@@ -208,7 +208,7 @@ A pioneering work that advances closed-domain hallucination detection from "judg
 - [\[ACL 2026\] Enhancing Hallucination Detection via Future Context](../../ACL2026/llm_safety/enhancing_hallucination_detection_via_future_context.md)
 - [\[CVPR 2026\] TriDF: Evaluating Perception, Detection, and Hallucination for Interpretable DeepFake Detection](../../CVPR2026/llm_safety/tridf_evaluating_perception_detection_and_hallucination_for_interpretable_deepfa.md)
 - [\[ICML 2026\] Harnessing Reasoning Trajectories for Hallucination Detection via Answer-agreement Representation Shaping](../../ICML2026/llm_safety/harnessing_reasoning_trajectories_for_hallucination_detection_via_answer-agreeme.md)
-- [\[ICLR 2026\] Veritas: Generalizable Deepfake Detection via Pattern-Aware Reasoning](veritas_generalizable_deepfake_detection_via_pattern-aware_reasoning.md)
+- [\[ACL 2026\] Hallucination Detection in LLMs with Topological Divergence on Attention Graphs](../../ACL2026/llm_safety/hallucination_detection_in_llms_with_topological_divergence_on_attention_graphs.md)
 
 </div>
 

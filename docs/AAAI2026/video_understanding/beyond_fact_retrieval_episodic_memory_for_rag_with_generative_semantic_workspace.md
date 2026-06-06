@@ -154,11 +154,11 @@ At query time: (1) named entities in the query are located in the GSW memory via
 
 ## Related Papers
 
+- [\[ACL 2026\] DualFact: A Multimodal Fact Verification Framework for Procedural Video Understanding](../../ACL2026/video_understanding/dualfact_a_multimodal_fact_verification_framework_for_procedural_video_understan.md)
 - [\[ICLR 2026\] LUMINA: Detecting Hallucinations in RAG System with Context-Knowledge Signals](../../ICLR2026/video_understanding/lumina_detecting_hallucinations_in_rag_system_with_context-knowledge_signals.md)
 - [\[AAAI 2026\] Explicit Temporal-Semantic Modeling for Dense Video Captioning via Context-Aware Cross-Modal Interaction](explicit_temporal-semantic_modeling_for_dense_video_captioning_via_context-aware.md)
 - [\[AAAI 2026\] APVR: Hour-Level Long Video Understanding with Adaptive Pivot Visual Information Retrieval](apvr_hour-level_long_video_understanding_with_adaptive_pivot.md)
 - [\[AAAI 2026\] Rethinking Progression of Memory State in Robotic Manipulation: An Object-Centric Perspective](rethinking_progression_of_memory_state_in_robotic_manipulation_an_object-centric.md)
-- [\[ACL 2026\] ViLL-E: Video LLM Embeddings for Retrieval](../../ACL2026/video_understanding/vill-e_video_llm_embeddings_for_retrieval.md)
 
 </div>
 

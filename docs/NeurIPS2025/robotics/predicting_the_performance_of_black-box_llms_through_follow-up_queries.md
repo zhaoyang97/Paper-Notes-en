@@ -167,11 +167,11 @@ Cross-domain transferability (OOD generalization):
 
 ## Related Papers
 
+- [\[ICML 2026\] DiBO: Offline Black-box Optimization with Diffusion Language Models (DNA + Robot Morphology)](../../ICML2026/robotics/training_diffusion_language_models_for_black-box_optimization.md)
 - [\[NeurIPS 2025\] Toward Engineering AGI: Benchmarking the Engineering Design Capabilities of LLMs](toward_engineering_agi_benchmarking_the_engineering_design_capabilities_of_llms.md)
 - [\[NeurIPS 2025\] Zero-Shot Embedding Drift Detection: A Lightweight Defense Against Prompt Injections in LLMs](zero-shot_embedding_drift_detection_a_lightweight_defense_against_prompt_injecti.md)
-- [\[AAAI 2026\] To Align or Not to Align: Strategic Multimodal Representation Alignment for Optimal Performance](../../AAAI2026/robotics/to_align_or_not_to_align_strategic_multimodal_representation_alignment_for_optim.md)
-- [\[AAAI 2026\] Towards Reinforcement Learning from Neural Feedback: Mapping fNIRS Signals to Agent Performance](../../AAAI2026/robotics/towards_reinforcement_learning_from_neural_feedback_mapping_.md)
-- [\[ICLR 2026\] Tracing and Reversing Edits in LLMs](../../ICLR2026/robotics/tracing_and_reversing_edits_in_llms.md)
+- [\[ICML 2026\] LangForce: Bayesian Decomposition of Vision-Language-Action Models via Latent Action Queries](../../ICML2026/robotics/langforce_bayesian_decomposition_of_vision_language_action_models_via_latent_act.md)
+- [\[ACL 2026\] Breaking Down and Building Up: Mixture of Skill-Based Vision-and-Language Navigation Agents](../../ACL2026/robotics/breaking_down_and_building_up_mixture_of_skill-based_vision-and-language_navigat.md)
 
 </div>
 

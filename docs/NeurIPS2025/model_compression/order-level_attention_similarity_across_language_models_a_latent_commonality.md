@@ -273,11 +273,11 @@ TOA uses stacked first- and second-order OLA as adapter input features. During t
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Geometry of Decision Making in Language Models](geometry_of_decision_making_in_language_models.md)
 - [\[ACL 2026\] Establishing a Scale for Kullback–Leibler Divergence in Language Models Across Various Settings](../../ACL2026/model_compression/establishing_a_scale_for_kullback-leibler_divergence_in_language_models_across_v.md)
+- [\[NeurIPS 2025\] Geometry of Decision Making in Language Models](geometry_of_decision_making_in_language_models.md)
+- [\[NeurIPS 2025\] LittleBit: Ultra Low-Bit Quantization via Latent Factorization](littlebit_ultra_low-bit_quantization_via_latent_factorization.md)
+- [\[NeurIPS 2025\] Disentangling Latent Shifts of In-Context Learning with Weak Supervision](disentangling_latent_shifts_of_in-context_learning_with_weak_supervision.md)
 - [\[NeurIPS 2025\] Correlation Dimension of Auto-Regressive Large Language Models](correlation_dimension_of_auto-regressive_large_language_models.md)
-- [\[NeurIPS 2025\] Restoring Pruned Large Language Models via Lost Component Compensation](restoring_pruned_large_language_models_via_lost_component_compensation.md)
-- [\[NeurIPS 2025\] PermLLM: Learnable Channel Permutation for N:M Sparse Large Language Models](permllm_learnable_channel_permutation_for_nm_sparse_large_language_models.md)
 
 </div>
 

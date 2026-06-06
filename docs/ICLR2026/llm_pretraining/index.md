@@ -20,7 +20,7 @@ tags:
 
 **🔬 ICLR2026** · **26** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (17)](../../ICML2026/llm_pretraining/index.md) · [💬 ACL2026 (7)](../../ACL2026/llm_pretraining/index.md) · [📷 CVPR2026 (8)](../../CVPR2026/llm_pretraining/index.md) · [🤖 AAAI2026 (5)](../../AAAI2026/llm_pretraining/index.md) · [🧠 NeurIPS2025 (46)](../../NeurIPS2025/llm_pretraining/index.md) · [📹 ICCV2025 (9)](../../ICCV2025/llm_pretraining/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (32)](../../ICML2026/llm_pretraining/index.md) · [💬 ACL2026 (12)](../../ACL2026/llm_pretraining/index.md) · [📷 CVPR2026 (8)](../../CVPR2026/llm_pretraining/index.md) · [🤖 AAAI2026 (5)](../../AAAI2026/llm_pretraining/index.md) · [🧠 NeurIPS2025 (46)](../../NeurIPS2025/llm_pretraining/index.md) · [📹 ICCV2025 (9)](../../ICCV2025/llm_pretraining/index.md)
 
 🔥 **Top topics:** LLM ×3
 

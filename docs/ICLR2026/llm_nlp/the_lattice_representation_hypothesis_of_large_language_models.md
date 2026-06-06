@@ -201,11 +201,11 @@ Soft equivalence is obtained by symmetrizing the inclusion measure via harmonic 
 
 ## Related Papers
 
+- [\[ICML 2026\] The Cylindrical Representation Hypothesis for Language Model Steering](../../ICML2026/llm_nlp/the_cylindrical_representation_hypothesis_for_language_model_steering.md)
 - [\[ICLR 2026\] PT2-LLM: Post-Training Ternarization for Large Language Models](pt2-llm_post-training_ternarization_for_large_language_models.md)
 - [\[AAAI 2026\] ProFuser: Progressive Fusion of Large Language Models](../../AAAI2026/llm_nlp/profuser_progressive_fusion_of_large_language_models.md)
+- [\[ICML 2026\] Rare Event Analysis of Large Language Models](../../ICML2026/llm_nlp/rare_event_analysis_of_large_language_models.md)
 - [\[ACL 2026\] Foresight Optimization for Strategic Reasoning in Large Language Models](../../ACL2026/llm_nlp/foresight_optimization_for_strategic_reasoning_in_large_language_models.md)
-- [\[ACL 2026\] Adam's Law: Textual Frequency Law on Large Language Models](../../ACL2026/llm_nlp/adam39s_law_textual_frequency_law_on_large_language_models.md)
-- [\[AAAI 2026\] Control Illusion: The Failure of Instruction Hierarchies in Large Language Models](../../AAAI2026/llm_nlp/control_illusion_the_failure_of_instruction_hierarchies_in_large_language_models.md)
 
 </div>
 

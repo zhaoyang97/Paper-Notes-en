@@ -1,0 +1,131 @@
+---
+title: >-
+  [Paper Note] Revisiting Non-Verbatim Memorization in Large Language Models: The Role of Entity Surface Forms
+description: >-
+  [ACL 2026][LLM Safety][Non-verbatim memorization] This paper constructs the RedirectQA dataset (using Wikipedia redirect information to link the same entity to multiple surface forms) to systematically study how non-verb…
+tags:
+  - "ACL 2026"
+  - "LLM Safety"
+  - "Non-verbatim memorization"
+  - "Entity surface forms"
+  - "Factual QA"
+  - "Frequency analysis"
+  - "RedirectQA"
+date: 2026-05-08
+content_hash: 318d17aff9b75fa4
+---
+
+# Revisiting Non-Verbatim Memorization in Large Language Models: The Role of Entity Surface Forms
+
+**Conference**: ACL 2026  
+**arXiv**: [2604.21882](https://arxiv.org/abs/2604.21882)  
+**Code**: [https://huggingface.co/datasets/naist-nlp/RedirectQA](https://huggingface.co/datasets/naist-nlp/RedirectQA) (Dataset)  
+**Area**: LLM/NLP  
+**Keywords**: Non-verbatim memorization, Entity surface forms, Factual QA, Frequency analysis, RedirectQA
+
+## TL;DR
+This paper constructs the RedirectQA dataset (using Wikipedia redirect information to link the same entity to multiple surface forms) to systematically study how non-verbatim memorization in LLMs is influenced by entity naming variations. It finds that factual memory is neither purely dependent on specific surface forms nor entirely surface-agnostic, and entity-level frequency contributes independently beyond surface frequency.
+
+## Background & Motivation
+
+**Background**: Large Language Models (LLMs) store vast amounts of factual knowledge in their parameters, enabling them to answer knowledge-intensive questions without external retrieval. Entity-based QA is a common framework for analyzing non-verbatim memorization, and existing research indicates that facts about low-frequency or low-fame entities are harder to memorize.
+
+**Limitations of Prior Work**: In typical evaluations, each entity is queried using only one canonical surface form (e.g., the Wikipedia title). This makes it difficult to distinguish whether the model "remembers the fact about the entity" or if the fact is "accessible only through a specific name." For example, a model might answer correctly for "Pelé" but fail for "Edson Arantes do Nascimento"—the underlying fact is the same, only the name differs.
+
+**Key Challenge**: Initial diagnostics found that 23.7% of canonical-redirect question pairs on Pythia-12B yielded inconsistent predictions. This suggests that existing single-surface evaluations significantly underestimate the unreliability of factual access, and evaluations based only on canonical names may miss many surface-conditioned failure cases.
+
+**Goal**: (1) Construct a QA dataset where factual triples are fixed while only entity surface forms vary; (2) Systematically evaluate the impact of surface form variations on factual QA; (3) Analyze the relative contributions of entity-level and surface-level frequencies to memorization accuracy.
+
+**Key Insight**: Wikipedia redirect pages serve as a natural resource for entity surface forms. These redirects include category labels (aliases, abbreviations, spelling variants, common errors, etc.), allowing for controlled analysis.
+
+**Core Idea**: By fixing the factual triple and the gold answer while varying only the surface form of the subject entity, Ours builds RedirectQA—a large-scale controlled QA dataset—to quantify the impact of surface forms on factual access.
+
+## Method
+
+### Overall Architecture
+The construction of RedirectQA follows three steps: (1) Collect factual triples (subject, relation, object) from Wikidata; (2) Use Wikipedia redirect information to associate canonical and redirect surface forms for each subject entity, grouping them by category; (3) Render surface instances into questions using relation-specific templates. The final dataset contains 30,560 surface instances, 14,672 factual triples, and 61,120 question implementations.
+
+### Key Designs
+
+1.  **Redirect Category Grouping**:
+    - **Function**: Categorizes surface form variations by type to support fine-grained consistency analysis.
+    - **Mechanism**: 33 frequent redirect categories were manually selected from Wikipedia redirect pages and grouped into three types: alternative names and abbreviations (e.g., birth name → stage name), spelling variants (e.g., with/without diacritics), and typical errors (e.g., common misspellings). Each type represents different degrees of lexical variation.
+    - **Design Motivation**: Different naming variations pose varying challenges to models; classification allows for quantifying the difference between "minor orthographic changes vs. major lexical changes."
+
+2.  **Double Template Disambiguation**:
+    - **Function**: Reduces the interference of question phrasing on the results.
+    - **Mechanism**: For each relation type, two question templates are used—the original template and a semantically preserved paraphrase generated by GPT-4o. Each surface instance is rendered into two question implementations, and the average result is reported.
+    - **Design Motivation**: Since LLM predictions are sensitive to surface variations in templates, the double template design ensures that observed surface form effects are not artifacts of a single template.
+
+3.  **Frequency Decomposition Analysis**:
+    - **Function**: Distinguishes the independent contributions of entity-level and surface-level frequencies to memorization accuracy.
+    - **Mechanism**: Large-scale entity linking was performed on pre-training corpora using DBpedia Spotlight to calculate entity frequency (total mentions across all associated mentions) and surface frequency (mentions of a specific surface form as that entity). Partial correlation analysis $\rho(\text{Ent}, \text{Acc} | \text{Surf})$ and $\rho(\text{Surf}, \text{Acc} | \text{Ent})$ was used to isolate the independent effects.
+    - **Design Motivation**: If accuracy correlates only with specific surface form frequency, it supports the "strong surface-specific" view. If entity frequency contributes beyond surface frequency, it indicates knowledge coupling across surface forms.
+
+### Loss & Training
+This is an analytical work and does not involve model training. Evaluations use 15-shot prompting, and correctness is determined via alias-aware string matching.
+
+## Key Experimental Results
+
+### Main Results
+Prediction consistency (canonical vs. redirect surface forms) was evaluated across 13 LLMs.
+
+| Redirect Type | Consistency Trend | Description |
+| :--- | :--- | :--- |
+| Spelling Variants | Highest | Models are relatively robust to minor orthographic changes (case, punctuation, diacritics). |
+| Alternative Names/Abbreviations | Lowest | Major lexical changes (aliases, acronyms) significantly disrupt factual access. |
+| Typical Errors | Medium | Partially robust to misspellings but not perfect. |
+
+### Frequency Analysis (Partial Correlation)
+
+| Model Family | $\rho(\text{Ent}, \text{Acc} | \text{Surf})$ Canonical | $\rho(\text{Surf}, \text{Acc} | \text{Ent})$ Canonical |
+| :--- | :--- | :--- |
+| Pythia 12B | 0.148* | -0.009 |
+| OLMo 2 32B | 0.113* | -0.032 |
+| OpenSciRef 1.7B | 0.125* | 0.000 |
+
+### Key Findings
+- Across all model categories, surface form variations lead to non-negligible flips in correctness; even strong instruction-tuned and commercial models fail to achieve perfect consistency.
+- In the subset of canonical surface forms, the partial correlation of entity frequency is consistently significantly positive and stronger than surface frequency. This suggests knowledge coupling across surface forms rather than independent memorization of each name.
+- Reverse patterns are noteworthy: models occasionally fail on canonical names but succeed on alternative names, indicating that human-oriented canonicality does not necessarily align with the surface form for the most reliable factual access by LLMs.
+- Acronyms (e.g., NYT → The New York Times) are the most challenging variant type.
+
+## Highlights & Insights
+- **The experimental design is ingenious**: Leveraging Wikipedia redirects as a free, natural, and category-labeled resource for surface forms allows for a strictly controlled experiment where the factual triple is fixed while only the surface form varies. This "minimal change" experimental design is transferable to other robustness evaluation tasks.
+- **Frequency decomposition** is the most profound contribution: By refining the coarse-grained "entity frequency → accuracy" analysis to the surface level, it reveals that entity frequency still contributes independently after controlling for surface frequency. This uncovers a mechanism of cross-surface knowledge coupling within LLMs rather than independent storage of facts for each name.
+- The conclusion that factual memory is "neither purely surface-specific nor completely surface-agnostic" provides a more accurate understanding framework than a binary view, avoiding simplistic assertions.
+
+## Limitations & Future Work
+- The dataset only covers English entities and 16 relation types; behavior across other languages and more relation types remains unknown.
+- Using DBpedia Spotlight for entity linking may introduce bias (zero-frequency cases are filtered), and linking quality may be poor for long-tail entities.
+- Causality is not established—frequency correlations do not directly imply causation; confounding variables like entity prominence affecting both frequency and training data quality may exist.
+- Methods to utilize these findings to improve models (e.g., surface form augmentation during training) were not explored.
+- Evaluation was limited to 15-shot prompts; different prompting strategies (e.g., Zero-shot, CoT) might affect surface form sensitivity.
+- The selection of redirect categories was based on manual filtering, which might miss certain important types of surface form variations.
+
+## Related Work & Insights
+- **vs PopQA/SimpleQA**: These datasets use only one canonical name per entity. RedirectQA reveals inconsistencies they miss through surface form diversification.
+- **vs Kandpal et al.**: While the former studies the relationship between entity frequency and memorization, Ours decomposes frequency into entity and surface levels, finding independent contributions and providing a more fine-grained understanding.
+- **Insights**: RAG systems should consider entity surface form diversity during querying (querying with multiple names to improve recall). Knowledge editing methods need to verify consistency across surface forms (checking if other names are synchronized after editing one name).
+
+## Rating
+- **Novelty**: ⭐⭐⭐⭐ Systematic study of the surface form dimension is new, though the core idea (name variants affecting QA) is somewhat intuitive.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Very solid, featuring 13 models, multi-category analysis, partial correlation decomposition, and double-template validation.
+- **Writing Quality**: ⭐⭐⭐⭐⭐ Clear structure, with every design decision well-reasoned.
+- **Value**: ⭐⭐⭐⭐ Provides enlightening insights into the knowledge storage mechanisms of LLMs.
+
+<!-- RELATED:START -->
+
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ACL 2026\] From Passive Metric to Active Signal: The Evolving Role of Uncertainty Quantification in Large Language Models](from_passive_metric_to_active_signal_the_evolving_role_of_uncertainty_quantifica.md)
+- [\[ACL 2026\] Exploring Cross-Client Memorization of Training Data in Large Language Models for Federated Learning](exploring_cross-client_memorization_of_training_data_in_large_language_models_fo.md)
+- [\[ACL 2026\] Topic-Based Watermarks for Large Language Models](topic-based_watermarks_for_large_language_models.md)
+- [\[ACL 2026\] Calibration vs Decision Making: Revisiting the Reliability Paradox in Unlearned Language Models](calibration_vs_decision_making_revisiting_the_reliability_paradox_in_unlearned_l.md)
+- [\[ACL 2026\] Jailbreaking Large Language Models with Morality Attacks](jailbreaking_large_language_models_with_morality_attacks.md)
+
+</div>
+
+<!-- RELATED:END -->

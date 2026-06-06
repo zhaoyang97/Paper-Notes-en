@@ -148,8 +148,8 @@ Illumination–texture disentanglement experiment (change in CD×1000 on GSO; la
 - [\[ICCV 2025\] AR-1-to-3: Single Image to Consistent 3D Object Generation via Next-View Prediction](../../ICCV2025/3d_vision/ar1to3_single_image_to_consistent_3d_object_via_nextview_pre.md)
 - [\[ICCV 2025\] WonderPlay: Dynamic 3D Scene Generation from a Single Image and Actions](../../ICCV2025/3d_vision/wonderplay_dynamic_3d_scene_generation_from_a_single_image_and_actions.md)
 - [\[NeurIPS 2025\] More Than Generation: Unifying Generation and Depth Estimation via Text-to-Image Diffusion Models](more_than_generation_unifying_generation_and_depth_estimation_via_text-to-image_.md)
-- [\[ICCV 2025\] Sat2City: 3D City Generation from A Single Satellite Image with Cascaded Latent Diffusion](../../ICCV2025/3d_vision/sat2city_3d_city_generation_from_a_single_satellite_image_with_cascaded_latent_d.md)
 - [\[ICCV 2025\] A Recipe for Generating 3D Worlds from a Single Image](../../ICCV2025/3d_vision/a_recipe_for_generating_3d_worlds_from_a_single_image.md)
+- [\[ICCV 2025\] Sat2City: 3D City Generation from A Single Satellite Image with Cascaded Latent Diffusion](../../ICCV2025/3d_vision/sat2city_3d_city_generation_from_a_single_satellite_image_with_cascaded_latent_d.md)
 
 </div>
 

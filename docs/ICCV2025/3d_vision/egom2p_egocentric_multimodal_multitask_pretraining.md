@@ -158,8 +158,8 @@ After pretraining, arbitrary-to-arbitrary modality prediction is achieved by sam
 
 ## Related Papers
 
-- [\[ICCV 2025\] TokenUnify: Scaling Up Autoregressive Pretraining for Neuron Segmentation](tokenunify_scaling_up_autoregressive_pretraining_for_neuron_segmentation.md)
 - [\[NeurIPS 2025\] Look and Tell: A Dataset for Multimodal Grounding Across Egocentric and Exocentric Views](../../NeurIPS2025/3d_vision/look_and_tell_a_dataset_for_multimodal_grounding_across_egocentric_and_exocentri.md)
+- [\[ICCV 2025\] TokenUnify: Scaling Up Autoregressive Pretraining for Neuron Segmentation](tokenunify_scaling_up_autoregressive_pretraining_for_neuron_segmentation.md)
 - [\[ICCV 2025\] Benchmarking Egocentric Visual-Inertial SLAM at City Scale](benchmarking_egocentric_visualinertial_slam_at_city_scale.md)
 - [\[ICCV 2025\] Fish2Mesh Transformer: 3D Human Mesh Recovery from Egocentric Vision](fish2mesh_transformer_3d_human_mesh_recovery_from_egocentric_vision.md)
 - [\[ICCV 2025\] HIS-GPT: Towards 3D Human-In-Scene Multimodal Understanding](his-gpt_towards_3d_human-in-scene_multimodal_understanding.md)

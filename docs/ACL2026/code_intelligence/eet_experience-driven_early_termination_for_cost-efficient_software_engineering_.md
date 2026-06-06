@@ -2,78 +2,78 @@
 title: >-
   [Paper Note] EET: Experience-Driven Early Termination for Cost-Efficient Software Engineering Agents
 description: >-
-  [ACL 2026][Code Intelligence][Software Engineering Agent] This paper proposes EET, an experience-driven early termination method that identifies unproductive iterations during patch generation and patch selection phases…
+  [ACL 2026][Code Intelligence][Software Engineering Agent] Ours proposes EET—an early termination method driven by historical experience that identifies invalid iterations during the patch generation and patch selection s…
 tags:
   - "ACL 2026"
   - "Code Intelligence"
   - "Software Engineering Agent"
   - "Cost Optimization"
   - "Experience-Driven"
-  - "Early Termination"
+  - "Early Termination Strategy"
   - "SWE-bench"
 date: 2026-05-08
-content_hash: 4d4bb648bba8f0ce
+content_hash: 1fb565049c4e7ec3
 ---
 
 # EET: Experience-Driven Early Termination for Cost-Efficient Software Engineering Agents
 
-**Conference**: ACL 2026
+**Conference**: ACL 2026  
 **arXiv**: [2601.05777](https://arxiv.org/abs/2601.05777)  
 **Code**: [GitHub](https://github.com/IanWalls/EET)  
-**Area**: Code Intelligence
-**Keywords**: Software Engineering Agent, Cost Optimization, Experience-Driven, Early Termination, SWE-bench
+**Area**: Code Intelligence  
+**Keywords**: Software Engineering Agent, Cost Optimization, Experience-Driven, Early Termination Strategy, SWE-bench
 
 ## TL;DR
 
-This paper proposes EET, an experience-driven early termination method that identifies unproductive iterations during patch generation and patch selection phases, reducing the total cost of SE agents by 19%–55% (32% on average) with negligible performance degradation (at most 0.2%).
+Ours proposes EET—an early termination method driven by historical experience that identifies invalid iterations during the patch generation and patch selection stages to terminate early. It reduces the total cost of SE Agents by 19%-55% (average 32%) while incurring almost no loss in task performance (0.2% maximum).
 
 ## Background & Motivation
 
-**Background**: LLM-based software engineering (SE) agents have achieved remarkable progress in automated issue resolution, with systems such as Agentless, Mini-SWE-Agent, and Trae Agent demonstrating strong performance on SWE-bench.
+**Background**: LLM-based Software Engineering (SE) Agents have made significant progress in automated issue resolution, with frameworks like Agentless, Mini-SWE-Agent, and Trae Agent performing exceptionally well on SWE-bench.
 
-**Limitations of Prior Work**: The high monetary cost of SE agents is a major barrier to practical deployment (53% of developers cite cost as a key obstacle). The "token snowball" effect causes costs to grow super-linearly as conversation histories accumulate; unproductive iterations on hard or unsolvable problems further amplify waste.
+**Limitations of Prior Work**: The prohibitive monetary cost of SE Agents remains a major barrier to practical deployment (53% of developers cite cost as a hurdle). Due to the "token snowball" effect, increasing conversation history leads to super-linear cost growth; furthermore, invalid iterations on difficult or unsolvable problems amplify waste.
 
-**Key Challenge**: Existing cost reduction methods (e.g., turn-control) can lower costs but significantly degrade task performance (an average drop of 10.7%). Achieving substantial cost savings while preserving performance remains the central challenge.
+**Key Challenge**: Existing cost optimization methods (such as turn-control) significantly impair task performance (an average 10.7% drop) while reducing costs. Reducing costs substantially while maintaining performance remains a core challenge.
 
-**Goal**: To propose a general-purpose early termination optimization method that integrates seamlessly into diverse SE agents and significantly reduces cost without sacrificing task performance.
+**Goal**: To propose a universal early termination optimization method that can be seamlessly integrated into various SE Agents to significantly reduce costs while maintaining task performance.
 
-**Key Insight**: Inspired by the intuition that experienced developers can directly locate solutions without extensive trial and error, the method uses structured historical experience to guide agents in skipping redundant iterations.
+**Key Insight**: Drawing on the intuition that experienced developers can locate solutions directly without excessive trial and error, structured historical experience is used to guide the Agent in skipping redundant iterations.
 
-**Core Idea**: Distill historical issue-resolution experience into structured knowledge objects (task abstraction + trajectory summary + confidence assessment), and use retrieved relevant experience at both the patch generation and patch selection stages to determine whether early termination is warranted.
+**Core Idea**: Historical issue-solving experiences are distilled into structured knowledge (task abstraction + trajectory summary + confidence evaluation), which is utilized during the patch generation and selection stages of new tasks to determine if early termination is feasible.
 
 ## Method
 
 ### Overall Architecture
 
-EET consists of two major components: (1) **Experience Generation** — distilling structured experience objects from historical issue-resolution records and storing them in an experience repository; and (2) **Early Termination Mechanism** — leveraging retrieved relevant experiences to make early termination decisions at milestone checkpoints during patch generation and via confidence thresholds during patch selection.
+EET consists of two main components: (1) Experience Generation—distilling structured experience objects from historical issue-solving records and storing them in an experience bank; (2) Early Termination Mechanism—making termination decisions using retrieved relevant experiences during the patch generation stage (at milestone checkpoints) and the patch selection stage (using confidence thresholds).
 
 ### Key Designs
 
 1. **Structured Experience Representation and Retrieval**:
-    - Function: Compress raw execution trajectories into compact, reusable experience objects.
-    - Mechanism: Each experience object contains `task_description` (issue abstraction), `execution_summary` (trajectory summary), `evaluation_result` (all passing), `confidence`, and `confidence_reason` (quality assessment). Only successfully resolved experiences are retained.
-    - Design Motivation: Raw trajectories are noisy and token-expensive; excessive compression discards useful signals. Structured representation strikes a balance between information density and utility.
+    - **Function**: Compresses raw execution trajectories into compact, reusable experience objects.
+    - **Mechanism**: Each experience object contains `task_description` (issue abstraction), `execution_summary` (trajectory summary), `evaluation_result` (all are "pass"), `confidence`, and `confidence_reason` (quality assessment). Only successfully resolved experiences are retained.
+    - **Design Motivation**: Raw trajectories are noisy and incur high token overhead, while excessive compression loses usable signals. A structured representation balances information density and utility.
 
-2. **Milestone-Based Early Termination during Patch Generation**:
-    - Function: Identify the point within a single patch generation process at which further iteration is unnecessary.
-    - Mechanism: Code modification and test execution are defined as milestones. After each milestone, a confidence score is evaluated; if it exceeds threshold $\tau^{gen}$, generation is terminated early.
-    - Design Motivation: Signals of patch quality may emerge after code modification (structural alignment) or after test execution (dynamic feedback); the dual-milestone design covers both scenarios.
+2. **Milestone Early Termination in Patch Generation**:
+    - **Function**: Identifies when to stop iterating within a single patch generation process.
+    - **Mechanism**: Code modification and test execution are defined as milestones. After each milestone, a confidence score is evaluated; if it exceeds threshold $\tau^{gen}$, the process terminates early.
+    - **Design Motivation**: Signals for patch quality may emerge after code changes (structural alignment) or after test execution (dynamic feedback). The dual-milestone design covers both scenarios.
 
-3. **Dual-Threshold Early Termination during Patch Selection**:
-    - Function: Dynamically control the number of candidate patches that need to be generated.
-    - Mechanism: After each patch is generated, its confidence is assessed using the patch content, execution trajectory, and historical experience. If confidence exceeds $\tau_{upper}^{sel}$, generation stops (the patch is sufficiently good); if it falls below $\tau_{lower}^{sel}$, generation also stops (the problem is unlikely to be solved).
-    - Design Motivation: Avoids the inefficiency of a fixed patch count — simple problems do not require multiple patches, and generating more patches for hard problems yields diminishing returns.
+3. **Double-Threshold Early Termination in Patch Selection**:
+    - **Function**: Dynamically controls the number of candidate patches to be generated.
+    - **Mechanism**: For each generated patch, confidence is assessed based on patch content, execution trajectory, and historical experience. If it exceeds $\tau_{upper}^{sel}$, generation stops (patch is good enough); if it falls below $\tau_{lower}^{sel}$, it also stops (current task is too difficult).
+    - **Design Motivation**: Avoids inefficiencies caused by a fixed number of patches—simple problems do not require multiple candidates, and for difficult problems, generating more patches provides no benefit.
 
 ### Loss & Training
 
-EET is an inference-time optimization method and involves no training. Key hyperparameters include: TF-IDF similarity threshold $\tau_{sim}$, generation early termination threshold $\tau^{gen}$, and selection upper/lower thresholds $\tau_{upper}^{sel}$ / $\tau_{lower}^{sel}$, tuned on 100 held-out validation samples from SWE-bench. The experience repository is constructed from SWE-bench Lite (207 deduplicated problems).
+EET is an inference-time optimization method and does not involve training. Key hyperparameters include the TF-IDF similarity threshold $\tau_{sim}$, the generation termination threshold $\tau^{gen}$, and the selection upper/lower thresholds $\tau_{upper}^{sel} / \tau_{lower}^{sel}$, which are tuned on 100 independent validation samples from SWE-bench. The experience bank is generated from SWE-bench Lite (207 unique tasks).
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Agent + Backend | Resolve Rate Δ | API Calls | Input Tokens | Output Tokens | Total Cost Δ |
-|----------------|---------------|-----------|--------------|---------------|--------------|
+| Agent + Backend | Success Rate Change | API Calls | Input Tokens | Output Tokens | Total Cost Change |
+|-------------|-----------|---------|-----------|-----------|-----------|
 | Agentless + GPT-5-mini | +7.8% | -26.4% | -51.8% | -51.0% | **-55.1%** |
 | Agentless + DeepSeek-V3.2 | +7.2% | -25.5% | -31.9% | -35.0% | -32.2% |
 | Mini-SWE + GPT-5-mini | +1.0% | -7.9% | -13.7% | -3.7% | -19.4% |
@@ -84,45 +84,45 @@ EET is an inference-time optimization method and involves no training. Key hyper
 
 ### Ablation Study
 
-| Variant (Trae + GPT-5-mini) | Resolve Rate Δ | Total Cost Δ |
-|-----------------------------|---------------|--------------|
+| Variant (Trae + GPT-5-mini) | Success Rate Change | Total Cost Change |
+|-----------------------------|---------------------|-------------------|
 | Full EET | 0.0% | -28.2% |
-| w/o experience injection | -10.4% | -58.9% |
-| w/o early termination mechanism | +0.4% | +3.1% |
+| Remove Experience Injection | -10.4% | -58.9% |
+| Remove Early Termination | +0.4% | +3.1% |
 
 ### Key Findings
 
-- EET achieves early termination on an average of 11.3% of issues (ranging from 8.6% to 14.0%), with the most significant cost savings concentrated in this subset.
-- The largest gains are observed for Agentless (resolve rate even improves by 7.2–7.8%), as experience guidance compensates for the limitations of its fixed pipeline.
-- Compared to turn-control: turn-control reduces costs more aggressively (−41.4%) but causes a substantial drop in resolve rate (−10.7%).
-- LLM confidence scores are well-calibrated: patches with confidence >90 have pass rates of 63.6%–92.6%, while those with confidence <40 achieve only 8.7%–13.8%.
-- Cross-repository transfer experiments demonstrate that the captured experience reflects general debugging patterns rather than repository-specific cues.
+- EET achieved early termination for an average of 11.3% of issues (ranging from 8.6% to 14.0%), where cost savings were most significant.
+- The greatest gain was observed with Agentless (success rate actually increased by 7.2-7.8%), as experience guidance compensated for its rigid workflow.
+- Comparison with Turn-control: While Turn-control reduces cost more (-41.4%), it results in a massive drop in success rate (-10.7%).
+- LLM confidence scores exhibit high calibration: patches with confidence >90 had a pass rate of 63.6%-92.6%, while those <40 were only 8.7%-13.8%.
+- Cross-repository transfer experiments indicate that the captured experiences represent general debugging patterns rather than repository-specific cues.
 
 ## Highlights & Insights
 
-- The method is highly general and can be plug-and-play integrated into SE agents of different paradigms (fixed pipeline / autonomous planning / generate-then-select).
-- The design of the "experience" object is elegant: rather than naive RAG retrieval of raw trajectories, it distills information into structured knowledge with confidence assessments.
-- The dual-threshold design covers both "good enough to stop" and "too hard to continue" scenarios, making it more principled than a single threshold.
-- Ablation studies clearly reveal the complementary roles of experience injection and the early termination mechanism.
+- The method is highly universal and can be integrated plug-and-play into SE Agents of different paradigms (fixed workflow, autonomous planning, or generate-then-select).
+- The design of the "Experience" concept is sophisticated: it is not simple RAG retrieval of raw trajectories, but a distillation into structured knowledge containing confidence assessments.
+- The double-threshold design handles both "good enough to stop" and "too hard to continue" scenarios, proving more rational than single-threshold approaches.
+- Ablation studies clearly demonstrate the complementary relationship between experience injection and the early termination mechanism.
 
 ## Limitations & Future Work
 
-- The method relies on historical data to build the experience repository, posing a cold-start problem for entirely novel domains.
-- Evaluation is conducted solely on SWE-bench Verified; generalization to industrial settings remains to be validated.
-- Early termination decisions depend on LLM confidence outputs, and calibration quality may vary substantially across models.
-- The current scope is limited to SE agents, but the underlying design philosophy — experience-driven early termination — is domain-agnostic and can be extended to general multi-step reasoning agents.
+- Building the experience bank relies on historical data, posing a cold-start problem for entirely new domains.
+- Evaluation was limited to SWE-bench Verified; generalization to industrial scenarios remains to be validated.
+- Early termination decisions rely on the calibration quality of LLM confidence outputs, which varies across models.
+- While currently focused on SE Agents, the design philosophy (experience-driven early termination) is domain-agnostic and could be extended to general multi-step reasoning agents.
 
 ## Related Work & Insights
 
-- **Distinction from RAG-based agent memory** (e.g., MetaGPT, MemoryBank): EET's experience is specifically designed to serve cost optimization, rather than to improve task performance.
-- Fan et al.'s "token snowball" analysis identifies the root cause of the cost problem; EET addresses it from the perspective of experience reuse.
-- **Implication for agent system design**: Cost optimization should be treated as a first-class concern rather than a secondary consideration subordinate to performance.
+- Difference from RAG-based agent memory (e.g., MetaGPT, MemoryBank): EET's experiences specifically serve cost optimization rather than just performance enhancement.
+- Analysis of the "token snowball" effect by Fan et al. reveals the root of the cost issue; EET provides a solution from the perspective of experience reuse.
+- Implications for Agent system design: Cost optimization should be treated as a first-class citizen rather than a secondary concern to performance.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — First systematic application of experience-driven early termination to the SE agent cost problem; the perspective is novel and practical.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — 3 agents × 2 LLM backends, with baseline comparisons, ablation studies, and cross-repository transfer analysis.
-- Writing Quality: ⭐⭐⭐⭐ — Clear structure, precise method description, and comprehensive experimental design.
+- **Novelty**: ⭐⭐⭐⭐ First systematic use of experience-driven early termination to solve the SE Agent cost problem; the perspective is novel and practical.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Evaluated across 3 Agents × 2 LLM backends, including baseline comparisons, ablations, and cross-repo transfer analysis.
+- **Writing Quality**: ⭐⭐⭐⭐ Clear structure, accurate method description, and comprehensive experimental design.
 
 <!-- RELATED:START -->
 
@@ -131,10 +131,10 @@ EET is an inference-time optimization method and involves no training. Key hyper
 ## Related Papers
 
 - [\[ICLR 2026\] Ambig-SWE: Interactive Agents to Overcome Underspecificity in Software Engineering](../../ICLR2026/code_intelligence/ambig-swe_interactive_agents_to_overcome_underspecificity_in_software_engineerin.md)
+- [\[ACL 2026\] Taming System Complexity: Demystifying Software Engineering Agents in Diagnosing Linux Kernel Faults](taming_system_complexity_demystifying_software_engineering_agents_in_diagnosing_.md)
 - [\[NeurIPS 2025\] SWE-rebench: An Automated Pipeline for Task Collection and Decontaminated Evaluation of Software Engineering Agents](../../NeurIPS2025/code_intelligence/swe-rebench_an_automated_pipeline_for_task_collection_and_decontaminated_evaluat.md)
+- [\[ACL 2026\] SWE-QA: Can Language Models Answer Repository-level Code Questions?](swe-qa_can_language_models_answer_repository-level_code_questions.md)
 - [\[ACL 2026\] CollabCoder: Plan-Code Co-Evolution via Collaborative Decision-Making for Efficient Code Generation](collabcoder_plan-code_co-evolution_via_collaborative_decision-making_for_efficie.md)
-- [\[ACL 2026\] KoCo-Bench: Can Large Language Models Leverage Domain Knowledge in Software Development?](koco-bench_can_large_language_models_leverage_domain_knowledge_in_software_devel.md)
-- [\[ACL 2026\] LogicEval: A Systematic Framework for Evaluating Automated Repair Techniques for Logical Vulnerabilities in Real-World Software](logiceval_a_systematic_framework_for_evaluating_automated_repair_techniques_for_.md)
 
 </div>
 

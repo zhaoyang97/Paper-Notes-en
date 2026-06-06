@@ -141,9 +141,9 @@ This paper systematically investigates the effects of model abliteration—a inf
 
 - [\[NeurIPS 2025\] RCCDA: Adaptive Model Updates in the Presence of Concept Drift under a Constrained Resource Budget](rccda_adaptive_model_updates_in_the_presence_of_concept_drift_under_a_constraine.md)
 - [\[NeurIPS 2025\] FiRA: Can We Achieve Full-Rank Training of LLMs Under Low-Rank Constraint?](fira_can_we_achieve_full-rank_training_of_llms_under_low-rank_constraint.md)
+- [\[ACL 2026\] MTA: Multi-Granular Trajectory Alignment for Large Language Model Distillation](../../ACL2026/model_compression/mta_multi-granular_trajectory_alignment_for_large_language_model_distillation.md)
 - [\[NeurIPS 2025\] Multi-Task Vehicle Routing Solver via Mixture of Specialized Experts under State-Decomposable MDP](multi-task_vehicle_routing_solver_via_mixture_of_specialized_experts_under_state.md)
 - [\[NeurIPS 2025\] Vision-centric Token Compression in Large Language Model](vision-centric_token_compression_in_large_language_model.md)
-- [\[NeurIPS 2025\] Towards Effective Federated Graph Foundation Model via Mitigating Knowledge Entanglement](towards_effective_federated_graph_foundation_model_via_mitigating_knowledge_enta.md)
 
 </div>
 

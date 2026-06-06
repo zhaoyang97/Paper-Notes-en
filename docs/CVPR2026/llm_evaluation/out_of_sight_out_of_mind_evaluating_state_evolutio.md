@@ -124,8 +124,8 @@ Three annotators labeled 180 videos, and verifier reliability was assessed using
 - [\[CVPR 2026\] Enhancing Out-of-Distribution Detection with Extended Logit Normalization](enhancing_out-of-distribution_detection_with_extended_logit_normalization.md)
 - [\[ICLR 2026\] Optimal Transport-Induced Samples against Out-of-Distribution Overconfidence](../../ICLR2026/llm_evaluation/optimal_transport-induced_samples_against_out-of-distribution_overconfidence.md)
 - [\[ICLR 2026\] Noise-Aware Generalization: Robustness to In-Domain Noise and Out-of-Domain Generalization](../../ICLR2026/llm_evaluation/noise-aware_generalization_robustness_to_in-domain_noise_and_out-of-domain_gener.md)
+- [\[ACL 2026\] Beyond Fixed Psychological Personas: State Beats Trait, but Language Models are State-Blind](../../ACL2026/llm_evaluation/beyond_fixed_psychological_personas_state_beats_trait_but_language_models_are_st.md)
 - [\[ICCV 2025\] ODP-Bench: Benchmarking Out-of-Distribution Performance Prediction](../../ICCV2025/llm_evaluation/odp-bench_benchmarking_out-of-distribution_performance_prediction.md)
-- [\[AAAI 2026\] Graph Out-of-Distribution Detection via Test-Time Calibration with Dual Dynamic Dictionaries](../../AAAI2026/llm_evaluation/graph_out-of-distribution_detection_via_test-time_calibration_with_dual_dynamic_.md)
 
 </div>
 

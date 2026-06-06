@@ -146,8 +146,8 @@ LookOut outperforms EgoCast in trajectory prediction accuracy by a factor of 2 (
 - [\[ICCV 2025\] SA-Occ: Satellite-Assisted 3D Occupancy Prediction in Real World](sa-occ_satellite-assisted_3d_occupancy_prediction_in_real_world.md)
 - [\[ICCV 2025\] RoboTron-Sim: Improving Real-World Driving via Simulated Hard-Case](robotron-sim_improving_real-world_driving_via_simulated_hard-case.md)
 - [\[NeurIPS 2025\] ChronoGraph: A Real-World Graph-Based Multivariate Time Series Dataset](../../NeurIPS2025/autonomous_driving/chronograph_a_real-world_graph-based_multivariate_time_series_dataset.md)
-- [\[ICCV 2025\] IGL-Nav: Incremental 3D Gaussian Localization for Image-goal Navigation](igl-nav_incremental_3d_gaussian_localization_for_image-goal_navigation.md)
 - [\[CVPR 2026\] SimScale: Learning to Drive via Real-World Simulation at Scale](../../CVPR2026/autonomous_driving/simscale_learning_to_drive_via_real-world_simulation_at_scale.md)
+- [\[ICCV 2025\] RTMap: Real-Time Recursive Mapping with Change Detection and Localization](rtmap_real-time_recursive_mapping_with_change_detection_and_localization.md)
 
 </div>
 

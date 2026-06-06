@@ -136,8 +136,8 @@ where $SOP^l = fr \times T \times FLOPs^l$ (fr denotes firing rate). Only the fi
 - [\[ICML 2026\] How 'Neural' is a Neural Foundation Model?](../../ICML2026/self_supervised/how_neural_is_a_neural_foundation_model.md)
 - [\[ICLR 2026\] Maximizing Asynchronicity in Event-based Neural Networks](../../ICLR2026/self_supervised/maximizing_asynchronicity_in_event-based_neural_networks.md)
 - [\[NeurIPS 2025\] Manifolds and Modules: How Function Develops in a Neural Foundation Model](../../NeurIPS2025/self_supervised/manifolds_and_modules_how_function_develops_in_a_neural_foundation_model.md)
-- [\[AAAI 2026\] Robust Tabular Foundation Models](robust_tabular_foundation_models.md)
 - [\[CVPR 2026\] SpHOR: A Representation Learning Perspective on Open-set Recognition for Identifying Unknown Classes in Deep Neural Networks](../../CVPR2026/self_supervised/sphor_a_representation_learning_perspective_on_open-set_recognition_for_identify.md)
+- [\[AAAI 2026\] Robust Tabular Foundation Models](robust_tabular_foundation_models.md)
 
 </div>
 

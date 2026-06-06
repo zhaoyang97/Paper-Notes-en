@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] What Makes LLMs Effective Sequential Recommenders? A Study on Preference Intensity and Temporal Context
 description: >-
-  [ACL 2026][Recommender Systems][Sequential Recommendation] This paper identifies that binary preference modeling in existing LLM-based recommender systems discards two critical signals—preference intensity and temporal c…
+  [ACL 2026][Recommender Systems][Sequential Recommendation] This paper reveals that binary preference modeling in existing LLM-based recommender systems neglects two critical pieces of information: preference intensity an…
 tags:
   - "ACL 2026"
   - "Recommender Systems"
@@ -12,64 +12,64 @@ tags:
   - "Temporal Context"
   - "DPO"
 date: 2026-05-08
-content_hash: da0fa92ac472b864
+content_hash: fb10db2a25eb737e
 ---
 
 # What Makes LLMs Effective Sequential Recommenders? A Study on Preference Intensity and Temporal Context
 
-**Conference**: ACL 2026
+**Conference**: ACL 2026  
 **arXiv**: [2506.02261](https://arxiv.org/abs/2506.02261)  
 **Code**: [https://github.com/zyouyang/RecPO](https://github.com/zyouyang/RecPO)  
-**Area**: Recommender Systems
+**Area**: Recommender Systems  
 **Keywords**: Sequential Recommendation, Preference Alignment, Preference Intensity, Temporal Context, DPO
 
 ## TL;DR
 
-This paper identifies that binary preference modeling in existing LLM-based recommender systems discards two critical signals—preference intensity and temporal context—and proposes RecPO, a framework that incorporates both factors into preference optimization via adaptive reward margins, substantially outperforming S-DPO and other baselines across five datasets.
+This paper reveals that binary preference modeling in existing LLM-based recommender systems neglects two critical pieces of information: preference intensity and temporal context. It proposes the RecPO framework to incorporate these factors into preference optimization through an adaptive reward margin, significantly outperforming baselines like S-DPO across five datasets.
 
 ## Background & Motivation
 
-**State of the Field**: Large language models are increasingly applied to sequential recommendation tasks, leveraging textualized interaction histories to predict users' next items of interest. Preference alignment techniques such as DPO and S-DPO have become the dominant training paradigm.
+**Background**: Large Language Models (LLMs) are being widely applied to sequential recommendation tasks to predict a user's next likely interaction via text-based interaction histories. Current mainstream methods employ preference alignment techniques such as DPO/S-DPO for training.
 
-**Limitations of Prior Work**: Existing preference alignment methods (DPO, S-DPO) reduce all preferences to binary pairwise comparisons—distinguishing only "liked" from "disliked"—thereby discarding substantial information. In practice, user ratings ranging from 1 to 5 encode structured preference intensity (strongly liked vs. mildly liked), and more recent interactions are more reflective of users' current intent.
+**Limitations of Prior Work**: Existing preference alignment methods (DPO, S-DPO) treat all preferences as binary pairwise comparisons—distinguishing only between "liked" and "disliked"—thus discarding substantial valuable information. In real-world user behavior, structured preference intensity differences exist (e.g., ratings from 1 to 5), and more recent interactions better reflect current user intent.
 
-**Root Cause**: A fundamental mismatch exists between binary preference modeling and human decision-making behavior. Humans exhibit structured preferences (varying intensities) and temporally sensitive preferences (recency matters), both of which are entirely neglected by existing methods.
+**Key Challenge**: A fundamental mismatch exists between binary preference modeling and human decision-making behavior, as humans exhibit structured preferences (varying intensities) and time-sensitive preferences (recency importance), which are entirely ignored by current methods.
 
-**Paper Goals**: (1) Systematically validate the importance of preference intensity and temporal context for LLM-based recommendation; (2) Design a preference optimization framework that exploits both factors.
+**Goal**: (1) Systematically verify the importance of preference intensity and temporal context for LLM recommendations; (2) design a preference optimization framework capable of leveraging these factors.
 
-**Starting Point**: Drawing on established characteristics of human decision-making from behavioral economics and cognitive science, the paper uses controlled experiments to demonstrate that retaining negative feedback alongside structured ratings yields substantial performance gains, providing an empirical foundation for method design.
+**Key Insight**: Starting from known characteristics of human decision-making in behavioral economics and cognitive science, this study provides an empirical foundation by demonstrating through controlled experiments that preserving negative feedback and structured ratings significantly enhances recommendation performance.
 
-**Core Idea**: Encode preference intensity and interaction recency into the DPO objective via adaptive reward margins, enabling the model to learn preference representations that better align with human decision-making patterns.
+**Core Idea**: Encode preference intensity and interaction recency into the DPO objective function using an adaptive reward margin, enabling the model to learn preference representations that better align with human decision patterns.
 
 ## Method
 
 ### Overall Architecture
 
-RecPO adopts a two-stage training paradigm: an initial SFT stage adapts a general-purpose LLM to the recommendation task, followed by preference optimization with adaptive margins for further alignment. The input consists of the user's complete interaction history (including both positive and negative feedback with ratings), and the output is the recommended next item selected from a candidate set. Unlike S-DPO, RecPO retains negative interaction records and treats ratings as structured preference signals.
+RecPO follows a two-stage training paradigm: first, it adapts a general LLM into a recommendation model using SFT; then, it performs further alignment through preference optimization with an adaptive margin. The input consists of the user's complete interaction history (including positive/negative feedback and ratings), and the output is the next recommended item selected from a candidate set. Unlike S-DPO, RecPO retains user records of negative interactions and utilizes ratings as structured preference signals.
 
 ### Key Designs
 
 1. **Complete and Structured Feedback Input**:
 
-    - Function: Provides the model with rich preference signals.
-    - Mechanism: Rather than filtering out negative interactions as in S-DPO, the full interaction sequence is retained. Each historical item is annotated with a preference signal (explicit rating or a structured score derived from implicit feedback) in the format "[ItemTitle] | Rating: [ItemRating]". For datasets lacking explicit ratings, proxy signals such as play duration or play count are used.
-    - Design Motivation: Proof-of-concept experiments show that recommendation performance is optimal only when both complete feedback and structured ratings are retained simultaneously. Retaining negative interactions without ratings introduces noise and degrades performance, demonstrating that the two components are mutually necessary.
+    - **Function**: Provides rich preference signals to the model.
+    - **Mechanism**: Instead of filtering out negative interactions as in S-DPO, the complete interaction sequence is preserved. Each historical item is accompanied by a preference signal (explicit ratings or structured scores converted from implicit feedback), formatted as "[ItemTitle] | Rating: [ItemRating]". For datasets without explicit ratings, proxies such as gameplay duration or play counts are used.
+    - **Design Motivation**: Proof-of-concept experiments show that recommendation performance is optimal only when both complete feedback and structured ratings are preserved simultaneously. Retaining negative interactions without ratings can introduce noise and degrade performance, indicating both are indispensable.
 
 2. **Adaptive Reward Margin**:
 
-    - Function: Dynamically adjusts the optimization strength between preference pairs based on preference intensity and interaction recency.
-    - Mechanism: For each preference pair $(y_p, y_d)$, the margin is defined as $\gamma_r = \lambda \cdot \phi(s_p, \Delta t_p) / \phi(s_d, \Delta t_d)$, where $\phi(s, \Delta t) = s / (\Delta t)^{0.5}$ is a utility function, $s$ denotes the preference score, and $\Delta t$ denotes the temporal distance from the current decision point. Larger preference gaps and greater recency yield larger margins and stronger optimization signals.
-    - Design Motivation: A uniform margin cannot distinguish between fundamentally different preference contrasts such as "5 vs. 1" and "4 vs. 3". The ratio-based margin amplifies training gradients in scenarios where users exhibit low rating variance.
+    - **Function**: Dynamically adjusts the optimization strength between preference pairs based on preference intensity and temporal recency.
+    - **Mechanism**: For each preference pair $(y_p, y_d)$, a margin $\gamma_r = \lambda \cdot \phi(s_p, \Delta t_p) / \phi(s_d, \Delta t_d)$ is defined, where $\phi(s, \Delta t) = s / (\Delta t)^{0.5}$ is a utility function, $s$ is the preference score, and $\Delta t$ is the temporal distance from the current decision point. Larger preference differences and shorter temporal distances lead to a larger margin and stronger optimization signal.
+    - **Design Motivation**: A uniform margin cannot distinguish between essentially different preference comparisons such as "5 stars vs. 1 star" and "4 stars vs. 3 stars." A ratio-based margin amplifies training gradients in scenarios with low user rating volatility.
 
-3. **Plackett-Luce Listwise Ranking Extension**:
+3. **Plackett-Luce List-wise Ranking Extension**:
 
-    - Function: Generalizes pairwise comparisons to listwise ranking with multiple negative samples.
-    - Mechanism: Based on the PL model, adaptive margins are embedded into a listwise preference distribution, pairing each positive sample with multiple negatives. Setting $\lambda=0$ recovers standard S-DPO, ensuring generality.
-    - Design Motivation: A single negative sample is insufficient to cover the user's "dislike" space; listwise ranking enables the model to simultaneously learn relative ordering among multiple negative samples.
+    - **Function**: Generalizes pairwise comparisons to list-wise ranking with multiple negative samples.
+    - **Mechanism**: Based on the PL model, the adaptive margin is embedded into the list-wise preference distribution, with each positive sample paired with multiple negative samples. When $\lambda=0$, it degrades to standard S-DPO, ensuring generality.
+    - **Design Motivation**: A single negative sample struggles to sufficiently cover a user's "dislike" space; list-wise ranking allows the model to learn relative ranking relationships across multiple negative samples simultaneously.
 
 ### Loss & Training
 
-The final loss function extends S-DPO by incorporating the adaptive margin term $\gamma_r$, with $\lambda$ controlling the margin influence (default $\lambda=2$). Training follows an SFT-then-alignment pipeline, with preference optimization initialized from the SFT checkpoint. Default preference scores and temporal delays are assigned to negatively sampled items and history interactions lacking explicit feedback.
+The final loss function incorporates the adaptive margin term $\gamma_r$ into the S-DPO framework, with $\lambda$ controlling the influence of the margin (default $\lambda=2$). Training proceeds with SFT followed by preference alignment, initializing the latter from the SFT checkpoint. For negative sampling and historical interactions without explicit feedback, default preference scores and time delays are assigned.
 
 ## Key Experimental Results
 
@@ -83,46 +83,46 @@ The final loss function extends S-DPO by incorporating the adaptive margin term 
 | Steam | HR@1 | 0.4672 | 0.3588 | +30.2% |
 | LastFM | HR@1 | 0.6830 | 0.5719 | +19.4% |
 
-RecPO also substantially outperforms all baselines on Qwen-7B, with HR@1 improvements ranging from 10% to 30%.
+RecPO significantly outperforms all baselines on Qwen-7B as well, with HR@1 improvements ranging between 10% and 30%.
 
 ### Ablation Study
 
 | Configuration | MovieLens | Amazon-Books | BeerAdvocate | Steam | LastFM |
 |------|---------|------|------|------|------|
-| –I –T (= S-DPO) | 0.2902 | 0.5065 | 0.4698 | 0.3588 | 0.5719 |
-| –T (intensity only) | 0.3343 | 0.5661 | 0.6143 | 0.4202 | 0.6544 |
-| RecPO (full) | 0.3451 | 0.5802 | 0.5771 | 0.4672 | 0.6830 |
+| –I –T (=S-DPO) | 0.2902 | 0.5065 | 0.4698 | 0.3588 | 0.5719 |
+| –T (Intensity only) | 0.3343 | 0.5661 | 0.6143 | 0.4202 | 0.6544 |
+| RecPO (Full) | 0.3451 | 0.5802 | 0.5771 | 0.4672 | 0.6830 |
 
 ### Key Findings
 
-- **Preference intensity contributes most**: Introducing preference intensity alone (–T) yields significant gains, indicating that structured preference signals are the most critical factor.
-- **Temporal context provides complementary gains**: Adding temporal context on top of preference intensity further improves performance on 4 out of 5 datasets, with the largest gain on Steam (0.4202 → 0.4672).
-- **Margin function form**: The ratio-based form (default) outperforms both Log Diff and Log Ratio alternatives.
-- **Human-aligned behavior**: RecPO learns four human decision-making patterns—immediate gratification prioritization, temptation resistance, implicit aversion modeling, and robustness across context lengths (HR@1 variance 8.7% vs. 17.8% for S-DPO).
+- **Preference intensity contributes most**: Simply adding preference intensity (–T) yields significant improvements, showing that structured preference signals are the most critical factor.
+- **Temporal context provide complementary gains**: Adding temporal context on top of preference intensity further improves results for 4 out of 5 datasets (Steam showed the largest gain, from 0.4202 to 0.4672).
+- **Margin function form**: The ratio-based form (default) outperforms alternatives like Log Diff and Log Ratio.
+- **Human alignment behavior**: RecPO learns four human decision patterns: immediate gratification prioritization, resisting temptation, implicit aversion modeling, and robustness across context lengths (HR@1 variance of 8.7% vs. 17.8% for S-DPO).
 
 ## Highlights & Insights
 
-- **Empiricism-first methodology**: The paper first demonstrates the importance of preference intensity and temporal context through controlled experiments before designing the method accordingly. This hypothesis-driven research paradigm is worth emulating.
-- **Concise and effective margin design**: The utility function $\phi(s, \Delta t) = s / (\Delta t)^{0.5}$ is elegantly simple, with a single hyperparameter $\lambda$ controlling its influence, facilitating reproducibility.
-- **Emergence of implicit aversion modeling**: The model learns to identify users' least-preferred items without explicit aversion labels, suggesting that structured preference signals can implicitly encode negative preferences.
+- **Empirical-first methodology**: Proving the importance of preference intensity and temporal context through controlled experiments before designing the method. This hypothesis-driven research paradigm is highly effective.
+- **Simple yet effective margin design**: The form $\phi(s, \Delta t) = s / (\Delta t)^{0.5}$ is concise, controlling influence via a single hyperparameter $\lambda$, making it easy to reproduce.
+- **Emergence of implicit aversion modeling**: The ability to identify users' most disliked items despite lacking explicit aversion labels suggests that structured preference signals can implicitly encode negative preferences.
 
 ## Limitations & Future Work
 
-- Only simplified sequential preference structures and satisfaction delay are considered as contextual factors; real-world human decision-making involves more complex preference hierarchies.
-- Gains on implicit feedback datasets are relatively modest, as the homogeneity of proxy signals limits the advantages of the approach.
-- Future work may explore cognitively grounded preference modeling beyond recommendation, in broader preference-sensitive tasks.
+- Only considers simplified sequential preference structures and satisfaction delay as contextual factors; real-world human decision-making involves more complex preference hierarchies.
+- Smaller improvements on implicit feedback datasets, where the homogeneity of proxy signals limits advantages.
+- Future work could explore the application of cognitively plausible preference modeling in non-recommendation preference tasks.
 
 ## Related Work & Insights
 
-- **vs. S-DPO**: S-DPO employs listwise optimization with multiple negatives but uses a uniform margin. RecPO is a natural extension of S-DPO (recovering S-DPO when $\lambda=0$), introducing preference intensity and temporal information via adaptive margins.
-- **vs. SimPO**: SimPO uses a fixed margin with length normalization, but fixed margins cannot capture differences across preference pairs, and a lower Valid Ratio constrains deployment.
+- **vs S-DPO**: S-DPO uses list-wise optimization with multiple negative samples but a uniform margin. RecPO is a natural extension of S-DPO (degenerating to S-DPO when $\lambda=0$), introducing preference intensity and temporal information through an adaptive margin.
+- **vs SimPO**: SimPO uses a fixed margin and length regularization, but a fixed margin fails to capture differences between various preference pairs, and its lower Valid Ratio affects deployment.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ The cognitive science perspective on preference alignment in recommendation is highly inspiring.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Five datasets, two backbones, extensive ablations, and behavioral analyses make for a very comprehensive evaluation.
-- Writing Quality: ⭐⭐⭐⭐⭐ The empiricism-first narrative structure is clear and well-organized.
-- Value: ⭐⭐⭐⭐ Provides a practical and principled improvement direction for preference alignment in LLM-based recommender systems.
+- Novelty: ⭐⭐⭐⭐ Approaching recommender system preference alignment from a cognitive science perspective is highly inspiring.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Extremely comprehensive across five datasets, two backbones, multiple ablations, and behavioral analyses.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear narrative structure with an empirical-first approach.
+- Value: ⭐⭐⭐⭐ Provides a practical direction for improving preference alignment in LLM-based recommender systems.
 
 <!-- RELATED:START -->
 
@@ -131,10 +131,10 @@ RecPO also substantially outperforms all baselines on Qwen-7B, with HR@1 improve
 ## Related Papers
 
 - [\[ACL 2026\] What Makes an Ideal Quote? Recommending "Unexpected yet Rational" Quotations via Novelty](what_makes_an_ideal_quote_recommending_34unexpected_yet_rational34_quotations_vi.md)
-- [\[ACL 2026\] Decisive: Guiding User Decisions with Optimal Preference Elicitation from Unstructured Documents](decisive_guiding_user_decisions_with_optimal_preference_elicitation_from_unstruc.md)
+- [\[ACL 2026\] Personalizing LLMs with Binary Feedback: A Preference-Corrected Optimization Framework](personalizing_llms_with_binary_feedback_a_preference-corrected_optimization_fram.md)
 - [\[ACL 2026\] Where and What: Reasoning Dynamic and Implicit Preferences in Situated Conversational Recommendation](where_and_what_reasoning_dynamic_and_implicit_preferences_in_situated_conversati.md)
-- [\[ICLR 2026\] Search Arena: Analyzing Search-Augmented LLMs](../../ICLR2026/recommender/search_arena_analyzing_search-augmented_llms.md)
-- [\[AAAI 2026\] HyMoERec: Hybrid Mixture-of-Experts for Sequential Recommendation](../../AAAI2026/recommender/hymoerec_hybrid_mixture-of-experts_for_sequential_recommendation.md)
+- [\[ACL 2026\] SenseJudge: Human-Centric Preference-Driven Judgment Framework](sensejudge_human-centric_preference-driven_judgment_framework.md)
+- [\[ACL 2026\] Bridging Language and Items for Retrieval and Recommendation: Benchmarking LLMs as Semantic Encoders](bridging_language_and_items_for_retrieval_and_recommendation_benchmarking_llms_a.md)
 
 </div>
 

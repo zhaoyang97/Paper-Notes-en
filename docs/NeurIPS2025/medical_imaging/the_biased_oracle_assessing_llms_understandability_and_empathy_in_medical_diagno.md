@@ -124,9 +124,9 @@ This work systematically evaluates GPT-4o and Claude-3.7 on readability and empa
 
 - [\[NeurIPS 2025\] Shallow Robustness, Deep Vulnerabilities: Multi-Turn Evaluation of Medical LLMs](shallow_robustness_deep_vulnerabilities_multi-turn_evaluation_of_medical_llms.md)
 - [\[NeurIPS 2025\] ImageNet-trained CNNs are not biased towards texture: Revisiting feature reliance through controlled suppression](imagenet-trained_cnns_are_not_biased_towards_texture_revisiting_feature_reliance.md)
+- [\[ACL 2026\] Empathy Applicability Modeling for General Health Queries](../../ACL2026/medical_imaging/empathy_applicability_modeling_for_general_health_queries.md)
 - [\[ACL 2026\] PrinciplismQA: A Philosophy-Grounded Approach to Assessing LLM-Human Clinical Medical Ethics Alignment](../../ACL2026/medical_imaging/principlismqa_a_philosophy-grounded_approach_to_assessing_llm-human_clinical_med.md)
 - [\[AAAI 2026\] Note2Chat: Improving LLMs for Multi-Turn Clinical History Taking Using Medical Notes](../../AAAI2026/medical_imaging/note2chat_improving_llms_for_multi-turn_clinical_history_taking_using_medical_no.md)
-- [\[ACL 2026\] Measuring What Matters!! Assessing Therapeutic Principles in Mental-Health Conversation](../../ACL2026/medical_imaging/measuring_what_matters_assessing_therapeutic_principles_in_mental-health_convers.md)
 
 </div>
 

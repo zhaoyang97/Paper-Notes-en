@@ -132,10 +132,10 @@ RefiDiff runs **4× faster** than DIFFPUTER with fewer parameters.
 ## Related Papers
 
 - [\[ICLR 2026\] Horizon Imagination: Efficient On-Policy Rollout in Diffusion World Models](../../ICLR2026/image_restoration/horizon_imagination_efficient_on-policy_rollout_in_diffusion_world_models.md)
+- [\[ICML 2026\] DyLLM: Efficient Diffusion LLM Inference via Saliency-based Token Selection and Partial Attention](../../ICML2026/image_restoration/dyllm_efficient_diffusion_llm_inference_via_saliency-based_token_selection_and_p.md)
 - [\[NeurIPS 2025\] Enhancing Infrared Vision: Progressive Prompt Fusion Network and Benchmark](../../NeurIPS2025/image_restoration/enhancing_infrared_vision_progressive_prompt_fusion_network_and_benchmark.md)
 - [\[CVPR 2026\] Spectral Super-Resolution via Adversarial Unfolding and Data-Driven Spectrum Regularization](../../CVPR2026/image_restoration/spectral_super-resolution_via_adversarial_unfolding_and_data-driven_spectrum_reg.md)
 - [\[ICCV 2025\] FoundIR: Unleashing Million-scale Training Data to Advance Foundation Models for Image Restoration](../../ICCV2025/image_restoration/foundir_unleashing_million-scale_training_data_to_advance_foundation_models_for_.md)
-- [\[ICCV 2025\] Efficient Concertormer for Image Deblurring and Beyond](../../ICCV2025/image_restoration/efficient_concertormer_for_image_deblurring_and_beyond.md)
 
 </div>
 

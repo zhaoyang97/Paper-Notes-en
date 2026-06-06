@@ -2,79 +2,79 @@
 title: >-
   [Paper Note] Alignment Data Map for Efficient Preference Data Selection and Diagnosis
 description: >-
-  [ACL 2026][LLM Alignment][Preference learning] This paper proposes the Alignment Data Map, an analytical tool that visualizes, selects…
+  [ACL 2026][LLM Alignment][Preference Learning] Proposes Alignment Data Map, an analytical tool that visualizes, selects, and diagnoses preference data by jointly considering response quality and variability…
 tags:
   - "ACL 2026"
   - "LLM Alignment"
-  - "Preference learning"
-  - "data selection"
-  - "alignment data map"
-  - "annotation quality diagnosis"
+  - "Preference Learning"
+  - "Data Selection"
+  - "Alignment Data Map"
+  - "Annotated Quality Diagnosis"
   - "DPO"
 date: 2026-05-08
-content_hash: 74fa050e70b03e0d
+content_hash: b44b031c0968b04d
 ---
 
 # Alignment Data Map for Efficient Preference Data Selection and Diagnosis
 
-**Conference**: ACL 2026
+**Conference**: ACL 2026  
 **arXiv**: [2505.23114](https://arxiv.org/abs/2505.23114)  
 **Code**: [GitHub](https://github.com/01choco/Alignment-Data-Map)  
-**Area**: LLM Alignment / Data Selection
-**Keywords**: Preference learning, data selection, alignment data map, annotation quality diagnosis, DPO
+**Area**: LLM Alignment / Data Selection  
+**Keywords**: Preference Learning, Data Selection, Alignment Data Map, Annotated Quality Diagnosis, DPO
 
 ## TL;DR
 
-This paper proposes the Alignment Data Map, an analytical tool that visualizes, selects, and diagnoses preference data by jointly considering response quality and variability. Using only 33% of the data, it achieves alignment performance comparable to full-data training.
+Proposes Alignment Data Map, an analytical tool that visualizes, selects, and diagnoses preference data by jointly considering response quality and variability; achieves full-training alignment performance using only 33% of the data.
 
 ## Background & Motivation
 
-**State of the Field**: Preference data is a core resource for LLM alignment (e.g., DPO, SimPO), yet collecting high-quality human preference annotations is costly and inefficient. Identifying and selecting the most effective preference data has become a critical challenge.
+**Background**: Preference data is a core resource for LLM alignment learning (e.g., DPO, SimPO). However, collecting high-quality human preference annotations is expensive and inefficient. Identifying and selecting the most effective preference data has become a critical problem.
 
-**Limitations of Prior Work**: Existing data selection methods primarily rely on **reward margin**—the reward difference between two responses—under the intuition that samples with smaller margins provide stronger learning signals. However, reward margin only captures relative differences and ignores the **absolute quality** of responses: samples with identical margins may consist of two high-quality responses or two low-quality ones, leading to drastically different training outcomes.
+**Limitations of Prior Work**: Existing data selection methods primarily rely on the **reward margin**—the difference in rewards between two responses. The intuition is that samples with small margins provide stronger learning signals. However, the reward margin only reflects relative differences and ignores the **absolute quality** of the responses. Data samples with the same margin could consist of two high-quality responses or two low-quality responses, leading to vastly different training effects.
 
-**Root Cause**: A low-margin sample may arise from "two high-quality responses that are hard to distinguish" (a valuable hard sample) or "two poor responses that are both bad" (a worthless noisy sample). Margin alone cannot distinguish between these two cases.
+**Key Challenge**: Low-margin samples may originate from "two high-quality responses being difficult to distinguish" (valuable hard samples) or "two poor-quality responses both being bad" (valueless noisy samples). Margins alone cannot distinguish between the two.
 
-**Paper Goals**: To construct a data analysis tool that simultaneously considers response quality and variability, enabling efficient data selection and annotation quality diagnosis.
+**Goal**: Construct a data analysis tool that simultaneously considers response quality and variability to achieve efficient data selection and annotation quality diagnosis.
 
-**Core Idea**: Inspired by Dataset Cartography, this work maps preference data into a two-dimensional space with variability on the x-axis and quality on the y-axis. Data in the "high quality + low variability" region is most suitable for preference learning—such samples provide high-quality yet hard-to-distinguish response candidates, offering the richest learning signal in a highly ambiguous preference space.
+**Core Idea**: Drawing on the concept of Dataset Cartography, preference data is mapped into a two-dimensional space with variability as the x-axis and quality as the y-axis. Data in the "high quality + low variability" region is most suitable for preference learning—these samples provide high-quality but hard-to-distinguish response candidates, offering the richest learning signals in highly ambiguous preference spaces.
 
 ## Method
 
 ### Overall Architecture
 
-The Alignment Data Map consists of three steps: (1) computing alignment scores for each response using multiple methods (LLM-as-a-judge, explicit reward models, and reference-based scoring); (2) deriving per-sample quality (mean) and variability (variance) from the alignment scores and projecting each sample onto a two-dimensional data map; and (3) performing data selection or annotation diagnosis based on the map.
+The Alignment Data Map consists of three steps: (1) calculating alignment scores for each response using multiple methods (LLM-as-a-judge, explicit reward models, and reference-based scoring); (2) calculating the quality (mean) and variability (variance) for each sample based on alignment scores to map them onto a 2D data map; (3) performing data selection or annotation diagnosis based on the data map.
 
 ### Key Designs
 
 1. **Alignment Score Computation**:
 
-    - *Function*: Quantifies how well each response candidate aligns with the given instruction.
-    - *Mechanism*: Three complementary evaluation methods are adopted—(a) LLM-as-a-judge: a high-capability LLM directly assesses response quality; (b) reward model: a reward model trained on preference data assigns scores; (c) reference-based scoring: alignment is measured via semantic similarity to reference responses generated by a high-performance model (e.g., BERTScore).
-    - *Design Motivation*: A single evaluation method may introduce systematic bias; three complementary approaches provide a more comprehensive alignment measure.
+    - **Function**: To quantify the alignment degree of each response candidate relative to the instruction.
+    - **Mechanism**: Employs three complementary evaluation methods—(a) LLM-as-a-judge: using high-capability LLMs to evaluate response quality directly; (b) Reward Model: scoring using a reward model trained on preference data; (c) Reference-based scoring: evaluating through semantic similarity with reference responses generated by high-performance models (e.g., BERTScore).
+    - **Design Motivation**: A single evaluation method may have biases; three complementary methods provide a more comprehensive alignment measure.
 
 2. **Data Map Construction & Selection**:
 
-    - *Function*: Projects preference data into a two-dimensional space and identifies the most effective training subset.
-    - *Mechanism*: For each data point $d$, quality is computed as $\mu_d = \frac{1}{|\mathcal{R}|}\sum_{i \in \mathcal{R}} s(x^d, r_i^d)$ and variability as $\sigma_d^2 = \frac{\sum(s(x^d, r_i^d) - \mu_d)^2}{|\mathcal{R}|}$. Quality serves as the y-axis and variability as the x-axis. Samples in the "high quality + low variability" region (High Average region) are selected for training. When only two responses are available, variability reduces to the conventional reward margin.
-    - *Design Motivation*: High quality ensures the validity of the supervision signal (high-quality chosen responses are critical for DPO learning), while low variability yields more informative preference comparisons.
+    - **Function**: To map preference data into a 2D space and identify the most effective training subset.
+    - **Mechanism**: For each data point $d$, quality $\mu_d = \frac{1}{|\mathcal{R}|}\sum_{i \in \mathcal{R}} s(x^d, r_i^d)$ and variability $\sigma_d^2 = \frac{\sum(s(x^d, r_i^d) - \mu_d)^2}{|\mathcal{R}|}$ are calculated. Quality serves as the y-axis and variability as the x-axis. Samples in the "high quality + low variability" (High Average region) are selected for training. When there are only two responses, variability is equivalent to the traditional reward margin.
+    - **Design Motivation**: High quality ensures the validity of the supervision signal (high-quality chosen responses are crucial for DPO learning), and low variability provides more informative preference comparisons.
 
 3. **Annotated Data Diagnosis**:
 
-    - *Function*: Detects potential errors in preference annotations.
-    - *Mechanism*: The cosine similarity $S_{\mathrm{corr}}$ between annotation labels $\mathcal{Y}$ and alignment scores $\mathcal{S}$ is computed. Low correlation indicates the presence of noise or mislabeling.
-    - *Design Motivation*: Human annotation errors are inevitable in preference datasets; automatic detection of such errors improves overall dataset quality.
+    - **Function**: To detect potential errors in preference annotations.
+    - **Mechanism**: Calculates the cosine similarity $S_{\mathrm{corr}}$ between annotation labels $\mathcal{Y}$ and alignment scores $\mathcal{S}$. Low correlation indicates that annotations may contain noise or incorrect labeling.
+    - **Design Motivation**: Human annotation errors are inevitable in preference labeling; automatically detecting these errors can improve overall dataset quality.
 
 ### Loss & Training
 
-Standard DPO and SimPO are used as alignment algorithms. Data selection is performed prior to training—33% of the data (the High Average region) is selected based on the Alignment Data Map, followed by standard preference learning training.
+Standard DPO and SimPO are used as alignment algorithms. Data selection is completed before training—33% of the data (High Average region) is selected based on the Alignment Data Map, followed by standard preference learning training.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Backbone | Data Ratio | Selection Strategy | MT-Bench (DPO) | AlpacaEval (DPO) |
-|----------|------------|-------------------|----------------|------------------|
+| Backbone Model | Data Ratio | Selection Strategy | MT-Bench (DPO) | AlpacaEval (DPO) |
+| :--- | :--- | :--- | :--- | :--- |
 | Mistral-7B | 100% | Full | 49.7 | 6.81 |
 | Mistral-7B | 33% | HighAvg | 45.6 | 6.65 |
 | Mistral-7B | 33% | Random | 45.0 | 6.82 |
@@ -83,47 +83,42 @@ Standard DPO and SimPO are used as alignment algorithms. Data selection is perfo
 
 ### Ablation Study
 
-| Region | Quality | Variability | Performance | Notes |
-|--------|---------|-------------|-------------|-------|
-| HighAvg | High | Low | Best or on par with Full | High quality + ambiguous comparison = optimal learning signal |
-| LowAvg | Low | Low | Notable degradation | Low-quality responses are ineffective even with small margins |
-| HighVar | High/Low | High | Notable degradation | Too easy to distinguish; insufficient learning signal |
+| Region | Quality | Variability | Performance | Explanation |
+| :--- | :--- | :--- | :--- | :--- |
+| HighAvg | High | Low | Best or equal to Full | High quality + ambiguous comparison = optimal learning signal |
+| LowAvg | Low | Low | Significant drop | Poor quality responses are useless even if the margin is small |
+| HighVar | High/Low | High | Significant drop | Too easy to distinguish, insufficient learning signal |
 
 ### Key Findings
-
-- Only 33% of "high quality + low variability" data is sufficient to match or even surpass full-data alignment performance.
-- The HighAvg selection consistently outperforms full training under SimPO, demonstrating that data selection is more effective for newer alignment methods.
-- Reward margin alone is insufficient for effective data selection—response quality can vary substantially across samples sharing the same margin.
-- The annotation diagnosis capability effectively detects systematic labeling errors and biases.
+- Using only 33% of "high quality + low variability" data can achieve or even surpass the alignment performance of the full dataset.
+- On SimPO, HighAvg selection consistently outperforms full training, proving that data selection is more effective for newer alignment methods.
+- Reward margins alone are insufficient for selecting effective data—quality varies significantly within the same margin.
+- The annotation diagnosis function effectively detects systematic annotation errors and biases.
 
 ## Highlights & Insights
-
-- **A concise yet profound insight**: Extending preference data analysis from one dimension (margin) to two dimensions (quality × variability) reveals the blind spots of margin-only selection.
-- **Transferring Dataset Cartography to alignment**: The framework elegantly adapts the ideas of Swayamdipta et al. to the preference learning setting.
-- **Unifying variability and margin**: When only two responses are present, variability degenerates to reward margin, ensuring compatibility with existing methods.
-- **Practical annotation diagnosis**: Beyond data selection, the framework detects annotation errors, offering dual practical utility.
-- **Practical implications for data efficiency**: 67% of the data can be safely discarded, yielding direct savings in annotation costs.
+- **Simple yet profound insight**: Expanding preference data analysis from one dimension (margin) to two dimensions (quality × variability) reveals blind spots in margin-based selection.
+- **Transfer from Dataset Cartography to Alignment Mapping**: Elegantly transfers the ideas of Swayamdipta et al. to the preference learning scenario.
+- **Unification of Variability vs. Margin**: When only two responses are present, variability simplifies to the margin, ensuring compatibility with existing methods.
+- **Practical Annotation Diagnosis**: Beyond data selection, it can detect annotation errors, providing dual utility.
+- **Practical Significance for Data Efficiency**: 67% of the data can be safely discarded, leading to direct savings in annotation costs.
 
 ## Limitations & Future Work
-
-- Alignment score computation depends on external evaluators (LLM judges or reward models), whose inherent biases may affect results.
-- Experiments are conducted primarily on UltraFeedback and Preference-Dissection; validation on additional datasets remains to be done.
-- The 33% threshold is chosen empirically; the optimal ratio may differ across datasets.
-- Dynamic or online data selection strategies (e.g., adaptively adjusting the selection region during training) are not explored.
-- Future work could integrate curriculum learning by first training on the HighAvg region and progressively incorporating other regions.
+- Alignment score computation depends on external evaluators (LLM judge or reward models); biases in the evaluators themselves affect the results.
+- Experiments were primarily conducted on UltraFeedback and Preference-Dissection; other datasets still require further validation.
+- 33% is an empirically chosen threshold; the optimal proportion may vary across different datasets.
+- Dynamic/online data selection strategies (e.g., dynamically adjusting the selection region during training) were not explored.
+- Future work could combine curriculum learning, training on HighAvg first and then gradually introducing other regions.
 
 ## Related Work & Insights
-
-- **vs. Margin-based selection (Yang et al., 2024)**: Margin-based selection conflates high-quality and low-quality low-margin samples; the Alignment Data Map resolves this by incorporating a quality dimension.
-- **vs. Dataset Cartography (Swayamdipta et al., 2020)**: The original method uses confidence and variability derived from training dynamics; this work adapts the framework to quality and variability in the alignment setting.
-- **vs. DPO data quality research (Pan et al., 2025)**: That work demonstrates the primacy of chosen response quality; this paper operationalizes the finding into a practical data selection tool.
+- **vs. Margin-based Selection (Yang et al., 2024)**: Margin selection confuses low-margin samples of high vs. low quality; Alignment Data Map resolves this by adding the quality dimension.
+- **vs. Dataset Cartography (Swayamdipta et al., 2020)**: The original method is based on confidence and variability in training dynamics; this paper adapts it to quality and variability in the alignment context.
+- **vs. DPO Data Quality Research (Pan et al., 2025)**: That work proves that the quality of chosen responses is key; this paper operationalizes this finding into a data selection tool.
 
 ## Rating
-
-- Novelty: ⭐⭐⭐⭐ The two-dimensional data map concept is novel in the alignment domain and yields deep insights.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Covers multiple backbones (Mistral/LLaMA), algorithms (DPO/SimPO), and benchmarks (MT-Bench/Evol/AlpacaEval).
-- Writing Quality: ⭐⭐⭐⭐ Motivation is clear, visualizations are intuitive, and the method is concisely presented.
-- Value: ⭐⭐⭐⭐ Provides a practical data selection tool with direct implications for reducing alignment training costs.
+- Novelty: ⭐⭐⭐⭐ The idea of 2D data maps is novel in the alignment field with deep insights.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Multiple backbones (Mistral/LLaMA), multiple algorithms (DPO/SimPO), multiple benchmarks (MT-Bench/Evol/AlpacaEval).
+- Writing Quality: ⭐⭐⭐⭐ Clear motivation, intuitive visualization, and concise methodology.
+- Value: ⭐⭐⭐⭐ Provides a practical data selection tool that directly assists in reducing alignment training costs.
 
 <!-- RELATED:START -->
 
@@ -135,7 +130,7 @@ Standard DPO and SimPO are used as alignment algorithms. Data selection is perfo
 - [\[ICLR 2026\] Towards Understanding Valuable Preference Data for Large Language Model Alignment](../../ICLR2026/llm_alignment/towards_understanding_valuable_preference_data_for_large_language_model_alignmen.md)
 - [\[ICLR 2026\] Is On-Policy Data always the Best Choice for Direct Preference Optimization-based LM Alignment?](../../ICLR2026/llm_alignment/is_on-policy_data_always_the_best_choice_for_direct_preference_optimization-base.md)
 - [\[NeurIPS 2025\] T-SHIRT: Token-Selective Hierarchical Data Selection for Instruction Tuning](../../NeurIPS2025/llm_alignment/t-shirt_token-selective_hierarchical_data_selection_for_instruction_tuning.md)
-- [\[ICLR 2026\] Alignment through Meta-Weighted Online Sampling: Bridging the Gap between Data Generation and Preference Optimization](../../ICLR2026/llm_alignment/alignment_through_meta-weighted_online_sampling_bridging_the_gap_between_data_ge.md)
+- [\[ACL 2026\] What Makes Good Instruction-Tuning Data? An In-Context Learning Perspective](what_makes_good_instruction-tuning_data_an_in-context_learning_perspective.md)
 
 </div>
 

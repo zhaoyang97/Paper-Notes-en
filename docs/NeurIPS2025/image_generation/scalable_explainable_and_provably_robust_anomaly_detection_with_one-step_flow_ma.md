@@ -146,7 +146,7 @@ This paper proposes TCCM (Time-Conditioned Contraction Matching), a flow matchin
 - [\[NeurIPS 2025\] Value Gradient Guidance for Flow Matching Alignment](value_gradient_guidance_for_flow_matching_alignment.md)
 - [\[NeurIPS 2025\] Energy Matching: Unifying Flow Matching and Energy-Based Models for Generative Modeling](energy_matching_unifying_flow_matching_and_energy-based_models_for_generative_mo.md)
 - [\[NeurIPS 2025\] Equivariant Flow Matching for Symmetry-Breaking Bifurcation Problems](equivariant_flow_matching_for_symmetry-breaking_bifurcation_problems.md)
-- [\[ICLR 2026\] FlowCast: Trajectory Forecasting for Scalable Zero-Cost Speculative Flow Matching](../../ICLR2026/image_generation/flowcast_trajectory_forecasting_for_scalable_zero-cost_speculative_flow_matching.md)
+- [\[ICLR 2026\] SoFlow: Solution Flow Models for One-Step Generative Modeling](../../ICLR2026/image_generation/soflow_solution_flow_models_for_one-step_generative_modeling.md)
 
 </div>
 

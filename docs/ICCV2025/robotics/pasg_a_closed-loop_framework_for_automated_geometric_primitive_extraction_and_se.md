@@ -167,7 +167,7 @@ PASG consists of four core stages:
 - [\[AAAI 2026\] SemanticVLA: Semantic-Aligned Sparsification and Enhancement for Efficient Robotic Manipulation](../../AAAI2026/robotics/semanticvla_semantic-aligned_sparsification_and_enhancement_for_efficient_roboti.md)
 - [\[AAAI 2026\] H-GAR: A Hierarchical Interaction Framework via Goal-Driven Observation-Action Refinement for Robotic Manipulation](../../AAAI2026/robotics/h-gar_a_hierarchical_interaction_framework_via_goal-driven_observation-action_re.md)
 - [\[CVPR 2026\] Action–Geometry Prediction with 3D Geometric Prior for Bimanual Manipulation](../../CVPR2026/robotics/actiongeometry_prediction_with_3d_geometric_prior.md)
-- [\[AAAI 2026\] Gaming the Answer Matcher: Examining the Impact of Text Manipulation on Automated Judgment](../../AAAI2026/robotics/gaming_the_answer_matcher_examining_the_impact_of_text_manipulation_on_automated.md)
+- [\[NeurIPS 2025\] DexFlyWheel: A Scalable Self-Improving Data Generation Framework for Dexterous Manipulation](../../NeurIPS2025/robotics/dexflywheel_a_scalable_and_self-improving_data_generation_framework_for_dexterou.md)
 
 </div>
 

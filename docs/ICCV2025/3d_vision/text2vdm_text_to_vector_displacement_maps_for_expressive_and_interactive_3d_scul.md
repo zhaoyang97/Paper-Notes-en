@@ -130,8 +130,8 @@ Key advantage: the semantically focused embeddings produced by Compel are **time
 
 ## Related Papers
 
-- [\[ICCV 2025\] WonderTurbo: Generating Interactive 3D World in 0.72 Seconds](wonderturbo_generating_interactive_3d_world_in_072_seconds.md)
 - [\[ICCV 2025\] ExCap3D: Expressive 3D Scene Understanding via Object Captioning with Varying Detail](excap3d_expressive_3d_scene_understanding_via_object_captioning_with_varying_det.md)
+- [\[ICCV 2025\] WonderTurbo: Generating Interactive 3D World in 0.72 Seconds](wonderturbo_generating_interactive_3d_world_in_072_seconds.md)
 - [\[ICCV 2025\] Dynamic Point Maps: A Versatile Representation for Dynamic 3D Reconstruction](dynamic_point_maps_a_versatile_representation_for_dynamic_3d_reconstruction.md)
 - [\[ICCV 2025\] Learning 3D Scene Analogies with Neural Contextual Scene Maps](learning_3d_scene_analogies_with_neural_contextual_scene_maps.md)
 - [\[ICCV 2025\] Easy3D: A Simple Yet Effective Method for 3D Interactive Segmentation](easy3d_a_simple_yet_effective_method_for_3d_interactive_segmentation.md)

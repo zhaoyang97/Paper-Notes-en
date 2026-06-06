@@ -181,10 +181,10 @@ Egg-MCTS reduces NMSE from 0.006/0.033 to <1E-6 on simple noiseless cases, an im
 ## Related Papers
 
 - [\[ICLR 2026\] GraphOmni: A Comprehensive and Extensible Benchmark Framework for Large Language Models on Graph-theoretic Tasks](graphomni_a_comprehensive_and_extensible_benchmark_framework_for_large_language_.md)
+- [\[ICML 2026\] Learning to Approximate Uniform Facility Location via Graph Neural Networks](../../ICML2026/reinforcement_learning/learning_to_approximate_uniform_facility_location_via_graph_neural_networks.md)
 - [\[NeurIPS 2025\] Distribution Learning Meets Graph Structure Sampling](../../NeurIPS2025/reinforcement_learning/distribution_learning_meets_graph_structure_sampling.md)
 - [\[AAAI 2026\] TAdaRAG: Task Adaptive Retrieval-Augmented Generation via On-the-Fly Knowledge Graph Construction](../../AAAI2026/reinforcement_learning/tadarag_task_adaptive_retrieval-augmented_generation_via_on-the-fly_knowledge_gr.md)
-- [\[NeurIPS 2025\] GraphChain: Large Language Models for Large-scale Graph Analysis via Tool Chaining](../../NeurIPS2025/reinforcement_learning/graphchain_large_language_models_for_large-scale_graph_analysis_via_tool_chainin.md)
-- [\[ICLR 2026\] MARS-Sep: Multimodal-Aligned Reinforced Sound Separation](mars-sep_multimodal-aligned_reinforced_sound_separation.md)
+- [\[ICML 2026\] RL4RLA: Teaching ML to Discover Randomized Linear Algebra Algorithms Through Curriculum Design and Graph-Based Search](../../ICML2026/reinforcement_learning/rl4rla_teaching_ml_to_discover_randomized_linear_algebra_algorithms_through_curr.md)
 
 </div>
 

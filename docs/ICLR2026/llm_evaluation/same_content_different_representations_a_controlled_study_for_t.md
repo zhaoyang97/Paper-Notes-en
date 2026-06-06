@@ -129,11 +129,11 @@ This work does not train models but evaluates existing methods, including:
 
 ## Related Papers
 
+- [\[ACL 2026\] Same Voice, Different Lab: On the Homogenization of Frontier LLM Personalities](../../ACL2026/llm_evaluation/same_voice_different_lab_on_the_homogenization_of_frontier_llm_personalities.md)
 - [\[ICLR 2026\] Function Spaces Without Kernels: Learning Compact Hilbert Space Representations](function_spaces_without_kernels_learning_compact_hilbert_space_representations.md)
 - [\[ACL 2026\] arXiv2Table: Toward Realistic Benchmarking and Evaluation for LLM-Based Literature-Review Table Generation](../../ACL2026/llm_evaluation/arxiv2table_toward_realistic_benchmarking_and_evaluation_for_llm-based_literatur.md)
-- [\[NeurIPS 2025\] RGB-to-Polarization Estimation: A New Task and Benchmark Study](../../NeurIPS2025/llm_evaluation/rgb-to-polarization_estimation_a_new_task_and_benchmark_study.md)
-- [\[NeurIPS 2025\] Beyond the Surface: Enhancing LLM-as-a-Judge Alignment with Human via Internal Representations](../../NeurIPS2025/llm_evaluation/beyond_the_surface_enhancing_llm-as-a-judge_alignment_with_human_via_internal_re.md)
-- [\[ACL 2026\] Capabilities and Evaluation Biases of Large Language Models in Classical Chinese Poetry Generation: A Case Study on Tang Poetry](../../ACL2026/llm_evaluation/capabilities_and_evaluation_biases_of_large_language_models_in_classical_chinese.md)
+- [\[ACL 2026\] Beyond Static Benchmarks: Synthesizing Harmful Content via Persona-based Simulation for Robust Evaluation](../../ACL2026/llm_evaluation/beyond_static_benchmarks_synthesizing_harmful_content_via_persona-based_simulati.md)
+- [\[ACL 2026\] Presupposition and Reasoning in Conditionals: A Theory-Based Study of Humans and LLMs](../../ACL2026/llm_evaluation/presupposition_and_reasoning_in_conditionals_a_theory-based_study_of_humans_and_.md)
 
 </div>
 

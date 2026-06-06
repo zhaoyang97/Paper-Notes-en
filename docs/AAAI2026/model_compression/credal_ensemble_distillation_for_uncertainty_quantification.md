@@ -145,10 +145,10 @@ From the reconstructed credal set $\mathbb{Q}_S$ of CREDIT, the following quanti
 ## Related Papers
 
 - [\[NeurIPS 2025\] Ensemble++: Scalable Exploration via Ensemble](../../NeurIPS2025/model_compression/scalable_exploration_via_ensemble.md)
+- [\[ACL 2026\] Cognitive-Uncertainty Guided Knowledge Distillation for Accurate Classification of Student Misconceptions](../../ACL2026/model_compression/cognitive-uncertainty_guided_knowledge_distillation_for_accurate_classification_.md)
 - [\[AAAI 2026\] CTPD: Cross Tokenizer Preference Distillation](ctpd_cross_tokenizer_preference_distillation.md)
 - [\[AAAI 2026\] Condensed Data Expansion Using Model Inversion for Knowledge Distillation](condensed_data_expansion_using_model_inversion_for_knowledge_distillation.md)
-- [\[AAAI 2026\] TGDD: Trajectory Guided Dataset Distillation with Balanced Distribution](tgdd_trajectory_guided_dataset_distillation_with_balanced_distribution.md)
-- [\[AAAI 2026\] EEG-DLite: Dataset Distillation for Efficient Large EEG Model Training](eeg-dlite_dataset_distillation_for_efficient_large_eeg_model_training.md)
+- [\[ICML 2026\] Quantifying the Uncertainty of Foundation Models with Singular Value Ensembles](../../ICML2026/model_compression/quantifying_the_uncertainty_of_foundation_models_with_singular_value_ensembles.md)
 
 </div>
 

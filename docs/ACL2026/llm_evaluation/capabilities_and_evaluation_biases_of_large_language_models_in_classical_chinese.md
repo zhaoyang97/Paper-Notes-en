@@ -2,121 +2,117 @@
 title: >-
   [Paper Note] Capabilities and Evaluation Biases of Large Language Models in Classical Chinese Poetry Generation: A Case Study on Tang Poetry
 description: >-
-  [ACL 2026][LLM Evaluation][Classical poetry generation] This paper proposes a three-step evaluation framework (computational feature extraction + LLM-as-Judge + human expert validation) to systematically assess the Tang…
+  [ACL 2026][LLM Evaluation][Classical Poetry Generation] This paper proposes a three-step evaluation framework (computational feature extraction + LLM-as-Judge + human expert validation) to systematically evaluate the cap…
 tags:
   - "ACL 2026"
   - "LLM Evaluation"
-  - "Classical poetry generation"
-  - "Tang poetry"
-  - "LLM evaluation bias"
-  - "echo chamber effect"
-  - "human-machine evaluation"
+  - "Classical Poetry Generation"
+  - "Tang Poetry"
+  - "LLM Evaluation Bias"
+  - "Echo Chamber Effect"
+  - "Human-Machine Evaluation"
 date: 2026-05-08
-content_hash: 07b783fef21b3acf
+content_hash: 18b80219aa1ceae6
 ---
 
 # Capabilities and Evaluation Biases of Large Language Models in Classical Chinese Poetry Generation: A Case Study on Tang Poetry
 
-**Conference**: ACL 2026
+**Conference**: ACL 2026  
 **arXiv**: [2510.15313](https://arxiv.org/abs/2510.15313)  
 **Code**: [https://github.com/boleima/Tang-Poetry](https://github.com/boleima/Tang-Poetry)  
-**Area**: LLM Evaluation
-**Keywords**: Classical poetry generation, Tang poetry, LLM evaluation bias, echo chamber effect, human-machine evaluation
+**Area**: LLM Evaluation  
+**Keywords**: Classical Poetry Generation, Tang Poetry, LLM Evaluation Bias, Echo Chamber Effect, Human-Machine Evaluation
 
 ## TL;DR
 
-This paper proposes a three-step evaluation framework (computational feature extraction + LLM-as-Judge + human expert validation) to systematically assess the Tang poetry generation capabilities of six LLMs. A critical "echo chamber" effect is identified: LLMs systematically overrate machine-generated poems that mimic statistical patterns while violating prosodic rules, diverging significantly from human expert judgments.
+This paper proposes a three-step evaluation framework (computational feature extraction + LLM-as-Judge + human expert validation) to systematically evaluate the capabilities of six LLMs in Tang poetry generation. It identifies a critical "echo chamber" effect: LLMs systematically overestimate machine-generated poems that mimic statistical patterns but violate prosodic rules, showing significant deviation from human expert judgments.
 
 ## Background & Motivation
 
-**Background**: LLMs have demonstrated impressive capabilities in text generation, including creative writing. Classical Chinese poetry—Tang poetry in particular—poses an extreme challenge for AI creativity due to its strict prosodic and tonal constraints and profound cultural depth.
+**Background**: LLMs have demonstrated impressive capabilities in text generation, including creative writing. Classical Chinese poetry, particularly Tang poetry, poses an extreme challenge to AI creativity due to its strict rhythm, tonal constraints, and profound cultural connotations.
 
-**Limitations of Prior Work**: (1) LLMs still frequently produce incoherence across lines, lack originality in imagery, or reproduce memorized verses; (2) conventional automatic metrics (BLEU, ROUGE) fail to capture prosody, imagery, and aesthetic value; (3) LLM-as-Judge approaches may exhibit systematic biases—models may inflate scores for their own outputs or converge toward peer models.
+**Limitations of Prior Work**: (1) LLMs still frequently exhibit inter-line incoherence, lack of original imagery, or the reproduction of memorized verses in poetry generation; (2) Traditional automatic metrics (BLEU, ROUGE) fail to capture prosody, imagery, and aesthetic value; (3) LLM-as-Judge methods may suffer from systematic bias—models might inflate their own outputs or converge with peers.
 
-**Key Challenge**: Poetry generation requires simultaneously satisfying structural correctness and aesthetic quality, yet current automatic evaluation methods cannot reliably measure either dimension, especially in culturally sensitive creative tasks.
+**Key Challenge**: Poetry generation requires balancing structural correctness with aesthetic quality. Current automatic evaluation methods cannot reliably measure these two dimensions, especially in culturally sensitive creative tasks.
 
-**Goal**: To establish a systematic study of LLM-based Tang poetry generation and evaluation, revealing the capability boundaries of LLMs in poetry generation and the biases present in their evaluation.
+**Goal**: To establish a systematic study of LLM Tang poetry generation and evaluation, revealing the capability boundaries and evaluation biases of LLMs.
 
-**Key Insight**: Tang poetry is used as a testbed. Generation tasks are designed across five dimensions (genre, poet style, theme, emotion, and imagery), and a three-step framework is employed to provide multi-level evaluation.
+**Key Insight**: Using Tang poetry as a testbed, the study designs generation tasks across five dimensions (genre, poet style, theme, emotion, imagery) and provides a multi-layered evaluation via a three-step framework.
 
-**Core Idea**: LLM-generated poems may approximate human works in surface-level statistical features while exhibiting systematic deficiencies in strict prosodic compliance—deficiencies that LLM evaluators fail to detect, giving rise to an "echo chamber."
+**Core Idea**: Poems generated by LLMs may approximate human works in surface statistical features but possess systematic flaws in strict prosodic compliance, which LLM evaluators fail to identify, creating an "echo chamber."
 
 ## Method
 
 ### Overall Architecture
 
-(1) **Large-scale generation**—six LLMs each generate approximately 2,500 poems (15,000 total), covering five poetic dimensions; (2) **Three-step evaluation**—Step 1: automated computational feature extraction (prosodic compliance rate, etc.); Step 2: LLM cross-evaluation (each model evaluates outputs from the other models); Step 3: human expert validation (specialists in classical Chinese literature).
+(1) **Large-scale Generation**: Six LLMs each generate approximately 2,500 poems (15,000 total) covering five dimensions; (2) **Three-step Evaluation**: Step 1: Automatic computational feature extraction (prosodic compliance rate, etc.); Step 2: LLM cross-evaluation (each model evaluates outputs of others); Step 3: Human expert validation (experts in classical Chinese literature).
 
 ### Key Designs
 
-1. **Multi-dimensional Poetry Generation Design**:
+1.  **Multi-dimensional Poetry Generation Design**:
+    *   Function: Systematically covers key dimensions of Tang poetry creation.
+    *   Mechanism: Defines five dimensions—Genre (5/7-character Jueju/Lushi), Poet Style (Li Bai, Du Fu, Bai Juyi, Wang Wei, Li Shangyin), Theme (Landscape, Nostalgia, History, Pastoral, Parting), Emotion (Sadness, Serenity, Boldness, Romance, Joy), and Imagery (Wind, Flower, Willow, Moon, Wild Goose). Explicit prompts are used with temperature $T=0.4$.
+    *   Design Motivation: An experimental design with controlled variables allows for scientific comparison between different models and dimensions.
 
-    - Function: Systematically covers all key dimensions of Tang poetry composition.
-    - Mechanism: Five dimensions are defined—genre (five- or seven-character jueju/lüshi), poet style (Li Bai / Du Fu / Bai Juyi / Wang Wei / Li Shangyin), theme (landscape / homesickness / historical reflection / pastoral / farewell), emotion (sorrow / serenity / boldness / romance / joy), and imagery (wind / flowers / willows / moon / wild geese). Dimensions are specified via explicit prompts at temperature $T=0.4$.
-    - Design Motivation: A controlled experimental design ensures scientifically valid comparisons across models and dimensions.
+2.  **Computational Feature Extraction (Step 1)**:
+    *   Function: Objectively quantifies the prosodic compliance of poetry.
+    *   Mechanism: Automatically detects adherence to prosodic rules such as level-oblique (Ping-Ze) patterns, antithesis (parallelism), and rhyming. This represents the most objective and quantifiable dimension in Tang poetry evaluation.
+    *   Design Motivation: Prosodic rules are hard constraints; poems violating these are professionally disqualified, yet LLM evaluators may overlook these violations.
 
-2. **Computational Feature Extraction (Step 1)**:
-
-    - Function: Objectively quantifies prosodic compliance in generated poems.
-    - Mechanism: Automatic detection of adherence to prosodic rules including tonal patterns (平仄), antithesis (对仗), and rhyme schemes, yielding a prosodic compliance rate—the most objectively quantifiable dimension in Tang poetry evaluation.
-    - Design Motivation: Prosodic rules constitute hard constraints in Tang poetry; poems that violate them are professionally substandard, yet LLM evaluators may overlook such violations.
-
-3. **LLM Cross-Evaluation and Human Expert Validation (Steps 2 & 3)**:
-
-    - Function: Reveals discrepancies between automatic evaluation and human judgment.
-    - Mechanism: In Step 2, each LLM evaluates poems generated by the other models across multiple dimensions including thematic relevance, emotional consistency, imagery/structure, and linguistic authenticity. In Step 3, classical literature experts independently evaluate the same samples. Comparing the two sets of judgments exposes the "echo chamber" effect.
-    - Design Motivation: The reliability of LLM-as-Judge is a pressing open question; the poetry domain provides a unique test scenario involving cultural sensitivity and strict formal constraints.
+3.  **LLM Cross-evaluation and Human Expert Validation (Step 2 & 3)**:
+    *   Function: Reveals biases between automatic evaluation and human judgment.
+    *   Mechanism: Step 2 involves LLMs evaluating generated poems across dimensions like thematic relevance, emotional consistency, imagery/structure, and linguistic authenticity; Step 3 involves independent assessment by experts. Comparing the two reveals the "echo chamber" effect.
+    *   Design Motivation: The reliability of LLM evaluation is a critical issue; poetry provides a unique testing scenario for cultural sensitivity and formal constraints.
 
 ### Loss & Training
 
-No model training is involved. Generation uses temperature $T=0.4$; evaluation is conducted in a zero-shot setting.
+No model training is involved. Generation uses $T=0.4$, and evaluation is conducted in a zero-shot setting.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**Performance Tiers Among Six LLMs**
-
-- Tier 1: Qwen2.5-7B-Instruct (highest prosodic compliance rate; best overall quality)
-- Tier 2: GLM-4-9B-Chat, DeepSeek-V2-Lite-Chat
-- Tier 3: Baichuan2-7B-Chat, Gemma-2-9B-it, Mistral-7B (weaker Chinese poetry capabilities)
+**Stratification of Generation Capabilities across Six LLMs**
+*   Tier 1: Qwen2.5-7B-Instruct (highest prosodic compliance, best overall quality).
+*   Tier 2: GLM-4-9B-Chat, DeepSeek-V2-Lite-Chat.
+*   Tier 3: Baichuan2-7B-Chat, Gemma-2-9B-it, Mistral-7B (weaker performance in Chinese poetry).
 
 ### Ablation Study
 
-**"Echo Chamber" Effect**: LLM evaluators systematically assign high scores to machine-generated poems, even when those poems violate strict prosodic rules. Human experts, by contrast, accurately identify prosodic violations and penalize scores accordingly. A tendency toward self-favoring scores is also observed between self-evaluation and cross-evaluation among LLMs.
+**"Echo Chamber" Effect**: LLM evaluators systematically assign high scores to machine-generated poems, even when they violate strict prosodic rules. Human experts accurately identify these violations and significantly lower the scores. There is a tendency toward self-preference in LLM scoring.
 
 ### Key Findings
 
-- Models with strong Chinese language capabilities (Qwen, GLM, DeepSeek) significantly outperform primarily English-oriented models in Tang poetry generation.
-- LLM evaluators tend to overrate poems that mimic statistical patterns while violating prosodic rules—the "echo chamber" effect.
-- Prosodic compliance rate is the most discriminative quality indicator, yet is precisely the dimension most readily overlooked by LLM evaluators.
-- Generation difficulty varies across dimensions; stylistic imitation proves easier than prosodic compliance.
+*   Models with a strong Chinese linguistic focus (Qwen, GLM, DeepSeek) significantly outperform English-centric models in Tang poetry generation.
+*   LLM evaluators tend to overestimate poems that mimic statistical patterns but violate prosody—the "echo chamber" effect.
+*   Prosodic compliance is the most discriminative quality metric, yet it is precisely what LLM evaluators most easily ignore.
+*   The difficulty of generation varies by dimension; style imitation is easier than strict prosodic adherence.
 
 ## Highlights & Insights
 
-- This is the first systematic study of the "echo chamber" effect in LLM-based classical Chinese poetry generation and evaluation.
-- The three-step evaluation framework is generalizable to other culturally sensitive creative generation tasks.
-- The findings raise a warning regarding the reliability of LLM-as-Judge approaches, particularly for evaluations requiring specialized domain knowledge.
-- The dataset and code are publicly available, ensuring strong reproducibility.
+*   The first systematic study of the "echo chamber" effect in LLM generation and evaluation of classical Chinese poetry.
+*   The three-step evaluation framework is generalizable to other culturally sensitive creative generation tasks.
+*   Provides a warning regarding the reliability of LLM-as-Judge, especially in evaluations requiring domain-specific expertise.
+*   Dataset and code are open-sourced with high reproducibility.
 
 ## Limitations & Future Work
 
-- Only six open-source models are evaluated; commercial closed-source models are not included.
-- Human evaluation is limited in scale due to expert availability constraints.
-- The study focuses solely on Tang poetry and does not extend to other poetic forms.
-- Future work may explore prosody-aware fine-tuning strategies to improve LLM poetry generation capabilities.
+*   Only six open-source models were evaluated, excluding commercial closed-source models.
+*   Human evaluation is limited in scale due to expert availability.
+*   Focused solely on Tang poetry, without extending to other poetic forms.
+*   Future work could explore prosody-aware fine-tuning strategies to improve LLM poetic capabilities.
 
 ## Related Work & Insights
 
-- The findings provide concrete domain-specific validation of bias phenomena reported in the broader LLM-as-Judge literature (e.g., Clark et al.).
-- The work contributes an important creative generation benchmark to the Chinese NLP community.
-- The automated prosodic compliance detection method is transferable to other text generation tasks with strict formal constraints.
+*   Acts as a domain-specific verification of bias studies in the LLM-as-Judge field (e.g., findings by Clark et al.).
+*   Provides an important creative generation benchmark for the Chinese NLP community.
+*   The automatic detection methods for prosodic compliance can be extended to other text generation tasks with strict formal constraints.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ First systematic study of the echo chamber effect in LLM-based Tang poetry generation.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive design spanning 6 models × 5 dimensions × 3-step evaluation.
-- Writing Quality: ⭐⭐⭐⭐ Rigorous research design with clear figures and tables.
+*   Novelty: ⭐⭐⭐⭐ First systematic study of the echo chamber effect in Tang poetry.
+*   Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive design with 6 models × 5 dimensions × 3-step evaluation.
+*   Writing Quality: ⭐⭐⭐⭐ Rigorous research design and clear visualizations.
 
 <!-- RELATED:START -->
 
@@ -124,11 +120,11 @@ No model training is involved. Generation uses temperature $T=0.4$; evaluation i
 
 ## Related Papers
 
+- [\[ACL 2026\] SciCustom: A Framework for Custom Evaluation of Scientific Capabilities in Large Language Models](scicustom_a_framework_for_custom_evaluation_of_scientific_capabilities_in_large_.md)
 - [\[ACL 2026\] Attribution, Citation, and Quotation: A Survey of Evidence-based Text Generation with Large Language Models](attribution_citation_and_quotation_a_survey_of_evidence-based_text_generation_wi.md)
+- [\[ACL 2026\] Dynamic Infilling Anchors for Format-Constrained Generation in Diffusion Large Language Models](dynamic_infilling_anchors_for_format-constrained_generation_in_diffusion_large_l.md)
+- [\[ACL 2026\] Can LLMs Act as Historians? Evaluating Historical Research Capabilities of LLMs via the Chinese Imperial Examination](can_llms_act_as_historians_evaluating_historical_research_capabilities_of_llms_v.md)
 - [\[ACL 2026\] Exploring the Capability Boundaries of LLMs in Mastering of Chinese Chouxiang Language](exploring_the_capability_boundaries_of_llms_in_mastering_of_chinese_chouxiang_la.md)
-- [\[ACL 2026\] Challenging the Boundaries of Reasoning: An Olympiad-Level Math Benchmark for Large Language Models](challenging_the_boundaries_of_reasoning_an_olympiad-level_math_benchmark_for_lar.md)
-- [\[ACL 2026\] E2EDev: Benchmarking Large Language Models in End-to-End Software Development Task](e2edev_benchmarking_large_language_models_in_end-to-end_software_development_tas.md)
-- [\[ACL 2026\] Modeling Multi-Dimensional Cognitive States in Large Language Models under Cognitive Crowding](modeling_multi-dimensional_cognitive_states_in_large_language_models_under_cogni.md)
 
 </div>
 

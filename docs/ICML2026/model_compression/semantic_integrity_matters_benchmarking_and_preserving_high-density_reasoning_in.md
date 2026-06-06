@@ -2,71 +2,71 @@
 title: >-
   [Paper Note] Semantic Integrity Matters: Benchmarking and Preserving High-Density Reasoning in KV Cache Compression
 description: >-
-  [ICML 2026][Model Compression][KV cache compression] This paper first uses the new benchmark system KVFundaBench to reveal a key asymmetry: "retrieval-type long-context tasks can be compressed…
+  [ICML 2026][Model Compression][KV cache compression] This paper introduces a new benchmark, KVFundaBench, to systematically reveal the key asymmetry where retrieval-based long-context tasks are compressible while reasoni…
 tags:
   - "ICML 2026"
   - "Model Compression"
   - "KV cache compression"
-  - "high-density reasoning"
-  - "few-shot semantic unit"
+  - "High-density reasoning"
+  - "few-shot semantic units"
   - "prefill-decoding separation"
   - "long-context generation"
 date: 2026-05-08
-content_hash: a4fa629e3c90066e
+content_hash: 26604526d5b4609f
 ---
 
 # Semantic Integrity Matters: Benchmarking and Preserving High-Density Reasoning in KV Cache Compression
 
 **Conference**: ICML 2026  
 **arXiv**: [2502.01941](https://arxiv.org/abs/2502.01941)  
-**Code**: None (no public link provided)  
+**Code**: None (Public link not provided in the paper)  
 **Area**: Model Compression / LLM Efficiency  
-**Keywords**: KV cache compression, high-density reasoning, few-shot semantic unit, prefill-decoding separation, long-context generation
+**Keywords**: KV cache compression, High-density reasoning, few-shot semantic units, prefill-decoding separation, long-context generation
 
 ## TL;DR
-This paper first uses the new benchmark system KVFundaBench to reveal a key asymmetry: "retrieval-type long-context tasks can be compressed, reasoning-type cannot." The root cause is attributed to KV compression breaking the integrity of few-shot examples as "semantic units." Based on this, ShotKV is proposed—preserving each shot as an indivisible unit during prefill, and applying dynamic token-level compression during decoding. This allows LG-GSM8K to improve from a baseline of 46.0 to 47.33 at a 40% compression rate, and reduces end-to-end latency by 11.3% under long-input settings.
+This paper introduces a new benchmark, KVFundaBench, to systematically reveal the key asymmetry where retrieval-based long-context tasks are compressible while reasoning tasks are not. The root cause is attributed to KV compression destroying the integrity of few-shot examples as "semantic units." Consequently, the authors propose ShotKV—preserving entire shots as indivisible units during prefill and performing dynamic token-level compression during decoding. ShotKV improves LG-GSM8K from a baseline of 46.0 to 47.33 at a 40% compression rate and reduces end-to-end latency by 11.3% in long-input settings.
 
 ## Background & Motivation
 
-**Background**: Mainstream KV cache compression methods (H2O, SnapKV, StreamingLLM, PyramidKV, ChunkKV, Quest, etc.) are almost exclusively evaluated on "retrieval/localization" benchmarks like LongBench and NIAH, concluding that retaining only ~50% of tokens does not sacrifice accuracy.
+**Background**: Mainstream KV cache compression methods (H2O, SnapKV, StreamingLLM, PyramidKV, ChunkKV, Quest, etc.) are almost exclusively evaluated on "retrieval-positioning" benchmarks like LongBench and NIAH, leading to the conclusion that performance is maintained even with only ~50% of tokens.
 
-**Limitations of Prior Work**: The authors observe a neglected workload—"High-Density Reasoning," where nearly every token in the prompt is critical for reasoning (e.g., CoT few-shot examples, multi-step arithmetic), rather than only a small "needle" segment being important. In such scenarios, arithmetic tasks suffer much greater performance drops than retrieval tasks at the same compression rate, and breaking a semantic chain in the reasoning process can cause catastrophic failure.
+**Limitations of Prior Work**: The authors identify an overlooked workload—"High-Density Reasoning," where nearly every token in the prompt is critical for reasoning (CoT few-shot examples, multi-step arithmetic), rather than only a small "needle" being important. In these scenarios, arithmetic tasks exhibit a sharper performance drop than retrieval tasks at the same compression rate, and breaking a single link in the reasoning chain can lead to catastrophic failure.
 
-**Key Challenge**: Existing token-level KV compression scores and discards tokens individually based on attention scores, which fragments complete few-shot examples; chunk-level methods, while preserving blocks, apply the same strategy to both prefill and decoding, failing to balance "static instruction integrity" and "dynamic generation freshness."
+**Key Challenge**: Existing token-level KV compression methods score or discard tokens individually based on attention scores, which fragments complete few-shot examples. Meanwhile, chunk-level methods preserve contiguous blocks but apply a unified strategy for both prefill and decoding, failing to balance "preserving instruction integrity" with "maintaining freshness in dynamic generation."
 
-**Goal**: (1) Provide a systematic benchmark, KVFundaBench, covering 5 fundamental abilities plus long-form generation; (2) Quantify which tasks are most sensitive to compression and which model types are most robust; (3) Operationalize "semantic integrity" as a compression principle, and construct a lightweight proof-of-concept, ShotKV, to validate the hypothesis.
+**Goal**: (1) Provide a systematic benchmark, KVFundaBench, covering 5 categories of fundamental capabilities plus long-form generation; (2) Quantify which tasks are most sensitive to compression and which model types are most robust; (3) Transform "semantic integrity" into an actionable compression principle and construct a lightweight proof-of-concept, ShotKV, to validate the hypothesis.
 
-**Key Insight**: Treat each shot in few-shot prompts as an "indivisible" Semantic Unit; during prefill, score and retain entire shots, while during decoding, independently apply token-level attention-top-k dynamic compression, thus explicitly separating the two types of information needs.
+**Key Insight**: Treat each shot in a few-shot prompt as an indivisible "Semantic Unit." During the prefill stage, scores are calculated at shot granularity to retain full segments, while the decoding stage uses independent token-level attention-top-k dynamic compression to explicitly separate these two distinct information requirements.
 
-**Core Idea**: "Compression should be performed at the semantic unit level, and prefill and decoding must be handled separately"—this is the core conclusion from the benchmark, with ShotKV as the minimal viable implementation.
+**Core Idea**: "Compression should be performed on semantic units, and prefill and decoding must be handled in separate phases"—this is the core conclusion derived from the benchmark, with ShotKV serving as the minimum viable implementation.
 
 ## Method
 
 ### Overall Architecture
-Two parallel tracks: one is **KVFundaBench**, covering 5 task types (MMLU World Knowledge WK, CommonsenseQA CSR, GSM8K Arithmetic AR, HumanEval Code CG, JailBreakV Safety SA) plus LG-GSM8K long-form generation, systematically evaluated across four models (LLaMA-3.1-8B/Instruct, Mistral-7B-Instruct, DeepSeek-R1-Distill-Llama-8B) and six KV compression methods. Relative performance is defined as $\Delta P = (P_C - P_{\text{base}})/P_{\text{base}}$. The other is **ShotKV**: the prompt is split into $n$ shots $\{s_1,\dots,s_n\}$; for each layer $l$, shot importance is computed as $\text{Score}_{\text{prefill}}^l(s_i)=\frac{1}{k_i}\sum_{t\in s_i}\sum_h \alpha_{t,h}^l$, and shots are retained in descending order until the budget $r_p \cdot |KV_{\text{prefill}}|$ is filled; decoding uses an independent ratio $r_d$ for token-level attention top-k. The final $KV_{\text{total},l}=KV^C_{\text{prefill},l}\cup KV^C_{\text{decoding},l}$.
+Two parallel tracks are established: **KVFundaBench**, covering 5 task categories (MMLU World Knowledge WK, CommonsenseQA CSR, GSM8K Arithmetic AR, HumanEval Code Generation CG, JailBreakV Safety SA) plus LG-GSM8K long generation. It systematically evaluates four models (LLaMA-3.1-8B/Instruct, Mistral-7B-Instruct, DeepSeek-R1-Distill-Llama-8B) across six KV compression methods, with relative performance defined as $\Delta P = (P_C - P_{\text{base}})/P_{\text{base}}$. The second track is **ShotKV**: the prompt is split into $n$ shots $\{s_1,\dots,s_n\}$. For each layer $l$, shot importance is calculated as $\text{Score}_{\text{prefill}}^l(s_i)=\frac{1}{k_i}\sum_{t\in s_i}\sum_h \alpha_{t,h}^l$, and shots are retained in descending order until the budget $r_p \cdot |KV_{\text{prefill}}|$ is met. Decoding uses an independent ratio $r_d$ for token-level attention top-k. Finally, $KV_{\text{total},l}=KV^C_{\text{prefill},l}\cup KV^C_{\text{decoding},l}$.
 
 ### Key Designs
 
-1. **KVFundaBench Reveals Task-Dependent Degradation**:
+1. **KVFundaBench Exposes Task-Dependent Degradation**:
 
-    - **Function**: First systematic measurement of "differential degradation of KV compression across fundamental abilities."
-    - **Mechanism**: Six empirical observations—(O1) WK/CSR are robust, AR/CG/SA collapse at compression rates < 20%; (O2) DeepSeek-R1 is more robust than instruct-tuned models; (O3) Short prompts are more fragile than long prompts (1-shot drops from 0.5 to 0.05 at 10% retention); (O4) Chunk-level methods (ChunkKV) are most robust for many-shot; (O5) Tasks with greater prompt gains are more sensitive (AR 0-shot→CoT improves 50.41% but is also most vulnerable); (O6) Long-context generation (LG-GSM8K) suffers random loss over 20%.
-    - **Design Motivation**: Existing benchmarks focus reasoning ability on "sink token + retrieval head," masking the truly fragile "semantic chain"; attention heatmaps further confirm that arithmetic tasks have more diffuse non-sink attention (Fig. 3b), making token-level eviction more likely to cut critical chains.
+    - Function: First systematic measurement of "differentiated degradation of KV compression across different fundamental capabilities."
+    - Mechanism: Six empirical observations—(O1) WK/CSR are compression-resistant, while AR/CG/SA collapse when the compression rate < 20%; (O2) DeepSeek-R1 is more robust than instruct-tuned models; (O3) Short prompts are more fragile than long ones (1-shot drops from 0.5 to 0.05 at a 10% ratio); (O4) Chunk-level methods (ChunkKV) are most stable on many-shot tasks; (O5) Tasks with higher prompt gains are more sensitive (AR 0-shot→CoT gains 50.41% but also drops the fastest); (O6) Long-context generation (LG-GSM8K) suffers over 20% performance loss with random eviction.
+    - Design Motivation: Existing benchmarks rely on "sink tokens + retrieval heads," masking the fragile "semantic chain." Attention heatmaps further confirm that arithmetic tasks have more diffused non-sink attention (Fig 3b), making token-level eviction more likely to cut critical links.
 
-2. **Shot-aware Prefill Retention (Semantic-Unit Preservation)**:
+2. **Shot-aware Prefill Preservation (Semantic-Unit Preservation)**:
 
-    - **Function**: Treats few-shot examples as atomic units, retaining them as a whole and preventing mid-example truncation.
-    - **Mechanism**: First parses prompt boundaries to identify $n$ shots; for each layer $l$, computes average attention score per shot, independently selects top-K per layer until the total token count does not exceed the budget; selected shots are fully cached, with no mid-shot eviction allowed. After one compression, the prefill cache remains fixed during generation.
-    - **Design Motivation**: Token-level methods like H2O/SnapKV may retain a shot's question but discard its answer, breaking the CoT causal chain; ChunkKV has shown contiguous chunks outperform discrete tokens, and this work further semanticizes "chunk" as "shot," allowing "different shots per layer" to leverage inter-layer attention specialization.
+    - Function: Treats few-shot examples as atomic units and keeps them in full, preventing the middle of an example from being truncated.
+    - Mechanism: Prompt boundaries are first parsed to identify $n$ shots. For each layer $l$, average shot attention scores are calculated, and shots are selected via TopK independently per layer until the token count respects the budget. Selected shots enter the cache in their entirety, with no internal token eviction allowed. The prefill cache remains fixed after compression during the generation process.
+    - Design Motivation: Token-level methods like H2O/SnapKV might retain the question of a shot but discard the answer, breaking the CoT causal chain. ChunkKV proved that contiguous chunks outperform discrete tokens; this work further semanticizes "chunks" into "shots" and allows "different shots to be selected per layer" to leverage inter-layer attention specialization.
 
-3. **Separate Compression for Prefill / Decoding Phases**:
+3. **Prefill / Decoding Phase Separation**:
 
-    - **Function**: Allows static instructions and dynamic generation to use independent strategies.
-    - **Mechanism**: Prefill uses the above shot-level retention (ratio $r_p$); decoding phase independently applies token-level TopK per layer based on $\text{Score}_{\text{decoding}}^l(t)=\sum_h \alpha_{t,h}^l$, with retention ratio $r_d$; the two sets of compressed results are merged per layer.
-    - **Design Motivation**: Observation 6 shows that long-form generation (4k+ tokens) is especially ill-suited to unified compression strategies—ChunkKV/SnapKV lack dynamic eviction, causing decoding-side cache overflow; using dynamic strategies for prefill would repeatedly break in-context examples. Independent strategies for both sides is the natural trade-off solution.
+    - Function: Allows static instructions and dynamic generation to follow distinct strategies.
+    - Mechanism: Prefill uses the shot-level preservation described above (ratio $r_p$). During decoding, each layer independently performs token-level TopK based on $\text{Score}_{\text{decoding}}^l(t)=\sum_h \alpha_{t,h}^l$ with retention ratio $r_d$. The two sets of compression results are merged at each layer.
+    - Design Motivation: Observation 6 shows that long generation (4k+ tokens) is particularly unfriendly to unified compression strategies—ChunkKV/SnapKV lack dynamic eviction, causing the decoding cache to explode, while dynamic strategies at the prefill stage repeatedly damage in-context examples. Independent handling is the natural solution for this trade-off.
 
 ### Loss & Training
-ShotKV is a training-free inference-time method with no additional training; the only hyperparameters are $(r_p, r_d)$. Temperature is set to 0, $K=35, T=20$ (LG-GSM8K). For non-ICL document QA like HotpotQA, treating each sentence as a "shot" allows direct adaptation without retraining.
+ShotKV is a training-free inference-time method with no additional training required. The only hyperparameters are $(r_p, r_d)$. Temperature is set to 0, $K=35, T=20$ (LG-GSM8K). Non-ICL document QA like HotpotQA is supported by treating each sentence as a "shot" without retraining.
 
 ## Key Experimental Results
 
@@ -84,10 +84,10 @@ ShotKV is a training-free inference-time method with no additional training; the
 
 | Configuration | Many-shot AR @10% | Description |
 |------|---------------------|------|
-| ShotKV (full) | 80.37 | Complete method |
-| Random Shot (same shot granularity but random selection) | 51.34 | Validates necessity of attention-based scoring, 29-point gap |
-| Prefill shot-aware only (no decoding dynamic compression) | Rapid loss in long-form generation | Validates phase separation |
-| ChunkKV (chunk but not shot boundary) | 79.32 | Shows shot semantic boundary outperforms generic chunk |
+| ShotKV (full) | 80.37 | Full method |
+| Random Shot (Shot granularity but random selection) | 51.34 | Verifies necessity of attention-based scoring; 29-point gap |
+| Prefill shot-aware only (No dynamic decoding compression) | Rapid loss in long generation | Verifies phase separation |
+| ChunkKV (Chunk but non-shot boundaries) | 79.32 | Shows shot semantic boundaries outperform general chunks |
 
 | Latency & Throughput | Input×Output | Latency (s) ↓ | Throughput (T/S) ↑ |
 |------------|----------|----------------|---------------------|
@@ -97,30 +97,30 @@ ShotKV is a training-free inference-time method with no additional training; the
 | ShotKV | 8192×4096 | 162.78 (**-11.3%**) | 63.24 (+13.1%) |
 
 ### Key Findings
-- Prompt-gain is strongly positively correlated with compression sensitivity: tasks with greater CoT improvement are more sensitive to KV compression (AR vs WK improvement +50.41 vs +6.20, with sensitivity gap magnified in the same direction), indicating that "tasks most reliant on in-context learning are most vulnerable to cache compression."
-- DeepSeek-R1-Distill maintains ~0.60 accuracy at 10% compression, significantly higher than instruct-tuned LLaMA at 0.50; reasoning models' attention patterns are more robust, providing empirical support for deploying "reasoning models + aggressive compression."
-- In non-ICL HotpotQA document QA, treating "sentences" as shots allows ShotKV to remain near-optimal at 10% compression; this demonstrates that the semantic unit concept can be smoothly transferred to any long text with natural segmentation boundaries.
+- Prompt-gain and compression sensitivity are strongly positively correlated: tasks that benefit more from CoT are more sensitive to KV compression (the gain difference for AR vs WK is +50.41 vs +6.20, with sensitivity differences scaling accordingly), implying that "tasks most reliant on in-context information are most vulnerable to cache compression."
+- DeepSeek-R1-Distill maintains ~0.60 accuracy at a 10% compression rate, significantly higher than the 0.50 of instruct-tuned LLaMA; the attention patterns of reasoning models are more robust to compression, providing empirical support for the deployment combination of "reasoning models + aggressive compression."
+- In document QA scenarios like HotpotQA without ICL, treating "sentences" as shots allows ShotKV to remain near-optimal at 10%, demonstrating that the semantic unit concept can transfer smoothly to any long text with natural segmentation boundaries.
 
 ## Highlights & Insights
-- This is one of the rare works that "first conducts a rigorous benchmark, then proposes a minimal method based on the findings"; the authors explicitly state that ShotKV is "not an algorithmic innovation," but rather a hypothesis test that "semantic unit preservation > token preservation," showing commendable honesty. The paper's value lies more in the benchmark and insights.
-- The "one-time prefill compression and freeze, dynamic scoring for decoding" two-stage structure can be directly reused by other KV compression methods—this is an essential adaptation for long-context generation, and is orthogonal and composable with KV quantization and cross-layer KV sharing.
-- The strong correlation between prompt-gain and compression sensitivity is a highly practical deployment heuristic: online, one can estimate the safe compression threshold for a task based on its CoT sensitivity, without running the full benchmark for every task.
+- This is one of the few works that "prioritizes a rigorous benchmark before proposing a minimal method." The authors explicitly state that ShotKV "is not an algorithmic innovation" but rather a means to validate the hypothesis that "preserving semantic units > preserving tokens." This honesty is rare, and the paper's value lies primarily in the benchmark and insights.
+- The two-stage structure—"compress once and freeze during prefill, dynamic scoring during decoding"—can be directly adopted by other KV compression methods. It is an essential adaptation for long-context generation and is orthogonally compatible with KV quantization and cross-layer KV sharing.
+- The strong correlation between prompt-gain and compression sensitivity is a practical deployment heuristic: the safety threshold for compression can be estimated based on "how sensitive a task is to CoT," avoiding the need to run full benchmarks for every task.
 
 ## Limitations & Future Work
-- ShotKV requires direct access to the KV cache, so it is only applicable to self-hosted/open-source models (LLaMA, Mistral, DeepSeek, Qwen), and is ineffective for closed API models; it still relies on an attention-derived heuristic score, which the authors acknowledge is not a "principled semantic importance metric."
-- In scenarios without few-shot structure or explicit sentence boundaries, such as "fully zero-shot long-document summarization," the shot concept fails; the authors only demonstrate sentence-level adaptation, and have not validated more complex structures like dialogue or code review.
-- The benchmark covers only 5 fundamental abilities plus long-form generation, and does not include agentic tool use, multi-turn long dialogue, or RAG multi-document concatenation—real-world long-context workloads; ShotKV's performance in these scenarios remains to be validated.
+- ShotKV requires direct access to the KV cache and is thus only applicable to self-hosted or open-source models (LLaMA, Mistral, DeepSeek, Qwen), not closed-API models. It still relies on an attention-derived heuristic score, which the authors admit is not a "principled measure of semantic importance."
+- The shot concept fails in "pure zero-shot long document summarization" where there is no few-shot structure or explicit sentence boundaries. The authors only demonstrated sentence-level adaptation; more complex structures like dialogue and code review have yet to be verified.
+- The benchmark only covers 5 basic capabilities plus long generation, excluding real-world long-context workloads like agentic tool use, multi-turn dialogue, or RAG multi-document concatenation. ShotKV's performance in these scenarios remains to be tested.
 
 ## Related Work & Insights
-- **vs ChunkKV (Liu et al., 2025)**: ChunkKV preserves contiguous blocks but uses a unified strategy; ShotKV semanticizes chunks as shot boundaries and adds prefill/decoding separation, effectively "ChunkKV + semantic boundary + phase separation."
-- **vs SCOPE (Wu et al., 2025)**: SCOPE already proposed prefill/decoding separation, but did not combine it with the semantic unit concept; ShotKV merges both into a complete proof-of-concept.
-- **vs H2O / SnapKV**: Both are token-level attention top-k; the Random Shot experiment indirectly proves that even with shot granularity, random selection is 29 points worse than attention-aware selection—"correct granularity + correct scoring" are both necessary.
+- **vs ChunkKV (Liu et al., 2025)**: It preserves contiguous blocks but uses a unified strategy; ShotKV semanticizes chunks into shot boundaries and adds prefill/decoding separation, essentially functioning as "ChunkKV + semantic boundaries + phase separation."
+- **vs SCOPE (Wu et al., 2025)**: SCOPE proposed the prefill/decoding separation idea but did not integrate the semantic unit concept; ShotKV combines both into a complete proof-of-concept.
+- **vs H2O / SnapKV**: Both use token-level attention top-k. The authors' Random Shot experiment indirectly proves that even with shot granularity, random selection is 29 points worse than attention-aware selection—both "correct granularity" and "correct scoring" are essential.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The benchmark exposes the long-overlooked high-density reasoning dimension, which is more valuable than the method itself.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Six observations × multiple models × multiple compression methods × multiple compression rates, with very comprehensive coverage.
-- Writing Quality: ⭐⭐⭐⭐ Clear three-part narrative ("benchmark → insight → proof-of-concept"), with the authors proactively clarifying the method's simplicity to avoid over-marketing.
-- Value: ⭐⭐⭐⭐ ShotKV is immediately usable and orthogonal to quantization and cross-layer sharing; the benchmark can serve as a de facto standard for future KV compression papers.
+- Novelty: ⭐⭐⭐⭐ The value of the benchmark in exposing the long-neglected dimension of high-density reasoning exceeds the method itself.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 6 observations across multiple models, compression methods, and rates provide exceptionally comprehensive coverage.
+- Writing Quality: ⭐⭐⭐⭐ The "benchmark → insight → proof-of-concept" narrative is clear, and the authors' transparent admission of the method's simplicity avoids over-marketing.
+- Value: ⭐⭐⭐⭐ ShotKV is immediately applicable and orthogonal to quantization and cross-layer sharing; the benchmark could become a de facto standard for future KV compression papers.
 
 <!-- RELATED:START -->
 
@@ -129,10 +129,10 @@ ShotKV is a training-free inference-time method with no additional training; the
 ## Related Papers
 
 - [\[NeurIPS 2025\] ChunkKV: Semantic-Preserving KV Cache Compression for Efficient Long-Context LLM Inference](../../NeurIPS2025/model_compression/chunkkv_semanticpreserving_kv_cache_compression_for_efficien.md)
+- [\[ACL 2026\] The Pitfalls of KV Cache Compression](../../ACL2026/model_compression/the_pitfalls_of_kv_cache_compression.md)
+- [\[ICML 2026\] EpiCache: Episodic KV Cache Management for Long-Term Conversation on Resource-Constrained Environments](epicache_episodic_kv_cache_management_for_long-term_conversation_on_resource-con.md)
+- [\[ICML 2026\] xKV: Cross-Layer KV-Cache Compression via Aligned Singular Vector Extraction](xkv_cross-layer_kv-cache_compression_via_aligned_singular_vector_extraction.md)
 - [\[ACL 2026\] FastKV: Decoupling of Context Reduction and KV Cache Compression for Prefill-Decoding Acceleration](../../ACL2026/model_compression/fastkv_decoupling_of_context_reduction_and_kv_cache_compression_for_prefill-deco.md)
-- [\[ACL 2026\] HeteroCache: A Dynamic Retrieval Approach to Heterogeneous KV Cache Compression for Long-Context LLM Inference](../../ACL2026/model_compression/heterocache_a_dynamic_retrieval_approach_to_heterogeneous_kv_cache_compression_f.md)
-- [\[NeurIPS 2025\] Inference-Time Hyper-Scaling with KV Cache Compression](../../NeurIPS2025/model_compression/inference-time_hyper-scaling_with_kv_cache_compression.md)
-- [\[NeurIPS 2025\] KVzip: Query-Agnostic KV Cache Compression with Context Reconstruction](../../NeurIPS2025/model_compression/kvzip_query-agnostic_kv_cache_compression_with_context_reconstruction.md)
 
 </div>
 

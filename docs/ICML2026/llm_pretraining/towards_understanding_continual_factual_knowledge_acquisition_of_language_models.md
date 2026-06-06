@@ -135,7 +135,7 @@ On legal domain IndustryCorpus2 1B token real CPT evaluation (MMLU / MMLU-Redux-
 - [\[ICML 2026\] Understanding Catastrophic Forgetting In LoRA via Mean-Field Attention Dynamics](understanding_catastrophic_forgetting_in_lora_via_mean-field_attention_dynamics.md)
 - [\[ICML 2026\] Consistent Diffusion Language Models](consistent_diffusion_language_models.md)
 - [\[ICML 2026\] Edit-Based Refinement for Parallel Masked Diffusion Language Models](edit-based_refinement_for_parallel_masked_diffusion_language_models.md)
-- [\[ICML 2026\] Model Merging Scaling Laws in Large Language Models](model_merging_scaling_laws_in_large_language_models.md)
+- [\[ACL 2026\] FOREVER: Forgetting Curve-Inspired Memory Replay for Language Model Continual Learning](../../ACL2026/llm_pretraining/forever_forgetting_curve-inspired_memory_replay_for_language_model_continual_lea.md)
 
 </div>
 

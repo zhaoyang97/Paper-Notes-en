@@ -2,121 +2,117 @@
 title: >-
   [Paper Note] Your LLM Agents are Temporally Blind: The Misalignment Between Tool Use Decisions and Human Time Perception
 description: >-
-  [ACL 2026][LLM Agent][temporal blindness] This paper reveals a "Temporal Blindness" phenomenon in LLM Agents during multi-turn interactions — the inability to adjust tool-calling decisions based on the real elapsed time…
+  [ACL 2026][LLM Agent][Temporal Blindness] Unveils the "Temporal Blindness" of LLM Agents in multi-turn interactions—the inability to adjust tool-use decisions based on the actual time elapsed between messages—and constru…
 tags:
   - "ACL 2026"
   - "LLM Agent"
-  - "temporal blindness"
-  - "tool use decision"
-  - "human preference alignment"
-  - "multi-turn dialogue"
-  - "time sensitivity"
+  - "Temporal Blindness"
+  - "Tool Use Decision-Making"
+  - "Human Preference Alignment"
+  - "Multi-turn Dialogue"
+  - "Temporal Sensitivity"
 date: 2026-05-08
-content_hash: 1c0877d28ea24cf8
+content_hash: eebe9f6143d94536
 ---
 
 # Your LLM Agents are Temporally Blind: The Misalignment Between Tool Use Decisions and Human Time Perception
 
-**Conference**: ACL 2026
+**Conference**: ACL 2026  
 **arXiv**: [2510.23853](https://arxiv.org/abs/2510.23853)  
 **Code**: [GitHub](https://github.com/chengez/TicToc)  
-**Area**: LLM Agent / Tool Use
-**Keywords**: temporal blindness, tool use decision, human preference alignment, multi-turn dialogue, time sensitivity
+**Area**: LLM Agent / Tool Use  
+**Keywords**: Temporal Blindness, Tool Use Decision-Making, Human Preference Alignment, Multi-turn Dialogue, Temporal Sensitivity
 
 ## TL;DR
 
-This paper reveals a "Temporal Blindness" phenomenon in LLM Agents during multi-turn interactions — the inability to adjust tool-calling decisions based on the real elapsed time between messages — and constructs the TicToc benchmark to evaluate this problem.
+Unveils the "Temporal Blindness" of LLM Agents in multi-turn interactions—the inability to adjust tool-use decisions based on the actual time elapsed between messages—and constructs the TicToc benchmark to evaluate this issue.
 
 ## Background & Motivation
 
-**Background**: LLM Agents are increasingly deployed in dynamic environments for task execution, leveraging external tools (search engines, databases, etc.) to retrieve real-time information. Existing tool-use evaluations primarily focus on **accuracy** (whether the correct tool and parameters are invoked), while neglecting the question of **when** a tool should be called.
+**Background**: LLM Agents are increasingly utilized for task execution in dynamic environments, obtaining real-time information by calling external tools (search engines, databases, etc.). Existing tool-use evaluations primarily focus on the **accuracy** of calls (whether the correct tools and parameters were used) but neglect the question of **when to call**.
 
-**Limitations of Prior Work**: LLM Agents implicitly assume that context is static, disregarding the real-world time elapsed between messages. This leads to two failure modes: (1) **over-reliance** — excessively trusting outdated context and skipping necessary tool calls, producing erroneous outputs; and (2) **under-reliance** — redundantly invoking tools for stable facts (e.g., Earth's radius), causing unnecessary latency.
+**Limitations of Prior Work**: LLM Agents assume by default that the context is static, failing to consider the real-world time elapsed between messages. This results in two failure modes: (1) **Over-reliance**—over-trusting outdated contexts and skipping necessary tool calls, leading to erroneous outputs; (2) **Under-reliance**—repeatedly calling tools for stable information (e.g., the Earth's radius), causing unnecessary latency.
 
-**Key Challenge**: Humans naturally integrate temporal information into decision-making — knowing when to re-query and when prior information remains valid. LLM Agents lack this temporal awareness and fail to leverage explicit timestamps even when provided.
+**Key Challenge**: Humans naturally integrate the passage of time into decision-making—knowing when a re-query is necessary and when previous information remains reliable. However, LLM Agents lack this temporal awareness and fail to utilize timestamps effectively even when explicitly provided.
 
-**Goal**: (1) Systematically identify and quantify the temporal blindness problem in LLM Agents; (2) construct the TicToc evaluation benchmark; (3) explore mitigation strategies.
+**Goal**: (1) Systematically identify and quantify the temporal blindness of LLM Agents; (2) Construct the evaluation benchmark TicToc; (3) Explore mitigation strategies.
 
-**Core Idea**: Temporal blindness is a fundamental limitation of LLM Agents that cannot be resolved through simple prompt engineering — dedicated post-training alignment is required for effective mitigation.
+**Core Idea**: Temporal blindness is a fundamental limitation of LLM Agents that cannot be resolved through simple prompt engineering; specialized post-training alignment is required for effective mitigation.
 
 ## Method
 
 ### Overall Architecture
 
-This paper constructs the TicToc dataset and evaluation framework to systematically study temporal blindness. TicToc contains 1,800+ multi-turn dialogue trajectories across 76 scenarios, covering dynamic environments with high, medium, and low time sensitivity. Each trajectory is expanded into three versions by injecting timestamps with different time intervals, and human preference annotations (invoke tool vs. respond directly) are collected. A total of 18 LLMs are evaluated on this benchmark to analyze the effect of temporal information on tool-calling decisions.
+This paper constructs the TicToc dataset and evaluation framework to systematically study temporal blindness. TicToc contains 1800+ multi-turn dialogue trajectories across 76 scenarios, covering dynamic environments with high, medium, and low temporal sensitivity. Three versions of each trajectory are generated by injecting timestamps with different intervals, and human preference annotations (call tool vs. direct answer) are collected. 18 LLMs are evaluated on this benchmark to analyze the impact of temporal information on tool-use decisions.
 
 ### Key Designs
 
-1. **TicToc Dataset Construction**:
+1.  **TicToc Dataset Construction**:
 
-    - Function: Provides a benchmark for systematically evaluating the temporal alignment capability of LLM tool-calling decisions.
-    - Mechanism: (a) 76 scenarios spanning low (29), medium (25), and high (22) time sensitivity, covering both read-only and read-write interaction modes; (b) 8 dialogue variant types defined (repeated queries, comparisons, multi-retrieval single-query, simple reasoning, retry after failure, user confirmation, repeated requests, resource exhaustion); (c) three timestamp intervals (small/medium/large) injected per trajectory, generating 5,592 samples; (d) each sample annotated by at least 5 annotators, with Krippendorff's alpha = 0.8574 indicating high inter-annotator agreement.
-    - Design Motivation: Existing tool-use evaluations lack a temporal dimension, necessitating purpose-built multi-turn dialogue scenarios that incorporate temporal variation.
+    *   **Function**: Provides a benchmark for systematic evaluation of temporal alignment in LLM tool use.
+    *   **Mechanism**: (a) 76 scenarios covering low (29), medium (25), and high (22) temporal sensitivity, spanning read-only and read-write interaction modes; (b) Definition of 8 dialogue variants (repeated inquiry, comparison, multi-retrieval single inquiry, simple reasoning, retry after failure, user confirmation, repeated request, resource exhaustion); (c) Generation of 5592 samples by injecting small, medium, and large time intervals into each trajectory; (d) At least 5 voters per sample, with a Krippendorff's alpha of 0.8574 indicating high annotation consistency.
+    *   **Design Motivation**: Existing tool-use assessments lack a temporal dimension; scenarios specifically designed for temporal changes in multi-turn dialogues are necessary.
 
-2. **Temporal Blindness Diagnostic Analysis**:
+2.  **Diagnostic Analysis of Temporal Blindness**:
 
-    - Function: In-depth analysis of why models fail to utilize temporal information.
-    - Mechanism: Analyzes the usage of temporal information in reasoning chains: timestamps appear in fewer than 4% of reasoning traces, the keyword "timestamp" appears in fewer than 1.5%, and time-related vocabulary appears in fewer than 15%. A "think-answer inconsistency" phenomenon is also identified — models decide to call a tool during reasoning but produce a direct answer in the final output.
-    - Design Motivation: Understanding the root cause of failure is necessary to guide effective improvements.
+    *   **Function**: Performs an in-depth analysis of why models fail to utilize temporal information.
+    *   **Mechanism**: Analyzes the use of temporal information in reasoning chains: the occurrence rate of timestamps in reasoning trajectories is <4%, "timestamp" keyword frequency is <1.5%, and time-related vocabulary frequency is <15%. A "thought-answer inconsistency" phenomenon was also discovered—models decide to call tools during reasoning but output a direct answer in the final response.
+    *   **Design Motivation**: Understanding the root causes of failure is essential for guiding effective improvements.
 
-3. **Alignment Strategy Exploration**:
+3.  **Alignment Strategy Exploration**:
 
-    - Function: Explores both prompt engineering and post-training strategies to mitigate temporal blindness.
-    - Mechanism: Naïve prompting methods prove ineffective for most models, whereas dedicated post-training alignment (fine-tuning on a subset of TicToc) effectively improves temporal awareness.
-    - Design Motivation: Provides a complete pipeline from problem identification to preliminary solutions.
+    *   **Function**: Explores prompt engineering and post-training strategies to mitigate temporal blindness.
+    *   **Mechanism**: Naive prompting methods show limited effectiveness for most models, but specialized post-training alignment (fine-tuning using a subset of TicToc) can effectively enhance temporal awareness.
+    *   **Design Motivation**: Provides a complete path from problem identification to preliminary solutions.
 
 ### Loss & Training
 
-The evaluation metric is the Normalized Alignment Rate $NAR = \frac{1}{2}(\frac{TP}{TP+FN} + \frac{TN}{TN+FP})$, where 50% corresponds to random chance. Post-training alignment employs supervised fine-tuning on a subset of TicToc. All models are evaluated at Temperature = 0 (except Qwen3 in reasoning mode).
+The evaluation metric is the Normalized Alignment Rate $NAR = \frac{1}{2}(\frac{TP}{TP+FN} + \frac{TN}{TN+FP})$, where 50% is equivalent to random guessing. Post-training alignment uses supervised fine-tuning on a subset of TicToc. During evaluation, all models use Temperature=0 (except for Qwen3 in reasoning mode).
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Condition | Best NAR | Note |
-|-----------|----------|------|
-| Without timestamps | ~55% | Near random chance |
-| With timestamps | <65% | Best models still perform poorly |
-
-### Key Findings (Analysis)
-
-| Analysis Dimension | Finding | Note |
-|--------------------|---------|------|
-| Dialogue length | Positively correlated with tool-call frequency | Models use "turn count" as a heuristic instead of elapsed time |
-| Reasoning mode (CoT) | Negligible improvement | Temporal awareness is not a reasoning problem |
-| Think-answer inconsistency | Up to 61.26% of false positives | Severe disconnect between reasoning and action |
-| Time-sensitivity stratification | Uniform failure across high/medium/low sensitivity | Not a scenario-specific issue |
+| Condition | Max NAR | Description |
+| :--- | :--- | :--- |
+| No Timestamps | ~55% | Close to random guessing |
+| With Timestamps | <65% | Best models remain poor |
 
 ### Key Findings
-- **No model** achieves a NAR above 65% when timestamps are provided, indicating that temporal blindness is pervasive and severe.
-- Models use **dialogue turn count** rather than **actual elapsed time** as a heuristic for information "expiration."
-- Chain-of-thought reasoning fails to improve temporal alignment, as models do not spontaneously reference temporal information during the reasoning process.
-- Post-training alignment demonstrates **strong potential** as a viable path toward resolving temporal blindness.
+
+- **No model** exceeds 65% NAR even after timestamps are provided, indicating that temporal blindness is a universal and serious issue.
+- Models use **dialogue turns** rather than **actual time** as a heuristic indicator for information "staleness."
+- Reasoning (CoT) does not improve temporal alignment, as models do not spontaneously reference temporal information during the reasoning process.
+- Post-training alignment demonstrates **strong potential** and is a feasible path to resolving temporal blindness.
 
 ## Highlights & Insights
-- **Forward-looking problem identification**: Temporal blindness is a previously entirely overlooked yet critically important capability gap in LLM Agents.
-- **Bidirectional analysis of over- and under-reliance**: The paper analyzes not only cases where tool calls are missed but also unnecessary repeated invocations.
-- **In-depth analysis of reasoning traces**: Quantifying temporal keywords in reasoning chains exposes the root cause of the problem.
-- **Discovery of think-answer inconsistency**: Reveals a systematic disconnect between LLM reasoning and action.
-- **TicToc dataset design quality**: Scenario diversity, timestamp injection methodology, and human annotation quality control are all carefully designed.
+
+- **Proactive Problem Identification**: Temporal blindness is a previously overlooked but critical deficiency in Agent capabilities.
+- **Bidirectional Analysis of Over/Under-reliance**: The study analyzes both instances where tools should have been called but weren't, and unnecessary repetitive calls.
+- **In-depth Reasoning Trajectory Analysis**: Reveals the source of the problem by quantifying temporal keywords within reasoning chains.
+- **Discovery of "Thought-Answer Inconsistency"**: Unveils a systematic disconnect between LLM reasoning and subsequent action.
+- **Quality of TicToc Dataset Design**: Meticulous scenario diversity, timestamp injection methods, and human annotation quality control.
 
 ## Limitations & Future Work
-- Evaluation is primarily conducted in English; cross-lingual differences in temporal awareness remain unexplored.
-- Detailed methodology and large-scale validation of post-training alignment warrant further investigation.
-- Timestamps are provided in a fixed format (ISO 8601); the impact of alternative temporal representations is not explored.
-- Although diverse, the scenario set remains limited (76 scenarios); broader domain coverage is needed.
-- Future work should investigate how to systematically incorporate temporal awareness during pre-training or alignment stages.
+
+- Primarily evaluates English scenarios; cross-lingual differences in temporal perception remain unknown.
+- Detailed methods and large-scale validation of post-training alignment require further public disclosure and expansion.
+- Timestamps are provided in a fixed format (ISO 8601); the impact of different temporal representations has not been explored.
+- Scenario design, while diverse, is still limited (76 scenarios); coverage across more domains needs expansion.
+- Future research should investigate how to systematically inject temporal awareness during the pre-training or alignment phases.
 
 ## Related Work & Insights
-- **vs. Existing tool-use evaluations (ToolBench, etc.)**: Prior work focuses on "whether the correct tool is called"; this paper is the first to address "when a tool should be called."
-- **vs. Temporal reasoning research**: Prior work studies LLM temporal reasoning in isolated settings, without connecting it to tool-calling decisions in an Agent context.
-- **vs. LLM alignment**: Introduces temporally-aware tool-calling decisions as a new dimension of the alignment problem.
+
+- **vs. Existing Tool-Use Evaluations (ToolBench, etc.)**: Existing work focuses on "whether the correct tool is called," while this paper is the first to focus on "when the tool should be called."
+- **vs. Temporal Reasoning Research**: Previous work studies temporal reasoning in isolated scenarios but does not link it to the tool-use decisions of Agents.
+- **vs. LLM Alignment**: Introduces time-aware tool-use decisions as a new dimension for alignment problems.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ First to identify and systematically study temporal blindness in LLM Agents; the problem is important and had been entirely overlooked.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 18 models, 76 scenarios, 5,592 annotated samples, multi-dimensional analysis.
-- Writing Quality: ⭐⭐⭐⭐ Clear problem formulation, thorough dataset construction methodology, and in-depth analysis.
-- Value: ⭐⭐⭐⭐⭐ Reveals a fundamental capability gap in LLM Agents with direct implications for Agent system design.
+
+- Novelty: ⭐⭐⭐⭐⭐ First to identify and systematically study the temporal blindness of LLM Agents; the problem is significant and previously ignored.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 18 models, 76 scenarios, 5592 annotated samples, and multi-dimensional analysis.
+- Writing Quality: ⭐⭐⭐⭐ Clear problem definition, detailed dataset construction methodology, and deep analysis.
+- Value: ⭐⭐⭐⭐⭐ Reveals a fundamental capability flaw in LLM Agents, providing direct guidance for Agent system design.
 
 <!-- RELATED:START -->
 
@@ -126,8 +122,8 @@ The evaluation metric is the Normalized Alignment Rate $NAR = \frac{1}{2}(\frac{
 
 - [\[ACL 2026\] When Agents Look the Same: Quantifying Distillation-Induced Similarity in Tool-Use Behaviors](when_agents_look_the_same_quantifying_distillation-induced_similarity_in_tool-us.md)
 - [\[ACL 2026\] Robust Tool Use via Fission-GRPO: Learning to Recover from Execution Errors](robust_tool_use_via_fission-grpo_learning_to_recover_from_execution_errors.md)
+- [\[ICML 2026\] Reward Hacking Benchmark: Measuring Exploits in LLM Agents with Tool Use](../../ICML2026/llm_agent/reward_hacking_benchmark_measuring_exploits_in_llm_agents_with_tool_use.md)
 - [\[ACL 2026\] Feedback-Driven Tool-Use Improvements in Large Language Models via Automated Build Environments](feedback-driven_tool-use_improvements_in_large_language_models_via_automated_bui.md)
-- [\[ACL 2026\] ToolOmni: Enabling Open-World Tool Use via Agentic Learning with Proactive Retrieval and Grounded Execution](toolomni_enabling_open-world_tool_use_via_agentic_learning_with_proactive_retrie.md)
 - [\[ACL 2026\] ZARA: Training-Free Motion Time-Series Reasoning via Evidence-Grounded LLM Agents](zara_training-free_motion_time-series_reasoning_via_evidence-grounded_llm_agents.md)
 
 </div>

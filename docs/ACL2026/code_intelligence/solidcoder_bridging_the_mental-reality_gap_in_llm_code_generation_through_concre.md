@@ -2,80 +2,77 @@
 title: >-
   [Paper Note] SolidCoder: Bridging the Mental-Reality Gap in LLM Code Generation through Concrete Execution
 description: >-
-  [ACL 2026][Code Intelligence][code generation] SolidCoder transforms code verification from LLM "imagined execution" to "real execution" via the S.O.L.I.D. architecture (Shift-left Planning, Oracle-based Assertions…
+  [ACL 2026][Code Intelligence][Code Generation] SolidCoder bridges the "Mental-Reality Gap" through the S.O.L.I.D. architecture (Shift-left Planning, Oracle-based Assertions, Live Execution, Intermediate Simulation…
 tags:
   - "ACL 2026"
   - "Code Intelligence"
-  - "code generation"
-  - "mental simulation"
-  - "execution verification"
-  - "multi-agent"
-  - "property-based testing"
+  - "Code Generation"
+  - "Mental Simulation"
+  - "Execution Verification"
+  - "Multi-Agent"
+  - "Property-Based Testing"
 date: 2026-05-08
-content_hash: e60b0f96b94db6b7
+content_hash: 9d855fbefcce237c
 ---
 
 # SolidCoder: Bridging the Mental-Reality Gap in LLM Code Generation through Concrete Execution
 
-**Conference**: ACL 2026
+**Conference**: ACL 2026  
 **arXiv**: [2604.19825](https://arxiv.org/abs/2604.19825)  
 **Code**: [https://github.com/10kH/SolidCoder](https://github.com/10kH/SolidCoder)  
-**Area**: Code Generation / LLM Agent
-**Keywords**: code generation, mental simulation, execution verification, multi-agent, property-based testing
+**Area**: Code Generation / LLM Agent  
+**Keywords**: Code Generation, Mental Simulation, Execution Verification, Multi-Agent, Property-Based Testing
 
 ## TL;DR
 
-SolidCoder transforms code verification from LLM "imagined execution" to "real execution" via the S.O.L.I.D. architecture (Shift-left Planning, Oracle-based Assertions, Live Execution, Intermediate Simulation, Defensive Accumulation), achieving pass@1 scores of 95.7% on HumanEval, 77.0% on CodeContests, and 26.7% on APPS with GPT-4o.
+SolidCoder bridges the "Mental-Reality Gap" through the S.O.L.I.D. architecture (Shift-left Planning, Oracle-based Assertions, Live Execution, Intermediate Simulation, Defensive Accumulation), shifting code verification from LLM "imagined execution" to "concrete execution." It achieves pass@1 performance of 95.7% on HumanEval, 77.0% on CodeContests, and 26.7% on APPS using GPT-4o.
 
 ## Background & Motivation
 
-**Background**: State-of-the-art code generation frameworks (e.g., MapCoder, CodeSIM) adopt multi-agent architectures. In particular, CodeSIM employs "Mental Simulation," in which the LLM internally traces code execution to verify correctness, achieving leading results on multiple benchmarks.
+**Background**: Current state-of-the-art code generation frameworks (e.g., MapCoder, CodeSIM) adopt multi-agent architectures. Among them, CodeSIM utilizes "Mental Simulation" to let the LLM verify correctness by internally tracking code execution, achieving leading results on multiple benchmarks.
 
-**Limitations of Prior Work**: Mental simulation has a fundamental flaw—LLMs suffer from execution hallucinations. In complex algorithmic scenarios, models "imagine" execution traces that diverge from actual program behavior, confidently validating buggy code. This is akin to playing chess blindfolded and declaring victory. The CodeSIM team previously attempted to augment test cases via self-consistency, only to observe a 9.3% performance drop, and subsequently abandoned execution-based verification.
+**Limitations of Prior Work**: Mental simulation has a fundamental flaw—LLMs suffer from execution hallucinations. In complex algorithmic scenarios, models "imagine" execution trajectories that do not match actual program behavior, confidently validating buggy code. This is akin to playing blindfolded chess and declaring victory. The CodeSIM team attempted to enhance test cases via self-consistency, but performance dropped by 9.3%, leading them to abandon execution verification.
 
-**Key Challenge**: The Mental-Reality Gap unfolds along two orthogonal dimensions: (1) Specification Gap—edge cases are overlooked during planning; (2) Verification Gap—correct execution traces are hallucinated during validation. These two issues are independent; fixing one does not resolve the other.
+**Key Challenge**: The Mental-Reality Gap unfolds along two orthogonal dimensions: (1) Specification Gap—neglecting edge cases during the planning stage; (2) Verification Gap—hallucinating correct execution trajectories during the verification stage. These issues exist independently, and fixing one does not resolve the other.
 
-**Goal**: To simultaneously close the gap along both dimensions—enabling the model to account for edge cases during planning while replacing imagined execution with real execution for verification.
+**Goal**: Simultaneously bridge the gaps across both dimensions by forcing the model to consider edge cases during planning and replacing imagined execution with concrete execution for verification.
 
-**Key Insight**: The authors observe that the failure of test generation in CodeSIM stems not from test generation per se, but from attempting to predict exact outputs. Verification does not require precise answers—by checking properties (e.g., "output length equals input length," "result is a permutation of the input") rather than exact values, correctness can be assessed without an oracle.
+**Key Insight**: The authors observe that the failure of test generation in CodeSIM is not due to the generation itself, but the attempt to predict precise outputs. Verification does not require exact answers—by checking properties (e.g., "output length equals input length," "result is a permutation of the input") rather than precise values, correctness can be judged without an oracle.
 
-**Core Idea**: Replace exact output prediction with property-based assertions, combined with sandbox execution, to shift verification from "imagination" to "execution"—don't imagine, execute.
+**Core Idea**: Replace precise output prediction with property-based assertions and combine this with sandboxed execution—shifting from "imagined" to "executed" (don't imagine, execute).
 
 ## Method
 
 ### Overall Architecture
 
-SolidCoder builds upon CodeSIM's three-agent architecture (Planning Agent, Coding Agent, Debugging Agent) by incorporating five S.O.L.I.D. components. Given a natural language problem description, the Planning Agent produces an algorithm plan with edge-case awareness; the Coding Agent translates the plan into code and applies intermediate simulation checks; the code then enters a Live Verification loop in which property-based test cases are generated, executed in a sandbox, and failing cases are accumulated for regression protection—ultimately outputting code that passes all tests.
+SolidCoder is built upon the three-agent architecture of CodeSIM (Planning Agent, Coding Agent, Debugging Agent), adding five S.O.L.I.D. components. The input natural language problem description passes through the Planning Agent to generate edge-case-aware algorithmic plans. The Coding Agent translates plans into code, which undergoes an intermediate simulation check before entering a Live Verification loop: generating property-based test cases, executing in a sandbox, and accumulating failed cases for regression protection, finally outputting code that passes all tests.
 
 ### Key Designs
 
-1. **Shift-left Planning (S)**:
+1.  **Shift-left Planning (S)**:
+    - **Function**: Forces the identification of edge cases prior to algorithmic planning.
+    - **Mechanism**: Prompts the LLM with "What worst-case inputs could break a naive solution?", injecting identified edge cases (empty inputs, boundary values, corner cases) into the planning prompt. Traditional methods handle edge cases reactively during debugging; this method "shifts them left" to the planning stage.
+    - **Design Motivation**: Ablation studies show a -23.7%p drop when removing this component, proving edge-case blindness is a primary failure mode in competitive programming.
 
-    - **Function**: Forces identification of edge cases prior to algorithm planning.
-    - **Mechanism**: The LLM is prompted with "what worst-case inputs could break a naïve solution?" The identified edge cases (empty inputs, boundary values, corner cases) are injected into the planning prompt, compelling the model to design robust algorithms from the outset. Whereas conventional approaches reactively address edge cases during debugging, this method "shifts left" their handling to the planning stage.
-    - **Design Motivation**: Ablation experiments show that removing this component results in a −23.7%p drop, demonstrating that edge-case blindness is the dominant failure mode in competitive programming problems.
+2.  **Oracle-based Assertions (O) + Live Execution (L)**:
+    - **Function**: Replaces mental simulation with property-based verification and concrete execution.
+    - **Mechanism**: The Oracle component generates domain-invariant property assertions (e.g., a sorting function should preserve length, maintain order, and produce a permutation), transforming verification from "Is this output correct?" to "Does this output satisfy necessary properties?"—the latter can be answered through execution. Live Execution runs the code in a sandboxed environment (5s timeout, restricted file system), routing to debugging upon assertion failure or runtime error.
+    - **Design Motivation**: Solves the "Missing Oracle Problem"—verification without knowing the exact answer. Removing O leads to a -11.6%p drop, while removing L causes a -7.9%p drop.
 
-2. **Oracle-based Assertions (O) + Live Execution (L)**:
-
-    - **Function**: Replaces mental simulation with property-based verification and real execution.
-    - **Mechanism**: The Oracle component generates domain-invariant property assertions (e.g., a sorting function should preserve length, maintain order, and produce a permutation), shifting verification from "is this output correct?" to "does this output satisfy the necessary properties?"—a question answerable through execution. Live Execution runs the code in a sandboxed environment (5-second timeout, restricted filesystem); assertion failures or runtime errors are routed to the debugger.
-    - **Design Motivation**: Addresses the "missing oracle problem"—code can be verified without knowing the correct answer. Removing O results in a −11.6%p drop; removing L results in a −7.9%p drop.
-
-3. **Intermediate Simulation (I) + Defensive Accumulation (D)**:
-
+3.  **Intermediate Simulation (I) + Defensive Accumulation (D)**:
     - **Function**: I serves as a rapid pre-filter after code generation; D prevents regressions during iterative debugging.
-    - **Mechanism**: Immediately after code generation, I prompts the LLM to trace the code on sample inputs. Unlike CodeSIM, I does not render a final verdict—Live Execution serves as the authoritative judge. D maintains a persistent test suite; every failing case discovered by Live Execution is added to the accumulated set, and every code revision must pass all accumulated tests, providing a monotonicity guarantee.
-    - **Design Motivation**: I acts as a cost-efficient pre-filter; D contributes −6.7%p in regression protection.
+    - **Mechanism**: I immediately asks the LLM to trace code on sample inputs after generation. Unlike CodeSIM, I does not provide the final verdict—Live Execution is the authority. D maintains a persistent test suite; every failure found by Live Execution is added to the accumulation set, and every subsequent code modification must pass all accumulated tests to guarantee monotonicity.
+    - **Design Motivation**: I acts as a cost-effective pre-filter, and D contributes -6.7%p in regression protection.
 
 ### Loss & Training
-This paper presents an inference-time framework and does not involve model training. The core hyperparameters are $p=5$ planning iterations, $d=5$ debugging iterations, and $a=3$ hypothesis-breaking iterations, all inherited from CodeSIM.
+This is an inference-time framework and does not involve model training. Core hyperparameters include $p=5$ planning iterations, $d=5$ debugging iterations, and $a=3$ assumption-breaking iterations, following CodeSIM settings.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Benchmark | Model | CodeSIM | SolidCoder | Gain |
-|-----------|-------|---------|------------|------|
+| :--- | :--- | :--- | :--- | :--- |
 | HumanEval | GPT-4o | 95.1% | 95.7% | +0.6%p |
 | CodeContests | GPT-4o | 72.7% | 77.0% | +4.3%p |
 | APPS | GPT-4o | 23.3% | 26.7% | +3.4%p |
@@ -85,43 +82,43 @@ This paper presents an inference-time framework and does not involve model train
 ### Ablation Study (CodeContests, GPT-4o)
 
 | Configuration | Pass@1 | Δ |
-|---------------|--------|---|
+| :--- | :--- | :--- |
 | Full SolidCoder | 77.0% | – |
-| w/o Shift-left Planning [S] | 53.3% | −23.7%p |
-| w/o Intermediate Simulation [I] | 64.0% | −13.0%p |
-| w/o Oracle-based Assertions [O] | 65.4% | −11.6%p |
-| w/o Live Execution [L] | 69.1% | −7.9%p |
-| w/o Defensive Accumulation [D] | 70.3% | −6.7%p |
-| GPT-4o Direct | 42.4% | −34.6%p |
+| w/o Shift-left Planning [S] | 53.3% | -23.7%p |
+| w/o Intermediate Simulation [I] | 64.0% | -13.0%p |
+| w/o Oracle-based Assertions [O] | 65.4% | -11.6%p |
+| w/o Live Execution [L] | 69.1% | -7.9%p |
+| w/o Defensive Accumulation [D] | 70.3% | -6.7%p |
+| GPT-4o Direct | 42.4% | -34.6%p |
 
 ### Key Findings
-- **Shift-left Planning contributes the most** (−23.7%p), demonstrating that edge-case blindness—rather than execution hallucination—is the dominant failure mode in algorithmic tasks.
-- **Live Execution captures a categorically distinct class of errors** that mental simulation incorrectly validates. Although its absolute contribution is smaller than [S], such errors cannot be resolved by improving specifications alone.
-- Gains are proportional to task difficulty: HumanEval (easy) yields only +0.6%p; CodeContests (medium) shows the largest gain at +4.3%p; APPS (hard) shifts the bottleneck from verification to generation itself.
-- RL post-trained models (GPT-OSS-120B, Grok-4.1-Fast) also benefit, indicating that even as generation capability improves, models still rely on mental simulation for self-evaluation at inference time.
+- **Shift-left Planning provides the largest contribution** (-23.7%p), proving that edge-case blindness, rather than execution hallucination, is the primary failure mode for algorithmic tasks.
+- **Live Execution captures categorically different errors** that mental simulation would incorrectly validate. While its absolute contribution is smaller than [S], these errors cannot be resolved by improving specifications alone.
+- Improvement is proportional to difficulty: HumanEval (Easy) only saw +0.6%p, while CodeContests (Medium) saw the largest increase of +4.3%p; APPS (Hard) reaches a bottleneck where the challenge shifts from verification to generation itself.
+- Post-RL models (GPT-OSS-120B, Grok-4.1-Fast) also benefit, indicating that even as generation capacity improves, models still rely on mental simulation for self-evaluation at inference time.
 
 ## Highlights & Insights
-- **Replacing exact output prediction with property-based testing** is the core innovation: it reformulates the intractable oracle problem as an executable property verification problem—an elegant insight with broad transferability.
-- **The two-dimensional decomposition** (Specification Gap + Verification Gap) yields a clear analytical framework, and the ablation experiments cleanly validate the independence and complementarity of the two dimensions.
-- **The shift-left concept originates in software engineering**; applying it to the planning stage of multi-agent reasoning frameworks is transferable to other domains such as mathematical reasoning or scientific inference tasks.
+- **Property testing as a replacement for precise output prediction** is the core innovation: transforming an unsolvable oracle problem into an executable property verification problem is ingenious and highly transferable.
+- **The two-dimensional analysis framework** (Specification Gap + Verification Gap) clarifies problem analysis, and ablation experiments perfectly validate that the two are independent and complementary.
+- **Shift-left thinking originated in software engineering**; moving testing to the planning stage can be transferred to other multi-agent reasoning frameworks, such as mathematical or scientific reasoning tasks.
 
 ## Limitations & Future Work
-- Live Execution currently supports only Python; extension to other languages requires language-specific sandboxing.
+- Live Execution currently only supports Python; extension to other languages requires language-specific sandboxing.
 - Evaluation focuses on function-level benchmarks and has not been validated on repository-level tasks (e.g., SWE-bench).
-- When the LLM simultaneously generates code, properties, and verification tests, systematic biases may propagate.
-- Token overhead is significant: +50% on CodeContests and +97% on HumanEval; difficulty-aware routing could be explored to improve efficiency.
-- Ablation experiments cover only one combination (CodeContests + GPT-4o).
+- Systematic bias may propagate when the LLM generates the code, properties, and verification tests simultaneously.
+- Significant token overhead: +50% on CodeContests and +97% on HumanEval; difficulty-aware routing could optimize efficiency.
+- Ablation studies only cover one combination (CodeContests + GPT-4o).
 
 ## Related Work & Insights
-- **vs. CodeSIM**: CodeSIM uses mental simulation as the final arbiter; SolidCoder replaces it with real execution. The key distinction is that SolidCoder's [I] serves only as a pre-filter, not as a final judge.
-- **vs. LDB/MGDebugger**: These execution-based debuggers operate as post-hoc correctors after code generation and require ground-truth test cases. SolidCoder integrates execution into the generation loop and substitutes property assertions for exact outputs.
-- **vs. Reflexion/LATS**: These methods leverage iterative self-correction and tree search, but verification still relies on LLM internal reasoning.
+- **vs CodeSIM**: CodeSIM uses mental simulation for the final verdict, whereas SolidCoder replaces it with concrete execution. The key difference is that SolidCoder's [I] is only a pre-filter, not the final authority.
+- **vs LDB/MGDebugger**: These executable debuggers act as secondary corrections after code generation and require real test cases. SolidCoder integrates execution into the generation loop, replacing real outputs with property assertions.
+- **vs Reflexion/LATS**: These use iterative self-correction and tree search, but verification still relies on internal LLM reasoning.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ The two-dimensional decomposition of the Mental-Reality Gap and the use of property-based testing to address the oracle problem represent meaningful contributions, though the overall architecture is incremental.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Three benchmarks, three models, and a complete ablation study; however, ablations are conducted on only one combination.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ Motivation is clearly articulated; the "blindfolded chess" analogy is vivid; the comparative example in Figure 2 is intuitive and persuasive.
-- **Value**: ⭐⭐⭐⭐ The property-based testing paradigm has broad transferability, though token overhead and Python-only constraints reduce practical applicability.
+- Novelty: ⭐⭐⭐⭐ The two-dimensional decomposition of the Mental-Reality Gap and the use of property testing to solve the oracle problem are meaningful innovations, though the overall architecture is incremental.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Three benchmarks, three models, and a complete ablation; however, the ablation was performed on only one combination.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear motivation; the "blindfolded chess" metaphor is vivid, and the comparison in Figure 2 is intuitive and persuasive.
+- Value: ⭐⭐⭐⭐ The property testing approach has high transferability, though token overhead and Python-specific limitations reduce immediate practicality.
 
 <!-- RELATED:START -->
 

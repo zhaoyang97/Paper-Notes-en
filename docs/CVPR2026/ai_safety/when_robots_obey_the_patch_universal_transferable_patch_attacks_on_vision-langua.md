@@ -161,7 +161,7 @@ The patch is pasted onto input frames via random geometric transformations (posi
 - [\[CVPR 2026\] A Unified Perspective on Adversarial Membership Manipulation in Vision Models](a_unified_perspective_on_adversarial_membership_manipulation_in_vision_models.md)
 - [\[AAAI 2026\] Transferable Backdoor Attacks for Code Models via Sharpness-Aware Adversarial Perturbation](../../AAAI2026/ai_safety/transferable_backdoor_attacks_for_code_models_via_sharpness-aware_adversarial_pe.md)
 - [\[ICCV 2025\] FedVLA: Federated Vision-Language-Action Learning with Dual Gating Mixture-of-Experts for Robotic Manipulation](../../ICCV2025/ai_safety/fedvla_federated_vision-language-action_learning_with_dual_gating_mixture-of-exp.md)
-- [\[ICCV 2025\] Staining and Locking Computer Vision Models without Retraining](../../ICCV2025/ai_safety/staining_and_locking_computer_vision_models_without_retraining.md)
+- [\[ACL 2026\] UniVid: A Unified Vision-Language Model for Video Moderation](../../ACL2026/ai_safety/univid_unified_vision-language_model_for_video_moderation.md)
 
 </div>
 

@@ -144,7 +144,7 @@ Key transferable insights:
 - [\[NeurIPS 2025\] Document Summarization with Conformal Importance Guarantees](document_summarization_with_conformal_importance_guarantees.md)
 - [\[AAAI 2026\] Streaming Generated Gaussian Process Experts for Online Learning and Control: Extended Version](../../AAAI2026/llm_evaluation/streaming_generated_gaussian_process_experts_for_online_learning_and_control_ext.md)
 - [\[ICLR 2026\] Conformal Prediction Adaptive to Unknown Subpopulation Shifts](../../ICLR2026/llm_evaluation/conformal_prediction_adaptive_to_unknown_subpopulation_shifts.md)
-- [\[ICLR 2026\] Deep FlexQP: Accelerated Nonlinear Programming via Deep Unfolding](../../ICLR2026/llm_evaluation/deep_flexqp_accelerated_nonlinear_programming_via_deep_unfolding.md)
+- [\[ICCV 2025\] BATCLIP: Bimodal Online Test-Time Adaptation for CLIP](../../ICCV2025/llm_evaluation/batclip_bimodal_online_test-time_adaptation_for_clip.md)
 
 </div>
 

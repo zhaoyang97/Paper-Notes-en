@@ -154,8 +154,8 @@ Short-range (0–20 m) depth estimation:
 - [\[CVPR 2026\] InCaRPose: In-Cabin Relative Camera Pose Estimation Model and Dataset](incarpose_in-cabin_relative_camera_pose_estimation_model_and_dataset.md)
 - [\[CVPR 2026\] Dr.Occ: Depth- and Region-Guided 3D Occupancy from Surround-View Cameras for Autonomous Driving](drocc_depth_region_guided_3d_occupancy.md)
 - [\[CVPR 2026\] EMDUL: Expanding mmWave Datasets for Human Pose Estimation with Unlabeled Data and LiDAR Datasets](expanding_mmwave_datasets_for_human_pose_estimation_with_unlabeled_data_and_lida.md)
-- [\[ICCV 2025\] DCHM: Depth-Consistent Human Modeling for Multiview Detection](../../ICCV2025/autonomous_driving/dchm_depth-consistent_human_modeling_for_multiview_detection.md)
 - [\[CVPR 2026\] Towards Balanced Multi-Modal Learning in 3D Human Pose Estimation](towards_balanced_multi-modal_learning_in_3d_human_pose_estimation.md)
+- [\[ICCV 2025\] DCHM: Depth-Consistent Human Modeling for Multiview Detection](../../ICCV2025/autonomous_driving/dchm_depth-consistent_human_modeling_for_multiview_detection.md)
 
 </div>
 

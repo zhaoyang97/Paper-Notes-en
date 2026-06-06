@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Disentangling Direction and Magnitude in Transformer Representations: A Double Dissociation Through L2-Matched Perturbation Analysis
 description: >-
-  [ICML 2026][Interpretability][Linear Representation Hypothesis] This paper uses an L2-matched perturbation protocol to demonstrate that, in the Pythia series…
+  [ICML 2026][Interpretability][Linear Representation Hypothesis] This paper employs an L2-matched perturbation protocol to demonstrate that in the Pythia model series…
 tags:
   - "ICML 2026"
   - "Interpretability"
   - "Linear Representation Hypothesis"
-  - "Direction vs Magnitude"
-  - "L2-matched Perturbation"
+  - "Direction vs. Magnitude"
+  - "L2-Matched Perturbation"
   - "LayerNorm"
-  - "Attention Pathway"
+  - "Attention Path"
 date: 2026-05-08
-content_hash: bad20dcf4fd8233b
+content_hash: 55802550b5545892
 ---
 
 # Disentangling Direction and Magnitude in Transformer Representations: A Double Dissociation Through L2-Matched Perturbation Analysis
@@ -21,131 +21,128 @@ content_hash: bad20dcf4fd8233b
 **arXiv**: [2602.11169](https://arxiv.org/abs/2602.11169)  
 **Code**: Not released  
 **Area**: Interpretability / Representation Geometry / Causal Intervention  
-**Keywords**: Linear Representation Hypothesis, Direction vs Magnitude, L2-matched Perturbation, LayerNorm, Attention Pathway
+**Keywords**: Linear Representation Hypothesis, Direction vs. Magnitude, L2-Matched Perturbation, LayerNorm, Attention Path
 
 ## TL;DR
-This paper uses an L2-matched perturbation protocol to demonstrate that, in the Pythia series, direction (angle) perturbations are 42.9 times more destructive to language modeling loss than magnitude perturbations of the same displacement, while magnitude perturbations are far more damaging to syntax (subject-verb agreement) than angle—constituting a "double dissociation" in the cognitive neuroscience sense, with direction effects propagating via the attention pathway and magnitude via the LayerNorm pathway.
+This paper employs an L2-matched perturbation protocol to demonstrate that in the Pythia model series, angular (direction) perturbations are up to 42.9 times more destructive to language modeling loss than magnitude perturbations of equal Euclidean displacement. Conversely, magnitude perturbations damage syntax (subject-verb agreement) significantly more than angular ones—forming a "double dissociation" in the cognitive neuroscience sense, where direction maps to the attention pathway and magnitude to the LayerNorm pathway.
 
 ## Background & Motivation
-**Background**: The Linear Representation Hypothesis (LRH) is foundational in current interpretability research—encoding concepts as directions in activation space and extracting semantic features with linear probes. Methods like activation patching, TunedLens, and representation engineering all rest on the assumption that "direction matters."
+**Background**: The Linear Representation Hypothesis (LRH) is a cornerstone of current interpretability research, encoding concepts as directions in activation space and extracting semantic features with linear probes. Activation patching, TunedLens, and representation engineering are all built upon the assumption that "direction matters."
 
-**Limitations of Prior Work**: LRH is silent by default on magnitude (norm)—yet norm is not constant in transformers: Kobayashi et al. found it varies significantly across tokens and layers; LayerNorm explicitly manipulates norm; representation engineering modifies behavior by scaling vectors. No one has systematically compared the causal importance of direction and magnitude.
+**Limitations of Prior Work**: LRH is largely silent on magnitude (norm). However, norms in Transformers are not constant: Kobayashi et al. found they vary significantly across tokens and layers; LayerNorm explicitly manipulates norms; and representation engineering modifies behavior by scaling vectors. There has been no systematic comparison of the causal importance of direction versus magnitude.
 
-**Key Challenge**: Naive comparisons—perturbing direction by a small angle or scaling magnitude by a small factor—result in different actual displacements in representation space. If angle perturbations are more damaging, is it because direction is more important, or because the perturbation is "more violent"? Without controlling for displacement, all comparisons are invalid.
+**Key Challenge**: A naive comparison—perturbing direction by a small angle versus scaling magnitude by a small factor—involves completely different actual displacements in the representation space. If angular perturbation causes more damage, is it because direction is inherently more important, or simply because that specific perturbation was "more violent"? Without controlling for the magnitude of displacement, all comparisons are invalid.
 
-**Goal**: (1) Construct an L2-matched perturbation protocol to eliminate confounding by displacement size; (2) Systematically measure the causal importance of direction and magnitude for different downstream tasks on Pythia; (3) Use pathway repair experiments to localize the mechanism of effect propagation.
+**Goal**: (1) Construct an L2-matched perturbation protocol to eliminate displacement-size confounding; (2) Systematically measure the causal importance of direction and magnitude for various downstream tasks in Pythia; (3) Locate the mechanistic paths of influence through pathway restoration experiments.
 
-**Key Insight**: Borrowing the "double dissociation" tool from cognitive neuroscience—if operation A mainly impairs task X but not Y, and operation B mainly impairs Y but not X, then X and Y are supported by separable subsystems.
+**Key Insight**: Borrowing the "double dissociation" tool from cognitive neuroscience—if operation A primarily impairs task X but not Y, while operation B primarily impairs Y but not X, it suggests that X and Y are supported by separable functional subsystems.
 
-**Core Idea**: Use $\delta$ to parameterize "perturbation strength," forcing both angle and magnitude perturbations to have exactly $\delta$ Euclidean displacement at the intervention layer, then compare their effects on loss/syntactic accuracy.
+**Core Idea**: Parameterize "perturbation intensity" with $\delta$, forcing the Euclidean displacement of both angular and magnitude perturbations at the intervention layer to be exactly $\delta$, then compare their impact on loss and syntactic accuracy.
 
 ## Method
 
 ### Overall Architecture
-For mid-layers (layers 8-15) of Pythia-410M, apply one of two perturbations to each token's hidden state $\mathbf{h}$:
+Applying one of two perturbations to the hidden states $\mathbf{h}$ at each token position in the middle layers (layers 8-15) of Pythia-410M:
 
-1. **Magnitude perturbation**: $\mathbf{h}'_{\text{mag}} = \alpha \mathbf{h}$, direction unchanged, length changes.
-2. **Angle perturbation**: $\mathbf{h}'_{\text{ang}} = \|\mathbf{h}\| \cdot \hat{\mathbf{h}}'$, length unchanged, direction rotated by $\theta$.
+1.  **Magnitude Perturbation**: $\mathbf{h}'_{\text{mag}} = \alpha \mathbf{h}$, direction remains constant, length changes.
+2.  **Angular Perturbation**: $\mathbf{h}'_{\text{ang}} = \|\mathbf{h}\| \cdot \hat{\mathbf{h}}'$, length remains constant, direction rotates by $\theta$.
 
-Analytical formulas ensure both perturbations satisfy $\|\mathbf{h} - \mathbf{h}'_{\text{mag}}\| = \|\mathbf{h} - \mathbf{h}'_{\text{ang}}\| = \delta$, then measure downstream (a) WikiText cross-entropy loss; (b) BLiMP subject-verb agreement accuracy; (c) recovery rate after attention/LayerNorm pathway repair.
+Analytical formulas ensure both satisfy $\|\mathbf{h} - \mathbf{h}'_{\text{mag}}\| = \|\mathbf{h} - \mathbf{h}'_{\text{ang}}\| = \delta$. The downstream effects are measured via (a) WikiText cross-entropy loss; (b) BLiMP subject-verb agreement accuracy; and (c) recovery rates after attention/LayerNorm pathway restoration.
 
 ### Key Designs
 
-1. **L2-matched Perturbation Formula**:
+1.  **L2-Matched Perturbation Formula**:
+    - **Function**: Eliminates the confounding effect of perturbation size when comparing direction and magnitude.
+    - **Mechanism**: For magnitude, $\alpha = 1 \pm \delta / \|\mathbf{h}\|$ is derived from $|1-\alpha| \cdot \|\mathbf{h}\| = \delta$, with the sign chosen randomly (scaling up or down), requiring $\delta < \|\mathbf{h}\|$. For angle, a unit vector $\mathbf{v} \perp \mathbf{h}$ is sampled, such that $\mathbf{h}'_{\text{ang}} = \|\mathbf{h}\|(\cos\theta \cdot \hat{\mathbf{h}} + \sin\theta \cdot \hat{\mathbf{v}})$. From $\|\mathbf{h} - \mathbf{h}'_{\text{ang}}\| = \delta$, it follows that $\theta = \arccos(1 - \delta^2 / 2\|\mathbf{h}\|^2)$. Post-perturbation displacement error is empirically verified to be < 0.01.
+    - **Design Motivation**: Projecting "direction vs. magnitude" from two incomparable axes onto a unified $\delta$ dimension ensures that differences in causal effects are entirely attributable to the "type" of perturbation.
 
-    - **Function**: Eliminates confounding from perturbation size when comparing direction/magnitude.
-    - **Mechanism**: For magnitude, solve $|1-\alpha| \cdot \|\mathbf{h}\| = \delta$ to get $\alpha = 1 \pm \delta / \|\mathbf{h}\|$, with sign randomly chosen (half scaling up, half down), requiring $\delta < \|\mathbf{h}\|$. For angle, sample an orthogonal unit vector $\mathbf{v} \perp \mathbf{h}$, write $\mathbf{h}'_{\text{ang}} = \|\mathbf{h}\|(\cos\theta \cdot \hat{\mathbf{h}} + \sin\theta \cdot \hat{\mathbf{v}})$, and from $\|\mathbf{h} - \mathbf{h}'_{\text{ang}}\| = \delta$ derive $\theta = \arccos(1 - \delta^2 / 2\|\mathbf{h}\|^2)$. Empirically, post-perturbation displacement error $<$ 0.01.
-    - **Design Motivation**: Projects "direction vs magnitude" onto a unified $\delta$ axis, making all causal effect differences attributable solely to perturbation "type"—the methodological foundation of the paper.
+2.  **Cross-over Dissociation Measurement**:
+    - **Function**: Measures the impact of perturbations across "macro loss" and "fine-grained syntax."
+    - **Mechanism**: For macro-impact, next-token cross-entropy on 281 WikiText-103 sentences (lengths 10-64) is used. For fine-grained impact, 200 BLiMP minimal pairs for subject-verb agreement (e.g., "The dogs run" vs. "The dogs runs") are tested. Experiments use 6 intensities of $\delta \in \{1, 2, 5, 10, 15, 20\}$ with 5 random seeds and pair t-tests with Bonferroni correction.
+    - **Design Motivation**: These tasks are complementary—next-token prediction is high-entropy and sensitive to direction, while subject-verb agreement is a low-dimensional discrete decision more sensitive to numerical magnitudes like the norm.
 
-2. **Cross-over Dissociation Measurement**:
-
-    - **Function**: Measures the impact of both perturbations on "macroscopic loss" and "fine-grained syntax."
-    - **Mechanism**: For macroscopic, use next-token cross-entropy on 281 WikiText-103 sentences (10-64 tokens each); for fine-grained, use BLiMP's 200 minimal pairs for irregular/regular plural subject-verb agreement (e.g., "The dogs run" vs "The dogs runs"), checking if the model still assigns higher probability to grammatical sentences. Six $\delta$ levels: $\{1, 2, 5, 10, 15, 20\}$. Five random seeds, pair t-test + Bonferroni correction.
-    - **Design Motivation**: These two tasks are complementary in "information density" and "sensitivity to geometric properties"—next-token prediction is high-entropy and globally direction-sensitive; subject-verb agreement is a low-dimensional discrete decision, more sensitive to norm as a control of "processing strength."
-
-3. **Attention / LayerNorm Pathway Repair**:
-
-    - **Function**: Localizes which computational pathway mediates the perturbation's effect.
-    - **Mechanism**: For perturbed state $\mathbf{h}'$, replace the intermediate product (attention pattern or LayerNorm output) on a single pathway with the clean version, and observe how much downstream loss is recovered. If repairing a pathway yields high recovery, that pathway carries the main effect. Specifically, attention repair = replay attention weights from the unperturbed forward pass; LayerNorm repair = substitute the unperturbed LN output for the perturbed version.
-    - **Design Motivation**: Correlational observations only show "direction matters," but to establish "direction affects loss via attention," causal intervention is needed—repairing a pathway and observing effect disappearance infers the causal route.
+3.  **Attention / LayerNorm Pathway Restoration**:
+    - **Function**: Pinpoints which computational path carries the perturbation effects.
+    - **Mechanism**: For a perturbed state $\mathbf{h}'$, specific intermediate products (attention patterns or LayerNorm outputs) are replaced with their "clean" versions to see how much downstream loss is recovered. High recovery implies the path carried the primary perturbation effect. Attention restoration uses unperturbed attention weights; LayerNorm restoration replaces perturbed LN outputs with unperturbed ones.
+    - **Design Motivation**: Correlational observations only suggest "direction is important," but causal interventions via pathway restoration are necessary to establish mechanistic claims like "direction influences loss through attention."
 
 ### Loss & Training
-No training is performed; all interventions are at inference time. Pythia-410M/1.4B are run in float32 precision; for each $\delta$, five seeds independently sample orthogonal directions to estimate confidence.
+No training is involved; this is a pure inference-time intervention study. Pythia-410M / 1.4B are run in float32. Orthogonal directions are sampled independently across 5 seeds for each $\delta$.
 
 ## Key Experimental Results
 
 ### Main Results
-Loss damage (Table 1, baseline loss = 4.107):
+Loss Damage (Table 1, baseline loss = 4.107):
 
-| $\delta$ | Magnitude $\Delta$loss | Angle $\Delta$loss | Angle/Mag Ratio | p |
-|----------|-----------------------|--------------------|-----------------|-----|
+| $\delta$ | Magnitude $\Delta$loss | Angular $\Delta$loss | Ang/Mag Ratio | p |
+|----------|-------------------|-------------------|----------|-----|
 | 1.0 | 0.009 | 0.368 | **42.9×** | <0.001 |
 | 2.0 | 0.042 | 0.983 | 23.2× | <0.001 |
 | 5.0 | 0.700 | 3.757 | 5.4× | <0.001 |
 | 10.0 | 3.262 | 7.061 | 2.2× | <0.001 |
 | 20.0 | 5.433 | 7.750 | 1.4× | <0.001 |
 
-Syntactic accuracy (Table 2, baseline 89.5%):
+Syntax Accuracy (Table 2, baseline 89.5%):
 
-| $\delta$ | Accuracy after Mag | Accuracy after Angle | Mag Drop | Angle Drop |
-|----------|-------------------|---------------------|----------|------------|
+| $\delta$ | Post-Mag Acc | Post-Ang Acc | Mag Drop | Ang Drop |
+|----------|--------------|--------------|----------|----------|
 | 5.0 | 69.1% | 87.9% | **20.4%** | 1.6% |
 | 10.0 | 56.0% | 77.1% | 33.5% | 12.4% |
 | 15.0 | 53.5% | 67.4% | 36.0% | 22.1% |
 
-At $\delta = 5$, loss difference is 5.4× in favor of direction, syntactic difference is 12.8× in favor of magnitude—these opposing advantages constitute a double dissociation.
+At $\delta = 5$, direction dominates loss (5.4x difference), while magnitude dominates syntax damage (12.8x difference)—these opposing advantages constitute a double dissociation.
 
 ### Ablation Study
-Pathway repair (proportion of total damage recovered):
+Pathway Restoration (Percentage of total damage recovered):
 
-| Repair Pathway | Angle Perturbation Recovery | Magnitude Perturbation Recovery | Bias |
-|---------------|----------------------------|-------------------------------|------|
-| Attention | **28.4%** | 15.2% | Angle→attention |
-| LayerNorm | 13.7% | **29.9%** | Magnitude→LayerNorm |
+| Restoration Path | Angular Recovery | Magnitude Recovery | Bias |
+|----------|--------------|--------------|------|
+| Attention | **28.4%** | 15.2% | Angle → Attention |
+| LayerNorm | 13.7% | **29.9%** | Magnitude → LayerNorm |
 
-This pattern replicates on Pythia-1.4B (angle/magnitude ratio rises from 23.2× at 410M to 56.8×). On RMSNorm architectures (no affine LN), the dissociation disappears, indicating the phenomenon is tightly coupled to LayerNorm's norm operation.
+The pattern is replicated on Pythia-1.4B (the Angular/Magnitude ratio grows from 23.2x to 56.8x). The dissociation vanishes on RMSNorm architectures (lacking affine LN), indicating the phenomenon is tightly coupled with LayerNorm's normalization mechanism.
 
-Inter-layer propagation (Table 4, $\delta = 5$):
+Inter-layer Propagation (Table 4, $\delta = 5$):
 
-| Layer | Angle L2 Displacement | Magnitude L2 Displacement | Ratio |
-|-------|----------------------|--------------------------|-------|
-| 8 (intervention start) | 5.00 | 5.00 | 1.00× |
-| 15 (intervention end) | 35.9 | 12.7 | 2.82× |
-| 23 (final) | 123.8 | 38.9 | 3.18× |
+| Layer | Angular L2 Displacement | Magnitude L2 Displacement | Ratio |
+|-------|-------------|-------------|------|
+| 8 (Start) | 5.00 | 5.00 | 1.00× |
+| 15 (End) | 35.9 | 12.7 | 2.82× |
+| 23 (Final) | 123.8 | 38.9 | 3.18× |
 
-Angle perturbation amplifies 24.8×, magnitude only 7.8×—LayerNorm naturally suppresses magnitude, but lets direction propagate freely.
+Angular perturbations are amplified by 24.8x compared to only 7.8x for magnitude—LayerNorm naturally suppresses magnitude shifts while leaving angular shifts unchecked.
 
 ### Key Findings
-- **Direction acts via attention**: Since attention is essentially $\text{softmax}(QK^T / \sqrt{d})$, relying on cosine similarity, direction perturbations directly alter routing; LayerNorm re-normalizes norm, absorbing magnitude changes.
-- **Syntax is norm-sensitive**: Subject-verb agreement and similar tasks requiring fine-grained numerical comparison depend more on norm to regulate "processing strength" than on attention routing.
-- **Small $\delta$ is highly asymmetric, large $\delta$ saturates**: At low $\delta$, angle advantage is 6.80×, dropping to 1.69× at high $\delta$, as model predictions have a "floor"—further perturbation only degrades to random.
-- **Architecture dependence**: The dissociation disappears on RMSNorm, indicating this geometric division of labor is unique to LayerNorm, not a universal transformer property.
+- **Direction acts via attention channels**: Since attention is essentially $\text{softmax}(QK^T / \sqrt{d})$ and relies on cosine similarity, angular perturbations directly alter routing. LayerNorm re-normalizes the norm, thus absorbing magnitude changes.
+- **Syntax is a norm-sensitive task**: Decisions like subject-verb agreement require precise numerical comparison and rely more on norm-regulated "processing intensity" than on which token the attention is routed to.
+- **Extreme asymmetry at small $\delta$**: The angular advantage is 42.9x in the low $\delta$ region but drops to 1.4x at high $\delta$ as model predictions hit a "floor."
+- **Architectural dependence**: The dissociation does not appear in RMSNorm architectures, suggesting it is a specific geometric division of labor in LayerNorm, not a universal Transformer property.
 
 ## Highlights & Insights
-- **L2-matching = clean experimental design**: Achieves conceptual clarity and mathematical simplicity, a paradigm-level contribution for geometric causal studies, likely to be widely adopted.
-- **Borrowing cognitive neuroscience terminology**: Introducing "double dissociation" as a mature causal inference framework strengthens interpretability arguments, far beyond unidirectional ablation.
-- **Mechanism localization + architectural counterexample**: Establishes the phenomenon (double dissociation), localizes the mechanism (attention/LN pathways), then uses RMSNorm to test dependency—a rigorous "phenomenon → mechanism → boundary" argument chain.
-- **Implicit warning for representation engineering**: Direction editing (steering vectors) and magnitude scaling (activation scaling) are not interchangeable, corresponding to different sub-capabilities.
+- **L2 Matching = Clean Experimental Design**: Maintaining mathematical simplicity while achieving conceptual clarity represents a paradigm-level contribution to geometric causality studies.
+- **Interdisciplinary Borrowing**: Introducing the "double dissociation" framework from cognitive neuroscience into interpretability provides much stronger argumentative weight than single-direction ablations.
+- **Mechanism Localization + Boundary Conditions**: The chain of "phenomenon → mechanism → boundary condition" (using RMSNorm as a counter-example) is logically rigorous.
+- **Warning for Representation Engineering**: Directional editing (steering vectors) and magnitude scaling (activation scaling) are not interchangeable; they correspond to different sub-capabilities.
 
 ## Limitations & Future Work
-- **Pathway explains only ~30%**: Attention/LN repair together recover less than half the damage; the remaining 70% of effect pathways remain a black box—the paper acknowledges the "mechanistic picture is incomplete."
-- **Only 5 seeds**: Authors admit limited statistical power, though effects are large.
-- **Only tested subject-verb agreement**: BLiMP contains many other syntactic phenomena (NPI licensing, island constraints, etc.); whether these are also magnitude-sensitive is unknown.
-- **Intervention layers fixed at 8-15**: Early/final layers not systematically scanned; dissociation may depend on processing stage.
-- **Orthogonal perturbation directions are random**: But representation space is anisotropic (Ethayarajh 2019), so "random orthogonal" is not necessarily "semantically neutral"—some perturbations may hit key subspaces.
-- **Future extensions**: Suggests testing RMSNorm + sandwich norm + different positional encoding combinations to map the dissociation phenomenon to specific norm forms.
+- **Pathways explain ~30%**: Combined attention/LN restoration accounts for less than half the damage; the remaining 70% of the path remains a black box.
+- **Statistical Power**: Only 5 seeds were used, which limits statistical power despite the large effect size.
+- **Single Syntax Task**: Only subject-verb agreement was tested; it remains unknown if other syntactic phenomena (NPI licensing, island constraints) are equally norm-sensitive.
+- **Fixed Intervention Layers**: Only layers 8-15 were systematically scanned; dissociation might vary in earlier or later processing stages.
+- **Random Orthogonal Perturbation**: "Random" does not guarantee "semantic neutrality" due to representation space anisotropy; some perturbations might inadvertently hit critical subspaces.
+- **Generalization**: Future work should test combinations of RMSNorm, sandwich norm, and different position encodings.
 
 ## Related Work & Insights
-- **vs Park et al. 2023 (LRH formalization)**: That work defined and empirically validated the direction-encoding assumption of LRH; this paper refines LRH by adding the previously ignored magnitude dimension.
-- **vs Kobayashi et al. 2020 (norm in attention)**: They found norm modulates attention weights; this paper uses causal intervention to show norm is especially important for syntactic function.
-- **vs Meng et al. 2022 (activation patching ROME)**: Also in the causal intervention family, but ROME patches the entire activation, while this paper decomposes into direction/magnitude before patching, achieving finer granularity.
-- **Insights**: In model editing practice, direction steering (affecting attention routing) and magnitude scaling (affecting processing strength) should be distinguished, not conflated; safety research can test whether "jailbreak prompts" mainly perturb direction or magnitude—a new dimension for analysis.
+- **vs. Park et al. 2023 (LRH Formalization)**: That work defined the directional encoding hypothesis; this paper is a refinement that adds the neglected dimension of magnitude.
+- **vs. Kobayashi et al. 2020 (Norm in Attention)**: They observed norm modulation in attention weights; this paper uses causal intervention to prove the specific importance of norm for syntax.
+- **vs. Meng et al. 2022 (ROME/Activation Patching)**: While belonging to the same causal intervention family, this work decomposes activations into direction/magnitude before patching, providing finer granularity.
+- **Insight**: Model editing should distinguish between steering (altering attention routing behavior) and scaling (altering processing intensity). Safety research could explore whether "jailbreak prompts" primarily perturb direction or magnitude.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ L2-matched perturbation protocol + interdisciplinary double dissociation—rarely seen methodological contribution in interpretability.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Two Pythia models + dual tasks + dual pathway repair + RMSNorm counterexample; point deducted for only 5 seeds and relatively small model scale.
-- Writing Quality: ⭐⭐⭐⭐⭐ Argument chain "phenomenon → mechanism → boundary" is well-structured, formula derivations are clear, counterexamples and confidence intervals are thoroughly discussed, readability is excellent.
-- Value: ⭐⭐⭐⭐ Fine-grained extension of LRH and practical guidance for representation engineering are both important, but practical threshold is high (requires causal intervention infrastructure).
+- **Novelty**: ⭐⭐⭐⭐⭐ The L2-matched protocol and double dissociation framework are rare methodological contributions.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Multiple models, dual tasks, pathway restoration, and architectural counter-examples; points deducted for low seed count and model size.
+- **Writing Quality**: ⭐⭐⭐⭐⭐ The argumentation chain is excellent, derivations are clear, and boundary conditions are well-discussed.
+- **Value**: ⭐⭐⭐⭐ Important for refining LRH and guiding representation engineering, though it requires specific causal intervention setups.
 
 <!-- RELATED:START -->
 
@@ -155,9 +152,9 @@ Angle perturbation amplifies 24.8×, magnitude only 7.8×—LayerNorm naturally 
 
 - [\[ACL 2026\] Similarity-Distance-Magnitude Activations](../../ACL2026/interpretability/similarity-distance-magnitude_activations.md)
 - [\[AAAI 2026\] Probing Preference Representations: A Multi-Dimensional Evaluation and Analysis Method for Reward Models](../../AAAI2026/interpretability/probing_preference_representations_a_multi-dimensional_evaluation_and_analysis_m.md)
-- [\[ICML 2026\] Understanding LoRA as Knowledge Memory: An Empirical Analysis](understanding_lora_as_knowledge_memory_an_empirical_analysis.md)
-- [\[NeurIPS 2025\] How Intrinsic Motivation Shapes Learned Representations in Decision Transformers: A Cognitive Interpretability Analysis](../../NeurIPS2025/interpretability/toward_explainable_offline_rl_analyzing_representations_in_intrinsically_motivat.md)
-- [\[CVPR 2026\] Beyond Semantics: Disentangling Information Scope in Sparse Autoencoders for CLIP](../../CVPR2026/interpretability/beyond_semantics_disentangling_information_scope_in_sparse_autoencoders_for_clip.md)
+- [\[ACL 2026\] Crosscoding Through Time: Tracking Emergence & Consolidation Of Linguistic Representations Throughout LLM Pretraining](../../ACL2026/interpretability/crosscoding_through_time_tracking_emergence_consolidation_of_linguistic_represen.md)
+- [\[ICML 2026\] Prototype Transformer: Towards Language Model Architectures Interpretable by Design](prototype_transformer_towards_language_model_architectures_interpretable_by_desi.md)
+- [\[ICML 2026\] Learning Coherent Representations: A Topological Approach to Interpretability](learning_coherent_representations_a_topological_approach_to_interpretability.md)
 
 </div>
 

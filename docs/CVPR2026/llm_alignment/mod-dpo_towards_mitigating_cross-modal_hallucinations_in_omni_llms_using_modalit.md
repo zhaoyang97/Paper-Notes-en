@@ -148,8 +148,8 @@ Forward passes on corrupted inputs do not require gradient computation (they are
 - [\[ICLR 2026\] Uni-DPO: A Unified Paradigm for Dynamic Preference Optimization of LLMs](../../ICLR2026/llm_alignment/uni-dpo_a_unified_paradigm_for_dynamic_preference_optimization_of_llms.md)
 - [\[ICLR 2026\] Mitigating Mismatch within Reference-based Preference Optimization](../../ICLR2026/llm_alignment/mitigating_mismatch_within_reference-based_preference_optimization.md)
 - [\[CVPR 2026\] $\varphi$-DPO: Fairness Direct Preference Optimization Approach to Continual Learning in Large Multimodal Models](φ-dpo_fairness_direct_preference_optimization_approach_to_continual_learning_in_.md)
-- [\[NeurIPS 2025\] Mitigating Hallucination Through Theory-Consistent Symmetric Multimodal Preference Optimization](../../NeurIPS2025/llm_alignment/mitigating_hallucination_through_theory-consistent_symmetric_multimodal_preferen.md)
 - [\[NeurIPS 2025\] g-DPO: Scalable Preference Optimization for Protein Language Models](../../NeurIPS2025/llm_alignment/g-dpo_scalable_preference_optimization_for_protein_language_models.md)
+- [\[NeurIPS 2025\] Mitigating Hallucination Through Theory-Consistent Symmetric Multimodal Preference Optimization](../../NeurIPS2025/llm_alignment/mitigating_hallucination_through_theory-consistent_symmetric_multimodal_preferen.md)
 
 </div>
 

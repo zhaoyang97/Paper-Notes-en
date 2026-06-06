@@ -138,10 +138,10 @@ $$\min_\Psi \max P_e \geq \frac{1}{2}\left(1 - \frac{1}{2\sqrt{d}}\left[\frac{1}
 ## Related Papers
 
 - [\[ICLR 2026\] Towards Understanding Subliminal Learning: When and How Hidden Biases Transfer](towards_understanding_subliminal_learning_when_and_how_hidden_biases_transfer.md)
+- [\[ICML 2026\] Position: Ideas Should be the Center of Machine Learning Research](../../ICML2026/interpretability/position_ideas_should_be_the_center_of_machine_learning_research.md)
 - [\[ICLR 2026\] When Thinking Backfires: Mechanistic Insights Into Reasoning-Induced Misalignment](when_thinking_backfires_mechanistic_insights_into_reasoning-induced_misalignment.md)
 - [\[ICLR 2026\] Behavior Learning (BL): Learning Hierarchical Optimization Structures from Data](behavior_learning_bl_learning_hierarchical_optimization_structures_from_data.md)
-- [\[AAAI 2026\] GenePheno: Interpretable Gene Knockout-Induced Phenotype Abnormality Prediction Framework](../../AAAI2026/interpretability/genepheno_interpretable_gene_knockout-induced_phenotype_abnormality_prediction_f.md)
-- [\[ICCV 2025\] Minerva: Evaluating Complex Video Reasoning](../../ICCV2025/interpretability/minerva_evaluating_complex_video_reasoning.md)
+- [\[ICML 2026\] Bridging the Knowledge-Prediction Gap in LLMs on Multiple-Choice Questions](../../ICML2026/interpretability/bridging_the_knowledge-prediction_gap_in_llms_on_multiple-choice_questions.md)
 
 </div>
 

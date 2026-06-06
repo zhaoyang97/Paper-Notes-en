@@ -2,75 +2,72 @@
 title: >-
   [Paper Note] Benchmarking Deflection and Hallucination in Large Vision-Language Models
 description: >-
-  [ACL 2026][Multimodal VLM][Vision-language models] This paper proposes VLM-DeflectionBench, a multimodal benchmark comprising 2,775 samples that systematically evaluates the deflection vs. hallucination behavior of large…
+  [ACL 2026][Multimodal VLM][Vision-Language Models] This paper introduces VLM-DeflectionBench, a multimodal benchmark containing 2,775 samples…
 tags:
   - "ACL 2026"
   - "Multimodal VLM"
-  - "Vision-language models"
-  - "hallucination detection"
-  - "deflection evaluation"
-  - "knowledge-based VQA"
-  - "retrieval-augmented generation"
+  - "Vision-Language Models"
+  - "Hallucination Detection"
+  - "Deflection Evaluation"
+  - "Knowledge Question Answering"
+  - "Retrieval-Augmented Generation"
 date: 2026-05-08
-content_hash: b28dc90cea5542a9
+content_hash: 1fb2cf40c5ca245a
 ---
 
 # Benchmarking Deflection and Hallucination in Large Vision-Language Models
 
-**Conference**: ACL 2026
+**Conference**: ACL 2026  
 **arXiv**: [2604.12033](https://arxiv.org/abs/2604.12033)  
-**Code**: Available (to be released upon publication)  
-**Area**: Multimodal VLM
-**Keywords**: Vision-language models, hallucination detection, deflection evaluation, knowledge-based VQA, retrieval-augmented generation
+**Code**: Yes (public after publication)  
+**Area**: Multimodal VLM  
+**Keywords**: Vision-Language Models, Hallucination Detection, Deflection Evaluation, Knowledge Question Answering, Retrieval-Augmented Generation
 
 ## TL;DR
-This paper proposes VLM-DeflectionBench, a multimodal benchmark comprising 2,775 samples that systematically evaluates the deflection vs. hallucination behavior of large vision-language models (LVLMs) under insufficient or misleading evidence, through four evaluation scenarios (Parametric / Oracle / Realistic / Adversarial). Experiments covering 20 state-of-the-art LVLMs reveal that virtually no model can reliably deflect under noisy evidence.
+This paper introduces VLM-DeflectionBench, a multimodal benchmark containing 2,775 samples, which systematically evaluates the deflection vs. hallucination behavior of Large Vision-Language Models (LVLMs) when evidence is insufficient or misleading across four evaluation scenarios (Parameterized/Oracle/Realistic/Adversarial). Experiments across 20 SOTA LVLMs reveal that almost all models fail to reliably deflect under noisy evidence.
 
 ## Background & Motivation
 
-**Background**: Large vision-language models increasingly rely on retrieval augmentation to answer knowledge-intensive multimodal questions. Existing KB-VQA benchmarks (e.g., OK-VQA, InfoSeek, E-VQA) primarily evaluate accuracy when correct evidence is retrieved.
+**Background**: Large Vision-Language Models (LVLMs) increasingly rely on retrieval augmentation to answer knowledge-intensive multimodal questions. Existing KB-VQA benchmarks (e.g., OK-VQA, InfoSeek, E-VQA) primarily evaluate accuracy when correct evidence is retrieved.
 
-**Limitations of Prior Work**: (1) **Evidence conflicts are ignored**: Existing benchmarks do not account for contradictions between visual and textual evidence, nor do they address what a model should do when retrieved knowledge is incomplete. (2) **Rapid obsolescence**: As LVLM training sets expand, many questions that previously required retrieval can now be answered directly via parametric knowledge, rendering benchmarks less discriminative. (3) **Failure modes are conflated**: These benchmarks only measure correctness without distinguishing between erroneous answers (hallucination) and refusals to answer (deflection)—yet deflection is a more desirable failure mode when evidence is insufficient.
+**Limitations of Prior Work**: (1) **Neglect of evidence conflict**: Existing benchmarks do not consider contradictions between visual and textual evidence, nor do they consider what a model should do when retrieved knowledge is incomplete. (2) **Rapid obsolescence**: As LVLM training sets expand, many questions originally requiring retrieval can now be answered via parameterized knowledge, causing benchmarks to lose discriminative power. (3) **Failure to distinguish failure modes**: Current metrics only measure "correctness" without distinguishing between "incorrect answers" (hallucination) and "refusal to answer" (deflection)—where deflection is the preferred failure mode when evidence is insufficient.
 
-**Key Challenge**: Reliable RAG systems should deflect rather than fabricate when evidence is insufficient, yet no benchmark systematically evaluates this behavior.
+**Key Challenge**: A reliable RAG system should deflect rather than hallucinate when evidence is insufficient, but no benchmark currently evaluates this behavior systematically.
 
-**Goal**: Construct a dynamically updatable benchmark specifically designed to evaluate LVLM hallucination vs. deflection behavior under varying knowledge conditions.
+**Goal**: Construct a dynamically updatable benchmark specifically to evaluate LVLM hallucination vs. deflection behaviors under different knowledge conditions.
 
-**Key Insight**: Four complementary scenarios are designed to disentangle parametric memory from retrieval robustness—ranging from no evidence to perfect evidence to mixed evidence to pure distractors.
+**Key Insight**: Design four complementary scenarios to decouple parameterized memory from retrieval robustness—ranging from no evidence to perfect evidence, mixed evidence, and pure distractors.
 
-**Core Idea**: A dynamic filtering pipeline maintains benchmark difficulty by excluding parametrically answerable samples, while a four-scenario evaluation protocol separately assesses what models know and how they behave when they do not know.
+**Core Idea**: Use a dynamic filtering pipeline to maintain benchmark difficulty (filtering out samples answerable via parameters) and a four-scenario evaluation protocol to separately assess what the model knows and how it behaves when it does not know.
 
 ## Method
 
 ### Overall Architecture
-A three-stage construction pipeline: Stage I applies multiple gating models to filter out parametrically answerable samples → Stage II mines textual and visual distractors for the retained samples → Stage III performs quality control (ensuring answerability and distractor validity). The final benchmark contains 2,775 samples, each accompanied by gold-standard evidence and distractors.
+A three-stage construction pipeline: Stage I uses multiple gating models to filter out samples answerable through parameters → Stage II mines textual and visual distractors for the retained samples → Stage III quality control (ensuring solvability and distractor validity). The final benchmark contains 2,775 samples, each equipped with gold standard evidence and distractors.
 
 ### Key Designs
 
-1. **Dynamic Parametric Filtering (Stage I)**:
+1.  **Dynamic Parameterized Filtering (Stage I)**:
+    - **Function**: Ensures that questions in the benchmark truly require external retrieval to answer.
+    - **Mechanism**: Four powerful gating models (Gemma3-27B, Qwen-2.5-VL-32B, InternVL3-38B, VL-Rethinker-72B) attempt to answer each question without external knowledge. Only samples that all models fail to answer correctly are retained. GPT-4o serves as the judge.
+    - **Design Motivation**: As model capabilities increase, questions requiring retrieval may become answerable via parameters. Dynamic filtering allows the benchmark to be updated over time by using stronger gating models.
 
-    - **Function**: Ensures that questions in the benchmark genuinely require external retrieval.
-    - **Mechanism**: Four powerful gating models (Gemma3-27B, Qwen-2.5-VL-32B, InternVL3-38B, VL-Rethinker-72B) attempt to answer each question without external knowledge. Only samples that none of the models answer correctly are retained. GPT-4o serves as the judge.
-    - **Design Motivation**: As model capabilities improve, questions previously requiring retrieval may become parametrically answerable. Dynamic filtering allows the benchmark to be updated over time by substituting stronger gating models, preserving evaluation validity.
+2.  **Four-Scenario Evaluation Protocol**:
+    - **Function**: Decouples parameterized knowledge from retrieval robustness and explicitly evaluates deflection behavior.
+    - **Mechanism**: **Parameterized Scenario** (no external knowledge): Validates filtering effectiveness; expected accuracy is near zero. **Oracle Scenario** (gold evidence only): Tests maximum capability given perfect evidence. **Realistic Scenario** (mixed gold and distractors): Simulates real-world retrieval. **Adversarial Scenario** (distractors only): Expects the model to deflect rather than hallucinate. Three metrics are reported: accuracy, deflection rate, and hallucination rate.
+    - **Design Motivation**: A single scenario cannot reveal the full behavioral profile of a model. These four scenarios cover the spectrum from ideal to worst-case knowledge conditions.
 
-2. **Four-Scenario Evaluation Protocol**:
-
-    - **Function**: Disentangles parametric knowledge from retrieval robustness and explicitly evaluates deflection behavior.
-    - **Mechanism**: **Parametric scenario** (no external knowledge): validates filtering effectiveness; near-zero accuracy is expected. **Oracle scenario** (gold-standard evidence only): measures maximum capability given perfect evidence. **Realistic scenario** (gold-standard evidence mixed with distractors): simulates real-world retrieval results. **Adversarial scenario** (distractors only): models are expected to deflect rather than hallucinate. Each scenario reports three metrics: accuracy, deflection rate, and hallucination rate.
-    - **Design Motivation**: A single scenario cannot reveal a complete picture of model behavior. The four scenarios span the spectrum from ideal to worst-case knowledge conditions.
-
-3. **Multimodal Distractor Mining (Stage II)**:
-
+3.  **Multimodal Distractor Mining (Stage II)**:
     - **Function**: Provides high-quality textual and visual distractors for each sample.
-    - **Mechanism**: Textual distractors are retrieved from a Wikipedia index using EVA-CLIP to obtain the top-10 relevant pages, which are then chunked and reranked with Contriever. Visual distractors are retrieved from an image index as the top-10 similar non-gold images. Each sample is guaranteed at least five distractors.
-    - **Design Motivation**: Noise is inevitable in real-world retrieval settings; high-quality distractors test a model's ability to distinguish relevant from irrelevant evidence.
+    - **Mechanism**: Textual distractors are retrieved via EVA-CLIP from Wikipedia (top-10 pages) and reranked using Contriever; visual distractors are retrieved from an image index (top-10 similar non-gold images). Each sample has at least 5 distractors.
+    - **Design Motivation**: Noise is inevitable in real retrieval scenarios; high-quality distractors test the ability of the model to distinguish relevant from irrelevant evidence.
 
 ## Key Experimental Results
 
-### Main Results (Four-scenario evaluation of 20 LVLMs; representative models shown)
+### Main Results (Four-scenario evaluation of 20 LVLMs, representative models selected)
 
 | Model | Oracle Acc↑ | Oracle Hall↓ | Realistic Acc | Realistic Hall↓ | Adversarial Defl↑ | Adversarial Hall↓ |
-|---|---|---|---|---|---|---|
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | Ovis2-34B | 66.5 | 27.8 | 49.1 | 43.3 | 38.7 | 58.1 |
 | GPT-5 | 73.1 | 12.6 | 59.5 | 25.5 | 61.2 | 34.7 |
 | Claude-Opus-4 | 49.1 | 9.2 | 32.1 | 8.5 | **88.3** | **11.1** |
@@ -79,36 +76,36 @@ A three-stage construction pipeline: Stage I applies multiple gating models to f
 | Mistral-Small-3.1 | 42.6 | 10.3 | 23.5 | 14.9 | 83.8 | 15.6 |
 
 ### Key Findings
-- **No model performs consistently across all scenarios**: Claude over-deflects (Oracle accuracy only 49.1%), Qwen is overconfident (adversarial hallucination rate 83.9%), and Mistral also over-deflects.
-- **Hallucination remains severe even with gold-standard evidence**: LLaVA-OneVision still exhibits a 41.6% hallucination rate in the Oracle scenario, indicating that grounding rather than retrieval is the primary bottleneck.
-- **Accuracy drops by 10–20 percentage points in the Realistic scenario**: Distractors frequently mislead models.
-- **GPT-5 exhibits elevated accuracy in the Parametric scenario (23.7%)**: This may reflect training data contamination.
-- **Open-source models rarely deflect in the Adversarial scenario**: Most deflection rates fall below 35%, with models tending to fabricate answers.
-- **A fundamental trade-off exists between deflection and accuracy**: Models with high deflection rates (e.g., Claude) sacrifice Oracle accuracy.
+- **No model performs in a balanced manner across all scenarios**: Claude over-deflects (Oracle accuracy only 49.1%), Qwen is overconfident (83.9% hallucination in Adversarial scenario), and Mistral also over-deflects.
+- **Hallucinations remain severe even with gold evidence**: LLaVA-OneVision maintains a 41.6% hallucination rate in the Oracle scenario, indicating that grounding, rather than retrieval, is a major bottleneck.
+- **Accuracy typically drops by 10-20 percentage points in Realistic scenarios**: Distractors frequently mislead models.
+- **GPT-5 shows high accuracy in the Parameterized scenario (23.7%)**: This likely reflects training set contamination.
+- **Open-source models rarely deflect in Adversarial scenarios**: Most deflection rates are below 35%, with models tending to fabricate answers.
+- **A fundamental trade-off exists between deflection and accuracy**: High-deflection models (like Claude) sacrifice Oracle accuracy.
 
 ## Highlights & Insights
-- The **dynamic filtering philosophy** is critically important—benchmarks should evolve alongside models; otherwise they quickly become obsolete. VLM-DeflectionBench's pipeline can maintain timeliness by replacing gating models as stronger ones become available.
-- The **four-scenario evaluation protocol** reveals behavioral patterns invisible to a single accuracy metric. For instance, Claude may score low on traditional benchmarks due to its high deflection rate, yet it may be the most suitable choice in safety-critical deployment contexts.
-- The **distinction between hallucination and deflection** is essential for RAG system deployment—in high-stakes domains such as medicine and law, generating unsupported answers is far more dangerous than deflecting.
+- The **"Dynamic Filtering" concept** is crucial—benchmarks should evolve with models, otherwise they become obsolete. The VLM-DeflectionBench pipeline maintains relevance by updating gating models.
+- The **Four-Scenario Evaluation Protocol** reveals behavioral patterns invisible to a single accuracy metric. For instance, while Claude might score lower on traditional benchmarks due to high deflection, it is the most suitable choice for safety-critical applications.
+- **Distinguishing "Hallucination vs. Deflection"** is vital for RAG deployment—in high-risk fields like medicine or law, generating unsupported answers is far more dangerous than deflecting.
 
 ## Limitations & Future Work
-- The benchmark relies solely on GPT-4o as the judge, which may introduce evaluation bias.
-- The scale of 2,775 samples is relatively modest, with limited coverage of certain modality combinations.
-- The "strict RAG" assumption—treating all incorrect answers as hallucinations—is an oversimplification; in practice, errors may stem from misreading evidence rather than confabulation.
-- Training models to improve deflection capability is not explored; the work is purely evaluative.
-- Deflection behavior in multi-turn interactions is not considered.
-- Distractor difficulty is not stratified; distractors of varying difficulty may elicit qualitatively different behaviors.
+- The benchmark relies on GPT-4o as a judge, which may introduce evaluation bias.
+- The scale of 2,775 samples is relatively limited; some modal combinations have fewer samples.
+- The "Strict RAG" assumption (all incorrect answers count as hallucinations) is simplified—in reality, errors might stem from misreading evidence rather than fabrication.
+- Strategies for training models to improve deflection were not explored (evaluation only).
+- Deflection behavior in multi-turn interactions was not considered.
+- Distractor difficulty is not graded; different difficulty levels may trigger different behaviors.
 
 ## Related Work & Insights
-- **vs. MRAG-Bench**: MRAG-Bench incorporates visual evidence but does not evaluate deflection or hallucination. VLM-DeflectionBench is the first to systematically assess both behaviors in the KB-VQA setting.
-- **vs. HaloQuest/AMBER**: These benchmarks focus exclusively on visual hallucination and do not involve retrieval-augmented scenarios. VLM-DeflectionBench evaluates within a RAG framework.
+- **vs. MRAG-Bench**: MRAG-Bench includes visual evidence but does not evaluate deflection and hallucination. VLM-DeflectionBench is the first to systematically evaluate both in KB-VQA.
+- **vs. HaloQuest/AMBER**: These benchmarks focus only on visual hallucination without retrieval-augmentation scenarios. VLM-DeflectionBench evaluates within a RAG framework.
 - **vs. SimpleQA/GaRaGe**: These are text-only hallucination evaluations that cannot capture visual-textual evidence conflicts.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐⭐ First benchmark to systematically evaluate deflection behavior in multimodal RAG; the four-scenario design is highly original.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Covers 20 models (open- and closed-source) with human validation at κ=0.91.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ Motivation is clear, experimental design is rigorous, and findings are insightful.
-- **Value**: ⭐⭐⭐⭐⭐ Introduces a new paradigm for evaluating the reliability of RAG systems with direct implications for deployment decisions.
+- Novelty: ⭐⭐⭐⭐⭐ First benchmark to systematically evaluate deflection in multimodal RAG; unique four-scenario design.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 20 models (open and closed source); human verification $\kappa=0.91$.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear motivation, rigorous experimental design, insightful findings.
+- Value: ⭐⭐⭐⭐⭐ Proposes a new paradigm for RAG reliability assessment with direct guidance for deployment decisions.
 
 <!-- RELATED:START -->
 

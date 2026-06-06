@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] InfoLaw: Information Scaling Laws for Large Language Models with Quality-Weighted Mixture Data and Repetition
 description: >-
-  [ICML 2026][LLM Pretraining][scaling law] The authors propose InfoLaw: redefining "pretraining" as a process of "bucket-wise information accumulation…
+  [ICML 2026][LLM Pretraining][scaling law] The authors propose InfoLaw, which redefines "pre-training" as a process of "accumulating information by buckets." The information quantity per bucket is defined as "quality dens…
 tags:
   - "ICML 2026"
   - "LLM Pretraining"
@@ -10,9 +10,9 @@ tags:
   - "data quality"
   - "data repetition"
   - "data recipe"
-  - "information content"
+  - "information quantity"
 date: 2026-05-08
-content_hash: 19032d53197e6fd5
+content_hash: ff241af2600f69b7
 ---
 
 # InfoLaw: Information Scaling Laws for Large Language Models with Quality-Weighted Mixture Data and Repetition
@@ -20,106 +20,102 @@ content_hash: 19032d53197e6fd5
 **Conference**: ICML 2026  
 **arXiv**: [2605.02364](https://arxiv.org/abs/2605.02364)  
 **Code**: None  
-**Area**: LLM Pretraining / Scaling Law / Data Recipe  
-**Keywords**: scaling law, data quality, data repetition, data recipe, information content
+**Area**: LLM Pre-training / Scaling Law / Data Recipe  
+**Keywords**: scaling law, data quality, data repetition, data recipe, information quantity
 
 ## TL;DR
-The authors propose InfoLaw: redefining "pretraining" as a process of "bucket-wise information accumulation," where the information in each bucket equals "quality density $f_d$ × unique token count $M_d$ × $\log K$" multiplied by an exponentially decaying factor with respect to repetition $R_d$. The final validation loss is expressed as $L = \alpha\cdot\text{info}^{-\beta}$, which can be fitted on 252M-1.2B and extrapolated to 7B / 425B tokens with an average error of 0.15% and a maximum of 0.96%. This formulation can be directly used to search for the optimal data recipe.
+The authors propose InfoLaw, which redefines "pre-training" as a process of "accumulating information by buckets." The information quantity per bucket is defined as "quality density $f_d \times$ unique tokens $M_d \times \log K$," multiplied by a factor that decays exponentially with the number of repetitions $R_d$. By expressing the validation loss as $L = \alpha\cdot\text{info}^{-\beta}$, the model can be fitted on 252M-1.2B parameters and extrapolated to 7B models or 425B tokens. It achieves an average error of 0.15% (max 0.96%) and can be directly used to search for optimal data recipes.
 
 ## Background & Motivation
 
-**Background**: The Chinchilla scaling law expresses loss as $L = E + A/N^\alpha + B/D^\beta$, which allows precise extrapolation when data is abundant. However, in practice, overtraining has become mainstream (e.g., LLaMA / Qwen series), and high-quality tokens are insufficient, necessitating repetition or mixing with lower-quality data.
+**Background**: Chinchilla-style scaling laws express loss as $L = E + A/N^\alpha + B/D^\beta$, which accurately extrapolates when data is abundant. However, in practice, overtraining has become mainstream (e.g., LLaMA / Qwen series), where high-quality tokens are insufficient, necessitating repetition or mixing with lower-quality data.
 
-**Limitations of Prior Work**: (i) The standard scaling law systematically underestimates large model loss under repetition (Fig 1: power-law fitted on 252M-1.2B deviates significantly at 2.5B); (ii) Different mixture recipes (e.g., more high-quality with less diversity, or more low-quality with greater diversity) fall on different curves, making cross-recipe comparison impossible; (iii) Optimal recipe search can only be done via small-scale grid search, but the optimal recipe at small and large scales is inconsistent—this leaves data recipe decisions stuck at "if you can't predict, you can only blindly burn GPUs."
+**Limitations of Prior Work**: (i) Standard scaling laws systematically underestimate the loss of large models under repetition (Fig 1: a power-law fitted on 252M-1.2B significantly deviates at 2.5B); (ii) Different mixture recipes (e.g., more high-quality with less diversity vs. less low-quality with more diversity) fall on different curves, making cross-recipe comparison impossible; (iii) Finding the optimal recipe requires small-scale grid searches, but optimal recipes at small scales often do not align with those at large scales—trapping data recipe decisions in a state where one must "blindly burn GPUs" without predictive capabilities.
 
-**Key Challenge**: Higher quality yields higher per-token value, but limited tokens must be repeated, and repetition brings diminishing returns; compute alone cannot simultaneously capture the three variables of "quality × repetition × scale."
+**Key Challenge**: Higher quality implies higher value per instance, but limited tokens must be repeated, leading to diminishing returns. The single axis of "compute" is no longer sufficient to simultaneously characterize the three variables: "quality × repetition × scale."
 
-**Goal**: To build a data-aware scaling law that can extrapolate loss across four dimensions: (mixture recipe, model size, training tokens, overtrain ratio), and search for the optimal data recipe without additional experiments.
+**Goal**: To build a data-aware scaling law that can extrapolate loss across four dimensions (mixture recipe, model size, training tokens, and overtraining ratio) and search for the optimal data recipe without running additional experiments.
 
-**Key Insight**: Change the axis! Since compute $C$ is insufficient, construct a new "effective data signal"—view training as "information accumulation," so that different mixtures yield the same loss at the same information content, naturally collapsing all experimental points onto a single power-law curve.
+**Key Insight**: Change the axis! Since compute $C$ is insufficient, the authors construct a new "effective data signal." Training is viewed as "information accumulation," allowing different mixtures to produce the same loss at the same information level, which naturally collapses all experimental points onto the same power-law line.
 
-**Core Idea**: Information content = ($f_d M_d \log K$) × (1 − $e^{-\lambda(N) R_d/\log K}$); the first term is the "potential information" in the data, the second is the "proportion learned by the model." All mixture × scale × repetition experiments are unified on the $L$-info plane as a single power law $L = \alpha\cdot\text{info}^{-\beta}$.
+**Core Idea**: Information quantity is defined as $(f_d M_d \log K) \times (1 - e^{-\lambda(N) R_d/\log K})$, where the former term represents the "potential information" in the data and the latter represents the "proportion learned by the model." This unifies all mixture × scale × repetition experiments onto a single power-law $L = \alpha\cdot\text{info}^{-\beta}$ on the $L$-info plane.
 
 ## Method
 
 ### Overall Architecture
-(1) Deduplicate Common Crawl globally to obtain 3.7T tokens, score with two quality classifiers (FineWeb-edu + DCLM), and split into 6 buckets by percentile (0-5%, 5-20%, 20-40%, 40-60%, 60-80%, 80-100%); (2) Design LayerMix sampling: assign a set of weights $w=[w_0,...,w_5]$ (with $w_d\geq w_{d+1}$ and sum to 1), sample $K$ tokens from source $S$ according to $w$ to form the training set, with repetition per bucket $R_d = w_d K / M_d$ ($M_d = \min(w_d K, B_d S)$); (3) Train 9 models (252M-1.2B) × 3 LayerMix recipes (HQ/MQ/LQ), fixed 3.6× overtrain, for 27 runs to collect loss data; (4) Fit four sets of parameters: $f_d, \lambda(N), \alpha, \beta$; (5) Validate extrapolation on 1.5B-7B, and use the fitted curve to search for the optimal recipe.
+(1) Perform global de-duplication on 3.7T tokens from Common Crawl. Use two quality classifiers (FineWeb-edu + DCLM) to score and partition the data into 6 buckets based on percentiles (0-5%, 5-20%, 20-40%, 40-60%, 60-80%, 80-100%). (2) Design LayerMix sampling: given a set of weights $w=[w_0,...,w_5]$ (where $w_d\geq w_{d+1}$ and $\sum w_d = 1$), sample $K$ tokens from source $S$ to form the training set. Repetition for each bucket is $R_d = w_d K / M_d$, where $M_d = \min(w_d K, B_d S)$. (3) Train 27 runs featuring 9 model scales (252M-1.2B) × 3 LayerMix recipes (HQ/MQ/LQ) with a fixed 3.6× overtraining ratio to collect loss data. (4) Fit four sets of parameters: $f_d, \lambda(N), \alpha, \beta$. (5) Validate extrapolation on 1.5B-7B models and use the fitted curve to search for optimal recipes.
 
 ### Key Designs
 
-1. **LayerMix Sampling: Explicit Parameterization of "Quality × Repetition"**:
+1.  **LayerMix Sampling: Explicitly Parametrizing "Quality × Repetition"**:
+    - **Function**: Uses a weight vector $w$ to simultaneously control "quality distribution" and "repetition level," allowing one pre-training run to be decomposed into independent contributions from 6 buckets.
+    - **Mechanism**: Data is split into 6 buckets by quality, with fixed source pool proportions $B$. The training set for bucket $d$ contains $K_d = w_d K$ tokens, using $M_d = \min(K_d, B_d S)$ unique tokens, resulting in an average repetition $R_d = K_d / M_d$. $R_d=1$ if $K_d\leq S_d$, otherwise $R_d>1$. The constraint $w_d\geq w_{d+1}$ prioritizes high-quality buckets.
+    - **Design Motivation**: Traditional scaling laws assume non-repeating, uniform quality data, failing to separate their contributions. LayerMix transforms the data recipe into a 6D parameter space, where the marginal contribution of $(w_d, R_d)$ for each dimension can be estimated independently, enabling the decomposition of loss into "additive information."
 
-    - **Function**: Uses a set of weights $w=[w_0,\ldots,w_5]$ to simultaneously control "quality distribution" and "degree of repetition," allowing pretraining to be decomposed into independent contributions from 6 buckets.
-    - **Mechanism**: First, split into 6 buckets by quality percentile, with fixed source proportions $B=[0.05, 0.15, 0.20, 0.20, 0.20, 0.20]$; when constructing the training set, the $d$-th bucket packs $K_d = w_d K$ tokens, with unique token count $M_d = \min(K_d, B_d S)$, and average repetition $R_d = K_d / M_d$, so $R_d=1$ when $K_d\leq S_d$, otherwise $>1$. The constraint $w_d\geq w_{d+1}$ enforces priority for high-quality buckets.
-    - **Design Motivation**: Traditional scaling laws assume tokens are non-repetitive and of uniform quality, making it impossible to separate their contributions; LayerMix turns the data recipe into a 6-dimensional parameter space, where each $(w_d, R_d)$ can independently estimate its marginal contribution to final loss, laying the foundation for decomposing loss into "additive information."
+2.  **Information Accumulation Formula: Quality Density + Exponential Decay + Log Normalization**:
+    - **Function**: Provides a unified formula for "how much effective information is gained from reading a segment of data," reflecting quality, repetition, model capacity, and training scale.
+    - **Mechanism**: First, apply first-order exponential decay to model the information gain of reading the same document for the $t$-th time: $I_{i\_\text{part}}(t, \lambda(N)) = I_i\cdot\lambda(N)e^{-\lambda(N)t}$. Integration yields total accumulated info: $I_{i,\text{total}}(T) = I_i(1-e^{-\lambda(N)T})$, reflecting "diminishing returns of repetition." Incorporating $\log K$ normalization (found empirically necessary for cross-magnitude generalization) gives $I_{i,\text{total}} = I_i\log K(1-e^{-\lambda(N)T/\log K})$. Finally, sum across all buckets: $\text{info}(w, K, S, f, \lambda(N)) = \sum_d f_d M_d \log K\cdot(1 - e^{-\lambda(N) R_d/\log K})$, where $f_d = e^{-\theta d}$ is the monotonically decreasing quality density and $\lambda(N) = a\ln N + b$ is the learning rate determined by model capacity.
+    - **Design Motivation**: Decouples "information density" from "learning ability"—$f_d$ describes the potential of the data itself, while $\lambda(N)$ describes the model's capacity to digest data. The $(1-e^{-\cdot})$ term naturally captures why small models saturate early while large models can extract more information.
 
-2. **Information Accumulation Formula: Quality Density + Exponential Decay + Log Normalization**:
-
-    - **Function**: Expresses "how much effective information is gained from reading a segment of data" in a unified formula, reflecting quality, repetition, model capacity, and training scale.
-    - **Mechanism**: First, use first-order exponential decay to model "information gain from reading the same document for the $t$-th time" $I_{i\_\text{part}}(t, \lambda(N)) = I_i\cdot\lambda(N)e^{-\lambda(N)t}$; integrating gives "total information after $T$ reads" $I_{i,\text{total}}(T) = I_i(1-e^{-\lambda(N)T})$, reflecting diminishing returns from repetition. Add $\log K$ normalization (empirically necessary for cross-scale generalization) to get $I_{i,\text{total}} = I_i\log K(1-e^{-\lambda(N)T/\log K})$. Finally, sum over all buckets: $\text{info}(w, K, S, f, \lambda(N)) = \sum_d f_d M_d \log K\cdot(1 - e^{-\lambda(N) R_d/\log K})$, where $f_d = e^{-\theta d}$ is monotonically decreasing quality density, and $\lambda(N) = a\ln N + b$ is the learning rate determined by model capacity.
-    - **Design Motivation**: Decouples "information density" and "learning ability"—$f_d$ describes the data's potential, $\lambda(N)$ describes the model's ability to absorb data, and the $(1-e^{-\cdot})$ term naturally yields the intuition that "small models saturate early, large models can extract more information."
-
-3. **Two-Step Fitting of $f_d$ and $\lambda(N)$**:
-
-    - **Function**: Determines parameterization without overfitting the 27 experimental points, and extrapolates to unseen $N$.
-    - **Mechanism**: (i) Assume $f_d = e^{-\theta d}$ ($\theta > 0$ ensures monotonic decrease), treat $\lambda(N)$ as a discrete variable, sample 100,000 sets $(\theta, \{\lambda_N\})$ from parameter space, use Spearman correlation $\rho_s(L, \text{info})$ as the fitting metric to select optimal $(\theta^*, \lambda_N^*)$, yielding $\theta^*=0.922$; (ii) Fit $\lambda(N)=a\ln N+b$ using each model's $\lambda_N^*$ as data points, resulting in $a^*=0.140, b^*=0.018$; the logarithmic function remains monotonically saturating in the extrapolation range, matching the intuition that "larger models have marginally increasing learning rates without divergence." Final loss-info fit: $\alpha=3.7373, \beta=0.0441$.
-    - **Design Motivation**: Spearman is a monotonicity metric, insensitive to absolute scale, aligning with the semantic "info monotonically corresponds to loss"; enforcing parametric forms for $f_d, \lambda(N)$ rather than table lookup ensures controllable extrapolation to 1.5B-7B.
+3.  **Two-step Fitting Process for $f_d$ and $\lambda(N)$**:
+    - **Function**: Determines parametric forms and extrapolates to unseen $N$ without overfitting the 27 experimental points.
+    - **Mechanism**: (i) Assume $f_d = e^{-\theta d}$ ($\theta > 0$) and treat $\lambda(N)$ as discrete variables. Sample 100k sets of $(\theta, \{\lambda_N\})$ from the parameter space and select the optimal $(\theta^*, \lambda_N^*)$ using Spearman correlation $\rho_s(L, \text{info})$ as the fit metric, yielding $\theta^*=0.922$. (ii) Fit the $\lambda_N^*$ values to $\lambda(N)=a\ln N+b$, resulting in $a^*=0.140, b^*=0.018$. The logarithmic function remains monotonic and saturating in the extrapolation range, consistent with the intuition that larger models have marginally increasing but non-divergent learning rates. The final loss-info fit yields $\alpha=3.7373, \beta=0.0441$.
+    - **Design Motivation**: Spearman correlation measures monotonic consistency, which is insensitive to absolute scales and fits the semantic that "info monotonically corresponds to loss." Enforcing parametric forms for $f_d$ and $\lambda(N)$ ensures controllable extrapolation to 1.5B-7B.
 
 ### Loss & Training
-
-All 27 fit experiments use a fixed overtrain ratio $m=3.6$, Transformer + SwiGLU + RoPE, 250k vocabulary, bf16; extrapolation experiments use $m'=25$ with 1.2B/640B tokens for validation. The fitted InfoLaw and 100k candidate mixture samples are used to directly select the optimal $w$ (no further training required).
+All 27 fitting experiments used a fixed overtraining ratio $m=3.6$, Transformer + SwiGLU + RoPE, 250k vocabulary, and bf16. Extrapolation experiments used $m'=25$ with 1.2B models and 640B tokens. The fitted InfoLaw was used with 100k mixture candidate samplings to directly select the optimal $w$ (no retraining required).
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Evaluation Scenario | Configuration | Mean/Max Absolute Error |
-|---------------------|--------------|------------------------|
-| Unseen LayerMix (MLQ/MHQ) ×252M-1.2B | Within-range mixture | Perfect collapse onto curve |
-| 1.5B-2.5B × MQ/LQ/HQ | Model extrapolation | Mean 0.15% / Max 0.96% |
-| 7B × MLQ/MHQ × 300B tokens | Unseen mixture + scale | Mean 0.15% / Max 0.96% |
-| 25× overtrain (1.2B, 640B tokens) | Cross overtrain domain | Fitted curves nearly parallel, only intercept shifts |
-| 2.5B optimal recipe search | $w^*=[0.50, 0.49, 0.01, 0, 0, 0]$ | Outperforms 4 baselines |
+| Evaluation Scenario | Configuration | Avg/Max Absolute Error |
+|---------|------|--------------------|
+| Unseen LayerMix (MLQ/MHQ) × 252M-1.2B | In-distribution mixture | Perfect collapse to curve |
+| 1.5B-2.5B × MQ/LQ/HQ | Model extrapolation | Avg 0.15% / Max 0.96% |
+| 7B × MLQ/MHQ × 300B tokens | Unseen mixture + scale | Avg 0.15% / Max 0.96% |
+| 25× overtrain (1.2B, 640B tokens) | Cross-overtraining domain | Parallel fit with intercept shift |
+| 2.5B Optimal Recipe Search | $w^*=[0.50, 0.49, 0.01, 0, 0, 0]$ | Defeats 4 baselines |
 
 ### Ablation Study
 
 | Setting | Key Metric | Description |
-|---------|------------|-------------|
-| No $\log K$ normalization | Cannot generalize across scales | Validates necessity of $\log K$ (Appendix B) |
-| $\lambda(N)$ as power-law / exp | Poor extrapolation | Log function fits best |
-| Traditional scaling law $L(C)$ | Systematic underestimation for large models | Fig 1 shows clear deviation at 7B |
+|------|---------|------|
+| No $\log K$ normalization | Fails across scales | Confirms $\log K$ is essential (Appendix B) |
+| $\lambda(N)$ using power-law / exp | Poor extrapolation | Logarithmic function fits best |
+| Traditional scaling law $L(C)$ | Large model underestimation | Significant deviation at 7B in Fig 1 |
 | 1.2B + 25 random mixtures | Pearson 0.76 | InfoLaw can rank unseen recipes |
 
 ### Key Findings
-- **Small models / few tokens prefer quality, large models / many tokens prefer diversity**: Table 2 shows that for 7B at 300B tokens, optimal $w_0=0.548$, $w_1=0.444$; at 1000B tokens, $w_0$ drops to 0.395, $w_2$ rises to 0.214. This refutes the naive intuition that "more high quality is always better."
-- **Marginal returns of repetition decay exponentially**: Under the HQ recipe, the top 5% bucket is repeated 16×, under MQ 10×; initially, both have similar loss, but HQ converges more slowly later, matching the saturation of $1-e^{-\lambda R/\log K}$ at large $R$.
-- **Info collapse is the core empirical evidence**: The originally scattered 27 points (different $w, N, K$) collapse into a straight line on the $L$-info plot (Fig 3f), providing the most intuitive evidence for InfoLaw.
-- **Overtrain only shifts intercept, not slope**: The $m=3.6$ and $m'=25$ curves are nearly parallel in log-log space, meaning InfoLaw does not require refitting $\beta$ for each overtrain ratio.
+- **Small models / few tokens prefer quality; large models / many tokens prefer diversity**: Table 2 shows that for 7B with 300B tokens, optimal $w_0=0.548, w_1=0.444$. At 1000B tokens, $w_0$ drops to 0.395 and $w_2$ rises to 0.214. This contradicts the naive intuition that "more high-quality data is always better."
+- **Diminishing marginal returns of repetition are exponential**: In the HQ recipe, the top 5% bucket is repeated 16×, while in MQ it is repeated 10×. Losses are similar early on, but HQ converges slower later, aligning with the saturation of $1-e^{-\lambda R/\log K}$ at large $R$.
+- **Info collapse is the core empirical evidence**: The 27 scattered points (different $w, N, K$) collapse into a straight line on the $L$-info plot (Fig 3f), providing the most intuitive evidence for InfoLaw.
+- **Overtraining shifts intercept, not slope**: The curves for $m=3.6$ and $m'=25$ are nearly parallel in the log-log plane, meaning InfoLaw does not need to re-fit $\beta$ for every overtraining ratio.
 
 ## Highlights & Insights
-- **Changing the x-axis is an elegant idea**: When compute $C$ alone lacks explanatory power, instead of adding more terms, switch to a composite axis—info—that accommodates "quality × repetition." Compared to Chinchilla's approach of "adding N and D terms," InfoLaw is more "data-centric."
-- **$\log K$ normalization is a key hack**: The appendix empirically shows that without it, cross-scale generalization fails, suggesting that scaling law design should consider not only model size but also the dilution effect of data scale on learning rate.
-- **Small models as recipe searchers**: Using 252M-1.2B as an "experimental platform" plus 100k cheap mixture candidates allows direct recipe selection for 7B, representing a data-efficient "prior scheduling" paradigm.
-- **One formula answers two questions**: It can both predict large model loss and select data recipes; the former is "diagnosis," the latter "decision," extending scaling law usage from passive to active.
+- **Elegant axis shifting**: When compute $C$ lacks explanatory power, rather than adding more terms, the authors switch to a synthetic axis—info—that accommodates "quality × repetition." Compared to the Chinchilla approach of adding $N$ and $D$ terms, InfoLaw is more "data-centric."
+- **$\log K$ normalization is a key hack**: The empirical evidence in the appendix showing its necessity for cross-scale generalization suggests that scaling law designs should consider the dilution effect of "data scale itself on the learning rate."
+- **Small models as recipe searchers**: Using 252M-1.2B models as an "experimental platform" + 100k cheap mixture samplings to select recipes for 7B models represents a paradigm of data-efficient "prior scheduling."
+- **One formula, two questions**: InfoLaw predicts large model loss and selects data recipes. The former is "diagnosis," the latter is "decision-making," extending the use of scaling laws from passive to active.
 
 ## Limitations & Future Work
-- Fitted data only covers three mixtures for 252M-1.2B; not validated on MoE, long context, or code/math specialized subsets.
-- Quality bucketing depends on the average of two external classifiers; biases in the classifiers propagate to $f_d$, with no sensitivity analysis performed.
-- Whether $\lambda(N) = a\ln N + b$ remains monotonically saturating for extremely large $N$ is unverified; the paper only tests up to 7B, so extrapolation risk for >100B is unknown.
-- Only validation perplexity / five-task average is used as loss; whether "factual knowledge" or "reasoning depth" still monotonically correspond to info is unknown.
-- Curriculum order (hard-to-easy vs. random) is not considered; LayerMix defaults to random packing.
+- Fitting data only covers 252M-1.2B and three mixtures; it has not been verified on MoE, long context, or specialized subsets like code/math.
+- Quality bucketing relies on the average of two external classifiers; biases in the classifiers will propagate to $f_d$, and no sensitivity analysis was conducted.
+- Whether $\lambda(N) = a\ln N + b$ remains monotonically saturating at extremely large $N$ is unknown; the paper only validates up to 7B.
+- Loss is defined only by validation perplexity / five-task average; it is unknown if high-level capabilities like "factual knowledge" or "reasoning depth" remain monotonically mapped to info.
+- Curriculum ordering (e.g., easy-to-hard vs. random) is not considered; LayerMix defaults to random packing.
 
 ## Related Work & Insights
-- **vs Chinchilla (Hoffmann 2022)**: Chinchilla assumes unlimited data and only considers $N$ and $D$; InfoLaw decomposes $D$ into "quality × repetition × bucket proportion," providing greater accuracy when data is limited.
-- **vs Muennighoff 2023 (scaling law under data constraints with repetition)**: They introduce $R_{\text{D}}^*$ as an effective repetition coefficient for single-source repetition; InfoLaw extends this to multi-bucket mixtures and incorporates quality density $f_d$.
-- **vs RegMix (Liu 2024)**: RegMix uses small proxy models for regression-based recipe selection, requiring many proxies; InfoLaw uses a single info-loss power law, eliminating the need for further training during search.
-- **vs DataComp-LM / FineWeb (Penedo, Li)**: These works provide high-quality data pools but do not address "proportional mixing"; InfoLaw offers a principled recipe selector that can be seamlessly integrated after DataComp.
+- **vs. Chinchilla (Hoffmann 2022)**: Chinchilla assumes infinite data and considers only $N$ and $D$. InfoLaw decomposes $D$ into "quality × repetition × bucket ratio," making it more accurate in data-constrained scenarios.
+- **vs. Muennighoff 2023 (Scaling Law under Data Constraints)**: They introduced a repetition efficiency coefficient $R_{\text{D}}^*$ for single-source repetition; InfoLaw extends this to multi-bucket mixtures and incorporates quality density $f_d$.
+- **vs. RegMix (Liu 2024)**: RegMix uses small proxy models to regress and select recipes, requiring many proxy training runs. InfoLaw uses a single info-loss power law, requiring no extra training during search.
+- **vs. DataComp-LM / FineWeb (Penedo, Li)**: They provide high-quality data pools but do not specify "how to mix in proportion." InfoLaw provides a principled recipe selector that can seamlessly integrate with DataComp.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The "info as coordinate" perspective is refreshing, with formula construction and physical intuition (diminishing returns from repetition + log normalization) highly aligned.
-- Experimental Thoroughness: ⭐⭐⭐⭐ 27 fits + 1.5B-7B multi-scale extrapolation + 25× overtrain + recipe search validation, with coverage density among the highest in pretraining papers; the only regret is evaluation only on standard dense Transformers, not MoE.
-- Writing Quality: ⭐⭐⭐⭐ Fig 1 directly reveals the problem via loss-C, Fig 3 visually demonstrates info collapse, and formula derivations are clear; the appendix completes the normalization ablation.
-- Value: ⭐⭐⭐⭐ Provides practical pretraining teams with a "small-scale fitting → large-scale recipe selection" tool, with huge potential for GPU savings and high industry value.
+- Novelty: ⭐⭐⭐⭐ "Info as a coordinate" is a fresh perspective; formula construction aligns well with physical intuition.
+- Experimental Thoroughness: ⭐⭐⭐⭐ 27 fits + 1.5B-7B multi-scale extrapolation + 25× overtrain + recipe search validation; high density for a pre-training paper, though MoE is absent.
+- Writing Quality: ⭐⭐⭐⭐ Fig 1 reveals the problem directly, Fig 3 proves the conclusion with info collapse, and logic is clear; appendix covers necessary ablations.
+- Value: ⭐⭐⭐⭐ Provides practical pre-training teams with a tool for "small-scale fitting → large-scale recipe selection," with significant potential to save GPU resources.
 
 <!-- RELATED:START -->
 
@@ -128,10 +124,21 @@ All 27 fit experiments use a fixed overtrain ratio $m=3.6$, Transformer + SwiGLU
 ## Related Papers
 
 - [\[ICML 2026\] Model Merging Scaling Laws in Large Language Models](model_merging_scaling_laws_in_large_language_models.md)
+- [\[ICML 2026\] Dropout Universality: Scaling Laws and Optimal Scheduling at the Edge-of-Chaos](dropout_universality_scaling_laws_and_optimal_scheduling_at_the_edge-of-chaos.md)
 - [\[ICML 2026\] Softplus Attention with Re-weighting Boosts Length Extrapolation in Large Language Models](softplus_attention_with_re-weighting_boosts_length_extrapolation_in_large_langua.md)
 - [\[ICML 2026\] On Training Large Language Models for Long-Horizon Tasks: An Empirical Study of Horizon Length](on_training_large_language_models_for_long-horizon_tasks_an_empirical_study_of_h.md)
 - [\[ICML 2026\] Predicting Large Model Test Losses with a Noisy Quadratic System](predicting_large_model_test_losses_with_a_noisy_quadratic_system.md)
-- [\[ICML 2026\] Decomposing the Basic Abilities of Large Language Models: Mitigating Cross-Task Interference in Multi-Task Instruct-Tuning](decomposing_the_basic_abilities_of_large_language_models_mitigating_cross-task_i.md)
+
+</div>
+
+<!-- RELATED:END -->
+## Related Papers
+
+- [\[ICML 2026\] Dropout Universality: Scaling Laws and Optimal Scheduling at the Edge-of-Chaos](dropout_universality_scaling_laws_and_optimal_scheduling_at_the_edge-of-chaos.md)
+- [\[ICML 2026\] On Training Large Language Models for Long-Horizon Tasks: An Empirical Study of Horizon Length](on_training_large_language_models_for_long-horizon_tasks_an_empirical_study_of_h.md)
+- [\[ACL 2025\] DavIR: Data Selection via Implicit Reward for Large Language Models](../../ACL2025/llm_pretraining/davir_data_selection_via_implicit_reward_for_large_language_models.md)
+- [\[ACL 2025\] Large Vocabulary Size Improves Large Language Models](../../ACL2025/llm_pretraining/large_vocabulary_size_improves_large_language_models.md)
+- [\[NeurIPS 2025\] Scaling Embedding Layers in Language Models](../../NeurIPS2025/llm_pretraining/scaling_embedding_layers_in_language_models.md)
 
 </div>
 

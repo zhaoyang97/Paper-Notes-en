@@ -130,10 +130,10 @@ This work is purely algorithmic estimation, with no training required. All "para
 ## Related Papers
 
 - [\[CVPR 2026\] OTPrune: Distribution-Aligned Visual Token Pruning via Optimal Transport](../../CVPR2026/optimization/otprune_distribution-aligned_visual_token_pruning_via_optimal_transport.md)
+- [\[ICML 2026\] Balancing Learning Rates Across Layers: Exact Two-Step Dynamics and Optimal Scaling in Linear Neural Networks](balancing_learning_rates_across_layers_exact_two-step_dynamics_and_optimal_scali.md)
 - [\[NeurIPS 2025\] Streaming Federated Learning with Markovian Data](../../NeurIPS2025/optimization/streaming_federated_learning_with_markovian_data.md)
 - [\[ICLR 2026\] RS-ORT: A Reduced-Space Branch-and-Bound Algorithm for Optimal Regression Trees](../../ICLR2026/optimization/rs-ort_a_reduced-space_branch-and-bound_algorithm_for_optimal_regression_trees.md)
-- [\[NeurIPS 2025\] Optimal Rates for Generalization of Gradient Descent for Deep ReLU Classification](../../NeurIPS2025/optimization/optimal_rates_for_generalization_of_gradient_descent_for_deep_relu_classificatio.md)
-- [\[ICML 2026\] Support-Proximity Augmented Diffusion Estimation for Offline Black-Box Optimization](support-proximity_augmented_diffusion_estimation_for_offline_black-box_optimizat.md)
+- [\[ICML 2026\] URS: A Unified Neural Routing Solver](urs_a_unified_neural_routing_solver_for_cross-problem_zero-shot_generalization.md)
 
 </div>
 

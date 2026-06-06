@@ -2,140 +2,125 @@
 title: >-
   [Paper Note] Contrastive Decoding Mitigates Score Range Bias in LLM-as-a-Judge
 description: >-
-  [ACL 2026][LLM Evaluation][LLM-as-a-Judge] This paper identifies **score range bias** in LLM judges under direct assessment settings — i.e.…
+  [ACL 2026][LLM Evaluation][LLM-as-a-Judge] This paper reveals that LLM-as-a-Judge exhibits **score range bias** in direct assessment tasks…
 tags:
   - "ACL 2026"
   - "LLM Evaluation"
   - "LLM-as-a-Judge"
-  - "contrastive decoding"
-  - "score range bias"
-  - "direct assessment"
-  - "model family bias"
+  - "Contrastive Decoding"
+  - "Score Range Bias"
+  - "Direct Assessment"
+  - "Model Family Bias"
 date: 2026-05-08
-content_hash: e9a62c424a88e45f
+content_hash: 78f0eb4338932e2a
 ---
 
 # Contrastive Decoding Mitigates Score Range Bias in LLM-as-a-Judge
 
-**Conference**: ACL 2026
+**Conference**: ACL 2026  
 **arXiv**: [2510.18196](https://arxiv.org/abs/2510.18196)  
-**Code**: N/A  
-**Area**: LLM Evaluation
-**Keywords**: LLM-as-a-Judge, contrastive decoding, score range bias, direct assessment, model family bias
+**Code**: None  
+**Area**: LLM Evaluation  
+**Keywords**: LLM-as-a-Judge, Contrastive Decoding, Score Range Bias, Direct Assessment, Model Family Bias
 
 ## TL;DR
 
-This paper identifies **score range bias** in LLM judges under direct assessment settings — i.e., model outputs are highly sensitive to predefined score ranges — and proposes **contrastive decoding** as a mitigation strategy, leveraging the mutual cancellation of similar biases within the same model family, achieving an average relative improvement of up to 11.3% in Spearman correlation.
+This paper reveals that LLM-as-a-Judge exhibits **score range bias** in direct assessment tasks, where model outputs are highly sensitive to predefined score ranges. It proposes using **contrastive decoding** to mitigate this issue by canceling out similar biases within the same model family, achieving an average relative improvement of up to 11.3% in Spearman correlation.
 
 ## Background & Motivation
 
-**Background**: LLM-as-a-Judge has become an indispensable component of evaluation ecosystems, widely applied to two tasks: direct assessment (assigning scores to outputs) and pairwise comparison.
+**Background**: LLM-as-a-Judge has become an indispensable part of the evaluation ecosystem, widely used for direct assessment (assigning scores to outputs) and pairwise comparison tasks.
 
-**Limitations of Prior Work**: Known LLM judge biases include self-enhancement bias (favoring the model's own outputs) and family enhancement bias (favoring outputs from models in the same family). Whether additional hidden biases exist has not been thoroughly investigated. In direct assessment tasks, the correlation between LLM judges and human annotations has consistently lagged behind pairwise comparison.
+**Limitations of Prior Work**: Known LLM judging biases include self-enhancement bias (favoring own outputs) and family enhancement bias (favoring outputs from the same family), but other hidden biases have not been fully studied. In direct assessment tasks, the correlation between LLM judges and human annotations has consistently lagged behind pairwise comparisons.
 
-**Key Challenge**: When different score ranges are used (e.g., 0–4, 1–5, 2–6, 3–7), the output correlations of LLM judges shift substantially, indicating unstable evaluation results that preclude reliable search for the optimal score range.
+**Key Challenge**: When using different score ranges (e.g., 0-4, 1-5, 2-6, 3-7), the output correlation of LLM judges changes significantly, implying instability and the inability to reliably search for the optimal score range.
 
-**Goal**: To identify and quantify score range bias in LLM judges and propose effective mitigation strategies.
+**Goal**: Reveal and quantify score range bias in LLM judges and propose effective mitigation strategies.
 
-**Key Insight**: The observation that models of different sizes within the same family encode similar score range biases (e.g., Qwen2.5 family models of 3B/7B/14B all tend to output Score 2) motivates the use of contrastive decoding to cancel these shared biases.
+**Key Insight**: It is observed that models of different sizes within the same model family encode similar score range biases (e.g., Qwen2.5 3B/7B/14B all tend to output Score 2), allowing these similar biases to cancel each other out through contrastive decoding.
 
-**Core Idea**: Apply contrastive decoding to the LLM-as-a-Judge setting by using a smaller model from the same family as an "assistant model," subtracting its logits from those of the main model to eliminate the shared score range bias.
+**Core Idea**: Apply contrastive decoding to the LLM judging scenario, using a small model from the same family as an "assistant model." Subtract the assistant model's logit from the main model's logit to eliminate shared score range bias.
 
 ## Method
 
 ### Overall Architecture
 
-The proposed method is built on the Contrastive Decoding framework, employing two models from the same model family: a main model and an assistant model. The final output is generated by subtracting the weighted log-probabilities of the assistant model from those of the main model, thereby canceling the score range bias shared by both.
+The proposed method is based on the contrastive decoding framework using two models from the same family: a main model and an assistant model. The final output is generated by subtracting weighted assistant model log-probabilities from main model log-probabilities, thereby neutralizing shared score range bias.
 
 ### Key Designs
 
-**1. Contrastive Decoding with a Scaling Factor**
+**1. Contrastive Decoding Formula with Scaling Factors**
 
-- **Function**: Aligns the logit distributions between the main and assistant models.
-- **Mechanism**: The final score is computed as $\log p_{\text{main}} - \lambda \log p_{\text{asst}}$, where $p_{\text{asst}}$ is controlled by temperature $t$: $p_{\text{asst}} = e^{e_i/t} / \sum_j e^{e_j/t}$.
-- **Design Motivation**: The logit ranges differ substantially across model sizes (3B max logit ≈ 25, 7B ≈ 30, 14B ≈ 34). Introducing scaling factor $\lambda$ and temperature $t$ to align logit distributions across models constitutes an improvement over the original contrastive decoding formulation.
+- **Function**: Adjusts logit distribution alignment between the main and assistant models.
+- **Mechanism**: Final scores are calculated via $\log p_{\text{main}} - \lambda \log p_{\text{asst}}$, where $p_{\text{asst}}$ is controlled by temperature $t$, i.e., $p_{\text{asst}} = e^{e_i/t} / \sum_j e^{e_j/t}$.
+- **Design Motivation**: Logit ranges vary significantly across model sizes (3B max logit ≈ 25, 7B ≈ 30, 14B ≈ 34). Introducing scaling factor $\lambda$ and temperature $t$ aligns logit distributions across models, which is an improvement over original contrastive decoding.
 
 **2. Same-Family Model Pairing Strategy**
 
-- **Function**: Selects model pairs that encode similar biases to enable effective bias cancellation.
-- **Mechanism**: The Llama-3 family uses 8B (main) + 1B/3B (assistant); the Qwen-2.5 family uses 7B/14B (main) + 3B (assistant).
-- **Design Motivation**: Models within the same family share similar score range bias patterns (e.g., the Llama family tends to output Score 4, while the Qwen family tends to output Score 2). This shared structure enables contrastive decoding to effectively cancel the bias.
+- **Function**: Selects model pairs encoding similar biases for cancellation.
+- **Mechanism**: Llama-3 family uses 8B (main) + 1B/3B (assistant); Qwen-2.5 family uses 7B/14B (main) + 3B (assistant).
+- **Design Motivation**: Models in the same family share similar score range bias patterns (e.g., Llama family tends to output Score 4, Qwen family Score 2). This similarity enables effective bias cancellation.
 
 **3. Hyperparameter Grid Search**
 
-- **Function**: Identifies the optimal $\lambda$ and $t$ combination for each model pair and score range.
-- **Mechanism**: A grid search is conducted over $\lambda \in \{0.01, 0.1, 0.5, 1.0\}$ and $t \in \{0.5, 1.0, 2.0, 3.0, 4.0, 5.0\}$, using 10% of the data as a development set.
-- **Design Motivation**: Different score ranges and model combinations require different hyperparameters to optimally align logit distributions.
+- **Function**: Finds the optimal $\lambda$ and $t$ combination for each model pair and score range.
+- **Mechanism**: Grid search over $\lambda \in \{0.01, 0.1, 0.5, 1.0\}$ and $t \in \{0.5, 1.0, 2.0, 3.0, 4.0, 5.0\}$, using 10% of the data as a development set.
+- **Design Motivation**: Different score ranges and model combinations require distinct hyperparameters to optimally align logit distributions.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Model / Method | Score Range | Pearson | Spearman | Kendall |
+| Model/Method | Score Range | Pearson | Spearman | Kendall |
 |---|---|---|---|---|
 | Llama 3.1-8B (greedy) | Average | 0.346 | 0.334 | 0.290 |
-| Contrastive (8B–1B) | Average | **0.361** | **0.352** | **0.306** |
+| Contrastive (8B-1B) | Average | **0.361** | **0.352** | **0.306** |
 | Qwen2.5-14B (greedy) | Average | 0.383 | 0.384 | 0.334 |
-| Contrastive (14B–3B) | Average | **0.424** | **0.433** | **0.376** |
+| Contrastive (14B-3B) | Average | **0.424** | **0.433** | **0.376** |
 
 ### Ablation Study
 
 | Analysis Dimension | Key Findings |
 |---|---|
-| Different score ranges (0–4 / 1–5 / 2–6 / 3–7) | Greedy decoding exhibits large correlation fluctuations across ranges (Llama 8B: 0.257–0.372); contrastive decoding is more stable (0.298–0.378) |
-| Assistant model selection (1B vs. 3B) | Marginal difference; 1B slightly outperforms 3B (Spearman 0.352 vs. 0.343) |
-| Multi-dimensional evaluation (coherence / relevance / consistency) | Score range bias is present across all dimensions; contrastive decoding improves most of them |
+| Different Score Ranges (0-4/1-5/2-6/3-7) | Greedy decoding correlation fluctuates significantly across ranges (Llama 8B: 0.257~0.372), while contrastive decoding is more stable (0.298~0.378). |
+| Assistant Model Selection (1B vs 3B) | Minimal difference; 1B performs slightly better than 3B (Spearman 0.352 vs 0.343). |
+| Multi-dimensional Evaluation (coherence/relevance/consistency) | Score range bias exists across all dimensions; contrastive decoding improves performance in most. |
 
 ### Key Findings
 
-1. **Score range bias is pervasive**: Models across different families (Llama-3, Qwen-2.5) and scales (1B–14B) all exhibit score range bias, showing preference for specific score values.
-2. **Same-family models encode similar biases**: Qwen family models at 3B/7B/14B all tend to output Score 2; the bias weakens as model size increases but persists.
-3. **Contrastive decoding yields the largest gains in the 2–6 range**: This is the range where greedy decoding performs worst; contrastive decoding improves it most substantially (Llama: Spearman 0.257 → 0.302).
-4. **Qwen-14B with contrastive decoding achieves the best overall performance**: Average Spearman improves from 0.384 to 0.433, a relative gain of approximately 12.8%.
+1. **Score range bias is prevalent**: Models across different families (Llama-3, Qwen-2.5) and scales (1B~14B) exhibit score range bias, preferring specific score values.
+2. **Same-family models encode similar biases**: Qwen 3B/7B/14B all tend to output Score 2. Bias weakens as model size increases but persists.
+3. **Contrastive decoding shows maximum improvement in the 2-6 range**: This is where greedy decoding performs worst; contrastive decoding provides the most significant boost here (Llama: Spearman 0.257→0.302).
+4. **Qwen-14B contrastive decoding achieves best results**: Average Spearman increases from 0.384 to 0.433, a relative improvement of ~12.8%.
 
 ## Highlights & Insights
 
-1. **High value in problem identification**: This is the first systematic revelation of score range bias in LLM judges — a previously overlooked issue with broad implications.
-2. **Simple yet effective method**: Contrastive decoding requires no additional training; it only requires running two same-family models concurrently, and can share computational overhead with speculative decoding.
-3. **Clear bias visualization**: Logit distribution plots intuitively demonstrate each model's preference for specific scores and how contrastive decoding shifts the score distribution closer to human annotations.
-4. **Expanded evaluation search space**: Contrastive decoding makes it feasible to search for optimal score ranges beyond the conventional 1–5 scale.
+1. **High value in problem discovery**: Systematically reveals score range bias in LLM-as-a-Judge for the first time, an overlooked but impactful issue.
+2. **Simple and effective method**: Contrastive decoding requires no additional training, only running two same-family models, and can share computational overhead with speculative decoding.
+3. **Clear bias visualization**: Logit distribution plots intuitively demonstrate preferences for specific scores and how contrastive decoding aligns the distribution closer to human annotations.
+4. **Expanded evaluation space**: Enables searching for optimal score ranges beyond the standard 1-5 format.
 
 ## Limitations & Future Work
 
-1. **Limited model scale**: Experiments only cover models up to 14B parameters; bias patterns and contrastive decoding effectiveness for larger models (e.g., 70B+) remain unknown.
-2. **Narrow task coverage**: Validation is limited to summarization evaluation; applicability to other evaluation tasks (e.g., code evaluation, dialogue evaluation) has not been verified.
-3. **English only**: No testing in multilingual settings.
-4. **Increased inference cost**: Two forward passes must be run simultaneously; although computational overhead can be shared via speculative decoding, deployment complexity increases.
-5. **Hyperparameter sensitivity**: Each model pair and score range requires separate tuning, and generalization in practical applications warrants further investigation.
+1. **Model scale constraints**: Experiments only cover up to 14B parameters; bias patterns and effectiveness in larger models (e.g., 70B+) are unknown.
+2. **Limited task coverage**: Verified only on summarization evaluation; applicability to other tasks (e.g., code, dialogue) remains unverified.
+3. **English only**: Not tested in multilingual scenarios.
+4. **Increased inference overhead**: Requires forward passes for two models, increasing deployment complexity despite speculative decoding sharing.
+5. **Hyperparameter sensitivity**: Requires specific tuning for each model pair and score range, questioning generalizability in practice.
 
 ## Related Work & Insights
 
-1. **G-Eval (Liu et al., 2023)**: A seminal work on NLG evaluation using GPT-4; the present paper identifies score range bias as a limitation building on this framework.
-2. **Family Enhancement Bias (Goel et al., 2025)**: Documents the tendency of same-family models to favor each other's outputs; this paper repurposes such "family similarity" for bias cancellation.
-3. **Contrastive Decoding (Li et al., 2023)**: The original contrastive decoding method for open-ended text generation; this paper transfers it to the LLM-as-a-Judge setting.
-4. **Prometheus 2 (Kim et al., 2024)**: A dedicated trained evaluation model, providing a contrast to the training-free approach proposed here.
+1. **G-Eval (Liu et al., 2023)**: Classic work on NLG evaluation using GPT-4; this paper identifies score range bias building upon it.
+2. **Family Enhancement Bias (Goel et al., 2025)**: Phenomenon where same-family models favor each other; this paper leverages this "family similarity" for bias cancellation.
+3. **Contrastive Decoding (Li et al., 2023)**: Originally for open-ended text generation; this paper adapts it for LLM judging.
+4. **Prometheus 2 (Kim et al., 2024)**: Specifically trained evaluation models, contrasting with the training-free approach here.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ — First to reveal score range bias and propose contrastive decoding as a remedy; the problem identification itself is of significant value.
-- **Experimental Thoroughness**: ⭐⭐⭐ — Covers two model families, four score ranges, and three evaluation dimensions, but task coverage is narrow (summarization only).
-- **Writing Quality**: ⭐⭐⭐⭐ — Clear structure, effective visualizations, and thorough bias analysis.
-- **Value**: ⭐⭐⭐⭐ — Carries important cautionary implications for the LLM-as-a-Judge community; the method is practical and compatible with existing inference acceleration techniques.
-
-## Highlights & Insights
-To be supplemented after a thorough reading of the paper.
-
-## Limitations & Future Work
-To be supplemented after a thorough reading of the paper.
-
-## Related Work & Insights
-To be supplemented after a thorough reading of the paper.
-
-## Rating
-- Novelty: Pending
-- Experimental Thoroughness: Pending
-- Writing Quality: Pending
-- Value: Pending
+- **Novelty**: ⭐⭐⭐⭐ — First to reveal score range bias and propose a contrastive decoding solution; the problem discovery itself is highly valuable.
+- **Experimental Thoroughness**: ⭐⭐⭐ — Covers two model families, four score ranges, and three evaluation dimensions, but covers only one task type (summarization).
+- **Writing Quality**: ⭐⭐⭐⭐ — Clear structure, good visualization, and intuitive bias analysis.
+- **Value**: ⭐⭐⭐⭐ — Significant cautionary importance for the LLM-as-a-Judge community; methodology is practical and compatible with existing acceleration techniques.
 
 <!-- RELATED:START -->
 
@@ -144,10 +129,21 @@ To be supplemented after a thorough reading of the paper.
 ## Related Papers
 
 - [\[ICLR 2026\] BiasScope: Towards Automated Detection of Bias in LLM-as-a-Judge Evaluation](../../ICLR2026/llm_evaluation/biasscope_towards_automated_detection_of_bias_in_llm-as-a-judge_evaluation.md)
+- [\[ACL 2026\] Fin-Bias: Comprehensive Evaluation for LLM Decision-Making under human bias in Finance Domain](fin-bias_comprehensive_evaluation_for_llm_decision-making_under_human_bias_in_fi.md)
 - [\[ACL 2026\] When Vision-Language Models Judge Without Seeing: Exposing Informativeness Bias](when_vision-language_models_judge_without_seeing_exposing_informativeness_bias.md)
 - [\[ACL 2026\] Common to Whom? Regional Cultural Commonsense and LLM Bias in India](common_to_whom_regional_cultural_commonsense_and_llm_bias_in_india.md)
 - [\[ACL 2026\] How Hypocritical Is Your LLM Judge? Listener–Speaker Asymmetries in the Pragmatic Competence of Large Language Models](how_hypocritical_is_your_llm_judge_listener-speaker_asymmetries_in_the_pragmatic.md)
-- [\[ACL 2026\] Multi-Task Reinforcement Learning for Enhanced Multimodal LLM-as-a-Judge](multi-task_reinforcement_learning_for_enhanced_multimodal_llm-as-a-judge.md)
+
+</div>
+
+<!-- RELATED:END -->
+## Related Papers
+
+- [\[ICLR 2026\] BiasScope: Towards Automated Detection of Bias in LLM-as-a-Judge Evaluation](../../ICLR2026/llm_evaluation/biasscope_towards_automated_detection_of_bias_in_llm-as-a-judge_evaluation.md)
+- [\[ACL 2026\] Fin-Bias: Comprehensive Evaluation for LLM Decision-Making under human bias in Finance Domain](fin-bias_comprehensive_evaluation_for_llm_decision-making_under_human_bias_in_fi.md)
+- [\[ACL 2026\] When Vision-Language Models Judge Without Seeing: Exposing Informativeness Bias](when_vision-language_models_judge_without_seeing_exposing_informativeness_bias.md)
+- [\[ACL 2026\] Common to Whom? Regional Cultural Commonsense and LLM Bias in India](common_to_whom_regional_cultural_commonsense_and_llm_bias_in_india.md)
+- [\[ACL 2026\] Reasoning Model Is Superior LLM-Judge, Yet Suffers from Biases](reasoning_model_is_superior_llm-judge_yet_suffers_from_biases.md)
 
 </div>
 

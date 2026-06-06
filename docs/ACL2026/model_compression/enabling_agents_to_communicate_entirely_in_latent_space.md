@@ -2,94 +2,94 @@
 title: >-
   [Paper Note] Enabling Agents to Communicate Entirely in Latent Space
 description: >-
-  [ACL 2026][Model Compression][latent space communication] This paper proposes Interlat, a framework enabling LLM agents to communicate entirely in latent space. The sender directly transmits the final-layer hidden states…
+  [ACL 2026][Model Compression][Latent Space Communication] This paper proposes Interlat, a framework enabling LLM agents to communicate entirely within the latent space. The sender directly transmits final-layer hidden st…
 tags:
   - "ACL 2026"
   - "Model Compression"
-  - "latent space communication"
-  - "multi-agent"
-  - "hidden state transfer"
-  - "information compression"
-  - "inference acceleration"
+  - "Latent Space Communication"
+  - "Multi-agent"
+  - "Hidden State Delivery"
+  - "Information Compression"
+  - "Inference Acceleration"
 date: 2026-05-08
-content_hash: ab8fd0c118a00ae3
+content_hash: d440f1b63fd71256
 ---
 
 # Enabling Agents to Communicate Entirely in Latent Space
 
-**Conference**: ACL 2026
+**Conference**: ACL 2026  
 **arXiv**: [2511.09149](https://arxiv.org/abs/2511.09149)  
 **Code**: [GitHub](https://github.com/XiaoDu-flying/Interlat)  
-**Area**: Model Compression
-**Keywords**: latent space communication, multi-agent, hidden state transfer, information compression, inference acceleration
+**Area**: Model Compression  
+**Keywords**: Latent Space Communication, Multi-agent, Hidden State Delivery, Information Compression, Inference Acceleration
 
 ## TL;DR
 
-This paper proposes Interlat, a framework enabling LLM agents to communicate entirely in latent space. The sender directly transmits the final-layer hidden states as a continuous representation of its "thoughts"; the receiver interprets these latent messages via a communication adapter and further compresses them to as few as 8 tokens through latent-space reasoning, achieving up to 24× communication speedup while maintaining competitive performance.
+This paper proposes Interlat, a framework enabling LLM agents to communicate entirely within the latent space. The sender directly transmits final-layer hidden states as representations of "thought," while the receiver interprets these latent messages via communication adapters. Through latent reasoning, messages are further compressed to only 8 tokens while maintaining competitive performance, achieving up to 24× communication acceleration.
 
 ## Background & Motivation
 
-**Background**: LLM-based multi-agent systems coordinate tasks through natural language communication. Despite its human readability, natural language constitutes a lossy communication medium—projecting high-dimensional internal states onto discrete tokens discards substantial information.
+**Background**: LLM-based multi-agent systems coordinate tasks through natural language communication. While human-readable, natural language is a lossy communication medium—downsampling high-dimensional internal states into discrete tokens loses significant information.
 
-**Limitations of Prior Work**: (1) Natural language communication offers limited information bandwidth (~15 bits/token vs. ~40k bits/hidden-state), causing much of the reasoning trajectory and nuanced information to be discarded during tokenization; (2) a large portion of generated text serves linguistic coherence rather than task-relevant content, introducing redundancy; (3) the inherent ambiguity of language communication is a primary source of failure in multi-agent coordination; (4) existing hidden-state communication methods rely on single-pass activation grafting or are coupled with language trajectories, requiring specific layer selection.
+**Limitations of Prior Work**: (1) Information bandwidth of natural language is limited (approx. 15 bits/token vs. approx. 40k bits/hidden-state), causing numerous reasoning paths and nuanced information to be discarded during tokenization; (2) A large volume of generated text serves linguistic coherence rather than task-relevant information, creating redundancy; (3) Inherent ambiguity in language communication is a primary source of coordination failure in multi-agent systems; (4) Existing hidden-state communication methods rely on single-activation grafting or are coupled with language trajectories, requiring specific layer selection.
 
-**Key Challenge**: The majority of LLM computation occurs in a continuous latent space, and internal hidden states carry extraordinarily rich information—yet inter-agent communication forces this information to be compressed into discrete tokens, resulting in severe information loss.
+**Key Challenge**: Most computations in LLMs occur within continuous latent spaces, where internal hidden states contain extremely rich information—yet communication requires compression into discrete tokens, leading to massive information loss.
 
-**Goal**: To enable communication between agents to occur entirely in latent space—transmitting continuous hidden states directly rather than discrete tokens—and to achieve efficient communication through compression.
+**Goal**: To enable communication between agents to occur entirely within the latent space—directly transmitting continuous hidden states instead of discrete tokens—and to achieve efficient communication through compression.
 
-**Key Insight**: Analogous to "telepathy," the framework bypasses symbolic language and directly transmits internal representations. The final-layer hidden state sequences produced during LLM generation are exploited as continuous representations of "thoughts" for transmission.
+**Key Insight**: An analogy to "telepathy"—bypassing symbolic language to transmit internal representations directly. The final-layer hidden state sequence generated during the LLM's decoding process is utilized as a continuous representation of "thought" for transmission.
 
-**Core Idea**: Time-aligned final-layer hidden state sequences serve as latent communication messages. A conditional thought separation loss ensures that the receiver genuinely exploits rather than ignores the latent information. A latent-space reasoning model then compresses long sequences into extremely short latent messages.
+**Core Idea**: Utilize time-aligned final-layer hidden state sequences as latent space communication messages. A conditional thought dissociation loss ensures the receiver utilizes rather than ignores latent information, and a latent reasoning model compresses long sequences into extremely short latent messages.
 
 ## Method
 
 ### Overall Architecture
 
-A sender–receiver two-agent setup: the reasoning agent (Sender) generates a plan along with its hidden states $H \in \mathbb{R}^{L \times d}$ → a communication adapter (lightweight self-attention + projection layers) processes the hidden states → the execution agent (Receiver) receives the hidden states and generates actions. After training, an additional compression model can be trained to compress $H_L$ into $H_K$ ($K \ll L$).
+In a Sender-Receiver two-agent setup: The inference agent (Sender) generates a plan and its hidden states $H \in \mathbb{R}^{L \times d}$ → A communication adapter (lightweight self-attention + projection layer) processes the hidden states → The execution agent (Receiver) receives the hidden states and generates an action. After training, a compression model can be further trained to compress $H_L$ into $H_K$ ($K \ll L$).
 
 ### Key Designs
 
-1. **Latent Space Communication with Conditional Thought Separation**
+1.  **Latent Communication and Conditional Thought Dissociation**:
 
-    - **Function**: Ensures that the receiver genuinely leverages task-relevant information contained in latent messages.
-    - **Mechanism**: The sender's time-aligned final-layer hidden state sequence $H = [h_1, \ldots, h_L]$ is transmitted, with special tokens `<bop>` and `<eop>` marking communication boundaries. During training, a conditional thought separation loss is minimized: the Jensen–Shannon divergence between the receiver's output distributions conditioned on matched latent states $H$ and mismatched latent states $\tilde{H}$ (from different tasks) is maximized, forcing the model to distinguish between the two.
-    - **Design Motivation**: Naive SFT may cause the model to ignore latent inputs and rely solely on the prompt. The conditional separation loss explicitly encourages the model to exploit task-specific information encoded in the latent space.
+    - **Function**: Ensures the receiver effectively utilizes task-relevant information within the latent messages.
+    - **Mechanism**: Transmits the time-aligned final-layer hidden state sequence $H = [h_1, ..., h_L]$ generated by the sender, using special tokens `<bop>` and `<eop>` to mark communication boundaries. During training, a conditional thought dissociation loss is minimized: comparing the Jensen-Shannon divergence of the receiver's output distribution under matched latent space $H$ and mismatched latent space $\tilde{H}$ (from different tasks), forcing the model to distinguish between the two.
+    - **Design Motivation**: Simple SFT may cause the model to ignore latent information and rely solely on prompts; the conditional dissociation loss explicitly encourages the model to leverage task-specific information in the latent space.
 
-2. **Plan Alignment Regularization**
+2.  **Plan Alignment Regularization**:
 
-    - **Function**: Prevents degenerate patterns during conditional separation training.
-    - **Mechanism**: Maximizing separation may cause the model to shift probability mass toward tokens that increase divergence but harm task utility. The output distribution conditioned on the corresponding linguistic plan $P$ is used as a regularizer—a KL divergence constraint aligns the latent-conditioned output with the language-plan-conditioned output, supplemented by logit cosine similarity alignment.
-    - **Design Motivation**: Ensures that latent space communication performs no worse than language communication—it should convey the same or more information.
+    - **Function**: Prevents degradation patterns during conditional dissociation training.
+    - **Mechanism**: Maximizing separation might shift probability mass toward unusual tokens that increase divergence but harm task utility. Regularization is performed using the output distribution of the corresponding language-space plan $P$—KL divergence constrains the output under latent conditions to be consistent with the output under language plan conditions, supplemented by logit cosine similarity alignment.
+    - **Design Motivation**: Ensures that latent communication is at least as effective as language communication—it should convey the same or more information.
 
-3. **Latent Space Reasoning Compression**
+3.  **Latent Reasoning Compression**:
 
     - **Function**: Compresses long latent messages into extremely short sequences.
-    - **Mechanism**: An independent reasoning model $M_\phi$ is trained to autoregressively generate a compact message $H_K$ ($K \ll L$) in latent space by feeding its own hidden states back as the next input embeddings. During training, the receiver is frozen and three loss components are optimized: task loss (preserving downstream performance) + uncertainty-weighted consistency loss (aligning the distributions of the compressed and full messages at positions with informative latent content) + latent geometry alignment loss (preserving global semantic directions).
-    - **Design Motivation**: A complete hidden state sequence may span hundreds of steps, introducing communication latency. Autoregressive latent-space reasoning distills information into a small number of steps.
+    - **Mechanism**: An independent reasoning model $M_\phi$ is trained to autoregressively generate compact messages $H_K$ ($K \ll L$) in the latent space by feeding its own hidden states back as the next input embedding. During training, the receiver is frozen, and a three-part loss is optimized: task loss (maintaining downstream performance) + uncertainty-weighted consistency loss (aligning distributions of compressed and full messages at positions with information gain) + latent geometric alignment loss (maintaining global semantic direction).
+    - **Design Motivation**: Full hidden state sequences can span hundreds of steps, causing communication latency. Autoregressive latent reasoning can "distill" information into a few steps.
 
 ### Loss & Training
 
-Main training: $\mathcal{L}_{total} = \mathcal{L}_{task} + \lambda_S \mathcal{L}_{sep} + \lambda_A \mathcal{L}_{align}$, with a stochastic token–latent mixed curriculum to stabilize training. Compression training: $\mathcal{L}_{compress} = \lambda_{task}\mathcal{L}_{task} + \lambda_{pref}\mathcal{L}_{pref} + \lambda_{geom}\mathcal{L}_{geom}$, with the receiver frozen and only the compression model updated.
+Main training: $$\mathcal{L}_{total} = \mathcal{L}_{task} + \lambda_S \mathcal{L}_{sep} + \lambda_A \mathcal{L}_{align}$$, using a stochastic token-latent hybrid curriculum for stable training. Compression training: $$\mathcal{L}_{compress} = \lambda_{task}\mathcal{L}_{task} + \lambda_{pref}\mathcal{L}_{pref} + \lambda_{geom}\mathcal{L}_{geom}$$, where the receiver is frozen and only the compression model is updated.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**Success Rate of Qwen2.5-7B on Seen/Unseen Tasks**
+**Success Rates of Qwen2.5-7B on Seen/Unseen Tasks**
 
 | Method | Seen Success Rate | Unseen Success Rate |
-|--------|------------------|---------------------|
-| No-Comm | 62.14 | 62.19 |
-| Text (language communication + SFT) | 64.29 | 62.44 |
-| CoT (full) | 67.14 | — |
-| **Interlat (latent space communication)** | **70.48** | **65.42** |
+| :--- | :--- | :--- |
+| No-Comm (No communication) | 62.14 | 62.19 |
+| Text (Language communication + SFT) | 64.29 | 62.44 |
+| CoT (full) | 67.14 | - |
+| **Interlat (Latent communication)** | **70.48** | **65.42** |
 
 ### Ablation Study
 
 **Communication Compression (Qwen2.5-7B, Seen Tasks)**
 
-| Compression Token Count K | Success Rate | Speedup |
-|--------------------------|-------------|---------|
+| Compression Tokens K | Success Rate | Speedup |
+| :--- | :--- | :--- |
 | Full L | 70.48 | 1× |
 | 64 | ~70 | ~4× |
 | 32 | ~69 | ~8× |
@@ -98,44 +98,44 @@ Main training: $\mathcal{L}_{total} = \mathcal{L}_{task} + \lambda_S \mathcal{L}
 
 **Cross-Model Heterogeneous Communication**
 
-| Sender → Receiver | Latent Communication | Language Communication |
-|-------------------|---------------------|----------------------|
+| Sender → Receiver | Latent Comm | Text Comm |
+| :--- | :--- | :--- |
 | Qwen-7B → Qwen-0.5B | 61.19 | 54.52 |
 | LLaMA-8B → LLaMA-8B | 70.71 | 62.86 |
 
 ### Key Findings
 
-- Latent space communication (70.48%) substantially outperforms language communication (64.29%) and no-communication (62.14%), confirming that hidden states carry task-relevant information that language cannot express.
-- The approach generalizes to cross-model heterogeneous settings (different architectures/sizes), suggesting that the information structure of final-layer hidden states exhibits a degree of cross-model universality.
-- Compressing to 8 tokens incurs only ~4% performance degradation (~66% vs. 70.48%) while achieving 24× communication speedup.
-- Analysis reveals that agents using latent communication exhibit more exploratory behavior, leveraging task-relevant information in latent space rather than surface-level pattern matching.
-- The conditional separation loss is critical—without it, the model tends to ignore latent space inputs.
+- Latent space communication (70.48%) significantly outperforms language communication (64.29%) and no communication (62.14%)—hidden states indeed carry useful information that language cannot express.
+- The method remains effective across heterogeneous models (different architectures/sizes), suggesting that the information structure of final-layer hidden states possesses cross-model universality.
+- Compressing to 8 tokens results in only an approx. 4% performance loss (~66% vs 70.48%) while increasing communication speed by 24×.
+- Analysis reveals that agents using latent communication exhibit more exploratory behavior, leveraging task-relevant information in the latent space rather than surface-level pattern matching.
+- Conditional dissociation loss is critical; without it, models tend to ignore latent inputs.
 
 ## Highlights & Insights
 
-- The "telepathy" analogy, though evocative, captures the core insight accurately: communication between LLMs need not pass through human-readable intermediate representations.
-- Latent space reasoning compression constitutes a novel form of "information distillation"—performing autoregressive reasoning in continuous space without decoding to tokens.
-- A 24× communication speedup carries significant practical implications for the deployment of multi-agent systems.
+- The "telepathy" analogy, while bold, captures the core: communication between LLMs does not require human-readable intermediate representations.
+- Latent reasoning compression is a novel form of "information distillation"—performing autoregressive reasoning in a continuous space without decoding into tokens.
+- The 24× communication acceleration is highly significant for the practical deployment of multi-agent systems.
 
 ## Limitations & Future Work
 
-- Validation is limited to the two-agent sender–receiver setting and has not been extended to more complex multi-agent topologies.
-- The communication adapter requires training, increasing deployment complexity.
-- Latent space communication forgoes human interpretability, making it difficult to debug and audit inter-agent "conversations."
+- Validated only in Sender-Receiver two-agent scenarios; not yet extended to complex multi-agent topologies.
+- Communication adapters require training, which increases deployment complexity.
+- Latent communication loses human interpretability, making it difficult to debug or audit "conversations" between agents.
 - Security implications of latent space communication remain unexplored.
 
 ## Related Work & Insights
 
-- **vs. COCONUT/Thought-of-Thought**: These works perform latent-space reasoning within a single model; Interlat extends this paradigm to inter-agent communication.
-- **vs. Ramesh & Li (2025)**: Their approach uses single-pass activation grafting, whereas Interlat transmits complete time-aligned hidden state sequences.
-- **vs. Tang et al. (2025)**: Their latent space communication is coupled with language trajectories; Interlat operates entirely within latent space.
+- **vs COCONUT/Thought-of-Thought**: These works perform latent reasoning within a single model; Interlat extends this to communication between multiple agents.
+- **vs Ramesh & Li (2025)**: They utilize single-activation grafting, whereas Interlat transmits full time-aligned hidden state sequences.
+- **vs Tang et al. (2025)**: Their latent communication is coupled with language trajectories; Interlat operates entirely in the latent space.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐⭐ — Fully latent communication combined with latent-space reasoning compression constitutes a genuinely new paradigm.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Multi-model, multi-task evaluation, though limited to two-agent scenarios.
-- **Writing Quality**: ⭐⭐⭐⭐ — Motivation and methodology are clearly presented with complete mathematical formulations.
-- **Value**: ⭐⭐⭐⭐⭐ — Opens a new direction for efficient communication in multi-agent systems.
+- Novelty: ⭐⭐⭐⭐⭐ Entirely latent communication + latent reasoning compression represents a new paradigm.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Evaluated across multiple models and tasks, though limited to two-agent scenarios.
+- Writing Quality: ⭐⭐⭐⭐ Clear description of motivation and methods with complete mathematical formulations.
+- Value: ⭐⭐⭐⭐⭐ Opens a new direction for efficient communication in multi-agent systems.
 
 <!-- RELATED:START -->
 
@@ -143,11 +143,11 @@ Main training: $\mathcal{L}_{total} = \mathcal{L}_{task} + \lambda_S \mathcal{L}
 
 ## Related Papers
 
-- [\[ACL 2026\] Latent-Condensed Transformer for Efficient Long Context Modeling](latent-condensed_transformer_for_efficient_long_context_modeling.md)
+- [\[ACL 2026\] ProActor: Timing-Aware Reinforcement Learning for Proactive Task Scheduling Agents](proactor_timing-aware_reinforcement_learning_for_proactive_task_scheduling_agent.md)
 - [\[ACL 2026\] IMPACT: Importance-Aware Activation Space Reconstruction](impact_importance-aware_activation_space_reconstruction.md)
+- [\[ACL 2026\] Latent-Condensed Transformer for Efficient Long Context Modeling](latent-condensed_transformer_for_efficient_long_context_modeling.md)
 - [\[CVPR 2026\] Generative Video Compression with One-Dimensional Latent Representation](../../CVPR2026/model_compression/generative_video_compression_with_one-dimensional_latent_representation.md)
-- [\[CVPR 2026\] DualReg: Dual-Space Filtering and Reinforcement for Rigid Registration](../../CVPR2026/model_compression/dualreg_dual-space_filtering_and_reinforcement_for_rigid_registration.md)
-- [\[ICLR 2026\] SwiReasoning: Switch-Thinking in Latent and Explicit for Pareto-Superior Reasoning](../../ICLR2026/model_compression/swireasoning_switch-thinking_in_latent_and_explicit_for_pareto-superior_reasonin.md)
+- [\[ICML 2026\] Exploiting Weight-Space Symmetries for Approximating Curvature](../../ICML2026/model_compression/exploiting_weight-space_symmetries_for_approximating_curvature.md)
 
 </div>
 

@@ -2,83 +2,80 @@
 title: >-
   [Paper Note] Hierarchical Reinforcement Learning with Augmented Step-Level Transitions for LLM Agents
 description: >-
-  [ACL 2026][LLM Agent][Hierarchical Reinforcement Learning] This paper proposes STEP-HRL, which introduces a local progress module to iteratively compress interaction history within each subtask into compact textual summa…
+  [ACL 2026][LLM Agent][Hierarchical Reinforcement Learning] This paper proposes STEP-HRL, which iteratively compresses interaction histories into compact text summaries through a local progress module. This allows high-le…
 tags:
   - "ACL 2026"
   - "LLM Agent"
   - "Hierarchical Reinforcement Learning"
-  - "Step-Level Transitions"
-  - "Local Progress"
-  - "Token Efficiency"
+  - "Step-level transitions"
+  - "Local progress"
+  - "Token efficiency"
   - "Offline RL"
 date: 2026-05-08
-content_hash: c5bd44624b4a9c1b
+content_hash: 0076f728e09cae66
 ---
 
 # Hierarchical Reinforcement Learning with Augmented Step-Level Transitions for LLM Agents
 
-**Conference**: ACL 2026
+**Conference**: ACL 2026  
 **arXiv**: [2604.05808](https://arxiv.org/abs/2604.05808)  
 **Code**: [GitHub](https://github.com/TonyStark042/STEP-HRL)  
-**Area**: LLM Agent / Hierarchical Reinforcement Learning
-**Keywords**: Hierarchical Reinforcement Learning, Step-Level Transitions, Local Progress, Token Efficiency, Offline RL
+**Area**: LLM Agent / Hierarchical Reinforcement Learning  
+**Keywords**: Hierarchical Reinforcement Learning, Step-level transitions, Local progress, Token efficiency, Offline RL
 
 ## TL;DR
 
-This paper proposes STEP-HRL, which introduces a local progress module to iteratively compress interaction history within each subtask into compact textual summaries, enabling both high-level and low-level policies to make decisions based solely on single-step transitions rather than full histories. The approach achieves significant performance and generalization gains on ScienceWorld and ALFWorld while reducing token usage.
+This paper proposes STEP-HRL, which iteratively compresses interaction histories into compact text summaries through a local progress module. This allows high-level and low-level policies to make decisions based on step-level transitions rather than full histories, significantly improving performance and generalization on ScienceWorld and ALFWorld while reducing token usage.
 
 ## Background & Motivation
 
-**Background**: LLM agents have demonstrated strong capabilities in interactive decision-making tasks. Reinforcement learning provides a principled mechanism for improving agents through environment interaction and reward feedback. Existing LLM agents predominantly adopt a "history-conditioned" paradigm, where policies condition on ever-growing historical sequences.
+**Background**: LLM agents have shown powerful capabilities in interactive decision-making tasks. Reinforcement Learning (RL) provides a principled mechanism for improving agents by optimizing policies through environment interaction and reward feedback. Existing LLM agents commonly adopt a "history-conditioned" paradigm, where policies are conditioned on increasingly long historical sequences.
 
-**Limitations of Prior Work**: (1) The quadratic complexity of attention mechanisms makes reasoning over long histories computationally expensive; (2) unfiltered history accumulates redundant or irrelevant information that may obscure decision-critical signals; (3) existing HRL methods introduce temporal abstraction but still condition both high- and low-level policies on cumulative histories, inheriting the long-context dependency problem.
+**Limitations of Prior Work**: (1) The quadratic complexity of the attention mechanism makes inference with long histories computationally expensive; (2) Unfiltered historical accumulation contains redundant or irrelevant information that can obscure critical decision signals; (3) Existing HRL methods, despite introducing temporal abstraction, still condition high-level and low-level policies on cumulative history, inheriting the long-context dependency issue.
 
-**Key Challenge**: History conditioning is a modeling choice rather than a necessity of RL — conflating long-horizon decision-making with long-context reasoning introduces unnecessary computational overhead and reasoning noise.
+**Key Challenge**: Long-history conditioning is a modeling choice rather than a necessity for RL—conflating long-term decision-making with long context introduces unnecessary computational burden and reasoning noise.
 
-**Goal**: Design a progress-based rather than history-based HRL framework in which policies rely solely on single-step transitions for decision-making.
+**Goal**: To design a progress-based rather than history-based HRL framework that enables policies to make decisions based only on step-level transitions.
 
-**Key Insight**: The sequence of completed subtasks naturally constitutes a compact summary of global progress; the remaining challenge is how to compactly represent the local interaction history within each subtask.
+**Key Insight**: The sequence of completed subtasks naturally forms a compact summary of global progress; the remaining challenge is how to compactly represent the local interaction history within each subtask.
 
-**Core Idea**: Introduce a local progress policy $\pi_\theta^p$ that iteratively compresses the intra-subtask interaction history into a compact textual representation at each step. The low-level policy conditions only on the current subtask, local progress, and current observation, eliminating dependence on the full history.
+**Core Idea**: Introduce a local progress policy $\pi_\theta^p$ that iteratively compresses the interaction history within a subtask into a compact text representation. The low-level policy conditions only on the current subtask, local progress, and current observation, eliminating reliance on the full history.
 
 ## Method
 
 ### Overall Architecture
 
-STEP-HRL comprises three policies sharing parameters: (1) the **high-level policy** $\pi_\theta^h$ generates the next subtask conditioned on the task instruction, completed subtasks, the final progress of the previous subtask, and the current observation; (2) the **low-level policy** $\pi_\theta^l$ generates primitive actions conditioned on the current subtask, local progress, and current observation; (3) the **local progress policy** $\pi_\theta^p$ updates local progress conditioned on the current subtask, previous action, current observation, and prior-step progress. Training proceeds in two stages: behavioral cloning initialization → step-level offline RL optimization.
+STEP-HRL consists of three policies with shared parameters: (1) **High-level policy** $\pi_\theta^h$ generates the next subtask based on task instructions, completed subtasks, the final progress of the previous subtask, and the current observation; (2) **Low-level policy** $\pi_\theta^l$ generates primitive actions based on the current subtask, local progress, and current observation; (3) **Local progress policy** $\pi_\theta^p$ updates the local progress based on the current subtask, the previous action, the current observation, and the previous step's progress. Training consists of two stages: Behavior Cloning initialization followed by step-level offline RL optimization.
 
 ### Key Designs
 
-1. **Local Progress Policy**:
+1.  **Local Progress Module**:
+    - **Function**: Iteratively compresses the growing interaction history within a subtask into a fixed-size text summary.
+    - **Mechanism**: $p_t^k \sim \pi_\theta^p(\cdot | g_k, a_{t-1}^k, o_t^k, p_{t-1}^k)$. Each step receives the previous progress, the last action, and the current observation to selectively extract subtask-relevant information and output an updated compact progress summary. Initialized as $p_0^k = \varnothing$.
+    - **Design Motivation**: Unlike simple history truncation, local progress is selective—it retains only subtask-relevant information and discards redundancy.
 
-    - **Function**: Iteratively compresses the growing intra-subtask interaction history into a fixed-size textual summary.
-    - **Mechanism**: $p_t^k \sim \pi_\theta^p(\cdot | g_k, a_{t-1}^k, o_t^k, p_{t-1}^k)$. At each step, the policy receives the previous progress, the last action, and the current observation, selectively extracts subtask-relevant information, and outputs an updated compact progress summary. Initialized as empty: $p_0^k = \varnothing$.
-    - **Design Motivation**: Unlike simple history truncation, local progress is selective — retaining only subtask-relevant information and discarding redundancy.
+2.  **Step-Level Transition Construction**:
+    - **Function**: Enables both low-level and high-level policies to make decisions based on constant-sized inputs.
+    - **Mechanism**: Low-level step transitions are $(o_t^k, p_t^k, a_t^k, \hat{r}_t^k, o_{t+1}^k, p_{t+1}^k)$; high-level step transitions are $(\hat{p}_{k-1}, o_0^k, g_k, R_k, \hat{p}_k, o_0^{k+1})$, where $\hat{p}_k$ is the final local progress at the end of subtask $g_k$.
+    - **Design Motivation**: Step-level transitions are Markovian—decisions can be made without backtracking through the full history.
 
-2. **Step-Level Transition Construction**:
-
-    - **Function**: Enables both low-level and high-level policies to make decisions based on constant-size inputs.
-    - **Mechanism**: The low-level step transition is $(o_t^k, p_t^k, a_t^k, \hat{r}_t^k, o_{t+1}^k, p_{t+1}^k)$; the high-level step transition is $(\hat{p}_{k-1}, o_0^k, g_k, R_k, \hat{p}_k, o_0^{k+1})$, where $\hat{p}_k$ denotes the final local progress upon completion of subtask $g_k$.
-    - **Design Motivation**: Step-level transitions are Markovian — decisions can be made without backtracking through the full history.
-
-3. **Step-Level Offline RL (IQL-based)**:
-
-    - **Function**: Further optimizes policies after behavioral cloning initialization.
-    - **Mechanism**: Built on the Implicit Q-Learning framework, the three policies share parameters but are each equipped with independent critic networks (utterance-level $V$ and $Q$). Value functions are learned via expectile regression, and policies are optimized via advantage-weighted regression. The low-level policy uses intrinsic rewards (subtask completion = 1); the high-level policy uses extrinsic environment rewards.
-    - **Design Motivation**: Behavioral cloning merely imitates experts, whereas offline RL can discover superior policies; step-level transitions yield more stable value estimates for RL.
+3.  **Step-Level Offline RL (IQL-based)**:
+    - **Function**: Further optimizes policies after Behavior Cloning initialization.
+    - **Mechanism**: Based on the Implicit Q-Learning framework, the three policies share parameters but are equipped with independent critic networks (utterance-level V and Q). Expectile regression is used to learn value functions, and advantage-weighted regression optimizes the policy. Low-level uses intrinsic rewards (subtask completion = 1), and high-level uses extrinsic environment rewards.
+    - **Design Motivation**: Behavior Cloning only mimics experts, while offline RL can discover superior policies; step-level transitions make value estimation in RL more stable.
 
 ### Loss & Training
 
-The behavioral cloning stage employs autoregressive cross-entropy loss. The offline RL stage jointly optimizes: a Q-function TD regression loss, a value function expectile loss, and an advantage-weighted policy loss. All three policies share LLM parameters to facilitate cross-level knowledge transfer.
+The Behavior Cloning stage utilizes an autoregressive cross-entropy loss. The offline RL stage involves joint optimization: Q-function TD regression loss + value function expectile loss + policy advantage-weighted loss. All three policies share LLM parameters to promote cross-level knowledge transfer.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**ScienceWorld (30 science task families)**
+**ScienceWorld (30 scientific task families)**
 
 | Method | Total Score | Token Usage | Generalization (Unseen Variants) |
-|--------|-------------|-------------|----------------------------------|
+| :--- | :--- | :--- | :--- |
 | ReAct | 32.1 | High | Low |
 | GLIDER (HRL) | 48.2 | High | Medium |
 | STEP-HRL (BC only) | 52.7 | **Low** | Medium |
@@ -87,43 +84,43 @@ The behavioral cloning stage employs autoregressive cross-entropy loss. The offl
 ### Ablation Study
 
 | Configuration | ScienceWorld | ALFWorld |
-|---------------|-------------|---------|
-| No local progress (full history) | 44.8 | 62.3 |
-| Fixed-window truncation | 47.2 | 65.1 |
-| **Local progress (STEP-HRL)** | **57.3** | **78.4** |
+| :--- | :--- | :--- |
+| W/O Local Progress (Full History) | 44.8 | 62.3 |
+| Fixed Window Truncation | 47.2 | 65.1 |
+| **Local Progress (STEP-HRL)** | **57.3** | **78.4** |
 
 ### Key Findings
 
-- STEP-HRL with behavioral cloning alone already surpasses existing HRL baselines (52.7 vs. 48.2), validating the effectiveness of step-level transitions per se.
-- Offline RL provides a further 4.6-point improvement, demonstrating that step-level transitions enable more efficient RL optimization.
-- The local progress module outperforms fixed-window truncation by 10.1 points — selective information retention is substantially superior to naive truncation.
-- Parameter sharing across the three policies reduces training and inference overhead while promoting cross-level knowledge transfer.
+- STEP-HRL in the Behavior Cloning stage alone surpasses existing HRL baselines (52.7 vs 48.2), validating the effectiveness of step-level transitions.
+- Offline RL provides an additional 4.6 percentage point improvement, proving that step-level transitions make RL optimization more efficient.
+- The local progress module improves performance by 10.1 percentage points compared to fixed-window truncation—selective information retention is far superior to simple truncation.
+- Shared parameters among the three policies reduce training and inference overhead while promoting cross-level knowledge transfer.
 
 ## Highlights & Insights
 
-- The core insight that "long-horizon decision-making ≠ long-context reasoning" is profound — step-level transitions demonstrate that information compression can substitute for history accumulation.
-- Local progress functions as an information bottleneck, naturally achieving attention focusing and noise filtering.
-- The parameter-sharing design across three policies strikes a favorable balance between efficiency and performance.
+- The core insight that "long-term decision-making $\neq$ long context" is profound—step-level transitions demonstrate that information compression can replace history accumulation.
+- Local progress acts as an information bottleneck, naturally achieving attention focus and noise filtering.
+- The design of shared parameters across the three policies strikes a good balance between efficiency and performance.
 
 ## Limitations & Future Work
 
-- The quality of local progress depends on the LLM's summarization capability — weaker LLMs may produce low-quality progress representations.
-- Subtask decomposition and progress annotations in expert demonstrations are generated by DeepSeek, which may introduce its inherent biases.
-- Evaluation is limited to text-based environments (ScienceWorld, ALFWorld); applicability to visual or multimodal environments remains unexplored.
-- Offline RL is constrained by the quality and diversity of collected data.
+- The quality of local progress depends on the LLM's summarization ability—weaker LLMs might generate low-quality progress.
+- Subtask decomposition and progress labeling for expert demonstrations were generated by DeepSeek, which may inherit its biases.
+- Evaluation was limited to text-based environments (ScienceWorld, ALFWorld); applicability to visual or multimodal environments remains unknown.
+- Offline RL is limited by the quality and diversity of the collected data.
 
 ## Related Work & Insights
 
-- **vs. GLIDER**: GLIDER employs HRL but still conditions on full histories; STEP-HRL eliminates historical dependence through local progress.
-- **vs. ReAct**: ReAct interleaves reasoning and acting but lacks hierarchical structure; STEP-HRL adds hierarchical abstraction and step-level optimization.
-- **vs. Decision Transformer**: DT reformulates decision-making as sequence prediction and requires complete trajectories; STEP-HRL requires only single-step transitions.
+- **vs GLIDER**: GLIDER uses HRL but still conditions on full history; STEP-HRL eliminates history dependency through local progress.
+- **vs ReAct**: ReAct interleaves reasoning and acting but lacks a hierarchical structure; STEP-HRL adds hierarchical abstraction and step-level optimization.
+- **vs Decision Transformer**: DT treats decision-making as sequence prediction requiring full trajectories; STEP-HRL requires only step-level transitions.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ The HRL design combining step-level transitions and local progress is novel and well-motivated.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Two benchmarks, detailed ablations, token analysis, and generalization evaluation.
-- Writing Quality: ⭐⭐⭐⭐⭐ Problem formulation is clear and method derivation is complete.
-- Value: ⭐⭐⭐⭐ Provides a more efficient framework for long-horizon decision-making in LLM agents.
+- Novelty: ⭐⭐⭐⭐ The HRL design combining step-level transitions and local progress is novel and sound.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Two benchmarks, detailed ablations, token analysis, and generalization assessment.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear problem definition and complete methodological derivation.
+- Value: ⭐⭐⭐⭐ Provides a more efficient framework for long-term decision-making in LLM agents.
 
 <!-- RELATED:START -->
 
@@ -131,11 +128,11 @@ The behavioral cloning stage employs autoregressive cross-entropy loss. The offl
 
 ## Related Papers
 
+- [\[ACL 2026\] Verified Critical Step Optimization for LLM Agents](verified_critical_step_optimization_for_llm_agents.md)
 - [\[AAAI 2026\] MoralReason: Generalizable Moral Decision Alignment For LLM Agents Using Reasoning-Level Reinforcement Learning](../../AAAI2026/llm_agent/moralreason_generalizable_moral_decision_alignment_for_llm_agents_using_reasonin.md)
-- [\[ACL 2026\] HeLa-Mem: Hebbian Learning and Associative Memory for LLM Agents](hela-mem_hebbian_learning_and_associative_memory_for_llm_agents.md)
+- [\[ACL 2026\] Why LLM Web Agents Fail: A Hierarchical Planning Perspective](why_do_llm-based_web_agents_fail_a_hierarchical_planning_perspective.md)
+- [\[ACL 2026\] Temp-R1: A Unified Autonomous Agent for Complex Temporal KGQA via Reverse Curriculum Reinforcement Learning](temp-r1_a_unified_autonomous_agent_for_complex_temporal_kgqa_via_reverse_curricu.md)
 - [\[ICLR 2026\] Reducing Belief Deviation in Reinforcement Learning for Active Reasoning of LLM Agents](../../ICLR2026/llm_agent/reducing_belief_deviation_in_reinforcement_learning_for_active_reasoning.md)
-- [\[ACL 2026\] HiGMem: A Hierarchical and LLM-Guided Memory System for Long-Term Conversational Agents](higmem_a_hierarchical_and_llm-guided_memory_system_for_long-term_conversational_.md)
-- [\[ICLR 2026\] Solving the Granularity Mismatch: Hierarchical Preference Learning for Long-Horizon LLM Agents](../../ICLR2026/llm_agent/solving_the_granularity_mismatch_hierarchical_preference_learning_for_long-horiz.md)
 
 </div>
 

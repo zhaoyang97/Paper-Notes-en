@@ -144,8 +144,8 @@ $$\dot{\tilde{w}}^\circ(t)=-\mathrm{grad}_{\mathcal{M}}\ell_2(\tilde{w}^\circ(t)
 - [\[NeurIPS 2025\] Impact of Layer Norm on Memorization and Generalization in Transformers](impact_of_layer_norm_on_memorization_and_generalization_in_transformers.md)
 - [\[NeurIPS 2025\] Finite-Time Analysis of Stochastic Nonconvex Nonsmooth Optimization on the Riemannian Manifolds](finite-time_analysis_of_stochastic_nonconvex_nonsmooth_optimization_on_the_riema.md)
 - [\[NeurIPS 2025\] Double Descent Meets Out-of-Distribution Detection: Theoretical Insights and Empirical Analysis](double_descent_meets_out-of-distribution_detection_theoretical_insights_and_empi.md)
+- [\[ICML 2026\] Riemannian Networks over Full-Rank Correlation Matrices](../../ICML2026/others/riemannian_networks_over_full-rank_correlation_matrices.md)
 - [\[NeurIPS 2025\] MutualVPR: A Mutual Learning Framework for Resolving Supervision Inconsistencies via Adaptive Clustering](mutualvpr_a_mutual_learning_framework_for_resolving_supervision_inconsistencies_.md)
-- [\[NeurIPS 2025\] A Unified Framework for Variable Selection in Model-Based Clustering with Missing Not at Random](a_unified_framework_for_variable_selection_in_modelbased_clu.md)
 
 </div>
 

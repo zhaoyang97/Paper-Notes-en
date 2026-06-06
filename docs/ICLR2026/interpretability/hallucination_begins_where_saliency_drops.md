@@ -147,10 +147,10 @@ Hyperparameter ablation on $\alpha$ (SGRS) and $\beta$ (LocoRE) with LLaVA-1.5-7
 ## Related Papers
 
 - [\[CVPR 2026\] Reallocating Attention Across Layers to Reduce Multimodal Hallucination](../../CVPR2026/interpretability/reallocating_attention_across_layers_to_reduce_multimodal_hallucination.md)
-- [\[NeurIPS 2025\] Beyond Token Probes: Hallucination Detection via Activation Tensors with ACT-ViT](../../NeurIPS2025/interpretability/beyond_token_probes_hallucination_detection_via_activation_tensors_with_act-vit.md)
+- [\[ACL 2026\] Mechanisms of Prompt-Induced Hallucination in Vision–Language Models](../../ACL2026/interpretability/mechanisms_of_prompt-induced_hallucination_in_vision-language_models.md)
+- [\[ICML 2026\] Finding the Correct Visual Evidence Without Forgetting: Mitigating Hallucination in LVLMs via Inter-Layer Visual Attention Discrepancy](../../ICML2026/interpretability/finding_the_correct_visual_evidence_without_forgetting_mitigating_hallucination_.md)
 - [\[NeurIPS 2025\] Fantastic Features and Where to Find Them: A Probing Method to Combine Features from Multiple Foundation Models](../../NeurIPS2025/interpretability/fantastic_features_and_where_to_find_them_a_probing_method_to_combine_features_f.md)
-- [\[ICLR 2026\] Uncovering Grounding IDs: How External Cues Shape Multimodal Binding](uncovering_grounding_ids_how_external_cues_shape_multimodal_binding.md)
-- [\[ICLR 2026\] Temporal Sparse Autoencoders: Leveraging the Sequential Nature of Language for Interpretability](temporal_sparse_autoencoders_leveraging_the_sequential_nature_of_language_for_in.md)
+- [\[NeurIPS 2025\] Beyond Token Probes: Hallucination Detection via Activation Tensors with ACT-ViT](../../NeurIPS2025/interpretability/beyond_token_probes_hallucination_detection_via_activation_tensors_with_act-vit.md)
 
 </div>
 

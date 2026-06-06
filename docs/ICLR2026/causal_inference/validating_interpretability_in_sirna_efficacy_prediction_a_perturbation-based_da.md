@@ -126,11 +126,11 @@ $\mathcal{L}_{total} = \mathcal{L}_{pred} + \lambda(t) \mathcal{L}_{bio} + \lamb
 
 ## Related Papers
 
+- [\[ICML 2026\] Outcome-Aware Spectral Feature Learning for Instrumental Variable Regression](../../ICML2026/causal_inference/outcome-aware_spectral_feature_learning_for_instrumental_variable_regression.md)
 - [\[NeurIPS 2025\] LLM Interpretability with Identifiable Temporal-Instantaneous Representation](../../NeurIPS2025/causal_inference/llm_interpretability_with_identifiable_temporal-instantaneous_representation.md)
 - [\[NeurIPS 2025\] Conformal Prediction for Causal Effects of Continuous Treatments](../../NeurIPS2025/causal_inference/conformal_prediction_for_causal_effects_of_continuous_treatments.md)
 - [\[ICLR 2026\] RFEval: Benchmarking Reasoning Faithfulness under Counterfactual Perturbations](rfeval_benchmarking_reasoning_faithfulness_under_counterfactual_perturbations.md)
 - [\[ICLR 2026\] Direct Doubly Robust Estimation of Conditional Quantile Contrasts](direct_doubly_robust_estimation_of_conditional_quantile_contrasts.md)
-- [\[ICLR 2026\] Counterfactual Explanations on Robust Perceptual Geodesics](counterfactual_explanations_on_robust_perceptual_geodesics.md)
 
 </div>
 

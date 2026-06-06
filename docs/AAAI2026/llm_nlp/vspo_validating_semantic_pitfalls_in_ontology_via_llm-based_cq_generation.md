@@ -145,9 +145,9 @@ Under the Type 4 aligned setting, VSPO achieves 96.7 precision and 80.4 F1, indi
 
 - [\[ICML 2026\] Escaping Mode Collapse in LLM Generation via Geometric Regulation](../../ICML2026/llm_nlp/escaping_mode_collapse_in_llm_generation_via_geometric_regulation.md)
 - [\[AAAI 2026\] LoopLLM: Transferable Energy-Latency Attacks in LLMs via Repetitive Generation](loopllm_transferable_energy-latency_attacks_in_llms_via_repetitive_generation.md)
+- [\[ICML 2026\] Differential Syntactic and Semantic Encoding in LLMs](../../ICML2026/llm_nlp/differential_syntactic_and_semantic_encoding_in_llms.md)
 - [\[ICLR 2026\] ELLMob: Event-Driven Human Mobility Generation with Self-Aligned LLM Framework](../../ICLR2026/llm_nlp/ellmob_event-driven_human_mobility_generation_with_self-aligned_language_models.md)
-- [\[ACL 2026\] Not All Animals Are Equal: Metaphorical Framing through Source Domains and Semantic Frames](../../ACL2026/llm_nlp/not_all_animals_are_equal_metaphorical_framing_through_source_domains_and_semant.md)
-- [\[AAAI 2026\] PERSIST: Persistent Instability in LLM's Personality Measurements](persistent_instability_in_llms_personality_measurements_effects_of_scale_reasoni.md)
+- [\[ICML 2026\] SAC-Opt: Semantic Anchors for Iterative Correction in Optimization Modeling](../../ICML2026/llm_nlp/sac-opt_semantic_anchors_for_iterative_correction_in_optimization_modeling.md)
 
 </div>
 

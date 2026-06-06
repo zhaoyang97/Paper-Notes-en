@@ -2,83 +2,80 @@
 title: >-
   [Paper Note] Enhancing Hallucination Detection via Future Context
 description: >-
-  [ACL 2026][LLM Safety][hallucination detection] This paper proposes leveraging sampled "future context" (subsequent sentences) to enhance hallucination detection in black-box settings. By exploiting the "snowball effect"…
+  [ACL 2026][LLM Safety][Hallucination detection] This paper proposes using sampled "future context" (subsequent sentences) to enhance hallucination detection in black-box scenarios. By exploiting the "snowball effect"—whe…
 tags:
   - "ACL 2026"
   - "LLM Safety"
-  - "hallucination detection"
-  - "future context"
-  - "black-box generator"
-  - "sampling methods"
-  - "snowball effect"
+  - "Hallucination detection"
+  - "Future context"
+  - "Black-box generator"
+  - "Sampling methods"
+  - "Snowball effect"
 date: 2026-05-08
-content_hash: 58f01fda8584a312
+content_hash: 6ad74403d13ca22a
 ---
 
 # Enhancing Hallucination Detection via Future Context
 
-**Conference**: ACL 2026
+**Conference**: ACL 2026  
 **arXiv**: [2507.20546](https://arxiv.org/abs/2507.20546)  
-**Code**: N/A  
-**Area**: LLM Safety
-**Keywords**: hallucination detection, future context, black-box generator, sampling methods, snowball effect
+**Code**: None  
+**Area**: LLM Safety  
+**Keywords**: Hallucination detection, Future context, Black-box generator, Sampling methods, Snowball effect
 
 ## TL;DR
 
-This paper proposes leveraging sampled "future context" (subsequent sentences) to enhance hallucination detection in black-box settings. By exploiting the "snowball effect"—whereby hallucinations tend to propagate once introduced—the method consistently improves detection performance across multiple sampling-based approaches, including SelfCheckGPT and SC.
+This paper proposes using sampled "future context" (subsequent sentences) to enhance hallucination detection in black-box scenarios. By exploiting the "snowball effect"—where hallucinations tend to persist once they occur—the method consistently improves detection performance across various sampling approaches, such as SelfCheckGPT and SC.
 
 ## Background & Motivation
 
-**Background**: LLM hallucination detection methods fall into two main categories: uncertainty-based methods (requiring logits access) and sampling-based methods (e.g., SelfCheckGPT, which checks consistency across multiple generated responses). In practical settings such as blog services or deprecated/updated APIs, internal signals from the generator are often inaccessible.
+**Background**: LLM hallucination detection methods are mainly categorized into uncertainty-based (requiring logit access) and sampling-based (e.g., SelfCheckGPT, which checks consistency across multiple responses). In practical scenarios (e.g., blog posts, updated or deprecated API services), the internal signals of generators are often inaccessible.
 
-**Limitations of Prior Work**: (1) Uncertainty-based methods require token-level logits and are infeasible in black-box scenarios; (2) retrieval-based methods are constrained by access to internal documents or private knowledge bases, and cannot detect logical hallucinations or internal inconsistencies (35.2% of self-contradictory hallucinations are undetectable via retrieval); (3) existing sampling-based methods exploit only "current context" through surrogate sampling, neglecting signals from "future context."
+**Limitations of Prior Work**: (1) Uncertainty methods require token-level logits, which is infeasible in black-box settings; (2) Retrieval methods are limited by internal documents or private knowledge bases and fail to detect logical hallucinations and internal inconsistencies (35.2% of self-contradictory hallucinations cannot be discovered via retrieval); (3) Existing sampling methods only utilize alternatives of the "current context" and do not leverage signals from "future context."
 
-**Key Challenge**: Once a hallucination occurs, it tends to persist and amplify in subsequent generation (snowball effect); however, existing methods focus solely on the consistency of the current sentence, ignoring cues provided by future context.
+**Key Challenge**: Hallucinations tend to persist and amplify in subsequent generations once they appear (snowball effect), but existing methods focus only on the consistency of the current sentence, ignoring clues provided by future context.
 
-**Goal**: To leverage future context as additional evidence to enhance the hallucination detection capability of existing sampling-based methods.
+**Goal**: To leverage future context as additional clues to enhance the hallucination detection capabilities of existing sampling methods.
 
-**Key Insight**: An instruction-tuned LLM is used to generate plausible continuations following the target sentence; these future contexts are appended to the detection prompt to provide richer cues for hallucination judgment.
+**Key Insight**: Use instruction-tuned LLMs to generate possible continuations following the target sentence, and append these future contexts to the detection prompt to provide richer clues for hallucination judgment.
 
-**Core Idea**: If the current sentence is a hallucination, its future context is more likely to contain hallucinated information—this "contagiousness" is exploited as a detection signal.
+**Core Idea**: If the current sentence is a hallucination, its future context is more likely to contain hallucinatory information—leveraging this "contagiousness" as a detection signal.
 
 ## Method
 
 ### Overall Architecture
 
-A three-step pipeline: (A) a black-box generator produces context–response pairs; (B) future context sampling—an instruction-tuned LLM generates plausible subsequent sentences; (C) the future context is integrated into existing hallucination detection methods (SelfCheckGPT, SC, Direct) by appending it to the prompt, thereby enriching the detection cues.
+A three-step pipeline: (A) Black-box generator produces context-response pairs; (B) Future context sampling—using instruction-tuned LLMs to generate possible subsequent sentences; (C) Integration of future context into existing hallucination detection methods (SelfCheckGPT, SC, Direct) by appending them to prompts to enrich detection clues.
 
 ### Key Designs
 
-1. **Future Context Sampling**:
+1.  **Future Context Sampling**:
+    -   **Function**: Generates possible subsequent sentences for the target sentence as detection clues.
+    -   **Mechanism**: Uses instruction-tuned LLMs prompted to generate the "next sentence." When more than one sentence of future context is required, generating multiple sentences at once is more effective than sequential sentence-by-sentence generation. A "future context" is defined as a set of sentences generated from a single sampling path.
+    -   **Design Motivation**: The snowball effect indicates that a hallucinatory sentence increases the probability of hallucinations in subsequent sentences; these subsequent hallucinations can, in turn, serve as clues for detecting hallucinations in the current sentence.
 
-    - **Function**: Generates plausible subsequent sentences for the target sentence to serve as detection cues.
-    - **Mechanism**: An instruction-tuned LLM is prompted to generate "the next sentence." When more than one future sentence is needed, generating multiple sentences in a single pass is more effective than sequential sentence-by-sentence generation. One "future context" is defined as the set of sentences generated from a single sampling trajectory.
-    - **Design Motivation**: The snowball effect implies that hallucinated sentences increase the probability of hallucination in subsequent sentences; these downstream hallucinations can in turn serve as cues for detecting hallucination in the current sentence.
+2.  **Integration with Existing Methods**:
+    -   **Function**: Integrates future context as a general enhancement scheme into multiple methods.
+    -   **Mechanism**: Unified strategy—directly append future context to the detection prompt. SelfCheckGPT+f: Future context is appended to alternative responses to expand the scope of clues for consistency checking; SC+f: Future context replaces the description field in SC; Direct+f: Future context is appended to the Direct method's prompt to enhance internal knowledge-assisted hallucination judgment.
+    -   **Design Motivation**: A simple and unified appending strategy allows the method to be easily integrated without modifying the underlying detection logic.
 
-2. **Integration with Existing Methods**:
-
-    - **Function**: Incorporates future context as a general-purpose augmentation into multiple detection methods.
-    - **Mechanism**: A unified strategy of directly appending future context to the detection prompt. *SelfCheckGPT+f*: future context is appended to surrogate responses to extend the scope of consistency checking; *SC+f*: future context replaces the description field in SC; *Direct+f*: future context is appended to the Direct method's prompt to augment hallucination judgment with additional evidence.
-    - **Design Motivation**: The simple, unified appending strategy allows seamless integration without modifying the underlying detection logic.
-
-3. **Direct Baseline Method**:
-
-    - **Function**: Leverages the detector LLM's internal knowledge to judge hallucinations directly.
-    - **Mechanism**: A binary question ("Is this sentence accurate?") is posed directly to the LLM, which uses its internal knowledge and reasoning capability to make a judgment. Each sentence–cue pair is evaluated independently, and the final hallucination score is obtained by averaging.
-    - **Design Motivation**: Serves as a concise baseline that requires no complex probability estimation, while providing precise experimental control over key factors.
+3.  **Direct Baseline Method**:
+    -   **Function**: Directly utilizes the detector LLM's internal knowledge to judge hallucinations.
+    -   **Mechanism**: Directly poses binary questions ("Is this sentence accurate?") to the LLM, leveraging the model's internal knowledge and reasoning capabilities. Each sentence-clue pair is evaluated independently, and hallucination scores are averaged.
+    -   **Design Motivation**: Serves as a concise baseline independent of complex probability estimation while providing experimental conditions for precise control of key elements.
 
 ### Loss & Training
 
-No model training is involved. Pre-trained instruction-tuned models (LLaMA 3.1, Gemma 3, Qwen 2.5) are used as detectors and samplers.
+Does not involve model training; pre-trained instruction-tuned models (LLaMA 3.1, Gemma 3, Qwen 2.5) are used as detectors and samplers.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**Hallucination Detection AUC-PR (averaged across 6 datasets)**
+**Hallucination Detection AUC-PR (Average across 6 datasets)**
 
-| Detector | Method | w/o Future Context | w/ Future Context | Gain |
-|----------|--------|--------------------|-------------------|------|
+| Detector | Method | Without Future Context | With Future Context | Gain |
+| :--- | :--- | :--- | :--- | :--- |
 | LLaMA 3.1 | Direct | 68.9 | **71.1** | +2.2 |
 | LLaMA 3.1 | SelfCheckGPT | 73.5 | **74.8** | +1.3 |
 | LLaMA 3.1 | SC | 65.7 | **70.8** | +5.1 |
@@ -87,36 +84,36 @@ No model training is involved. Pre-trained instruction-tuned models (LLaMA 3.1, 
 
 ### Key Findings
 
-- Future context **consistently** improves performance across all methods and all detector models.
-- The SC method benefits the most (+5.1), as the original SC provides limited cues, and future context yields substantial information gain.
-- Increasing the number of future context samples further improves performance.
-- Future context also **reduces sampling cost**—when combined with SelfCheckGPT, comparable performance can be achieved with fewer surrogate responses.
-- The snowball effect is empirically validated: the probability of hallucination in sentences following a hallucinated sentence is significantly higher than that following a non-hallucinated sentence.
+-   Future context **consistently** improves performance across all methods and detector models.
+-   The SC method benefits the most (+5.1) because the original SC has fewer clues; future context provides significant information gain.
+-   Increasing the number of future context samples can further enhance performance.
+-   Future context also **reduces sampling costs**—when combined with SelfCheckGPT, it can reach the same performance with fewer alternative responses.
+-   Empirically validated the snowball effect: the probability of subsequent hallucinations is significantly higher after a hallucinatory sentence than after a non-hallucinatory one.
 
 ## Highlights & Insights
 
-- The idea of exploiting the "contagiousness" of hallucinations (snowball effect) as a detection signal is both elegant and counterintuitive—hallucination propagation is typically viewed as detrimental, yet here it is repurposed as a detection tool.
-- The generality and simplicity of the method are key advantages—as an "append-and-augment" scheme, it can enhance any sampling-based approach without modification.
-- The generator-agnostic design makes it well-suited for real-world black-box scenarios such as blogs and API services.
+-   The idea of leveraging the "contagiousness" of hallucinations (snowball effect) as a detection signal is clever and counter-intuitive—usually, hallucination propagation is seen as a negative, but here it is transformed into a detection tool.
+-   The generality and simplicity of the method are major advantages—as an "add-on" scheme, it can enhance any sampling method.
+-   The generator-agnostic nature makes it suitable for real-world black-box scenarios such as blogs and APIs.
 
 ## Limitations & Future Work
 
-- The approach requires additional sampling steps to generate future context, increasing inference cost.
-- The generated future context may itself contain hallucinations, potentially introducing noisy signals.
-- Detection operates only at the sentence level; extension to claim-level or paragraph-level granularity remains unexplored.
-- Experimental datasets are primarily Wikipedia-style factual texts; dialogue or creative writing scenarios are not covered.
+-   Requires additional sampling steps to generate future context, increasing inference cost.
+-   Future context itself may contain hallucinations, potentially introducing noise signals.
+-   Detection is only at the sentence level and has not been extended to claim or paragraph levels.
+-   Experimental datasets consist primarily of Wikipedia-style factual text; dialogue or creative writing scenarios are not covered.
 
 ## Related Work & Insights
 
-- **vs. SelfCheckGPT**: SelfCheckGPT relies on surrogate sampling of the current context; the proposed method additionally incorporates future context sampling.
-- **vs. Uncertainty-based Methods**: The proposed method operates entirely in a black-box setting without requiring access to logits.
+-   **vs SelfCheckGPT**: SelfCheckGPT uses alternative sampling of the current context; this paper adds sampling of the future context.
+-   **vs Uncertainty-based methods**: This paper operates entirely in a black-box setting without requiring logit access.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ The idea of leveraging the snowball effect for detection is novel, though the method itself is a straightforward "append" operation.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive evaluation across three detectors, six datasets, and three methods.
-- Writing Quality: ⭐⭐⭐⭐ Motivation is clearly articulated; experimental design is rigorous.
-- Value: ⭐⭐⭐⭐ Provides a simple and effective augmentation scheme for black-box hallucination detection.
+-   Novelty: ⭐⭐⭐⭐ The idea of using the snowball effect for detection is novel, though the method itself is a simple "add-on."
+-   Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive evaluation across three detectors, six datasets, and three methods.
+-   Writing Quality: ⭐⭐⭐⭐ Clear motivation and rigorous experimental design.
+-   Value: ⭐⭐⭐⭐ Provides a simple and effective enhancement scheme for black-box hallucination detection.
 
 <!-- RELATED:START -->
 
@@ -125,10 +122,10 @@ No model training is involved. Pre-trained instruction-tuned models (LLaMA 3.1, 
 ## Related Papers
 
 - [\[ICLR 2026\] Enhancing Hallucination Detection through Noise Injection](../../ICLR2026/llm_safety/enhancing_hallucination_detection_through_noise_injection.md)
+- [\[ACL 2026\] Context-Fidelity Boosting: Enhancing Faithful Generation through Watermark-Inspired Decoding](context-fidelity_boosting_enhancing_faithful_generation_through_watermark-inspir.md)
 - [\[ACL 2026\] The Reasoning Trap: How Enhancing LLM Reasoning Amplifies Tool Hallucination](the_reasoning_trap_how_enhancing_llm_reasoning_amplifies_tool_hallucination.md)
-- [\[ICLR 2026\] VeriTrail: Closed-Domain Hallucination Detection with Traceability](../../ICLR2026/llm_safety/veritrail_closed-domain_hallucination_detection_with_traceable_evidence_synthes.md)
-- [\[ICML 2026\] Harnessing Reasoning Trajectories for Hallucination Detection via Answer-agreement Representation Shaping](../../ICML2026/llm_safety/harnessing_reasoning_trajectories_for_hallucination_detection_via_answer-agreeme.md)
-- [\[CVPR 2026\] TriDF: Evaluating Perception, Detection, and Hallucination for Interpretable DeepFake Detection](../../CVPR2026/llm_safety/tridf_evaluating_perception_detection_and_hallucination_for_interpretable_deepfa.md)
+- [\[ACL 2026\] Hallucination Detection in LLMs with Topological Divergence on Attention Graphs](hallucination_detection_in_llms_with_topological_divergence_on_attention_graphs.md)
+- [\[ACL 2026\] Logical Consistency as a Bridge: Improving LLM Hallucination Detection via Label Constraint Modeling between Responses and Self-Judgments](logical_consistency_as_a_bridge_improving_llm_hallucination_detection_via_label_.md)
 
 </div>
 

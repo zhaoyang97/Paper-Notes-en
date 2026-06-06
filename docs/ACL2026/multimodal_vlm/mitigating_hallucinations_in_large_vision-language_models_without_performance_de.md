@@ -2,78 +2,78 @@
 title: >-
   [Paper Note] Mitigating Hallucinations in Large Vision-Language Models without Performance Degradation
 description: >-
-  [ACL 2026][Multimodal VLM][Vision-language models] This paper proposes the MPD framework, which decouples hallucination components via semantics-aware orthogonal subspace projection and selectively updates only the param…
+  [ACL 2026][Multimodal VLM][Vision-Language Models] This paper proposes the MPD framework, which decouples hallucination components via semantic-aware orthogonal subspace projection and selectively updates a small number…
 tags:
   - "ACL 2026"
   - "Multimodal VLM"
-  - "Vision-language models"
-  - "object hallucination"
-  - "representation intervention"
-  - "orthogonal projection"
-  - "selective parameter editing"
+  - "Vision-Language Models"
+  - "Object Hallucination"
+  - "Representation Intervention"
+  - "Orthogonal Projection"
+  - "Selective Parameter Editing"
 date: 2026-05-08
-content_hash: eb1e6c4765abcbb4
+content_hash: cb65c9f6129f3c66
 ---
 
 # Mitigating Hallucinations in Large Vision-Language Models without Performance Degradation
 
-**Conference**: ACL 2026
+**Conference**: ACL 2026  
 **arXiv**: [2604.20366](https://arxiv.org/abs/2604.20366)  
 **Code**: None  
-**Area**: Multimodal VLM / Hallucination Mitigation
-**Keywords**: Vision-language models, object hallucination, representation intervention, orthogonal projection, selective parameter editing
+**Area**: Multimodal VLM / Hallucination Mitigation  
+**Keywords**: Vision-Language Models, Object Hallucination, Representation Intervention, Orthogonal Projection, Selective Parameter Editing
 
 ## TL;DR
-This paper proposes the MPD framework, which decouples hallucination components via semantics-aware orthogonal subspace projection and selectively updates only the parameters most relevant to hallucinations. MPD reduces hallucinations by 23.4% while preserving 97.4% of general generation capability, without introducing any additional inference overhead.
+This paper proposes the MPD framework, which decouples hallucination components via semantic-aware orthogonal subspace projection and selectively updates a small number of parameters most relevant to hallucinations. It reduces hallucinations by 23.4% while maintaining 97.4% of general generation capability without introducing additional inference overhead.
 
 ## Background & Motivation
 
-**Background**: Large vision-language models (LVLMs) demonstrate strong cross-modal understanding and generation capabilities, yet suffer from pervasive object hallucination—generated text descriptions fabricate non-existent objects, misattribute visual properties, or invent spatial relationships. Mainstream mitigation approaches fall into two categories: annotated data fine-tuning (costly) and representation intervention (efficient but with side effects).
+**Background**: Large Vision-Language Models (LVLMs) demonstrate excellent performance in cross-modal understanding and generation, but universally suffer from object hallucinations—generating text that fabricates non-existent objects, misattributes visual properties, or invents spatial relationships. Mainstream mitigation methods follow two paths: supervised fine-tuning (high cost) and representation intervention (efficient but with side effects).
 
-**Limitations of Prior Work**: Representation intervention methods such as Nullu eliminate the need for annotated data, yet the resulting LVLMs lose general generation capability—manifested as semantic incoherence and elevated lexical repetition rates. Two root causes are identified: (1) extracted hallucination components are heavily entangled with general semantics, so naive differencing inadvertently removes normal semantic content; (2) large-scale perturbations are applied to all weights in the target layer, modifying hundreds of millions of parameters and causing overfitting and disruption of the original parameter distribution.
+**Limitations of Prior Work**: Representation intervention methods (e.g., Nullu), while requiring no annotated data, cause LVLMs to lose general generation capability, manifested as semantic incoherence and increased vocabulary repetition. There are two root causes: (1) Hallucination components are highly coupled with general semantics during extraction, leading simple differences to erroneously remove normal semantics; (2) Parameter updates impose large scale perturbations on all weights in target layers, and modifying hundreds of millions of parameters leads to overfitting and destruction of the original parameter distribution.
 
-**Key Challenge**: Hallucination components and general semantics are highly entangled in the hidden representation space. Coarse global intervention inevitably damages both simultaneously—the central challenge is how to precisely isolate the hallucination signal and suppress it with minimal perturbation.
+**Key Challenge**: Hallucination components and general semantics are highly entangled in the hidden representation space. Global intervention inevitably damages both—how can one precisely separate the hallucination signal and suppress it with minimal perturbation?
 
-**Goal**: To design a two-stage framework that effectively mitigates hallucinations while preserving the model's general generation capability, without incurring additional inference cost.
+**Goal**: Design a dual-stage framework that effectively mitigates hallucinations while maintaining general generation capability without introducing additional inference costs.
 
-**Key Insight**: Grounding the approach in linear-algebraic orthogonal projection theory, faithful representations and hallucination representations are treated as components residing in distinct subspaces, with SVD decomposition enabling precise disentanglement.
+**Key Insight**: Leveraging orthogonal projection theory from linear algebra, faithful and hallucinated representations are treated as components in different subspaces, achieving precise decoupling through SVD decomposition.
 
-**Core Idea**: Orthogonal projection for extracting pure hallucination components + cosine-similarity-guided selective parameter editing = precise hallucination suppression without degrading generation capability.
+**Core Idea**: Precise suppression of hallucinations without damaging generation capabilities via orthogonal projection to extract pure hallucination components combined with selective parameter editing based on cosine similarity.
 
 ## Method
 
 ### Overall Architecture
-MPD consists of two stages: (1) **Hallucination component extraction**—contrastive query pairs are constructed to obtain faithful/hallucination representations, and pure hallucination components are isolated via SVD-based orthogonal projection; (2) **Selective parameter update**—cosine similarity is used to identify weight vectors most correlated with the hallucination components, and spatial projection editing is applied exclusively to those weights. The inputs are the original LVLM and a small set of contrastive data pairs; the output is an edited LVLM with no additional inference overhead.
+MPD consists of two stages: (1) Hallucination component extraction—building faithful/hallucinated representations using contrastive query pairs and separating pure hallucination components via SVD orthogonal projection; (2) Selective parameter updating—identifying weight vectors most relevant to hallucination components through cosine similarity and applying spatial projection editing only to those weights. The input is the original LVLM plus a small number of contrastive data pairs; the output is the edited LVLM with no additional inference overhead.
 
 ### Key Designs
 
-1. **Semantics-Aware Hallucination Component Decoupling (Orthogonal Projection)**
+1. **Semantic-aware Hallucination Component Decoupling (Orthogonal Projection)**:
 
-    - **Function**: Precisely extract "pure" hallucination components from hallucination representations, free of general semantics.
-    - **Mechanism**: For each layer $\ell$, the hidden-state matrices $\mathbf{X}_\ell^+$ (faithful descriptions) and $\mathbf{X}_\ell^-$ (hallucination descriptions) are collected. SVD is applied to $\mathbf{X}_\ell^+$ to obtain the projection matrix $\mathbf{P}_\ell = \mathbf{U}_\ell \mathbf{U}_\ell^\top$ spanning the faithful subspace. The hallucination representations are then projected onto the orthogonal complement of this subspace: $\tilde{\mathbf{X}}_\ell = (\mathbf{I} - \mathbf{P}_\ell) \mathbf{X}_\ell^-$. The paper proves that this approach yields a more accurate estimate of the pure hallucination component than naive differencing ($\mathbf{X}^- - \mathbf{X}^+$).
-    - **Design Motivation**: Naive differencing introduces hallucination-parallel components within the faithful subspace as well as doubled noise, whereas orthogonal projection automatically eliminates components shared with faithful semantics, ensuring that the extracted hallucination direction does not inadvertently impair normal generation capability.
+    - **Function**: Precisely extract "pure" hallucination components that do not contain general semantics from hallucinated representations.
+    - **Mechanism**: For each layer $\ell$, collect hidden state matrices $\mathbf{X}_\ell^+$ for faithful descriptions and $\mathbf{X}_\ell^-$ for hallucinated descriptions. Perform SVD on $\mathbf{X}_\ell^+$ to obtain the projection matrix $\mathbf{P}_\ell = \mathbf{U}_\ell \mathbf{U}_\ell^\top$ for the faithful subspace, then project the hallucinated representation onto the orthogonal complement of the faithful subspace: $\tilde{\mathbf{X}}_\ell = (\mathbf{I} - \mathbf{P}_\ell) \mathbf{X}_\ell^-$. The paper proves this method is more accurate in estimating pure hallucination components than naive subtraction ($\mathbf{X}^- - \mathbf{X}^+$).
+    - **Design Motivation**: Naive subtraction introduces hallucination-parallel components in the faithful subspace and double the noise. Orthogonal projection automatically eliminates components shared with faithful semantics, ensuring extracted hallucination directions do not "collaterally damage" normal generation capabilities.
 
-2. **Selective Parameter Identification and Editing**
+2. **Selective Parameter Identification and Editing**:
 
-    - **Function**: Modify only the small subset of weights most correlated with hallucinations, minimizing perturbation to the original parameter distribution.
-    - **Mechanism**: For each row $\mathbf{w}_\ell^{(i)}$ of weight matrix $\mathbf{W}_\ell$, the average cosine similarity $s_i$ between that row and the hallucination components $\tilde{\mathbf{x}}_{\ell,j}$ is computed. The top-$K$ weight vectors with the highest similarity are selected. The orthogonal complement projection matrix of the hallucination subspace, $\tilde{\mathbf{Q}}_\ell = \mathbf{I} - \tilde{\mathbf{X}}_\ell^\top (\tilde{\mathbf{X}}_\ell \tilde{\mathbf{X}}_\ell^\top)^{-1} \tilde{\mathbf{X}}_\ell$, is constructed, and the update $\mathbf{w}_\ell^{(i)} \leftarrow \tilde{\mathbf{Q}}_\ell \mathbf{w}_\ell^{(i)}$ is applied only to the selected weights.
-    - **Design Motivation**: Methods such as Nullu modify all parameters in the target layer, resulting in excessive perturbation (hundreds of millions of parameters). MPD reduces the number of modified parameters by 42% on mPLUG-Owl2 and 37% on MiniGPT-4.
+    - **Function**: Modify only the minority of weights most relevant to hallucinations to minimize perturbation to the original parameter distribution.
+    - **Mechanism**: For each row $\mathbf{w}_\ell^{(i)}$ in the weight matrix $\mathbf{W}_\ell$, calculate its average cosine similarity $s_i$ with the hallucination components $\tilde{\mathbf{x}}_{\ell,j}$. Select the top-K weight vectors with the highest similarity. Then construct the orthogonal complement projection matrix for the hallucination subspace $\tilde{\mathbf{Q}}_\ell = \mathbf{I} - \tilde{\mathbf{X}}_\ell^\top (\tilde{\mathbf{X}}_\ell \tilde{\mathbf{X}}_\ell^\top)^{-1} \tilde{\mathbf{X}}_\ell$, and perform $\mathbf{w}_\ell^{(i)} \leftarrow \tilde{\mathbf{Q}}_\ell \mathbf{w}_\ell^{(i)}$ only on the selected weights.
+    - **Design Motivation**: Methods like Nullu modify all parameters in target layers, leading to excessive perturbation (hundreds of millions of parameters). MPD reduces parameter modifications by 42% on mPLUG-Owl2 and 37% on MiniGPT4.
 
-3. **Contrastive Query Pair Construction**
+3. **Contrastive Query Pair Construction**:
 
     - **Function**: Provide paired hallucination/faithful representations for component extraction.
-    - **Mechanism**: An auxiliary LLM is used to construct, for the same image, a pair of semantically equivalent queries—one that induces hallucination and one that remains faithful to the image. The LURE dataset serves as the paired data source.
-    - **Design Motivation**: Representations of the same image under both hallucination-inducing and faithful conditions are required to perform differential analysis.
+    - **Mechanism**: Use an auxiliary LLM to construct semantically equivalent query pairs for the same image—one designed to induce hallucinations and one faithful to the image. The LURE dataset is used as the pair data source.
+    - **Design Motivation**: Representations of the same image under both hallucination and faithful conditions are required for difference analysis.
 
 ### Loss & Training
-MPD is a training-free method—no gradient optimization is involved. Model weights are edited directly via SVD decomposition and projection operations. After editing, inference proceeds identically to the original model, incurring no additional computational overhead.
+MPD is a training-free method—it involves no gradient optimization and directly edits model weights through SVD decomposition and projection operations. Once editing is complete, the inference process is identical to the original model with zero additional computational overhead.
 
 ## Key Experimental Results
 
 ### Main Results (CHAIR Benchmark)
 
 | Model | Method | CHAIR_S ↓ | CHAIR_I ↓ | BLEU ↑ |
-|-------|--------|-----------|-----------|--------|
+|------|------|-----------|-----------|--------|
 | LLaVA-1.5-7B | Greedy | 20.40 | 7.08 | 15.72 |
 | LLaVA-1.5-7B | Nullu | 15.20 | 5.30 | 15.69 |
 | LLaVA-1.5-7B | **MPD** | **12.80** | **4.20** | 15.31 |
@@ -87,7 +87,7 @@ MPD is a training-free method—no gradient optimization is involved. Model weig
 ### Ablation Study (LLaVA-Bench Generation Capability)
 
 | Model | Method | Accuracy ↑ | Detailedness ↑ |
-|-------|--------|-----------|---------------|
+|------|------|-----------|---------------|
 | MiniGPT-4 | Original | 4.05 | 3.95 |
 | MiniGPT-4 | MPD | 5.53 | 4.67 |
 | mPLUG-Owl2 | Original | 5.76 | 4.22 |
@@ -96,32 +96,32 @@ MPD is a training-free method—no gradient optimization is involved. Model weig
 | LLaVA-1.5-7B | MPD | 6.39 | — |
 
 ### Key Findings
-- MPD simultaneously achieves the lowest hallucination rates and the highest or competitive generation quality (BLEU) across all models and benchmarks, breaking the previously observed trade-off between hallucination mitigation and generation capability.
-- On the POPE benchmark across all three settings (random/popular/adversarial), MPD achieves the highest F1 on all models.
-- On LLaVA-Bench, MPD not only preserves generation capability but also improves both accuracy and detailedness, indicating that removing hallucination noise inherently benefits generation quality.
-- Consistent improvements on HallusionBench demonstrate that the method generalizes to fine-grained hallucination scenarios beyond object hallucination.
+- MPD simultaneously achieves the lowest hallucination rates and the highest or competitive generation quality (BLEU) across all models and benchmarks, breaking the previous trade-off between hallucination mitigation and generation capability.
+- Under the three settings (random/popular/adversarial) of the POPE benchmark, MPD achieves the highest F1 score across all models.
+- On LLaVA-Bench, MPD does not reduce generation capability but rather improves accuracy and detailedness, suggesting that removing hallucination noise itself improves generation quality.
+- Consistent improvements are observed on HallusionBench, indicating the method generalizes to fine-grained hallucination scenarios beyond object hallucinations.
 
 ## Highlights & Insights
-- **Theoretical elegance of orthogonal projection**—Proposition 1 rigorously proves that the projection-based method yields smaller expected estimation error for hallucination components than naive differencing, providing a mathematical foundation rather than relying solely on empirical evidence.
-- The selective parameter editing strategy has strong practical value: reducing parameter modification by 37–42% while achieving superior results demonstrates that precision strikes outperform broad-spectrum intervention.
-- The edited model incurs zero additional inference overhead (weights are permanently modified), making MPD more deployment-friendly than methods that require modifying the inference pipeline, such as VCD and OPERA.
+- **Theoretical Elegance of Orthogonal Projection**—Proposition 1 rigorously proves that the projection method has smaller expected error in estimating hallucination components compared to naive subtraction, providing a mathematical foundation rather than relying solely on heuristics.
+- The concept of selective parameter editing is highly practical—reducing parameter modifications by 37-42% while achieving better results demonstrates that "less is more"—precise strikes are more effective than carpet bombing.
+- The edited model has zero inference overhead (parameters are permanently modified), making it more suitable for practical deployment than methods like VCD or OPERA that require modification of the inference process.
 
 ## Limitations & Future Work
-- Validation is limited to three relatively small LVLMs (MiniGPT-4, mPLUG-Owl2, LLaVA-1.5-7B); experiments on larger and more recent models (e.g., LLaVA-Next, Qwen-VL) are absent.
-- Preparation of contrastive data pairs is required, which, though modest in scale, adds pipeline complexity.
-- The orthogonal projection approach assumes that hallucination and faithful semantics are linearly separable, which may fail in highly nonlinear entanglement scenarios.
-- The number of principal components $C$ retained in SVD and the top-$K$ parameter selection both require hyperparameter tuning.
+- Evaluation is limited to three smaller LVLMs (MiniGPT-4, mPLUG-Owl2, LLaVA-1.5-7B) and has not been tested on larger or newer models (e.g., LLaVA-Next, Qwen-VL).
+- Requires preparation of contrastive data pairs, which increases pipeline complexity despite the small scale.
+- Orthogonal projection assumes that hallucinations and faithful semantics can be linearly separated, which may fail in cases of high non-linear entanglement.
+- The number of principal components $C$ maintained in SVD and the top-K parameter selection require hyperparameter tuning.
 
 ## Related Work & Insights
-- **vs. Nullu (Yang et al., 2025)**: Both methods employ null-space projection, but Nullu operates on all weights. MPD introduces two key improvements—orthogonal decoupling and selective editing—and outperforms Nullu on both hallucination metrics and generation quality.
-- **vs. VCD (Leng et al., 2024)**: VCD imposes contrastive distribution constraints at decoding time, incurring additional inference latency; MPD introduces zero overhead after editing.
-- **vs. HALC (Chen et al., 2024)**: HALC relies on an external visual grounding module for post-hoc correction, introducing additional model dependencies; MPD is self-contained with no external dependencies.
+- **vs Nullu (Yang et al., 2025)**: Also uses null space projection but operates on all weights. MPD adds orthogonal decoupling and selective editing, outperforming Nullu in both hallucination metrics and generation quality.
+- **vs VCD (Leng et al., 2024)**: VCD introduces contrastive distribution constraints during decoding, increasing inference latency; MPD has zero inference overhead after editing.
+- **vs HALC (Chen et al., 2024)**: HALC relies on external visual grounding modules for posterior correction, introducing additional model dependencies; MPD is self-contained.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ The combination of orthogonal projection and selective editing is theoretically grounded, though the core idea constitutes an incremental improvement over Nullu rather than an entirely new paradigm.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Five benchmarks, three models, and multiple baselines are evaluated, though the model scale is relatively small.
-- **Writing Quality**: ⭐⭐⭐⭐ Theoretical derivations are clear, though notation is dense.
-- **Value**: ⭐⭐⭐⭐ High practical utility—zero-inference-overhead hallucination mitigation has direct deployment value.
+- Novelty: ⭐⭐⭐⭐ The combination of orthogonal projection and selective editing is theoretically supported, though the core idea is an improvement on Nullu rather than a completely new paradigm.
+- Experimental Thoroughness: ⭐⭐⭐⭐ 5 benchmarks, 3 models, and multiple baselines, though model scales are relatively small.
+- Writing Quality: ⭐⭐⭐⭐ Clear theoretical derivations, though notation is dense.
+- Value: ⭐⭐⭐⭐ Highly practical—hallucination mitigation with zero inference overhead has direct value for deployment.
 
 <!-- RELATED:START -->
 
@@ -130,10 +130,10 @@ MPD is a training-free method—no gradient optimization is involved. Model weig
 ## Related Papers
 
 - [\[CVPR 2026\] Residual Decoding: Mitigating Hallucinations in Large Vision-Language Models via History-Aware Residual Guidance](../../CVPR2026/multimodal_vlm/residual_decoding_mitigating_hallucinations_in_large_vision-language_models_via_.md)
+- [\[ICML 2026\] Mitigating Hallucinations in Large Vision-Language Models via Causal Route Gating](../../ICML2026/multimodal_vlm/mitigating_hallucinations_in_large_vision-language_models_via_causal_route_gatin.md)
 - [\[CVPR 2026\] HulluEdit: Single-Pass Evidence-Consistent Subspace Editing for Mitigating Hallucinations in Large Vision-Language Models](../../CVPR2026/multimodal_vlm/hulluedit_single-pass_evidence-consistent_subspace_editing_for_mitigating_halluc.md)
 - [\[ACL 2026\] Benchmarking Deflection and Hallucination in Large Vision-Language Models](benchmarking_deflection_and_hallucination_in_large_vision-language_models.md)
 - [\[ACL 2026\] Topology-Aware Layer Pruning for Large Vision-Language Models](topology-aware_layer_pruning_for_large_vision-language_models.md)
-- [\[ACL 2026\] Efficient Inference for Large Vision-Language Models: Bottlenecks, Techniques, and Prospects](efficient_inference_for_large_vision-language_models_bottlenecks_techniques_and_.md)
 
 </div>
 

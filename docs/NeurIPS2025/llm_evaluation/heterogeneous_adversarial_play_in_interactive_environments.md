@@ -156,11 +156,11 @@ Thirty participants were evaluated in Minigrid under three conditions: no tutori
 
 ## Related Papers
 
+- [\[ICML 2026\] Multi$^2$: Hierarchical Multi-Agent Decision-Making with LLM-Based Agents in Interactive Environments](../../ICML2026/llm_evaluation/multi2_hierarchical_multi-agent_decision-making_with_llm-based_agents_in_interac.md)
 - [\[NeurIPS 2025\] Small Language Models as Compiler Experts: Auto-Parallelization for Heterogeneous Systems](small_language_models_as_compiler_experts_auto-parallelization_for_heterogeneous.md)
+- [\[ICML 2026\] Toward Training Superintelligent Software Agents through Self-Play SWE-RL](../../ICML2026/llm_evaluation/toward_training_superintelligent_software_agents_through_self-play_swe-rl.md)
+- [\[ICML 2026\] Agent World Model: Infinity Synthetic Environments for Agentic Reinforcement Learning](../../ICML2026/llm_evaluation/agent_world_model_infinity_synthetic_environments_for_agentic_reinforcement_lear.md)
 - [\[ICML 2026\] iWorld-Bench: A Benchmark for Interactive World Models with a Unified Action Generation Framework](../../ICML2026/llm_evaluation/iworld-bench_a_benchmark_for_interactive_world_models_with_a_unified_action_gene.md)
-- [\[NeurIPS 2025\] EvaLearn: Quantifying the Learning Capability and Efficiency of LLMs via Sequential Problem Solving](evalearn_quantifying_the_learning_capability_and_efficiency_of_llms_via_sequenti.md)
-- [\[NeurIPS 2025\] PARROT: A Benchmark for Evaluating LLMs in Cross-System SQL Translation](parrot_a_benchmark_for_evaluating_llms_in_cross-system_sql_translation.md)
-- [\[NeurIPS 2025\] LTD-Bench: Evaluating Large Language Models by Letting Them Draw](ltd-bench_evaluating_large_language_models_by_letting_them_draw.md)
 
 </div>
 

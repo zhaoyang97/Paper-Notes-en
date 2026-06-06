@@ -2,126 +2,118 @@
 title: >-
   [Paper Note] Scaling Behaviors of LLM Reinforcement Learning Post-Training: An Empirical Study
 description: >-
-  [ACL 2026][Reinforcement Learning][RL post-training] This work presents the first systematic study of scaling behaviors in LLM reinforcement learning post-training…
+  [ACL 2026][Reinforcement Learning][reinforcement learning post-training] This paper presents the first systematic study of scaling behaviors in LLM reinforcement learning post-training. Using the Qwen2.5 series (0.5B-72B…
 tags:
   - "ACL 2026"
   - "Reinforcement Learning"
-  - "RL post-training"
+  - "reinforcement learning post-training"
   - "scaling laws"
   - "mathematical reasoning"
   - "learning efficiency"
   - "data reuse"
 date: 2026-05-08
-content_hash: baf08de3b58a2e16
+content_hash: cfbad105910b8457
 ---
 
 # Scaling Behaviors of LLM Reinforcement Learning Post-Training: An Empirical Study
 
-**Conference**: ACL 2026
+**Conference**: ACL 2026  
 **arXiv**: [2509.25300](https://arxiv.org/abs/2509.25300)  
 **Code**: [GitHub](https://github.com/reasoning360/rl-scaling)  
-**Area**: Reinforcement Learning / Scaling Laws
-**Keywords**: RL post-training, scaling laws, mathematical reasoning, learning efficiency, data reuse
+**Area**: Reinforcement Learning / Scaling Laws  
+**Keywords**: reinforcement learning post-training, scaling laws, mathematical reasoning, learning efficiency, data reuse
 
 ## TL;DR
 
-This work presents the first systematic study of scaling behaviors in LLM reinforcement learning post-training, revealing power-law relationships between performance and training resources across the Qwen2.5 family (0.5B–72B), with learning efficiency saturating as model scale increases.
+This paper presents the first systematic study of scaling behaviors in LLM reinforcement learning post-training. Using the Qwen2.5 series (0.5B-72B), it identifies a power-law relationship between performance and training resources, revealing that learning efficiency tends to saturate as model scale increases.
 
 ## Background & Motivation
 
-**Background**: Scaling laws for pre-training have been extensively studied—Kaplan et al. and Chinchilla established power-law relationships between loss and model size, data volume, and compute. However, RL post-training (e.g., GRPO, RLHF) has become the dominant paradigm for improving LLM reasoning, yet its scaling behavior remains almost entirely unexplored.
+**Background**: Scaling laws in the pre-training phase have been extensively researched; Kaplan et al. and Chinchilla established power-law relationships between loss and model size, data volume, and computation. While RL post-training (e.g., GRPO, RLHF) has become the mainstream paradigm for enhancing LLM reasoning capabilities, its scaling behaviors remain almost entirely unexplored.
 
-**Limitations of Prior Work**: Practitioners conducting RL post-training lack principled guidance: How large a model should be selected? How much compute should be allocated? Should data be reused when it is scarce? These critical questions lack quantitative answers, leading to extensive trial-and-error and resource waste.
+**Limitations of Prior Work**: Practitioners lack guidance when conducting RL post-training: What model size should be selected? How much computational resource should be allocated? Should data be reused when samples are scarce? These critical questions lack quantitative answers, leading to significant trial-and-error and resource waste.
 
-**Key Challenge**: Do pre-training scaling laws transfer to RL post-training? RL post-training has distinct characteristics—using verifiable rewards rather than cross-entropy loss, and relying on on-policy sampling rather than i.i.d. data—which may give rise to fundamentally different scaling behavior.
+**Key Challenge**: Do pre-training scaling laws apply to RL post-training? RL post-training has unique characteristics—utilizing verifiable rewards instead of cross-entropy loss and employing on-policy sampling instead of i.i.d. data—differences that may lead to distinct scaling behaviors.
 
-**Goal**: To systematically characterize the relationships among model scale, data volume, compute, and performance in RL post-training through large-scale experiments, and to establish predictive scaling formulas.
+**Goal**: Systematically characterize the relationships between model scale, data volume, computation, and performance in RL post-training through large-scale experiments to establish predictable scaling formulas.
 
-**Core Idea**: The test loss of RL post-training follows a log-linear (power-law) relationship with resource consumption: $\log L(N,X) = -k(N) \cdot \log X + E(N)$, where the learning efficiency $k(N)$ increases with model scale but converges toward a saturation limit $K_{\max}$.
+**Core Idea**: Test loss in RL post-training follows a log-linear (power-law) relationship with resource consumption: $\log L(N,X) = -k(N) \cdot \log X + E(N)$, where learning efficiency $k(N)$ improves with model scale but approaches a saturation limit $K_{\max}$.
 
 ## Method
 
 ### Overall Architecture
 
-This paper presents a systematic empirical study in which 63 LLMs spanning the full Qwen2.5 series (0.5B to 72B, both base and instruct variants) are trained on mathematical reasoning tasks using the GRPO algorithm. Performance is measured under three resource-constrained scenarios, and scaling formulas are fitted accordingly.
+This study is a systematic empirical investigation. By training 63 LLMs (covering the full Qwen2.5 series from 0.5B to 72B, including both base and instruct variants) on mathematical reasoning tasks using the GRPO algorithm, the researchers measure performance across three resource-constrained scenarios and fit scaling formulas.
 
 ### Key Designs
 
-1. **Power-Law Scaling Formulation**:
+1.  **Power-Law Scaling Formulation**:
+    - **Function**: Establishes a predictable relationship between test loss, model scale, and resource consumption in RL post-training.
+    - **Mechanism**: Findings show $\log L(N,X) = -k(N) \cdot \log X + E(N)$, where $X$ represents computation $C$ or data volume $D$. Learning efficiency $k(N)$ is modeled using a saturation function: $k(N) = \frac{K_{\max}}{1+N_0/N}$, indicating that larger models possess higher learning efficiency, though marginal returns diminish.
+    - **Design Motivation**: Analogous to pre-training scaling laws, but incorporating a saturation term to capture the diminishing marginal effects unique to RL post-training.
 
-    - **Function**: Establishes a predictable relationship between test loss and model scale/resource consumption in RL post-training.
-    - **Mechanism**: The formula $\log L(N,X) = -k(N) \cdot \log X + E(N)$ is derived, where $X$ denotes compute $C$ or data $D$. Learning efficiency $k(N)$ is modeled with a saturation function: $k(N) = \frac{K_{\max}}{1+N_0/N}$, capturing that larger models exhibit higher learning efficiency with diminishing marginal returns.
-    - **Design Motivation**: Analogous to pre-training scaling laws, but augmented with a saturation term to capture the diminishing returns characteristic of RL post-training.
+2.  **Inter/Intra-model Prediction**:
+    - **Function**: Validates the predictive power of the scaling formulas.
+    - **Mechanism**: Inter-model prediction—using fitted parameters from 0.5B-32B models to predict the performance of the 72B model. Intra-model prediction—using early training steps to predict subsequent training trajectories. Goodness-of-fit $R^2 > 0.99$ was achieved under both protocols.
+    - **Design Motivation**: Predictability is the core value of scaling laws; these protocols verify the ability to predict across both model scales and training stages.
 
-2. **Inter/Intra-model Prediction Protocol**:
-
-    - **Function**: Validates the predictive capability of the scaling formula.
-    - **Mechanism**: Inter-model prediction uses parameters fitted on 0.5B–32B models to predict 72B model performance; intra-model prediction uses early training steps to predict subsequent training trajectories. Both protocols achieve $R^2 > 0.99$.
-    - **Design Motivation**: The core value of scaling laws lies in their predictive power; these two protocols validate generalization across model scales and training stages, respectively.
-
-3. **Data Reuse Analysis**:
-
-    - **Function**: Addresses the practical question of whether data should be reused when training data is limited.
-    - **Mechanism**: Total data volume $D_{\mathrm{total}}$ is fixed while varying the reuse factor $\tau$ ($D_{\mathrm{unique}} \times \tau = D_{\mathrm{total}}$). Experiments show that performance is insensitive to $\tau$ for $\tau \leq 25$, with performance governed primarily by total training volume rather than sample uniqueness.
-    - **Design Motivation**: High-quality reasoning data is a common bottleneck; validating the effectiveness of data reuse has direct practical significance.
+3.  **Data Reuse Analysis**:
+    - **Function**: Addresses the practical question of whether data should be reused when it is insufficient.
+    - **Mechanism**: By fixing the total data volume $D_{\mathrm{total}}$ and varying the reuse factor $\tau$ ($D_{\mathrm{unique}} \times \tau = D_{\mathrm{total}}$), experiments found that within the range of $\tau \leq 25$, performance is insensitive to the reuse factor. Performance is primarily determined by total training volume rather than the uniqueness of samples.
+    - **Design Motivation**: High-quality reasoning data is a common bottleneck; verifying the effectiveness of data reuse carries significant practical weight.
 
 ### Loss & Training
 
-Standard GRPO is employed with binary reward signals (correct = 1, incorrect = 0). The primary evaluation metric is test loss $L = 1 - R/R_{\max}$. Training data is drawn from the mathematical subset of guru-RL-92k (~50k problems), sorted by increasing difficulty for curriculum learning. Each configuration is repeated three times to ensure robustness.
+The standard GRPO algorithm is used with binary reward signals (Correct=1, Incorrect=0). The primary evaluation metric is test loss $L = 1 - R/R_{\max}$. Training data utilizes the guru-RL-92k math subset (approximately 50k problems), sorted by increasing difficulty to implement curriculum learning. Each configuration is repeated 3 times to ensure robustness.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Model Scale | Compute Efficiency $k_C(N)$ | Data Efficiency $k_D(N)$ | Notes |
-|---|---|---|---|
-| 0.5B–3B | Rapid increase | Rapid increase | Small-model regime; scale benefits are pronounced |
-| 7B–32B | Growth slows | Growth slows | Efficiency gains begin to saturate |
-| 72B | Approaching $K_{\max}$ | Approaching $K_{\max}$ | Saturation trend clearly visible |
+| Model Scale | Compute Efficiency $k_C(N)$ | Data Efficiency $k_D(N)$ | Description |
+| :--- | :--- | :--- | :--- |
+| 0.5B-3B | Rapid growth | Rapid growth | Small model stage; significant scale benefits. |
+| 7B-32B | Growth slows | Growth slows | Efficiency gains begin to saturate. |
+| 72B | Approaches $K_{\max}$ | Approaches $K_{\max}$ | Saturation trend is evident. |
 
 ### Prediction Accuracy
 
-| Prediction Type | $R^2$ | Notes |
-|---|---|---|
-| Inter-model (0.5B–32B → 72B) | >0.99 | Accurately predicts large-model performance |
-| Intra-model (early → late) | >0.99 | Accurately predicts training trajectory |
-| Cross-architecture (Llama 3) | >0.99 | Formula is architecture-agnostic |
+| Prediction Type | $R^2$ | Description |
+| :--- | :--- | :--- |
+| Inter-model (0.5B-32B → 72B) | >0.99 | Accurately predicts large model performance. |
+| Intra-model (Early → Late) | >0.99 | Accurately predicts training trajectories. |
+| Cross-architecture (Llama 3) | >0.99 | Formulas exhibit architectural independence. |
 
 ### Key Findings
-
-- **Larger models consistently achieve superior compute and data efficiency**, but with diminishing marginal returns; gains above 32B are substantially reduced.
-- **Data reuse is highly effective**: no significant performance degradation is observed for $\tau \leq 25$; overfitting only emerges at $\tau = 100$.
-- **Domain transfer is limited**: RL post-training generalizes well within the mathematical domain but yields little benefit—and may even impair certain capabilities—on OOD tasks such as code and logical reasoning.
-- **An interesting crossover exists between 32B and 72B**: under the same compute budget, 32B models can outperform 72B models in early training (due to more feasible training steps), revealing a trade-off between model scale and training duration.
+- **Larger models are consistently superior in compute and data efficiency**, but marginal returns diminish after 32B, where gains decrease significantly.
+- **Data reuse is highly effective**: No significant performance degradation occurs when $\tau \leq 25$; overfitting only appears when $\tau=100$.
+- **Limited domain transfer**: RL post-training generalizes well within the math domain but provides almost no benefit for OOD tasks such as code or logical reasoning, and may even harm certain capabilities.
+- **Crossover between 32B and 72B**: Under the same compute budget, 32B may outperform 72B in the early stages (as it can undergo more training steps), revealing a trade-off between model scale and training steps.
 
 ## Highlights & Insights
-
-- **The "Chinchilla" of RL post-training**: This work is the first to establish scaling formulas for RL post-training analogous to those for pre-training, filling an important theoretical gap.
-- **Discovery of saturation**: The saturation of learning efficiency implies that indefinitely scaling model size is not the optimal strategy for RL post-training, providing an upper-bound reference for resource allocation.
-- **Practical value of data reuse**: Moderate data reuse is shown to incur negligible performance loss, offering direct guidance for data-scarce settings.
-- **Cross-architecture validation**: Validation on the Llama 3 family strengthens the generality of the conclusions.
-- **Warning on domain transfer**: The high specialization of RL post-training—which may degrade other capabilities—is an important practical caution.
+- **RL version of "Chinchilla"**: This work establishes scaling formulas for RL post-training analogous to pre-training scaling laws for the first time, filling a major theoretical gap.
+- **Discovery of saturation trends**: The saturation of learning efficiency suggests that infinitely increasing model scale is not the optimal strategy for RL post-training, providing an upper-bound reference for resource allocation.
+- **Practical value of data reuse**: Validating that moderate data reuse causes almost no performance loss provides direct guidance for data-scarce scenarios.
+- **Cross-architecture validation**: Validation on the Llama 3 series strengthens the universality of the conclusions.
+- **Warning on domain specialization**: The high degree of specialization in RL post-training (which may even harm other capabilities) serves as a vital practical reminder.
 
 ## Limitations & Future Work
-
-- Experiments are limited to mathematical reasoning; scaling behavior of multi-domain RL post-training remains unknown.
-- The largest model evaluated is 72B; the saturation trend beyond this scale cannot be empirically verified.
-- Only GRPO is studied; whether other RL algorithms (e.g., DAPO, PPO) exhibit different scaling behaviors warrants further investigation.
-- Only dense models are considered; scaling behavior of RL post-training for MoE architectures is not addressed.
-- The absolute coefficients of the scaling formula depend on the evaluation dataset and task difficulty, limiting universal interpretability.
+- Experiments only cover the mathematical reasoning domain; scaling behaviors for multi-domain RL post-training remain unknown.
+- The largest model is only 72B; the saturation trend for models over 100B cannot be empirically verified.
+- Findings are based only on the GRPO algorithm; whether other RL algorithms (e.g., DAPO, PPO) exhibit different scaling behaviors remains to be explored.
+- Only dense models were studied; scaling behaviors for MoE architectures in RL post-training were not covered.
+- Absolute coefficients of the scaling formulas depend on the evaluation dataset and task difficulty, making them difficult to generalize universally.
 
 ## Related Work & Insights
-
-- **vs. Kaplan et al. (2020)**: The classical pre-training scaling laws focus on cross-entropy loss; this work extends the scaling framework to reward optimization in RL post-training.
-- **vs. Chinchilla (Hoffmann et al., 2022)**: Chinchilla provides compute-optimal model-data ratios; this work offers analogous resource allocation guidance for RL post-training.
-- **vs. Hilton et al. (2023)**: That work identifies power-law relationships in CNN+RL settings; this work validates similar patterns in the LLM+GRPO regime.
+- **vs Kaplan et al. (2020)**: Classic pre-training scaling laws focus on cross-entropy loss; this paper extends scaling laws to reward optimization in RL post-training.
+- **vs Chinchilla (Hoffmann et al., 2022)**: Chinchilla provided compute-optimal model-data ratios; this paper provides a similar resource allocation guide for RL post-training.
+- **vs Hilton et al. (2023)**: While that work found power-law relationships in CNN+RL environments, this paper validates similar patterns in the LLM+GRPO context.
 
 ## Rating
-
-- Novelty: ⭐⭐⭐⭐ — First systematic study of RL post-training scaling behavior, addressing an important open question.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — Large-scale experiments with 63 models across multiple scales, architectures, and scenarios, each repeated three times.
-- Writing Quality: ⭐⭐⭐⭐ — Clear structure, rigorous mathematical derivations, and rich visualizations.
-- Value: ⭐⭐⭐⭐⭐ — Provides quantitative guidance for resource allocation in RL post-training, with exceptionally high practical significance.
+- Novelty: ⭐⭐⭐⭐ First systematic study of RL post-training scaling behaviors, filling an important gap.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Large-scale experiments involving 63 models, multiple scales, architectures, and scenarios, with 3 repetitions per configuration.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure, rigorous formula derivation, and rich visualizations.
+- Value: ⭐⭐⭐⭐⭐ Provides quantitative guidance for resource allocation in RL post-training, offering extreme practical value.
 
 <!-- RELATED:START -->
 
@@ -130,10 +122,10 @@ Standard GRPO is employed with binary reward signals (correct = 1, incorrect = 0
 ## Related Papers
 
 - [\[ICML 2026\] How Reasoning Evolves from Post-Training Data: An Empirical Study Using Chess](../../ICML2026/reinforcement_learning/how_reasoning_evolves_from_post-training_data_an_empirical_study_using_chess.md)
+- [\[ACL 2026\] Why Does Reinforcement Learning Generalize? A Feature-Level Mechanistic Study of Post-Training in Large Language Models](why_does_reinforcement_learning_generalize_a_feature-level_mechanistic_study_of_.md)
 - [\[ACL 2026\] Deliberative Searcher: Improving LLM Reliability via Reinforcement Learning with Constraints](deliberative_searcher_improving_llm_reliability_via_reinforcement_learning_with_.md)
+- [\[ACL 2026\] LearnAlign: Data Selection for LLM Reinforcement Learning with Improved Gradient Alignment](learnalign_data_selection_for_llm_reinforcement_learning_with_improved_gradient_.md)
 - [\[ACL 2026\] CE-GPPO: Coordinating Entropy via Gradient-Preserving Clipping Policy Optimization in Reinforcement Learning](ce-gppo_coordinating_entropy_via_gradient-preserving_clipping_policy_optimizatio.md)
-- [\[CVPR 2026\] Rethinking Camera Choice: An Empirical Study on Fisheye Camera Properties in Robotic Manipulation](../../CVPR2026/reinforcement_learning/rethinking_camera_choice_an_empirical_study_on_fisheye_camera_properties_in_robo.md)
-- [\[ACL 2026\] Easy Samples Are All You Need: Self-Evolving LLMs via Data-Efficient Reinforcement Learning](easy_samples_are_all_you_need_self-evolving_llms_via_data-efficient_reinforcemen.md)
 
 </div>
 

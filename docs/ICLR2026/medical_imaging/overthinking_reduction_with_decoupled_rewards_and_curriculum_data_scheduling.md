@@ -127,9 +127,9 @@ A GRPO-based PPO surrogate loss (Eq. 3) is used, with token-level advantage $A_{
 
 ## Related Papers
 
+- [\[ACL 2026\] CURE-Med: Curriculum-Informed Reinforcement Learning for Multilingual Medical Reasoning](../../ACL2026/medical_imaging/cure-med_curriculum-informed_reinforcement_learning_for_multilingual_medical_rea.md)
 - [\[CVPR 2026\] CURE: Curriculum-guided Multi-task Training for Reliable Anatomy Grounded Report Generation](../../CVPR2026/medical_imaging/cure_curriculum-guided_multi-task_training_for_reliable_anatomy_grounded_report_.md)
 - [\[ICML 2026\] Federated Distillation for Whole Slide Image via Gaussian-Mixture Feature Alignment and Curriculum Integration](../../ICML2026/medical_imaging/federated_distillation_for_whole_slide_image_via_gaussian-mixture_feature_alignm.md)
-- [\[ACL 2026\] From Answers to Arguments: Toward Trustworthy Clinical Diagnostic Reasoning with Toulmin-Guided Curriculum Goal-Conditioned Learning](../../ACL2026/medical_imaging/from_answers_to_arguments_toward_trustworthy_clinical_diagnostic_reasoning_with_.md)
 - [\[AAAI 2026\] Advancing Safe Mechanical Ventilation Using Offline RL With Hybrid Actions and Clinically Aligned Rewards](../../AAAI2026/medical_imaging/advancing_safe_mechanical_ventilation_using_offline_rl_with_.md)
 - [\[AAAI 2026\] FaNe: Towards Fine-Grained Cross-Modal Contrast with False-Negative Reduction and Text-Conditioned Sparse Attention](../../AAAI2026/medical_imaging/fane_towards_fine-grained_cross-modal_contrast_with_false-negative_reduction_and.md)
 

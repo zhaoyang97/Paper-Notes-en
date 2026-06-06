@@ -127,9 +127,9 @@ No new loss or training algorithm is introduced; all formulas are for analyzing 
 
 - [\[ICML 2026\] Towards Understanding Continual Factual Knowledge Acquisition of Language Models: From Theory to Algorithm](towards_understanding_continual_factual_knowledge_acquisition_of_language_models.md)
 - [\[ICML 2026\] Focus and Dilution: The Multi-stage Learning Process of Attention](focus_and_dilution_the_multi-stage_learning_process_of_attention.md)
+- [\[ACL 2026\] FOREVER: Forgetting Curve-Inspired Memory Replay for Language Model Continual Learning](../../ACL2026/llm_pretraining/forever_forgetting_curve-inspired_memory_replay_for_language_model_continual_lea.md)
 - [\[ICLR 2026\] Intrinsic Training Dynamics of Deep Neural Networks](../../ICLR2026/llm_pretraining/intrinsic_training_dynamics_of_deep_neural_networks.md)
 - [\[ICML 2026\] Softplus Attention with Re-weighting Boosts Length Extrapolation in Large Language Models](softplus_attention_with_re-weighting_boosts_length_extrapolation_in_large_langua.md)
-- [\[ICLR 2026\] Understanding and Improving Shampoo and SOAP via Kullback-Leibler Minimization](../../ICLR2026/llm_pretraining/understanding_and_improving_shampoo_and_soap_via_kullback-leibler_minimization.md)
 
 </div>
 

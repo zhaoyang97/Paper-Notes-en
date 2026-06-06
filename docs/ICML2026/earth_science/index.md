@@ -20,4 +20,4 @@ tags:
 
 **[(Sparse) Attention to the Details: Preserving Spectral Fidelity in ML-based Weather Forecasting Models](sparse_attention_to_the_details_preserving_spectral_fidelity_in_ml-based_weather.md)**
 
-:   MOSAIC addresses two types of spectral degradation in ML-based weather forecasting models—spectral damping from deterministic averaging and high-frequency aliasing from latent space compression—by combining probabilistic perturbation with mesh-aligned block-sparse attention on the HEALPix spherical mesh. With only 214M parameters at 1.5° resolution, it matches or surpasses models at 6× higher resolution, generating 24-member 10-day forecasts in 12 seconds on a single H100.
+:   MOSAIC addresses two types of spectral degradation in ML weather models (spectral damping from deterministic averaging and high-frequency aliasing from coarsened latent spaces) using "probabilistic perturbation + mesh-aligned block-sparse attention on HEALPix spherical grids." At 1.5° resolution with only 214M parameters, it matches or exceeds models with 6× higher resolution, generating a 24-member, 10-day forecast in 12 seconds on a single H100.

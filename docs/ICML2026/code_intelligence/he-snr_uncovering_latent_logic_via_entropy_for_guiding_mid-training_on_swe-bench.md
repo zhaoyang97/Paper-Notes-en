@@ -2,124 +2,121 @@
 title: >-
   [Paper Note] HE-SNR: Uncovering Latent Logic via Entropy for Guiding Mid-Training on SWE-bench
 description: >-
-  [ICML 2026][Code Intelligence][SWE-bench] On SWE-bench, traditional PPL is affected by the "long context tax" and cannot predict post-SFT agent capabilities. This paper proposes the "entropy compression hypothesis" and t…
+  [ICML 2026][Code Intelligence][SWE-bench] Traditional PPL on SWE-bench is disrupted by the "long-context tax" and fails to predict post-SFT agent capabilities. This paper proposes the "Entropy Compression Hypothesis" and…
 tags:
   - "ICML 2026"
   - "Code Intelligence"
   - "SWE-bench"
-  - "Mid-Training Evaluation"
+  - "Mid-training Evaluation"
   - "Top-k Entropy"
-  - "High-Entropy Decision Points"
+  - "High-entropy Decision Points"
   - "Entropy Compression"
 date: 2026-05-08
-content_hash: 42fe548a9f4ad9bc
+content_hash: b260efd350726202
 ---
 
 # HE-SNR: Uncovering Latent Logic via Entropy for Guiding Mid-Training on SWE-bench
 
 **Conference**: ICML 2026  
 **arXiv**: [2601.20255](https://arxiv.org/abs/2601.20255)  
-**Code**: None (Meituan LongCat Team)  
-**Area**: Code Intelligence / LLM Evaluation / Mid-Training Metrics  
-**Keywords**: SWE-bench, Mid-Training Evaluation, Top-k Entropy, High-Entropy Decision Points, Entropy Compression
+**Code**: None (Meituan LongCat team)  
+**Area**: Code Intelligence / LLM Evaluation / Mid-training Metrics  
+**Keywords**: SWE-bench, Mid-training Evaluation, Top-k Entropy, High-entropy Decision Points, Entropy Compression
 
 ## TL;DR
-On SWE-bench, traditional PPL is affected by the "long context tax" and cannot predict post-SFT agent capabilities. This paper proposes the "entropy compression hypothesis" and the HE-SNR metric, which computes the signal-to-noise ratio only at "high-entropy decision points" where Top-10 entropy exceeds $(\ln 3 + \ln 4)/2$. This achieves a Pearson correlation of 0.96 and Kendall consistency of 0.98 with downstream SWE-bench scores.
+Traditional PPL on SWE-bench is disrupted by the "long-context tax" and fails to predict post-SFT agent capabilities. This paper proposes the "Entropy Compression Hypothesis" and the HE-SNR metric. By calculating the Signal-to-Noise Ratio only at "high-entropy decision points" where Top-10 entropy exceeds $(\ln 3 + \ln 4)/2$, the method achieves a Pearson correlation of 0.96 and a Kendall consistency of 0.98 with downstream SWE-bench scores.
 
 ## Background & Motivation
 
-**Background**: SWE-bench has become the de facto standard for evaluating LLM software engineering capabilities. SOTA systems (SWE-RL, Kimi-Dev, SWE-Dev) all rely on SFT over instruction models. The mid-training phase (between PT and SFT) determines the model's "potential" for SWE, but to assess the quality of a mid-training checkpoint, the only way is to expend significant compute to run full SFT and then test on SWE-bench.
+**Background**: SWE-bench has become the de facto standard for evaluating LLM software engineering capabilities. SOTA systems (SWE-RL, Kimi-Dev, SWE-Dev) rely on applying SFT to instruction models. The mid-training phase (between PT and SFT) determines a model's SWE "potential," but the only way to evaluate a mid-training checkpoint is to consume massive compute for full SFT and subsequent SWE-bench testing.
 
-**Limitations of Prior Work**: (1) PPL/BPC correlates poorly with downstream SWE-bench scores, especially when Top-1 accuracy exceeds 90%; PPL mainly measures "parroting" rather than reasoning. (2) When using RoPE to extend context, models immediately suffer from the "long context tax"—Top-1 and PPL both temporarily worsen, but actual SWE capability improves, with PPL even reversing. (3) Improvements like LongPPL only address positional bias in retrieval-style long context (RULER), not the key tokens in agentic reasoning tasks.
+**Limitations of Prior Work**: (1) PPL/BPC correlates poorly with downstream SWE-bench scores; when Top-1 accuracy exceeds 90%, PPL measures "parroting" rather than reasoning. (2) When using RoPE to extend context, models immediately suffer a "long-context tax"—Top-1 and PPL temporarily degrade while actual SWE capabilities improve, causing PPL to move in the opposite direction. (3) Improvements like LongPPL only address positional bias in retrieval-based long-context tasks (RULER) and are not tailored for key tokens in agentic reasoning.
 
-**Key Challenge**: Is intelligence equivalent to "compression"? The traditional Compression-Intelligence Hypothesis uses scalar PPL as a compression metric, but PPL measures "repetition accuracy." True reasoning requires "reasonable hesitation" among multiple candidates—a distributional compression that scalar information theory cannot capture.
+**Key Challenge**: Does intelligence equal "compression"? The traditional Compression-Intelligence Hypothesis uses scalar PPL as a measure of compression, but PPL measures "repeater precision." True reasoning requires "rational hesitation" among multiple candidates—this is compression at the distribution level, which scalar information theory fails to capture.
 
-**Goal**: (1) Find a mid-training signal that is SFT-invariant, (2) robust to the "long context tax," (3) reliably predict downstream performance with minimal data (500 trajectories).
+**Goal**: (1) Identify an SFT-invariant mid-training signal, (2) Resist the "long-context tax," and (3) Provide reliable downstream performance predictions using minimal data (500 trajectories).
 
-**Key Insight**: By plotting Top-10 entropy distributions across multiple models and checkpoints, a universal pattern emerges—non-Top-2 predicted tokens cluster at "natural boundaries" like $\ln 2, \ln 3$, etc. Stronger models compress "scattered $\ln 4$ uncertainty" into "$\ln 3$ reasonable hesitation." This suggests reasoning ability can be measured by how much uncertainty the model folds into a smaller candidate set.
+**Key Insight**: By plotting Top-10 entropy distributions across multiple models and checkpoints, the authors found a universal law: predicted tokens (excluding Top-1) concentrate at "natural boundaries" such as $\ln 2$ and $\ln 3$. Stronger models compress "scattered $\ln 4$ uncertainty" into "rational $\ln 3$ hesitation." This suggests that reasoning capability can be measured by how well a model "folds" uncertainty into specific set sizes.
 
-**Core Idea**: Upgrade "compression" from scalar PPL to the distributional level—compute the signal-to-noise ratio (HE-SNR) of target token probability to entropy only at "high-entropy decision points" where Top-10 entropy exceeds the midpoint between $\ln 3$ and $\ln 4$, strictly filtering out style tokens in the chain-of-thought and evaluating only the executable logic of action tokens.
+**Core Idea**: Upgrade "compression" from the scalar PPL level to the distribution level. Calculate the Signal-to-Noise Ratio (HE-SNR) of target token probability vs. entropy only at "high-entropy decision points" where Top-10 entropy exceeds the midpoint of $\ln 3$-$\ln 4$. Strictly filter out style tokens in the chain-of-thought to evaluate only the executable logic of action tokens.
 
 ## Method
 
 ### Overall Architecture
-Two components: (1) **Data Filtering**—from 500 SWE-bench-Verified trajectories, retain only the Action segments (excluding Thought, as it is SFT-style dominated), then use regex to remove XML tags, AST to remove comments, and strip whitespace; (2) **Metric Calculation**—for each retained token, compute Top-10 entropy $H_{top10}(x_t)$, filter out the high-entropy decision set $\mathcal{H} = \{t : H_{top10} > \epsilon \text{ and } x_t \in C_{10}\}$, then compute HE-SNR as the mean of target probability over entropy on the high-entropy set.
+The framework consists of two parts: (1) **Data Filtering**—Retaining only Action segments from 500 SWE-bench-Verified trajectories (discarding Thoughts as they are dominated by SFT style), then using regex to remove XML tags, AST to remove comments, and stripping whitespace; (2) **Metric Calculation**—Calculating Top-10 entropy $H_{top10}(x_t)$ for each retained token, filtering the high-entropy decision set $\mathcal{H} = \{t : H_{top10} > \epsilon \text{ and } x_t \in C_{10}\}$, and computing HE-SNR as the mean ratio of target probability to entropy over the high-entropy set.
 
 ### Key Designs
 
-1. **Entropy Compression State and "$\ln 3$" Shift Phenomenon**:
+1.  **Entropy Compression States and "$\ln 3$" Transition**:
+    - **Function**: Infers the size of the candidate set the model is "hesitating" over based on Top-$k$ entropy peak positions.
+    - **Mechanism**: According to Jensen's inequality, the upper bound of Top-$k$ re-normalized entropy is $\ln k$, achieved if and only if candidate probabilities are uniform. Observing entropy peaks at $\ln 2, \ln 3, \ln 4$ means the model is hesitating equally among 2, 3, or 4 candidates. Strong models exhibit a "Shift to $\ln 3$," folding uncertainty from $\ln 4$ to $\ln 3$.
+    - **Design Motivation**: Traditional PPL mixes all candidates into a scalar, obscuring set size. Top-$k$ entropy peaks directly reveal the number of candidates under consideration. "Fewer but rational hesitations" are a hallmark of reasoning depth. In MoE-A26B, observation tokens exhibit a $\ln 10$ peak (corresponding to random digits 0-9), confirming $\ln 10$ represents aleatoric uncertainty rather than intelligence.
 
-    - Function: Use the specific peak positions of Top-$k$ entropy to infer "how many candidate tokens the model hesitates among."
-    - Mechanism: By Jensen's inequality, the upper bound of Top-$k$ normalized entropy is $\ln k$, achieved only when candidate probabilities are uniform. Thus, entropy peaks at $\ln 2, \ln 3, \ln 4$ indicate the model hesitates equally among 2, 3, or 4 candidates; strong models shift from $\ln 4$ to $\ln 3$ ("Shift to $\ln 3$"), folding uncertainty into a smaller set.
-    - Design Motivation: Traditional PPL mixes all candidates into a scalar, obscuring "set size." The peak of Top-$k$ entropy directly reveals how many candidates the model hesitates among; "few but reasonable hesitation" is a hallmark of deep reasoning. MoE-A26B shows a $\ln 10$ peak on Observation tokens, corresponding to "random digits 0-9," confirming that $\ln 10$ reflects aleatoric uncertainty, not intelligence.
+2.  **High-Entropy SNR (HE-SNR) Metric**:
+    - **Function**: Quantifies the ratio of target token signal to entropy noise at high-entropy decision points that are resistant to SFT "stylization."
+    - **Mechanism**: $\text{HE-SNR} = \frac{1}{|\mathcal{H}|}\sum_{t \in \mathcal{H}} \frac{p(x_t)}{H_{top10}(x_t)}$, where $\mathcal{H} = \{t : H_{top10}(x_t) > \epsilon, x_t \in C_{10}(x_t)\}$, with a threshold $\epsilon = (\ln 3 + \ln 4)/2 \approx 0.897$. The condition $x_t \in C_{10}$ filters out style tokens that deviate completely, preventing skewing by extreme samples.
+    - **Design Motivation**: SFT compresses many originally high-entropy tokens to the $\ln 1$-$\ln 3$ range. Therefore, the "residual uncertainty between $\ln 3$ and $\ln 4$" represents the parts SFT cannot easily change—the true "hard cases" of reasoning. HE-SNR measures relative confidence in target tokens for these cases, correlating highly with downstream SWE-bench scores.
 
-2. **High-Entropy SNR (HE-SNR) Metric**:
-
-    - Function: Quantifies the ratio of target token signal to entropy noise at high-entropy decision points, which are hard for SFT to "stylize."
-    - Mechanism: $\text{HE-SNR} = \frac{1}{|\mathcal{H}|}\sum_{t \in \mathcal{H}} \frac{p(x_t)}{H_{top10}(x_t)}$, where $\mathcal{H} = \{t : H_{top10}(x_t) > \epsilon, x_t \in C_{10}(x_t)\}$, with threshold $\epsilon = (\ln 3 + \ln 4)/2 \approx 0.897$. The condition $x_t \in C_{10}$ filters out "completely off-style tokens," avoiding bias from extreme samples.
-    - Design Motivation: SFT compresses many originally high-entropy tokens to $\ln 1$-$\ln 3$, so the "residual uncertainty between $\ln 3$ and $\ln 4$" is precisely the part SFT cannot change—the model's true "reasoning hard cases." HE-SNR measures "how much relative confidence the model assigns to the target token on these hard cases," which should correlate highly with downstream SWE-bench scores.
-
-3. **Token-Level Filtering Pipeline**:
-
-    - Function: Retain only tokens reflecting executable logic from raw trajectories.
-    - Mechanism: Discard Observation (input context) and Thought (style-dominated); for Action segments, use regex to remove XML tags and markdown, Python AST to remove code comments, and finally clean up extra whitespace; label at the character level, then align to token level via offset mapping.
-    - Design Motivation: Ablation shows switching from Thinking to Action raises Pearson from 0.558 to 0.967; adding XML/whitespace/AST comment filtering further boosts Kendall $\tau$ from 0.944 to 0.979. This demonstrates that SFT style artifacts are the largest source of prediction noise.
+3.  **Token-level Filtering Pipeline**:
+    - **Function**: Extracts tokens that reflect executable logic from raw trajectories.
+    - **Mechanism**: Discards Observations (input context) and Thoughts (style-dominated). For Action segments, regex removes XML tags and markdown formatting; Python AST parsing removes code comments; finally, redundant whitespace is cleaned. Tokens are mapped from character-level labels via offset alignment.
+    - **Design Motivation**: Ablations show that switching from Thinking to Action improves Pearson correlation from 0.558 to 0.967. Layering XML/whitespace/AST comment filtering pushes Kendall $\tau$ to a peak of 0.979. This proves SFT style artifacts are the primary source of interference for predictive signals.
 
 ### Loss & Training
-HE-SNR is an evaluation metric, not a training loss. During validation, HE-SNR of multiple mid-training checkpoints is correlated with post-SFT SWE-bench-Verified Pass@1 (average of 3 runs).
+HE-SNR is an evaluation metric, not a training loss. During validation, HE-SNR from multiple mid-training checkpoints is correlated with the average of 3 SWE-bench-Verified Pass@1 evaluations after SFT.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Metric | Scope | Pearson $r$ vs SWE-bench | Robust to "Long Context Tax" |
-|--------|-------|--------------------------|------------------------------|
-| PPL | All tokens | Weak (inverse) | No, inversion at Step 200 |
-| HE-PPL | High-entropy set, all tokens | Medium | No |
+| Metric | Calculation Scope | Pearson $r$ vs SWE-bench | Resists "Long-context Tax" |
+| :--- | :--- | :--- | :--- |
+| PPL | All tokens | Weak (Negative) | No, inverted at Step 200 |
+| HE-PPL | High-entropy set, all tokens | Moderate | No |
 | HE-PPL | High-entropy set, filtered Action | Strong | No |
-| **HE-SNR** | High-entropy set, filtered Action | **Strongest** (linear + monotonic) | **Yes** |
+| **HE-SNR** | High-entropy set, filtered Action | **Strongest** (Linear + Monotonic) | **Yes** |
 
-Model scale: MoE-A3B (68B total / 3B active) and MoE-A26B (560B total / 26B active), context length from 32K to 128K.
+Model scales covered: MoE-A3B (68B total / 3B active) and MoE-A26B (560B total / 26B active), with context extended from 32K up to 128K.
 
 ### Ablation Study
 
 | Token Type | Filtering Strategy | Pearson $r$ | Kendall $\tau$ |
-|------------|-------------------|-------------|----------------|
-| Thinking | None | 0.558 | 0.519 |
-| Action | None | 0.967 | 0.944 |
-| Action | +Remove XML | 0.953 | 0.956 |
-| Action | +Remove whitespace/symbols | 0.952 | 0.968 |
-| Action | +AST comment removal (full) | **0.965** | **0.979** |
+| :--- | :--- | :--- | :--- |
+| Thinking | No filtering | 0.558 | 0.519 |
+| Action | No filtering | 0.967 | 0.944 |
+| Action | + Remove XML | 0.953 | 0.956 |
+| Action | + Remove Whitespace/Symbols | 0.952 | 0.968 |
+| Action | + AST Comment Removal (Full) | **0.965** | **0.979** |
 
-Threshold sensitivity: In the range $\ln 2$ to $\ln 5$, $(\ln 3 + \ln 4)/2$ is empirically near-optimal and forms a robust plateau, requiring no fine-tuning.
+Threshold Sensitivity: In the range of $\ln 2$ to $\ln 5$, $(\ln 3 + \ln 4)/2$ is near-optimal and forms a robust plateau, requiring no fine-tuning.
 
 ### Key Findings
-- **$\ln 3$ shift generalizes across architectures**: Qwen2.5-72B (Dense), DeepSeek-V3 (MoE), and 5000 math QA samples all show the $\ln 1, \ln 2, \ln 3$ tri-modal structure. $\ln 2$ corresponds to "general reasoning" (common in natural language), $\ln 3$ to "strict logical reasoning" (common in code/math).
-- **SFT "alignment tax" is exposed in the high-entropy set**: SFT improves global PPL, but HE-PPL and HE-SNR degrade on the high-entropy set—indicating SFT trades "stylization" for "complex reasoning," providing a mechanistic explanation for the "alignment tax."
-- **$|\mathcal{H}|$ spikes at 128K training step 200**; traditional HE-PPL also degrades, but HE-SNR (signal-to-noise ratio) remains robust, suggesting "number of hard cases" and "mastery of hard cases" should be considered separately.
+- **The $\ln 3$ Transition Phenomenon Generalizes**: A three-peak structure ($\ln 1, \ln 2, \ln 3$) is observed in Qwen2.5-72B (Dense), DeepSeek-V3 (MoE), and across 5000 math QA pairs. $\ln 2$ corresponds to "general reasoning" (common in NL), while $\ln 3$ corresponds to "strict logical reasoning" (common in code/math).
+- **The SFT "Alignment Tax" is Exposed in High-Entropy Sets**: Post-SFT global PPL improves, but HE-PPL and HE-SNR actually degrade in high-entropy sets. This suggests SFT trades "complex reasoning" for "stylization," providing a mechanistic explanation for the "alignment tax."
+- **$|\mathcal{H}|$ Spikes at 128K training step 200**, where traditional HE-PPL also degrades. However, HE-SNR (signal-to-noise ratio) remains stable, indicating that "quantity of hard problems" and "mastery of hard problems" should be viewed separately.
 
 ## Highlights & Insights
-- **From scalar to distributional compression**: Elevates the classic "compression = intelligence" hypothesis to the distributional level, identifying $\ln k$ as quantifiable "natural boundaries," with higher theoretical value than pure engineering metrics.
-- **Perspective of "reasonable hesitation"**: Traditionally, high entropy is seen as noise; this work treats $\ln 2, \ln 3$ as "healthy states of model self-awareness of uncertainty," a hallmark of high-quality reasoning, and offers a new framework for "exploration vs exploitation" in RL chain-of-thought.
-- **AST + offset-aligned filtering pipeline**: Aligns character-level labeling with token-level evaluation, reusable for any LLM evaluation scenario requiring "removal of noisy tokens by code structure."
-- **Transferable to PRM**: High-entropy decision points are precisely the "forking points" of Process Reward Models (PRM); the HE-SNR approach can be seamlessly transferred to PRM training data construction.
+- **From Scalar to Distributional Compression**: Elevates the "compression = intelligence" hypothesis to the distributional level and identifies $\ln k$ as quantifiable "natural boundaries," offering higher theoretical value than purely engineering metrics.
+- **"Rational Hesitation" Perspective**: While traditional views treat high entropy as noise, this paper treats $\ln 2, \ln 3$ as "healthy states of self-aware uncertainty," which are signs of high-quality reasoning. This provides a new framework for "exploration vs. exploitation" in RL chains-of-thought.
+- **AST + Offset Alignment Filtering Pipeline**: By aligning character-level masking with token-level evaluation, this pipeline can be reused for any LLM evaluation scenario requiring the removal of noise tokens based on code structure.
+- **Translatability to PRM**: High-entropy decision points coincide with the "forking points" of interest for Process Reward Models (PRM). The HE-SNR concept can be seamlessly migrated to PRM training data construction.
 
 ## Limitations & Future Work
-- The threshold $\epsilon$ is static; the "reasonable hesitation boundary" may differ across tasks. The authors acknowledge the need for adaptive thresholds.
-- High-entropy tokens are affected by code style—different implementations of the same logic yield different high-entropy sets. The authors suggest code canonicalization/style transfer for standardization.
-- Main validation is on MoE-A3B and MoE-A26B; although Qwen2.5-72B and DeepSeek-V3 also show the "$\ln 3$ phenomenon," full HE-SNR vs SWE-bench correlation curves have not been plotted for other models.
-- Currently only SWE-bench tasks are considered; whether higher-order ($k \geq 4$) entropy compression states appear in more complex tasks remains an open question.
+- The threshold $\epsilon$ is static. Since "rational hesitation boundaries" may vary across different tasks, the authors acknowledge the need for adaptive thresholds.
+- High-entropy tokens are influenced by coding style. Different ways of writing the same logic result in different high-entropy sets; the authors propose using code canonicalization or style transfer for standardization.
+- Primary validation focused on MoE-A3B and MoE-A26B. Although the "$\ln 3$ phenomenon" was validated on Qwen2.5-72B and DeepSeek-V3, full HE-SNR vs. SWE-bench correlation curves for other model families are pending.
+- Currently limited to SWE-bench tasks. Whether higher-order ($k \geq 4$) entropy compression states appear in more complex tasks remains an open question.
 
 ## Related Work & Insights
-- **vs PPL / BPC** (Kaplan, Huang): Scalar compression metrics only reflect parroting; this work supplements the "reasoning depth" dimension via distributional entropy peaks.
-- **vs LongPPL** (Fang et al., ICLR 2025): LongPPL addresses positional bias in retrieval tasks (RULER) for instruct models; HE-SNR targets base models + agentic SWE tasks, with a completely different focus.
-- **vs Beyond 80/20 High-Entropy Token RL** (Wang et al., 2025): They found high-entropy tokens are key for RL optimization; this work reverses the observation, showing high-entropy tokens are also key for "evaluating reasoning potential."
+- **vs. PPL / BPC** (Kaplan, Huang): Scalar compression metrics only reflect repetition. This paper uses distributional entropy peaks to capture the "reasoning depth" dimension.
+- **vs. LongPPL** (Fang et al., ICLR 2025): LongPPL addresses positional bias in retrieval tasks for instructed models; HE-SNR targets base models in agentic SWE tasks with a different focus.
+- **vs. Beyond 80/20 High-Entropy Token RL** (Wang et al., 2025): They identified high-entropy tokens as keys for RL optimization; this paper reverses that observation to prove they are also keys for "evaluating reasoning potential."
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ "Entropy compression hypothesis + HE-SNR" is a relatively novel theoretical package, though the underlying method is a simple combination of Top-$k$ entropy.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers multiple checkpoints from 3B to 560B, two context lengths (32K/128K), and both Dense and MoE architectures; validation is very thorough.
-- Writing Quality: ⭐⭐⭐⭐⭐ The narrative is clear, tracing the failure of PPL to the proposal of HE-SNR, with an appendix providing concrete case studies of "$\ln k$ candidate probability distributions," making it highly readable.
-- Value: ⭐⭐⭐⭐ Directly addresses the high-cost pain point of "which mid-training checkpoint to select" in industry; with just 500 trajectories and 12M tokens, downstream performance can be reliably predicted, offering significant practical value.
+- Novelty: ⭐⭐⭐⭐ The "Entropy Compression Hypothesis + HE-SNR" is a relatively novel theoretical framing, though the underlying components are simple combinations of Top-$k$ entropy.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Extremely thorough validation covering 3B-560B checkpoints, 32K/128K stages, and Dense + MoE architectures.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear narrative progressing from PPL failure to HE-SNR, supplemented by detailed case studies of $\ln k$ candidate distributions in the appendix.
+- Value: ⭐⭐⭐⭐ Directly addresses the high-cost pain point of "selecting the right mid-training checkpoint." Using 500 trajectories (12M tokens) for reliable downstream prediction offers significant practical utility.
 
 <!-- RELATED:START -->
 
@@ -127,11 +124,11 @@ Threshold sensitivity: In the range $\ln 2$ to $\ln 5$, $(\ln 3 + \ln 4)/2$ is e
 
 ## Related Papers
 
+- [\[ICML 2026\] SWE-rebench V2: Language-Agnostic SWE Task Collection at Scale](swe-rebench_v2_language-agnostic_swe_task_collection_at_scale.md)
+- [\[ICML 2026\] Entropy-informed Decoding: Adaptive Information-Driven Branching](entropy-informed_decoding_adaptive_information-driven_branching.md)
+- [\[ICML 2026\] Probability-Entropy Calibration: An Elastic Indicator for Adaptive Fine-tuning](probability-entropy_calibration_an_elastic_indicator_for_adaptive_fine-tuning.md)
+- [\[ICML 2026\] Pull Requests as a Training Signal for Repo-Level Code Editing](pull_requests_as_a_training_signal_for_repo-level_code_editing.md)
 - [\[NeurIPS 2025\] Searching Latent Program Spaces](../../NeurIPS2025/code_intelligence/searching_latent_program_spaces.md)
-- [\[ICLR 2026\] Ambig-SWE: Interactive Agents to Overcome Underspecificity in Software Engineering](../../ICLR2026/code_intelligence/ambig-swe_interactive_agents_to_overcome_underspecificity_in_software_engineerin.md)
-- [\[ICLR 2026\] Training Large Language Models To Reason In Parallel With Global Forking Tokens](../../ICLR2026/code_intelligence/training_large_language_models_to_reason_in_parallel_with_global_forking_tokens.md)
-- [\[ACL 2026\] KoCo-Bench: Can Large Language Models Leverage Domain Knowledge in Software Development?](../../ACL2026/code_intelligence/koco-bench_can_large_language_models_leverage_domain_knowledge_in_software_devel.md)
-- [\[NeurIPS 2025\] SWE-rebench: An Automated Pipeline for Task Collection and Decontaminated Evaluation of Software Engineering Agents](../../NeurIPS2025/code_intelligence/swe-rebench_an_automated_pipeline_for_task_collection_and_decontaminated_evaluat.md)
 
 </div>
 

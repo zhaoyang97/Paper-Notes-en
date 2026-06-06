@@ -12,120 +12,117 @@ tags:
   - "Beam Search"
   - "Concept Bottleneck"
 date: 2026-05-08
-content_hash: 1d617b25d9c1431f
+content_hash: ff475be35c94f393
 ---
 
 # Tree-of-Evidence: Efficient "System 2" Search for Faithful Multimodal Grounding
 
-**Conference**: ACL 2026
+**Conference**: ACL 2026  
 **arXiv**: [2604.07692](https://arxiv.org/abs/2604.07692)  
 **Code**: None  
-**Area**: Multimodal VLM
+**Area**: Multimodal VLM  
 **Keywords**: Multimodal Interpretability, Evidence Search, Clinical Prediction, Beam Search, Concept Bottleneck
 
 ## TL;DR
 
-This paper proposes Tree-of-Evidence (ToE), an inference-time discrete beam search algorithm that formalizes multimodal model interpretability as a discrete optimization problem over coarse-grained evidence units (vital sign time windows, radiology report segments). With only 5 evidence units, ToE retains over 98% of the full-input model's AUROC while generating auditable evidence trace paths.
+This paper proposes Tree-of-Evidence (ToE), an inference-time discrete beam search algorithm that formalizes multimodal model interpretability as a discrete optimization problem over coarse-grained evidence units (vital sign time windows, radiology report snippets). It preserves over 98% of the full-input model's AUROC using only 5 evidence units while generating auditable evidence traces.
 
 ## Background & Motivation
 
-**Background**: Large multimodal models (LMMs) have achieved state-of-the-art performance in high-stakes domains such as healthcare, but their reasoning processes remain opaque. Existing interpretability methods include attention visualization, gradient saliency, post-hoc attribution methods (LIME/SHAP), and concept bottleneck models (CBMs).
+**Background**: Large Multimodal Models (LMMs) have achieved SOTA performance in high-stakes fields such as healthcare, but their reasoning processes remain opaque. Existing interpretability methods include post-hoc attribution methods like attention visualization, gradient saliency, LIME/SHAP, and Concept Bottleneck Models (CBM).
 
-**Limitations of Prior Work**: (1) Attention weights are often unfaithful to the model's actual decision logic; (2) LIME/SHAP provide approximations without guarantees and cannot produce discrete evidence selection; (3) CBMs require predefined concept annotations and are static at inference time, lacking adaptive search capability; (4) existing rationale extraction methods are typically limited to a single modality (primarily text) and fail to capture cross-modal synergistic dependencies.
+**Limitations of Prior Work**: (1) Attention weights are often unfaithful to the model's actual decision logic; (2) LIME/SHAP provide approximations rather than guarantees and cannot provide discrete evidence selection; (3) CBMs require pre-defined concept annotations and are static during inference, lacking adaptive search capabilities; (4) Existing rationale extraction methods are typically limited to single modalities (primarily text) and fail to capture cross-modal synergistic dependencies.
 
-**Key Challenge**: Clinical deployment requires that model predictions be explicitly traceable to specific, verifiable evidence, yet existing methods are either unfaithful, do not support multimodal inputs, or cannot provide audit trails.
+**Key Challenge**: Clinical deployment requires that model predictions be explicitly traceable to specific, verifiable evidence, but existing methods are either unfaithful, do not support multimodality, or fail to provide an audit trail.
 
-**Goal**: Design an inference-time search algorithm capable of identifying a compact multimodal evidence set that both reproduces full-input predictions and provides an auditable search process.
+**Goal**: Design an inference-time search algorithm capable of finding compact sets of multimodal evidence that both replicate full-input predictions and provide an auditable search process.
 
-**Key Insight**: Drawing on the deliberate branching search concept from Tree-of-Thoughts, this work reframes interpretability as a discrete search problem—a "System 2"-style multi-step deliberate search rather than a "System 1"-style single-pass greedy ranking.
+**Key Insight**: Borrowing the deliberate branching search idea from Tree-of-Thoughts, this work treats interpretability as a discrete search problem—a "System 2" style multi-step deliberate search, rather than a "System 1" style single-pass greedy ranking.
 
-**Core Idea**: Structure the multimodal input space into "global context" (fixed priors, e.g., CXR/ECG baselines) and "searchable evidence" (dynamically varying vital signs and clinical notes). A lightweight Evidence Bottleneck scorer is trained, and beam search is performed at inference time to identify the most compact faithful evidence set.
+**Core Idea**: The multimodal input space is structured into "Global Context" (fixed priors, such as CXR/ECG baselines) and "Searchable Evidence" (dynamically changing vital signs and notes). A compact, faithful evidence set is found by training a lightweight Evidence Bottleneck scorer and executing beam search during inference.
 
 ## Method
 
 ### Overall Architecture
 
-The ToE framework consists of three phases. Phase I independently trains modality-specific classifiers (BiGRU for time series, frozen BioClinicalBERT for text). Phase II freezes the encoders and trains a lightweight MLP selector, learning evidence scores via STE top-k masking. Phase III performs beam search at inference time, constructing a compact evidence set by jointly optimizing three objectives: decision consistency, probability stability, and sparsity. Inputs are 24-hour ICU time-series windows and radiology report text segments; outputs are binary predictions along with corresponding evidence traces.
+The ToE framework consists of three phases: Phase I independently trains modality-specific classifiers (BiGRU for time series, frozen BioClinicalBERT for text); Phase II trains a lightweight MLP selector after freezing the encoders, learning evidence scores via STE top-k masking; Phase III executes beam search during inference to construct a compact evidence set by combining three objectives: decision consistency, probability stability, and sparsity. The input consists of 24-hour ICU time-series windows and radiology report text snippets, while the output is a binary classification prediction and its corresponding evidence trace.
 
 ### Key Designs
 
-1. **Evidence Bottleneck Predictor (EB)**:
+1.  **Evidence Bottleneck Predictor (EB)**:
+    *   **Function**: Learns interpretable scores for each discrete evidence unit.
+    *   **Mechanism**: A "selector-predictor" architecture is constructed independently for each modality. The selector MLP scores each evidence unit $s_i = f_\theta(u_i)$, implementing differentiable top-k hard mask selection via STE. The predictor only uses the selected subset for prediction. Both streams are trained separately and fused via logit summation during inference.
+    *   **Design Motivation**: The selector-predictor separation ensures the model cannot "cheat" by accessing unselected information; Phase II only updates the selector MLP with 98K parameters, where STE gradient mismatch affects magnitude but not ranking.
 
-    - **Function**: Learns interpretable scores for each discrete evidence unit.
-    - **Mechanism**: Each modality independently adopts a "selector–predictor" architecture. The selector MLP scores each evidence unit as $s_i = f_\theta(u_i)$, and a differentiable top-k hard mask is realized via the Straight-Through Estimator (STE). The predictor uses only the selected subset for prediction. The two streams are trained separately, and their logits are summed at inference time for fusion.
-    - **Design Motivation**: The selector–predictor separation ensures the model cannot "cheat" by accessing unselected information. Phase II updates only the 98K-parameter selector MLP; STE gradient mismatch affects magnitude but not ranking.
+2.  **Multimodal Role Separation (Context vs. Evidence)**:
+    *   **Function**: Separates static baseline information from dynamic changes to focus the search space.
+    *   **Mechanism**: CXR/ECG are concatenated into the representation as fixed context priors, while vital sign time windows and clinical notes serve as searchable evidence. The search space is limited to dynamic evidence, while the context is always retained.
+    *   **Design Motivation**: Simulates clinical reasoning logic—"Given the patient's baseline risk, what dynamic changes explain the outcome"—preventing the search from wasting the budget on static confirmatory signals.
 
-2. **Multimodal Role Separation (Context vs. Evidence)**:
-
-    - **Function**: Separates static baseline information from dynamic information to focus the search space.
-    - **Mechanism**: CXR/ECG serve as fixed contextual priors concatenated into the representation, while vital sign time windows and clinical notes serve as searchable evidence. The search space is restricted to dynamic evidence; context is always retained.
-    - **Design Motivation**: Mirrors clinical reasoning—"given a patient's baseline risk, which dynamic changes explain the outcome?"—and prevents the search from wasting budget on static confirmatory signals.
-
-3. **Inference-Time Beam Search (ToE Search)**:
-
-    - **Function**: Finds a compact and faithful evidence set through multi-step deliberate search at inference time.
-    - **Mechanism**: The scoring function is $\text{score}(\mathbf{m}) = C(\mathbf{m}) + \lambda S(\mathbf{m}) - \mu K(\mathbf{m})$, where $C$ denotes decision consistency, $S = 1 - |p_{\text{full}} - p(\mathbf{m})|$ denotes probability stability, and $K$ denotes evidence cost. Starting from the empty set, evidence units are added incrementally; the top-$B$ states are retained, and search terminates when a threshold is met.
-    - **Design Motivation**: The probability-space stability term ensures selected evidence is not merely "sufficient" but also faithful to the model's full decision calibration. Beam search captures cross-modal synergistic dependencies that greedy top-k selection cannot discover.
+3.  **Inference-time Beam Search (ToE Search)**:
+    *   **Function**: Finds a compact and faithful evidence set through multi-step deliberate search during inference.
+    *   **Mechanism**: The scoring function is defined as $\text{score}(\mathbf{m}) = C(\mathbf{m}) + \lambda S(\mathbf{m}) - \mu K(\mathbf{m})$, where $C$ is decision consistency, $S = 1 - |p_{\text{full}} - p(\mathbf{m})|$ is probability stability, and $K$ is evidence cost. The search starts from an empty set, gradually adds evidence while retaining the top-B states, and terminates when a threshold is met.
+    *   **Design Motivation**: The probability space stability term ensures that the selected evidence is not only "sufficient" but also faithful to the model's full decision calibration; beam search captures cross-modal synergistic dependencies that greedy top-k cannot discover.
 
 ### Loss & Training
 
-Phase I trains both modality streams independently using class-balanced binary cross-entropy. Phase II freezes the encoders and trains only the selector MLP. Inference requires no additional training—only beam search is executed.
+Phase I uses category-balanced binary cross-entropy to train the two modality streams independently. Phase II freezes the encoders and trains only the selector MLP. No training is required during inference; only beam search is executed.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**MIMIC-IV E1: In-hospital Mortality Prediction under Varying Evidence Budgets**
+**MIMIC-IV E1: In-hospital mortality prediction, comparison under different evidence budgets**
 
 | Method | k=1 AUROC | k=1 Fidelity MAE↓ | k=5 AUROC | k=5 Fidelity MAE↓ |
-|--------|-----------|-------------------|-----------|-------------------|
+| :--- | :--- | :--- | :--- | :--- |
 | LIME | 0.564 | 0.229 | 0.695 | 0.171 |
 | SHAP | 0.764 | 0.123 | 0.801 | 0.039 |
-| ToE | **0.783** | **0.096** | **0.800** | **0.040** |
+| **Ours (ToE)** | **0.783** | **0.096** | **0.800** | **0.040** |
 | Full Model | 0.800 | — | 0.800 | — |
 
 ### Ablation Study
 
-**Comparison with LLMs and CBMs**
+**Comparison with LLMs and CBM**
 
 | Method | Parameters | AUROC | AUPRC |
-|--------|------------|-------|-------|
+| :--- | :--- | :--- | :--- |
 | Hard CBM (24 concepts) | — | 0.775 | 0.349 |
 | Med42-v2-70B | 70B | 0.745 | 0.293 |
-| ToE (k=5) | 109M | **0.800** | — |
+| **Ours (ToE, k=5)** | 109M | **0.800** | — |
 
 ### Key Findings
 
-- ToE retains 98%+ of full-model AUROC with only 5 evidence units, consistently across 6 tasks.
-- At k=1, ToE reduces Fidelity MAE by 56% compared to LIME and achieves 22 percentage points higher AUROC.
-- Qualitative analysis shows ToE adaptively searches: simple cases rely solely on vital signs, while ambiguous signals trigger inclusion of text.
-- Results are stable under cross-center validation (eICU, 208 hospitals) and in a non-medical domain (LEMMA-RCA).
+*   ToE retains over 98% of the full model's AUROC using only 5 evidence units, consistent across 6 tasks.
+*   At k=1, ToE reduces Fidelity MAE by 56% compared to LIME, with an AUROC 22 percentage points higher.
+*   Qualitative analysis shows ToE performs adaptive search: using only vital signs for simple cases, and introducing text when signals are ambiguous.
+*   Stability is demonstrated through cross-center validation (eICU, 208 hospitals) and non-medical domains (LEMMA-RCA).
 
 ## Highlights & Insights
 
-- The "System 2 search" analogy is apt—interpretability is elevated from passive attribution to active search, with the search process itself being auditable.
-- The probability-space stability term is elegantly designed: in ICU settings, most patients have $p$ close to 0 or 1, so logit-space deviations have minimal impact in probability space.
-- The 109M-parameter ToE outperforms the 70B Med42, demonstrating that structured approaches substantially outperform general-purpose LLMs on structured prediction tasks.
+*   The "System 2 search" analogy is apt—upgrading interpretability from passive attribution to active search, where the search process itself is auditable.
+*   The probability space stability term is ingeniously designed—in ICU scenarios where most patients have $p$ near 0 or 1, logit space deviations have minimal impact in the probability space.
+*   ToE, with 109M parameters, outperforms the 70B Med42, indicating that structured methods are far superior to general LLMs for structured prediction.
 
 ## Limitations & Future Work
 
-- Evidence unit granularity (1-hour windows, 3-sentence text segments) is predefined; different tasks may require different granularities.
-- Beam search yields heuristic rather than global optima, though the gap with exhaustive search is <0.001 AUROC at small $k$.
-- Training modality-specific encoders and selectors is required in advance; the approach is not plug-and-play.
-- Validation at finer-grained evidence units (e.g., image pixel regions or waveform segments) has not been conducted.
+*   The granularity of evidence units (1-hour windows, 3-sentence text snippets) is pre-set; different tasks may require different granularities.
+*   Beam search is a heuristic optimum rather than a global optimum, though the gap with exhaustive search is $<0.001$ AUROC at small $k$.
+*   It requires prior training of modality-specific encoders and selectors and is not plug-and-play.
+*   It has not been validated on finer-grained evidence units such as image pixel-level or waveform segment-level data.
 
 ## Related Work & Insights
 
-- **vs. LIME/SHAP**: These are post-hoc approximations without hard selection mechanisms; ToE achieves substantially higher fidelity under sparse evidence budgets.
-- **vs. Concept Bottleneck Models**: CBMs require predefined concept annotations and perform static inference; ToE dynamically discovers evidence from learned representations.
-- **vs. Tree-of-Thoughts**: ToT searches in the token generation space; ToE searches in the evidence selection space.
+*   **vs. LIME/SHAP**: The latter are post-hoc approximations without a hard selection mechanism; ToE exhibits significantly higher faithfulness under sparse budgets.
+*   **vs. Concept Bottleneck Models**: CBMs require pre-defined concept annotations and involve static inference; ToE dynamically discovers evidence from learned representations.
+*   **vs. Tree-of-Thoughts**: ToT searches in the token generation space, whereas ToE searches in the evidence selection space.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ First application of inference-time beam search to multimodal interpretability; the framework is complete and original.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Three datasets, 6 tasks, cross-center validation, and comparisons with LLMs and CBMs.
-- Writing Quality: ⭐⭐⭐⭐ The System 1/2 analogy is clear; method description is thorough.
-- Value: ⭐⭐⭐⭐ Provides a practical and auditable mechanism for deploying multimodal models in high-stakes domains.
+*   **Novelty**: ⭐⭐⭐⭐⭐ First to apply inference-time beam search to multimodal interpretability with a complete, original framework.
+*   **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ 6 tasks across 3 datasets + cross-center validation + LLM/CBM comparisons.
+*   **Writing Quality**: ⭐⭐⭐⭐ Clear System 1/2 analogy and detailed methodological descriptions.
+*   **Value**: ⭐⭐⭐⭐ Provides a practical, auditable mechanism for deploying multimodal models in high-stakes fields.
 
 <!-- RELATED:START -->
 

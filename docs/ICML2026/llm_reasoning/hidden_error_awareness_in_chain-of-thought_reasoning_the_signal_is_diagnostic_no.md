@@ -2,79 +2,77 @@
 title: >-
   [Paper Note] Hidden Error Awareness in Chain-of-Thought Reasoning: The Signal Is Diagnostic, Not Causal
 description: >-
-  [ICML 2026][LLM Reasoning][Chain-of-thought] A simple logistic regression probe on LLM hidden states during chain-of-thought (CoT) generation can predict whether the entire reasoning will be incorrect with 0.95 AUROC (0.…
+  [ICML 2026][LLM Reasoning][Chain-of-Thought] Using a simple logistic regression probe on the hidden states of an LLM during Chain-of-Thought (CoT) generation allows for predicting reasoning errors with 0.95 AUROC (starti…
 tags:
   - "ICML 2026"
   - "LLM Reasoning"
-  - "Chain-of-thought"
-  - "hidden state probe"
-  - "error detection"
-  - "activation steering"
-  - "causal intervention"
+  - "Chain-of-Thought"
+  - "Hidden State Probe"
+  - "Error Detection"
+  - "Activation Guidance"
+  - "Causal Intervention"
 date: 2026-05-08
-content_hash: fa7d7ca3cfb37552
+content_hash: fe737bb453b6d173
 ---
 
 # Hidden Error Awareness in Chain-of-Thought Reasoning: The Signal Is Diagnostic, Not Causal
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.09502](https://arxiv.org/abs/2605.09502)  
-**Code**: Key code snippets provided in the paper appendix  
+**Code**: The paper appendix provides key code snippets  
 **Area**: LLM Reasoning / Mechanistic Interpretability / CoT Faithfulness  
-**Keywords**: Chain-of-thought, hidden state probe, error detection, activation steering, causal intervention
+**Keywords**: Chain-of-Thought, Hidden State Probe, Error Detection, Activation Guidance, Causal Intervention
 
 ## TL;DR
-A simple logistic regression probe on LLM hidden states during chain-of-thought (CoT) generation can predict whether the entire reasoning will be incorrect with 0.95 AUROC (0.79 from the first step), while a classifier trained on surface text achieves only 0.59; unfortunately, all four intervention methods (activation steering, probe-guided best-of-N, self-correction, activation patching) fail—this error signal is "diagnostic" rather than "causal."
+Using a simple logistic regression probe on the hidden states of an LLM during Chain-of-Thought (CoT) generation allows for predicting reasoning errors with 0.95 AUROC (starting at 0.79 from the very first step). In contrast, a textual surface classifier achieves only 0.59. Despite this strong signal, four types of interventions (activation guidance, probe-guided best-of-N, self-correction, and activation patching) all failed—demonstrating that this error signal is "diagnostic" rather than "causal."
 
 ## Background & Motivation
 
-**Background**: The implicit contract of CoT prompting is "the model's written reasoning = its internal computation." Previous work (Turpin et al., Lanham et al.) has questioned this contract via behavioral interventions (e.g., interrupting CoT but answer unchanged), but these remain at the surface text level. Meanwhile, mechanistic interpretability (Meng et al. ROME, Li et al. ITI) has successfully located and edited factual knowledge representations, naturally raising the question: can reasoning errors be similarly located and corrected?
+**Background**: The implicit contract of CoT prompting is that "the model's written reasoning = its internal computation process." Prior works (Turpin et al., Lanham et al.) have questioned this contract via behavioral interventions (e.g., perturbing the CoT but the answer remains unchanged), but these remained at the textual surface. Given that mechanistic interpretability (Meng et al. ROME, Li et al. ITI) has successfully localized and edited factual knowledge representations, it is natural to ask: Can reasoning errors be localized and corrected in the same way?
 
-**Limitations of Prior Work**: (1) Verbalized confidence is unreliable—error trajectories self-report 4.55/5, correct ones 4.87/5, nearly indistinguishable; (2) No observable error signals on the text surface (hedging words, length differences are statistically insignificant); (3) Existing self-correction methods have limited effect, but lack mechanistic explanation for their failure.
+**Limitations of Prior Work**: (1) Verbalized confidence is unreliable—models report 4.55/5 for incorrect trajectories vs. 4.87/5 for correct ones, making them nearly indistinguishable; (2) There are no observable textual error signals (e.g., hedging words or length differences are not statistically significant); (3) Existing self-correction methods show limited efficacy and lack mechanistic explanations for their failure.
 
-**Key Challenge**: "The model knows it is wrong" and "the model can correct itself" are distinct. The former is representational (probes can read it out), the latter is causal (can we intervene). If these are decoupled, the "diagnose-edit" paradigm of mechanistic interpretability fails for reasoning tasks.
+**Key Challenge**: Whether a model "knows it is wrong" is distinct from whether it can "correct its wrong." The former pertains to the representational level (readable by probes), while the latter pertains to causal mechanisms (controllability via intervention). If these are decoupled, the "diagnose-and-edit" paradigm of mechanistic interpretability may fail for reasoning tasks.
 
-**Goal**: (1) Quantify the predictive power of model hidden states for its own CoT correctness, and strictly compare with surface text signals; (2) Use four increasingly strong intervention experiments to rigorously distinguish "diagnostic" vs "causal" signals; (3) Generalize this distinction across model scales, families, and training paradigms (RL distilled).
+**Goal**: (1) Quantify the predictive power of hidden states regarding CoT correctness compared to textual surface signals; (2) Strictly distinguish between "diagnostic" and "causal" signals through four progressively stronger intervention experiments; (3) Generalize these findings across different model scales, families, and training paradigms (e.g., RL distilled).
 
-**Key Insight**: Train a linear probe $p(\text{error} \mid h) = \sigma(w^\top h + b)$ using 100 MATH-500 problems as training set, with 5-fold CV to select the best layer; simultaneously train a TF-IDF + LR text classifier as the "surface text control." The AUROC gap between the two quantifies the degree of "concealment" in hidden vs surface signals.
+**Key Insight**: Train a linear probe $p(\text{error} \mid h) = \sigma(w^\top h + b)$ using 100 MATH-500 problems as the training set and 5-fold CV to select the optimal layer. Simultaneously, train a TF-IDF + LR textual classifier as a "textual surface control." The AUROC gap between the two quantifies the degree of concealment between hidden and surface signals.
 
-**Core Idea**: Use the AUROC gap between hidden and surface signals to quantify the model's "hidden error awareness," then test whether this awareness can be leveraged to correct errors using four methods: activation steering, best-of-N probe selection, self-correction, and activation patching.
+**Core Idea**: Use the AUROC gap between "hidden vs. surface" to quantify the model's "hidden error awareness," then employ a suite of four interventions—activation guidance, best-of-N, self-correction, and activation patching—to test whether this awareness can be leveraged to correct errors.
 
 ## Method
 
 ### Overall Architecture
-A three-act structure: (1) Train a probe using the hidden state at the last token to linearly classify whether the entire CoT yields an incorrect answer; (2) Extract the first-step hidden state for "early detection" experiments, and train a text classifier as a "surface control"; (3) Apply four causal interventions along the "error direction" read out by the probe.
+The study is structured in three acts: (1) Training probes using hidden state features at the final token to predict if the full CoT results in an error; (2) Performing "early detection" experiments using step-one hidden states and comparisons against textual classifiers; (3) Conducting four causal intervention tests based on the "error direction" identified by the probe.
 
 ### Key Designs
 
-1. **Hidden State Linear Probe (Source of Diagnostic Signal)**:
+1.  **Hidden State Linear Probe (Diagnostic Signal Source)**:
+    - **Function**: Reads the probability of an incorrect trajectory from frozen LLM hidden states.
+    - **Mechanism**: CoTs are generated greedily. The hidden state $h_T^{(l)}$ of the last token at layer $l$ is used as the feature, with label $y = 1$ representing an incorrect answer. An L2-regularized logistic regression ($C = 0.1$) is trained on 100 problems, with 5-fold CV used to select the best layer (typically at 70-85% depth). 200 problems are used for evaluation.
+    - **Design Motivation**: A linear probe is intentionally used as the weakest classifier. If it achieves 0.95 AUROC, it implies the information is "linearly separable" in the hidden states. The fact that MLP (0.944) and Random Forest (0.893) do not outperform the linear probe (0.955) supports this choice.
 
-    - **Function**: Reads out "will this trajectory be wrong" from frozen LLM hidden states.
-    - **Mechanism**: Greedily generate full CoT, use the hidden state $h_T^{(l)}$ at the last token of layer $l$ as features, label $y = 1$ if the answer is wrong, train L2-regularized logistic regression ($C = 0.1$). Use 100 problems for training, 5-fold CV to select the best layer (typically 70-85% depth), 200 problems for evaluation.
-    - **Design Motivation**: The linear probe is intentionally the weakest form; if it achieves 0.95 AUROC, the information is "linearly separable" in hidden states, requiring no complex nonlinear explanation. MLP (0.944) and RF (0.893) underperform the linear probe (0.955), supporting this.
+2.  **Textual Surface Baseline + First-Step Prediction (Concealment Metric)**:
+    - **Function**: Establishes a baseline for information detectable in the text and determines if the error signal originates at the start of the CoT.
+    - **Mechanism**: For the same 200 problems, the text of the first step is fed into a TF-IDF + Logit model to Get $s_{text}$. The first-step hidden state probe provides $s_{hidden}$. The "concealment gap" is defined as $\Delta_{conceal} = s_{hidden} - s_{text}$. On Qwen2.5-3B, $s_{hidden} = 0.787$ and $s_{text} = 0.590$, yielding $\Delta_{conceal} = 0.197$.
+    - **Design Motivation**: The first-step AUROC is critical—0.787 indicates the model "knows it will fail from the start," even when the text shows no signs (length $p = 0.211$, digit density $p = 0.726$, hedging $< 1\%$). This provides rigorous evidence for "hidden error awareness." 65% of error trajectories fall into an "unfaithful region" (high verbal confidence $\ge 4$ but high probe error score $> 0.5$).
 
-2. **Surface Text Control + First-Step Prediction (Concealment Measurement)**:
-
-    - **Function**: Establishes a baseline for "if the information is also in the text" and locates whether the error signal appears in the first CoT step.
-    - **Mechanism**: On the same 200 problems, feed the first-step text of each trajectory to a TF-IDF + LR classifier to get $s_{text}$; use the first-step hidden state to train a probe for $s_{hidden}$. Define "concealment gap" $\Delta_{conceal} = s_{hidden} - s_{text}$. On Qwen2.5-3B, $s_{hidden} = 0.787, s_{text} = 0.590$, $\Delta_{conceal} = 0.197$.
-    - **Design Motivation**: First-step AUROC is key—0.787 shows the model "knows it will be wrong from the first step," while the text shows nothing (length $p = 0.211$, digit density $p = 0.726$, hedging words < 1%). This provides rigorous evidence for "hidden error awareness." 65% of error trajectories have both "verbal confidence ≥ 4 and probe error score > 0.5," termed the unfaithful region.
-
-3. **Four-Stage Causal Intervention (Diagnostic vs Causal Boundary)**:
-
-    - **Function**: Tests whether "probe can read it out" is equivalent to "we can fix it."
-    - **Mechanism**: (a) **Activation Steering**: Subtract normalized error direction from hidden state $h' = h - \alpha (h \cdot \hat w) \hat w$, at most +4%; strong intervention ($\alpha = 8$) actually drops 6%. (b) **Probe-Guided Best-of-N**: Generate $N$ trajectories, select the one with lowest probe score, surprisingly worse than majority vote; oracle upper bound is 88-91%, indicating correct answers exist among candidates but cannot be selected. (c) **Self-Correction**: Use probe to flag suspicious cases and have the model retry, but accuracy drops 3%; even oracle triggers only increase by 1%. (d) **Activation Patching** (strongest test): Mix hidden states from correct into wrong trajectories $h'_{wrong} = (1 - \alpha) h_{wrong} + \alpha h_{correct}$, with $\alpha = 0.5$ the 3B model's accuracy drops to 0%—patching destroys output coherence.
-    - **Design Motivation**: The four interventions span the spectrum from "reading out direction" to "implanting correct representation"; all failing strictly demonstrates the signal is "just a thermometer." The collapse of activation patching is especially key: since factual knowledge can be edited by the same means in ROME, this contrast proves that "reasoning quality" and "factual association" are fundamentally different at the representational level—the former is distributed and emergent, the latter locally editable.
+3.  **Four-Stage Causal Intervention (Diagnostic vs. Causal Boundary)**:
+    - **Function**: Tests whether "probe readability" implies "correctability."
+    - **Mechanism**: (a) **Activation Guidance**: Subtracting the normalized error direction $h' = h - \alpha (h \cdot \hat w) \hat w$. Accuracy gains are max +4%, while strong intervention ($\alpha = 8$) results in a 6% drop. (b) **Probe-guided best-of-N**: Selecting the trajectory with the lowest probe score among $N$ samples; surprisingly, this performs worse than majority voting. (c) **Self-correction**: Prompting a retry when the probe detects suspicion results in a 3% drop. (d) **Activation Patching** (Strongest test): Mixing hidden states from correct trajectories into incorrect ones $h'_{wrong} = (1 - \alpha) h_{wrong} + \alpha h_{correct}$. At $\alpha = 0.5$, 3B accuracy drops to 0% because the patch destroys coherence.
+    - **Design Motivation**: These cover a spectrum of intensity from "direction steering" to "representation replacement." Failure across all four proves the signal is merely a "thermometer." The collapse during activation patching is crucial: as factual knowledge *can* be edited this way (ROME), it proves "reasoning quality" differs fundamentally from "factual associations"—the former is a distributed, multi-layer emergent property.
 
 ### Loss & Training
-
-Probe: Standard L2-regularized logistic regression $\mathcal{L} = -\frac{1}{N}\sum [y_i \log \hat p_i + (1-y_i)\log(1-\hat p_i)] + \frac{1}{2C}\|w\|^2$, $C = 0.1$, up to 2000 iterations. With just 20 problems, AUROC reaches 0.956, indicating very high data efficiency.
+Probe: Standard L2-regularized logistic regression: 
+$$\mathcal{L} = -\frac{1}{N}\sum [y_i \log \hat p_i + (1-y_i)\log(1-\hat p_i)] + \frac{1}{2C}\|w\|^2$$ 
+with $C = 0.1$ and up to 2000 iterations. Achieving 0.956 AUROC requires only 20 problems, showing high data efficiency.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Model | Type | Accuracy | Best Layer | CV AUROC | Eval AUROC |
-|-------|------|----------|------------|----------|------------|
+|------|------|--------|--------|----------|------------|
 | Qwen2.5-1.5B | std | 0.35 | 27 | 0.918 | 0.724 |
 | Qwen2.5-3B | std | 0.53 | 27 | 0.953 | **0.956** |
 | Qwen2.5-7B | std | 0.62 | 16 | 0.669 | 0.737 |
@@ -85,55 +83,55 @@ Probe: Standard L2-regularized logistic regression $\mathcal{L} = -\frac{1}{N}\s
 | DeepSeek-R1-7B | RL distilled | 0.76 | 12 | 0.884 | 0.852 |
 
 | Detection Method | AUROC | Cost |
-|------------------|-------|------|
-| **Hidden State Probe (Ours)** | **0.953** | 1 forward pass |
-| Self-Consistency ($N = 5$) | 0.823 | 5× generation |
-| CCS (Burns et al.) | 0.718 | 1 forward pass |
-| $P(\text{True})$ | 0.721 | 1 query |
-| Verbalized Confidence | 0.674 | 1 query |
+|----------|-------|------|
+| **Hidden State Probe (Ours)** | **0.953** | 1 Forward |
+| Self-Consistency ($N = 5$) | 0.823 | 5× Gen |
+| CCS (Burns et al.) | 0.718 | 1 Forward |
+| $P(\text{True})$ | 0.721 | 1 Query |
+| Verbalized Confidence | 0.674 | 1 Query |
 | Sequence Log-prob | 0.676 | Free |
 
 ### Intervention Experiments
 
-| Intervention | 3B Accuracy Change | 7B Accuracy Change |
-|--------------|-------------------|-------------------|
-| Activation Steering (optimal $\alpha$) | +3% | +4% |
-| Activation Steering ($\alpha = 8$, strong) | -6% | +4% |
+| Intervention Method | 3B Accuracy Change | 7B Accuracy Change |
+|----------|---------------|---------------|
+| Activation Guidance (Optimal $\alpha$) | +3% | +4% |
+| Activation Guidance ($\alpha = 8$, Strong) | -6% | +4% |
 | Best-of-N Probe Selection ($N = 12$) | 0.62 (oracle 0.88) | 0.70 (oracle 0.91) |
-| Majority Vote (control) | 0.75 | 0.75 |
-| Self-Correction (always retry) | -3% | -3% |
-| Activation Patching (mix correct, $\alpha = 0.5$) | **0%** | **7%** |
+| Majority Voting (Control) | 0.75 | 0.75 |
+| Self-correction (always retry) | -3% | -3% |
+| Activation Patching (Mixed, $\alpha = 0.5$) | **0%** | **7%** |
 
 ### Key Findings
-- **Predictable from the First Step**: Qwen2.5-3B achieves 0.787 AUROC on the first step, already 98% of the full trajectory—model "knows" it will be wrong before writing the error.
-- **Two Temporal Dynamics**: 3B is "front-loaded" (first step gap max 0.41, early commitment to error), 7B is "accumulative" (gap grows from 0.11 to 0.38), indicating different error encoding by model scale.
-- **Weak Cross-Domain Transfer**: Probe trained on MATH achieves only 0.54-0.55 AUROC on ARC-Challenge, but native ARC probe gets 0.63-0.69, showing "error direction" is domain-specific, not a single universal direction.
-- **Non-monotonic Scale Curve**: 1.5B (0.918) → 7B (0.669) → 72B (0.977); the mid-scale dip is due to more dispersed, less linearly separable errors, while large models regularize error representations.
-- **Collapse of Activation Patching as Decisive Evidence**: Factual knowledge can be edited, but reasoning quality cannot—reasoning is distributed and emergent, not a single editable feature, fundamentally different from ROME and similar factual editing work.
+- **Predictable from the first step**: Qwen2.5-3B first-step AUROC is 0.787, reaching 98% of the full trajectory AUROC—the model "knows" internally that it will fail before it writes the error.
+- **Two temporal dynamics**: 3B is "pre-emptive" (largest gap of 0.41 at step 1, early commitment to error path), while 7B is "cumulative" (gap grows from 0.11 to 0.38), indicating different error encoding styles across scales.
+- **Weak cross-domain transfer**: Probes trained on MATH only achieve 0.54-0.55 AUROC on ARC-Challenge, though native ARC probes reach 0.63-0.69, suggesting the "error direction" is domain-specific.
+- **Non-monotonic scaling curve**: 1.5B (0.918) → 7B (0.669) → 72B (0.977). The dip in mid-sized models suggests their errors are more scattered and less linearly separable, whereas larger models regularize error representations.
+- **Activation patching collapse is the smoking gun**: The ability to edit facts but failure to edit reasoning quality demonstrates that reasoning is a distributed emergent property rather than a localizable feature, a key distinction from ROME-style factual editing.
 
 ## Highlights & Insights
-- **"Diagnostic vs Causal" Dichotomy**: The thermometer analogy clearly distinguishes "readable" from "editable," a valuable conceptual contribution for mechanistic interpretability, delineating the boundary of methods like ROME.
-- **Representational Evidence for CoT Faithfulness**: Previous discussions of CoT faithfulness were behavioral; this work provides strict quantification ("hidden vs surface AUROC = 0.20"), establishing "hidden error awareness" as a new concept.
-- **Honest but Pessimistic**: The comprehensive failure of all four interventions is a convincing negative result; the authors do not hide failed experiments but make them central to the main conclusion—a commendable research style.
-- **Implications for Process Reward Models**: PRMs may be learning the same diagnostic signal, lacking causal leverage, implying their main use is "selection" rather than "training-time correction of reasoning."
+- **"Diagnostic vs. Causal" Dichotomy**: The authors use a thermometer analogy to distinguish between "readability" and "controllability," drawing a clear boundary for mechanistic interpretability methods like ROME.
+- **Representational Evidence for CoT Faithfulness**: While previous discussions on CoT faithfulness were behavioral, this paper provides a rigorous quantification through the "hidden vs. surface AUROC = 0.20" gap, establishing the concept of "hidden error awareness."
+- **Honest Negative Results**: The failure of all four interventions is a compelling negative result. The authors do not hide these failures but use them as primary evidence for their main conclusion.
+- **Implications for Process Reward Models (PRMs)**: Signals learned by PRMs may be purely diagnostic with no causal leverage, suggesting PRMs are best suited for "selection" rather than "on-the-fly correction" during training.
 
 ## Limitations & Future Work
-- Did not test fine-tuning or RL (e.g., RLPF) on probe signals; this may be a training-time solution to bridge the "diagnostic-causal" gap, acknowledged as an open problem.
-- Experiments mainly on MATH-500, with cross-domain tests on ARC, but not on other reasoning tasks (HumanEval, TheoremQA, MMLU-Pro).
-- All four interventions are post-training; did not attempt joint training with probe loss during pretraining, which may be the real solution.
-- On DeepSeek-R1, the "difficulty control" effect is weak ($p = 0.447$, $d = -0.30$), possibly due to too few mixed trajectories at 76% accuracy ($n = 14$), limiting statistical power.
+- The study did not test fine-tuning or RL (e.g., RLPF) on the probe signal, which might be a training-time solution to bridge the "diagnostic-causal" gap.
+- Experiments were primarily on MATH-500; while ARC was used for cross-domain testing, other reasoning tasks (HumanEval, TheoremQA, MMLU-Pro) were not covered.
+- Interventions were post-training; joint training with a probe loss during pre-training was not explored as a potential solution.
+- The "difficulty control" effect was weaker on DeepSeek-R1 ($p = 0.447$, $d = -0.30$), likely due to the small sample size of incorrect trajectories at 76% accuracy ($n = 14$).
 
 ## Related Work & Insights
-- **vs Turpin et al. 2023 / Lanham et al. 2023**: Prior work questioned CoT faithfulness via behavioral interventions (prompt injection, trajectory truncation); this work quantifies "concealment" at the representational level via AUROC gap, methodologically complementary.
-- **vs ROME (Meng et al., 2022)**: ROME can edit factual associations; this work shows the "read + edit" paradigm fails completely for reasoning errors, delineating the boundary for mechanistic interpretability.
-- **vs Zhang et al., 2025** (parallel work): They also probe hidden states for self-verification and find best-of-N selection works; this work conversely shows probes cannot improve reasoning itself—opposite but complementary conclusions.
-- **vs CCS (Burns et al., 2023)**: CCS uses unsupervised methods to find "truth directions"; this work uses supervised probes for error detection, achieving AUROC 0.953 vs CCS's 0.718, showing clear advantage for supervision in this task.
+- **vs. Turpin et al. 2023 / Lanham et al. 2023**: While prior work used behavioral interventions (prompt injection, truncation) to question CoT faithfulness, this work quantifies "concealment" at the representational level via AUROC gaps.
+- **vs. ROME (Meng et al., 2022)**: ROME edits factual associations; this paper proves the same "read-and-edit" paradigm fails for reasoning errors, setting a boundary for mechanistic interpretability.
+- **vs. Zhang et al., 2025** (Concurrent work): They also use probes for self-verification and find them useful for Best-of-N selection; this paper proves probes cannot improve the reasoning itself, providing an opposite but complementary perspective.
+- **vs. CCS (Burns et al., 2023)**: CCS finds a "truth direction" unsupervised; this work uses supervised probes for error detection, showing a significant advantage (0.953 vs. 0.718 AUROC).
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The "diagnostic vs causal" dichotomy is a clear conceptual innovation; hidden vs surface quantification is a new perspective, though probes themselves are standard tools.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 9 models covering 1.5B-72B + Qwen/Llama/Phi + RL distilled, 4 interventions + cross-domain + difficulty control + layer analysis—extremely thorough.
-- Writing Quality: ⭐⭐⭐⭐⭐ The "three-act" structure is dramatic; the thermometer analogy makes concepts accessible; negative results are clearly presented without concealment.
-- Value: ⭐⭐⭐⭐⭐ Raises important alarms for LLM safety monitoring (CoT auditing unreliability), mechanistic interpretability (boundaries), and PRM training, with broad impact.
+- Novelty: ⭐⭐⭐⭐ The "diagnostic vs. causal" dichotomy is a clear conceptual innovation, though probing itself is a standard tool.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 9 models from 1.5B-72B (Qwen/Llama/Phi/DeepSeek), 4 interventions, cross-domain tests, and layer analysis.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear "three-act" structure and excellent use of analogies to explain complex findings.
+- Value: ⭐⭐⭐⭐⭐ Provides critical warnings for AI monitoring (unreliable CoT audits), mechanistic interpretability (boundaries), and PRM training.
 
 <!-- RELATED:START -->
 
@@ -141,11 +139,11 @@ Probe: Standard L2-regularized logistic regression $\mathcal{L} = -\frac{1}{N}\s
 
 ## Related Papers
 
+- [\[ICML 2026\] Dynamics Within Latent Chain-of-Thought: An Empirical Study of Causal Structure](dynamics_within_latent_chain-of-thought_an_empirical_study_of_causal_structure.md)
+- [\[ICML 2026\] Chain-of-Thought Reasoning in the Wild Is Not Always Faithful](chain-of-thought_reasoning_in_the_wild_is_not_always_faithful.md)
 - [\[ICML 2026\] Efficient Reasoning with Hidden Thinking](efficient_reasoning_with_hidden_thinking.md)
 - [\[AAAI 2026\] Deep Hidden Cognition Facilitates Reliable Chain-of-Thought Reasoning](../../AAAI2026/llm_reasoning/deep_hidden_cognition_facilitates_reliable_chain-of-thought_.md)
-- [\[ACL 2026\] Do Not Step Into the Same River Twice: Learning to Reason from Trial and Error](../../ACL2026/llm_reasoning/do_not_step_into_the_same_river_twice_learning_to_reason_from_trial_and_error.md)
-- [\[ICLR 2026\] Dynamics Within Latent Chain-of-Thought: An Empirical Study of Causal Structure](../../ICLR2026/llm_reasoning/dynamics_within_latent_chain-of-thought_an_empirical_study_of_causal_structure.md)
-- [\[ICLR 2026\] Verifying Chain-of-Thought Reasoning via Its Computational Graph](../../ICLR2026/llm_reasoning/verifying_chain-of-thought_reasoning_via_its_computational_graph.md)
+- [\[ACL 2026\] Is Chain-of-Thought Really Not Explainability? Chain-of-Thought Can Be Faithful without Hint Verbalization](../../ACL2026/llm_reasoning/is_chain-of-thought_really_not_explainability_chain-of-thought_can_be_faithful_w.md)
 
 </div>
 

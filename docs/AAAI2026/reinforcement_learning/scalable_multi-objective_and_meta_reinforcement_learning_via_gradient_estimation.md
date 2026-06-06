@@ -253,9 +253,9 @@ Loss-based clustering improves over the other two strategies by **19%**.
 ## Related Papers
 
 - [\[AAAI 2026\] MARS: A Meta-Adaptive Reinforcement Learning Framework for Risk-Aware Multi-Agent Portfolio Management](mars_a_meta-adaptive_reinforcement_learning_framework_for_risk-aware_multi-agent.md)
+- [\[ICML 2026\] ProRL: Effective Reinforcement Learning for Proactive Recommendation via Rectified Policy Gradient Estimation](../../ICML2026/reinforcement_learning/prorl_effective_reinforcement_learning_for_proactive_recommendation_via_rectifie.md)
 - [\[AAAI 2026\] Provably Efficient Multi-Objective Bandit Algorithms under Preference-Centric Customization](provably_efficient_multi-objective_bandit_algorithms_under_preference-centric_cu.md)
 - [\[NeurIPS 2025\] Multi-Objective Reinforcement Learning with Max-Min Criterion: A Game-Theoretic Approach](../../NeurIPS2025/reinforcement_learning/multi-objective_reinforcement_learning_with_max-min_criterion_a_game-theoretic_a.md)
-- [\[ICLR 2026\] RLP: Reinforcement as a Pretraining Objective](../../ICLR2026/reinforcement_learning/rlp_reinforcement_as_a_pretraining_objective.md)
 - [\[AAAI 2026\] Explaining Decentralized Multi-Agent Reinforcement Learning Policies](explaining_decentralized_multi-agent_reinforcement_learning_policies.md)
 
 </div>

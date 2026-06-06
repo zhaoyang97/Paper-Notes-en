@@ -111,10 +111,10 @@ Algorithm 1: PGD on $z'$ + mirror descent on $\beta$ + SGD on $\theta$. Selectio
 ## Related Papers
 
 - [\[ICLR 2026\] Breaking the Correlation Plateau: On the Optimization and Capacity Limits of Attention-Based Regressors](breaking_the_correlation_plateau_on_the_optimization_and_capacity_limits_of_atte.md)
+- [\[ICML 2026\] HiPER: Hierarchical Reinforcement Learning with Explicit Credit Assignment for Large Language Model Agents](../../ICML2026/llm_evaluation/hiper_hierarchical_reinforcement_learning_with_explicit_credit_assignment_for_la.md)
 - [\[ACL 2026\] MARCH: Evaluating the Intersection of Ambiguity Interpretation and Multi-hop Inference](../../ACL2026/llm_evaluation/march_evaluating_the_intersection_of_ambiguity_interpretation_and_multi-hop_infe.md)
-- [\[CVPR 2026\] Free-Grained Hierarchical Visual Recognition](../../CVPR2026/llm_evaluation/free-grained_hierarchical_visual_recognition.md)
 - [\[NeurIPS 2025\] Risk Management for Mitigating Benchmark Failure Modes: BenchRisk](../../NeurIPS2025/llm_evaluation/risk_management_for_mitigating_benchmark_failure_modes_benchrisk.md)
-- [\[ICLR 2026\] In-Context Learning for Pure Exploration](in-context_learning_for_pure_exploration.md)
+- [\[CVPR 2026\] Free-Grained Hierarchical Visual Recognition](../../CVPR2026/llm_evaluation/free-grained_hierarchical_visual_recognition.md)
 
 </div>
 

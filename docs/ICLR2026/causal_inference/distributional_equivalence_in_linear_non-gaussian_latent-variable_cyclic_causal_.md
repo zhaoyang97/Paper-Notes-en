@@ -150,10 +150,10 @@ Non-Gaussianity plays a critical role here: compared to Gaussian models, non-Gau
 ## Related Papers
 
 - [\[AAAI 2026\] I-CAM-UV: Integrating Causal Graphs over Non-Identical Variable Sets Using Causal Additive Models with Unobserved Variables](../../AAAI2026/causal_inference/i-cam-uv_integrating_causal_graphs_over_non-identical_variable_sets_using_causal.md)
-- [\[ICML 2026\] Causal Fine-Tuning under Latent Confounded Shift](../../ICML2026/causal_inference/causal_fine-tuning_under_latent_confounded_shift.md)
+- [\[ICML 2026\] Causal-JEPA: Learning World Models through Object-Level Latent Masking](../../ICML2026/causal_inference/causal-jepa_learning_world_models_through_object-level_latent_masking.md)
 - [\[ICLR 2026\] Synthesising Counterfactual Explanations via Label-Conditional Gaussian Mixture Variational Autoencoders](synthesising_counterfactual_explanations_via_label-conditional_gaussian_mixture_.md)
+- [\[ICML 2026\] Causal Fine-Tuning under Latent Confounded Shift](../../ICML2026/causal_inference/causal_fine-tuning_under_latent_confounded_shift.md)
 - [\[NeurIPS 2025\] Cyclic Counterfactuals under Shift–Scale Interventions](../../NeurIPS2025/causal_inference/cyclic_counterfactuals_under_shift-scale_interventions.md)
-- [\[ICLR 2026\] Flattery, Fluff, and Fog: Diagnosing and Mitigating Idiosyncratic Biases in Preference Models](flattery_fluff_and_fog_diagnosing_and_mitigating_idiosyncratic_biases_in_prefere.md)
 
 </div>
 

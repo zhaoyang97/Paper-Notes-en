@@ -129,10 +129,10 @@ Tensor Product Attention (TPA) decomposes the Q/K/V matrices in standard attenti
 ## Related Papers
 
 - [\[NeurIPS 2025\] Scale-invariant Attention](scale-invariant_attention.md)
+- [\[ICML 2026\] Do Transformers Need Three Projections? A Systematic Study of QKV Sharing Schemes](../../ICML2026/llm_efficiency/do_transformers_need_three_projections_systematic_study_of_qkv_variants.md)
 - [\[NeurIPS 2025\] UMoE: Unifying Attention and FFN with Shared Experts](umoe_unifying_attention_and_ffn_with_shared_experts.md)
-- [\[ICLR 2026\] Universe Routing: Why Self-Evolving Agents Need Epistemic Control](../../ICLR2026/llm_efficiency/universe_routing_why_self-evolving_agents_need_epistemic_control.md)
-- [\[NeurIPS 2025\] ZeroS: Zero-Sum Linear Attention for Efficient Transformers](zeros_zero-sum_linear_attention_for_efficient_transformers.md)
 - [\[ICML 2026\] Not All Prefills Are Equal: PPD Disaggregation for Multi-turn LLM Serving](../../ICML2026/llm_efficiency/not_all_prefills_are_equal_ppd_disaggregation_for_multi-turn_llm_serving.md)
+- [\[NeurIPS 2025\] ZeroS: Zero-Sum Linear Attention for Efficient Transformers](zeros_zero-sum_linear_attention_for_efficient_transformers.md)
 
 </div>
 

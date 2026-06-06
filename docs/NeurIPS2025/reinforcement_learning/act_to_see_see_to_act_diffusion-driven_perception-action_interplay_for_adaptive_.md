@@ -134,9 +134,9 @@ Push-T image modality: 0.87 → **0.93** (+6%); Dynamic Push-T: 0.65 → **0.80*
 
 - [\[ICML 2026\] Recovering Hidden Reward in Diffusion-Based Policies](../../ICML2026/reinforcement_learning/recovering_hidden_reward_in_diffusion-based_policies.md)
 - [\[NeurIPS 2025\] Learning Intractable Multimodal Policies with Reparameterization and Diversity Regularization](learning_intractable_multimodal_policies_with_reparameterization_and_diversity_r.md)
-- [\[AAAI 2026\] CHDP: Cooperative Hybrid Diffusion Policies for RL in Parametric Environments](../../AAAI2026/reinforcement_learning/chdp_cooperative_hybrid_diffusion_policies_for_reinforcement_learning_in_paramet.md)
 - [\[NeurIPS 2025\] Real-World Reinforcement Learning of Active Perception Behaviors](real-world_reinforcement_learning_of_active_perception_behaviors.md)
 - [\[NeurIPS 2025\] Reinforcement Learning with Action Chunking](reinforcement_learning_with_action_chunking.md)
+- [\[AAAI 2026\] CHDP: Cooperative Hybrid Diffusion Policies for RL in Parametric Environments](../../AAAI2026/reinforcement_learning/chdp_cooperative_hybrid_diffusion_policies_for_reinforcement_learning_in_paramet.md)
 
 </div>
 

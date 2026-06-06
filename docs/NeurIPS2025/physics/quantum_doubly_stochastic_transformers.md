@@ -136,9 +136,9 @@ MedMNIST (7 datasets): QontOT achieves best performance on 5 out of 7 datasets.
 
 - [\[NeurIPS 2025\] Vision Transformers for Cosmological Fields: Application to Weak Lensing Mass Maps](vision_transformers_for_cosmological_fields_application_to_weak_lensing_mass_map.md)
 - [\[NeurIPS 2025\] AstroCo: Self-Supervised Conformer-Style Transformers for Light-Curve Embeddings](astroco_self-supervised_conformer-style_transformers_for_light-curve_embeddings.md)
-- [\[AAAI 2026\] Data Verification is the Future of Quantum Computing Copilots](../../AAAI2026/physics/data_verification_is_the_future_of_quantum_computing_copilots.md)
-- [\[ICLR 2026\] Sublinear Time Quantum Algorithm for Attention Approximation](../../ICLR2026/physics/sublinear_time_quantum_algorithm_for_attention_approximation.md)
-- [\[ICLR 2026\] Feedback-driven Recurrent Quantum Neural Network Universality](../../ICLR2026/physics/feedback-driven_recurrent_quantum_neural_network_universality.md)
+- [\[ICML 2026\] REX: A Family of Reversible Exponential Stochastic Runge-Kutta Solvers](../../ICML2026/physics/rex_a_family_of_reversible_exponential_stochastic_runge-kutta_solvers.md)
+- [\[ICML 2026\] Distribution Transformers: Fast Approximate Bayesian Inference With On-The-Fly Prior Adaptation](../../ICML2026/physics/distribution_transformers_fast_approximate_bayesian_inference_with_on-the-fly_pr.md)
+- [\[ICML 2026\] Quiver: Quantum-Informed Views for Enhanced Representations in Large ML Models](../../ICML2026/physics/quiver_quantum-informed_views_for_enhanced_representations_in_large_ml_models.md)
 
 </div>
 

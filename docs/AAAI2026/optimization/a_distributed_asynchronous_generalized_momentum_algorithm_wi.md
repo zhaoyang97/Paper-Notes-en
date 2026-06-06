@@ -134,10 +134,10 @@ The paper's core technical paradigm — "a single step is not a contraction, but
 ## Related Papers
 
 - [\[ICML 2026\] FAB: A First-Order AB-based Gradient Algorithm for Distributed Bilevel Optimization over Time-Varying Directed Graphs](../../ICML2026/optimization/fab_a_first-order_ab-based_gradient_algorithm_for_distributed_bilevel_optimizati.md)
+- [\[ICML 2026\] Mirror Descent Under Generalized Smoothness](../../ICML2026/optimization/mirror_descent_under_generalized_smoothness.md)
 - [\[AAAI 2026\] SMoFi: Step-wise Momentum Fusion for Split Federated Learning on Heterogeneous Data](smofi_step-wise_momentum_fusion_for_split_federated_learning_on_heterogeneous_da.md)
-- [\[CVPR 2026\] Dynamic Momentum Recalibration in Online Gradient Learning](../../CVPR2026/optimization/dynamic_momentum_recalibration_in_online_gradient_learning.md)
-- [\[ICLR 2026\] MT-DAO: Multi-Timescale Distributed Adaptive Optimizers with Local Updates](../../ICLR2026/optimization/mt-dao_multi-timescale_distributed_adaptive_optimizers_with_local_updates.md)
-- [\[ICML 2026\] RMNP: Row-Momentum Normalized Preconditioning for Scalable Matrix-Based Optimization](../../ICML2026/optimization/rmnp_row-momentum_normalized_preconditioning_for_scalable_matrix-based_optimizat.md)
+- [\[ICML 2026\] Interpretability and Generalization Bounds for Learning Spatial Physics](../../ICML2026/optimization/interpretability_and_generalization_bounds_for_learning_spatial_physics.md)
+- [\[ICML 2026\] Pseudospectral Bounds for Transient Amplification in Coupled Gradient Descent](../../ICML2026/optimization/pseudospectral_bounds_for_transient_amplification_in_coupled_gradient_descent.md)
 
 </div>
 

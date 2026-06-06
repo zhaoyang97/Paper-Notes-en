@@ -171,11 +171,11 @@ CL loss reduces EMD by approximately 4.5×, with a slight improvement in IIA. In
 
 ## Related Papers
 
-- [\[AAAI 2026\] Learning Fair Representations with Kolmogorov-Arnold Networks](../../AAAI2026/others/learning_fair_representations_with_kolmogorov-arnold_networks.md)
+- [\[ICML 2026\] CORE-MTL: Rethinking Gradient Balancing via Causal Orthogonal Representations](../../ICML2026/others/core-mtl_rethinking_gradient_balancing_via_causal_orthogonal_representations.md)
 - [\[NeurIPS 2025\] SAD Neural Networks: Divergent Gradient Flows and Asymptotic Optimality via o-minimal Structures](../../NeurIPS2025/others/sad_neural_networks_divergent_gradient_flows_and_asymptotic_optimality_via_o-min.md)
+- [\[AAAI 2026\] Learning Fair Representations with Kolmogorov-Arnold Networks](../../AAAI2026/others/learning_fair_representations_with_kolmogorov-arnold_networks.md)
 - [\[ICLR 2026\] Exchangeability of GNN Representations with Applications to Graph Retrieval](exchangeability_gnn_representations.md)
 - [\[ICLR 2026\] Entropic Confinement and Mode Connectivity in Overparameterized Neural Networks](entropic_confinement_and_mode_connectivity_in_overparameterized_neural_networks.md)
-- [\[ICML 2026\] Singular Bayesian Neural Networks](../../ICML2026/others/singular_bayesian_neural_networks.md)
 
 </div>
 

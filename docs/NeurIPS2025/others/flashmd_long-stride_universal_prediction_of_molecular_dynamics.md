@@ -173,8 +173,8 @@ Insight: FlashMD demonstrates a future paradigm in which "each MLIP is paired wi
 ## Related Papers
 
 - [\[NeurIPS 2025\] Computable Universal Online Learning](computable_universal_online_learning.md)
-- [\[NeurIPS 2025\] Evolutionary Prediction Games](evolutionary_prediction_games.md)
 - [\[NeurIPS 2025\] Normalization in Attention Dynamics](normalization_in_attention_dynamics.md)
+- [\[NeurIPS 2025\] Evolutionary Prediction Games](evolutionary_prediction_games.md)
 - [\[NeurIPS 2025\] One Sample is Enough to Make Conformal Prediction Robust](one_sample_is_enough_to_make_conformal_prediction_robust.md)
 - [\[NeurIPS 2025\] Prediction-Powered Semi-Supervised Learning with Online Power Tuning](prediction-powered_semi-supervised_learning_with_online_power_tuning.md)
 

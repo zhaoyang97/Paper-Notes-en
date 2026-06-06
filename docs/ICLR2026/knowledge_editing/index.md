@@ -20,7 +20,7 @@ tags:
 
 **🔬 ICLR2026** · **8** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (3)](../../ICML2026/knowledge_editing/index.md) · [💬 ACL2026 (5)](../../ACL2026/knowledge_editing/index.md) · [📷 CVPR2026 (2)](../../CVPR2026/knowledge_editing/index.md) · [🤖 AAAI2026 (5)](../../AAAI2026/knowledge_editing/index.md) · [🧠 NeurIPS2025 (6)](../../NeurIPS2025/knowledge_editing/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (8)](../../ICML2026/knowledge_editing/index.md) · [💬 ACL2026 (9)](../../ACL2026/knowledge_editing/index.md) · [📷 CVPR2026 (2)](../../CVPR2026/knowledge_editing/index.md) · [🤖 AAAI2026 (5)](../../AAAI2026/knowledge_editing/index.md) · [🧠 NeurIPS2025 (6)](../../NeurIPS2025/knowledge_editing/index.md)
 
 **[Bilinear Representation Mitigates Reversal Curse and Enables Consistent Model Editing](bilinear_representation_mitigates_reversal_curse_and_enables_consistent_model_ed.md)**
 

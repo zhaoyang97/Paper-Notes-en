@@ -131,11 +131,11 @@ RedTeamCUA consists of three components: (1) a **hybrid sandbox environment** â€
 
 ## Related Papers
 
-- [\[CVPR 2026\] Semantic Audio-Visual Navigation in Continuous Environments](../../CVPR2026/audio_speech/semantic_audio-visual_navigation_in_continuous_environments.md)
+- [\[ICML 2026\] SafeSearch: Automated Red-Teaming of LLM-Based Search Agents](../../ICML2026/audio_speech/safesearch_automated_red-teaming_of_llm-based_search_agents.md)
 - [\[AAAI 2026\] USE: A Unified Model for Universal Sound Separation and Extraction](../../AAAI2026/audio_speech/use_a_unified_model_for_universal_sound_separation_and_extraction.md)
+- [\[CVPR 2026\] Semantic Audio-Visual Navigation in Continuous Environments](../../CVPR2026/audio_speech/semantic_audio-visual_navigation_in_continuous_environments.md)
 - [\[ACL 2026\] XLSR-MamBo: Scaling the Hybrid Mamba-Attention Backbone for Audio Deepfake Detection](../../ACL2026/audio_speech/xlsr-mambo_scaling_the_hybrid_mamba-attention_backbone_for_audio_deepfake_detect.md)
-- [\[NeurIPS 2025\] The Impact of Scaling Training Data on Adversarial Robustness](../../NeurIPS2025/audio_speech/the_impact_of_scaling_training_data_on_adversarial_robustness.md)
-- [\[NeurIPS 2025\] Benchmarking Egocentric Multimodal Goal Inference for Assistive Wearable Agents](../../NeurIPS2025/audio_speech/benchmarking_egocentric_multimodal_goal_inference_for_assist.md)
+- [\[ICML 2026\] JAEGER: Joint 3D Audio-Visual Grounding and Reasoning in Simulated Physical Environments](../../ICML2026/audio_speech/jaeger_joint_3d_audio-visual_grounding_and_reasoning_in_simulated_physical_envir.md)
 
 </div>
 

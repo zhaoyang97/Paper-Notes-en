@@ -141,7 +141,7 @@ Methods such as AKS employ pretrained VLMs to perform binary frame selection bef
 - [\[ICLR 2026\] Cut Less, Fold More: Model Compression through the Lens of Projection Geometry](../../ICLR2026/model_compression/cut_less_fold_more_model_compression_through_the_lens_of_projection_geometry.md)
 - [\[NeurIPS 2025\] Vision-centric Token Compression in Large Language Model](vision-centric_token_compression_in_large_language_model.md)
 - [\[NeurIPS 2025\] DP-LLM: Runtime Model Adaptation with Dynamic Layer-wise Precision Assignment](dp-llm_runtime_model_adaptation_with_dynamic_layer-wise_precision_assignment.md)
-- [\[NeurIPS 2025\] Dependency Parsing is More Parameter-Efficient with Normalization](dependency_parsing_is_more_parameter-efficient_with_normalization.md)
+- [\[ACL 2026\] Quantize What Counts: More for Keys, Less for Values](../../ACL2026/model_compression/quantize_what_counts_more_for_keys_less_for_values.md)
 
 </div>
 

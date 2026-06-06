@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Anchor-guided Hypergraph Condensation with Dual-level Discrimination
 description: >-
-  [ICML 2026][Graph Learning][hypergraph condensation] AHGCDD rewrites hypergraph condensation (HGC) from the decoupled paradigm of "train structure generator first…
+  [ICML 2026][Graph Learning][hypergraph condensation] AHGCDD reformulates Hypergraph Condensation (HGC) from a decoupled paradigm (training a structure generator followed by trajectory matching) into an end-to-end framewo…
 tags:
   - "ICML 2026"
   - "Graph Learning"
@@ -12,124 +12,123 @@ tags:
   - "dual-level discrimination"
   - "MMD"
 date: 2026-05-08
-content_hash: 093e2b4f9e59b09b
+content_hash: 23111fbaf6ee17be
 ---
 
 # Anchor-guided Hypergraph Condensation with Dual-level Discrimination
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.10001](https://arxiv.org/abs/2605.10001)  
-**Code**: Not released  
-**Area**: Graph Learning / Hypergraph Neural Networks / Dataset Condensation (Graph/Hypergraph Condensation)  
+**Code**: Not disclosed  
+**Area**: Graph Learning / Hypergraph Neural Networks / Graph/Hypergraph Condensation  
 **Keywords**: hypergraph condensation, HKPR diffusion, anchor-guided hyperedge, dual-level discrimination, MMD
 
 ## TL;DR
-AHGCDD rewrites hypergraph condensation (HGC) from the decoupled paradigm of "train structure generator first, then match training trajectories" into an end-to-end framework: Heat-Kernel-PageRank injects structural information into initial features, an anchor-guided approach synthesizes sparse, learnable hyperedges based on feature distances, and a dual-level discrimination loss (class prototype MMD + instance-level contrastive) replaces expensive HNN retraining. On five hypergraph benchmarks, it achieves ≥SOTA accuracy with up to 144× speedup.
+AHGCDD reformulates Hypergraph Condensation (HGC) from a decoupled paradigm (training a structure generator followed by trajectory matching) into an end-to-end framework: it embeds structural information into initialized features via Heat-Kernel-PageRank, synthesizes sparse learnable hyperedges based on feature distances using an anchor-guided approach, and replaces expensive HNN retraining with a coarse-to-fine dual-level discriminative loss (class prototype MMD + instance-level contrastive). It achieves ≥ SOTA performance on five hypergraph benchmarks with up to 144× speedup.
 
 ## Background & Motivation
 
-**Background**: Hypergraph neural networks (HNNs) excel at modeling higher-order interactions in domains such as social analysis, biochemistry, and e-commerce, but large-scale hypergraph training is computationally expensive. Graph condensation (GC) compresses the original graph into a small synthetic graph while preserving downstream GNN performance. In 2025, HG-Cond extended this to hypergraphs—pretraining a Neural Hyperedge Linker (NHL) to capture higher-order connectivity via variational inference, then using GPSM to repeatedly retrain HNNs for trajectory alignment.
+**Background**: Hypergraph Neural Networks (HNNs) excel at modeling high-order interactions in social analysis, biochemistry, and e-commerce. However, training on large-scale hypergraphs incurs massive computational costs. Graph Condensation (GC) compresses the original graph into a small synthetic one while maintaining downstream GNN performance. In 2025, HG-Cond extended this to hypergraphs by pre-training a Neural Hyperedge Linker (NHL) with variational inference to capture high-order connectivity and using GPSM to align training trajectories via repeated HNN retraining.
 
-**Limitations of Prior Work**: HG-Cond faces two fundamental issues—(1) **Decoupled structure generation and feature optimization**: NHL is frozen during the amelioration phase, optimized only for "reconstructing the original hypergraph" and not jointly trained with synthetic features, leading to misalignment between structure and nodes and degraded downstream accuracy; (2) **Resource-intensive trajectory matching**: Each amelioration round requires retraining the HNN, and the memory cost of NHL variational pretraining makes scaling to large hypergraphs difficult.
+**Limitations of Prior Work**: HG-Cond suffers from two fundamental issues: (1) **Decoupling of structure generation and feature optimization**: The NHL is frozen during the amelioration phase; it was optimized to "reconstruct the original hypergraph" rather than jointly with synthetic features, leading to structural-node misalignment and degraded downstream accuracy. (2) **Resource-intensive trajectory matching**: Every amelioration round requires retraining HNNs, and the memory overhead of NHL variational pre-training makes it difficult to scale to massive hypergraphs.
 
-**Key Challenge**: Simultaneously encoding "structure / features / training trajectory" in bi-level optimization inevitably requires either retraining or complex alignment losses; to maintain downstream accuracy without retraining, a lightweight signal that supervises both structure and features is needed.
+**Key Challenge**: Incorporating "structure, features, and training trajectories" simultaneously into bi-level optimization inevitably lead to either retraining or complex alignment losses. Maintaining downstream accuracy without retraining requires a lightweight signal that can supervise both structure and features.
 
-**Goal**: (1) Integrate the structure generator into end-to-end optimization to avoid misalignment; (2) Find an alignment target that does not require HNN retraining; (3) Encode higher-order structural information into features at initialization, providing a strong starting point for subsequent optimization.
+**Goal**: (1) Integrate the structure generator into end-to-end optimization to avoid misalignment; (2) Identify an alignment objective that does not require HNN retraining; (3) Encode high-order structural information into features during the initialization phase to provide a strong starting point for optimization.
 
-**Key Insight**: First, use Heat Kernel PageRank to perform low-pass spectral filtering on the original graph, "baking" multi-hop structural knowledge into node features; then, let each synthetic node act as an anchor in turn, using an MLP to learn pairwise association strengths among synthetic nodes to form differentiable sparse hyperedges; finally, use a composite loss of prototype MMD + node-level InfoNCE to preserve both global class distribution and local decision boundaries.
+**Key Insight**: First, apply a low-pass spectral filter using Heat Kernel PageRank on the original graph to "bake" multi-hop structural knowledge into node features. Second, allow each synthetic node to serve as an anchor and use an MLP to learn pairwise affinity between synthetic nodes to form differentiable sparse hyperedges. Finally, use a composite loss of prototype MMD and node-level InfoNCE to preserve both the global class distribution and local decision boundaries.
 
-**Core Idea**: Replace "structure by generator + features by matching" with "structure and features jointly driven by discrimination loss," and use HKPR to fold expensive "repeated propagation" into a one-time initialization filter.
+**Core Idea**: Replace the "structure by generator + features by matching" paradigm with "structure and features driven simultaneously by discriminative loss," and use HKPR to collapse expensive "repeated propagation" into a one-time initialization filter.
 
 ## Method
 
 ### Overall Architecture
-Given a large hypergraph $\mathcal{T}=(\mathbf{X},\mathbf{H},\mathbf{Y})$, the target synthetic hypergraph $\mathcal{S}=(\mathbf{X}',\mathbf{H}',\mathbf{Y}')$ satisfies $N'\ll N, M'\ll M$. The pipeline: (1) **HKPR Initialization**—apply truncated Heat Kernel PageRank diffusion to original node features to obtain $\tilde{\mathbf{X}}$, then map to $N'$ synthetic nodes $\mathbf{X}'$ via class-wise mean pooling; (2) **Anchor-guided Hyperedge Generation**—each $\mathbf{X}'_i$ acts as an anchor, an MLP learns its association scores $\hat{\mathbf{H}}'_i$ with other synthetic nodes, and an adaptive threshold $\delta_i$ sparsifies via ReLU to yield structure $\mathbf{H}'_i$; (3) **Dual-level Discrimination Loss** aligns class prototypes (coarse) and instance geometry (fine) between synthetic and original graphs, with dynamic cos/sin weighting. Downstream, training HNN on $\mathcal{S}$ achieves accuracy close to the full graph.
+Given a large hypergraph $\mathcal{T}=(\mathbf{X},\mathbf{H},\mathbf{Y})$, the goal is to synthesize a hypergraph $\mathcal{S}=(\mathbf{X}',\mathbf{H}',\mathbf{Y}')$ where $N'\ll N$ and $M'\ll M$. The pipeline consists of: (1) **HKPR Initialization**—performing truncated Heat Kernel PageRank diffusion on original node features to obtain $\tilde{\mathbf{X}}$, then mapping to $N'$ synthetic nodes $\mathbf{X}'$ via intra-class mean pooling; (2) **Anchor-guided Hyperedge Generation**—treating each $\mathbf{X}'_i$ as an anchor and using an MLP to learn association scores $\hat{\mathbf{H}}'_i$ with other synthetic nodes, refined by an adaptive threshold $\delta_i$ per edge for sparsity via ReLU; (3) **Dual-level Discriminative Loss**—simultaneously aligning synthetic and original class prototypes (coarse) and instance geometry (fine), with dynamic switching using cos/sin time weighting. Downstream HNNs are trained on $\mathcal{S}$ to achieve near full-graph accuracy.
 
 ### Key Designs
 
-1. **HKPR-based Node Initialization (Baking Structural Knowledge into Features)**:
+1. **HKPR-based Node Initialization (Baking structural knowledge into features)**:
 
-    - **Function**: Before condensation, multi-scale higher-order structural information is embedded into synthetic node features, providing a structure-aware starting point for subsequent optimization and topological signals for feature-driven hyperedge generation.
-    - **Mechanism**: Define the normalized hypergraph propagation operator $\mathbf{P}=\mathbf{D}_v^{-1/2}\mathbf{H}\mathbf{D}_e^{-1}\mathbf{H}^\top\mathbf{D}_v^{-1/2}$, HKPR diffusion as $\tilde{\mathbf{X}}=\sum_{k=0}^\infty \frac{e^{-\lambda}\lambda^k}{k!}\mathbf{P}^{(k)}\mathbf{X}$, equivalent to low-pass filtering $g(\mu)=e^{-\lambda\mu}$ in the hypergraph Fourier domain (Thm 3.1). Truncate at $K=\lceil\lambda+3\sqrt{\lambda}\rceil$—Lemma 3.2 provides a Poisson tail bound ensuring exponentially decaying error. Each class's synthetic node feature is obtained by mean pooling over original nodes of the same class: $\mathbf{X}'_i=\frac{1}{|S_i|}\sum_{j\in S_i}\tilde{\mathbf{X}}_j$.
-    - **Design Motivation**: Randomly initializing synthetic features forces subsequent optimization to learn structure from scratch; HKPR injects "K-hop neighborhood + global context" via one-shot low-pass filtering, providing a strong prior and denoising high-frequency noise.
+    - **Function**: Infuses multi-scale high-order structural information into synthetic node features before condensation starts, providing a structure-aware starting point and a topological signal for feature-driven hyperedge generation.
+    - **Mechanism**: Define the normalized hypergraph propagation operator $\mathbf{P}=\mathbf{D}_v^{-1/2}\mathbf{H}\mathbf{D}_e^{-1}\mathbf{H}^\top\mathbf{D}_v^{-1/2}$. HKPR diffusion is $\tilde{\mathbf{X}}=\sum_{k=0}^\infty \frac{e^{-\lambda}\lambda^k}{k!}\mathbf{P}^{(k)}\mathbf{X}$, equivalent to low-pass filtering $g(\mu)=e^{-\lambda\mu}$ in the hypergraph Fourier domain (Thm 3.1). Truncating at $K=\lceil\lambda+3\sqrt{\lambda}\rceil$ yields an exponentially decaying error bound (Lemma 3.2). Synthetic features $\mathbf{X}'_i$ are initialized by classroom mean pooling: $\mathbf{X}'_i=\frac{1}{|S_i|}\sum_{j\in S_i}\tilde{\mathbf{X}}_j$.
+    - **Design Motivation**: Direct random initialization forces the optimizer to learn structure from scratch. HKPR embeds "K-hop neighborhood + global context" via one-time low-pass filtering, providing a strong prior and filtering out high-frequency noise.
 
 2. **Anchor-guided Hyperedge Generation + Adaptive Sparsity Threshold**:
 
-    - **Function**: Enables differentiable structure generation jointly trained with features, supporting per-edge sparsity.
-    - **Mechanism**: Each synthetic node $v_i'$ acts as an anchor, and for all other synthetic nodes $j$, a shared MLP computes pairwise association: $\hat{h}'_{i,j}=\text{sigmoid}(\text{MLP}_\Phi([\mathbf{X}'_i;\mathbf{X}'_j]))$, forming the incidence vector $\hat{\mathbf{H}}'_i$; an adaptive threshold $\delta_i$ is learned for each hyperedge, and final sparsification is $\mathbf{H}'_i=\text{ReLU}(\hat{\mathbf{H}}'_i-\delta_i)$. Thus, both structure $\mathbf{H}'$ and features $\mathbf{X}'$ are differentiable under the same loss.
-    - **Design Motivation**: Using a global threshold (as in HG-Cond) leads to uniform hyperedge density and reduced expressiveness; the anchor perspective lets each hyperedge be driven by a central node, aligning with the intuition that "a hypergraph is essentially a high-order motif around a node." The MLP association avoids pretraining a generator, allowing structure to co-evolve with features under the discrimination loss.
+    - **Function**: Makes structure generation differentiable, enables joint training with features, and supports independent sparsity per edge.
+    - **Mechanism**: Each synthetic node $v_i'$ acts as an anchor. A shared MLP computes pairwise associations: $\hat{h}'_{i,j}=\text{sigmoid}(\text{MLP}_\Phi([\mathbf{X}'_i;\mathbf{X}'_j]))$ to form the incident vector $\hat{\mathbf{H}}'_i$. A per-hyperedge adaptive threshold $\delta_i$ is learned to sparsify the structure: $\mathbf{H}'_i=\text{ReLU}(\hat{\mathbf{H}}'_i-\delta_i)$. Both $\mathbf{H}'$ and $\mathbf{X}'$ are differentiable with respect to the same loss.
+    - **Design Motivation**: Methods like HG-Cond use global thresholds, leading to uniform edge density and lost expressiveness. The anchor perspective allows each hyperedge to be driven by a central node, aligning with the intuition that hypergraphs are high-order motifs around nodes. The MLP avoids pre-training a generator and allows structure to evolve with features under discriminative loss gradients.
 
-3. **Dual-level Discrimination Loss + Cos/Sin Dynamic Weighting**:
+3. **Dual-level Discriminative Loss + cos/sin Dynamic Weighting**:
 
-    - **Function**: Aligns the global class distribution (coarse) and intra-class instance geometry (fine) between synthetic and original data without retraining HNN, serving as the condensation objective.
-    - **Mechanism**: (a) **Coarse** $\mathcal{L}_c$: Based on class prototypes $\mathbf{C}=\mathbf{Y}^\top\tilde{\mathbf{X}}, \mathbf{C}'=\mathbf{Y}'^\top\tilde{\mathbf{X}}'$, maximize cosine similarity for same-class prototypes (→1), minimize for different classes (→0); Thm 3.3 shows this is equivalent to minimizing MMD over the joint distribution of normalized features and labels; Prop 3.5 provides a class-level margin lower bound. (b) **Fine** $\mathcal{L}_f$: For each synthetic node $v_i'$, sample same-class original nodes as positives and different-class as negatives, applying an InfoNCE-style contrastive loss; Prop 3.8 shows this directly upper-bounds the probability of mis-ranking events $\Pr(\mathcal{E}_i)\leq\mathbb{E}[e^{l_i}-1]$. (c) **Dynamic Weighting** $\mathcal{L}_{Disc}^{(t)}=\cos(\frac{\pi t}{2T})\mathcal{L}_c+\sin(\frac{\pi t}{2T})\mathcal{L}_f$, with $T$ as total epochs; early stages emphasize global distribution alignment, later stages refine local decision boundaries.
-    - **Design Motivation**: Coarse loss ensures global class separability but cannot refine crowded intra-class regions; fine loss resolves instances but is sensitive to anchor sampling noise if used alone. Weighted fusion theoretically optimizes both MMD and ranking margin; cos/sin scheduling implements "global → local" curriculum learning without introducing new hyperparameters.
+    - **Function**: Aligns the synthetic and original data across global class distributions (coarse) and intra-class instance geometry (fine) as the condensation objective, without retraining HNNs.
+    - **Mechanism**: (a) **Coarse-grained** $\mathcal{L}_c$: Based on prototypes $\mathbf{C}=\mathbf{Y}^\top\tilde{\mathbf{X}}$ and $\mathbf{C}'=\mathbf{Y}'^\top\tilde{\mathbf{X}}'$, it maximizes cosine similarity for same-class prototypes while minimizing different-class similarity. Thm 3.3 proves this is equivalent to minimizing MMD on the joint distribution of (normalized features, labels); Prop 3.5 provides a class-level margin lower bound. (b) **Fine-grained** $\mathcal{L}_f$: For each synth node $v_i'$, samples same-class original nodes as positives and different-class as negatives for an InfoNCE-style contrastive loss. Prop 3.8 proves this upper-bounds the mis-ranking probability $\Pr(\mathcal{E}_i)\leq\mathbb{E}[e^{l_i}-1]$. (c) **Dynamic Weighting**: $\mathcal{L}_{Disc}^{(t)}=\cos(\frac{\pi t}{2T})\mathcal{L}_c+\sin(\frac{\pi t}{2T})\mathcal{L}_f$, where $T$ is the total rounds. Early stages focus on global alignment, while later stages refine local decision boundaries.
+    - **Design Motivation**: Coarse alignment ensures global separability but fails to refine crowded regions. Fine alignment handles instance discrimination but is sensitive to sampling noise. The weighted fusion theoretically optimizes both MMD and ranking margin; the cos/sin scheduler implements curriculum learning (Global $\rightarrow$ Local) without additional hyperparameters.
 
 ### Loss & Training
-
-The final condensation objective is $\min_{\mathbf{X}', \Phi, \delta}\mathcal{L}_{Disc}^{(t)}$, with no HNN retraining. Main hyperparameters are HKPR path strength $\lambda$, truncation order $K$, sample count $s$, number of negatives $N_{neg}$, and training epochs $T$. Overall time complexity is $\mathcal{O}(KM\delta_e d+T(L_\Phi N'^2 d^2+N'N_{neg}d))$, dominated by original edge count and synthetic size, far lower than trajectory matching methods requiring HNN retraining.
+The final condensation objective is $\min_{\mathbf{X}', \Phi, \delta}\mathcal{L}_{Disc}^{(t)}$, which bypasses the HNN retraining step. Hyperparameters include HKPR path intensity $\lambda$, truncation order $K$, sample size $s$, negative sample count $N_{neg}$, and training epochs $T$. The time complexity is $\mathcal{O}(KM\delta_e d+T(L_\Phi N'^2 d^2+N'N_{neg}d))$, where the primary terms relate to original edge counts and synthetic size, significantly lower than the HNN training cost in trajectory matching.
 
 ## Key Experimental Results
 
 ### Main Results
-The authors compare SOTA HGC (HG-Cond) and several GC methods on five hypergraph benchmarks (Cora, Pubmed, DBLP-CA, Walmart, Yelp) for downstream HNN accuracy after condensation:
+The authors compared SOTA HGC (HG-Cond) and several GC methods across five hypergraph benchmarks (Cora, Pubmed, DBLP-CA, Walmart, Yelp) regarding downstream HNN accuracy after condensation:
 
-| Dataset | #Nodes | #Hyperedges | #Classes | Description |
-|---------|--------|-------------|----------|-------------|
+| Dataset | Nodes | Hyperedges | Classes | Description |
+|--------|--------|--------|------|------|
 | Cora | 2,708 | 1,579 | 7 | co-citation |
 | Pubmed | 19,717 | 7,963 | 3 | co-citation |
 | DBLP-CA | 41,302 | 22,363 | 6 | co-authorship |
 | Walmart | 88,860 | 69,906 | 11 | co-purchase |
 | Yelp | 50,758 | 679,302 | 9 | co-occurrence |
 
-| Method Category | Accuracy Trend | Condensation Speed |
-|-----------------|---------------|-------------------|
-| GC methods (Jin et al. 2022; Zheng et al. 2023; ...) direct to hypergraph | Inferior on all HG data (no higher-order modeling) | Medium |
-| HG-Cond (trajectory matching + NHL) | SOTA but requires multiple HNN retrainings | Slow |
+| Method Category | Accuracy Trends | Condensation Speed |
+|----------|----------|----------|
+| GC (Jin et al. 2022; Zheng et al. 2023; ...) applied to HG | Lags behind on all HG data (lacks high-order modeling) | Moderate |
+| HG-Cond (Trajectory Matching + NHL) | SOTA but requires multiple HNN retrains | Slow |
 | **AHGCDD** | ≥ HG-Cond on all 5 datasets | **Up to 144× speedup** |
 
 ### Ablation Study
 
 | Configuration | Phenomenon | Interpretation |
-|---------------|------------|----------------|
-| w/o HKPR (random synthetic feature initialization) | Significant drop in downstream accuracy | Structure-aware initialization is a crucial prior |
-| Global threshold instead of anchor-adaptive $\delta_i$ | Homogenized structure, accuracy drop | Adaptive sparsity allows per-hyperedge density |
-| Only $\mathcal{L}_c$ (coarse) | Clear inter-class separation but intra-class crowding, accuracy drop on Yelp/Walmart | Lacks local ranking signal |
-| Only $\mathcal{L}_f$ (fine) | Prototype drift, unstable training | Lacks global distribution constraint |
-| Fixed 50%/50% weighting | Worse than cos/sin dynamic scheduling | Curriculum learning is effective |
-| GPSM (HG-Cond style) retraining | ↑↑ time cost, no significant accuracy gain | Dual-level discrimination is sufficient |
-| Replace anchor generation with pretrained NHL | Accuracy drop | End-to-end optimization is key |
+|------|------|------|
+| w/o HKPR (Random Synth Init) | Significant drop in accuracy | Structure-aware initialization is a vital prior |
+| Global threshold instead of anchor-adaptive $\delta_i$ | Structural homogenization, lower accuracy | Adaptive sparsity allows density on demand |
+| $\mathcal{L}_c$ only (Coarse-grained) | Global classes clear, but intra-class crowding (Yelp/Walmart drop) | Lacks local ranking signals |
+| $\mathcal{L}_f$ only (Fine-grained) | Prototype shift, unstable training | Lacks global distribution constraints |
+| Fixed 50%/50% Weighting | Inferior to cos/sin dynamic scheduling | Curriculum learning is effective |
+| Retraining with GPSM (HG-Cond style) | Time cost ↑↑, no significant gain in accuracy | Dual-level discrimination is sufficient |
+| Replace Anchor Gen with pre-trained NHL | Accuracy drop | End-to-end optimization is critical |
 
 ### Key Findings
-- HKPR initialization and anchor generation provide orthogonal gains: the former delivers "structure→feature" knowledge transfer, the latter "feature→structure" end-to-end feedback—both are indispensable.
-- $\lambda$ controls HKPR average diffusion steps; smaller $\lambda$ (e.g., 2-3) suits small-diameter graphs, larger $\lambda$ benefits large graphs like Pubmed/Walmart—this correlates with hypergraph spectral radius.
-- Condensation efficiency gain scales with original graph size: on Yelp, up to 144× speedup, mainly because HG-Cond requires extensive trajectory matching and HNN retraining on large graphs.
-- The curriculum order from coarse to fine in dual-level loss greatly stabilizes convergence; reversing the order leads to early local optima within classes.
+- HKPR initialization and anchor generation are orthogonal performance gains: the former enables "structure $\rightarrow$ feature" knowledge transfer, while the latter enables "feature $\rightarrow$ structure" end-to-end feedback.
+- $\lambda$ controls average HKPR diffusion steps; smaller $\lambda$ (e.g., 2-3) suits small-diameter graphs, while larger $\lambda$ is better for Pubmed/Walmart—reflecting the hypergraph spectral radius.
+- Efficiency gains scale with the original graph size: the 144× speedup on Yelp occurs because HG-Cond requires massive trajectory matching/HNN retraining on large graphs.
+- The Coarse-to-Fine order in the dual-level loss is crucial for convergence stability; reversing the order causes the model to get stuck in local intra-class optima early on.
 
 ## Highlights & Insights
-- **Dual Theoretical-Methodological Proofs**: Thm 3.3 links $\mathcal{L}_c$ to MMD, Prop 3.8 links $\mathcal{L}_f$ to a mis-ranking upper bound—this "condensation loss = distribution alignment + ranking guarantee" duality is rare in GC literature and provides a template for future work.
-- **HKPR Filtering Perspective**: Compressing "multi-hop propagation" into a one-shot spectral filter is a transferable technique—any initialization needing prior structural signals can use similar low-pass filtering instead of repeated message passing.
-- **Anchor-based Differentiable Hyperedges**: Each node is both anchor and candidate member, naturally supporting arbitrary-arity higher-order interactions; threshold $\delta_i$ lets the optimizer decide "edge density."
-- **Discriminative Loss without HNN Retraining**: This is the most valuable engineering contribution—liberating GC from "proxy task matching" to "direct discriminative alignment," making the algorithm scalable to billion-scale graphs.
+- **Dual Proofs of Method and Theory**: Thm 3.3 links $\mathcal{L}_c$ to MMD, and Prop 3.8 links $\mathcal{L}_f$ to mis-ranking bounds. This "Condensation Loss = Distribution Alignment + Ranking Guarantee" duality is rare in GC literature and provides a strong template for future work.
+- **HKPR Filter Perspective**: Compressing "multi-hop propagation" into a one-time spectral filter is a transferable trick—any initialization requiring prior structural signals can use similar low-pass filters instead of repeated message passing.
+- **Differentiable Hyperedges via Anchors**: Each node serves as both an anchor and a candidate member, naturally supporting high-order interactions of arbitrary arity; the threshold $\delta_i$ lets the optimizer decide edge density.
+- **Discriminative Loss without Retraining**: This is the most valuable engineering contribution—liberating GC from "proxy task matching" to "direct discriminative alignment," allowing scalability to billion-scale graphs.
 
 ## Limitations & Future Work
-- The largest experimental dataset is Yelp (50K nodes / 679K hyperedges); whether the 144× speedup holds for true industrial-scale hypergraphs (millions of nodes) is unverified.
-- Anchor MLP complexity $\mathcal{O}(L_\Phi N'^2 d^2)$ is quadratic in $N'$; if users require larger synthetic graphs (e.g., 1% ratio), this becomes a bottleneck.
-- HKPR path strength $\lambda$ requires manual tuning or grid search; no adaptive estimation is provided, and optimal $\lambda$ varies across hypergraphs.
-- Evaluation is limited to node classification; whether dual-level discrimination remains SOTA for hypergraph link prediction, subgraph classification, etc., is unknown.
-- The cos/sin scheduling of dual-level loss depends on a fixed total epoch count $T$; long/short training may shift the optimal schedule.
+- The maximum scale tested was Yelp (50K nodes / 679K edges); whether the 144× speedup holds for industrial-scale hypergraphs (millions) remains unverified.
+- Anchor MLP complexity is $\mathcal{O}(L_\Phi N'^2 d^2)$, quadratic in $N'$; this becomes a bottleneck if users require high condensation ratios (e.g., 1%).
+- HKPR intensity $\lambda$ requires manual tuning or grid search; no adaptive estimation is provided despite its sensitivity to dataset types.
+- Evaluation is limited to node classification; it is unknown if dual-level discrimination holds SOTA for hypergraph link prediction or subgraph classification.
+- The cos/sin scheduler depends on a fixed total epoch count $T$; varying training durations may shift the optimal schedule.
 
 ## Related Work & Insights
-- **vs HG-Cond (Gong et al. 2025)**: HG-Cond achieves high-fidelity condensation via NHL pretraining + GPSM trajectory matching but at high cost; AHGCDD makes structure generation end-to-end and replaces trajectory matching with discrimination loss, greatly accelerating while maintaining accuracy.
-- **vs GCond / SFGC (Graph Condensation)**: These works handle only pairwise graphs; AHGCDD extends the approach to higher-order via anchor + adaptive sparsity, and is the first to propose the equivalence between "MMD ↔ class prototype alignment" in hypergraph condensation.
-- **vs DSL / GraphSAINT (Graph Sampling)**: Sampling preserves original substructures, while AHGCDD synthesizes new graphs with greater controllability; their application scenarios differ (the former for training acceleration, the latter for inference service).
-- **vs Dataset Distillation (Wang et al.; Cazenavette et al.)**: Traditional DD uses gradient/trajectory matching; AHGCDD offers an alternative—"distribution alignment + ranking guarantee" instead of trajectory matching, showing that high-quality distillation is possible without proxy tasks.
+- **vs HG-Cond (Gong et al. 2025)**: HG-Cond uses NHL pre-training and GPSM trajectory matching for high-fidelity condensation but at a massive cost; AHGCDD end-to-endizes structure generation and uses discriminative loss to drastically speed up while maintaining or exceeding accuracy.
+- **vs GCond / SFGC (Graph Condensation)**: These works handle pairwise graphs; AHGCDD extends the logic to high-order via anchors and adaptive sparsity and is the first to prove the equivalence of "MMD ↔ Prototype Alignment" in HGC.
+- **vs DSL / GraphSAINT (Graph Sampling)**: Sampling preserves original sub-structures, while AHGCDD synthesizes new ones for better control; they target different scenarios (training acceleration vs. inference serving).
+- **vs Dataset Distillation (Wang et al.; Cazenavette et al.)**: Traditional DD uses gradient/trajectory matching; AHGCDD provides an alternative path—using "distribution alignment + ranking guarantee" to prove high-quality distillation is possible without proxy tasks.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The combination of HKPR initialization, anchor hyperedges, and dual-level discrimination appears for the first time in HGC, each with theoretical support.
-- Experimental Thoroughness: ⭐⭐⭐⭐ 5 datasets + multiple backbone HNNs + complete ablation; but lacks validation on larger graphs and different downstream tasks.
-- Writing Quality: ⭐⭐⭐⭐ Rigorous formula derivations, clear ablation correspondence; Theorem 3.1/3.3 + Prop 3.5/3.8 are well-placed theoretically.
-- Value: ⭐⭐⭐⭐ The combination of 144× speedup and ≥SOTA accuracy is highly practical, providing a feasible preprocessing solution for large-scale hypergraph training.
+- **Novelty**: ⭐⭐⭐⭐ The combination of HKPR initialization, anchor hyperedges, and dual-level discrimination is a first for HGC, with solid theoretical backing for each.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ 5 datasets with multiple HNN backbones and complete ablations; however, larger graphs and diverse downstream tasks are missing.
+- **Writing Quality**: ⭐⭐⭐⭐ Rigorous derivations and clear ablations; Theorems 3.1/3.3 and Propositions 3.5/3.8 are perfectly positioned.
+- **Value**: ⭐⭐⭐⭐ The 144× speedup + ≥ SOTA accuracy makes this highly practical, providing a viable pre-processing solution for large-scale hypergraph training.
 
 <!-- RELATED:START -->
 
@@ -137,11 +136,11 @@ The authors compare SOTA HGC (HG-Cond) and several GC methods on five hypergraph
 
 ## Related Papers
 
-- [\[AAAI 2026\] BugSweeper: Function-Level Detection of Smart Contract Vulnerabilities Using Graph Neural Networks](../../AAAI2026/graph_learning/bugsweeper_function-level_detection_of_smart_contract_vulnerabilities_using_grap.md)
+- [\[ICML 2026\] Learnable Kernel Density Estimation for Graphs and Its Application to Graph-Level Anomaly Detection](learnable_kernel_density_estimation_for_graphs_and_its_application_to_graph-leve.md)
+- [\[ICML 2026\] DTKG: Dual-Track Knowledge Graph-Verified Reasoning Framework for Multi-Hop QA](dtkg_dual-track_knowledge_graph-verified_reasoning_framework_for_multi-hop_qa.md)
 - [\[ICLR 2026\] Pairwise is Not Enough: Hypergraph Neural Networks for Multi-Agent Pathfinding](../../ICLR2026/graph_learning/pairwise_is_not_enough_hypergraph_neural_networks_for_multi-agent_pathfinding.md)
 - [\[AAAI 2026\] Commonality in Few: Few-Shot Multimodal Anomaly Detection via Hypergraph-Enhanced Memory](../../AAAI2026/graph_learning/commonality_in_few_few-shot_multimodal_anomaly_detection_via_hypergraph-enhanced.md)
-- [\[ICLR 2026\] Entropy-Guided Dynamic Tokens for Graph-LLM Alignment in Molecular Understanding](../../ICLR2026/graph_learning/entropy-guided_dynamic_tokens_for_graph-llm_alignment_in_molecular_understanding.md)
-- [\[NeurIPS 2025\] SPOT-Trip: Dual-Preference Driven Out-of-Town Trip Recommendation](../../NeurIPS2025/graph_learning/spot-trip_dual-preference_driven_out-of-town_trip_recommendation.md)
+- [\[AAAI 2026\] BugSweeper: Function-Level Detection of Smart Contract Vulnerabilities Using Graph Neural Networks](../../AAAI2026/graph_learning/bugsweeper_function-level_detection_of_smart_contract_vulnerabilities_using_grap.md)
 
 </div>
 

@@ -134,9 +134,9 @@ where $L_{\text{seg}}$ is action segmentation loss, $L_{\text{eff}}$ is the effe
 
 - [\[ICLR 2026\] Capacity-Aware Inference: Mitigating the Straggler Effect in Mixture of Experts](capacity-aware_inference_mitigating_the_straggler_effect_in_mixture_of_experts.md)
 - [\[ICLR 2026\] Unified Vision-Language Modeling via Concept Space Alignment](unified_vision-language_modeling_via_concept_space_alignment.md)
+- [\[ICML 2026\] Pair2Scene: Learning Local Object Relations for Procedural Scene Generation](../../ICML2026/multimodal_vlm/pair2scene_learning_local_object_relations_for_procedural_scene_generation.md)
 - [\[CVPR 2026\] From Observation to Action: Latent Action-based Primitive Segmentation for VLA Pre-training in Industrial Settings](../../CVPR2026/multimodal_vlm/from_observation_to_action_latent_action-based_primitive_segmentation_for_vla_pr.md)
-- [\[ICLR 2026\] Zero-shot HOI Detection with MLLM-based Detector-agnostic Interaction Recognition](zero-shot_hoi_detection_with_mllm-based_detector-agnostic_interaction_recognitio.md)
-- [\[ICCV 2025\] MaTVLM: Hybrid Mamba-Transformer for Efficient Vision-Language Modeling](../../ICCV2025/multimodal_vlm/matvlm_hybrid_mamba-transformer_for_efficient_vision-language_modeling.md)
+- [\[ACL 2026\] Vision-Language Models Mistake Head Orientation for Gaze Direction: Nonverbal Conversation Cues](../../ACL2026/multimodal_vlm/vision-language_models_mistake_head_orientation_for_gaze_direction_nonverbal_con.md)
 
 </div>
 

@@ -158,11 +158,11 @@ CARE-Flow-B (10B) outperforms same-scale baselines by +10.9% and exceeds Lingshu
 
 ## Related Papers
 
-- [\[ICLR 2026\] MMedAgent-RL: Optimizing Multi-Agent Collaboration for Multimodal Medical Reasoning](mmedagent-rl_optimizing_multi-agent_collaboration_for_multimodal_medical_reasoni.md)
 - [\[CVPR 2026\] EMAD: Evidence-Centric Grounded Multimodal Diagnosis for Alzheimer's Disease](../../CVPR2026/medical_imaging/emad_evidence-centric_grounded_multimodal_diagnosis_for_alzheimers_disease.md)
-- [\[NeurIPS 2025\] CureAgent: A Training-Free Executor-Analyst Framework for Clinical Reasoning](../../NeurIPS2025/medical_imaging/cureagent_a_training-free_executor-analyst_framework_for_clinical_reasoning.md)
+- [\[ICLR 2026\] MMedAgent-RL: Optimizing Multi-Agent Collaboration for Multimodal Medical Reasoning](mmedagent-rl_optimizing_multi-agent_collaboration_for_multimodal_medical_reasoni.md)
+- [\[ACL 2026\] MultiDx: A Multi-Source Knowledge Integration Framework towards Diagnostic Reasoning](../../ACL2026/medical_imaging/multidx_a_multi-source_knowledge_integration_framework_towards_diagnostic_reason.md)
 - [\[ACL 2026\] PrinciplismQA: A Philosophy-Grounded Approach to Assessing LLM-Human Clinical Medical Ethics Alignment](../../ACL2026/medical_imaging/principlismqa_a_philosophy-grounded_approach_to_assessing_llm-human_clinical_med.md)
-- [\[NeurIPS 2025\] RAD: Towards Trustworthy Retrieval-Augmented Multi-modal Clinical Diagnosis](../../NeurIPS2025/medical_imaging/rad_towards_trustworthy_retrieval-augmented_multi-modal_clinical_diagnosis.md)
+- [\[NeurIPS 2025\] CureAgent: A Training-Free Executor-Analyst Framework for Clinical Reasoning](../../NeurIPS2025/medical_imaging/cureagent_a_training-free_executor-analyst_framework_for_clinical_reasoning.md)
 
 </div>
 

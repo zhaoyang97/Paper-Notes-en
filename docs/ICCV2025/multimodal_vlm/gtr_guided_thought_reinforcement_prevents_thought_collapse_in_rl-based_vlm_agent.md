@@ -171,11 +171,11 @@ GTR achieves a **7×** improvement in success rate over the SOTA method (RL4VLM)
 
 ## Related Papers
 
-- [\[CVPR 2026\] GTR-Turbo: Merged Checkpoint is Secretly a Free Teacher for Agentic VLM Training](../../CVPR2026/multimodal_vlm/gtr_turbo_merged_checkpoint_free_teacher.md)
-- [\[AAAI 2026\] VipAct: Visual-Perception Enhancement via Specialized VLM Agent Collaboration and Tool-use](../../AAAI2026/multimodal_vlm/vipact_visual-perception_enhancement_via_specialized_vlm_age.md)
+- [\[ICML 2026\] Spectral-Progressive Thought Flow for Lightweight Multimodal Reasoning](../../ICML2026/multimodal_vlm/spectral-progressive_thought_flow_for_lightweight_multimodal_reasoning.md)
 - [\[ICCV 2025\] MMAT-1M: A Large Reasoning Dataset for Multimodal Agent Tuning](mmat1m_a_large_reasoning_dataset_for_multimodal_agent_tuning.md)
-- [\[NeurIPS 2025\] Praxis-VLM: Vision-Grounded Decision Making via Text-Driven Reinforcement Learning](../../NeurIPS2025/multimodal_vlm/praxisvlm_visiongrounded_decision_making_via_textdriven_rein.md)
-- [\[NeurIPS 2025\] What Can RL Bring to VLA Generalization? An Empirical Study](../../NeurIPS2025/multimodal_vlm/what_can_rl_bring_to_vla_generalization_an_empirical_study.md)
+- [\[CVPR 2026\] GTR-Turbo: Merged Checkpoint is Secretly a Free Teacher for Agentic VLM Training](../../CVPR2026/multimodal_vlm/gtr_turbo_merged_checkpoint_free_teacher.md)
+- [\[ICCV 2025\] Controlling Multimodal LLMs via Reward-guided Decoding](controlling_multimodal_llms_via_rewardguided_decoding.md)
+- [\[ICCV 2025\] G2D: Boosting Multimodal Learning with Gradient-Guided Distillation](g2d_boosting_multimodal_learning_with_gradient-guided_distillation.md)
 
 </div>
 

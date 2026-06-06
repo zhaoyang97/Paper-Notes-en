@@ -126,9 +126,9 @@ On the audio modality (LibriTTS, 0.9 kbps bandwidth), SimVQ achieves UTMOS score
 
 - [\[AAAI 2026\] On the Learning Dynamics of Two-Layer Linear Networks with Label Noise SGD](../../AAAI2026/optimization/on_the_learning_dynamics_of_two-layer_linear_networks_with_label_noise_sgd.md)
 - [\[ICLR 2026\] Constraint Matters: Multi-Modal Representation for Reducing Mixed-Integer Linear Programming](../../ICLR2026/optimization/constraint_matters_multi-modal_representation_for_reducing_mixed-integer_linear_.md)
+- [\[ICML 2026\] Dynamics and Representation Structure of Local Approximations to Gradient-Based Learning in Linear Recurrent Neural Networks](../../ICML2026/optimization/dynamics_and_representation_structure_of_local_approximations_to_gradient-based_.md)
 - [\[ICLR 2026\] COLD-Steer: Steering Large Language Models via In-Context One-step Learning Dynamics](../../ICLR2026/optimization/cold-steer_steering_large_language_models_via_in-context_one-step_learning_dynam.md)
 - [\[ICLR 2026\] Optimizer Choice Matters for the Emergence of Neural Collapse](../../ICLR2026/optimization/optimizer_choice_matters_for_the_emergence_of_neural_collapse.md)
-- [\[NeurIPS 2025\] Neural Thermodynamics: Entropic Forces in Deep and Universal Representation Learning](../../NeurIPS2025/optimization/neural_thermodynamics_entropic_forces_in_deep_and_universal_representation_learn.md)
 
 </div>
 

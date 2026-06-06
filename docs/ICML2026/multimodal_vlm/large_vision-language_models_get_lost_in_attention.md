@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Large Vision-Language Models Get Lost in Attention
 description: >-
-  [ICML 2026][Multimodal VLM][LVLM interpretability] This paper quantitatively diagnoses the residual stream of LVLMs using a geometric information-theoretic framework based on "information complexity (eRank) + subspace su…
+  [ICML 2026][Multimodal VLM][LVLM interpretability] This paper proposes a geometric information-theoretic framework using "Information Complexity (eRank) + Subspace Support" to quantitatively diagnose the residual flow of…
 tags:
   - "ICML 2026"
   - "Multimodal VLM"
   - "LVLM interpretability"
-  - "attention redundancy"
-  - "information theory"
-  - "subspace analysis"
-  - "attention replacement"
+  - "Attention redundancy"
+  - "Information theory"
+  - "Subspace analysis"
+  - "Attention replacement"
 date: 2026-05-08
-content_hash: bcf52e2c9f2280bf
+content_hash: 625eaa649d6e5ac1
 ---
 
 # Large Vision-Language Models Get Lost in Attention
@@ -21,101 +21,98 @@ content_hash: bcf52e2c9f2280bf
 **arXiv**: [2605.05668](https://arxiv.org/abs/2605.05668)  
 **Code**: Public  
 **Area**: Multimodal VLM / Interpretability  
-**Keywords**: LVLM interpretability, attention redundancy, information theory, subspace analysis, attention replacement
+**Keywords**: LVLM interpretability, Attention redundancy, Information theory, Subspace analysis, Attention replacement
 
 ## TL;DR
-This paper quantitatively diagnoses the residual stream of LVLMs using a geometric information-theoretic framework based on "information complexity (eRank) + subspace support." It finds that attention almost exclusively performs reconfiguration within the subspace, while the FFN injects new semantic dimensions. Even more strikingly, replacing learned attention weights with Gaussian noise leads to equal or improved performance on most vision tasks, revealing severe misalignment and redundancy in visual attention of contemporary LVLMs.
+This paper proposes a geometric information-theoretic framework using "Information Complexity (eRank) + Subspace Support" to quantitatively diagnose the residual flow of LVLMs. It finds that Attention primarily performs intra-subspace reconfiguration while FFN injects new semantic dimensions. More surprisingly, replacing learned attention weights with Gaussian noise actually improves performance on most vision tasks, revealing severe mismatch and redundancy in visual attention within contemporary LVLMs.
 
 ## Background & Motivation
-**Background**: The decoder of LVLMs remains a Transformer with residual connections, where each module outputs an additive update $\Delta\mathbf{X}$ written back to the shared residual stream. The mainstream assumption is that attention is responsible for in-context reasoning (induction head, copy mechanism), while the FFN acts as key-value memory for storing facts. Recent empirical phenomena in LVLMs, such as visual attention sink and visual attention drift, suggest that models may not truly utilize visual evidence.
+**Background**: The decoder of an LVLM remains a Transformer with residual connections, where each module outputs an additive update $\Delta\mathbf{X}$ back to the shared residual flow. The mainstream hypothesis is that attention handles in-context reasoning (induction heads, copy mechanisms), while FFN acts like key-value memory for facts. Recent empirical phenomena like visual attention sink and visual attention drift suggest tokens might not truly utilize visual evidence.
 
-**Limitations of Prior Work**: Existing analyses mostly remain at the **statistical level**—visualizing attention maps, performing attention rollout, counting sparse heads, or conducting causal interventions. However, these tools: (i) lack a unified theoretical foundation, making it difficult to compare conclusions across modules and metrics; (ii) attention weights themselves have been shown by Jain & Wallace et al. to be unreliable attribution signals; (iii) lack a unified metric to quantify "what the residual update actually changes in the representation."
+**Limitations of Prior Work**: Most analyses stay at the **statistical level**—plotting attention maps, attention rollouts, counting sparse heads, or causal interventions. These tools: (i) lack a unified theoretical basis, making it hard to compare different modules or metrics; (ii) attention weights themselves might not be reliable attribution signals; (iii) there is no unified metric to quantify "what the residual update actually changes in the representation."
 
-**Key Challenge**: To answer "what do attention and FFN actually do," a unified and comparable metric is needed. The LLM representation analysis community has used entropy, effective rank, and other geometric tools to characterize cross-layer quality, but module-level interpretation in LVLMs remains unexplored.
+**Key Challenge**: Answering "who does what" between attention and FFN requires a unified, comparable metric. While geometric tools like entropy and effective rank have been used in the LLM representation community, module-level interpretation for LVLMs remains unexplored.
 
-**Goal**: (i) Define "what information a representation matrix $\mathbf{X}$ contains"; (ii) Quantify "what an additive update $\Delta\mathbf{X}$ injects into $\mathbf{X}$"; (iii) Use these two metrics to diagnose the functional division of LVLM modules, especially to reveal whether visual attention is truly meaningful.
+**Goal**: (i) Define "what information a representation matrix $\mathbf{X}$ contains"; (ii) Quantize "what the additive update $\Delta\mathbf{X}$ injects into $\mathbf{X}$"; (iii) Use these to diagnose the functional division of LVLM modules, specifically revealing if visual attention performs meaningful work.
 
-**Key Insight**: By viewing the representation matrix as lying on a fixed-rank matrix manifold and applying SVD, two geometric objects naturally emerge: "singular spectrum (complexity)" and "column/row subspace (semantic support)." The concept of innovation from least squares is then used to quantify the "energy outside the existing subspace" in the update. This turns the vague problem of "information change" into a computable subspace projection residual.
+**Key Insight**: View the representation matrix on a fixed-rank matrix manifold. SVD naturally yields two geometric objects: the "singular spectrum (complexity)" and the "column/row subspace (semantic support)." The concept of "innovation" from least squares quantifies the "energy exceeding the existing subspace" in the update. This transforms the vague "information change" problem into computable subspace projection residuals.
 
-**Core Idea**: Decompose Transformer residual updates into two orthogonal dimensions: "innovation (RID)" vs "reconfiguration (MixIG)," and use this lens to re-examine LVLMs.
+**Core Idea**: Decompose Transformer residual updates into two orthogonal dimensions: "Innovation (RID)" and "Reconfiguration (MixIG)," then re-examine LVLMs through this lens.
 
 ## Method
 
 ### Overall Architecture
-For the residual stream $\mathbf{X}_{\text{new}} = \mathbf{X}_{\text{old}} + \Delta\mathbf{X}$, the authors define the representation information as $\mathcal{I}(\mathbf{X}) = (\mathcal{S}_\mathbf{X}, \mathcal{D}_\mathbf{X})$: $\mathcal{S}_\mathbf{X} = \mathrm{eRank}(\mathbf{X})$ describes spectral complexity, and $\mathcal{D}_\mathbf{X} = (\mathbf{P}_{\mathcal{C}(\mathbf{X})}, \mathbf{P}_{\mathcal{R}(\mathbf{X})})$ describes column/row subspace support. **RID** measures "external innovation" (spectral change + subspace novelty), while **MixIG** measures "internal reconfiguration" (token-level mixing entropy change). Applying these metrics to Attention and FFN updates yields quantitative evidence for module-level functional division.
+For residual flow $\mathbf{X}_{\text{new}} = \mathbf{X}_{\text{old}} + \Delta\mathbf{X}$, the authors define representation information as $\mathcal{I}(\mathbf{X}) = (\mathcal{S}_\mathbf{X}, \mathcal{D}_\mathbf{X})$: $\mathcal{S}_\mathbf{X} = \mathrm{eRank}(\mathbf{X})$ describes spectral complexity, and $\mathcal{D}_\mathbf{X} = (\mathbf{P}_{\mathcal{C}(\mathbf{X})}, \mathbf{P}_{\mathcal{R}(\mathbf{X})})$ describes column/row subspace support. Then, **RID** is used to measure "external innovation" (spectrum change + subspace novelty), and **MixIG** measures "internal reconfiguration" (change in token-level mixing entropy). Applying these to Attention and FFN updates yields quantitative evidence of module-level functional roles.
 
 ### Key Designs
 
-1. **SVD Geometric Characterization of Representation Information (RQ1)**:
-
+1.  **SVD Geometric Characterization of Representation Information (RQ1)**:
     - **Function**: Formalizes "what information is in $\mathbf{X}$."
-    - **Mechanism**: On the matrix manifold $\mathcal{M}_r = \{\mathbf{X} : \mathrm{rank}(\mathbf{X}) = r\}$, SVD $\mathbf{X} = \mathbf{U}\mathbf{\Sigma}\mathbf{V}^\top$ yields three geometric objects: left singular subspace $\mathcal{C}(\mathbf{X}) \in \mathrm{Gr}(r, S)$ (token association), right singular subspace $\mathcal{R}(\mathbf{X}) \in \mathrm{Gr}(r, H)$ (semantic direction), and singular spectrum $\mathbf{\Sigma}$ (energy distribution). Complexity is reduced to effective rank $\mathcal{S}_\mathbf{X} = \exp(-\sum_i p_i \log p_i)$ ($p_i = \sigma_i / \sum \sigma$), and support to projection operators.
-    - **Design Motivation**: Directly examining $\|\mathbf{X}\|_F$ misses structure; SVD decouples "number of effective dimensions" from "directions covered," distinguishing "energy change" from "direction change."
+    - **Mechanism**: Parameterize $\mathbf{X} = \mathbf{U}\mathbf{\Sigma}\mathbf{V}^\top$ on the matrix manifold $\mathcal{M}_r = \{\mathbf{X} : \mathrm{rank}(\mathbf{X}) = r\}$, obtaining three classes of geometric objects: left singular subspace $\mathcal{C}(\mathbf{X}) \in \mathrm{Gr}(r, S)$ (token correlations), right singular subspace $\mathcal{R}(\mathbf{X}) \in \mathrm{Gr}(r, H)$ (semantic directions), and singular spectrum $\mathbf{\Sigma}$ (energy distribution). Complexity is summarized by effective rank $\mathcal{S}_\mathbf{X} = \exp(-\sum_i p_i \log p_i)$ where $p_i = \sigma_i / \sum \sigma$, and support is summarized by projection operator pairs.
+    - **Design Motivation**: Simply observing $\|\mathbf{X}\|_F$ misses structure. Decoupling "how many effective dimensions" from "which directions are covered" using SVD allows distinguishing between "changing energy" and "changing direction."
 
-2. **RID = Spectral Change + Subspace Innovation (RQ2)**:
+2.  **RID = Spectral Change + Subspace Innovation (RQ2)**:
+    - **Function**: Quantifies whether $\Delta\mathbf{X}$ injects **external new information** (neither in the original spectrum nor the original subspace).
+    - **Mechanism**: Spectral change $\Delta\mathcal{S} = |\mathrm{eRank}(\mathbf{X}') - \mathrm{eRank}(\mathbf{X})| / \min(S, H)$; subspace innovation $\Delta\mathcal{D} = \frac{\|(\mathbf{I} - \mathbf{P}_{\mathcal{C}(\mathbf{X})})\mathbf{X}'\|_F + \|\mathbf{X}'(\mathbf{I} - \mathbf{P}_{\mathcal{R}(\mathbf{X})})\|_F}{2\|\mathbf{X}'\|_F}$ inspired by least-squares innovation. Finally, $\mathrm{RID} = \Delta\mathcal{S} + \Delta\mathcal{D} \in [0, 2]$. Considering that positional encodings like RoPE inherently cause non-zero RID, a tolerance $\epsilon_{\text{RoPE}} = \mathrm{RID}(\mathbf{X}^{(\text{RoPE})} \mid \mathbf{X}^{(\text{no-RoPE})})$ is introduced as a baseline.
+    - **Design Motivation**: Spectral change alone misses "direction change without dimension change" updates; subspace alone misses "dimension collapse." Combining both fully characterizes external information injection.
 
-    - **Function**: Quantifies whether $\Delta\mathbf{X}$ injects **external new information** (neither in the original spectrum nor in the original subspace).
-    - **Mechanism**: Spectral change $\Delta\mathcal{S} = |\mathrm{eRank}(\mathbf{X}') - \mathrm{eRank}(\mathbf{X})| / \min(S, H)$; subspace innovation $\Delta\mathcal{D} = \frac{\|(\mathbf{I} - \mathbf{P}_{\mathcal{C}(\mathbf{X})})\mathbf{X}'\|_F + \|\mathbf{X}'(\mathbf{I} - \mathbf{P}_{\mathcal{R}(\mathbf{X})})\|_F}{2\|\mathbf{X}'\|_F}$, inspired by least squares innovation. Final $\mathrm{RID} = \Delta\mathcal{S} + \Delta\mathcal{D} \in [0, 2]$. Since position encodings like RoPE inherently make RID nonzero, a tolerance $\epsilon_{\text{RoPE}} = \mathrm{RID}(\mathbf{X}^{(\text{RoPE})} \mid \mathbf{X}^{(\text{no-RoPE})})$ is introduced as a baseline.
-    - **Design Motivation**: Looking only at spectral change misses "direction change without dimension change"; looking only at subspace misses "dimension collapse." Both are needed to fully characterize external information injection.
-
-3. **MixIG = Token Mixing Entropy Change + Attention Replacement Experiment (RQ3)**:
-
-    - **Function**: Quantifies how much $\Delta\mathbf{X}$ reconfigures tokens **within the existing subspace**; controlled replacement experiments map functional division to performance impact.
-    - **Mechanism**: Each token row is normalized to construct a token-to-token mixing distribution $P_{t,j} \propto \frac{\tilde{\mathbf{x}}_t^\top \tilde{\mathbf{x}}_j + 1}{2}$; average Shannon entropy yields TME; $\mathrm{MixIG} = \mathrm{TME}(\mathbf{X}') - \mathrm{TME}(\mathbf{X})$, where a positive value means the update increases token mixing. Diagnostic experiments on 15 open-source LVLMs: attention updates are replaced with two types of noise—Noise $\mathbf{\Delta}$ (directly replacing $\Delta\mathbf{X}_{\text{attn}}$ with Gaussian noise) and Noise $\mathbf{QKV}$ (replacing Q/K/V matrices with Gaussian weights)—to observe performance and geometric signal changes.
-    - **Design Motivation**: MixIG captures "within-subspace rearrangement" invisible to RID; noise replacement experiments link theoretical metrics to downstream performance—if attention is truly important, noise replacement should break the model.
+3.  **MixIG = Token Mixing Entropy Change + Attention Replacement Experiments (RQ3)**:
+    - **Function**: Quantifies how much token reconfiguration $\Delta\mathbf{X}$ performs **within existing subspaces**; uses controlled replacement experiments to map functional division to performance.
+    - **Mechanism**: Normalize each row to construct a token-to-token mixing distribution $P_{t,j} \propto \frac{\tilde{\mathbf{x}}_t^\top \tilde{\mathbf{x}}_j + 1}{2}$, taking the mean Shannon entropy as TME; $\mathrm{MixIG} = \mathrm{TME}(\mathbf{X}') - \mathrm{TME}(\mathbf{X})$, where positive values indicate the update mixes tokens more broadly. Diagnostic experiments on 15 LVLMs: replace attention updates with two types of noise—Noise $\mathbf{\Delta}$ (replacing $\Delta\mathbf{X}_{\text{attn}}$ directly with Gaussian noise) and Noise $\mathbf{QKV}$ (replacing Q/K/V weights with Gaussian noise) to see impacts on geometric signals and performance.
+    - **Design Motivation**: MixIG captures "in-subspace reordering" invisible to RID. Noise replacement experiments link theoretical metrics to actual downstream performance—if attention were truly critical, performance should collapse.
 
 ### Loss & Training
-This is a diagnostic framework; no new models are trained. All metrics are geometric quantities computed in the forward pass. Experiments are conducted on 15 variants from the Qwen2.5-VL, LLaVA-1.5, and LLaVA-NeXT families, across 7 benchmarks: POPE, 3DSRBench, RealWorldQA, MMMU, VMCBench, MathVista, and HallusionBench, with 1000 samples per benchmark.
+This is a diagnostic framework; no new model is trained. All metrics are geometric quantities from the forward pass. Experiments are conducted across 15 variants from Qwen2.5-VL / LLaVA-1.5 / LLaVA-NeXT families, evaluated on 7 benchmarks including POPE, 3DSRBench, RealWorldQA, MMMU, VMCBench, MathVista, and HallusionBench (1000 samples per category).
 
 ## Key Experimental Results
 
 ### Main Results
-Module-level RID/MixIG aggregated across models (Table 1 in the paper):
+Module-level RID/MixIG aggregated across models (Table 1):
 
-| Module | RID | MixIG | Functional Feature |
-|--------|-----|-------|-------------------|
+| Module | RID | MixIG | Functional Features |
+|------|-----|-------|---------|
 | Noise $\mathbf{\Delta}$ | 0.61 | -0.80 | High RID + Negative MixIG (off-manifold perturbation) |
 | Noise $\mathbf{QKV}$ | 0.44 | -0.50 | High RID + Negative MixIG |
-| **Attention** | **0.06** | **0.61** | **Low RID + High MixIG** (subspace preservation + reconfiguration) |
-| **FFN** | **0.21** | **0.02** | **High RID + Low MixIG** (subspace expansion + innovation) |
+| **Attention** | **0.06** | **0.61** | **Low RID + High MixIG** (Subspace-preserving + Reconfiguration) |
+| **FFN** | **0.21** | **0.02** | **High RID + Low MixIG** (Subspace-expanding + Innovation) |
 
-The separation across 15 models is highly stable: attention's RID is almost equal to $\epsilon_{\text{RoPE}} = 0.062$, indicating it **introduces almost no new support directions** and is purely mixing; FFN's RID is significantly higher than this baseline, making it the true source of innovation.
+The separation is stable across 15 models: Attention's RID is almost equal to $\epsilon_{\text{RoPE}} = 0.062$, meaning it **injects almost no new support directions** and focuses entirely on mixing. FFN's RID is significantly higher, identifying it as the true source of innovation.
 
 ### Ablation Study
-SAP (Stochastic Attention Probing) noise replacement experiment (excerpt from Table 2, Qwen-2.5-VL-3B):
+SAP (Stochastic Attention Probing) noise replacement experiments (partial data from Table 2, Qwen-2.5-VL-3B):
 
 | Configuration | POPE | RWQA | 3dSRBench |
-|---------------|------|------|-----------|
+|------|------|------|-----------|
 | Vanilla | 86.13 | 59.35 | 53.46 |
-| + Vis. Attn. (noise replacement) | 87.58 | 61.38 | — |
+| + Vis. Attn. (Noise Replace) | 87.58 | 61.38 | — |
 
-On most vision tasks, **replacing learned visual attention weights with Gaussian noise does not degrade, and even improves, performance**—the most dramatic finding of this paper.
+On most vision tasks, **replacing learned visual attention weights with Gaussian noise actually improves performance**—this is the most dramatic finding of the paper.
 
 ### Key Findings
-- The functions of Attention and FFN are geometrically orthogonal: Attention = subspace-preserving operator (reconfiguration); FFN = subspace-expanding operator (innovation). The previous hypothesis that "attention does in-context, FFN does memory" is substantiated by geometric evidence.
-- Visual attention in LVLMs is highly redundant, with attention scores carrying little effective information; this corroborates the attention sink and attention drift phenomena.
-- Since attention complexity is the main $O(S^2)$ bottleneck yet is redundant, this work provides strong theoretical and empirical support for approximate attention (sparse/predefined/low-rank) on visual tokens.
+- Attention and FFN functions are geometrically orthogonal: Attention = subspace-preserving operator (reconfiguration); FFN = subspace-expansion operator (innovation). The traditional hypothesis of "attention for in-context, FFN for memory" is solidified by geometric evidence.
+- LVLM visual attention exhibits massive redundancy; effective information in attention scores is minimal, corroborating attention sink and attention drift phenomena.
+- Since attention complexity is a $O(S^2)$ bottleneck yet redundant, this work provides strong theoretical and empirical grounds for approximate attention (sparse, predefined, low-rank) on visual tokens.
 
 ## Highlights & Insights
-- "RID + MixIG" is an elegant pair of dual metrics, decomposing residual updates into "adding new bases" and "mixing within old bases." This language is more general than tool-level methods like attention rollout or tuned lens, and can be applied to any additive update module.
-- The noise replacement experiment is more radical than any ablation—replacing "learned weights with pure randomness" yet not affecting vision tasks implies that LVLM training objectives may provide too weak a learning signal for visual attention. This directly motivates directions like "visual token pruning" and "attention-free visual fusion."
-- The introduction of the RoPE baseline is pragmatic—subtracting the "spurious RID" introduced by position encoding avoids misjudgment, reflecting the authors' engineering awareness in making the metric a portable tool.
+- "RID + MixIG" is an elegant dual-metric set decomposing residual updates into "adding new bases" and "mixing within old bases." This language is more general than tool-specific methods like attention rollout or tuned lens.
+- Noise replacement experiments are more radical than typical ablations—replacing learned weights with random noise without affecting vision tasks suggests training objectives for LVLMs might not provide strong learning signals for visual attention. This motivates "visual token pruning" and "attention-free visual fusion."
+- Introduction of the RoPE baseline is practical—subtracting "fake RID" prevents misinterpretation, reflecting engineering rigor in metric design.
 
 ## Limitations & Future Work
-- The framework only considers single-step additive updates; cumulative effects across layers (which layers together constitute true innovation) require further analysis.
-- Noise replacement experiments focus on the visual side; for pure text tasks (MathVista), attention remains crucial, and the paper does not explain why text-visual dependency is asymmetric.
-- All metrics are relative; an "absolute information quantity" baseline is lacking. The cross-model comparability of RID values needs more controlled experiments.
+- The framework only examines single-step additive updates; cumulative multi-layer effects (identifying series of layers for innovation) require more analysis.
+- Noise replacement results are concentrated on the vision side; attention remains critical for textual tasks (e.g., MathVista), and the paper doesn't explain the asymmetry.
+- Metrics are relative; an "absolute information volume" benchmark is missing. Cross-model comparability of RID values needs more controlled experiments.
 
 ## Related Work & Insights
-- **vs Tuned Lens / Linear Probes**: Probes only tell what is "contained" at a layer; this work tells what is "added" by a module, offering finer granularity.
-- **vs Attention Sink / Drift Empirical Studies**: Those works observed phenomena; this work provides a geometric information-theoretic explanation—sink is essentially attention concentrating entropy on a few tokens during reconfiguration.
-- **vs Sparse Attention / Attention-Free Models**: This work provides theoretical backing for these approaches—since attention scores are redundant, replacing them with linear or fixed patterns does not harm visual capability.
+- **vs Tuned Lens / Linear Probes**: Probes tell you what a layer "contains," while this work tells you what a module "adds," offering finer granularity.
+- **vs Attention Sink / Drift Empirical Studies**: Those works identify phenomena; this work provides a geometric information-theoretic explanation—sink is essentially attention concentrating entropy into a few tokens during reconfiguration.
+- **vs Sparse Attention / Attention-Free Models**: This work provide theoretical backing—since attention scores are redundant, replacing them with linear or fixed patterns without losing visual capabilities is reasonable.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Systematically introduces information geometry into LVLM module interpretation for the first time, with counterintuitive noise replacement findings.
+- Novelty: ⭐⭐⭐⭐⭐ Systematically introduces information geometry to LVLM module interpretation with counter-intuitive findings.
 - Experimental Thoroughness: ⭐⭐⭐⭐ 15 models × 7 benchmarks, broad coverage.
-- Writing Quality: ⭐⭐⭐⭐ Three RQs progress logically, with clear definition-metric-diagnosis flow.
-- Value: ⭐⭐⭐⭐⭐ Directly challenges design assumptions of LVLM visual pathways, offering guidance for architecture and efficiency research.
+- Writing Quality: ⭐⭐⭐⭐ Progressive structure, clear logical flow between definitions, metrics, and diagnosis.
+- Value: ⭐⭐⭐⭐⭐ Directly challenges design assumptions of LVLM vision paths, guiding architecture and efficiency research.
 
 <!-- RELATED:START -->
 
@@ -123,11 +120,11 @@ On most vision tasks, **replacing learned visual attention weights with Gaussian
 
 ## Related Papers
 
+- [\[ICML 2026\] Mitigating Hallucinations in Large Vision-Language Models via Causal Route Gating](mitigating_hallucinations_in_large_vision-language_models_via_causal_route_gatin.md)
+- [\[ICML 2026\] Seeing is Understanding: Unlocking Causal Attention into Modality-Mutual Attention for Multimodal LLMs](seeing_is_understanding_unlocking_causal_attention_into_modality-mutual_attentio.md)
 - [\[ACL 2026\] HiPrune: Hierarchical Attention for Efficient Token Pruning in Vision-Language Models](../../ACL2026/multimodal_vlm/hiprune_hierarchical_attention_for_efficient_token_pruning_in_vision-language_mo.md)
-- [\[CVPR 2026\] AVA-VLA: Improving Vision-Language-Action models with Active Visual Attention](../../CVPR2026/multimodal_vlm/ava_vla_improving_vision_language_action_models_with_active_visual_attention.md)
-- [\[CVPR 2026\] Can Vision-Language Models Count? A Synthetic Benchmark and Analysis of Attention-Based Interventions](../../CVPR2026/multimodal_vlm/can_vision-language_models_count_a_synthetic_benchmark_and_analysis_of_attention.md)
-- [\[ICML 2026\] Revis: Sparse Latent Steering to Mitigate Object Hallucination in Large Vision-Language Models](revis_sparse_latent_steering_to_mitigate_object_hallucination_in_large_vision-la.md)
-- [\[CVPR 2026\] It's Time to Get It Right: Improving Analog Clock Reading and Clock-Hand Spatial Reasoning in Vision-Language Models](../../CVPR2026/multimodal_vlm/its_time_to_get_it_right_improving_analog_clock_reading_and_clock-hand_spatial_r.md)
+- [\[ICML 2026\] On the Adversarial Robustness of Large Vision-Language Models under Visual Token Compression](on_the_adversarial_robustness_of_large_vision-language_models_under_visual_token.md)
+- [\[ICML 2026\] Focusing Where Vision Matters: Selective Training for Large Vision Language Models via Visual Information Gain](focusing_where_vision_matters_selective_training_for_large_vision_language_model.md)
 
 </div>
 

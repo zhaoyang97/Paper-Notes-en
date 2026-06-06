@@ -141,8 +141,8 @@ s1.1-32B suffers a 47.38% drop on IFEval while incurring a 250% increase in reas
 
 ## Related Papers
 
-- [\[AAAI 2026\] Text-to-Scene with Large Reasoning Models](text-to-scene_with_large_reasoning_models.md)
 - [\[AAAI 2026\] Jupiter: Enhancing LLM Data Analysis Capabilities via Notebook and Inference-Time Value-Guided Search](jupiter_enhancing_llm_data_analysis_capabilities_via_notebook_and_inference-time.md)
+- [\[AAAI 2026\] Text-to-Scene with Large Reasoning Models](text-to-scene_with_large_reasoning_models.md)
 - [\[AAAI 2026\] Answering the Unanswerable Is to Err Knowingly: Analyzing and Mitigating Abstention Failures in Large Reasoning Models](answering_the_unanswerable_is_to_err_knowingly_analyzing_and.md)
 - [\[NeurIPS 2025\] Are Large Reasoning Models Good Translation Evaluators? Analysis and Performance Boost](../../NeurIPS2025/llm_reasoning/are_large_reasoning_models_good_translation_evaluators_analysis_and_performance_.md)
 - [\[ICLR 2026\] Towards Safe Reasoning in Large Reasoning Models via Corrective Intervention](../../ICLR2026/llm_reasoning/towards_safe_reasoning_in_large_reasoning_models_via_corrective_intervention.md)

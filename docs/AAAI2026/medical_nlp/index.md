@@ -16,7 +16,7 @@ tags:
 
 **🤖 AAAI2026** · **2** paper notes
 
-📌 **Same area in other venues:** [💬 ACL2026 (8)](../../ACL2026/medical_nlp/index.md) · [🔬 ICLR2026 (5)](../../ICLR2026/medical_nlp/index.md) · [🧠 NeurIPS2025 (6)](../../NeurIPS2025/medical_nlp/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (2)](../../ICML2026/medical_nlp/index.md) · [💬 ACL2026 (14)](../../ACL2026/medical_nlp/index.md) · [🔬 ICLR2026 (5)](../../ICLR2026/medical_nlp/index.md) · [🧠 NeurIPS2025 (6)](../../NeurIPS2025/medical_nlp/index.md)
 
 🔥 **Top topics:** Medical Imaging ×2
 

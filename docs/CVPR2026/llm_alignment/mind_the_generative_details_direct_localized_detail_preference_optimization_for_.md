@@ -151,7 +151,7 @@ Consistent improvements over all post-training methods are also observed on Wan2
 - [\[NeurIPS 2025\] DenseDPO: Fine-Grained Temporal Preference Optimization for Video Diffusion Models](../../NeurIPS2025/llm_alignment/densedpo_finegrained_temporal_preference_optimization_for_vi.md)
 - [\[CVPR 2026\] PhysMoDPO: Physically-Plausible Humanoid Motion with Preference Optimization](physmodpo_physicallyplausible_humanoid_motion_with.md)
 - [\[CVPR 2026\] GlyphPrinter: Region-Grouped Direct Preference Optimization for Glyph-Accurate Visual Text Rendering](glyphprinter_region-grouped_direct_preference_optimization_for_glyph-accurate_vi.md)
-- [\[AAAI 2026\] Margin-aware Preference Optimization for Aligning Diffusion Models without Reference](../../AAAI2026/llm_alignment/margin-aware_preference_optimization_for_aligning_diffusion_models_without_refer.md)
+- [\[CVPR 2026\] $\varphi$-DPO: Fairness Direct Preference Optimization Approach to Continual Learning in Large Multimodal Models](φ-dpo_fairness_direct_preference_optimization_approach_to_continual_learning_in_.md)
 
 </div>
 

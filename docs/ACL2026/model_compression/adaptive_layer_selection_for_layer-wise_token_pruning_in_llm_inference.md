@@ -2,124 +2,119 @@
 title: >-
   [Paper Note] Adaptive Layer Selection for Layer-Wise Token Pruning in LLM Inference
 description: >-
-  [ACL 2026][Model Compression][KV cache compression] This paper proposes ASL (Adaptive Selection Layer), which monitors the variance of token attention score rankings to adaptively determine the layer at which KV cache pr…
+  [ACL 2026][Model Compression][KV Cache Compression] ASL (Adaptive Selection Layer) is proposed to adaptively determine the layer position for KV cache pruning by monitoring the ranking variance of token attention scores.…
 tags:
   - "ACL 2026"
   - "Model Compression"
-  - "KV cache compression"
-  - "adaptive layer selection"
-  - "attention pruning"
-  - "long-context inference"
-  - "training-free method"
+  - "KV Cache Compression"
+  - "Adaptive Layer Selection"
+  - "Attention Pruning"
+  - "Long-Context Inference"
+  - "Training-Free Method"
 date: 2026-05-08
-content_hash: 7623dba9396b779d
+content_hash: 36633ab102d864cb
 ---
 
 # Adaptive Layer Selection for Layer-Wise Token Pruning in LLM Inference
 
-**Conference**: ACL 2026
+**Conference**: ACL 2026  
 **arXiv**: [2601.07667](https://arxiv.org/abs/2601.07667)  
 **Code**: [GitHub](https://github.com/TANIGUCHIREI/ASL)  
-**Area**: Model Compression / KV Cache Optimization
-**Keywords**: KV cache compression, adaptive layer selection, attention pruning, long-context inference, training-free method
+**Area**: Model Compression / KV Cache Optimization  
+**Keywords**: KV Cache Compression, Adaptive Layer Selection, Attention Pruning, Long-Context Inference, Training-Free Method
 
 ## TL;DR
 
-This paper proposes ASL (Adaptive Selection Layer), which monitors the variance of token attention score rankings to adaptively determine the layer at which KV cache pruning is performed. ASL significantly outperforms fixed-layer selection methods on difficult tasks while remaining training-free.
+ASL (Adaptive Selection Layer) is proposed to adaptively determine the layer position for KV cache pruning by monitoring the ranking variance of token attention scores. It significantly outperforms fixed-layer selection methods on difficult tasks while maintaining a training-free nature.
 
 ## Background & Motivation
 
-**Background**: The KV cache is the primary memory bottleneck in LLM inference. Layer-wise token pruning—selecting an important subset of tokens at a designated layer and discarding the rest—is a mainstream compression approach.
+**Background**: KV cache is the primary memory bottleneck in LLM inference. Layer-wise token pruning (selecting a subset of important tokens at a specific layer and pruning others) is a mainstream compression scheme.
 
-**Limitations of Prior Work**: Existing layer-wise pruning methods (e.g., FastKV, GemFilter) rely on predefined fixed selection layers. This design performs adequately on simple tasks (e.g., QA) but degrades severely on difficult tasks (e.g., KV retrieval), where high semantic similarity between queries and contexts prevents early layers from distinguishing relevant tokens.
+**Limitations of Prior Work**: Existing layer-wise pruning methods (e.g., FastKV, GemFilter) use predefined fixed selection layers. This design is effective for simple tasks (e.g., QA) but degrades severely on difficult tasks (e.g., KV retrieval). The cause is the high semantic similarity between the query and context in difficult tasks, making it hard for early layers to distinguish relevant tokens.
 
-**Key Challenge**: Fixed selection layers face a fundamental trade-off—early selection saves computation but sacrifices accuracy, while late selection preserves accuracy but reduces memory savings. The optimal selection layer varies substantially across tasks.
+**Key Challenge**: Fixed selection layers face a fundamental trade-off—early selection saves computation but loses accuracy, while late selection maintains accuracy but reduces memory savings. The optimal selection layer varies significantly across different tasks.
 
-**Goal**: Design an adaptive method that automatically determines the optimal token selection layer based on task difficulty.
+**Goal**: Design an adaptive method to automatically determine the optimal token selection layer based on task difficulty.
 
-**Key Insight**: Attention score rankings converge to a stable subset at different rates across tasks—simple tasks stabilize at intermediate layers, while difficult tasks require deeper layers before stabilization.
+**Key Insight**: It is observed that the speed at which attention score rankings converge to a stable subset varies across tasks—simple tasks stabilize at middle layers, while difficult tasks require deeper layers for stability.
 
-**Core Idea**: Monitor the variance of token rankings as an indicator of "attention focus." Token selection is triggered when the variance falls below a specified threshold.
+**Core Idea**: Monitor the ranking variance of tokens as an indicator of "attention focus." Token selection is triggered when the variance drops below a certain threshold.
 
 ## Method
 
 ### Overall Architecture
 
-ASL operates during the prefilling stage: starting from layer $L_{min}$, it computes the ranking variance of pooled attention scores over every $L_{obs}$ consecutive layers. When the relative variance drops below a user-specified threshold, one-shot token selection is performed at that layer. ASL can subsequently be combined with methods such as SnapKV to further optimize the decoding stage.
+ASL operates during the prefilling stage: starting from layer $L_{min}$, it calculates the ranking variance of pooled attention scores over every $L_{obs}$ consecutive layers. When the relative variance is lower than a user-specified threshold, one-shot token selection is executed at that layer. This can be jointly optimized with methods like SnapKV for the decoding stage.
 
 ### Key Designs
 
-1. **Rank-Variance-Based Adaptive Selection**
+1. **Adaptive Selection Based on Rank Variance**:
 
     - **Function**: Automatically determines the optimal layer for token pruning based on task difficulty.
-    - **Mechanism**: Computes pooled attention scores $PA = \text{pool}(\text{softmax}(\frac{\mathbf{q}_w \mathbf{k}_c + \mathbf{m}_w}{\sqrt{d}}))$, then calculates the variance of token rankings over $L_{obs}$ consecutive layers. Low variance indicates that attention has stably focused on a fixed subset of tokens.
-    - **Design Motivation**: Rank variance is more robust than raw attention scores—it is agnostic to specific score magnitudes and focuses solely on whether the set of attended tokens has stabilized.
+    - **Mechanism**: Calculates pooled attention scores $PA = \text{pool}(\text{softmax}(\frac{\mathbf{q}_w \mathbf{k}_c + \mathbf{m}_w}{\sqrt{d}}))$ and computes the ranking variance of tokens across $L_{obs}$ consecutive layers. Low variance indicates that attention has stably focused on a fixed subset.
+    - **Design Motivation**: Rank variance is more robust than raw attention scores—it focuses on whether "which tokens are being attended to" is stable, rather than the specific score values.
 
-2. **Threshold-Controlled Adaptive Trade-off**
+2. **Threshold-Controlled Adaptive Trade-off**:
 
-    - **Function**: Allows users to control the accuracy–efficiency trade-off via a single parameter.
+    - **Function**: Allows users to control the accuracy-efficiency balance via a single parameter.
     - **Mechanism**: The user specifies a threshold $\theta$; selection is triggered once variance falls below $\theta$. A higher $\theta$ leads to earlier selection (faster but potentially less accurate), while a lower $\theta$ leads to later selection (more accurate but slower).
-    - **Design Motivation**: Different application scenarios have varying requirements for accuracy and speed; a single tunable parameter is more practical than manually adjusting the selection layer.
+    - **Design Motivation**: Different applications have varying requirements for accuracy and speed; a single parameter control is more practical than manual layer adjustment.
 
-3. **Seamless Integration with Existing Methods**
+3. **Seamless Integration with Existing Methods**:
 
-    - **Function**: Jointly optimizes the full inference pipeline in combination with methods such as SnapKV.
-    - **Mechanism**: ASL optimizes the prefilling stage (determining the selection layer), while SnapKV optimizes the decoding stage (compressing the KV cache prior to the selection layer). ASL can also be combined with GemFilter using a two-pass strategy.
-    - **Design Motivation**: ASL is an orthogonal improvement that can directly replace the fixed-layer selection component in existing methods.
+    - **Function**: Jointly optimizes the entire inference pipeline with methods like SnapKV.
+    - **Mechanism**: ASL optimizes the prefilling stage (determining the selection layer), while SnapKV optimizes the decoding stage (compressing the KV cache before the selection layer). It can also be combined with GemFilter using a two-pass strategy.
+    - **Design Motivation**: ASL is an orthogonal improvement that can directly replace the fixed-layer selection components in existing methods.
 
 ### Loss & Training
 
-ASL requires no training whatsoever and operates entirely at inference time. Two hyperparameters, $L_{min}$ and $L_{obs}$, control the starting monitoring layer and the observation window size, respectively.
+ASL is entirely training-free and only runs during inference. Two hyperparameters $L_{min}$ and $L_{obs}$ control the starting monitor layer and the observation window size, respectively.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Method | KV Retrieval (Hard) | QA (Easy) | NIAH | Memory Usage |
-|--------|---------------------|-----------|------|--------------|
-| FastKV (fixed layer) | Severe degradation | Strong | Moderate | Low |
-| GemFilter (fixed layer) | Degradation | Strong | Moderate | Low |
-| ASL (adaptive) | Significant improvement | Maintained | Improved | Comparable |
+| Method | KV Retrieval (Hard) | QA (Simple) | NIAH | Memory Usage |
+|------|------------|---------|------|--------|
+| FastKV (Fixed Layer) | Severe Degradation | Strong | Medium | Low |
+| GemFilter (Fixed Layer) | Degradation | Strong | Medium | Low |
+| ASL (Adaptive) | Significant Gain | Maintained | Improved | Comparable |
 
 ### Ablation Study
 
-| Configuration | Key Metric | Description |
-|---------------|------------|-------------|
-| Threshold sensitivity | Smooth transition | Different thresholds yield a continuous accuracy–speed trade-off |
-| Cross-task adaptability | InfiniteBench, 10 tasks | Different tasks automatically select layers of different depths |
-| 256K context | Effective | Also applicable to long-context scenarios |
+| Configuration | Key Metrics | Explanation |
+|------|---------|------|
+| Threshold Sensitivity | Smooth Transition | Different thresholds produce a continuous accuracy-speed trade-off |
+| Cross-task Adaptability | InfiniteBench 10 tasks | Different tasks automatically select layers of varying depths |
+| 256K Context | Effective | Works equally well in long-context scenarios |
 
 ### Key Findings
-
-- For simple tasks (QA), attention stabilizes at intermediate layers (~layer 15); for difficult tasks (KV retrieval), stabilization requires deeper layers (~layer 25 or beyond).
-- ASL substantially outperforms fixed-layer methods on difficult tasks while maintaining comparable performance on simple tasks.
-- Relative variance serves as an effective "task difficulty probe"—enabling adaptive behavior without requiring prior knowledge of the task type.
+- Attention stabilizes at middle layers (~layer 15) for simple tasks (QA) but requires deeper layers (~layer 25+) for difficult tasks (KV retrieval).
+- ASL significantly outperforms fixed-layer methods on difficult tasks while maintaining comparable performance on simple tasks.
+- Relative variance serves as an effective "task difficulty probe"—enabling adaptation without prior knowledge of the task type.
 
 ## Highlights & Insights
-
-- Reframes the question of "when to select" from a hyperparameter-tuning problem to an automatic detection problem, significantly improving practical usability.
-- Observation-driven design—grounded in the cross-layer evolution of attention patterns, with a clear and coherent logical chain.
-- Entirely training-free, ready to use out of the box, and orthogonally composable with existing methods.
+- Transforms the "when to select" problem from hyperparameter tuning to automatic detection, significantly enhancing practicality.
+- Observation-driven design—derived from the cross-layer evolution patterns of attention masks, with a clear logical chain.
+- Completely training-free and plug-and-play, while being orthogonal and combinable with existing methods.
 
 ## Limitations & Future Work
-
-- Currently validated only on Llama 3.1 8B; evaluation on a broader range of model architectures is needed.
-- Monitoring rank variance incurs a small computational overhead, which may require optimization in extreme low-latency settings.
-- The optimal threshold value still requires user selection based on the target scenario.
-- Future work may explore a progressive variant that performs token pruning gradually across multiple adaptively selected layers.
+- Currently validated only on Llama 3.1 8B; needs testing on more model architectures.
+- Monitoring rank variance incurs some computational overhead (albeit small), which may require optimization in extreme low-latency scenarios.
+- The optimal threshold value still requires user selection based on the specific scenario.
+- Future work could explore a progressive version—gradual pruning across multiple adaptively selected layers.
 
 ## Related Work & Insights
-
-- **vs. FastKV/GemFilter**: ASL replaces fixed layer selection with adaptive selection, fundamentally addressing the issue of task sensitivity.
-- **vs. PyramidKV/DynamicKV**: These methods adaptively allocate budgets but do not adaptively select layers; the two approaches are complementary.
-- **vs. SnapKV**: ASL optimizes layer selection during prefilling, while SnapKV optimizes token retention during decoding; the two can be used in combination.
+- **vs FastKV/GemFilter**: Replaces fixed layers with adaptive selection to fundamentally solve the task-sensitivity issue.
+- **vs PyramidKV/DynamicKV**: These methods adaptively allocate budgets but do not adaptively select layers; they are complementary to ASL.
+- **vs SnapKV**: ASL optimizes layer selection in the prefilling stage, while SnapKV optimizes token retention in the decoding stage; they can be used in combination.
 
 ## Rating
-
-- **Novelty**: ⭐⭐⭐⭐ The idea of using rank variance as a task difficulty probe is concise and effective.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Comprehensive evaluation across multiple benchmarks and context lengths.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ The logical chain from observation → motivation → method → validation is exceptionally clear.
-- **Value**: ⭐⭐⭐⭐ Directly applicable to optimizing LLM long-context inference.
+- Novelty: ⭐⭐⭐⭐ The idea of using rank variance as a task difficulty probe is simple yet effective.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive evaluation across multiple benchmarks and context lengths.
+- Writing Quality: ⭐⭐⭐⭐⭐ The logic chain from observation $\rightarrow$ motivation $\rightarrow$ method $\rightarrow$ validation is very clear.
+- Value: ⭐⭐⭐⭐ Provides direct practical value for the optimization of LLM long-context inference.
 
 <!-- RELATED:START -->
 
@@ -128,10 +123,10 @@ ASL requires no training whatsoever and operates entirely at inference time. Two
 ## Related Papers
 
 - [\[ACL 2026\] A Layer-wise Analysis of Supervised Fine-Tuning](a_layer-wise_analysis_of_supervised_fine-tuning.md)
+- [\[ACL 2026\] LEAP: Layer-wise Exit-Aware Pretraining for Efficient Transformer Inference](leap_layer-wise_exit-aware_pretraining_for_efficient_transformer_inference.md)
+- [\[ACL 2026\] A BERTology View of LLM Orchestrations: Token- and Layer-Selective Probes for Efficient Single-Pass Classification](a_bertology_view_of_llm_orchestrations_token-_and_layer-selective_probes_for_eff.md)
+- [\[ICML 2026\] ReSpinQuant: Efficient Layer-Wise LLM Quantization via Subspace Residual Rotation Approximation](../../ICML2026/model_compression/respinquant_efficient_layer-wise_llm_quantization_via_subspace_residual_rotation.md)
 - [\[CVPR 2026\] FAIR-Pruner: Leveraging Tolerance of Difference for Flexible Automatic Layer-Wise Neural Network Pruning](../../CVPR2026/model_compression/fair-pruner_leveraging_tolerance_of_difference_for_flexible_automatic_layer-wise.md)
-- [\[NeurIPS 2025\] DP-LLM: Runtime Model Adaptation with Dynamic Layer-wise Precision Assignment](../../NeurIPS2025/model_compression/dp-llm_runtime_model_adaptation_with_dynamic_layer-wise_precision_assignment.md)
-- [\[ICML 2026\] Token Sparse Attention: Efficient Long-Context Inference with Interleaved Token Selection](../../ICML2026/model_compression/token_sparse_attention_efficient_long-context_inference_with_interleaved_token_s.md)
-- [\[ACL 2026\] HeteroCache: A Dynamic Retrieval Approach to Heterogeneous KV Cache Compression for Long-Context LLM Inference](heterocache_a_dynamic_retrieval_approach_to_heterogeneous_kv_cache_compression_f.md)
 
 </div>
 

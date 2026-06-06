@@ -113,8 +113,8 @@ A three-step pipeline: (1) train racial classification probes on SAE activations
 ## Related Papers
 
 - [\[ICML 2026\] Marrying Generative Model of Healthcare Events with Digital Twin of Social Determinants of Health for Disease Reasoning](../../ICML2026/medical_imaging/marrying_generative_model_of_healthcare_events_with_digital_twin_of_social_deter.md)
-- [\[CVPR 2026\] Can Natural Image Autoencoders Compactly Tokenize fMRI Volumes for Long-Range Dynamics Modeling?](../../CVPR2026/medical_imaging/can_natural_image_autoencoders_compactly_tokenize_fmri_volumes_for_long-range_dy.md)
 - [\[AAAI 2026\] GEM: Generative Entropy-Guided Preference Modeling for Few-shot Alignment of LLMs](../../AAAI2026/medical_imaging/gem_generative_entropy-guided_preference_modeling_for_few-shot_alignment_of_llms.md)
+- [\[CVPR 2026\] Can Natural Image Autoencoders Compactly Tokenize fMRI Volumes for Long-Range Dynamics Modeling?](../../CVPR2026/medical_imaging/can_natural_image_autoencoders_compactly_tokenize_fmri_volumes_for_long-range_dy.md)
 - [\[AAAI 2026\] Training-Free Policy Violation Detection via Activation-Space Whitening in LLMs](../../AAAI2026/medical_imaging/training-free_policy_violation_detection_via_activation-space_whitening_in_llms.md)
 - [\[AAAI 2026\] qa-FLoRA: Data-free Query-Adaptive Fusion of LoRAs for LLMs](../../AAAI2026/medical_imaging/qa-flora_data-free_query-adaptive_fusion_of_loras_for_llms.md)
 

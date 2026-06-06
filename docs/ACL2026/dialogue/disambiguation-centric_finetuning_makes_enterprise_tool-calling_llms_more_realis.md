@@ -2,83 +2,80 @@
 title: >-
   [Paper Note] Disambiguation-Centric Finetuning Makes Enterprise Tool-Calling LLMs More Realistic and Less Risky
 description: >-
-  [ACL 2026][Dialogue Systems][tool calling] This paper proposes DiaFORGE, a disambiguation-centric synthetic data generation pipeline combined with chain-of-thought fine-tuning and a dynamic evaluation framework…
+  [ACL 2026][Dialogue Systems][Tool Calling] Proposes the DiaFORGE framework, which utilizes a disambiguation-centric synthetic data generation pipeline, chain-of-thought fine-tuning…
 tags:
   - "ACL 2026"
   - "Dialogue Systems"
-  - "tool calling"
-  - "disambiguation"
-  - "multi-turn dialogue"
-  - "enterprise API"
-  - "fine-tuning"
+  - "Tool Calling"
+  - "Disambiguation"
+  - "Multi-turn Dialogue"
+  - "Enterprise API"
+  - "Fine-tuning"
 date: 2026-05-08
-content_hash: ba04565a840dc889
+content_hash: aaad2207cfb15063
 ---
 
 # Disambiguation-Centric Finetuning Makes Enterprise Tool-Calling LLMs More Realistic and Less Risky
 
-**Conference**: ACL 2026
+**Conference**: ACL 2026  
 **arXiv**: [2507.03336](https://arxiv.org/abs/2507.03336)  
 **Code**: [HuggingFace](https://huggingface.co/SAP/diaforge-utc-r-0725)  
-**Area**: Dialogue Systems / LLM Agent
-**Keywords**: tool calling, disambiguation, multi-turn dialogue, enterprise API, fine-tuning
+**Area**: Dialogue Systems / LLM Agent  
+**Keywords**: Tool Calling, Disambiguation, Multi-turn Dialogue, Enterprise API, Fine-tuning
 
 ## TL;DR
 
-This paper proposes DiaFORGE, a disambiguation-centric synthetic data generation pipeline combined with chain-of-thought fine-tuning and a dynamic evaluation framework, enabling open-source LLMs to achieve tool-calling success rates 27 percentage points higher than GPT-4o and 49 percentage points higher than Claude-3.5-Sonnet when facing near-duplicate enterprise APIs.
+Proposes the DiaFORGE framework, which utilizes a disambiguation-centric synthetic data generation pipeline, chain-of-thought fine-tuning, and a dynamic evaluation system. This enables open-source LLMs to achieve tool-calling success rates 27 percentage points higher than GPT-4o and 49 percentage points higher than Claude-3.5-Sonnet when encountering near-duplicate enterprise APIs.
 
 ## Background & Motivation
 
-**Background**: LLMs are evolving from conversational assistants into operational agents capable of invoking APIs. Enterprise environments manage tens of thousands of APIs, many of which are subtle variants of core functionalities (e.g., different versions for customer support, finance, and supply chain).
+**Background**: LLMs are evolving from conversational assistants into operational agents capable of calling APIs. Enterprise environments manage thousands of APIs, many of which are slight variants of core functions (e.g., different versions for customer support, finance, or supply chain).
 
-**Limitations of Prior Work**: In practice, approximately 35–38% of queries retrieve highly similar distractor APIs, 71% of APIs have required parameters, and 76–81% of calls are missing at least one required field. Existing tool-calling benchmarks (BFCL, ToolBench, API-Bank) rely on pre-scripted user queries for static evaluation and fail to expose the cascading failure patterns arising from incomplete requests combined with near-duplicate tools.
+**Limitations of Prior Work**: In reality, approximately 35-38% of queries retrieve highly similar distractor APIs, 71% of APIs contain mandatory parameters, and 76-81% of calls lack at least one required field. However, existing tool-calling benchmarks (BFCL, ToolBench, API-Bank) utilize static evaluation with pre-written user scripts, failing to expose cascading failure modes involving "incomplete requests + near-duplicate tools."
 
-**Key Challenge**: Enterprise tool calling demands two tightly intertwined capabilities—multi-turn dialogue to elicit missing parameters, and fine-grained disambiguation across densely overlapping API surfaces—yet both existing training data and evaluation methodologies neglect this coupling.
+**Key Challenge**: Enterprise tool-calling requires two tightly intertwined capabilities: multi-turn dialogue to complete missing parameters and fine-grained disambiguation across a dense, overlapping API surface. Existing training data and evaluation methods ignore this intersection.
 
-**Goal**: (1) Construct disambiguation-centric training data; (2) fine-tune open-source models to learn proactive clarification and precise tool selection; (3) design a dynamic evaluation framework to measure end-to-end task completion rates.
+**Goal**: (1) Construct disambiguation-centric training data, (2) fine-tune open-source models to learn proactive questioning and precise tool selection, and (3) design a dynamic evaluation framework to measure end-to-end goal completion rates.
 
-**Key Insight**: The authors, from SAP Labs, draw on production telemetry from real enterprise API environments, from which they identify disambiguation as the central bottleneck in tool calling.
+**Key Insight**: Drawing from real-world enterprise API production telemetry at SAP Labs, the authors identified disambiguation as the core bottleneck in tool calling.
 
-**Core Idea**: A bottom-up multi-agent data engine synthesizes disambiguation-centric dialogues by providing the assistant with near-duplicate tool sets and deliberately withholding critical information, structurally compelling the assistant to learn to disambiguate before invoking any tool.
+**Core Idea**: Use a "bottom-up" multi-agent data engine to synthesize disambiguation-centric dialogues. By providing the assistant with sets of near-duplicate tools and deliberately withholding critical information, the assistant is forced to learn to disambiguate before execution.
 
 ## Method
 
 ### Overall Architecture
 
-DiaFORGE is a three-stage pipeline: (1) the UTC-Gen data engine synthesizes training dialogues; (2) supervised fine-tuning with chain-of-thought reasoning; (3) dual-track static and dynamic evaluation. The input is an enterprise tool catalog $\mathcal{T}$ (approximately 5,000 production-grade API specifications), and the output is a fine-tuned tool-calling model.
+DiaFORGE is a three-stage pipeline: (1) UTC-Gen data engine for synthesizing training dialogues, (2) supervised fine-tuning with reasoning chains, and (3) a dual-track static and dynamic evaluation. The input is an enterprise tool catalog $\mathcal{T}$ (comprising ~5,000 production-grade API specifications), and the output is a fine-tuned tool-calling model.
 
 ### Key Designs
 
-1. **UTC-Gen Multi-Agent Data Engine**:
+1.  **UTC-Gen Multi-agent Data Engine**:
+    - **Function**: Synthesizes disambiguation-centric multi-turn dialogue training data from the bottom up.
+    - **Mechanism**: For each seed tool $\tau^*$, an enterprise user persona $p$ is sampled, and a semantic encoder $\phi$ retrieves $k=5$ nearest-neighbor distractor tools to form a candidate pool $\mathcal{C}_k(\tau^*)$. Dialogues unfold in two phases: the Tool Selection Phase (where the user is intentionally vague, forcing the assistant to ask questions to exclude distractors) and the Parameter Completion Phase (where the assistant requests missing mandatory fields sequentially). All dialogues undergo a three-stage validation (format, relevance, LLM-based critique) before inclusion.
+    - **Design Motivation**: Existing datasets assume user requests are fully specified, failing to train models for disambiguation scenarios. By injecting near-duplicate distractors and a two-phase mandatory dialogue protocol, the assistant is structurally forced to learn disambiguation.
 
-    - **Function**: Bottom-up synthesis of disambiguation-centric multi-turn dialogue training data.
-    - **Mechanism**: For each seed tool $\tau^*$, an enterprise user persona $p$ is sampled, and a semantic encoder $\phi$ retrieves $k=5$ nearest-neighbor distractor tools to form a candidate pool $\mathcal{C}_k(\tau^*)$. Dialogues unfold in two phases: a tool selection phase (in which the user is intentionally vague and the assistant must ask clarifying questions to eliminate distractor tools) followed by a parameter completion phase (in which the assistant elicits each missing required field). All dialogues pass three-level validation—format, relevance, and LLM critique—before being added to the dataset.
-    - **Design Motivation**: Existing datasets assume fully specified user requests and cannot train models for disambiguation scenarios. By injecting near-duplicate distractor tools and enforcing a two-phase dialogue protocol, the engine structurally compels the assistant to learn disambiguation.
+2.  **Supervised Fine-tuning with Reasoning Chains**:
+    - **Function**: Enables the model to generate interpretable reasoning processes before calling a tool.
+    - **Mechanism**: Employs a turn-slicing strategy. For each assistant turn, input-target pairs are constructed as $x_{i,t} = [\text{SYS}]\;u_1\;a_1\;\ldots\;u_t$ and $y_{i,t} = a_t$. Each assistant response is divided into a private reasoning chain (thought process) and a public response; both are treated as learning targets during training. Fine-tuning is performed using LoRA, with loss calculated only on the completion tokens.
+    - **Design Motivation**: Tool selection requires not just "getting it right" but "knowing why." Reasoning chains allow the model to explicitly exclude distractor tools rather than relying on pattern matching.
 
-2. **Supervised Fine-Tuning with Chain-of-Thought**:
-
-    - **Function**: Train the model to produce interpretable reasoning prior to tool invocation.
-    - **Mechanism**: A turn-slicing strategy is adopted, constructing input–target pairs for each assistant turn as $x_{i,t} = [\text{SYS}]\;u_1\;a_1\;\ldots\;u_t$ and $y_{i,t} = a_t$. Each assistant response consists of a private reasoning chain (thinking process) and a public response, both included as learning targets. LoRA is used for fine-tuning, with loss computed only over completion tokens.
-    - **Design Motivation**: Tool selection requires not only correctness but also explainability. The reasoning chain enables the model to explicitly rule out distractor tools rather than relying on pattern matching.
-
-3. **DiaBENCH Dynamic Evaluation Protocol**:
-
-    - **Function**: Assess end-to-end task completion rates within a live dialogue loop.
-    - **Mechanism**: The fine-tuned model is inserted as the assistant in the UTC-Gen loop, with the user agent policy kept frozen. Up to $T_{max}$ interaction turns are conducted to generate complete trajectories. Three core metrics are tracked: accuracy Acc (both tool and parameters correct), false trigger rate FTR (wrong tool invoked), and tool abstention rate TAR (no tool invoked). The user agent employs a multi-sampling and voting strategy to reduce evaluation noise.
-    - **Design Motivation**: Static evaluation cannot capture the cascading effects of how assistant outputs influence subsequent user behavior; dynamic evaluation more faithfully reflects real-world scenarios.
+3.  **DiaBENCH Dynamic Evaluation Protocol**:
+    - **Function**: Evaluates end-to-end goal completion rates within a real-time dialogue loop.
+    - **Mechanism**: The fine-tuned model is inserted as an assistant into the UTC-Gen loop, while the user agent policy remains frozen. Interactions continue for up to $T_{max}$ turns to generate a complete trajectory. Three core metrics are tracked: Accuracy (Acc, both tool and parameters are correct), False Trigger Rate (FTR, wrong tool called), and Total Abstention Rate (TAR, no tool called). The user agent employs a multi-sampling and voting strategy to reduce evaluation noise.
+    - **Design Motivation**: Static evaluation cannot capture the cascading effects of how assistant outputs influence subsequent user behavior. Dynamic evaluation more closely reflects real-world scenarios.
 
 ### Loss & Training
 
-Standard SFT with LoRA and the AdamW optimizer, trained for a single epoch. The training data consists of 13,649 turn-sliced completion samples derived from 5,000 DiaFORGE dialogues. Loss masking is applied so that loss is computed only over completion tokens.
+Standard SFT + LoRA using the AdamW optimizer for one epoch. Training data consists of 13,649 turn-sliced completion samples generated from 5,000 DiaFORGE dialogues. Loss masking is applied to ensure loss is only computed on completion tokens.
 
 ## Key Experimental Results
 
 ### Main Results
 
-DiaBENCH dynamic evaluation results (tool-calling accuracy Acc↑ / false trigger rate FTR↓ / abstention rate TAR↓):
+DiaBENCH dynamic evaluation results (Accuracy Acc↑ / False Trigger Rate FTR↓ / Total Abstention Rate TAR↓):
 
 | Model | Acc↑ | FTR↓ | TAR↓ |
-|-------|------|------|------|
+|------|------|------|------|
 | GPT-4o | 0.62 | 0.02 | 0.36 |
 | GPT-4o-fc | 0.56 | 0.59 | 0.05 |
 | Claude-3.5-Sonnet | 0.39 | 0.03 | 0.55 |
@@ -89,45 +86,45 @@ DiaBENCH dynamic evaluation results (tool-calling accuracy Acc↑ / false trigge
 
 ### Ablation Study
 
-Ablation based on Gemma-3-27B (dynamic evaluation Acc):
+Ablation based on Gemma-3-27B (Dynamic Eval Acc):
 
-| Configuration | Acc↑ | FTR↓ | TAR↓ |
-|---------------|------|------|------|
+| Setting | Acc↑ | FTR↓ | TAR↓ |
+|------|------|------|------|
 | Full DiaFORGE | 0.89 | 0.03 | 0.03 |
-| w/o validation cascade | 0.56 | 0.06 | 0.35 |
-| w/o near-duplicate distractor sampling | 0.63 | 0.18 | 0.19 |
-| w/o chain-of-thought | 0.77 | 0.16 | 0.04 |
+| w/o Validation Cascade | 0.56 | 0.06 | 0.35 |
+| w/o Near-duplicate Sampling | 0.63 | 0.18 | 0.19 |
+| w/o Reasoning Chain | 0.77 | 0.16 | 0.04 |
 
 ### Key Findings
 
-- Fine-tuning on only 5,000 synthetic dialogues enables a 3B model to surpass GPT-4o in dynamic evaluation (0.80 vs. 0.62).
-- Native function-calling mode (the `-fc` suffix) increases the false trigger rate: GPT-4o-fc reaches an FTR of 0.59.
-- In a scenario with 10K daily tool calls, GPT-4o incurs approximately 3,500–3,800 abstentions or 5,500–6,000 erroneous invocations per day, whereas DiaFORGE models produce only 250–350 total failures.
-- Near-duplicate distractor sampling is the most critical component; removing it causes FTR to jump from 0.03 to 0.18.
+- With only 5,000 synthetic dialogues for fine-tuning, a 3B small model can outperform GPT-4o in dynamic evaluation (0.80 vs. 0.62).
+- Native function-calling modes (indicated by the -fc suffix) actually increase the false trigger rate: GPT-4o-fc's FTR reaches 0.59.
+- In a scenario with 10K tool calls per day, GPT-4o would result in ~3,500-3,800 abstentions or 5,500-6,000 miscalls, whereas the DiaFORGE model incurs only 250-350 total failures.
+- Near-duplicate distractor sampling is the most critical component; removing it causes the FTR to jump from 0.03 to 0.18.
 
 ## Highlights & Insights
 
-- The data-driven insights derived from SAP production environments are highly compelling: 35–38% of queries encounter near-duplicate tools, and 76–81% of calls have missing parameters.
-- The conceptual shift of elevating disambiguation from an ancillary requirement to a primary training objective is particularly inspiring.
-- The dynamic evaluation framework addresses a significant gap in existing tool-calling benchmarks.
+- Data-driven insights from SAP production environments are highly compelling: 35-38% of queries encounter near-duplicate tools, and 76-81% of calls lack parameters.
+- Shifting the perspective of disambiguation from a "secondary requirement" to a "core training objective" is highly instructive.
+- The dynamic evaluation framework fills a major gap in existing tool-calling benchmarks.
 
 ## Limitations & Future Work
 
-- DiaBENCH covers only 119 seed tools, limiting its scale.
-- The user agent is still simulated by an LLM, which may diverge from real user behavior.
-- Retrieval-augmented tool selection is not explored; as the number of tools grows further, retrieval quality will become a new bottleneck.
+- DiaBENCH contains only 119 seed tools, which is limited in scale.
+- User agents are still simulated by LLMs, which may differ from real user behavior.
+- Retrieval-augmented tool selection was not explored; as tool counts grow further, retrieval quality will become a new bottleneck.
 
 ## Related Work & Insights
 
-- ReAct and HuggingGPT establish the foundational paradigm of LLMs as tool-calling agents; DiaFORGE extends this by incorporating disambiguation capabilities.
-- APIGen and ToolACE focus on data validation but assume fully specified requests; the disambiguation-centric strategy of DiaFORGE serves as an important complement.
-- Key insight: the central challenge for enterprise-grade AI agents is not whether they can call tools, but whether they can safely refrain from calling—or first seek clarification—when faced with ambiguity.
+- ReAct and HuggingGPT established the basic paradigm of LLMs as tool-calling agents; DiaFORGE builds on this by adding disambiguation capabilities.
+- APIGen and ToolACE focus on data validation but assume fully specified requests; DiaFORGE’s disambiguation-centric strategy is a crucial complement.
+- **Insight**: The core challenge for enterprise-grade AI agents is not just "can it call a tool," but "can it safely refrain from calling or clarify first when faced with ambiguity."
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ The disambiguation-centric problem formulation and systematic solution stand out distinctively in the tool-calling literature.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Six open-source models and two closed-source models are evaluated under dual-track static and dynamic evaluation with comprehensive ablations.
-- **Writing Quality**: ⭐⭐⭐⭐ Problem motivation is clear and the industrial perspective is persuasive; mathematical notation is somewhat dense but the overall logic is coherent.
+- Novelty: ⭐⭐⭐⭐ The disambiguation-centric problem definition and systematic solution are unique in the tool-calling field.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Evaluated on 6 open-source and 2 closed-source models with both static and dynamic tracks and comprehensive ablations.
+- Writing Quality: ⭐⭐⭐⭐ Clear motivation, persuasive industrial perspective, and consistent logic despite heavy use of notation.
 
 <!-- RELATED:START -->
 
@@ -135,11 +132,11 @@ Ablation based on Gemma-3-27B (dynamic evaluation Acc):
 
 ## Related Papers
 
+- [\[ACL 2026\] Reasoning Gets Harder for LLMs Inside A Dialogue](reasoning_gets_harder_for_llms_inside_a_dialogue.md)
+- [\[ACL 2026\] GenesisFunc: Multi-Agent Data Generation for Accurate and Generalizable Function-Calling](genesisfunc_multi-agent_data_generation_for_accurate_and_generalizable_function-.md)
 - [\[ICLR 2026\] Non-Collaborative User Simulators for Tool Agents](../../ICLR2026/dialogue/non-collaborative_user_simulators_for_tool_agents.md)
-- [\[AAAI 2026\] Emergent Persuasion: Will LLMs Persuade Without Being Prompted?](../../AAAI2026/dialogue/emergent_persuasion_will_llms_persuade_without_being_prompted.md)
-- [\[AAAI 2026\] Chatsparent: An Interactive System for Detecting and Mitigating Cognitive Fatigue in LLMs](../../AAAI2026/dialogue/chatsparent_an_interactive_system_for_detecting_and_mitigating_cognitive_fatigue.md)
-- [\[AAAI 2026\] Canoe: Teaching LLMs to Maintain Contextual Faithfulness via Synthetic Tasks and RL](../../AAAI2026/dialogue/teaching_large_language_models_to_maintain_contextual_faithfulness_via_synthetic.md)
-- [\[ACL 2026\] ETHICMIND: A Risk-Aware Framework for Ethical-Emotional Alignment in Multi-Turn Dialogue](ethicmind_a_risk-aware_framework_for_ethical-emotional_alignment_in_multi-turn_d.md)
+- [\[ACL 2026\] Preference Learning Unlocks LLMs' Psycho-Counseling Skills](preference_learning_unlocks_llms_psycho-counseling_skills.md)
+- [\[ICML 2026\] From Self-Evolving Synthetic Data to Verifiable-Reward RL: Post-Training Multi-turn Interactive Tool-Using Agents](../../ICML2026/dialogue/from_self-evolving_synthetic_data_to_verifiable-reward_rl_post-training_multi-tu.md)
 
 </div>
 

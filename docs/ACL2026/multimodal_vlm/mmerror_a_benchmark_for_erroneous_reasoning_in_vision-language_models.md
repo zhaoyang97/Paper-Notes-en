@@ -2,80 +2,77 @@
 title: >-
   [Paper Note] MMErroR: A Benchmark for Erroneous Reasoning in Vision-Language Models
 description: >-
-  [ACL 2026][Multimodal VLM][erroneous reasoning diagnosis] This paper presents MMErroR, a multimodal erroneous reasoning benchmark comprising 1,997 samples…
+  [ACL 2026][Multimodal VLM][Erroneous reasoning diagnosis] This paper introduces MMErroR, a multimodal erroneous reasoning benchmark containing 1…
 tags:
   - "ACL 2026"
   - "Multimodal VLM"
-  - "erroneous reasoning diagnosis"
-  - "vision-language model evaluation"
-  - "process-level assessment"
-  - "error taxonomy"
-  - "multimodal reasoning"
+  - "Erroneous reasoning diagnosis"
+  - "Vision-Language Model evaluation"
+  - "Process-level evaluation"
+  - "Error classification"
+  - "Multimodal reasoning"
 date: 2026-05-08
-content_hash: 8ab457930f4d941b
+content_hash: 003353edba862717
 ---
 
 # MMErroR: A Benchmark for Erroneous Reasoning in Vision-Language Models
 
-**Conference**: ACL 2026
+**Conference**: ACL 2026  
 **arXiv**: [2601.03331](https://arxiv.org/abs/2601.03331)  
 **Code**: [https://mmerror-benchmark.github.io](https://mmerror-benchmark.github.io)  
-**Area**: Multimodal VLM
-**Keywords**: erroneous reasoning diagnosis, vision-language model evaluation, process-level assessment, error taxonomy, multimodal reasoning
+**Area**: Multimodal VLM  
+**Keywords**: Erroneous reasoning diagnosis, Vision-Language Model evaluation, Process-level evaluation, Error classification, Multimodal reasoning
 
 ## TL;DR
 
-This paper presents MMErroR, a multimodal erroneous reasoning benchmark comprising 1,997 samples, each containing exactly one deliberately injected reasoning error, spanning 6 domains and 4 error types. The benchmark requires VLMs to not only detect the presence of errors in reasoning chains but also classify the error type (Visual Perception Error / Knowledge Deficiency Error / Question Comprehension Error / Reasoning Error). Evaluation of 12 representative VLMs reveals that even the strongest model, Gemini-3-Pro-Preview, achieves only 66.65% accuracy.
+This paper introduces MMErroR, a multimodal erroneous reasoning benchmark containing 1,997 samples. Each sample embeds a single reasoning error across 6 major domains and 4 error types. It requires VLMs to not only detect the presence of errors in reasoning chains but also classify the error types (Visual Perception Error / Knowledge Application Error / Question Understanding Error / Reasoning Error). Evaluation of 12 representative VLMs reveals that the strongest model, Gemini-3-Pro-Preview, achieves only 66.65% accuracy.
 
 ## Background & Motivation
 
-**Background**: Vision-language models (VLMs) continue to set new records on benchmarks such as MMMU and MathVista, creating the impression that models are approaching human-level understanding. However, existing evaluations almost exclusively adopt an answer-oriented paradigm—verifying only whether the final answer is correct while ignoring the soundness of the reasoning process that leads to it.
+**Background**: Vision-Language Models (VLMs) continuously break records on benchmarks such as MMMU and MathVista, creating the impression that "models have approached human-level understanding." However, existing evaluations almost entirely adopt a "result-oriented" paradigm—checking only whether the final answer is correct without considering if the reasoning process is sound.
 
-**Limitations of Prior Work**: (1) A correct final answer does not imply a correct reasoning process—models may arrive at the right result through shortcuts or pattern matching, masking deficiencies in genuine reasoning ability. (2) Existing error-localization benchmarks (e.g., ProcessBench, ErrorRadar) focus solely on identifying *which step* is erroneous, without diagnosing the type or root cause of the error. (3) These benchmarks are either limited to a single modality (pure text) or lack domain diversity and a systematic error taxonomy.
+**Limitations of Prior Work**: (1) Correct final answers do not guarantee correct reasoning processes; models may reach correct results through shortcuts or pattern matching, masking deficiencies in intrinsic reasoning capabilities. (2) Existing error localization benchmarks (e.g., ProcessBench, ErrorRadar) only focus on "which step went wrong" without diagnosing the type or root cause of the error. (3) These benchmarks are either limited to a single modality (text-only) or lack domain diversity and an error classification taxonomy.
 
-**Key Challenge**: A significant gap exists between VLMs' high scores on standard benchmarks and their ability to diagnose errors when presented with faulty reasoning chains. Models can produce apparently coherent reasoning chains yet fail to identify errors within them, indicating that *generative ability* and *introspective ability* are fundamentally distinct capabilities.
+**Key Challenge**: There is a significant gap between high VLM scores on various benchmarks and their diagnostic capabilities when faced with erroneous reasoning chains. Models can generate plausible reasoning chains but fail to judge errors within them, suggesting that "generation capability" and "introspection capability" are distinct skills.
 
-**Goal**: To construct a multimodal, multi-domain, process-level reasoning evaluation benchmark with error-type classification, enabling systematic assessment of whether VLMs can identify erroneous reasoning and diagnose its underlying cause.
+**Goal**: To construct a multimodal, multi-domain, process-level reasoning evaluation benchmark with error classification to systematically assess whether VLMs possess the ability to "identify erroneous reasoning and diagnose error types."
 
-**Key Insight**: The paper approaches the problem from the perspective of *error classification* rather than *error localization*—the task is not merely to detect which step is wrong, but to diagnose whether the root cause is a failure of visual perception, knowledge application, question comprehension, or logical reasoning.
+**Key Insight**: Approaching the problem through "error classification" rather than just "error localization." The goal is not just to detect where a step fails, but to diagnose whether the root cause is visual perception failure, knowledge application failure, question understanding bias, or logical reasoning fallacy.
 
-**Core Idea**: A controlled benchmark is designed in which each sample contains exactly one error with a clearly attributable root cause. Errors are injected via GPT-5, followed by three rounds of human verification and quality scoring, ensuring uniqueness and traceability of error-type labels. Two evaluation modes are supported: Error Type Classification (ETC) and Error Presence Detection (EPD).
+**Core Idea**: Design a controlled benchmark where each sample contains exactly one clear root-cause error. Errors are injected via GPT-5, followed by three rounds of human verification and quality score filtering to ensure uniqueness and attributability of error type labels. The benchmark supports two evaluation modes: Error Type Classification (ETC) and Error Presence Detection (EPD).
 
 ## Method
 
 ### Overall Architecture
 
-The construction pipeline of MMErroR consists of four stages: (1) *Question curation*—stratified sampling from existing benchmarks (MMMU, MathVista, MathVerse, ScienceQA, AI2D) with complexity filtering to retain multi-step reasoning instances; (2) *Error injection*—GPT-5 is used to inject one semantically coherent error into a correct reasoning chain, constrained to one of four predefined error types; (3) *Data validation*—20 domain experts (6 professors and 14 doctoral students) conduct three rounds of manual inspection, narrowing an initial pool of 10,000 samples to 3,148; (4) *Quality assurance*—at least two linguistics experts score each sample along four dimensions (coherence, step clarity, error localizability, and semantic consistency), retaining only samples with a mean score above 0.5, yielding the final 1,997 samples.
+The construction process of MMErroR follows four steps: (1) Question Curation—stratified sampling from benchmarks like MMMU, MathVista, MathVerse, ScienceQA, and AI2D, with complexity filtering to retain multi-step reasoning instances. (2) Error Injection—using GPT-5 to inject one semantically coherent error into a correct reasoning chain, restricted to one of four predefined types. (3) Data Verification—20 experts (6 professors + 14 PhD students) performed three rounds of manual inspection, filtering initial 10,000 samples down to 3,148. (4) Quality Assurance—at least two linguistics experts scored samples based on coherence, step clarity, error localizability, and semantic consistency, retaining 1,997 samples with a mean score $> 0.5$.
 
 ### Key Designs
 
-1. **Four-Category Error Taxonomy**
+1. **Four-class Error Taxonomy**:
+    - Function: Provides a fine-grained diagnostic framework for root-cause errors.
+    - Mechanism: Defines four mutually exclusive error types—Visual Perception Error (VPE, e.g., misidentification, spatial misjudgment, symbol misreading), Knowledge Application Error (KDE, e.g., using wrong formulas, misapplying physical laws, the largest category at 44.07%), Question Understanding Error (QCE, e.g., misunderstanding intent, ignoring constraints), and Reasoning Error (RE, e.g., logical fallacies, missing premises, invalid steps). Each reasoning chain contains only one error to ensure unique attribution.
+    - Design Motivation: Different error types reflect weaknesses in different stages of the model's multimodal understanding pipeline; locating a step alone cannot reveal the nature of the failure.
 
-    - **Function**: Provides a fine-grained root-cause diagnostic framework.
-    - **Mechanism**: Four mutually exclusive error types are defined—Visual Perception Error (VPE: e.g., object misidentification, spatial relation misjudgment, symbol misreading), Knowledge Deficiency Error (KDE: e.g., applying incorrect formulas or physical laws; the largest category at 44.07%), Question Comprehension Error (QCE: e.g., misinterpreting the question's intent or overlooking key constraints), and Reasoning Error (RE: e.g., logical fallacies, missing premises, invalid inference steps). Each reasoning chain contains exactly one error, ensuring unambiguous attribution.
-    - **Design Motivation**: Different error types reflect weaknesses at distinct stages of a model's multimodal understanding pipeline; merely localizing an erroneous step cannot reveal the fundamental cause of failure.
+2. **Dual-mode Evaluation Protocol (ETC + EPD)**:
+    - Function: Evaluates error diagnostic capabilities across two difficulty levels.
+    - Mechanism: The ETC (Error Type Classification) mode informs the model that the reasoning chain is definitely wrong and asks for the error type. The EPD (Error Presence Detection) mode requires the model to first determine "if there is an error" before classifying it. Since the current dataset only contains erroneous samples, EPD acts as a controlled stress test for error sensitivity and attribution. In EPD, an "always report error" strategy is ineffective because points are only awarded if the error type is also correctly classified.
+    - Design Motivation: ETC tests diagnostic precision under known error conditions, while EPD further tests the model's ability to actively discover errors. Together, they provide a comprehensive assessment of introspection.
 
-2. **Dual Evaluation Protocol (ETC + EPD)**
-
-    - **Function**: Assesses models' error-diagnosis capability at two levels of difficulty.
-    - **Mechanism**: In the ETC (Error Type Classification) mode, the model is informed that the reasoning chain contains an error and is asked to classify its type. In the EPD (Error Presence Detection) mode, the model must first determine whether an error exists before classifying it. Since all samples in the current dataset contain errors, EPD serves as a controlled stress test of error sensitivity and attribution ability. A naive strategy of always reporting an error does not yield a score, because credit is awarded only when the error type is also classified correctly.
-    - **Design Motivation**: ETC measures diagnostic precision under the known-error condition; EPD further tests the model's ability to proactively detect errors. Together, the two modes provide a comprehensive assessment of introspective capability.
-
-3. **Single-Error Controlled Design with Multi-Stage Quality Filtering**
-
-    - **Function**: Ensures the benchmark's attributability and high overall quality.
-    - **Mechanism**: Each reasoning chain contains exactly one root-cause error, while all remaining steps maintain local coherence and logical validity. Three rounds of expert review (retention requires unanimous agreement) are combined with four-dimensional quality scoring (coherence / step clarity / error localizability / semantic consistency, threshold 0.5). Cohen's Kappa $\kappa = 0.796$; the third-round rejection rate is only 2.81% (inter-annotator agreement 97.19%).
-    - **Design Motivation**: Interactions among multiple errors would severely confound attribution. Although the single-error design sacrifices some ecological validity, it yields unambiguous diagnostic labels and interpretable evaluation results.
+3. **Single-error Controlled Design + Multi-stage Quality Filtering**:
+    - Function: Ensures attributability and high quality of the benchmark.
+    - Mechanism: Only one root-cause error is injected into each reasoning chain; other steps remain locally coherent and logically valid. Three rounds of expert review (retention only upon unanimous approval) + four-dimension quality scoring (coherence/clarity/localizability/consistency, threshold 0.5). Cohen's Kappa $\kappa = 0.796$, with a third-round rejection rate of only 2.81% (observed agreement 97.19%).
+    - Design Motivation: Multiple interacting errors would severely confound attribution. The single-error design sacrifices some realism for label clarity and evaluation interpretability.
 
 ### Loss & Training
 
-This paper presents an evaluation benchmark and does not involve model training. Evaluation is conducted in a multiple-choice format; all models are decoded at temperature 0 to ensure determinism and reproducibility.
+This is a benchmark paper and does not involve model training. Evaluation is conducted using a multiple-choice format where the model outputs corresponding labels. All model decoding temperatures are set to 0 to ensure determinism and reproducibility.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Model | ML | PE | CM | BH | EE | DA | Overall (ETC) |
+| Model | ML | PE | CM | BH | EE | DA | Total (ETC) |
 |------|-----|-----|-----|-----|-----|-----|---------|
 | Gemini-3-Pro-Preview | 66.37 | 66.88 | 69.81 | 64.43 | 65.39 | 69.26 | 66.65 |
 | Doubao-Seed-2.0-pro | 65.47 | 67.32 | 61.01 | 59.94 | 66.16 | 66.22 | 64.80 |
@@ -86,58 +83,58 @@ This paper presents an evaluation benchmark and does not involve model training.
 | Human Expert (High) | 91.07 | 88.65 | 87.50 | 90.15 | 88.96 | 90.18 | 89.52 |
 | Random Choice | 22.10 | 23.62 | 24.18 | 24.06 | 21.50 | 25.53 | 23.45 |
 
-| Model | ETC Overall | EPD Overall | EPD Drop |
+| Model | ETC Total | EPD Total | EPD Drop |
 |------|---------|---------|------------|
-| Gemini-3-Pro-Preview | 66.65 | 61.39 | −5.26 |
-| GPT-5.2 (xhigh) | 64.30 | 58.54 | −5.76 |
-| Claude-Opus-4.5 | 61.04 | 55.18 | −5.86 |
-| Kimi-K2.5 | 60.19 | 51.63 | −8.56 |
-| LLaMA-4-Maverick | 39.46 | 18.13 | −21.33 |
+| Gemini-3-Pro-Preview | 66.65 | 61.39 | -5.26 |
+| GPT-5.2 (xhigh) | 64.30 | 58.54 | -5.76 |
+| Claude-Opus-4.5 | 61.04 | 55.18 | -5.86 |
+| Kimi-K2.5 | 60.19 | 51.63 | -8.56 |
+| LLaMA-4-Maverick | 39.46 | 18.13 | -21.33 |
 
 ### Ablation Study
 
 | Input Condition | Gemini-3-Pro | GPT-5.2 | Doubao-Seed | Qwen3-VL-32B |
 |---------|-------------|---------|------------|-------------|
-| VQA (original Q&A) | 81.0 | 80.0 | 80.5 | 78.5 |
-| VQA + erroneous chain | 82.5 | 80.5 | 81.5 | 80.0 |
-| VQA + erroneous chain + error step | 84.0 | 82.0 | 83.0 | 82.5 |
-| VQA + erroneous chain + error type | 90.5 | 89.5 | 88.5 | 84.5 |
+| VQA (Original QA) | 81.0 | 80.0 | 80.5 | 78.5 |
+| VQA + Erroneous Chain | 82.5 | 80.5 | 81.5 | 80.0 |
+| VQA + Erroneous Chain + Error Step | 84.0 | 82.0 | 83.0 | 82.5 |
+| VQA + Erroneous Chain + Error Type | 90.5 | 89.5 | 88.5 | 84.5 |
 
 ### Key Findings
 
-- **Large gap between all models and human experts**: The strongest VLM (66.65%) trails the high-group human experts (89.52%) by nearly 23 percentage points, indicating that erroneous reasoning diagnosis is a major weakness of current VLMs.
-- **EPD is substantially harder than ETC**: All models exhibit significant score drops from ETC to EPD; LLaMA-4-Maverick collapses from 39.46% to 18.13%, demonstrating that *proactively detecting errors* is far more difficult than *classifying errors once informed of their existence*.
-- **Error-diagnosis ability correlates with question-answering ability**: Samples on which models correctly diagnose the error type also yield higher raw VQA accuracy (Gemini: 85.5% vs. 74.5%), suggesting that error-diagnosis capability reflects genuine depth of understanding.
-- **Error-type information is more valuable than error-step information**: Providing the error type improves VQA accuracy by approximately 9.5 points, whereas providing only the erroneous step yields only a 2–3-point improvement, demonstrating that knowing *why* something is wrong is more correctively valuable than knowing *where* it is wrong.
-- **No single model dominates across all domains**: Different models excel in different domains, indicating that error diagnosis draws on diverse underlying capabilities including domain knowledge, visual grounding, and procedural reasoning.
+- **Significant gap between all models and human experts**: The strongest VLM (66.65%) lags nearly 23 percentage points behind high-group human experts (89.52%), indicating that erroneous reasoning diagnosis is a major weakness for VLMs.
+- **EPD is much harder than ETC**: All models showed significant performance drops from ETC to EPD; LLaMA-4-Maverick plummeted from 39.46% to 18.13%, suggesting that "actively discovering errors" is far more difficult than "classifying errors when informed they exist."
+- **Error diagnostic capability correlates positively with QA capability**: Samples where models correctly diagnosed error types also showed higher original VQA accuracy (Gemini: 85.5% vs 74.5%), indicating that error diagnosis reflects true depth of understanding.
+- **Error type information is more useful than error step information**: Providing the error type increased VQA accuracy by ~9.5 points, whereas providing only the error step increased it by only ~2-3 points. This proves that "knowing why it is wrong" has more corrective value than "knowing where it is wrong."
+- **No single model dominates all domains**: Different models show varied strengths across domains, highlighting that error diagnosis depends on diverse underlying abilities like domain knowledge, visual grounding, and procedural reasoning.
 
 ## Highlights & Insights
 
-- **Paradigm shift from answer correctness to process diagnosis**: MMErroR is the first benchmark to advance multimodal reasoning evaluation from "is the answer correct?" to "can the model diagnose the error type in a reasoning process?", offering a fundamentally new perspective on VLMs' true reasoning capability.
-- **Error type is more correctively valuable than error location**: Ablation results clearly show that knowing *why* something is wrong (error type) is more effective for error correction than knowing *where* it is wrong (error step), with important implications for the design of future VLM self-correction mechanisms.
-- **Logit lens visualization analysis**: Logit lens analysis on Qwen3-VL-32B-Instruct intuitively demonstrates precise semantic alignment between visual and textual tokens during correct diagnosis, and the collapse of cross-modal alignment during incorrect diagnosis.
-- **Rigorous quality control**: The pipeline reduces an initial pool of 10,000 samples through three rounds of expert review to 3,148, and further through quality scoring to 1,997, yielding a retention rate of approximately 20% and a Cohen's Kappa of 0.796, ensuring high benchmark reliability.
+- **Paradigm shift from "Answer Correctness" to "Process Diagnosis"**: MMErroR is the first to push multimodal reasoning evaluation from "is the result correct" to "can the error type in the reasoning process be diagnosed," providing a fresh perspective on the true reasoning capabilities of VLMs.
+- **Error types hold more corrective value than error locations**: Ablation experiments clearly demonstrate that knowing the "why" (error type) is more effective for correcting mistakes than knowing the "where" (error step), which has significant implications for future VLM self-correction mechanisms.
+- **Logit Lens Visualization Analysis**: Through logit lens analysis of Qwen3-VL-32B-Instruct, the paper intuitively demonstrates precise semantic alignment between visual and text tokens during correct diagnosis, and the collapse of cross-modal alignment during incorrect diagnosis.
+- **Extremely strict quality control**: The retention rate was approximately 20% (filtering 10,000 down to 1,997) through three rounds of expert review and quality scoring. A Cohen's Kappa of 0.796 ensures high reliability of the benchmark.
 
 ## Limitations & Future Work
 
-- Each sample contains only one error, whereas real-world reasoning failures often involve cascading or multiple co-occurring errors.
-- The current version contains only erroneous reasoning chains; the EPD task therefore cannot measure false-positive rates on correct reasoning chains (i.e., the tendency to over-report errors).
-- Initial erroneous reasoning chains are generated by GPT-5, which may introduce biases specific to that model's error patterns or linguistic style.
-- Future work may extend the benchmark to open-ended generation evaluation (beyond the multiple-choice format) and to multi-error cascading scenarios.
+- Each sample contains only one error, whereas real-world reasoning failures often involve cascading or multiple simultaneous errors.
+- The current version only contains erroneous reasoning chains; the EPD task cannot test the false positive rate (i.e., "over-reporting errors") on correct reasoning chains.
+- Initial erroneous reasoning chains were generated by GPT-5, which might introduce biases (error patterns or linguistic styles) specific to that model.
+- Future work could extend to open-ended generation evaluation (rather than multiple-choice) and multi-error cascading scenarios.
 
 ## Related Work & Insights
 
-- **vs. ProcessBench / PRISM-Bench**: These benchmarks localize erroneous steps but do not classify error types; MMErroR requires models to diagnose the root cause of errors.
-- **vs. ErrorRadar**: ErrorRadar focuses on error localization but lacks multi-domain coverage and a systematic error taxonomy.
-- **vs. POPE / HallusionBench**: These hallucination benchmarks primarily target visual perception errors; MMErroR additionally covers higher-order failure modes such as knowledge application, question comprehension, and logical reasoning.
-- **vs. MMMU / MathVista**: These benchmarks employ outcome-oriented evaluation; MMErroR shifts to process-level diagnostic evaluation, providing a complementary assessment perspective.
+- **vs ProcessBench/PRISM-Bench**: These benchmarks only locate error steps without classifying error types; MMErroR requires diagnosing the root cause.
+- **vs ErrorRadar**: ErrorRadar focuses on error localization but lacks multi-domain coverage and an error classification taxonomy.
+- **vs POPE/HallusionBench**: These hallucination benchmarks primarily target visual perception errors; MMErroR covers higher-order failures like knowledge application, question understanding, and logical reasoning.
+- **vs MMMU/MathVista**: These benchmarks use result-oriented evaluation; MMErroR shifts toward process-level diagnostic evaluation, acting as a complement.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ — First systematic evaluation of VLMs' erroneous reasoning diagnosis capability; the error taxonomy is well-motivated.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — 12 models, 6 domains, dual evaluation modes, supplemented by reasoning consistency analysis, multimodal alignment analysis, and error-perception ablations.
-- **Writing Quality**: ⭐⭐⭐⭐ — Clear structure, rigorous experimental design, and transparent quality control procedures.
-- **Value**: ⭐⭐⭐⭐ — Provides an important benchmark and insights for understanding and improving VLMs' introspective capability.
+- Novelty: ⭐⭐⭐⭐ Systematically evaluates VLM error reasoning diagnosis for the first time with a well-designed taxonomy.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 12 models, 6 domains, dual evaluation modes, supplemented by reasoning consistency, multimodal alignment, and error perception ablation.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure, rigorous experimental design, and transparent quality control.
+- Value: ⭐⭐⭐⭐ Provides a crucial benchmark and insights for understanding and improving VLM introspection capabilities.
 
 <!-- RELATED:START -->
 

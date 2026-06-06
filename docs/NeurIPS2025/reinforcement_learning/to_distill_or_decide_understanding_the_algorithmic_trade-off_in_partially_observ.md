@@ -183,7 +183,7 @@ Analysis of key factors:
 - [\[NeurIPS 2025\] Succeed or Learn Slowly: Sample Efficient Off-Policy Reinforcement Learning for Mobile App Control](succeed_or_learn_slowly_sample_efficient_off-policy_reinforcement_learning_for_m.md)
 - [\[NeurIPS 2025\] Bootstrap Off-policy with World Model (BOOM)](bootstrap_off-policy_with_world_model.md)
 - [\[NeurIPS 2025\] Real-World Reinforcement Learning of Active Perception Behaviors](real-world_reinforcement_learning_of_active_perception_behaviors.md)
-- [\[ICLR 2026\] Partially Equivariant Reinforcement Learning in Symmetry-Breaking Environments](../../ICLR2026/reinforcement_learning/partially_equivariant_reinforcement_learning_in_symmetry-breaking_environments.md)
+- [\[NeurIPS 2025\] The Path Not Taken: RLVR Provably Learns Off the Principals](the_path_not_taken_rlvr_provably_learns_off_the_principals.md)
 
 </div>
 

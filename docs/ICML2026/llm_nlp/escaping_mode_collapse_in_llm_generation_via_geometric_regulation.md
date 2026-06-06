@@ -126,7 +126,7 @@ The authors test on multiple open-source LLMs (including Qwen3-4B-Base) using bo
 - [\[ICML 2026\] A Geometric Relation of the Error Introduced by Sampling a Language Model's Output Distribution to its Internal State](a_geometric_relation_of_the_error_introduced_by_sampling_a_language_models_outpu.md)
 - [\[AAAI 2026\] VSPO: Validating Semantic Pitfalls in Ontology via LLM-Based CQ Generation](../../AAAI2026/llm_nlp/vspo_validating_semantic_pitfalls_in_ontology_via_llm-based_cq_generation.md)
 - [\[ICLR 2026\] ELLMob: Event-Driven Human Mobility Generation with Self-Aligned LLM Framework](../../ICLR2026/llm_nlp/ellmob_event-driven_human_mobility_generation_with_self-aligned_language_models.md)
-- [\[ICML 2026\] Rethinking LLM Ensembling from the Perspective of Mixture Models](rethinking_llm_ensembling_from_the_perspective_of_mixture_models.md)
+- [\[ICML 2026\] "I've Seen How This Goes": Characterizing LLM and Human Writing Diversity via Progressive Conditional Surprisal](ive_seen_how_this_goes_characterizing_diversity_via_progressive_conditional_surp.md)
 - [\[ICLR 2026\] AssetFormer: Modular 3D Assets Generation with Autoregressive Transformer](../../ICLR2026/llm_nlp/assetformer_modular_3d_assets_generation_with_autoregressive_transformer.md)
 
 </div>

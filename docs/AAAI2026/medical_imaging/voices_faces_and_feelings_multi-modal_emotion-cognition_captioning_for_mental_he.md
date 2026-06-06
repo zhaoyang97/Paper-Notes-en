@@ -191,11 +191,11 @@ Total parameters: ~7.6B, of which ~605M are trainable. Optimized with DeepSpeed 
 
 ## Related Papers
 
-- [\[ACL 2026\] Measuring What Matters!! Assessing Therapeutic Principles in Mental-Health Conversation](../../ACL2026/medical_imaging/measuring_what_matters_assessing_therapeutic_principles_in_mental-health_convers.md)
+- [\[ACL 2026\] Responsible Evaluation of AI for Mental Health](../../ACL2026/medical_imaging/responsible_evaluation_of_ai_for_mental_health.md)
 - [\[AAAI 2026\] MAMA-Memeia! Multi-Aspect Multi-Agent Collaboration for Depressive Symptoms Identification in Memes](mama-memeia_multi-aspect_multi-agent_collaboration_for_depressive_symptoms_ident.md)
-- [\[AAAI 2026\] Personalization of Large Foundation Models for Health Interventions](personalization_of_large_foundation_models_for_health_interventions.md)
+- [\[ACL 2026\] Measuring What Matters!! Assessing Therapeutic Principles in Mental-Health Conversation](../../ACL2026/medical_imaging/measuring_what_matters_assessing_therapeutic_principles_in_mental-health_convers.md)
 - [\[AAAI 2026\] ReCoN-Ipsundrum: An Inspectable Recurrent Persistence Loop Agent with Affect-Coupled Cognition](recon-ipsundrum_an_inspectable_recurrent_persistence_loop_agent_with_affect-coup.md)
-- [\[ICLR 2026\] Boosting Medical Visual Understanding From Multi-Granular Language Learning](../../ICLR2026/medical_imaging/boosting_medical_visual_understanding_from_multi-granular_language_learning.md)
+- [\[AAAI 2026\] Personalization of Large Foundation Models for Health Interventions](personalization_of_large_foundation_models_for_health_interventions.md)
 
 </div>
 

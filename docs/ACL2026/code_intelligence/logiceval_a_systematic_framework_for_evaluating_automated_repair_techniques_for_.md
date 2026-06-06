@@ -2,74 +2,74 @@
 title: >-
   [Paper Note] LogicEval: A Systematic Framework for Evaluating Automated Repair Techniques for Logical Vulnerabilities in Real-World Software
 description: >-
-  [ACL 2026][Code Intelligence][Logical vulnerabilities] This paper presents LogicEval, the first systematic evaluation framework for logical vulnerability repair…
+  [ACL 2026][Code Intelligence][Logical Vulnerabilities] Ours constructs the first repair evaluation framework LogicEval and dataset LogicDS (61 real-world logical vulnerabilities + 61 synthetic Java samples) specifically…
 tags:
   - "ACL 2026"
   - "Code Intelligence"
-  - "Logical vulnerabilities"
-  - "automated repair evaluation"
-  - "LLM-based code repair"
-  - "patch generation"
-  - "benchmark dataset"
+  - "Logical Vulnerabilities"
+  - "Automated Repair Evaluation"
+  - "LLM Code Repair"
+  - "Patch Generation"
+  - "Benchmark Dataset"
 date: 2026-05-08
-content_hash: cb2f3a6149577ca9
+content_hash: f9e4e45c21713a5d
 ---
 
 # LogicEval: A Systematic Framework for Evaluating Automated Repair Techniques for Logical Vulnerabilities in Real-World Software
 
-**Conference**: ACL 2026
+**Conference**: ACL 2026  
 **arXiv**: [2604.12994](https://arxiv.org/abs/2604.12994)  
 **Code**: [GitHub](https://github.com/LogicEval)  
-**Area**: Code Intelligence / Vulnerability Repair Evaluation
-**Keywords**: Logical vulnerabilities, automated repair evaluation, LLM-based code repair, patch generation, benchmark dataset
+**Area**: Code Intelligence / Vulnerability Repair Evaluation  
+**Keywords**: Logical Vulnerabilities, Automated Repair Evaluation, LLM Code Repair, Patch Generation, Benchmark Dataset
 
 ## TL;DR
 
-This paper presents LogicEval, the first systematic evaluation framework for logical vulnerability repair, along with the LogicDS dataset (61 real-world logical vulnerabilities + 61 synthetic Java samples). It systematically evaluates both traditional AVR tools and LLMs on logical vulnerability repair, finding that LLMs perform best when provided with auxiliary information yet overall repair rates remain low (only 5 out of 61 real-world samples correctly repaired). Key bottlenecks identified include prompt sensitivity, context loss, and patch localization difficulty.
+Ours constructs the first repair evaluation framework LogicEval and dataset LogicDS (61 real-world logical vulnerabilities + 61 synthetic Java samples) specifically for logical vulnerabilities. It systematically evaluates the capabilities of traditional AVR tools and LLMs in repairing logical vulnerabilities, finding that LLMs perform best when provided with auxiliary information but the overall repair rate remains very low (only 5 out of 61 real-world samples correctly repaired), while identifying key bottlenecks such as prompt sensitivity, context loss, and patch localization difficulties.
 
 ## Background & Motivation
 
-**Background**: Logical vulnerabilities stem from incorrect implementations of program logic or functionality, rather than memory safety violations. They can be exploited for authentication bypass, sensitive data leakage, or system disruption, and do not trigger conventional security defenses such as address sanitizers. Existing automated vulnerability repair (AVR) techniques predominantly target memory corruption vulnerabilities.
+**Background**: Logical vulnerabilities stem from incorrect implementations of program logic/functionality rather than memory safety violations. They can be exploited for authentication bypass, sensitive data leakage, or system operation disruption without triggering traditional security defenses (e.g., address sanitizers). Existing automated vulnerability repair (AVR) techniques primarily target memory corruption vulnerabilities.
 
-**Limitations of Prior Work**: (1) Logical vulnerabilities lack consistent, reusable repair templates or patterns; each repair requires deep understanding of program semantics and intended behavior. (2) Logical vulnerabilities do not necessarily cause crashes or illegal memory accesses, making traditional signals (compilation logs, runtime logs, memory sanitizers) of limited utility for localization. (3) Existing datasets focus primarily on memory safety bugs, lacking logical vulnerability samples with demonstrable security impact.
+**Limitations of Prior Work**: (1) Logical vulnerabilities lack consistent, reusable repair templates/patterns, requiring deep understanding of program semantics and expected behavior for each fix; (2) Logical vulnerabilities do not necessarily cause crashes or illegal memory access, meaning traditional signals (compilation logs, runtime logs, memory sanitizers) provide limited help for localization; (3) Existing datasets mainly focus on memory safety bugs and lack logical vulnerability samples with actual security impact.
 
-**Key Challenge**: While LLMs have demonstrated strong capabilities in code understanding and generation, no systematic framework exists to analyze their ability and limitations in repairing logical vulnerabilities — a gap that impedes the extension of AVR from memory safety to the more subtle domain of logical vulnerabilities.
+**Key Challenge**: LLMs have demonstrated powerful capabilities in code understanding and generation, but there is no systematic framework to analyze their capabilities and limitations in repairing logical vulnerabilities—this hinders the expansion of AVR from memory safety to the more subtle domain of logical vulnerabilities.
 
-**Goal**: To construct the first systematic evaluation framework for analyzing the capabilities, limitations, and failure modes of both traditional and LLM-based methods when repairing real-world logical vulnerabilities.
+**Goal**: Construct the first systematic evaluation framework to analyze the capabilities, limitations, and failure modes of traditional and LLM-based methods in repairing real-world logical vulnerabilities.
 
-**Key Insight**: Logical vulnerability repair is highly context-dependent — relying on vulnerability descriptions, behavioral specifications, and repair steps — making it appropriate to evaluate the impact of different auxiliary information dimensions systematically.
+**Key Insight**: The specificity of logical vulnerability repair lies in its repair logic being highly dependent on context (vulnerability descriptions, behavior specifications, repair steps). Therefore, the impact of different dimensions is evaluated by systematically varying auxiliary information.
 
-**Core Idea**: Construct the LogicDS dataset and LogicEval evaluation framework to systematically assess performance across three dimensions: LLM configuration, source code granularity, and auxiliary information. Introduce reasoning-based automatic evaluation metrics (cosine similarity + LLM judgment) to complement conventional compilation/test-based evaluation.
+**Core Idea**: Construct the LogicDS dataset + LogicEval evaluation framework to systematically evaluate from three dimensions: LLM configuration, source code granularity, and auxiliary information. Introduce reasoning-based automated evaluation metrics (Cosine Similarity + LLM Judgment) to supplement traditional compilation/testing evaluation.
 
 ## Method
 
 ### Overall Architecture
 
-LogicEval is an end-to-end evaluation pipeline: (1) **Input** — vulnerable source code $S$, fixed code $F$, vulnerability description $D$, behavioral specification $V_S$ (optional), context $V_{ctx}$ (optional), and compilation/test scripts; (2) **Patch Localization** — assuming perfect localization, the core repair region (single hunk) is manually identified; (3) **Patch Generation** — prompts are constructed along different dimensions to drive LLM patch generation, with tagged code extracted to replace the vulnerable region; (4) **Patch Evaluation** — compilation and testing, supplemented by reasoning-based automatic evaluation (semantic similarity between generated patch explanations and ground-truth repair explanations).
+LogicEval is an end-to-end evaluation pipeline: (1) **Input**—Vulnerable source code $S$, repaired code $F$, vulnerability description $D$, behavior specification $V_S$ (optional), context $V_{ctx}$ (optional), compilation/test scripts; (2) **Patch Localization**—Assuming perfect localization, manually identifying the core repair area (single hunk); (3) **Patch Generation**—Constructing prompts across different dimensions to drive LLMs to generate patches, extracting marked code to replace the vulnerable area; (4) **Patch Evaluation**—Compilation testing + reasoning-based automated evaluation (comparing the semantic alignment between patch explanations and ground-truth repair explanations).
 
 ### Key Designs
 
 1. **LogicDS Dataset Construction**:
 
-    - Function: Provides the first logical vulnerability benchmark with demonstrated real-world security impact.
-    - Mechanism: 61 real-world logical vulnerabilities are curated from CVEs across 28 popular open-source projects. Each sample includes vulnerable/fixed code, CVE description, manually localized core repair region, compilation scripts, and test cases. An additional 61 synthetic Java samples are constructed for compatibility with Java-specific repair tools.
-    - Design Motivation: Existing datasets (Defects4J, Vul4J) primarily contain memory safety bugs with few security-impactful logical defects. Each data point requires approximately 10 person-hours to construct.
+    - **Function**: Provides the first benchmark of logical vulnerabilities with actual security impact.
+    - **Mechanism**: 61 real-world logical vulnerabilities were filtered from CVEs of 28 popular open-source projects. Each sample includes vulnerable/repaired code, CVE description, manually localized core repair area, compilation scripts, and test cases. An additional 61 synthetic Java samples were constructed for compatibility with Java-specific repair tools.
+    - **Design Motivation**: Existing datasets (Defects4J, Vul4J) primarily contain memory safety bugs with few security-impacting logical defects. Each data point takes approximately 10 person-hours to construct.
 
-2. **Multi-Dimensional LLM Evaluation System**:
+2. **Multi-dimensional LLM Evaluation System**:
 
-    - Function: Systematically decouples the effect of different factors on repair performance.
-    - Mechanism: Prompts are varied along three dimensions: (a) LLM configuration — temperature (0.2/0.5/0.9), orientation (role/task), strategy (zero-shot/few-shot/CoT); (b) source code — vulnerable block $V_b$ vs. full function $V_f$, with or without context $V_{ctx}$; (c) auxiliary information — combinations of none / vulnerability description $D$ / specification $V_S$ / repair steps $R$.
-    - Design Motivation: Logical vulnerability repair is highly context-dependent, necessitating precise identification of which information types are most beneficial to LLMs.
+    - **Function**: Systematically decouples the impact of different factors on repair performance.
+    - **Mechanism**: Prompts are varied along three dimensions: (a) LLM configuration—temperature (0.2/0.5/0.9), orientation (Role/Task), strategy (zero-shot/few-shot/CoT); (b) Source code—vulnerable block $V_b$ vs. complete function $V_f$, with or without context $V_{ctx}$; (c) Auxiliary information—different combinations of None/vulnerability description $D$/specification $V_S$/repair steps $R$.
+    - **Design Motivation**: Logical vulnerability repair is highly dependent on contextual information, requiring precise understanding of which information is most helpful to LLMs.
 
-3. **Reasoning-Based Patch Quality Evaluation**:
+3. **Reasoning-based Patch Quality Evaluation**:
 
-    - Function: Assesses the reasoning soundness of patches beyond compilation and testing.
-    - Mechanism: An LLM generates natural language explanations $E$ and $E_g$ for the generated patch and the ground-truth fix respectively. Cosine similarity $CS$ and LLM judgment $J$ are used to measure semantic alignment. High similarity indicates that the patch's repair logic is consistent with the ground-truth fix.
-    - Design Motivation: Logical vulnerabilities lack uniform repair patterns; traditional static analysis and testing cannot reliably assess patch correctness. Reasoning-based analysis captures whether a patch "understands the problem."
+    - **Function**: Evaluates the reasoning rationality of patches beyond compilation/testing.
+    - **Mechanism**: LLMs generate natural language explanations $E$ and $E_g$ for the generated patch and the ground-truth repair, respectively. Semantic alignment is evaluated using Cosine Similarity $CS$ and LLM Judgment $J$. High similarity indicates that the patch's repair logic is consistent with the ground truth.
+    - **Design Motivation**: Logical vulnerabilities lack unified repair patterns, and traditional static analysis or testing cannot reliably evaluate them; reasoning analysis captures whether the patch "understands the problem."
 
 ### Loss & Training
 
-This paper presents an evaluation framework rather than a training methodology. Evaluation is conducted using three LLMs — Llama 3.1, Qwen 2.5, and OpenAI o3-mini — and three baseline AVR tools: SimFix, KNOD, and VRPilot.
+Ours is an evaluation framework rather than a training method. Evaluation uses three LLMs—Llama 3.1, Qwen 2.5, and OpenAI o3-mini—alongside three baseline AVR tools: SimFix, KNOD, and VRPilot.
 
 ## Key Experimental Results
 
@@ -77,64 +77,64 @@ This paper presents an evaluation framework rather than a training methodology. 
 
 **Baseline AVR Tools (Synthetic Java Samples)**
 
-| Tool | Compilation Rate | Test Pass Rate | Cosine Similarity | LLM Judgment Agreement |
-|------|-----------------|----------------|-------------------|------------------------|
-| SimFix | 0.01 | 0.00 | 0.62–0.64 | 0.00–0.01 |
-| KNOD | 0.35 | 0.00 | 0.64–0.65 | 0.00–0.02 |
-| VRPilot | 0.56 | 0.09 | 0.65 | 0.03–0.15 |
+| Tool | Compilation Pass Rate | Test Pass Rate | Cosine Similarity | LLM Judgment Consistency Rate |
+|------|----------|----------|----------|-------------|
+| SimFix | 0.01 | 0.00 | 0.62-0.64 | 0.00-0.01 |
+| KNOD | 0.35 | 0.00 | 0.64-0.65 | 0.00-0.02 |
+| VRPilot | 0.56 | 0.09 | 0.65 | 0.03-0.15 |
 
-**LLM Zero-Shot Repair (Real-World Vulnerabilities, $V_b$ + $D$ Provided)**
+**LLM Zero-shot Repair (Real-world Vulnerabilities, providing $V_b$ + $D$)**
 
-| LLM | Compilation Rate | Test Pass Rate | Reasoning Similarity (CS) |
-|-----|-----------------|----------------|--------------------------|
-| Llama 3.1 | 0.50 | 0.06 | 0.76–0.81 |
-| Qwen 2.5 | 0.66 | 0.04 | 0.73–0.81 |
+| LLM | Compilation Pass Rate | Test Pass Rate | Reasoning Similarity (CS) |
+|-----|----------|----------|--------------|
+| Llama 3.1 | 0.50 | 0.06 | 0.76-0.81 |
+| Qwen 2.5 | 0.66 | 0.04 | 0.73-0.81 |
 | o3-mini | 0.58 | 0.07 | 0.77 |
 
 ### Ablation Study
 
-**Effect of Auxiliary Information (Real-World Vulnerabilities, Llama 3.1)**
+**Impact of Auxiliary Information (Real-world Vulnerabilities, Llama 3.1)**
 
-| Auxiliary Information | Compilation Rate | Test Pass Rate | LLM Judgment Agreement |
-|-----------------------|-----------------|----------------|------------------------|
-| No auxiliary info | 0.66 | 0.04 | 0.02–0.10 |
-| + Vulnerability description $D$ | 0.55 | 0.03 | 0.13–0.41 |
-| + Description + specification $V_S$ | 0.49 | 0.00 | 0.18–0.51 |
-| + Description + repair steps $R$ | 0.62 | 0.07 | 0.46–0.72 |
+| Auxiliary Information | Compilation Rate | Test Rate | LLM Judgment Consistency Rate |
+|---------|-------|-------|-------------|
+| No auxiliary information | 0.66 | 0.04 | 0.02-0.10 |
+| + Description $D$ | 0.55 | 0.03 | 0.13-0.41 |
+| + Description + Spec $V_S$ | 0.49 | 0.00 | 0.18-0.51 |
+| + Description + Repair Steps $R$ | 0.62 | 0.07 | 0.46-0.72 |
 
 ### Key Findings
 
-- Without auxiliary information, LLMs achieve the highest compilation rates but lowest reasoning scores — LLMs tend to treat logical vulnerabilities as memory vulnerabilities, generating patches that "compile but are logically incorrect."
-- Providing repair steps $R$ yields the highest reasoning scores (LLM judgment agreement 0.46–0.72), but may cause compilation failures as LLMs introduce undeclared variables.
-- Zero-shot generally outperforms CoT — CoT reasoning steps introduce additional undefined variables that cause compilation errors.
-- Temperature and orientation (role/task) have negligible impact on performance.
-- In the real-world setting, LLMs correctly repair only 5 out of 61 samples, demonstrating that logical vulnerability repair remains an extreme challenge.
+- LLMs achieve the highest compilation rates but lowest reasoning scores without auxiliary information—LLMs tend to treat logical vulnerabilities as memory vulnerabilities, generating patches that "pass compilation but have incorrect logic."
+- Providing repair steps $R$ yields the highest reasoning scores (LLM judgment consistency 0.46-0.72) but may lead to compilation failures (e.g., LLMs creating undeclared variables).
+- Zero-shot generally outperforms CoT—reasoning steps in CoT introduce additional undefined variables, leading to compilation errors.
+- Temperature and orientation (Role/Task) do not significantly impact performance.
+- In real-world scenarios, LLMs correctly repair only 5 out of 61 samples, indicating that logical vulnerability repair remains a significant challenge.
 
 ## Highlights & Insights
 
-- The distinction between "logical vulnerabilities" and "memory vulnerabilities" highlights an important yet underexplored direction in AVR research.
-- The introduction of reasoning-based evaluation metrics addresses the inadequacy of conventional compilation/testing for assessing logical vulnerability patches.
-- The finding that "no auxiliary information → high compilation rate but low reasoning score" is particularly revealing — it demonstrates that superficially passing compilation can mask fundamental repair failure.
+- The distinction between "logical vulnerabilities vs. memory vulnerabilities" reveals an important overlooked direction in the AVR field.
+- The introduction of reasoning evaluation metrics compensates for the shortcomings of traditional compilation/testing in evaluating logical vulnerabilities.
+- The finding of "No auxiliary information → high compilation rate but low reasoning score" is profound—it indicates that superficial compilation success masks fundamental repair failures.
 
 ## Limitations & Future Work
 
-- Perfect patch localization is assumed; in practice, localizing logical vulnerabilities is itself a significant challenge.
-- The dataset is relatively small (61 real-world samples), limiting statistical significance.
-- Only single-hunk repairs are evaluated; multi-location repair scenarios are not covered.
-- Reasoning-based evaluation relies on an LLM as judge, whose reliability warrants further validation.
+- Perfect patch localization is assumed, whereas localization of logical vulnerabilities is a major challenge in real-world scenarios.
+- The dataset scale is small (61 real-world samples), limiting statistical significance.
+- Only single-hunk repairs are evaluated; multi-location repair evaluation is not covered.
+- Reasoning evaluation depends on LLMs as judges, and its reliability requires further verification.
 
 ## Related Work & Insights
 
-- **vs. VRPilot**: VRPilot is the strongest existing LLM-based repair method, yet its CoT strategy yields lower reasoning scores on logical vulnerabilities than zero-shot.
-- **vs. SimFix/KNOD**: Traditional template-based and learning-based methods almost entirely fail on logical vulnerabilities, validating the unique challenges they pose.
-- **vs. Pearce et al.**: Prior LLM repair evaluations do not consider auxiliary information, lack reasoning-based evaluation, and employ CodeQL testing unsuitable for logical vulnerabilities.
+- **vs. VRPilot**: VRPilot is the strongest existing LLM repair method, yet its CoT strategy actually yields lower reasoning scores on logical vulnerabilities than zero-shot.
+- **vs. SimFix/KNOD**: Traditional template/learning methods fail almost completely on logical vulnerabilities, validating their unique challenges.
+- **vs. Pearce et al.**: Previous LLM repair evaluations did not consider auxiliary information, lacked reasoning evaluation, and used CodeQL testing which is unsuitable for logical vulnerabilities.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ First systematic evaluation framework and dataset for logical vulnerability repair.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 21 prompt configurations × 3 LLMs × 2 datasets; analysis is exceptionally comprehensive.
-- Writing Quality: ⭐⭐⭐⭐ Well-structured with coherent analysis.
-- Value: ⭐⭐⭐⭐ Reveals critical bottlenecks of LLMs in logical vulnerability repair and points the way for future AVR research.
+- **Novelty**: ⭐⭐⭐⭐ First systematic evaluation framework and dataset for logical vulnerability repair.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Extremely detailed analysis with 21 prompt configurations × 3 LLMs × 2 datasets.
+- **Writing Quality**: ⭐⭐⭐⭐ Clear structure and organized analysis.
+- **Value**: ⭐⭐⭐⭐ Identifies key bottlenecks for LLMs in logical vulnerability repair, pointing the way for future AVR research.
 
 <!-- RELATED:START -->
 
@@ -145,8 +145,8 @@ This paper presents an evaluation framework rather than a training methodology. 
 - [\[ACL 2026\] ReFEree: Reference-Free and Fine-Grained Method for Evaluating Factual Consistency in Real-World Code Summarization](referee_reference-free_and_fine-grained_method_for_evaluating_factual_consistenc.md)
 - [\[ACL 2026\] Discover and Prove: An Open-source Agentic Framework for Hard Mode Automated Theorem Proving in Lean 4](discover_and_prove_an_open-source_agentic_framework_for_hard_mode_automated_theo.md)
 - [\[ACL 2026\] ChatHLS: Towards Systematic Design Automation and Optimization for High-Level Synthesis](chathls_towards_systematic_design_automation_and_optimization_for_high-level_syn.md)
+- [\[ACL 2026\] Benchmarking Testing in Automated Theorem Proving](benchmarking_testing_in_automated_theorem_proving.md)
 - [\[ACL 2026\] QiMeng-PRepair: Precise Code Repair via Edit-Aware Reward Optimization](qimeng-prepair_precise_code_repair_via_edit-aware_reward_optimization.md)
-- [\[ICML 2026\] BoostAPR: Boosting Automated Program Repair via Execution-Grounded Reinforcement Learning with Dual Reward Models](../../ICML2026/code_intelligence/boostapr_boosting_automated_program_repair_via_execution-grounded_reinforcement_.md)
 
 </div>
 

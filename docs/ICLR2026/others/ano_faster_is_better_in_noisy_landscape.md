@@ -117,8 +117,8 @@ Same memory and computational cost as Adam (maintains $m_k, v_k$). Default hyper
 - [\[ICLR 2026\] Noisy-Pair Robust Representation Alignment for Positive-Unlabeled Learning](noisy-pair_robust_representation_alignment_for_positive-unlabeled_learning.md)
 - [\[ICLR 2026\] Speculative Actions: A Lossless Framework for Faster AI Agents](speculative_actions_faster_ai_agents.md)
 - [\[AAAI 2026\] Faster Certified Symmetry Breaking Using Orders With Auxiliary Variables](../../AAAI2026/others/faster_certified_symmetry_breaking_using_orders_with_auxiliary_variables.md)
+- [\[ICML 2026\] Envy-Free Allocation of Indivisible Goods via Noisy Queries](../../ICML2026/others/envy-free_allocation_of_indivisible_goods_via_noisy_queries.md)
 - [\[ICCV 2025\] Joint Asymmetric Loss for Learning with Noisy Labels](../../ICCV2025/others/joint_asymmetric_loss_for_learning_with_noisy_labels.md)
-- [\[AAAI 2026\] DiffMM: Efficient Method for Accurate Noisy and Sparse Trajectory Map Matching via One Step Diffusion](../../AAAI2026/others/diffmm_efficient_method_for_accurate_noisy_and_sparse_trajectory_map_matching_vi.md)
 
 </div>
 

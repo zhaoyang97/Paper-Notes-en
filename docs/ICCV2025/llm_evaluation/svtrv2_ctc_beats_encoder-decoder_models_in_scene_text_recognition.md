@@ -145,8 +145,8 @@ MSR contributes the most (+4.44 U14M Avg); FRM yields significant gains on MO (+
 
 ## Related Papers
 
+- [\[ACL 2026\] Beyond Fixed Psychological Personas: State Beats Trait, but Language Models are State-Blind](../../ACL2026/llm_evaluation/beyond_fixed_psychological_personas_state_beats_trait_but_language_models_are_st.md)
 - [\[ACL 2026\] Attribution, Citation, and Quotation: A Survey of Evidence-based Text Generation with Large Language Models](../../ACL2026/llm_evaluation/attribution_citation_and_quotation_a_survey_of_evidence-based_text_generation_wi.md)
-- [\[ICCV 2025\] Imbalance in Balance: Online Concept Balancing in Generation Models](imbalance_in_balance_online_concept_balancing_in_generation_models.md)
 - [\[NeurIPS 2025\] Unlocking Transfer Learning for Open-World Few-Shot Recognition](../../NeurIPS2025/llm_evaluation/unlocking_transfer_learning_for_open-world_few-shot_recognition.md)
 - [\[CVPR 2026\] Free-Grained Hierarchical Visual Recognition](../../CVPR2026/llm_evaluation/free-grained_hierarchical_visual_recognition.md)
 - [\[NeurIPS 2025\] Towards Implicit Aggregation: Robust Image Representation for Place Recognition in the Transformer Era](../../NeurIPS2025/llm_evaluation/towards_implicit_aggregation_robust_image_representation_for_place_recognition_i.md)

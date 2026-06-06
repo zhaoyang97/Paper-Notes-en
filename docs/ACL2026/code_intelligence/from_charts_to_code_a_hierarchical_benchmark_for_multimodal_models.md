@@ -2,74 +2,71 @@
 title: >-
   [Paper Note] From Charts to Code: A Hierarchical Benchmark for Multimodal Models
 description: >-
-  [ACL 2026][Code Intelligence][chart generation] This paper proposes Chart2Code, a hierarchical benchmark comprising 2,186 tasks spanning 22 chart types…
+  [ACL 2026][Code Intelligence][Chart Generation] This paper introduces Chart2Code, a hierarchical benchmark containing 2,186 tasks covering 22 chart types. It is divided into three progressive levels: chart reproduction (…
 tags:
   - "ACL 2026"
   - "Code Intelligence"
-  - "chart generation"
-  - "code generation"
-  - "multimodal benchmark"
-  - "hierarchical evaluation"
-  - "visual fidelity"
+  - "Chart Generation"
+  - "Code Generation"
+  - "Multimodal Benchmark"
+  - "Hierarchical Evaluation"
+  - "Visual Fidelity"
 date: 2026-05-08
-content_hash: b41669d038817251
+content_hash: 8c441b7fd0bba0fa
 ---
 
 # From Charts to Code: A Hierarchical Benchmark for Multimodal Models
 
-**Conference**: ACL 2026
+**Conference**: ACL 2026  
 **arXiv**: [2510.17932](https://arxiv.org/abs/2510.17932)  
 **Code**: [GitHub](https://github.com/CSU-JPG/Chart2Code)  
-**Area**: Code Intelligence / Multimodal Understanding
-**Keywords**: chart generation, code generation, multimodal benchmark, hierarchical evaluation, visual fidelity
+**Area**: Code Intelligence / Multimodal Understanding  
+**Keywords**: Chart Generation, Code Generation, Multimodal Benchmark, Hierarchical Evaluation, Visual Fidelity
 
 ## TL;DR
 
-This paper proposes Chart2Code, a hierarchical benchmark comprising 2,186 tasks spanning 22 chart types, organized into three progressively challenging levels: chart reproduction (Level 1), chart editing (Level 2), and long-table-to-chart generation (Level 3). The benchmark evaluates 29 state-of-the-art multimodal models and reveals that even the strongest model, GPT-5.2, achieves a chart quality score of only 33.41 on editing tasks, exposing significant deficiencies in current models for practical chart code generation.
+This paper introduces Chart2Code, a hierarchical benchmark containing 2,186 tasks covering 22 chart types. It is divided into three progressive levels: chart reproduction (Level 1), chart editing (Level 2), and long-table-to-chart generation (Level 3). Evaluating 29 SOTA multimodal models reveals that even the strongest GPT-5.2 achieves a chart quality score of only 33.41 on editing tasks, uncovering significant deficiencies in current models for practical chart code generation.
 
 ## Background & Motivation
 
-**Background**: Charts are among the most critical visualization tools in scientific papers and business reports. With the rapid advancement of large multimodal models (LMMs), AI systems are increasingly capable of not only understanding charts but also generating executable chart-rendering code (chart-to-code), which holds substantial potential for productivity enhancement.
+**Background**: Charts are essential visualization tools in scientific papers and business reports. With the rapid development of Large Multimodal Models (LMMs), AI systems can now not only understand charts but also generate executable code (chart-to-code), promising significant productivity gains.
 
-**Limitations of Prior Work**: (1) Existing benchmarks such as ChartMimic have approached performance saturation—GPT-4o already achieves 82.2% on ChartMimic—and can no longer differentiate the capabilities of current and future models. (2) There is a lack of systematic benchmarks covering realistic use scenarios: users not only need to reproduce charts but more frequently need to edit them (e.g., change chart type, add elements) or generate charts from raw long-form tabular data, yet these scenarios remain largely untested. (3) Existing evaluations primarily focus on code correctness while neglecting the visual fidelity of the rendered charts.
+**Limitations of Prior Work**: (1) Existing benchmarks (e.g., ChartMimic) are approaching performance saturation—GPT-4o reaches 82.2% on ChartMimic, failing to distinguish capabilities of current and future models; (2) Lack of systematic benchmarks covering real-world usage—users need not only to reproduce charts but also to edit them (changing types, adding elements) and generate visualizations from raw long tables; (3) Existing evaluations primarily focus on code correctness, ignoring the visual fidelity of the rendered charts.
 
-**Key Challenge**: A substantial gap exists between the high scores reported by existing benchmarks and actual model performance in practical use—models score well on simple reproduction but degrade sharply on the more common tasks of editing and data-to-chart generation, gaps that current benchmarks fail to expose.
+**Key Challenge**: A massive gap exists between high scores reported on existing benchmarks and model performance in practical scenarios. Models score high on simple reproduction but experience significant performance drops in more common editing and data-to-chart scenarios. Current benchmarks fail to expose these issues.
 
-**Goal**: (1) Construct a hierarchical chart code generation benchmark grounded in real user workflows. (2) Design a multi-level evaluation protocol combining code-level and chart-level assessment. (3) Comprehensively evaluate 29 state-of-the-art multimodal models.
+**Goal**: (1) Construct a hierarchical chart code generation benchmark from a user perspective; (2) Design a multi-level evaluation protocol (code-level + chart-level); (3) Compressively evaluate 29 SOTA multimodal models.
 
-**Key Insight**: The benchmark is designed around realistic user workflows, structured into three progressively demanding levels—simple reproduction → complex editing → long-table-to-chart generation—each placing incrementally higher demands on a model's comprehension, reasoning, and code generation capabilities.
+**Key Insight**: Design three progressive difficulty levels starting from real-world user workflows—simple reproduction $\rightarrow$ complex editing $\rightarrow$ long-table-to-chart—gradually increasing requirements for model understanding, reasoning, and code generation.
 
-**Core Idea**: Chart code generation is extended from a single reproduction task to a hierarchical benchmark covering the complete user workflow, while a dual-level evaluation framework (code-level and chart-level) is introduced to comprehensively measure generation quality.
+**Core Idea**: Extend chart code generation from a single reproduction task to a hierarchical benchmark covering complete user workflows, while introducing dual-layer evaluation (code-level and chart-level) to measure generation quality comprehensively.
 
 ## Method
 
 ### Overall Architecture
 
-The Chart2Code benchmark is formally defined as $C = f(R, I, D)$, where $R$ is the reference chart, $I$ is the user's natural language instruction, $D$ is an optional data source (supporting three modalities: text, table screenshot, and Excel file), and $C$ is the executable Python code generated by the LMM $f$. Evaluation is conducted at two levels: code-level (rule-based Base score + LLM score) and chart-level (LMM visual score + human evaluation).
+The Chart2Code benchmark is formally defined as $C = f(R, I, D)$, where $R$ is the reference chart, $I$ is the natural language instruction, $D$ is an optional data source (supporting text, table screenshots, or Excel files), and $C$ is the executable Python code generated by the LMM ($f$). Evaluation is split into code-level (rule-based Base score + LLM score) and chart-level (LMM visual score + human evaluation).
 
 ### Key Designs
 
-1. **Three-Level Hierarchical Task Design**:
+1.  **Three-Level Hierarchical Task Design**:
+    *   Function: Covers complete chart code generation scenarios from simple to complex.
+    *   Mechanism: Level 1 (Chart Reproduction) includes Direct Reproduction (DR, vision only) and Chart-to-Code with Data (CRD/CFD), totaling 863 tasks; Level 2 (Chart Editing) requires complex modifications (changing types, adding trendlines, calculating coefficients, splitting by category), totaling 1,010 tasks; Level 3 (Long-Table-to-Chart) involves extracting, calculating, and generating charts from raw long tables (averaging 2,647 rows), totaling 313 tasks.
+    *   Design Motivation: Actual user workflows involve far more than simple reproduction—editing and data visualization are more common and difficult requirements ignored by existing benchmarks.
 
-    - Function: Covers the full spectrum of chart code generation scenarios from simple to complex.
-    - Mechanism: Level 1 (Chart Reproduction) is divided into pure visual reproduction DR (chart image only) and data-accompanied style transfer CRD/CFD (chart + data), comprising 863 tasks in total. Level 2 (Chart Editing) requires complex modifications to a reference chart (e.g., changing chart type, adding trend lines, computing correlation coefficients, splitting by category), comprising 1,010 tasks. Level 3 (Long-Table-to-Chart) requires extracting, computing, and generating charts from raw long-form tables (averaging 2,647 rows), comprising 313 tasks.
-    - Design Motivation: Real user workflows extend far beyond simple reproduction—editing and data visualization are more common and more challenging requirements that existing benchmarks entirely overlook.
+2.  **Multi-level Evaluation Protocol**:
+    *   Function: Evaluates generation quality comprehensively from both code and visual perspectives.
+    *   Mechanism: (a) Code-level Base score—parsing Matplotlib Figure objects to extract 8 dimensions (color, grid, layout, legend, visual elements, data, text, type) for rule-based scoring; (b) Code-level LLM score—using GPT-5-mini to evaluate visual fidelity from a code perspective; (c) Chart-level LMM score—using GPT-5-mini to compare multi-dimensional similarity between GT and generated charts. Human evaluation is conducted to verify the consistency of LMM scores.
+    *   Design Motivation: Correct code does not guarantee a correct chart—the same data can be rendered through different code paths resulting in large visual differences. 8-dimension rule-based scoring is more comprehensive and accurate than the 4 dimensions in ChartMimic.
 
-2. **Multi-Level Evaluation Protocol**:
-
-    - Function: Comprehensively assesses generation quality from both code and visual perspectives.
-    - Mechanism: (a) Code-level Base score—parses the Figure object of libraries such as Matplotlib and extracts eight dimensions (color, grid, layout, legend, visual elements, data, text, and type) for rule-based scoring. (b) Code-level LLM score—uses GPT-5-mini to evaluate visual fidelity at the code level. (c) Chart-level LMM score—uses GPT-5-mini to compare multi-dimensional similarity between the ground-truth chart and the generated chart. Human evaluation is additionally conducted to validate the consistency of LMM scores.
-    - Design Motivation: Code correctness does not imply chart correctness—the same data can be rendered into visually disparate charts through different code paths. The eight-dimensional rule-based scoring is more comprehensive, faster, and more accurate than the four-dimensional scheme used in ChartMimic.
-
-3. **Rich Data Diversity**:
-
-    - Function: Ensures broad coverage and discriminative power of the benchmark.
-    - Mechanism: The benchmark covers 22 chart types (radar charts, heatmaps, scatter plots, box plots, treemaps, error bars, pie charts, violin plots, etc.). Level 1 emphasizes chart uniqueness (719 distinct charts); Level 2 provides at least one editing instruction per chart (1,010 distinct edits); Level 3 includes 71 Excel files (the longest containing 30,427 rows). Level 2 instructions average 267 words in length, reflecting the complexity of editing tasks.
-    - Design Motivation: Diverse chart types and task coverage prevent the benchmark from being dominated by models with a single specialized capability.
+3.  **Rich Data Diversity**:
+    *   Function: Ensures broad coverage and discriminative power.
+    *   Mechanism: Covers 22 chart types (radar, heatmap, scatter, boxplot, treemap, error bars, pie, violin, etc.). Level 1 emphasizes chart uniqueness (719 unique charts); Level 2 provides at least one editing instruction per chart (1,010 unique edits); Level 3 includes 71 Excel files (up to 30,427 rows). Level 2 instructions average 267 words, reflecting the complexity of editing tasks.
+    *   Design Motivation: Diverse types and tasks ensure the benchmark cannot be "gamed" by models with single capabilities.
 
 ### Loss & Training
 
-This paper presents a benchmarking study and does not involve model training. All models are evaluated using their publicly available weights or APIs. Open-source models are executed on NVIDIA V100 GPUs, with a maximum inference length of 4,096 tokens for non-thinking models. Images are provided at their original resolution.
+This work is a benchmark study and does not involve model training. All models are evaluated using public weights or APIs. Open-source models were run on NVIDIA V100 GPUs, with a 4,096 token inference length for non-thinking models. Images were input at original resolution.
 
 ## Key Experimental Results
 
@@ -78,17 +75,17 @@ This paper presents a benchmarking study and does not involve model training. Al
 **Level 1 Chart Reproduction (Selected Models)**
 
 | Model | DR Exec% | DR Base | DR LMM | CRD Base | CFD Base |
-|-------|----------|---------|--------|----------|----------|
+| :--- | :--- | :--- | :--- | :--- | :--- |
 | GPT-5.2 | 97.08 | 79.91 | 43.73 | 66.31 | 73.02 |
 | Gemini-3-Pro | 97.50 | 78.65 | 45.42 | 69.23 | 70.78 |
 | Claude-Sonnet-4 | 96.52 | 65.60 | 32.36 | 61.46 | 65.27 |
 | Qwen3-VL-32B | - | - | - | - | - |
 | InternVL-3-38B | 85.26 | 53.57 | 16.68 | 58.17 | 60.17 |
 
-**Level 2 Chart Editing (8-Dimensional Code-Level Scores)**
+**Level 2 Chart Editing (8-Dimension Code-Level Scores)**
 
 | Model | Exec% | Color | Data | Text | Type | Base | LMM |
-|-------|-------|-------|------|------|------|------|-----|
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | GPT-5.2 | 96.04 | 58.44 | 64.66 | 83.77 | 94.52 | 70.93 | 33.03 |
 | Gemini-3-Pro | 97.23 | 52.32 | 62.75 | 77.16 | 93.86 | 70.78 | 33.41 |
 | Claude-Sonnet-4 | 90.20 | 47.17 | 54.88 | 80.52 | 93.29 | 63.65 | 25.40 |
@@ -98,15 +95,15 @@ This paper presents a benchmarking study and does not involve model training. Al
 **Code-Level vs. Chart-Level Score Gap**
 
 | Model | Level 2 Code-Level Base | Level 2 Chart-Level LMM | Gap |
-|-------|------------------------|------------------------|-----|
-| GPT-5.2 | 70.93 | 33.03 | −37.90 |
-| Gemini-3-Pro | 70.78 | 33.41 | −37.37 |
-| Claude-Sonnet-4 | 63.65 | 25.40 | −38.25 |
+| :--- | :--- | :--- | :--- |
+| GPT-5.2 | 70.93 | 33.03 | -37.90 |
+| Gemini-3-Pro | 70.78 | 33.41 | -37.37 |
+| Claude-Sonnet-4 | 63.65 | 25.40 | -38.25 |
 
-**Open-Source Model: Thinking vs. Non-Thinking (Level 2, MiMo-VL-7B)**
+**Open-source Thinking vs. Non-thinking (Level 2, MiMo-VL-7B)**
 
 | Configuration | Base | LMM |
-|---------------|------|-----|
+| :--- | :--- | :--- |
 | MiMo-VL-7B-SFT (non-thinking) | 63.99 | 22.61 |
 | MiMo-VL-7B-RL (non-thinking) | 64.41 | 21.43 |
 | MiMo-VL-7B-SFT (thinking) | 65.49 | 16.95 |
@@ -114,37 +111,37 @@ This paper presents a benchmarking study and does not involve model training. Al
 
 ### Key Findings
 
-- All models exhibit significant performance degradation from Level 1 to Levels 2 and 3—even GPT-5.2 achieves a chart quality score (LMM) of only 33.03 on editing tasks, indicating that chart editing and data-to-chart generation remain far from solved.
-- A large gap (~37–38 points) exists between code-level and chart-level scores, demonstrating that code-level correctness cannot serve as a proxy for visual fidelity.
-- Closed-source models (GPT-5.2, Gemini-3-Pro) substantially outperform open-source models across all levels; among open-source models, Qwen3-VL-32B and InternVL-3.5-38B perform best.
-- The thinking mode benefits some models (MiMo-VL-7B-RL thinking LMM: 30.04 vs. non-thinking: 21.43) but does not universally improve performance.
-- Level 3 long-table tasks are extremely challenging, requiring the integrated capabilities of long-context understanding, information retrieval, mathematical computation, and code generation.
+*   Performance drops significantly for all models from Level 1 to Level 2/3. Even GPT-5.2 scores only 33.03 in chart quality (LMM) for editing, indicating editing and data-to-chart tasks are far from solved.
+*   A huge gap (approx. 37-38 points) exists between code-level and chart-level scores, showing that code correctness does not equate to visual fidelity.
+*   Closed-source models (GPT-5.2, Gemini-3-Pro) lead open-source models across all levels; among open-source models, Qwen3-VL-32B and InternVL-3.5-38B perform best.
+*   Thinking mode helps some models (MiMo-VL-7B-RL thinking LMM 30.04 vs. non-thinking 21.43), but not all benefit equally.
+*   Level 3 long-table tasks are extremely challenging, requiring integrated capabilities in long-context understanding, retrieval, calculation, and code generation.
 
 ## Highlights & Insights
 
-- The hierarchical design precisely maps to the three stages of real user workflows—"reproduce from image," "edit chart," and "generate chart from data"—with progressively increasing difficulty that reveals the genuine capability boundaries of models.
-- The large gap between code-level and chart-level evaluation scores is a notable finding, signaling to the community that code similarity alone is insufficient for assessing chart generation quality.
-- The eight-dimensional rule-based scoring scheme is transferable to other chart/code generation tasks.
+*   The hierarchical design precisely maps to three stages of user workflow—from "view and draw" to "modify" to "data-based drawing"—exposing true model capability boundaries as difficulty increases.
+*   The significant gap between code-level and chart-level evaluation is a major discovery—prompting the community to move beyond code similarity for evaluating chart generation.
+*   The 8-dimension rule-based scoring system is transferable to other chart or code generation tasks.
 
 ## Limitations & Future Work
 
-- Evaluation relies on GPT-5-mini as the judge, introducing potential LMM evaluation bias.
-- The annotation and ground-truth code construction for Level 3 are extremely time-consuming, limiting the dataset scale to only 313 tasks.
-- Only Python/Matplotlib-ecosystem code generation is evaluated; other charting tools such as R and D3.js are not covered.
-- The benchmark does not assess models' iterative correction capabilities—in practice, users engage in multi-turn interactions to refine charts.
+*   Evaluation relies on GPT-5-mini as a judge, which may introduce LMM evaluation bias.
+*   Annotation and GT code construction for Level 3 are time-consuming, limiting data scale (313 tasks).
+*   Evaluations are limited to Python/Matplotlib, omitting other tools like R or D3.js.
+*   The study did not test iterative correction capabilities—an essential part of real-world multi-turn user interaction.
 
 ## Related Work & Insights
 
-- **vs. ChartMimic**: ChartMimic tests only chart reproduction (Level 1) and has been largely saturated by GPT-4o at 82.2%; Chart2Code extends evaluation to editing and long-table scenarios, where the current state of the art reaches only ~33 points.
-- **vs. ChartEdit**: ChartEdit covers only simple local edits (233 samples), whereas Chart2Code's Level 2 comprises 1,010 complex editing tasks (e.g., adding trend lines, computing correlation coefficients).
-- **vs. Plot2Code**: Plot2Code contains only 132 samples and lacks rule-based evaluation; Chart2Code is substantially more comprehensive in both scale and evaluation methodology.
+*   **vs ChartMimic**: ChartMimic only tests reproduction (Level 1) and is reaching saturation (GPT-4o at 82.2%); Chart2Code extends to editing and long tables where SOTA models score only ~33 pts.
+*   **vs ChartEdit**: ChartEdit only covers simple local edits (233 samples); Chart2Code Level 2 includes 1,010 complex editing tasks (e.g., trendlines, correlations).
+*   **vs Plot2Code**: Plot2Code has only 132 samples and lacks rule-based evaluation; Chart2Code is significantly more comprehensive in both scale and evaluation framework.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ First hierarchical chart code generation benchmark with task designs closely aligned with real user needs.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive evaluation of 29 models, multi-level evaluation protocol, and human evaluation validation.
-- Writing Quality: ⭐⭐⭐⭐ Task definitions are clear and data statistics are rich, though the abundance of tables requires repeated cross-referencing.
-- Value: ⭐⭐⭐⭐⭐ Reveals the true challenges in chart code generation and points the community toward meaningful directions for improvement.
+*   Novelty: ⭐⭐⭐⭐ First hierarchical chart-to-code benchmark aligned with real user needs.
+*   Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive evaluation of 29 models, multi-level protocol, and human validation.
+*   Writing Quality: ⭐⭐⭐⭐ Clear task definitions and rich statistics, though many tables require careful cross-referencing.
+*   Value: ⭐⭐⭐⭐⭐ Identifies true bottlenecks in chart code generation and sets a clear direction for the community.
 
 <!-- RELATED:START -->
 
@@ -155,8 +152,8 @@ This paper presents a benchmarking study and does not involve model training. Al
 - [\[ACL 2026\] Precise Debugging Benchmark: Is Your Model Debugging or Regenerating?](precise_debugging_benchmark_is_your_model_debugging_or_regenerating.md)
 - [\[NeurIPS 2025\] Table2LaTeX-RL: High-Fidelity LaTeX Code Generation from Table Images via Reinforced Multimodal Language Models](../../NeurIPS2025/code_intelligence/table2latex-rl_high-fidelity_latex_code_generation_from_table_images_via_reinfor.md)
 - [\[CVPR 2026\] GeoTikzBridge: Advancing Multimodal Code Generation for Geometric Perception and Reasoning](../../CVPR2026/code_intelligence/geotikzbridge_advancing_multimodal_code_generation_for_geometric_perception_and_.md)
-- [\[AAAI 2026\] MoSE: Hierarchical Self-Distillation Enhances Early Layer Embeddings](../../AAAI2026/code_intelligence/mose_hierarchical_self-distillation_enhances_early_layer_embeddings.md)
-- [\[NeurIPS 2025\] AstroVisBench: A Code Benchmark for Scientific Computing and Visualization in Astronomy](../../NeurIPS2025/code_intelligence/astrovisbench_a_code_benchmark_for_scientific_computing_and_visualization_in_ast.md)
+- [\[ICML 2026\] AlgoVeri: An Aligned Benchmark for Verified Code Generation on Classical Algorithms](../../ICML2026/code_intelligence/algoveri_an_aligned_benchmark_for_verified_code_generation_on_classical_algorith.md)
+- [\[ACL 2026\] SWE-QA: Can Language Models Answer Repository-level Code Questions?](swe-qa_can_language_models_answer_repository-level_code_questions.md)
 
 </div>
 

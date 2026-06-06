@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Learn to Think: Improving Multimodal Reasoning through Vision-Aware Self-Improvement Training
 description: >-
-  [ICML 2026][Multimodal VLM][Multimodal reasoning] VISTA transforms self-improvement training for multimodal large models into a two-stage pipeline: "augmenting hard samples via prefix resampling…
+  [ICML 2026][Multimodal VLM][Multimodal Reasoning] VISTA transforms self-improvement training for Multimodal Large Language Models (MLLMs) into a two-stage pipeline: supplementing samples via prefix resampling for difficu…
 tags:
   - "ICML 2026"
   - "Multimodal VLM"
-  - "Multimodal reasoning"
-  - "self-improvement training"
-  - "visual attention"
-  - "prefix resampling"
+  - "Multimodal Reasoning"
+  - "Self-Improvement Training"
+  - "Visual Attention"
+  - "Prefix Resampling"
   - "DPO"
 date: 2026-05-08
-content_hash: 4774f4d3d1891c1e
+content_hash: 49b401d781273cf4
 ---
 
 # Learn to Think: Improving Multimodal Reasoning through Vision-Aware Self-Improvement Training
@@ -21,51 +21,48 @@ content_hash: 4774f4d3d1891c1e
 **arXiv**: [2605.11931](https://arxiv.org/abs/2605.11931)  
 **Code**: Not mentioned  
 **Area**: Multimodal VLM / LLM Reasoning / Self-Improvement  
-**Keywords**: Multimodal reasoning, self-improvement training, visual attention, prefix resampling, DPO
+**Keywords**: Multimodal Reasoning, Self-Improvement Training, Visual Attention, Prefix Resampling, DPO
 
 ## TL;DR
-VISTA transforms self-improvement training for multimodal large models into a two-stage pipeline: "augmenting hard samples via prefix resampling, filtering pseudo-positive samples via Visual Attention Score (VAS)." On Qwen2.5-VL-3B, it achieves an average improvement of +13.66% on mathematical/medical multimodal reasoning.
+VISTA transforms self-improvement training for Multimodal Large Language Models (MLLMs) into a two-stage pipeline: supplementing samples via prefix resampling for difficult problems and filtering false positives via Vision-aware Attention Score (VAS). This achieves a +13.66% average improvement in mathematical and medical multimodal reasoning on Qwen2.5-VL-3B.
 
 ## Background & Motivation
-**Background**: The mainstream approach to improving multimodal reasoning in MLLMs is post-training with explicit CoT. However, annotating CoT is expensive, so self-improvement paradigms such as STaR, ReSTEM, and R3V let the model sample its own answers and retrain itself after verification with ground-truth.
+**Background**: Current mainstream approaches improve multimodal reasoning by performing post-training on MLLMs with explicit Chain-of-Thought (CoT). Since annotating CoT is expensive, "self-improvement" paradigms like STaR, ReSTEM, and R3V allow models to sample answers and self-train after verification against ground-truth.
 
-**Limitations of Prior Work**: Empirical analysis on Qwen2.5-VL-3B over SLAKE, VQA-Rad, and Geometry3K reveals two overlooked issues. First, **data imbalance**: simple questions easily yield many correct answers, but for hard questions (e.g., Geometry3K), over 40% of queries have zero correct answers in 10 samples, even though these are most critical for training. Second, **language prior bias**: even when the final answer is correct, the model's intermediate reasoning may describe objects not present in the image; attention maps show that although visual tokens dominate the context, their attention scores are below 20% across layers.
+**Limitations of Prior Work**: Empirical analysis using Qwen2.5-VL-3B on SLAKE, VQA-Rad, and Geometry3K reveals two overlooked issues. First is **data imbalance**: simple problems easily generate numerous correct solutions, while over 40% of queries in difficult tasks (e.g., Geometry3K) yield zero correct samples in 10 attempts, despite being critical for training. Second is **language prior bias**: even if the final answer is correct, the intermediate reasoning may describe objects not present in the image. Attention distribution shows that although vision tokens occupy the largest proportion of context, their attention scores across layers remain below 20%.
 
-**Key Challenge**: Existing self-improvement methods **use only "answer correctness" as the quality signal**, which is insufficient both quantitatively (too few positives for hard questions) and qualitatively (cannot distinguish genuine image-based reasoning from lucky guesses).
+**Key Challenge**: Existing self-improvement methods **only use "answer correctness" as a quality signal**. This signal is insufficient in terms of quantity (too few positive samples for hard problems) and quality (inability to distinguish true image-based reasoning from lucky guesses).
 
-**Goal**: (1) How to supplement correct answers for hard questions? (2) How to identify and filter pseudo-positive samples where the answer is correct but the reasoning is hallucinated?
+**Goal**: (1) How to supplement correct solutions for difficult problems? (2) How to identify and filter "correct answer but hallucinated reasoning" false positives?
 
-**Key Insight**: Citing Ji et al. 2025, the authors note that errors in failed solutions often occur in the latter part of reasoning—**prefixes are usually correct**. They also leverage the model's own attention distribution as an internal signal of visual focus, requiring neither extra models nor a second forward pass (unlike He et al. 2025, which needs to rerun without the image).
+**Key Insight**: Leveraging observations from Ji et al. 2025, errors in failed solutions often occur in the later stages of reasoning while the **prefixes are typically correct**. Simultaneously, the model's own attention distribution can serve as an internal signal for visual focus, requiring no additional models or second forward passes (unlike He et al. 2025, which requires re-running without the image).
 
-**Core Idea**: Use "prefix resampling" to revive good prefixes from failed solutions to augment hard samples; use "Vision-aware Attention Score (VAS)"—computed in a single forward pass as the proportion of attention to visual/system/instruction segments—to filter pseudo-positives with low visual attention.
+**Core Idea**: Use "prefix resampling" to revive high-quality prefixes from failed solutions to augment difficult samples; use "Vision-aware Attention Score (VAS)" to calculate the attention ratio across vision, system, and instruction segments in a single forward pass to filter out false positives with low visual attention.
 
 ## Method
 
 ### Overall Architecture
-VISTA is embedded in the standard three-step iteration (sampling → verification → training), mainly modifying the sampling and verification steps. Given the $(t-1)$-th model $\mathcal{M}_{t-1}$ and multimodal dataset $\mathcal{D}$, each query $x_i = \{x_i^{\text{sys}}, x_i^{\text{vis}}, x_i^{\text{ins}}\}$ is first sampled for $K=10$ solutions as usual; ground-truth is used to separate positives $\mathcal{D}_t^p$ and negatives $\mathcal{D}_t^n$. Then: (1) For $\mathcal{D}_t^n$, prefix resampling is applied for $J=3$ times to augment $\mathcal{D}_t^p$; (2) For $\mathcal{D}_t^p$, VAS is computed for each solution, and those below threshold $\tau=-0.5$ are discarded; (3) The remaining high-quality positives are used for SFT or DPO+NLL optimization to obtain $\mathcal{M}_t$, iterated for $T=3$ rounds.
+VISTA is embedded within a standard three-step iterative loop (sampling → verification → training), primarily modifying the sampling and verification steps. Given the model $\mathcal{M}_{t-1}$ from iteration $t-1$ and a multimodal dataset $\mathcal{D}$, each query $x_i = \{x_i^{\text{sys}}, x_i^{\text{vis}}, x_i^{\text{ins}}\}$ first undergoes standard sampling of $K=10$ solutions. These are partitioned into a positive set $\mathcal{D}_t^p$ and a negative set $\mathcal{D}_t^n$ via ground-truth verification. Subsequently: (1) $\mathcal{D}_t^n$ is expanded into $\mathcal{D}_t^p$ through $J=3$ prefix resampling attempts; (2) VAS is calculated for each solution in $\mathcal{D}_t^p$, discarding those below a threshold $\tau=-0.5$; (3) remaining high-quality positive solutions are used for SFT or DPO+NLL optimization to obtain $\mathcal{M}_t$ over $T=3$ iterations.
 
 ### Key Designs
 
-1. **Prefix Resampling**:
+1.  **Prefix Resampling**:
+    - **Function**: Localizes "critical tokens" where errors begin in failed solutions and resamples from that point, without relying on ground-truth or external models during localization.
+    - **Mechanism**: For each failed solution $r_i^{k_n}$, a paraphrased input "$x_i^{\text{sys}} + x_i^{\text{ins}} + x_i^{\text{vis}} + r_i^{k_n}$" is constructed by swapping image and instruction positions. This is fed into $\mathcal{M}_{t-1}$ to obtain $\text{Top}_5(o_n)$ predictions for each position. The first token not present in the original $\text{Top}_5(o_{n-1})$ is identified as the critical token. It is replaced with a new Top-1 token, the subsequent sequence is truncated, and the model resamples $J$ new solutions using the original query with this prefix.
+    - **Design Motivation**: This yields a self-calibration capability to discover "areas of uncertainty." Compared to simply increasing sampling frequency for hard problems (Tong et al. 2024) or using ground-truth guidance (Ding et al. 2025), this method efficiently recycles the "early correct portions" of negative samples.
 
-    - **Function**: Locates the "critical token" where failed solutions start to go wrong, truncates there, and resamples from that point, without relying on ground-truth or external models.
-    - **Mechanism**: For each failed solution $r_i^{k_n}$, swap the image and instruction positions in the query to construct a paraphrased input "$x_i^{\text{sys}} + x_i^{\text{ins}} + x_i^{\text{vis}} + r_i^{k_n}$", feed it into $\mathcal{M}_{t-1}$ to get Top-5 predictions $\text{Top}_5(o_n)$ at each position; the first original token not in $\text{Top}_5(o_{n-1})$ is deemed the critical token. Replace it with the new Top-1 token, truncate the rest, and concatenate this prefix back to the original query to resample $J$ new solutions.
-    - **Design Motivation**: This leverages the model's self-calibration to find "uncertain spots." Compared to simply increasing sampling for hard questions (Tong et al. 2024) or using ground-truth guidance (Ding et al. 2025), this method recycles the "correct early part" of negatives, making it more efficient.
+2.  **Vision-aware Attention Score (VAS)**:
+    - **Function**: Uses the model's internal attention maps to quantify whether "the reasoning actually looked at the image," thereby filtering false positives.
+    - **Mechanism**: The attention output $\mathbf{A}_i^k$ from the middle layers of $\mathcal{M}_{t-1}$ (identified as most responsible for visual processing) is extracted. The attention sums from output tokens to the system, vision, and instruction segments are computed as $\lambda^k_{\text{sys}}, \lambda^k_{\text{vis}}, \lambda^k_{\text{ins}}$. These are normalized to $S_i^k = \lambda^k_{\text{vis}} / (\lambda^k_{\text{sys}} + \lambda^k_{\text{vis}} + \lambda^k_{\text{ins}})$, and then standardized via z-score within the query to obtain $\text{VAS}_i^k = (S_i^k - \text{mean}(S_i)) / \text{std}(S_i)$. Solutions below threshold $\tau$ are discarded as having insufficient visual focus or potential hallucinations.
+    - **Design Motivation**: Unlike He et al. 2025, which requires two forward passes (with and without the image), VAS requires only one forward pass with zero additional overhead. Using z-scores instead of absolute thresholds accounts for varying baseline attention levels across different samples.
 
-2. **Vision-aware Attention Score (VAS)**:
-
-    - **Function**: Quantifies whether a reasoning sequence actually "looks at the image" using the model's own attention maps, thus filtering pseudo-positives.
-    - **Mechanism**: Take the attention output $\mathbf{A}_i^k$ from an intermediate layer of $\mathcal{M}_{t-1}$ (intermediate layers are found to be most responsible for visual processing), sum the attention from output tokens to system/visual/instruction input segments to get $\lambda^k_{\text{sys}}, \lambda^k_{\text{vis}}, \lambda^k_{\text{ins}}$, normalize to $S_i^k = \lambda^k_{\text{vis}} / (\lambda^k_{\text{sys}} + \lambda^k_{\text{vis}} + \lambda^k_{\text{ins}})$, then apply z-score normalization within the query to get $\text{VAS}_i^k = (S_i^k - \text{mean}(S_i)) / \text{std}(S_i)$. Solutions below threshold $\tau$ are considered visually inattentive and filtered out.
-    - **Design Motivation**: Unlike He et al. 2025, which requires two forward passes (with and without image), VAS needs only one, incurring zero extra cost. Using z-score instead of an absolute threshold adapts to varying overall attention levels across samples.
-
-3. **Unified SFT / DPO+NLL Training Interface**:
-
-    - **Function**: Seamlessly integrates the above data processing into both post-training paradigms.
-    - **Mechanism**: For SFT, directly use the filtered $\mathcal{D}_t^p$ for NLL optimization $\mathcal{L}_{\text{SFT}} = -\mathbb{E}[\log \mathcal{M}_\theta(r,\hat y \mid x)/(|r|+|\hat y|)]$; for DPO, pair each positive with a randomly selected negative, using the enhanced loss $\mathcal{L}_{\text{DPO+NLL}} = \mathcal{L}_{\text{DPO}} + \alpha \cdot \mathcal{L}_{\text{NLL}}(r^{k_p}, \hat y^{k_p})$, where $\alpha=0.5, \beta=0.1$.
-    - **Design Motivation**: Retaining the NLL term in preference learning prevents DPO collapse and maintains generation quality. The unified data processing supports both paradigms, enabling fair comparison with SFT-Seed, SFT-Oracle, RFT, STaR, ReSTEM, R3V, etc.
+3.  **Unified SFT / DPO+NLL Training Interface**:
+    - **Function**: Allows the aforementioned data processing to integrate seamlessly into two types of post-training paradigms.
+    - **Mechanism**: In SFT, the filtered $\mathcal{D}_t^p$ is used directly for NLL optimization $\mathcal{L}_{\text{SFT}} = -\mathbb{E}[\log \mathcal{M}_\theta(r,\hat y \mid x)/(|r|+|\hat y|)]$. In DPO, each positive instance is paired with a randomly selected negative instance using an augmented loss $\mathcal{L}_{\text{DPO+NLL}} = \mathcal{L}_{\text{DPO}} + \alpha \cdot \mathcal{L}_{\text{NLL}}(r^{k_p}, \hat y^{k_p})$, where $\alpha=0.5, \beta=0.1$.
+    - **Design Motivation**: Retaining the NLL term in preference learning prevents DPO training collapse and maintains generation quality. Using the same data processing for both paradigms facilitates fair comparison against baselines like RFT, STaR, and ReSTEM.
 
 ### Loss & Training
-Iterate for $T=3$ rounds; each round samples $K=10$, prefix resampling $J=3$, temperature 1.0, max output 2048. Each round fine-tunes from the base model to prevent overfitting. Training runs for 3 epochs on 8×A800 80GB; inference uses greedy decoding.
+The process involves $T=3$ iterations. Each iteration uses a sampling size $K=10$, prefix resampling $J=3$, temperature 1.0, and maximum output length 2048. To prevent overfitting, the model is re-fine-tuned from the base model each round. Training is conducted on 8×A800 80GB for 3 epochs using greedy decoding for inference.
 
 ## Key Experimental Results
 
@@ -80,44 +77,44 @@ Iterate for $T=3$ rounds; each round samples $K=10$, prefix resampling $J=3$, te
 | Qwen2.5-VL-7B + SFT-Seed | 79.15 | 70.52 | 36.94 | 62.20 |
 | **Qwen2.5-VL-7B + VISTA-SFT (iter 3)** | **87.89** | **77.29** | **41.43** | **68.87 (+6.67)** |
 
-Consistent improvements across MLLMs: On Qwen3-VL-2B, InternVL3-2B/8B, a single round of training stably outperforms STaR / STaR+ baselines, demonstrating the method's backbone-agnostic nature.
+Consistent improvement across MLLMs: VISTA outperforms baselines like STaR and STaR+ in a single iteration on Qwen3-VL-2B and InternVL3-2B/8B, proving back-bone independence.
 
 ### Ablation Study
 
-| Configuration | Overall on 3B | Notes |
+| Configuration | Overall on 3B | Description |
 |---|---|---|
 | Full VISTA-SFT (iter 1) | 62.41 | Both prefix resampling and VAS enabled |
-| Prefix resampling only | Between SFT-Seed and Full | Addresses data imbalance |
-| VAS filtering only | Between SFT-Seed and Full | Addresses hallucinated pseudo-positives |
-| Adjusting VAS threshold $\tau$ | Bell-shaped performance | Too high a threshold filters out too many samples |
+| Prefix resampling only | 5x.xx | Addresses data imbalance |
+| VAS filtering only | 5x.xx | Addresses hallucinated false positives |
+| Shifting VAS threshold $\tau$ | Bell-shaped | High thresholds over-filter samples |
 
 ### Key Findings
-- On the hard set Geo3K: 3B model improves from 25.46 to 37.27 (absolute +11.81), showing that prefix resampling truly revives hard samples that otherwise yield no positives.
-- VAS layer selection analysis (Appendix C.2) shows filtering is most effective with intermediate layers, consistent with Jiang et al. 2025's finding that intermediate layers are most responsible for visual processing.
-- OOD generalization: Gains are also observed on unseen ScienceQA and ChartQA, indicating VISTA learns more reliable visual reasoning habits rather than dataset-specific features.
+- **Geo3K Analysis**: The 3B model improved from 25.46 to 37.27 (+11.81 absolute gain) on the difficult Geo3K set, demonstrating that prefix resampling effectively recovers "unsamplable" hard problems.
+- **Layer Selection**: VAS analysis (Appendix C.2) shows that filtering is most effective when using middle layers, consistent with Jiang et al. 2025's finding that middle layers are most responsible for visual processing.
+- **OOD Generalization**: Improvements on unseen ScienceQA and ChartQA suggest that VISTA learns reliable visual reasoning habits rather than dataset-specific features.
 
 ## Highlights & Insights
-- "Treating negatives as resources, not noise": Traditional self-improvement discards all failed solutions, but prefix resampling reveals that **prefixes of failed solutions are often correct and valuable**—this perspective can be transferred to almost any sample-then-filter training paradigm.
-- Using internal attention z-score from a single forward pass as a hallucination detector is a minimalist yet effective "model introspection" method; it requires no extra discriminator or token-level alignment data.
-- The observation "correct answer ≠ correct reasoning" is operationalized as a filtering signal via attention quantification, which could inspire "process-level" extensions to reward models in the future.
+- "Treating negative samples as resources rather than noise": While traditional self-improvement discards all incorrect solutions, prefix resampling highlights that **failed solution prefixes are often correct and valuable**. This perspective can be migrated to any sample-then-filter training paradigm.
+- Using a single-pass internal attention z-score as a hallucination detector is a minimalist but effective "model introspection" method; it requires no external discriminators or token-level alignment data.
+- The observation that "Correct Answer $\neq$ Correct Reasoning" is operationalized into a filtering signal via attention scores, which could inspire "process-level" extensions for reward models.
 
 ## Limitations & Future Work
-- The effectiveness of VAS relies on the assumption that the model's own attention distribution is a reliable indicator of visual focus; this may not hold for models heavily instruction-tuned or with collapsed attention distributions.
-- The choice of intermediate layer is empirical (middle layer of the backbone); switching backbones requires recalibration, and there is no automatic layer selection mechanism.
-- The threshold $\tau$ is globally fixed; different difficulties or tasks may require adaptive thresholds.
-- Experiments are mainly on medical and mathematical geometry; transfer to more complex visual modalities (common-sense images, video, documents) remains to be validated.
+- VAS effectiveness relies on the assumption that "internal attention distribution is a reliable indicator of visual focus," which may not hold for models with collapsed attention distributions due to heavy instruction tuning.
+- Middle layer selection is empirical (taking one middle layer of the backbone); re-calibration may be needed for different backbones, and it lacks an automated selection mechanism.
+- The threshold $\tau$ is globally fixed; adaptive thresholds for different difficulties or tasks could be beneficial.
+- Experiments focused on medical and mathematical geometry; transferability to more complex modalities like common-sense images, video, or documents remains to be verified.
 
 ## Related Work & Insights
-- **vs STaR / ReSTEM**: They discard all failed solutions, VISTA recycles prefixes; they only consider answer correctness, VISTA also considers visual attention.
-- **vs Ding et al. 2025 (ground-truth guided reasoning)**: That approach uses answer leakage to guide reasoning, essentially hint-augmented; VISTA relies solely on the model's own prediction consistency.
-- **vs He et al. 2025 (rerun without image to quantify language prior)**: That method requires two forward passes; VAS achieves an equivalent signal in a single pass, saving computation.
-- **vs R3V**: R3V also improves via multiple iterations, but its sample size is about twice that of VISTA yet achieves worse results, indicating "sample quality > sample quantity."
+- **vs STaR / ReSTEM**: These discard all failed solutions; VISTA recycles prefixes. They only observe answer correctness; VISTA also monitors visual attention.
+- **vs Ding et al. 2025**: That method uses ground-truth to guide reasoning (hint-augmented); VISTA relies entirely on the model's own predictive consistency.
+- **vs He et al. 2025**: That method requires two forward passes to quantify language priors; VAS achieves equivalent results with one pass, saving significant computation.
+- **vs R3V**: R3V also improves through multiple iterations, but VISTA achieves better results with approximately half the sample volume, suggesting that "sample quality > sample quantity."
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Both techniques are not entirely new, but their combination is highly effective and well-targeted
-- Experimental Thoroughness: ⭐⭐⭐⭐ Covers 5 MLLMs, 5 benchmarks, both SFT and DPO paradigms, with ablation and layer selection studies
-- Writing Quality: ⭐⭐⭐⭐ Motivation analysis (§2.1) includes figures and data, method description is clear, formulae are consistently marked
-- Value: ⭐⭐⭐⭐ Self-improvement paradigms are trending; both "attention-based hallucination filtering" and "prefix recycling" tricks are easily reusable
+- Novelty: ⭐⭐⭐⭐ Both technical points are well-targeted adaptations of existing concepts into a cohesive pipeline.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covers 5 MLLMs, 5 benchmarks, SFT + DPO dual paradigms, and detailed ablation on layer selection.
+- Writing Quality: ⭐⭐⭐⭐ Motivation analysis (§2.1) is supported by data, methodology is clear, and notations are consistent.
+- Value: ⭐⭐⭐⭐ The self-improvement paradigm is currently popular; both the hallucination filtering via attention and prefix recovery tricks are highly reusable.
 
 <!-- RELATED:START -->
 
@@ -128,8 +125,8 @@ Consistent improvements across MLLMs: On Qwen3-VL-2B, InternVL3-2B/8B, a single 
 - [\[ICLR 2026\] Through the Lens of Contrast: Self-Improving Visual Reasoning in VLMs](../../ICLR2026/multimodal_vlm/through_the_lens_of_contrast_self-improving_visual_reasoning_in_vlms.md)
 - [\[ICLR 2026\] Vision-Zero: Scalable VLM Self-Improvement via Strategic Gamified Self-Play](../../ICLR2026/multimodal_vlm/vision-zero_scalable_vlm_self-improvement_via_strategic_gamified_self-play.md)
 - [\[ICLR 2026\] VTool-R1: VLMs Learn to Think with Images via Reinforcement Learning on Multimodal Tool Use](../../ICLR2026/multimodal_vlm/vtool-r1_vlms_learn_to_think_with_images_via_reinforcement_learning_on_multimoda.md)
-- [\[ICML 2026\] LIMSSR: LLM-Driven Sequence-to-Score Reasoning under Training-Time Incomplete Multimodal Observations](limssr_llm-driven_sequence-to-score_reasoning_under_training-time_incomplete_mul.md)
-- [\[ICML 2026\] Self-Captioning Multimodal Interaction Tuning: Amplifying Exploitable Redundancies for Robust Vision Language Models](self-captioning_multimodal_interaction_tuning_amplifying_exploitable_redundancie.md)
+- [\[ACL 2026\] iReasoner: Trajectory-Aware Intrinsic Reasoning Supervision for Self-Evolving Large Multimodal Models](../../ACL2026/multimodal_vlm/ireasoner_trajectory-aware_intrinsic_reasoning_supervision_for_self-evolving_lar.md)
+- [\[ICML 2026\] VisionPulse: Dynamic Visual Sparsification in Multimodal Reasoning](visionpulse_dynamic_visual_sparsity_for_efficient_multimodal_reasoning.md)
 
 </div>
 

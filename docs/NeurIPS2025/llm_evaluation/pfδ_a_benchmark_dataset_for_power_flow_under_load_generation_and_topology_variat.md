@@ -162,7 +162,7 @@ Data efficiency experiments (Task 2.1–2.3, 18k/36k/54k samples):
 - [\[NeurIPS 2025\] Bispectral OT: Dataset Comparison using Symmetry-Aware Optimal Transport](bispectral_ot_dataset_comparison_using_symmetry-aware_optimal_transport.md)
 - [\[ICLR 2026\] AnesSuite: A Comprehensive Benchmark and Dataset Suite for Anesthesiology Reasoning](../../ICLR2026/llm_evaluation/anessuite_a_comprehensive_benchmark_and_dataset_suite_for_anesthesiology_reasoni.md)
 - [\[CVPR 2026\] TacSIm: A Dataset and Benchmark for Football Tactical Style Imitation](../../CVPR2026/llm_evaluation/tacsim_a_dataset_and_benchmark_for_football_tactical_style_imitation.md)
-- [\[NeurIPS 2025\] Model-Behavior Alignment under Flexible Evaluation: When the Best-Fitting Model Isn't the Right One](model-behavior_alignment_under_flexible_evaluation_when_the_best-fitting_model_i.md)
+- [\[CVPR 2026\] Pioneering Perceptual Video Fluency Assessment: A Novel Task with Benchmark Dataset and Baseline](../../CVPR2026/llm_evaluation/pioneering_perceptual_video_fluency_assessment_a_novel_task_with_benchmark_datas.md)
 
 </div>
 

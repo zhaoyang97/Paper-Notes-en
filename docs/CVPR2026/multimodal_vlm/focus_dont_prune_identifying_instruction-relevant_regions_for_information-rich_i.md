@@ -144,10 +144,10 @@ On InfoVQA, PinPoint outperforms the Vanilla baseline by 18.5% in accuracy while
 ## Related Papers
 
 - [\[CVPR 2026\] When Token Pruning is Worse than Random: Understanding Visual Token Information in VLLMs](when_token_pruning_is_worse_than_random_understanding_visual_token_information_i.md)
-- [\[ACL 2026\] A Survey on MLLM-based Visually Rich Document Understanding: Methods, Challenges, and Emerging Trends](../../ACL2026/multimodal_vlm/a_survey_on_mllm-based_visually_rich_document_understanding_methods_challenges_a.md)
 - [\[CVPR 2026\] LFPC: Learning to Focus and Precise Cropping for MLLMs](lfpc_learning_to_focus_and_precise_cropping_for_mllms.md)
 - [\[CVPR 2026\] Seeing Through Touch: Tactile-Driven Visual Localization of Material Regions](seeing_through_touch_tactile_localization.md)
 - [\[CVPR 2026\] See, Think, Act: Teaching Multimodal Agents to Effectively Interact with GUI by Identifying Toggles](see_think_act_teaching_multimodal_agents_to_effectively_interact_with_gui_by_ide.md)
+- [\[ACL 2026\] A Survey on MLLM-based Visually Rich Document Understanding: Methods, Challenges, and Emerging Trends](../../ACL2026/multimodal_vlm/a_survey_on_mllm-based_visually_rich_document_understanding_methods_challenges_a.md)
 
 </div>
 

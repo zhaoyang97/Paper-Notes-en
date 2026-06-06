@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Trajectory-Level Data Augmentation for Offline Reinforcement Learning
 description: >-
-  [ICML 2026][Reinforcement Learning][Offline RL] This paper proposes LIFT: in active localization tasks, it leverages the geometric properties of trajectories to "shortcut" redundant zig-zag paths left by suboptimal loggi…
+  [ICML 2026][Reinforcement Learning][Offline RL] This paper proposes LIFT: In active alignment tasks, it leverages trajectory geometric properties to transform redundant zig-zag trajectories from sub-optimal logging polic…
 tags:
   - "ICML 2026"
   - "Reinforcement Learning"
   - "Offline RL"
-  - "trajectory augmentation"
-  - "shortcut"
+  - "Trajectory Augmentation"
+  - "Shortcut"
   - "CQL"
-  - "active localization"
+  - "Active Alignment"
 date: 2026-05-08
-content_hash: 7ad35039b70b7014
+content_hash: 791ead9667c774e1
 ---
 
 # Trajectory-Level Data Augmentation for Offline Reinforcement Learning
@@ -20,52 +20,52 @@ content_hash: 7ad35039b70b7014
 **Conference**: ICML 2026  
 **arXiv**: [2605.13401](https://arxiv.org/abs/2605.13401)  
 **Code**: https://github.com/HS-Kempten/lift  
-**Area**: Reinforcement Learning / Offline RL / Data Augmentation / Active Localization  
-**Keywords**: Offline RL, trajectory augmentation, shortcut, CQL, active localization
+**Area**: Reinforcement Learning / Offline RL / Data Augmentation / Active Alignment  
+**Keywords**: Offline RL, Trajectory Augmentation, Shortcut, CQL, Active Alignment
 
 ## TL;DR
-This paper proposes LIFT: in active localization tasks, it leverages the geometric properties of trajectories to "shortcut" redundant zig-zag paths left by suboptimal logging policies, synthesizes these transitions, and feeds them to a lightweight augmentor that replaces logging actions during data collection. This enables offline CQL to significantly outperform standard offline RL and warm-start SAC across low- to high-dimensional, partial observation, and other settings.
+This paper proposes LIFT: In active alignment tasks, it leverages trajectory geometric properties to transform redundant zig-zag trajectories from sub-optimal logging policies into "shortcuts." These synthesized transitions are fed into a lightweight augmentor to replace logging actions during data collection. This enables offline CQL to significantly outperform standard offline RL and warm-start SAC across various settings, including high-dimensional spaces and partial observations.
 
 ## Background & Motivation
-**Background**: Mainstream offline RL relies on "conservative updates + behavior regularization" (BC loss, pessimistic critic in CQL, expectation quantile policy extraction in IQL), all assuming the dataset is "good enough." However, substantial evidence shows that dataset quality (coverage, expertise, trajectory structure) often impacts final performance more than algorithmic differences.
+**Background**: The mainstream of offline RL focuses on "conservative updates + behavioral regularization" (BC loss, CQL pessimistic critic, IQL expectile policy extraction). These algorithmic methods assume the dataset is already "good enough." However, evidence suggests that dataset quality (coverage, expertise, and trajectory structure) often impacts final performance more than algorithmic differences.
 
-**Limitations of Prior Work**: In industrial-scale active localization scenarios (optical alignment, camera/telescope assembly, robotic coarse positioning), the logging policy is typically a stateful scripted "coordinate walk"—coarse-to-fine, converging dimension by dimension, reliable but highly suboptimal, producing many detours. Existing approaches either stick to pure offline (limited by data quality) or offline-to-online fine-tuning (requiring expensive online interaction). The middle ground—"improving data during logging"—is largely overlooked. Directly injecting better actions triggers the "hand-off problem": once the script is interrupted, it cannot resume and must reset the entire segment.
+**Limitations of Prior Work**: In industrial active alignment scenarios (optical alignment, camera/telescope assembly, robotic arm coarse positioning), logging policies are typically scripted "coordinate-descent" methods—converging from coarse to fine and dimension by dimension. These are reliable but severely sub-optimal, producing circuitous paths. Existing approaches either use pure offline RL (limited by data quality) or offline-to-online fine-tuning (requiring expensive online interaction). The "middle ground"—improving data directly during logging—has been largely ignored. Furthermore, hard injection of superior actions triggers the "hand-off problem": once the script is interrupted, it cannot resume and requires a full reset.
 
-**Key Challenge**: The goal is to inject better actions during collection, but (i) the augmentor must provide reliable suggestions with very little data; (ii) must not disrupt the logging policy's subsequent progress; (iii) must provide a theoretical criterion for when a shortcut is truly better, considering both dynamics perturbation $f$ and value function $V^\pi$. Simply summing multi-step actions $a = \sum a_k$ neither guarantees reaching $s_j$ nor value stability near $s_j$.
+**Key Challenge**: To inject superior actions during collection, one must address: (i) the augmentor must provide reliable suggestions with minimal data; (ii) subsequent logging policy progression must not be disrupted; (iii) theoretical criteria for both dynamics $f$ and value functions $V^\pi$ are needed to determine when a shortcut is truly superior. Simply summing multi-step actions $a = \sum a_k$ guarantees neither reaching $s_j$ nor value stability near $s_j$.
 
-**Goal**: (1) Provide sufficient conditions for identifying shortcuts on existing logged trajectories; (2) use these shortcuts during data collection to train an augmentor that replaces some logging actions; (3) verify whether this "middle ground" is more data-efficient than pure offline + warm-start RL.
+**Goal**: (1) Provide sufficient conditions to identify shortcuts in logged trajectories; (2) Train an augmentor using these shortcuts to replace logging actions during collection; (3) Verify if this "middle ground" approach is more data-efficient than pure offline or warm-start RL.
 
-**Key Insight**: It is observed that distance-improving logging policies in geometrically structured localization tasks have a strong prior—the later state is always closer to the goal than the earlier state. Thus, the value difference between states can infer the potential value of a shortcut, enabling synthetic transitions without re-execution.
+**Key Insight**: It is observed that distance-improving logging policies in geometrically structured alignment tasks have a strong prior—posterior states are always closer to the target than anterior states. Thus, potential shortcut value can be inferred from value differences without re-execution to synthesize transitions.
 
-**Core Idea**: Using "distance improvement + LPE (linear position error) + $L_V$-Lipschitz value function" as three conditions, a verifiable inequality is derived for "$\sum a_k$ is a $\pi$-shortcut." This is instantiated as Algorithm 1, which linearly scans logged trajectories to synthesize shortcut transitions, which are then used to train an augmentor that probabilistically replaces logging actions during collection.
+**Core Idea**: Verifiable inequalities for "$\sum a_k$ is a $\pi$-shortcut" are derived using "distance-improving + LPE (Linear Positional Error) + $L_V$-Lipschitz value function" conditions. This is instantiated as Algorithm 1 to scan logged trajectories for shortcut synthesis, followed by training an augmentor to replace logging actions with probability $p$ during collection.
 
 ## Method
 
 ### Overall Architecture
-Active localization is modeled as a contextual POMDP: state $(s, W) \in \mathcal{P} \times \mathcal{W}$, action $a \in \mathcal{A}$, dynamics $s' = f(s, a, W)$, reward $R = -\|f(s,a,W) - s_W\|$; typically $f(s,a,W) = s + W \cdot a$ (linear error) or with nonlinear perturbations. The pipeline has two layers: (1) Offline shortcut synthesis (Algorithm 1) identifies $(o_i, \hat{a}, r_{j-1}, o_j)$ tuples from a logged trajectory that meet theoretical conditions and adds them to the training set; (2) Online LIFT collection (Algorithm 2) replaces logging actions with augmentor actions $a_\theta(o) = \arg\max_a Q_\theta(o,a)$ with probability $p$, resetting the logging policy's internal state upon replacement to ensure hand-off. CQL is then trained on the dataset with shortcut transitions (CQL-SC), and combined with LIFT forms LIFT-SC.
+Active alignment is modeled as a contextual POMDP: state $(s, W) \in \mathcal{P} \times \mathcal{W}$, action $a \in \mathcal{A}$, dynamics $s' = f(s, a, W)$, and reward $R = -\|f(s,a,W) - s_W\|$. Typical $f(s,a,W) = s + W \cdot a$ (linear error) or forms with non-linear perturbations. The pipeline consists of two layers: (1) Offline shortcut synthesis (Algorithm 1) extracts $(o_i, \hat{a}, r_{j-1}, o_j)$ triplets satisfying theoretical conditions from logged trajectories; (2) Online LIFT collection (Algorithm 2) replaces logging actions with a $Q_\theta$-based augmentor $a_\theta(o) = \arg\max_a Q_\theta(o,a)$ with probability $p$. Upon replacement, the logging policy internal state is reset to ensure proper hand-off. Finally, CQL is trained on the dataset containing shortcut transitions (CQL-SC), and the combined system is LIFT-SC.
 
 ### Key Designs
 
-1. **Theoretical Criterion for Shortcuts (Theorem 3.6 + Corollary 3.8)**:
+1. **Theoretical Criteria for Shortcuts (Theorem 3.6 + Corollary 3.8)**:
 
-    - **Function**: Formalizes "when summing actions $\sum a_k$ truly improves value" as an inequality checkable on logged data.
-    - **Mechanism**: Defines "distance-improving policy"—reward strictly increases along the trajectory; introduces LPE property (linear position error) $\|f(s_0, \sum a_i, W) - s_k\| \le L_f \cdot \sum \|a_i\|$ to bound cumulative action deviation; requires $V^\pi$ to be $L_V$-Lipschitz. It is then proven that if $\gamma V^\pi(s_j, W) - V^\pi(s_i, W) - \|s_j - s_W\| \ge (\gamma L_V + 1) L_f \sum_{k=i}^{j-1} \|a_k\|$, then $\sum a_k$ is a shortcut. Linear dynamics $f(s,a,W) = s + Wa$ is a special case with $L_f = 0$, where any sum is valid.
-    - **Design Motivation**: Directly summing multi-step actions almost always misses; this criterion guides the algorithm to select $(i, j)$ pairs with "large value difference, short path"—corresponding to zig-zag segments in logged trajectories. This is the theoretical foundation, turning "empirical shortcuts" into something Algorithm 1 can systematically extract.
+    - **Function**: Formalizes when summing actions $\sum a_k$ leads to a value improvement into an inequality checkable on logged data.
+    - **Mechanism**: Defines "distance-improving policies" where rewards strictly increase. It introduces the LPE (Linear Positional Error) property $\|f(s_0, \sum a_i, W) - s_k\| \le L_f \cdot \sum \|a_i\|$ to bound accumulated action shifts and requires $V^\pi$ to be $L_V$-Lipschitz. It is then proved that if $\gamma V^\pi(s_j, W) - V^\pi(s_i, W) - \|s_j - s_W\| \ge (\gamma L_V + 1) L_f \sum_{k=i}^{j-1} \|a_k\|$, then $\sum a_k$ is a shortcut. Linear dynamics $f(s,a,W) = s + Wa$ is a special case where $L_f = 0$, making any accumulation valid.
+    - **Design Motivation**: Summing multi-step actions directly almost always results in a miss. This criterion identifies $(i, j)$ pairs with "large value difference and short paths," which correspond to zig-zag segments in logged trajectories. This serves as the theoretical foundation for filtering shortcuts via Algorithm 1.
 
-2. **Algorithm 1: Scanning and Sampling Shortcuts on Logged Trajectories**:
+2. **Algorithm 1: Scanning and Sampling Shortcuts in Logged Trajectories**:
 
-    - **Function**: For a trajectory with return $G_i = V^{\pi_\beta}(s_i, W) = \sum_{k=i}^n \gamma^{k-i} r_k$, for each position $i$, traverse $j > i$, for each candidate $\hat{a} = \sum_{k=i}^{j-1} a_k$, check $\gamma G_j - G_i + r_{j-1} \ge C \sum \|a_k\|$; passing synthetic transitions $(o_i, \hat{a}, r_{j-1}, o_j)$ enter candidate set $S$, and one is sampled according to normalized reward $\rho \propto \hat{r} - \min \hat{r}$.
-    - **Mechanism**: $C$ consolidates the right-hand constant in Theorem 3.6 into a single hyperparameter (default $C=0$, i.e., all value-increasing candidates are included); linear time scan, can be plugged into d3rlpy as a "transition picker."
-    - **Design Motivation**: Implements the theoretical criterion as a plug-and-play interface—any d3rlpy algorithm beyond CQL can use shortcuts by swapping the picker; using reward as sampling weight preserves diversity while favoring shortcuts closer to the goal.
+    - **Function**: For a trajectory with returns $G_i = V^{\pi_\beta}(s_i, W) = \sum_{k=i}^n \gamma^{k-i} r_k$, it iterates $j > i$ starting from position $i$. For each candidate $\hat{a} = \sum_{k=i}^{j-1} a_k$, it checks $\gamma G_j - G_i + r_{j-1} \ge C \sum \|a_k\|$. Validated $(o_i, \hat{a}, r_{j-1}, o_j)$ transitions enter a candidate set $S$, sampled according to normalized rewards $\rho \propto \hat{r} - \min \hat{r}$.
+    - **Mechanism**: $C$ collapses Theorem 3.6 constants into a single hyperparameter (default $C=0$). Linear time scanning allows it to be plugged into d3rlpy as a "transition picker."
+    - **Design Motivation**: Implements the theoretical criterion into a plug-and-play interface. Any d3rlpy algorithm (besides CQL) can utilize shortcuts by switching the picker. Reward-based sampling preserves diversity while favoring shortcuts closer to the goal.
 
-3. **Algorithm 2: LIFT Collection-Time Augmentation (Augmentor + Reset)**:
+3. **Algorithm 2: Augmentation during LIFT Collection (Augmentor + Reset)**:
 
-    - **Function**: During data collection, with probability $p$, replaces $\pi_\beta$'s action with $a_\theta(o)$, creating a hybrid between pure offline and warm-start RL; upon replacement, resets $\pi_\beta$'s internal state to ensure the script can continue.
-    - **Mechanism**: Collects a small number of trajectories with the logging policy to train $a_\theta$ (augmented with Algorithm 1), then in each new episode, $a_\theta$ takes over with $p=0.6$; defines $\pi_{\text{aug}}(o) = a_\theta(o)$ if $a_\theta(o)$ is a $\pi_\beta$-shortcut else $\pi_\beta(o)$, and by Proposition A.1, $V^{\pi_{\text{aug}}} \ge V^{\pi_\beta}$.
-    - **Design Motivation**: Explicitly encodes "hand-off friendliness"—once the augmentor takes over, the logging policy's internal progress (current step size, optimized dimensions) is refreshed, preventing the script from running in an inconsistent state. This detail, unsolved by pure exploration augmentations like IORL, is central to LIFT ("Logging Improvement via Fine-tuned Trajectories").
+    - **Function**: Replaces $\pi_\beta$ actions with $a_\theta(o)$ with probability $p$ during collection, creating a hybrid between pure offline and warm-start RL. Resets $\pi_\beta$ internal states upon replacement for hand-off.
+    - **Mechanism**: Logged trajectories train $a_\theta$ (augmented by Algorithm 1). New episodes allow $a_\theta$ to intervene with $p=0.6$. Defines $\pi_{\text{aug}}(o) = a_\theta(o)$ if $a_\theta(o)$ is a $\pi_\beta$-shortcut else $\pi_\beta(o)$. By Proposition A.1, $V^{\pi_{\text{aug}}} \ge V^{\pi_\beta}$.
+    - **Design Motivation**: Explicitly integrates "hand-off friendliness"—once the augmentor takes over, the logging policy internal progress (step size, optimized dimensions) is refreshed to prevent inconsistent states. This nuance is the core of LIFT (Logging Improvement via Fine-tuned Trajectories).
 
 ### Loss & Training
-No new loss is introduced; all training follows the standard CQL (Conservative Q-Learning) objective. Algorithm 1 transitions are injected via d3rlpy's picker interface. $Q_\theta$ is trained on a small early dataset (after 50-100 trajectories), then collection enters the main loop. Hyperparameters: $C=0$, $p=0.6$, per-trajectory augmentation cap 20.
+No new losses are introduced; all training follows standard CQL objectives. Algorithm 1 transitions are injected via the d3rlpy picker interface. $Q_\theta$ is trained on an initial small dataset (50-100 trajectories) before entering the main collection loop. Hyperparameters: $C=0, p=0.6$, max 20 augmentations per trajectory.
 
 ## Key Experimental Results
 
@@ -73,67 +73,55 @@ No new loss is introduced; all training follows the standard CQL (Conservative Q
 
 | Scenario | logging | CQL | CQL-SC | LIFT | LIFT-SC | warm-start SAC |
 |---|---|---|---|---|---|---|
-| $(\mathcal{O}_{\text{PO}}, f_{\text{blend}})$, $d=5$ | Highly suboptimal | Moderate | Improved | Further improved | **Best** | Lagging |
-| Lens alignment $\mathcal{O}_{\text{LP}}$ (image) | Same | Medium | Higher | Higher | **Best** | Weaker than LIFT-SC |
-| Fetch Reach $\mathcal{O}_{\text{Fetch}}$ | Same | Medium | Higher | Higher | **Best** | Slightly weaker |
-| Polarization channel $\mathcal{O}_{\text{LT}}$ (image) | Same | Weak | Medium | Medium | **Best** | Weak |
-| $d=2$ low-dimensional $\mathcal{O}_{\text{PO}}$ | — | — | — | Flat | Flat | **Better** |
+| $(\mathcal{O}_{\text{PO}}, f_{\text{blend}})$, $d=5$ | Highly sub-optimal | Fair | Gain | Further Gain | **Best** | Lags behind |
+| Lens alignment $\mathcal{O}_{\text{LP}}$ (Image) | Same | Medium | High | High | **Best** | Weaker than LIFT-SC |
+| Fetch Reach $\mathcal{O}_{\text{Fetch}}$ | Same | Medium | High | High | **Best** | Slightly weaker |
+| Polarized channel $\mathcal{O}_{\text{LT}}$ (Image) | Same | Weak | Medium | Medium | **Best** | Weak |
+| $d=2$ Low-dim $\mathcal{O}_{\text{PO}}$ | — | — | — | Flat | Flat | **Better** |
 
-In Figure 7 and multiple comparisons in Appendix E, LIFT-SC leads almost universally in high-dimensional/partial observable/image settings; diffusion-based GTA and Diffusion-QL did not consistently outperform.
+LIFT-SC leads across high-dimensional/PO/image observations (Figure 7, Appendix E). Diffusion-based GTA and Diffusion-QL do not consistently win.
 
 ### Ablation Study
 
-| Configuration | Phenomenon | Interpretation |
+| Config | Observation | Interpretation |
 |---|---|---|
-| Add shortcut (CQL → CQL-SC) | Consistent improvement in all scenarios | Offline shortcut alone already exploits logged data potential |
-| Add LIFT collection (CQL → LIFT) | Better than CQL | Improving data distribution during collection is stronger than pure offline |
-| LIFT-SC = LIFT + shortcut | Nearly always optimal | Two-step gains are additive |
-| $f_{\text{regrot}}$ (violates contraction) | shortcut fails | Confirms Corollary 3.8's constraints are physically necessary |
-| $f_{\text{sqrt}}$ (violates LPE) | shortcut still works but less advantage | LPE is "sufficient" not "necessary" |
-| Noise injection disrupts logging structure | LIFT-SC still superior | Shows it does not rely on coordinate-walk scripts |
+| Add Shortcut (CQL → CQL-SC) | Consistent gains | Offline shortcuts alone extract latent potential from logged data |
+| Add LIFT Collection (CQL → LIFT) | Better than CQL | Improving data distribution during collection is stronger than pure offline RL |
+| LIFT-SC = LIFT + shortcut | Optimized in nearly all cases | Gains from both steps are additive |
+| $f_{\text{regrot}}$ (violates contraction) | Shortcut fails | Validates that Corollary 3.8 constraints are physically necessary |
+| $f_{\text{sqrt}}$ (violates LPE) | Shortcut remains effective | LPE is sufficient but not necessary |
+| Noise injection | LIFT-SC remains superior | Indicates lack of reliance on structured coordinate-descent scripts |
 
 ### Key Findings
-- Shortcut yields the largest gains in high-dimensional and image observation settings, precisely where standard offline RL is weakest; this shows that "expanding data coverage via task geometry" is more effective than simply adding more conservative algorithmic regularization.
-- On $f_{\text{regrot}}$ (violating contraction), shortcut fails outright: theoretical assumptions are not just decorative, and practical deployment requires checking if dynamics meet LPE/contraction.
-- LIFT's dataset metrics (per Schweighofer et al. 2022) show "high mean return, low exploration"—in contrast to IORL, which has high exploration but poor hand-off, resulting in lower final trajectory quality.
-- TBPTT-style "improving data during collection" addresses data issues more directly than "using more complex offline algorithms"; warm-start SAC still excels in low dimensions, indicating LIFT's advantage is focused on mid/high-dimensional + partially observable settings.
+- Shortcuts provide the most gain in high-dimensional and image-based observations, exactly where standard offline RL is most fragile. Expanding data coverage via task geometry is more effective than stricter algorithmic regularization.
+- Shortcuts fail on $f_{\text{regrot}}$ which violates contraction; theoretical assumptions must be verified for LPE/contraction in real dynamics.
+- LIFT datasets show "high average reward, low exploration," contrasting with IORL (high exploration, poor hand-off), which yields lower trajectory quality.
+- Improving data during collection is more direct than complex offline algorithms. Warm-start SAC excels in low dimensions, showing LIFT's advantage in mid-to-high dimensions and partial observability.
 
 ## Highlights & Insights
-- The formal criterion "shortcut = multi-step action sum + geometric condition" is elegant, turning the engineering intuition of "obvious shortcuts" into a computable inequality; this approach can be transferred to any task with "distance improvement + smooth dynamics" (robotic coarse positioning, autonomous parking, AFM tip alignment).
-- The hand-off design is a truly practical detail—many augmentation/hybrid methods look good on paper, but scripted logging collapses once interrupted; LIFT explicitly encodes "reset on hand-off" in pseudocode, reflecting a deep understanding of industrial deployment.
-- The fact that "the augmentor is usable with little data" relies on shortcut-synthesized transitions providing high-quality supervision, not massive online interaction—making the "middle ground" a practical, evidence-based route.
+- The formal "shortcut = multi-step sum + geometric conditions" criterion transforms engineering intuition into computable inequalities. This applies to any task with "distance-improving + smooth dynamics."
+- Hand-off design is a practical detail—many hybrid methods fail when scripted logging is interrupted. Explicitly including "reset on hand-off" shows deep understanding of industrial deployment.
+- Enabling augmentors with small data relies on high-quality supervision from synthesized shortcut transitions rather than massive online interaction.
 
 ## Limitations & Future Work
-- Theoretical guarantees depend on the trio of distance-improving / LPE / $V$ Lipschitz; for non-continuous dynamics like $f_{\text{regrot}}$, this fails outright. Many real-world robotics tasks (contact assembly) have discontinuous dynamics.
-- All evaluations are in semi-simulated environments, not on real optical/mechanical platforms; the sim-to-real gap is untested.
-- Setting $C=0$ is equivalent to "taking all value-increasing segments," which may include too many false shortcuts in noisy trajectories; when $L_f$ is large, $C$ needs tuning, and the paper acknowledges the lack of an adaptive scheme.
-- Integration with model-based/world-model approaches is an open direction—shortcuts are essentially simplified local models and should naturally combine with Dyna-style RL.
-- Only validated on CQL; whether IQL/BCQ and other offline RL methods benefit similarly is not yet systematically reported.
+- Theoretical guarantees depend on distance-improving/LPE/Lipschitz properties, failing under discontinuous dynamics like $f_{\text{regrot}}$.
+- Evaluations are limited to simulations; sim-to-real gaps are not validated on physical platforms.
+- Setting $C=0$ might include false shortcuts in noisy trajectories. Adaptive schemes for $C$ are needed when $L_f$ is large.
+- Integration with model-based/world-models is open; shortcuts could merge with Dyna-style RL.
+- Only validated on CQL; benefits for IQL/BCQ etc. are not systematically reported.
 
 ## Related Work & Insights
-- **vs HER (Hindsight Experience Replay)**: Both are transition augmentations, but HER rewrites goal/state to create sparse reward successes, while this work compresses action chains to generate shortcuts; they are complementary—HER addresses "sparse rewards," LIFT addresses "redundant trajectories."
-- **vs IORL (Zhang et al. 2023)**: Both augment during collection; IORL injects exploratory actions to expand coverage, LIFT does the opposite by injecting exploitative shortcuts; experiments show IORL explores well but has poor hand-off, resulting in lower final trajectory quality than LIFT.
-- **vs GuDA (Corrado et al. 2024)**: Both use expert-guided collection; GuDA relies on human intervention, LIFT replaces humans with pure algorithms (augmentor + shortcut criterion), saving costly annotation.
-- **vs Diffusion Augmentation (GTA, Diffusion-QL)**: Diffusion methods generate synthetic transitions but are less consistent with real dynamics; this work uses geometric conditions to ensure synthetic transitions are valid under the original dynamics, with stronger interpretability.
-- **vs warm-start SAC / Ball et al. 2023**: Warm-start requires substantial online interaction budget, while LIFT surpasses it with a fixed trajectory budget, embodying the idea that "better data" is more economical than "more online steps."
+- **vs HER (Hindsight Experience Replay)**: Both augment transitions; HER rewrites goals/states for sparse rewards, while LIFT compresses action chains for shortcuts.
+- **vs IORL (Zhang et al. 2023)**: Both augment during collection; IORL explores for coverage, whereas LIFT injects exploitative shortcuts.
+- **vs GuDA (Corrado et al. 2024)**: GuDA relies on human intervention, whereas LIFT uses algorithms (augmentor + shortcut criteria) to reduce cost.
+- **vs Diffusion Augmentation (GTA, Diffusion-QL)**: Diffusion generates synthetic transitions with weak physical consistency; LIFT ensures transitions hold via geometric conditions.
+- **vs warm-start SAC / Ball et al. 2023**: Warm-start requires larger online interaction budgets; LIFT excels within fixed trajectory budgets.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ "Synthesizing shortcuts during collection + hand-off friendly reset" is a novel and systematic approach in active localization.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Covers low-dimensional intuitive, high-dimensional, and image observations + five dynamics + multiple baselines, but only in simulation.
-- Writing Quality: ⭐⭐⭐⭐ Theoretical sections (Definition→Proposition→Theorem→Corollary) are clearly structured; Figure 1 overview and Algorithm 1/2 are well integrated.
-- Value: ⭐⭐⭐⭐ Provides a plug-and-play d3rlpy-compatible toolset for industrial active localization, advancing the methodological debate of "data augmentation vs algorithmic regularization."
-
-## Related Papers
-
-- [\[AAAI 2026\] Know your Trajectory -- Trustworthy Reinforcement Learning Deployment through Importance-Based Trajectory Analysis](../../AAAI2026/reinforcement_learning/know_your_trajectory_--_trustworthy_reinforcement_learning_deployment_through_im.md)
-- [\[NeurIPS 2025\] NoisyRollout: Reinforcing Visual Reasoning with Data Augmentation](../../NeurIPS2025/reinforcement_learning/noisyrollout_reinforcing_visual_reasoning_with_data_augmenta.md)
-- [\[ICML 2026\] CPMöbius: Iterative Coach–Player Reasoning for Data-Free Reinforcement Learning](cpmobius_iterative_coach-player_reasoning_for_data-free_reinforcement_learning.md)
-- [\[ICML 2026\] Long-Horizon Model-Based Offline Reinforcement Learning Without Explicit Conservatism](long-horizon_model-based_offline_reinforcement_learning_without_explicit_conserv.md)
-- [\[ICML 2025\] Zero-Shot Generalization of Vision-Based RL Without Data Augmentation](../../ICML2025/reinforcement_learning/zero-shot_generalization_of_vision-based_rl_without_data_augmentation.md)
-
-</div>
-
-<!-- RELATED:END -->
+- Novelty: ⭐⭐⭐⭐ Systematic shortcut synthesis and reset-friendly hand-off are novel for active alignment.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covers various observations and dynamics, though only in simulation.
+- Writing Quality: ⭐⭐⭐⭐ Clear theoretical structure and well-coordinated algorithms.
+- Value: ⭐⭐⭐⭐ Provides a plug-and-play toolset for industrial alignment and advances the "augmentation vs regularization" discussion.
 
 <!-- RELATED:START -->
 
@@ -141,11 +129,11 @@ In Figure 7 and multiple comparisons in Appendix E, LIFT-SC leads almost univers
 
 ## Related Papers
 
+- [\[ICML 2026\] Offline Reinforcement Learning with Generative Trajectory Policies](offline_reinforcement_learning_with_generative_trajectory_policies.md)
 - [\[ICML 2026\] Long-Horizon Model-Based Offline Reinforcement Learning Without Explicit Conservatism](long-horizon_model-based_offline_reinforcement_learning_without_explicit_conserv.md)
-- [\[NeurIPS 2025\] NoisyRollout: Reinforcing Visual Reasoning with Data Augmentation](../../NeurIPS2025/reinforcement_learning/noisyrollout_reinforcing_visual_reasoning_with_data_augmenta.md)
-- [\[AAAI 2026\] Know your Trajectory -- Trustworthy Reinforcement Learning Deployment through Importance-Based Trajectory Analysis](../../AAAI2026/reinforcement_learning/know_your_trajectory_--_trustworthy_reinforcement_learning_deployment_through_im.md)
+- [\[ICML 2026\] Beyond the Proxy: Trajectory-Distilled Guidance for Offline GFlowNet Training](beyond_the_proxy_trajectory-distilled_guidance_for_offline_gflownet_training.md)
+- [\[ICML 2026\] Offline Reinforcement Learning with Universal Horizon Models](offline_reinforcement_learning_with_universal_horizon_models.md)
 - [\[ICML 2026\] Towards Efficient and Expressive Offline RL via Flow-Anchored Noise-conditioned Q-Learning](towards_efficient_and_expressive_offline_rl_via_flow-anchored_noise-conditioned_.md)
-- [\[AAAI 2026\] Enhancing Robustness of Offline RL Under Data Corruption via SAM](../../AAAI2026/reinforcement_learning/enhancing_robustness_of_offline_reinforcement_learning_under_data_corruption_via.md)
 
 </div>
 

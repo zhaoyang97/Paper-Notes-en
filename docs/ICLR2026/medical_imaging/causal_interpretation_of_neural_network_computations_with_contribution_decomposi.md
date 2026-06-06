@@ -131,9 +131,9 @@ The Sparse Autoencoder is trained on 50,000 images from the ImageNet validation 
 
 - [\[AAAI 2026\] Unsupervised Motion-Compensated Decomposition for Cardiac MRI Reconstruction via Neural Representation](../../AAAI2026/medical_imaging/unsupervised_motion-compensated_decomposition_for_cardiac_mri_reconstruction_via.md)
 - [\[AAAI 2026\] MAPI-GNN: Multi-Activation Plane Interaction Graph Neural Network for Multimodal Medical Diagnosis](../../AAAI2026/medical_imaging/mapi-gnn_multi-activation_plane_interaction_graph_neural_network_for_multimodal_.md)
+- [\[ICML 2026\] Controllable Generative Sandbox for Causal Inference](../../ICML2026/medical_imaging/controllable_generative_sandbox_for_causal_inference.md)
 - [\[ICLR 2026\] NeuroCircuitry-Inspired Hierarchical Graph Causal Attention Networks for Explainable Depression Identification](neurocircuitry-inspired_hierarchical_graph_causal_attention_networks_for_explain.md)
-- [\[CVPR 2026\] EchoAgent: Towards Reliable Echocardiography Interpretation with "Eyes", "Hands" and "Minds"](../../CVPR2026/medical_imaging/echoagent_towards_reliable_echocardiography_interpretation_with_eyeshands_and_mi.md)
-- [\[CVPR 2026\] Bridging the Skill Gap in Clinical CBCT Interpretation with CBCTRepD](../../CVPR2026/medical_imaging/bridging_the_skill_gap_in_clinical_cbct_interpreta.md)
+- [\[ICLR 2026\] Neuro-Symbolic Decoding of Neural Activity](neuro-symbolic_decoding_of_neural_activity.md)
 
 </div>
 

@@ -129,11 +129,11 @@ LoRA finetuning (not full parameters), rank 128, 1000 steps, batch size 8; $\bet
 
 ## Related Papers
 
-- [\[AAAI 2026\] Multi-Metric Preference Alignment for Generative Speech Restoration](../../AAAI2026/image_generation/multi-metric_preference_alignment_for_generative_speech_restoration.md)
 - [\[ICML 2026\] Anomaly-Preference Image Generation (APO)](anomaly-preference_image_generation.md)
+- [\[AAAI 2026\] Multi-Metric Preference Alignment for Generative Speech Restoration](../../AAAI2026/image_generation/multi-metric_preference_alignment_for_generative_speech_restoration.md)
+- [\[ICML 2026\] E²PO: Embedding-perturbed Exploration Preference Optimization for Flow Models](embedding-perturbed_exploration_preference_optimization_for_flow_models.md)
 - [\[ICML 2026\] Visual Implicit Autoregressive Modeling](visual_implicit_autoregressive_modeling.md)
 - [\[CVPR 2026\] Ani3DHuman: Photorealistic 3D Human Animation with Self-guided Stochastic Sampling](../../CVPR2026/image_generation/ani3dhuman_photorealistic_3d_human_animation_with_self-guided_stochastic_samplin.md)
-- [\[ICCV 2025\] HPSv3: Towards Wide-Spectrum Human Preference Score](../../ICCV2025/image_generation/hpsv3_towards_wide-spectrum_human_preference_score.md)
 
 </div>
 

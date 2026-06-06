@@ -2,127 +2,121 @@
 title: >-
   [Paper Note] ViLL-E: Video LLM Embeddings for Retrieval
 description: >-
-  [ACL 2026][Video Understanding][Video Retrieval] This paper proposes ViLL-E, the first unified Video LLM architecture supporting both text generation and embedding generation. Through a three-stage joint generative-contr…
+  [ACL 2026][Video Understanding][Video Retrieval] This paper proposes ViLL-E, the first unified Video LLM architecture that simultaneously supports text generation and embedding generation. Through a three-stage generativ…
 tags:
   - "ACL 2026"
   - "Video Understanding"
   - "Video Retrieval"
   - "Video LLM"
-  - "Embedding Generation"
-  - "Contrastive Learning"
-  - "Temporal Grounding"
+  - "embedding generation"
+  - "contrastive learning"
+  - "temporal localization"
 date: 2026-05-08
-content_hash: 63881a3b6a8f538a
+content_hash: 9c7df79859e0e64d
 ---
 
 # ViLL-E: Video LLM Embeddings for Retrieval
 
-**Conference**: ACL 2026
+**Conference**: ACL 2026  
 **arXiv**: [2604.12148](https://arxiv.org/abs/2604.12148)  
 **Code**: None  
-**Area**: Video Understanding
-**Keywords**: Video Retrieval, Video LLM, Embedding Generation, Contrastive Learning, Temporal Grounding
+**Area**: Video Understanding  
+**Keywords**: Video Retrieval, Video LLM, embedding generation, contrastive learning, temporal localization
 
 ## TL;DR
-This paper proposes ViLL-E, the first unified Video LLM architecture supporting both text generation and embedding generation. Through a three-stage joint generative-contrastive training strategy and an adaptive KV-Former embedding head, ViLL-E approaches expert models on video retrieval and temporal grounding while maintaining competitive performance on VideoQA.
+This paper proposes ViLL-E, the first unified Video LLM architecture that simultaneously supports text generation and embedding generation. Through a three-stage generative-contrastive joint training strategy and an adaptive KV-Former embedding head, it approaches the performance of expert models in video retrieval and temporal localization while maintaining competitive VideoQA capabilities.
 
 ## Background & Motivation
 
-**State of the Field** Video LLMs (e.g., VideoLLaVA, VideoChat2) excel at text generation tasks such as video question answering and captioning, but fall far behind specialized models (e.g., QD-DETR, SigLIP, VidLA) on embedding-based tasks such as text-to-video retrieval (T2V) and moment retrieval.
+**Background** Video LLMs (e.g., VideoLLaVA, VideoChat2) perform excellently on generative tasks like video question answering and captioning, but lag significantly behind specialized models (e.g., QD-DETR, SigLIP, VidLA) in tasks requiring embedding matching, such as text-to-video (T2V) retrieval and temporal moment retrieval.
 
-**Limitations of Prior Work** Current video understanding requires maintaining two separate model stacks: a Video LLM for generative tasks and a dedicated dual-encoder for retrieval tasks. This not only increases deployment complexity but also prevents shared representation learning across the two task categories. Although NLP research has demonstrated that LLMs can be adapted into strong retrieval models via contrastive fine-tuning (e.g., GRIT, E5), no analogous work exists for the video domain.
+**Limitations of Prior Work** Current video understanding requires maintaining two independent model stacks: Video LLMs for generative tasks and specialized dual-encoders for retrieval tasks. This increases deployment complexity and prevents shared representation learning between the two categories of tasks. While research in the NLP field has shown that LLMs can be transformed into strong retrieval models through contrastive fine-tuning (e.g., GRIT, E5), no such work exists in the video domain.
 
-**Root Cause** The autoregressive generation architecture of Video LLMs is inherently ill-suited for producing dense embeddings, whereas dedicated embedding models lack the reasoning and generation capabilities of LLMs. Unifying both capabilities within a single model is therefore the central challenge.
+**Key Challenge** The autoregressive generative architecture of Video LLMs is naturally unsuited for producing dense embeddings, whereas specialized embedding models lack the reasoning and generative capabilities of LLMs. Unifying these two capabilities within a single model is a critical challenge.
 
-**Paper Goals** To design a unified Video LLM architecture that can both generate textual responses and produce high-quality video/text embeddings, achieving competitive performance across retrieval, temporal grounding, and QA tasks.
+**Goal** To design a unified Video LLM architecture capable of generating both textual responses and high-quality video/text embeddings, achieving competitive performance across retrieval, localization, and QA tasks.
 
-**Starting Point** A learnable embedding head is added on top of the PaliGemma multimodal LLM, and a three-stage joint training strategy (large-scale pretraining → high-quality pretraining → multi-task fine-tuning) is employed to simultaneously optimize generative and discriminative capabilities.
+**Key Insight** Building upon the PaliGemma multimodal LLM by adding a learnable embedding head and optimizing both generative and discriminative capabilities through a three-stage joint training strategy (large-scale pre-training → high-quality pre-training → multi-task fine-tuning).
 
-**Core Idea** The key innovation is an EOS-triggered adaptive embedding generation mechanism: the model first autoregressively generates a variable number of tokens, which are then fed into the embedding head and aggregated into a dense embedding. This allows the model to "think longer" for complex videos while returning quickly for simpler ones.
+**Core Idea** The key innovation is an EOS-triggered adaptive embedding generation mechanism—the model first autoregressively generates a variable number of tokens, which are then fed into the embedding head to be aggregated into a dense embedding. This allows the model to "think longer" for complex videos and return quickly for simple ones.
 
 ## Method
 
 ### Overall Architecture
-ViLL-E is built upon PaliGemma-3B and comprises a visual encoder, an LLM backbone, and a newly introduced embedding head. Visual tokens and input prompts attend bidirectionally, while autoregressively generated suffixes use causal attention. Upon encountering an `<EOS>` token, all generated tokens are collected and passed to the embedding head to produce a dense embedding. Training proceeds in three stages: large-scale joint contrastive-generative pretraining, high-quality data continued training, and multi-task fine-tuning.
+ViLL-E is based on the PaliGemma-3B multimodal LLM, consisting of a vision encoder, an LLM backbone, and a newly added embedding head. Bidirectional attention is used for visual tokens and input prompts, while causal attention is used for the autoregressively generated suffixes. When an `<EOS>` token is encountered, all generated tokens are collected and sent to the embedding head to produce a dense embedding. Training is divided into three stages: large-scale generative-contrastive joint pre-training, continued training on high-quality data, and multi-task fine-tuning.
 
 ### Key Designs
 
-1. **KV-Former Embedding Head**:
-    - **Function**: Aggregates the variable-length token sequence output by the LLM into a fixed-dimensional dense embedding.
-    - **Mechanism**: The LLM output tokens serve as queries, while $P$ learnable keys and values ("pooling tokens") act as a dictionary; an attention mechanism performs adaptive weighted aggregation. The result is then projected via an MLP and mean-pooled to obtain the final embedding.
-    - **Design Motivation**: Unlike Q-Former's fixed output length, KV-Former supports variable-length inputs and can adaptively adjust to video complexity. Compared to simple mean pooling or self-attention, it provides a bottleneck representation capacity decoupled from the generation task while remaining parameter-efficient.
+1.  **KV-Former Embedding Head**:
+    - **Function**: Aggregates the variable-length token sequences output by the LLM into fixed-dimensional dense embeddings.
+    - **Mechanism**: Uses the LLM output tokens as queries, and $P$ learnable keys and values ("pooling tokens") as a dictionary to perform adaptive weighted aggregation via an attention mechanism. This is followed by MLP projection and mean pooling to obtain the final embedding.
+    - **Design Motivation**: Compared to the fixed output length of Q-Former, KV-Former supports variable-length inputs, allowing for adaptive adjustments based on video complexity; compared to simple mean pooling or self-attention, it provides bottleneck representation capacity independent of the generation task while maintaining parameter efficiency.
 
-2. **EOS-Triggered Adaptive Embedding Generation**:
-    - **Function**: Allows the model to automatically determine how many intermediate tokens to generate before producing an embedding, based on video complexity.
-    - **Mechanism**: Before extracting an embedding, the model autoregressively generates tokens until `<EOS>`; the number of generated tokens varies naturally with video complexity. Complex videos require more analytical steps, while simple videos converge quickly.
-    - **Design Motivation**: Fixed-step embedding generation cannot adapt to videos of varying complexity; the adaptive mechanism achieves a better balance between efficiency and representation quality.
+2.  **EOS-triggered Adaptive Embedding Generation**:
+    - **Function**: Enables the model to automatically decide how many intermediate tokens to generate before producing an embedding based on video complexity.
+    - **Mechanism**: The model autoregressively generates tokens until `<EOS>` before extracting the embedding. The number of tokens naturally varies with video complexity. Complex videos require more analysis steps, while simple videos can converge quickly.
+    - **Design Motivation**: Fixed-step embedding generation methods cannot adapt to videos of different complexities. The adaptive mechanism achieves a better balance between efficiency and representation quality.
 
-3. **Three-Stage Joint Generative-Contrastive Training**:
-    - **Function**: Progressively improves the model's capabilities on both generative and embedding tasks.
-    - **Mechanism**: Stage 1 jointly trains next-token prediction (generation) and CLIP-style contrastive loss (embedding) on 10M Shutterstock video-caption pairs. Stage 2 continues training on 200K high-quality long captions generated by Claude-3-Sonnet. Stage 3 performs four-task fine-tuning (QA, retrieval, matching, and grounding) on 100K samples.
-    - **Design Motivation**: Stage 1 establishes foundational video-language alignment; Stage 2 compensates for the overly brief nature of raw captions through high-quality detailed descriptions; Stage 3 unlocks downstream task capabilities via multi-task fine-tuning. Ablation studies confirm that each stage contributes substantially.
+3.  **Three-stage Generative-Contrastive Joint Training**:
+    - **Function**: Progressively enhances the model's capabilities in both generative and embedding tasks.
+    - **Mechanism**: Stage 1 performs joint training of next-token prediction (generative) and CLIP-style contrastive loss (embedding) on 10M Shutterstock video-caption pairs. Stage 2 involves continued training on 200K high-quality long captions generated by Claude-3-Sonnet. Stage 3 performs four-task fine-tuning (QA, retrieval, matching, localization) on 100K samples.
+    - **Design Motivation**: Stage 1 establishes foundational video-language alignment. Stage 2 compensates for short original captions with high-quality detailed descriptions. Stage 3 unlocks downstream task capabilities through multi-task fine-tuning. Ablation studies confirm significant contributions from each stage.
 
 ### Loss & Training
-Four task-specific losses are employed: (1) CLIP-style in-batch contrastive loss for retrieval; (2) next-token prediction loss for captioning/QA; (3) binary cross-entropy for video-text matching; and (4) contrastive loss with sliding-window hard negative mining (segments with IoU < 0.2 serve as negatives) for temporal grounding. During fine-tuning, LoRA is applied for parameter efficiency, while the visual projection module and embedding head are trained in full.
+Four tasks correspond to four losses: (1) Retrieval tasks use a CLIP-style in-batch contrastive loss; (2) Captioning/QA use a next-token prediction loss; (3) Matching tasks use binary cross-entropy; (4) Temporal localization uses contrastive loss combined with sliding window hard negative mining (segments with IoU < 0.2 serve as negatives). LoRA is used during the fine-tuning stage for parameter efficiency, while the vision projection module and embedding head are fully trained.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Task / Dataset | Metric | ViLL-E | Prev. Best VideoLLM | Expert Model |
-|---|---|---|---|---|
-| ActivityNet (Grounding) | R@1, IoU=0.5 | **39.4** | 31.2 (LLaVA-ST) | 33.2 (QD-DETR) |
-| Charades-STA (Grounding) | R@1, IoU=0.5 | **51.5** | 44.8 (LLaVA-ST) | 57.3 (QD-DETR) |
-| MSR-VTT (Retrieval) | R@1 | **62.5** | N/A | 58.0 (VidLA) |
-| DiDeMo (Retrieval) | R@1 | **61.4** | N/A | 61.1 (VidLA) |
-| MSR-VTT QA | Acc | **65.2** | 63.2 (ST-LLM) | — |
-| Composed Retrieval (Zero-shot) | R@1 | **53.1** | — | 47.5 (SOTA) |
+| Task/Dataset | Metric | Ours | Prev. SOTA VideoLLM | Expert Model |
+| :--- | :--- | :--- | :--- | :--- |
+| ActivityNet (Loc.) | R@1, IoU=0.5 | **39.4** | 31.2 (LLaVA-ST) | 33.2 (QD-DETR) |
+| Charades-STA (Loc.) | R@1, IoU=0.5 | **51.5** | 44.8 (LLaVA-ST) | 57.3 (QD-DETR) |
+| MSR-VTT (Retr.) | R@1 | **62.5** | N/A | 58.0 (VidLA) |
+| DiDeMo (Retr.) | R@1 | **61.4** | N/A | 61.1 (VidLA) |
+| MSR-VTT QA | Acc | **65.2** | 63.2 (ST-LLM) | - |
+| Composed Retr. (ZS) | R@1 | **53.1** | - | 47.5 (SOTA) |
 
 ### Ablation Study
 
-| Configuration | MSR QA | MSR Retr. | ANet Loc. | Note |
-|---|---|---|---|---|
-| G+C+M (Full) | 65.1 | 62.8 | 39.4 | Joint supervision from all three signals |
-| G+C (w/o Matching) | 63.9 | 60.3 | 39.1 | Matching loss benefits retrieval |
-| G only (Generation only) | 61.3 | 25.1 | 28.7 | Retrieval collapses without contrastive learning |
-| C only (Contrastive only) | 45.5 | 54.7 | 29.3 | QA drops sharply without generation loss |
-| w/o Pretraining | 55.9 | 49.3 | 32.3 | Pretraining is critical for retrieval |
+| Config | MSR QA | MSR Retr. | ANet Loc. | Description |
+| :--- | :--- | :--- | :--- | :--- |
+| G+C+M (Full) | 65.1 | 62.8 | 39.4 | Combination of three supervision signals |
+| G+C (No Match) | 63.9 | 60.3 | 39.1 | Matching loss assists retrieval |
+| G only | 61.3 | 25.1 | 28.7 | Retrieval collapses without contrastive learning |
+| C only | 45.5 | 54.7 | 29.3 | QA drops significantly without generative loss |
+| w/o Pre-train | 55.9 | 49.3 | 32.3 | Pre-training is crucial for retrieval |
 
 ### Key Findings
-- ViLL-E outperforms dedicated Video LLMs on temporal grounding by an average of 77% (8+ percentage points) and surpasses fine-tuned expert models on video retrieval by up to 4%.
-- Generative and contrastive training are complementary: joint training outperforms either objective alone on both task categories.
-- Zero-shot generalization to new tasks: composed video retrieval exceeds SOTA by 5%, and long-text retrieval exceeds SOTA by 2%.
-- The KV-Former design outperforms all other embedding head variants.
-- Two-stage retrieval (embedding retrieval + LLM reranking) yields an additional R@1 gain of 2% over single-stage retrieval.
+- ViLL-E improves by an average of 77% (8+ percentage points) over specialized VideoLLMs in temporal localization and surpasses fine-tuned expert models by 4% in video retrieval.
+- Generative and contrastive training are complementary: joint training outperforms individual training on both types of tasks.
+- Zero-shot capability for new tasks: exceeds SOTA by 5% in composed video retrieval and by 2% in long-text retrieval.
+- The KV-Former design performs best among all embedding head variants.
+- Two-stage retrieval (embedding retrieval + LLM reranking) provides an additional 2% gain in R@1 over single-stage retrieval.
 
 ## Highlights & Insights
-- This work is the first to demonstrate that a single Video LLM can excel at both generative and embedding tasks simultaneously, challenging the prevailing paradigm of maintaining two separate model stacks.
-- The adaptive embedding generation mechanism elegantly addresses the problem of variable video complexity.
-- The three-stage training strategy is well-motivated, with each stage having a clear objective supported by ablation evidence.
-- The approach unlocks new tasks previously inaccessible to Video LLMs, including composed retrieval and long-text retrieval.
+- It is demonstrated for the first time that a single Video LLM can excel at both generative and embedding tasks, breaking the "two model stack" paradigm.
+- The adaptive embedding generation mechanism elegantly solves the issue of varying video complexity.
+- The design of the three-stage training strategy is rational, with clear objectives for each stage supported by thorough ablation studies.
+- New tasks previously inaccessible to Video LLMs (e.g., composed retrieval, long-text retrieval) are unlocked.
 
 ## Limitations & Future Work
-- ViLL-E is built on PaliGemma-3B, which has a relatively small parameter count and lacks multi-turn dialogue capability.
-- Training data is primarily in English, potentially compromising multilingual generalization.
-- Comparisons with the latest general-purpose Video LLMs (e.g., Qwen2.5-VL-72B) are absent, leaving a substantial gap in model scale unaddressed.
-- Future work could extend the approach to larger backbones and incorporate the audio modality.
+- Based on PaliGemma-3B, the parameter count is relatively small, and it lacks multi-turn dialogue capabilities.
+- Training data is primarily English, which may result in a loss of multilingual capability.
+- No comparison was made with the latest large-scale general Video LLMs (e.g., Qwen2.5-VL-72B), indicating a gap in model scale.
+- Future work could extend to larger backbones and incorporate the audio modality.
 
 ## Related Work & Insights
-- GRIT and E5 in NLP have demonstrated that LLMs can be repurposed as strong retrieval models; this paper successfully extends that paradigm to the video domain.
-- Concurrent works such as VLM2Vec and GME are limited to images; ViLL-E is the first unified solution for the video domain.
-- The paper provides affirmative experimental evidence for the broader question of whether a single large model can replace multiple specialized models.
+- GRIT and E5 in the NLP field proved that LLMs can be adapted into strong retrieval models; this paper successfully extends this idea to the video domain.
+- Concurrent works like VLM2Vec and GME are limited to images; ViLL-E is the first unified solution in the video domain.
+- Provides empirical evidence for the discussion on whether a single large model can replace multiple specialized models.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ First unified generation + embedding Video LLM; KV-Former design is elegant.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Eight benchmarks, detailed ablations, and multiple zero-shot task evaluations.
-- Writing Quality: ⭐⭐⭐⭐ Clear structure with informative figures and tables.
-- Value: ⭐⭐⭐⭐ Provides a viable path toward model unification in video understanding.
-
-## Rating
-- Novelty: Pending
-- Experimental Thoroughness: Pending
-- Writing Quality: Pending
-- Value: Pending
+- Novelty: ⭐⭐⭐⭐ First unified generative + embedding VideoLLM; ingenious KV-Former design.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Validated across 8 benchmarks with detailed ablations and multiple zero-shot tasks.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure with information-rich charts.
+- Value: ⭐⭐⭐⭐ Provides a feasible path for model unification in the field of video understanding.
 
 <!-- RELATED:START -->
 

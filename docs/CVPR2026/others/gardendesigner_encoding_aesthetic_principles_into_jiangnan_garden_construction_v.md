@@ -119,9 +119,9 @@ Terrain generation employs a water-centric fitness function. Layout optimization
 
 - [\[AAAI 2026\] Whispering Agents: An Event-Driven Covert Communication Protocol for the Internet of Agents](../../AAAI2026/others/whispering_agents_an_event-driven_covert_communication_protocol_for_the_internet.md)
 - [\[NeurIPS 2025\] A Differentiable Model of Supply-Chain Shocks](../../NeurIPS2025/others/a_differentiable_model_of_supply-chain_shocks.md)
+- [\[ICML 2026\] Honest Lying: Understanding Memory Confabulation in Reflexive Agents](../../ICML2026/others/honest_lying_understanding_memory_confabulation_in_reflexive_agents.md)
 - [\[ICLR 2026\] Speculative Actions: A Lossless Framework for Faster AI Agents](../../ICLR2026/others/speculative_actions_faster_ai_agents.md)
-- [\[NeurIPS 2025\] Exact Learning of Arithmetic with Differentiable Agents](../../NeurIPS2025/others/exact_learning_of_arithmetic_with_differentiable_agents.md)
-- [\[AAAI 2026\] Symbolic Planning and Multi-Agent Path Finding in Extremely Dense Environments with Unassigned Agents](../../AAAI2026/others/symbolic_planning_and_multi-agent_path_finding_in_extremely_dense_environments_w.md)
+- [\[ICML 2026\] Markov Chain Monte Carlo without Evaluating the Target: An Auxiliary Variable Approach](../../ICML2026/others/markov_chain_monte_carlo_without_evaluating_the_target_an_auxiliary_variable_app.md)
 
 </div>
 

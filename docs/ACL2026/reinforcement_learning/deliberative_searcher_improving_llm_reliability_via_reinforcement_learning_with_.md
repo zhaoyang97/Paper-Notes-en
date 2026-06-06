@@ -2,126 +2,123 @@
 title: >-
   [Paper Note] Deliberative Searcher: Improving LLM Reliability via Reinforcement Learning with Constraints
 description: >-
-  [ACL 2026][Reinforcement Learning][confidence calibration] This paper proposes Deliberative Searcher, a reasoning-first framework that integrates search operations into chain-of-thought (CoT) generation with explicit con…
+  [ACL 2026][Reinforcement Learning][Confidence Calibration] This paper proposes Deliberative Searcher, a reasoning-first framework that integrates search operations into Chain-of-Thought (CoT) generation while maintaining…
 tags:
   - "ACL 2026"
   - "Reinforcement Learning"
-  - "confidence calibration"
-  - "search-augmented LLM"
-  - "constrained reinforcement learning"
-  - "reliability"
-  - "inference efficiency"
+  - "Confidence Calibration"
+  - "Search-Augmented LLMs"
+  - "Constrained RL"
+  - "Reliability"
+  - "Inference Efficiency"
 date: 2026-05-08
-content_hash: 53f732f4409e4dfb
+content_hash: fc171ffc71fe9787
 ---
 
 # Deliberative Searcher: Improving LLM Reliability via Reinforcement Learning with Constraints
 
-**Conference**: ACL 2026
+**Conference**: ACL 2026  
 **arXiv**: [2507.16727](https://arxiv.org/abs/2507.16727)  
 **Code**: None  
-**Area**: Reinforcement Learning
-**Keywords**: confidence calibration, search-augmented LLM, constrained reinforcement learning, reliability, inference efficiency
+**Area**: Reinforcement Learning  
+**Keywords**: Confidence Calibration, Search-Augmented LLMs, Constrained RL, Reliability, Inference Efficiency
 
 ## TL;DR
 
-This paper proposes Deliberative Searcher, a reasoning-first framework that integrates search operations into chain-of-thought (CoT) generation with explicit confidence calibration. It employs constrained RL with adaptive Lagrangian multipliers to jointly optimize correctness and reliability, reducing the average "false-certain" rate of a 7B model from a baseline of 54% to 2%.
+This paper proposes Deliberative Searcher, a reasoning-first framework that integrates search operations into Chain-of-Thought (CoT) generation while maintaining explicit confidence calibration. By employing constrained reinforcement learning (RL) with adaptive Lagrange multipliers to jointly optimize correctness and reliability, the framework reduces the average "False-Certain" rate of a 7B model from a 54% baseline to 2%.
 
 ## Background & Motivation
 
-**Background**: LLMs equipped with search capabilities frequently exhibit confidence miscalibration—expressing high certainty for incorrect answers. This can have serious consequences in decision support, medical question answering, and similar high-stakes scenarios.
+**Background**: LLMs equipped with search capabilities often exhibit misaligned confidence—expressing high certainty in incorrect answers. This can lead to severe consequences in scenarios such as decision support and medical question-answering.
 
-**Limitations of Prior Work**: (1) LLM-expressed confidence lacks reliable correspondence with factual correctness; (2) existing search-augmented methods focus on accuracy while neglecting reliability (i.e., the model should express uncertainty when uncertain); (3) "false-certain" outputs represent the most dangerous failure mode, as users cannot identify errors.
+**Limitations of Prior Work**: (1) There is a lack of reliable correspondence between an LLM's declared confidence and its factual correctness; (2) Existing search-augmented methods focus on accuracy but neglect reliability (i.e., the model should express uncertainty when it is unsure); (3) "False-Certain" outputs represent the most dangerous state, as users cannot easily identify these errors.
 
-**Key Challenge**: Accuracy and reliability are distinct objectives—improving accuracy may be achieved by increasing expressions of certainty, which in turn raises the risk of false-certain outputs. Both must be optimized simultaneously.
+**Key Challenge**: Accuracy and reliability are distinct objectives—increasing accuracy may be achieved by boosting certain expressions, which in turn raises the risk of "False-Certain" outputs. Both must be optimized simultaneously.
 
-**Goal**: Design an RL framework that jointly optimizes correctness and confidence calibration, enabling reliable outputs in search-assisted reasoning.
+**Goal**: To design an RL framework that optimizes both correctness and confidence calibration, ensuring the model produces reliable outputs during search-assisted reasoning.
 
-**Key Insight**: Incorporating reliability constraints (bounding the false-certain rate) directly into the RL training objective, with adaptive Lagrangian multipliers to balance correctness and reliability.
+**Key Insight**: Incorporate reliability constraints (limiting the "False-Certain" rate) directly into the RL training objective, utilizing adaptive Lagrange multipliers to balance correctness and reliability.
 
-**Core Idea**: Calibrated confidence not only produces reliable outputs but also drives efficient test-time computation—confidence-weighted aggregation replaces majority voting, achieving with 4 samples the performance of 16.
+**Core Idea**: Well-calibrated confidence not only provides reliable output but also drives efficient test-time computation—replacing standard majority voting with confidence-weighted aggregation allows 4 samples to achieve the performance of 16 samples.
 
 ## Method
 
 ### Overall Architecture
 
-Deliberative Searcher embeds search operations within the CoT reasoning process: the model decides when to search, what to search for, and how to integrate retrieved results during reasoning. Training uses constrained RL: the primary objective optimizes accuracy, while the constraint bounds the false-certain rate below a threshold.
+Deliberative Searcher embeds search operations within the CoT reasoning process: the model decides when to search, what to search for, and how to integrate search results. Training employs constrained RL: the primary objective optimizes accuracy, while constraints ensure the "False-Certain" rate remains below a specified threshold.
 
 ### Key Designs
 
-1. **Reasoning-First Search Integration**:
+1.  **Reasoning-First Search Integration**:
+    - **Function**: Naturally triggers and utilizes search within CoT reasoning.
+    - **Mechanism**: During reasoning, the model identifies knowledge gaps, generates search queries, integrates results to continue reasoning, and finally outputs an answer with a confidence score.
+    - **Design Motivation**: By treating search as an integral part of reasoning rather than a standalone retrieval step, the model better judges when external information is required.
 
-    - Function: Naturally trigger and leverage search within CoT reasoning.
-    - Mechanism: During reasoning, the model identifies knowledge gaps, generates search queries, integrates retrieved results to continue reasoning, and ultimately produces an answer along with a confidence score.
-    - Design Motivation: Treating search as an integral part of reasoning rather than a standalone retrieval step enables the model to better judge when external information is needed.
+2.  **Constrained Reinforcement Learning (Adaptive Lagrangian)**:
+    - **Function**: Jointly optimizes correctness and reliability.
+    - **Mechanism**: $\max_\theta \mathbb{E}[R_{\text{correct}}]$ s.t. $P(\text{false-certain}) \leq \epsilon$. Adaptive Lagrange multipliers $\lambda$ convert the constraint into a penalty term, with $\lambda$ dynamically adjusted during training to satisfy the constraint.
+    - **Design Motivation**: While simple multi-objective optimization (weighted sums) requires manual weight tuning, constrained RL automatically balances the objectives.
 
-2. **Constrained Reinforcement Learning (Adaptive Lagrangian)**:
-
-    - Function: Jointly optimize correctness and reliability.
-    - Mechanism: $\max_\theta \mathbb{E}[R_{\text{correct}}]$ s.t. $P(\text{false-certain}) \leq \epsilon$. An adaptive Lagrangian multiplier $\lambda$ converts the constraint into a penalty term, and $\lambda$ is dynamically adjusted during training to enforce the constraint.
-    - Design Motivation: Naive multi-objective optimization (weighted sum) requires manual weight tuning; constrained RL automatically balances the objectives.
-
-3. **Confidence-Weighted Test-Time Computation**:
-
-    - Function: Leverage calibrated confidence to improve sampling efficiency.
-    - Mechanism: Instead of standard majority voting (one vote per sample), confidence scores are used for weighted aggregation—answers with higher confidence contribute greater weight. Four samples suffice to match the performance of 16-sample majority voting (4× reduction in inference compute).
-    - Design Motivation: Calibrated confidence encodes answer reliability information; exploiting this information allows more efficient use of the sampling budget.
+3.  **Confidence-Weighted Test-Time Computation**:
+    - **Function**: Leverages calibrated confidence to improve sampling efficiency.
+    - **Mechanism**: Instead of standard majority voting (one vote per sample), the framework uses confidence scores for weighted aggregation—high-confidence correct answers contribute more weight. 4 samples can match the performance of 16-sample majority voting (a 4× reduction in inference compute).
+    - **Design Motivation**: Calibrated confidence contains info about answer reliability; utilizing this allows for more efficient allocation of the sampling budget.
 
 ### Loss & Training
 
-Constrained RL loss = standard policy gradient loss + $\lambda \cdot$ constraint violation penalty, where $\lambda$ is adaptively updated via dual gradient ascent. Training is conducted on 7B and 72B models.
+Constrained RL Loss = standard policy gradient loss + $\lambda \cdot$ constraint violation penalty. $\lambda$ is adaptively adjusted via dual gradient ascent. Training is conducted on 7B and 72B models.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**Average false-certain rate across five benchmarks**
+**Average "False-Certain" rate across five benchmarks**
 
 | Method | False-Certain Rate ↓ | Accuracy |
-|---|---|---|
-| Search-augmented baseline | 54% | Moderate |
+| :--- | :--- | :--- |
+| Search-augmented Baseline | 54% | Moderate |
 | **7B Deliberative Searcher** | **2%** | Competitive |
-| **72B Deliberative Searcher** | **9%** | Near closed-source |
+| **72B Deliberative Searcher** | **9%** | Close to Closed-source |
 
 ### Ablation Study
 
-| Configuration | Outcome |
-|---|---|
-| Unconstrained RL | High accuracy but high false-certain rate |
-| Fixed $\lambda$ | Suboptimal—cannot adaptively balance objectives |
-| Adaptive $\lambda$ | Best—dynamically balances correctness and reliability |
-| Confidence-weighted vs. majority voting | 4-sample confidence-weighted ≈ 16-sample majority voting |
+| Config | Effect |
+| :--- | :--- |
+| No Constrained RL | High accuracy but high False-Certain rate |
+| Fixed $\lambda$ | Suboptimal—unable to adaptively balance |
+| Adaptive $\lambda$ | Optimal—dynamically balances correctness and reliability |
+| Confidence-weighted vs. Majority Voting | 4-sample weighted $\approx$ 16-sample majority |
 
 ### Key Findings
 
-- False-certain rate reduced from 54% to 2% (7B), fundamentally improving output reliability.
-- The 72B model achieves accuracy competitive with closed-source models while maintaining a low false-certain rate.
-- Confidence-weighted aggregation achieves 4× inference compute savings.
-- Adaptive Lagrangian multipliers outperform fixed-weight multi-objective optimization.
+- The False-Certain rate dropped from 54% to 2% (7B), fundamentally enhancing output reliability.
+- The 72B model achieves accuracy competitive with closed-source models while maintaining a low False-Certain rate.
+- Confidence-weighted aggregation achieves a 4× saving in inference computation.
+- Adaptive Lagrange multipliers outperform multi-objective optimization with fixed weights.
 
 ## Highlights & Insights
 
-- Formalizing reliability as a constrained optimization problem rather than an auxiliary objective provides reliability guarantees.
-- Confidence calibration yields dual value: (1) user trust and (2) inference efficiency—achieving two goals simultaneously.
-- The false-certain rate serves as a core reliability metric for LLMs with direct practical significance for deployment.
+- Formalizing reliability as a constrained optimization problem rather than an auxiliary goal ensures rigorous reliability guarantees.
+- Confidence calibration offers dual value: (1) increasing user trust and (2) improving inference efficiency.
+- The "False-Certain" rate serves as a core metric for LLM reliability with significant implications for practical deployment.
 
 ## Limitations & Future Work
 
-- The representation format of confidence scores (e.g., probabilities vs. natural language) may affect user comprehension.
-- The choice of constraint threshold $\epsilon$ requires adjustment depending on the application context.
-- Search quality depends on external search engines; misinformation in retrieved results may be incorporated into reasoning.
+- The representation format of confidence scores (e.g., numerical probabilities vs. natural language) may influence user perception.
+- The selection of the constraint threshold $\epsilon$ needs to be tuned based on specific application scenarios.
+- Search quality remains dependent on external engines; misinformation in search results may still be integrated.
 
 ## Related Work & Insights
 
-- **vs. standard search-augmented LLMs**: Standard methods neglect confidence calibration; Deliberative Searcher explicitly optimizes reliability.
-- **vs. self-reflection methods**: Self-reflection relies on the model's internal judgment, whereas Deliberative Searcher enforces calibration through RL constraints.
+- **vs. Standard Search-Augmented LLMs**: Standard methods often neglect confidence calibration, whereas Deliberative Searcher explicitly optimizes for reliability.
+- **vs. Self-Reflection Methods**: Reflection methods rely heavily on the model's internal judgment, while Deliberative Searcher ensures calibration through RL constraints.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ The combination of constrained RL for reliability optimization and confidence-weighted inference is highly novel.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Five benchmarks, two model scales, and efficiency analysis.
-- Writing Quality: ⭐⭐⭐⭐ Problem formulation is clear; the four-quadrant reliability framework is intuitive.
-- Value: ⭐⭐⭐⭐⭐ Significant practical implications for reliable LLM deployment.
+- **Novelty**: ⭐⭐⭐⭐⭐ The combination of constrained RL for reliability and confidence-weighted reasoning is highly novel.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Covers five benchmarks, two model scales, and efficiency analysis.
+- **Writing Quality**: ⭐⭐⭐⭐ Clear problem definition and intuitive reliability framework.
+- **Value**: ⭐⭐⭐⭐⭐ Highly significant for the reliable deployment of LLMs.
 
 <!-- RELATED:START -->
 
@@ -129,11 +126,11 @@ Constrained RL loss = standard policy gradient loss + $\lambda \cdot$ constraint
 
 ## Related Papers
 
-- [\[ACL 2026\] Scaling Behaviors of LLM Reinforcement Learning Post-Training: An Empirical Study](scaling_behaviors_of_llm_reinforcement_learning_post-training_an_empirical_study.md)
 - [\[ICLR 2026\] Understanding and Improving Hyperbolic Deep Reinforcement Learning](../../ICLR2026/reinforcement_learning/understanding_and_improving_hyperbolic_deep_reinforcement_learning.md)
+- [\[ACL 2026\] Scaling Behaviors of LLM Reinforcement Learning Post-Training: An Empirical Study](scaling_behaviors_of_llm_reinforcement_learning_post-training_an_empirical_study.md)
+- [\[ACL 2026\] Efficient Hyperparameter Optimization for LLM Reinforcement Learning](efficient_hyperparameter_optimization_for_llm_reinforcement_learning.md)
+- [\[ACL 2026\] LearnAlign: Data Selection for LLM Reinforcement Learning with Improved Gradient Alignment](learnalign_data_selection_for_llm_reinforcement_learning_with_improved_gradient_.md)
 - [\[ICLR 2026\] Self-Improving Skill Learning for Robust Skill-based Meta-Reinforcement Learning](../../ICLR2026/reinforcement_learning/self-improving_skill_learning_for_robust_skill-based_meta-reinforcement_learning.md)
-- [\[ICLR 2026\] CUDA-L1: Improving CUDA Optimization via Contrastive Reinforcement Learning](../../ICLR2026/reinforcement_learning/cuda-l1_improving_cuda_optimization_via_contrastive_reinforcement_learning.md)
-- [\[ACL 2026\] Adaptive Instruction Composition for Automated LLM Red-Teaming](adaptive_instruction_composition_for_automated_llm_red-teaming.md)
 
 </div>
 

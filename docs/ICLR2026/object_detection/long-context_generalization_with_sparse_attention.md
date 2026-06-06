@@ -150,9 +150,9 @@ Effect of $\alpha$ and temperature learnability (Associative Recall, test length
 
 - [\[ICLR 2026\] SPWOOD: Sparse Partial Weakly-Supervised Oriented Object Detection](spwood_sparse_partial_weakly-supervised_oriented_object_detection.md)
 - [\[ICML 2026\] Smoothing Slot Attention Iterations and Recurrences](../../ICML2026/object_detection/smoothing_slot_attention_iterations_and_recurrences.md)
+- [\[ICML 2026\] FOCUS: Forcing In-Context Object Localization through Visual Support Constraints and Policy Optimization](../../ICML2026/object_detection/focus_forcing_in-context_object_localization_through_visual_support_constraints_.md)
 - [\[CVPR 2026\] AR²-4FV: Anchored Referring and Re-identification for Long-Term Grounding in Fixed-View Videos](../../CVPR2026/object_detection/ar2-4fv_anchored_referring_and_re-identification_for_long-term_grounding_in_fixe.md)
 - [\[NeurIPS 2025\] Video-RAG: Visually-aligned Retrieval-Augmented Long Video Comprehension](../../NeurIPS2025/object_detection/video-rag_visually-aligned_retrieval-augmented_long_video_comprehension.md)
-- [\[ICCV 2025\] Toward Long-Tailed Online Anomaly Detection through Class-Agnostic Concepts](../../ICCV2025/object_detection/toward_long-tailed_online_anomaly_detection_through_class-agnostic_concepts.md)
 
 </div>
 

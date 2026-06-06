@@ -136,7 +136,7 @@ SAE consists of two core modules: (1) a **Semantic Correction Module**—jointly
 - [\[AAAI 2026\] Conversational Learning Diagnosis via Reasoning Multi-Turn Interactive Learning](conversational_learning_diagnosis_via_reasoning_multi-turn_interactive_learning.md)
 - [\[NeurIPS 2025\] C²Prompt: Class-aware Client Knowledge Interaction for Federated Continual Learning](../../NeurIPS2025/llm_nlp/c2prompt_class-aware_client_knowledge_interaction_for_federated_continual_learni.md)
 - [\[AAAI 2026\] Learning Spatial Decay for Vision Transformers](learning_spatial_decay_for_vision_transformers.md)
-- [\[ACL 2026\] MulDimIF: A Multi-Dimensional Constraint Framework for Evaluating and Improving Instruction Following in Large Language Models](../../ACL2026/llm_nlp/muldimif_a_multi-dimensional_constraint_framework_for_evaluating_and_improving_i.md)
+- [\[ICML 2026\] Position: Adversarial ML for LLMs Is Not Making Any Progress](../../ICML2026/llm_nlp/position_adversarial_ml_for_llms_is_not_making_any_progress.md)
 
 </div>
 

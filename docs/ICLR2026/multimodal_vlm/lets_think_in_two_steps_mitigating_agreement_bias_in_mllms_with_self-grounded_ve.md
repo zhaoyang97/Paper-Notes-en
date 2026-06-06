@@ -142,10 +142,10 @@ Majority voting relies on the mode of the output distribution, but agreement bia
 ## Related Papers
 
 - [\[CVPR 2026\] Self-Consistency for LLM-Based Motion Trajectory Generation and Verification](../../CVPR2026/multimodal_vlm/self-consistency_for_llm-based_motion_trajectory_generation_and_verification.md)
+- [\[ACL 2026\] VIGNETTE: Socially Grounded Bias Evaluation for Vision-Language Models](../../ACL2026/multimodal_vlm/vignette_socially_grounded_bias_evaluation_for_vision-language_models.md)
 - [\[AAAI 2026\] SAGE: Spuriousness-Aware Guided Prompt Exploration for Mitigating Multimodal Bias](../../AAAI2026/multimodal_vlm/sage_spuriousness-aware_guided_prompt_exploration_for_mitigating_multimodal_bias.md)
 - [\[CVPR 2026\] Mitigating Multimodal Hallucinations via Gradient-based Self-Reflection](../../CVPR2026/multimodal_vlm/mitigating_multimodal_hallucinations_via_gradient-based_self-reflection.md)
 - [\[ICLR 2026\] Empowering Small VLMs to Think with Dynamic Memorization and Exploration](empowering_small_vlms_to_think_with_dynamic_memorization_and_exploration.md)
-- [\[CVPR 2026\] CodePercept: Code-Grounded Visual STEM Perception for MLLMs](../../CVPR2026/multimodal_vlm/codepercept_code-grounded_visual_stem_perception_for_mllms.md)
 
 </div>
 

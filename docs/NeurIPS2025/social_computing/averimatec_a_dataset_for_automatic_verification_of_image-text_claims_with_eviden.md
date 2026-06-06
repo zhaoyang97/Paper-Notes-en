@@ -135,9 +135,9 @@ AVerImaTeC introduces the first image-text fact-checking dataset with complete e
 
 - [\[NeurIPS 2025\] Precise Information Control in Long-Form Text Generation](precise_information_control_in_long-form_text_generation.md)
 - [\[AAAI 2026\] Beyond Detection: Exploring Evidence-based Multi-Agent Debate for Misinformation Intervention and Persuasion](../../AAAI2026/social_computing/beyond_detection_exploring_evidence-based_multi-agent_debate_for_misinformation_.md)
+- [\[ACL 2026\] ClaimDB: A Fact Verification Benchmark over Large Structured Data](../../ACL2026/social_computing/claimdb_a_fact_verification_benchmark_over_large_structured_data.md)
+- [\[ACL 2026\] FigSIM: A Dataset for Fine-grained Suicide Severity and Figurative Language in Suicide Memes](../../ACL2026/social_computing/figsim_a_dataset_for_fine-grained_suicide_severity_and_figurative_language_in_su.md)
 - [\[ACL 2026\] Persona-E2: A Human-Grounded Dataset for Personality-Shaped Emotional Responses to Textual Events](../../ACL2026/social_computing/persona-e2_a_human-grounded_dataset_for_personality-shaped_emotional_responses_t.md)
-- [\[CVPR 2026\] Bridging Pixels and Words: Mask-Aware Local Semantic Fusion for Multimodal Media Verification](../../CVPR2026/social_computing/bridging_pixels_and_words_mask-aware_local_semantic_fusion_for_multimodal_media_.md)
-- [\[ACL 2026\] Who Gets Which Message? Auditing Demographic Bias in LLM-Generated Targeted Text](../../ACL2026/social_computing/who_gets_which_message_auditing_demographic_bias_in_llm-generated_targeted_text.md)
 
 </div>
 

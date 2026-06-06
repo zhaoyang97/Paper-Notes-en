@@ -133,11 +133,11 @@ OuroMamba consists of two stages: OuroMamba-Gen (synthetic data generation) and 
 
 ## Related Papers
 
+- [\[ICML 2026\] Selective Coupling of Decoupled Informative Regions: Masked Attention Alignment for Data-Free Quantization of Vision Transformers](../../ICML2026/model_compression/selective_coupling_of_decoupled_informative_regions_masked_attention_alignment_f.md)
 - [\[ICCV 2025\] MixA-Q: Revisiting Activation Sparsity for Vision Transformers from a Mixed-Precision Quantization Perspective](mixa-q_revisiting_activation_sparsity_for_vision_transformers_from_a_mixed-preci.md)
-- [\[CVPR 2026\] Learning through Creation: A Hash-Free Framework for On-the-Fly Category Discovery](../../CVPR2026/model_compression/learning_through_creation_a_hash-free_framework_for_on-the-fly_category_discover.md)
-- [\[CVPR 2026\] HiAP: A Multi-Granular Stochastic Auto-Pruning Framework for Vision Transformers](../../CVPR2026/model_compression/hiap_a_multi-granular_stochastic_auto-pruning_framework_for_vision_transformers.md)
+- [\[ICML 2026\] Float8@2bits: Entropy Coding Enables Data-Free Model Compression](../../ICML2026/model_compression/float82bits_entropy_coding_enables_data-free_model_compression.md)
 - [\[ICCV 2025\] EA-ViT: Efficient Adaptation for Elastic Vision Transformer](ea-vit_efficient_adaptation_for_elastic_vision_transformer.md)
-- [\[ICCV 2025\] StolenLoRA: Exploring LoRA Extraction Attacks via Synthetic Data](stolenlora_exploring_lora_extraction_attacks_via_synthetic_data.md)
+- [\[ICCV 2025\] Achieving More with Less: Additive Prompt Tuning for Rehearsal-Free Class-Incremental Learning](achieving_more_with_less_additive_prompt_tuning_for_rehearsal-free_class-increme.md)
 
 </div>
 

@@ -122,8 +122,8 @@ Input image $x$ → Fourier augmentation generates domain-shifted views $(x_1, x
 - [\[CVPR 2026\] Text-Phase Synergy Network with Dual Priors for Unsupervised Cross-Domain Image Retrieval](../../CVPR2026/self_supervised/text-phase_synergy_network_with_dual_priors_for_unsupervised_cross-domain_image_.md)
 - [\[NeurIPS 2025\] SEAL: Semantic-Aware Hierarchical Learning for Generalized Category Discovery](seal_semantic-aware_hierarchical_learning_for_generalized_category_discovery.md)
 - [\[ICML 2026\] Statistical Consistency and Generalization of Contrastive Representation Learning](../../ICML2026/self_supervised/statistical_consistency_and_generalization_of_contrastive_representation_learnin.md)
+- [\[ICML 2026\] Inconsistency-Aware Minimization: Improving Generalization with Unlabeled Data](../../ICML2026/self_supervised/inconsistency-aware_minimization_improving_generalization_with_unlabeled_data.md)
 - [\[CVPR 2026\] MINE-JEPA: In-Domain Self-Supervised Learning for Mineral Exploration](../../CVPR2026/self_supervised/mine-jepa_in-domain_self-supervised_learning_for_mine-like_object_classification.md)
-- [\[CVPR 2026\] GeoChemAD: Benchmarking Unsupervised Geochemical Anomaly Detection for Mineral Exploration](../../CVPR2026/self_supervised/geochemad_benchmarking_unsupervised_geochemical_anomaly_detection_for_mineral_ex.md)
 
 </div>
 

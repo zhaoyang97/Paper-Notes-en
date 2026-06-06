@@ -141,8 +141,8 @@ Results on a self-collected container vibration dataset (23 container types, 5,9
 - [\[NeurIPS 2025\] Inductive Transfer Learning for Graph-Based Recommenders](../../NeurIPS2025/audio_speech/inductive_transfer_learning_for_graph-based_recommenders.md)
 - [\[ICCV 2025\] Zero-AVSR: Zero-Shot Audio-Visual Speech Recognition with LLMs by Learning Language-Agnostic Speech Representations](zero-avsr_zero-shot_audio-visual_speech_recognition_with_llms_by_learning_langua.md)
 - [\[ICLR 2026\] PACE: Pretrained Audio Continual Learning](../../ICLR2026/audio_speech/pace_pretrained_audio_continual_learning.md)
+- [\[ACL 2026\] Privacy-preserving Prosody Representation Learning](../../ACL2026/audio_speech/privacy-preserving_prosody_representation_learning.md)
 - [\[AAAI 2026\] Gene Incremental Learning for Single-Cell Transcriptomics](../../AAAI2026/audio_speech/gene_incremental_learning_for_single-cell_transcriptomics.md)
-- [\[CVPR 2026\] SAVE: Speech-Aware Video Representation Learning for Video-Text Retrieval](../../CVPR2026/audio_speech/save_speech-aware_video_representation_learning_for_video-text_retrieval.md)
 
 </div>
 

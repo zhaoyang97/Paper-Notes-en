@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Steer Like the LLM: Activation Steering that Mimics Prompting
 description: >-
-  [ICML 2026][Interpretability][activation steering] This paper reinterprets "prompt steering" as a form of activation steering natively implemented by LLMs…
+  [ICML 2026][Interpretability][activation steering] This paper reinterprets "prompt steering" as a form of activation steering implemented by the LLM itself. It uses a **per-token ReLU probe** to distill the activation di…
 tags:
   - "ICML 2026"
   - "Interpretability"
   - "activation steering"
   - "prompt steering"
-  - "token-specific coefficient"
+  - "token-specific coefficients"
   - "ReLU probe"
   - "PSR"
 date: 2026-05-08
-content_hash: 6811d2ffdbe2f06c
+content_hash: 1dbb93e712799475
 ---
 
 # Steer Like the LLM: Activation Steering that Mimics Prompting
@@ -21,73 +21,69 @@ content_hash: 6811d2ffdbe2f06c
 **arXiv**: [2605.03907](https://arxiv.org/abs/2605.03907)  
 **Code**: <https://github.com/Nokia-Bell-Labs/steer-like-the-llm>  
 **Area**: Mechanistic Interpretability / LLM Alignment / Activation Steering  
-**Keywords**: activation steering, prompt steering, token-specific coefficient, ReLU probe, PSR
+**Keywords**: activation steering, prompt steering, token-specific coefficients, ReLU probe, PSR
 
 ## TL;DR
-This paper reinterprets "prompt steering" as a form of activation steering natively implemented by LLMs, and then distills the activation difference induced by prompt injection using a **token-wise ReLU probe**. The resulting Prompt Steering Replacement (PSR) module not only outperforms existing activation steering methods (CAA, ReFT-R1, Stolfo, etc.) on three steering benchmarks, but also matches or surpasses prompting on AxBench and persona steering tasks.
+This paper reinterprets "prompt steering" as a form of activation steering implemented by the LLM itself. It uses a **per-token ReLU probe** to distill the activation differences injected by prompts, training a PSR (Prompt Steering Replacement) module. PSR outperforms existing steering methods (CAA, ReFT-R1, Stolfo, etc.) across three benchmarks and achieves performance comparable to or even surpassing prompting in AxBench and personality steering.
 
 ## Background & Motivation
 
-**Background**: There are two main approaches to controlling LLM behavior: (1) prompting/in-context examples; (2) activation steering—adding a fixed vector $\alpha\mathbf z_{attr}$ to the residual stream at a certain layer. The latter is attractive for being lightweight, robust to prompt injection, and interpretable, making it a popular direction in mechanistic interpretability.
+**Background**: Controlling LLM behavior generally follows two paths: (1) prompting / in-context examples; (2) activation steering—adding a fixed vector $\alpha\mathbf z_{attr}$ to the residual stream at a specific layer. The latter is a prominent direction in mechanistic interpretability due to its "lightweight nature, robustness to prompt injection, and interpretability."
 
-**Limitations of Prior Work**: Despite a long list of methods (ActAdd, CAA, ITI, ReFT-R1), activation steering is **still systematically weaker than prompting** (as repeatedly validated by Wu et al.). The paper provides two direct illustrations: plotting the actual activation difference $\Delta_{PS}$ caused by prompt injection reveals that its strength varies by several orders of magnitude across tokens—some tokens are barely affected, while others are heavily rewritten. All mainstream activation steering methods either use the same constant vector for all tokens or only intervene at the last token, which is fundamentally different from the steering mechanism implemented by LLMs (i.e., prompting).
+**Limitations of Prior Work**: Despite a long list of methods like ActAdd, CAA, ITI, and ReFT-R1, activation steering **remains systematically weaker than prompting** (as verified multiple times by Wu et al.). The paper presents two intuitive figures: plotting the actual activation difference $\Delta_{PS}$ caused by prompt injection reveals that its **magnitude varies across tokens by several orders of magnitude**. Some tokens remain nearly unchanged, while others are heavily rewritten. All mainstream activation steering methods either use the same constant vector for all tokens or only apply it to the last token, which does not reflect the steering mechanism (prompting) implemented by the LLM itself.
 
-**Key Challenge**: The implicit assumption of "replicating prompting behavior with a constant $\alpha\mathbf z$" does not hold—prompting is essentially a **token-specific**, non-uniform intervention, so using a constant inevitably leads to oversteering or understeering.
+**Key Challenge**: The implicit assumption of "replicating prompting behavior with a constant $\alpha\mathbf z$" is untenable. Prompting is inherently a **token-specific**, non-uniform intervention. Using a constant inevitably leads to trade-offs (either oversteering or insufficient steering).
 
-**Goal**: (a) Explicitly formalize "prompting as a (black-box) activation steering"; (b) Distill the differential activation induced by prompt injection using a simple, interpretable model; (c) Treat token-specific coefficients as a first-order requirement and design a learnable PSR; (d) Systematically outperform baselines while maintaining high coherence.
+**Goal**: (a) Explicitly formalize "prompting as a (black-box) activation steering"; (b) distill the differential activations of prompt injection using a simple, interpretable model; (c) design a learnable PSR using token-specific coefficients as a first-order necessity; (d) systematically outperform baselines while maintaining high coherence.
 
-**Key Insight**: Since the "groundtruth intervention" of prompt steering $\Delta_{PS}=\mathbf A^{prompt}-\mathbf A^{base}$ can be **directly computed**, it can be used as a supervised target, training the activation steering module to imitate it via MSE.
+**Key Insight**: Since the "ground truth intervention" of prompt steering $\Delta_{PS}=\mathbf A^{prompt}-\mathbf A^{base}$ can be **calculated directly**, it can be treated as a supervised target. An activation steering module can then be trained as its imitator using MSE.
 
-**Core Idea**: Express prompt steering as $\mathbf A_{y_i'|PS}=\mathbf A_{y_i'}+\alpha\,\lambda(\mathbf A_{y_i'};\theta_{attr})\mathbf z_{attr}$, where $\lambda$ is a **ReLU probe decoding token-level strength from the activation itself**; the training objective is to minimize the MSE with the prompt-steered activation, which defines PSR.
+**Core Idea**: Prompt steering is formulated as $\mathbf A_{y_i'|PS}=\mathbf A_{y_i'}+\alpha\,\lambda(\mathbf A_{y_i'};\theta_{attr})\mathbf z_{attr}$, where $\lambda$ is a **ReLU probe** that decodes token-level intensity from the activations themselves. The training objective is the MSE against prompt-steered activations, resulting in the PSR.
 
 ## Method
 
 ### Overall Architecture
-Training pipeline: (i) Given an attribute $attr$, collect prompt pairs $(x,x')$, where $x'$ contains an additional trait-eliciting instruction compared to $x$; (ii) Use the LLM to sample responses $y'$ on $x'$, and filter out unsuccessful or incoherent samples using an LLM judge $J_{attr}$ and a coherence judge $J_{coher}$; (iii) Compute $\mathbf A_{y_i'|PS}=\mathrm{LLM}(x'y')$ and $\mathbf A_{y_i'}=\mathrm{LLM}(xy')$, with their difference being the intervention $\Delta_{PS}$; (iv) Train the PSR module (single-layer/all-layer versions) to make its activations approximate $\mathbf A_{y_i'|PS}$. During inference: only the original prompt $x$ is used, the PSR intervention is inserted into the forward pass, and the global coefficient $\alpha$ serves as a strength knob.
+Training pipeline: (i) Given an attribute $attr$, collect prompt pairs $(x,x')$, where $x'$ includes a trait-eliciting instruction; (ii) sample response $y'$ from the LLM under $x'$, and use LLM judges $J_{attr}$ and $J_{coher}$ to filter successful and coherent samples; (iii) calculate $\mathbf A_{y_i'|PS}=\mathrm{LLM}(x'y')$ and $\mathbf A_{y_i'}=\mathrm{LLM}(xy')$, where the difference is the intervention $\Delta_{PS}$; (iv) train the PSR module (single-layer or all-layer versions) to approximate $\mathbf A_{y_i'|PS}$. Inference: Using only the original prompt $x$, the PSR intervention is inserted into the forward pass, with a global coefficient $\alpha$ acting as an intensity knob.
 
 ### Key Designs
 
-1. **Formalizing prompt steering as token-specific activation steering**:
+1.  **Formalizing prompt steering as token-specific activation steering**:
+    - **Function**: Provides a mathematical equation to decompose the actual activation effect of prompt injection into "layer-wise, token-wise differences $\Delta_{PS}$." It distinguishes between the **accumulated version** $\Delta_{PS_{acc}}$ (relative to a baseline without steering) and the **local version** $\Delta_{PS_{loc}}$ (relative to a baseline already steered in the previous layer), corresponding to single-layer and all-layer PSR, respectively.
+    - **Mechanism**: Expresses $\mathbf A_{l,y_i'|PS}=\mathbf A_{l,y_i'}+\Delta_{PS}(x'y'_{\le i},xy'_{\le i})$ (Eq. 3). Based on this, two minimal assumptions are proposed: Assumption 3.1 (intervention follows a single direction $\mathbf z_{attr}$) + Assumption 3.2 (consistent intensity across tokens) $\Rightarrow$ degenerates into existing constant steering (Eq. 2). The paper uses Llama-3.2-3B sycophancy data to visualize that Assumption 3.2 contradicts reality; thus, **only Assumption 3.1 is retained, while 3.2 is relaxed** to "intensity is decodable from activations" (Assumption 3.2a).
+    - **Design Motivation**: This formalization serves as the scaffolding for the methodology, directly indicating that mimicking prompts requires $\lambda$ to vary per token.
 
-    - **Function**: Provides a mathematical equation decomposing the actual activation effect of prompt injection into "layer-wise, token-wise differences $\Delta_{PS}$", distinguishing between the **accumulated version** $\Delta_{PS_{acc}}$ (relative to a baseline with no steering) and the **local version** $\Delta_{PS_{loc}}$ (relative to the previous layer already steered), corresponding to single-layer/all-layer PSR, respectively.
-    - **Mechanism**: Expresses $\mathbf A_{l,y_i'|PS}=\mathbf A_{l,y_i'}+\Delta_{PS}(x'y'_{\le i},xy'_{\le i})$ (Eq. 3); introduces two minimal assumptions—Assumption 3.1 (intervention along a single direction $\mathbf z_{attr}$) + Assumption 3.2 (strength is uniform across tokens) ⇒ reduces to existing constant steering Eq. 2; the paper uses Llama-3.2-3B sycophancy data to show that Assumption 3.2 does not hold in practice, so **only 3.1 is retained, and 3.2 is relaxed** to "strength can be decoded from the activation" (Assumption 3.2a).
-    - **Design Motivation**: This formalization underpins all subsequent methodology, directly indicating that "to mimic prompt, $\lambda$ must at least vary by token".
+2.  **PSR Architecture: ReLU Probes for Token-level Intensity Estimation**:
+    - **Function**: Dynamically determines steering intensity for each layer and token, replacing the constant $\alpha$.
+    - **Mechanism**: Uses a single-layer ReLU probe $\lambda(\mathbf A_{l,y_i'};\theta_{attr,l})=\mathrm{ReLU}(\mathbf A_{l,y_i'}\cdot\mathbf w_{attr,l}+b_{attr,l})$ (Eq. 8). The intervention is defined as $\mathbf A_{l,y_i'|AS}=\mathbf A_{l,y_i'}+\alpha\lambda(\cdot)\mathbf z_{attr,l}$ (Eq. 7). Two variants: **S-PSR** intervenes at a single layer (corresponding to $\Delta_{PS_{acc}}$); **A-PSR** intervenes at all layers simultaneously (corresponding to $\Delta_{PS_{loc}}$). ReLU is used instead of sigmoid to explicitly allow "zero intervention" on certain tokens—matching the observation in Figure 2 where many tokens are barely modified by prompts.
+    - **Design Motivation**: The probe reads $\mathbf A_{l,y_i'}$ because the influence of prompts in Transformers only enters the hidden state of the current token via self-attention. Thus, the decision to steer a token should inherently be recoverable from that token's activation.
 
-2. **PSR architecture: ReLU probe estimates token-level strength**:
-
-    - **Function**: Dynamically determines steering strength at each layer and token, replacing the constant $\alpha$.
-    - **Mechanism**: Uses a single-layer ReLU probe $\lambda(\mathbf A_{l,y_i'};\theta_{attr,l})=\mathrm{ReLU}(\mathbf A_{l,y_i'}\cdot\mathbf w_{attr,l}+b_{attr,l})$ (Eq. 8), with intervention defined as $\mathbf A_{l,y_i'|AS}=\mathbf A_{l,y_i'}+\alpha\lambda(\cdot)\mathbf z_{attr,l}$ (Eq. 7). Two variants: **S-PSR** intervenes at a single layer, corresponding to $\Delta_{PS_{acc}}$; **A-PSR** intervenes at all layers, corresponding to $\Delta_{PS_{loc}}$. ReLU (rather than sigmoid) is used to explicitly allow "zero intervention" for some tokens—matching the empirical observation in Figure 2 that "many tokens are barely affected by the prompt".
-    - **Design Motivation**: The probe reads $\mathbf A_{l,y_i'}$ itself, since in transformers, the effect of the prompt can only reach the current token's hidden state via self-attention, so "whether to steer this token" can in principle be recovered from the token's own activation, aligning with the physical intuition of Assumption 3.2a.
-
-3. **Training objectives: Dual-track MSE-on-activations and LL-on-output**:
-
-    - **Function**: Provides two complementary objectives—MSE strictly mimics prompt-injected activations, LL only cares about final output attribute alignment.
-    - **Mechanism**: (a) **MSE objective** $\mathcal L_{MSE}=\sum_l\|\mathbf A_{l,y_i'|AS}-\mathbf A_{l,y_i'|PS}\|^2$, trained on filtered successful prompt-steered triplets $(x,x',y')$, with $\alpha=J_{attr}\in[0,1]$ as a soft label during training and freely adjustable at inference; (b) **LL objective** $-\log p_{AS}(y'|x)$, which does not require intermediate activations to match; (c) Adds a $\lambda$ regularizer $\mathcal L_{reg}=\max(0,1-\sum_i\lambda_i)$ to prevent all ReLUs from dying. Negative samples ($J_{attr}<0.5$) are handled by bias $b_{m,l}=-0.5$ to yield negative $\alpha$, automatically learning "LLM's default when the attribute should not appear".
-    - **Design Motivation**: MSE is activation-level distillation, providing the richest training signal but assuming Assumptions 3.1/3.2a hold at that layer; LL does not require intermediate faithfulness and is stronger on tasks like IFEval that require complex format control (since rank-1 intervention cannot fully replicate all prompt mechanisms).
+3.  **Training Objectives: Dual-track MSE-on-activations and LL-on-output**:
+    - **Function**: Provides two complementary goals—MSE strictly mimics the activations of prompt injection, while LL focuses on final output alignment with the attribute.
+    - **Mechanism**: (a) **MSE Objective**: $\mathcal L_{MSE}=\sum_l\|\mathbf A_{l,y_i'|AS}-\mathbf A_{l,y_i'|PS}\|^2$. Training data consists of filtered successful prompt-steered triplets $(x,x',y')$. During training, $\alpha=J_{attr}\in[0,1]$ is used as a soft label; during inference, $\alpha$ is freely adjusted. (b) **LL Objective**: $-\log p_{AS}(y'|x)$, which does not require intermediate activation similarity. (c) A $\lambda$ regularization $\mathcal L_{reg}=\max(0,1-\sum_i\lambda_i)$ is added to prevent all ReLUs from becoming inactive. Negative samples ($J_{attr}<0.5$) are converted to negative $\alpha$ via a bias term $b_{m,l}=-0.5$.
+    - **Design Motivation**: MSE provides the richest training signal for activation-level distillation, provided Assumptions 3.1/3.2a hold. LL does not require intermediate fidelity and performs better on tasks requiring complex format control (like IFEval), where rank-1 interventions cannot fully replicate every mechanism of a prompt.
 
 ### Loss & Training
-
-- Key hyperparameter: The global coefficient $\alpha$ is tuned via binary search at inference to achieve target coherence 80; A-PSR is jointly optimized across all layers, and single-layer MSE also monitors downstream layer MSE to avoid noise propagation; training uses only positive successful samples (negatives are handled with bias shift).
-- Data filtering: Samples with $J_{coher}<0.5$ are discarded, as are positive samples with $J_{attr}<0.5$—ensuring PSR learns the behavior of "successful prompt steering".
+- **Key Hyperparameters**: The global coefficient $\alpha$ is tuned during inference using binary search to reach 80% coherence. A-PSR is optimized across all layers jointly.
+- **Data Filtering**: Samples with $J_{coher}<0.5$ are discarded entirely, as are positive samples with $J_{attr}<0.5$, ensuring PSR learns the behavior of "successful prompt steering."
 
 ## Key Experimental Results
 
 ### Main Results
 
-**Persona Vectors** (persona steering, 5 traits × 3 LLMs): trait alignment at coherence 80 (TA@C80) and prompt-coherence-aligned (TA@Cp), higher is better.
+**Persona Vectors** (5 traits × 3 LLMs): Measured by trait alignment at coherence 80 (TA@C80) and prompt-coherence-aligned (TA@Cp).
 
 | Method (Qwen2.5-7B) | TA@C80 | TA@Cp |
 |---|---|---|
-| S-Const$_{DiM\|R}$ (CAA type) | 74.8 | 34.8 |
+| S-Const$_{DiM\|R}$ (CAA-like) | 74.8 | 34.8 |
 | S-Const$_{MSE\|QR}$ | 71.6 | 48.8 |
 | **S-PSR$_{MSE\|QR}$** | **83.3** | **60.9** |
 | A-Const$_{MSE\|QR}$ | 96.1 | 83.6 |
 | **A-PSR$_{MSE\|QR}$** | **96.8** | **83.9** |
-| prompt (upper bound reference) | – | 71.6 |
+| prompting (Upper bound ref) | – | 71.6 |
 
-A-PSR$_{MSE}$ achieves **higher TA@Cp than prompting** on all 3 LLMs, marking the first stable outperformance by activation steering.
+A-PSR$_{MSE}$ **exceeds prompting** in TA@Cp across all 3 LLMs, marking it as the first activation steering method to consistently outperform prompting in this context.
 
-**IFEval (format/multilingual instruction following)**: Reports IF Acc and Coherence.
+**IFEval (Format / Multilingual instruction following)**: Reporting IF Acc and Coherence.
 
 | Method (Gemma-2-9b-it) | IF Acc | Coher |
 |---|---|---|
@@ -95,74 +91,62 @@ A-PSR$_{MSE}$ achieves **higher TA@Cp than prompting** on all 3 LLMs, marking th
 | Stolfo et al. 2025 | 30.8 | 96.1 |
 | S-PSR$_{LL}$ | 66.1 | 95.5 |
 | **A-PSR$_{LL}$** | **71.9** | 82.3 |
-| prompt | 85.7 | 94.8 |
-| **S-PSR$_{LL}$+prompt** | **93.1** | 94.6 |
+| prompting | 85.7 | 94.8 |
+| **S-PSR$_{LL}$+prompting** | **93.1** | 94.6 |
 
-Rank-1 PSR alone cannot beat prompting, but stacking with prompt yields an additional 7–10 points.
+While rank-1 PSR alone does not beat prompting on IFEval, adding PSR to prompting yields a **Gain** of 7-10 points.
 
-**AxBench (500 SAE concepts, Gemma-2)**: Harmonic mean of concept/fluency/relevance, max score 2.0.
+**AxBench (500 SAE concepts, Gemma-2)**: Harmonic mean of concept / fluency / relevance (max 2.0).
 
 | Method | 2B-L20 | 9B-L20 |
 |---|---|---|
 | ReFT-r1 (rank-1) | 0.509 | 0.630 |
 | Φ_SV (Wu 25b) | 0.606 | 0.892 |
 | **S-PSR$_{LL}$ (rank-1)** | **0.618** | 0.667 |
-| LoReFT-RePS (high rank) | 0.805 | 0.757 |
+| LoReFT-RePS (High rank) | 0.805 | 0.757 |
 | HyperSteer | 0.742 | 1.091 |
 | **A-PSR$_{MSE}$** | **0.871** | **1.120** |
-| prompt | 0.731 | 1.075 |
+| prompting | 0.731 | 1.075 |
 
-A-PSR$_{MSE}$ achieves **SOTA** on both subsets, surpassing both prompting and LoRA.
+A-PSR$_{MSE}$ achieves **SOTA** on both subsets, outperforming both prompting and LoRA.
 
 ### Ablation Study
 
-| Configuration | Key Metric Change | Notes |
+| Configuration | Key Metric Change | Description |
 |------|----------|------|
-| Const vs PSR (single-layer) | TA@Cp +10~20 | Token-specific coefficients contribute most |
-| MSE vs LL (rank-1 PSR) | MSE better on persona, LL better on IFEval | MSE assumes Assumptions 3.1/3.2a hold, IFEval format instructions may not satisfy |
-| Single-layer → All-layer (A-PSR) | TA@Cp +25~40 | Multi-layer joint intervention nearly fully mimics prompt |
-| Remove $\lambda$ regularizer (AxBench) | Increase | AxBench interventions are weaker, regularizer is limiting |
+| Const vs PSR (Single layer) | TA@Cp +10\~20 | Token-specific coefficients provide the largest contribution. |
+| MSE vs LL (rank-1 PSR) | MSE better on Persona, LL better on IFEval | MSE requires Assumptions 3.1/3.2a; some IFEval format instructions violate these. |
+| Single layer → All layers (A-PSR) | TA@Cp +25\~40 | Multi-layer joint intervention almost perfectly mimics prompting. |
+| Removing $\lambda$ Reg (AxBench) | Gain | Weaker interventions in AxBench make regularization restrictive. |
 
 ### Key Findings
-- **Figure 3** reveals an interesting byproduct: the cumulative intervention of A-PSR$_{MSE}$ achieves a relative RMSE with the true $\Delta_{PS_{acc}}$ that is **lower than the RMSE between equivalent prompts** from layer 10 onward—indicating that PSR more faithfully replicates the internal mechanism of the original prompt than "another prompt expressing the same meaning".
-- Single-layer Const has RMSE > 1 at the intervention layer (worse than no steering), but RMSE drops below 1 in subsequent layers, indicating the model **self-corrects** to default behavior, explaining why constant steering appears "okay"—the model is compensating for it.
-- On IFEval, rank-1 intervention is insufficient, suggesting that prompt injection for "answer in Japanese + three-part format" type composite instructions inherently requires rank > 1, pointing to a clear direction for future work.
+- **Figure 3** shows an interesting byproduct: the relative RMSE of A-PSR$_{MSE}$ accumulated intervention compared to the real $\Delta_{PS_{acc}}$ **is lower than the RMSE between "equivalent prompts"** starting from layer 10. This suggests PSR replicates the internal mechanism of the original prompt more faithfully than another prompt expressing the same meaning.
+- Single-layer Constant steering has an RMSE > 1 at the intervention layer (further than no steering), but RMSE drops back to < 1 in subsequent layers. This indicates the model **compensates for inaccuracies** to return to default behavior, explaining why constant steering seems "acceptable"—the model is essentially rectifying its errors.
+- The insufficiency of rank-1 intervention on IFEval suggests that commands like "Answer in Japanese + Three-paragraph format" inherently require rank > 1, providing a clear direction for future work.
 
 ## Highlights & Insights
-- **Elegant perspective shift**: "prompting = LLM's self-implemented activation steering" seamlessly connects mechanistic interpretability and prompt engineering, making distillation a natural training objective—logically clear and experimentally closed-loop.
-- **ReLU probe + token-level coefficients** is a design transferable to all "sparse injection" scenarios: e.g., SAE feature steering, safety guardrail activations, hard concept editing.
-- Honest experiments: The fact that IFEval cannot be beaten by PSR alone is not hidden; instead, PSR+prompt is presented as a realistic deployment combo with full curves.
-- **Interpretability byproduct**: The $\lambda$ output of PSR can directly visualize "which tokens are most affected by the prompt", serving as an out-of-the-box tool for localizing prompt effects.
+- **Elegant Perspective Shift**: The concept that "prompting = LLM's self-implemented activation steering" bridges mechanistic interpretability and prompt engineering. The training objective naturally becomes distillation, creating a closed logical loop.
+- **ReLU Probe + Token-level Coefficients**: This design is transferable to all "sparse injection" scenarios, such as SAE feature steering, safety guardrail activation, or hard concept editing.
+- **Experimental Honesty**: The paper does not hide that PSR alone fails to beat prompting in IFEval, instead providing full curves for the realistic deployment combination of PSR+prompting.
+- **Interpretability Byproduct**: Visualizing $\lambda$ outputs from PSR allows for locating which tokens were most affected by the prompt, serving as an out-of-the-box tool for prompt behavior localization.
 
 ## Limitations & Future Work
-- Assumption 3.1 (single direction) clearly does not hold for some attributes; the paper acknowledges that some traits are multi-directional, requiring extension to low-rank ($r>1$) interventions—precisely the entry point for LoReFT.
-- Rank-1 is insufficient for IFEval, and MSE cannot be trained effectively; the paper recognizes this as a ceiling.
-- Training cost: Each trait requires 1k prompt-steered triplets + LLM judge, which remains expensive for long trait lists (e.g., AxBench's 500 concepts); exploring whether SAE features can be used directly as $\mathbf z_{attr}$ is a promising direction.
-- "Adversarial robustness"—since PSR distills prompt steering into a learnable module, could prompt injection attacks exploit weaknesses in the PSR probe, creating new risks? This is not discussed in the paper.
+- Assumption 3.1 (single direction) clearly does not hold for all attributes; the authors admit some traits are multi-directional and require expansion to low-rank ($r>1$) interventions—a natural entry point for LoReFT.
+- Rank-1 interventions are insufficient for complex tasks like IFEval, and MSE struggle to train them; the paper acknowledges this as a performance ceiling.
+- Training Cost: Each trait requires 1k prompt-steered triplets and LLM judging, which remains expensive for long trait lists (e.g., the 500 concepts in AxBench). Using SAE features as a starting point for $\mathbf z_{attr}$ is worth exploring.
+- Adversarial Robustness: Since PSR distills prompt steering into a learnable module, could prompt injection attacks exploit weaknesses in PSR probes? This risk is not discussed.
 
 ## Related Work & Insights
-- **vs ActAdd / CAA / ITI**: All use constant $\alpha\mathbf z$, do not relax Assumption 3.2, and are thus inherently limited to "uniform intervention across tokens"; PSR relaxes this with a ReLU probe.
-- **vs ReFT-R1 (Wu 2025a)**: ReFT-R1 also uses LL to train low-rank interventions, but still token-uniform; PSR's Const$_{LL}$ is roughly a degenerate version of ReFT-R1, while PSR$_{LL}$ systematically improves by adding $\lambda(\cdot)$.
-- **vs Stolfo et al. 2025**: Stolfo proposes per-token coefficients but aims for "uniform projection of $\mathbf z$ across tokens", which is opposite to this paper's goal (mimicking actual prompt injection); the paper directly outperforms it experimentally.
-- **vs HyperSteer (Sun 2025)**: HyperSteer uses a hypernetwork to generate interventions from the base prompt + steering instruction; A-PSR$_{MSE}$ outperforms it by 0.03–0.13 points on AxBench, with a more interpretable model.
+- **vs ActAdd / CAA / ITI**: These use constant $\alpha\mathbf z$ (relying on Assumption 3.2), which limits them to uniform intervention across tokens. PSR relaxes this via the ReLU probe.
+- **vs ReFT-R1 (Wu 2025a)**: ReFT-R1 also uses LL to train low-rank interventions but remains token-uniform. PSR$_{LL}$ systematically improves upon this via $\lambda(\cdot)$.
+- **vs Stolfo et al. 2025**: Stolfo proposes per-token coefficients but aims for uniform projection of $\mathbf z$ across tokens, which is the opposite of the goal of mimicking actual prompt injection.
+- **vs HyperSteer (Sun 2025)**: HyperSteer uses a hypernetwork to generate interventions. A-PSR$_{MSE}$ outperforms it by 0.03-0.13 points in AxBench and is more interpretable.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The formalization of "prompting = self-implemented activation steering" + token-specific ReLU probe is a clear, theoretically grounded innovation.
-- Experimental Thoroughness: ⭐⭐⭐⭐ 3 benchmarks × multiple LLMs × multiple baselines, comprehensive ablation, and interesting faithfulness analysis.
-- Writing Quality: ⭐⭐⭐⭐⭐ The progressive explanation of Assumptions 3.1/3.2/3.2a is very clear, and the roles of S-PSR/A-PSR are well articulated.
-- Value: ⭐⭐⭐⭐ A reproducible baseline for all teams working on activation steering/model behavior control, with code and training pipeline released.
-
-## Related Papers
-
-- [\[ICML 2026\] CorrSteer: Generation-Time LLM Steering via Correlated Sparse Autoencoder Features](corrsteer_generation-time_llm_steering_via_correlated_sparse_autoencoder_feature.md)
-- [\[ICML 2026\] The Cylindrical Representation Hypothesis for Language Model Steering](the_cylindrical_representation_hypothesis_for_language_model_steering.md)
-- [\[NeurIPS 2025\] CBMAS: Cognitive Behavioral Modeling via Activation Steering](../../NeurIPS2025/interpretability/cbmas_cognitive_behavioral_modeling_via_activation_steering.md)
-- [\[ICML 2025\] To Steer or Not to Steer? Mechanistic Error Reduction with Abstention for Language Models](../../ICML2025/interpretability/to_steer_or_not_to_steer_mechanistic_error_reduction_with_abstention_for_languag.md)
-- [\[CVPR 2026\] Language Models Can Explain Visual Features via Steering](../../CVPR2026/interpretability/language_models_can_explain_visual_features_via_steering.md)
-
-</div>
-
-<!-- RELATED:END -->
+- **Novelty**: ⭐⭐⭐⭐ The formalization of "prompting as self-implemented activation steering" combined with the token-specific ReLU probe is a clear, theoretically-supported innovation.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Tested across 3 benchmarks, multiple LLMs, and various baselines. The faithfulness analysis and ablations are robust.
+- **Writing Quality**: ⭐⭐⭐⭐⭐ The progressive narrative from Assumption 3.1 to 3.2a is very clear, and the roles of S-PSR vs. A-PSR are well-explained.
+- **Value**: ⭐⭐⭐⭐ A must-replicate baseline for teams working on activation steering and model behavior control, with open-sourced code and training processes.
 
 <!-- RELATED:START -->
 
@@ -175,6 +159,17 @@ A-PSR$_{MSE}$ achieves **SOTA** on both subsets, surpassing both prompting and L
 - [\[ICML 2026\] The Cylindrical Representation Hypothesis for Language Model Steering](the_cylindrical_representation_hypothesis_for_language_model_steering.md)
 - [\[ICML 2026\] Towards Steering without Sacrifice: Principled Training of Steering Vectors for Prompt-only Interventions](towards_steering_without_sacrifice_principled_training_of_steering_vectors_for_p.md)
 - [\[ICML 2026\] Do Activation Verbalization Methods Convey Privileged Information?](do_activation_verbalization_methods_convey_privileged_information.md)
+
+</div>
+
+<!-- RELATED:END -->
+## Related Papers
+
+- [\[ICML 2026\] CorrSteer: Generation-Time LLM Steering via Correlated Sparse Autoencoder Features](corrsteer_generation-time_llm_steering_via_correlated_sparse_autoencoder_feature.md)
+- [\[NeurIPS 2025\] CBMAS: Cognitive Behavioral Modeling via Activation Steering](../../NeurIPS2025/interpretability/cbmas_cognitive_behavioral_modeling_via_activation_steering.md)
+- [\[ICML 2025\] To Steer or Not to Steer? Mechanistic Error Reduction with Abstention for Language Models](../../ICML2025/interpretability/to_steer_or_not_to_steer_mechanistic_error_reduction_with_abstention_for_languag.md)
+- [\[ICML 2026\] Do Activation Verbalization Methods Convey Privileged Information?](do_activation_verbalization_methods_convey_privileged_information.md)
+- [\[ACL 2026\] Compositional Steering of Large Language Models with Steering Tokens](../../ACL2026/interpretability/compositional_steering_of_large_language_models_with_steering_tokens.md)
 
 </div>
 

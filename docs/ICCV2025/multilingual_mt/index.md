@@ -16,7 +16,7 @@ tags:
 
 **📹 ICCV2025** · **1** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (2)](../../ICML2026/multilingual_mt/index.md) · [💬 ACL2026 (32)](../../ACL2026/multilingual_mt/index.md) · [📷 CVPR2026 (2)](../../CVPR2026/multilingual_mt/index.md) · [🔬 ICLR2026 (5)](../../ICLR2026/multilingual_mt/index.md) · [🤖 AAAI2026 (11)](../../AAAI2026/multilingual_mt/index.md) · [🧠 NeurIPS2025 (14)](../../NeurIPS2025/multilingual_mt/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (4)](../../ICML2026/multilingual_mt/index.md) · [💬 ACL2026 (63)](../../ACL2026/multilingual_mt/index.md) · [📷 CVPR2026 (2)](../../CVPR2026/multilingual_mt/index.md) · [🔬 ICLR2026 (5)](../../ICLR2026/multilingual_mt/index.md) · [🤖 AAAI2026 (11)](../../AAAI2026/multilingual_mt/index.md) · [🧠 NeurIPS2025 (14)](../../NeurIPS2025/multilingual_mt/index.md)
 
 **[SignRep: Enhancing Self-Supervised Sign Representations](signrep_enhancing_self-supervised_sign_representations.md)**
 

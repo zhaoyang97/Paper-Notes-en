@@ -145,8 +145,8 @@ StreamDiffusion outperforms the LCM baseline on FID (26.79 vs. 29.69) while main
 
 - [\[CVPR 2026\] StreamAvatar: Streaming Diffusion Models for Real-Time Interactive Human Avatars](../../CVPR2026/image_generation/streamavatar_streaming_diffusion_models_for_real-time_interactive_human_avatars.md)
 - [\[ICCV 2025\] SDMatte: Grafting Diffusion Models for Interactive Matting](sdmatte_grafting_diffusion_models_for_interactive_matting.md)
-- [\[ICCV 2025\] GameFactory: Creating New Games with Generative Interactive Videos](gamefactory_creating_new_games_with_generative_interactive_videos.md)
 - [\[NeurIPS 2025\] Real-Time Execution of Action Chunking Flow Policies](../../NeurIPS2025/image_generation/real-time_execution_of_action_chunking_flow_policies.md)
+- [\[ICCV 2025\] GameFactory: Creating New Games with Generative Interactive Videos](gamefactory_creating_new_games_with_generative_interactive_videos.md)
 - [\[ICCV 2025\] Inference-Time Diffusion Model Distillation](inference-time_diffusion_model_distillation.md)
 
 </div>

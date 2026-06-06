@@ -2,70 +2,68 @@
 title: >-
   [Paper Note] Multimodal In-Context Learning for ASR of Low-Resource Languages
 description: >-
-  [ACL 2026][Audio & Speech][Multimodal in-context learning] This paper systematically investigates whether multimodal in-context learning (MICL) enables speech LLMs to handle unseen endangered languages…
+  [ACL 2026][Audio & Speech][Multimodal In-Context Learning] This paper systematically investigates whether Multimodal In-Context Learning (MICL) enables Speech LLMs to learn unseen endangered languages. It proposes an MIC…
 tags:
   - "ACL 2026"
   - "Audio & Speech"
-  - "Multimodal in-context learning"
-  - "low-resource ASR"
-  - "speech large language model"
-  - "cross-lingual transfer"
-  - "hypothesis selection"
+  - "Multimodal In-Context Learning"
+  - "Low-resource ASR"
+  - "Speech Large Language Models"
+  - "Cross-lingual Transfer"
+  - "Hypothesis Selection"
 date: 2026-05-08
-content_hash: e43379fc5be27024
+content_hash: 1b4d936531bafeb1
 ---
 
 # Multimodal In-Context Learning for ASR of Low-Resource Languages
 
-**Conference**: ACL 2026
+**Conference**: ACL 2026  
 **arXiv**: [2601.05707](https://arxiv.org/abs/2601.05707)  
 **Code**: [github](https://github.com/ZL-KA/MICL)  
-**Area**: Audio & Speech / Low-Resource ASR
-**Keywords**: Multimodal in-context learning, low-resource ASR, speech large language model, cross-lingual transfer, hypothesis selection
+**Area**: Audio & Speech / Low-resource ASR  
+**Keywords**: Multimodal In-Context Learning, Low-resource ASR, Speech Large Language Models, Cross-lingual Transfer, Hypothesis Selection
 
 ## TL;DR
 
-This paper systematically investigates whether multimodal in-context learning (MICL) enables speech LLMs to handle unseen endangered languages, and proposes a MICL-based hypothesis selection system that combines the complementary strengths of acoustic models and speech LLMs, achieving substantial ASR improvements across three endangered languages.
+This paper systematically investigates whether Multimodal In-Context Learning (MICL) enables Speech LLMs to learn unseen endangered languages. It proposes an MICL-based hypothesis selection system that combines the complementary strengths of acoustic models and Speech LLMs, achieving significant ASR performance improvements across three endangered languages.
 
 ## Background & Motivation
 
-**Background**: Of the 7,000+ languages worldwide, current ASR systems cover only a tiny fraction, with the primary bottleneck being the scarcity of annotated data. Speech LLMs (e.g., Phi4, Qwen3-Omni) possess strong multi-task capabilities, yet their performance remains largely confined to high-resource languages seen during training.
+**Background**: Among 7000+ languages globally, current ASR systems cover only a tiny fraction, primarily due to the scarcity of labeled data. While Speech Large Language Models (e.g., Phi4, Qwen3-Omni) possess powerful multi-task capabilities, their performance remains limited to the high-resource languages covered during training.
 
-**Limitations of Prior Work**: (1) Existing ICL research focuses predominantly on the text modality and high-resource languages; (2) the effectiveness of multimodal ICL (MICL) for speech LLMs on unseen languages has not been thoroughly studied; (3) directly applying speech LLMs to prompt-based ASR on unseen languages yields extremely poor results (WER > 100%).
+**Limitations of Prior Work**: (1) Existing ICL research focuses mainly on the text modality and high-resource languages; (2) The effectiveness of Multimodal ICL (MICL) for Speech LLMs on uncovered languages is under-explored; (3) Direct use of Speech LLMs for prompt-based ASR on unseen languages yields extremely poor results (WER > 100%).
 
-**Key Challenge**: Although speech LLMs possess powerful in-context learning capabilities, how to leverage these capabilities effectively under data-scarce conditions for endangered languages remains unclear.
+**Key Challenge**: While Speech LLMs have powerful in-context learning capabilities, it remains unclear how to effectively leverage this ability for data-scarce endangered languages.
 
-**Goal**: To validate the effectiveness of MICL for unseen languages, analyze its internal mechanisms, and construct a practical ASR system.
+**Goal**: To verify the effectiveness of MICL for unseen languages, analyze its internal mechanisms, and construct a practical ASR system.
 
-**Key Insight**: A systematic experimental design is adopted—comparing three modality configurations (text-only ICL, audio+text ICL, and multimodal ICL) and evaluating two speech LLMs on three endangered languages from distinct language families.
+**Key Insight**: Conduct systematic experiments comparing three modality settings—text ICL, audio+text ICL, and multimodal ICL—evaluating two Speech LLMs across three endangered languages from different language families.
 
-**Core Idea**: Although MICL cannot directly enable speech LLMs to produce accurate transcriptions, it can be integrated with acoustic models via hypothesis selection, leveraging MICL's language understanding capability to rerank candidate transcriptions.
+**Core Idea**: Although MICL cannot directly enable Speech LLMs to generate high-quality transcriptions, it can be combined with acoustic models through hypothesis selection. This leverages the language understanding capabilities of MICL to rerank candidate transcriptions.
 
 ## Method
 
 ### Overall Architecture
 
-(1) **MICL Analysis**: Three prompting paradigms are designed—T-ICL (text-only), ICL (text + target audio), and MICL (audio–text pairs + target audio)—evaluated using perplexity. (2) **Cross-lingual Fine-Tuning**: Fine-tuning is conducted on 143 auxiliary languages (excluding target languages) to assess transfer effectiveness. (3) **Hypothesis Selection System**: An MMS acoustic model generates N-best candidates, and a speech LLM computes language model scores via MICL to jointly rerank and select the optimal hypothesis.
+(1) MICL Analysis: Three prompt modes are designed—T-ICL (text-only), ICL (text + target audio), and MICL (audio-text pairs + target audio)—evaluated via perplexity; (2) Cross-lingual Fine-tuning: Fine-tuning is performed on 143 auxiliary languages (excluding target languages) to test transfer effects; (3) Hypothesis Selection System: An MMS acoustic model generates N-best candidates, and the Speech LLM calculates language model scores via MICL for joint reranking to select the optimal hypothesis.
 
 ### Key Designs
 
-1. **Three Prompting Modality Configurations**: T-ICL ($c_i = t_i$, text-only exemplars) measures the contribution of textual context; ICL ($c_i = t_i$ + target audio $a^*$) isolates the effect of the target audio; MICL ($c_i = (a_i, t_i)$ + $a^*$) tests the additional benefit of paired audio–text exemplars. Comparing the three configurations quantifies the marginal contribution of each modality.
+1.  **Three Prompt Modality Designs**: T-ICL ($c_i = t_i$, text-only examples) measures the contribution of textual context; ICL ($c_i = t_i$ + target audio $a^*$) isolates the role of target audio; MICL ($c_i = (a_i, t_i)$ + $a^*$) tests the marginal gain of paired audio-text examples. Quantifying marginal contributions is achieved by comparing these three.
 
-2. **Cross-Lingual Instruction Fine-Tuning (XFT)**: MICL instruction fine-tuning is performed on 143 languages from ML-SUPERB 2.0, explicitly excluding the target languages. Only decoder parameters are updated via LoRA, and 1–10 in-context samples are randomly selected during training. The motivation is to teach the model to follow the MICL prompt format and exploit contextual information more effectively, rather than to learn the target languages directly.
+2.  **Cross-lingual Instruction Fine-tuning (XFT)**: Performs MICL instruction fine-tuning on 143 languages from ML-SUPERB 2.0 (excluding target languages). LoRA is used to fine-tune only decoder parameters, with 1-10 context samples randomly selected during training. Motivation: To enable the model to follow MICL prompt formats and utilize context information more effectively, rather than learning the target language itself.
 
-3. **MICL Hypothesis Selection System**: Given a 10-best candidate list from MMS, the optimal hypothesis is selected via joint scoring:
-$$\hat{h} = \arg\max_{h^{(k)}} \left[\text{Acoustic\_score}(h^{(k)}) + \text{LM\_score}_{MICL}(h^{(k)})\right]$$
-where the LM score is the log-likelihood of the speech LLM conditioned on MICL. The design motivation is that acoustic models excel at basic recognition while speech LLMs excel at contextual understanding, making the two complementary.
+3.  **MICL Hypothesis Selection System**: Given a 10-best candidate list from MMS, reranking is performed using a joint score: $\hat{h} = \arg\max_{h^{(k)}} [\text{Acoustic\_score}(h^{(k)}) + \text{LM\_score}_{MICL}(h^{(k)})]$, where the LM score is the log-likelihood of the Speech LLM under MICL conditions. Design Motivation: Acoustic models excel at basic recognition while Speech LLMs excel at contextual understanding; the two are complementary.
 
 ### Loss & Training
 
-During fine-tuning, the loss is computed only over the target transcription tokens, with in-context exemplars serving as conditional inputs. LoRA adapters are used with all other parameters frozen. Evaluation metrics are perplexity (PPL, used for configuration selection) and word error rate (WER, used for final evaluation).
+During fine-tuning, loss is calculated only on target transcription tokens, with context examples serving as conditional inputs. LoRA adapters are used while freezing remaining parameters. Evaluation metrics: Perplexity (PPL, for configuration selection) and Word Error Rate (WER, for final evaluation).
 
 ## Key Experimental Results
 
 ### Main Results (Qwen3-Omni Perplexity, Pre-trained Model)
 
-| Language | Setting | 0-shot | 1-shot | 5-shot | 10-shot | 50-shot | 100-shot |
+| Language | Task | 0-shot | 1-shot | 5-shot | 10-shot | 50-shot | 100-shot |
 |---|---|---|---|---|---|---|---|
 | Khinalug | T-ICL | 1302 | 289 | 69 | 57 | 44 | 43 |
 | Khinalug | ICL | 54 | 28 | 11 | 10 | 11 | 15 |
@@ -89,36 +87,36 @@ During fine-tuning, the loss is computed only over the target transcription toke
 
 ### Key Findings
 
-- MICL enables both speech LLMs to learn unseen languages, with perplexity consistently decreasing as the number of in-context examples increases.
-- Qwen3-Omni continues to benefit from audio exemplars in long-context settings (100-shot), whereas Phi4 benefits primarily in short-context settings (≤3 shots).
-- Attention analysis reveals that the models allocate more attention to text (65–70%) than to audio (30–35%), exhibiting a layer-dependent pattern.
-- Cross-lingual fine-tuning approaches target-language fine-tuning performance on Kichwa, suggesting that linguistic diversity enhances generalization.
+*   MICL enables both Speech LLMs to learn unseen languages, with perplexity consistently decreasing as context samples increase.
+*   Qwen3-Omni consistently benefits from audio examples in long-context scenarios (100 samples), while Phi4 primarily benefits in short-context scenarios (≤3 samples).
+*   Attention analysis reveals the model allocates more attention to text (65-70%) than audio (30-35%), showing a layer-dependent pattern.
+*   Cross-lingual fine-tuning on Kichwa approaches the performance of target-language fine-tuning, indicating that linguistic diversity enhances generalization.
 
 ## Highlights & Insights
 
-- **MICL is effective for unseen languages**: This is the first systematic demonstration that speech LLMs can learn uncovered endangered languages through multimodal in-context learning.
-- **Attention mechanism analysis**: A layer-dependent modality preference pattern is identified—shallow and deep layers favor audio, while intermediate layers favor text.
-- **Practical system design**: The hypothesis selection system combining an acoustic model and a speech LLM is simple yet effective, requiring no end-to-end training.
+*   **MICL Effectiveness on Unseen Languages**: This is the first systematic demonstration that Speech LLMs can learn uncovered endangered languages through multimodal in-context learning.
+*   **Attention Mechanism Analysis**: Discovery of layer-dependent modality preference patterns—shallow and deep layers prefer audio, while middle layers prefer text.
+*   **Practical System Design**: The acoustic model + Speech LLM hypothesis selection system is simple and effective, requiring no end-to-end training.
 
 ## Limitations & Future Work
 
-- Due to computational constraints, cross-lingual fine-tuning is conducted only on Phi4.
-- The number of in-context samples during fine-tuning is capped at 1–10, which may limit performance in long-context settings.
-- The three endangered languages each have very limited data (2–4 hours), and the generalizability of the findings requires further validation.
-- Future work could explore larger-scale cross-lingual instruction fine-tuning and evaluation on a broader set of endangered languages.
+*   Due to computational constraints, cross-lingual fine-tuning was only performed on Phi4.
+*   The number of context samples during fine-tuning was limited to 1-10, which may constrain long-context effectiveness.
+*   The data volume for the three endangered languages is very small (2-4 hours); the generalizability of the conclusions requires further verification.
+*   Future work could explore larger-scale cross-lingual instruction fine-tuning and a broader range of endangered languages.
 
 ## Related Work & Insights
 
-- This work extends text-based ICL for low-resource languages (Li & Niehues, 2025b) to the multimodal setting.
-- The hypothesis selection framework is generalizable to other low-resource multimodal tasks.
-- The attention analysis findings are consistent with the text-bias phenomenon observed in vision LLMs.
+*   Multimodal extension of text-based ICL for low-resource languages (Li & Niehues, 2025b).
+*   The hypothesis selection approach can be generalized to other low-resource multimodal tasks.
+*   Attention analysis findings are consistent with the text-bias phenomenon observed in Vision LLMs.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ First systematic study of MICL for endangered language ASR, with a distinctive perspective.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Comprehensive coverage across 3 languages × 2 models × multiple ICL configurations × attention analysis.
-- **Writing Quality**: ⭐⭐⭐⭐ Experimental design is clear and systematic, with rigorous comparative logic across configurations.
-- **Value**: ⭐⭐⭐⭐ Provides a novel technical pathway for ASR of endangered languages with meaningful societal impact.
+*   **Novelty**: ⭐⭐⭐⭐ First systematic study of MICL effects in ASR for endangered languages, offering a unique perspective.
+*   **Experimental Thoroughness**: ⭐⭐⭐⭐ Comprehensive coverage across 3 languages × 2 models × various ICL settings × attention analysis.
+*   **Writing Quality**: ⭐⭐⭐⭐ Clear and systematic experimental design with rigorous comparative logic across settings.
+*   **Value**: ⭐⭐⭐⭐ Provides a new technical path for ASR in endangered languages, possessing significant social value.
 
 <!-- RELATED:START -->
 
@@ -127,10 +125,10 @@ During fine-tuning, the loss is computed only over the target transcription toke
 ## Related Papers
 
 - [\[ACL 2026\] Hard to Be Heard: Phoneme-Level ASR Analysis of Phonologically Complex, Low-Resource Endangered Languages](hard_to_be_heard_phoneme-level_asr_analysis_of_phonologically_complex_low-resour.md)
+- [\[ACL 2026\] DRInQ: Evaluating Conversational Implicature with Controlled Context Variation](drinq_evaluating_conversational_implicature_with_controlled_context_variation.md)
+- [\[ICML 2026\] Algorithmic Recourse of In-Context Learning for Tabular Data](../../ICML2026/audio_speech/algorithmic_recourse_of_in-context_learning_for_tabular_data.md)
 - [\[ACL 2026\] Indic-CodecFake meets SATYAM: Towards Detecting Neural Audio Codec Synthesized Speech Deepfakes in Indic Languages](indic-codecfake_meets_satyam_towards_detecting_neural_audio_codec_synthesized_sp.md)
-- [\[ACL 2026\] Music Audio-Visual Question Answering Requires Specialized Multimodal Designs](music_audio-visual_question_answering_requires_specialized_multimodal_designs.md)
-- [\[ACL 2026\] Omni-Embed-Audio: Leveraging Multimodal LLMs for Robust Audio-Text Retrieval](omni-embed-audio_leveraging_multimodal_llms_for_robust_audio-text_retrieval.md)
-- [\[NeurIPS 2025\] A Multi-Task Benchmark for Abusive Language Detection in Low-Resource Settings](../../NeurIPS2025/audio_speech/a_multitask_benchmark_for_abusive_language_detection_in_lowr.md)
+- [\[ICML 2026\] Multiple Choice Learning of Low-Rank Adapters for Language Modeling](../../ICML2026/audio_speech/multiple_choice_learning_of_low-rank_adapters_for_language_modeling.md)
 
 </div>
 

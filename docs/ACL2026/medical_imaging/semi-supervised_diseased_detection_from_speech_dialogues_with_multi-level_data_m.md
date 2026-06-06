@@ -2,135 +2,135 @@
 title: >-
   [Paper Note] Semi-Supervised Diseased Detection from Speech Dialogues with Multi-Level Data Modeling
 description: >-
-  [ACL 2026][Medical Imaging][Semi-supervised learning] This paper proposes an audio-only semi-supervised learning framework that jointly models pathological speech features in clinical dialogues at three levels—session…
+  [ACL 2026][Medical Imaging][Semi-supervised learning] This paper proposes a pure audio semi-supervised learning framework that jointly models pathological speech features in clinical dialogues at three levels—session-lev…
 tags:
   - "ACL 2026"
   - "Medical Imaging"
   - "Semi-supervised learning"
   - "pathological speech detection"
   - "multi-granularity modeling"
-  - "pseudo-labeling"
-  - "clinical dialogue"
+  - "pseudo-labels"
+  - "clinical dialogues"
 date: 2026-05-08
-content_hash: 131474fdd3b39435
+content_hash: bbb6e6aa3c07446e
 ---
 
 # Semi-Supervised Diseased Detection from Speech Dialogues with Multi-Level Data Modeling
 
-**Conference**: ACL 2026
+**Conference**: ACL 2026  
 **arXiv**: [2601.04744](https://arxiv.org/abs/2601.04744)  
 **Code**: [GitHub](https://github.com/fispresent/semi_pathological)  
-**Area**: Medical Imaging
-**Keywords**: Semi-supervised learning, pathological speech detection, multi-granularity modeling, pseudo-labeling, clinical dialogue
+**Area**: Medical Imaging  
+**Keywords**: Semi-supervised learning, pathological speech detection, multi-granularity modeling, pseudo-labels, clinical dialogues
 
 ## TL;DR
 
-This paper proposes an audio-only semi-supervised learning framework that jointly models pathological speech features in clinical dialogues at three levels—session, clip, and frame—using an EMA teacher-student network to dynamically generate high-quality pseudo-labels. With only 11 annotated samples, the framework achieves 90% of fully supervised performance on depression and Alzheimer's disease detection.
+This paper proposes a pure audio semi-supervised learning framework that jointly models pathological speech features in clinical dialogues at three levels—session-level, clip-level, and frame-level. By utilizing an EMA Teacher-Student network to dynamically generate high-quality pseudo-labels, it achieves 90% of fully supervised performance in depression and Alzheimer's disease detection with only 11 labeled samples.
 
 ## Background & Motivation
 
-**Background**: Leveraging acoustic speech features as biomarkers for disease detection is a growing area of interest. Existing approaches predominantly rely on fully supervised learning with pretrained audio encoders such as wav2vec2 and HuBERT. Multimodal methods incorporating audio, text, and vision have also been explored, but face challenges including modality conflicts and ASR error propagation.
+**Background**: Using acoustic features of speech as biomarkers for disease detection is an increasingly prominent research direction. Existing methods primarily rely on fully supervised learning, utilizing pre-trained audio encoders such as wav2vec2 and HuBERT for transfer learning. Multimodal approaches (combining audio, text, and visual) have also been explored but face challenges such as modality conflict and ASR error propagation.
 
-**Limitations of Prior Work**: (1) Annotating medical speech data requires clinical expertise, making acquisition prohibitively expensive and resulting in severe data scarcity. (2) Clinical annotations exhibit substantial inter-rater subjectivity, rendering labels inherently noisy. (3) The most critical challenge is *distal weak supervision*: a dialogue lasting several minutes carries only a single session-level label (e.g., "depressed/healthy"), yet pathological features are not uniformly distributed across utterances. (4) Existing methods segment long recordings and process them independently, implicitly assuming uniform symptom expression across segments—an assumption that frequently fails in practice. (5) General-purpose semi-supervised methods from the audio domain cannot be directly transferred to clinical settings, as pathological patterns are sparsely distributed in speech.
+**Limitations of Prior Work**: (1) Labeling medical speech data requires clinical experts, resulting in extremely high acquisition costs and severe data scarcity; (2) Clinical annotations exhibit significant inter-rater subjective differences, making the labels themselves noisy; (3) The core challenge is "distal weak supervision"—a several-minute dialogue may have only one session-level label (e.g., "depressed/healthy"), but pathological features are not uniformly distributed in every sentence; (4) Existing methods segment long recordings into independent clips, implicitly assuming uniform symptom expression across all segments, which is often invalid; (5) Semi-supervised methods from the general audio domain cannot be directly transferred to medical scenarios due to the sparse distribution of pathological patterns in speech.
 
-**Key Challenge**: Supervision signals exist at the session level (macro), whereas meaningful acoustic features must be extracted at the frame or clip level (micro). Models must learn to localize diagnostically informative segments within long dialogues without fine-grained annotations.
+**Key Challenge**: Supervision signals are at the session level (macro), while meaningful acoustic features must be extracted at the frame or clip level (micro). The model must learn to locate segments with the highest diagnostic value from long dialogues without fine-grained annotations.
 
-**Goal**: Design a semi-supervised framework tailored to medical speech that simultaneously addresses weak supervision, data scarcity, and label noise.
+**Goal**: Design a semi-supervised framework specifically for medical speech that can simultaneously address the core challenges of weak supervision, data scarcity, and label noise.
 
-**Key Insight**: The hierarchical structure of clinical dialogues—frame-level acoustics → clip-level (utterance) semantics → session-level diagnostic labels—is explicitly modeled rather than compressed into a single granularity.
+**Key Insight**: Starting from the hierarchical structure of clinical dialogues—frame-level acoustic features $\rightarrow$ clip-level (single sentence) semantics $\rightarrow$ session-level diagnostic labels—explicitly model this hierarchical relationship rather than compressing all information into a single granularity.
 
-**Core Idea**: Joint modeling across three granularities (session-level classification + clip-level pseudo-label refinement + frame-level consistency regularization) enables dynamic pseudo-label generation and updating within a single-stage end-to-end training procedure, facilitating efficient exploitation of unlabeled data.
+**Core Idea**: Through joint modeling across three granularity levels (session-level classification + clip-level pseudo-label refinement + frame-level consistency constraints), pseudo-labels are dynamically generated and updated during single-stage end-to-end training, enabling efficient utilization of unlabeled data.
 
 ## Method
 
 ### Overall Architecture
 
-The framework adopts a teacher-student architecture with three levels of modeling: (1) a *session-level main pipeline* that encodes the full dialogue and aggregates representations via a Transformer for final diagnosis; (2) a *clip-level module* that applies an RNN over utterance-level embeddings and is trained using pseudo-labels generated by the main pipeline; and (3) a *frame-level module* that enforces consistency constraints via a Siamese network. Teacher network parameters are updated via EMA and do not receive gradients.
+The framework adopts a Teacher-Student architecture consisting of three modeling levels: (1) Session-level main pipeline—encoding full dialogues and aggregating them via a Transformer for final diagnosis; (2) Clip-level—modeling utterance-level embeddings with an RNN and training with pseudo-labels generated by the main pipeline; (3) Frame-level—imposing frame-level consistency constraints through a Siamese network. Teacher network parameters are updated via EMA and do not participate in gradient backpropagation.
 
 ### Key Designs
 
-1. **Session-level Pipeline**:
+1.  **Session-level Pipeline**:
 
-    - **Function**: Processes the complete dialogue audio and produces the final diagnostic output.
-    - **Mechanism**: The dialogue is segmented into clips; each clip is encoded by an audio encoder $E$ (e.g., HuBERT/wav2vec2) as $embed_{clip_i} = POOL(E(clip_i))$. The embeddings are concatenated with learnable positional encodings and fed into a 3-layer, 16-head Transformer to obtain a session-level representation, which is subsequently aggregated via temporal attention and passed to a classification head. Pseudo-labels are dynamically generated for unlabeled samples and incorporated into the training set.
-    - **Design Motivation**: Processing the full dialogue directly avoids information loss from independent segment processing; multi-head attention implicitly learns the relative diagnostic importance of each utterance.
+    - **Function**: Processes full dialogue audio and generates the final diagnostic results.
+    - **Mechanism**: The dialogue is segmented into several clips. Each clip is encoded by an audio encoder $E$ (e.g., HuBERT/wav2vec2) as $embed_{clip_i} = POOL(E(clip_i))$. These are then sequentially concatenated with learnable positional encodings and fed into a 3-layer 16-head Transformer to obtain session-level representations. The final output is generated through temporal attention aggregation and a classification head. Pseudo-labels are dynamically generated for unlabeled data and included in the training set.
+    - **Design Motivation**: Direct processing of full dialogues avoids information loss caused by segmenting long recordings, while the multi-head attention mechanism automatically learns importance weights for different utterances.
 
-2. **Clip-level Pseudo-labeling**:
+2.  **Clip-level Pseudo-labeling**:
 
-    - **Function**: Encourages the audio encoder to learn finer-grained, utterance-level pathological representations.
-    - **Mechanism**: Clip embeddings $embed_{clip_i}$ from the session-level pipeline are fed into a two-layer bidirectional LSTM to produce clip-level embeddings $embed_{clip_i} = RNN(clip_i)$. Pseudo-labels are derived directly from session-level inference and the module is trained with cross-entropy loss. Crucially, no assumption is made that pathological features are uniformly expressed; pseudo-labels are updated dynamically throughout training.
-    - **Design Motivation**: Eliminates the strong "uniform expression" assumption of existing methods and handles mixed dialogues containing both interviewer and subject speech without requiring speaker diarization.
+    - **Function**: Enables the audio encoder to learn finer-grained utterance-level pathological features.
+    - **Mechanism**: Clip embeddings $embed_{clip_i}$ from the session-level pipeline are fed into a 2-layer Bi-LSTM to produce clip-level embeddings $embed_{clip_i} = RNN(clip_i)$. Pseudo-labels are inferred directly from the session-level pipeline and trained using cross-entropy loss. A key distinction is that it does not assume every sentence from a patient is pathological, nor every sentence from a healthy individual is not—pseudo-labels are updated dynamically during training.
+    - **Design Motivation**: This avoids the rigid "uniform expression assumption" of existing methods and allows for handling mixed dialogues of investigators and subjects without necessitating speaker diarization.
 
-3. **Frame-level Consistency Regularization**:
+3.  **Frame-level Consistency**:
 
-    - **Function**: Captures fine-grained acoustic feature consistency at the frame level.
-    - **Mechanism**: A Siamese network applies two different augmentations (speed perturbation, pitch shifting, time masking) to the same input, generating two views that are passed through the student and teacher networks respectively. An MSE loss enforces consistency between frame-level embeddings: $Loss_{frame} = MSELoss(embed_{teacher}, embed_{student})$. The teacher is updated via EMA: $\theta_{teacher} \leftarrow m \cdot \theta_{teacher} + (1-m) \cdot \theta_{student}$, with decay rate $m=0.999$.
-    - **Design Motivation**: Frame-level training is independent of pseudo-labels, providing inherent robustness to pseudo-label noise—low-level acoustic pattern learning remains unaffected even when session- or clip-level pseudo-labels are inaccurate.
+    - **Function**: Captures the finest-grained acoustic feature consistency.
+    - **Mechanism**: A Siamese network applies different data augmentations (speed perturbation, pitch shift, time masking) to the same input to generate two views, which are fed into the Student and Teacher networks respectively. Frame-level embedding consistency is constrained via MSE loss: $Loss_{frame} = MSELoss(embed_{teacher}, embed_{student})$. The Teacher network is updated via EMA: $\theta_{teacher} \leftarrow m \cdot \theta_{teacher} + (1-m) \cdot \theta_{student}$, with a decay rate $m=0.999$.
+    - **Design Motivation**: Frame-level training is independent of pseudo-labels, providing the framework with inherent robustness against pseudo-label noise—even if session or clip-level labels are inaccurate, low-level acoustic pattern learning remains unaffected.
 
 ### Loss & Training
 
-The total loss is a weighted sum of the three-level losses: $Loss = \alpha Loss_{session} + \beta Loss_{clip} + \gamma Loss_{frame}$. Training follows a single-stage online scheme: after a warm-up of $k_0$ steps, all pseudo-labels are re-evaluated and updated every $k$ steps. A confidence threshold strategy is applied—unlabeled samples exceeding the threshold are included in training, while those below are excluded. The optimal threshold is 0.75 (achieving Macro F1 of 68.58% on EATD-Corpus).
+The total loss is a weighted sum of the three levels: $Loss = \alpha Loss_{session} + \beta Loss_{clip} + \gamma Loss_{frame}$. Training is conducted in a single-stage online manner: after $k_0$ warm-up steps, all pseudo-labels are re-evaluated and updated every $k$ steps. A thresholding strategy is employed where unlabeled samples with confidence exceeding the threshold are included in training, while others are excluded. The optimal threshold is 0.75 (reaching 68.58% Macro F1 on EATD-Corpus).
 
 ## Key Experimental Results
 
 ### Main Results
 
-**Detection Performance at Varying Annotation Ratios (Macro F1)**
+**Detection Performance under Different Labeling Ratios (Macro F1)**
 
 | Method | 100% | 50% | 40% | 30% | 20% | 10% |
-|--------|------|-----|-----|-----|-----|-----|
-| Depression-Baseline | 59.53 | 57.41 | 55.78 | 56.04 | 55.00 | 51.73 |
-| Depression-Ours | 63.26 | 62.00 | 58.51 | 58.59 | 57.70 | 54.37 |
-| Alzheimer's-Baseline | 71.25 | 70.18 | 69.80 | 67.79 | 67.45 | 65.09 |
-| Alzheimer's-Ours | 73.01 | 71.35 | 72.14 | 70.11 | 69.80 | 69.47 |
+|------|------|-----|-----|-----|-----|-----|
+| Depression Detection-Baseline | 59.53 | 57.41 | 55.78 | 56.04 | 55.00 | 51.73 |
+| Depression Detection-Ours | 63.26 | 62.00 | 58.51 | 58.59 | 57.70 | 54.37 |
+| Alzheimer-Baseline | 71.25 | 70.18 | 69.80 | 67.79 | 67.45 | 65.09 |
+| Alzheimer-Ours | 73.01 | 71.35 | 72.14 | 70.11 | 69.80 | 69.47 |
 
 ### Ablation Study
 
 **Incremental Ablation of Hierarchical Components (Depression Detection, Macro F1)**
 
 | Method | 100% | 50% | 30% | 10% |
-|--------|------|-----|-----|-----|
+|------|------|-----|-----|-----|
 | Baseline | 59.53 | 57.41 | 56.04 | 51.73 |
 | +Session-level | - | 60.55 | 58.25 | 52.95 |
 | +Clip-level | 60.78 | 58.30 | 56.55 | 52.50 |
 | +Frame-level | 62.87 | 60.31 | 58.21 | 54.21 |
-| Ours (all + fine-tuned encoder) | 63.26 | 62.00 | 58.59 | 54.37 |
+| Ours (Full + Fine-tuned Encoder) | 63.26 | 62.00 | 58.59 | 54.37 |
 
 ### Key Findings
 
-- Using only 10% of labeled data (~11 samples) achieves 90% of fully supervised baseline performance; 30% labeled data matches full supervision.
-- The framework also outperforms the baseline under full supervision, demonstrating that multi-granularity modeling itself enhances feature learning.
-- The frame-level component contributes most significantly, due to its inherent robustness to pseudo-label noise.
-- The framework generalizes robustly across encoders (wav2vec2, HuBERT, WavLM), languages (Chinese and English), and disease types.
-- Pseudo-label quality improves continuously during training, eventually surpassing additional manually annotated labels in the later stages.
-- Compared to the FixMatch baseline, the proposed method achieves substantial gains across all annotation ratios (e.g., 69.47 vs. 61.93 at 10%), as FixMatch does not model the hierarchical sparsity of pathological features.
+- Using only 10% of labeled data (approx. 11 samples) achieves 90% of the fully supervised baseline performance, and 30% labeled data matches the fully supervised performance.
+- Outperforms the baseline even in the fully supervised setting, indicating that multi-granularity modeling itself enhances feature learning.
+- The frame-level component contributes the most as it provides natural robustness to pseudo-label noise.
+- The framework is robust across common encoders (wav2vec2, HuBERT, WavLM), languages (Chinese and English), and disease types.
+- Pseudo-label quality improves continuously during training, eventually exceeding the quality of additional manual annotations.
+- Significantly leads the FixMatch baseline across all labeling ratios (e.g., 69.47 vs 61.93 at 10%), as FixMatch fails to model the hierarchical sparsity of pathological features.
 
 ## Highlights & Insights
 
-- The three-granularity joint modeling design is particularly elegant: session-level handles global decisions, clip-level performs fine-grained learning, and frame-level enforces consistency regularization—the three components are complementary yet each functional independently.
-- Single-stage online pseudo-label updating avoids the complexity and additional inference cost of conventional multi-stage SSL pipelines.
-- No speaker diarization preprocessing is required; the framework processes raw dialogues containing both interviewer and subject speech, and experiments show negligible performance degradation when interviewer speech is included.
-- Clip-level pseudo-label analysis (Figure 5) clearly demonstrates that the model learns to distinguish subject from interviewer: the proportion of "pathological" pseudo-labels assigned to subjects increases markedly during training, while those for interviewers remain low.
+- The design of tri-granularity joint modeling is elegant—session-level for global decision, clip-level for refinement, and frame-level for consistency—the three are complementary and effective even when operating independently.
+- Single-stage online pseudo-label updates avoid the complexity and additional inference costs of traditional multi-stage SSL.
+- No speaker diarization preprocessing is required—the framework handles raw dialogues between investigators and subjects directly, and experiments show performance remains stable even with investigator speech included.
+- Clip-level pseudo-label analysis (Figure 5) clearly demonstrates that the model learns to distinguish between subjects and investigators—the "pathological" label ratio for subjects rises significantly during training while remaining low for investigators.
 
 ## Limitations & Future Work
 
-- The audio-only approach cannot exploit information from text and visual modalities.
-- Dataset scale is limited (EATD-Corpus: 162 subjects; ADReSSo21: 237 subjects); performance on larger-scale data remains to be verified.
-- Integration with multimodal methods has not been explored.
-- Cross-lingual pretrained models (e.g., English WavLM applied to Chinese datasets) yield limited gains, underscoring the importance of language-matched pretraining.
+- Pure audio methods cannot utilize information from text and visual modalities.
+- The dataset scale is relatively small (EATD-Corpus 162 subjects, ADReSSo21 237 subjects); performance on larger-scale data needs further verification.
+- Combinations with multimodal methods have not yet been explored.
+- The effectiveness of cross-lingual pre-trained models (e.g., English WavLM for Chinese datasets) is limited, highlighting the importance of language-matched pre-training.
 
 ## Related Work & Insights
 
-- **vs. FixMatch**: General-purpose SSL methods cannot model the hierarchical sparsity of pathological features; the proposed multi-granularity framework is specifically designed to address this limitation.
-- **vs. Multimodal methods (CAMFM, ACMA)**: Multimodal approaches achieve higher accuracy, but the audio-only method offers advantages in cross-lingual transfer and deployment simplicity.
-- **vs. Conventional fully supervised methods**: Traditional methods segment dialogues and process each segment independently under a uniform symptom expression assumption; this work explicitly models the sparse expression property of pathological features.
+- **vs FixMatch**: General SSL methods cannot model the hierarchical sparsity of pathological features; this work addresses this specifically through multi-granularity modeling.
+- **vs Multimodal methods (CAMFM, ACMA)**: While multimodal methods achieve higher accuracy, pure audio methods offer advantages in cross-lingual transfer and deployment simplicity.
+- **vs Traditional fully supervised methods**: Unlike traditional methods that process dialogue segments independently while assuming uniform symptom expression, this work explicitly models sparse expression characteristics.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ The three-granularity semi-supervised framework is introduced for the first time in medical speech detection; the single-stage online pseudo-label updating scheme is concise and effective.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Validated across two languages, two diseases, three encoders, multiple annotation ratios, and detailed ablations; however, dataset scale is relatively small.
-- **Writing Quality**: ⭐⭐⭐⭐ Problem formulation is clear, method hierarchy is well-structured, and pseudo-label analysis visualizations are informative.
-- **Value**: ⭐⭐⭐⭐ Provides a practical semi-supervised solution for annotation-scarce medical speech analysis; the model-agnostic design enhances generalizability.
+- Novelty: ⭐⭐⭐⭐ The tri-granularity semi-supervised framework is introduced for medical speech detection for the first time; the single-stage online pseudo-labeling is concise and effective.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Validated across two languages and two diseases with three encoders and multiple labeling ratios; however, the dataset scale is a limitation.
+- Writing Quality: ⭐⭐⭐⭐ The problem definition is clear, the method is well-structured, and the pseudo-label analysis is well-visualized.
+- Value: ⭐⭐⭐⭐ Provides a practical semi-supervised solution for medical speech analysis where labels are scarce; the model-agnostic design enhances generalizability.
 
 <!-- RELATED:START -->
 
@@ -139,9 +139,9 @@ The total loss is a weighted sum of the three-level losses: $Loss = \alpha Loss_
 ## Related Papers
 
 - [\[CVPR 2026\] Addressing Data Scarcity in 3D Trauma Detection through Self-Supervised and Semi-Supervised Learning with Vertex Relative Position Encoding](../../CVPR2026/medical_imaging/addressing_data_scarcity_in_3d_trauma_detection_through_self-supervised_and_semi.md)
-- [\[ACL 2026\] Eliciting Medical Reasoning with Knowledge-enhanced Data Synthesis: A Semi-Supervised Reinforcement Learning Approach](eliciting_medical_reasoning_with_knowledge-enhanced_data_synthesis_a_semi-superv.md)
+- [\[ACL 2026\] Eliciting Medical Reasoning with Knowledge-enhanced Data Synthesis: A Semi-Supervised RL Approach](eliciting_medical_reasoning_with_knowledge-enhanced_data_synthesis_a_semi-superv.md)
 - [\[CVPR 2026\] SemiTooth: a Generalizable Semi-supervised Framework for Multi-Source Tooth Segmentation](../../CVPR2026/medical_imaging/semitooth_a_generalizable_semisupervised_framework.md)
-- [\[AAAI 2026\] ProPL: Universal Semi-Supervised Ultrasound Image Segmentation via Prompt-Guided Pseudo-Labeling](../../AAAI2026/medical_imaging/propl_universal_semi-supervised_ultrasound_image_segmentation_via_prompt-guided_.md)
+- [\[ACL 2026\] Forgotten Words: Benchmarking NeoBERT for Dementia Detection in Low-Resource Conversational Filipino and English Speech](forgotten_words_benchmarking_neobert_for_dementia_detection_in_low-resource_conv.md)
 - [\[CVPR 2026\] Event-Level Detection of Surgical Instrument Handovers in Videos](../../CVPR2026/medical_imaging/event_level_detection_of_surgical_instrument_handovers_in_videos.md)
 
 </div>

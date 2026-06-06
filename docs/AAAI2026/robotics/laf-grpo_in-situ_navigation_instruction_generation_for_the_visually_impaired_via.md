@@ -162,11 +162,11 @@ Training data size ablation (7B model): scaling from 1k to 2k to 3k samples impr
 
 ## Related Papers
 
-- [\[AAAI 2026\] Realistic Synthetic Household Data Generation at Scale](realistic_synthetic_household_data_generation_at_scale.md)
+- [\[ACL 2026\] GoViG: Goal-Conditioned Visual Navigation Instruction Generation via Multimodal Reasoning](../../ACL2026/robotics/govig_goal-conditioned_visual_navigation_instruction_generation_via_multimodal_r.md)
 - [\[AAAI 2026\] Adaptive Theory of Mind for LLM-based Multi-Agent Coordination](adaptive_theory_of_mind_for_llm-based_multi-agent_coordination.md)
-- [\[ICLR 2026\] Enhancing Instruction Following of LLMs via Activation Steering with Dynamic Rejection](../../ICLR2026/robotics/enhancing_instruction_following_of_llms_via_activation_steering_with_dynamic_rej.md)
+- [\[AAAI 2026\] Realistic Synthetic Household Data Generation at Scale](realistic_synthetic_household_data_generation_at_scale.md)
+- [\[ACL 2026\] GROKE: Vision-Free Navigation Instruction Evaluation via Graph Reasoning on OpenStreetMap](../../ACL2026/robotics/groke_vision-free_navigation_instruction_evaluation_via_graph_reasoning_on_opens.md)
 - [\[AAAI 2026\] Shadows in the Code: Exploring the Risks and Defenses of LLM-based Multi-Agent Software Development Systems](shadows_in_the_code_exploring_the_risks_and_defenses_of_llm-.md)
-- [\[AAAI 2026\] Sketch-HARP: Hierarchical Autoregressive Sketch Generation for Flexible Stroke-Level Drawing Manipulation](generating_sketches_in_a_hierarchical_auto-regressive_proces.md)
 
 </div>
 

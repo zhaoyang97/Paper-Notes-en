@@ -138,9 +138,9 @@ Autoregressive per-frame generation requires only: ① a fixed-length KV-cache o
 ## Related Papers
 
 - [\[NeurIPS 2025\] RLVR-World: Training World Models with Reinforcement Learning](../../NeurIPS2025/image_generation/rlvr-world_training_world_models_with_reinforcement_learning.md)
-- [\[AAAI 2026\] LongLLaDA: Unlocking Long Context Capabilities in Diffusion LLMs](../../AAAI2026/image_generation/longllada_unlocking_long_context_capabilities_in_diffusion_llms.md)
+- [\[ICML 2026\] Efficient Learning of Deep State Space Models via Importance Smoothing](../../ICML2026/image_generation/efficient_learning_of_deep_state_space_models_via_importance_smoothing.md)
 - [\[ICCV 2025\] AnimeGamer: Infinite Anime Life Simulation with Next Game State Prediction](animegamer_infinite_anime_life_simulation_with_next_game_state_prediction.md)
-- [\[ICCV 2025\] Aether: Geometric-Aware Unified World Modeling](aether_geometric-aware_unified_world_modeling.md)
+- [\[AAAI 2026\] LongLLaDA: Unlocking Long Context Capabilities in Diffusion LLMs](../../AAAI2026/image_generation/longllada_unlocking_long_context_capabilities_in_diffusion_llms.md)
 - [\[ICCV 2025\] CURE: Cultural Gaps in the Long Tail of Text-to-Image Systems](cure_cultural_gaps_in_the_long_tail_of_text-to-image_systems.md)
 
 </div>

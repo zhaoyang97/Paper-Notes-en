@@ -173,10 +173,10 @@ Comparison of three collision handling strategies:
 ## Related Papers
 
 - [\[NeurIPS 2025\] MPMAvatar: Learning 3D Gaussian Avatars with Accurate and Robust Physics-Based Dynamics](mpmavatar_learning_3d_gaussian_avatars_with_accurate_and_robust_physics-based_dy.md)
+- [\[ICML 2026\] STABLE: Simulation-Ready Tabletop Layout Generation via a Semantics–Physics Dual System](../../ICML2026/3d_vision/stable_simulation-ready_tabletop_layout_generation_via_a_semantics-physics_dual_.md)
+- [\[NeurIPS 2025\] DGH: Dynamic Gaussian Hair](dgh_dynamic_gaussian_hair.md)
+- [\[NeurIPS 2025\] IBGS: Image-Based Gaussian Splatting](ibgs_image-based_gaussian_splatting.md)
 - [\[ICCV 2025\] TRAN-D: 2D Gaussian Splatting-based Sparse-view Transparent Object Depth Reconstruction via Physics Simulation for Scene Update](../../ICCV2025/3d_vision/2d_gaussian_splattingbased_sparseview_transparent_object_dep.md)
-- [\[CVPR 2026\] MotionAnymesh: Physics-Grounded Articulation for Simulation-Ready Digital Twins](../../CVPR2026/3d_vision/motionanymesh_physicsgrounded_articulation_for_sim.md)
-- [\[ICLR 2026\] Augmented Radiance Field: A General Framework for Enhanced Gaussian Splatting](../../ICLR2026/3d_vision/augmented_radiance_field_a_general_framework_for_enhanced_gaussian_splatting.md)
-- [\[ICCV 2025\] DMesh++: An Efficient Differentiable Mesh for Complex Shapes](../../ICCV2025/3d_vision/dmesh_an_efficient_differentiable_mesh_for_complex_shapes.md)
 
 </div>
 

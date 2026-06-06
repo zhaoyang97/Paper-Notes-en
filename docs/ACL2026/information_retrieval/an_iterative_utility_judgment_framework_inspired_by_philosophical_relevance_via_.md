@@ -2,120 +2,117 @@
 title: >-
   [Paper Note] An Iterative Utility Judgment Framework Inspired by Philosophical Relevance via LLMs
 description: >-
-  [ACL 2026][Information Retrieval & RAG][utility judgment] Inspired by Schutz's philosophical theory of relevance, this paper proposes ITEM, an iterative utility judgment framework that enables the three core RAG componen…
+  [ACL 2026][Information Retrieval & RAG][Utility Judgment] Inspired by Schutz’s philosophical relevance theory, this paper proposes the ITEM iterative utility judgment framework. By enabling dynamic interaction and mutual…
 tags:
   - "ACL 2026"
   - "Information Retrieval & RAG"
-  - "utility judgment"
-  - "philosophical relevance theory"
-  - "iterative framework"
-  - "RAG optimization"
-  - "LLM reasoning"
+  - "Utility Judgment"
+  - "Philosophical Relevance Theory"
+  - "Iterative Framework"
+  - "RAG Optimization"
+  - "LLM Reasoning"
 date: 2026-05-08
-content_hash: ca5bab06d42aa114
+content_hash: f9a8529e72ca5081
 ---
 
 # An Iterative Utility Judgment Framework Inspired by Philosophical Relevance via LLMs
 
-**Conference**: ACL 2026
+**Conference**: ACL 2026  
 **arXiv**: [2406.11290](https://arxiv.org/abs/2406.11290)  
 **Code**: [GitHub](https://github.com/Trustworthy-Information-Access/ITEM)  
-**Area**: Information Retrieval / RAG
-**Keywords**: utility judgment, philosophical relevance theory, iterative framework, RAG optimization, LLM reasoning
+**Area**: Information Retrieval / RAG  
+**Keywords**: Utility Judgment, Philosophical Relevance Theory, Iterative Framework, RAG Optimization, LLM Reasoning
 
 ## TL;DR
 
-Inspired by Schutz's philosophical theory of relevance, this paper proposes ITEM, an iterative utility judgment framework that enables the three core RAG components—relevance ranking, utility judgment, and answer generation—to mutually and dynamically enhance one another, yielding improvements over baselines across retrieval, utility judgment, and QA tasks.
+Inspired by Schutz’s philosophical relevance theory, this paper proposes the ITEM iterative utility judgment framework. By enabling dynamic interaction and mutual enhancement among three RAG components (relevance reranking, utility judgment, and answer generation), it outperforms baselines in retrieval, utility judgment, and QA tasks.
 
 ## Background & Motivation
 
-**Background**: In RAG settings, LLMs operate under limited input bandwidth, necessitating the prioritization of high-utility (rather than merely high-relevance) retrieved documents. Relevance measures whether a document is *about* the topic, whereas utility measures whether it *helps answer* the question.
+**Background**: In RAG scenarios, LLM input bandwidth is limited, necessitating the prioritization of high-utility (rather than just high-relevance) retrieval results. Relevance measures "whether it is about the topic," while utility measures "whether it helps answer the question."
 
-**Limitations of Prior Work**: (1) Existing RAG approaches primarily optimize for topical relevance while neglecting the higher standard of utility; (2) Zhang et al. introduced LLM-based utility judgment but only conducted preliminary exploration; (3) the three RAG components (retrieval, judgment, generation) are typically optimized independently, lacking joint enhancement.
+**Limitations of Prior Work**: (1) Existing RAG methods primarily optimize topical relevance, ignoring the higher standard of utility; (2) While Zhang et al. proposed LLM utility judgment, it remains a preliminary exploration; (3) The three components of RAG (retrieval, judgment, and generation) are typically optimized independently, lacking joint enhancement.
 
-**Key Challenge**: Topically relevant documents are not necessarily useful—a document discussing the same topic but containing no specific answer is relevant yet unhelpful. Existing methods struggle to distinguish between the two.
+**Key Challenge**: Topically relevant documents are not necessarily useful—a document discussing the same topic but lacking specific answers is relevant but useless. Existing methods struggle to distinguish between the two.
 
-**Goal**: Improve LLM utility judgment through iterative interaction among the three RAG components.
+**Goal**: Enhance the utility judgment capability of LLMs through the iterative interaction of the three RAG components.
 
-**Key Insight**: The paper maps RAG onto Schutz's philosophical "system of relevances"—topical relevance, interpretational relevance (utility), and motivational relevance (answer) correspond to three cognitive levels that can mutually reinforce one another.
+**Key Insight**: The paper maps RAG to Schutz’s philosophical "relevance system"—topical relevance, interpretational relevance (utility), and motivational relevance (answer) correspond to three cognitive levels, which can mutually enhance one another.
 
-**Core Idea**: The three RAG components reflect three cognitive levels of LLMs in question answering (aboutness → value → answer), and iterating among them enables mutual enhancement.
+**Core Idea**: The three components of RAG reflect three cognitive levels of LLMs in question answering (aboutness → value → answer). They are mutually enhanced through iteration.
 
 ## Method
 
 ### Overall Architecture
 
-ITEM has two variants: ITEM-A (iterative answer generation + utility judgment) and ITEM-AR (iterative answer generation + relevance ranking + utility judgment). In each iteration, the LLM first generates a pseudo-answer, then refines utility judgment or ranking based on that pseudo-answer, and subsequently regenerates the answer in a cyclic manner.
+ITEM offers two variants: ITEM-A (iterative answer generation + utility judgment) and ITEM-AR (iterative answer generation + relevance reranking + utility judgment). In each iteration, the LLM first generates a pseudo-answer, then refines utility judgment or reranking based on that pseudo-answer, and finally regenerates the answer in a continuous loop.
 
 ### Key Designs
 
-1. **Iterative Utility Judgment Mechanism**:
+1.  **Iterative Utility Judgment Mechanism**:
+    - **Function**: Gradually improves the quality of utility judgment through multi-round iterations.
+    - **Mechanism**: In each round, the LLM first generates a pseudo-answer (serving as a cognitive anchor), then performs utility judgment (pointwise or listwise) based on that pseudo-answer, and finally updates the pseudo-answer. The judgment quality improves over multiple rounds.
+    - **Design Motivation**: Single-shot judgments are easily influenced by noise; iteration allows the LLM to progressively accumulate understanding of both the question and the documents.
 
-    - **Function**: Progressively improves utility judgment quality through multiple rounds of iteration.
-    - **Mechanism**: In each round, the LLM generates a pseudo-answer (serving as a cognitive anchor), performs utility judgment (pointwise or listwise) conditioned on the pseudo-answer, and then updates the pseudo-answer. Judgment quality improves incrementally across rounds.
-    - **Design Motivation**: Single-pass judgment is susceptible to noise; iteration allows the LLM to gradually accumulate understanding of both the question and the documents.
+2.  **Mapping Philosophical Theory to RAG**:
+    - **Function**: Provides a theoretical foundation for the iterative framework.
+    - **Mechanism**: Schutz’s three types of relevance—topical relevance (focusing on the object) → interpretational relevance (understanding the object) → motivational relevance (acting based on understanding)—correspond one-to-one with RAG's retrieval → utility judgment → answer generation.
+    - **Design Motivation**: Philosophical theory predicts that these three will mutually enhance each other, providing a theoretical basis for the iterative design.
 
-2. **Mapping Philosophical Theory to RAG**:
-
-    - **Function**: Provides theoretical grounding for the iterative framework.
-    - **Mechanism**: Schutz's three types of relevance—topical relevance (focusing on an object) → interpretational relevance (understanding the object) → motivational relevance (acting on that understanding)—map one-to-one onto RAG's retrieval → utility judgment → answer generation pipeline.
-    - **Design Motivation**: Philosophical theory predicts mutual reinforcement among these three dimensions, offering a theoretical basis for the iterative design.
-
-3. **Comparison of Two Iterative Variants**:
-
+3.  **Comparison of Two Iterative Variants**:
     - **Function**: Explores the applicability of different iterative strategies.
-    - **Mechanism**: ITEM-A iterates only over answer generation and judgment (fewer components, more rounds); ITEM-AR incorporates a ranking component (more components, richer per-round updates). Different levels of task complexity call for different strategies.
-    - **Design Motivation**: Harder tasks benefit from more components and more rounds; simpler tasks are better served by a more lightweight strategy.
+    - **Mechanism**: ITEM-A iterates only on answer + judgment (fewer components, more rounds); ITEM-AR adds the reranking component (more components, richer information per round). Different task complexities require different strategies.
+    - **Design Motivation**: Difficult tasks require more components and more rounds, while simple tasks can be handled with lightweight strategies.
 
 ### Loss & Training
 
-No training is required. The framework relies entirely on in-context learning with LLMs. Prompt design governs the task assigned at each round (answer generation / utility judgment / ranking).
+No training required. The framework is entirely based on LLM in-context learning. Task execution for each round (answer generation/utility judgment/ranking) is controlled via prompt design.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Task | Dataset | ITEM Improvement | Notes |
-|------|---------|-----------------|-------|
-| Retrieval Ranking | TREC DL | Outperforms baseline | Utility judgment in turn improves ranking |
-| Utility Judgment | GTI-NQ | Outperforms baseline | Iteration substantially improves judgment quality |
-| QA | NQ | Outperforms baseline | Higher-utility documents yield better answers |
-| Non-factoid Retrieval | WebAP | Outperforms baseline | Greater gains on harder tasks |
+| Task | Dataset | ITEM Gain | Description |
+|------|--------|---------|------|
+| Retrieval Reranking | TREC DL | Superior to baselines | Utility judgment in turn improves reranking |
+| Utility Judgment | GTI-NQ | Superior to baselines | Iteration significantly improves judgment quality |
+| QA | NQ | Superior to baselines | High-utility documents lead to better answers |
+| Non-factoid Retrieval | WebAP | Superior to baselines | Greater gains in difficult tasks |
 
 ### Ablation Study
 
-| Configuration | Key Metric | Notes |
-|---------------|-----------|-------|
-| 1 round vs. multiple rounds | Multiple rounds superior | Iteration is genuinely effective |
-| ITEM-A vs. ITEM-AR | Task-dependent | Harder tasks require ITEM-AR |
-| vs. long-reasoning mode | Comparable performance, much lower cost | Iteration is more efficient than single-pass extended reasoning |
+| Configuration | Key Metrics | Description |
+|------|---------|------|
+| 1 Round vs Multi-round | Multi-round is better | Iteration is indeed effective |
+| ITEM-A vs ITEM-AR | Task-dependent | Difficult tasks require ITEM-AR |
+| vs Long-reasoning mode | Comparable performance, much lower cost | Iteration is more efficient than one-shot long reasoning |
 
 ### Key Findings
-- For harder tasks (e.g., non-factoid retrieval on WebAP) and complex candidate lists (e.g., GTI-NQ), more components combined with more iterations prove most effective.
-- ITEM achieves performance comparable to long-reasoning modes at substantially lower computational cost.
-- For simpler factoid QA tasks, fewer components with more iterations yield the best results.
+- In difficult tasks (e.g., WebAP non-factoid answer retrieval) and complex candidate lists (e.g., GTI-NQ), using more components and more iterations is most effective.
+- ITEM achieves performance comparable to long-reasoning modes but at a significantly lower computational cost.
+- In simple factoid QA tasks, using fewer components with more iterations actually yields the best results.
 
 ## Highlights & Insights
-- A creative mapping from philosophical theory to engineering methodology—Schutz's system of relevances offers a novel perspective for RAG optimization.
-- The paper reveals a relationship between task complexity and optimal iterative strategy.
-- RAG quality is improved without any training, making the approach highly practical.
+- Creative mapping of philosophical theory to engineering methods—Schutz’s relevance system provides a new perspective for RAG optimization.
+- Identifies the relationship between task complexity and optimal iteration strategies.
+- Improves RAG quality without training, demonstrating strong practical utility.
 
 ## Limitations & Future Work
-- Iteration increases inference cost due to multiple LLM calls, and latency may be unacceptable in latency-sensitive settings.
-- The quality of pseudo-answers may impose an upper bound on the gains achievable through iteration.
-- Evaluation is conducted exclusively on English datasets.
-- Future work could combine the framework with fine-tuned retrievers for further improvement.
+- Iteration increases inference costs (multiple LLM calls), and latency may be unacceptable for some applications.
+- The quality of pseudo-answers may limit the upper bound of iteration gains.
+- Evaluated only on English datasets.
+- Future work could combine this with fine-tuned retrievers for further enhancement.
 
 ## Related Work & Insights
-- **vs. single-pass utility judgment**: The iterative framework substantially improves judgment quality through multi-round cognitive accumulation.
-- **vs. multi-round retrieval RAG**: Rather than modifying retrieval itself, the framework iteratively refines utility judgment over already-retrieved results.
-- **vs. long-reasoning / chain-of-thought**: Achieves comparable performance at considerably lower cost.
+- **vs Single-shot Utility Judgment**: The iterative framework significantly improves judgment quality through multi-round cognitive accumulation.
+- **vs Multi-round Retrieval RAG**: Does not change retrieval itself but iteratively improves utility judgment on already retrieved results.
+- **vs Long-reasoning/Chain-of-Thought**: Achieves comparable effects at a lower cost.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Innovative perspective mapping philosophical theory to RAG
-- Experimental Thoroughness: ⭐⭐⭐⭐ Four datasets, multi-task evaluation
-- Writing Quality: ⭐⭐⭐⭐ Clear theoretical framework, well-organized experiments
-- Value: ⭐⭐⭐⭐ Practically informative for RAG optimization
+- Novelty: ⭐⭐⭐⭐ Innovative perspective mapping philosophical theory to RAG.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Evaluation across 4 datasets and multiple tasks.
+- Writing Quality: ⭐⭐⭐⭐ Clear theoretical framework and well-organized experiments.
+- Value: ⭐⭐⭐⭐ Practical guiding significance for RAG optimization.
 
 <!-- RELATED:START -->
 
@@ -126,8 +123,8 @@ No training is required. The framework relies entirely on in-context learning wi
 - [\[ACL 2026\] Bayesian Active Learning with Gaussian Processes Guided by LLM Relevance Scoring](bayesian_active_learning_with_gaussian_processes_guided_by_llm_relevance_scoring.md)
 - [\[ACL 2026\] From Relevance to Authority: Authority-aware Generative Retrieval in Web Search Engines](from_relevance_to_authority_authority-aware_generative_retrieval_in_web_search_e.md)
 - [\[NeurIPS 2025\] SymRTLO: Enhancing RTL Code Optimization with LLMs and Neuron-Inspired Symbolic Reasoning](../../NeurIPS2025/information_retrieval/symrtlo_enhancing_rtl_code_optimization_with_llms_and_neuron-inspired_symbolic_r.md)
+- [\[ACL 2026\] Utility-Oriented Visual Evidence Selection for Multimodal Retrieval-Augmented Generation](utility-oriented_visual_evidence_selection_for_multimodal_retrieval-augmented_ge.md)
 - [\[ACL 2026\] CiteGuard: Faithful Citation Attribution for LLMs via Retrieval-Augmented Validation](citeguard_faithful_citation_attribution_for_llms_via_retrieval-augmented_validat.md)
-- [\[ACL 2026\] Domain-Specific Data Generation Framework for RAG Adaptation](domain-specific_data_generation_framework_for_rag_adaptation.md)
 
 </div>
 

@@ -2,127 +2,124 @@
 title: >-
   [Paper Note] UKP_Psycontrol at SemEval-2026 Task 2: Modeling Valence and Arousal Dynamics from Text
 description: >-
-  [ACL 2026][Model Compression][Affect Assessment] UKP_Psycontrol achieves first place on both subtasks of SemEval-2026 Task 2 by combining LLM prompting, a MaxEnt model with Ising interactions…
+  [ACL 2026][Model Compression][Emotion assessment] UKP_Psycontrol achieved first place in both subtasks at SemEval-2026 Task 2. By combining LLM prompting, a MaxEnt model with Ising interactions…
 tags:
   - "ACL 2026"
   - "Model Compression"
-  - "Affect Assessment"
-  - "Longitudinal Analysis"
-  - "Valence-Arousal"
-  - "LLM Prompting"
-  - "MaxEnt Model"
+  - "Emotion assessment"
+  - "longitudinal analysis"
+  - "valence-arousal"
+  - "LLM prompting"
+  - "MaxEnt model"
 date: 2026-05-08
-content_hash: e91ba2b2a46e5404
+content_hash: ce01f7e9a86eb90e
 ---
 
 # UKP_Psycontrol at SemEval-2026 Task 2: Modeling Valence and Arousal Dynamics from Text
 
-**Conference**: ACL 2026
+**Conference**: ACL 2026  
 **arXiv**: [2604.21534](https://arxiv.org/abs/2604.21534)  
 **Code**: [GitHub](https://github.com/)  
-**Area**: Affective Computing / Longitudinal Affect Modeling
-**Keywords**: Affect Assessment, Longitudinal Analysis, Valence-Arousal, LLM Prompting, MaxEnt Model
+**Area**: Affective Computing / Longitudinal Emotion Modeling  
+**Keywords**: Emotion assessment, longitudinal analysis, valence-arousal, LLM prompting, MaxEnt model
 
 ## TL;DR
 
-UKP_Psycontrol achieves first place on both subtasks of SemEval-2026 Task 2 by combining LLM prompting, a MaxEnt model with Ising interactions, and a neural regression model. The system reveals that LLMs excel at capturing static affective signals, whereas short-term affective changes are better explained by recent numerical trajectories than by textual semantics.
+UKP_Psycontrol achieved first place in both subtasks at SemEval-2026 Task 2. By combining LLM prompting, a MaxEnt model with Ising interactions, and a neural regression model, the study found that LLMs excel at capturing static emotional signals, while short-term emotional changes are explained more by recent numerical trajectories than by textual semantics.
 
 ## Background & Motivation
 
-**Background**: In computational sentiment analysis, affect is typically represented along two continuous dimensions: valence (positive–negative polarity) and arousal (activation level). Most NLP research relies on social media or review data annotated by external raters or approximated via sentiment proxies, allowing only indirect access to internal affective states.
+**Background**: In computational sentiment analysis, emotions are typically represented by two continuous dimensions: valence (positive/negative) and arousal (level of activation). Most NLP research utilizes social media or review data, which is annotated by external evaluators or approximated via emotional proxies, only indirectly accessing internal emotional states.
 
-**Limitations of Prior Work**: SemEval-2026 Task 2 introduces a novel challenge requiring longitudinal affect assessment and prediction over temporally ordered self-report texts. The dataset consists of diary entries from U.S. service-industry workers spanning several years, comprising free-prose narratives and affect word lists paired with self-rated valence and arousal scores. This demands that models not only understand the affect conveyed in individual texts but also capture how affect evolves over time.
+**Limitations of Prior Work**: SemEval-2026 Task 2 poses a new challenge—requiring longitudinal emotional assessment and prediction from time-series ordered self-reported texts. The data consists of logs from US service workers over several years, including free prose and lists of emotional words, paired with self-rated valence and arousal. This requires models to not only understand the sentiment of a single text but also capture the dynamic changes of emotion over time.
 
-**Key Challenge**: Textual semantics and numerical affect trajectories may contribute differently to affect prediction. LLMs are strong at understanding textual meaning, yet short-term affective fluctuations may reflect personal affective inertia rather than new information conveyed in the text.
+**Key Challenge**: The contributions of textual semantics versus numerical emotional trajectories to emotion prediction may differ—LLMs are proficient at understanding textual meaning, but short-term emotional fluctuations might reflect an individual's emotional inertia rather than new textual information.
 
-**Goal**: (1) Evaluate static affect recognition (Subtask 1); (2) predict future affective change (Subtask 2A); (3) understand the relative importance of textual semantics versus numerical trajectories across tasks.
+**Goal**: (1) Evaluate static emotion recognition (Subtask 1); (2) Predict future emotional changes (Subtask 2A); (3) Understand the relative importance of textual semantics vs. numerical trajectories across different tasks.
 
-**Key Insight**: Three complementary approaches are combined — LLM prompting (leveraging language understanding), MaxEnt+Ising (leveraging structured dependency modeling via probabilistic graphical models), and neural regression (leveraging numerical trajectories and user embeddings).
+**Key Insight**: A combination of three complementary methods—LLM prompting (leveraging linguistic understanding), MaxEnt+Ising (leveraging structured dependency modeling in probabilistic graphical models), and neural regression (leveraging numerical trajectories and user embeddings).
 
-**Core Idea**: Static affect assessment benefits from LLM-based textual understanding, while dynamic affect prediction benefits from the short-term inertia of numerical trajectories; the two are complementary.
+**Core Idea**: Static emotional assessment relies on LLM textual understanding, while dynamic emotional prediction depends on the short-term inertia of numerical trajectories; both have their respective strengths.
 
 ## Method
 
 ### Overall Architecture
 
-The system comprises three modules: (1) an LLM prompting module that uses GPT-5 to predict valence and arousal under user-aware and user-agnostic settings; (2) a MaxEnt+Ising module that employs a maximum entropy model with Ising interactions to capture structured dependencies among affective states; and (3) a neural regression module that predicts the next affective change using recent affect trajectories within a sliding window, RoBERTa text embeddings, and trainable user embeddings.
+The system consists of three modules: (1) an LLM prompting module—using GPT-5 to predict valence and arousal under user-aware and user-agnostic settings; (2) a MaxEnt+Ising module—modeling structured dependencies of emotional states using a Maximum Entropy model and Ising interactions; (3) a neural regression module—predicting the next emotional change using a sliding window of recent emotional trajectories + RoBERTa text embeddings + trainable user embeddings.
 
 ### Key Designs
 
-1. **LLM Prompting Strategy**:
+1.  **LLM Prompting Strategy**:
+    - **Function**: Leverages the language understanding capabilities of LLMs to predict emotions within the text.
+    - **Mechanism**: Distinguishes between user-aware (using historical examples from the same user as few-shot) and user-agnostic (using label-balanced random examples) settings. Compares two output formats: textual emotion labels (mapped to numerical values) vs. direct numerical prediction, finding textual labels to be more stable. Introduces a sliding window dynamic update strategy (most recent N=15 entries), but observes that prediction errors propagate cumulatively, making fixed examples preferable. Prose and emotional words are processed separately.
+    - **Design Motivation**: Utilizes the strong correlation between LLMs and human valence/arousal scores, with the user-aware setting capturing individual expression patterns.
 
-    - **Function**: Exploits LLMs' language understanding to predict affect from text.
-    - **Mechanism**: Two settings are distinguished — user-aware (using historical examples from the same user as few-shot demonstrations) and user-agnostic (using label-balanced randomly sampled examples). Two output formats are compared: textual affect labels (mapped to numerical values) versus direct numerical predictions; textual labels prove more stable. A sliding-window dynamic update strategy (most recent $N=15$ entries) is explored but found to accumulate prediction errors; fixed demonstrations perform better. Prose and affect word lists are processed separately.
-    - **Design Motivation**: LLM outputs exhibit strong correlation with human valence/arousal ratings; the user-aware setting captures individual expressive patterns.
+2.  **MaxEnt+Ising Structural Model**:
+    - **Function**: Uses a probabilistic graphical model to capture structured dependencies between emotional states.
+    - **Mechanism**: Defines an energy function $E(\mathbf{x}) = -\mathbf{x}^\top \mathbf{h} - \frac{1}{2}\mathbf{x}^\top \mathbf{J}\mathbf{x}$, where $\mathbf{h}$ models linear effects and $\mathbf{J}$ captures pairwise interactions. Emotional variables are one-hot encoded, and semantic information is compressed into binary vectors via an autoencoder. Since the state space is bounded, the partition function $Z$ can be calculated exactly, enabling maximum likelihood training. Inference is performed via conditional expectation decoding, generating continuous predictions aligned with correlation evaluation metrics.
+    - **Design Motivation**: Psychological theories suggest that mental states evolve on an underlying energy landscape and follow a Boltzmann distribution.
 
-2. **MaxEnt+Ising Structured Model**:
-
-    - **Function**: Captures structured dependencies among affective states via a probabilistic graphical model.
-    - **Mechanism**: An energy function is defined as $E(\mathbf{x}) = -\mathbf{x}^\top \mathbf{h} - \frac{1}{2}\mathbf{x}^\top \mathbf{J}\mathbf{x}$, where $\mathbf{h}$ models linear effects and $\mathbf{J}$ captures pairwise interactions. Affective variables are one-hot encoded, and semantic information is compressed into binary vectors via an autoencoder. Because the state space is bounded, the partition function $Z$ can be computed exactly, enabling maximum likelihood training. At inference time, continuous predictions are decoded via conditional expectations, aligning with the correlation-based evaluation metric.
-    - **Design Motivation**: Psychological theory posits that mental states evolve on a latent energy landscape and follow a Boltzmann distribution.
-
-3. **Neural Regression Model (Subtask 2A)**:
-
-    - **Function**: Predicts the next affective change from recent affect trajectories.
-    - **Mechanism**: Inputs include recent text embeddings (RoBERTa mean-pooling) within a sliding window of 1–4 steps, current valence/arousal values, the previous state change, and trainable user embeddings. Three configurations are compared: (a) a text-free baseline (numerical features + user embeddings only), (b) text-augmented, and (c) semantic cluster representations.
-    - **Design Motivation**: Short-term affective changes are hypothesized to be primarily driven by individual affective inertia; user embeddings capture individual differences.
+3.  **Neural Regression Model (Subtask 2A)**:
+    - **Function**: Uses recent emotional trajectories to predict the next emotional change.
+    - **Mechanism**: Inputs include recent text embeddings (RoBERTa mean-pooling) within a sliding window (1-4 steps), current valence/arousal, previous state changes, and trainable user embeddings. Compares three settings: (a) a text-less baseline (numerical features + user embeddings only), (b) text-enhanced, and (c) semantic cluster representations.
+    - **Design Motivation**: Hypothesizes that short-term emotional changes are primarily driven by personal emotional inertia, with user embeddings capturing individual differences.
 
 ### Loss & Training
 
-The MaxEnt model is trained via maximum likelihood estimation; the neural regression model uses a standard regression loss. LLM prompting requires no training. The final submission combines the optimal configurations of each module.
+The MaxEnt model is trained using maximum likelihood estimation, while the neural regression model uses standard regression loss. LLM prompting requires no training. The final submission combines the optimal configurations from each module.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**Subtask 1 (Longitudinal Affect Assessment) — Test Set**
+**Subtask 1 (Longitudinal Emotion Assessment) — Test Set**
 
-| Method | Valence $r_\text{composite}$ | Arousal $r_\text{composite}$ |
-|--------|------------------------------|------------------------------|
-| Baseline linear (BERT) | 0.557 | 0.299 |
+| Method | Valence r_composite | Arousal r_composite |
+| :--- | :--- | :--- |
+| Baseline linear(BERT) | 0.557 | 0.299 |
 | MaxEnt Ising | 0.589 | 0.327 |
-| **LLM-based (submission)** | **0.667** | **0.554** |
+| **LLM-based (Submitted)** | **0.667** | **0.554** |
 
-**Subtask 2A (Affect Change Prediction) — Test Set**
+**Subtask 2A (Emotion Change Prediction) — Test Set**
 
-| Method | Valence $r$ | Arousal $r$ |
-|--------|-------------|-------------|
-| Baseline linear (prev) | 0.520 | 0.609 |
+| Method | Valence r | Arousal r |
+| :--- | :--- | :--- |
+| Baseline linear(prev) | 0.520 | 0.609 |
 | MaxEnt Ising | — | — |
-| **Neural Regression (submission)** | **0.675** | **0.683** |
+| **Neural Regression (Submitted)** | **0.675** | **0.683** |
 
 ### Key Findings
 
-- The user-aware prompting setting yields only marginally better results than the user-agnostic setting, suggesting that label-balanced random demonstrations already approximate most user-specific information.
-- Increasing the number of shots improves valence correlation (10→20 shots: 0.617→0.661) but produces no comparable effect for arousal.
-- Predicting textual affect labels outperforms direct numerical prediction, indicating that natural language descriptions better align with LLM pretraining distributions.
-- **Key finding**: In Subtask 2A, the text-free baseline (numerical trajectories + user embeddings only) performs comparably to text-augmented models, demonstrating that short-term affective changes are better explained by recent numerical states than by textual semantics.
-- The dynamic update strategy (sliding-window replacement of demonstrations) underperforms fixed demonstrations due to accumulated propagation of prediction errors.
+- User-aware prompting was only slightly better than user-agnostic prompting, indicating that label-balanced random examples already approximate most user-specific information.
+- Increasing the number of shots improved valence correlation (10→20 shots: 0.617→0.661), but had no similar effect on arousal.
+- Textual emotion label prediction outperformed direct numerical prediction, suggesting that natural language descriptions better match the LLM's pre-training distribution.
+- **Key Finding**: In Subtask 2A, the performance of the text-less baseline (numerical trajectory + user embeddings only) was comparable to the text-enhanced model, illustrating that short-term emotional changes are explained more by recent numerical states than by textual semantics.
+- Dynamic update strategies (sliding window replacement) were inferior to fixed shots due to the cumulative propagation of prediction errors.
 
 ## Highlights & Insights
 
-- The finding that "short-term affective changes are driven by numerical trajectories rather than textual semantics" carries important implications for affective computing — suggesting that affect has its own temporal inertia and that text serves as a snapshot rather than a driving force.
-- The MaxEnt+Ising model introduces a psychological theory (the energy landscape hypothesis) into NLP tasks, providing an interpretable probabilistic framework.
-- The complementary combination strategy across three methods is noteworthy: LLMs handle semantic understanding, probabilistic models handle structured dependencies, and neural networks handle numerical sequences.
+- The finding that "short-term emotional change is driven by numerical trajectories rather than textual semantics" provides significant insights for the field of affective computing—implying that emotion may have its own time-series inertia, where text serves as a snapshot rather than a driver.
+- The MaxEnt+Ising model introduces psychological theory (the energy landscape hypothesis) into NLP tasks, providing an interpretable probabilistic framework.
+- The complementary combination strategy of the three methods is noteworthy: LLMs handle semantic understanding, probabilistic models handle structured dependencies, and neural networks handle numerical sequences.
 
 ## Limitations & Future Work
 
-- The dataset is relatively small (2,764 entries, 137 users), limiting the potential of deep learning approaches.
-- Data quality issues are prominent: 92% of users participated in only one time period, and some users exhibit no variation in valence/arousal ratings.
-- The binarized semantic representations in the MaxEnt model may lose affective nuance.
-- Validation is limited to English-speaking service-industry workers; cultural differences may influence affective expression patterns.
+- Small data volume (2764 entries, 137 users) limits the potential of deep learning methods.
+- Significant data quality issues: 92% of users participated in only one time period, and some users' valence/arousal remained constant throughout.
+- The binary semantic representation in the MaxEnt model may lose emotional nuances.
+- Validation was only conducted on English-speaking service workers; cultural differences may affect emotional expression patterns.
 
 ## Related Work & Insights
 
-- **vs. pure LLM methods**: LLMs are powerful for static assessment but insufficient for dynamic prediction, necessitating complementary numerical trajectory modeling.
-- **vs. traditional BERT baseline**: The combined system (LLM + MaxEnt + neural regression) achieves first place on both subtasks.
+- **vs. Pure LLM methods**: LLMs are powerful for static assessment but insufficient for dynamic prediction, requiring supplementation by numerical trajectory modeling.
+- **vs. Traditional BERT baselines**: The system combining multiple methods (LLM+MaxEnt+Neural Regression) achieved first place in both subtasks.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ The combination strategy and the application of MaxEnt+Ising are novel, though individual components are not new in isolation.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Detailed ablations and comparisons, albeit constrained by the shared task's data scale.
-- Writing Quality: ⭐⭐⭐⭐ Clear structure with detailed method descriptions.
-- Value: ⭐⭐⭐⭐ The "text vs. numerical trajectory" finding offers important insights for affective computing research.
+- Novelty: ⭐⭐⭐⭐ The combination strategy of the three methods and the application of MaxEnt+Ising are innovative, though the individual components are not entirely new.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Detailed ablation and comparisons, though limited by the data scale of the shared task.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure with detailed methodological descriptions.
+- Value: ⭐⭐⭐⭐ The "text vs. numerical trajectory" finding provides important insights for affective computing research.
 
 <!-- RELATED:START -->
 
@@ -130,11 +127,11 @@ The MaxEnt model is trained via maximum likelihood estimation; the neural regres
 
 ## Related Papers
 
-- [\[ACL 2026\] Latent-Condensed Transformer for Efficient Long Context Modeling](latent-condensed_transformer_for_efficient_long_context_modeling.md)
+- [\[ACL 2026\] TELL-TALE: Task Efficient LLMs with Task Aware Layer Elimination](tell-tale_task_efficient_llms_with_task_aware_layer_elimination.md)
+- [\[ACL 2026\] Why Steering Works: Toward a Unified View of Language Model Parameter Dynamics](why_steering_works_toward_a_unified_view_of_language_model_parameter_dynamics.md)
+- [\[ICML 2026\] Proxy Compression for Language Modeling](../../ICML2026/model_compression/proxy_compression_for_language_modeling.md)
 - [\[ACL 2026\] Task-Stratified Knowledge Scaling Laws for Post-Training Quantized LLMs](task-stratified_knowledge_scaling_laws_for_post-training_quantized_large_languag.md)
 - [\[ACL 2026\] SAMoRA: Semantic-Aware Mixture of LoRA Experts for Task-Adaptive Learning](samora_semantic-aware_mixture_of_lora_experts_for_task-adaptive_learning.md)
-- [\[ICML 2026\] Proxy Compression for Language Modeling](../../ICML2026/model_compression/proxy_compression_for_language_modeling.md)
-- [\[ACL 2026\] Reason Only When Needed: Efficient Generative Reward Modeling via Model-Internal Uncertainty](reason_only_when_needed_efficient_generative_reward_modeling_via_model-internal_.md)
 
 </div>
 

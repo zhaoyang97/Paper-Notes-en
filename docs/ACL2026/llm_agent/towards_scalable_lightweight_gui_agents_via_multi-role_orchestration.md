@@ -2,146 +2,143 @@
 title: >-
   [Paper Note] Towards Scalable Lightweight GUI Agents via Multi-role Orchestration
 description: >-
-  [ACL 2026][LLM Agent][GUI Agent] This paper proposes LAMO, a framework that trains a lightweight 3B MLLM into a flexibly orchestrated multi-role GUI Agent through role-oriented data synthesis and two-stage training (SFT…
+  [ACL 2026][LLM Agent][GUI Agent] This paper proposes the LAMO framework, which transforms a lightweight 3B MLLM into a GUI Agent capable of flexible multi-role orchestration through role-oriented data synthesis and two-s…
 tags:
   - "ACL 2026"
   - "LLM Agent"
   - "GUI Agent"
-  - "Lightweight Model"
+  - "Lightweight Models"
   - "Multi-role Orchestration"
   - "Policy Executor"
   - "Reinforcement Learning"
 date: 2026-05-08
-content_hash: 801956d14b57ffe3
+content_hash: 8b4b1f7a58a24017
 ---
 
 # Towards Scalable Lightweight GUI Agents via Multi-role Orchestration
 
-**Conference**: ACL 2026
+**Conference**: ACL 2026  
 **arXiv**: [2604.13488](https://arxiv.org/abs/2604.13488)  
 **Code**: [GitHub](https://github.com/BigTaige/LAMO)  
-**Area**: LLM Agent / GUI Automation
-**Keywords**: GUI Agent, Lightweight Model, Multi-role Orchestration, Policy Executor, Reinforcement Learning
+**Area**: LLM Agent / GUI Automation  
+**Keywords**: GUI Agent, Lightweight Models, Multi-role Orchestration, Policy Executor, Reinforcement Learning
 
 ## TL;DR
 
-This paper proposes LAMO, a framework that trains a lightweight 3B MLLM into a flexibly orchestrated multi-role GUI Agent through role-oriented data synthesis and two-stage training (SFT with Perplexity-Weighted Cross-Entropy + multi-task RL). The agent operates in three modes—monolithic inference, multi-agent collaboration, and plug-and-play policy executor—and achieves a 77.6% success rate on AndroidWorld when paired with a GPT-5 planner, surpassing dedicated GUI agents with 72B parameters.
+This paper proposes the LAMO framework, which transforms a lightweight 3B MLLM into a GUI Agent capable of flexible multi-role orchestration through role-oriented data synthesis and two-stage training (SFT with Perplexity-Weighted Cross-Entropy + Multi-task RL). Operating in three modes—monolithic inference, multi-agent collaboration, and as a plug-and-play policy executor—LAMO-3B paired with a GPT-5 planner achieves a 77.6% success rate on AndroidWorld, surpassing specialized GUI Agents with 72B parameters.
 
 ## Background & Motivation
 
-**Background**: MLLM-based GUI Agents are evolving from static environments toward complex online real-world scenarios. State-of-the-art methods (e.g., UI-TARS-72B, Agent-S2) have achieved significant gains by scaling model size and training data, but at prohibitively high deployment costs. Lightweight GUI Agents (≤7B) perform reasonably well on static benchmarks but suffer dramatic performance degradation in online real-world environments.
+**Background**: MLLM-based GUI Agents are evolving from static environments to complex online real-world scenarios. Current state-of-the-art methods (e.g., UI-TARS-72B, Agent-S2) achieve significant gains by scaling parameters and data, but deployment costs remain extremely high. While lightweight GUI Agents (≤7B) perform well on static benchmarks, their performance drops sharply in online real-world environments.
 
-**Limitations of Prior Work**: (1) Lightweight MLLMs are limited by parameter scale and underperform in end-to-end long-horizon tasks that simultaneously demand screen analysis, strategic decision-making, and tool invocation. (2) End-to-end monolithic episodic learning couples high-level reasoning with low-level execution within a fixed pipeline, resulting in poor task scalability and difficulty adapting to multi-agent systems (MAS). (3) Training multiple skill experts is costly—for example, Agent-S2 requires concurrently deploying UI-TARS-72B (visual grounding), Tesseract OCR (text grounding), and UNO (structural grounding), incurring extremely high system costs. (4) Lightweight agents lack task scalability and cannot flexibly switch roles via context engineering.
+**Limitations of Prior Work**: (1) Lightweight MLLMs are constrained by parameter scale, performing poorly in end-to-end long-horizon tasks that require simultaneous screen analysis, strategic decision-making, and tool invocation; (2) End-to-end episodic learning couples high-level reasoning with low-level execution in a fixed pipeline, leading to poor task scalability and difficulty in adapting to Multi-Agent Systems (MAS); (3) Training multiple skill experts is costly—for instance, Agent-S2 requires the concurrent deployment of UI-TARS-72B (visual grounding), Tesseract OCR (text grounding), and UNO (structural grounding); (4) Lightweight Agents lack task scalability and cannot flexibly switch roles via context engineering.
 
-**Key Challenge**: A cost-scalability dilemma—large models offer task scalability but at high deployment cost, while lightweight models are cheap to deploy but limited in capability and not scalable.
+**Key Challenge**: The cost-scalability dilemma—large models possess task scalability but high deployment costs, while lightweight models are cheap to deploy but limited in capability and unscalable.
 
-**Goal**: To achieve task scalability on lightweight MLLMs by enabling a 3B model to work flexibly across different inference modes through parameter sharing and multi-role orchestration, while continuously benefiting as a plug-and-play policy executor paired with advanced planners.
+**Goal**: To achieve task scalability on lightweight MLLMs. Through parameter sharing and multi-role orchestration, a 3B model can work flexibly across different inference modes and continuously benefit from advanced planners as a plug-and-play policy executor.
 
-**Key Insight**: Decompose GUI automation into five core capabilities—Action-Tool Alignment (ATA), Logically Consistent CoT (LCC), Screen Understanding (SU), Goal Planning (GP), and Screen Grounding (SG)—and enable a single 3B model to assume multiple roles through role-oriented data synthesis and parameter sharing.
+**Key Insight**: GUI automation is decomposed into five core capabilities (Action-Tool Alignment ATA, Logic-Consistent CoT LCC, Screen Understanding SU, Goal Planning GP, Screen Grounding SG). These roles are unified within a single 3B model through role-oriented data synthesis and parameter sharing.
 
-**Core Idea**: Replace multiple specialized models with parameter-shared multi-role orchestration—a single lightweight model switches among four roles (Observer, Planner, Allocator, Executor) via context engineering, achieving MAS-level performance.
+**Core Idea**: Replace multiple specialized models with parameter-shared multi-role orchestration—a single lightweight model switches between roles (Observer, Planner, Allocator, Executor) via context engineering, achieving MAS-level performance.
 
 ## Method
 
 ### Overall Architecture
 
-The LAMO framework consists of three core stages: (1) Role-oriented data synthesis—teacher models (Qwen-2.5-VL-72B and Gemini-2.5-Pro) generate training data for five categories of GUI skills; (2) SFT stage—knowledge distillation and visual perception enhancement using PWCE loss; (3) RL stage—multi-task GRPO collaborative exploration. After training, LAMO-3B supports three inference modes: end-to-end monolithic inference, parameter-shared multi-agent systems, and plug-and-play policy executor paired with an advanced planner.
+The LAMO framework consists of three core stages: (1) Role-oriented data synthesis—using teacher models (Qwen-2.5-VL-72B and Gemini-2.5-Pro) to generate training data for five types of GUI skills; (2) SFT stage—employing PWCE loss for knowledge distillation and visual perception enhancement; (3) RL stage—collaborative exploration via multi-task GRPO. Once trained, LAMO-3B supports three inference modes: end-to-end monolithic inference, parameter-shared multi-agent systems, and functioning as a plug-and-play policy executor paired with advanced planners.
 
 ### Key Designs
 
-1. **Role-oriented Data Synthesis**:
+1.  **Role-oriented Data Synthesis**:
+    - **Function**: Generates high-quality training data for the five core GUI capabilities.
+    - **Mechanism**: Decomposes GUI automation into ATA (Action-Tool Alignment), LCC (Logic-Consistent CoT), SU (Screen Understanding), GP (Goal Planning), and SG (Screen Grounding) tasks. ATA and SG are synthesized by Qwen-2.5-VL-72B, while SU/LCC/GP are synthesized by Gemini-2.5-Pro. For SG tasks, two specific challenges are addressed: (a) Semantically sparse elements—short descriptions are expanded into rich semantic captions by the teacher model; (b) Complex layout interference—Intricate-Layout Grounding (ILG) data is generated by overlaying foreground targets onto background screens with distractors.
+    - **Design Motivation**: Lightweight models struggle with long-horizon tasks but are reliable when sub-capabilities are handled independently—hence tasks are decomposed to grant the unified model all necessary skills.
 
-    - Function: Generate high-quality training data for five core GUI capability categories.
-    - Mechanism: GUI automation is decomposed into five task types—ATA (Action-Tool Alignment), LCC (Logically Consistent CoT), SU (Screen Understanding), GP (Goal Planning), and SG (Screen Grounding). ATA and SG data are synthesized with Qwen-2.5-VL-72B; SU/LCC/GP data are synthesized with Gemini-2.5-Pro. For SG tasks, two practical challenges receive special treatment: (a) semantically sparse elements—brief original descriptions are expanded into semantically rich captions by the teacher model, training the model to jointly predict rich descriptions and coordinates; (b) complex layout interference—foreground targets are overlaid onto background screens with added distractors via rule-based augmentation, generating Intricate-Layout Grounding (ILG) data.
-    - Design Motivation: Lightweight models perform poorly on long-horizon tasks end-to-end, yet are reliable when handling individual sub-capabilities independently. Task decomposition with parameter sharing thus enables a single model to possess all skills.
+2.  **Perplexity-Weighted Cross-Entropy (PWCE) Loss**:
+    - **Function**: Enhances the model's perception accuracy for screen details, particularly coordinate values.
+    - **Mechanism**: In standard cross-entropy, coordinate tokens often have high perplexity (PPL) but equal weight. PWCE dynamically adjusts loss weights based on PPL: $w_i = \frac{1 + \alpha \frac{PPL_i}{\overline{PPL} + \epsilon}}{\frac{1}{|M|}\sum_{j \in M}(1 + \alpha \frac{PPL_j}{\overline{PPL} + \epsilon})}$, followed by weighted cross-entropy $\mathcal{L}_{PW} = \frac{1}{|M|}\sum_{i \in M} w_i \cdot CE(h_i^*, \tilde{y}_i)$. The final loss is $\mathcal{L}_{PWCE} = \mathcal{L}_{CE} + \lambda \mathcal{L}_{PW}$.
+    - **Design Motivation**: SFT improves textual learning, but predicted coordinates often show systematic bias—PWCE addresses this numerical perception deficit by assigning higher weights to high-perplexity coordinate tokens.
 
-2. **Perplexity-Weighted Cross-Entropy (PWCE) Loss**:
-
-    - Function: Enhance the model's perceptual precision over screen details, particularly coordinate values.
-    - Mechanism: In standard cross-entropy loss, coordinate tokens tend to exhibit high perplexity yet receive equal weight. PWCE dynamically adjusts the loss weight for each token according to its perplexity: $w_i = \frac{1 + \alpha \frac{PPL_i}{\overline{PPL} + \epsilon}}{\frac{1}{|M|}\sum_{j \in M}(1 + \alpha \frac{PPL_j}{\overline{PPL} + \epsilon})}$, followed by weighted cross-entropy $\mathcal{L}_{PW} = \frac{1}{|M|}\sum_{i \in M} w_i \cdot CE(h_i^*, \tilde{y}_i)$. The final loss is $\mathcal{L}_{PWCE} = \mathcal{L}_{CE} + \lambda \mathcal{L}_{PW}$.
-    - Design Motivation: Although SFT improves textual learning, predicted coordinates exhibit systematic bias. PWCE addresses this numerical perception deficiency by assigning greater weight to high-perplexity coordinate tokens.
-
-3. **Multi-role Orchestration Inference**:
-
-    - Function: Instantiate multiple skill-specialized roles from a single parameter-shared model instance, supporting diverse inference modes.
-    - Mechanism: LAMO-3B switches among four roles via context engineering—Observer (providing semantic screen description $\mathcal{C}_{s2w}$), Planner (decomposing goals into sub-tasks $\mathcal{C}_{plan}$ and hints $\mathcal{C}_{tips}$), Allocator (assigning the current action $\mathcal{C}_{action}$ based on history and context), and Executor (translating action instructions into atomic operations $a_t$). In policy executor mode, an advanced MLLM (e.g., GPT-5) acts as the planner generating high-level instructions $\mathcal{C}_{action}^*$, while LAMO-3B serves as the executor converting them into precise screen operations.
-    - Design Motivation: MAS decomposition reduces the complexity faced by each role, mitigating the "lost-in-the-middle" problem and thought-action hallucinations. The policy executor mode allows the lightweight model to continuously benefit as planner capabilities improve.
+3.  **Multi-role Orchestration**:
+    - **Function**: Instantiates multiple skill-specific roles using a single parameter-shared model, supporting various inference modes.
+    - **Mechanism**: LAMO-3B switches between roles via context engineering: Observer (provides screen semantic descriptions $\mathcal{C}_{s2w}$), Planner (decomposes goals into sub-tasks $\mathcal{C}_{plan}$ and tips $\mathcal{C}_{tips}$), Allocator (assigns the current action based on history and context $\mathcal{C}_{action}$), and Executor (converts action instructions into atomic operations $a_t$). In policy executor mode, an advanced MLLM (e.g., GPT-5) acts as the planner to generate high-level instructions $\mathcal{C}_{action}^*$, which LAMO-3B converts into precise operations.
+    - **Design Motivation**: MAS decomposition reduces the complexity for each role, mitigating the "lost-in-the-middle" problem and thought-action hallucinations; the policy executor mode allows the lightweight model to benefit from planner advancements.
 
 ### Loss & Training
 
-SFT stage: 1 epoch, learning rate 4e-6, warmup ratio 0.03, global batch size 256, LoRA (rank 128, alpha 256). RL stage: visual backbone frozen; only the merge layer and LLM are trained; GRPO for 1 epoch, learning rate 1e-6, rollout batch 32, 8 rollouts per sample. Multi-task RL rewards: TF-IDF similarity normalization for SU/GP; coordinate distance for SG; string matching on tool category and value for ATA; with a length penalty $r_{penalty} = -\varphi \cdot \frac{length(y_{pred})}{L_{max}}$.
+SFT stage: 1 epoch, learning rate 4e-6, warmup ratio 0.03, global batch size 256, LoRA (rank 128, alpha 256). RL stage: Visual backbone frozen, only merge layer and LLM trained, GRPO for 1 epoch, learning rate 1e-6, rollout batch 32, 8 rollouts per sample. Multi-task RL rewards: TF-IDF similarity normalization for SU/GP, coordinate distance for SG, string matching for ATA tool categories and values, plus a length penalty $r_{penalty} = -\varphi \cdot \frac{length(y_{pred})}{L_{max}}$.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**MiniWob++ Online Environment Success Rate**
+**Success Rate in MiniWob++ Online Environment**
 
 | Method | Success Rate |
-|--------|-------------|
+|------|--------|
 | Qwen2.5-VL-3B | 34.6 |
 | UI-TARS-7B | 58.7 |
-| Gemini-2.5-pro (monolithic) | 71.0 |
-| LAMO-3B (end-to-end) | 50.0 |
+| Gemini-2.5-pro (Monolithic) | 71.0 |
+| LAMO-3B (End-to-End) | 50.0 |
 | LAMO-3B (MAS) | 60.9 (+21.8%) |
-| LAMO-3B (Gemini-2.5-pro planning) | **77.2** (+54.4%) |
+| LAMO-3B (Gemini-2.5-pro Plan) | **77.2** (+54.4%) |
 
-**AndroidWorld Success Rate**
+**Success Rate on AndroidWorld**
 
 | Method | Success Rate |
-|--------|-------------|
+|------|--------|
 | UI-TARS-72B | 46.6 |
 | Agent-S2 | 54.3 |
 | Mobile-Agent-V3 | 73.3 |
-| LAMO-3B (Gemini-2.5-pro planning) | 60.3 |
-| LAMO-3B (GPT-5 planning) | **77.6** |
+| LAMO-3B (Gemini-2.5-pro Plan) | 60.3 |
+| LAMO-3B (GPT-5 Plan) | **77.6** |
 
 ### Ablation Study
 
-**Key Component Ablation (Performance Degradation Relative to LAMO-3B)**
+**Key Component Ablation (Performance Drop Relative to LAMO-3B)**
 
-| Ablation | SP | SP-v2 | SP-pro | MiniWob++ |
-|----------|----|-------|--------|-----------|
-| Remove ILG data | -2.1% | -3.8% | -34.7% | -2.7% |
-| SFT only (no RL) | -1.1% | -3.0% | -32.7% | -22.5% |
+| Ablation Item | SP | SP-v2 | SP-pro | MiniWob++ |
+|--------|-----|-------|--------|-----------|
+| Remove ILG Data | -2.1% | -3.8% | -34.7% | -2.7% |
+| SFT Only (No RL) | -1.1% | -3.0% | -32.7% | -22.5% |
 | Remove PWCE | -1.7% | -3.5% | -38.3% | -26.9% |
-| Qwen2.5-VL-3B (no training) | -7.7% | -6.3% | -51.0% | -44.5% |
+| Qwen2.5-VL-3B (No Training) | -7.7% | -6.3% | -51.0% | -44.5% |
 
 ### Key Findings
 
-- MAS mode improves over end-to-end inference by 21.8% on MiniWob++; the policy executor mode yields a further 54.4% gain.
-- LAMO-3B + GPT-5 planner achieves 77.6% on AndroidWorld, surpassing Mobile-Agent-V3 (73.3%) and UI-Venus-Navi-72B (65.9%).
+- MAS mode improves monolithic inference by 21.8% (MiniWob++), and policy executor mode further increases it by 54.4%.
+- LAMO-3B + GPT-5 planner reaches 77.6% on AndroidWorld, surpassing Mobile-Agent-V3 (73.3%) and UI-Venus-Navi-72B (65.9%).
 - On ScreenSpot-pro, LAMO-3B (36.1%) outperforms UI-TARS-7B (35.7%) and several 72B models.
-- PWCE contributes most significantly in complex layout scenarios: its removal causes a 38.3% drop on SP-pro.
-- The RL stage is critical for online environments: SFT-only results in a 22.5% drop on MiniWob++.
-- On OSWorld, LAMO-3B (38.5%) surpasses UI-TARS-1.5-7B (28.2%) and trails Qwen2.5-VL-32B (43.6%) by only 5.1 points despite having 10× fewer parameters.
+- PWCE contributes most to complex layout scenarios: removing it led to a 38.3% drop on SP-pro.
+- The RL stage is critical for online environments: SFT-only performance dropped by 22.5% on MiniWob++.
+- On OSWorld, LAMO-3B (38.5%) beats UI-TARS-1.5-7B (28.2%) and is only 5.1 points behind Qwen2.5-VL-32B (43.6%) despite having 10x fewer parameters.
 
 ## Highlights & Insights
 
-- The policy executor mode represents a highly forward-looking design—the lightweight model need not perform planning itself but serves as a reliable "hand," with the overall performance ceiling rising continuously as planners (e.g., GPT-5) improve.
-- The PWCE loss provides an elegant solution to the coordinate prediction problem in GUI agents: perplexity-based weighting directs the model's attention toward uncertain numerical tokens.
-- Parameter-shared multi-role orchestration achieves the advantages of MAS without increasing model parameters, representing an efficient approach to capability scaling.
-- InfiGUI-R1-3B is competitive in static environments but collapses in online settings (38.5 vs. 10.3 on OSWorld), highlighting the task scalability deficiencies of end-to-end episodic learning.
+- The policy executor mode is a forward-looking design—the lightweight model does not need to plan but rather acts as a reliable "hand." As planners (like GPT-5) evolve, the overall performance ceiling continues to rise.
+- The PWCE loss function provides an elegant solution for coordinate prediction in GUI Agents—perplexity weighting focuses the model on uncertain numerical tokens.
+- Parameter-shared multi-role orchestration achieves the advantages of MAS without increasing model parameters, representing an efficient method for capacity expansion.
+- InfiGUI-R1-3B is competitive in static environments but crashes in online environments (38.5 vs 10.3 in OSWorld), highlighting the task scalability flaws of end-to-end learning.
 
 ## Limitations & Future Work
 
-- Due to the 3B parameter constraint, reasoning depth remains insufficient for long-horizon tasks requiring more than 10 steps, still necessitating a large-model planner.
-- Performance on desktop environments—particularly spreadsheet tasks and scenarios requiring software-domain priors—lags behind mobile-environment performance.
-- The synthesis quality and diversity of ILG data augmentation leave room for improvement.
-- The effect of combining LAMO with a broader range of planner types (e.g., open-source vs. closed-source planners) remains unexplored.
+- Limited by 3B parameters, reasoning depth is insufficient for long-horizon tasks exceeding 10 steps, still requiring pairing with a large model planner.
+- Performance in desktop environments (especially spreadsheets and scenarios requiring software-specific priors) is inferior to mobile environments.
+- Synthesis quality and diversity of ILG data augmentation still have room for improvement.
+- Combinations with different types of planners (e.g., open-source vs. closed-source) have not been fully explored.
 
 ## Related Work & Insights
 
-- **vs. UI-TARS**: UI-TARS-72B has 24× more parameters than LAMO-3B yet achieves only 46.6% on AndroidWorld, while LAMO-3B + GPT-5 reaches 77.6%—demonstrating that a "heavy executor" is inferior to a "lightweight executor + strong planner."
-- **vs. GUI-R1 / InfiGUI-R1**: These methods are trained with end-to-end episodic RL, performing well in static environments but collapsing online. LAMO achieves superior task scalability through role decomposition.
-- **vs. Agent-S2**: Agent-S2 employs multiple large specialized executors (UI-TARS-72B + Tesseract + UNO) at extremely high system cost; LAMO-3B accomplishes all execution functions with a single 3B model.
+- **vs UI-TARS**: UI-TARS-72B has 24x the parameters of LAMO-3B but only reaches 46.6% on AndroidWorld, whereas LAMO-3B + GPT-5 reaches 77.6%—proving a "strong planner + light executor" exceeds a "large executor."
+- **vs GUI-R1 / InfiGUI-R1**: These methods train on end-to-end episodic RL, performing well in static environments but failing online; LAMO achieves better task scalability through role decomposition.
+- **vs Agent-S2**: Agent-S2 uses multiple large-parameter specialized executors (UI-TARS-72B + Tesseract + UNO), incurring high system costs. LAMO-3B fulfills all execution functions with a single 3B model.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ — PWCE loss, role-oriented data synthesis, and parameter-shared multi-role orchestration are each independently original; the policy executor mode has strong practical foresight.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — Covers five benchmarks spanning static (ScreenSpot-pro, AndroidControl) and online (MiniWob++, AndroidWorld, OSWorld) settings, with detailed ablations.
-- Writing Quality: ⭐⭐⭐⭐ — Problem formulation is clear and the three inference modes are well-structured hierarchically, though the notation system is somewhat complex.
-- Value: ⭐⭐⭐⭐⭐ — Establishes a viable "executor + planner" paradigm for lightweight GUI agents; the 77.6% AndroidWorld success rate represents a genuinely top-tier result.
+- Novelty: ⭐⭐⭐⭐⭐ PWCE loss, role-oriented synthesis, and parameter-shared multi-role orchestration are original, and the policy executor mode has strong practical foresight.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers five benchmarks across static (ScreenSpot-pro, AndroidControl) and online (MiniWob++, AndroidWorld, OSWorld) environments with detailed ablations.
+- Writing Quality: ⭐⭐⭐⭐ Problem definitions are clear, and the hierarchy of the three inference modes is well-structured, though the notation system is slightly complex.
+- Value: ⭐⭐⭐⭐⭐ Provides a viable "executor + planner" path for lightweight GUI Agents; the 77.6% success rate on AndroidWorld is a top-tier result.
 
 <!-- RELATED:START -->
 
@@ -149,10 +146,10 @@ SFT stage: 1 epoch, learning rate 4e-6, warmup ratio 0.03, global batch size 256
 
 ## Related Papers
 
+- [\[ICML 2026\] NaviAgent: Graph-Driven Bilevel Planning for Scalable Tool Orchestration](../../ICML2026/llm_agent/naviagent_graph-driven_bilevel_planning_for_scalable_tool_orchestration.md)
 - [\[ACL 2026\] Lightweight LLM Agent Memory with Small Language Models](lightweight_llm_agent_memory_with_small_language_models.md)
+- [\[ACL 2026\] FedGUI: Benchmarking Federated GUI Agents across Heterogeneous Platforms, Devices, and Operating Systems](fedgui_benchmarking_federated_gui_agents_across_heterogeneous_platforms_devices_.md)
 - [\[AAAI 2026\] History-Aware Reasoning for GUI Agents](../../AAAI2026/llm_agent/history-aware_reasoning_for_gui_agents.md)
-- [\[AAAI 2026\] Parallelism Meets Adaptiveness: Scalable Documents Understanding in Multi-Agent LLM Systems](../../AAAI2026/llm_agent/parallelism_meets_adaptiveness_scalable_documents_understanding_in_multi-agent_l.md)
-- [\[CVPR 2026\] GUI-CEval: A Hierarchical and Comprehensive Chinese Benchmark for Mobile GUI Agents](../../CVPR2026/llm_agent/gui-ceval_a_hierarchical_and_comprehensive_chinese_benchmark_for_mobile_gui_agen.md)
 - [\[ACL 2026\] LPO: Towards Accurate GUI Agent Interaction via Location Preference Optimization](lpo_towards_accurate_gui_agent_interaction_via_location_preference_optimization.md)
 
 </div>

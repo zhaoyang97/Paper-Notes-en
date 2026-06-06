@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Accelerating Training of Autoregressive Video Generation Models via Local Optimization with Representation Continuity
 description: >-
-  [ACL 2026][Video Generation][Autoregressive Video Generation] This paper proposes a Local Optimization + Representation Continuity (ReCo) training strategy that optimizes within local windows while constraining smooth tr…
+  [ACL 2026][Video Generation][Autoregressive Video Generation] The authors propose a training strategy combining Local Optimization and Representation Continuity (ReCo). By optimizing within local windows and constraining…
 tags:
   - "ACL 2026"
   - "Video Generation"
@@ -11,112 +11,109 @@ tags:
   - "Local Optimization"
   - "Representation Continuity"
   - "Lipschitz Continuity"
-date: 2025-04-17
-content_hash: b088897d33c681f7
+date: 2026-05-08
+content_hash: 836892bacc750451
 ---
 
 # Accelerating Training of Autoregressive Video Generation Models via Local Optimization with Representation Continuity
 
 **Conference**: ACL 2026  
 **arXiv**: [2604.07402](https://arxiv.org/abs/2604.07402)  
-**Code**: N/A  
+**Code**: None  
 **Area**: Video Generation  
 **Keywords**: Autoregressive Video Generation, Training Acceleration, Local Optimization, Representation Continuity, Lipschitz Continuity
 
 ## TL;DR
-This paper proposes a Local Optimization + Representation Continuity (ReCo) training strategy that optimizes within local windows while constraining smooth transitions of hidden states, achieving 2× training speedup for autoregressive video generation models without sacrificing generation quality.
+The authors propose a training strategy combining Local Optimization and Representation Continuity (ReCo). By optimizing within local windows and constraining the smooth transition of hidden states, it achieves a 2x acceleration in training for autoregressive video generation models without compromising generation quality.
 
 ## Background & Motivation
 
-**Background**: Autoregressive models have demonstrated superior inference speed and performance over diffusion models in image generation, but in video generation, the extremely long video token sequences make training costs prohibitively high (requiring full-sequence autoregressive modeling across complete video frame sequences).
+**Background**: Autoregressive models have demonstrated superior inference speed and performance compared to diffusion models in image generation. However, in video generation, training costs are extremely high because video token sequences are significantly longer than those of images, requiring full-sequence autoregressive modeling.
 
-**Limitations of Prior Work**: Intuitively, training can be accelerated by reducing the number of training frames (Fewer-Frames method) — training on short sequences then iteratively generating during inference. However, experiments reveal this causes severe error accumulation and temporal inconsistency, as each block at inference is generated based only on the previous (potentially erroneous) block without global context information, leading to exponential error amplification.
+**Limitations of Prior Work**: Intuitively, training could be accelerated by reducing the number of frames during training (Fewer-Frames method). However, experiments show that this leads to severe error accumulation and temporal inconsistency. During inference, each block is generated based on a preceding block that might contain errors; without global context, these errors amplify exponentially.
 
-**Key Challenge**: A trade-off exists between training efficiency and generation consistency. Reducing training frames decreases computation but disrupts temporal coherence between video frames, causing severe FVD degradation (e.g., FFS from 73.65 to 229.32).
+**Key Challenge**: There is a trade-off between training efficiency and generation consistency. While reducing training frames lowers the computational load, it disrupts temporal coherence, causing significant deterioration in FVD (e.g., FFS increases from 73.65 to 229.32).
 
-**Goal**: Halve training cost while maintaining baseline-level video quality and temporal consistency.
+**Goal**: To halve the training cost while maintaining baseline-level video quality and temporal consistency.
 
-**Key Insight**: The authors approach from two levels: (1) Training strategy: replace full-sequence optimization with local window optimization, using out-of-window context as frozen conditional input; (2) Representation space: constrain hidden state variation magnitude between adjacent timesteps based on Lipschitz continuity to suppress error propagation.
+**Key Insight**: The authors approach this from two levels: (1) Training strategy: replacing full-sequence optimization with local window optimization, using context outside the window as frozen conditions; (2) Representation space: employing Lipschitz continuity to constrain the magnitude of hidden state changes between adjacent time steps to suppress error propagation.
 
-**Core Idea**: Optimize autoregressive loss within randomly sampled local windows (Local Opt.) while using representation continuity loss (ReCo) to constrain smooth hidden state transitions, thereby substantially reducing computation during training while maintaining full-sequence generation consistency during inference.
+**Core Idea**: Autoregressive loss is optimized within randomly sampled local windows (Local Opt.), while a representation continuity loss (ReCo) constrains smooth transitions of hidden states. This significantly reduces computation during training while maintaining full-sequence generation consistency during inference.
 
 ## Method
 
 ### Overall Architecture
-Input video is first encoded into discrete token sequences via VQ-VAE (OmniTokenizer), then modeled with an autoregressive Transformer. During training, loss is not computed on the complete sequence but on a randomly sampled local window, with preceding tokens outside the window serving as frozen context (stop-gradient). Continuity constraints are simultaneously applied to hidden states within the window. Inference uses standard full-sequence autoregressive generation.
+Input videos are first encoded into discrete token sequences by a VQ-VAE (OmniTokenizer) and then modeled by an autoregressive Transformer. Instead of calculating loss over the complete sequence, the model randomly samples a local window for optimization. Tokens preceding the window serve as frozen context (stop-gradient). Continuity constraints are applied to hidden states within the window. Standard full-sequence autoregressive generation is still used for inference.
 
 ### Key Designs
 
-1. **Local Optimization**:
+1.  **Local Optimization (Local Opt.)**:
+    - **Function**: Calculates autoregressive loss within a randomly sampled local window to significantly reduce the computational load per training step.
+    - **Mechanism**: Given a complete token sequence $\mathbf{E}$, a starting position $s$ and window length $W$ are randomly sampled. The cross-entropy loss is calculated only within the window $\mathbf{E}_\mathcal{W} = (\mathbf{e}_s, ..., \mathbf{e}_{s+W-1})$. Preceding tokens $\mathbf{E}_{<s}$ act as frozen context. Overlapping windows with stride $S < W$ are used so that tokens are optimized multiple times under different contexts.
+    - **Design Motivation**: To address two core issues of the Fewer-Frames method: (1) Always conditioning on ground-truth context to avoid exposure bias; (2) Forcing the model to learn more robust representations via overlapping windows. This does not affect inference speed as standard generation is used.
 
-    - Function: Compute autoregressive loss within randomly sampled local windows, substantially reducing per-step training computation
-    - Mechanism: Given the complete token sequence $\mathbf{E}$, randomly sample starting position $s$ and window length $W$, computing cross-entropy loss only within window $\mathbf{E}_\mathcal{W} = (\mathbf{e}_s, ..., \mathbf{e}_{s+W-1})$. Tokens before the window $\mathbf{E}_{<s}$ serve as frozen context (no gradient backpropagation). Overlapping windows are created using stride $S < W$, enabling tokens to be optimized multiple times under different contexts
-    - Design Motivation: Addresses two core problems of the Fewer-Frames method: (1) always conditioning on ground-truth context, avoiding exposure bias; (2) overlapping windows force the model to learn more robust representations. Inference still uses standard full-sequence generation without affecting inference speed
+2.  **First-Frame Balanced Sampling**:
+    - **Function**: Resolves the training-generation distribution mismatch by increasing the sampling ratio of windows containing the first frame.
+    - **Mechanism**: Analysis revealed that the loss distribution of the Local Opt. model on generated samples differs significantly from training samples, particularly with higher loss on the first frame. The sampling probability for windows containing the first frame is increased to 0.5.
+    - **Design Motivation**: The quality of the first frame directly impacts all subsequent frames. Experiments showed that balanced sampling reduced FVD from 190.46 to 127.11 and further improved training speed to 2.0x.
 
-2. **First-Frame Balanced Sampling**:
-
-    - Function: Resolve training-generation distribution mismatch by increasing sampling proportion of windows containing the first frame
-    - Mechanism: Analysis reveals that the Local Opt. model's loss distribution on generated samples differs significantly from training samples, with particularly high first-frame loss. The sampling probability of windows containing the first frame is increased to 0.5, enabling more optimization of the video beginning
-    - Design Motivation: First-frame quality directly impacts all subsequent frame generation. Experiments show balanced sampling reduces FVD from 190.46 to 127.11 while further increasing training speed to 2.0×
-
-3. **Representation Continuity (ReCo)**:
-
-    - Function: Constrain hidden state variation magnitude between adjacent timesteps, enhancing temporal smoothness
-    - Mechanism: Viewing the autoregressive model as a discrete-time dynamical system, inspired by Lipschitz continuity, a continuity loss is applied to adjacent hidden states within the window: $\mathcal{L}_{ReCo} = \frac{1}{W-1}\sum_{i=s}^{s+W-2}\|\mathbf{h}_{i+1} - \mathbf{h}_i\|_2^2$. Total loss is $\mathcal{L}_{Total} = \mathcal{L}_{CE} + \lambda \cdot \mathcal{L}_{ReCo}$
-    - Design Motivation: Local Opt. focusing on independent windows may produce abrupt changes in representation space. By constraining small local Lipschitz constants, error propagation is bounded to linear growth $\|\epsilon_{t+1}\| \leq L \cdot \|\epsilon_t\| + \delta_t$ rather than exponential amplification
+3.  **Representation Continuity (ReCo)**:
+    - **Function**: Constrains the magnitude of hidden state changes between adjacent time steps to enhance temporal smoothness.
+    - **Mechanism**: Viewing the autoregressive model as a discrete-time dynamical system and inspired by Lipschitz continuity, a continuity loss is applied within the window: $\mathcal{L}_{ReCo} = \frac{1}{W-1}\sum_{i=s}^{s+W-2}\|\mathbf{h}_{i+1} - \mathbf{h}_s\|_2^2$. The total loss is $\mathcal{L}_{Total} = \mathcal{L}_{CE} + \lambda \cdot \mathcal{L}_{ReCo}$.
+    - **Design Motivation**: Local Opt. focused on independent windows might produce abrupt changes in representation space. By constraining a small local Lipschitz constant, error propagation is restricted to a linear growth range $\|\epsilon_{t+1}\| \leq L \cdot \|\epsilon_t\| + \delta_t$ rather than exponential amplification.
 
 ### Loss & Training
-Total loss consists of two parts: (1) standard cross-entropy loss $\mathcal{L}_{CE}$ within the window; (2) representation continuity regularizer $\mathcal{L}_{ReCo}$ with weight $\lambda=0.1$. First-frame window sampling probability is set to 0.5. Training for 300 epochs with learning rate $1\times10^{-4}$.
+The total loss consists of: (1) standard cross-entropy loss $\mathcal{L}_{CE}$ within the window; (2) representation continuity regularization $\mathcal{L}_{ReCo}$ with weight $\lambda=0.1$. The first-frame window sampling probability is set to 0.5. The model is trained for 300 epochs with a learning rate of $1\times10^{-4}$.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Dataset | Metric | ReCo★ | Baseline★ | Gain |
-|--------|------|-------|-----------|------|
+| :--- | :--- | :--- | :--- | :--- |
 | FFS | FVD↓ | 42.5 | 46.1 | -7.8% |
 | SKY | FVD↓ | 58.8 | 62.7 | -6.2% |
 | UCF101 | FVD↓ | 251.4 | 254.5 | -1.2% |
 | Taichi | FVD↓ | 98.3 | 105.5 | -6.8% |
 
-Training speed: ReCo is approximately 2× faster than Baseline.
+Training Speed: ReCo is approximately 2x faster than Baseline.
 
 ### Ablation Study
 
 | Config | FFS FVD↓ | SKY FVD↓ | Training Speed |
-|------|----------|----------|----------|
+| :--- | :--- | :--- | :--- |
 | Baseline | 73.65 | 89.09 | 1.0× |
 | Fewer-Frames | 229.32 | 292.41 | 2.5× |
 | Local-Opt. | 190.46 | 256.94 | 1.7× |
 | Local-Opt. (w/ first frame) | 134.73 | 186.63 | 1.7× |
 | Local-Opt. (w/ balanced) | 127.11 | 179.84 | 2.0× |
-| ReCo (full method) | 72.6 | 87.5 | 2.0× |
+| ReCo (Full method) | 72.6 | 87.5 | 2.0× |
 
 ### Key Findings
-- Fewer-Frames method achieves 2.5× training speedup but FVD degrades by over 3×, confirming the theoretical error accumulation analysis
-- Local Opt.'s first-frame balanced sampling strategy contributes substantially, reducing FVD from 190 to 127
-- ReCo further reduces FVD from 127 to 72.6, matching or even surpassing the Baseline (73.7), validating the effectiveness of Lipschitz regularization
-- On MSR-VTT text-to-video tasks, ReCo* achieves comparable CLIP Score and FVD to the 7B baseline at 50% training cost
+- The Fewer-Frames method, while 2.5x faster, deteriorates FVD by over 3x, confirming the theoretical analysis of error accumulation.
+- The first-frame balanced sampling strategy in Local Opt. contributes significantly, reducing FVD from 190 to 127.
+- ReCo further reduces FVD from 127 to 72.6, performing equal to or better than the Baseline (73.7), validating the effectiveness of Lipschitz regularization.
+- On the MSR-VTT text-to-video task, ReCo* achieves CLIP Scores and FVD comparable to a 7B baseline at 50% of the training cost.
 
 ## Highlights & Insights
-- **Dynamical systems perspective**: Viewing the autoregressive model as a discrete dynamical system and using Lipschitz continuity theory to guide regularization design provides a new tool for understanding and improving autoregressive generation
-- **Training-inference decoupled design**: Local Opt. only modifies the training procedure (local window optimization) while maintaining standard full-sequence generation during inference — this "training trick without affecting inference" design philosophy is worth adopting
-- **Loss distribution analysis-driven improvement**: Discovering the first-frame bottleneck by comparing loss distributions between training/generated samples, then designing balanced sampling, represents a data-driven improvement approach transferable to other sequence generation tasks
+- **Inspiration from Dynamical Systems**: Treating the autoregressive model as a discrete dynamical system and using Lipschitz continuity theory to guide regularization is an innovative perspective for understanding and improving sequences.
+- **Decoupled Training-Inference Design**: Local Opt. modifies only the training process (local window optimization). Inference remains standard full-sequence generation. This "training trick without inference overhead" philosophy is highly valuable.
+- **Improvements Driven by Loss Distribution Analysis**: Identifying the first-frame bottleneck by comparing loss distributions between training and generated samples led to the balanced sampling strategy. This data-driven approach is transferable to other sequence tasks.
 
 ## Limitations & Future Work
-- Experiments are mainly on small-scale models (110M-770M) and short videos (17 frames); not tested on commercial large models
-- ReCo's $\lambda$ hyperparameter may require tuning for different datasets and resolutions
-- Text-to-video experiments are limited to zero-shot evaluation on MSR-VTT, lacking validation on more T2V benchmarks
-- Combination effects of ReCo with other acceleration techniques (e.g., KV-cache compression, quantization) are unexplored
+- Experiments were primarily conducted on small-scale models (110M-770M) and short videos (17 frames), without testing on commercial large-scale models.
+- The $\lambda$ hyperparameter for ReCo might require tuning for different datasets and resolutions.
+- Text-to-video experiments were limited to zero-shot evaluation on MSR-VTT, lacking verification on more benchmarks.
+- The combination of ReCo with other acceleration techniques (e.g., KV-cache compression, quantization) has not been explored.
 
 ## Related Work & Insights
-- **vs Fewer-Frames**: Fewer-Frames only reduces training frame count, causing severe error accumulation during iterative inference generation; ReCo solves the problem on the training side through Local Opt. + continuity constraints while maintaining full-sequence generation at inference
-- **vs LARP**: LARP improves video quality through a better tokenizer; ReCo is orthogonal and complementary — ReCo♠ (combined with LARP) achieves 56.1 FVD on UCF (LARP original: 57.0)
+- **vs Fewer-Frames**: Fewer-Frames only reduces frames for training and generates iteratively, leading to severe error accumulation. ReCo solves this on the training side via Local Opt. and continuity constraints, while maintaining full-sequence generation at inference.
+- **vs LARP**: LARP improves video quality through a better tokenizer. ReCo is complementary to LARP—ReCo♠ (combined with LARP) achieved 56.1 FVD on UCF (vs 57.0 for LARP alone).
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The dynamical systems perspective + Lipschitz regularization in autoregressive video generation is relatively novel, though the core ideas (local optimization + smoothness constraints) have precedents in NLP sequence modeling
-- Experimental Thoroughness: ⭐⭐⭐⭐ 4 datasets + 2 model scales + text-to-video extension experiments + detailed ablation, but lacks large-scale validation
-- Writing Quality: ⭐⭐⭐⭐⭐ The logical chain from problem analysis → theoretical proof → method design → experimental validation is very clear; figures are intuitive and effective
+- **Novelty**: ⭐⭐⭐⭐ The application of dynamical system perspectives and Lipschitz regularization to autoregressive video generation is quite novel, though core concepts (local optimization + smoothing) have precedents in NLP.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Covers 4 datasets, 2 model scales, text-to-video extensions, and detailed ablations, though lacks large-scale validation.
+- **Writing Quality**: ⭐⭐⭐⭐⭐ The logical chain from problem analysis to theoretical proof, method design, and experimental verification is very clear. The visualizations are intuitive and effective.
 
 <!-- RELATED:START -->
 
@@ -124,11 +121,11 @@ Training speed: ReCo is approximately 2× faster than Baseline.
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Autoregressive Adversarial Post-Training for Real-Time Interactive Video Generation](../../NeurIPS2025/video_generation/autoregressive_adversarial_posttraining_for_realtime_interac.md)
+- [\[ICML 2026\] Light Forcing: Accelerating Autoregressive Video Diffusion via Sparse Attention](../../ICML2026/video_generation/light_forcing_accelerating_autoregressive_video_diffusion_via_sparse_attention.md)
 - [\[ICCV 2025\] VPO: Aligning Text-to-Video Generation Models with Prompt Optimization](../../ICCV2025/video_generation/vpo_aligning_text-to-video_generation_models_with_prompt_optimization.md)
-- [\[ICLR 2026\] Streaming Autoregressive Video Generation via Diagonal Distillation](../../ICLR2026/video_generation/streaming_autoregressive_video_generation_via_diagonal_distillation.md)
+- [\[NeurIPS 2025\] Autoregressive Adversarial Post-Training for Real-Time Interactive Video Generation](../../NeurIPS2025/video_generation/autoregressive_adversarial_posttraining_for_realtime_interac.md)
+- [\[ICML 2026\] WorldCache: Accelerating World Models for Free via Heterogeneous Token Caching](../../ICML2026/video_generation/worldcache_accelerating_world_models_for_free_via_heterogeneous_token_caching.md)
 - [\[ICLR 2026\] Frame Guidance: Training-Free Guidance for Frame-Level Control in Video Diffusion Models](../../ICLR2026/video_generation/frame_guidance_training-free_guidance_for_frame-level_control_in_video_diffusion.md)
-- [\[CVPR 2026\] Infinity-RoPE: Action-Controllable Infinite Video Generation Emerges From Autoregressive Self-Rollout](../../CVPR2026/video_generation/infinity-rope_action-controllable_infinite_video_generation_emerges_from_autoreg.md)
 
 </div>
 

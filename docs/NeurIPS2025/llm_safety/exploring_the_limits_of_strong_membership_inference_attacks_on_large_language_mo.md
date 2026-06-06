@@ -169,10 +169,10 @@ $$\text{flip}_\eta(x) \coloneqq \Pr_{r,r' \sim \mu}[b_r^{(\eta)}(x) \neq b_{r'}^
 ## Related Papers
 
 - [\[ICLR 2026\] Membership Inference Attacks Against Fine-tuned Diffusion Language Models (SAMA)](../../ICLR2026/llm_safety/membership_inference_attacks_against_fine-tuned_diffusion_language_models.md)
+- [\[ACL 2026\] Membership Inference Attacks on In-Context Learning Recommendation](../../ACL2026/llm_safety/membership_inference_attacks_on_llm-based_recommender_systems.md)
+- [\[ACL 2026\] SharedRequest: Privacy-Preserving Model-Agnostic Inference for Large Language Models](../../ACL2026/llm_safety/sharedrequest_privacy-preserving_model-agnostic_inference_for_large_language_mod.md)
 - [\[NeurIPS 2025\] Distributive Fairness in Large Language Models: Evaluating Alignment with Human Values](distributive_fairness_in_large_language_models_evaluating_alignment_with_human_v.md)
 - [\[NeurIPS 2025\] Robust or Suggestible? Exploring Non-Clinical Induction in LLM Drug-Safety Decisions](robust_or_suggestible_exploring_non-clinical_induction_in_llm_drug-safety_decisi.md)
-- [\[NeurIPS 2025\] Learning to Watermark: A Selective Watermarking Framework for Large Language Models via Multi-Objective Optimization](learning_to_watermark_a_selective_watermarking_framework_for_large_language_mode.md)
-- [\[NeurIPS 2025\] Securing the Language of Life: Inheritable Watermarks from DNA Language Models to Proteins](securing_the_language_of_life_inheritable_watermarks_from_dna_language_models_to.md)
 
 </div>
 

@@ -149,7 +149,7 @@ Key finding: The combination of dynamic attributes and Adapt performs best; gene
 - [\[NeurIPS 2025\] Generate, but Verify: Reducing Hallucination in Vision-Language Models with Retrospective Resampling](../../NeurIPS2025/multimodal_vlm/generate_but_verify_reducing_hallucination_in_visionlanguage.md)
 - [\[ICLR 2026\] Breaking the Limits of Open-Weight CLIP: An Optimization Framework for Self-supervised Fine-tuning of CLIP](../../ICLR2026/multimodal_vlm/breaking_the_limits_of_open-weight_clip_an_optimization_framework_for_self-super.md)
 - [\[ICCV 2025\] DASH: Detection and Assessment of Systematic Hallucinations of VLMs](dash_detection_and_assessment_of_systematic_hallucinations_of_vlms.md)
-- [\[NeurIPS 2025\] READ: Enhancing Compositional Reasoning in CLIP via Reconstruction and Alignment of Text Descriptions](../../NeurIPS2025/multimodal_vlm/enhancing_compositional_reasoning_in_clip_via_reconstruction.md)
+- [\[ICCV 2025\] BabyVLM: Data-Efficient Pretraining of VLMs Inspired by Infant Learning](babyvlm_data-efficient_pretraining_of_vlms_inspired_by_infant_learning.md)
 
 </div>
 

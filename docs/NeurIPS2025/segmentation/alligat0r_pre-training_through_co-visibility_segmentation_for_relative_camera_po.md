@@ -123,8 +123,8 @@ RUBIK Benchmark: Overall success rate of 60.3% ranks first, surpassing DUSt3R (5
 
 ## Related Papers
 
-- [\[CVPR 2026\] Live Interactive Training for Video Segmentation](../../CVPR2026/segmentation/live_interactive_training_for_video_segmentation.md)
 - [\[ICCV 2025\] Enhancing Transformers Through Conditioned Embedded Tokens](../../ICCV2025/segmentation/enhancing_transformers_through_conditioned_embedded_tokens.md)
+- [\[CVPR 2026\] Live Interactive Training for Video Segmentation](../../CVPR2026/segmentation/live_interactive_training_for_video_segmentation.md)
 - [\[ICCV 2025\] Training-Free Class Purification for Open-Vocabulary Semantic Segmentation](../../ICCV2025/segmentation/training-free_class_purification_for_open-vocabulary_semantic_segmentation.md)
 - [\[ICCV 2025\] What If: Understanding Motion Through Sparse Interactions](../../ICCV2025/segmentation/what_if_understanding_motion_through_sparse_interactions.md)
 - [\[ICCV 2025\] DeRIS: Decoupling Perception and Cognition for Enhanced Referring Image Segmentation through Loopback Synergy](../../ICCV2025/segmentation/deris_decoupling_perception_and_cognition_for_enhanced_referring_image_segmentat.md)

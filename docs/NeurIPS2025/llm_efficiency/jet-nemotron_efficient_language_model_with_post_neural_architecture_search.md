@@ -146,7 +146,7 @@ PostNAS begins from a pretrained full-attention model (e.g., Qwen2.5-1.5B), free
 - [\[NeurIPS 2025\] 3-Model Speculative Decoding (PyramidSD)](3model_speculative_decoding.md)
 - [\[NeurIPS 2025\] ZeroS: Zero-Sum Linear Attention for Efficient Transformers](zeros_zero-sum_linear_attention_for_efficient_transformers.md)
 - [\[AAAI 2026\] Scaling and Transferability of Annealing Strategies in Large Language Model Training](../../AAAI2026/llm_efficiency/scaling_and_transferability_of_annealing_strategies_in_large_language_model_trai.md)
-- [\[ICML 2026\] Understand and Accelerate Memory Processing Pipeline for Large Language Model Inference](../../ICML2026/llm_efficiency/understand_and_accelerate_memory_processing_pipeline_for_disaggregated_llm_infer.md)
+- [\[ICML 2026\] SiameseNorm: Breaking the Barrier to Reconciling Pre/Post-Norm](../../ICML2026/llm_efficiency/siamesenorm_breaking_the_barrier_to_reconciling_prepost-norm.md)
 
 </div>
 

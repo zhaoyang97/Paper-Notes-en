@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Self-Correcting Text-to-Video Generation with Misalignment Detection and Localized Refinement
 description: >-
-  [ACL 2026][Video Generation][Text-to-Video Generation] This paper proposes VideoRepair, the first training-free, model-agnostic text-to-video self-correction framework that detects fine-grained text-video misalignment vi…
+  [ACL 2026][Video Generation][Text-to-Video Generation] Proposes VideoRepair, the first training-free and model-agnostic text-to-video self-correction framework. It employs MLLMs to detect fine-grained text-video misalign…
 tags:
   - "ACL 2026"
   - "Video Generation"
@@ -10,9 +10,9 @@ tags:
   - "Self-Correction"
   - "Localized Refinement"
   - "Text-Video Alignment"
-  - "Diffusion Model"
-date: 2025-04-17
-content_hash: 7f5733bd2d47694e
+  - "Diffusion Models"
+date: 2026-05-08
+content_hash: 0bbdbabd468f0ba7
 ---
 
 # Self-Correcting Text-to-Video Generation with Misalignment Detection and Localized Refinement
@@ -21,62 +21,59 @@ content_hash: 7f5733bd2d47694e
 **arXiv**: [2411.15115](https://arxiv.org/abs/2411.15115)  
 **Code**: [video-repair](https://video-repair.github.io/)  
 **Area**: Video Generation  
-**Keywords**: Text-to-Video Generation, Self-Correction, Localized Refinement, Text-Video Alignment, Diffusion Model
+**Keywords**: Text-to-Video Generation, Self-Correction, Localized Refinement, Text-Video Alignment, Diffusion Models
 
 ## TL;DR
 
-This paper proposes VideoRepair, the first training-free, model-agnostic text-to-video self-correction framework that detects fine-grained text-video misalignment via MLLM, preserves correct regions, and selectively repairs problematic regions, consistently improving alignment quality across four T2V backbone models on EvalCrafter and T2V-CompBench.
+Proposes VideoRepair, the first training-free and model-agnostic text-to-video self-correction framework. It employs MLLMs to detect fine-grained text-video misalignments, preserves correctly generated regions, and selectively refines problematic areas, consistently improving alignment quality across four T2V backbone models on EvalCrafter and T2V-CompBench.
 
 ## Background & Motivation
 
-**Background**: Text-to-video (T2V) diffusion models have made significant advances in generation quality, but still struggle with following complex text prompts — particularly involving multiple objects, attribute binding, and spatial relationships. Common errors include incorrect object counts, confused attribute binding, or region distortion.
+**Background**: Text-to-video (T2V) diffusion models have made significant progress in generation quality but still struggle with following complex text prompts—especially those involving multiple objects, attribute binding, and spatial relationships. Common errors include incorrect object counts, confused attribute binding, or regional deformations.
 
-**Limitations of Prior Work**: Existing compositional T2V methods improve compositionality but lack explicit feedback mechanisms to detect and correct misalignments. Image-domain repair frameworks suffer from high computational overhead, reliance on external generators, or introduction of visual inconsistencies. The key issue is: even when generated videos contain misaligned portions, correctly generated regions should often be preserved rather than regenerated.
+**Limitations of Prior Work**: Existing compositional T2V methods improve compositionality but lack explicit feedback mechanisms to detect and correct misalignments. Refinement frameworks in the image domain suffer from high computational overhead, dependency on external generators, or the introduction of visual inconsistencies. A key observation is that even when generated videos contain misaligned parts, the correctly generated regions should often be preserved rather than regenerated.
 
-**Key Challenge**: Global regeneration wastes correctly generated content, while simple inpainting/editing lacks semantically guided ability to introduce or correct entities that do not match the text. A mechanism is needed that can both precisely locate problematic regions and preserve faithful content.
+**Key Challenge**: Global regeneration wastes correctly generated content, while simple inpainting/editing lacks the semantic guidance capability to introduce or correct entities that do not match the text. A mechanism is needed to precisely locate problematic areas while preserving faithful content.
 
-**Goal**: Design a training-free video repair framework that can automatically detect what is wrong, plan how to fix it, and then locally correct it.
+**Goal**: To design a training-free video refinement framework capable of automatically detecting errors, planning the modification, and performing localized correction.
 
-**Key Insight**: Analogous to how humans revise creative works — modifying only erroneous parts while preserving correct ones. Through MLLM-generated fine-grained evaluation questions to identify misaligned regions, then leveraging the diffusion model's own regeneration capability for selective repair.
+**Key Insight**: Analogous to how humans revise creative work—modifying only the erroneous parts while keeping the correct ones. Fine-grained evaluation questions generated by MLLMs are used to identify misaligned regions, followed by leveraging the regeneration capability of the diffusion model itself for selective refinement.
 
-**Core Idea**: Preserve correct regions, selectively repair erroneous regions — transform MLLM evaluation feedback into actionable generation guidance.
+**Core Idea**: Preserve correct regions and selectively refine erroneous ones—transforming MLLM evaluation feedback into actionable generation guidance.
 
 ## Method
 
 ### Overall Architecture
 
-VideoRepair has three stages: (1) Misalignment Detection: extract semantic tuples from text prompts, generate evaluation question sets, use MLLM binary answers to identify misaligned regions; (2) Refinement Planning: determine entities to preserve and their instance counts, obtain preservation region masks through segmentation models, generate local prompts for regions to be repaired; (3) Localized Refinement: selectively reinitialize noise, apply different text guidance to preserved and repair regions, achieve seamless fusion through joint optimization.
+VideoRepair consists of three stages: (1) Misalignment Detection: Extracts semantic tuples from the text prompt, generates a set of evaluation questions, and uses an MLLM to provide binary judgments to identify misaligned regions; (2) Refinement Planning: Determines which entities to preserve and their instance counts, obtains masks for preserved regions via segmentation models, and generates localized prompts for areas needing repair; (3) Localized Refinement: Selectively re-initializes noise, applying different text guidance to preserved and refinement regions respectively, and achieves seamless blending through joint optimization.
 
 ### Key Designs
 
-1. **MLLM-Driven Misalignment Detection**:
+1.  **MLLM-driven Misalignment Detection**:
+    - **Function**: Automatically identifies which elements in the video do not match the text prompt.
+    - **Mechanism**: Extracts semantic tuples (entities, attributes, relationships, actions) from the prompt. An LLM generates an evaluation question set $Q$, categorized into counting questions $Q_c$ (e.g., "Is there one bear?") and other questions $Q_{others}$ (attributes, actions, scene). An MLLM answers these questions for the initial video; counting questions return triples (judgment, prompt count, video count), while others return binary judgments. These are aggregated into an alignment score in $[0,1]$.
+    - **Design Motivation**: More granular than simple object existence checks—explicitly capturing counts, attributes, spatio-temporal relationships, and actions to provide direct feedback signals for refinement planning.
 
-    - Function: Automatically identify which video elements do not match the text prompt
-    - Mechanism: Extract semantic tuples (entities, attributes, relationships, actions) from the prompt, use LLM to generate evaluation question sets $Q$, divided into counting questions $Q_c$ (e.g., "Is there one bear?") and other questions $Q_{others}$ (attributes, actions, scenes). MLLM answers these questions for the initial video; counting questions return triplets (judgment, prompt count, video count), other questions return binary judgments. Aggregated into a $[0,1]$ alignment score
-    - Design Motivation: More fine-grained than simple object existence checks — explicitly capturing quantity, attributes, spatiotemporal relationships, and actions, providing feedback that directly guides repair planning
+2.  **Region-Preserving Refinement Planning**:
+    - **Function**: Determines what to preserve, what to refine, and what prompts to use for refinement.
+    - **Mechanism**: (a) Uses the MLLM to identify key correctly generated entities $O^*$ and their preservation count $N^*$ based on Q&A results; (b) Obtains binary masks $\mathbf{M}$ for entities across frames using pointing prompts and segmentation models; (c) Generates a localized refinement prompt $p^r$ using an LLM after excluding preserved entities.
+    - **Design Motivation**: Converts evaluation feedback into actionable guidance—masks precisely define which pixels are kept or regenerated, and localized prompts ensure that the refinement area receives correct semantic guidance.
 
-2. **Region-Preserving Refinement Planning**:
-
-    - Function: Determine what to preserve, what to repair, and what prompts to use for repair
-    - Mechanism: (a) MLLM identifies correctly generated key entities $O^*$ and their preservation count $N^*$ based on QA results; (b) Pointing prompts and segmentation models obtain entity binary masks $\mathbf{M}$ per frame; (c) LLM generates local repair prompts $p^r$ excluding already preserved entities
-    - Design Motivation: Transforms evaluation feedback into actionable generation guidance — masks precisely define which pixels to preserve and which to regenerate; local prompts ensure repair regions receive correct semantic guidance
-
-3. **Localized Refinement and Fusion**:
-
-    - Function: Repair problematic regions without destroying correct regions
-    - Mechanism: Downscale masks to latent space; preserved regions use original noise while repair regions use resampled noise. Each denoising step runs the diffusion model twice: preserved regions with original prompt $p$, repair regions with local prompt $p^r$. Final fusion via joint optimization: $V_1 = \arg\min_{\tilde{V}} \|M_{pres} \otimes (\tilde{V} - \hat{V}_{pres})\|^2 + \|M_{refine} \otimes (\tilde{V} - \hat{V}_{refine})\|^2$, achieving seamless boundary transitions
-    - Design Motivation: Pure mask inpainting cannot introduce new entities; pure editing cannot freely correct misalignments; dual-path denoising + joint optimization achieves both precise control and global consistency
+3.  **Localized Refinement**:
+    - **Function**: Repairs problematic areas without disrupting correct regions.
+    - **Mechanism**: Downsamples masks to latent space, using original noise for preserved regions and re-sampled noise for refinement regions. During each denoising step, the diffusion model runs twice: using the original prompt $p$ for preserved regions and the localized prompt $p^r$ for refinement regions. Final fusion is achieved via joint optimization: $V_1 = \arg\min_{\tilde{V}} \|M_{pres} \otimes (\tilde{V} - \hat{V}_{pres})\|^2 + \|M_{refine} \otimes (\tilde{V} - \hat{V}_{refine})\|^2$, ensuring seamless transitions at region boundaries.
+    - **Design Motivation**: Simple masked inpainting cannot introduce new entities, and simple editing cannot freely correct misalignments; the dual-path denoising and joint optimization balance precise control with global consistency.
 
 ### Loss & Training
 
-Entirely training-free, using existing T2V diffusion models for inference. K repair candidate videos are generated (different random seeds), with the best selected via evaluation question scores. BLIP-BLEU score serves as tiebreaker when scores are tied.
+Entirely training-free, performing inference using existing T2V diffusion models. $K$ refinement candidate videos are generated (with different random seeds), and the best is selected based on evaluation question scores. BLIP-BLEU scores serve as a tiebreaker if evaluation scores are equal.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | T2V Backbone | Method | EvalCrafter Avg↑ | Visual Quality | Motion Quality | Temporal Consistency |
-|--------|------|------|----------|------|------|
+| :--- | :--- | :--- | :--- | :--- | :--- |
 | Wan 2.1-1.3B | Original | 44.83 | 63.2 | 61.0 | 62.1 |
 | Wan 2.1-1.3B | + VideoRepair | 49.01 | 65.1 | 61.6 | 62.0 |
 | VideoCrafter2 | Original | 45.97 | 61.8 | 62.6 | 62.9 |
@@ -86,43 +83,43 @@ Entirely training-free, using existing T2V diffusion models for inference. K rep
 
 ### Ablation Study
 
-| Config | Metric | Note |
-|------|---------|------|
-| vs LLM paraphrasing | 43.12-45.81 | Simple prompt rephrasing, limited or negative improvement |
-| vs SLD | 43.72-47.11 | Effective in some scenarios but severely damages visual/temporal quality |
-| vs OPT2I | 45.63-48.69 | Clear improvement but lower than VideoRepair |
-| VideoRepair | 46.41-49.01 | Consistently optimal without harming quality metrics |
+| Configuration | Key Metrics | Description |
+| :--- | :--- | :--- |
+| vs LLM paraphrasing | 43.12-45.81 | Simple prompt rewriting shows limited improvement or even degradation. |
+| vs SLD | 43.72-47.11 | Effective in some scenes but severely damages visual/temporal quality. |
+| vs OPT2I | 45.63-48.69 | Significant improvement but lower than VideoRepair. |
+| VideoRepair | 46.41-49.01 | Consistently optimal without compromising quality metrics. |
 
 ### Key Findings
 
-- VideoRepair provides consistent improvements across all four T2V backbones, validating model-agnosticism
-- The key advantage is not harming visual quality, motion quality, and temporal consistency — while the SLD method sometimes approaches alignment scores, it severely damages these quality metrics (e.g., temporal consistency drops from 62.1 to 21.0)
-- Count and Color subcategories show the most significant improvements, precisely the weakest areas of current T2V models
+- VideoRepair yields consistent improvements across all four T2V backbones, validating its model-agnostic nature.
+- A key advantage is its ability to not compromise visual quality, motion quality, or temporal consistency—while methods like SLD sometimes achieve similar alignment scores, they severely degrade these quality metrics (e.g., temporal consistency dropping from 62.1 to 21.0).
+- Significant gains are observed in Count and Color subcategories, which are currently the weakest points of T2V models.
 
 ## Highlights & Insights
 
-- **"Preserve correct, repair incorrect" paradigm**: An intuitively natural but technically non-trivial approach — compared to global regeneration or simple inpainting, region-preserving refinement is superior in both efficiency and quality. This paradigm is transferable to any generative task requiring post-processing correction
-- **Evaluation-feedback-driven generation**: Directly transforming MLLM evaluation QA results into repair plans (masks + prompts) establishes a closed loop between evaluation and generation. This self-correction paradigm is more scalable than purely human feedback
-- **Training-free + model-agnostic**: No additional model training required; can be used plug-and-play with any T2V diffusion model
+- **"Preserve Correct, Refine Incorrect" Paradigm**: An intuitively natural but technically non-trivial approach—region-preserving refinement outperforms global regeneration or simple inpainting in both efficiency and quality. This paradigm is transferable to any generation task requiring post-processing correction.
+- **Evaluation Feedback-Driven Generation**: Directly transforming MLLM evaluation Q&A results into refinement plans (masks + prompts) establishes a closed loop between evaluation and generation. This self-correction paradigm is more scalable than human feedback alone.
+- **Training-Free + Model-Agnostic**: Requires no additional model training and can be plugged into any T2V diffusion model.
 
 ## Limitations & Future Work
 
-- Requires two diffusion model forward passes (preservation + repair), doubling inference overhead
-- Depends on MLLM evaluation accuracy — misalignment state misjudgments may lead to unnecessary modifications or omissions
-- Currently supports only single-round repair; iterative repair may lead to error accumulation
-- Future exploration: combining with T2V model training for online self-correction, incorporating user interactive feedback
+- Requires two diffusion model forward passes (preserve + refine), doubling inference overhead.
+- Depends on the evaluation accuracy of the MLLM—misjudgments by the MLLM may lead to unnecessary modifications or omissions.
+- Currently supports only single-round refinement; iterative refinement could lead to error accumulation.
+- Future Work: Integrating with the T2V model training process for online self-correction, or incorporating interactive user feedback.
 
 ## Related Work & Insights
 
-- **vs SLD/OPT2I**: SLD uses global semantic guidance but severely damages visual quality; OPT2I optimizes prompts but does not perform pixel-level repair; VideoRepair's region-preserving strategy achieves both alignment precision and quality maintenance
-- **vs Image repair/editing methods**: Inpainting can only fill regions but cannot introduce new entities; editing cannot freely correct misalignments; VideoRepair's dual-path denoising overcomes both limitations
+- **vs SLD/OPT2I**: SLD uses global semantic guidance but severely damages visual quality; OPT2I optimizes prompts but lacks pixel-level refinement. VideoRepair's region-preserving strategy balances alignment precision and quality maintenance.
+- **vs Image Inpainting/Editing**: Inpainting can only fill and cannot introduce new entities, while editing cannot freely correct misalignments. VideoRepair's dual-path denoising overcomes both limitations.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ First training-free video self-correction framework; region-preserving repair paradigm is novel
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Four backbones, two benchmarks, comprehensive ablation and quality metric evaluation
-- Writing Quality: ⭐⭐⭐⭐ Three-stage pipeline diagram is clear; method description is systematic
-- Value: ⭐⭐⭐⭐ Provides a general and practical post-processing improvement solution for T2V generation
+- Novelty: ⭐⭐⭐⭐ First training-free video self-correction framework with a novel region-preserving refinement paradigm.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Evaluated on four backbones, two benchmarks, with comprehensive ablations and quality metrics.
+- Writing Quality: ⭐⭐⭐⭐ Clear three-stage flowchart and systematic method description.
+- Value: ⭐⭐⭐⭐ Provides a universal and practical post-processing solution for improving T2V generation.
 
 <!-- RELATED:START -->
 
@@ -130,11 +127,11 @@ Entirely training-free, using existing T2V diffusion models for inference. K rep
 
 ## Related Papers
 
+- [\[ICML 2026\] Self-Refining Video Sampling](../../ICML2026/video_generation/self-refining_video_sampling.md)
 - [\[ACL 2026\] OSCBench: Benchmarking Object State Change in Text-to-Video Generation](oscbench_benchmarking_object_state_change_in_text-to-video_generation.md)
 - [\[AAAI 2026\] GenVidBench: A 6-Million Benchmark for AI-Generated Video Detection](../../AAAI2026/video_generation/genvidbench_a_6-million_benchmark_for_ai-generated_video_detection.md)
 - [\[CVPR 2026\] Infinity-RoPE: Action-Controllable Infinite Video Generation Emerges From Autoregressive Self-Rollout](../../CVPR2026/video_generation/infinity-rope_action-controllable_infinite_video_generation_emerges_from_autoreg.md)
-- [\[CVPR 2026\] From Static to Dynamic: Exploring Self-supervised Image-to-Video Representation Transfer Learning](../../CVPR2026/video_generation/from_static_to_dynamic_exploring_self-supervised_image-to-video_representation_t.md)
-- [\[ICLR 2026\] Language-guided Open-world Video Anomaly Detection under Weak Supervision](../../ICLR2026/video_generation/language-guided_open-world_video_anomaly_detection_under_weak_supervision.md)
+- [\[ICML 2026\] World-R1: Reinforcing 3D Constraints for Text-to-Video Generation](../../ICML2026/video_generation/world-r1_reinforcing_3d_constraints_for_text-to-video_generation.md)
 
 </div>
 

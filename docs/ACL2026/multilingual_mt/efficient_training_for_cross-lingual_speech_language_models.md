@@ -2,78 +2,78 @@
 title: >-
   [Paper Note] Efficient Training for Cross-lingual Speech Language Models
 description: >-
-  [ACL 2026][Multilingual & Machine Translation][cross-lingual speech LLM] This paper proposes CSLM, a data-efficient method for training cross-lingual speech LLMs. It introduces a novel alignment strategy to achieve cross…
+  [ACL 2026][Multilingual & Machine Translation][Cross-lingual speech LLM] This paper proposes CSLM, a data-efficient training method for cross-lingual speech LLMs. It achieves cross-modality and cross-lingual alignment th…
 tags:
   - "ACL 2026"
   - "Multilingual & Machine Translation"
-  - "cross-lingual speech LLM"
+  - "Cross-lingual speech LLM"
   - "discrete speech tokens"
   - "modality alignment"
-  - "chain-of-modality generation"
+  - "interleaved chain-of-modality generation"
   - "data-efficient training"
 date: 2026-05-08
-content_hash: c3841653fa822dcc
+content_hash: 0262c4b3557d9497
 ---
 
 # Efficient Training for Cross-lingual Speech Language Models
 
-**Conference**: ACL 2026
+**Conference**: ACL 2026  
 **arXiv**: [2604.11096](https://arxiv.org/abs/2604.11096)  
 **Code**: [https://github.com/ictnlp/CSLM](https://github.com/ictnlp/CSLM)  
-**Area**: Multilingual/Translation / Audio & Speech
-**Keywords**: cross-lingual speech LLM, discrete speech tokens, modality alignment, chain-of-modality generation, data-efficient training
+**Area**: Multilingual/Translation / Audio Speech  
+**Keywords**: Cross-lingual speech LLM, discrete speech tokens, modality alignment, interleaved chain-of-modality generation, data-efficient training
 
 ## TL;DR
-This paper proposes CSLM, a data-efficient method for training cross-lingual speech LLMs. It introduces a novel alignment strategy to achieve cross-modal and cross-lingual alignment simultaneously, and presents a speech-text interleaved chain-of-modality generation paradigm to improve quality and reduce latency—without requiring large-scale speech data to extend to new languages.
+This paper proposes CSLM, a data-efficient training method for cross-lingual speech LLMs. It achieves cross-modality and cross-lingual alignment through a novel alignment strategy and introduces interleaved speech-text chain-of-modality generation to enhance quality and reduce latency, enabling expansion to new languages without large-scale speech data.
 
 ## Background & Motivation
 
-**Background**: Speech LLMs are emerging to enable more natural human-computer interaction, yet building effective end-to-end speech LLMs remains challenging. Existing approaches include: cascaded ASR+LLM+TTS (suffering from error propagation and high latency), modular encoder+LLM methods (with weak speech generation capability), and unified modeling based on discrete speech tokens (e.g., SpeechGPT, GLM-4-Voice).
+**Background**: Speech LLMs are emerging to enable more natural human-computer interaction, but building effective end-to-end models remains challenging. Existing methods include cascaded ASR+LLM+TTS (suffering from error accumulation and high latency), modular encoder+LLM approaches (limited speech generation capability), and unified modeling based on discrete speech tokens (e.g., SpeechGPT, GLM-4-Voice).
 
-**Limitations of Prior Work**: (1) Speech data is extremely scarce relative to text, especially for certain languages; (2) existing unified modeling approaches (e.g., GLM-4-Voice, Moshi) require massive amounts of training data; (3) extending speech LLMs to more languages faces the dual challenge of data scarcity and training difficulty; (4) existing chain-of-modality generation (TQ→full TA→full SA) incurs high latency.
+**Limitations of Prior Work**: (1) Speech data is extremely scarce compared to text, especially for certain languages; (2) Existing unified modeling methods (e.g., GLM-4-Voice, Moshi) require massive amounts of training data; (3) Expanding speech LLMs to more languages faces the double challenge of data scarcity and training difficulty; (4) Existing chain-of-modality generation (TQ → full TA → full SA) results in high latency.
 
-**Key Challenge**: Building unified multilingual multimodal representations typically requires large amounts of data, yet speech data is severely insufficient for many languages. The core challenge is how to achieve cross-lingual and cross-modal alignment simultaneously with limited data.
+**Key Challenge**: Constructing a unified multilingual multimodal representation usually requires vast amounts of data, yet speech data is severely lacking for many languages. Simultaneously achieving cross-lingual and cross-modal alignment with limited data is the core challenge.
 
-**Goal**: Design a data-efficient training method that achieves cross-modal and cross-lingual alignment using limited speech data while remaining easily extensible to new languages.
+**Goal**: Design a data-efficient training method that achieves both cross-modality and cross-lingual alignment using limited speech data while ensuring good language scalability.
 
-**Key Insight**: Use the text modality as a "bridge" for cross-lingual alignment—within a single language, cross-modal speech-text alignment is achieved via ASR/TTS data; cross-lingual alignment is achieved via machine translation data (text-to-text). This eliminates the need for cross-lingual speech-speech paired data.
+**Key Insight**: Leverage the text modality as a "bridge" for cross-lingual alignment—performing cross-modal alignment between speech and text within a single language via ASR/TTS data, and cross-lingual alignment through machine translation (text-to-text) data. This eliminates the need for parallel cross-lingual speech-to-speech data.
 
-**Core Idea**: Introduce a speech-text interleaved chain-of-modality generation paradigm, in which the model alternately generates short text chunks and their corresponding speech chunks (TQ→TA→SA→TA→SA…). Compared to the full chain-of-modality format (TQ→full TA→full SA), this achieves finer-grained modality alignment and lower latency.
+**Core Idea**: Design an "interleaved speech-text chain-of-modality" generation approach where the model alternates between generating short text chunks and corresponding speech chunks (TQ → TA → SA → TA → SA...). This provides finer-grained modality alignment and lower latency than full chain-of-modality generation (TQ → full TA → full SA).
 
 ## Method
 
 ### Overall Architecture
-CSLM consists of three components: (1) a CosyVoice speech tokenizer (vocabulary size 4096, 25 Hz) that converts speech into discrete tokens; (2) a joint speech-text LLM with a merged vocabulary; and (3) a speech decoder (flow matching model + HiFi-GAN vocoder). Training follows a two-stage paradigm: continual pre-training followed by supervised fine-tuning.
+CSLM consists of three components: (1) A CosyVoice speech tokenizer (4096 vocabulary, 25Hz) that converts speech into discrete tokens; (2) A joint speech-text LLM (merging speech and text vocabularies); (3) A speech decoder (flow-matching model + HiFi-GAN vocoder). Training follows a two-stage paradigm: continual pre-training and supervised fine-tuning.
 
 ### Key Designs
 
-1. **Cross-Modal and Cross-Lingual Alignment Strategy**
+1. **Cross-modal + Cross-lingual Alignment Strategy**:
 
-    - **Function**: Simultaneously achieve speech-text alignment and cross-lingual alignment with limited data.
-    - **Mechanism**: Within a single language, cross-modal alignment is established via ASR data (speech→text) and TTS data (text→speech). Cross-lingual alignment is established via machine translation data (Chinese↔English text). The text modality serves as a bridge—once each language's speech is aligned to text, cross-lingual speech alignment is achieved indirectly through inter-text translation alignment. Monolingual instruction data is also incorporated to prevent degradation of text capabilities.
-    - **Design Motivation**: Obtaining cross-lingual speech-speech paired data directly is difficult, whereas ASR/TTS paired data and translation data are relatively easy to acquire. Bridging through text avoids the dependency on cross-lingual speech data.
+    - **Function**: Achieve speech-text and cross-lingual alignment simultaneously with limited data.
+    - **Mechanism**: Within a language, cross-modal alignment is achieved via ASR data (speech → text) and TTS data (text → speech). Cross-lingual alignment is achieved through machine translation data (CN ↔ EN text). Text serves as the bridge—once speech and text are aligned within each language, indirect cross-lingual speech alignment is realized through inter-language text translation. Monolingual instruction data is also used to prevent text capability degradation.
+    - **Design Motivation**: Paired cross-lingual speech-to-speech data is hard to obtain, whereas ASR/TTS and translation data are more accessible. Bridging through text avoids reliance on cross-lingual speech data.
 
-2. **Speech-Text Interleaved Chain-of-Modality Generation**
+2. **Interleaved Speech-text Chain-of-modality Generation**:
 
     - **Function**: Enable finer-grained modality alignment during fine-tuning while reducing inference latency.
-    - **Mechanism**: The original chain-of-modality format (TQ→full TA→full SA) is replaced by an interleaved format: the model generates a short text response chunk, immediately generates the corresponding speech chunk, and repeats until completion, i.e., TQ→TA→SA→TA→SA…. A CTC aligner is used to construct interleaved training data from existing speech-text pairs—the optimal alignment path is found via CTC dynamic programming, $\pi^* = \arg\max_\pi \prod_t P(\pi_t|\mathbf{h}_t)$, yielding token-level time boundaries, which are then segmented into chunks (7 words) at punctuation boundaries.
-    - **Design Motivation**: Full chain-of-modality generation must wait for the complete text before beginning speech generation, resulting in high latency. Interleaved generation achieves temporal overlap between generation and playback—while one speech chunk is being played, the model is already generating subsequent content. Chunk-level text-speech interleaving is more stable than word-level interleaving.
+    - **Mechanism**: The original chain-of-modality (TQ → full TA → full SA) is replaced with an interleaved format: the model generates a small text response chunk and immediately generates the corresponding speech chunk, repeating until completion (TQ → TA → SA → TA → SA...). A CTC aligner builds interleaved data from existing speech-text pairs by finding the optimal alignment path $\pi^* = \arg\max_\pi \prod_t P(\pi_t|\mathbf{h}_t)$ to obtain token-level time boundaries and splitting at punctuation based on chunk size (7 words).
+    - **Design Motivation**: Full chain-of-modality requires the entire text to be generated before speech starts, causing high latency. Interleaved generation allows overlapping of generation and playback—while the current speech chunk plays, the model generates subsequent content. Chunk-level interleaving produces fewer errors than word-level interleaving.
 
-3. **Language Extensibility Design**
+3. **Language Scalability Design**:
 
-    - **Function**: Enable the training method to be easily extended to new languages with minimal data and training overhead.
-    - **Mechanism**: Integrating a new language into CSLM requires only (1) speech-text paired data (for cross-modal alignment) and (2) translation data (for cross-lingual alignment). Discrete speech tokens are language-agnostic, and the CosyVoice tokenizer natively supports multiple languages.
-    - **Design Motivation**: Data requirements are minimized—large-scale monolingual speech data or cross-lingual speech paired data for the target language are not required; only ASR/TTS pairs and translation data are needed. This makes extension to low-resource languages feasible.
+    - **Function**: Ensure the training method is easily extensible to new languages in terms of data volume and training difficulty.
+    - **Mechanism**: As long as the target language has (1) paired speech-text data (for modality alignment) and (2) translation data (for language alignment), it can be integrated into CSLM. Discrete tokens are language-independent, and the CosyVoice tokenizer itself supports multiple languages.
+    - **Design Motivation**: Minimizing data requirements—no large-scale target-language monolingual speech data or cross-lingual speech-to-speech pairs are needed. This allows scaling to low-resource languages.
 
 ### Loss & Training
-Two-stage training: (1) **Continual pre-training**—starting from an instruction-tuned LLM, the speech vocabulary is merged and mixed training is conducted on ASR/TTS/MT/monolingual instruction data to obtain CSLM-base; (2) **Supervised fine-tuning**—CSLM-SFT is trained on text instruction and speech dialogue data using the interleaved chain-of-modality format. Consecutive repeated speech tokens are merged before being fed to the LLM to improve efficiency.
+Two-stage training: (1) Continual Pre-training—starting from an instruction-finetuned LLM, the speech vocabulary is merged, and the model is trained on a mix of ASR/TTS/MT/monolingual instruction data to obtain CSLM-base; (2) Supervised Fine-tuning—training on text instructions and speech dialogue data to obtain CSLM-SFT using the interleaved format. Consecutive identical speech tokens are merged before entering the LLM for efficiency.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Task | Model | English | Chinese |
-|------|-------|---------|---------|
+|------|------|------|------|
 | ASR (WER↓) | Whisper-large-v3 | 2.5 | 9.3 |
 | ASR | GLM-4-Voice | 2.8 | 2.5 |
 | ASR | CSLM-SFT | 9.8 | 9.0 |
@@ -84,41 +84,41 @@ Two-stage training: (1) **Continual pre-training**—starting from an instructio
 
 ### Ablation Study
 
-| Configuration | Effect | Notes |
-|--------------|--------|-------|
-| Full chain-of-modality | High latency | TQ→full TA→full SA |
-| Interleaved chain-of-modality | Low latency, better quality | TQ→TA→SA→TA→SA… |
-| w/o cross-lingual alignment | Poor cross-lingual performance | Lacks translation data bridging |
-| w/o cross-modal alignment | Poor speech quality | Lacks ASR/TTS training |
+| Configuration | Effect | Description |
+|------|------|------|
+| Full chain-of-modality | High latency | TQ → full TA → full SA |
+| Interleaved chain-of-modality | Low latency, better quality | TQ → TA → SA → TA → SA... |
+| w/o cross-lingual alignment | Poor cross-lingual tasks | Lacks translation data bridging |
+| w/o modality alignment | Poor speech quality | Lacks ASR/TTS training |
 
 ### Key Findings
-- CSLM achieves TTS quality comparable to or exceeding dedicated TTS systems (CosyVoice) while simultaneously supporting dialogue and cross-lingual capabilities.
-- Interleaved chain-of-modality significantly reduces latency—the model generates subsequent content while the previous audio chunk is still being played.
-- CSLM achieves comparable performance to GLM-4-Voice using substantially less speech data (the latter relies on massive-scale data).
-- Chunk-level interleaved data constructed by the CTC aligner is more stable than word-level interleaving.
-- ASR performance falls short of dedicated ASR models (Whisper), but is sufficient for conversational scenarios.
+- CSLM approaches or exceeds dedicated TTS systems (CosyVoice) in speech quality while possessing dialogue and cross-lingual capabilities.
+- Interleaved chain-of-modality significantly reduces latency by overlapping generation and audio playback.
+- CSLM achieves comparable performance to GLM-4-Voice despite using significantly less speech data.
+- Chunk-level interleaved data constructed via the CTC aligner is more stable than word-level interleaving.
+- ASR performance is inferior to dedicated models (Whisper) but remains sufficient for dialogue scenarios.
 
 ## Highlights & Insights
-- **Text as a cross-lingual bridge**: The approach cleverly leverages the rich resources of the text modality to bridge speech across languages, eliminating the dependency on cross-lingual speech paired data. This idea generalizes to all multilingual multimodal systems.
-- **Latency optimization via interleaved chain-of-modality**: Alternating text and speech generation to achieve generation-playback overlap is a practical and elegant solution for latency reduction.
-- **CTC aligner for training data construction**: The CTC module of existing ASR models is used to obtain precise speech-text alignment, enabling automatic construction of interleaved training data without manual annotation.
+- **Text as a Cross-lingual Bridge**: Cleverly leverages rich text resources to bridge speech across different languages, avoiding the need for parallel cross-lingual speech data. This concept is valuable for all multilingual multimodal systems.
+- **Latency Optimization via Interleaved Generation**: Optimizing latency through alternating text and speech generation to achieve generation-playback overlap is a practical and elegant solution.
+- **Data Construction via CTC Aligner**: Using the CTC module of existing ASR models to obtain precise speech-text alignment allows for automatic construction of interleaved training data, avoiding manual alignment efforts.
 
 ## Limitations & Future Work
-- ASR performance is significantly weaker than dedicated Whisper models, indicating that unified modeling still lags behind on comprehension tasks.
-- Evaluation is limited to Chinese-English bilingual settings; extension to more languages has not been tested.
-- System performance is directly constrained by the speech tokenizer (CosyVoice); replacing the tokenizer may yield further improvements.
-- The chunk size for interleaved generation (7 words) is selected manually; adaptive chunk segmentation strategies merit further exploration.
+- ASR performance is significantly weaker than dedicated Whisper models, suggesting unified modeling still has a gap in understanding tasks.
+- Experiments were only conducted on Chinese-English; the scalability to more languages remains untested.
+- The performance of the speech tokenizer (CosyVoice) directly impacts the system; replacing it might yield improvements.
+- The chunk size for interleaved generation (7 words) was selected manually; adaptive chunk partitioning could be explored.
 
 ## Related Work & Insights
-- **vs. GLM-4-Voice**: GLM-4-Voice is the first Chinese-English bilingual speech LLM but requires massive data. CSLM achieves comparable results with substantially less data.
-- **vs. SPIRIT LM / Moshi**: Unified modeling approaches that require large amounts of speech data. CSLM's efficient alignment strategy substantially reduces data requirements.
-- **vs. LLaMA-Omni**: A modular approach (encoder+LLM+TTS) with limited speech quality and diversity. CSLM provides more natural speech through unified discrete-token modeling.
+- **vs GLM-4-Voice**: GLM-4-Voice is the first CN-EN speech LLM but requires massive data. CSLM achieves comparable results with much less data.
+- **vs SPIRIT LM / Moshi**: Unified modeling methods that require large speech datasets. CSLM's efficient alignment strategy significantly reduces data requirements.
+- **vs LLaMA-Omni**: Modular approaches (Encoder+LLM+TTS) are limited in speech quality and diversity. CSLM provides more natural speech through unified modeling with discrete tokens.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ The interleaved chain-of-modality and text-bridged alignment strategy are novel and practical designs.
-- **Experimental Thoroughness**: ⭐⭐⭐ Covers multiple tasks but is limited to bilingual evaluation; comparisons of data scale lack sufficient detail.
-- **Writing Quality**: ⭐⭐⭐⭐ The framework is clearly presented; visualizations of the alignment strategy aid understanding.
-- **Value**: ⭐⭐⭐⭐ Provides a viable training pathway for speech LLMs in low-resource language settings.
+- Novelty: ⭐⭐⭐⭐ Interleaved chain-of-modality and text-bridged alignment are novel and practical designs.
+- Experimental Thoroughness: ⭐⭐⭐ Covers multiple tasks but only includes two languages, and data scale comparisons are not sufficiently detailed.
+- Writing Quality: ⭐⭐⭐⭐ Clear framework; visualization of alignment strategies aids understanding.
+- Value: ⭐⭐⭐⭐ Provides a feasible training path for speech LLMs in low-resource languages.
 
 <!-- RELATED:START -->
 
@@ -126,11 +126,11 @@ Two-stage training: (1) **Continual pre-training**—starting from an instructio
 
 ## Related Papers
 
+- [\[ACL 2026\] LLM-XTM: Enhancing Cross-Lingual Topic Models with Large Language Models](llm-xtm_enhancing_cross-lingual_topic_models_with_large_language_models.md)
+- [\[ACL 2026\] Vocabulary Shapes Cross-Lingual Variation of Word-Order Learnability in Language Models](vocabulary_shapes_cross-lingual_variation_of_word-order_learnability_in_language.md)
 - [\[ACL 2026\] IndoTabVQA: A Benchmark for Cross-Lingual Table Understanding in Bahasa Indonesia Documents](indotabvqa_a_benchmark_for_cross-lingual_table_understanding_in_bahasa_indonesia.md)
 - [\[ACL 2026\] XQ-MEval: A Dataset with Cross-lingual Parallel Quality for Benchmarking Translation Metrics](xq-meval_a_dataset_with_cross-lingual_parallel_quality_for_benchmarking_translat.md)
 - [\[ACL 2026\] Language Models Entangle Language and Culture](language_models_entangle_language_and_culture.md)
-- [\[AAAI 2026\] GloCTM: Cross-Lingual Topic Modeling via a Global Context Space](../../AAAI2026/multilingual_mt/gloctm_cross-lingual_topic_modeling_via_a_global_context_space.md)
-- [\[ACL 2026\] Multilingual Language Models Encode Script Over Linguistic Structure](multilingual_language_models_encode_script_over_linguistic_structure.md)
 
 </div>
 

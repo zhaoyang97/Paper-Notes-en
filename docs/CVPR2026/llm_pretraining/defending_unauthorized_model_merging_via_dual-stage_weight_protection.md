@@ -129,7 +129,7 @@ MergeGuard's average accuracy drop exceeds PaRaMS by **21.35 percentage points**
 - [\[ICML 2026\] Model Merging Scaling Laws in Large Language Models](../../ICML2026/llm_pretraining/model_merging_scaling_laws_in_large_language_models.md)
 - [\[ICML 2026\] Focus and Dilution: The Multi-stage Learning Process of Attention](../../ICML2026/llm_pretraining/focus_and_dilution_the_multi-stage_learning_process_of_attention.md)
 - [\[ICLR 2026\] Steering Language Models with Weight Arithmetic](../../ICLR2026/llm_pretraining/steering_language_models_with_weight_arithmetic.md)
-- [\[ACL 2026\] Data Mixing Agent: Learning to Re-weight Domains for Continual Pre-training](../../ACL2026/llm_pretraining/data_mixing_agent_learning_to_re-weight_domains_for_continual_pre-training.md)
+- [\[ICML 2026\] On the Expressive Power of Permutation-Equivariant Weight-Space Networks](../../ICML2026/llm_pretraining/on_the_expressive_power_of_permutation-equivariant_weight-space_networks.md)
 
 </div>
 

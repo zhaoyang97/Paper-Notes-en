@@ -18,7 +18,7 @@ tags:
 
 **📹 ICCV2025** · **7** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (2)](../../ICML2026/information_retrieval/index.md) · [💬 ACL2026 (39)](../../ACL2026/information_retrieval/index.md) · [📷 CVPR2026 (9)](../../CVPR2026/information_retrieval/index.md) · [🔬 ICLR2026 (33)](../../ICLR2026/information_retrieval/index.md) · [🤖 AAAI2026 (29)](../../AAAI2026/information_retrieval/index.md) · [🧠 NeurIPS2025 (31)](../../NeurIPS2025/information_retrieval/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (22)](../../ICML2026/information_retrieval/index.md) · [💬 ACL2026 (74)](../../ACL2026/information_retrieval/index.md) · [📷 CVPR2026 (9)](../../CVPR2026/information_retrieval/index.md) · [🔬 ICLR2026 (33)](../../ICLR2026/information_retrieval/index.md) · [🤖 AAAI2026 (29)](../../AAAI2026/information_retrieval/index.md) · [🧠 NeurIPS2025 (31)](../../NeurIPS2025/information_retrieval/index.md)
 
 **[aligning information capacity between vision and language via dense-to-sparse fe](aligning_information_capacity_between_vision_and_language_via_dense-to-sparse_fe.md)**
 

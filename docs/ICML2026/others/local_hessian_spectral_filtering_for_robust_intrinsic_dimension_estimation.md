@@ -126,11 +126,11 @@ The differences are striking: on the $D=3072$ Funnel manifold, FLIPD's MAE is 78
 
 ## Related Papers
 
+- [\[ICML 2026\] Partitioning for Intrinsic Model Inversion Resistance in Collaborative Inference](partitioning_for_intrinsic_model_inversion_resistance_in_collaborative_inference.md)
 - [\[ICML 2026\] Local and Mixing-Based Algorithms for Gaussian Graphical Model Selection from Glauber Dynamics](local_and_mixing-based_algorithms_for_gaussian_graphical_model_selection_from_gl.md)
+- [\[ICML 2026\] Variable Clustering via Distributionally Robust Nodewise Regression](variable_clustering_via_distributionally_robust_nodewise_regression.md)
 - [\[ICLR 2026\] Bayesian Influence Functions for Hessian-Free Data Attribution](../../ICLR2026/others/bayesian_influence_functions_for_hessian-free_data_attribution.md)
 - [\[ICLR 2026\] Hilbert-Guided Sparse Local Attention](../../ICLR2026/others/hilbert-guided_sparse_local_attention.md)
-- [\[NeurIPS 2025\] Sharpness-Aware Minimization with Z-Score Gradient Filtering](../../NeurIPS2025/others/sharpness-aware_minimization_with_z-score_gradient_filtering.md)
-- [\[NeurIPS 2025\] The Parameterized Complexity of Computing the VC-Dimension](../../NeurIPS2025/others/the_parameterized_complexity_of_computing_the_vc-dimension.md)
 
 </div>
 

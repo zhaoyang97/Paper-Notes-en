@@ -205,7 +205,7 @@ Evaluated on 12 unseen datasets (covering 8 modalities, 187 segmentation tasks),
 - [\[ICCV 2025\] RadGPT: Constructing 3D Image-Text Tumor Datasets](radgpt_constructing_3d_image-text_tumor_datasets.md)
 - [\[NeurIPS 2025\] Scalable Diffusion Transformer for Conditional 4D fMRI Synthesis](../../NeurIPS2025/medical_imaging/scalable_diffusion_transformer_for_conditional_4d_fmri_synthesis.md)
 - [\[NeurIPS 2025\] Orochi: Versatile Biomedical Image Processor](../../NeurIPS2025/medical_imaging/orochi_versatile_biomedical_image_processor.md)
-- [\[NeurIPS 2025\] Meta-Learning an In-Context Transformer Model of Human Higher Visual Cortex](../../NeurIPS2025/medical_imaging/meta-learning_an_in-context_transformer_model_of_human_higher_visual_cortex.md)
+- [\[ICML 2026\] Factored Classifier-Free Guidance](../../ICML2026/medical_imaging/factored_classifier-free_guidance.md)
 
 </div>
 

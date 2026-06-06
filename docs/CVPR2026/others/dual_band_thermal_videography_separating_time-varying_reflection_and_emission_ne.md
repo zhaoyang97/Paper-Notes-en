@@ -187,7 +187,7 @@ The proposed method substantially outperforms the FLIR-recommended reflector met
 - [\[CVPR 2026\] Neural Collapse in Test-Time Adaptation](neural_collapse_in_test-time_adaptation.md)
 - [\[CVPR 2026\] ViT3: Unlocking Test-Time Training in Vision](vit3_unlocking_test_time_training_in_vision.md)
 - [\[AAAI 2026\] Depth-Synergized Mamba Meets Memory Experts for All-Day Image Reflection Separation](../../AAAI2026/others/depth-synergized_mamba_meets_memory_experts_for_all-day_image_reflection_separat.md)
-- [\[AAAI 2026\] Lost in Time? A Meta-Learning Framework for Time-Shift-Tolerant Physiological Signal Transformation](../../AAAI2026/others/lost_in_time_a_meta-learning_framework_for_time-shift-tolerant_physiological_sig.md)
+- [\[ICML 2026\] TEMPORA: Characterising the Time-Contingent Utility of Online Test-Time Adaptation](../../ICML2026/others/tempora_characterising_the_time-contingent_utility_of_online_test-time_adaptatio.md)
 
 </div>
 

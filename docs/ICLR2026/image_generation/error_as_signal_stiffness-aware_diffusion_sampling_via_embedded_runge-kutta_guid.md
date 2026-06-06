@@ -149,10 +149,10 @@ Improvements are most pronounced in low-step regimes (8-step FID reduced from 7.
 ## Related Papers
 
 - [\[ICLR 2026\] Test-Time Iterative Error Correction for Efficient Diffusion Models](test-time_iterative_error_correction_for_efficient_diffusion_models.md)
+- [\[ICML 2026\] TAG: Tangential Amplifying Guidance for Hallucination-Resistant Sampling](../../ICML2026/image_generation/tag_tangential_amplifying_guidance_for_hallucination-resistant_sampling.md)
 - [\[NeurIPS 2025\] System-Embedded Diffusion Bridge Models](../../NeurIPS2025/image_generation/system-embedded_diffusion_bridge_models.md)
+- [\[ICML 2026\] Quantifying Error Propagation and Model Collapse in Diffusion Models](../../ICML2026/image_generation/quantifying_error_propagation_and_model_collapse_in_diffusion_models.md)
 - [\[ICLR 2026\] Contractive Diffusion Policies: Robust Action Diffusion via Contractive Score-Based Sampling with Differential Equations](contractive_diffusion_policies_robust_action_diffusion_via_contractive_score-bas.md)
-- [\[ICLR 2026\] Stochastic Self-Guidance for Training-Free Enhancement of Diffusion Models](stochastic_self-guidance_for_training-free_enhancement_of_diffusion_models.md)
-- [\[ICML 2026\] Conditional Diffusion Sampling](../../ICML2026/image_generation/conditional_diffusion_sampling.md)
 
 </div>
 

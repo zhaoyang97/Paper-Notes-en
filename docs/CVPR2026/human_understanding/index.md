@@ -21,7 +21,7 @@ tags:
 
 **📷 CVPR2026** · **56** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (1)](../../ICML2026/human_understanding/index.md) · [🔬 ICLR2026 (7)](../../ICLR2026/human_understanding/index.md) · [🤖 AAAI2026 (15)](../../AAAI2026/human_understanding/index.md) · [🧠 NeurIPS2025 (18)](../../NeurIPS2025/human_understanding/index.md) · [📹 ICCV2025 (39)](../../ICCV2025/human_understanding/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (4)](../../ICML2026/human_understanding/index.md) · [💬 ACL2026 (3)](../../ACL2026/human_understanding/index.md) · [🔬 ICLR2026 (7)](../../ICLR2026/human_understanding/index.md) · [🤖 AAAI2026 (15)](../../AAAI2026/human_understanding/index.md) · [🧠 NeurIPS2025 (18)](../../NeurIPS2025/human_understanding/index.md) · [📹 ICCV2025 (39)](../../ICCV2025/human_understanding/index.md)
 
 🔥 **Top topics:** Face & Gaze ×6 · Human Pose ×6 · Multimodal/VLM ×5 · Avatars ×4 · Alignment/RLHF ×3
 

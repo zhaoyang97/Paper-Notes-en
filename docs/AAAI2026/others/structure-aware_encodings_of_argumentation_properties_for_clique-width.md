@@ -146,8 +146,8 @@ Clique-width strictly generalizes treewidth, enabling the results of this paper 
 - [\[AAAI 2026\] Tab-PET: Graph-Based Positional Encodings for Tabular Transformers](tab-pet_graph-based_positional_encodings_for_tabular_transformers.md)
 - [\[AAAI 2026\] How to Marginalize in Causal Structure Learning?](how_to_marginalize_in_causal_structure_learning.md)
 - [\[NeurIPS 2025\] Structure-Aware Spectral Sparsification via Uniform Edge Sampling](../../NeurIPS2025/others/structure-aware_spectral_sparsification_via_uniform_edge_sampling.md)
-- [\[AAAI 2026\] Agent-SAMA: State-Aware Mobile Assistant](agent-sama_state-aware_mobile_assistant.md)
 - [\[CVPR 2026\] Crowdsourcing of Real-world Image Annotation via Visual Properties](../../CVPR2026/others/crowdsourcing_of_real_world_image_annotation_via_visual_properties.md)
+- [\[AAAI 2026\] Agent-SAMA: State-Aware Mobile Assistant](agent-sama_state-aware_mobile_assistant.md)
 
 </div>
 

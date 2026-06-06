@@ -134,8 +134,8 @@ Listwise LiPO loss with online iterative LoRA fine-tuning. Energies are computed
 - [\[NeurIPS 2025\] g-DPO: Scalable Preference Optimization for Protein Language Models](../../NeurIPS2025/llm_alignment/g-dpo_scalable_preference_optimization_for_protein_language_models.md)
 - [\[ICLR 2026\] Dual-IPO: Dual-Iterative Preference Optimization for Text-to-Video Generation](../../ICLR2026/llm_alignment/dual-ipo_dual-iterative_preference_optimization_for_text-to-video_generation.md)
 - [\[AAAI 2026\] AMaPO: Adaptive Margin-attached Preference Optimization for Language Model Alignment](amapo_adaptive_margin-attached_preference_optimization_for_l.md)
-- [\[AAAI 2026\] DeCoRL: Decoupling Reasoning Chains via Parallel Sub-Step Generation and Cascaded Reinforcement for Interpretable and Scalable RLHF](decorl_decoupling_reasoning_chains_via_parallel_sub-step_gen.md)
 - [\[AAAI 2026\] Margin-aware Preference Optimization for Aligning Diffusion Models without Reference](margin-aware_preference_optimization_for_aligning_diffusion_models_without_refer.md)
+- [\[ICML 2026\] F-TIS: Harnessing Diverse Models in Collaborative GRPO](../../ICML2026/llm_alignment/f-tis_harnessing_diverse_models_in_collaborative_grpo.md)
 
 </div>
 

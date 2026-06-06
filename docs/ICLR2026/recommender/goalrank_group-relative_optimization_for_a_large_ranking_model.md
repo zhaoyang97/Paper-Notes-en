@@ -106,9 +106,9 @@ On an industrial-scale short-video platform, GoalRank achieves significant impro
 
 - [\[AAAI 2026\] Inference-Aware Prompt Optimization for Aligning Black-Box Large Language Models](../../AAAI2026/recommender/inference-aware_prompt_optimization_for_aligning_black-box_large_language_models.md)
 - [\[NeurIPS 2025\] Measuring What Matters: Construct Validity in Large Language Model Benchmarks](../../NeurIPS2025/recommender/measuring_what_matters_construct_validity_in_large_language_model_benchmarks.md)
-- [\[AAAI 2026\] AutoPP: Towards Automated Product Poster Generation and Optimization](../../AAAI2026/recommender/autopp_towards_automated_product_poster_generation_and_optimization.md)
 - [\[AAAI 2026\] Interpretable Reward Model via Sparse Autoencoder](../../AAAI2026/recommender/interpretable_reward_model_via_sparse_autoencoder.md)
-- [\[AAAI 2026\] From Parameter to Representation: A Closed-Form Approach for Controllable Model Merging](../../AAAI2026/recommender/from_parameter_to_representation_a_closed-form_approach_for_controllable_model_m.md)
+- [\[AAAI 2026\] AutoPP: Towards Automated Product Poster Generation and Optimization](../../AAAI2026/recommender/autopp_towards_automated_product_poster_generation_and_optimization.md)
+- [\[ICML 2026\] RGMem: Renormalization Group-Inspired Memory Evolution for Language Agents](../../ICML2026/recommender/rgmem_renormalization_group-inspired_memory_evolution_for_language_agents.md)
 
 </div>
 

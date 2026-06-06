@@ -154,10 +154,10 @@ The paradigm of "physical dynamics as ML optimization" is broadly applicable to 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Multiplayer Federated Learning: Reaching Equilibrium with Less Communication](multiplayer_federated_learning_reaching_equilibrium_with_less_communication.md)
+- [\[ICML 2026\] Interpretability and Generalization Bounds for Learning Spatial Physics](../../ICML2026/optimization/interpretability_and_generalization_bounds_for_learning_spatial_physics.md)
 - [\[NeurIPS 2025\] Learning Reconfigurable Representations for Multimodal Federated Learning with Missing Data](learning_reconfigurable_representations_for_multimodal_federated_learning_with_m.md)
 - [\[NeurIPS 2025\] Wasserstein Transfer Learning](wasserstein_transfer_learning.md)
 - [\[NeurIPS 2025\] Learning from Interval Targets](learning_from_interval_targets.md)
-- [\[NeurIPS 2025\] Learning Parameterized Skills from Demonstrations](learning_parameterized_skills_from_demonstrations.md)
 
 </div>
 

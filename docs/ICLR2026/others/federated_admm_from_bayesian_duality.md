@@ -124,11 +124,11 @@ Deep heterogeneous federated learning:
 
 ## Related Papers
 
-- [\[ICLR 2026\] Bayesian Influence Functions for Hessian-Free Data Attribution](bayesian_influence_functions_for_hessian-free_data_attribution.md)
 - [\[ICLR 2026\] A Federated Generalized Expectation-Maximization Algorithm for Mixture Models with an Unknown Number of Components](a_federated_generalized_expectation-maximization_algorithm_for_mixture_models_wi.md)
+- [\[ICLR 2026\] Bayesian Influence Functions for Hessian-Free Data Attribution](bayesian_influence_functions_for_hessian-free_data_attribution.md)
 - [\[NeurIPS 2025\] Rethinking PCA Through Duality](../../NeurIPS2025/others/rethinking_pca_through_duality.md)
 - [\[ICML 2026\] Singular Bayesian Neural Networks](../../ICML2026/others/singular_bayesian_neural_networks.md)
-- [\[AAAI 2026\] Bayesian Network Structural Consensus via Greedy Min-Cut Analysis](../../AAAI2026/others/bayesian_network_structural_consensus_via_greedy_min-cut_analysis.md)
+- [\[ICML 2026\] Cost-Aware Stopping for Bayesian Optimization](../../ICML2026/others/cost-aware_stopping_for_bayesian_optimization.md)
 
 </div>
 

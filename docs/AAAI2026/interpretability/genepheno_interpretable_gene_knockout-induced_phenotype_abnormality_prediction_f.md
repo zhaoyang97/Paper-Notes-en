@@ -147,11 +147,11 @@ Evaluation is conducted on four datasets (MPO, HPO, GWAS, CAFA2 wPPI), stratifie
 
 ## Related Papers
 
+- [\[ACL 2026\] Preference Heads in Large Language Models: A Mechanistic Framework for Interpretable Personalization](../../ACL2026/interpretability/preference_heads_in_large_language_models_a_mechanistic_framework_for_interpreta.md)
 - [\[ACL 2026\] IDEA: An Interpretable and Editable Decision-Making Framework for LLMs via Verbal-to-Numeric Calibration](../../ACL2026/interpretability/idea_an_interpretable_and_editable_decision-making_framework_for_llms_via_verbal.md)
-- [\[ICLR 2026\] When Machine Learning Gets Personal: Evaluating Prediction and Explanation](../../ICLR2026/interpretability/when_machine_learning_gets_personal_evaluating_prediction_and_explanation.md)
+- [\[ACL 2026\] Mechanisms of Prompt-Induced Hallucination in Vision–Language Models](../../ACL2026/interpretability/mechanisms_of_prompt-induced_hallucination_in_vision-language_models.md)
 - [\[ICLR 2026\] When Thinking Backfires: Mechanistic Insights Into Reasoning-Induced Misalignment](../../ICLR2026/interpretability/when_thinking_backfires_mechanistic_insights_into_reasoning-induced_misalignment.md)
-- [\[ICLR 2026\] NIMO: a Nonlinear Interpretable MOdel](../../ICLR2026/interpretability/nimo_a_nonlinear_interpretable_model.md)
-- [\[ACL 2026\] Understanding New-Knowledge-Induced Factual Hallucinations in LLMs: Analysis and Interpretation](../../ACL2026/interpretability/understanding_new-knowledge-induced_factual_hallucinations_in_llms_analysis_and_.md)
+- [\[ICML 2026\] Bridging the Knowledge-Prediction Gap in LLMs on Multiple-Choice Questions](../../ICML2026/interpretability/bridging_the_knowledge-prediction_gap_in_llms_on_multiple-choice_questions.md)
 
 </div>
 

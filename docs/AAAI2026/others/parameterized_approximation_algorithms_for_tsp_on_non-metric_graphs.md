@@ -143,8 +143,8 @@ Implications for future research: The CST and potential set techniques introduce
 - [\[AAAI 2026\] Finding Diverse Solutions Parameterized by Cliquewidth](finding_diverse_solutions_parameterized_by_cliquewidth.md)
 - [\[NeurIPS 2025\] Improved Approximation Algorithms for Chromatic and Pseudometric-Weighted Correlation Clustering](../../NeurIPS2025/others/improved_approximation_algorithms_for_chromatic_and_pseudometric-weighted_correl.md)
 - [\[ICLR 2026\] Scalable Random Wavelet Features: Efficient Non-Stationary Kernel Approximation with Convergence Guarantees](../../ICLR2026/others/scalable_random_wavelet_features_efficient_non-stationary_kernel_approximation_w.md)
-- [\[AAAI 2026\] Boosting Adversarial Transferability via Ensemble Non-Attention](boosting_adversarial_transferability_via_ensemble_non-attention.md)
 - [\[AAAI 2026\] Improved Differentially Private Algorithms for Rank Aggregation](improved_differentially_private_algorithms_for_rank_aggregation.md)
+- [\[AAAI 2026\] Boosting Adversarial Transferability via Ensemble Non-Attention](boosting_adversarial_transferability_via_ensemble_non-attention.md)
 
 </div>
 

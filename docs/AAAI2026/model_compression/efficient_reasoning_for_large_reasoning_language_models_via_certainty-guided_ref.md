@@ -180,11 +180,11 @@ Systematic evaluation across 8 models × 4 benchmarks; representative results ar
 
 ## Related Papers
 
+- [\[ACL 2026\] LightReasoner: Can Small Language Models Teach Large Language Models Reasoning?](../../ACL2026/model_compression/lightreasoner_can_small_language_models_teach_large_language_models_reasoning.md)
 - [\[ICLR 2026\] Landscape of Thoughts: Visualizing the Reasoning Process of Large Language Models](../../ICLR2026/model_compression/landscape_of_thoughts_visualizing_the_reasoning_process_of_large_language_models.md)
 - [\[ICLR 2026\] Efficient Reasoning with Balanced Thinking](../../ICLR2026/model_compression/efficient_reasoning_with_balanced_thinking.md)
 - [\[ACL 2026\] JudgeMeNot: Personalizing Large Language Models to Emulate Judicial Reasoning in Hebrew](../../ACL2026/model_compression/judgemenot_personalizing_large_language_models_to_emulate_judicial_reasoning_in_.md)
 - [\[ICLR 2026\] InftyThink: Breaking the Length Limits of Long-Context Reasoning in Large Language Models](../../ICLR2026/model_compression/inftythink_breaking_the_length_limits_of_long-context_reasoning_in_large_languag.md)
-- [\[ICLR 2026\] BeyondBench: Contamination-Resistant Evaluation of Reasoning in Language Models](../../ICLR2026/model_compression/beyondbench_contamination-resistant_evaluation_of_reasoning_in_language_models.md)
 
 </div>
 

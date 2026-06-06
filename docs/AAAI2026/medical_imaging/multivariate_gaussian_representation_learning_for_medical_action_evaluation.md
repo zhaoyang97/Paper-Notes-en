@@ -132,11 +132,11 @@ Input skeleton sequence → Dual-stream spatial encoding (Cartesian coordinates 
 
 ## Related Papers
 
+- [\[ICML 2026\] SEMIR: Semantic Minor-Induced Representation Learning on Graphs for Visual Segmentation](../../ICML2026/medical_imaging/semir_semantic_minor-induced_representation_learning_on_graphs_for_visual_segmen.md)
 - [\[CVPR 2026\] Comparative Evaluation of Traditional Methods and Deep Learning for Brain Glioma Imaging](../../CVPR2026/medical_imaging/comparative_evaluation_of_traditional_methods_and_deep_learning_for_brain_glioma.md)
 - [\[ICLR 2026\] Uni-NTFM: A Unified Foundation Model for EEG Signal Representation Learning](../../ICLR2026/medical_imaging/uni-ntfm_a_unified_foundation_model_for_eeg_signal_representation_learning.md)
 - [\[AAAI 2026\] Unsupervised Motion-Compensated Decomposition for Cardiac MRI Reconstruction via Neural Representation](unsupervised_motion-compensated_decomposition_for_cardiac_mri_reconstruction_via.md)
-- [\[ACL 2026\] Inflated Excellence or True Performance? Rethinking Medical Diagnostic Benchmarks with Dynamic Evaluation](../../ACL2026/medical_imaging/inflated_excellence_or_true_performance_rethinking_medical_diagnostic_benchmarks.md)
-- [\[AAAI 2026\] MedEyes: Learning Dynamic Visual Focus for Medical Progressive Diagnosis](medeyes_learning_dynamic_visual_focus_for_medical_progressive_diagnosis.md)
+- [\[AAAI 2026\] PINGS-X: Physics-Informed Normalized Gaussian Splatting with Axes Alignment for Efficient Super-Resolution of 4D Flow MRI](pings-x_physics-informed_normalized_gaussian_splatting_with_axes_alignment_for_e.md)
 
 </div>
 

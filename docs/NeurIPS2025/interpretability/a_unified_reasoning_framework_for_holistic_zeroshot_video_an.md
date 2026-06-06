@@ -101,8 +101,8 @@ VAU: GPT-C on UCF-Crime improves from 0.384 to 0.444 (+InterTC).
 ## Related Papers
 
 - [\[NeurIPS 2025\] VADTree: Explainable Training-Free Video Anomaly Detection via Hierarchical Granularity](vadtree_explainable_training-free_video_anomaly_detection_via_hierarchical_granu.md)
-- [\[AAAI 2026\] Induce, Align, Predict: Zero-Shot Stance Detection via Cognitive Inductive Reasoning](../../AAAI2026/interpretability/induce_align_predict_zero-shot_stance_detection_via_cognitive_inductive_reasonin.md)
 - [\[ICCV 2025\] SVIP: Semantically Contextualized Visual Patches for Zero-Shot Learning](../../ICCV2025/interpretability/svip_semantically_contextualized_visual_patches_for_zero-shot_learning.md)
+- [\[AAAI 2026\] Induce, Align, Predict: Zero-Shot Stance Detection via Cognitive Inductive Reasoning](../../AAAI2026/interpretability/induce_align_predict_zero-shot_stance_detection_via_cognitive_inductive_reasonin.md)
 - [\[CVPR 2026\] Text-guided Fine-Grained Video Anomaly Understanding](../../CVPR2026/interpretability/text-guided_fine-grained_video_anomaly_understanding.md)
 - [\[NeurIPS 2025\] scPilot: Large Language Model Reasoning Toward Automated Single-Cell Analysis and Discovery](scpilot_large_language_model_reasoning_toward_automated_single-cell_analysis_and.md)
 

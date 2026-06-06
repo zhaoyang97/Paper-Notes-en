@@ -2,82 +2,79 @@
 title: >-
   [Paper Note] GanitLLM: Difficulty-Aware Bengali Mathematical Reasoning through Curriculum-GRPO
 description: >-
-  [ACL 2026][LLM Reasoning][Bengali mathematical reasoning] This paper presents GanitLLM, the first mathematical reasoning model that genuinely reasons in Bengali (rather than translating or reasoning in English)…
+  [ACL 2026][LLM Reasoning][Bengali mathematical reasoning] This paper proposes GanitLLM, the first mathematical reasoning model that truly reasons in Bengali (rather than translating or reasoning in English). The authors…
 tags:
   - "ACL 2026"
   - "LLM Reasoning"
   - "Bengali mathematical reasoning"
   - "curriculum learning"
-  - "GRPO cold start"
+  - "GRPO cold-start"
   - "difficulty-aware"
-  - "low-resource language"
+  - "low-resource languages"
 date: 2026-05-08
-content_hash: 5c49d320faca4b44
+content_hash: ee2b6ac9fef0d31c
 ---
 
 # GanitLLM: Difficulty-Aware Bengali Mathematical Reasoning through Curriculum-GRPO
 
-**Conference**: ACL 2026
+**Conference**: ACL 2026  
 **arXiv**: [2601.06767](https://arxiv.org/abs/2601.06767)  
 **Code**: [Website](https://dipta007.github.io/GanitLLM/)  
-**Area**: Low-Resource Language Reasoning / Mathematical Reasoning
-**Keywords**: Bengali mathematical reasoning, curriculum learning, GRPO cold start, difficulty-aware, low-resource language
+**Area**: Low-resource language reasoning / Mathematical reasoning  
+**Keywords**: Bengali mathematical reasoning, curriculum learning, GRPO cold-start, difficulty-aware, low-resource languages
 
 ## TL;DR
 
-This paper presents GanitLLM, the first mathematical reasoning model that genuinely reasons in Bengali (rather than translating or reasoning in English), together with Ganit, a difficulty-annotated Bengali math dataset. The proposed Curriculum-GRPO addresses the cold-start problem in GRPO training for low-resource languages. The 4B model achieves an 8 percentage-point accuracy gain on Bn-MGSM, and the proportion of Bengali reasoning tokens increases from 14% to 88%.
+This paper proposes GanitLLM, the first mathematical reasoning model that truly reasons in Bengali (rather than translating or reasoning in English). The authors construct Ganit, a difficulty-annotated Bengali math dataset, and introduce Curriculum-GRPO to address the cold-start issue in GRPO training for low-resource languages. The 4B model achieves an 8-percentage-point accuracy gain on Bn-MGSM, with the proportion of Bengali reasoning tokens increasing from 14% to 88%.
 
 ## Background & Motivation
 
-**State of the Field**: LLMs have achieved remarkable progress in mathematical reasoning for high-resource languages (e.g., English), as demonstrated by DeepSeek-R1 and OpenAI o1, and RL methods such as GRPO have proven effective at enhancing mathematical reasoning. However, progress on low-resource languages lags far behind. Bengali is the seventh most spoken language globally, yet existing LLMs either reason in English and translate the final answer, or fail outright on Bengali math problems.
+**Background**: LLMs have made significant progress in mathematical reasoning for high-resource languages like English (e.g., DeepSeek-R1, OpenAI o1), where RL methods such as GRPO have proven effective. However, reasoning progress in low-resource languages lags severely. Despite Bengali being the seventh most spoken language globally, existing LLMs either reason in English and translate the answer or fail entirely on Bengali math problems.
 
-**Limitations of Prior Work**: (1) Even when explicitly prompted to reason in Bengali, existing LLMs tend to reason in English and only output the answer in Bengali, which severely hinders comprehensibility for native speakers. (2) Standard GRPO training encounters a cold-start problem in low-resource languages: the policy model, lacking sufficient target-language capability, fails to produce any correct solution within a rollout group, resulting in zero reward, zero gradient, and ineffective training. (3) Existing Bengali math datasets vary widely in quality and lack difficulty annotations and systematic quality filtering.
+**Limitations of Prior Work**: (1) Even when explicitly prompted to reason in Bengali, existing LLMs tend to reason in English and only output the final answer in Bengali, which is poor for native user interpretability; (2) Standard GRPO training encounters a "cold-start problem" in low-resource languages, where the policy model fails to generate any correct solutions in rollout groups due to insufficient target language capability, leading to zero rewards, zero gradients, and ineffective training; (3) Bengali math datasets suffer from inconsistent quality and lack difficulty annotations and systematic filtering.
 
-**Root Cause**: GRPO requires at least some correct answers within a rollout group to compute valid advantage estimates, yet low-resource language models are entirely unable to generate correct answers for difficult problems—a chicken-and-egg situation where the model must already be capable in order to learn.
+**Key Challenge**: GRPO requires at least some correct answers within a rollout group to calculate valid advantage values. However, low-resource language models often fail completely on difficult problems—a "chicken-and-egg" problem where the model must already know how to solve problems to learn from them.
 
-**Paper Goals**: Construct a high-quality, difficulty-annotated Bengali math dataset; design a training strategy that resolves the cold-start problem; and enable the model to genuinely reason in Bengali rather than English.
+**Goal**: Construct a high-quality, difficulty-annotated Bengali math dataset and design a training strategy that solves the cold-start problem, enabling the model to reason natively in Bengali.
 
-**Starting Point**: The problem is decomposed into three steps: (1) Data—build a quality-filtered, difficulty-annotated dataset; (2) SFT—first teach the model to reason in Bengali (focusing on language rather than correctness); (3) GRPO—apply a curriculum learning strategy to train progressively from easy to hard.
+**Key Insight**: The problem is decomposed into three steps: (1) Data: Building a quality-filtered and difficulty-annotated dataset; (2) SFT: Teaching the model to reason step-by-step in Bengali first (regardless of correctness); (3) GRPO: Using a curriculum learning strategy to train from easy to difficult.
 
-**Core Idea**: Curriculum-GRPO arranges training data in order of increasing difficulty, ensuring that the model can produce some correct answers at each stage to obtain valid gradients, thereby avoiding the cold-start problem.
+**Core Idea**: Use Curriculum-GRPO to arrange training data by difficulty, ensuring the model can generate partially correct answers throughout each stage to obtain valid gradients and avoid cold starts.
 
 ## Method
 
 ### Overall Architecture
 
-The training consists of two stages: (1) **SFT stage**—the model is trained on CoT-SFT data to perform step-by-step reasoning in Bengali, with emphasis on language rather than correctness; (2) **Curriculum-GRPO stage**—GRPO training is applied to difficulty-sorted RL data, beginning with easy problems and gradually increasing difficulty. The dataset Ganit is derived from ~1.5M raw samples through multi-stage filtering and difficulty annotation.
+A two-stage training process: (1) SFT Stage: Teaching the model step-by-step Bengali reasoning on CoT-SFT data, focusing on language consistency rather than final correctness; (2) Curriculum-GRPO Stage: Training with GRPO on RL data sorted by difficulty, starting with simple problems and gradually increasing complexity. The Ganit dataset is derived from ~1.5M raw samples through multi-stage filtering and difficulty annotation.
 
 ### Key Designs
 
-1. **Difficulty-Aware Dataset Ganit**
+1.  **Difficulty-Aware Dataset (Ganit)**:
+    *   **Function**: Provides high-quality, difficulty-annotated Bengali math training and evaluation data.
+    *   **Mechanism**: (a) Collects ~1.5M samples from 9 public datasets; (b) Filters datasets to keep those with >95% accuracy via human evaluation (~1.1M remaining); (c) Applies rule-based filtering (numerical solutions only, >99% Bengali characters, excludes multiple-choice); (d) Performs fuzzy and MinHash deduplication; (e) Generates 32 independent solutions using Qwen3-32B and classifies samples into Easy/Medium/Hard/Olympiad based on pass@k; (f) Decontaminates against evaluation benchmarks.
+    *   **Design Motivation**: Existing Bengali math datasets vary in quality, and standard benchmarks (Bn-MGSM/Bn-MSVAMP) are too simple for modern LLMs (77-86% are Easy level).
 
-    - **Function**: Provides high-quality, difficulty-annotated training and evaluation data for Bengali mathematical reasoning.
-    - **Mechanism**: (a) ~1.5M samples are collected from 9 public datasets; (b) human evaluation filters for datasets with >95% accuracy (~1.1M retained); (c) rule-based filtering retains only numerical answers, samples with >99% Bengali characters, and excludes multiple-choice questions; (d) fuzzy deduplication and MinHash deduplication are applied; (e) Qwen3-32B generates 32 independent solutions per problem, and difficulty is categorized into Easy/Medium/Hard/Olympiad levels based on pass@k; (f) benchmark contamination is removed.
-    - **Design Motivation**: Existing Bengali math datasets are inconsistent in quality; standard evaluation sets (Bn-MGSM/Bn-MSVAMP) are too easy for modern LLMs (77–86% of samples are at the Easy level).
+2.  **Curriculum-GRPO Training Strategy**:
+    *   **Function**: Solves the cold-start problem of GRPO in low-resource settings.
+    *   **Mechanism**: Uses fine-grained difficulty signals (1-32 correct generations). For each difficulty bucket, 60% of samples are drawn from the current bucket and 40% from the remaining 31 buckets (3 per bucket), sorted from easy to difficult by the primary bucket. This ensures: (a) The model gains correct experience on easy problems first; (b) Sufficient sample diversity in each stage to prevent forgetting; (c) The 60/40 ratio balances curriculum signal strength and diversity.
+    *   **Design Motivation**: Naive full sorting (100% by difficulty) leads to overfitting on easy problems early on; random shuffling introduces difficult problems too early, causing cold starts.
 
-2. **Curriculum-GRPO Training Strategy**
-
-    - **Function**: Resolves the cold-start problem in GRPO training for low-resource languages.
-    - **Mechanism**: A fine-grained difficulty signal from 1 to 32 (number of correctly generated solutions) is used. For each difficulty bucket, 60% of samples are drawn from the current bucket and 40% from the remaining 31 buckets (3 samples per bucket). Batches are then ordered by the primary bucket difficulty from easy to hard. This ensures: (a) the model first gains correct experience on easy problems; (b) sufficient mixed samples at each stage prevent forgetting; (c) the 60/40 ratio balances curriculum signal strength and diversity.
-    - **Design Motivation**: A naive full sort (100% difficulty-ordered) causes overfitting to easy problems in early training; random shuffling causes difficult problems to appear too early, triggering the cold-start problem.
-
-3. **Three-Dimensional Reward Function**
-
-    - **Function**: Simultaneously optimizes format correctness, answer accuracy, and the proportion of Bengali reasoning tokens.
-    - **Mechanism**: $R = R_{format} + R_{correctness} + R_{bengali}$, where $R_{format} \in \{0,1\}$ checks output format, $R_{correctness} \in \{0,1,2\}$ rewards correct answers (with a bonus for answers in Bengali), and $R_{bengali} \in \{0,1\}$ rewards the model when the proportion of Bengali tokens in the reasoning chain is ≥80%.
-    - **Design Motivation**: Conventional GRPO rewards only final answer correctness and provides no incentive for the model to reason in the target language.
+3.  **Three-Dimensional Reward Function**:
+    *   **Function**: Simultaneously optimizes format correctness, answer accuracy, and Bengali reasoning ratio.
+    *   **Mechanism**: $R = R_{format} + R_{correctness} + R_{bengali}$, where $R_{format} \in \{0,1\}$ checks output format, $R_{correctness} \in \{0,1,2\}$ rewards the correct answer (with bonus points for Bengali answers), and $R_{bengali} \in \{0,1\}$ provides a reward if the proportion of Bengali tokens in reasoning is $\ge 80\%$.
+    *   **Design Motivation**: Traditional GRPO only rewards final answer correctness, failing to incentivize reasoning in the target language.
 
 ### Loss & Training
 
-The SFT stage uses standard cross-entropy loss. The GRPO stage applies standard GRPO loss with an overlength filter and token-level loss. The base model is Qwen3-4B.
+The SFT stage uses standard cross-entropy loss. The GRPO stage utilizes standard GRPO loss combined with a max-length filter and token-level loss. Qwen3-4B serves as the base model.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Model | Bn-MGSM | Bn-MSVAMP | Bengali% | Avg. Length (tokens) |
-|---|---|---|---|---|
-| Qwen3-4B (base) | 69 | 78 | 14% | 943 |
+| Model | Bn-MGSM | Bn-MSVAMP | Bengali % | Avg. Length (words) |
+| :--- | :--- | :--- | :--- | :--- |
+| Qwen3-4B (Base) | 69 | 78 | 14% | 943 |
 | + SFT only | 73 | 81 | 82% | 210 |
 | + Curriculum-GRPO | **77** | **84** | **88%** | **193** |
 | Qwen3-8B | 76 | 83 | 18% | 876 |
@@ -85,44 +82,44 @@ The SFT stage uses standard cross-entropy loss. The GRPO stage applies standard 
 
 ### Ablation Study
 
-| Training Strategy | Bn-MGSM | Cold-Start Rate |
-|---|---|---|
-| Random shuffle GRPO | 72 | 35% |
-| Full sort (easy→hard) | 74 | 12% |
+| Training Strategy | Bn-MGSM | Cold-start Rate |
+| :--- | :--- | :--- |
+| Random Shuffle GRPO | 72 | 35% |
+| Full Sort (Easy → Hard) | 74 | 12% |
 | **Curriculum-GRPO (60/40)** | **77** | **5%** |
 
 ### Key Findings
 
-- Curriculum-GRPO reduces the cold-start rate from 35% to 5%, which is critical for effective GRPO training in low-resource languages.
-- The SFT stage is essential for language switching—Bengali rewards in GRPO alone are insufficient to shift reasoning language from English to Bengali.
-- The 4B model trained with Curriculum-GRPO matches the accuracy of the 8B base model while reducing reasoning tokens by 79.5%.
-- The difficulty distribution of Ganit-Dev is far more balanced than standard evaluation sets (~21–29% per level vs. 77–86% Easy in standard sets), providing more discriminative evaluation.
+*   Curriculum-GRPO reduces the cold-start rate from 35% to 5%, which is crucial for GRPO training in low-resource languages.
+*   The SFT stage is vital for language switching; Bengali rewards in GRPO alone cannot shift the reasoning language from English to Bengali.
+*   Through Curriculum-GRPO, the 4B model reaches the accuracy level of the 8B base model while reducing reasoning tokens by 79.5%.
+*   The difficulty distribution of Ganit-Dev is much more balanced (approx. 21-29% per level) compared to standard benchmarks (77-86% Easy), providing more discriminative evaluation.
 
 ## Highlights & Insights
 
-- The identification and resolution of the cold-start problem offers broadly applicable insights for RL training across all low-resource languages.
-- The three-dimensional reward function is an elegant design—it optimizes not only correctness but also explicitly incentivizes reasoning in the target language.
-- The 80% Bengali token threshold accounts for the language-agnostic nature of mathematical symbols, reflecting a nuanced understanding of the domain.
+*   The identification and resolution of the "cold-start problem" provide valuable insights for RL training in all low-resource languages.
+*   The design of the three-dimensional reward function is elegant—it not only optimizes correctness but also explicitly incentivizes target language reasoning.
+*   The 80% Bengali threshold design accounts for the language-agnostic nature of mathematical symbols, reflecting deep domain understanding.
 
 ## Limitations & Future Work
 
-- Validation is limited to a 4B model; the cold-start problem may manifest differently at larger scales.
-- The 60/40 curriculum ratio is empirically tuned and lacks theoretical justification.
-- Difficulty labels depend on the capability of Qwen3-32B and may require updating as stronger evaluation models become available.
-- Evaluation is restricted to mathematical reasoning; applicability to other reasoning tasks such as logical or commonsense reasoning remains unexplored.
+*   Validation is limited to the 4B model; cold-start issues might manifest differently in larger models.
+*   The 60/40 curriculum ratio is empirically tuned and lacks theoretical guidance.
+*   Difficulty labels depend on Qwen3-32B's capability and may need updates as evaluator models evolve.
+*   Applicability to other reasoning tasks, such as logical or commonsense reasoning, remains unexplored.
 
 ## Related Work & Insights
 
-- **vs. Confucius3-Math**: Confucius3-Math is a Chinese K-12 math model trained with standard RL; GanitLLM must address the cold-start problem arising from a much smaller volume of Bengali training data.
-- **vs. mCoT**: mCoT performs multilingual CoT fine-tuning but does not enforce reasoning in the target language; GanitLLM achieves 88% native-language reasoning through a dedicated Bengali reward.
-- **vs. MathOctopus**: MathOctopus uses parallel corpora but still reasons in English; GanitLLM achieves genuine native-language reasoning.
+*   **vs Confucius3-Math**: While the Chinese K-12 math model uses standard RL, GanitLLM must solve the cold-start problem inherent in smaller-scale Bengali training data.
+*   **vs mCoT**: mCoT performs multilingual CoT tuning but does not enforce target language reasoning; GanitLLM achieves 88% native reasoning through specific Bengali rewards.
+*   **vs MathOctopus**: Uses parallel corpora but reasoning remains in English; GanitLLM achieves true native-language reasoning.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ Curriculum-GRPO and the identification of the cold-start problem constitute novel contributions.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Includes detailed ablations, dataset quality analysis, and language proportion statistics.
-- **Writing Quality**: ⭐⭐⭐⭐ Problem definition is clear and the data construction process is described in detail.
-- **Value**: ⭐⭐⭐⭐ Provides a practical solution for RL training in low-resource language settings.
+*   Novelty: ⭐⭐⭐⭐ The identification of the cold-start problem and the Curriculum-GRPO approach are novel contributions.
+*   Experimental Thoroughness: ⭐⭐⭐⭐ Detailed ablation studies, dataset quality analysis, and language ratio statistics.
+*   Writing Quality: ⭐⭐⭐⭐ Clear problem definition and exhaustive description of the data construction process.
+*   Value: ⭐⭐⭐⭐ Provides a practical solution for RL training in low-resource languages.
 
 <!-- RELATED:START -->
 
@@ -133,7 +130,7 @@ The SFT stage uses standard cross-entropy loss. The GRPO stage applies standard 
 - [\[ICLR 2026\] Harder Is Better: Boosting Mathematical Reasoning via Difficulty-Aware GRPO and Multi-Aspect Question Reformulation](../../ICLR2026/llm_reasoning/harder_is_better_boosting_mathematical_reasoning_via_difficulty-aware_grpo_and_m.md)
 - [\[ACL 2026\] Step-GRPO: Internalizing Dynamic Early Exit for Efficient Reasoning](step-grpo_internalizing_dynamic_early_exit_for_efficient_reasoning.md)
 - [\[ACL 2026\] Semantic-Aware Logical Reasoning via a Semiotic Framework](semantic-aware_logical_reasoning_via_a_semiotic_framework.md)
-- [\[ACL 2026\] Budget-Aware Anytime Reasoning with LLM-Synthesized Preference Data](budget-aware_anytime_reasoning_with_llm-synthesized_preference_data.md)
+- [\[ACL 2026\] Calibration-Aware Policy Optimization for Reasoning LLMs](calibration-aware_policy_optimization_for_reasoning_llms.md)
 - [\[ACL 2026\] MathAgent: Adversarial Evolution of Constraint Graphs for Mathematical Reasoning Data Synthesis](mathagent_adversarial_evolution_of_constraint_graphs_for_mathematical_reasoning_.md)
 
 </div>

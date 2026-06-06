@@ -2,74 +2,71 @@
 title: >-
   [Paper Note] Syntax as a Rosetta Stone: Universal Dependencies for In-Context Coptic Translation
 description: >-
-  [ACL 2026][Multilingual & Machine Translation][Low-resource machine translation] This paper is the first to explore Universal Dependencies (UD) syntactic information as an augmentation source for in-context learning (ICL…
+  [ACL 2026][Multilingual & Machine Translation][Low-resource Machine Translation] This paper performs the first exploration of using Universal Dependencies (UD) syntactic information as an augmentation source for In-Conte…
 tags:
   - "ACL 2026"
   - "Multilingual & Machine Translation"
-  - "Low-resource machine translation"
+  - "Low-resource Machine Translation"
   - "Coptic"
   - "Universal Dependencies"
-  - "in-context learning"
-  - "syntax-augmented translation"
+  - "In-Context Learning"
+  - "Syntactic Augmentation"
 date: 2026-05-08
-content_hash: 0fefe16721eabc07
+content_hash: bd2eae7df9f4f485
 ---
 
 # Syntax as a Rosetta Stone: Universal Dependencies for In-Context Coptic Translation
 
-**Conference**: ACL 2026
+**Conference**: ACL 2026  
 **arXiv**: [2604.18758](https://arxiv.org/abs/2604.18758)  
 **Code**: [GitHub](https://github.com/gucorpling/in-context-coptic-translation)  
-**Area**: Low-Resource Machine Translation / Multilingual NLP
-**Keywords**: Low-resource machine translation, Coptic, Universal Dependencies, in-context learning, syntax-augmented translation
+**Area**: Low-resource Machine Translation / Multilingual NLP  
+**Keywords**: Low-resource Machine Translation, Coptic, Universal Dependencies, In-Context Learning, Syntactic Augmentation
 
 ## TL;DR
 
-This paper is the first to explore Universal Dependencies (UD) syntactic information as an augmentation source for in-context learning (ICL) in low-resource Coptic-to-English machine translation. While syntactic information alone is less effective than a bilingual lexicon, combining lexicon with syntactic information (LEX+SYN) achieves the best results across all tested models, with Gemma-27B reaching a BERTScore F1 of 0.8746 (+0.0361).
+This paper performs the first exploration of using Universal Dependencies (UD) syntactic information as an augmentation source for In-Context Learning (ICL) in low-resource Coptic-to-English machine translation. The authors find that while syntactic information alone is less effective than dictionaries, combining dictionaries with syntax (LEX+SYN) achieves the best performance across all models, with Gemma-27B reaching a BERTScore F1 of 0.8746 (+0.0361).
 
 ## Background & Motivation
 
-**Background**: LLMs have approached practical usability for high-resource language translation, but low-resource languages (LRLs) have barely benefited — models lack fundamental language modeling capacity for these languages. Augmenting ICL prompts with bilingual lexicons has been shown to be effective, yet lexicons only provide word-by-word translations and cannot encode grammatical relations.
+**Background**: LLMs have approached practical utility in high-resource language translation, but low-resource languages (LRLs) have barely benefited, as models lack basic language modeling capabilities for these languages. Augmenting ICL prompts with bilingual dictionaries has proven effective, but dictionaries only provide word-for-word translation and cannot encode grammatical relationships.
 
-**Limitations of Prior Work**: (1) Coptic is an agglutinative language whose grammatical constructions (e.g., the auxiliary system, postponed subjects) carry meaning distinctions that cannot be inferred from content words alone; (2) even large models such as GPT-4.1 produce fluent but fundamentally incorrect Coptic translations without augmentation; (3) simple word lists face an information ceiling — they cannot inform the model about grammatical structure.
+**Limitations of Prior Work**: (1) Coptic is an agglutinative language where grammatical constructions (e.g., auxiliary systems, post-posed subjects) carry semantic nuances that cannot be inferred from content words alone; (2) Even powerful models like GPT-4.1 produce fluent but fundamentally incorrect Coptic translations without augmentation; (3) Simple lexicons have an information ceiling—they cannot inform the model about grammatical structure.
 
-**Key Challenge**: Lexicon augmentation covers only the lexical dimension; the information gap in the grammatical dimension limits the upper bound of translation quality. A mechanism is needed to inject grammatical information into in-context prompts.
+**Key Challenge**: Dictionary augmentation only covers the lexical dimension; the information gap in the grammatical dimension limits the upper bound of translation quality. A method is needed to inject grammatical information into in-context prompts.
 
-**Goal**: To verify whether UD syntactic information can provide complementary gains beyond a bilingual lexicon for low-resource translation in an ICL setting.
+**Goal**: To verify whether UD syntactic information can provide complementary gains beyond dictionaries for low-resource translation in an ICL setting.
 
-**Key Insight**: Coptic already has an available UD treebank (60K tokens, 2,387 sentences). The paper designs multiple syntactic information representations — raw CoNLL-U, natural-language verbalization, and construction rules derived from error analysis — and tests their combined effect with the lexicon.
+**Key Insight**: Leveraging existing Coptic UD treebanks (60K tokens, 2,387 sentences), the authors design multiple ways to represent syntactic information (raw CoNLL-U, natural language verbalization, and construction rules based on error analysis) to test their combined effects with dictionaries.
 
-**Core Idea**: Syntactic information and lexical information are orthogonally complementary: the lexicon addresses "what does each word mean," while syntax addresses "how are words related to one another." Combining both can break through the information ceiling imposed by lexicon-only augmentation.
+**Core Idea**: Syntactic and lexical information are orthogonal and complementary—dictionaries solve "what each word means," while syntax solves "how words relate to each other." Combining both allows for breaking through the information ceiling of dictionary-only augmentation.
 
 ## Method
 
 ### Overall Architecture
 
-Four information components are designed: LEX (bilingual lexicon mapping), DEP (natural-language verbalization of UD dependency relations), CON (26 construction rules derived from error analysis), and CoNLLU (raw UD parse output). Single-component and combination settings are evaluated, with BERTScore F1 as the primary metric.
+The authors design four information components: LEX (bilingual dictionary mapping), DEP (natural language verbalization of UD dependency relations), CON (26 construction rules based on error analysis), and CoNLLU (raw UD parse output). Single-component and combined settings are tested, with BERTScore F1 as the primary metric.
 
 ### Key Designs
 
-1. **LEX Component**:
-
+1.  **LEX Dictionary Component**:
     - **Function**: Maps Coptic vocabulary to English translations, providing word-level semantic information.
-    - **Mechanism**: Uses part-of-speech and morphological information from syntactic parsing (lemmas and tokenization) to retrieve dialect-specific translations from a Coptic lexicon. Entries are further filtered to retain the most relevant hierarchical information for prompt-length control.
-    - **Design Motivation**: An established baseline component proven effective for low-resource translation, serving as the reference point for subsequent syntactic augmentation.
+    - **Mechanism**: Utilizes POS and morphological information (lemma and segmentation) from syntactic analysis to retrieve dialect-specific translations in Coptic dictionaries. Entries are further filtered to retain the most relevant hierarchical information to control prompt length.
+    - **Design Motivation**: A foundational component proven effective for low-resource translation, providing a baseline for subsequent syntactic augmentation.
 
-2. **CON Component**:
+2.  **CON Construction Rules Component**:
+    - **Function**: Provides translation instructions for specific grammatical constructions targeting typical model errors identified on the development set.
+    - **Mechanism**: Manual analysis of GPT-4.1 mini translation errors on the dev set, combined with syntactic analysis to identify 26 common error patterns. DepEdit templates are used to match dependency subtrees. Strategies range from simple rules (e.g., imperative identification) to complex ones (e.g., post-posed subject constructions), enabling automatic detection and generation of translation guidance.
+    - **Design Motivation**: The most customized component—directly addressing model weaknesses. Unlike general syntax info, construction rules encode domain experts' understanding of translation pitfalls.
 
-    - **Function**: Provides translation instructions for specific grammatical constructions targeting typical model errors observed on the development set.
-    - **Mechanism**: GPT-4.1 mini's translation errors on the development set are manually analyzed; 26 common error patterns are identified in conjunction with syntactic parsing, and DepEdit templates are used to match dependency subtrees. Rules range from simple (e.g., imperative identification) to complex (e.g., postponed subject constructions), automatically detecting patterns and generating translation guidance.
-    - **Design Motivation**: The most customized component — it directly targets the model's known weaknesses. Unlike generic syntactic information, construction rules encode domain-expert understanding of translation pitfalls.
-
-3. **DEP Component**:
-
-    - **Function**: Translates UD syntactic structure into brief English statements, enabling LLMs to understand inter-word relations.
-    - **Mechanism**: Head–dependent relations are extracted for each sentence and verbalized as plain English statements (e.g., "n is the case marking of you"). Controllable parameters include the selected UD label set, selected part-of-speech tags, and disambiguation of repeated tokens.
-    - **Design Motivation**: Raw CoNLL-U format may be "recognized" by LLMs through training exposure but not necessarily understood semantically. Verbalization converts structural information into a natural-language form that LLMs can more readily exploit.
+3.  **DEP Dependency Verbalization Component**:
+    - **Function**: Translates UD syntactic structures into short English statements so that LLMs can understand inter-word relationships.
+    - **Mechanism**: Extracts head-dependent relations for each sentence and verbalizes them into plain English statements (e.g., "n is the case marking of you"). Controllable parameters include the selected UD tag set, POS selection, and disambiguation of repeated tokens.
+    - **Design Motivation**: Raw CoNLL-U formats might be "recognized" by LLMs due to exposure in training data, but their semantics are not necessarily understood. Verbalization transforms structural information into a natural language form that LLMs can utilize more easily.
 
 ### Loss & Training
 
-Pure ICL setting; no training is performed. Three models are evaluated: Gemma-12B, Gemma-27B, and GPT-4.1. Evaluation uses the standard dev (380 sentences) and test (405 sentences) splits of the UD treebank.
+A pure ICL setting with no training is used. The study evaluates three models: Gemma-12B/27B and GPT-4.1. Evaluation is conducted on the standard dev (380 sentences) and test (405 sentences) sets of the UD treebank.
 
 ## Key Experimental Results
 
@@ -77,55 +74,55 @@ Pure ICL setting; no training is performed. Three models are evaluated: Gemma-12
 
 **Test Set BERTScore F1**
 
-| Setting | Gemma-12B | Gemma-27B | GPT-4.1 |
-|---------|-----------|-----------|---------|
+| Setup | Gemma-12B | Gemma-27B | GPT-4.1 |
+|-------|-----------|-----------|---------|
 | Baseline | 0.8363 | 0.8385 | 0.9012 |
 | LEX | 0.8551 (+0.019) | 0.8565 (+0.018) | 0.9152 (+0.014) |
 | LEX+SYN | **0.8707 (+0.034)** | **0.8746 (+0.036)** | **0.9195 (+0.018)** |
 
 ### Ablation Study
 
-| Setting | BERTScore Δ (Gemma-27B test) | Note |
-|---------|------------------------------|------|
+| Setup | BERTScore Δ (Gemma-27B test) | Description |
+|-------|---------------------------|-------------|
 | Baseline | 0.0000 | No augmentation |
-| DEP alone | +0.0033 | Dependency verbalization only; marginal gain |
-| CON alone | +0.0133 | Construction rules effective in isolation |
-| CoNLLU alone | +0.0162 | Raw parse output performs reasonably well |
-| LEX alone | +0.0181 | Most effective single component |
-| LEX+SYN | +0.0361 | Combined effect far exceeds any single component |
+| DEP alone | +0.0033 | Dependency verbalization only; slight improvement |
+| CON alone | +0.0133 | Construction rules are effective individually |
+| CoNLLU alone | +0.0162 | Raw parse output works well |
+| LEX alone | +0.0181 | Dictionary is the most effective single component |
+| LEX+SYN | +0.0361 | Combined effect far exceeds single components |
 
 ### Key Findings
 
-- Syntactic information alone is less effective than the lexicon, but in combination it provides substantial gains beyond the lexicon alone (LEX+SYN exceeds LEX alone by +0.018 BERTScore on Gemma-27B).
-- The combination effect is approximately additive — the individual gains of LEX and SYN sum close to the total gain of LEX+SYN.
-- The gap between automatic and gold-standard parses is small, indicating that syntactic augmentation is robust to parser errors.
-- Gains are larger on non-biblical text, suggesting that syntactic information is more valuable when the model cannot rely on memorized scripture.
+- Syntactic information alone is less effective than the dictionary, but combined settings provide significant gains beyond the dictionary (LEX+SYN improves 0.018 over LEX alone on Gemma-27B).
+- The combined effects are additive—the individual gains of LEX and SYN nearly sum up to the total gain of LEX+SYN.
+- The gap between automatic parsing and gold standards is minimal, suggesting that syntactic augmentation is robust to parser errors.
+- Greater gains are observed on non-biblical texts, indicating that syntactic information is more valuable when the model cannot rely on memorized scripture.
 
 ## Highlights & Insights
 
-- Applying UD syntactic information to ICL-based translation is a first — demonstrating that grammatical knowledge can be injected into prompts as "another reference source."
-- The CON component embodies an error-driven engineering philosophy: rather than providing all grammatical information generically, it offers targeted guidance directed at the model's actual failure modes.
-- The approach has clear practical value for LRL translation workflows, with the potential to reduce the burden of expert post-editing.
+- The use of UD syntactic information for ICL translation is a first—demonstrating that grammatical knowledge can be injected into prompts as "another form of reference material."
+- The design of the CON component reflects an "error-oriented" engineering philosophy—providing targeted guidance for actual model errors rather than generalized grammatical information.
+- This method has clear value in practical LRL translation scenarios by reducing the workload required for expert post-editing.
 
 ## Limitations & Future Work
 
-- Limited to the single direction of Coptic-to-English translation.
-- Passage-level translation restricts evaluation of discourse-level phenomena.
-- The CON component requires linguistic expert involvement in error analysis.
-- The use of parallel few-shot examples remains unexplored.
+- Limited to the single direction of Coptic-to-English.
+- Sentential translation limits the evaluation of discourse-level phenomena.
+- The CON component requires linguistic experts for error analysis.
+- The effect of leveraging parallel few-shot examples was not explored.
 
 ## Related Work & Insights
 
-- **vs. Dictionary-only ICL**: LEX serves as the baseline; this paper demonstrates that syntactic augmentation provides complementary information not covered by the lexicon.
-- **vs. Grammar excerpt approaches**: Rules extracted from grammar books are general-purpose, whereas CON rules are customized to the model's specific weaknesses.
-- **vs. Fine-tuning approaches**: Fine-tuning requires parallel data and still yields suboptimal results; ICL with augmentation is more flexible.
+- **vs Dictionary-only ICL**: LEX serves as the baseline; this paper proves that syntactic augmentation provides complementary info that dictionaries cannot cover.
+- **vs Grammar excerpt approaches**: Rules extracted from grammar books are generic, whereas CON is customized for model weaknesses.
+- **vs Fine-tuning approaches**: Fine-tuning requires large parallel data and remains suboptimal; ICL+augmentation is more flexible.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ First application of UD syntactic information to ICL-based translation; the CON component design is particularly elegant.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Multi-model evaluation, multi-component ablation, gold vs. automatic parse comparison, and biblical vs. non-biblical text analysis.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ Clear paper structure with thorough introduction of linguistic background.
-- **Value**: ⭐⭐⭐⭐ Makes a concrete contribution to low-resource translation research; the method is transferable to other LRLs.
+- Novelty: ⭐⭐⭐⭐ First use of UD syntax for ICL translation; clever CON component design.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Multi-model + multi-component ablation + gold vs. silver parsing + biblical vs. non-biblical analysis.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear structure and sufficient linguistic background.
+- Value: ⭐⭐⭐⭐ Significant contribution to low-resource translation research; transferable method.
 
 <!-- RELATED:START -->
 
@@ -134,10 +131,10 @@ Pure ICL setting; no training is performed. Three models are evaluated: Gemma-12
 ## Related Papers
 
 - [\[AAAI 2026\] GloCTM: Cross-Lingual Topic Modeling via a Global Context Space](../../AAAI2026/multilingual_mt/gloctm_cross-lingual_topic_modeling_via_a_global_context_space.md)
+- [\[ACL 2026\] EMCEE: Improving Multilingual Capability of LLMs via Bridging Knowledge and Reasoning with Extracted Synthetic Multilingual Context](emcee_improving_multilingual_capability_of_llms_via_bridging_knowledge_and_reaso.md)
 - [\[NeurIPS 2025\] How Data Mixing Shapes In-Context Learning: Asymptotic Equivalence for Transformers with MLPs](../../NeurIPS2025/multilingual_mt/how_data_mixing_shapes_in-context_learning_asymptotic_equivalence_for_transforme.md)
 - [\[ACL 2026\] Hierarchical Policy Optimization for Simultaneous Translation of Unbounded Speech](hierarchical_policy_optimization_for_simultaneous_translation_of_unbounded_speec.md)
-- [\[ACL 2026\] Lost in Translation: Do LVLM Judges Generalize Across Languages?](lost_in_translation_do_lvlm_judges_generalize_across_languages.md)
-- [\[ACL 2026\] CLewR: Curriculum Learning with Restarts for Machine Translation Preference Learning](clewr_curriculum_learning_with_restarts_for_machine_translation_preference_learn.md)
+- [\[ACL 2026\] Evaluating the Impact of Verbal Multiword Expressions on Machine Translation](evaluating_the_impact_of_verbal_multiword_expressions_on_machine_translation.md)
 
 </div>
 

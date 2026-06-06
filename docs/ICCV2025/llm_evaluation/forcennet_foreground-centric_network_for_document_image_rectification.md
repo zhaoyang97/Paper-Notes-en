@@ -180,7 +180,7 @@ Performance saturates at approximately ×500–×1000.
 - [\[ICCV 2025\] OmniDiff: A Comprehensive Benchmark for Fine-grained Image Difference Captioning](omnidiff_a_comprehensive_benchmark_for_fine-grained_image_difference_captioning.md)
 - [\[NeurIPS 2025\] Document Summarization with Conformal Importance Guarantees](../../NeurIPS2025/llm_evaluation/document_summarization_with_conformal_importance_guarantees.md)
 - [\[AAAI 2026\] Axis-Aligned Document Dewarping](../../AAAI2026/llm_evaluation/axis-aligned_document_dewarping.md)
-- [\[AAAI 2026\] HybriDLA: Hybrid Generation for Document Layout Analysis](../../AAAI2026/llm_evaluation/hybridla_hybrid_generation_for_document_layout_analysis.md)
+- [\[ICLR 2026\] PlanetAlign: A Comprehensive Python Library for Benchmarking Network Alignment](../../ICLR2026/llm_evaluation/planetalign_a_comprehensive_python_library_for_benchmarking_network_alignment.md)
 
 </div>
 

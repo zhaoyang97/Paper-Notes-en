@@ -2,77 +2,74 @@
 title: >-
   [Paper Note] Template-assisted Contrastive Learning of Task-oriented Dialogue Sentence Embeddings
 description: >-
-  [ACL 2026][Dialogue Systems][dialogue sentence embeddings] This paper proposes TaDSE, a framework that leverages existing template information in dialogues as auxiliary anchors. Through three stages—template-aware data a…
+  [ACL 2026][Dialogue Systems][Dialogue Sentence Embeddings] The TaDSE framework is proposed to leverage existing template information in dialogues as auxiliary anchors. Through three stages—template-aware data augmentatio…
 tags:
   - "ACL 2026"
   - "Dialogue Systems"
-  - "dialogue sentence embeddings"
-  - "contrastive learning"
-  - "template augmentation"
-  - "intent classification"
-  - "unsupervised representation learning"
+  - "Dialogue Sentence Embeddings"
+  - "Contrastive Learning"
+  - "Template Enhancement"
+  - "Intent Classification"
+  - "Unsupervised Representation Learning"
 date: 2026-05-08
-content_hash: 7043f189ac71a496
+content_hash: 9ddcc3eb9473b9f7
 ---
 
 # Template-assisted Contrastive Learning of Task-oriented Dialogue Sentence Embeddings
 
-**Conference**: ACL 2026
+**Conference**: ACL 2026  
 **arXiv**: [2305.14299](https://arxiv.org/abs/2305.14299)  
 **Code**: [GitHub](https://github.com/minsik-ai/Template-Contrastive-Embedding)  
-**Area**: Dialogue Systems
-**Keywords**: dialogue sentence embeddings, contrastive learning, template augmentation, intent classification, unsupervised representation learning
+**Area**: Dialogue Systems  
+**Keywords**: Dialogue Sentence Embeddings, Contrastive Learning, Template Enhancement, Intent Classification, Unsupervised Representation Learning
 
 ## TL;DR
-This paper proposes TaDSE, a framework that leverages existing template information in dialogues as auxiliary anchors. Through three stages—template-aware data augmentation, paired contrastive training, and semantic compression inference—TaDSE significantly improves sentence embedding quality for task-oriented dialogue in an unsupervised setting, surpassing previous SOTA and even outperforming supervised commercial embedding models on five benchmarks.
+The TaDSE framework is proposed to leverage existing template information in dialogues as auxiliary anchors. Through three stages—template-aware data augmentation, paired contrastive training, and semantic compression inference—it significantly improves the quality of task-oriented dialogue sentence embeddings in unsupervised settings, outperforming Prev. SOTA and even commercial supervised embedding models across five benchmarks.
 
 ## Background & Motivation
 
-**Background**: Learning high-quality dialogue sentence embeddings is critical for downstream tasks such as intent classification and slot filling in low-annotation scenarios. Existing unsupervised sentence embedding methods (e.g., SimCSE, PromptBERT) perform well on general text but degrade noticeably when transferred to the dialogue domain, due to the unique semantic relational structure among dialogue utterances.
+**Background**: Learning high-quality dialogue sentence embeddings is crucial for downstream tasks such as intent classification and slot filling in low-annotation scenarios. Existing unsupervised sentence embedding methods (e.g., SimCSE, PromptBERT) perform well on general text but show significant degradation when transferred to the dialogue domain due to the specific semantic relational structures between dialogue utterances.
 
-**Limitations of Prior Work**: Obtaining utterance-level semantic relation annotations in the dialogue domain is extremely difficult, whereas token-level annotations (e.g., entities, slots, templates) are relatively easy to acquire. However, existing sentence embedding frameworks operate as sentence-level self-supervised systems and cannot exploit these rich token-level auxiliary signals. General data augmentation methods (e.g., back-translation, rule-based substitution) are prone to semantic drift or require additional model support.
+**Limitations of Prior Work**: Obtaining utterance-level semantic relationship annotations in the dialogue domain is difficult, whereas token-level annotations (e.g., entities, slots, templates) are relatively easier to acquire. However, existing sentence embedding frameworks are self-supervised at the sentence level and cannot utilize this rich token-level auxiliary knowledge. General data augmentation methods (e.g., back-translation, rule-based substitution) tend to introduce semantic shift or require additional model support.
 
-**Key Challenge**: Dialogues contain abundant structured template information—multiple utterances with different surface forms share the same underlying template—yet utterance-template pairing relationships have never been exploited for embedding learning. Existing methods perform contrastive learning solely in the utterance space, ignoring the potential of templates as semantic anchors that could constrain the structure of the embedding space.
+**Key Challenge**: Dialogues contain a large amount of structured template information (where one template corresponds to multiple utterances with different expressions), but this utterance-template pairing has never been utilized for embedding learning. Existing methods only perform contrastive learning within the utterance space, ignoring templates as semantic anchors to constrain the structure of the embedding space.
 
-**Goal**: Design an unsupervised framework that leverages template information to enhance dialogue sentence embeddings, yielding tighter clustering of semantically similar utterances and clearer decision boundaries.
+**Goal**: Design an unsupervised framework that leverages template information to enhance dialogue sentence embeddings, resulting in more compact clusters for semantically similar utterances and clearer decision boundaries.
 
-**Key Insight**: The authors observe that templates serve as the "semantic skeleton" of utterances—utterances sharing the same template differ only in slot values while preserving the same core semantic structure. Introducing templates as auxiliary representations into contrastive learning enables the model to learn to distinguish correct utterance-template pairings, thereby improving the embedding space.
+**Key Insight**: The authors observe that templates serve as the "semantic skeleton" of utterances—utterances under the same template share a core semantic structure and differ only in slot values. Introducing templates as auxiliary representations into contrastive learning helps the model learn to distinguish correct utterance-template pairs, thereby improving the embedding space.
 
-**Core Idea**: Template-aware data augmentation expands the diversity of utterance-template pairs; a triple contrastive loss (template loss + utterance loss + pairing loss) is then used for joint training; finally, semantic compression fuses template representations into utterance representations at inference time to further refine the embeddings.
+**Core Idea**: Expand the diversity of utterance-template pairs through template-aware data augmentation, followed by joint training using a triple contrastive loss (template loss + utterance loss + pairing loss), and finally optimize embeddings by integrating template representations during inference via semantic compression.
 
 ## Method
 
 ### Overall Architecture
-TaDSE consists of three stages: (1) **Template Data Augmentation**—generates a large number of natural synthetic utterances by permuting slot values over existing slots and templates; (2) **Paired Contrastive Training**—jointly learns template representations, utterance representations, and utterance-template pairing representations via three contrastive losses; (3) **Semantic Compression Inference**—blends template representations into utterance representations at a tuned ratio during inference to enhance semantic discriminability. The inputs are dialogue utterances and their corresponding templates; the output is an optimized sentence embedding vector.
+TaDSE consists of three stages: (1) Template Data Augmentation—generating a large number of natural synthetic utterances through permutations of existing slots and templates; (2) Paired Contrastive Training—simultaneously learning template, utterance, and utterance-template pair representations optimized by three joint contrastive losses; (3) Semantic Compression Inference—integrating template representations into utterance representations proportionally during inference to enhance semantic discriminability. The input consists of dialogue utterances and their corresponding templates, and the output is the optimized sentence embedding vector.
 
 ### Key Designs
 
-1. **Template Data Augmentation**:
-
+1.  **Template Data Augmentation**:
     - **Function**: Expand the diversity of utterance-template pairs in the training data.
-    - **Mechanism**: Slot types (e.g., CITY, DEVICE) and their high-frequency values are extracted from the dataset to construct a Slot Book. For each template, top-$k$ frequent slot values are permuted to generate a large number of natural synthetic utterances. For example, "Book a flight to {CITY}" yields "Book a flight to Paris/Tokyo/London," etc. Across five datasets, 834K augmented utterances are generated, averaging 16 utterances per template.
-    - **Design Motivation**: The effectiveness of paired contrastive learning depends on having sufficiently diverse utterances per template. The original datasets have a low utterance/template ratio; augmentation substantially increases pairing diversity, enabling the model to better learn discriminative representations.
+    - **Mechanism**: Extracts slots (e.g., CITY, DEVICE) and their high-frequency values from the dataset to construct a Slot Book, then performs permutations of slot values (top-k frequency values) for each template to generate natural synthetic utterances. For example, "Book a flight to {CITY}" can generate "Book a flight to Paris/Tokyo/London". A total of 834,000 augmented utterances were generated across 5 datasets, averaging 16 utterances per template.
+    - **Design Motivation**: The effectiveness of paired contrastive learning depends on having diverse utterance samples for each template. The original datasets have low utterance/template ratios; augmentation drastically increases pairing diversity, enabling the model to better learn discriminative capabilities.
 
-2. **Triple Contrastive Loss**:
+2.  **Triple Contrastive Loss**:
+    - **Function**: Jointly learn representations for the template space, utterance space, and utterance-template pair space.
+    - **Mechanism**: (a) The template loss $L^t$ uses dropout noise to generate positive pairs, pulling two encodings of the same template together; (b) The utterance loss $L^u$ learns utterance representations similar to the SimCSE framework; (c) The paired loss $L^{pair}$ treats correct utterance-template pairs as positive samples and other utterances as negative samples, teaching the model to distinguish semantically matching pairs. The final loss is $L^{train} = L^t + \lambda^u L^u + \lambda^{pair} L^{pair}$.
+    - **Design Motivation**: Utterance-only contrastive learning cannot leverage the structural information of templates; the introduction of the paired loss allows the model to use templates as semantic anchors, pulling utterances of the same template closer and pushing those of different templates further apart, forming clearer semantic clusters.
 
-    - **Function**: Jointly learn representations in the template space, utterance space, and utterance-template pairing space.
-    - **Mechanism**: (a) The template loss $L^t$ uses dropout noise to generate positive pairs, pulling together two encodings of the same template; (b) the utterance loss $L^u$ follows the SimCSE framework to learn utterance representations; (c) the pairing loss $L^{pair}$ treats correct utterance-template pairs as positives and other utterances as negatives, training the model to distinguish semantically matched pairs. The final loss is $L^{train} = L^t + \lambda^u L^u + \lambda^{pair} L^{pair}$.
-    - **Design Motivation**: Utterance-only contrastive learning cannot exploit the structural information in templates. The pairing loss enables the model to use templates as semantic anchors, pulling utterances under the same template closer together and pushing utterances from different templates apart, resulting in cleaner semantic clusters.
-
-3. **Semantic Compression**:
-
-    - **Function**: Fuse template information into utterance representations at inference time to further refine embeddings.
-    - **Mechanism**: The final representation is $repr_i = \lambda^{comp} t_i + (1 - \lambda^{comp}) u_i$, where $\lambda^{comp}$ is tuned on a validation set. Incorporating the template component enhances specific semantic dimensions, enabling distinction between utterances that are superficially similar but semantically different.
-    - **Design Motivation**: Templates capture the semantic essence of utterances; blending in a moderate amount of template signal sharpens decision boundaries in ambiguous regions. Additionally, the optimal value of $\lambda^{comp}$ serves as an analytical tool for measuring the quality of template-utterance semantic alignment.
+3.  **Semantic Compression Inference**:
+    - **Function**: Integrate template information during the inference stage to further optimize embeddings.
+    - **Mechanism**: The final representation is $repr_i = \lambda^{comp} t_i + (1 - \lambda^{comp}) u_i$, where $\lambda^{comp}$ is tuned on the validation set. Adding the template component enhances specific semantic dimensions, allowing utterances that are similar in appearance but different in semantics to be distinguished.
+    - **Design Motivation**: Templates are the semantic essence of utterances; moderate integration can enhance discriminative power near decision boundaries. Furthermore, the optimal value of $\lambda^{comp}$ serves as an analytical tool to measure the quality of template-utterance semantic alignment.
 
 ### Loss & Training
-All three contrastive losses are based on the InfoNCE framework with in-batch negative sampling. Each loss branch has an independent temperature hyperparameter: $\tau_t$, $\tau_u$, and $\tau_{pair}$. The method performs transfer learning on a SimCSE-initialized BERT-base model, with kNN on the training set for intent classification evaluation. Optionally, a trainable MLP layer $W_A$ is added to the template branch to adjust the template representation dimensionality.
+The triple contrastive losses are all based on the InfoNCE framework, using in-batch negative sampling. Each loss has independent temperature hyperparameters $\tau_t$, $\tau_u$, and $\tau_{pair}$. Transfer learning is performed on a BERT-base model based on SimCSE, and intent classification is evaluated using kNN on the training set. Optionally, a trainable MLP layer $W_A$ is added to the template branch to adjust template representation dimensions.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Model | SNIPS | ATIS | MASSIVE | HWU64 | CLINC150 | Avg. |
+| Model | SNIPS | ATIS | MASSIVE | HWU64 | CLINC150 | Average |
 |-------|-------|------|---------|-------|----------|------|
 | BERT | 80.00 | 78.05 | 41.86 | 50.84 | 33.35 | 56.82 |
 | SimCSE | 91.71 | 85.67 | 76.77 | 81.08 | 71.00 | 81.25 |
@@ -80,9 +77,9 @@ All three contrastive losses are based on the InfoNCE framework with in-batch ne
 | **TaDSE** | **97.00** | **89.70** | **78.18** | **82.77** | 70.56 | **83.64** |
 | TaDSE w/ MLP | 96.29 | 89.14 | **79.15** | 82.29 | **72.49** | **83.87** |
 
-Comparison with supervised commercial embeddings (TaDSE is unsupervised, only 110M parameters):
+Comparison with commercial supervised embeddings (TaDSE is unsupervised with only 110M parameters):
 
-| Model | SNIPS | ATIS | Avg. |
+| Model | SNIPS | ATIS | Average |
 |-------|-------|------|------|
 | OpenAI-large | 98.57 | 84.77 | 91.67 |
 | Gemini-001 | 98.29 | 86.00 | 92.15 |
@@ -91,39 +88,39 @@ Comparison with supervised commercial embeddings (TaDSE is unsupervised, only 11
 ### Ablation Study
 
 | Configuration | SNIPS | ATIS | MASSIVE | CLINC150 |
-|---------------|-------|------|---------|----------|
-| w/o augmentation (SimCSE) | 91.71 | 85.67 | 77.00 | 71.05 |
-| + augmentation | 93.29 | 86.00 | 77.37 | 70.98 |
+|------|-------|------|---------|----------|
+| w/o Augmentation (SimCSE) | 91.71 | 85.67 | 77.00 | 71.05 |
+| + Augmentation | 93.29 | 86.00 | 77.37 | 70.98 |
 | + $L^t$ | 95.29 | 88.47 | 78.58 | 71.53 |
 | + $L^t$ + $L^{pair}$ | 96.14 | 89.59 | 79.39 | 72.98 |
 | + $L^{t'}$ (MLP) + $L^{pair}$ | **97.00** | 88.69 | **79.83** | **73.45** |
 
 ### Key Findings
-- The pairing loss $L^{pair}$ contributes most significantly; on SNIPS, its introduction alone improves performance from 93.29 to 96.14 (+2.85%), validating the effectiveness of utterance-template paired learning.
-- The template loss $L^t$ alone also yields substantial gains (+2.0%–+2.5%), indicating that the salient semantic information encoded in templates provides an independent contribution to embedding learning.
-- Augmentation stability varies by dataset: SNIPS and ATIS improve consistently with increased augmentation (augmentation-stable), while MASSIVE and CLINC150 may degrade under high-order augmentation.
-- Semantic compression consistently yields positive gains on augmentation-stable datasets (SNIPS +0.29%, ATIS +0.44%), confirming the quality of template-utterance semantic alignment.
+- The paired loss $L^{pair}$ contributes the most; its individual introduction on SNIPS improves results from 93.29 to 96.14 (+2.85%), proving the effectiveness of utterance-template pairing.
+- The template loss $L^t$ itself significantly improves performance (+2.0% to +2.5%), indicating that the salient semantic information in templates makes an independent contribution to embedding learning.
+- Augmentation stability varies by dataset: SNIPS/ATIS improve continuously with more augmentation (augmentation-stable), while MASSIVE/CLINC150 may decline under high-order augmentation.
+- Semantic compression consistently yields positive gains on augmentation-stable datasets (SNIPS +0.29%, ATIS +0.44%), validating the quality of template-utterance semantic alignment.
 
 ## Highlights & Insights
-- The use of templates as semantic anchors is a particularly elegant design—it converts token-level annotations already present in dialogue data into auxiliary supervision signals for sentence-level contrastive learning, effectively injecting "free" supervision. This idea is generalizable to any domain with structured templates or schemas.
-- Semantic compression testing serves not only as an inference-time enhancement but also as an analytical tool: the optimal value of $\lambda^{comp}$ reflects the quality of template-utterance semantic alignment in the embedding space, providing an interpretable window into the representation geometry.
-- An unsupervised 110M-parameter model surpasses the supervised commercial embeddings from OpenAI and Google in average accuracy, demonstrating the substantial potential of domain-specialized approaches.
+- The idea of using templates as semantic anchors is ingenious—transforming existing token-level annotations in dialogues into auxiliary signals for sentence-level contrastive learning, achieving "free" supervised signal injection. This approach can be generalized to any domain with structured templates/schemas.
+- Semantic compression is not only an inference enhancement method but also an analytical tool—the optimal value of $\lambda^{comp}$ reflects the quality of template-utterance semantic alignment in the embedding space, providing an interpretable window into the representation space.
+- The unsupervised 110M small model outperforms supervised commercial embeddings from OpenAI and Google in average accuracy, demonstrating the significant potential of domain-specific methods.
 
 ## Limitations & Future Work
-- The method depends on template and slot annotations; for dialogue datasets without annotated templates, an additional automatic template extraction step is required (the NER-based approach used for CLINC150 in this work shows limited effectiveness).
-- Evaluation is conducted solely on intent classification; the effectiveness on other downstream tasks (e.g., dialogue state tracking, response selection) remains unvalidated.
-- Semantic compression yields uncertain benefits on augmentation-unstable datasets, indicating some sensitivity to data quality.
-- Future work could consider combining LLMs to automatically generate high-quality templates, removing the dependence on manual annotation.
+- Dependency on template and slot annotations; for dialogue datasets without template labels, additional automatic template extraction steps are required (the NER scheme for CLINC150 in the paper showed limited effectiveness).
+- Evaluation was only conducted on intent classification tasks; effectiveness on other downstream tasks (e.g., Dialogue State Tracking, Response Selection) has not been verified.
+- The effect of semantic compression is uncertain on non-augmentation-stable datasets, indicating some sensitivity to data quality.
+- Future work could consider integrating LLMs to automatically generate high-quality templates to remove dependency on manual annotations.
 
 ## Related Work & Insights
-- **vs SimCSE**: SimCSE relies solely on dropout noise for positive pairs; TaDSE additionally introduces templates as semantic anchors for paired contrastive learning, enabling better exploitation of structural information in the dialogue domain.
-- **vs DSE**: DSE uses consecutive utterances as positive pairs for contrastive learning, but remains at the utterance-utterance level; TaDSE introduces cross-granularity utterance-template pairings, providing more precise semantic association signals.
+- **vs SimCSE**: SimCSE uses only dropout noise for positive samples, whereas TaDSE introduces templates as semantic anchors for paired contrastive learning, better utilizing structural information in the dialogue domain.
+- **vs DSE**: DSE uses consecutive utterances as positive pairs for contrastive learning, but it remains at the utterance-utterance level; TaDSE introduces cross-granularity utterance-template pairs, providing more precise semantic correlation signals.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ The design of templates as contrastive learning anchors and the semantic compression test are both innovative, though the base framework remains grounded in SimCSE.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Comprehensive evaluation across five datasets with thorough ablations and comparisons against commercial models, though validation on additional downstream tasks is lacking.
-- **Writing Quality**: ⭐⭐⭐⭐ The paper is clearly structured with complete methodological derivations and rich figures and tables.
-- **Value**: ⭐⭐⭐⭐ Provides an effective paradigm for leveraging template information in dialogue embedding learning, generalizable to other domains with structured annotations.
+- Novelty: ⭐⭐⭐⭐ The design of templates as contrastive learning anchors and the semantic compression test are innovative, though the base framework is still built on SimCSE.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive evaluation across five datasets with thorough ablation and comparison with commercial models, though verification on more downstream tasks is missing.
+- Writing Quality: ⭐⭐⭐⭐ The paper is clearly structured, the method derivation is complete, and tables/figures are informative.
+- Value: ⭐⭐⭐⭐ Provides an effective paradigm for dialogue embedding learning by utilizing template information, which can be extended to other domains with structured annotations.
 
 <!-- RELATED:START -->
 
@@ -132,10 +129,10 @@ Comparison with supervised commercial embeddings (TaDSE is unsupervised, only 11
 ## Related Papers
 
 - [\[ACL 2026\] CoDial: Interpretable Task-Oriented Dialogue Systems Through Dialogue Flow Alignment](codial_interpretable_task-oriented_dialogue_systems_through_dialogue_flow_alignm.md)
+- [\[ACL 2026\] Dual Hierarchical Dialogue Policy Learning for Legal Inquisitive Conversational Agents](dual_hierarchical_dialogue_policy_learning_for_legal_inquisitive_conversational_.md)
+- [\[ACL 2026\] Codebook-Injected Dialogue Segmentation for Multi-Utterance Constructs Annotation: LLM-Assisted and Gold-Label-Free Evaluation](codebook-injected_dialogue_segmentation_for_multi-utterance_constructs_annotatio.md)
 - [\[ACL 2026\] ODUTQA-MDC: A Task for Open-Domain Underspecified Tabular QA with Multi-turn Dialogue-based Clarification](odutqa-mdc_a_task_for_open-domain_underspecified_tabular_qa_with_multi-turn_dial.md)
-- [\[ACL 2026\] Frame of Reference: Addressing the Challenges of Common Ground Representation in Dialogue](frame_of_reference_addressing_the_challenges_of_common_ground_representation_in_.md)
-- [\[ACL 2026\] Discourse Coherence and Response-Guided Context Rewriting for Multi-Party Dialogue Generation](discourse_coherence_and_response-guided_context_rewriting_for_multi-party_dialog.md)
-- [\[ACL 2026\] ETHICMIND: A Risk-Aware Framework for Ethical-Emotional Alignment in Multi-Turn Dialogue](ethicmind_a_risk-aware_framework_for_ethical-emotional_alignment_in_multi-turn_d.md)
+- [\[ACL 2026\] Preference Learning Unlocks LLMs' Psycho-Counseling Skills](preference_learning_unlocks_llms_psycho-counseling_skills.md)
 
 </div>
 

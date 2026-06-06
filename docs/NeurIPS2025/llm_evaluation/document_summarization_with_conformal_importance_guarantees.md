@@ -129,11 +129,11 @@ Empirical coverage strictly falls within the theoretical bounds across all exper
 
 ## Related Papers
 
+- [\[ACL 2026\] Stress Testing Factual Consistency Metrics for Long-Document Summarization](../../ACL2026/llm_evaluation/stress_testing_factual_consistency_metrics_for_long-document_summarization.md)
 - [\[NeurIPS 2025\] Conformal Online Learning of Deep Koopman Linear Embeddings](conformal_online_learning_of_deep_koopman_linear_embeddings.md)
-- [\[AAAI 2026\] Axis-Aligned Document Dewarping](../../AAAI2026/llm_evaluation/axis-aligned_document_dewarping.md)
 - [\[ICLR 2026\] Conformal Prediction Adaptive to Unknown Subpopulation Shifts](../../ICLR2026/llm_evaluation/conformal_prediction_adaptive_to_unknown_subpopulation_shifts.md)
 - [\[ICCV 2025\] ForCenNet: Foreground-Centric Network for Document Image Rectification](../../ICCV2025/llm_evaluation/forcennet_foreground-centric_network_for_document_image_rectification.md)
-- [\[AAAI 2026\] Improved Runtime Guarantees for the SPEA2 Multi-Objective Optimizer](../../AAAI2026/llm_evaluation/improved_runtime_guarantees_for_the_spea2_multi-objective_optimizer.md)
+- [\[CVPR 2026\] Semi-Supervised Conformal Prediction With Unlabeled Nonconformity Score](../../CVPR2026/llm_evaluation/semi-supervised_conformal_prediction_with_unlabeled_nonconformity_score.md)
 
 </div>
 

@@ -162,7 +162,7 @@ The relay token mechanism is a general paradigm applicable to any SSM architectu
 - [\[AAAI 2026\] USE: A Unified Model for Universal Sound Separation and Extraction](use_a_unified_model_for_universal_sound_separation_and_extraction.md)
 - [\[AAAI 2026\] End-to-end Contrastive Language-Speech Pretraining Model For Long-form Spoken Question Answering](end-to-end_contrastive_language-speech_pretraining_model_for_long-form_spoken_qu.md)
 - [\[AAAI 2026\] Cross-Space Synergy: A Unified Framework for Multimodal Emotion Recognition in Conversation](cross-space_synergy_a_unified_framework_for_multimodal_emotion_recognition_in_co.md)
-- [\[AAAI 2026\] Let the Model Learn to Feel: Mode-Guided Tonality Injection for Symbolic Music Emotion Recognition](let_the_model_learn_to_feel_mode-guided_tonality_injection_f.md)
+- [\[AAAI 2026\] TEXT: Text-Routed Sparse Mixture of Experts for Multimodal Sentiment Analysis with Explanation Enhancement and Temporal Alignment](text-routed_sparse_mixture-of-experts_model_with_explanation_and_temporal_alignm.md)
 
 </div>
 

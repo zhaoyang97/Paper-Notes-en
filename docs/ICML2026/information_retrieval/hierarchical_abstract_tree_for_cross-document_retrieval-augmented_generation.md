@@ -2,126 +2,123 @@
 title: >-
   [Paper Note] Hierarchical Abstract Tree for Cross-Document Retrieval-Augmented Generation
 description: >-
-  [ICML 2026][Information Retrieval & RAG][Tree-RAG] Ψ-RAG replaces RAPTOR's k-means with a "merge–collapse" hierarchical clustering to construct a cross-document abstract tree…
+  [ICML 2026][Information Retrieval & RAG][Tree-RAG] Ψ-RAG replaces the k-means clustering used in RAPTOR with a "merge-collapse" hierarchical clustering approach to construct cross-document abstraction trees. Combined wit…
 tags:
   - "ICML 2026"
   - "Information Retrieval & RAG"
   - "Tree-RAG"
-  - "Cross-document Multi-hop"
-  - "Hierarchical Abstraction"
-  - "Agentic Retrieval"
-  - "Hybrid Sparse Retrieval"
+  - "Cross-document multi-hop"
+  - "Hierarchical abstraction"
+  - "Agentic retrieval"
+  - "Hybrid sparse retrieval"
 date: 2026-05-08
-content_hash: ee1f37093275565f
+content_hash: 6374bbdc3fa35cb2
 ---
 
 # Hierarchical Abstract Tree for Cross-Document Retrieval-Augmented Generation
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.00529](https://arxiv.org/abs/2605.00529)  
-**Code**: https://github.com/Newiz430/Psi-RAG (available)  
+**Code**: https://github.com/Newiz430/Psi-RAG (Available)  
 **Area**: Information Retrieval / Retrieval-Augmented Generation / Multi-hop QA  
-**Keywords**: Tree-RAG, Cross-document Multi-hop, Hierarchical Abstraction, Agentic Retrieval, Hybrid Sparse Retrieval
+**Keywords**: Tree-RAG, Cross-document multi-hop, Hierarchical abstraction, Agentic retrieval, Hybrid sparse retrieval
 
 ## TL;DR
-Ψ-RAG replaces RAPTOR's k-means with a "merge–collapse" hierarchical clustering to construct a cross-document abstract tree, paired with a retrieval-answering Agent capable of multi-turn rewriting and a hybrid sparse BM25 index. This enables Tree-RAG, for the first time, to match or even surpass Graph-RAG on corpus-level, cross-document multi-hop QA, achieving an average F1 25.9% higher than RAPTOR and 7.4% higher than HippoRAG 2.
+Ψ-RAG replaces the k-means clustering used in RAPTOR with a "merge-collapse" hierarchical clustering approach to construct cross-document abstraction trees. Combined with a Retrieval-and-Answer (R&A) Agent capable of multi-round rewriting and a sparse BM25 hybrid index, this framework allows Tree-RAG to match or even surpass Graph-RAG in corpus-level, cross-document multi-hop QA for the first time. The average F1 score is 25.9% higher than RAPTOR and 7.4% higher than HippoRAG 2.
 
 ## Background & Motivation
 
-**Background**: Current RAG approaches mainly follow two structured paradigms. Graph-RAG (e.g., GraphRAG, HippoRAG 2) explicitly models inter-document relations via knowledge graphs, offering strong multi-hop capabilities but requiring extensive OpenIE during indexing, which is costly. Tree-RAG (represented by RAPTOR) clusters documents bottom-up into an abstract tree using k-means, enabling retrieval at token/passage/document granularity and excelling at summarization tasks, but is mainly designed for single-document scenarios.
+**Background**: Current structured RAG follows two main paths: Graph-RAG (e.g., GraphRAG, HippoRAG 2), which uses knowledge graphs to explicitly model relationships between documents—offering strong multi-hop capabilities but suffering from high OpenIE indexing overhead; and Tree-RAG (represented by RAPTOR), which performs bottom-up k-means clustering to create abstraction trees, enabling retrieval at token, passage, and document granularities, primarily for single-document summary tasks.
 
-**Limitations of Prior Work**: Directly applying Tree-RAG to "corpus-level, cross-document, multi-hop" settings exposes three issues: (1) k-means clustering assumes spherical distributions, leading to a "uniform effect" on skewed corpora, misassigning major-class documents to minority clusters and introducing noise; (2) tree leaves lack explicit interconnections, preventing causal jumps between documents as in Graph-RAG; (3) top-level abstractions are too coarse, making it difficult for dense vectors to align specific query entities with abstract concepts.
+**Limitations of Prior Work**: Applying Tree-RAG directly to "corpus-level, cross-document, multi-hop" scenarios reveals three problems: (1) k-means clustering implies a spherical distribution assumption, which creates a "uniform effect" in skewed corpora by misallocating documents from major clusters to minor ones, introducing noise; (2) the tree structure lacks explicit edges between leaves, preventing the causal jumps between documents seen in Graph-RAG; (3) top-level abstractions are too coarse, making it difficult for dense vectors to align specific entities in queries with high-level abstract concepts.
 
-**Key Challenge**: The goal is to "retain the multi-granularity advantage of trees while gaining Graph-RAG's cross-document causal reasoning," but traditional clustering objectives and static dense matching do not support this.
+**Key Challenge**: To "retain the multi-granularity advantages of tree structures while gaining the cross-document causal reasoning capabilities of Graph-RAG," even though traditional clustering objectives and static dense matching do not support this goal.
 
-**Goal**: Decompose into three subproblems—(a) design a hierarchical indexing method that does not rely on distributional assumptions and can handle skewed corpora; (b) enable the retriever to perform cross-document jumps without altering the tree structure; (c) supplement coarse-grained matching at abstract nodes with fine-grained evidence channels.
+**Goal**: Decomposed into three sub-problems: (a) design a hierarchical indexing method independent of distribution assumptions that fits skewed corpora; (b) introduce cross-document jumping capabilities to the retriever without modifying the tree structure; (c) supplement coarse-grained abstract node matching with fine-grained evidence channels.
 
-**Key Insight**: The authors leverage agglomerative hierarchical clustering (AHC), using Dasgupta cost to show that greedy merging naturally favors "skewed" over "uniform" distributions; they draw on IRCoT's iterative agent, letting the LLM decide "when to retrieve again"; at the fine-grained level, they simply add a BM25 keyword index for hybrid retrieval.
+**Key Insight**: Starting from agglomerative hierarchical clustering (AHC), the authors prove via Dasgupta cost that greedy merging naturally prefers "skewed" over "uniform" distributions. They then adopt an iterative agent approach inspired by IRCoT, delegating the decision of "when to retrieve again" to the LLM. For fine-grained matching, they simply integrate a BM25 keyword index for hybrid retrieval.
 
-**Core Idea**: Replace k-means tree construction with "similarity ranking → iterative merging & collapse → abstraction," then add an R&A Agent and agentic sparse retrieval, upgrading Tree-RAG into a universal framework for cross-document multi-hop tasks.
+**Core Idea**: Replace k-means tree construction with "similarity ranking $\rightarrow$ iterative merging & collapse $\rightarrow$ abstraction," and upgrade Tree-RAG into a versatile framework for cross-document multi-hop QA through an R&A Agent and agentic sparse retrieval.
 
 ## Method
 
 ### Overall Architecture
-Ψ-RAG adopts a two-stage indexing + retrieval pipeline. In the indexing stage, all corpus chunks are encoded into dense vectors, pairwise cosine similarities are ranked, and an abstract tree is built via iterative "merge/collapse" in this order; tree leaves are original chunks, and each internal node is summarized by an abstraction agent (either a summary or a set of keywords) and re-encoded. In retrieval, the user query enters the R&A Agent, which first triggers hybrid retrieval (dense top-down + BM25); results are filled into the context, and the Agent decides between `<answer>` and `<retrieve>`. If `<retrieve>` is chosen, the Agent rewrites a new sub-query (e.g., expanding "David Gest's wife" to "the wife of American film producer David Gest"), driving the next retrieval round, until an answer is given or the budget is exhausted.
+Ψ-RAG follows a two-stage process: indexing and retrieval. During indexing, all chunks in the corpus are encoded into dense vectors and sorted by pairwise cosine similarity. A tree is iteratively "merged/collapsed" in descending order of similarity. Leaves are original chunks, while internal nodes consist of summative abstracts or keyword sets generated by an abstraction agent. During retrieval, the user query enters the R&A Agent. The agent first invokes hybrid retrieval (dense top-down + BM25), fills the context with results, and decides whether to `<answer>` or `<retrieve>`. If `<retrieve>` is chosen, the agent rewrites a new sub-query (e.g., expanding "David Gest's wife" to "The wife of American producer David Gest") to drive the next round of retrieval until an answer is provided or the budget is exhausted.
 
 ### Key Designs
 
-1. **Hierarchical Abstract Tree via "Merge–Collapse"**:
+1.  **Hierarchical Abstraction Tree Based on "Merge-Collapse"**:
+    - **Function**: Organizes $n$ chunks into a multi-way abstraction tree bottom-up without distribution assumptions.
+    - **Mechanism**: Calculates a symmetric similarity matrix $S = e(D) e(D)^\top$ and iterates through chunk pairs $(u, v)$ by descending similarity. If both lack parents, a new abstract node $a$ is created such that $c(a)=\{u, v\}$ (merging). If $u$ is already under $p(u)$ and $v$ is independent, $v$ is attached to $p(u)$ (leaf node collapse). If both are roots of different trees, they are aligned by depth—creating a new ancestor if depths match, or grafting the shallower tree into the corresponding layer of the deeper one (abstract node collapse). This process connects $n$ chunks into a tree in exactly $n-1$ steps. Overly wide nodes are split to avoid exceeding LLM context limits.
+    - **Design Motivation**: Using Dasgupta cost, authors prove: (i) "moving a leaf" in a perfectly uniform tree reduces cost, meaning Ψ-RAG naturally avoids uniformity; (ii) in a skewed tree, moving nodes from a majority cluster to a minority cluster increases cost, meaning the algorithm maintains skewness. This uses first-order geometric-cost analysis to bypass the uniform effect of k-means without additional training losses.
 
-    - **Function**: Organizes $n$ chunks bottom-up into a multi-branch abstract tree, without any distributional assumptions.
-    - **Mechanism**: Compute the symmetric similarity matrix $S = e(D) e(D)^\top$, enumerate chunk pairs $(u,v)$ in descending similarity order. If neither has a parent, create a new abstract node $a$ with $c(a)=\{u,v\}$ (merging); if $u$ is already under $p(u)$ and $v$ is independent, attach $v$ to $p(u)$ (leaf node collapse); if both have different roots, align by depth—if depths match, create a new ancestor; if not, graft the shallower tree onto the deeper one at the corresponding level (abstract node collapse). This process takes exactly $n-1$ steps to connect $n$ chunks into a tree; overly wide nodes are split evenly to avoid overlong abstraction agent contexts.
-    - **Design Motivation**: Using Dasgupta cost, the authors prove: (i) On a perfectly uniform tree, a "move leaf" operation reduces cost, so Ψ-RAG naturally avoids uniformity; (ii) On skewed trees, moving majority-class nodes to minority classes increases cost, so the algorithm preserves skewness. Thus, the "geometric–cost" analysis sidesteps k-means' uniform effect without introducing new loss functions.
+2.  **Multi-round Retrieval Driven by R&A Agent**:
+    - **Function**: Enables the retriever with causal reasoning: "check if evidence is sufficient; if not, rewrite and re-retrieve."
+    - **Mechanism**: Each agent step outputs a triplet $a = (R, \langle\text{action}\rangle, \cdot)$, where action is either `<answer>` or `<retrieve>`. If retrieving, the agent produces a new query $q'_i$. Retrieval results $D^*_i = r(q'_i, \mathcal{T})$ and history $\{(I(D^*_j) \cup a_j)\}$ are fed back to the agent until $i_{\max}$ is reached. Underlying retrieval follows RAPTOR's top-down beam search.
+    - **Design Motivation**: Cross-document multi-hop queries are often dominated by major entities (e.g., "Beyoncé") in initial dense matching, causing intermediate entities to be missed. Allowing the agent to decide the next step based on initial evidence dynamically reconstructs the "cross-document edges" missing in the tree.
 
-2. **R&A Agent-Driven Multi-turn Retrieval**:
-
-    - **Function**: Enables the retriever to reason causally—"check if current evidence suffices, otherwise rewrite the query and retrieve again."
-    - **Mechanism**: Each Agent step outputs a triple $a = (R, \langle\text{action}\rangle, \cdot)$, where action is `<answer>` or `<retrieve>`; if retrieve, the Agent produces a new query $q'_i$. The $i$-th retrieval result $D^*_i = r(q'_i, \mathcal{T})$ and history $\{(I(D^*_j) \cup a_j)\}$ are fed back to the Agent, until an answer is given or the upper limit $i_{\max}$ is reached. Each retrieval follows RAPTOR's top-down beam: starting from the root, at each level select top-$k$ by $s(q,u)$, propagate their children to the next candidate set, and recurse to the leaves.
-    - **Design Motivation**: For cross-document multi-hop queries (e.g., "Who is the wife of the producer of the documentary about the singer who influenced Beyoncé?"), initial dense matching is dominated by "Beyoncé" and "documentary," missing the true intermediary (David Gest); letting the Agent decide the next step after seeing initial evidence allows the language model to dynamically supplement the tree's missing "cross-document edges."
-
-3. **Keyword Hybrid Index + Query Rewriting**:
-
-    - **Function**: Addresses the issue where top-level dense abstractions are too coarse to pinpoint fine-grained facts.
-    - **Mechanism**: During indexing, build an additional BM25 sparse index; at retrieval, the Agent can fuse results via a parameterized reranker (integrating dense+sparse top-$k$) or non-parametric RRF (reciprocal rank fusion). Notably, when the Agent chooses `<retrieve>`, it can not only rewrite the query but also add descriptive appositives, enabling BM25 to capture more topic keywords and helping dense retrieval locate upper-level abstractions via high-level context.
-    - **Design Motivation**: Abstract trees excel at coarse summarization but cannot align specific entities to top-level summaries; BM25 complements lexical matching, and Agent query rewriting turns "short questions" into "long questions with modifiers," benefiting both retrieval paths.
+3.  **Keyword Hybrid Index + Query Rewriting**:
+    - **Function**: Compensates for coarse top-level dense abstractions that fail to lock onto fine-grained facts.
+    - **Mechanism**: A BM25 sparse index is built during indexing. The agent integrates results via a parametric reranker or non-parametric Reciprocal Rank Fusion (RRF). During `<retrieve>`, the agent can add "descriptive appositives" to help BM25 capture thematic keywords and help dense retrieval locate nodes via high-level context.
+    - **Design Motivation**: Trees excel at coarse generalization but struggle with specific entity alignment at top levels. BM25 fills this gap with lexical matching, while agentic query rewriting benefits both retrieval paths.
 
 ### Loss & Training
-The entire pipeline is training-free: encoder, reranker, and Agent LLMs (Llama-3.3-70B, Qwen3-Embedding-8B) use open-source weights directly; indexing relies on similarity ranking and LLM summarization, retrieval is controlled by prompt-driven Agent; only top-$k$, $i_{\max}$, and fusion method are tuned as hyperparameters.
+The entire process is training-free. Encoders, rerankers, and the agent's LLM (Llama-3.3-70B, Qwen3-Embedding-8B) use open-source weights. Indexing relies on similarity ranking and LLM-generated summaries, while retrieval is controlled by agent prompts. Only hyperparameters like top-$k$, $i_{\max}$, and fusion methods require tuning.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Task (Multi-hop F1) | RAPTOR | HippoRAG 2 | Ψ-RAG (Ours) | Gain over RAPTOR ↑ |
+| Task (Multi-hop F1) | RAPTOR | HippoRAG 2 | Ψ-RAG (Ours) | Relative Gain vs RAPTOR |
 |---|---|---|---|---|
-| HotpotQA / 2Wiki / MuSiQue / MultiHop-RAG Avg. | Baseline | Strong Baseline | +25.9% F1 vs RAPTOR; +7.4% vs HippoRAG 2 | Significant |
-| Corpus-level Indexing Time vs Graph-RAG | — | Slow | ≈10× faster | — |
+| HotpotQA / 2Wiki / MuSiQue / MultiHop-RAG Avg | Baseline | Strong Baseline | +25.9% F1 vs RAPTOR; +7.4% vs HippoRAG 2 | Significant |
+| Corpus-level Indexing Time vs Graph-RAG | — | Slow | ≈10× Faster | — |
 | Token-level QA (NQ / PopQA) retrieval | Baseline | — | +23.7% retrieval | Significant |
 
 | Capability | Traditional RAG | Graph-RAG | Tree-RAG (RAPTOR) | Ψ-RAG |
 |---|---|---|---|---|
-| Single Document | ✓ | ✓ | ✓ | ✓ |
+| Single-document | ✓ | ✓ | ✓ | ✓ |
 | Cross-document | Partial | ✓ | Partial | ✓ |
 | Token-level QA | ✓ | ✓ | Weak | ✓ |
 | Passage-level | Partial | ✓ | ✓ | ✓ |
-| Document-level Summarization | Weak | Partial | ✓ | ✓ |
+| Document-level Summary | Weak | Partial | ✓ | ✓ |
 
 ### Ablation Study
 
-| Configuration | Key Findings |
+| Configuration | Key Finding |
 |---|---|
-| Full Ψ-RAG | Achieves best or near-best on all four task types (single-hop / multi-hop / narrative / summarization) |
-| w/o R&A Agent | Multi-hop F1 drops sharply due to loss of cross-document jumps |
-| w/o BM25 Hybrid | Token-level fact questions suffer most, showing coarse abstraction needs fine-grained supplementation |
-| w/o "Merge–Collapse" (use k-means) | On skewed corpora, abstract nodes start mixing major classes, triggering "uniform effect" noise |
+| Full Ψ-RAG | Achieved best or near-best performance across all four task types (single-hop, multi-hop, narrative, summarization). |
+| w/o R&A Agent | Multi-hop F1 degraded significantly due to the loss of cross-document jumping. |
+| w/o BM25 Hybrid | Token-level factual questions suffered most, proving coarse abstractions need fine-grained support. |
+| w/o Merge-Collapse (k-means) | Abstract nodes became contaminated with majority cluster data in skewed corpora (Uniform Effect). |
 
 ### Key Findings
-- On synthetic skewed corpora like "Sports[:50] + Business[:5]", RAPTOR's top-level abstract nodes misclassify majority-class (Sports) chunks as minority, introducing "confused abstraction" noise; Ψ-RAG's ring-tree visualization shows this confusion nearly disappears, matching Dasgupta cost analysis predictions.
-- Ψ-RAG's core improvement comes from the synergy of "hierarchical abstraction + Agent multi-turn": changing only indexing improves summarization tasks; adding only the Agent yields limited token-level gains; both together surpass Graph-RAG on multi-hop QA.
-- Indexing is about an order of magnitude faster than GraphRAG / HippoRAG 2, as no OpenIE entity extraction is needed—crucial for real-world deployment.
+- On synthetic skewed corpora (e.g., "Sports[:50] + Business[:5]"), RAPTOR's top-level nodes mixed majority and minority chunks; this confusion was nearly eliminated in Ψ-RAG's tree visualization, aligning with Dasgupta cost predictions.
+- The improvement stems from the synergy of "hierarchical abstraction + multi-round agent." Changing indexing only helps summarization; adding the agent only helps token-level tasks significantly when combined with the tree.
+- Indexing is roughly an order of magnitude faster than GraphRAG/HippoRAG 2 because it avoids OpenIE entity extraction, which is critical for deployment.
 
 ## Highlights & Insights
-- Theoretical analysis via Dasgupta cost clarifies that "AHC is inherently resistant to uniform effect and naturally fits skewed distributions," bridging the gap between "heuristic clustering" and "task performance" with a clean geometric argument, much stronger than empirical comparisons alone.
-- "Patch-style enhancements" are applied at two precise points: geometric structure at indexing, semantic jumps at retrieval, and BM25 to fix "overly coarse abstraction"—each patch addresses a distinct issue without overlap, exemplifying an engineering "divide and conquer" worth emulating.
-- The Agent's query rewriting trick (adding appositive descriptions) is nearly cost-free yet benefits both dense and sparse retrieval, a "lightweight patch at the bottleneck" with high transferability—applicable to other multi-hop search, Code RAG, and long-document QA.
+- Using Dasgupta cost to theoretically explain why AHC resists the uniform effect and adapts to skewed distributions bridges the gap between heuristic clustering and empirical performance.
+- Enhancements are placed at correct bottlenecks: index geometry, retrieval semantic jumps, and matching granularity. These "patches" address different failure modes without redundancy.
+- The query rewriting trick (adding appositives) is virtually cost-free but benefits both dense and sparse paths. This "lightweight patch for a major bottleneck" is highly transferable to Code RAG or long-document QA.
 
 ## Limitations & Future Work
-- The system's latency bottleneck is entirely in the LLM Agent's multi-turn calls; as $i_{\max}$ increases, latency rises linearly, and no adaptive stopping strategy is provided.
-- Abstract tree quality depends on the underlying LLM's summarization ability; with smaller local models, abstract nodes may lose key entities, causing dense matching to collapse—no degradation curve for low-cost LLMs is reported.
-- "Merging & collapse" is a streaming greedy algorithm, sensitive to the order of highly similar chunks; in practice, multiple shuffles and aggregation may be needed, but stability is not deeply discussed.
-- In comparison with Graph-RAG, HippoRAG 2's PPR reasoning is "re-skinned" as Agent multi-turn retrieval; for hops $\geq 4$, explicit graph parallel diffusion may still outperform Agent serial calls, but no sensitivity analysis for ultra-multi-hop settings is provided.
+- System latency is dominated by multi-round LLM agent calls. Latency scales linearly with $i_{\max}$; the paper lacks an adaptive "early exit" strategy.
+- Abstraction quality depends on the LLM's summarization capability. Smaller local models might lose critical entities in abstract nodes, potentially collapsing dense matching performance.
+- "Merging & collapse" is a greedy algorithm sensitive to the order of chunks with very similar scores. Shuffling and re-aggregating for stability was not discussed.
+- While outperforming HippoRAG 2, explicit graph diffusion might still be superior for very high hop counts ($\geq 4$) compared to serial agent reasoning.
 
 ## Related Work & Insights
-- **vs RAPTOR**: Both follow the Tree-RAG paradigm, but RAPTOR uses k-means GMM for bottom-up clustering, triggering the "uniform effect" on skewed corpora; Ψ-RAG employs AHC-style merge–collapse + multi-branch rebalancing, avoids distributional assumptions, and natively supports corpus-level indexing.
-- **vs HippoRAG 2 / GraphRAG**: Graph-RAG builds graphs via OpenIE entity extraction and uses PPR for multi-hop reasoning, making offline indexing very expensive; Ψ-RAG defers "cross-document relations" to retrieval-time dynamic discovery by the Agent, achieving ~10× faster indexing and higher multi-hop accuracy.
-- **vs IRCoT**: IRCoT couples "multi-step reasoning + multi-step retrieval" in a single chain, but the underlying retriever is single-layer dense; Ψ-RAG applies the same multi-turn idea atop an abstract tree + sparse hybrid retrieval, making it more general for multi-granularity tasks.
-- **Insights**: When a static index structure (tree/graph/inverted) alone cannot handle multi-hop, instead of modifying the index, "letting the LLM act as a temporary graph at retrieval" is a lower-cost shortcut—this idea can transfer to Code RAG (jumping by call graph), long-paper QA (jumping by citation), etc.
+- **vs RAPTOR**: Both are Tree-RAG, but RAPTOR's GMM k-means triggers the "uniform effect" on skewed corpora. Ψ-RAG's AHC-style merge-collapse avoids distribution assumptions and supports corpus-level indexing natively.
+- **vs HippoRAG 2 / GraphRAG**: Graph-RAG uses expensive OpenIE and offline graph construction. Ψ-RAG defers "cross-document relations" to the agent during retrieval, making indexing 10× faster while achieving higher accuracy.
+- **vs IRCoT**: IRCoT couples multi-step reasoning/retrieval on a chain with single-layer dense retrieval. Ψ-RAG applies this to hierarchical trees and hybrid retrieval for multi-granularity versatility.
+- **Insight**: When a static index (tree/graph/inverted) cannot handle multi-hop alone, using the LLM as a "temporary graph" during retrieval is a cost-effective shortcut.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The combination of "merge–collapse + Dasgupta cost theory + Agent hybrid retrieval" is a first in Tree-RAG, though each component has precedents.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Compared across four task types, six datasets, and multiple baselines, with visualization and theory; lacks ultra-multi-hop and small-model degradation curves.
-- Writing Quality: ⭐⭐⭐⭐⭐ Framework diagrams, merge step illustrations, Dasgupta proofs, and visual comparisons are all well-presented, making it highly readable.
-- Value: ⭐⭐⭐⭐ Elevates Tree-RAG to Graph-RAG-level multi-hop capability, training-free and ~10× faster indexing, practical for deployment.
+- Novelty: ⭐⭐⭐⭐
+- Experimental Thoroughness: ⭐⭐⭐⭐
+- Writing Quality: ⭐⭐⭐⭐⭐
+- Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
 
@@ -129,11 +126,11 @@ The entire pipeline is training-free: encoder, reranker, and Agent LLMs (Llama-3
 
 ## Related Papers
 
+- [\[ICML 2026\] LazyAttention: Efficient Retrieval-Augmented Generation with Deferred Positional Encoding](lazyattention_efficient_retrieval-augmented_generation_with_deferred_positional_.md)
 - [\[NeurIPS 2025\] Benchmarking Retrieval-Augmented Multimodal Generation for Document Question Answering](../../NeurIPS2025/information_retrieval/benchmarking_retrievalaugmented_multimodal_generation_for_do.md)
+- [\[ICML 2026\] Vector Linking based on Cross-Model Local Isometry Consistency](vector_linking_via_cross-model_local_isometric_consistency.md)
+- [\[ICML 2026\] Predictive Prefetching for Retrieval-Augmented Generation](predictive_prefetching_for_retrieval-augmented_generation.md)
 - [\[ACL 2026\] Feedback Adaptation for Retrieval-Augmented Generation](../../ACL2026/information_retrieval/feedback_adaptation_for_retrieval-augmented_generation.md)
-- [\[ICLR 2026\] Toward Faithful Retrieval-Augmented Generation with Sparse Autoencoders](../../ICLR2026/information_retrieval/toward_faithful_retrieval-augmented_generation_with_sparse_autoencoders.md)
-- [\[AAAI 2026\] Neighbor-aware Instance Refining with Noisy Labels for Cross-Modal Retrieval](../../AAAI2026/information_retrieval/neighbor-aware_instance_refining_with_noisy_labels_for_cross-modal_retrieval.md)
-- [\[ICLR 2026\] Hierarchical Concept-based Interpretable Models](../../ICLR2026/information_retrieval/hierarchical_concept-based_interpretable_models.md)
 
 </div>
 

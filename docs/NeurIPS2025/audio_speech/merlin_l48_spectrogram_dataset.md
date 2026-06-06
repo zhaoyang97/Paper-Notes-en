@@ -133,11 +133,11 @@ The L48 dataset is sourced from the Merlin Sound ID system covering recordings f
 
 ## Related Papers
 
+- [\[ICML 2026\] A Semantically Consistent Dataset for Data-Efficient Query-Based Universal Sound Separation](../../ICML2026/audio_speech/a_semantically_consistent_dataset_for_data-efficient_query-based_universal_sound.md)
+- [\[ACL 2026\] Dial HEALTHDIAL for Advice: A Multilingual and Multi-Parallel Spoken Dialogue Dataset for Knowledge-Grounded Information Seeking](../../ACL2026/audio_speech/dial_healthdial_for_advice_a_multilingual_and_multi-parallel_spoken_dialogue_dat.md)
 - [\[NeurIPS 2025\] Node-Based Editing for Multimodal Generation of Text, Audio, Image, and Video](node-based_editing_for_multimodal_generation_of_text_audio_image_and_video.md)
 - [\[NeurIPS 2025\] A TRIANGLE Enables Multimodal Alignment Beyond Cosine Similarity](a_triangle_enables_multimodal_alignment_beyond_cosine_simila.md)
 - [\[NeurIPS 2025\] Data-Juicer 2.0: Cloud-Scale Adaptive Data Processing for and with Foundation Models](data-juicer_20_cloud-scale_adaptive_data_processing_for_and_with_foundation_mode.md)
-- [\[NeurIPS 2025\] WhAM: Towards A Translative Model of Sperm Whale Vocalization](wham_towards_a_translative_model_of_sperm_whale_vocalization.md)
-- [\[NeurIPS 2025\] VITA-1.5: Towards GPT-4o Level Real-Time Vision and Speech Interaction](vita-15_towards_gpt-4o_level_real-time_vision_and_speech_interaction.md)
 
 </div>
 

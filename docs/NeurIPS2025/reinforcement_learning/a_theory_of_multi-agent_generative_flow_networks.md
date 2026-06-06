@@ -144,8 +144,8 @@ MA-GFlowNet is a tuple $((F^{(i)})_{i \in I}, F)$, consisting of local GFlowNets
 - [\[NeurIPS 2025\] Multi-Agent Collaboration via Evolving Orchestration](multi-agent_collaboration_via_evolving_orchestration.md)
 - [\[NeurIPS 2025\] PARCO: Parallel AutoRegressive Models for Multi-Agent Combinatorial Optimization](parco_parallel_autoregressive_models_for_multi-agent_combinatorial_optimization.md)
 - [\[NeurIPS 2025\] Sequential Multi-Agent Dynamic Algorithm Configuration](sequential_multi-agent_dynamic_algorithm_configuration.md)
-- [\[NeurIPS 2025\] Learning Interestingness in Automated Mathematical Theory Formation](learning_interestingness_in_automated_mathematical_theory_formation.md)
 - [\[NeurIPS 2025\] Extending NGU to Multi-Agent RL: A Preliminary Study](extending_ngu_to_multi-agent_rl_a_preliminary_study.md)
+- [\[NeurIPS 2025\] Learning Interestingness in Automated Mathematical Theory Formation](learning_interestingness_in_automated_mathematical_theory_formation.md)
 
 </div>
 

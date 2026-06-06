@@ -20,7 +20,7 @@ tags:
 
 **📷 CVPR2026** · **40** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (2)](../../ICML2026/object_detection/index.md) · [🔬 ICLR2026 (9)](../../ICLR2026/object_detection/index.md) · [🤖 AAAI2026 (15)](../../AAAI2026/object_detection/index.md) · [🧠 NeurIPS2025 (17)](../../NeurIPS2025/object_detection/index.md) · [📹 ICCV2025 (27)](../../ICCV2025/object_detection/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (7)](../../ICML2026/object_detection/index.md) · [🔬 ICLR2026 (9)](../../ICLR2026/object_detection/index.md) · [🤖 AAAI2026 (15)](../../AAAI2026/object_detection/index.md) · [🧠 NeurIPS2025 (17)](../../NeurIPS2025/object_detection/index.md) · [📹 ICCV2025 (27)](../../ICCV2025/object_detection/index.md)
 
 🔥 **Top topics:** Object Detection ×16 · Few-/Zero-Shot Learning ×7 · Anomaly Detection ×4 · Multimodal/VLM ×4 · Alignment/RLHF ×3
 

@@ -158,7 +158,7 @@ The two-phase prediction–validation design is generalizable to other multimoda
 - [\[CVPR 2026\] BeautyGRPO: Aesthetic Alignment for Face Retouching via Dynamic Path Guidance and Fine-Grained Preference Modeling](../../CVPR2026/image_generation/beautygrpo_aesthetic_alignment_for_face_retouching_via_dynamic_path_guidance_and.md)
 - [\[ICCV 2025\] TaxaDiffusion: Progressively Trained Diffusion Model for Fine-Grained Species Generation](../../ICCV2025/image_generation/taxadiffusion_progressively_trained_diffusion_model_for_fine-grained_species_gen.md)
 - [\[CVPR 2026\] SegQuant: A Semantics-Aware and Generalizable Quantization Framework for Diffusion Models](../../CVPR2026/image_generation/segquant_a_semantics-aware_and_generalizable_quantization_framework_for_diffusio.md)
-- [\[AAAI 2026\] VoiceCloak: A Multi-Dimensional Defense Framework against Unauthorized Diffusion-based Voice Cloning](voicecloak_a_multi-dimensional_defense_framework_against_unauthorized_diffusion-.md)
+- [\[ICML 2026\] Coarse-Grained Boltzmann Generators](../../ICML2026/image_generation/coarse-grained_boltzmann_generators.md)
 
 </div>
 

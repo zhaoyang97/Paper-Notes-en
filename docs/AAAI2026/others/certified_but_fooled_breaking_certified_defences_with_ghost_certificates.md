@@ -171,9 +171,9 @@ Attention maps replace GradCAM for Transformer-based models.
 
 - [\[AAAI 2026\] Faster Certified Symmetry Breaking Using Orders With Auxiliary Variables](faster_certified_symmetry_breaking_using_orders_with_auxiliary_variables.md)
 - [\[AAAI 2026\] Certified Branch-and-Bound MaxSAT Solving (Extended Version)](certified_branch-and-bound_maxsat_solving_extended_version.md)
+- [\[ICML 2026\] Rethinking Evaluation Paradigms in IBP-based Certified Training](../../ICML2026/others/rethinking_evaluation_paradigms_in_ibp-based_certified_training.md)
 - [\[ICLR 2026\] LipNeXt: Scaling up Lipschitz-based Certified Robustness to Billion-parameter Models](../../ICLR2026/others/lipnext_scaling_up_lipschitz-based_certified_robustness_to_billion-parameter_mod.md)
 - [\[AAAI 2026\] Rethinking Flow and Diffusion Bridge Models for Speech Enhancement](rethinking_flow_and_diffusion_bridge_models_for_speech_enhancement.md)
-- [\[AAAI 2026\] DeepRWCap: Neural-Guided Random-Walk Capacitance Solver for IC Design](deeprwcap_neural-guided_random-walk_capacitance_solver_for_ic_design.md)
 
 </div>
 

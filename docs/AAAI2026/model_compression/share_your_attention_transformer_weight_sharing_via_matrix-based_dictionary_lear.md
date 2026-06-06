@@ -154,10 +154,10 @@ Both the dictionary atoms and the linear coefficients are jointly learned via ba
 ## Related Papers
 
 - [\[ICLR 2026\] Revisiting Weight Regularization for Low-Rank Continual Learning](../../ICLR2026/model_compression/revisiting_weight_regularization_for_low-rank_continual_learning.md)
+- [\[ICML 2026\] Provably Learning Attention with Queries](../../ICML2026/model_compression/provably_learning_attention_with_queries.md)
 - [\[CVPR 2026\] Elastic Weight Consolidation Done Right for Continual Learning](../../CVPR2026/model_compression/elastic_weight_consolidation_done_right_for_continual_learning.md)
-- [\[ICML 2026\] Task-Driven Subspace Decomposition for Knowledge Sharing and Isolation in LoRA-based Continual Learning](../../ICML2026/model_compression/task-driven_subspace_decomposition_for_knowledge_sharing_and_isolation_in_lora-b.md)
 - [\[NeurIPS 2025\] Spark Transformer: Reactivating Sparsity in FFN and Attention](../../NeurIPS2025/model_compression/spark_transformer_reactivating_sparsity_in_ffn_and_attention.md)
-- [\[AAAI 2026\] CAMERA: Multi-Matrix Joint Compression for MoE Models via Micro-Expert Redundancy Analysis](camera_multi-matrix_joint_compression_for_moe_models_via_mic.md)
+- [\[ICML 2026\] Task-Driven Subspace Decomposition for Knowledge Sharing and Isolation in LoRA-based Continual Learning](../../ICML2026/model_compression/task-driven_subspace_decomposition_for_knowledge_sharing_and_isolation_in_lora-b.md)
 
 </div>
 

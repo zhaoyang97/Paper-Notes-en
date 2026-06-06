@@ -168,9 +168,9 @@ A track is considered valid if $e_{fb}(\mathbf{p}_0) < \epsilon$.
 
 - [\[ICLR 2026\] Online Time Series Prediction Using Feature Adjustment](../../ICLR2026/video_understanding/online_time_series_prediction_using_feature_adjustment.md)
 - [\[AAAI 2026\] Listening Between the Frames: Bridging Temporal Gaps in Large Audio-Language Models](listening_between_the_frames_bridging_temporal_gaps_in_large_audio-language_mode.md)
+- [\[ICML 2026\] ProAct-VL: A Proactive VideoLLM for Real-Time AI Companions](../../ICML2026/video_understanding/proact-vl_a_proactive_videollm_for_real-time_ai_companions.md)
 - [\[CVPR 2026\] Real-World Point Tracking with Verifier-Guided Pseudo-Labeling](../../CVPR2026/video_understanding/realworld_point_tracking_with_verifierguided_pseud.md)
 - [\[AAAI 2026\] UVLM: Benchmarking Video Language Model for Underwater World Understanding](uvlm_benchmarking_video_language_model_for_underwater_world_understanding.md)
-- [\[AAAI 2026\] Balancing Multimodal Domain Generalization via Gradient Modulation and Projection](balancing_multimodal_domain_generalization_via_gradient_modulation_and_projectio.md)
 
 </div>
 

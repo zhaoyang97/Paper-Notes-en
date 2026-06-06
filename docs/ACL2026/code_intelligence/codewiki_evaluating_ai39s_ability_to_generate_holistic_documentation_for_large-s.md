@@ -2,81 +2,78 @@
 title: >-
   [Paper Note] CodeWiki: Evaluating AI's Ability to Generate Holistic Documentation for Large-Scale Codebases
 description: >-
-  [ACL 2026][Code Intelligence][Code documentation generation] This paper presents CodeWiki, an open-source framework based on hierarchical decomposition and recursive multi-agent processing for automated repository-level…
+  [ACL 2026][Code Intelligence][Code Documentation Generation] CodeWiki is proposed as an open-source framework based on hierarchical decomposition and recursive multi-agent processing for the automated generation of repos…
 tags:
   - "ACL 2026"
   - "Code Intelligence"
-  - "Code documentation generation"
-  - "repository-level understanding"
-  - "multi-agent systems"
-  - "hierarchical decomposition"
-  - "code benchmarks"
+  - "Code Documentation Generation"
+  - "Repository-level Understanding"
+  - "Multi-agent Systems"
+  - "Hierarchical Decomposition"
+  - "Code Benchmark"
 date: 2026-05-08
-content_hash: 1e3a07582e48251c
+content_hash: 518211df338c4c5b
 ---
 
 # CodeWiki: Evaluating AI's Ability to Generate Holistic Documentation for Large-Scale Codebases
 
-**Conference**: ACL 2026
+**Conference**: ACL 2026  
 **arXiv**: [2510.24428](https://arxiv.org/abs/2510.24428)  
 **Code**: [GitHub](https://github.com/FSoft-AI4Code/CodeWiki)  
-**Area**: Code Intelligence
-**Keywords**: Code documentation generation, repository-level understanding, multi-agent systems, hierarchical decomposition, code benchmarks
+**Area**: Code Intelligence  
+**Keywords**: Code Documentation Generation, Repository-level Understanding, Multi-agent Systems, Hierarchical Decomposition, Code Benchmark
 
 ## TL;DR
 
-This paper presents CodeWiki, an open-source framework based on hierarchical decomposition and recursive multi-agent processing for automated repository-level code documentation generation. It also introduces the CodeWikiBench benchmark, achieving a quality score of 68.79% across seven programming languages, surpassing the closed-source system DeepWiki (64.06%).
+CodeWiki is proposed as an open-source framework based on hierarchical decomposition and recursive multi-agent processing for the automated generation of repository-level code documentation. The authors also establish the CodeWikiBench benchmark, where the framework achieves a quality score of 68.79% across seven programming languages, outperforming the closed-source system DeepWiki (64.06%).
 
 ## Background & Motivation
 
-**Background**: As codebases continue to grow in scale and complexity, maintaining comprehensive and up-to-date documentation has become a critical bottleneck in software development. Approximately 31% of developers already rely heavily on AI for code documentation, reflecting the urgent demand for automated documentation generation.
+**Background**: As the scale and complexity of codebases continue to grow, maintaining comprehensive and timely documentation has become a core bottleneck in software development. Approximately 31% of developers already extensively use AI to assist in code documentation, reflecting an urgent demand for automated solutions.
 
-**Limitations of Prior Work**: Existing approaches primarily focus on function-level and file-level documentation generation (e.g., CodeBERT, DocAgent), and struggle to scale to the repository level. Repository-level documentation must capture architectural patterns, cross-module interactions, data flows, and system-level design decisions — capabilities that current tools lack due to their inability to model semantic dependencies and hierarchical structures. Evaluation methodology is also inadequate: traditional BLEU/ROUGE metrics fail to capture the multidimensional nature of documentation quality, and no systematic benchmark exists for repository-level documentation.
+**Limitations of Prior Work**: Existing methods primarily focus on function-level and file-level documentation generation (e.g., CodeBERT, DocAgent), which are difficult to scale to the repository level. Repository-level documentation requires capturing architectural patterns, cross-module interactions, data flows, and system-level design decisions, yet existing tools lack the capability to model these semantic dependencies and hierarchical structures. Furthermore, evaluation systems are inadequate—traditional BLEU/ROUGE metrics fail to capture the multi-dimensional features of documentation quality, and systematic benchmarks for repository-level documentation are missing.
 
-**Key Challenge**: Repository-level documentation generation requires simultaneous understanding of both local implementation details and global architectural relationships, yet LLMs are constrained by limited context windows and cannot process large codebases in a single pass. Most existing approaches also suffer from severely insufficient multilingual support, focusing primarily on Python.
+**Key Challenge**: Repository-level documentation generation requires simultaneous understanding of local implementation details and global architectural relationships. However, the limited context window of LLMs prevents processing large codebases at once. Additionally, existing multi-language support is severely lacking, with most research focusing solely on Python.
 
-**Goal**: To construct a scalable, multilingual framework for automated repository-level documentation generation, accompanied by a reliable evaluation methodology.
+**Goal**: To build a scalable, multi-language automated framework for repository-level documentation generation while providing a reliable evaluation methodology.
 
-**Key Insight**: Drawing inspiration from dynamic programming, the framework decomposes large repositories into manageable modules via hierarchical partitioning, then recursively generates and synthesizes documentation in a bottom-up manner.
+**Key Insight**: Drawing inspiration from dynamic programming, the framework utilizes hierarchical decomposition to break down large repositories into manageable modules, followed by recursive bottom-up generation and synthesis of documentation.
 
-**Core Idea**: Repository-level documentation generation is decomposed into three stages — static analysis and module decomposition, recursive agent-based documentation generation, and hierarchical assembly and synthesis — with a dynamic delegation mechanism enabling adaptive processing of repositories at arbitrary scale.
+**Core Idea**: The repository-level documentation generation is divided into three stages: static analysis and module decomposition, recursive agent documentation generation, and hierarchical assembly and synthesis. A dynamic delegation mechanism is employed to achieve adaptive processing for repositories of any scale.
 
 ## Method
 
 ### Overall Architecture
 
-The CodeWiki framework consists of three main stages: (1) **Repository Analysis** — constructing a dependency graph via AST/LLM parsing and identifying high-level components, followed by hierarchical module decomposition; (2) **Recursive Documentation Generation** — assigning a dedicated agent to each leaf module, equipped with capabilities for source code access, module tree browsal, documentation workspace manipulation, and dependency graph traversal, with dynamic delegation to sub-agents when module complexity exceeds single-pass capacity; (3) **Hierarchical Assembly** — synthesizing sub-module documentation into parent-module architectural overviews in a bottom-up manner, ultimately producing comprehensive documentation with multimodal elements including architecture diagrams and data flow visualizations.
+The CodeWiki framework consists of three main stages: (1) Repository Analysis Stage—parsing via AST/LLM to construct dependency graphs and identify high-level components, followed by hierarchical module decomposition; (2) Recursive Documentation Generation Stage—assigning dedicated agents to each leaf module, equipped with source code access, module tree navigation, documentation workspace operations, and dependency graph traversal capabilities. If module complexity exceeds single-session capacity, tasks are dynamically delegated to sub-agents; (3) Hierarchical Assembly Stage—synthesizing sub-module documentation bottom-up into architectural overviews for parent modules, ultimately producing comprehensive multimodal documentation including architecture diagrams and data flow visualizations.
 
 ### Key Designs
 
-1. **Hierarchical Module Decomposition**:
+1.  **Hierarchical Module Decomposition**:
+    - **Function**: Decomposes large repositories into manageable modular units.
+    - **Mechanism**: Tree-Sitter parsers are used to extract ASTs and construct a directed dependency graph $G=(V,E)$. Entry components with zero in-degree (e.g., main functions, API endpoints) are identified via topological sorting, then recursively partitioned into a module tree. To ensure scalability, the module tree uses only component IDs as input.
+    - **Design Motivation**: Leveraging the "divide and conquer" strategy of dynamic programming to resolve the conflict between limited LLM context windows and massive repository scales while maintaining architectural consistency.
 
-    - **Function**: Partitions large repositories into manageable modular units.
-    - **Mechanism**: Employs Tree-Sitter parsers to extract ASTs and constructs a directed dependency graph $G=(V,E)$. Topological sorting identifies zero-indegree entry components (e.g., main functions, API endpoints), which are then recursively partitioned into a module tree. For scalability, the module tree uses only component IDs as input.
-    - **Design Motivation**: Applies the divide-and-conquer principle from dynamic programming to resolve the tension between limited LLM context windows and large repository scales, while preserving architectural coherence.
-
-2. **Dynamic Delegation Recursive Agents**:
-
+2.  **Dynamic Delegation Recursive Agents**:
     - **Function**: Adaptively handles modules of varying complexity.
-    - **Mechanism**: Each dedicated leaf-module agent evaluates whether delegation is necessary based on code complexity metrics (cyclomatic complexity, nesting depth), semantic diversity, and context window utilization. When module complexity exceeds a threshold, the agent delegates sub-modules to newly spawned child agents for recursive processing.
-    - **Design Motivation**: Ensures the framework can handle repositories of arbitrary scale while maintaining per-module documentation quality, achieving bounded complexity and architectural consistency.
+    - **Mechanism**: A dedicated agent for each leaf module determines the need for delegation based on code complexity metrics (cyclomatic complexity, nesting depth), semantic diversity, and context window utilization. When complexity exceeds a threshold, the agent delegates sub-modules to new sub-agents for recursive processing.
+    - **Design Motivation**: To ensure the framework can handle repositories of any size while maintaining the documentation quality of each module, achieving bounded complexity and architectural coherence.
 
-3. **Cross-Module Reference Management & Hierarchical Synthesis**:
-
-    - **Function**: Maintains cross-module documentation consistency and generates global architectural documentation.
-    - **Mechanism**: A global registry tracks documented components and their locations; when external components are encountered, cross-references are created rather than duplicating content. Parent-module synthesis follows a multi-stage LLM pipeline: analyzing thematic patterns across child documents → generating architectural overviews → creating feature summaries → developing usage guides → generating visualizations.
-    - **Design Motivation**: Eliminates content redundancy and produces an interconnected documentation system that accurately reflects the actual structure and interactions of the codebase.
+3.  **Cross-Module Reference & Hierarchical Synthesis**:
+    - **Function**: Maintains documentation consistency across modules and generates global architectural documentation.
+    - **Mechanism**: A global registry tracks documented components and locations; when external components are encountered, cross-references are created instead of redundant content. Hierarchical synthesis for parent modules involves multi-stage LLM processing: analyzing thematic patterns in sub-documentation, generating architectural overviews, creating feature summaries, developing usage guides, and generating visualization charts.
+    - **Design Motivation**: To avoid content redundancy and generate an interconnected documentation system that truly reflects the actual structure and interactions of the codebase.
 
 ### Evaluation Framework: CodeWikiBench
 
-The core innovation of CodeWikiBench lies in its **Hierarchical Rubric** design: evaluation criteria are automatically generated from official documentation of open-source projects, mirroring project architecture in a hierarchical structure. Multiple Judge Agents (drawn from different model families) independently assess leaf-level requirements, and final scores along with reliability metrics are computed via weighted bottom-up aggregation. The multi-model consensus mechanism effectively reduces single-model bias.
+The core innovation of CodeWikiBench lies in the design of a Hierarchical Rubric: evaluation criteria are automatically generated from the official documentation of open-source projects, mirroring the project architecture. The evaluation process involves multiple Judge Agents (using different model families) independently judging leaf-level requirements, followed by weighted aggregation to calculate final scores and reliability metrics bottom-up. The multi-model consensus mechanism effectively reduces single-model bias.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Repository | Language | LOC | CodeWiki | DeepWiki | Gain |
-|---|---|---|---|---|---|
+| :--- | :--- | :--- | :--- | :--- | :--- |
 | OpenHands | Python | 229K | 82.45% | 73.04% | +9.41% |
 | svelte | JavaScript | 125K | 71.96% | 68.51% | +3.45% |
 | puppeteer | TypeScript | 136K | 83.00% | 64.46% | +18.54% |
@@ -89,38 +86,38 @@ The core innovation of CodeWikiBench lies in its **Hierarchical Rubric** design:
 ### Cross-Language Analysis
 
 | Language Category | CodeWiki | DeepWiki | Gain |
-|---|---|---|---|
-| Scripting languages (Python/JS/TS) | 79.14% | 68.67% | +10.47% |
-| Managed languages (C#/Java) | 68.84% | 64.80% | +4.04% |
-| Systems languages (C/C++) | 53.24% | 56.39% | -3.15% |
+| :--- | :--- | :--- | :--- |
+| Scripting (Python/JS/TS) | 79.14% | 68.67% | +10.47% |
+| Managed (C#/Java) | 68.84% | 64.80% | +4.04% |
+| Systems (C/C++) | 53.24% | 56.39% | -3.15% |
 
 ### Key Findings
-- CodeWiki outperforms all baselines on 5 of 7 repositories, with the largest gain on the TypeScript repository (+18.54%).
-- The advantage is most pronounced on high-level scripting languages (+10.47%), but CodeWiki falls slightly below DeepWiki on systems programming languages (C/C++).
-- Performance differences are primarily attributable to language characteristics rather than repository scale.
-- A preliminary human study indicates CodeWiki is preferred in 7 out of 9 evaluations.
+- CodeWiki outperforms all baselines in 5 out of 7 repositories, with the largest gain seen in the TypeScript repository (+18.54%).
+- The advantage is most significant in high-level scripting languages (+10.47%), though it slightly trails DeepWiki in system programming languages (C/C++).
+- Performance variations are primarily attributed to language characteristics rather than repository scale.
+- Preliminary human studies show CodeWiki was preferred in 7 out of 9 evaluations.
 
 ## Highlights & Insights
-- **Elegant hierarchical decomposition**: Applying dynamic programming principles to documentation generation elegantly addresses scalability while preserving architectural semantic consistency.
-- **Evaluation methodology innovation**: CodeWikiBench's hierarchical rubric generation and multi-model consensus evaluation mechanism provide a systematic solution for repository-level documentation assessment.
-- **Open-source transparency**: In a landscape dominated by closed-source systems, the open-source release of CodeWiki carries significant community value.
+- **Ingenious Hierarchical Decomposition**: Applying dynamic programming concepts to documentation generation effectively solves scalability issues while preserving architectural semantics.
+- **Innovative Evaluation Methodology**: The hierarchical rubric generation and multi-model consensus judging in CodeWikiBench provide a systematic solution for repository-level evaluation.
+- **Open-Source Transparency**: In a landscape dominated by closed-source systems, the open-source release of CodeWiki holds significant community value.
 
 ## Limitations & Future Work
-- **Underperformance on systems programming languages**: CodeWiki falls below DeepWiki on C/C++, with insufficient parsing capability for low-level constructs such as pointer arithmetic and template metaprogramming.
-- **Evaluation rubrics lack thorough human validation**: Semantic reliability stands at 73.65% and structural reliability at 70.84%.
-- **Limited scale of human evaluation**: Only 3 participants × 3 repositories.
-- Future directions include developing specialized parsing modules for systems languages, multi-version documentation tracking, and leveraging documentation to support downstream tasks.
+- **Suboptimal Performance in Systems Languages**: Performance in C/C++ is lower than DeepWiki due to insufficient parsing capabilities for low-level constructs like pointer operations and template metaprogramming.
+- **Rubrics Lack Extensive Human Validation**: Semantic reliability is at 73.65% and structural reliability at 70.84%.
+- **Limited Scale of Human Evaluation**: Only 3 participants across 3 repositories were involved.
+- **Future Directions**: Developing specialized parsing modules for systems languages, multi-version documentation tracking, and utilizing documentation to support downstream tasks.
 
 ## Related Work & Insights
-- **vs. DocAgent**: DocAgent employs multi-agent collaboration for function-level documentation generation, whereas CodeWiki focuses on repository-level hierarchical synthesis.
-- **vs. DeepWiki**: A closed-source commercial system with generally strong performance but lacking hierarchical decomposition capabilities.
-- **vs. OpenDeepWiki/deepwiki-open**: Open-source alternatives that adopt a whole-repository direct prompting approach, resulting in noticeably lower performance.
+- **vs DocAgent**: DocAgent uses multi-agent collaboration for function-level documentation, whereas CodeWiki focuses on repository-level hierarchical synthesis.
+- **vs DeepWiki**: A closed-source commercial system that performs well overall but lacks explicit hierarchical decomposition capabilities.
+- **vs OpenDeepWiki/deepwiki-open**: Open-source alternatives that use direct whole-repository prompting, resulting in significantly lagging performance.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ The hierarchical decomposition combined with dynamic delegation is a novel design; the CodeWikiBench evaluation methodology offers meaningful methodological contributions.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Covers 7 languages and 7 repositories with cross-language and scalability analyses; human evaluation is limited in scale.
-- **Writing Quality**: ⭐⭐⭐⭐ Well-structured with three clearly organized research questions.
-- **Value**: ⭐⭐⭐⭐ Addresses an important gap in automated repository-level documentation generation and evaluation; the open-source release positively impacts the community.
+- Novelty: ⭐⭐⭐⭐ The design of hierarchical decomposition and dynamic delegation is novel; the CodeWikiBench methodology is innovative.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covers 7 languages and 7 repositories with cross-language and scalability analysis, though the human evaluation scale is small.
+- Writing Quality: ⭐⭐⭐⭐ Clearly structured with well-organized research questions.
+- Value: ⭐⭐⭐⭐ Fills a critical gap in automated repository-level documentation generation and evaluation; open-sourcing has a positive community impact.
 
 <!-- RELATED:START -->
 
@@ -129,10 +126,10 @@ The core innovation of CodeWikiBench lies in its **Hierarchical Rubric** design:
 ## Related Papers
 
 - [\[NeurIPS 2025\] MLR-Bench: Evaluating AI Agents on Open-Ended Machine Learning Research](../../NeurIPS2025/code_intelligence/mlr-bench_evaluating_ai_agents_on_open-ended_machine_learning_research.md)
-- [\[ACL 2026\] SecureVibeBench: Evaluating Secure Coding Capabilities of Code Agents with Realistic Vulnerability Scenarios](securevibebench_evaluating_secure_coding_capabilities_of_code_agents_with_realis.md)
+- [\[ACL 2026\] AutoMonitor-Bench: Evaluating the Reliability of LLM-Based Misbehavior Monitor](automonitor-bench_evaluating_the_reliability_of_llm-based_misbehavior_monitor.md)
+- [\[ACL 2026\] Can LLMs Compress (and Decompress)? Evaluating Code Understanding and Execution via Invertibility](can_llms_compress_and_decompress_evaluating_code_understanding_and_execution_via.md)
 - [\[ACL 2026\] River-LLM: Large Language Model Seamless Exit Based on KV Share](river-llm_large_language_model_seamless_exit_based_on_kv_share.md)
-- [\[ACL 2026\] LogicEval: A Systematic Framework for Evaluating Automated Repair Techniques for Logical Vulnerabilities in Real-World Software](logiceval_a_systematic_framework_for_evaluating_automated_repair_techniques_for_.md)
-- [\[ACL 2026\] ReFEree: Reference-Free and Fine-Grained Method for Evaluating Factual Consistency in Real-World Code Summarization](referee_reference-free_and_fine-grained_method_for_evaluating_factual_consistenc.md)
+- [\[ACL 2026\] SecureVibeBench: Evaluating Secure Coding Capabilities of Code Agents with Realistic Vulnerability Scenarios](securevibebench_evaluating_secure_coding_capabilities_of_code_agents_with_realis.md)
 
 </div>
 

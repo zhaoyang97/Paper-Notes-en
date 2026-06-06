@@ -170,10 +170,10 @@ Ablation results on top of ProPos (averaged across CIFAR-10 / CIFAR-20 / STL-10)
 ## Related Papers
 
 - [\[NeurIPS 2025\] Angular Constraint Embedding via SpherePair Loss for Constrained Clustering](angular_constraint_embedding_via_spherepair_loss_for_constrained_clustering.md)
-- [\[NeurIPS 2025\] TabSTAR: A Tabular Foundation Model for Tabular Data with Text Fields](tabstar_a_tabular_foundation_model_for_tabular_data_with_text_fields.md)
-- [\[NeurIPS 2025\] Manifolds and Modules: How Function Develops in a Neural Foundation Model](manifolds_and_modules_how_function_develops_in_a_neural_foundation_model.md)
-- [\[NeurIPS 2025\] Hybrid Autoencoders for Tabular Data: Leveraging Model-Based Augmentation in Low-Label Settings](hybrid_autoencoders_for_tabular_data_leveraging_model-based_augmentation_in_low-.md)
+- [\[ICML 2026\] Can Local Learning Match Self-Supervised Backpropagation?](../../ICML2026/self_supervised/can_local_learning_match_self-supervised_backpropagation.md)
 - [\[NeurIPS 2025\] T-REGS: Minimum Spanning Tree Regularization for Self-Supervised Learning](t-regs_minimum_spanning_tree_regularization_for_self-supervised_learning.md)
+- [\[NeurIPS 2025\] Understanding Ice Crystal Habit Diversity with Self-Supervised Learning](understanding_ice_crystal_habit_diversity_with_self-supervised_learning.md)
+- [\[NeurIPS 2025\] TabSTAR: A Tabular Foundation Model for Tabular Data with Text Fields](tabstar_a_tabular_foundation_model_for_tabular_data_with_text_fields.md)
 
 </div>
 

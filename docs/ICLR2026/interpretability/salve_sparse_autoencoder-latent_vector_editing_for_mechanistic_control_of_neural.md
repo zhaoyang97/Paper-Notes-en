@@ -129,7 +129,7 @@ SAE training: reconstruction loss + L1 regularization. Weight editing is a post-
 - [\[ICML 2026\] Probabilistic Modeling of Latent Agentic Substructures in Deep Neural Networks](../../ICML2026/interpretability/probabilistic_modeling_of_latent_agentic_substructures_in_deep_neural_networks.md)
 - [\[ICLR 2026\] Modal Logical Neural Networks for Financial AI](modal_logical_neural_networks_for_financial_ai.md)
 - [\[ICML 2026\] CorrSteer: Generation-Time LLM Steering via Correlated Sparse Autoencoder Features](../../ICML2026/interpretability/corrsteer_generation-time_llm_steering_via_correlated_sparse_autoencoder_feature.md)
-- [\[ICLR 2026\] Formal Mechanistic Interpretability: Automated Circuit Discovery with Provable Guarantees](formal_mechanistic_interpretability_automated_circuit_discovery_with_provable_gu.md)
+- [\[ICML 2026\] Verified SHAP: Provable Bounds for Exact Shapley Values in Neural Networks](../../ICML2026/interpretability/verified_shap_provable_bounds_for_exact_shapley_values_of_neural_networks.md)
 
 </div>
 

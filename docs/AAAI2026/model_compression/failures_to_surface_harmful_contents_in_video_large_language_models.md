@@ -143,8 +143,8 @@ Rather than proposing a solution, the paper presents a systematic vulnerability 
 - [\[AAAI 2026\] Efficient Reasoning for Large Reasoning Language Models via Certainty-Guided Reflection Suppression](efficient_reasoning_for_large_reasoning_language_models_via_certainty-guided_ref.md)
 - [\[AAAI 2026\] First-Order Error Matters: Accurate Compensation for Quantized Large Language Models](first-order_error_matters_accurate_compensation_for_quantized_large_language_mod.md)
 - [\[AAAI 2026\] PocketLLM: Ultimate Compression of Large Language Models via Meta Networks](pocketllm_ultimate_compression_of_large_language_models_via_meta_networks.md)
+- [\[ACL 2026\] LightReasoner: Can Small Language Models Teach Large Language Models Reasoning?](../../ACL2026/model_compression/lightreasoner_can_small_language_models_teach_large_language_models_reasoning.md)
 - [\[AAAI 2026\] SkipCat: Rank-Maximized Low-Rank Compression of Large Language Models via Shared Projection and Block Skipping](skipcat_rank-maximized_low-rank_compression_of_large_language_models_via_shared_.md)
-- [\[ICLR 2026\] Knowledge Fusion of Large Language Models Via Modular Skillpacks](../../ICLR2026/model_compression/knowledge_fusion_of_large_language_models_via_modular_skillpacks.md)
 
 </div>
 

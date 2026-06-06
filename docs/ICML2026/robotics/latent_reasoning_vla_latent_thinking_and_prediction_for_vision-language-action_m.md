@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Latent Reasoning VLA: Latent Thinking and Prediction for Vision-Language-Action Models
 description: >-
-  [ICML 2026][Robotics][VLA] LaRA-VLA internalizes both textual and visual CoT in VLA models as continuous latents. Through a three-stage curriculum training (explicit CoT → latent replacement → action expert adaptation)…
+  [ICML 2026][Robotics][VLA] LaRA-VLA internalizes both textual and visual CoT in VLA models into continuous latents. Through three-stage curriculum training (explicit CoT → latent replacement → action expert adaptation)…
 tags:
   - "ICML 2026"
   - "Robotics"
   - "VLA"
   - "Latent CoT"
   - "Visual Prediction"
-  - "Curriculum Training"
-  - "Reasoning Efficiency"
+  - "curriculum training"
+  - "inference efficiency"
 date: 2026-05-08
-content_hash: 698b3e054119be53
+content_hash: d15daa690baf2192
 ---
 
 # Latent Reasoning VLA: Latent Thinking and Prediction for Vision-Language-Action Models
@@ -21,51 +21,51 @@ content_hash: 698b3e054119be53
 **arXiv**: [2602.01166](https://arxiv.org/abs/2602.01166)  
 **Code**: Public (Project Page)  
 **Area**: Multimodal VLA / Embodied Intelligence / Robotics  
-**Keywords**: VLA, Latent CoT, Visual Prediction, Curriculum Training, Reasoning Efficiency
+**Keywords**: VLA, Latent CoT, Visual Prediction, curriculum training, inference efficiency
 
 ## TL;DR
-LaRA-VLA internalizes both textual and visual CoT in VLA models as continuous latents. Through a three-stage curriculum training (explicit CoT → latent replacement → action expert adaptation), reasoning is completed in the latent space. Compared to explicit CoT, inference latency is reduced by up to 90%, restoring control frequency to real-time levels.
+LaRA-VLA internalizes both textual and visual CoT in VLA models into continuous latents. Through three-stage curriculum training (explicit CoT → latent replacement → action expert adaptation), reasoning is completed within the latent space. This reduces inference latency by up to 90% compared to explicit CoT, returning control frequency to the real-time range.
 
 ## Background & Motivation
-**Background**: VLA models aim to map "image + instruction" to "continuous actions" end-to-end. Recent mainstream enhancements introduce Chain-of-Thought: textual CoT (ECoT, $\pi_{0.5}$, ThinkAct) decomposes tasks into explicit language reasoning chains; visual CoT (CoT-VLA, DreamVLA) uses VQ-VAE and similar methods to predict future observations via discrete visual tokens; a few works (UP-VLA) combine both.
+**Background**: VLA models aim to map "image + instruction" to "continuous actions" end-to-end. Recent main enhancement strategies involve Chain-of-Thought: Textual CoT (ECoT, $\pi_{0.5}$, ThinkAct) decomposes tasks into explicit linguistic reasoning chains; Visual CoT (CoT-VLA, DreamVLA) uses discrete visual tokens like VQ-VAE to predict future observations; a few works (UP-VLA) combine both.
 
-**Limitations of Prior Work**: (i) Textual CoT requires generating long token chains during inference, causing KV-cache to balloon and control frequency to drop to 5 Hz or even 1 Hz, making real-time robotic control infeasible; (ii) Textual CoT uses discrete language tokens, visual CoT uses VQ discrete visual tokens, but perception and action are inherently continuous spaces—discrete representations naturally cause a **representation mismatch**, e.g., forcibly segmenting a continuous motion like "smoothly sliding along the table" into vocabulary indices.
+**Limitations of Prior Work**: (i) Textual CoT generates long token chains during inference, causing KV-cache to explode and control frequency to drop to 5 Hz or even 1 Hz, hindering real-time robot control; (ii) Textual CoT uses discrete language tokens and Visual CoT uses VQ discrete visual tokens, yet perception and action reside in continuous spaces—discrete representation is an inherent **representation mismatch**, forcing continuous motion like "smoothly sliding along a tabletop" into vocabulary indices.
 
-**Key Challenge**: The effectiveness of CoT does not stem from "using natural language," but from "exposing structured intermediate reasoning." In embodied scenarios, forcing reasoning into language tokens is both slow and misaligned.
+**Key Challenge**: CoT is effective not because it "must use natural language," but because it "exposes structured intermediate reasoning." In embodied scenarios, forcing reasoning into language tokens is both slow and misaligned.
 
-**Goal**: To construct a VLA framework that internalizes structured CoT as **continuous latents**, thereby achieving (i) reasoning efficiency (no explicit generation), (ii) continuous representations aligned with perception/action spaces, and (iii) a more thorough approach than Fast-ThinkAct—which only latentizes textual CoT, while the visual part remains a discrete trace.
+**Goal**: Construct a VLA framework that internalizes structured CoT into **continuous latents**, achieving (i) inference efficiency (no explicit generation), (ii) continuous representations aligned with perception/action spaces, and (iii) a more thorough approach than Fast-ThinkAct—the latter only latentizes textual CoT while the visual part remains discrete traces.
 
-**Key Insight**: Treat reasoning as the evolution of a latent state sequence. Use curriculum training to gradually replace explicit tokens with learnable latents, and employ future visual latent prediction as implicit supervision to ensure latent reasoning remains structured and interpretable.
+**Key Insight**: View reasoning as the evolution of a latent state sequence. Use curriculum training to replace explicit tokens with learnable latents step-by-step, using future visual latent prediction as implicit supervision to ensure latent reasoning remains structured and interpretable.
 
-**Core Idea**: Replace textual CoT with continuous latents, align visual CoT with future image latents (EMA encoder for stability), and use a diffusion expert for actions. All three are coordinated via curriculum training.
+**Core Idea**: Replace textual CoT with continuous latents, align visual CoT with future image latents (EMA encoder for stability), and use a diffusion expert for actions. These three components cooperate through curriculum training.
 
 ## Method
 
 ### Overall Architecture
-LaRA-VLA uses Qwen3-VL as the VLM backbone, adding a special token `<img_next>` to represent future visual latents. On the action side, Stage I-II uses autoregressive action tokens (following Pertsch et al.), while Stage III switches to a 16-layer Diffusion Transformer action expert, outputting continuous action trajectories conditioned on latent representations via self- and cross-attention. Training data is generated by an automatic CoT annotation pipeline driven by "semantic anchors (Qwen3-VL object extraction) + temporal anchors (gripper state segmentation)," constructing LIBERO-LaRA, Bridge-LaRA, and real robot datasets. Training is divided into three stages: explicit CoT fine-tuning → progressive latent replacement → action expert adaptation.
+LaRA-VLA uses Qwen3-VL as the VLM backbone, adding a special token `<img_next>` to represent future visual latents. On the action side, Stage I-II use autoregressive action tokens (following Pertsch et al.), while Stage III switches to a 16-layer Diffusion Transformer action expert, which outputs continuous action trajectories conditioned on latent representations via self- and cross-attention. Training data is generated by an automated CoT labeling pipeline driven by "semantic anchors (object extraction via Qwen3-VL) + temporal anchors (gripper state segmentation)," constructing LIBERO-LaRA, Bridge-LaRA, and real-world robot data. The entire training is divided into three stages: explicit CoT fine-tuning → progressive latent replacement → action expert adaptation.
 
 ### Key Designs
 
 1. **Stage I: Explicit CoT Fine-tuning + Visual Latent Alignment + Inverse Dynamics Supervision**:
 
-    - **Function**: Enables the model to first learn "see image + hear instruction → write structured textual reasoning + predict next-frame visual features + output action."
-    - **Mechanism**: CoT branch uses teacher forcing to optimize $\mathcal{L}_{\text{cot}} = -\sum_t \log p_\theta(c_t \mid c_{<t}, \mathbf{v}, \mathbf{x})$; visual branch predicts next-frame latent $\hat{\mathbf{z}}_{t+1}$ and aligns via $\ell_1$ loss $\mathcal{L}_{\text{vis}} = \|\hat{\mathbf{z}}_{t+1} - \mathbf{z}_{t+1}\|_1$, with target latents provided by an **EMA copy** of the same visual encoder $\bar{\theta}_v^t = \tau_v \bar{\theta}_v^{t-1} + (1 - \tau_v) \theta_v^t$ to prevent representation collapse; action branch uses inverse dynamics $f(\mathbf{v}_t, \mathbf{v}_{t+1} \mid \mathbf{x}, c) = \mathbf{a}_t$ to bridge predicted visuals.
-    - **Design Motivation**: Directly learning latent reasoning is hard to converge, so explicit CoT is first used to inject "task decomposition, spatial localization, motion direction" structure into the model; EMA target network is a standard BYOL/JEPA technique to prevent both prediction and target collapsing to trivial solutions.
+    - **Function**: Enables the model to learn "see image + hear instruction → write structured textual reasoning + predict next-frame visual features + output actions."
+    - **Mechanism**: The CoT side optimizes $\mathcal{L}_{\text{cot}} = -\sum_t \log p_\theta(c_t \mid c_{<t}, \mathbf{v}, \mathbf{x})$ via teacher forcing. The visual side predicts the next-frame latent $\hat{\mathbf{z}}_{t+1}$ for $\ell_1$ alignment $\mathcal{L}_{\text{vis}} = \|\hat{\mathbf{z}}_{t+1} - \mathbf{z}_{t+1}\|_1$. The target latent is provided by an EMA copy of the **same visual encoder** $\bar{\theta}_v^t = \tau_v \bar{\theta}_v^{t-1} + (1 - \tau_v) \theta_v^t$ to prevent representation collapse. The action side uses inverse dynamics $f(\mathbf{v}_t, \mathbf{v}_{t+1} \mid \mathbf{x}, c) = \mathbf{a}_t$, using predicted vision as a bridge.
+    - **Design Motivation**: Learning latent reasoning directly is difficult to converge, so explicit CoT is first used to inject structure like "task decomposition, spatial localization, and movement direction." The EMA target network is a standard technique from BYOL/JEPA to prevent both prediction and target from collapsing to trivial solutions.
 
 2. **Stage II: Curriculum Replacement of Discrete CoT Tokens**:
 
     - **Function**: Gradually internalizes explicit textual CoT into latent representations.
-    - **Mechanism**: Training objective remains $\mathcal{L}_{\text{cot}} + \mathcal{L}_{\text{vis}}$, but according to a preset schedule, tokens in the CoT sequence are randomly masked and replaced with learnable latents. As training progresses, the proportion of discrete tokens monotonically decreases to zero, with all reasoning carried by latents. Visual latent prediction target remains unchanged, serving as **implicit supervision** to ensure latents still encode corresponding visual/semantic information.
-    - **Design Motivation**: Fully switching to latents at once would lose structured reasoning; curriculum allows the model to adapt gradually, always retaining some explicit tokens as anchors to prevent latents from degenerating into "uninformative placeholders." Retaining $\mathcal{L}_{\text{vis}}$ is key—visual consistency constraints prevent latents from collapsing to trivial representations.
+    - **Mechanism**: The training objective maintains $\mathcal{L}_{\text{cot}} + \mathcal{L}_{\text{vis}}$, but tokens in the CoT sequence are randomly masked and replaced with learnable latents according to a preset schedule. As training progresses, the proportion of discrete tokens decreases monotonically to zero, with all reasoning carried by latents. Visual latent prediction remains unchanged as **implicit supervision**, constraining latents to still encode corresponding visual/semantics.
+    - **Design Motivation**: Fully switching to latents immediately would lose structured reasoning; curriculum training allows the model to adapt gradually, with some explicit tokens serving as anchors at each step to prevent latents from degenerating into "placeholders that learn nothing." Maintaining $\mathcal{L}_{\text{vis}}$ is crucial—latents must be constrained by visual consistency to avoid collapsing into trivial representations.
 
-3. **Stage III: Action Expert Adaptation + Discarding Textual Token Output**:
+3. **Stage III: Action Expert Adaptation + Deprecation of Textual Token Output**:
 
-    - **Function**: Removes explicit action tokens, feeding latent reasoning directly into the Diffusion Transformer to output continuous control trajectories.
-    - **Mechanism**: Removes autoregressive action tokens, adds a 16-layer alternating self-/cross-attention Diffusion Transformer as the action expert, conditioned on latent representations to generate action chunks. During VLM inference, CoT is no longer output, greatly reducing KV-cache usage.
-    - **Design Motivation**: Coexistence of action expert and autoregressive tokens is only for training stability; final deployment requires the shortest path of "latent reasoning + continuous actions." Diffusion is also better suited for fine control than discrete action tokens, consistent with findings from $\pi_0$, OpenVLA-OFT.
+    - **Function**: Removes explicit action tokens and feeds latent reasoning directly into the Diffusion Transformer for continuous control trajectories.
+    - **Mechanism**: Autoregressive action tokens are removed, and a 16-layer Diffusion Transformer with alternating self-/cross-attention is added as the action expert, generating action chunks conditioned on latent representations. During VLM inference, CoT is no longer output, significantly reducing KV-cache usage.
+    - **Design Motivation**: The coexistence of the action expert and autoregressive tokens is only for training stability. Final deployment seeks the shortest path of "latent reasoning + continuous action." Diffusion is also better suited for fine-grained control than discrete action tokens, consistent with findings from $\pi_0$ and OpenVLA-OFT.
 
 ### Loss & Training
-Total loss = $\mathcal{L}_{\text{cot}} + \mathcal{L}_{\text{vis}} + \mathcal{L}_{\text{act-dis}}$ (Stage I-II); Stage III switches to diffusion training objective + $\mathcal{L}_{\text{vis}}$ maintained. Curriculum schedule is implemented by gradually increasing the mask probability. EMA decay rate $\tau_v$ is a key hyperparameter: too small leads to collapse, too large lags behind the online encoder.
+Total Loss = $\mathcal{L}_{\text{cot}} + \mathcal{L}_{\text{vis}} + \mathcal{L}_{\text{act-dis}}$ (Stage I-II). Stage III switches to the diffusion training objective while maintaining $\mathcal{L}_{\text{vis}}$. The curriculum schedule is implemented by gradually increasing the masking probability. The EMA decay rate $\tau_v$ is a key hyperparameter; too small leads to collapse, too large fails to keep up with online encoder updates.
 
 ## Key Experimental Results
 
@@ -73,51 +73,51 @@ Total loss = $\mathcal{L}_{\text{cot}} + \mathcal{L}_{\text{vis}} + \mathcal{L}_
 Comparison with SOTA on LIBERO (Table 2, partial results):
 
 | Type | Method | Spatial | Goal | Object | Long | Avg. |
-|------|--------|---------|------|--------|------|------|
+|------|------|---------|------|--------|------|------|
 | No CoT | OpenVLA | 84.7 | 88.4 | 79.2 | 53.7 | 76.5 |
 | No CoT | OpenVLA-OFT | 97.6 | 98.4 | 97.9 | 94.5 | 97.1 |
 | Textual CoT | ThinkAct | 88.3 | 91.4 | 87.1 | 70.9 | 84.4 |
 | Textual CoT | $\pi_{0.5}$ | 98.8 | 98.2 | 98.0 | 92.4 | 96.8 |
 
-LaRA-VLA consistently outperforms all CoT-based methods in this table and reports inference latency reductions of up to **90%** compared to explicit CoT baselines.
+LaRA-VLA consistently leads all CoT-based methods in this table, reporting a reduction in inference latency by **up to 90%** compared to explicit CoT baselines.
 
 ### Ablation Study
 
 | Configuration | Avg. Success Rate | Inference Latency |
-|---------------|------------------|------------------|
+|------|-----------|---------|
 | Stage I (Explicit CoT) | High | Slow (~1-5 Hz) |
-| Mid Stage II (Partial Latent) | Near | Moderate |
-| Stage III (Full Latent + Expert) | Same/Slightly Higher | **Fast** (Real-time) |
-| w/o EMA target | Significantly drops (latent collapse) | — |
-| w/o Visual Latent Prediction | Long-horizon tasks drop | — |
+| Mid-Stage II (Partial latent) | Comparable | Medium |
+| Stage III (All latent + expert) | Parity/Slightly up | **Fast** (Real-time) |
+| w/o EMA target | Significant drop (Latent collapse) | — |
+| w/o Visual latent prediction | Drop in long-horizon tasks | — |
 
-Both EMA and visual prediction supervision are essential for maintaining latent structure; skipping curriculum training leads to non-convergent latents.
+Both EMA and visual prediction supervision are indispensable for maintaining latent structure. Skipping curriculum training steps leads to non-convergence of latents.
 
 ### Key Findings
-- **No trade-off between efficiency and performance**: Latentization reduces inference latency by an order of magnitude, with performance maintained or improved, as discrete tokens inherently introduce representational noise.
-- **Multimodal latents supervise each other**: Visual latents serve as "implicit grounding" for textual latents; without them, training textual latents alone loses semantics.
-- **Greatest benefit for long-horizon tasks**: Stage III shows the most significant improvement on long-horizon tasks like LIBERO-Long, as the saved token budget can be used for actual execution.
+- **Efficiency vs. Performance No Longer a Trade-off**: After latentization, inference latency drops by an order of magnitude while performance remains equal or higher, as discrete tokens inherently introduce representation noise.
+- **Multimodal Latent Mutual Supervision**: Visual latents act as "implicit grounding" for textual latents; without them, training textual latents alone loses semantics.
+- **Long-Horizon Tasks Benefit Most**: Stage III shows the most significant improvement on long-horizon tasks like LIBERO-Long, as the saved token budget can be utilized for actual execution.
 
 ## Highlights & Insights
-- The proposition that "CoT's effectiveness comes from structure, not textuality" is realized as a complete algorithmic stack, avoiding the forced imposition of LLM discrete priors into continuous control scenarios.
-- Curriculum replacement is an elegant softening of "explicit-to-implicit"—more stable than Coconut's direct latent switch, and more systematic than SIM-CoT's stabilization techniques.
-- Visual latents + EMA targets essentially introduce BYOL/JEPA into VLA training, serving as a physical constraint source for "latent reasoning," preventing latents from degenerating into dispensable placeholders.
+- Implement the proposition "CoT effectiveness comes from structure, not textuality" into a complete algorithmic stack, avoiding the forcing of LLM discrete priors into continuous control scenarios.
+- Curriculum replacement is an elegant "explicit-to-implicit" softening approach—stabler than Coconut's direct latent replacement and more systematic than SIM-CoT's stabilization techniques.
+- Visual latents + EMA targets essentially introduce BYOL/JEPA into VLA training as sources of physical constraints for "latent reasoning," preventing latents from degenerating into optional placeholders.
 
 ## Limitations & Future Work
-- The number of reasoning latents is a manually set hyperparameter; the optimal ratio to task complexity has not been explored. Too few impairs capability, too many wastes resources.
-- Real robot data scale is limited; long-term embodied generalization (lighting, novel objects, post-disaster scenarios) remains unverified.
-- The VLM backbone is fixed to Qwen3-VL; lack of scaling experiments with different VLM capacities makes it unclear whether latent reasoning continues to benefit from larger models.
+- The number of reasoning latents is a manually set hyperparameter; the optimal ratio relative to task complexity remains unexplored. Too few latents impair performance, while too many are wasteful.
+- Real-world robot data scale is limited; long-term embodied generalization (lighting, new objects, post-disaster scenarios) is not yet verified.
+- The VLM backbone is locked to Qwen3-VL; a lack of scaling experiments across different VLM capacities makes it difficult to determine if latent reasoning continues to benefit with model size.
 
 ## Related Work & Insights
-- **vs Fast-ThinkAct**: Fast-ThinkAct only latentizes text, visual remains a discrete trace; LaRA-VLA is fully latent in both modalities, with visual latents supervising textual latents.
-- **vs CoT-VLA / DreamVLA**: They use VQ-VAE to discretize vision into tokens for CoT; this work directly uses continuous visual latents, avoiding discretization loss.
-- **vs Coconut (LLM latent CoT)**: Transfers latent CoT techniques from language to VLA, adding visual and action anchors to address the risk of "latents losing semantics."
+- **vs. Fast-ThinkAct**: Fast-ThinkAct only latentizes text, while vision remains discrete traces. LaRA-VLA is fully latent for both modalities, and visual latents in turn supervise textual latents.
+- **vs. CoT-VLA / DreamVLA**: They use VQ-VAE to turn vision into discrete tokens for CoT; ours uses continuous visual latents directly, avoiding discretization loss.
+- **vs. Coconut (LLM Latent CoT)**: Migrates latent CoT technology from the language domain to VLA, adding visual and action anchors to resolve the risk of "latents losing semantics."
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Latent CoT cross-modal extension to VLA is a clear incremental + integration innovation.
-- Experimental Thoroughness: ⭐⭐⭐⭐ LIBERO multi-split + real robot + multiple baselines, comprehensive coverage.
-- Writing Quality: ⭐⭐⭐⭐ Three-stage framework is clearly explained; Table 1 taxonomy aids understanding and positioning.
-- Value: ⭐⭐⭐⭐⭐ Solves the real-time bottleneck of VLA + CoT, directly valuable for real-world robot deployment.
+- Novelty: ⭐⭐⭐⭐ Extending Latent CoT across modalities to VLA is a clear incremental + integration innovation.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Multiple LIBERO splits + real-world robot + multiple baselines, providing comprehensive coverage.
+- Writing Quality: ⭐⭐⭐⭐ The three-stage framework is explained clearly, and the taxonomy in Table 1 aids positioning understanding.
+- Value: ⭐⭐⭐⭐⭐ Resolves the real-time bottleneck of VLA + CoT, holding direct value for real robot deployment.
 
 <!-- RELATED:START -->
 
@@ -125,11 +125,11 @@ Both EMA and visual prediction supervision are essential for maintaining latent 
 
 ## Related Papers
 
+- [\[ICML 2026\] LangForce: Bayesian Decomposition of Vision-Language-Action Models via Latent Action Queries](langforce_bayesian_decomposition_of_vision_language_action_models_via_latent_act.md)
 - [\[CVPR 2026\] Fast-ThinkAct: Efficient Vision-Language-Action Reasoning via Verbalizable Latent Planning](../../CVPR2026/robotics/fast-thinkact_efficient_vision-language-action_reasoning_via_verbalizable_latent.md)
-- [\[CVPR 2026\] Chain of World: World Model Thinking in Latent Motion (CoWVLA)](../../CVPR2026/robotics/chain_of_world_world_model_thinking_in_latent_motion.md)
-- [\[NeurIPS 2025\] ThinkAct: Vision-Language-Action Reasoning via Reinforced Visual Latent Planning](../../NeurIPS2025/robotics/thinkact_vision-language-action_reasoning_via_reinforced_visual_latent_planning.md)
-- [\[ICML 2026\] Embodied Interpretability: Linking Causal Understanding to Generalization in Vision-Language-Action Models](embodied_interpretability_linking_causal_understanding_to_generalization_in_visi.md)
-- [\[ICML 2026\] Seeing Realism from Simulation: Efficient Video Transfer for Vision-Language-Action Data Augmentation](seeing_realism_from_simulation_efficient_video_transfer_for_vision-language-acti.md)
+- [\[ICML 2026\] Discrete Diffusion VLA: Bringing Discrete Diffusion to Action Decoding in Vision-Language-Action Policies](discrete_diffusion_vla_bringing_discrete_diffusion_to_action_decoding_in_vision-.md)
+- [\[ICML 2026\] SpecPrune-VLA: Accelerating Vision-Language-Action Models via Action-Aware Self-Speculative Pruning](specprune-vla_accelerating_vision-language-action_models_via_action-aware_self-s.md)
+- [\[ICML 2026\] StableVLA: Towards Robust Vision-Language-Action Models without Extra Data](stablevla_towards_robust_vision-language-action_models_without_extra_data.md)
 
 </div>
 

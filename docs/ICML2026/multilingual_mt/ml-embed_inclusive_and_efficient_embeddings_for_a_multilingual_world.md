@@ -157,11 +157,11 @@ The 8B model ranks first in 9 out of 17 benchmarks, with especially large improv
 
 ## Related Papers
 
-- [\[AAAI 2026\] Bridging the Multilingual Safety Divide: Efficient, Culturally-Aware Alignment for Global South Languages](../../AAAI2026/multilingual_mt/bridging_the_multilingual_safety_divide_efficient_culturally-aware_alignment_for.md)
+- [\[ACL 2026\] NiuTrans.LMT: Toward Inclusive and Scalable Multilingual Machine Translation with LLMs](../../ACL2026/multilingual_mt/niutranslmt_toward_inclusive_and_scalable_multilingual_machine_translation_with_.md)
 - [\[AAAI 2026\] STELLAR: Scene Text Editor for Low-Resource Languages and Real-World Data](../../AAAI2026/multilingual_mt/stellar_scene_text_editor_for_low-resource_languages_and_real-world_data.md)
-- [\[ACL 2026\] Efficient Training for Cross-lingual Speech Language Models](../../ACL2026/multilingual_mt/efficient_training_for_cross-lingual_speech_language_models.md)
-- [\[ACL 2026\] Alexandria: A Multi-Domain Dialectal Arabic Machine Translation Dataset for Culturally Inclusive and Linguistically Diverse LLMs](../../ACL2026/multilingual_mt/alexandria_a_multi-domain_dialectal_arabic_machine_translation_dataset_for_cultu.md)
-- [\[NeurIPS 2025\] Note 7: Value-Guided Search - Efficient Chain-of-Thought Reasoning](../../NeurIPS2025/multilingual_mt/polymath_evaluating_mathematical_reasoning_in_multilingual_contexts.md)
+- [\[AAAI 2026\] Bridging the Multilingual Safety Divide: Efficient, Culturally-Aware Alignment for Global South Languages](../../AAAI2026/multilingual_mt/bridging_the_multilingual_safety_divide_efficient_culturally-aware_alignment_for.md)
+- [\[ICML 2026\] Toward Robust Multilingual Adaptation of LLMs for Low-Resource Languages](toward_robust_multilingual_adaptation_of_llms_for_low-resource_languages.md)
+- [\[ACL 2026\] Efficient Low-Resource Language Adaptation via Multi-Source Dynamic Logit Fusion](../../ACL2026/multilingual_mt/efficient_low-resource_language_adaptation_via_multi-source_dynamic_logit_fusion.md)
 
 </div>
 

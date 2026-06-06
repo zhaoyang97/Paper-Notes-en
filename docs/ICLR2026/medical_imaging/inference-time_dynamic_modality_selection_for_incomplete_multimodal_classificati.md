@@ -147,7 +147,7 @@ PolyMNIST at 80% missing: DyMo surpasses OnlineMAE by +5.67%; DVM with full tabu
 - [\[AAAI 2026\] MIRAGE: Scaling Test-Time Inference with Parallel Graph-Retrieval-Augmented Reasoning Chains](../../AAAI2026/medical_imaging/mirage_scaling_test-time_inference_with_parallel_graph-retrieval-augmented_reaso.md)
 - [\[ICLR 2026\] Adaptive Domain Shift in Diffusion Models for Cross-Modality Image Translation](adaptive_domain_shift_in_diffusion_models_for_cross-modality_image_translation.md)
 - [\[CVPR 2026\] GLEAM: A Multimodal Imaging Dataset and HAMM for Glaucoma Classification](../../CVPR2026/medical_imaging/gleam_a_multimodal_imaging_dataset_and_hamm_for_gl.md)
-- [\[ICLR 2026\] Decentralized Attention Fails Centralized Signals: Rethinking Transformers for Medical Time Series](decentralized_attention_fails_centralized_signals_rethinking_transformers_for_me.md)
+- [\[ICML 2026\] Controllable Generative Sandbox for Causal Inference](../../ICML2026/medical_imaging/controllable_generative_sandbox_for_causal_inference.md)
 
 </div>
 

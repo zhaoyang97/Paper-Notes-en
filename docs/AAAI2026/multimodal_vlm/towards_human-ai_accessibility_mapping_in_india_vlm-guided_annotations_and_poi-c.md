@@ -164,8 +164,8 @@ Mean utility score: **4.66/5**
 
 - [\[CVPR 2026\] VLM-Guided Group Preference Alignment for Diffusion-based Human Mesh Recovery](../../CVPR2026/multimodal_vlm/vlm-guided_group_preference_alignment_for_diffusion-based_human_mesh_recovery.md)
 - [\[CVPR 2026\] HumanVBench: Probing Human-Centric Video Understanding in MLLMs with Automatically Synthesized Benchmarks](../../CVPR2026/multimodal_vlm/humanvbench_probing_human_centric_video_understanding_in_mllms_with_automatica.md)
-- [\[AAAI 2026\] Towards Scalable Web Accessibility Audit with MLLMs as Copilots](towards_scalable_web_accessibility_audit_with_mllms_as_copilots.md)
 - [\[ICLR 2026\] VLM-SubtleBench: How Far Are VLMs from Human-Level Subtle Comparative Reasoning?](../../ICLR2026/multimodal_vlm/vlm-subtlebench_how_far_are_vlms_from_human-level_subtle_comparative_reasoning.md)
+- [\[AAAI 2026\] Towards Scalable Web Accessibility Audit with MLLMs as Copilots](towards_scalable_web_accessibility_audit_with_mllms_as_copilots.md)
 - [\[AAAI 2026\] CreBench: Human-Aligned Creativity Evaluation from Idea to Process to Product](crebench_human-aligned_creativity_evaluation_from_idea_to_process_to_product.md)
 
 </div>

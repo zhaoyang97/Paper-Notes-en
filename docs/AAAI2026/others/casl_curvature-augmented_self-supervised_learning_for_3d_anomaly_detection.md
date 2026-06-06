@@ -146,9 +146,9 @@ The idea of using curvature as a geometric prior to guide reconstruction can be 
 
 - [\[NeurIPS 2025\] Semi-supervised Graph Anomaly Detection via Robust Homophily Learning](../../NeurIPS2025/others/semi-supervised_graph_anomaly_detection_via_robust_homophily_learning.md)
 - [\[AAAI 2026\] RcAE: Recursive Reconstruction Framework for Unsupervised Industrial Anomaly Detection](rcae_recursive_reconstruction_framework_for_unsupervised_industrial_anomaly_dete.md)
+- [\[ICML 2026\] Towards Optimal Robustness in Learning-Augmented Paging](../../ICML2026/others/towards_optimal_robustness_in_learning-augmented_paging.md)
 - [\[NeurIPS 2025\] ADPretrain: Advancing Industrial Anomaly Detection via Anomaly Representation Pretraining](../../NeurIPS2025/others/adpretrain_advancing_industrial_anomaly_detection_via_anomaly_representation_pre.md)
-- [\[CVPR 2026\] Integration of Deep Generative Anomaly Detection Algorithm in High-Speed Industrial Line](../../CVPR2026/others/integration_of_deep_generative_anomaly_detection_algorithm_in_high-speed_industr.md)
-- [\[ICLR 2026\] OwlEye: Zero-Shot Learner for Cross-Domain Graph Data Anomaly Detection](../../ICLR2026/others/owleye_zero-shot_learner_for_cross-domain_graph_data_anomaly_detection.md)
+- [\[ICML 2026\] Parsimonious Learning-Augmented Online Metric Matching](../../ICML2026/others/parsimonious_learning-augmented_online_metric_matching.md)
 
 </div>
 

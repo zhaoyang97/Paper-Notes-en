@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Many-Shot CoT-ICL: Making In-Context Learning Truly Learn
 description: >-
-  [ICML 2026][LLM Reasoning][many-shot ICL] This paper systematically reveals that the "rules of thumb" for many-shot ICL in non-reasoning tasks **completely fail** in CoT reasoning tasks—similarity retrieval is actually h…
+  [ICML 2026][LLM Reasoning][many-shot ICL] This paper systematically reveals that the "rules of thumb" for many-shot ICL in non-reasoning tasks **completely fail** in CoT reasoning tasks—specifically…
 tags:
   - "ICML 2026"
   - "LLM Reasoning"
@@ -12,7 +12,7 @@ tags:
   - "demonstration ordering"
   - "curvature regularization"
 date: 2026-05-08
-content_hash: b0a6d942e17c393a
+content_hash: 816a680137f84265
 ---
 
 # Many-Shot CoT-ICL: Making In-Context Learning Truly Learn
@@ -24,106 +24,101 @@ content_hash: b0a6d942e17c393a
 **Keywords**: many-shot ICL, chain-of-thought, in-context test-time learning, demonstration ordering, curvature regularization
 
 ## TL;DR
-This paper systematically reveals that the "rules of thumb" for many-shot ICL in non-reasoning tasks **completely fail** in CoT reasoning tasks—similarity retrieval is actually harmful, and order sensitivity increases with the number of shots. The paper reinterprets successful many-shot CoT as "in-context test-time learning," and proposes the CDS method, which sorts demonstrations by embedding trajectory curvature, achieving a 5.42 pp improvement on 64-shot geometry problems.
+This paper systematically reveals that the "rules of thumb" for many-shot ICL in non-reasoning tasks **completely fail** in CoT reasoning tasks—specifically, similarity retrieval becomes harmful and order sensitivity increases with the number of shots. By reinterpreting successful many-shot CoT as "in-context test-time learning," the authors propose the CDS method, which orders demonstrations by embedding trajectory curvature, achieving a 5.42 pp improvement on 64-shot geometry problems.
 
 ## Background & Motivation
 
-**Background**: Long-context LLMs make many-shot ICL feasible. Prior work (Bertsch et al., Baek et al.) observed three rules in non-reasoning tasks (classification, simple QA): (1) performance steadily improves as the number of shots increases; (2) order sensitivity decreases with more shots; (3) similarity-based retrieval (top-k most similar) improves performance. Meanwhile, chain-of-thought (CoT) has become standard for complex reasoning, but CoT-ICL is mostly studied in few-shot settings.
+**Background**: Long-context LLMs have enabled many-shot ICL. Prior works (Bertsch et al., Baek et al.) observed three patterns in non-reasoning tasks (classification, simple QA): (1) performance increases steadily with the number of shots; (2) sensitivity to demonstration order decreases as shots increase; (3) similarity retrieval (top-k most similar) enhances performance. Meanwhile, Chain-of-Thought (CoT) has become the standard for complex reasoning, but CoT-ICL is mostly studied in few-shot settings.
 
-**Limitations of Prior Work**: When CoT is combined with many-shot (i.e., many-shot CoT-ICL), do these three empirical rules still hold? This has not been systematically studied. If the rules still hold, engineering can continue with retrieval/shot stacking; if not, the entire prompt engineering paradigm must be reconsidered. This is not just an engineering issue, but also relates to the fundamental debate on whether ICL is "scalable pattern matching" or "true learning."
+**Limitations of Prior Work**: Whether these three empirical laws hold when CoT is combined with many-shot (i.e., many-shot CoT-ICL) has not been systematically investigated. If the laws hold, prompt engineering can continue with traditional retrieval/stacking strategies; if they are violated, the entire prompt engineering paradigm requires rethinking. This is not just an engineering issue but concerns the fundamental debate of whether ICL is "scaled pattern matching" or "genuine learning."
 
-**Key Challenge**: CoT demonstrations are much longer (in geometry tasks, a single CoT is about 30× longer than BANKING77), contain internal procedural reasoning chains, and require higher model understanding. These properties mean that the traditional many-shot intuition of "more is better, retrieval is right" may not hold in CoT scenarios. If ICL is truly "learning," then demonstrations act as supervision and order is akin to curriculum, requiring gradual progression as in teaching; from a pattern-matching perspective, order should not matter.
+**Key Challenge**: CoT demonstrations are significantly longer (e.g., a single CoT in geometry tasks is ~30× longer than in BANKING77), contain internal procedural reasoning chains, and demand higher-level understanding from the model. these properties suggest that traditional many-shot intuitions like "more is better" and "retrieval is correct" may not hold in CoT scenarios. If ICL truly involves "learning," then demonstrations serve as supervision and the order acts as a curriculum, requiring a gradual progression similar to teaching; whereas in a pattern-matching view, order should not matter.
 
-**Goal**: (1) Systematically characterize the scaling, retrieval, and ordering behaviors of many-shot CoT-ICL; (2) Identify the root causes for the failure of empirical rules; (3) Propose a new perspective to unify the observed phenomena and guide demonstration selection/ordering.
+**Goal**: (1) Systematically characterize the scaling, retrieval, and ordering behaviors of many-shot CoT-ICL; (2) Identify the root causes for the failure of empirical laws; (3) Propose a new perspective to unify these phenomena and guide demonstration selection/ordering.
 
-**Key Insight**: Many-shot CoT should be viewed as **in-context test-time learning**: the long-context window is not just a "retrieval cache," but an implicit curriculum, and the model's forward pass is a form of gradient-free adaptation. This perspective naturally leads to two pedagogical principles: (P1) demonstrations must be **understandable to the model** to serve as effective supervision; (P2) demonstration order must **transition smoothly**, avoiding abrupt conceptual jumps that disrupt the implicit learning trajectory.
+**Key Insight**: many-shot CoT is viewed as **in-context test-time learning**: the long-context window is not merely a "retrieval cache" but an implicit curriculum, and the model's forward pass functions as a gradient-free adaptation. This perspective leads to two pedagogical principles: (P1) demonstrations must be **understandable to the model** to serve as effective supervision; (P2) demonstration sequences must provide **smooth transitions** to avoid abrupt conceptual jumps that disrupt the implicit learning trajectory.
 
-**Core Idea**: Based on P2, treat demonstration order as a trajectory in embedding space, where **total curvature** (sum of angles between adjacent displacements) quantifies the "smoothness" of the order; minimizing total curvature yields a coherent in-context curriculum—this is Curvilinear Demonstration Selection (CDS).
+**Core Idea**: Based on P2, the demonstration sequence is treated as a trajectory in the embedding space. The **total curvature** (the sum of angles between adjacent displacements) is used as a quantitative metric for "smoothness." Minimizing the total curvature yields a coherent in-context curriculum—referred to as Curvilinear Demonstration Selection (CDS).
 
 ## Method
 
 ### Overall Architecture
-The paper first conducts extensive diagnostic experiments to expose the failure of the three rules, then reconstructs the theory from the in-context test-time learning perspective, and finally implements CDS. **Diagnostic phase** uses 4 non-reasoning LLMs (LLaMA 3.1 8B / 3.3 70B / Qwen2.5 7B / 14B) and 4 reasoning LLMs (Qwen3 8B / 14B / QwQ 32B / DeepSeek-R1 685B), running 1-128 shots on classification tasks (SuperGLUE, NLU, TREC, BANKING77) and math/narrative reasoning tasks (GSM8K, MATH's geometry / number_theory / counting_and_probability, DetectiveQA), all evaluated with open-ended generation + exact match. **CDS algorithm** seeks a permutation $O = [\mathbf{d}_{\pi(1)}, \ldots, \mathbf{d}_{\pi(n)}]$ of $n$ demonstrations that minimizes total curvature $\Theta(O) = \sum_{t=2}^{n-1} \arccos\!\left(\frac{\mathbf{v}_t \cdot \mathbf{v}_{t+1}}{\|\mathbf{v}_t\|\|\mathbf{v}_{t+1}\|}\right)$, where $\mathbf{v}_t = \tilde{\mathbf{e}}_t - \tilde{\mathbf{e}}_{t-1}$ is the displacement vector between adjacent projected demonstration embeddings.
+The paper first conducts extensive diagnostic experiments to expose the failure of the three empirical laws, then reconstructs the theory through the lens of in-context test-time learning, and finally implements CDS. **The diagnostic phase** involves 4 non-reasoning LLMs (LLaMA 3.1 8B / 3.3 70B / Qwen2.5 7B / 14B) and 4 reasoning-oriented LLMs (Qwen3 8B / 14B / QwQ 32B / DeepSeek-R1 685B), tested on classification tasks (SuperGLUE, NLU, TREC, BANKING77) and math/narrative reasoning tasks (GSM8K, MATH subdomains, DetectiveQA) across 1-128 shots using open-ended generation and exact match evaluation. **The CDS algorithm** finds a permutation $O = [\mathbf{d}_{\pi(1)}, \ldots, \mathbf{d}_{\pi(n)}]$ for $n$ demonstrations that minimizes the total curvature $\Theta(O) = \sum_{t=2}^{n-1} \arccos\!\left(\frac{\mathbf{v}_t \cdot \mathbf{v}_{t+1}}{\|\mathbf{v}_t\|\|\mathbf{v}_{t+1}\|}\right)$, where $\mathbf{v}_t = \tilde{\mathbf{e}}_t - \tilde{\mathbf{e}}_{t-1}$ represents the displacement vector of projected embeddings.
 
 ### Key Designs
 
-1. **Diagnostic Experiments: Exposing the Simultaneous Failure of Three Empirical Rules in CoT Reasoning**:
-
-    - Function: Uses controlled comparisons to rigorously test whether each rule still holds.
-    - Mechanism: (A) **Scaling**: On reasoning tasks like geometry/number_theory, non-reasoning LLMs show **unstable or even declining** performance as shot count increases (e.g., LLaMA 3.3 70B exhibits negative gain in CoT-ICL); only reasoning-oriented LLMs (Qwen3, QwQ, R1) show monotonic positive scaling. Table 1 further shows that disabling thinking mode on Qwen3 drops geometry accuracy by 7 pp, proving reasoning prior is necessary for scaling. (B) **Retrieval**: Embedding cosine top-k (most similar) vs bottom-k (least similar); on BANKING77, top-k significantly outperforms bottom-k (validating retrieval hypothesis), but on geometry/number_theory/DetectiveQA, top-k performs **worst**—semantic similarity does not predict procedural compatibility. (C) **Ordering**: Standard deviation over 5 random permutations; in non-reasoning tasks, std decreases with more shots, but in reasoning tasks, std **increases** with more shots, indicating strong and deepening path dependence.
-    - Design Motivation: By systematically testing each "common sense" of many-shot ICL in CoT reasoning, the simultaneous failure across three independent dimensions convincingly demonstrates that "CoT-ICL is fundamentally different," not just a dataset coincidence. This "triangulation" is a paradigm for diagnostic empirical work, more persuasive than a single phenomenon.
+1. **Diagnostic Experiments: Exposing the simultaneous failure of empirical laws in CoT reasoning**:
+    - **Function**: Utilizes a comparative design to examine whether standard laws still hold.
+    - **Mechanism**: (A) **Scaling**: Running reasoning tasks on non-reasoning LLMs shows that increasing shots results in unstable or even **declining performance** (e.g., LLaMA 3.3 70B showing negative gain in CoT-ICL); only reasoning-oriented LLMs (Qwen3, QwQ, R1) demonstrate monotonic positive scaling. (B) **Retrieval**: top-k similarity significantly outperforms bottom-k in BANKING77, but top-k is **consistently the worst** in geometry/number_theory/DetectiveQA—semantic similarity does not predict procedural compatibility. (C) **Ordering**: The standard deviation across random permutations decreases with shots in non-reasoning tasks but **increases with shots** in reasoning tasks, indicating strong and deepening path dependence.
+    - **Design Motivation**: By contrasting many-shot "common sense" against CoT reasoning across three independent dimensions, the authors demonstrate that "CoT-ICL is a different beast" rather than a dataset-specific fluke.
 
 2. **Direct Evidence for Procedure Absorption: Corrupted CoT Ablation**:
+    - **Function**: Decouples the hypothesis that "the model only uses the final answer $y$" from "the model truly absorbs the intermediate reasoning $C$."
+    - **Mechanism**: Two prompt versions are constructed for geometry tasks: a normal version $(x_i, C_i, y_i)$ and a **procedurally corrupted** version $(x_i, C_0, y_i)$, where all rationales are replaced by the chain from the first demonstration while keeping the questions and final answers intact. At $n=128$, the corrupted version causes a performance drop of 1.25 pp for Qwen3-8B and 2.51 pp for Qwen3-14B.
+    - **Design Motivation**: This provides counterfactual evidence that the model "reads" the procedural content of demonstrations. The larger gap in long prompts suggests that procedure is the true signal for scaling.
 
-    - Function: Separates the hypotheses "the model only uses the final answer $y$" and "the model truly absorbs the intermediate reasoning $C$."
-    - Mechanism: On geometry, constructs two prompt sets—normal $(x_i, C_i, y_i)$ and **procedurally corrupted** $(x_i, C_0, y_i)$, where all rationales are replaced with the first demonstration's chain, but each question and final answer are retained. This controls for format, context length, and $x \to y$ mapping, only altering $C$. Table 2: At $n=16$, the two groups are nearly identical; at $n=128$, the corrupted version causes Qwen3-8B to drop 1.25 pp and Qwen3-14B to drop 2.51 pp.
-    - Design Motivation: Provides direct counterfactual evidence for whether the model is truly reading the demonstration's procedure. Small differences with short prompts indicate the model can learn from both IO and CoT; large differences with long prompts indicate procedure is the true scaling signal—offering hard evidence for the "in-context test-time learning" perspective, much more convincing than philosophical arguments.
-
-3. **Curvilinear Demonstration Selection (CDS): Minimizing Total Curvature Ordering**:
-
-    - Function: Based on the smooth transition principle, finds an ordering of $n$ demonstrations that yields the smoothest implicit learning trajectory.
-    - Mechanism: (i) Each demonstration $\mathbf{d}_i$ (question + CoT + answer) is encoded using Qwen3-Embedding-4B into $\mathbf{e}_i \in \mathbb{R}^d$, crucially using the **full demonstration** rather than just the question—since order effects depend on procedural content, question alone misses CoT structure. (ii) All prompt embeddings are projected to a low-dimensional subspace $\tilde{\mathbf{e}}_i \in \mathbb{R}^{d'}$ for stable curvature estimation. (iii) Local curvature $\theta_i = \arccos\!\left(\frac{(\tilde{\mathbf{e}}_i - \tilde{\mathbf{e}}_{i-1}) \cdot (\tilde{\mathbf{e}}_{i+1} - \tilde{\mathbf{e}}_i)}{\|\cdot\|\|\cdot\|}\right)$ is defined as the angle between adjacent displacements, and total curvature $\Theta(O) = \sum_{i=2}^{n-1}\theta_i$. (iv) Searches for a permutation minimizing $\Theta$ (algorithm details in Section 6).
-    - Design Motivation: The authors observe that ordering curvature is significantly negatively correlated with accuracy (overall $r=-0.547$, geometry $-0.545$, counting $-0.628$), so minimizing curvature is a natural objective. To rule out "just clustering similar items," they introduce a high-curvature reverse baseline—preserving local neighborhoods but reversing the curvature objective to create abrupt transitions—and find CDS still outperforms, proving that **smooth transition itself** rather than clustering is the causal factor. This causal smoothness ablation is a methodological highlight.
+3. **Curvilinear Demonstration Selection (CDS): Minimizing Total Curvature**:
+    - **Function**: Finds an optimal permutation that makes the implicit learning trajectory as smooth as possible.
+    - **Mechanism**: (i) Each demonstration $\mathbf{d}_i$ (question + CoT + answer) is encoded into $\mathbf{e}_i \in \mathbb{R}^d$ using Qwen3-Embedding-4B. (ii) All embeddings are projected into a low-dimensional subspace $\tilde{\mathbf{e}}_i \in \mathbb{R}^{d'}$ for stable curvature estimation. (iii) Local curvature $\theta_i$ is defined as the angle between adjacent displacement vectors, with the objective to minimize $\Theta(O) = \sum \theta_i$.
+    - **Design Motivation**: The authors observed a significant negative correlation between ordering curvature and accuracy (e.g., $r = -0.545$ for geometry). To prove causality, they compared CDS against a "high-curvature" baseline (which flips the goal to maximize abrupt transitions) and found CDS still superior, confirming that **smooth transition itself** is the causal factor.
 
 ### Loss & Training
-CDS is a **pure inference-time** algorithm, with no training involved. The underlying embedding model is Qwen3-Embedding-4B (off-the-shelf). Evaluation models include LLaMA, Qwen2.5, Qwen3, QwQ, and DeepSeek-R1 series, with prompt context up to 131K tokens and shot numbers up to $n \leq 128$.
+CDS is a **purely inference-time** algorithm with no training involved. The underlying embedding model is Qwen3-Embedding-4B (off-the-shelf). Evaluation models include LLaMA, Qwen2.5, Qwen3, QwQ, and DeepSeek-R1 series, with contexts up to 131K tokens and shots up to $n = 128$.
 
 ## Key Experimental Results
 
 ### Main Results
-CDS improvements on Qwen3 series (geometry / number theory / DetectiveQA):
+CDS improvements on the Qwen3 series:
 
-| Task | Model | Setting | n=64 Gain |
+| Task | Model | Configuration | Gain at n=64 |
 |---|---|---|---|
-| Geometry | Qwen3-14B | CDS vs Random Order | **+5.42 pp** |
-| Geometry | Qwen3-14B | n=128 + thinking on | 73.07% vs n=16 at 66.18% |
-| Geometry | Qwen3-14B | thinking on vs off (n=128) | 73.07 vs 65.76 |
-| Number_theory | Qwen3-14B | thinking on vs off (n=128) | 91.30 vs 88.15 |
-| DetectiveQA | Qwen3-8B | thinking on vs off (n=128) | 69.48 vs 66.88 |
+| Geometry | Qwen3-14B | CDS vs. Random | **+5.42 pp** |
+| Geometry | Qwen3-14B | n=128 + thinking on | 73.07% vs. 66.18% (n=16) |
+| Geometry | Qwen3-14B | thinking on vs. off (n=128) | 73.07 vs. 65.76 |
+| Number_theory | Qwen3-14B | thinking on vs. off (n=128) | 91.30 vs. 88.15 |
+| DetectiveQA | Qwen3-8B | thinking on vs. off (n=128) | 69.48 vs. 66.88 |
 
 ### Ablation Study
 
-| Setting | Behavior | Notes |
+| Configuration | Behavior | Description |
 |---|---|---|
 | CDS (low curvature) | Best | Full method |
-| High-curvature baseline | Significantly worse | Same embedding neighborhood, reversed curvature objective |
-| Similarity top-k retrieval | Worse | Semantic similarity does not predict procedural compatibility |
-| Similarity bottom-k | Between top-k and original | Counterintuitive |
-| Procedurally corrupted CoT (n=128) | Significantly worse (-1.25 to -2.51 pp) | Shows procedure is key |
-| Thinking mode disabled | Significantly worse | Reasoning prior is necessary for scaling |
-| Non-reasoning LLM + CoT-ICL | Scaling unstable or negative | Model class determines ability to absorb CoT |
+| High-curvature baseline | Significantly worse | Same neighborhood, reversed curvature objective |
+| Similarity top-k retrieval | Worse | Semantic similarity fails to predict procedural compatibility |
+| Similarity bottom-k | Between top-k and original | Counter-intuitive result |
+| Procedurally corrupted CoT (n=128) | Significantly worse (-1.25 to -2.51 pp) | Proves procedure plays a key role |
+| Thinking mode disabled | Significantly worse | Reasoning prior is a necessity for scaling |
+| Non-reasoning LLM + CoT-ICL | Unstable/Negative scaling | Model class determines ability to absorb CoT |
 
 ### Key Findings
-- **CoT-ICL is not scalable pattern matching**: Similarity retrieval is effective on BANKING77 (non-reasoning) but **reversed** on geometry/number_theory/DetectiveQA (reasoning), refuting the retrieval hypothesis for reasoning tasks.
-- **Order sensitivity increases with shot count** (opposite to non-reasoning tasks): Randomly ordering 100+ demonstrations leads to more "conceptual mutations," triggering procedural discontinuity.
-- **Self-generated CoT outperforms ground-truth CoT**: On weaker models, self-generated CoT (even with wrong answers) outperforms dataset CoT; this advantage narrows as models strengthen, validating P1 ("understandability first").
-- **Scaling gap between reasoning-oriented and non-reasoning LLMs** is rooted in the thinking token—it treats demonstrations as procedural supervision, not just IO pattern matching.
-- **Total curvature is significantly negatively correlated with accuracy** (geometry $r=-0.545$, counting $r=-0.628$), so minimizing curvature is a quantifiable, non-ad-hoc objective.
+- **CoT-ICL is not scaled pattern matching**: Similarity retrieval works for non-reasoning tasks but is **inverted** for reasoning tasks, nullifying the retrieval hypothesis in reasoning scenarios.
+- **Order sensitivity increases with shots**: Unlike non-reasoning tasks, more demonstrations lead to a higher probability of "conceptual mutations" if ordered randomly, triggering procedural incoherence.
+- **Self-generated CoT outperforms ground-truth CoT**: On weaker models, self-generated CoTs (even with wrong answers) perform better than dataset-provided CoTs. This advantage diminishes as models get stronger, validating P1 ("understandability first").
+- **Gaps in scaling between reasoning and non-reasoning LLMs** stem from the thinking mode, which extracts procedural supervision rather than treating IO as a pattern.
+- **Total curvature is significantly negatively correlated with accuracy**, making minimum curvature a justifiable quantitative target rather than an ad-hoc heuristic.
 
 ## Highlights & Insights
-- **In-context test-time learning is a unifying anchor**: From this perspective, scaling failure (P1 violation), similarity failure (procedure mismatches surface), and order sensitivity (P2 violation) are all explained—long context is an implicit curriculum, not a cache. This unified explanation provides clear design guidance for future prompt engineering.
-- **Self-generated CoT outperforms ground-truth CoT** is a highly counterintuitive but reasonable finding: models "understand" their own CoT better, and even with wrong answers, benefit from procedural context. Incorporating this into prompt pipelines is a free engineering upgrade—let weak models train themselves with their own CoT.
-- **Total curvature as an ordering objective**: Quantifies the abstract "smooth transition" as the sum of angles between adjacent displacements, both geometrically intuitive and computationally feasible; causal smoothness ablation with a high-curvature reverse baseline rules out "similarity clustering" confounds, demonstrating methodological rigor.
-- **Using full demonstration for embedding** is a crucial detail: question-only embeddings miss CoT procedural structure; using question + CoT + answer allows curvature to reflect procedural transition difficulty.
+- **In-context test-time learning provides a unified anchor**: This perspective explains scaling failures, retrieval failures, and order sensitivity under one roof: long contexts are implicit curricula, not caches.
+- **Self-generated CoT superiority** is a counter-intuitive finding: models "understand" their own generated rationales better, even if imperfect, benefiting from the procedural context.
+- **Total curvature as an ordering objective**: Quantifying "smooth transitions" as the sum of displacement angles is geometrically intuitive and computationally feasible. The causal ablation using high-curvature baselines effectively rules out clustering as a confounding factor.
+- **Encoding full demonstrations** is a crucial detail: question-only embeddings lose the procedural structure of the CoT.
 
 ## Limitations & Future Work
-- The core "smooth transition" assumption of CDS depends on the embedding space's ability to represent procedural content; if the embedding model poorly encodes CoT internal structure (e.g., instruction-only models), curvature signals may be distorted and the method's effectiveness is not guaranteed.
-- Experiments focus on math and narrative reasoning; it remains unverified whether more complex reasoning types (programming, theorem proving, agentic planning) also exhibit the curvature-performance negative correlation.
-- The paper does not provide the optimization algorithm complexity or comparisons for CDS (a TSP-like ordering problem); minimization itself may become a bottleneck for large shot counts.
-- The advantage of "self-generated CoT over ground-truth" narrows as models strengthen—but whether future strong models can entirely skip self-generation is not quantified.
-- Future work could explore injecting the curvature term as a differentiable regularizer during training (curriculum learning fine-tuning), or combining with RAG chunk ordering for retrieval-aware curriculum.
+- "Smooth transition" relies on the embedding space's ability to represent procedural content; if the embedding model fails to encode CoT structures well, the curvature signal becomes noisy.
+- Experiments focus on math and narrative reasoning; whether more complex types like programming or agentic planning satisfy the curvature-performance correlation remains unverified.
+- The complexity of the CDS optimization algorithm for very large $n$ is not detailed.
+- Future work could explore injecting curvature as a differentiable regularizer during training or combining it with chunk ordering in RAG.
 
 ## Related Work & Insights
-- **vs Bertsch et al. / Baek et al. (many-shot ICL)**: They found scale + order robustness + effective retrieval in non-reasoning tasks; this paper demonstrates all three fail simultaneously in CoT reasoning, providing a key corrective.
-- **vs Auto-CoT (Zhang et al.) / Dr.ICL (Luo et al.)**: These focus on CoT demonstration selection in few-shot settings; this paper addresses the new dynamics in the many-shot regime.
-- **vs Test-time scaling (Snell et al.)**: Test-time scaling mainly increases inference computation via sample-and-revise; this paper views many-shot CoT as another form of test-time scaling, treating demonstrations as in-context supervision.
-- **Insights**: (1) Any engineering relying on "long context for large-scale retrieval" (RAG, agent memory) should reconsider the impact of ordering; (2) Educational psychology's "zone of proximal development" and textbook curve concepts have concrete, quantifiable counterparts in prompt engineering, potentially spawning a new subfield of "pedagogical prompting."
+- **vs. Bertsch et al. / Baek et al. (many-shot ICL)**: This work serves as a critical corrective, showing that their findings on scaling and retrieval do not transfer to CoT reasoning.
+- **vs. Auto-CoT / Dr.ICL**: While they focus on few-shot selection, this work explores the entirely new dynamics of many-shot settings.
+- **vs. Test-time scaling (Snell et al.)**: While test-time scaling usually refers to increased inference compute via sampling, this work treats many-shot CoT as a form of test-time scaling where demonstrations act as in-context supervision.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ First to systematically refute the transfer of many-shot ICL rules of thumb to CoT, reconstructs the perspective and implements CDS
-- Experimental Thoroughness: ⭐⭐⭐⭐ 4+4 models × multi-task × multi-shot × multi-seed, covers three major dimensions with causal ablation; but CDS evaluation mainly on Qwen3
-- Writing Quality: ⭐⭐⭐⭐⭐ Clear chain from diagnosis to theory to algorithm to validation, apt pedagogical analogies
-- Value: ⭐⭐⭐⭐⭐ Wake-up call for all prompt engineering relying on long context, CDS is a plug-and-play engineering upgrade
+- Novelty: ⭐⭐⭐⭐⭐ First to systematically disprove many-shot ICL rules for CoT and reconstruct a curvature-based framework.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive cross-model and cross-task evaluation, although CDS is primarily tested on the Qwen3 series.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear progression from diagnosis to theory to algorithm.
+- Value: ⭐⭐⭐⭐⭐ A wake-up call for prompt engineering in long-context scenarios; CDS offers a plug-and-play upgrade.
 
 <!-- RELATED:START -->
 
@@ -135,7 +130,7 @@ CDS improvements on Qwen3 series (geometry / number theory / DetectiveQA):
 - [\[ICLR 2026\] Is In-Context Learning Learning?](../../ICLR2026/llm_reasoning/is_in-context_learning_learning.md)
 - [\[ICLR 2026\] CoT-RVS: Zero-Shot Chain-of-Thought Reasoning Segmentation for Videos](../../ICLR2026/llm_reasoning/cot-rvs_zero-shot_chain-of-thought_reasoning_segmentation_for_videos.md)
 - [\[ICML 2026\] Unlocking Zero-Shot Geospatial Reasoning via Indirect Rewards](unlocking_zero-shot_geospatial_reasoning_via_indirect_rewards.md)
-- [\[NeurIPS 2025\] Unlabeled Data Can Provably Enhance In-Context Learning of Transformers](../../NeurIPS2025/llm_reasoning/unlabeled_data_can_provably_enhance_in-context_learning_of_transformers.md)
+- [\[ICML 2026\] Clustering as Reasoning: A $k$-Means Interpretation of Chain-of-Thought Graph Learning](clustering_as_reasoning_a_k-means_interpretation_of_chain-of-thought_graph_learn.md)
 
 </div>
 

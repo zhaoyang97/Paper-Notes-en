@@ -100,11 +100,11 @@ The anchor strategy (generating an intermediate representation first, then disti
 
 ## Related Papers
 
+- [\[ICML 2026\] HOI-PAGE: Zero-Shot Human-Object Interaction Generation with Part Affordance Guidance](../../ICML2026/3d_vision/hoi-page_zero-shot_human-object_interaction_generation_with_part_affordance_guid.md)
 - [\[CVPR 2026\] CARI4D: Category Agnostic 4D Reconstruction of Human-Object Interaction](../../CVPR2026/3d_vision/cari4d_category_agnostic_4d_reconstruction_of_human_object_interaction.md)
 - [\[AAAI 2026\] EPSegFZ: Efficient Point Cloud Semantic Segmentation for Few- and Zero-Shot Scenarios](epsegfz_efficient_point_cloud_semantic_segmentation_for_few-_and_zero-shot_scena.md)
 - [\[AAAI 2026\] STMI: Segmentation-Guided Token Modulation with Cross-Modal Hypergraph Interaction for Multi-Modal Object Re-Identification](stmi_segmentation-guided_token_modulation_with_cross-modal_hypergraph_interactio.md)
 - [\[AAAI 2026\] 4DSTR: Advancing Generative 4D Gaussians with Spatial-Temporal Rectification for High-Quality and Consistent 4D Generation](4dstr_advancing_generative_4d_gaussians_with_spatial-tempora.md)
-- [\[ICLR 2026\] pySpatial: Generating 3D Visual Programs for Zero-Shot Spatial Reasoning](../../ICLR2026/3d_vision/pyspatial_generating_3d_visual_programs_for_zero-shot_spatial_reasoning.md)
 
 </div>
 

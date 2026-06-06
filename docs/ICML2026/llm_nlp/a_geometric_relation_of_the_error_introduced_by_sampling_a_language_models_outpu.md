@@ -2,112 +2,109 @@
 title: >-
   [Paper Note] A Geometric Relation of the Error Introduced by Sampling a Language Model's Output Distribution to its Internal State
 description: >-
-  [ICML 2026][LLM/NLP][Sampling error] This paper characterizes the information loss introduced by sampling from high-entropy distributions in GPT-style LLMs from a differential geometry perspective. It constructs $\mathfr…
+  [ICML 2026][LLM/NLP][Sampling Error] This paper characterizes the information loss introduced by sampling from high-entropy distributions in GPT-style LLMs from a differential geometric perspective. It constructs $\mathf…
 tags:
   - "ICML 2026"
   - "LLM/NLP"
-  - "Sampling error"
-  - "differential geometry"
-  - "parallel transport"
-  - "world model"
-  - "chess"
+  - "Sampling Error"
+  - "Differential Geometry"
+  - "Parallel Transport"
+  - "World Models"
+  - "Chess"
 date: 2026-05-08
-content_hash: 333fc58bc1456cc7
+content_hash: 7bc9ea6e0b883973
 ---
 
 # A Geometric Relation of the Error Introduced by Sampling a Language Model's Output Distribution to its Internal State
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.04899](https://arxiv.org/abs/2605.04899)  
-**Code**: See supplementary materials  
+**Code**: See supplementary material  
 **Area**: LLM Interpretability / NLP  
-**Keywords**: Sampling error, differential geometry, parallel transport, world model, chess
+**Keywords**: Sampling Error, Differential Geometry, Parallel Transport, World Models, Chess
 
 ## TL;DR
-This paper characterizes the information loss introduced by sampling from high-entropy distributions in GPT-style LLMs from a differential geometry perspective. It constructs $\mathfrak{so}(n)$-valued 1-forms and parallel transport operators, and demonstrates in chess probing experiments that such geometric rotations are highly aligned with the world vectors learned by the model.
+This paper characterizes the information loss introduced by sampling from high-entropy distributions in GPT-style LLMs from a differential geometric perspective. It constructs $\mathfrak{so}(n)$-valued 1-forms and parallel transport operators, demonstrating through chess probing experiments that this geometric rotation is highly aligned with the world vectors learned by the model.
 
 ## Background & Motivation
 
-**Background**: Autoregressive LLMs generate tokens via greedy or stochastic decoding. When the output distribution is concentrated (high confidence), sampling error is negligible; when the distribution is diffuse ("blurry points"), different samples can cause subsequent trajectories to diverge significantly.
+**Background**: Autoregressive LLMs generate tokens through greedy or stochastic decoding. When the output distribution is concentrated (high confidence), sampling error is negligible; however, when the distribution is diffuse ("blurry points"), different samplings cause subsequent trajectories to diverge significantly.
 
-**Limitations of Prior Work**: The sensitivity of LLMs to single-token perturbations is well known, but the intrinsic structure of this sensitivity has not been characterized—is it merely chaotic exponential divergence, or does it reflect geometric properties internal to the model?
+**Limitations of Prior Work**: While the sensitivity of LLMs to single-token perturbations is widely recognized, the internal structure of this sensitivity remains uncharacterized—is it merely chaotic exponential divergence, or does it reflect the internal geometric properties of the model?
 
-**Key Challenge**: The internal state $z_t \in \mathbb{R}^n$ and the output distribution (discrete probabilities) are linked via projection/softmax/sampling, a highly nonlinear relationship. How can one describe this "internal → external → feedback to internal" coupling within a unified geometric framework?
+**Key Challenge**: The relationship between internal states $z_t \in \mathbb{R}^n$ and the output distribution (discrete probabilities) via projection, softmax, and sampling is highly non-linear. The challenge lies in describing this "internal → external → internal perturbation" coupling within a unified geometric framework.
 
-**Goal**: To establish a testable relationship between the geometric properties of blurry points in the model's internal state and the world vectors obtained via probing.
+**Goal**: To establish a verifiable relationship between the geometric properties of "blurry points" inside the model and the world vectors obtained through probing.
 
-**Key Insight**: Using the language of differential geometry, sampling uncertainty is modeled as a vector-valued degree on a manifold, injecting uncertainty into geometric actions via exterior products and parallel transport.
+**Key Insight**: Modeling sampling uncertainty as a directed measure on a manifold using the language of differential geometry. Uncertainty is "injected" into geometric actions via wedge products and parallel transport.
 
-**Core Idea**: Parameterize blurring strength as a triple exterior product $A(z_t) = 4 z_t \wedge (p_1 v_1) \wedge (p_2 v_2)$, then contract with tangent vectors to obtain an $\mathfrak{so}(n)$-valued 1-form; its parallel transport imposes a testable rotation in hidden state space, coupled with the direction of the world vector.
+**Core Idea**: Parameterize blurring intensity as a triple wedge product $A(z_t) = 4 z_t \wedge (p_1 v_1) \wedge (p_2 v_2)$, then contract it with tangent vectors to obtain an $\mathfrak{so}(n)$-valued 1-form. Its parallel transport imposes testable rotations in the hidden state space that couple with the directions of world vectors.
 
 ## Method
 
 ### Overall Architecture
 
-Three-layer structure: (1) Geometric modeling: exterior product and $\mathfrak{so}(n)$ structure; (2) Parallel transport and holographic measurement; (3) Experimental validation: confirming the coupling via clustering of world vector directions in chess tasks.
+A three-layer structure: (1) Geometric modeling: wedge products and $\mathfrak{so}(n)$ structures; (2) Parallel transport and holographic measurement; (3) Experimental validation: confirming coupling relationships via directional clustering of world vectors in chess tasks.
 
 ### Key Designs
 
-1. **Upgrading Multiple Exterior Products to $\mathfrak{so}(n)$-Valued 1-Forms**:
+1.  **Upgrading Wedge Products to $\mathfrak{so}(n)$-valued 1-forms**:
+    - **Function**: Transforms the scalar magnitude of blurring into a directed geometric object acting on hidden states.
+    - **Mechanism**: Define $A(z_t) = 4 z_t \wedge (p_1 v_1) \wedge (p_2 v_2)$, where the Frobenius norm $\|A\|_F$ is proportional to the degree to which $z_t$ resides within the plane spanned by the top-two token embeddings. Contracting with a tangent vector $\mu$ yields $A_\mu(z_t) = 4 p_1 p_2 \big(-(\mu\cdot v_1)(z_t \wedge v_2) + (\mu \cdot v_2)(z_t \wedge v_1)\big)$, an element of the $\mathfrak{so}(n)$ Lie algebra (a rotation generator).
+    - **Design Motivation**: Scalar magnitudes cannot encode direction; anti-symmetric tensors naturally introduce rotational effects that carry directional uncertainty information.
 
-    - **Function**: Converts the scalar magnitude of blurring into a directed geometric object acting on the hidden state.
-    - **Mechanism**: Define $A(z_t) = 4 z_t \wedge (p_1 v_1) \wedge (p_2 v_2)$, whose Frobenius norm $\|A\|_F$ is proportional to the degree to which $z_t$ lies in the plane spanned by the top two token embeddings. Contracting with tangent vector $\mu$ yields $A_\mu(z_t) = 4 p_1 p_2 \big(-(\mu\cdot v_1)(z_t \wedge v_2) + (\mu \cdot v_2)(z_t \wedge v_1)\big)$, an element of the $\mathfrak{so}(n)$ Lie algebra (rotation generator).
-    - **Design Motivation**: Scalar magnitude cannot encode direction; using antisymmetric tensors naturally introduces rotational actions, carrying directional uncertainty.
+2.  **Probability Charge and Parallel Transport Operators**:
+    - **Function**: Parameterizes the intensity of geometric action and calculates cumulative rotation through closed paths.
+    - **Mechanism**: $4 p_1 p_2$ is termed the "probability charge"—analogous to charge coupling in electromagnetism; it tends to zero when $p_2 \to 0$ (high confidence) and reaches a maximum of $1$ at $p_1 = p_2 = 0.5$ (maximum uncertainty). The parallel transport operator along a curve $\gamma$ is $U_\gamma = P\exp\big(-\int_0^1 A_{\dot\gamma(s)}(\gamma(s))\,ds\big)$ (where $P$ denotes path ordering), measuring the rotation of hidden states in uncertain regions.
+    - **Design Motivation**: Connects to intuitions from gauge theory, providing physical correspondence for sampling uncertainty—using "geometric curvature" as a carrier of information loss.
 
-2. **Probability Charge and Parallel Transport Operator**:
-
-    - **Function**: Parameterizes the strength of geometric action and computes cumulative rotation via closed path integration.
-    - **Mechanism**: $4 p_1 p_2$ is termed "probability charge"—analogous to electric charge coupling in electromagnetism; it vanishes as $p_2 \to 0$ (high confidence) or $p_1 \ll p_2$, and reaches its maximum value 1 at $p_1=p_2=0.5$ (maximum uncertainty). The parallel transport operator along curve $\gamma$ is $U_\gamma = P\exp\big(-\int_0^1 A_{\dot\gamma(s)}(\gamma(s))\,ds\big)$ ($P$ denotes path ordering), measuring rotation of the hidden state in uncertain regions.
-    - **Design Motivation**: Connects to gauge theory intuition, giving sampling uncertainty a physical analogue—"geometric curvature" as a carrier of information loss.
-
-3. **Holography and Finite-Step Closed Path Measurement**:
-
-    - **Function**: Under the constraint of not being able to continuously translate hidden states, measures local curvature via a closed square loop around a point.
-    - **Mechanism**: The model only generates actual trajectories, not arbitrary paths, so point-to-point parallel transport is infeasible. Instead, an $\epsilon$-sized clover (four small squares combined to eliminate coordinate bias) is used to construct a closed loop, yielding a holographic operator $H_{z_t}$, reflecting local curvature $R = \partial_\mu A_\nu - \partial_\nu A_\mu - [A_\nu, A_\mu]$.
-    - **Design Motivation**: Adopts standard techniques from lattice gauge theory, enabling extraction of local geometric information under restricted observations.
+3.  **Holography and Finite-Step Closed Path Measurement**:
+    - **Function**: Measures local curvature via closed quadrilateral paths around a point, overcoming the inability to continuously translate hidden states.
+    - **Mechanism**: Since models generate actual trajectories rather than arbitrary paths, point-to-point parallel transport is impossible. Instead, a holographic operator $H_{z_t}$ is constructed using $\epsilon$-sized "clovers" (four combined small squares to cancel coordinate bias), reflecting the local curvature $R = \partial_\mu A_\nu - \partial_\nu A_\mu - [A_\nu, A_\mu]$.
+    - **Design Motivation**: Borrows standard techniques from lattice gauge theory to extract local geometric information under restricted observations.
 
 ### Loss & Training
-No new models are trained in this work; probes are trained as linear classifiers on frozen LLM hidden states to predict 737 chess piece positions.
+This work does not train new models. Probes are trained on frozen LLM hidden states using linear classifiers to predict 737 piece positions.
 
 ## Key Experimental Results
 
 | Setting | Task | Model | Key Metric | Result |
-|---------|------|-------|------------|--------|
-| Chess world model | 737 piece position classification | Qwen 32B | Mean accuracy | 81.2%–100% |
-| Chess world model | Same as above | Mistral 24B | Mean accuracy | 76.0%–98.9% |
-| Blurring sensitivity | Move selection difference | Qwen 32B | Position evaluation change | 4.5±1.5 log-cp |
-| Geometric-semantic coupling | Rotation direction vs world vector | Qwen 32B | Mean $\|\cos\|$ | Top pieces >0.7, overall >0.5 |
-| Geometric-semantic coupling | Board region clustering | Qwen 32B | Clustering purity | Board quadrants >85% |
+| :--- | :--- | :--- | :--- | :--- |
+| Chess World Model | 737 piece pos. classification | Qwen 32B | Avg. Accuracy | 81.2%–100% |
+| Chess World Model | Same as above | Mistral 24B | Avg. Accuracy | 76.0%–98.9% |
+| Blurring Sensitivity | Move selection difference | Qwen 32B | Pos. Eval Change | 4.5±1.5 log-cp |
+| Geo-Semantic Coupling | Rotation Dir vs World Vector | Qwen 32B | Mean $\|\cos\|$ | Top pieces >0.7, Overall >0.5 |
+| Geo-Semantic Coupling | Board partition clustering | Qwen 32B | Cluster Purity | Board quadrants >85% |
 
 ### Key Findings
-- **Coupling of World Vectors and Geometric Rotation**: At all branch points, the rotation direction and corresponding world vector have mean $|\cos|>0.5$, top pieces $>0.7$, far exceeding the random baseline $\sim 0.07$.
-- **Geometric Mapping of Piece Importance**: High-value pieces (e.g., queen) correspond to the strongest blurring signals and largest rotation magnitudes; piece value is positively correlated with geometric strength.
-- **Model Capability vs Geometric Signal**: The Mistral probe, with lower accuracy, also shows significantly weaker geometric signals, suggesting this is a feature of genuine structure learned by LLMs.
-- **Sampling Error Is Not Pure Chaos**: Divergence directions are coupled with world structure, indicating this is not directionless chaos but a geometric projection of internal model representations.
+- **Coupling of World Vectors and Geometric Rotation**: At all branch points, the rotation direction and the corresponding world vector show a mean $|\cos| > 0.5$ (top pieces $> 0.7$), significantly higher than the random baseline of $\sim 0.07$.
+- **Geometric Mapping of Piece Importance**: High-value pieces (e.g., Queen) correspond to the strongest blurring signals and largest rotation magnitudes; there is a positive correlation between value and geometric intensity.
+- **Model Capability vs. Geometric Signal**: Mistral, which has lower probe accuracy, also shows significantly weakened geometric signals, suggesting this is a feature of structures genuinely learned by LLMs.
+- **Sampling Error is Not Pure Chaos**: The direction of divergence is coupled with the world structure, indicating this is not directionless chaos but a geometric projection of the model's internal representation.
 
 ## Highlights & Insights
-- **Mathematical Elegance**: Sampling uncertainty is precisely characterized using Lie algebras and parallel transport, with tools borrowed from gauge theory fitting the context well.
-- **New Dimension of Interpretability**: Links model brittleness to the geometry of the world model, providing a deeper explanation than "chaotic divergence."
-- **Clever Task Choice**: Chess has a well-defined world model (legal positions), facilitating objective and quantitative validation of the coupling.
-- **Cross-Model Consistency**: The coupling phenomenon appears in two different model families, suggesting it may be a general property of LLMs.
+- **Mathematical Elegance**: Precisely characterizes sampling uncertainty using Lie algebra and parallel transport, utilizing tools from gauge theory with high compatibility.
+- **New Dimension of Interpretability**: Links model vulnerability to the geometry of world models, providing a deeper explanation than mere "chaotic divergence."
+- **Clever Task Selection**: Chess provides an explicit world model (deterministic legal positions), facilitating objective and quantitative verification of coupling relationships.
+- **Cross-Model Consistency**: The coupling phenomenon appears across different model families, suggesting it may be a universal property of LLMs.
 
 ## Limitations & Future Work
-- Validation is limited to the chess domain; it remains unclear whether the findings generalize to natural language or open domains.
-- Probe training data is artificially balanced; its correlation with real text distributions is limited.
-- The effect is significantly weaker on Mistral, indicating sensitivity to model choice and the need for more family-level validation.
-- There is no rigorous proof yet for why geometric rotation must align with the world vector; this is currently an empirical observation.
-- Future directions: extend to natural language tasks; design new decoding strategies using geometric insights; theoretically analyze how Lie group structures emerge from training.
+- Validated only in the single domain of chess; it remains unclear if this replicates in natural language or open domains.
+- Probe training data faces human-balancing issues; its relevance to real text distributions is limited.
+- Results on Mistral are significantly weaker, indicating sensitivity to model choice and requiring verification across more families.
+- There is a lack of rigorous proof regarding why geometric rotation must align with world vectors; it remains an empirical observation.
+- Future work: Extend to natural language tasks; design new decoding strategies based on geometric insights; theoretically analyze how Lie group structures emerge from training.
 
 ## Related Work & Insights
-- **vs Traditional Sensitivity Analysis**: Previous work only described exponential divergence; this paper further shows that the direction and pattern of divergence are linked to the world model.
-- **vs Probe/World Model Work (e.g., OthelloGPT)**: Prior work verified the existence of world models; this paper explains why world models and sampling uncertainty are coupled.
-- **Insights**: Differential geometry tools (parallel transport, holography) can be extended to other interpretability problems such as attention geometry and gradient manifold shapes.
+- **vs. Traditional Sensitivity Analysis**: Previous works only described exponential divergence; this paper further aligns the direction and pattern of divergence with world models.
+- **vs. Probing/World Model Works (OthelloGPT, etc.)**: The latter verify the existence of world models; this paper explains why world models couple with sampling uncertainty.
+- **Insights**: Differential geometry tools (parallel transport, holography) can be extended to other interpretability problems such as attention geometry or gradient flow shapes.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Highly original construction of differential geometry perspective and $\mathfrak{so}(n)$-valued forms.
-- Experimental Thoroughness: ⭐⭐⭐⭐☆ Chess validation is thorough and quantitative, but single-domain limits generalizability.
-- Writing Quality: ⭐⭐⭐⭐☆ Mathematically rigorous, but some derivations are challenging for readers without a differential geometry background.
-- Value: ⭐⭐⭐⭐⭐ Opens a new direction for understanding LLM internal dynamics via geometry, with far-reaching impact.
+- Novelty: ⭐⭐⭐⭐⭐ The construction of the $\mathfrak{so}(n)$-valued form and the differential geometric perspective are highly original.
+- Experimental Thoroughness: ⭐⭐⭐⭐☆ Validation in chess is thorough and quantitative, though the single domain limits generalizable conclusions.
+- Writing Quality: ⭐⭐⭐⭐☆ Mathematically rigorous, though some derivations pose a high barrier for readers without a differential geometry background.
+- Value: ⭐⭐⭐⭐⭐ Opens a new direction for understanding LLM internal dynamics through geometry, with far-reaching implications.
 
 <!-- RELATED:START -->
 
@@ -116,10 +113,10 @@ No new models are trained in this work; probes are trained as linear classifiers
 ## Related Papers
 
 - [\[ICML 2026\] Escaping Mode Collapse in LLM Generation via Geometric Regulation](escaping_mode_collapse_in_llm_generation_via_geometric_regulation.md)
+- [\[ICML 2026\] Scheduling LLM Inference with Uncertainty-Aware Output Length Predictions](scheduling_llm_inference_with_uncertainty-aware_output_length_predictions.md)
+- [\[ICML 2026\] The Cylindrical Representation Hypothesis for Language Model Steering](the_cylindrical_representation_hypothesis_for_language_model_steering.md)
 - [\[ACL 2026\] Text-to-Distribution Prediction with Quantile Tokens and Neighbor Context](../../ACL2026/llm_nlp/text-to-distribution_prediction_with_quantile_tokens_and_neighbor_context.md)
 - [\[NeurIPS 2025\] Opinion Maximization in Social Networks by Modifying Internal Opinions](../../NeurIPS2025/llm_nlp/opinion_maximization_in_social_networks_by_modifying_internal_opinions.md)
-- [\[AAAI 2026\] An Invariant Latent Space Perspective on Language Model Inversion](../../AAAI2026/llm_nlp/an_invariant_latent_space_perspective_on_language_model_inve.md)
-- [\[ACL 2026\] Min-k Sampling: Decoupling Truncation from Temperature Scaling via Relative Logit Dynamics](../../ACL2026/llm_nlp/min-k_sampling_decoupling_truncation_from_temperature_scaling_via_relative_logit.md)
 
 </div>
 

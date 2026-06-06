@@ -2,154 +2,125 @@
 title: >-
   [Paper Note] Self-Consistency from Only Two Samples: CoT-PoT Ensembling for Efficient LLM Reasoning
 description: >-
-  [ACL 2026][LLM Reasoning][To be supplemented] To be supplemented after thorough reading.
+  [ACL 2026][LLM Reasoning][Self-Consistency] Ours proposes the CoT-PoT cross-modal ensemble method, leveraging the complementarity between Chain-of-Thought (CoT) and Program-of-Thought (PoT) reasoning modalities to reduce…
 tags:
   - "ACL 2026"
   - "LLM Reasoning"
-  - "To be supplemented"
+  - "Self-Consistency"
+  - "Chain-of-Thought"
+  - "Program-of-Thought"
+  - "Cross-Modal Ensemble"
+  - "Bayesian Early Stopping"
 date: 2026-05-08
-content_hash: 988223a7051cc72d
+content_hash: 6fabf4e93acfe7ff
 ---
 
 # Self-Consistency from Only Two Samples: CoT-PoT Ensembling for Efficient LLM Reasoning
 
-**Conference**: ACL 2026
+**Conference**: ACL 2026  
 **arXiv**: [2604.17433](https://arxiv.org/abs/2604.17433)  
 **Code**: None  
-**Area**: LLM Reasoning Efficiency
-**Keywords**: Self-Consistency, Chain-of-Thought, Program-of-Thought, Cross-Modal Ensembling, Bayesian Early Stopping
+**Area**: LLM Reasoning Efficiency  
+**Keywords**: Self-Consistency, Chain-of-Thought, Program-of-Thought, Cross-Modal Ensemble, Bayesian Early Stopping
 
 ## TL;DR
 
-This paper proposes CoT-PoT, a cross-modal ensembling method that exploits the complementarity between chain-of-thought (CoT) and program-of-thought (PoT) reasoning modalities to reduce the number of samples required for self-consistency by 9.3×, resolving 78.6% of problems with only 2 samples.
+Ours proposes the CoT-PoT cross-modal ensemble method, leveraging the complementarity between Chain-of-Thought (CoT) and Program-of-Thought (PoT) reasoning modalities to reduce the number of samples required for self-consistency by 9.3x, solving 78.6% of problems with only 2 samples.
 
 ## Background & Motivation
 
-**State of the Field**: Self-Consistency (SC) improves LLM reasoning accuracy by sampling multiple reasoning paths and selecting the most frequent answer via majority vote, but requires a large number of samples (typically 40), incurring prohibitive computational costs. Existing adaptive consistency methods reduce the average sample count but remain far from efficient.
+**Background**: Self-Consistency (SC) improves LLM reasoning accuracy by sampling multiple reasoning paths and voting for the most frequent answer, but it typically requires a large number of samples (often 40), leading to extremely high computational costs. Existing adaptive consistency methods reduce the average number of samples but remain insufficiently efficient.
 
-**Limitations of Prior Work**: Standard SC relies on high-temperature sampling to increase diversity among reasoning paths. However, empirical observation reveals that multiple samples from the same modality often differ only in surface wording rather than in substantive semantic content, resulting in severe information redundancy across samples.
+**Limitations of Prior Work**: Standard SC utilizes high-temperature sampling to increase diversity in reasoning paths, but empirical observations show that multiple samples within the same modality often exhibit superficial phrasing differences rather than substantive semantic diversity. This results in significant information redundancy within large sample sets.
 
-**Root Cause**: The core assumption of SC is that convergence of diverse reasoning paths to a single answer constitutes a strong signal of correctness, making path diversity—not quantity—the key factor. Yet existing methods achieve diversity only through temperature sampling, which is of limited effectiveness.
+**Key Challenge**: The core assumption of SC is that "different reasoning paths converging to the same answer is a strong signal of correctness." The priority is the diversity of reasoning paths rather than their quantity. However, existing methods only increase diversity through temperature sampling, which has limited effectiveness.
 
-**Paper Goals**: To maximize reasoning diversity by combining two fundamentally different reasoning modalities, thereby achieving high accuracy with a minimal number of samples.
+**Goal**: Maximize reasoning diversity by combining two fundamentally different reasoning modalities to achieve high accuracy with a minimal number of samples.
 
-**Starting Point**: CoT (natural language step-by-step reasoning) and PoT (program-based computation) represent two essentially distinct reasoning paradigms—CoT is more flexible and expressive but prone to arithmetic errors, while PoT is computationally robust but susceptible to symbolic formulation errors. Critically, the error patterns of the two modalities are highly uncorrelated.
+**Key Insight**: CoT (natural language step-by-step reasoning) and PoT (writing programs for calculation) are inherently different. CoT is flexible but prone to calculation errors, while PoT is computationally robust but prone to symbolic representation errors. Their error patterns are highly uncorrelated.
 
-**Core Idea**: When CoT and PoT produce the same answer to a given problem, this cross-modal agreement constitutes an exceptionally strong correctness signal, precisely because their error modes are nearly independent. Based on this insight, a Bayesian early-stopping strategy is designed such that most problems require only one CoT sample plus one PoT sample.
+**Core Idea**: If CoT and PoT yield the same answer for the same problem, this cross-modal consistency serves as an extremely strong signal of correctness due to their nearly uncorrelated error patterns. Based on this, a Bayesian early stopping strategy is designed, where most problems require only 1 CoT + 1 PoT sample.
 
 ## Method
 
 ### Overall Architecture
 
-The framework comprises two families of strategies: (1) **full-budget sampling strategies**—alternating between CoT and PoT samples and aggregating answers via CPMaj, CPMax, or CPAgr; and (2) **early-stopping strategies**—based on a Bayesian model that terminates sampling upon observing cross-modal agreement, with both data-driven and data-free variants.
+The framework consists of two categories of strategies: (1) Full sampling strategies—alternating between CoT and PoT sampling and using various aggregation methods (CPMaj/CPMax/CPAgr) to vote for answers; (2) Early stopping strategies—terminating sampling once cross-modal consistency is observed based on a Bayesian model, including both data-driven and data-independent variants.
 
 ### Key Designs
 
-1. **Cross-Modal Full-Budget Aggregation**:
-
+1.  **Cross-modal full sampling aggregation**:
     - **Function**: Maximize accuracy under a fixed sampling budget.
-    - **Mechanism**: CoT and PoT samples are drawn in alternation (each modality receiving half the budget). Three aggregation strategies are proposed: CPMaj (cross-modal majority vote), CPMax (select the answer from the more confident modality), and CPAgr (prioritize answers appearing in both modalities). All strategies outperform single-modality SC.
-    - **Design Motivation**: The complementarity of the two modalities in terms of logical structure and computation yields higher-quality diversity than repeated sampling within a single modality.
+    - **Mechanism**: Alternates between sampling CoT and PoT (each taking half the budget) and proposes three strategies: CPMaj (Cross-Modal Majority vote), CPMax (selecting the answer from the most confident modality), and CPAgr (prioritizing answers appearing in both modalities). All strategies surpass single-modal SC.
+    - **Design Motivation**: Leverages the complementarity between the two modalities in logical framework and computation, providing higher quality diversity than repeated sampling within a single modality.
 
-2. **Bayesian Cross-Modal Early Stopping**:
+2.  **Bayesian cross-modal consistency early stopping**:
+    - **Function**: Minimize the number of samples while maintaining high accuracy.
+    - **Mechanism**: Formalizes early stopping as a Bayesian hypothesis test. By alternating CoT and PoT sampling, once a PoT produces an answer $y$, it tracks how many subsequent CoT samples yield the same $y$. Three core probabilities are defined: $c$ (probability of answer safety), $a_1$ (probability of CoT agreeing with the anchor answer), and $a_2$ (conditional probability of answer safety given agreement). Sampling stops when the posterior $P(C|k,t)$ exceeds a threshold $\rho$. A key empirical finding is $a_2 \approx 1$ (agreement almost certainly implies safety), providing theoretical support for the simplest strategy (stopping at the first agreement).
+    - **Design Motivation**: The information content of cross-modal consistency is much higher than intra-modal consistency because error patterns are nearly uncorrelated.
 
-    - **Function**: Minimize the number of samples while preserving high accuracy.
-    - **Mechanism**: Early stopping is formalized as Bayesian hypothesis testing. CoT and PoT samples are drawn alternately; after PoT produces an answer $y$, subsequent CoT samples are monitored for agreement with $y$. Three core probabilities are defined: $c$ (probability that an answer is safe/correct), $a_1$ (probability that a CoT sample agrees with the anchor answer), and $a_2$ (conditional probability that the answer is safe given agreement). Sampling stops when the posterior $P(C|k,t)$ exceeds a threshold $\rho$. A key empirical finding is that $a_2 \approx 1$—agreement almost certainly implies correctness—providing theoretical justification for the simplest strategy of stopping after a single cross-modal agreement.
-    - **Design Motivation**: Cross-modal agreement carries far more information than same-modality agreement, as the error patterns of the two modalities are nearly independent.
-
-3. **Data-Free Minimal Strategy (CPFF)**:
-
-    - **Function**: The most efficient strategy, applicable without any training data.
-    - **Mechanism**: Motivated by the extreme parameterization $a_2 \approx 1$, CPFF compares only the first CoT and the first PoT answer, both generated at temperature 0—stopping if they agree (2 samples total) and continuing with alternating sampling otherwise. A parallel adaptive-consistency Beta test serves as a fallback.
-    - **Design Motivation**: Since $a_2$ is consistently close to 0.99 across all evaluated models, cross-modal agreement is an extremely reliable correctness signal.
+3.  **Data-independent minimalist strategy (CPFF)**:
+    - **Function**: The most efficient strategy applicable without any training data.
+    - **Mechanism**: Based on the extreme parameterization where $a_2 \approx 1$, CPFF compares the first CoT and first PoT answers at temperature 0—if they agree, it stops (2 samples total). If they disagree, it continues alternating samples. A Beta test for adaptive consistency is run in parallel as a fallback.
+    - **Design Motivation**: $a_2$ is close to 0.99 across all models, indicating that cross-modal consistency is an extremely reliable signal of correctness.
 
 ### Loss & Training
 
-No training is involved. Data-driven variants infer Bayesian parameters from 100 questions drawn from each benchmark's training split. Evaluation spans 5 benchmarks (GSM8K, MATH, FinQA, SVAMP, TabMWP) and 5 LLMs. The first sample is generated at temperature 0; subsequent samples use temperature 0.7.
+A training-free method. Data-driven variants infer Bayesian parameters from 100 problems in each benchmark's training set. Evaluated across 5 benchmarks (GSM8K, MATH, FinQA, SVAMP, TabMWP) and 5 LLMs. The first sample uses temperature 0, and subsequent samples use temperature 0.7.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Method | Avg. Accuracy | Avg. Samples | 2-Sample Resolution Rate |
-|---|---|---|---|
+| Method | Mean Accuracy | Mean Samples | 2-Sample Solve Rate |
+| :--- | :--- | :--- | :--- |
 | SCCoT (40 samples) | 84.6% | 40 | 0% |
 | SCPoT (40 samples) | 82.9% | 40 | 0% |
-| CPMax (full budget) | **85.7%** | 40 | 0% |
+| CPMax (Full) | **85.7%** | 40 | 0% |
 | Adaptive SC | ~84% | ~10 | 0% |
-| CPFF (early stopping) | ~85% | **4.3** | **78.6%** |
+| CPFF (Early Stop) | ~85% | **4.3** | **78.6%** |
 
 ### Ablation Study
 
-| Configuration | Accuracy | Samples | Note |
-|---|---|---|---|
-| Single-modality SC | 84.6% | 40 | Baseline |
-| CPMaj (full budget) | 85.6% | 40 | Cross-modal aggregation |
-| CPAA (any agreement) | ~85% | ~4 | Efficient |
-| CPFA (first + any) | ~85% | ~4.5 | Slightly conservative |
-| CPFF (first + first) | ~85% | ~4.3 | Most efficient |
+| Configuration | Accuracy | Samples | Description |
+| :--- | :--- | :--- | :--- |
+| Single-modal SC | 84.6% | 40 | Baseline |
+| CPMaj (Full) | 85.6% | 40 | Cross-modal aggregation |
+| CPAA (Any-Agree) | ~85% | ~4 | Highly efficient |
+| CPFA (First+Any) | ~85% | ~4.5 | Slightly conservative |
+| CPFF (First+First) | ~85% | ~4.3 | Most efficient |
 
 ### Key Findings
 
-- Full-budget cross-modal ensembling outperforms single-modality SC (85.7% vs. 84.6%), achieving higher accuracy under the same budget.
-- Early-stopping strategies reduce sampling by 9.3× on average, with 78.6% of problems requiring only 2 samples.
-- The finding that $a_2 \approx 1$ is pivotal—cross-modal agreement is an almost certain indicator of correctness.
-- Stronger reasoning models such as DeepSeek R1 benefit more from cross-modal consistency, exhibiting higher 2-sample resolution rates.
-- On certain benchmarks (e.g., SVAMP), the 2-sample resolution rate exceeds 90%.
+- Cross-modal full sampling consistency outperforms single-modal methods (85.7% vs 84.6%), providing higher accuracy under the same budget.
+- Early stopping strategies reduce samples by 9.3x on average, with 78.6% of problems requiring only 2 samples.
+- The finding $a_2 \approx 1$ is pivotal—cross-modal consistency almost certainly indicates a correct answer.
+- Stronger reasoning models like DeepSeek R1 benefit more from cross-modal consistency (higher 2-sample solve rate).
+- On certain benchmarks (e.g., SVAMP), the 2-sample solve rate exceeds 90%.
 
 ## Highlights & Insights
 
-- **The insight that diversity matters more than quantity is profound**: 40 same-modality samples may carry less information than 2 cross-modal samples. This principle generalizes to other settings requiring repeated reasoning.
-- **The Bayesian formalization is elegant**: it translates the intuition—cross-modal agreement implies high confidence—into a provable probabilistic model, with the key parameter $a_2 \approx 1$ strongly validated experimentally.
-- **Practical significance for reasoning-oriented models is substantial**: as o1/R1-style models become widespread, 2-sample SC can dramatically reduce inference costs.
+- **Insight that "diversity is more important than quantity"**: The information content of 40 intra-modal samples may be less than that of 2 cross-modal samples. This perspective is generalizable to other scenarios requiring multiple reasoning steps.
+- **Elegant Bayesian formalization**: Translates the intuition (cross-modal agreement = high confidence) into a provable probabilistic model, with the key parameter $a_2 \approx 1$ strongly validated by experiments.
+- **Significant practical value for reasoning models**: As o1/R1-style models become more common, 2-sample SC can significantly reduce inference costs.
 
 ## Limitations & Future Work
 
-- PoT requires a code execution environment, which may be unavailable in certain deployment contexts.
-- The applicability of the PoT modality is limited for non-mathematical or non-computational reasoning tasks (e.g., commonsense reasoning).
-- When both modalities commit systematic errors on the same problem, cross-modal agreement can produce spuriously high confidence in an incorrect answer.
-- The fallback mechanism of the early-stopping strategy (adaptive consistency) still requires a non-trivial number of additional samples.
+- PoT depends on a code execution environment, which may not be available in all deployment scenarios.
+- For non-mathematical/non-computational reasoning tasks (e.g., commonsense reasoning), PoT is less applicable.
+- When both modalities make systematic errors, cross-modal consistency may yield false high confidence.
+- The fallback mechanism (adaptive consistency) for the early stopping strategy still requires some additional samples.
 
 ## Related Work & Insights
 
-- **vs. Standard Self-Consistency**: Standard SC pursues quantitative diversity within a single modality; CoT-PoT pursues modality-level diversity, which is substantially more efficient.
-- **vs. Adaptive Consistency**: Adaptive consistency relies on statistical majority voting for early stopping and requires at least 4 samples. The cross-modal agreement signal in CoT-PoT is stronger, enabling stopping at 2 samples.
+- **vs Standard Self-Consistency**: Standard SC pursues quantitative diversity within the same modality; CoT-PoT pursues modal diversity, which is more efficient.
+- **vs Adaptive Consistency**: Adaptive consistency uses statistical majorities for early stopping and still typically requires at least 4 samples. The cross-modal consistency signal in CoT-PoT is stronger, allowing for termination at 2 samples.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ The cross-modal consistency insight is concise and profound; the Bayesian early-stopping framework is elegant.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers 5 benchmarks × 5 LLMs, with full-budget, early-stopping, and multiple variant evaluations—exceptionally comprehensive.
-- Writing Quality: ⭐⭐⭐⭐⭐ Motivation is clearly articulated, theoretical derivations are rigorous, and experimental organization is excellent.
-**Code**: To be confirmed  
-**Area**: llm_reasoning
-**Keywords**: To be supplemented
-
-## TL;DR
-To be supplemented after thorough reading.
-
-## Background & Motivation
-To be supplemented after thorough reading.
-
-## Method
-To be supplemented after thorough reading.
-
-## Key Experimental Results
-To be supplemented after thorough reading.
-
-## Highlights & Insights
-To be supplemented after thorough reading.
-
-## Limitations & Future Work
-To be supplemented after thorough reading.
-
-## Related Work & Insights
-To be supplemented after thorough reading.
-
-## Rating
-- Novelty: Pending
-- Experimental Thoroughness: Pending
-- Writing Quality: Pending
-- Value: Pending
+- Novelty: ⭐⭐⭐⭐⭐ The insight into cross-modal consistency is simple and profound; the Bayesian early stopping framework is elegant.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Extremely thorough, covering 5 benchmarks × 5 LLMs with various full and early stopping variants.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear motivation, rigorous theoretical derivation, and excellent experimental organization.
 
 <!-- RELATED:START -->
 
@@ -157,11 +128,11 @@ To be supplemented after thorough reading.
 
 ## Related Papers
 
-- [\[ACL 2026\] Efficient Test-Time Scaling via Temporal Reasoning Aggregation](efficient_test-time_scaling_via_temporal_reasoning_aggregation.md)
-- [\[ACL 2026\] Step-GRPO: Internalizing Dynamic Early Exit for Efficient Reasoning](step-grpo_internalizing_dynamic_early_exit_for_efficient_reasoning.md)
-- [\[ACL 2026\] Learning to Edit Knowledge via Instruction-based Chain-of-Thought Prompting](learning_to_edit_knowledge_via_instruction-based_chain-of-thought_prompting.md)
-- [\[ACL 2026\] CRISP: Compressing Redundancy in Chain-of-Thought via Intrinsic Saliency Pruning](crisp_compressing_redundancy_in_chain-of-thought_via_intrinsic_saliency_pruning.md)
-- [\[ICLR 2026\] No Answer Needed: Predicting LLM Answer Accuracy from Question-Only Linear Probes](../../ICLR2026/llm_reasoning/no_answer_needed_predicting_llm_answer_accuracy_from_question-only_linear_probes.md)
+- [\[ACL 2026\] Does Self-Consistency Improve the Recall of Encyclopedic Knowledge?](does_self-consistency_improve_the_recall_of_encyclopedic_knowledge.md)
+- [\[ACL 2026\] Reliability-Aware Adaptive Self-Consistency for Efficient Sampling in LLM Reasoning](reliability-aware_adaptive_self-consistency_for_efficient_sampling_in_llm_reason.md)
+- [\[ACL 2026\] Revisiting the Uniform Information Density Hypothesis in LLM Reasoning](revisiting_the_uniform_information_density_hypothesis_in_llm_reasoning.md)
+- [\[ACL 2026\] LLM Reasoning as Trajectories: Step-Specific Representation Geometry and Correctness Signals](llm_reasoning_as_trajectories_step-specific_representation_geometry_and_correctn.md)
+- [\[ICML 2026\] Self-Play Only Evolves When Self-Synthetic Pipeline Ensures Learnable Information Gain](../../ICML2026/llm_reasoning/self-play_only_evolves_when_self-synthetic_pipeline_ensures_learnable_informatio.md)
 
 </div>
 

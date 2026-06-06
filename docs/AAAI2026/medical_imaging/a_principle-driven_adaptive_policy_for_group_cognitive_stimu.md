@@ -183,7 +183,7 @@ Compared to the prior work of Jiang et al. (2023) from the same team, the core a
 - [\[AAAI 2026\] EgoEMS: A High-Fidelity Multimodal Egocentric Dataset for Cognitive Assistance in Emergency Medical Services](egoems_a_high-fidelity_multimodal_egocentric_dataset_for_cognitive_assistance_in.md)
 - [\[AAAI 2026\] NeuroBridge: Bio-Inspired Self-Supervised EEG-to-Image Decoding via Cognitive Priors and Bidirectional Semantic Alignment](neurobridge_bio-inspired_self-supervised_eeg-to-image_decoding_via_cognitive_pri.md)
 - [\[AAAI 2026\] From Policy to Logic for Efficient and Interpretable Coverage Assessment](from_policy_to_logic_for_efficient_and_interpretable_coverage_assessment.md)
-- [\[AAAI 2026\] Training-Free Policy Violation Detection via Activation-Space Whitening in LLMs](training-free_policy_violation_detection_via_activation-space_whitening_in_llms.md)
+- [\[ACL 2026\] MDP-GRPO: Stabilized Group Relative Policy Optimization for Multi-Constraint Instruction Following](../../ACL2026/medical_imaging/mdp-grpo_stabilized_group_relative_policy_optimization_for_multi-constraint_inst.md)
 
 </div>
 

@@ -133,10 +133,10 @@ MAS-Verify is the most critical component — removing it causes a 21.70% perfor
 ## Related Papers
 
 - [\[NeurIPS 2025\] Optimism Without Regularization: Constant Regret in Zero-Sum Games](optimism_without_regularization_constant_regret_in_zero-sum_games.md)
+- [\[ICML 2026\] Mapping Human Anti-collusion Mechanisms to Multi-agent AI Systems](../../ICML2026/others/mapping_human_anti-collusion_mechanisms_to_multi-agent_ai_systems.md)
 - [\[AAAI 2026\] Designing Incident Reporting Systems for Harms from General-Purpose AI](../../AAAI2026/others/designing_incident_reporting_systems_for_harms_from_general-purpose_ai.md)
+- [\[ICML 2026\] AutoNumerics-Zero: Automated Discovery of State-of-the-Art Mathematical Functions](../../ICML2026/others/autonumerics-zero_automated_discovery_of_state-of-the-art_mathematical_functions.md)
 - [\[CVPR 2026\] ZO-SAM: Zero-Order Sharpness-Aware Minimization for Efficient Sparse Training](../../CVPR2026/others/zo-sam_zero-order_sharpness-aware_minimization_for_efficient_sparse_training.md)
-- [\[ICLR 2026\] OwlEye: Zero-Shot Learner for Cross-Domain Graph Data Anomaly Detection](../../ICLR2026/others/owleye_zero-shot_learner_for_cross-domain_graph_data_anomaly_detection.md)
-- [\[AAAI 2026\] Local Guidance for Configuration-Based Multi-Agent Pathfinding](../../AAAI2026/others/local_guidance_for_configuration-based_multi-agent_pathfinding.md)
 
 </div>
 

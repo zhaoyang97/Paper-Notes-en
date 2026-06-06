@@ -178,10 +178,10 @@ Equivariance evaluation (DENDI Reflection, ±45° random rotation):
 
 ## Related Papers
 
+- [\[ICML 2026\] Left-Right Symmetry Breaking in CLIP-style Vision-Language Models Trained on Synthetic Spatial-Relation Data](../../ICML2026/multimodal_vlm/left-right_symmetry_breaking_in_clip-style_vision-language_models_trained_on_syn.md)
 - [\[ICCV 2025\] GTA-CLIP: Generate, Transduct, Adapt — Iterative Transduction with VLMs](generate_transduct_adapt_iterative_transduction_with_vlms.md)
 - [\[ICCV 2025\] NegRefine: Refining Negative Label-Based Zero-Shot OOD Detection](negrefine_refining_negative_label-based_zero-shot_ood_detection.md)
 - [\[ICCV 2025\] Dynamic Group Detection using VLM-augmented Temporal Groupness Graph](dynamic_group_detection_using_vlm-augmented_temporal_groupness_graph.md)
-- [\[ICLR 2026\] Breaking the Limits of Open-Weight CLIP: An Optimization Framework for Self-supervised Fine-tuning of CLIP](../../ICLR2026/multimodal_vlm/breaking_the_limits_of_open-weight_clip_an_optimization_framework_for_self-super.md)
 - [\[ICCV 2025\] DASH: Detection and Assessment of Systematic Hallucinations of VLMs](dash_detection_and_assessment_of_systematic_hallucinations_of_vlms.md)
 
 </div>

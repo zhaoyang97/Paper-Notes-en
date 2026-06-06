@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Referring Multiple Regions with Large Multimodal Models via Contextual Latent Steering
 description: >-
-  [ICML 2026][Multimodal VLM][Multi-region referring] CSteer proposes a training-free latent steering method that constructs "contextual vectors" from the difference in hidden activations between incorrect/correct referrin…
+  [ICML 2026][Multimodal VLM][Multi-region referring] CSteer proposes a training-free latent steering method that constructs "contextual vectors" based on the hidden activation differences between incorrect and correct ref…
 tags:
   - "ICML 2026"
   - "Multimodal VLM"
@@ -12,67 +12,64 @@ tags:
   - "contextual vector"
   - "LMM"
 date: 2026-05-08
-content_hash: 5b61333d3e9da340
+content_hash: 774bd2ea1000ec5b
 ---
 
 # Referring Multiple Regions with Large Multimodal Models via Contextual Latent Steering
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.01827](https://arxiv.org/abs/2605.01827)  
-**Code**: https://github.com/xing0047/csteer.git (available)  
-**Area**: Multimodal VLM / Representation Editing / Visual Referring  
+**Code**: https://github.com/xing0047/csteer.git (Available)  
+**Area**: Multimodal VLM / Representation Editing / Visual Grounding  
 **Keywords**: Multi-region referring, latent steering, training-free, contextual vector, LMM
 
 ## TL;DR
-CSteer proposes a training-free latent steering method that constructs "contextual vectors" from the difference in hidden activations between incorrect/correct referring answers. These vectors are hierarchically injected into early query layers and mid-to-late decode layers during inference, enabling general LMMs (Qwen3-VL, InternVL-3.5) to outperform specialized region LMMs fine-tuned for multi-region visual referring tasks.
+CSteer proposes a training-free latent steering method that constructs "contextual vectors" based on the hidden activation differences between incorrect and correct referring responses. By injecting these vectors into early query layers and mid-to-late decoding layers, general LMMs (e.g., Qwen3-VL, InternVL-3.5) outperform specialized fine-tuned region LMMs on multi-region visual referring tasks.
 
 ## Background & Motivation
 
-**Background**: General LMMs (LLaVA, Qwen-VL, InternVL series) have achieved strong holistic image understanding, but still struggle when required to answer about multiple marked regions ([1][2][3]) in an image. Existing region LMMs (GAR, INST-IT-Qwen, DAM, Sa2VA, etc.) typically rely on dedicated region encoders and large-scale referring data fine-tuning, which is costly and mainly effective for single-region descriptions.
+**Background**: General LMMs (LLaVA, Qwen-VL, InternVL series) demonstrate strong performance in whole-image understanding but struggle when required to answer questions about multiple regions marked as [1][2][3]. Existing region LMMs (GAR, INST-IT-Qwen, DAM, Sa2VA, etc.) typically follow a "specialized region encoder + massive referring data fine-tuning" route, which is costly and often specialized only for single-region descriptions.
 
-**Limitations of Prior Work**: Single-region Set-of-Mark (SoM) prompts can still work on general LMMs, but as the number of regions $m>1$, the model’s visual attention becomes "diffuse and unfaithful"—it either mixes semantics across regions, mismatches indices ([1][2]), or ignores global context (e.g., counting, comparing depth/reflectance).
+**Limitations of Prior Work**: While single-region Set-of-Mark (SoM) prompting works on general LMMs, once the number of regions $m>1$, the model's visual attention becomes "scattered and unfaithful"—either mixing the semantics of multiple regions, misaligning labels like [1] or [2] with objects, or ignoring global context (e.g., counting, comparing depth/reflectance).
 
-**Key Challenge**: Instance-level fine-grained perception requires the model to "distinguish by index + attend to global context," but general LMMs are only pre-trained for holistic image understanding. This "partitioned + contextual" hybrid behavior lacks explicit supervision and representation pathways; SFT/RL-based training is costly and not scalable.
+**Key Challenge**: Instance-level fine-grained perception requires the model to "distinguish by ID + attend to global context simultaneously." However, the pre-training objectives of general LMMs only optimize for whole-image understanding. This hybrid "zoning + contextual" behavior has neither explicit supervision nor explicit representation pathways; training it via SFT/RL is high-cost and lacks scalability.
 
-**Goal**: Without modifying architecture or supervised fine-tuning, intervene only at inference by editing hidden activations to trigger multi-region and context-sensitive referring behavior in general LMMs.
+**Goal**: To trigger multi-region and context-sensitive referring behavior in general LMMs by intervening in hidden activations during inference, without changing the architecture or performing supervised fine-tuning.
 
-**Key Insight**: Inspired by Rimsky et al.'s work on editing LLM behaviors—where specific behaviors (e.g., refusal, sycophancy) can be captured as "activation direction vectors" in certain hidden layers and toggled by adding these vectors during inference—the authors hypothesize that "multi-region referring" is also a linearly editable behavior.
+**Key Insight**: Drawing inspiration from the work of Rimsky et al. on LLM behavior editing—where specific behaviors (e.g., refusal, sycophancy) can often be extracted as an "activation direction vector" in the hidden space of certain layers—the authors hypothesize that "multi-region referring" is also a behavior pattern that can be linearly edited.
 
-**Core Idea**: Use LLM-as-judge to rewrite incorrect referring descriptions generated by the LMM into correct ones. Construct contextual vectors $\Delta^l$ from the difference between rewritten (correct) and original (incorrect) activations, then perform layer-decomposed injection—injecting into early query layers for "information aggregation" and mid-to-late decode layers for "output differentiation."
+**Core Idea**: An LLM-as-judge is used to rewrite the incorrect referring descriptions generated by the general LMM itself into correct ones. A contextual vector $\Delta^l$ is constructed from these "rewrite vs. original error" positive-negative pairs, followed by a layer-decomposed injection—injecting into early query layers to assist "information aggregation" and into mid-to-late decoding layers to guide "output differentiation."
 
 ## Method
 
 ### Overall Architecture
-Given an image $v$, visual prompts $p=\{p_1,...,p_m\}$ (numeric markers) overlaid on the image, and a text query $q$, the general LMM $\mathcal{F}$ encodes them as $\textbf{X}_c=\text{concat}(\mathcal{F}_{visual}(v,p), \textbf{X}_q)$, then the language model $\mathcal{F}_L$ autoregressively decodes the answer. CSteer does not alter this main pipeline, but adds a precomputed contextual vector $\Delta^l$ to certain hidden states $h^l$ in $\mathcal{F}_L$: $\hat{h}^l = h^l + \lambda \cdot \Delta^l$. The pipeline has two stages: **(1) Offline computation of $\Delta^l$**—using a small batch of GT-annotated samples, run the LMM to obtain incorrect referring answers, use a pure-text judge (e.g., GPT-4o) to rewrite these into correct versions referencing the GT, then use teacher forcing to have the LMM "forced" to output both positive and negative answers, record the last token’s hidden activations, subtract and average across samples to obtain $\Delta^l$ for each layer; **(2) Online injection**—during inference, inject $\Delta^l$ according to the "early-layer query, mid/late-layer decode" decomposition strategy, without modifying architecture or updating parameters.
+Given an image $v$, visual prompts $p=\{p_1,...,p_m\}$ (numerical markers) overlaid on the image, and a text query $q$, a general LMM $\mathcal{F}$ encodes them as $\textbf{X}_c=\text{concat}(\mathcal{F}_{visual}(v,p), \textbf{X}_q)$. The language model $\mathcal{F}_L$ then autoregressively decodes the answer. CSteer does not modify this main flow but instead adds a pre-calculated contextual vector $\Delta^l$ to the hidden states $h^l$ of several layers in $\mathcal{F}_L$: $\hat{h}^l = h^l + \lambda \cdot \Delta^l$. The entire pipeline consists of two stages: **(1) Offline calculation of $\Delta^l$**—running the LMM on a small batch of GT-labeled samples to obtain incorrect referring responses, using a text-only judge like GPT-4o to rewrite these errors into correct versions based on the GT, then using teacher forcing to make the LMM output both positive and negative responses while recording the hidden activations of the last token. The difference between positive and negative pairs is averaged across samples to obtain $\Delta^l$ for each layer. **(2) Online injection**—during inference, $\Delta^l$ is superimposed according to a decomposition strategy: "early layers for queries, mid-to-late layers for decoding," without modifying the architecture or updating parameters.
 
 ### Key Designs
 
-1. **Rewrite vs Rollout Positive-Negative Pair Construction**:
+1.  **Rewrite vs. Rollout Positive-Negative Pair Construction**:
+    *   **Function**: Ensures $\Delta^l$ truly encodes the "multi-region referring" behavior rather than superficial stylistic differences.
+    *   **Mechanism**: The negative sample $\hat{x}_-$ is the actual incorrect rollout from the LMM under SoM prompting (e.g., describing the object in region [2] as being in [1]). The positive sample $\mathcal{F}_{rewrite}(\hat{x})_+$ is generated by a text-only LLM (GPT-4o) which performs a "minimal edit" on the negative sample to make it correct based on the GT caption—correcting only the referring relations while maintaining the writing style. Finally, $\Delta^l = f_+(v,p,\mathcal{F}_{rewrite}(\hat{x})_+) - f_-(v,p,\hat{x}_-)$. The authors compared several naive schemes ("Refer vs. No Refer" using presence/absence of $p$, "Exact Matching vs. Marker Shuffle", and "GT vs. Rollout"), finding the rewrite scheme to be the cleanest as it minimizes non-referring differences, ensuring $\Delta^l$ carries almost exclusively "referring correction" signals.
+    *   **Design Motivation**: Naive "GT vs. Rollout" would incorporate irrelevant differences such as writing style, sentence length, and vocabulary richness into $\Delta^l$, turning it into a "style vector" rather than a "behavior vector." Minimal editing ensures purity in the difference direction.
 
-    - **Function**: Ensures $\Delta^l$ encodes the "multi-region referring" behavior, not superficial style differences.
-    - **Mechanism**: Negative sample $\hat{x}_-$ is the LMM’s actual incorrect rollout under SoM prompts (e.g., describing region [2]’s object as [1]’s); positive sample $\mathcal{F}_{rewrite}(\hat{x})_+$ is a pure-text LLM (GPT-4o) that minimally edits the negative sample into a correct version using the GT caption as reference—only correcting the referring relation, not writing style. Finally, $\Delta^l = f_+(v,p,\mathcal{F}_{rewrite}(\hat{x})_+) - f_-(v,p,\hat{x}_-)$ is computed. The authors compare several naive schemes ("Refer vs No Refer" using presence/absence of $p$, "Exact Matching vs Marker Shuffle" shuffling indices, "GT vs Rollout" using GT as positive), finding the rewrite scheme is cleanest, as non-referring parts of positive/negative samples are matched, so $\Delta^l$ mainly carries "referring correction" signals.
-    - **Design Motivation**: Naive "GT vs Rollout" introduces style, length, and vocabulary differences into $\Delta^l$, making it a "style vector" rather than a "behavior vector"; minimal rewriting ensures a clean difference.
+2.  **Layer-Decomposed Steering**:
+    *   **Function**: Assigns "information aggregation" and "output differentiation" to different layers of the LMM, avoiding a one-size-fits-all approach.
+    *   **Mechanism**: Marker IDs (e.g., "[1]", "[2]") appear in the user query rather than the decoding stage; thus, in-query editing of hidden states affects how the LMM "reads" these markers. Conversely, marker-only editing during the decoding stage superimposes $\Delta^l$ only when decoding tokens corresponding to the ID, affecting the "writing" behavior. Empirical results show that in-query editing yields the most gain in early layers (aggregation phase), while marker-only editing is most effective in mid-to-late layers (prediction phase). Combining both addresses two issues: "attending to the correct cat when reading [1]" and "avoiding confusion with [2] when outputting the description for [1]."
+    *   **Design Motivation**: This aligns with research by Wang et al. (2023) on LLM information flow—early layers handle semantic aggregation and late layers handle next-token prediction; injecting behavioral signals into appropriate "functional layers" is more effective.
 
-2. **Layer-Decomposed Steering**:
-
-    - **Function**: Assigns "information aggregation" and "output differentiation" to different LMM layers, avoiding a one-size-fits-all approach.
-    - **Mechanism**: Marker indices (e.g., "[1]", "[2]") appear in the user query, not during decoding, so in-query editing of hidden states affects how the LMM "reads" these markers; marker-only editing during decoding adds $\Delta^l$ only when decoding the corresponding index token, affecting "writing" behavior. Empirically, in-query editing benefits early LLM layers (aggregation phase), marker-only editing benefits mid-to-late layers (output prediction phase), and combining both improves both "attend to the right cat when reading [1]" and "avoid mixing [1] and [2] in output."
-    - **Design Motivation**: This echoes Wang et al. 2023’s findings on LLM information flow—early layers aggregate semantics, later layers predict next tokens; injecting behavior signals into the appropriate "functional layers" is essential for effectiveness.
-
-3. **Training-Free & Plug-and-Play Deployment**:
-
-    - **Function**: Enables the method to be applied to any existing general LMM without retraining or architectural changes.
-    - **Mechanism**: The pipeline only requires a small batch (hundreds to thousands) of GT samples to precompute $\Delta^l$ (one-time offline cost); inference adds only an $O(d)$ per-layer addition, with negligible latency. The same vector can be reused across tasks, e.g., $\Delta^l$ computed on GAR-Bench can be directly applied to INST-IT, VIP-Bench.
-    - **Design Motivation**: Region LMMs typically require hundreds of thousands of samples for SFT to achieve stable referring, which is infeasible for small teams or closed-source models; representation editing shifts "behavior acquisition" from weight space to activation space, making it low-cost and portable.
+3.  **Training-free + Plug-and-play Deployment**:
+    *   **Function**: Allows the method to be applied to any existing general LMM without retraining or architectural modification.
+    *   **Mechanism**: The pipeline uses a small batch (hundreds to thousands) of GT-labeled samples to pre-calculate $\Delta^l$ (a one-time offline cost). During inference, it adds only an $O(d)$ layer-wise addition, with negligible latency. The same vector can be reused across tasks; for instance, $\Delta^l$ calculated on GAR-Bench can be applied directly to INST-IT or VIP-Bench.
+    *   **Design Motivation**: Region LMMs usually require SFT on hundreds of thousands of samples for stable referring, which is infeasible for small teams or closed-source models. Representation editing moves "behavior acquisition" from weight space to activation space, making it cost-effective and portable.
 
 ### Loss & Training
-CSteer has no training loss; the main step is SVD-free mean differencing: $\Delta^l = \mathbb{E}_{(x_+, x_-)}\left[h^l_+ - h^l_-\right]$. The only hyperparameters are injection strength $\lambda$ and layer range, selected via grid search on a small validation set.
+CSteer has no training loss. The main step is a simple mean difference calculation without SVD: $\Delta^l = \mathbb{E}_{(x_+, x_-)}\left[h^l_+ - h^l_-\right]$. The only hyperparameters are the injection strength $\lambda$ and the range of layers, determined via grid search on a small validation set.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Base LMM | Method | GAR-Bench ALL | INST-IT (Img) AVG | LaSOText Eval (alt) |
+| Base LMM | Method | GAR-Bench ALL | INST-IT (Img) AVG | LaSOText (Substitute) |
 |---|---|---|---|---|
 | Qwen3-VL-8B | w/o refer | 39.3 | 31.8 | - |
 | Qwen3-VL-8B | SoM (Yang 2023) | 63.9 | 52.5 | - |
@@ -82,49 +79,49 @@ CSteer has no training loss; the main step is SVD-free mean differencing: $\Delt
 | GAR-8B (region LMM) | tailored SFT | 59.9 | 62.2 | - |
 | Gemini-2.5-Pro | proprietary | 64.2 | 59.3 | - |
 
-| Dataset | Qwen3-VL SoM | Qwen3-VL CSteer | Gain | Note |
+| Dataset | Qwen3-VL SoM | Qwen3-VL CSteer | Gain | Remarks |
 |---|---|---|---|---|
-| VIP-Bench AVG | 70.8 | 71.0 | +0.2 | Mainly single-region, limited room |
-| BLINK ALL | 47.9 | (see paper) | +3-5 | Multi-region comparison tasks |
-| GAR-Bench (contextual) | 58.9 | 66.4 | **+7.5** | Largest gain in context-sensitive scenarios |
+| VIP-Bench AVG | 70.8 | 71.0 | +0.2 | Mostly single region, limited room |
+| BLINK ALL | 47.9 | - | +3-5 | Multi-region comparison tasks |
+| GAR-Bench (contextual)| 58.9 | 66.4 | **+7.5** | Largest gain in context-sensitive scenarios |
 
 ### Ablation Study
 
-| Design Component | GAR-Bench AVG | Notes |
+| Design Component | GAR-Bench AVG | Description |
 |---|---|---|
-| Full CSteer | 57.4 | Qwen3-VL-8B + rewrite + layer decomposition |
-| w/o Rewrite (GT vs Rollout) | ~54 | Style noise contaminates, gain reduced |
+| Full CSteer | 57.4 | Qwen3-VL-8B + rewrite + decomposition |
+| w/o Rewrite (GT vs Rollout) | ~54 | Style noise interferes, smaller gain |
 | w/o Decomposition (marker-only) | ~55 | Lacks information aggregation phase |
-| w/o Decomposition (in-query only) | ~54 | Output still confused during decode |
-| Marker Shuffle Construction | ~53 | Less clean than rewrite |
+| w/o Decomposition (in-query) | ~54 | Output remains confused during decoding |
+| Marker Shuffle Construction | ~53 | Less pure than the rewrite strategy |
 
 ### Key Findings
-- **Contextual scenarios see greater gains than region-centric**: GAR-Bench contextual subset improves by +7.5%, but BLINK’s relative depth/reflectance only by +3-5%, indicating $\Delta^l$ is better at "correcting global neglect," though also effective (with smaller gains) for pure geometric comparison tasks.
-- **Layer decomposition is critical**: In-query and marker-only alone each improve little over SoM (+1-2%), but combined yield +5-7% gain, supporting the authors’ hypothesis of "early aggregation / late output" division of labor.
-- **Training-free approach can surpass SFT models**: Qwen3-VL-8B+CSteer achieves 65.8 on GAR-Bench, surpassing the specialized GAR-8B (59.9), showing that general LMMs already possess multi-region perception ability—it just needs to be "activated," a counterintuitive finding.
+- **Contextual scenes see higher gains than region-centric ones**: The GAR-Bench contextual subset saw a +7.5% improvement, whereas BLINK relative depth/reflectance only improved by +3-5%, indicating that $\Delta^l$ is better at "correcting global neglect" and is also effective for geometric comparison tasks, though with smaller margins.
+- **Layer decomposition is key**: Used alone, in-query or marker-only editing is barely better than SoM (+1-2%). Only the combination yields a +5-7% gain, validating the hypothesis regarding the "early aggregation / late output" division of labor.
+- **Training-free can surpass SFT models**: Qwen3-VL-8B+CSteer reached 65.8 on GAR-Bench, surpassing the 59.9 of GAR-8B which was specifically fine-tuned for that benchmark. This suggests general LMMs already possess multi-region perception capabilities that simply aren't "activated"—a somewhat counter-intuitive finding.
 
 ## Highlights & Insights
-- **Visual extension of the "behavior can be linearly edited" hypothesis**: Previously, Rimsky et al. showed that refusal/sycophancy in text LLMs can be modulated by steering vectors; this work cleanly extends the paradigm to multimodal referring tasks, proving that even highly localized visual marker behaviors are amenable—suggesting that more visual behaviors (e.g., fine-grained counting, relational reasoning) may also be editable via representation editing.
-- **Clean positive-negative pair construction via rewrite**: Rather than simply using GT as positive, the LLM minimally rewrites the negative sample into a correct version, making this "differential matching" approach transferable to any task needing clean behavior vectors (e.g., code style, toxicity, reasoning chain structure).
-- **Functional mapping of layer-wise injection**: Assigning "information aggregation" to early layers and "output generation" to later layers, this fine-grained intervention based on LLM information flow priors is more robust and effective than all-layer injection; future work can systematically align "task-layer" mappings.
+- **Visual extension of the "linearly editable behavior" hypothesis**: Previous work by Rimsky et al. verified that behaviors like refusal could be regulated by steering vectors in text LLMs. This paper cleanly transfers this paradigm to multimodal referring tasks and proves that "highly localized" behaviors like visual markers also respond to it.
+- **Rewriting for pure positive-negative pairs**: Instead of simply using GT as the positive sample, the LLM performs a "minimal rewrite" of the negative sample. This "differential matching" logic can be transferred to any task requiring pure behavior vectors (e.g., code style, toxicity, reasoning chain structure).
+- **Functional mapping of layered injection**: Mapping "information aggregation" to early layers and "output generation" to late layers based on LLM information flow priors is more robust than a one-size-fits-all intervention.
 
 ## Limitations & Future Work
-- The contextual vector is dataset-dependent—while cross-benchmark reuse is demonstrated, robustness across entirely different modalities (e.g., medical imaging, remote sensing) is untested; domain shift may require recomputing $\Delta^l$.
-- Injection strength $\lambda$ and layer range require grid search on a small validation set, so "cold start" without annotations remains a deployment challenge; whether unsupervised $\lambda$ adaptation is possible is an open question.
-- Only tested on open-source LMMs up to 8B scale; not evaluated on 70B+ or closed-source large models (GPT-4o, o3)—these are only used as baselines. Whether representation editing is stable on 10B+ models remains unknown.
-- The upper bound for multi-region is still limited by the general LMM’s visual token count and attention width; extremely dense scenarios (dozens of regions) are likely to saturate.
+- Contextual vectors are dataset-dependent—while cross-benchmark reuse is demonstrated, robustness across completely different modalities (e.g., medical imaging, remote sensing) has not been verified. Domain shifts may require recalculating $\Delta^l$.
+- Injection strength $\lambda$ and layer range require grid searching on a small validation set; the "cold start" problem without labels remains a challenge for deployment.
+- Experiments only covered open-source LMMs up to the 8B scale; steering was not tested on 70B+ or closed-source models (GPT-4o, o3), which served only as baselines.
+- The upper limit for multi-region performance is still constrained by the visual token count and attention width of the general LMM; performance likely saturates in extremely dense scenarios (dozens of regions).
 
 ## Related Work & Insights
-- **vs GAR / INST-IT-Qwen / DAM (region LMM)**: These use "region encoder + large-scale referring data SFT," offering strong generalization but high training cost; CSteer requires no architecture change or training, and outperforms them on multi-region tasks, suggesting "general base model + inference-time intervention" is a promising direction.
-- **vs SoM (Set-of-Mark, Yang 2023)**: SoM overlays markers as prompts, a pure black-box approach; CSteer adds latent intervention atop SoM, validating the "prompt + activation editing" combination.
-- **vs Rimsky 2024 (CAA)**: Rimsky performed single-direction steering on text LLMs; this work extends to multimodal, layer-decomposed (in-query / marker-only), and rewrite-based positive-negative pairs—a multidimensional engineering advance.
-- **vs Inference-Time Intervention (ITI)**: Similar in spirit (editing activations at inference), but ITI mainly targets "honesty"; CSteer is the first to systematically apply this paradigm to visual referring, with layer decomposition as a novel component.
+- **vs. GAR / INST-IT-Qwen / DAM (region LMMs)**: These use the "region encoder + large-scale SFT" route, which is general but expensive. CSteer achieves better results on multi-region tasks without architecture changes or training, suggesting "general base model + inference-time intervention" is a promising direction.
+- **vs. SoM (Set-of-Mark, Yang 2023)**: SoM only overlays markers as prompts (black box). CSteer adds latent intervention on top of SoM, validating the "prompt + activation editing" combo.
+- **vs. Rimsky 2024 (CAA)**: Rimsky performed single-direction steering on text LLMs. This work extends the paradigm to multimodal + layer-decomposed + rewrite pairs.
+- **vs. Inference-Time Intervention (ITI)**: Similar in concept (modifying activations), but ITI primarily focuses on "honesty." CSteer is the first to systematize this for visual referring, introducing layer-decomposed as a new component.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Cleanly introduces latent steering to multimodal multi-region referring; both rewrite and layer decomposition are new engineering contributions.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Covers 4+ benchmarks and multiple base LMMs, comprehensive ablation, but lacks cross-domain (medical/remote sensing) validation.
-- Writing Quality: ⭐⭐⭐⭐ Clear pipeline diagrams, consistent math notation, informative comparison of vector construction schemes (Formulas 4-8).
-- Value: ⭐⭐⭐⭐⭐ Provides a low-cost path to "extract region ability without fine-tuning," highly instructive for industrial deployment of general LMMs.
+- **Novelty**: ⭐⭐⭐⭐ Cleanly introduces latent steering to multimodal multi-region referring; rewrite and layer decomposition are solid engineering contributions.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Covers 4+ benchmarks and multiple base LMMs with comprehensive ablations, though lacking cross-domain (medical/RS) validation.
+- **Writing Quality**: ⭐⭐⭐⭐ Clear pipeline diagrams, consistent mathematical notation, and informative comparison of vector construction schemes.
+- **Value**: ⭐⭐⭐⭐⭐ Provides a low-cost path to extract region capabilities without fine-tuning, highly relevant for industrial deployment of general LMMs.
 
 <!-- RELATED:START -->
 
@@ -133,10 +130,10 @@ CSteer has no training loss; the main step is SVD-free mean differencing: $\Delt
 ## Related Papers
 
 - [\[ICML 2026\] Revis: Sparse Latent Steering to Mitigate Object Hallucination in Large Vision-Language Models](revis_sparse_latent_steering_to_mitigate_object_hallucination_in_large_vision-la.md)
+- [\[ICML 2026\] Adaptive Residual-Update Steering for Low-Overhead Hallucination Mitigation in Large Vision Language Models](adaptive_residual-update_steering_for_low-overhead_hallucination_mitigation_in_l.md)
 - [\[ICML 2026\] Vision-aligned Latent Reasoning for Multi-modal Large Language Model](vision-aligned_latent_reasoning_for_multi-modal_large_language_model.md)
 - [\[ICLR 2026\] Dynamic Multimodal Activation Steering for Hallucination Mitigation in Large Vision-Language Models](../../ICLR2026/multimodal_vlm/dynamic_multimodal_activation_steering_for_hallucination_mitigation_in_large_vis.md)
-- [\[ICLR 2026\] Steering and Rectifying Latent Representation Manifolds in Frozen Multi-Modal LLMs for Video Anomaly Detection](../../ICLR2026/multimodal_vlm/steering_and_rectifying_latent_representation_manifolds_in_frozen_multi-modal_ll.md)
-- [\[ICML 2026\] SLQ: Bridging Modalities via Shared Latent Queries for Retrieval with Frozen MLLMs](slq_bridging_modalities_via_shared_latent_queries_for_retrieval_with_frozen_mllm.md)
+- [\[ICML 2026\] Mitigating Hallucinations in Large Vision-Language Models via Causal Route Gating](mitigating_hallucinations_in_large_vision-language_models_via_causal_route_gatin.md)
 
 </div>
 

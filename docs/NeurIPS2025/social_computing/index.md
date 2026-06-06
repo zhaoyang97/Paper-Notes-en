@@ -21,7 +21,7 @@ tags:
 
 **🧠 NeurIPS2025** · **18** paper notes
 
-📌 **Same area in other venues:** [💬 ACL2026 (19)](../../ACL2026/social_computing/index.md) · [📷 CVPR2026 (5)](../../CVPR2026/social_computing/index.md) · [🔬 ICLR2026 (10)](../../ICLR2026/social_computing/index.md) · [🤖 AAAI2026 (11)](../../AAAI2026/social_computing/index.md) · [📹 ICCV2025 (4)](../../ICCV2025/social_computing/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (8)](../../ICML2026/social_computing/index.md) · [💬 ACL2026 (45)](../../ACL2026/social_computing/index.md) · [📷 CVPR2026 (5)](../../CVPR2026/social_computing/index.md) · [🔬 ICLR2026 (10)](../../ICLR2026/social_computing/index.md) · [🤖 AAAI2026 (11)](../../AAAI2026/social_computing/index.md) · [📹 ICCV2025 (4)](../../ICCV2025/social_computing/index.md)
 
 🔥 **Top topics:** LLM ×4
 

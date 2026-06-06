@@ -19,7 +19,7 @@ tags:
 
 **📹 ICCV2025** · **7** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (16)](../../ICML2026/optimization/index.md) · [📷 CVPR2026 (8)](../../CVPR2026/optimization/index.md) · [🔬 ICLR2026 (44)](../../ICLR2026/optimization/index.md) · [🤖 AAAI2026 (22)](../../AAAI2026/optimization/index.md) · [🧠 NeurIPS2025 (110)](../../NeurIPS2025/optimization/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (67)](../../ICML2026/optimization/index.md) · [📷 CVPR2026 (8)](../../CVPR2026/optimization/index.md) · [🔬 ICLR2026 (44)](../../ICLR2026/optimization/index.md) · [🤖 AAAI2026 (22)](../../AAAI2026/optimization/index.md) · [🧠 NeurIPS2025 (110)](../../NeurIPS2025/optimization/index.md)
 
 🔥 **Top topics:** Federated Learning ×3
 

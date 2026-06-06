@@ -145,9 +145,9 @@ Removing SDPE causes the most severe degradation (ArtFID rising from 32.45 to 40
 
 - [\[ICCV 2025\] Doodle Your Keypoints: Sketch-Based Few-Shot Keypoint Detection](doodle_your_keypoints_sketch-based_few-shot_keypoint_detection.md)
 - [\[NeurIPS 2025\] Optimized Learned Count-Min Sketch](../../NeurIPS2025/others/optimized_learned_count-min_sketch.md)
+- [\[ICML 2026\] SORA: Free Second-Order Attacks in Fast Adversarial Training](../../ICML2026/others/sora_free_second-order_attacks_in_fast_adversarial_training.md)
 - [\[ICLR 2026\] Training Deep Normalization-Free Spiking Neural Networks with Lateral Inhibition](../../ICLR2026/others/training_deep_normalization-free_spiking_neural_networks_with_lateral_inhibition.md)
 - [\[ICCV 2025\] Hi3DGen: High-fidelity 3D Geometry Generation from Images via Normal Bridging](hi3dgen_high-fidelity_3d_geometry_generation_from_images_via_normal_bridging.md)
-- [\[ICCV 2025\] FixTalk: Taming Identity Leakage for High-Quality Talking Head Generation in Extreme Cases](fixtalk_taming_identity_leakage_for_high-quality_talking_head_generation_in_extr.md)
 
 </div>
 

@@ -130,11 +130,11 @@ PCBF shows the greatest advantage on tasks where distribution tails/multimodal r
 
 ## Related Papers
 
+- [\[ICML 2026\] Distributional Inverse Reinforcement Learning](distributional_inverse_reinforcement_learning.md)
+- [\[ICML 2026\] Coupled Variational Reinforcement Learning for Language Model General Reasoning](coupled_variational_reinforcement_learning_for_language_model_general_reasoning.md)
 - [\[ICLR 2026\] Value Flows](../../ICLR2026/reinforcement_learning/value_flows.md)
-- [\[NeurIPS 2025\] Convergence Theorems for Entropy-Regularized and Distributional Reinforcement Learning](../../NeurIPS2025/reinforcement_learning/convergence_theorems_for_entropy-regularized_and_distributional_reinforcement_le.md)
 - [\[ICLR 2026\] ReFORM: Reflected Flows for On-support Offline RL via Noise Manipulation](../../ICLR2026/reinforcement_learning/reform_reflected_flows_for_on-support_offline_rl_via_noise_manipulation.md)
-- [\[ICLR 2026\] Spectral Bellman Method: Unifying Representation and Exploration in RL](../../ICLR2026/reinforcement_learning/spectral_bellman_method_unifying_representation_and_exploration_in_rl.md)
-- [\[AAAI 2026\] PA-FAS: Towards Interpretable and Generalizable Multimodal Face Anti-Spoofing via Path-Augmented Reinforcement Learning](../../AAAI2026/reinforcement_learning/pa-fas_towards_interpretable_and_generalizable_multimodal_face_anti-spoofing_via.md)
+- [\[NeurIPS 2025\] Convergence Theorems for Entropy-Regularized and Distributional Reinforcement Learning](../../NeurIPS2025/reinforcement_learning/convergence_theorems_for_entropy-regularized_and_distributional_reinforcement_le.md)
 
 </div>
 

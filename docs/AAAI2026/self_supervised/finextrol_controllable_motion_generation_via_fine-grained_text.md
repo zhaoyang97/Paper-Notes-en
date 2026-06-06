@@ -152,11 +152,11 @@ Inference efficiency comparison:
 
 ## Related Papers
 
+- [\[ICML 2026\] TRACER: Robust Multimodal Fine-Tuning Proven by WMA Teacher + Geometric Decomposition](../../ICML2026/self_supervised/tracer_persistent_regularization_for_robust_multimodal_finetuning.md)
 - [\[ICCV 2025\] MoSiC: Optimal-Transport Motion Trajectory for Dense Self-Supervised Learning](../../ICCV2025/self_supervised/mosic_optimal-transport_motion_trajectory_for_dense_self-supervised_learning.md)
 - [\[ICML 2026\] Text-Conditional JEPA for Learning Semantically Rich Visual Representations](../../ICML2026/self_supervised/text-conditional_jepa_for_learning_semantically_rich_visual_representations.md)
 - [\[CVPR 2026\] Text-Phase Synergy Network with Dual Priors for Unsupervised Cross-Domain Image Retrieval](../../CVPR2026/self_supervised/text-phase_synergy_network_with_dual_priors_for_unsupervised_cross-domain_image_.md)
 - [\[NeurIPS 2025\] TabSTAR: A Tabular Foundation Model for Tabular Data with Text Fields](../../NeurIPS2025/self_supervised/tabstar_a_tabular_foundation_model_for_tabular_data_with_text_fields.md)
-- [\[ICCV 2025\] A Token-level Text Image Foundation Model for Document Understanding (TokenFD/TokenVL)](../../ICCV2025/self_supervised/a_tokenlevel_text_image_foundation_model_for_document_unders.md)
 
 </div>
 

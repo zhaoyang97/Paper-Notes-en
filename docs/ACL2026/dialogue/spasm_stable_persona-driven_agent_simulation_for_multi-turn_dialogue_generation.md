@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] SPASM: Stable Persona-driven Agent Simulation for Multi-turn Dialogue Generation
 description: >-
-  [ACL 2026 Findings][Dialogue Systems][Persona-based Dialogue] This paper proposes SPASM, a stability-centric persona-driven multi-turn dialogue simulation framework that significantly reduces role drift and echo effects…
+  [ACL 2026 Findings][Dialogue Systems][Persona-based Dialogue] This work proposes SPASM, a stability-centric persona-driven multi-turn dialogue simulation framework. Through modular persona generation…
 tags:
   - "ACL 2026 Findings"
   - "Dialogue Systems"
   - "Persona-based Dialogue"
   - "Multi-turn Simulation"
-  - "Role Drift"
-  - "Egocentric Projection"
+  - "Character Drift"
+  - "Egocentric Context Projection"
   - "Data Generation"
 date: 2026-05-08
-content_hash: c3b9755bfdc78f40
+content_hash: e02f3ad58132297e
 ---
 
 # SPASM: Stable Persona-driven Agent Simulation for Multi-turn Dialogue Generation
@@ -21,55 +21,55 @@ content_hash: c3b9755bfdc78f40
 **arXiv**: [2604.09212](https://arxiv.org/abs/2604.09212)  
 **Code**: [GitHub](https://github.com/lhannnn/SPASM)  
 **Area**: Dialogue Systems  
-**Keywords**: Persona-based Dialogue, Multi-turn Simulation, Role Drift, Egocentric Projection, Data Generation
+**Keywords**: Persona-based Dialogue, Multi-turn Simulation, Character Drift, Egocentric Context Projection, Data Generation
 
 ## TL;DR
 
-This paper proposes SPASM, a stability-centric persona-driven multi-turn dialogue simulation framework that significantly reduces role drift and echo effects in LLM-LLM conversations through three components: modular persona generation, Egocentric Context Projection (ECP), and termination detection, constructing 45,000 high-quality multi-turn dialogue instances.
+This work proposes SPASM, a stability-centric persona-driven multi-turn dialogue simulation framework. Through modular persona generation, Egocentric Context Projection (ECP), and termination detection, it significantly reduces character drift and the "echoing" effect in LLM-LLM dialogues, constructing a high-quality dataset of 45,000 multi-turn dialogues.
 
 ## Background & Motivation
 
-**Background**: LLMs are widely deployed in multi-turn interactive scenarios such as tutoring, support, and counseling. LLM-LLM dialogue simulation is an effective approach for generating large-scale training/evaluation data, offering lower costs and better controllability compared to human collection.
+**Background**: LLMs are extensively deployed in multi-turn interactive scenarios such as tutoring, support, and consultation. LLM-LLM dialogue simulation serves as an efficient method to generate large-scale training/evaluation data, offering lower costs and better controllability compared to manual collection.
 
-**Limitations of Prior Work**: LLM-LLM long conversations accumulate identity-related failures—persona drift (agents gradually deviate from assigned identities), role confusion, and echo effects (one agent gradually mimics another's language and stance). These issues intensify as dialogues lengthen, causing generated conversations to no longer correspond to intended settings and contaminating synthetic datasets.
+**Limitations of Prior Work**: Long LLM-LLM dialogues accumulate identity-related failures—persona drift (characters gradually deviating from assigned identities), role confusion, and the "echoing" effect (where one agent mimics the language and stance of the other). These issues intensify as dialogues lengthen, leading to generated data that fails to match intended settings and pollutes synthetic datasets.
 
-**Key Challenge**: Naive dialogue history concatenation is the root problem—the same utterance may occupy different relative roles (user vs assistant) for different agents, leading to role confusion and feedback loops.
+**Key Challenge**: The root cause lies in the naive concatenation of dialogue history—the same utterance may occupy different relative roles (user vs. assistant) for different agents, leading to role confusion and feedback loops.
 
-**Goal**: Design a "stability-first" dialogue simulation framework that ensures long-term role consistency without modifying model weights.
+**Goal**: To design a "stability-first" dialogue simulation framework that ensures long-term persona consistency without modifying model weights.
 
-**Key Insight**: Address the problem by changing the **representation method** of dialogue history rather than the model itself—store dialogue history in a perspective-neutral format and deterministically project it to each agent's egocentric view during generation.
+**Key Insight**: The problem is addressed by altering the **representation** of dialogue history rather than the model itself—storing dialogue history in a perspective-neutral format and deterministically projecting it into each agent's egocentric perspective during generation.
 
-**Core Idea**: Egocentric Context Projection (ECP): Store dialogue history in $(speaker\_id, content)$ format, and during generation use role relabeling operator $\Psi_i$ to map speaker labels to SELF/PARTNER, ensuring each agent always views the dialogue from its own perspective.
+**Core Idea**: Egocentric Context Projection (ECP): Dialogue history is stored as $(speaker\_id, content)$ pairs. During generation, a role re-labeling operator $\Psi_i$ maps speaker labels to SELF/PARTNER, ensuring that each agent consistently perceives the dialogue from its own perspective.
 
 ## Method
 
 ### Overall Architecture
 
-SPASM comprises five components: (1) Persona Schema (samples persona attributes) → (2) Persona Validator (verifies combination plausibility) → (3) Persona Crafter (generates natural language persona descriptions) → (4) Client-Responder dialogue simulation (with ECP) → (5) Termination Detector (detects natural endpoints).
+SPASM consists of five components: (1) Persona Schema (sampling attribute fields) → (2) Persona Validator (verifying combination rationality) → (3) Persona Crafter (generating natural language descriptions) → (4) Client-Responder dialogue simulation (incorporating ECP) → (5) Termination Detector (identifying natural ending points).
 
 ### Key Designs
 
-1. **Egocentric Context Projection (ECP)**:
+1.  **Egocentric Context Projection (ECP)**:
 
-    - Function: Eliminates role confusion and echo effects, ensuring long-term persona consistency
-    - Mechanism: Dialogue history is stored as a perspective-neutral ordered sequence $\mathcal{H}_t = (u_k)_{k=1}^t$, where $u_k = (s_k, c_k)$ (speaker ID + content). During generation, projection operator $\Psi_i(\mathcal{H}_t) = ((\phi_i(s_k), c_k))_{k=1}^t$ maps absolute speakers to relative role descriptions (SELF/PARTNER). This ensures that in the dialogue history seen by each agent, its own utterances are labeled SELF and the other's are labeled PARTNER
-    - Design Motivation: Fixed assignment of user/assistant labels in naive concatenation is the source of role confusion. ECP converts this to symmetric SELF/PARTNER representation, decoupling role labels from agent identities
+    - **Function**: Eliminates role confusion and echoing effects, ensuring long-term persona consistency.
+    - **Mechanism**: Dialogue history is stored as a perspective-agnostic ordered sequence $\mathcal{H}_t = (u_k)_{k=1}^t$, where $u_k = (s_k, c_k)$ (Speaker ID + Content). During generation, the projection operator $\Psi_i(\mathcal{H}_t) = ((\phi_i(s_k), c_k))_{k=1}^t$ maps absolute speakers to relative role descriptions (SELF/PARTNER). This ensures that in the history perceived by each agent, its own utterances are marked as SELF, while the counterpart's are marked as PARTNER.
+    - **Design Motivation**: The fixed assignment of user/assistant labels in naive concatenation causes role confusion. ECP transforms this into a symmetric SELF/PARTNER representation, decoupling role labels from agent identity.
 
-2. **Modular Persona Generation Pipeline**:
+2.  **Modular Persona Generation Pipeline**:
 
-    - Function: Generates diverse, plausible, controllable persona descriptions
-    - Mechanism: Three-step process—Schema Sampling (randomly samples from predefined fields: age, occupation, location, emotional state, behavioral patterns, etc.) → Validator (checks coherence and plausibility of combinations; implausible ones like "18-year-old student + retirement planning" trigger resampling) → Crafter (converts validated attribute sets into coherent natural language persona descriptions, with possible additional detail expansion)
-    - Design Motivation: Directly using randomly sampled attribute combinations may be implausible. Validator + refiner ensure persona credibility
+    - **Function**: Generates diverse, rational, and controllable persona descriptions.
+    - **Mechanism**: A three-step process—Schema Sampling (random selection from predefined fields: age, occupation, location, emotional state, behavioral patterns, etc.) → Validator (checking coherence, e.g., re-sampling if "18-year-old student + pension planning" is detected) → Crafter (converting validated attributes into coherent natural language descriptions with optional detail expansion).
+    - **Design Motivation**: Direct attribute sampling may lead to irrational combinations. The validator and crafter ensure persona credibility.
 
-3. **Termination Detector**:
+3.  **Termination Detector**:
 
-    - Function: Detects and terminates dialogue at natural endpoints, avoiding forced truncation or infinite loops
-    - Mechanism: Activates after turn $T$, judges whether closing signals appear (e.g., expressing thanks, farewells) based on recent $m$ turns of dialogue history and predefined termination rules
-    - Design Motivation: Hard truncation produces unnatural endings; termination detection ensures dialogue coherence and naturalness
+    - **Function**: Detects natural ending points and terminates dialogues to avoid forced truncation or infinite loops.
+    - **Mechanism**: Activated after $T$ rounds, it assesses whether closing signals (e.g., expressions of gratitude or farewell) are present based on the most recent $m$ turns and predefined rules.
+    - **Design Motivation**: Hard truncation results in unnatural endings; termination detection ensures dialogue coherence and naturalness.
 
 ### Loss & Training
 
-Completely training-free. All components implemented via API calls without modifying model weights.
+The framework is entirely training-free. All components are implemented via API calls without modifying model weights.
 
 ## Key Experimental Results
 
@@ -82,43 +82,43 @@ Completely training-free. All components implemented via API calls without modif
 | DS / GPT | 0.99 | 1.00 |
 | Qwen / Qwen | 0.98 | 1.00 |
 
-### Ablation Study (ECP Effects)
+### Ablation Study (ECP Effect)
 
 | Metric | With ECP | Without ECP |
 |------|-------|--------|
-| Persona Drift | Significantly reduced | High |
-| Echo Effect | Near-zero in manual verification | Frequent |
+| Persona Drift | Significantly Reduced | High |
+| Echo Effect | Near Zero (Human Eval) | Frequent |
 | Silhouette Score | High (0.60) | Low |
 
 ### Key Findings
-- ECP is the most critical design: dramatically reduces persona drift, nearly eliminates echo effects in manual verification
-- Same-backbone model interactions produce tighter persona clusters (GPT/GPT Silhouette=0.60 vs GPT/DS=0.10)
-- Responder model backbone dominates interaction geometry: when Responder is fixed to GPT, clustering quality is high regardless of Client
-- Cross-model interactions primarily increase within-cluster variance rather than reducing between-cluster separation
-- Constructed large-scale dataset of 4,500 personas × 45,000 dialogues
+- ECP is the most critical design: it significantly reduces persona drift and virtually eliminates echoing effects in human evaluations.
+- Interactions between identical backbone models produce tighter persona clusters (GPT/GPT Silhouette=0.60 vs. GPT/DS=0.10).
+- The Responder backbone dominates interaction geometry: if the Responder is fixed as GPT, clustering quality remains high regardless of the Client model.
+- Cross-model interactions primarily increase intra-cluster variance rather than decreasing inter-cluster separation.
+- A large-scale dataset was constructed featuring 4,500 personas and 45,000 dialogues.
 
 ## Highlights & Insights
-- **ECP's "minimal change, maximum effect"** is highly elegant: merely changing role label representation in dialogue history (user/assistant → SELF/PARTNER) dramatically improves long-term stability. This simple idea has profound implications—role representation matters more than model capability
-- **Responder model dominates interaction geometry** is an interesting finding: in persona-driven dialogue, the responder (not the initiator) determines the structure of dialogue space, suggesting "listener" impacts interaction quality more than "speaker"
-- **Persona validation step** avoids implausible combinations, making the dataset more credible—a practice worth promoting in synthetic data generation
+- The **"minimal change, maximum effect" of ECP** is elegant: by merely modifying the representation of role labels (user/assistant → SELF/PARTNER), long-term stability is vastly improved. This simple approach suggests that role representation is more fundamental to identity than raw model capability.
+- The finding that the **Responder model dominates interaction geometry** is insightful: in persona-driven dialogues, the responder (rather than the initiator) defines the structure of the dialogue space, implying that the "listener" has a greater impact on interaction quality than the "speaker."
+- The **Persona Validation step** prevents irrational attribute combinations, enhancing dataset credibility—a practice highly recommended for synthetic data generation.
 
 ## Limitations & Future Work
-- Only validated on English dialogues; effectiveness in multilingual scenarios is unknown
-- Persona attribute fields are predefined and may not cover all application scenarios
-- Maximum dialogue length limited to 25 turns/agent; stability in longer dialogues untested
-- Effectiveness of generated data for downstream SFT training not evaluated
-- ECP extension to multi-agent (>2) scenarios is theoretically feasible but unverified
+- Only English dialogues were verified; effectiveness in multilingual contexts remains unknown.
+- Persona attribute fields are predefined and may not cover all potential application scenarios.
+- Maximum dialogue length is restricted to 25 turns per agent; stability for extreme-length dialogues was not tested.
+- The impact of using the generated data for downstream SFT was not evaluated.
+- While theoretically feasible, the extension of ECP to multi-agent (>2) scenarios has not been verified.
 
 ## Related Work & Insights
-- **vs Self-Chat/RolePlay**: These methods use simple dialogue history concatenation; SPASM addresses long-term role consistency via ECP
-- **vs Generative Agents (Park et al.)**: Focuses on memory and behavioral simulation; SPASM specializes in dialogue data generation and identity stability
-- **vs Instruction drift research (Li et al.)**: This paper extends similar measurement methods to persona-driven dialogue generation scenarios
+- **vs Self-Chat/RolePlay**: Unlike these methods that use simple history concatenation, SPASM ensures long-term persona consistency via ECP.
+- **vs Generative Agents (Park et al.)**: While prior work emphasizes memory and behavior, SPASM focuses on dialogue data generation and identity stability.
+- **vs Instruction Drift Research (Li et al.)**: This work extends similar metrics to the realm of persona-driven dialogue generation.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ ECP is simple yet effective, in-depth persona stability analysis
-- Experimental Thoroughness: ⭐⭐⭐⭐ 9 backbone combinations, 45K dialogues, multi-dimensional analysis
-- Writing Quality: ⭐⭐⭐⭐ Clear formalization, thorough analysis
-- Value: ⭐⭐⭐⭐ Provides practical stability solution for LLM dialogue data generation
+- **Novelty**: ⭐⭐⭐⭐ ECP is simple yet effective, and the persona stability analysis is thorough.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Covers 9 backbone combinations, 45K dialogues, and multi-dimensional analysis.
+- **Writing Quality**: ⭐⭐⭐⭐ Clear formalization and insightful analysis.
+- **Value**: ⭐⭐⭐⭐ Provides a practical stability solution for LLM-based dialogue data generation.
 
 <!-- RELATED:START -->
 
@@ -126,11 +126,11 @@ Completely training-free. All components implemented via API calls without modif
 
 ## Related Papers
 
+- [\[ACL 2026\] GenesisFunc: Multi-Agent Data Generation for Accurate and Generalizable Function-Calling](genesisfunc_multi-agent_data_generation_for_accurate_and_generalizable_function-.md)
 - [\[ACL 2026\] ETHICMIND: A Risk-Aware Framework for Ethical-Emotional Alignment in Multi-Turn Dialogue](ethicmind_a_risk-aware_framework_for_ethical-emotional_alignment_in_multi-turn_d.md)
-- [\[ACL 2026\] ODUTQA-MDC: A Task for Open-Domain Underspecified Tabular QA with Multi-turn Dialogue-based Clarification](odutqa-mdc_a_task_for_open-domain_underspecified_tabular_qa_with_multi-turn_dial.md)
 - [\[ACL 2026\] Discourse Coherence and Response-Guided Context Rewriting for Multi-Party Dialogue Generation](discourse_coherence_and_response-guided_context_rewriting_for_multi-party_dialog.md)
-- [\[NeurIPS 2025\] MetaMind: Modeling Human Social Thoughts with Metacognitive Multi-Agent Systems](../../NeurIPS2025/dialogue/metamind_modeling_human_social_thoughts_with_metacognitive_multi-agent_systems.md)
-- [\[ACL 2026\] Cognitive Policy-Driven LLM for Diagnosis and Intervention of Cognitive Distortions in Emotional Support Conversation](cognitive_policy-driven_llm_for_diagnosis_and_intervention_of_cognitive_distorti.md)
+- [\[ACL 2026\] ODUTQA-MDC: A Task for Open-Domain Underspecified Tabular QA with Multi-turn Dialogue-based Clarification](odutqa-mdc_a_task_for_open-domain_underspecified_tabular_qa_with_multi-turn_dial.md)
+- [\[ACL 2026\] Context-Agent: Dynamic Discourse Trees for Non-Linear Dialogue](context-agent_dynamic_discourse_trees_for_non-linear_dialogue.md)
 
 </div>
 

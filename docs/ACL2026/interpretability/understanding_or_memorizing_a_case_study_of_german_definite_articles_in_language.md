@@ -2,131 +2,128 @@
 title: >-
   [Paper Note] Understanding or Memorizing? A Case Study of German Definite Articles in Language Models
 description: >-
-  [ACL 2026][Interpretability][grammatical encoding] This paper employs the Gradiend gradient-based interpretability method to investigate whether language models predict German definite articles (der/die/das/den/dem/des)…
+  [ACL 2026][Interpretability][Grammar encoding] This paper utilizes the Gradiend gradient-based interpretability method to investigate whether language models predict German definite articles (der/die/das/den/dem/des) bas…
 tags:
   - "ACL 2026"
   - "Interpretability"
-  - "grammatical encoding"
-  - "memorization vs. generalization"
+  - "Grammar encoding"
+  - "Memorization vs Generalization"
   - "German articles"
-  - "gradient-based interpretability"
+  - "Gradient interpretability"
   - "Gradiend"
 date: 2026-05-08
-content_hash: ab593475a2b61816
+content_hash: 72a19e0e14352aa9
 ---
 
 # Understanding or Memorizing? A Case Study of German Definite Articles in Language Models
 
-**Conference**: ACL 2026
+**Conference**: ACL 2026  
 **arXiv**: [2601.09313](https://arxiv.org/abs/2601.09313)  
 **Code**: None  
-**Area**: Interpretability
-**Keywords**: grammatical encoding, memorization vs. generalization, German articles, gradient-based interpretability, Gradiend
+**Area**: Interpretability  
+**Keywords**: Grammar encoding, Memorization vs Generalization, German articles, Gradient interpretability, Gradiend
 
 ## TL;DR
 
-This paper employs the Gradiend gradient-based interpretability method to investigate whether language models predict German definite articles (der/die/das/den/dem/des) by leveraging abstract grammatical rules or surface-level memorization, finding that models rely at least partially on memorized associations rather than strict rule-based encoding.
+This paper utilizes the Gradiend gradient-based interpretability method to investigate whether language models predict German definite articles (der/die/das/den/dem/des) based on abstract grammatical rules or surface memorization. Results find that models rely at least partially on memorized associations rather than strict rule encoding.
 
 ## Background & Motivation
 
-**Background**: Modern language models achieve near-perfect performance on grammatical agreement tasks, yet whether their internal mechanisms encode abstract grammatical rules (e.g., systematic relations among gender, number, and case) or merely memorize high-frequency token–context associations remains a central question in interpretability research.
+**Background**: Modern language models perform nearly perfectly on grammatical consistency tasks, but whether their internal mechanisms encode abstract grammatical rules (such as systematic relations of gender, number, and case) or merely memorize high-frequency token-context associations remains a core question in interpretability research.
 
-**Limitations of Prior Work**: Existing probing studies can only demonstrate that grammatical features are "recoverable from model representations," but cannot establish that these features "causally drive" model predictions. Consequently, high probing accuracy does not imply that a model genuinely understands grammatical rules.
+**Limitations of Prior Work**: Existing probing research can only prove that grammatical features are "recoverable from model representations" but cannot prove these features "causally drive" model predictions. Therefore, high probing accuracy is not equivalent to a model truly understanding grammatical rules.
 
-**Key Challenge**: The German definite article system provides an ideal testbed — the same article can correspond to multiple gender–case combinations (e.g., *der* serves as both masculine nominative and feminine dative/genitive), and this syncretism allows researchers to distinguish rule-based from memory-based behavior: if the model encodes rules, an intervention targeting a specific gender–case transformation should affect only that grammatical dimension; if it relies on memorization, the intervention will spill over to unrelated grammatical settings that share the same surface article form.
+**Key Challenge**: The German definite article system provides an ideal test scenario—the same article can correspond to multiple gender-case combinations (e.g., "der" can be masculine nominative, feminine dative, or feminine genitive). This syncretism allows researchers to distinguish: if the model is based on rule encoding, then interventions targeting specific gender-case transitions should only affect that grammatical dimension; if based on memorization, interventions will spill over to unrelated grammatical settings sharing the same surface article.
 
-**Goal**: To empirically determine, via gradient intervention experiments, whether German definite article prediction is rule-driven or memory-driven.
+**Goal**: To verify whether German definite article prediction is rule-driven or memory-driven through gradient intervention experiments.
 
-**Key Insight**: The Gradiend method — a gradient-based encoder–decoder interpretability framework — is used to learn parameter update directions for specific gender–case article transformations, and these directions are then tested for generalization to unrelated grammatical settings.
+**Key Insight**: Utilize the Gradiend method—a gradient-based encoder-decoder interpretability framework—to learn parameter update directions for specific gender-case article transitions, then test whether these update directions generalize to unrelated grammatical settings.
 
-**Core Idea**: If the update direction learned for "masculine nominative *der* → feminine nominative *die*" simultaneously affects unrelated grammatical settings such as "feminine dative *der* → feminine dative *die*," this indicates that the model relies on surface-level memorization rather than abstract rules at these positions.
+**Core Idea**: If the update direction learned for "masculine nominative der → feminine nominative die" simultaneously affects unrelated grammatical settings such as "feminine dative der → feminine dative die", it indicates that the model relies on surface memorization rather than abstract rules in these positions.
 
 ## Method
 
 ### Overall Architecture
 
-The German definite article system (3 genders × 4 cases = 12 slots, 6 article forms) is selected as a controlled experimental system. For each pair of gender–case slots (e.g., masculine nominative ↔ feminine nominative), Gradiend is used to learn a one-dimensional feature direction. The analysis proceeds from three perspectives: encoder value distributions, post-intervention article probability changes, and overlap of update directions in parameter space.
+The German definite article system (3 genders × 4 cases = 12 cells, 6 article forms) is selected as a controlled experimental system. For each article transition between gender-case cells (e.g., masculine nominative ↔ feminine nominative), Gradiend is used to learn a one-dimensional feature direction. Analysis is then conducted from three perspectives: encoder value distribution, changes in article probability post-intervention, and overlap of update directions in parameter space.
 
 ### Key Designs
 
-1. **Gradiend Gradient Feature Learning**
+1.  **Gradiend Gradient Feature Learning**:
+    -   **Function**: Learn a compressed one-dimensional feature direction for a specific article transition.
+    -   **Mechanism**: Given an article transition between two gender-case cells $z_1, z_2$ (e.g., masculine nominative der ↔ feminine nominative die), collect gradients for both directions (factual target gradient $\nabla^F$ and alternative target gradient $\nabla^A$). Train an encoder to compress the gradient difference $\nabla^\Delta = \nabla^F - \nabla^A$ into a scalar $h \in [-1, 1]$ (+1 corresponds to one direction, -1 to the other), and an accompanying decoder to reconstruct the gradient from the scalar. Training data from all non-target cells serve as identity pairs (factual = alternative), forcing $h \approx 0$.
+    -   **Design Motivation**: A one-dimensional bottleneck ensures that the most dominant update direction is learned, while identity pair constraints ensure the learned direction is specific to the target transition rather than a global perturbation.
 
-    - *Function*: Learns a compressed one-dimensional feature direction for a specific article transformation.
-    - *Mechanism*: Given a transformation between two gender–case slots $z_1, z_2$ (e.g., masculine nominative *der* ↔ feminine nominative *die*), gradients are collected in both directions — factual-target gradient $\nabla^F$ and alternative-target gradient $\nabla^A$. An encoder is trained to compress the gradient difference $\nabla^\Delta = \nabla^F - \nabla^A$ into a scalar $h \in [-1, 1]$ (+1 for one direction, −1 for the other), and a decoder reconstructs the gradient from the scalar. Training data from all non-target slots are treated as identity pairs (factual = alternative), enforcing $h \approx 0$.
-    - *Design Motivation*: The one-dimensional bottleneck ensures that the most dominant update direction is captured, while the identity-pair constraint ensures that the learned direction is specific to the target transformation rather than a global perturbation.
+2.  **Three Analytical Perspectives**:
+    -   **Function**: Determine rule encoding vs. memorization from complementary angles.
+    -   **Mechanism**: (a) Encoder analysis—check whether gradients of non-target cells are also encoded into non-zero values (which should be zero under rule prediction); (b) Probability intervention—after applying the learned direction to model parameters, check whether article probability changes are restricted to target cells (Local Response, LR), systematically extend to the same gender/case dimension (Grammar-based Response, GR), or spill over to unrelated cells sharing surface articles (Surface-based Overlap, SO); (c) Top-k parameter overlap—compare whether the most important parameters for different transitions overlap significantly.
+    -   **Design Motivation**: These three analyses provide complementary evidence from representation space, functional behavior, and parameter space, as any single perspective might have confounding factors.
 
-2. **Three Complementary Analytical Perspectives**
-
-    - *Function*: Assess rule-based encoding vs. memorization from mutually complementary angles.
-    - *Mechanism*: (a) *Encoder analysis* — examines whether gradients from non-target slots are also encoded to non-zero values (under rule-based encoding, these should be zero); (b) *Probability intervention* — applies the learned direction to model parameters and checks whether article probability changes are confined to the target slot (LR), systematically extend to slots sharing the same gender or case dimension (GR), or spill over to unrelated slots sharing the same surface article form (SO); (c) *Top-$k$ parameter overlap* — compares the most important parameters across different transformations to assess whether they overlap substantially.
-    - *Design Motivation*: The three perspectives provide complementary evidence from representation space, functional behavior, and parameter space, respectively; any single perspective may be subject to confounding factors.
-
-3. **Learning Rate Selection and Language Modeling Preservation**
-
-    - *Function*: Ensures that intervention effects do not constitute spurious signals caused by model degradation.
-    - *Mechanism*: Multiple learning rates $\alpha$ are swept during intervention; only candidates that maintain at least 99% of the language modeling score on a neutral dataset are retained, and the $\alpha^*$ that maximizes the target article probability on the target dataset is selected. SuperGLEBer benchmark scores are additionally reported to confirm that the model's overall capabilities are unaffected.
-    - *Design Motivation*: Large parameter updates may alter predictions by disrupting language modeling ability rather than reflecting genuine grammatical mechanisms.
+3.  **Learning Rate Selection & Language Modeling Maintenance**:
+    -   **Function**: Ensure intervention effects are not pseudo-signals caused by model degradation.
+    -   **Mechanism**: When applying interventions, scan multiple learning rates $\alpha$ and retain only candidates that maintain over 99% of the language modeling score on neutral datasets. Select the $\alpha^*$ that maximizes the target article probability on the target dataset. SuperGLEBer benchmark scores are also reported to confirm that the model's overall capability is not impaired.
+    -   **Design Motivation**: Excessive parameter updates might change predictions by destroying language modeling capability rather than reflecting true grammatical mechanisms.
 
 ### Loss & Training
 
-Gradiend is trained with an MSE reconstruction loss $\|\text{dec}(\text{enc}(\nabla^A W_m)) - \nabla^\Delta W_m\|_2^2$, using the alternative-target gradient as input, since the factual-target gradient is typically close to zero and thus insufficiently informative.
+Gradiend is trained using the MSE reconstruction loss $\|\text{dec}(\text{enc}(\nabla^A W_m)) - \nabla^\Delta W_m\|_2^2$, using the alternative target gradient as input (since factual target gradients are typically near zero and not sufficiently informative).
 
 ## Key Experimental Results
 
 ### Main Results
 
-Gradiend variants (19 in total) are trained on 6 models: GermanBERT, GBERT, ModernGBERT, EuroBERT, GermanGPT-2, and LLaMA.
+19 Gradiend variants were trained on 6 models (GermanBERT, GBERT, ModernGBERT, EuroBERT, GermanGPT-2, LLaMA).
 
-| Model | Encoder Correlation | Spillover |
-|---|---|---|
-| GermanBERT | 90–98% | Pronounced: interventions for *der*→*die* also affect feminine dative/genitive |
-| GBERT | 95–99% | Pronounced: similar pattern |
-| ModernGBERT | 81–95% | Moderate spillover |
-| EuroBERT | 50–73% | Weaker but still significant |
-| GermanGPT-2 | 51–71% | Inconsistent patterns |
-| LLaMA | 50–67% | Least spillover, potentially reflecting a trend in larger models |
+| Model | Encoder Correlation | Spill-over Phenomenon |
+| :--- | :--- | :--- |
+| GermanBERT | 90-98% | Significant: der→die intervention simultaneously affects fem. dative/genitive |
+| GBERT | 95-99% | Significant: similar pattern |
+| ModernGBERT | 81-95% | Moderate spill-over |
+| EuroBERT | 50-73% | Weaker but still significant |
+| GermanGPT-2 | 51-71% | Inconsistent patterns |
+| LLaMA | 50-67% | Least spill-over, potentially reflecting a trend for larger models |
 
 ### Ablation Study
 
-| Analysis | Key Finding | Notes |
-|---|---|---|
-| Probability intervention | Spillover pattern (SO) occurs frequently | *der*→*die* intervention increases *die* probability for feminine dative/genitive (also using *der*) |
-| Top-1000 parameter overlap | 40–60% overlap within same-article groups | Different transformations share a large proportion of parameters, far above the random baseline |
-| Cross-article-group overlap | 20–30% | Considerable parameter overlap even across transformations involving different articles |
-| Control group | Baseline-level overlap | Gradiend trained on shuffled data yields only baseline overlap |
+| Analysis | Key Findings | Description |
+| :--- | :--- | :--- |
+| Probability Intervention | Spill-over patterns (SO) occur frequently | der→die intervention increased die probability for fem. dative/genitive (which also use der) |
+| Top-1000 Parameter Overlap | 40-60% overlap within the same article group | Different transitions share many parameters, exceeding the random baseline |
+| Cross-article Group Overlap | 20-30% | Notable parameter overlap even between transitions of different articles |
+| Control Group | Baseline-level overlap | Gradiend trained with shuffled data shows only baseline levels of overlap |
 
 ### Key Findings
 
-- **Widespread spillover**: Parameter update directions learned for specific gender–case transformations significantly affect unrelated slots that share the same surface article form, which is inconsistent with the pure rule-based encoding hypothesis.
-- **High parameter overlap**: The most important parameters across different article transformations overlap substantially (40–60%), far exceeding the random baseline, indicating that the model does not allocate independent parameter subsets to distinct grammatical relations.
-- **Encoder models are more "memory-dependent"**: Encoder models such as GermanBERT and GBERT exhibit the strongest spillover, possibly because bidirectional attention facilitates the exploitation of surface co-occurrence associations.
-- **Larger models may memorize less**: LLaMA (3.2B) is the only model that does not exhibit spillover at certain critical slots, suggesting that larger models may tend toward more abstract encoding.
-- **Language modeling capability preserved**: SuperGLEBer scores remain essentially unchanged before and after intervention (70.7 → 70.1–70.2), confirming that the observed effects are not attributable to model degradation.
+-   **Widespread Spill-over**: Parameter update directions learned for specific gender-case transitions significantly affect unrelated cells sharing the same surface article, which is inconsistent with the pure rule-encoding hypothesis.
+-   **High Parameter Overlap**: The most important parameters for different article transitions overlap heavily (40-60%), far exceeding random baselines, suggesting the model does not allocate independent parameter subsets for each grammatical relation.
+-   **Encoder Models are More "Memetic"**: Encoder models like GermanBERT and GBERT show the strongest spill-over, possibly because bidirectional attention makes it easier for the model to exploit surface co-occurrence associations.
+-   **Larger Models May Memorize Less**: LLaMA (3.2B) is the only model that did not demonstrate spill-over in certain key cells, hinting that larger models may tend toward more abstract encoding.
+-   **Unimpaired Language Modeling Capability**: SuperGLEBer scores remained basically unchanged before and after intervention (70.7 → 70.1-70.2), confirming the effects were not caused by model degradation.
 
 ## Highlights & Insights
 
-- **Elegant experimental design**: The syncretism of German articles (*der* can be masculine nominative or feminine dative/genitive) is exploited to construct a natural controlled experiment; this "same surface form, different underlying grammatical function" setup is replicable in other languages.
-- **Causal evidence**: The work moves beyond the correlational evidence of traditional probing by providing causal evidence through parameter intervention — the pattern of changes in model predictions directly reveals internal encoding mechanisms.
-- **Triangulated three-perspective analysis**: The encoder analysis, probability intervention, and parameter overlap perspectives yield consistent conclusions, substantially strengthening the evidentiary force.
+-   **Ingenious Experimental Design**: Leveraging the syncretism of German articles (where "der" can be masculine nominative or feminine dative/genitive) to construct a natural control experiment. This "one surface form, different deep grammatical functions" setup is replicable in other languages.
+-   **Causal Evidence**: Moves beyond the "correlation" evidence of traditional probing by providing "causal" evidence through parameter intervention—the pattern of changes in model prediction directly reveals internal encoding mechanisms.
+-   **Comprehensive Three-Perspective Analysis**: Encoder analysis, probability intervention, and parameter overlap provide consistent conclusions, enhancing the persuasiveness of the evidence.
 
 ## Limitations & Future Work
 
-- Only one grammatical phenomenon — German definite articles — is studied; whether the conclusions generalize to the morphological systems of other morphologically rich languages remains to be verified.
-- Decoder models (GPT-2, LLaMA) require custom MLM prediction heads, which may introduce noise that affects the conclusions.
-- The one-dimensional bottleneck of Gradiend may oversimplify what is in practice a multidimensional grammatical encoding.
-- The influence of article–noun co-occurrence frequency in training data on the degree of memorization vs. generalization is not explored.
+-   Only one grammatical phenomenon (German definite articles) was studied; whether the conclusions generalize to the grammatical systems of other morphologically rich languages remains to be verified.
+-   Decoder models (GPT-2, LLaMA) require custom MLM prediction heads, which may introduce noise affecting the conclusions.
+-   The one-dimensional bottleneck of Gradiend may oversimplify actual multidimensional grammatical encoding.
+-   The extent to which article-noun co-occurrence frequency in training data affects memorization vs. generalization was not explored.
 
 ## Related Work & Insights
 
-- **vs. Linear probing**: Probing can only demonstrate that information "exists within" representations; Gradiend intervention can demonstrate that information "causally drives" predictions, providing stronger evidence.
-- **vs. Finlayson et al. (2021)**: Their work modifies internal representations to study subject–verb agreement, whereas this paper modifies model parameters to study article prediction — the methodologies are complementary but operate at different levels (representation space vs. parameter space).
+-   **vs. Linear Probing**: Probing can only prove that information "exists" in representations, whereas Gradiend interventions can prove that information "causally drives" predictions, providing stronger evidence.
+-   **vs. Finlayson et al. (2021)**: While they modified internal representations to study subject-verb agreement, this paper modifies model parameters to study article prediction; the methodologies are complementary but operate at different levels (representation space vs. parameter space).
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ The experimental design exploiting German article syncretism is highly ingenious.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Six models, 19 variants, three-perspective analysis, rigorous statistical testing.
-- Writing Quality: ⭐⭐⭐⭐ Clear, though non-German readers may face a non-trivial learning curve.
-- Value: ⭐⭐⭐⭐ Provides important causal evidence for the memorization-vs.-rules debate in LM grammatical encoding.
+-   Novelty: ⭐⭐⭐⭐ The experimental design utilizing German article syncretism is very ingenious.
+-   Experimental Thoroughness: ⭐⭐⭐⭐⭐ 19 variants across 6 models, three-perspective analysis, and rigorous statistical testing.
+-   Writing Quality: ⭐⭐⭐⭐ Clear, though there is a certain barrier for non-German speakers.
+-   Value: ⭐⭐⭐⭐ Provides important causal evidence for the memorization vs. rule debate in LM grammatical encoding.
 
 <!-- RELATED:START -->
 
@@ -134,11 +131,11 @@ Gradiend variants (19 in total) are trained on 6 models: GermanBERT, GBERT, Mode
 
 ## Related Papers
 
+- [\[ACL 2026\] Interpretable Semantic Gradients in SSD: A PCA Sweep Approach and a Case Study on AI Discourse](interpretable_semantic_gradients_in_ssd_a_pca_sweep_approach_and_a_case_study_on.md)
 - [\[ACL 2026\] Rhetorical Questions in LLM Representations: A Linear Probing Study](rhetorical_questions_in_llm_representations_a_linear_probing_study.md)
 - [\[ACL 2026\] Tracing Relational Knowledge Recall in Large Language Models](tracing_relational_knowledge_recall_in_large_language_models.md)
-- [\[ACL 2026\] Compositional Steering of Large Language Models with Steering Tokens](compositional_steering_of_large_language_models_with_steering_tokens.md)
-- [\[ACL 2026\] Experiments or Outcomes? Probing Scientific Feasibility in Large Language Models](experiments_or_outcomes_probing_scientific_feasibility_in_large_language_models.md)
-- [\[ACL 2026\] Towards Intrinsic Interpretability of Large Language Models: A Survey of Design Principles and Architectures](towards_intrinsic_interpretability_of_large_language_modelsa_survey_of_design_pr.md)
+- [\[ACL 2026\] Mechanisms of Prompt-Induced Hallucination in Vision–Language Models](mechanisms_of_prompt-induced_hallucination_in_vision-language_models.md)
+- [\[ACL 2026\] Knowledge Vector of Logical Reasoning in Large Language Models](knowledge_vector_of_logical_reasoning_in_large_language_models.md)
 
 </div>
 

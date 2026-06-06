@@ -16,7 +16,7 @@ tags:
 
 **🔬 ICLR2026** · **3** paper notes
 
-📌 **Same area in other venues:** [💬 ACL2026 (10)](../../ACL2026/nlp_generation/index.md) · [🤖 AAAI2026 (2)](../../AAAI2026/nlp_generation/index.md) · [📹 ICCV2025 (1)](../../ICCV2025/nlp_generation/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (2)](../../ICML2026/nlp_generation/index.md) · [💬 ACL2026 (17)](../../ACL2026/nlp_generation/index.md) · [🤖 AAAI2026 (2)](../../AAAI2026/nlp_generation/index.md) · [📹 ICCV2025 (1)](../../ICCV2025/nlp_generation/index.md)
 
 **[AP-OOD: Attention Pooling for Out-of-Distribution Detection](ap-ood_attention_pooling_for_out-of-distribution_detection.md)**
 

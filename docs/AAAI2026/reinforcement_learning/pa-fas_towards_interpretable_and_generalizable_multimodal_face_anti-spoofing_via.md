@@ -178,8 +178,8 @@ PA-FAS maintains superior performance under missing modality conditions, demonst
 - [\[AAAI 2026\] Distilling Deep Reinforcement Learning into Interpretable Fuzzy Rules: An Explainable AI Framework](distilling_deep_reinforcement_learning_into_interpretable_fuzzy_rules_an_explain.md)
 - [\[AAAI 2026\] Think, Speak, Decide: Language-Augmented Multi-Agent Reinforcement Learning for Economic Decision-Making](think_speak_decide_language-augmented_multi-agent_reinforcement_learning_for_eco.md)
 - [\[ICML 2026\] Path-Coupled Bellman Flows for Distributional Reinforcement Learning](../../ICML2026/reinforcement_learning/path-coupled_bellman_flows_for_distributional_reinforcement_learning.md)
+- [\[ICML 2026\] PAC-Bayesian Reinforcement Learning Trains Generalizable Policies](../../ICML2026/reinforcement_learning/pac-bayesian_reinforcement_learning_trains_generalizable_policies.md)
 - [\[AAAI 2026\] TAdaRAG: Task Adaptive Retrieval-Augmented Generation via On-the-Fly Knowledge Graph Construction](tadarag_task_adaptive_retrieval-augmented_generation_via_on-the-fly_knowledge_gr.md)
-- [\[AAAI 2026\] MMhops-R1: Multimodal Multi-hop Reasoning](mmhops-r1_multimodal_multi-hop_reasoning.md)
 
 </div>
 

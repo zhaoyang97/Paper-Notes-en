@@ -21,7 +21,7 @@ tags:
 
 **🧠 NeurIPS2025** · **24** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (1)](../../ICML2026/recommender/index.md) · [💬 ACL2026 (12)](../../ACL2026/recommender/index.md) · [🔬 ICLR2026 (10)](../../ICLR2026/recommender/index.md) · [🤖 AAAI2026 (26)](../../AAAI2026/recommender/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (11)](../../ICML2026/recommender/index.md) · [💬 ACL2026 (21)](../../ACL2026/recommender/index.md) · [🔬 ICLR2026 (10)](../../ICLR2026/recommender/index.md) · [🤖 AAAI2026 (26)](../../AAAI2026/recommender/index.md)
 
 🔥 **Top topics:** LLM ×8 · Recommendation ×6 · Face & Gaze ×3 · Personalized Generation ×2 · Alignment/RLHF ×2
 

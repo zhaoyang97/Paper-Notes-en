@@ -2,119 +2,116 @@
 title: >-
   [Paper Note] Idiom Understanding as a Tool to Measure the Dialect Gap
 description: >-
-  [ACL 2026][LLM Evaluation][dialect gap] Three new French idiom understanding benchmark datasets are proposed — QFrCoRE and QFrCoRT for Quebec French…
+  [ACL 2026][LLM Evaluation][Dialect gap] This paper proposes three new French idiom understanding benchmark datasets (Quebec French QFrCoRE/QFrCoRT and Standard French MFrCoE). Evaluation on 111 LLMs reveals that 65.77% o…
 tags:
   - "ACL 2026"
   - "LLM Evaluation"
-  - "dialect gap"
-  - "idiom understanding"
+  - "Dialect gap"
+  - "Idiom understanding"
   - "Quebec French"
-  - "benchmark dataset"
-  - "multilingual evaluation"
+  - "Benchmark dataset"
+  - "Multilingual evaluation"
 date: 2026-05-08
-content_hash: 3607c1b0e2639f81
+content_hash: eb266743107b20d4
 ---
 
 # Idiom Understanding as a Tool to Measure the Dialect Gap
 
-**Conference**: ACL 2026
+**Conference**: ACL 2026  
 **arXiv**: [2510.05026](https://arxiv.org/abs/2510.05026)  
 **Code**: None  
-**Area**: LLM Evaluation
-**Keywords**: dialect gap, idiom understanding, Quebec French, benchmark dataset, multilingual evaluation
+**Area**: LLM Evaluation  
+**Keywords**: Dialect gap, Idiom understanding, Quebec French, Benchmark dataset, Multilingual evaluation
 
 ## TL;DR
-Three new French idiom understanding benchmark datasets are proposed — QFrCoRE and QFrCoRT for Quebec French, and MFrCoE for standard French. Evaluation across 111 LLMs reveals that 65.77% of models perform significantly worse on dialectal idioms than on standard French idioms, quantifying the dialect gap phenomenon.
+This paper proposes three new French idiom understanding benchmark datasets (Quebec French QFrCoRE/QFrCoRT and Standard French MFrCoE). Evaluation on 111 LLMs reveals that 65.77% of models perform significantly worse on dialectal idioms than on standard French, quantifying the dialect gap phenomenon.
 
 ## Background & Motivation
 
-**Background**: Idiom understanding and dialect understanding are each well-established benchmark domains in NLP. LLMs perform well on standard French (Parisian French), yet their capabilities on other French dialects remain largely unexplored.
+**Background**: Idiom understanding and dialect understanding are mature evaluation benchmark areas in NLP. While LLMs perform well on standard French (Metropolitan French), research on their capabilities in other French dialects is minimal.
 
-**Limitations of Prior Work**: (1) Existing idiom datasets predominantly focus on a single standard language variety, lacking dialectal coverage. (2) Although the dialect gap has been studied in languages such as Arabic and Bengali, local idioms have not been used as probes for dialectal comprehension. (3) Model proficiency on a prestige dialect does not guarantee understanding of regionally specific expressions.
+**Limitations of Prior Work**: (1) Existing idiom datasets mostly focus on a single standard language variety, lacking dialectal coverage. (2) Although the dialect gap has been validated in languages such as Arabic and Bengali, local idioms have not been used as probes for dialect understanding. (3) Model proficiency in authoritative dialects does not guarantee the ability to understand regional dialect-specific expressions.
 
-**Key Challenge**: While the grammar and syntax of a dialect can be approximately inferred from the standard language, dialectal idioms originate from local culture and history and cannot be derived from standard-language training data, constituting an intrinsic challenge for dialect understanding.
+**Key Challenge**: While grammatical and syntactic rules of dialects can be approximately inferred from standard languages, dialectal idioms originate from local culture and history. They cannot be derived from standard language training, constituting an essential challenge for dialect understanding.
 
-**Goal**: (1) Construct idiom understanding benchmarks for both Quebec French and standard French. (2) Use dialectal idioms as a tool to quantify the dialect gap in LLMs.
+**Goal**: (1) Construct idiom understanding benchmarks for both Quebec French and Standard French; (2) Utilize dialectal idioms as a tool to quantify the dialect gap in LLMs.
 
-**Key Insight**: Idiom understanding and dialect understanding are combined by exploiting the fact that dialectal idioms are culturally specific artifacts that cannot be generalized from standard-language training, making idiom understanding performance gaps a direct reflection of dialect capability gaps.
+**Key Insight**: By combining idiom understanding with dialect understanding—given that dialectal idioms are unique cultural products that do not generalize from standard language training—the performance gap in idiom understanding directly reflects the dialect capability gap.
 
-**Core Idea**: Local idiom understanding is used as a probe for dialectal competence, and paired standard/dialectal idiom benchmarks are constructed to quantify the dialect gap.
+**Core Idea**: Use local idiom understanding as a probe for dialect capability, constructing paired standard/dialect idiom benchmarks to quantify the dialect gap.
 
 ## Method
 
 ### Overall Architecture
-Three benchmark datasets are constructed around a classification task in which a model, given an idiom and multiple candidate definitions, selects the correct definition. Evaluation is conducted across 111 LLMs, and performance on standard French is compared against performance on Quebec French.
+The authors construct three benchmark datasets and design a classification task (given an idiom and multiple definitions, the model selects the correct one). They evaluate 111 LLMs and compare the performance differences between Standard French and Quebec French.
 
 ### Key Designs
 
-1. **QFrCoRE (Quebec French Corpus of Regional Expressions)**:
+1.  **QFrCoRE (Quebec French Expressions Corpus)**:
+    - **Function**: Evaluates LLM understanding of Quebec multi-word idiomatic expressions.
+    - **Mechanism**: 4,633 idiomatic expressions and their definitions were extracted via OCR from authoritative sources like the *Dictionary of Quebec Expressions*, followed by Azure OCR, regex cleaning, and manual deduplication. The task is multiple-choice definition matching.
+    - **Design Motivation**: Multi-word idioms are core carriers of dialect culture, and their meanings are usually unrelated to the literal meanings of the constituent words.
 
-    - Function: Evaluates LLMs' understanding of Quebec multi-word idiomatic expressions.
-    - Mechanism: 4,633 idiomatic expressions and their definitions are extracted via OCR from authoritative sources such as the *Dictionnaire des expressions québécoises*, followed by Azure OCR processing, regex-based cleaning, and manual deduplication. The task is formatted as multiple-choice definition matching.
-    - Design Motivation: Multi-word idioms are core carriers of dialectal culture, and their meanings are typically unrelated to the literal senses of their constituent words.
+2.  **QFrCoRT (Quebec French Terms Corpus)**:
+    - **Function**: Evaluates LLM understanding of Quebec word-level dialectal terms.
+    - **Mechanism**: 171 dialectal terms and definitions were manually extracted from five online Quebec linguistic resources, excluding English loanwords to ensure pure dialect understanding testing.
+    - **Design Motivation**: Word-level dialectal terms complement phrase-level assessments, covering dialect understanding at different granularities.
 
-2. **QFrCoRT (Quebec French Corpus of Regional Terms)**:
+3.  **MFrCoE (Metropolitan French Expressions Corpus)**:
+    - **Function**: Serves as a control benchmark for standard French to quantify the dialect gap.
+    - **Mechanism**: 4,938 standard French idioms were constructed from sources like *The 1001 Favorite Expressions of the French*. It maintains the same evaluation format as QFrCoRE.
+    - **Design Motivation**: The gap can only be quantified by simultaneously evaluating standard and dialectal versions, rather than merely reporting absolute dialectal performance.
 
-    - Function: Evaluates LLMs' understanding of single-word Quebec dialectal terms.
-    - Mechanism: 171 dialectal vocabulary items and their definitions are manually extracted from five online Quebec linguistic resources; English loanwords are excluded to ensure pure dialectal understanding is tested.
-    - Design Motivation: Single-word dialectal terms complement phrase-level evaluation, covering dialectal comprehension at different levels of granularity.
-
-3. **MFrCoE (Metropolitan French Corpus of Expressions)**:
-
-    - Function: Serves as a standard French control benchmark to quantify the dialect gap.
-    - Mechanism: 4,938 standard French idioms are compiled from sources such as *Les 1001 expressions préférées des Français*, using the same evaluation format as QFrCoRE.
-    - Design Motivation: Quantifying the gap requires evaluating both standard and dialectal varieties simultaneously, rather than reporting only absolute dialectal performance.
-
-### Evaluation Protocol
-A zero-shot classification setup is used, in which models select the correct definition of an idiom from a set of provided options. Accuracy on MFrCoE versus QFrCoRE is compared for each model.
+### Evaluation
+The study uses a zero-shot classification task where the model must choose the correct definition of an idiom from given options. The accuracy difference for each model is compared between MFrCoE and QFrCoRE.
 
 ## Key Experimental Results
 
 ### Main Results
-Distribution of the dialect gap across 111 LLMs:
+The distribution of the dialect gap across 111 LLMs:
 
-| Metric | Value |
-|--------|-------|
-| Models performing significantly worse on the dialect | 65.77% |
-| Models performing significantly better on the dialect | 9.0% |
-| Models showing no significant difference | 25.23% |
-| Average accuracy on standard French | Higher (baseline) |
-| Average accuracy on Quebec French | Significantly lower than standard French |
+| Indicator | Value |
+|-----------|-------|
+| Proportion of models significantly worse on dialect | 65.77% |
+| Proportion of models significantly better on dialect | 9.0% |
+| Proportion of models with no significant difference | 25.23% |
+| Standard French average accuracy | Higher (Baseline) |
+| Quebec French average accuracy | Significantly lower than standard French |
 
 ### Ablation Study
 
-| Analysis Dimension | Finding |
-|--------------------|---------|
-| Model scale | Larger models exhibit smaller dialect gaps, though the gap is not eliminated |
-| Idiom type | Culturally specific idioms show the largest gap |
-| QFrCoRT vs QFrCoRE | Single-word and phrase-level dialect gaps are consistent |
+| Analysis Dimension | Findings |
+|--------------------|----------|
+| Model Scale | Large models show smaller dialect gaps but do not eliminate them. |
+| Idiom Type | Culture-specific idioms exhibit the largest gap. |
+| QFrCoRT vs QFrCoRE | Dialect gaps are consistent across both word-level and phrase-level. |
 
 ### Key Findings
-- Proficiency in standard French does not guarantee comprehension of regional dialect expressions — 65.77% of models exhibit a significant dialect gap.
-- Only 9% of models perform better on the dialect, indicating that dialectal advantage is an exceptional case.
-- The dialect gap is most severe for culturally specific idioms, validating the hypothesis that idioms serve as effective probes for dialect understanding.
+- Proficiency in standard French does not guarantee regional dialect understanding; 65.77% of models exhibit a significant dialect gap.
+- Only 9% of models perform better on the dialect, indicating that dialect preference is a rare exception.
+- The dialect gap is most severe for culture-specific idioms, validating the hypothesis that idioms are effective probes for dialect understanding.
 
 ## Highlights & Insights
-- The approach of combining idiom understanding with dialect evaluation is original and generalizable to any language that has local idiomatic expressions.
-- The detailed description of the dataset construction methodology enables replication for other French dialects, such as Swiss French or Belgian French.
-- The large-scale evaluation across 111 models yields statistically reliable conclusions.
+- The evaluation approach of combining idiom understanding with dialect understanding is original and can be extended to any language with regional idioms.
+- The detailed description of the dataset construction methodology makes it reproducible for other dialects (e.g., Swiss French, Belgian French).
+- The large-scale evaluation of 111 models provides statistically reliable conclusions.
 
 ## Limitations & Future Work
-- The study focuses solely on two dialectal varieties of French, and generalizability remains to be validated.
-- The evaluation task is limited to a multiple-choice definition-matching format and does not assess open-ended idiom production.
-- No analysis is conducted on the correlation between the proportion of dialectal training data and the dialect gap.
-- Future work could extend the framework to languages with multiple dialects, such as English (US vs. UK vs. AU) or Spanish.
+- The study focuses only on two dialectal varieties of French; generalizability remains to be verified.
+- The evaluation task is limited to a multiple-choice matching format and does not test open-ended idiom usage.
+- The correlation between the proportion of dialectal corpora in model training data and the dialect gap was not analyzed.
+- Future work could expand the scope to other multi-dialectal languages such as English (US vs UK vs AU) and Spanish.
 
 ## Related Work & Insights
-- **vs. Kantharuban et al. (dialect gap research)**: Their work measures the dialect gap using general NLP tasks, whereas this paper employs idiom understanding as a more targeted probe.
-- **vs. Kim et al. (idiom understanding mechanisms)**: Their work investigates whether LLMs memorize or reason about idioms; this paper focuses on cross-dialectal differences in idiom comprehension.
-- **vs. Sørensen & Nimb (Danish idioms)**: Their work evaluates a single language variety, whereas this paper introduces a methodology for quantifying the gap through standard–dialect pairing.
+- **vs Kantharuban et al. (Dialect Gap Research)**: While they use general NLP tasks to measure gaps, this work uses idiom understanding as a more precise probe.
+- **vs Kim et al. (Idiom Understanding Mechanism)**: They study whether LLMs memorize or reason about idioms; this work focuses on the disparity in understanding between dialects.
+- **vs Sørensen & Nimb (Danish Idioms)**: They evaluate a single language; this work provides a methodology for quantifying gaps through standard-dialect pairings.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The use of idioms as dialectal probes is original and broadly applicable.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Large-scale evaluation across 111 models is highly comprehensive.
-- Writing Quality: ⭐⭐⭐⭐ Well-structured with detailed dataset construction descriptions.
-- Value: ⭐⭐⭐⭐ Makes a meaningful contribution to multilingual fairness research.
+- **Novelty**: ⭐⭐⭐⭐ The idea of using idioms as dialect probes is novel and generalizable.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ The evaluation involving 111 models is very comprehensive.
+- **Writing Quality**: ⭐⭐⭐⭐ The structure is clear and the dataset construction is well-documented.
+- **Value**: ⭐⭐⭐⭐ This work provides a practical contribution to multilingual fairness research.
 
 <!-- RELATED:START -->
 

@@ -194,10 +194,10 @@ Core insight: In VRP lifelong learning, behavior-level consolidation is more eff
 
 ## Related Papers
 
-- [\[ICLR 2026\] Robustness and Radioactivity of Watermarks in Federated Learning May Be at Odds](watermark_robustness_and_radioactivity_may_be_at_odds_in_federated_learning.md)
 - [\[AAAI 2026\] PRISM: Privacy-Aware Routing for Adaptive Cloud-Edge LLM Inference via Semantic Sketch Collaboration](../../AAAI2026/llm_safety/prism_privacy-aware_routing_for_adaptive_cloud-edge_llm_inference_via_semantic_s.md)
-- [\[ICLR 2026\] Supervised Reinforcement Learning: From Expert Trajectories to Step-wise Reasoning](supervised_reinforcement_learning_from_expert_trajectories_to_step-wise_reasonin.md)
+- [\[ICLR 2026\] Robustness and Radioactivity of Watermarks in Federated Learning May Be at Odds](watermark_robustness_and_radioactivity_may_be_at_odds_in_federated_learning.md)
 - [\[NeurIPS 2025\] CryptoMoE: Privacy-Preserving and Scalable Mixture of Experts Inference via Balanced Expert Routing](../../NeurIPS2025/llm_safety/cryptomoe_privacy-preserving_and_scalable_mixture_of_experts_inference_via_balan.md)
+- [\[ICLR 2026\] Supervised Reinforcement Learning: From Expert Trajectories to Step-wise Reasoning](supervised_reinforcement_learning_from_expert_trajectories_to_step-wise_reasonin.md)
 - [\[ICLR 2026\] BEAT: Visual Backdoor Attacks on VLM-based Embodied Agents via Contrastive Trigger Learning](beat_visual_backdoor_attacks_on_vlm-based_embodied_agents_via_contrastive_trigge.md)
 
 </div>

@@ -2,133 +2,133 @@
 title: >-
   [Paper Note] Experiments or Outcomes? Probing Scientific Feasibility in Large Language Models
 description: >-
-  [ACL 2026][Interpretability][scientific feasibility assessment] This work constructs a controlled knowledge framework to systematically study how LLMs leverage experimental descriptions and outcome evidence in scientific…
+  [ACL 2026][Interpretability][Scientific feasibility assessment] A controlled knowledge framework was constructed to systematically investigate how LLMs utilize experimental descriptions and outcome evidence in scientific…
 tags:
   - "ACL 2026"
   - "Interpretability"
-  - "scientific feasibility assessment"
+  - "Scientific feasibility assessment"
   - "controlled knowledge framework"
-  - "evidence robustness"
+  - "evidentiary robustness"
   - "experiments vs. outcomes"
   - "LLM reasoning"
 date: 2026-05-08
-content_hash: 6d6b7912bc37ab18
+content_hash: ff83687894bb2500
 ---
 
 # Experiments or Outcomes? Probing Scientific Feasibility in Large Language Models
 
-**Conference**: ACL 2026
+**Conference**: ACL 2026  
 **arXiv**: [2604.18786](https://arxiv.org/abs/2604.18786)  
 **Code**: [https://github.com/mohammadi-ali/scify](https://github.com/mohammadi-ali/scify)  
-**Area**: Interpretability
-**Keywords**: scientific feasibility assessment, controlled knowledge framework, evidence robustness, experiments vs. outcomes, LLM reasoning
+**Area**: Interpretability  
+**Keywords**: Scientific feasibility assessment, controlled knowledge framework, evidentiary robustness, experiments vs. outcomes, LLM reasoning
 
 ## TL;DR
 
-This work constructs a controlled knowledge framework to systematically study how LLMs leverage experimental descriptions and outcome evidence in scientific feasibility assessment. Results show that providing outcome evidence is more reliable than experimental descriptions, that partial experimental information frequently degrades performance below a parametric-knowledge-only baseline, and that LLM reasoning exhibits notable fragility under incomplete evidence.
+A controlled knowledge framework was constructed to systematically investigate how LLMs utilize experimental descriptions and outcome evidence in scientific feasibility assessment. It was discovered that providing outcome evidence is more reliable than experimental descriptions, and partial experimental information often leads to performance lower than the baseline using only parametric knowledge, revealing the fragility of LLM reasoning.
 
 ## Background & Motivation
 
-**Background**: LLMs are increasingly employed in scientific workflows (literature review, hypothesis generation, experiment planning), yet their capacity to perform a fundamental scientific task—scientific feasibility assessment—remains poorly understood. Feasibility assessment requires judging whether a claim is consistent with established knowledge and whether experimental evidence supports or refutes it.
+**Background**: LLMs are increasingly utilized in scientific workflows (literature review, hypothesis generation, experimental planning), but their ability to execute basic scientific tasks—such as scientific feasibility assessment—remains unclear. Feasibility assessment requires determining whether a claim aligns with existing knowledge and whether experimental evidence supports or refutes it.
 
-**Limitations of Prior Work**: Existing work either focuses on hypothesis generation rather than evaluation, conflates parametric knowledge with retrieved information without isolating their respective contributions, or examines compliance with external knowledge in non-scientific settings. Three critical questions remain unanswered: (RQ1) Can LLMs assess feasibility using parametric knowledge alone? (RQ2) How does providing experimental/outcome context alter judgments? (RQ3) How robust are these judgments under incomplete information?
+**Limitations of Prior Work**: Existing research either focuses on hypothesis generation rather than evaluation, mixes internal model knowledge with retrieval without isolating individual contributions, or tests adherence to external knowledge in non-scientific scenarios. Three key questions remain unanswered: (RQ1) Can LLMs assess feasibility using only parametric knowledge? (RQ2) How does providing experimental/outcome context change judgments? (RQ3) How robust are these judgments when information is incomplete?
 
-**Key Challenge**: Intuitively, more evidence should improve judgment—yet partial or noisy evidence may in fact mislead. The question is whether LLMs can handle incomplete information gracefully.
+**Key Challenge**: Intuitively, more evidence should aid judgment, but partial or noisy evidence might be misleading—can LLMs handle incomplete information gracefully?
 
-**Goal**: To understand how evidence type affects LLM feasibility judgments by systematically controlling the visibility of experimental descriptions and outcomes.
+**Goal**: To understand the impact of evidence types on LLM feasibility judgments through systematic control of the visibility of experiments and outcomes.
 
-**Key Insight**: Design four knowledge conditions (hypothesis only / +experiments / +outcomes / +both) and a stability analysis involving progressive removal of partial evidence.
+**Key Insight**: Design 4 knowledge conditions (Hypothesis only / +Experiment / +Outcome / +Both) and stability analysis (progressive removal of partial evidence).
 
-**Core Idea**: Outcome evidence is generally more reliable than experimental descriptions; partial evidence frequently causes brittle collapse rather than graceful degradation.
+**Core Idea**: Outcome evidence is generally more reliable than experimental descriptions, and partial evidence often leads to fragile collapse rather than graceful degradation.
 
 ## Method
 
 ### Overall Architecture
 
-Given a scientific hypothesis $h$, LLM feasibility judgments are evaluated under four controlled knowledge conditions: H (hypothesis only), H+E (+experimental descriptions), H+O (+outcome summaries), and H+E+O (+both). The visibility proportions of experiments and outcomes are controlled via parameters $k_1, k_2 \in \{0, 0.5, 1.0\}$; each configuration is averaged over five random samples.
+Given a scientific hypothesis $h$, the feasibility judgments of LLMs are evaluated under 4 controlled knowledge conditions: H (Hypothesis only), H+E (+Experimental description), H+O (+Outcome summary), and H+E+O (+Both). The visibility ratios of experiments and outcomes are controlled via parameters $k_1, k_2 \in \{0, 0.5, 1.0\}$, with each configuration averaged over 5 random samplings.
 
 ### Key Designs
 
 1. **Controlled Knowledge Framework**:
 
-    - Function: Isolate the effect of different evidence types on LLM feasibility judgments.
-    - Mechanism: The prediction task is held strictly constant (output: feasible/infeasible + rationale); only the context accompanying the hypothesis varies: $x \in \{\emptyset, \mathcal{E}^*, \mathcal{O}^*, (\mathcal{E}^*, \mathcal{O}^*)\}$. Experimental descriptions and outcomes are extracted directly from source papers rather than retrieved, ensuring evidence quality. Any difference in predictions across conditions therefore reflects the influence of evidence alone, not task variation.
-    - Design Motivation: Prior work conflated multiple information sources, making it impossible to distinguish which type of evidence is genuinely useful.
+    - **Function**: Isolates the impact of different evidence types on LLM feasibility judgments.
+    - **Mechanism**: The prediction task remains identical (output feasible/infeasible + reasoning), while only the context accompanying the hypothesis is varied: $x \in \{\emptyset, \mathcal{E}^*, \mathcal{O}^*, (\mathcal{E}^*, \mathcal{O}^*)\}$. Experimental descriptions and outcomes are extracted from source papers rather than retrieved, ensuring evidence quality. Differences in predictions across conditions reflect the impact of evidence rather than task variation.
+    - **Design Motivation**: Previous work mixed multiple information sources, making it impossible to distinguish which type of evidence was truly beneficial.
 
 2. **Stability Analysis**:
 
-    - Function: Test the degradation pattern of LLM judgments under incomplete evidence.
-    - Mechanism: The proportions of experiments and/or outcomes are progressively removed ($k_1, k_2$ reduced from 1.0 to 0.5 to 0), and performance is observed to determine whether degradation is monotonic (graceful) or non-monotonic (brittle). A "below-baseline rate" is defined as the proportion of partial-evidence conditions in which performance falls below the zero-evidence (H) baseline.
-    - Design Motivation: Real-world scientific reasoning frequently relies on incomplete evidence. If partial evidence misleads the model, this suggests the model is performing superficial alignment rather than deep reasoning.
+    - **Function**: Tests the degradation patterns of LLM judgments when evidence is incomplete.
+    - **Mechanism**: Gradually reduces the proportion of experiments and/or outcomes ($k_1, k_2$ from 1.0 to 0.5 to 0) to observe whether performance exhibits monotonic degradation (graceful) or non-monotonic collapse (fragile). The "below-baseline rate" is defined as the proportion of cases where performance under partial evidence is lower than the zero-evidence (H) baseline.
+    - **Design Motivation**: Real-world scientific reasoning is often based on incomplete evidence; if partial evidence misleads the model, it indicates the model is performing surface alignment rather than deep reasoning.
 
-3. **Multi-Dimensional Evaluation**:
+3. **Multi-dimensional Evaluation**:
 
-    - Function: Comprehensively assess both the accuracy of feasibility judgments and the quality of explanations.
-    - Mechanism: Accuracy, macro-F1, and MCC (more informative under class imbalance) are reported, alongside ROUGE lexical overlap between generated and reference explanations (used as a diagnostic signal only). Five frontier LLMs (GPT-5.1, GPT-4o, Gemini-2.5-Pro/Flash, Grok-4.1-fast) are evaluated on two datasets.
-    - Design Motivation: MCC is more reliable than accuracy under imbalanced classification; multi-model evaluation ensures cross-platform generalizability of findings.
+    - **Function**: Comprehensively evaluates the accuracy and explanation quality of feasibility judgments.
+    - **Mechanism**: Evaluates Accuracy, macro-F1, MCC (more informative under class imbalance), and ROUGE lexical overlap between generated and reference explanations (as a diagnostic signal). The study covers 5 frontier LLMs (GPT-5.1, GPT-4o, Gemini-2.5-Pro/Flash, Grok-4.1-fast) across two datasets.
+    - **Design Motivation**: MCC is more reliable than accuracy in unbalanced classification, and multi-model evaluation ensures cross-platform consistency of findings.
 
 ### Loss & Training
 
-This is a purely evaluative study using zero-shot prompting. All models are given identical task instructions.
+A pure evaluation study utilizing zero-shot prompting. All models use the same task instructions.
 
 ## Key Experimental Results
 
 ### Main Results
 
-GPT-5.1 performance on the MoF dataset:
+Performance of GPT-5.1 on the MoF dataset:
 
 | Condition | Accuracy | F1_macro | MCC |
-|-----------|----------|----------|-----|
-| H (hypothesis only) | 0.68 | 0.67 | 0.42 |
-| H+E (100% experiments) | 0.70 | 0.69 | 0.44 |
-| H+O (100% outcomes) | 0.66 | 0.66 | 0.33 |
-| H+E+O (full) | 0.66 | 0.66 | 0.33 |
+|------|----------|---------|-----|
+| H (Hypothesis only) | 0.68 | 0.67 | 0.42 |
+| H+E (100% Exp) | 0.70 | 0.69 | 0.44 |
+| H+O (100% Out) | 0.66 | 0.66 | 0.33 |
+| H+E+O (All) | 0.66 | 0.66 | 0.33 |
 
 ### Ablation Study
 
-GPT-5.1 on the Reasons dataset:
+On the Reasons dataset (GPT-5.1):
 
-| Condition | Accuracy | Note |
-|-----------|----------|------|
+| Condition | Accuracy | Description |
+|------|----------|------|
 | H | 0.84 | Parametric knowledge baseline |
-| H+E (50%) | 0.85 | Marginal improvement |
+| H+E (50%) | 0.85 | Slight improvement |
 | H+O (100%) | 0.92 | Strong outcome evidence |
-| H+E+O (100%) | 0.93 | Best overall |
-| H+E (50%) + H+O (50%) | 0.90 | Partial evidence still useful |
+| H+E+O (100%) | 0.93 | Optimal |
+| H+E (50%) + H+O (50%) | 0.90 | Partial evidence useful |
 
 ### Key Findings
 
-- Outcome evidence consistently improves feasibility judgments more reliably than experimental descriptions—on the Reasons dataset, H+O uniformly outperforms H+E.
-- Experimental descriptions can be "brittle": partial experimental information ($k_1=0.5$) causes performance to fall below the hypothesis-only baseline across multiple models, suggesting models engage in surface-feature matching rather than genuine understanding of experimental design.
-- Degradation is frequently non-monotonic—performance at $k_1=0.5$ can be worse than at $k_1=0$—indicating that models do not reason in a "use whatever information is available" manner.
-- Gemini-2.5-Pro exhibits the greatest instability under experimental description conditions (dropping from 0.67 to 0.48), exposing severe surface alignment issues.
-- Even for the strongest model, GPT-5.1, providing full experiments+outcomes does not consistently outperform providing outcomes alone (MCC is equal or lower on the MoF dataset).
+- Outcome evidence (outcomes) generally improves feasibility judgments more than experimental descriptions (experiments)—on the Reasons dataset, H+O consistently outperforms H+E.
+- Experimental descriptions can be "fragile": partial experimental information ($k_1=0.5$) causes performance to drop below the hypothesis-only baseline across multiple models, suggesting models perform surface feature matching rather than true understanding of experimental design.
+- Degradation is often non-monotonic—performance at $k_1=0.5$ can be worse than at $k_1=0$—indicating that models are not reasoning by "using whatever information is available."
+- Gemini-2.5-Pro exhibited most instability under experimental description conditions (dropping from 0.67 to 0.48), exposing significant surface alignment issues.
+- Even for the strongest model, GPT-5.1, providing full experiments + outcomes is not necessarily better than providing outcomes alone (MCC is the same or lower on the MoF dataset).
 
 ## Highlights & Insights
 
-- The finding that "partial evidence can be actively harmful" is a profound and sobering result: it reveals a fundamental fragility in LLM scientific reasoning—models behave more like pattern matchers than genuine reasoners over the logical structure of experiments. This carries important warnings for using LLMs in scientific peer review and decision-making.
-- The controlled knowledge framework is methodologically elegant: by holding the task constant and varying only the context, it enables clean causal inference. This design can be transferred to other research evaluating how LLMs utilize different types of knowledge.
-- The "outcomes > experiments" finding suggests that LLMs are better at processing declarative knowledge ("what happened") than procedural knowledge ("how it was done")—a pattern consistent with the nature of LLM training data.
+- The finding that "partial evidence is harmful" is a profound and cautionary insight: it reveals a fundamental fragility in LLM scientific reasoning—models behave more like pattern matchers than entities that understand the logical structure of experiments. This serves as an important warning for using LLMs in scientific peer review and decision-making.
+- The experimental design of the Controlled Knowledge Framework is elegant: by keeping the task constant and varying only the context, it achieves clean causal inference. This methodology can be transferred to other studies evaluating LLM knowledge utilization.
+- The "Outcomes > Experiments" finding implies that LLMs are better at processing declarative knowledge ("what happened") than procedural knowledge ("how it was done")—consistent with the nature of LLM training data.
 
 ## Limitations & Future Work
 
-- Only zero-shot evaluation is conducted; fine-tuned or few-shot settings may yield different results.
-- Feasibility judgment is reduced to binary classification, whereas real-world scientific feasibility typically exists on a spectrum.
-- The quality of experiment and outcome extraction may influence conclusions—incomplete extraction itself could introduce the observed brittleness.
-- Explanation quality is assessed solely via ROUGE lexical overlap, which cannot truly measure the logical correctness of scientific reasoning.
-- Only commercial API models are evaluated; open-source models may behave differently.
+- Only zero-shot evaluation was used; fine-tuning or few-shot settings might yield different results.
+- Feasibility judgment was simplified into binary classification, whereas real scientific feasibility is often a spectrum.
+- The quality of experiment and outcome extraction might influence conclusions—incomplete extraction itself could lead to "fragility."
+- Explanation quality was only evaluated via ROUGE lexical overlap, which cannot truly measure the logical correctness of scientific reasoning.
+- Only commercial API models were tested; open-source models may perform differently.
 
 ## Related Work & Insights
 
-- **vs. Qi et al. (2023) / Yang et al. (2024)**: Focus on hypothesis generation rather than evaluation; this paper fills the gap in feasibility judgment.
-- **vs. Jansen et al. (2025)**: Mixes parametric knowledge and retrieval without isolating their contributions; the controlled framework here achieves a clean separation.
-- **vs. Mohammadi et al. (2025)**: Studies LLM compliance with external knowledge but in non-scientific settings; this paper focuses on evidence utilization in scientific reasoning.
+- **vs. Qi et al. (2023) / Yang et al. (2024)**: Focused on hypothesis generation rather than evaluation; this work fills the gap in feasibility judgment.
+- **vs. Jansen et al. (2025)**: Mixed internal knowledge and retrieval without isolating contributions; the controlled framework in this work achieves clean separation.
+- **vs. Mohammadi et al. (2025)**: Investigated LLM adherence to external knowledge in non-scientific scenarios; this work focuses on evidence utilization in scientific reasoning.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The experimental design combining a controlled knowledge framework with stability analysis is novel.
+- Novelty: ⭐⭐⭐⭐ Innovative experimental design with controlled knowledge framework and stability analysis.
 - Experimental Thoroughness: ⭐⭐⭐⭐⭐ 5 models × 2 datasets × 9 evidence conditions × 5 random seeds.
-- Writing Quality: ⭐⭐⭐⭐⭐ Problem formalization is clear; experimental design is rigorous.
-- Value: ⭐⭐⭐⭐ Meaningfully advances understanding of LLM scientific reasoning capabilities.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear problem formalization and rigorous experimental design.
+- Value: ⭐⭐⭐⭐ Significantly advances the understanding of LLM scientific reasoning capabilities.
 
 <!-- RELATED:START -->
 
@@ -136,11 +136,11 @@ GPT-5.1 on the Reasons dataset:
 
 ## Related Papers
 
+- [\[ACL 2026\] MINED: Probing and Updating with Multimodal Time-Sensitive Knowledge for Large Multimodal Models](mined_probing_and_updating_with_multimodal_time-sensitive_knowledge_for_large_mu.md)
+- [\[ACL 2026\] Knowledge Vector of Logical Reasoning in Large Language Models](knowledge_vector_of_logical_reasoning_in_large_language_models.md)
 - [\[ACL 2026\] Tracing Relational Knowledge Recall in Large Language Models](tracing_relational_knowledge_recall_in_large_language_models.md)
 - [\[ACL 2026\] Compositional Steering of Large Language Models with Steering Tokens](compositional_steering_of_large_language_models_with_steering_tokens.md)
 - [\[ACL 2026\] Towards Intrinsic Interpretability of Large Language Models: A Survey of Design Principles and Architectures](towards_intrinsic_interpretability_of_large_language_modelsa_survey_of_design_pr.md)
-- [\[ACL 2026\] FineSteer: A Unified Framework for Fine-Grained Inference-Time Steering in Large Language Models](finesteer_a_unified_framework_for_fine-grained_inference-time_steering_in_large_.md)
-- [\[ACL 2026\] Interpretable Traces, Unexpected Outcomes: Investigating the Disconnect in Trace-Based Knowledge Distillation](interpretable_traces_unexpected_outcomes_investigating_the_disconnect_in_trace-b.md)
 
 </div>
 

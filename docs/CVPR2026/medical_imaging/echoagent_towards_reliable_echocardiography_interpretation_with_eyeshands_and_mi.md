@@ -161,8 +161,8 @@ EchoAgent achieves accuracy exceeding 70% across all 7 anatomical structure cate
 - [\[CVPR 2026\] Bridging the Skill Gap in Clinical CBCT Interpretation with CBCTRepD](bridging_the_skill_gap_in_clinical_cbct_interpreta.md)
 - [\[CVPR 2026\] CURE: Curriculum-guided Multi-task Training for Reliable Anatomy Grounded Report Generation](cure_curriculum-guided_multi-task_training_for_reliable_anatomy_grounded_report_.md)
 - [\[ICLR 2026\] Causal Interpretation of Neural Network Computations with Contribution Decomposition](../../ICLR2026/medical_imaging/causal_interpretation_of_neural_network_computations_with_contribution_decomposi.md)
-- [\[ICCV 2025\] GDKVM: Echocardiography Video Segmentation via Spatiotemporal Key-Value Memory with Gated Delta Rule](../../ICCV2025/medical_imaging/gdkvm_echocardiography_video_segmentation_via_spatiotemporal_key-value_memory_wi.md)
-- [\[CVPR 2026\] OmniFM: Toward Modality-Robust and Task-Agnostic Federated Learning for Heterogeneous Medical Imaging](omnifm_toward_modality-robust_and_task-agnostic_federated_learning_for_heterogen.md)
+- [\[ACL 2026\] CT-Flow: Orchestrating CT Interpretation Workflow with Model Context Protocol Servers](../../ACL2026/medical_imaging/ct-flow_orchestrating_ct_interpretation_workflow_with_model_context_protocol_ser.md)
+- [\[ACL 2026\] Reliable Automated Triage in Spanish Clinical Notes: A Hybrid Framework for Risk-Aware HIV Suspicion Identification](../../ACL2026/medical_imaging/reliable_automated_triage_in_spanish_clinical_notes_a_hybrid_framework_for_risk-.md)
 
 </div>
 

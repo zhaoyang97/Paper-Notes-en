@@ -2,42 +2,42 @@
 title: >-
   [Paper Note] Beyond Literal Mapping: Benchmarking and Improving Non-Literal Translation Evaluation
 description: >-
-  [ACL 2026][Multilingual & Machine Translation][machine translation evaluation] This paper constructs MENT, a non-literal translation meta-evaluation dataset comprising 7,530 human-annotated instances…
+  [ACL 2026][Multilingual & Machine Translation][Machine Translation Evaluation] Ours constructs a non-literal translation meta-evaluation dataset MENT (7,530 human annotations)…
 tags:
   - "ACL 2026"
   - "Multilingual & Machine Translation"
-  - "machine translation evaluation"
-  - "non-literal translation"
-  - "meta-evaluation benchmark"
-  - "agentic evaluation framework"
+  - "Machine Translation Evaluation"
+  - "Non-Literal Translation"
+  - "Meta-Evaluation Benchmark"
+  - "Agent Evaluation Framework"
   - "LLM-as-Judge"
 date: 2026-05-08
-content_hash: 6331057c0c523241
+content_hash: 21fbb44bc582507b
 ---
 
 # Beyond Literal Mapping: Benchmarking and Improving Non-Literal Translation Evaluation
 
-**Conference**: ACL 2026
+**Conference**: ACL 2026  
 **arXiv**: [2601.07338](https://arxiv.org/abs/2601.07338)  
 **Code**: [GitHub](https://github.com/BITHLP/RATE)  
-**Area**: Multilingual / MT Evaluation
-**Keywords**: machine translation evaluation, non-literal translation, meta-evaluation benchmark, agentic evaluation framework, LLM-as-Judge
+**Area**: Multilingual / MT Evaluation  
+**Keywords**: Machine Translation Evaluation, Non-Literal Translation, Meta-Evaluation Benchmark, Agent Evaluation Framework, LLM-as-Judge
 
 ## TL;DR
 
-This paper constructs MENT, a non-literal translation meta-evaluation dataset comprising 7,530 human-annotated instances, reveals the unreliability of traditional metrics and LLM-as-Judge approaches on non-literal translation evaluation, and proposes RATE, an agentic evaluation framework in which a reflective Core Agent dynamically invokes sub-agents to improve correlation with human judgments by 3.2+ points.
+Ours constructs a non-literal translation meta-evaluation dataset MENT (7,530 human annotations), revealing the unreliability of traditional metrics and LLM-as-Judge in non-literal translation evaluation, and proposes the RATE agentic evaluation framework. By using a core agent for reflection and dynamic invocation of sub-agents, RATE improves correlation with human judgment by 3.2+ points.
 
 ## Background & Motivation
 
-**Background**: LLMs have greatly expanded the scope of machine translation applications, making non-literal translation scenarios such as social media and literary texts increasingly important. Translation quality evaluation is critical for MT system iteration and reinforcement learning reward signals.
+**Background**: LLMs have significantly expanded the application scope of machine translation (MT), making non-literal translation scenarios such as social media and literature increasingly important. Translation quality evaluation is critical for the iteration of MT systems and reinforcement learning reward signals.
 
-**Limitations of Prior Work**: (1) Traditional metrics (BLEU, COMET) lack deep semantic understanding and diverge significantly from human judgments on non-literal translations—overrating literal but semantically incorrect translations while underrating idiomatic but non-literal ones; (2) LLM-as-Judge approaches are constrained by knowledge cutoffs (preventing evaluation of emerging internet slang) and scoring inconsistency; (3) Existing meta-evaluation datasets primarily cover formal domains such as news and Wikipedia, lacking coverage of non-literal translation.
+**Limitations of Prior Work**: (1) Traditional metrics (BLEU, COMET) lack deep semantic understanding and are severely decoupled from human judgment in non-literal translation—overestimating literal but semantically incorrect translations and underestimating idiomatic but non-literal ones; (2) LLM-as-Judge is affected by knowledge cutoff (unable to evaluate emerging internet slang) and scoring inconsistency; (3) Existing meta-evaluation datasets primarily cover formal domains like news/Wikipedia, lacking non-literal translation coverage.
 
-**Key Challenge**: The core difficulty of non-literal translation evaluation lies in the fact that translation errors typically stem from misunderstanding holistic semantics (e.g., slang, cultural allusions) rather than isolated lexical errors, making metrics based on word-level matching or surface semantics inherently incapable of capturing such phenomena.
+**Key Challenge**: The core challenge of non-literal translation is that errors often stem from a misunderstanding of global semantics (e.g., slang, cultural allusions) rather than isolated lexical errors. Traditional metrics based on word-level matching or surface semantics are inherently unable to capture such issues.
 
-**Goal**: To systematically assess the reliability of MT metrics on non-literal translation and to propose a more accurate evaluation methodology.
+**Goal**: Systematically evaluate the reliability of MT metrics on non-literal translation and propose more accurate evaluation methods.
 
-**Key Insight**: The paper first constructs a large-scale non-literal translation meta-evaluation benchmark covering four domains (SNS, cross-cultural, poetry, and literary), then designs an agentic framework to address the limitations of LLM-based evaluation.
+**Key Insight**: First construct a large-scale non-literal translation meta-evaluation benchmark (covering four domains: SNS, cross-cultural, poetry, and literature), then design an agentic framework to address the limitations of LLM evaluation.
 
 **Core Idea**: Reflective agentic evaluation—a Core Agent dynamically decides whether to invoke a Search Agent for background knowledge retrieval, an Evaluation Agent for scoring, or a Comparison Agent for score calibration.
 
@@ -45,85 +45,82 @@ This paper constructs MENT, a non-literal translation meta-evaluation dataset co
 
 ### Overall Architecture
 
-RATE centers on a reflective Core Agent that dynamically invokes three types of sub-agents according to evaluation needs: a Search Agent (retrieving external knowledge to compensate for knowledge cutoffs), an Evaluation Agent (scoring based on context), and a Comparison Agent (calibrating score consistency through multi-translation comparison).
+RATE centers on a reflective Core Agent. Based on the needs of the translation evaluation, it dynamically invokes three sub-agents: Search Agent (retrieves external knowledge to bridge the knowledge cutoff), Evaluation Agent (scores based on context), and Comparison Agent (calibrates score consistency through multi-translation comparison).
 
 ### Key Designs
 
-1. **MENT Meta-Evaluation Dataset**:
+1.  **MENT Meta-Evaluation Dataset**:
+    - **Function**: Systematically evaluates the reliability of MT metrics on non-literal translation.
+    - **Mechanism**: Covers 4 domains (SNS, cross-cultural, poetry, and literature), 10 MT systems (from NLLB-3.3B to GPT-4o), and includes 7,530 human annotations (SQM 5-point scale), with at least 2 professional translators per entry.
+    - **Design Motivation**: Existing datasets have fewer than 1,000 annotations and are limited to formal domains, which cannot support systematic validation of metrics for non-literal translation.
 
-    - Function: Systematically evaluate the reliability of MT metrics on non-literal translation.
-    - Mechanism: Covers 4 domains (SNS, cross-cultural, poetry, literary), 10 MT systems (from NLLB-3.3B to GPT-4o), and 7,530 human-annotated instances (SQM 5-point scale), each annotated by at least 2 professional translators.
-    - Design Motivation: Existing datasets contain no more than 1,000 annotations and are limited to formal domains, making them insufficient for systematic validation of metrics on non-literal translation.
+2.  **Reflective Reasoning of Core Agent**:
+    - **Function**: Provides dynamic decision-making in the evaluation process to address the limitations of static LLM evaluation.
+    - **Mechanism**: After analyzing the source text and translation, the Core Agent reasons whether external knowledge is needed (invoking Search Agent), how to construct evaluation instructions (passing them to the Evaluation Agent), and whether score calibration is required (invoking Comparison Agent).
+    - **Design Motivation**: Different translation scenarios require different evaluation strategies—SNS needs retrieval of emerging slang meanings, while poetry requires understanding of rhythm and imagery. Static LLM evaluation cannot adapt flexibly.
 
-2. **Core Agent Reflective Reasoning**:
-
-    - Function: Dynamically orchestrate the evaluation pipeline to address the limitations of static LLM evaluation.
-    - Mechanism: After analyzing the source text and translation, the Core Agent reasons whether external knowledge is needed (invoking the Search Agent), how to construct evaluation instructions (passed to the Evaluation Agent), and whether score calibration is required (invoking the Comparison Agent).
-    - Design Motivation: Different translation scenarios demand different evaluation strategies—SNS content requires retrieval of emerging slang meanings, while poetry requires understanding of prosody and imagery; static LLM evaluation cannot adapt flexibly.
-
-3. **Search Agent Knowledge Retrieval**:
-
-    - Function: Compensate for LLM knowledge cutoff limitations.
-    - Mechanism: When the Core Agent determines that external knowledge is necessary, it formulates search queries to retrieve relevant background information (e.g., internet slang definitions, cultural allusion explanations), passing the retrieved content as context to the Evaluation Agent.
-    - Design Motivation: LLMs have a training data cutoff and cannot accurately evaluate internet slang or cultural phenomena that emerged afterward.
+3.  **Search Agent Knowledge Retrieval**:
+    - **Function**: Mitigates LLM knowledge cutoff limitations.
+    - **Mechanism**: When the Core Agent determines external knowledge is needed, it constructs search queries to retrieve background information (e.g., internet slang meanings, cultural allusion explanations) and passes the retrieval results as context to the Evaluation Agent.
+    - **Design Motivation**: LLM training data has cutoff dates, preventing accurate evaluation of internet slang or cultural phenomena appearing after the cutoff.
 
 ### Loss & Training
 
-RATE requires no training and operates as a zero-shot agentic framework based on LLMs. The evaluation protocol adopts the SQM 5-point scale. The Comparison Agent calibrates scores by comparing multiple translations of the same source text, mitigating score drift in LLM-based evaluation.
+RATE is a training-free, zero-shot LLM agentic framework. The evaluation protocol uses an SQM 5-point scale. The Comparison Agent calibrates scores by comparing multiple translations of the same source text, alleviating the score drift problem in LLM evaluation.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Method Category | Representative Method | System + Segment-Level Aggregate Correlation |
-|----------------|----------------------|---------------------------------------------|
+| Method Category | Representative Method | Integrated Correlation (System + Segment) |
+| :--- | :--- | :--- |
 | Traditional Metrics | BLEU, COMET | Baseline |
 | LLM-as-Judge | GEMBA, AutoMQM | +X |
 | **RATE (Ours)** | Core + Sub-agents | **+3.2+ points** |
 
 ### Ablation Study
 
-| Configuration | Finding |
-|---------------|---------|
-| w/o Search Agent | Significant performance drop on SNS and cross-cultural domains |
-| w/o Comparison Agent | Reduced scoring consistency |
-| Different backbone LLMs | RATE remains consistently effective across different LLMs |
-| General-domain test | RATE is also robust on general MT evaluation |
+| Configuration | Findings |
+| :--- | :--- |
+| No Search Agent | Significant performance drop in SNS and cross-cultural domains |
+| No Comparison Agent | Reduced score consistency |
+| Different Backbone LLMs | RATE is consistently effective across different LLMs |
+| General Domain Test | RATE is also robust in general MT evaluation |
 
 ### Key Findings
 
-- Traditional metrics are severely unreliable on non-literal translation: they overestimate literal mappings and underestimate idiomatic translations.
-- Two key limitations of LLM-as-Judge: knowledge cutoffs (inability to evaluate new slang) and scoring inconsistency (same quality receiving different scores).
-- RATE is effective not only in non-literal scenarios but also remains robust on general MT evaluation.
-- Among the 10 MT systems evaluated, large-scale foundation models (GPT-4o, Gemini-2.5Pro) achieve the best performance.
+- Traditional metrics are severely inaccurate for non-literal translation: they overestimate literal mappings and underestimate idiomatic translations.
+- LLM-as-Judge has two major limitations: knowledge cutoff (unable to evaluate new slang) and score inconsistency (assigning different scores for the same quality).
+- RATE is not only effective in non-literal scenarios but also maintains robustness in general MT evaluation.
+- Among 10 MT systems, large-scale foundation models (GPT-4o, Gemini-1.5-Pro) perform the best.
 
 ## Highlights & Insights
 
-- This work provides the first systematic evaluation of MT metric reliability on non-literal translation, filling an important gap in the field.
-- The MENT dataset (7,530 annotations) substantially exceeds comparable prior work (<1,000) and covers four challenging domains.
-- The agentic design of RATE is elegant—central reasoning combined with on-demand invocation of sub-capabilities mirrors the cognitive process of human evaluation.
-- The paper identifies knowledge cutoff as a critical bottleneck for LLM-based evaluation, and the Search Agent offers a concise and effective mitigation strategy.
+- First systematic evaluation of the reliability of MT metrics for non-literal translation, filling a significant gap.
+- MENT dataset scale (7,530 annotations) far exceeds similar works (<1,000) and covers 4 challenging domains.
+- The agentic design of RATE is elegant—core reasoning combined with on-demand sub-capability invocation aligns with the cognitive process of human evaluation.
+- Identified knowledge cutoff as a key bottleneck for LLM evaluation, and the Search Agent provides a concise and effective mitigation.
 
 ## Limitations & Future Work
 
-- MENT covers only the Chinese–English language pair and does not extend to additional language pairs.
-- RATE is dependent on the quality of the underlying search engine.
-- The number and types of sub-agents could be further expanded (e.g., a style analysis agent).
-- The SQM evaluation protocol may omit fine-grained error information.
+- MENT only covers Chinese-English and has not yet been extended to more language pairs.
+- RATE depends on the quality of the search engine.
+- The number and types of sub-agents could be further expanded (e.g., style analysis agents).
+- The SQM evaluation protocol might miss fine-grained error information.
 
 ## Related Work & Insights
 
-- WMT Meta-Evaluation (Freitag et al., 2023; Moghe et al., 2025): formal-domain benchmarks.
-- COMET / BLEURT: model-based metrics, still limited in non-literal scenarios.
-- Agent-as-a-Judge (You et al., 2026): agentic evaluation paradigm.
-- RATE's dynamic sub-agent invocation is generalizable to other evaluation scenarios requiring external knowledge.
+- WMT Meta-evaluation (Freitag et al., 2023; Moghe et al., 2025): Benchmarks for formal domains.
+- COMET / BLEURT: Model-based metrics, but still limited in non-literal scenarios.
+- Agent-as-a-Judge (You et al., 2026): Agentic evaluation paradigm.
+- The dynamic sub-agent invocation of RATE can be generalized to other evaluation scenarios requiring external knowledge.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ First work focused on non-literal translation evaluation, with an elegant agentic framework design.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 7,530 human annotations, 10 MT systems, comprehensive ablation studies.
-- Writing Quality: ⭐⭐⭐⭐ Dataset construction pipeline clearly described; case analyses are intuitive.
-- Value: ⭐⭐⭐⭐ Directly informative for both MT evaluation research and practice.
+- Novelty: ⭐⭐⭐⭐ First focus on non-literal translation evaluation, clever agentic framework design.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 7,530 human annotations, 10 MT systems, comprehensive ablations.
+- Writing Quality: ⭐⭐⭐⭐ Clear data construction process, intuitive case analysis.
+- Value: ⭐⭐⭐⭐ Direct guidance for MT evaluation research and practice.
 
 <!-- RELATED:START -->
 
@@ -132,10 +129,21 @@ RATE requires no training and operates as a zero-shot agentic framework based on
 ## Related Papers
 
 - [\[ACL 2026\] XQ-MEval: A Dataset with Cross-lingual Parallel Quality for Benchmarking Translation Metrics](xq-meval_a_dataset_with_cross-lingual_parallel_quality_for_benchmarking_translat.md)
+- [\[ACL 2026\] PEAR: Pairwise Evaluation for Automatic Relative Scoring in Machine Translation](pear_pairwise_evaluation_for_automatic_relative_scoring_in_machine_translation.md)
 - [\[ACL 2026\] Prosody as Supervision: Bridging the Non-Verbal–Verbal for Multilingual Speech Emotion Recognition](prosody_as_supervision_bridging_the_non-verbal--verbal_for_multilingual_speech_e.md)
 - [\[NeurIPS 2025\] Reflective Translation: Improving Low-Resource Machine Translation via Structured Self-Reflection](../../NeurIPS2025/multilingual_mt/reflective_translation_improving_low-resource_machine_translation_via_structured.md)
 - [\[ACL 2026\] LQM: Linguistically Motivated Multidimensional Quality Metrics for Machine Translation](lqm_linguistically_motivated_multidimensional_quality_metrics_for_machine_transl.md)
-- [\[ICLR 2026\] ASSESS: A Semantic and Structural Evaluation Framework for Statement Similarity](../../ICLR2026/multilingual_mt/assess_a_semantic_and_structural_evaluation_framework_for_statement_similarity.md)
+
+</div>
+
+<!-- RELATED:END -->
+## Related Papers
+
+- [\[ACL 2026\] XQ-MEval: A Dataset with Cross-lingual Parallel Quality for Benchmarking Translation Metrics](xq-meval_a_dataset_with_cross-lingual_parallel_quality_for_benchmarking_translat.md)
+- [\[ACL 2025\] Beyond N-Grams: Rethinking Evaluation Metrics and Strategies for Multilingual Abstractive Summarization](../../ACL2025/multilingual_mt/beyond_n-grams_rethinking_evaluation_metrics_and_strategies_for_multilingual_abs.md)
+- [\[ACL 2026\] Prosody as Supervision: Bridging the Non-Verbal–Verbal for Multilingual Speech Emotion Recognition](prosody_as_supervision_bridging_the_non-verbal--verbal_for_multilingual_speech_e.md)
+- [\[ACL 2026\] PEAR: Pairwise Evaluation for Automatic Relative Scoring in Machine Translation](pear_pairwise_evaluation_for_automatic_relative_scoring_in_machine_translation.md)
+- [\[ACL 2025\] Accessible Machine Translation Evaluation For Low-Resource Languages](../../ACL2025/multilingual_mt/accessible_machine_translation_evaluation_for_low-resource_languages.md)
 
 </div>
 

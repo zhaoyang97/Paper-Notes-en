@@ -2,79 +2,76 @@
 title: >-
   [Paper Note] Instruction Lens Score: Your Instruction Contributes a Powerful Object Hallucination Detector for Multimodal Large Language Models
 description: >-
-  [ICML 2026][Multimodal VLM][Object Hallucination] This work finds that the intermediate-layer embeddings of instruction tokens in MLLMs naturally filter misleading information introduced from the visual side. Based on th…
+  [ICML 2026][Multimodal VLM][Object Hallucination] This paper discovers that the middle-layer embeddings of instruction tokens in MLLMs naturally filter out misleading information introduced from the visual end. Based on…
 tags:
   - "ICML 2026"
   - "Multimodal VLM"
   - "Object Hallucination"
   - "Instruction Embedding"
   - "Logit Lens"
-  - "Training-Free Detection"
+  - "Training-free Detection"
   - "MLLM"
 date: 2026-05-08
-content_hash: db111ead6f0f181c
+content_hash: c4960369f387e2fd
 ---
 
 # Instruction Lens Score: Your Instruction Contributes a Powerful Object Hallucination Detector for Multimodal Large Language Models
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.12258](https://arxiv.org/abs/2605.12258)  
-**Code**: https://github.com/Fraserlairh/Instruction-Lens-Score (available)  
+**Code**: https://github.com/Fraserlairh/Instruction-Lens-Score (Available)  
 **Area**: Multimodal VLM / Hallucination Detection  
-**Keywords**: Object Hallucination, Instruction Embedding, Logit Lens, Training-Free Detection, MLLM
+**Keywords**: Object Hallucination, Instruction Embedding, Logit Lens, Training-free Detection, MLLM
 
 ## TL;DR
-This work finds that the intermediate-layer embeddings of instruction tokens in MLLMs naturally filter misleading information introduced from the visual side. Based on this, a training-free InsLen score (Calibrated Local Score + Context Consistency Score) is proposed, which improves object hallucination detection AUROC by up to 13.81% across 5 MLLMs × 4 benchmarks.
+This paper discovers that the middle-layer embeddings of instruction tokens in MLLMs naturally filter out misleading information introduced from the visual end. Based on this, it proposes the training-free InsLen score (comprised of Calibrated Local Score and Context Consistency Score), which improves the AUROC of object hallucination detection by up to 13.81% across 5 MLLMs and 4 benchmarks.
 
 ## Background & Motivation
 
-**Background**: Object hallucination in MLLMs (generating objects not present in the image) is a core obstacle to reliable deployment. Existing detection methods follow two lines: one relies on external models like GPT-4 for scoring, which is costly; the other mines internal model signals, such as attention weights of visual tokens (SVAR) or similarity between answer token embeddings and image patch embeddings (GLSIM).
+**Background**: Object hallucination in MLLMs (generating objects not present in the image) is a core obstacle to deployment reliability. Existing detection methods follow two lines: one relies on external models like GPT-4 for scoring, which is costly; the other mines internal model signals, such as the attention weights of visual tokens (SVAR) or the similarity between answer token embeddings and image patch embeddings (GLSIM).
 
-**Limitations of Prior Work**: Internal signal methods almost exclusively bet on "visual evidence"—but the visual encoder or cross-modal attention may introduce misleading visual features (e.g., mistaking a silver spoon for a silver knife), causing hallucinated objects to receive inflated scores; patch-level representations only consider local context and cannot incorporate global object context.
+**Limitations of Prior Work**: Internal signal methods rely almost entirely on "visual evidence." However, visual encoders or cross-modal attention can introduce misleading visual features (e.g., misidentifying a silver spoon as a silver knife), leading to inflated scores for hallucinated objects. Furthermore, patch-level representations only consider local information and fail to incorporate global object context.
 
-**Key Challenge**: Using "visual evidence" to detect "visual hallucinations" introduced by the visual side is essentially using signals and noise from the same source. An independent pathway is needed to calibrate visual signals.
+**Key Challenge**: Using "visual evidence" to detect "visual hallucinations" introduced by the visual end essentially uses signals to detect noise from the same source. An independent pathway is needed to calibrate visual signals.
 
-**Goal**: (1) Identify internal signals that can suppress misleading visual information; (2) Provide both patch-level local evidence and global context consistency.
+**Goal**: (1) Identify internal signals capable of suppressing visual misleading information; (2) Provide both patch-level local evidence and global context consistency.
 
-**Key Insight**: The authors use Logit Lens to project intermediate-layer instruction token embeddings onto the vocabulary and unexpectedly find that instruction embeddings have high confidence for real objects in the image and low confidence for hallucinated objects (e.g., "bag" in Figure 1). On MSCOCO, instruction embeddings yield AUROC at least 8% higher than image embeddings. This overlooked filtering effect can serve as an independent pathway.
+**Key Insight**: The authors use Logit Lens to project the middle-layer embeddings of instruction tokens onto the vocabulary. They unexpectedly find that instruction embeddings show high confidence for real objects in the image and low confidence for hallucinated objects (e.g., the "bag" in Figure 1). Statistics on MSCOCO show that AUROC provided by instruction embeddings is $\geq 8\%$ higher than that of image embeddings. This neglected filtering effect can serve as an independent pathway.
 
-**Core Idea**: Use instruction embeddings to both calibrate visual scores and provide global object context, fusing the two signals for hallucination detection.
+**Core Idea**: Use instruction embeddings to both calibrate visual scores and provide global object context, fusing these two signals for hallucination detection.
 
 ## Method
 
 ### Overall Architecture
-Input consists of image $I$, user instruction $\mathbf{X}$ (default: "Please describe the image in detail."), and MLLM-generated answer $Y$. All instruction token embeddings $\{\mathbf{z}_j\}_{j=1}^{M}$, all image patch embeddings $\{\mathbf{v}_i\}$, and each object token embedding in the answer $\mathbf{h_o}$ are extracted from the penultimate layer of the MLLM language model. The entire InsLen process is training-free. For each object token, two complementary scores are computed: $S_{\rm cls}$ (Calibrated Local Score) and $S_{\rm ccs}$ (Context Consistency Score). The weighted sum $S_{\rm Ins}(\mathbf{o})=\omega S_{\rm cls}+(1-\omega)S_{\rm ccs}$ is used; a threshold $\mu$ is applied for binary classification, with scores below the threshold considered hallucinations.
+The input consists of an image $I$, a user instruction $\mathbf{X}$ (defaulting to "Please describe the image in detail."), and the answer $Y$ generated by the MLLM. All instruction token embeddings $\{\mathbf{z}_j\}_{j=1}^{M}$, all image patch embeddings $\{\mathbf{v}_i\}$, and the embedding $\mathbf{h_o}$ for each object token in the answer are extracted from the penultimate layer of the MLLM language model. The entire InsLen process requires no training. For each object token, two complementary scores are calculated: $S_{\rm cls}$ (Calibrated Local Score) and $S_{\rm ccs}$ (Context Consistency Score). The final weighted score is $S_{\rm Ins}(\mathbf{o})=\omega S_{\rm cls}+(1-\omega)S_{\rm ccs}$. Binary classification is performed using a threshold $\mu$, where scores below the threshold are considered hallucinations.
 
 ### Key Designs
 
-1. **Calibration Confidence (Cafe): Calibrating Inflated Visual Evidence**:
+1.  **Calibration Confidence (Cafe) to Calibrate Inflated Visual Evidence**:
+    - **Function**: Multiplies the maximum confidence of instruction embeddings for an object token with any existing vision-based score to "pull back" inflated predictions from the visual end.
+    - **Mechanism**: Each instruction embedding $\mathbf{z}_j$ undergoes Logit Lens to obtain a vocabulary distribution. The probability assigned to the object token $\mathbf{o}$ is taken, and the maximum value across all $M$ instruction positions is selected to obtain $S_{\rm cafe}(\mathbf{o})=\max_{j} {\rm softmax}(\mathbf{W}_u\mathbf{z}_j/\tau)[\mathbf{o}]$, where $\tau$ is the temperature. This is fused via multiplication; for example, combining it with Local Similarity Score yields $S_{\rm cls}(\mathbf{o})=S_{\rm cafe}(\mathbf{o})\cdot\frac{1}{K}\sum_k\cos(\mathbf{h_o},\mathbf{v}_k)$.
+    - **Design Motivation**: Multiplication is chosen over addition because different vision-based scores (SVAR, Internal Conf, LSS) have inconsistent scales; multiplication is naturally compatible without extra scaling coefficients. The max operator ensures that as long as any instruction position is confident about the object, the score is preserved, aligning with statistical observations of the filtering effect.
 
-    - **Function**: Uses the maximum confidence of instruction embeddings for an object token, multiplying it with any existing vision-based score to "pull back" inflated visual predictions.
-    - **Mechanism**: For each instruction embedding $\mathbf{z}_j$, Logit Lens yields a vocabulary distribution. The probability for object token $\mathbf{o}$ is taken, and the maximum across all $M$ instruction positions is used: $S_{\rm cafe}(\mathbf{o})=\max_{j} {\rm softmax}(\mathbf{W}_u\mathbf{z}_j/\tau)[\mathbf{o}]$, where $\tau$ is the temperature. This is then multiplicatively fused, e.g., with Local Similarity Score: $S_{\rm cls}(\mathbf{o})=S_{\rm cafe}(\mathbf{o})\cdot\frac{1}{K}\sum_k\cos(\mathbf{h_o},\mathbf{v}_k)$.
-    - **Design Motivation**: Multiplication is chosen over addition because different vision-based scores (SVAR, Internal Conf, LSS) have inconsistent scales; multiplication is naturally compatible and does not require extra scaling. The max operator ensures that as long as any instruction position is confident about the object, the score is preserved, matching the observed filtering effect.
+2.  **Context Consistency Score to Introduce Global Object Context**:
+    - **Function**: Aggregates a global object context using object-related instruction embeddings and measures the consistency between the object token embedding in the answer and this context.
+    - **Mechanism**: Instruction embeddings are projected to the vocabulary to select the top-$m$ embeddings $\{\hat{\mathbf{z}}_n\}$ with the highest confidence for object token $\mathbf{o}$. These are averaged to get $\overline{\mathbf{z}}=\frac{1}{m}\sum_n \hat{\mathbf{z}}_n$. Consistency is calculated using normalized $\ell_2$ distance: $S_{\rm con}(\mathbf{o})=\alpha-\|\mathbf{h_o}-\overline{\mathbf{z}}\|/\|\mathbf{h_o}\|$. This is then multiplied by the average confidence of these selected instruction embeddings to obtain $S_{\rm ccs}=S_{\rm con}\cdot\overline{p}$.
+    - **Design Motivation**: Vision-based scores only look at local patches and fail to distinguish cases with similar local textures like "silver spoon vs. silver knife." Instruction embeddings are calculated by aggregating the entire image via cross-attention, providing a global view. Selecting top-$m$ instead of all positions excludes noisy instruction locations; using $\ell_2$ instead of cosine captures differences in both direction and magnitude.
 
-2. **Context Consistency Score: Introducing Global Object Context**:
-
-    - **Function**: Aggregates global object context using instruction embeddings related to the object, then measures the consistency between the answer's object token embedding and this context.
-    - **Mechanism**: Each instruction embedding is projected onto the vocabulary, and the top-$m$ embeddings with the highest confidence for object token $\mathbf{o}$, $\{\hat{\mathbf{z}}_n\}$, are selected and averaged: $\overline{\mathbf{z}}=\frac{1}{m}\sum_n \hat{\mathbf{z}}_n$. Consistency is computed using normalized $\ell_2$ distance: $S_{\rm con}(\mathbf{o})=\alpha-\|\mathbf{h_o}-\overline{\mathbf{z}}\|/\|\mathbf{h_o}\|$, then multiplied by the average confidence of these selected instruction embeddings for the object, yielding $S_{\rm ccs}=S_{\rm con}\cdot\overline{p}$.
-    - **Design Motivation**: Vision-based scores only consider local patches and cannot distinguish cases like "silver spoon vs silver knife" with similar local textures. Instruction embeddings, computed via cross-attention over the entire image, inherently provide a global view. Top-$m$ selection excludes noisy instruction positions; $\ell_2$ is used instead of cosine to capture both direction and magnitude differences.
-
-3. **Plug-and-Play with Multiple Models + Complementary Fusion of Two Scores**:
-
-    - **Function**: InsLen can be attached to any existing vision-based detector as a calibration layer, and $\omega\in[0,1]$ balances local evidence and global consistency.
-    - **Mechanism**: Cafe can be multiplied with any vision-based score (SVAR, Internal Conf, LSS, etc.); CCS and CLS are complementary, with the former capturing patch-level local evidence and the latter capturing object-level global context. The final score is $S_{\rm Ins}=\omega S_{\rm cls}+(1-\omega)S_{\rm ccs}$, with default $\omega=0.4$, $\alpha=2$, $\tau=10$, $m=4$.
-    - **Design Motivation**: Training-free and independent of external models, deployment only requires an additional pass through the unembedding matrix, with negligible overhead; orthogonal to existing detectors and can be stacked for further gains.
+3.  **Plug-and-play for Multiple Models + Complementary Score Fusion**:
+    - **Function**: Integrates InsLen as a calibration layer onto any existing vision-based detector and balances local evidence with global consistency via $\omega\in[0,1]$.
+    - **Mechanism**: Cafe can be multiplied onto any visual score such as SVAR, Internal Conf, or LSS. CCS and CLS are complementary; the former captures patch-level local evidence, while the latter captures object-level global context. The final score is $S_{\rm Ins}=\omega S_{\rm cls}+(1-\omega)S_{\rm ccs}$, with default settings $\omega=0.4, \alpha=2, \tau=10, m=4$.
+    - **Design Motivation**: Being training-free and independent of external models, deployment only requires an additional pass through the unembedding matrix, making overhead negligible. It is orthogonal to existing detectors and can provide additive gains.
 
 ### Loss & Training
-This method is entirely training-free; all embeddings are directly taken from the penultimate layer of the frozen MLLM (Layer 31 for LLaVA, Layer 35 for Qwen3-VL). No new parameters are introduced, and only 4 hyperparameters $\omega, \alpha, \tau, m$ are used, with a single configuration shared across dozens of MLLMs.
+This method is entirely training-free. All embeddings are extracted directly from the penultimate layer of the frozen MLLM (Layer 31 for LLaVA, Layer 35 for Qwen3-VL). No new parameters are introduced; only 4 hyperparameters $\omega, \alpha, \tau, m$ are used, with one set shared across dozens of MLLMs.
 
 ## Key Experimental Results
 
 ### Main Results
-5 MLLMs (LLaVA-1.5-7B, InstructBLIP-7B, mPLUG-Owl3-8B, LLaVA-OneVision1.5-8B, Qwen3-VL-8B) × 4 benchmarks (MSCOCO, Objects365, POPE, CLEVR), compared with 7 baselines (NLL, Entropy, Internal Conf, SVAR, Contextual Lens, EAZY, GLSIM), all evaluated with AUROC / AUPR.
+Evaluation across 5 MLLMs (LLaVA-1.5-7B, InstructBLIP-7B, mPLUG-Owl3-8B, LLaVA-OneVision1.5-8B, Qwen3-VL-8B) $\times$ 4 benchmarks (MSCOCO, Objects365, POPE, CLEVR), compared against 7 baselines (NLL, Entropy, Internal Conf, SVAR, Contextual Lens, EAZY, GLSIM) using AUROC / AUPR.
 
 | Model / Dataset | Metric | Strongest Baseline | InsLen | Gain |
-|--------|------|------|----------|------|
+| :--- | :--- | :--- | :--- | :--- |
 | Qwen3-VL / MSCOCO | AUROC | 75.36 (SVAR) | 81.02 | +5.66 |
 | LLaVA-1.5 / POPE | AUROC | 70.13 (GLSIM) | 83.94 | +13.81 |
 | Qwen3-VL / Objects365 | AUROC | 70.84 (SVAR) | 77.44 | +6.60 |
@@ -82,43 +79,43 @@ This method is entirely training-free; all embeddings are directly taken from th
 
 ### Ablation Study
 
-| Configuration | LLaVA-1.5 AUROC | Qwen3-VL AUROC | Note |
-|------|---------|---------|------|
-| Only $S_{\rm local}$ | 74.20 | 65.43 | Pure vision baseline |
-| Only $S_{\rm cafe}$ | 80.41 | 77.06 | Instruction calibration only |
-| $S_{\rm local}+S_{\rm cafe}$ (i.e., CLS) | 84.31 | 79.83 | Cafe adds 10 points to vision score |
-| Only $S_{\rm con}$ | 80.69 | 71.94 | Global consistency only |
-| Only Conf. weighted | 79.44 | 78.12 | Average confidence itself is informative |
+| Configuration | LLaVA-1.5 AUROC | Qwen3-VL AUROC | Description |
+| :--- | :--- | :--- | :--- |
+| $S_{\rm local}$ only | 74.20 | 65.43 | Pure visual baseline |
+| $S_{\rm cafe}$ only | 80.41 | 77.06 | Confidence calibration via instruction only |
+| $S_{\rm local}+S_{\rm cafe}$ (CLS) | 84.31 | 79.83 | Cafe adds 10 points to visual scores |
+| $S_{\rm con}$ only | 80.69 | 71.94 | Global consistency only |
+| Conf. weighting only | 79.44 | 78.12 | Average confidence itself contains signal |
 | Full InsLen | **86.93** | **81.02** | All four components enabled |
 
 ### Key Findings
-- Cafe is the largest contributor: On LLaVA-1.5, adding Cafe alone increases any vision score (SVAR/Internal Conf/LSS) by 7–10 AUROC, confirming that "inflated visual scores" are the core issue.
-- CCS and CLS are highly complementary: CCS alone achieves 80.69 AUROC on LLaVA, CLS alone 84.31, and combined 86.93, indicating that patch-level local and object-level global signals are indeed distinct.
-- Longer instructions yield better detection: On LLaVA, lengthening the instruction increases AUROC by 2.40%, as more instruction positions provide more internal visual information redundancy.
-- Extremely low inference overhead: On Qwen3-VL, InsLen takes 564.5ms, only 2.9% of the 19550ms required for answer generation; much lower than EAZY's 40293ms.
-- Still effective on post-trained models: On LLaVA-RLAIF-V (where easy hallucination is already suppressed, HR only 6.72%), InsLen still achieves 80.14 AUROC, 7.78 higher than GLSIM.
+- Cafe is the largest contributor: Adding Cafe alone to any visual score (SVAR/Internal Conf/LSS) results in an average increase of 7–10 AUROC points on LLaVA-1.5, verifying that "inflated visual end prediction" is the core pain point.
+- CCS and CLS are highly complementary: Using CCS alone achieves 80.69 AUROC on LLaVA, and CLS alone achieves 84.31. Combining them yields 86.93, indicating that patch-level local and object-level global features capture different signals.
+- Longer instructions lead to better detection: Lengthening instructions on LLaVA increases AUROC by 2.40% because more instruction positions provide more redundant backups of internal visual information.
+- Minimal inference overhead: On Qwen3-VL, InsLen takes 564.5ms, accounting for only 2.9% of the 19550ms required for answer generation; this is far lower than EAZY's 40293ms.
+- Effective on post-trained models: On LLaVA-RLAIF-V (which significantly suppresses easy hallucinations with an HR of only 6.72%), InsLen still achieves 80.14 AUROC, 7.78 higher than GLSIM.
 
 ## Highlights & Insights
-- The observation that "instruction embeddings understand images better than image embeddings" is counterintuitive but statistically supported and highly explanatory—misleading visual information is "voted out" by semantic priors on the instruction side after multiple attention layers. This insight can be transferred to tasks like visual question answering and grounding.
-- The Logit Lens + top-$k$ high-confidence token selection paradigm is lightweight and can serve as an "internal diagnostic" tool for VLM debugging and prompt engineering.
-- Using multiplication for calibration is an underrated trick—avoids introducing new scaling factors and is more stable when combining methods.
+- The observation that "instruction embeddings understand the image better than image embeddings" is counter-intuitive but statistically supported. It has strong explanatory power—misleading visual information is "denoised" by semantic priors on the instruction side after multiple attention layers. This insight is transferable to tasks like VQA and grounding.
+- The paradigm of Logit Lens + selecting top-$k$ high-confidence tokens is lightweight and can be reused as an "internal diagnostic" tool for VLM debugging and prompt engineering.
+- Using multiplication for calibration is an underrated technique—it avoids introducing new scaling coefficients and remains stable when combining different methods.
 
 ## Limitations & Future Work
-- The authors acknowledge that Logit Lens can only translate internal signals into "literal tokens," while the model may store information as synonyms (e.g., "dog" as "puppy"), so selecting confidence based on generated answer tokens may miss some semantics.
-- Representation drift affects deep-layer embeddings, leading to significant performance differences across MLLM architectures (e.g., mPLUG-Owl3 vs LLaVA).
-- This method only detects hallucinations but does not correct them; combining with contrastive decoding for a closed loop may be more valuable.
-- Evaluation is limited to static image description tasks; multi-turn dialogue and video understanding scenarios are not validated.
+- The authors acknowledge that Logit Lens can only translate internal signals into "literal tokens," whereas the model might store information using synonyms (e.g., storing "dog" as "puppy"). Selecting confidence based on generated answer tokens might miss some semantics.
+- Representation drift affects deep layer embeddings, leading to performance variance across different MLLM architectures (e.g., varying gains in mPLUG-Owl3 vs. LLaVA).
+- The method only detects "whether it is a hallucination" without fixing it; combining it with contrastive decoding for a closed-loop solution might be more valuable.
+- Evaluation is limited to static image description tasks; multi-turn dialogue and video understanding scenarios remain unverified.
 
 ## Related Work & Insights
-- **vs GLSIM (Park & Li 2025)**: GLSIM also fuses global-local signals, but its global signal comes from the image summary token; this work uses instruction tokens, which naturally provide a filtering effect, achieving 13.81 higher AUROC on POPE.
-- **vs SVAR (Jiang et al. 2025b)**: SVAR uses attention ratio, still a visual evidence method; this work shows that multiplying Cafe with SVAR further increases AUROC by 7.47, indicating complementarity rather than substitution.
-- **vs EAZY (Che et al. 2025)**: EAZY uses "zero out image tokens" for contrast, which is extremely costly (40s+/sentence); InsLen is training-free and nearly costless at inference, making it more suitable for online deployment.
+- **vs GLSIM (Park & Li 2025)**: GLSIM also fuses global-local features, but the global signal comes from image summary tokens. Ours uses instruction tokens because the latter naturally possess a filtering effect, achieving 13.81 higher AUROC on POPE.
+- **vs SVAR (Jiang et al. 2025b)**: SVAR uses attention ratios, which are still visual evidence. Ours proves that multiplying Cafe onto SVAR provides an additional gain of 7.47 AUROC, acting as a complement rather than a replacement.
+- **vs EAZY (Che et al. 2025)**: EAZY performs contrast via "zeroing out image tokens," which entails extreme overhead (40s+/sentence). InsLen is training-free and practically free in terms of inference, making it more suitable for online deployment.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The perspective of using instruction embeddings for hallucination detection is novel and statistically validated, though the underlying tools (Logit Lens, cosine sim) are standard.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 5 MLLMs × 4 benchmarks + post-trained variants + instruction length sensitivity + combinations with various vision scores.
-- Writing Quality: ⭐⭐⭐⭐ Formulas are clear, but the naming of Cafe and CCS can be confusing, and some figures/tables could be more intuitive.
-- Value: ⭐⭐⭐⭐ Training-free, plug-and-play, and near-zero overhead, making it suitable for direct integration into production MLLMs as a hallucination gate.
+- Novelty: ⭐⭐⭐⭐ The perspective of using instruction embeddings for hallucination detection is novel and statistically validated, though underlying tools (Logit Lens, cosine similarity) are standard.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 5 MLLMs $\times$ 4 benchmarks + post-trained variants + instruction length sensitivity + combination with multiple visual scores.
+- Writing Quality: ⭐⭐⭐⭐ Formulas are clear, but the naming of Cafe and CCS can be confusing; some chart descriptions could be more intuitive.
+- Value: ⭐⭐⭐⭐ Training-free + plug-and-play + near-zero overhead, suitable for direct integration into production MLLMs as a hallucination gatekeeper.
 
 <!-- RELATED:START -->
 
@@ -127,10 +124,10 @@ This method is entirely training-free; all embeddings are directly taken from th
 ## Related Papers
 
 - [\[ICML 2026\] Revis: Sparse Latent Steering to Mitigate Object Hallucination in Large Vision-Language Models](revis_sparse_latent_steering_to_mitigate_object_hallucination_in_large_vision-la.md)
-- [\[ICCV 2025\] MM-IFEngine: Towards Multimodal Instruction Following](../../ICCV2025/multimodal_vlm/mm-ifengine_towards_multimodal_instruction_following.md)
 - [\[ICML 2026\] WeatherSyn: An Instruction Tuning MLLM For Weather Forecasting Report Generation](weathersyn_an_instruction_tuning_mllm_for_weather_forecasting_report_generation.md)
-- [\[ICML 2026\] Model-Dowser: Data-Free Importance Probing to Mitigate Catastrophic Forgetting in Multimodal Large Language Models](model-dowser_data-free_importance_probing_to_mitigate_catastrophic_forgetting_in.md)
-- [\[NeurIPS 2025\] MoniTor: Exploiting Large Language Models with Instruction for Online Video Anomaly Detection](../../NeurIPS2025/multimodal_vlm/monitor_exploiting_large_language_models_with_instruction_for_online_video_anoma.md)
+- [\[ICML 2026\] SAME: Stabilized Mixture-of-Experts for Multimodal Continual Instruction Tuning](same_stabilized_mixture-of-experts_for_multimodal_continual_instruction_tuning.md)
+- [\[ICCV 2025\] MM-IFEngine: Towards Multimodal Instruction Following](../../ICCV2025/multimodal_vlm/mm-ifengine_towards_multimodal_instruction_following.md)
+- [\[ICML 2026\] Adaptive Residual-Update Steering for Low-Overhead Hallucination Mitigation in Large Vision Language Models](adaptive_residual-update_steering_for_low-overhead_hallucination_mitigation_in_l.md)
 
 </div>
 

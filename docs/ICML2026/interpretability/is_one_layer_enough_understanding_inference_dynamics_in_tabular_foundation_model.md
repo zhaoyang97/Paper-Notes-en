@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Is One Layer Enough? Understanding Inference Dynamics in Tabular Foundation Models
 description: >-
-  [ICML 2026][Interpretability][TabPFN] The authors conduct the first large-scale hierarchical mechanistic analysis of six mainstream tabular foundation models (TFMs)…
+  [ICML 2026][Interpretability][TabPFN] The authors perform the first large-scale layer-wise mechanistic analysis of six mainstream Tabular Foundation Models (TFMs). They discover that middle and late layers primarily perf…
 tags:
   - "ICML 2026"
   - "Interpretability"
   - "TabPFN"
-  - "Tabular Foundation Model"
+  - "Tabular Foundation Models"
   - "Mechanistic Interpretability"
   - "Recurrent Transformer"
   - "Inter-layer Dynamics"
 date: 2026-05-08
-content_hash: 4bd838685bc07ce9
+content_hash: 066a2314bef3cbef
 ---
 
 # Is One Layer Enough? Understanding Inference Dynamics in Tabular Foundation Models
@@ -21,108 +21,105 @@ content_hash: 4bd838685bc07ce9
 **arXiv**: [2605.06510](https://arxiv.org/abs/2605.06510)  
 **Code**: https://github.com/amirbalef/is_one_layer_enough  
 **Area**: Interpretability / Tabular Foundation Models / Model Compression  
-**Keywords**: TabPFN, Tabular Foundation Model, Mechanistic Interpretability, Recurrent Transformer, Inter-layer Dynamics
+**Keywords**: TabPFN, Tabular Foundation Models, Mechanistic Interpretability, Recurrent Transformer, Inter-layer Dynamics
 
 ## TL;DR
-The authors conduct the first large-scale hierarchical mechanistic analysis of six mainstream tabular foundation models (TFMs), discovering that the middle and later layers mainly perform "iterative refinement" and contain substantial redundancy. Based on this, they design a single-layer recurrent TFM using only 20% of the parameters, achieving performance nearly matching the original six-layer version.
+The authors perform the first large-scale layer-wise mechanistic analysis of six mainstream Tabular Foundation Models (TFMs). They discover that middle and late layers primarily perform "iterative refinement" with significant redundancy. Based on these insights, they design a single-layer recurrent TFM using only 20% of the parameters, which nearly matches the performance of the original six-layer version.
 
 ## Background & Motivation
-**Background**: Transformer-based tabular foundation models such as TabPFN, TabICL, and LimiX have surpassed traditional GBDT pipelines on small- and medium-scale tabular prediction tasks. However, their internal mechanisms—specifically, how they perform Bayesian inference via in-context learning—remain largely a black box.
+**Background**: Transformer-based Tabular Foundation Models (TFMs) such as TabPFN, TabICL, and LimiX have outperformed traditional GBDT pipelines in small-to-medium scale tabular prediction. However, how they "perform Bayesian inference via in-context learning" remains a black box.
 
-**Limitations of Prior Work**: Directly applying the "logit lens" method from LLMs to analyze TFM layer representations yields fragile results (as shown in Figure 1, the original decoder almost completely fails at shallow layers). Moreover, TFMs are encoder-only, non-autoregressive, and row-invariant, making them structurally distinct from LLMs. It is unclear whether interpretability findings from LLMs (e.g., early layers for detokenization, middle layers for abstraction, late layers for sharpening) transfer to TFMs.
+**Limitations of Prior Work**: Directly applying the "logit lens" method from LLMs to analyze TFM layer representations is fragile (Figure 1 shows the original decoder fails almost completely in early layers). Furthermore, TFMs are encoder-only, non-autoregressive, and row-invariant, differing significantly from LLM architectures. Whether existing LLM interpretability findings (early-layer detokenization, middle-layer abstraction, late-layer sharpening) apply to TFMs remains unknown.
 
-**Key Challenge**: On one hand, TFMs are smaller and cheaper to run than LLMs, making them ideal for large-scale mechanistic studies. On the other hand, there is a lack of suitable analysis toolchains, and the encoder designs of different TFMs vary greatly, limiting the generalizability of single-point studies.
+**Key Challenge**: On one hand, TFMs are smaller and cheaper to infer than LLMs, making them ideal for large-scale mechanistic research. On the other hand, there is a lack of specialized analysis toolchains, and the diverse encoder designs of various TFMs make single-point studies difficult to generalize.
 
-**Goal**: (1) Design a hierarchical analysis protocol tailored to TFMs; (2) Answer "at which layer and how does inference emerge" and "what are the similarities and differences compared to LLMs"; (3) Use these findings to guide more efficient architecture design.
+**Goal**: (1) Design a layer-wise analysis protocol tailored for TFMs; (2) Determine where and how inference is formed compared to LLMs; (3) Use these findings to guide more efficient architecture design.
 
-**Key Insight**: The authors note that TFM tasks are fixed classification/regression problems, allowing direct training of "per-layer decoders" (i.e., "tabular tuned lens") without relying on vocabulary projection as in LLMs. They also adapt three mature intervention experiments from LLM mechanistic studies: skip, repeat, and swap.
+**Key Insight**: Since TFM tasks are fixed classification or regression problems, one can train "per-layer decoders" (i.e., "tabular tuned lens") instead of relying on vocabulary projections used in LLMs. Mature intervention experiments from LLM mechanistic research, such as skip, repeat, and swap, can also be repurposed.
 
-**Core Idea**: By combining six experiments—embedding similarity, class separation gap, probing classifier, tabular logit lens, layer ablation, and self-repair—the authors characterize the hierarchical dynamics of TFMs. The finding that "middle and later layers mainly perform iterative refinement" supports the design of more efficient architectures that replace multi-layer stacks with a single recurrent layer.
+**Core Idea**: Characterize TFM inter-layer dynamics through six joint experiments: embedding similarity, class separation intervals, probing classifiers, tabular logit lens, layer ablation, and self-repair. The finding that "middle and late layers primarily perform iterative refinement" justifies an efficient architecture replacing multiple layers with a single recurrent layer.
 
 ## Method
 
 ### Overall Architecture
-The study consists of two parts: an analysis protocol and a proof-of-concept model. The protocol fixes six open-source/open-weight TFMs (TabPFN v1/v2/2.5, TabICL, LimiX-2M/16M), running six mechanistic experiments on PMLBmini (34 tasks) and TabArena (15 binary classification tasks). Each experiment targets a different granularity, from representation similarity to hierarchical intervention to self-repair. The proof-of-concept uses the open-source nanoTabPFN, training three variants: the original six-layer, a single-layer, and a single-layer recurrent model (nanoTabPFNlooped), all pretrained with the same TabICL prior for comparison.
+The research consists of two parts: an analysis protocol and a proof-of-concept model. The analysis protocol is applied to six open-source/open-weight TFMs (TabPFN v1/v2/2.5, TabICL, LimiX-2M/16M), running six mechanistic experiments on PMLBmini (34 tasks) and TabArena (15 binary tasks). Each experiment focuses on questions at different granularities, from representation space similarity to layer-wise interventions and self-repair. The proof-of-concept part is based on nanoTabPFN, comparing the original 6-layer version, a 1-layer version, and a 1-layer version looped 6 times (nanoTabPFNlooped) using the same TabICL prior for pre-training.
 
 ### Key Designs
 
-1. **Tabular Tuned Lens**:
+1.  **Tabular Tuned Lens**:
+    - **Function**: Maps the hidden states of each layer back to task output probabilities to measure whether "useful discriminative representations have formed in that layer."
+    - **Mechanism**: The authors found that using the original decoder ("logit lens") results in failure in early layers (solid ROC-AUC lines in Figure 1 near 0.5). Thus, following the Tuned Lens approach by Belrose et al., a specific decoder is pre-trained for each layer: the backbone is frozen, and a dedicated decoder is trained for 200 epochs using TabICL synthetic priors.
+    - **Design Motivation**: TFMs are encoder-only and row-invariant without a vocabulary detokenizer; per-layer decoders are the most natural alternative for ICL tasks. They allow reading out potential performance if inference stopped at that layer.
 
-    - **Function**: Maps each layer's hidden state back to task output probabilities, measuring whether the layer has formed usable discriminative representations.
-    - **Mechanism**: The authors find that using the original decoder ("logit lens") fails at shallow layers (solid ROC-AUC in Figure 1 approaches 0.5 in early layers). Following Belrose's tuned lens approach, they pretrain a separate decoder for each layer: the backbone is frozen, and a decoder is trained for each layer using TabICL's synthetic prior for 200 epochs.
-    - **Design Motivation**: TFMs are encoder-only and row-invariant, lacking a vocabulary detokenizer. Per-layer decoders are the most natural adaptation for ICL tasks, directly revealing "if inference stops at this layer, how well can a lightweight classifier perform," thus assessing the feasibility of early exiting.
+2.  **Three Layer Intervention Experiments (skip / repeat / swap) + Self-repair Analysis**:
+    - **Function**: Uses structural ablation to evaluate "what each layer contributes" and whether its removal can be compensated for by subsequent layers.
+    - **Mechanism**: Skipping layer $l$ evaluates uniqueness; repeating layer $l$ evaluates if the layer performs iterative refinement; swapping two adjacent layers evaluates representational alignment. Overlaying the tuned lens on the skip experiment checks if performance recovers in subsequent layers—if it does, it indicates self-repair or layer redundancy.
+    - **Design Motivation**: Looking only at the final output confuses "redundancy" with "self-repair." Tuned lens allows differentiation: if performance never recovers after skipping an early layer (Figure 8), it indicates a unique critical function. If performance rebounds immediately in the next layer's lens, it indicates redundancy and self-repair.
 
-2. **Three Types of Layerwise Interventions (skip / repeat / swap) + Self-repair Analysis**:
-
-    - **Function**: Uses structural ablation to evaluate "what each layer does" and "whether subsequent layers can compensate if a layer is removed."
-    - **Mechanism**: Skipping layer $l$ assesses its uniqueness; repeating layer $l$ tests if it performs iterative refinement; swapping adjacent layers checks if the representation sequence is truly aligned. By overlaying the tuned lens on skip experiments, the authors observe whether subsequent layers can restore performance—if so, this indicates self-repair/layer redundancy.
-    - **Design Motivation**: Simply observing "final output after ablation" conflates redundancy and self-repair. Overlaying the lens distinguishes: early layers, once removed, cannot be compensated (Figure 8), indicating unique critical functions; skipping middle/later layers sees immediate recovery in the next layer's lens performance, indicating redundancy and self-repair.
-
-3. **Single-layer Recurrent nanoTabPFNlooped Proof-of-concept**:
-
-    - **Function**: Operationalizes the analysis conclusion—if middle/later layers only perform iterative refinement, then repeating a single layer N times should theoretically match an N-layer stack.
-    - **Mechanism**: Based on the nanoTabPFN architecture (similar to TabPFN v2 but lighter), three models are trained: six-layer stack, single-layer, and single-layer looped six times. Their parameter counts are 3.72M / 0.75M / 0.75M, but the looped version's "forward computation" matches the six-layer stack. All are trained from scratch with 10,000 steps and batch size 512.
-    - **Design Motivation**: Directly modifying SOTA TFMs is costly, but nanoTabPFN is a public reproducible version, enabling controlled comparison to confirm that performance differences stem from "looping vs stacking" rather than parameter count.
+3.  **Proof-of-concept: nanoTabPFNlooped**:
+    - **Function**: Operationalizes the analysis findings—if middle/late layers are just refining iteratively, repeating one layer $N$ times should theoretically match an $N$-layer stack.
+    - **Mechanism**: Based on the nanoTabPFN architecture (lighter version of TabPFN v2), three versions are trained: 6-layer stack, 1-layer standalone, and 1-layer looped 6 times. The parameters are 3.72M / 0.75M / 0.75M respectively, though the looped version's FLOPs match the 6-layer stack. All are trained from scratch with 10,000 steps and batch 512.
+    - **Design Motivation**: Modifying SOTA TFM architectures directly is costly; nanoTabPFN allows controlled comparison to confirm that performance gains come from "looping vs. stacking" rather than parameter count.
 
 ### Loss & Training
-The nanoTabPFN series uses the standard TabPFN training objective. The TabICL prior generator is configured with batch=4×10,000 batches, feature count 2–30, up to 10 classes, and sequence length 1024. The optimizer is AdamW, $\eta=10^{-4}$, cosine warmup for 2000 steps, and weight decay=0. The single-layer, six-layer, and looped models require 11.9h / 62.3h / 68.8h respectively (single A100 GPU). Per-layer decoder fine-tuning uses 200 epochs, batch=8, $\eta=3\times10^{-5}$.
+The nanoTabPFN series uses standard TabPFN training objectives. The TabICL prior generator configuration includes $batch=4 \times 10000$ batches, features 2-30, up to 10 classes, and sequence length 1024. Optimization uses AdamW, $\eta=10^{-4}$, cosine warmup of 2000 steps, and weight decay = 0. Training times for 1-layer, 6-layer, and looped models on a single A100 were 11.9h, 62.3h, and 68.8h respectively. Per-layer decoder fine-tuning used 200 epochs, $batch=8$, and $\eta=3 \times 10^{-5}$.
 
 ## Key Experimental Results
 
 ### Main Results
-Table 1 compares the three nanoTabPFN variants on PMLBmini and TabArena:
+Table 1 compares the three nanoTabPFN versions on PMLBmini and TabArena:
 
 | Model | Parameters | Computation | PMLBmini Performance | Gap vs 6-layer |
-|-------|------------|-------------|----------------------|----------------|
-| nanoTabPFN-1l | 0.75M | 1× | Significantly worse | Substantially behind |
+| :--- | :--- | :--- | :--- | :--- |
+| nanoTabPFN-1l | 0.75M | 1× | Significantly Worst | Large Gap |
 | nanoTabPFN-6l | 3.72M | 6× | Baseline | — |
-| nanoTabPFN-looped | 0.75M | 6× | Close to 6l | Nearly matches |
-| TabPFN(2.5) | 10.7M | 24 layers | Upper bound | Still better than looped |
+| nanoTabPFN-looped | 0.75M | 6× | Close to 6l | Nearly Matched |
+| TabPFN(2.5) | 10.7M | 24 layers | Upper Bound | Still better than looped |
 
-Key conclusion: Performance differences are mainly due to "whether six refinements are performed," not "whether there are six independent parameter sets."
+Key Conclusion: The performance gap is primarily determined by whether the model performs 6 refinements, not whether it has 6 sets of independent parameters.
 
 ### Ablation Study
-Six mechanistic experiments profile the hierarchical behavior:
+Six mechanistic experiments provide a profile of layer-wise behavior:
 
-| Experiment | Main Finding | Interpretation |
-|------------|-------------|----------------|
-| Embedding similarity (cos / CKA) | Large models (TabPFN 2.5, LimiX-16M) form clear "layer blocks" | Within-block representations only make small incremental updates |
-| Class separation gap | Monotonically increases with depth; label embedding rises later than feature | Model separates features first, then forms labels |
-| Probing classifier | Probe at layer $i$ generalizes well to $j>i$, but not vice versa | Later layers retain earlier information and add new features |
-| Tabular tuned lens | Most models achieve high AUC at early layers | Inference decisions are actually formed "very early" |
-| Layer ablation (skip) | Removing layer 1 collapses performance; removing middle/later layers has little effect | Early layers = specialized mapping; middle/later layers = redundancy |
-| Self-repair | After skipping middle/later layers, next layer's lens performance immediately rebounds | Hydra effect-style self-repair exists |
+| Experiment | Main Finding | Implication |
+| :--- | :--- | :--- |
+| Embedding Similarity (cos / CKA) | Large models (TabPFN 2.5, LimiX-16M) form clear "layer blocks" | Representations within blocks undergo only small incremental updates |
+| Class Separation Gap | Increases monotonically with depth; label embeddings lift slightly later than features | The model separates features before forming label representations |
+| Probing classifier | Probes from layer $i$ generalize well to $j>i$, but not vice versa | Late layers preserve early layer information and stack new features |
+| Tabular tuned lens | Most models achieve high AUC in early layers | Inference decisions are actually formed "very early" |
+| Layer ablation (skip) | Performance collapses if Layer 1 is skipped; middle/late layers are almost lossless | Early layer = specialized mapping; middle/late layers = redundancy |
+| Self-repair | Performance in the next layer's lens rebounds immediately after middle-layer skip | Presence of hydra-effect-style self-repair |
 
 ### Key Findings
-- **Early layers are irreplaceable "mapping layers"**: TabICL and LimiX-2M, due to strong encoders (row interaction compression / RBF kernel preprocessing), are less sensitive to the first few transformer blocks; other models collapse if layer 1 is removed. This suggests early layers mainly project raw tokens into a space suitable for residual stream operations.
-- **Middle/later layers: redundancy + self-repair**: In TabPFN(v2), lens performance "jumps" around layer 5, with substantial overlapping computation between adjacent layers—this is the physical basis for the viability of recurrent architectures.
-- **Key differences between TFM and LLM**: TFMs are much more sensitive to layer swap than LLMs (especially TabPFN v2), and even if the last layer is disrupted, output is barely affected—contrasting with LLMs where the last layer's sharpening is essential. TFM's "prediction calibration" phase is later and more implicit.
-- **Strong encoders are a free lunch**: Models with explicit feature encoding (row interaction / RBF kernel) are less sensitive to depth, suggesting a design direction of "wide encoder + shallow looped backbone."
+- **Early layers are irreplaceable "mapping layers"**: TabICL and LimiX-2M are less sensitive to early transformer blocks due to strong encoders (row-interaction compression/RBF kernel preprocessing). For other models, skipping Layer 1 causes performance collapse, indicating early layers project raw tokens into a space suitable for residual stream operations.
+- **Redundancy and self-repair in middle/late layers**: TabPFN(v2) shows a "jump" in lens performance near Layer 5, with significant overlapping computations between layers—the physical basis for the success of recurrent architectures.
+- **Key differences between TFMs and LLMs**: TFMs are far more sensitive to layer swapping than LLMs (especially TabPFN v2). Additionally, destroying the final layer has little impact on output, contrasting with the "essential sharpening" in the final layer of LLMs. "Prediction calibration" in TFMs occurs later and more implicitly.
+- **Strong encoders are a free lunch**: Models with explicit feature encoding (row-interaction/RBF kernels) are less sensitive to depth, suggesting a design direction of "wide encoder + shallow looped backbone."
 
 ## Highlights & Insights
-- "Tabular tuned lens" is the key tool for cleanly transferring the LLM logit lens to ICL tabular tasks: original decoder failure is not due to poor representations, but to misalignment between representation and decoder; per-layer decoders reveal that the model "already knows the answer" early on.
-- The combination of three interventions + lens overlay is ingenious: looking at skip alone conflates "layer is useless" and "layer is self-repaired"; overlaying the lens distinguishes the two. This analysis paradigm can be directly transferred to all ICL models.
-- The single-layer recurrent validation truly "monetizes" interpretability research: mechanistic studies usually provide observations but not solutions; here, nanoTabPFNlooped directly translates the finding that "middle/later layers perform iterative refinement" into an architecture saving 80% of parameters.
-- Reveals fundamental differences between TFM and LLM in sensitivity to layer swap and the importance of the last layer, providing empirical evidence that TFM should not blindly reuse LLM experience.
+- "Tabular tuned lens" is the key tool for cleanly migrating LLM logit lens to ICL tabular tasks: the failure of the original decoder is not due to poor representations but a misalignment between representations and the fixed decoder. Per-layer decoders reveal the model already "knows the answer."
+- The design of three intervention types + lens overlay is clever: skip alone confuses "useless layer" with "self-repaired layer," while adding the lens separates the two. This analysis paradigm can be migrated to all ICL models.
+- The single-layer recurrent validation successfully "monetizes" interpretability research: while typically mechanistic studies provide observations without solutions, this work converts the "iterative refinement" conclusion into an architecture that saves 80% of parameters.
+- Essential differences in layer swap sensitivity and final-layer importance between TFMs and LLMs are revealed, providing empirical evidence that TFM design cannot blindly reuse LLM intuition.
 
 ## Limitations & Future Work
-- Experiments are mainly on binary classification; multiclass and regression are only partially validated in the appendix. Transferability to long priors and complex high-cardinality tasks is unknown.
-- The tabular tuned lens prior uses the open-source TabICL version; for models like LimiX trained with more sophisticated priors, early layer quality may be underestimated.
-- nanoTabPFNlooped is only validated at small scale (6 layers, single-layer looped); whether it can scale to TabPFN(2.5) with 24 layers and 50,000 samples remains untested.
-- Evaluation does not use ensemble methods; conclusions may be diluted in TFM's common "repeated sampling ensemble" scenarios.
-- Future directions: push analysis down to neuron/circuit level; study how prior design shapes hierarchical dynamics; apply the same tools to LLM-based tabular models (e.g., TabLLM) for cross-comparison.
+- Experiments primarily focus on binary classification; multi-class and regression are only validated in a limited capacity in the appendix. Transferability to long priors or complex high-cardinality tasks is unknown.
+- The Tabular tuned lens used the open-source TabICL prior, which might underestimate the early-layer quality of models trained with more sophisticated priors like LimiX.
+- nanoTabPFNlooped was only validated at a small scale (6 layers); whether it scales to 24-layer, 50,000-sample settings like TabPFN(2.5) remains unverified.
+- Evaluation did not utilize ensembles; conclusions might be diluted in common TFM "subsampling ensemble" scenarios.
+- Future directions: push analysis down to neuron/circuit levels; study how prior design shapes layer dynamics; apply similar tools to LLM-based tabular models (e.g., TabLLM) for cross-comparison.
 
 ## Related Work & Insights
-- **vs Lad et al. (Remarkable robustness of LLMs)**: They propose four-stage LLM inference (detokenize → feature refinement → ensembling → sharpening); this work shows TFMs have similar but differently distributed stages, with lower importance for the last layer.
-- **vs Belrose et al. (Tuned Lens)**: This work concretizes "tuned lens" as per-layer decoder + tabular prior fine-tuning, circumventing the lack of vocabulary in TFMs.
-- **vs Looped Transformer (Universal Transformer, Dehghani 2019; Gong 2025)**: First to transfer the "recurrent refinement" concept to tabular ICL models, and mechanistically demonstrates "why looping works."
-- **vs TabPFN series and LimiX**: This work is not a new architecture competitor, but provides the whole TFM family with interpretability and compression recipes, serving as a complement.
+- **vs. Lad et al. (Remarkable robustness of LLMs)**: They propose 4-stage LLM inference (detokenize → feature refinement → ensembling → sharpening). This paper proves TFMs have similar but differently distributed stages, with lower importance for the final layer.
+- **vs. Belrose et al. (Tuned Lens)**: This paper concretizes "tuned lens" as per-layer decoders fine-tuned with tabular priors, bypassing the lack of vocabulary in TFMs.
+- **vs. Looped Transformer (Universal Transformer, Dehghani 2019; Gong 2025)**: First migration of "iterative refinement" to tabular ICL models, providing mechanistic proof for *why* looping should work.
+- **vs. TabPFN series and LimiX**: This work is not a competitor in architecture benchmarks but provides a complementary analysis template and compression recipe for the entire TFM family.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ — First large-scale hierarchical mechanistic study of TFMs, with findings directly translated into concrete architectural modifications.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — 6 models × 6 experiments × 2 benchmarks, with appendix covering multiclass/regression; evidence chain is very complete.
-- Writing Quality: ⭐⭐⭐⭐ — Each experiment features a blue "takeaway" box, with clear logic from observation to conclusion, though some figures (e.g., self-repair) require careful reading.
-- Value: ⭐⭐⭐⭐ — Provides the TFM community with an analysis template and a "do 6 layers with 1" compression approach, directly relevant for industrial deployment.
+- Novelty: ⭐⭐⭐⭐ — First large-scale layer-wise mechanistic study for TFMs, translating findings into specific architectural improvements.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — 6 models × 6 experiments × 2 benchmarks, with appendix covering multi-class/regression; very complete chain of evidence.
+- Writing Quality: ⭐⭐⭐⭐ — Clear logical chain with "takeaway" boxes; however, some charts (e.g., self-repair) require careful reading.
+- Value: ⭐⭐⭐⭐ — Provides an analysis template for the TFM community and a "1 layer for 6" compression strategy, relevant for industrial deployment.
 
 <!-- RELATED:START -->
 
@@ -130,11 +127,11 @@ Six mechanistic experiments profile the hierarchical behavior:
 
 ## Related Papers
 
-- [\[CVPR 2026\] DINO-QPM: Adapting Visual Foundation Models for Globally Interpretable Image Classification](../../CVPR2026/interpretability/dino-qpm_adapting_visual_foundation_models_for_globally_interpretable_image_clas.md)
+- [\[ICML 2026\] Memorization Dynamics of Fill-in-the-Middle Pretraining](memorization_dynamics_of_fill-in-the-middle_pretraining.md)
 - [\[ICLR 2026\] Layer by layer, module by module: Choose both for optimal OOD probing of ViT](../../ICLR2026/interpretability/layer_by_layer_module_by_module_choose_both_for_optimal_ood_probing_of_vit.md)
+- [\[CVPR 2026\] DINO-QPM: Adapting Visual Foundation Models for Globally Interpretable Image Classification](../../CVPR2026/interpretability/dino-qpm_adapting_visual_foundation_models_for_globally_interpretable_image_clas.md)
 - [\[AAAI 2026\] SOM Directions are Better than One: Multi-Directional Refusal Suppression in Language Models](../../AAAI2026/interpretability/som_directions_are_better_than_one_multi-directional_refusal_suppression_in_lang.md)
-- [\[CVPR 2026\] Pixel2Phys: Distilling Governing Laws from Visual Dynamics](../../CVPR2026/interpretability/pixel2phys_distilling_governing_laws_from_visual_dynamics.md)
-- [\[ACL 2026\] FineSteer: A Unified Framework for Fine-Grained Inference-Time Steering in Large Language Models](../../ACL2026/interpretability/finesteer_a_unified_framework_for_fine-grained_inference-time_steering_in_large_.md)
+- [\[ICML 2026\] OmniSapiens: A Foundation Model for Social Behavior Processing via Heterogeneity-Aware Relative Policy Optimization](omnisapiens_a_foundation_model_for_social_behavior_processing_via_heterogeneity-.md)
 
 </div>
 

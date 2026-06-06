@@ -2,151 +2,125 @@
 title: >-
   [Paper Note] S2H-DPO: Hardness-Aware Preference Optimization for Vision-Language Models
 description: >-
-  [ACL 2026][LLM Alignment][To be supplemented] To be supplemented after a thorough reading of the paper.
+  [ACL 2026][LLM Alignment][Multi-image Reasoning] Ours proposes the Simple-to-Hard (S2H) DPO framework, which systematically enhances multi-image reasoning capabilities of VLMs by constructing preference data across three…
 tags:
   - "ACL 2026"
   - "LLM Alignment"
-  - "To be supplemented"
+  - "Multi-image Reasoning"
+  - "DPO Preference Optimization"
+  - "Visual Search"
+  - "Hardness Grading"
+  - "VLM Alignment"
 date: 2026-05-08
-content_hash: dcd408cf9a166cfa
+content_hash: 003ae0667808eee1
 ---
 
 # S2H-DPO: Hardness-Aware Preference Optimization for Vision-Language Models
 
-**Conference**: ACL 2026
+**Conference**: ACL 2026  
 **arXiv**: [2604.18512](https://arxiv.org/abs/2604.18512)  
 **Code**: None  
-**Area**: Multimodal VLM / Preference Alignment
-**Keywords**: Multi-image reasoning, DPO preference optimization, visual search, difficulty grading, VLM alignment
+**Area**: Multimodal VLM / Preference Alignment  
+**Keywords**: Multi-image Reasoning, DPO Preference Optimization, Visual Search, Hardness Grading, VLM Alignment
 
 ## TL;DR
 
-This paper proposes a Simple-to-Hard (S2H) DPO framework that constructs multi-image preference data across three progressively harder levels (anchored reasoning → cross-image comparison → global visual search), systematically improving VLM multi-image reasoning while preserving single-image performance.
+Ours proposes the Simple-to-Hard (S2H) DPO framework, which systematically enhances multi-image reasoning capabilities of VLMs by constructing preference data across three progressive difficulty levels (point-based reasoning → cross-image comparison → global visual search) while maintaining single-image performance.
 
 ## Background & Motivation
 
-**State of the Field**: VLMs have achieved remarkable progress in single-image understanding, yet effective reasoning across multiple images remains challenging. Multi-image reasoning requires localizing relevant images, comparing, and integrating information from multiple visual sources.
+**Background**: VLMs have achieved significant progress in single-image understanding, but effective reasoning across multiple images remains challenging. Multi-image reasoning requires locating relevant images, comparing, and integrating information from multiple visual sources.
 
-**Limitations of Prior Work**: Existing multi-image alignment methods (e.g., MIA-DPO) primarily focus on "anchored reasoning" — where the question pre-specifies which image to attend to (e.g., "In image 3, ...") — thereby bypassing global visual search and autonomous cross-image comparison, two critical capabilities. This leaves models underperforming in more complex multi-image scenarios.
+**Limitations of Prior Work**: Existing multi-image alignment methods (e.g., MIA-DPO) mainly focus on "point-based reasoning"—where the question pre-specifies which image to look at (e.g., "Look at Image 3..."), bypassing the key capabilities of global visual search and autonomous cross-image comparison. This leads to poor performance in more complex multi-image scenarios.
 
-**Root Cause**: MIA-DPO trains exclusively on Level 1 data (single-image anchored questions), neglecting the higher-order reasoning capabilities required at Level 2 (multi-image anchored comparison) and Level 3 (global visual search). Different levels induce qualitatively distinct reasoning patterns, and low-level training fails to generalize to higher levels.
+**Key Challenge**: MIA-DPO only utilizes Level 1 data (single-image point-based questions), ignoring higher-order reasoning required for Level 2 (multi-image point-based comparison) and Level 3 (global visual search). Different levels of questions induce qualitatively different reasoning patterns, and low-level training does not generalize to high-level reasoning.
 
-**Paper Goals**: To explicitly define the capability hierarchy required for multi-image reasoning and construct preference data covering all levels to comprehensively improve VLM multi-image reasoning.
+**Goal**: To clearly define the hierarchy of capabilities required for multi-image reasoning and construct preference data covering all levels to comprehensively enhance VLM multi-image reasoning.
 
-**Starting Point**: The paper defines a three-level capability hierarchy — Level 1 (reasoning over a pre-specified single image), Level 2 (comparing pre-specified multiple images), and Level 3 (autonomously searching all images to locate those satisfying a given condition) — and constructs corresponding chosen/rejected pairs for DPO training.
+**Key Insight**: Define a three-level capability hierarchy—Level 1 (reasoning on a pre-specified single image), Level 2 (comparing pre-specified multiple images), and Level 3 (autonomously searching all images to locate those meeting specific conditions)—and construct corresponding chosen/rejected pairs for DPO training.
 
-**Core Idea**: Chosen/rejected pairs are created via prompt-driven complexity rather than model-specific hallucinations, making the dataset model-agnostic and covering the full reasoning spectrum from simple to hard.
+**Core Idea**: Create chosen/rejected pairs through prompt-driven complexity (rather than model-specific hallucinations), making the dataset model-agnostic and covering the full reasoning spectrum from simple to hard.
 
 ## Method
 
 ### Overall Architecture
 
-S2H-DPO converts existing single-image data into multi-image preference data at three levels, with 20K samples per level. Level 1 constructs preference pairs using distractor images and model hallucinations; Level 2 designs kinship recognition and visual arithmetic tasks to test cross-image comparison; Level 3 designs global visual search tasks requiring the model to search all images before localizing the target. All levels are trained jointly.
+S2H-DPO transforms existing single-image data into three levels of multi-image preference data, with 20K samples per level. Level 1 utilizes distractor images and model hallucinations to construct preference pairs; Level 2 designs kinship recognition and visual arithmetic tasks to test cross-image comparison; Level 3 designs global visual search tasks that require the model to search all images before locating the target. All levels are jointly trained.
 
 ### Key Designs
 
-1. **Three-Level Reasoning Capability Hierarchy**:
+1. **Definition of Three-Level Reasoning Hierarchy**:
 
-    - Function: Systematically defines the complete capability spectrum for multi-image reasoning.
-    - Mechanism: Level 1 (single-image anchored) — "What color is the car in image 2?" requires attending only to the specified image; Level 2 (multi-image anchored comparison) — "Are the cars in images 1 and 3 the same color?" requires cross-image relational comparison; Level 3 (global search) — "Which image contains a white car?" requires inspecting all images to locate the target. Each level strictly demands more capabilities than the previous.
-    - Design Motivation: Training solely on Level 1, as in MIA-DPO, is insufficient — different levels induce qualitatively distinct reasoning patterns, and low-level training does not generalize to higher levels.
+    - **Function**: Systematically defines the complete capability spectrum of multi-image reasoning.
+    - **Mechanism**: Level 1 (Single-image point-based)—"What color is the car in Image 2?", requires only the specified image; Level 2 (Multi-image point-based comparison)—"Are the cars in Image 1 and Image 3 the same color?", requires cross-image association and comparison; Level 3 (Global search)—"Which image contains a white car?", requires checking all images to find the target. Each level strictly requires more capabilities than the previous one.
+    - **Design Motivation**: Training solely on Level 1 as in MIA-DPO is insufficient; different levels induce distinct reasoning patterns, and low-level training cannot generalize to high-level tasks.
 
-2. **Model-Agnostic Chosen/Rejected Construction**:
+2. **Universal Chosen/Rejected Construction Method**:
 
-    - Function: Eliminates the need to regenerate data for each new model.
-    - Mechanism: Level 1 uses distractor images to trigger hallucinations (identical to MIA-DPO); Level 2 leverages pre-labeled datasets (kinship datasets, synthetic visual arithmetic) to deterministically generate correct/incorrect pairs; Level 3 samples target concept images from ImageNet paired with random distractor images, where chosen responses accurately describe the target image and rejected responses provide generic, non-targeted descriptions. Semantic similarity filtering via CLIP/MPNet removes low-quality pairs.
-    - Design Motivation: MIA-DPO relies on model-specific hallucinations to generate rejected samples, necessitating regeneration for each new model. The prompt-driven approach produces contrastive pairs through task design itself, making it universally applicable across models.
+    - **Function**: Eliminates the need to regenerate data for each specific model.
+    - **Mechanism**: Level 1 uses distractor images to trigger hallucinations (consistent with MIA-DPO); Level 2 utilizes pre-labeled datasets (kinship datasets, synthetic visual arithmetic) to deterministically generate correct/incorrect pairs; Level 3 selects target images from ImageNet combined with random distractors, where the chosen response is an accurate target description and the rejected response is a generalized description without a specific target. Low-quality pairs are filtered using CLIP/MPNet semantic similarity.
+    - **Design Motivation**: MIA-DPO relies on model-specific hallucinations for rejected samples, necessitating regeneration for different models. Prompt-driven methods generate contrast through task design itself, ensuring model-agnosticism.
 
 3. **Joint Multi-Level Training**:
 
-    - Function: Simultaneously learns reasoning capabilities across all levels.
-    - Mechanism: Data from all three levels are mixed and trained with the standard DPO loss $L_{\text{DPO}} = -\mathbb{E}[\log \sigma(\beta \log \frac{\pi_\theta(y_w|x)}{\pi_{\text{ref}}(y_w|x)} - \beta \log \frac{\pi_\theta(y_l|x)}{\pi_{\text{ref}}(y_l|x)})]$. Evaluation is conducted on LLaVA-v1.5-7B, Qwen2.5-VL-7B, and Qwen3-VL-2B.
-    - Design Motivation: Ablation experiments demonstrate that joint training outperforms training on any single level, as different reasoning levels mutually reinforce each other.
+    - **Function**: Simultaneously learns reasoning capabilities across all levels.
+    - **Mechanism**: Mixes data from all three levels and trains using the standard DPO loss $$L_{\text{DPO}} = -\mathbb{E}[\log \sigma(\beta \log \frac{\pi_\theta(y_w|x)}{\pi_{\text{ref}}(y_w|x)} - \beta \log \frac{\pi_\theta(y_l|x)}{\pi_{\text{ref}}(y_l|x)})]$$. Evaluations are conducted on LLaVA-v1.5-7B, Qwen2.5-VL-7B, and Qwen3-VL-2B.
+    - **Design Motivation**: Ablation studies indicate that joint training outperforms training on a single level, suggesting that different reasoning levels facilitate each other.
 
 ### Loss & Training
 
-Standard DPO loss with temperature $\beta=0.1$, learning rate $5 \times 10^{-5}$, trained for 3 epochs. 20K samples per level.
+Standard DPO loss is used with temperature $\beta=0.1$, a learning rate of $5 \times 10^{-5}$, and training for 3 epochs. Each level consists of 20K samples.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Method | BLINK | MANTIS | NLVR2 | Multi-image Avg. |
-|--------|-------|--------|-------|-----------------|
+| Method | BLINK | MANTIS | NLVR2 | Multi-image Avg |
+|------|-------|--------|-------|---------|
 | LLaVA-v1.5 Baseline | 37.1 | 41.9 | 52.1 | 43.7 |
 | MIA-DPO | 42.9 | 44.2 | 54.2 | 47.1 |
-| S2H-DPO | **43.4** | **47.9** | **55.6** | **49.0** |
-| Gain vs. Baseline | +6.3 | +6.0 | +3.5 | +5.3 |
+| S2H-DPO (Ours) | **43.4** | **47.9** | **55.6** | **49.0** |
+| Gain vs Baseline | +6.3 | +6.0 | +3.5 | +5.3 |
 
 ### Ablation Study
 
-| Configuration | Multi-image Avg. | Single-image Avg. | Notes |
-|---------------|-----------------|-------------------|-------|
+| Configuration | Multi-image Avg | Single-image Avg | Description |
+|------|---------|---------|------|
 | Level 1 only | 47.1 | Maintained | Equivalent to MIA-DPO |
-| Level 2 only | Improved | Maintained | Cross-image comparison is beneficial |
-| Level 3 only | Improved | Maintained | Global search is most challenging |
+| Level 2 only | Gain | Maintained | Cross-image comparison is beneficial |
+| Level 3 only | Gain | Maintained | Global search is the most challenging |
 | Level 1+2+3 | **49.0** | **Maintained** | Joint training is optimal |
 
 ### Key Findings
 
-- S2H-DPO outperforms MIA-DPO on all multi-image benchmarks, with a more pronounced advantage on harder Level 3 tasks.
-- Joint training across all three levels surpasses training on any single level; different reasoning levels mutually reinforce each other.
-- A key advantage is that multi-image reasoning gains are achieved without any degradation in single-image performance (no decline on MMStar or POPE).
-- Unlike MIA-DPO, S2H-DPO's data construction does not depend on model-specific hallucinations and is universally applicable across models.
+- S2H-DPO outperforms MIA-DPO across all multi-image benchmarks, with a more pronounced advantage in difficult Level 3 tasks.
+- Joint training across three levels is superior to training on any single level, indicating mutual promotion between reasoning tiers.
+- Key Advantage: Enhances multi-image reasoning while completely maintaining single-image performance (no degradation on MMStar and POPE).
+- Unlike MIA-DPO, the data construction in S2H-DPO does not depend on specific model hallucinations, making it model-agnostic.
 
 ## Highlights & Insights
 
-- **Clear and compelling definition of capability levels**: The progressive hierarchy from anchored reasoning → comparison → search, where each level strictly requires more capabilities than the previous, provides a systematic task analysis framework transferable to other multimodal reasoning scenarios.
-- **Prompt-driven vs. hallucination-driven contrastive design**: The former generates natural contrast through task difficulty, while the latter relies on model-specific deficiencies. The former is more general and does not become obsolete as models improve.
-- **Practical importance of preserving single-image performance**: Multi-image gains should not come at the cost of single-image degradation; S2H-DPO successfully achieves both simultaneously.
+- **Clear and Persuasive Capability Hierarchy**: The progression from point-based → comparison → search provides a systematic framework for task analysis that is transferable to other multimodal reasoning scenarios.
+- **Prompt-driven vs. Hallucination-driven Design**: The former creates natural contrast through task difficulty, while the latter depends on specific model flaws. The former is more universal and does not lose effectiveness as models improve.
+- **Practical Importance of Maintaining Single-image Performance**: Multi-image improvements should not come at the cost of single-image degradation; S2H-DPO successfully balances both.
 
 ## Limitations & Future Work
 
-- The specific task designs for each level (kinship recognition, visual arithmetic) may lack sufficient diversity.
-- Level 3 rejected samples are generated by "omitting the target specification," which may result in inconsistent quality.
-- Validation is limited to 7B and 2B models; effectiveness on larger models remains unknown.
-- Scenarios involving more than four images are not considered.
+- Task-specific designs for each level (e.g., kinship recognition, visual arithmetic) may lack sufficient diversity.
+- Level 3 rejected samples are generated by "not specifying a target," which may lead to unstable quality.
+- Validation is limited to 7B and 2B models; performance on larger models remains unknown.
+- Scenarios involving more images (>4) were not considered.
 
 ## Related Work & Insights
 
-- **vs. MIA-DPO**: MIA-DPO relies solely on Level 1 data and model hallucinations; S2H-DPO covers all three levels with model-agnostic data construction.
-- **vs. LLaVA-RLHF/HA-DPO**: These methods focus on single-image preference alignment, whereas S2H-DPO targets hierarchical improvement of multi-image reasoning.
+- **vs. MIA-DPO**: MIA-DPO only uses Level 1 data and relies on model hallucinations, whereas S2H-DPO covers all three levels and uses model-agnostic data construction.
+- **vs. LLaVA-RLHF/HA-DPO**: These methods focus on single-image preference alignment, while S2H-DPO focuses on hierarchical enhancement for multi-image reasoning.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ The three-level capability hierarchy is insightful, though the underlying methodology (DPO + synthetic data) is not novel in itself.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Three multi-image and two single-image benchmarks, three models, and sufficient ablations.
-- Writing Quality: ⭐⭐⭐⭐ Motivation is clear and the capability hierarchy visualization is effective, though some descriptions are verbose.
-**Code**: To be confirmed  
-**Area**: llm_alignment
-**Keywords**: To be supplemented
-
-## TL;DR
-To be supplemented after a thorough reading of the paper.
-
-## Background & Motivation
-To be supplemented after a thorough reading of the paper.
-
-## Method
-To be supplemented after a thorough reading of the paper.
-
-## Key Experimental Results
-To be supplemented after a thorough reading of the paper.
-
-## Highlights & Insights
-To be supplemented after a thorough reading of the paper.
-
-## Limitations & Future Work
-To be supplemented after a thorough reading of the paper.
-
-## Related Work & Insights
-To be supplemented after a thorough reading of the paper.
-
-## Rating
-- Novelty: Pending
-- Experimental Thoroughness: Pending
-- Writing Quality: Pending
-- Value: Pending
+- Novelty: ⭐⭐⭐⭐ The definition of the three-level capability hierarchy is insightful, though the methodology (DPO + synthetic data) is standard.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Evaluated on 3 multi-image and 2 single-image benchmarks across 3 models with comprehensive ablations.
+- Writing Quality: ⭐⭐⭐⭐ Clear motivation and excellent visualization of capability levels, though some descriptions are verbose.
 
 <!-- RELATED:START -->
 
@@ -155,10 +129,10 @@ To be supplemented after a thorough reading of the paper.
 ## Related Papers
 
 - [\[ICML 2026\] TUR-DPO: Topology- and Uncertainty-Aware Direct Preference Optimization](../../ICML2026/llm_alignment/tur-dpo_topology-_and_uncertainty-aware_direct_preference_optimization.md)
+- [\[ACL 2026\] Mitigating Selection Bias in Large Language Models via Permutation-Aware GRPO](mitigating_selection_bias_in_large_language_models_via_permutation-aware_grpo.md)
 - [\[NeurIPS 2025\] g-DPO: Scalable Preference Optimization for Protein Language Models](../../NeurIPS2025/llm_alignment/g-dpo_scalable_preference_optimization_for_protein_language_models.md)
-- [\[ACL 2026\] ConsistRM: Improving Generative Reward Models via Consistency-Aware Self-Training](consistrm_improving_generative_reward_models_via_consistency-aware_self-training.md)
 - [\[ICLR 2026\] Toward Universal and Transferable Jailbreak Attacks on Vision-Language Models (UltraBreak)](../../ICLR2026/llm_alignment/toward_universal_and_transferable_jailbreak_attacks_on_vision-language_models.md)
-- [\[AAAI 2026\] Margin-aware Preference Optimization for Aligning Diffusion Models without Reference](../../AAAI2026/llm_alignment/margin-aware_preference_optimization_for_aligning_diffusion_models_without_refer.md)
+- [\[ACL 2026\] ConsistRM: Improving Generative Reward Models via Consistency-Aware Self-Training](consistrm_improving_generative_reward_models_via_consistency-aware_self-training.md)
 
 </div>
 

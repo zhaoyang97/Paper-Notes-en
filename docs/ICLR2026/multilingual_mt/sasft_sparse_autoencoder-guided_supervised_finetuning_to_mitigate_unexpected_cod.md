@@ -171,11 +171,11 @@ $$
 
 ## Related Papers
 
+- [\[ACL 2026\] Structure-Guided Entity Resolution: Fine-Tuning LLMs for Robust Name Matching in Complex Linguistic Contexts](../../ACL2026/multilingual_mt/structure-guided_entity_resolution_fine-tuning_llms_for_robust_name_matching_in_.md)
 - [\[ICLR 2026\] ATLAS: Adaptive Transfer Scaling Laws for Multilingual Pretraining, Finetuning, and Decoding the Curse of Multilinguality](atlas_adaptive_transfer_scaling_laws_for_multilingual_pretraining_finetuning_and.md)
+- [\[ACL 2026\] Multilingual Steering by Design: Multilingual Sparse Autoencoders and Principled Layer Selection](../../ACL2026/multilingual_mt/multilingual_steering_by_design_multilingual_sparse_autoencoders_and_principled_.md)
 - [\[ICCV 2025\] SignRep: Enhancing Self-Supervised Sign Representations](../../ICCV2025/multilingual_mt/signrep_enhancing_self-supervised_sign_representations.md)
 - [\[NeurIPS 2025\] Note 7: Value-Guided Search - Efficient Chain-of-Thought Reasoning](../../NeurIPS2025/multilingual_mt/polymath_evaluating_mathematical_reasoning_in_multilingual_contexts.md)
-- [\[CVPR 2026\] MMTIT-Bench: A Multilingual and Multi-Scenario Benchmark with Cognition-Perception-Reasoning Guided Text-Image Machine Translation](../../CVPR2026/multilingual_mt/mmtit-bench_a_multilingual_and_multi-scenario_benchmark_with_cognition-perceptio.md)
-- [\[ACL 2026\] Vocab Diet: Reshaping the Vocabulary of LLMs via Vector Arithmetic](../../ACL2026/multilingual_mt/vocab_diet_reshaping_the_vocabulary_of_llms_via_vector_arithmetic.md)
 
 </div>
 

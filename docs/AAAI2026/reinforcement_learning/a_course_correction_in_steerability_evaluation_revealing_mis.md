@@ -107,7 +107,7 @@ Additional key findings:
 - [\[AAAI 2026\] Revealing POMDPs: Qualitative and Quantitative Analysis for Parity Objectives](revealing_pomdps_qualitative_and_quantitative_analysis_for_parity_objectives.md)
 - [\[AAAI 2026\] Does Self-Evaluation Enable Wireheading in Language Models?](does_self-evaluation_enable_wireheading_in_language_models.md)
 - [\[ICLR 2026\] Nearly-Optimal Bandit Learning in Stackelberg Games with Side Information](../../ICLR2026/reinforcement_learning/nearly-optimal_bandit_learning_in_stackelberg_games_with_side_information.md)
-- [\[NeurIPS 2025\] Learning to Clean: Reinforcement Learning for Noisy Label Correction](../../NeurIPS2025/reinforcement_learning/learning_to_clean_reinforcement_learning_for_noisy_label_correction.md)
+- [\[ICML 2026\] ORLoopBench: Solver-in-the-Loop Benchmarks for Self-Correction and Behavioral Rationality in Operations Research](../../ICML2026/reinforcement_learning/orloopbench_solver-in-the-loop_benchmarks_for_self-correction_and_behavioral_rat.md)
 - [\[ICLR 2026\] A Unifying View of Coverage in Linear Off-Policy Evaluation](../../ICLR2026/reinforcement_learning/a_unifying_view_of_coverage_in_linear_off-policy_evaluation.md)
 
 </div>

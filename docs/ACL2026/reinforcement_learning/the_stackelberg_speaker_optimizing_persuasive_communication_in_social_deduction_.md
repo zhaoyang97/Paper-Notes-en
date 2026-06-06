@@ -2,70 +2,74 @@
 title: >-
   [Paper Note] The Stackelberg Speaker: Optimizing Persuasive Communication in Social Deduction Games
 description: >-
-  [ACL 2026][Reinforcement Learning][To be supplemented] To be supplemented after thorough reading.
+  [ACL 2026][Reinforcement Learning][Persuasive Communication] This paper models turn-based dialogue in Social Deduction Games (SDGs) as a Stackelberg game. The current player acts as a leader to optimize the persuasive im…
 tags:
   - "ACL 2026"
   - "Reinforcement Learning"
-  - "To be supplemented"
+  - "Persuasive Communication"
+  - "Social Deduction Games"
+  - "Stackelberg Game"
+  - "GRPO"
+  - "LLM Agents"
 date: 2026-05-08
-content_hash: 12dbf6af3a593721
+content_hash: d059c555c65db347
 ---
 
 # The Stackelberg Speaker: Optimizing Persuasive Communication in Social Deduction Games
 
-**Conference**: ACL 2026
+**Conference**: ACL 2026  
 **arXiv**: [2510.09087](https://arxiv.org/abs/2510.09087)  
 **Code**: [https://3dagentworld.github.io/leader_follower](https://3dagentworld.github.io/leader_follower)  
-**Area**: Reinforcement Learning / Social Deduction Games
+**Area**: Reinforcement Learning / Social Deduction Games  
 **Keywords**: Persuasive Communication, Social Deduction Games, Stackelberg Game, GRPO, LLM Agents
 
 ## TL;DR
 
-This paper models turn-based dialogue in social deduction games as a Stackelberg game, where the current player acts as the leader and optimizes the persuasive impact of utterances by measuring the response distribution of the next player. A Refiner model trained with GRPO achieves significant improvements over baselines across four game benchmarks including Werewolf and Avalon.
+This paper models turn-based dialogue in Social Deduction Games (SDGs) as a Stackelberg game. The current player acts as a leader to optimize the persuasive impact of their discourse by measuring the response distribution of the next player. A Refiner model is trained using GRPO, significantly outperforming baselines across four game benchmarks including Werewolf and Avalon.
 
 ## Background & Motivation
 
-**Background**: LLM agents have achieved notable progress in social deduction games (SDGs) such as Werewolf and Avalon. Existing methods primarily focus on information processing (inferring other players' roles) and strategy selection (choosing optimal actions).
+**Background**: LLM agents have made significant progress in Social Deduction Games (SDGs) such as Werewolf and Avalon. Existing methods primarily focus on information processing (inferring other players' roles) and strategy selection (choosing optimal actions).
 
-**Limitations of Prior Work**: Existing methods overlook the central role of persuasive communication. In SDGs, success depends not only on making correct inferences but also on convincing others to act according to one's intentions. Existing RL methods (e.g., SLA, LSPO) reduce the rich natural language space to a finite action classification problem, precluding utterance optimization in the continuous language space.
+**Limitations of Prior Work**: Existing methods ignore the core role of persuasive communication—in SDGs, success depends not only on making correct inferences but also on persuading others to act according to one's intentions. Existing RL methods (e.g., SLA, LSPO) simplify the rich natural language space into limited action classification problems, failing to optimize discourse in a continuous language space.
 
-**Key Challenge**: The core challenge in SDGs is not "knowing what is correct" but "convincing others that one is correct." The persuasive dimension is central to both game success and real human interaction, yet remains largely unaddressed in current research.
+**Key Challenge**: The core challenge of SDGs is not "knowing what is right," but "convincing others that one is right." While the persuasive dimension is central to game success and real human interaction, it remains nearly untouched in current research.
 
-**Goal**: To explicitly model and optimize persuasive communication in social deduction games, enabling agents to proactively steer dialogue toward favorable outcomes.
+**Goal**: To explicitly model and optimize persuasive communication in Social Deduction Games, enabling agents to proactively guide the dialogue flow toward favorable outcomes.
 
-**Key Insight**: The paper adopts the Stackelberg game framework from game theory — if the leader sufficiently understands the follower's response distribution over different actions, the leader can select the action that maximizes its own utility. In turn-based dialogue, the current speaker naturally assumes the role of leader.
+**Key Insight**: Borrowing the Stackelberg game framework from game theory—if a leader fully understands the follower's response distribution to different actions, they can choose the action that maximizes their own utility. In turn-based dialogue, the current speaker is the leader.
 
-**Core Idea**: A Refiner model is trained to refine base utterances into more persuasive versions. The reward signal is based on the shift in the next player's response probability distribution induced by the utterance — increasing the probability of desired responses while decreasing that of undesired ones.
+**Core Idea**: Training a Refiner model to refine base discourse into more persuasive versions, where the reward signal is based on the shift in the response probability distribution of the next player (increasing the probability of desired responses and decreasing the probability of undesired ones).
 
 ## Method
 
 ### Overall Architecture
 
-The framework proceeds in three steps: (1) **Intent Recognition** — an API LLM analyzes the current game state and generates $K=3$ desired and undesired follower responses respectively; (2) **Impact Measurement** — an API LLM generates a base utterance, the Refiner produces multiple candidates, and a Measurer computes the distributional shift in follower responses as the reward; (3) **Policy Optimization** — GRPO is used to train the Refiner to maximize persuasive impact.
+The process consists of three steps: (1) Intent Identification—An API LLM analyzes the current situation to generate K=3 sets of desired/undesired follower responses; (2) Impact Measurement—An API LLM generates base discourse, the Refiner refines it into multiple candidates, and the Measurer calculates the shift in the follower's response distribution for each candidate as a reward; (3) Strategy Optimization—GRPO is used to optimize the Refiner to maximize persuasive impact.
 
 ### Key Designs
 
-1. **Stackelberg Modeling and Intent Recognition**:
+1. **Stackelberg Modeling and Intent Identification**:
 
-    - **Function**: Models each speaking turn as a leader–follower interaction and explicitly defines the optimization objective.
-    - **Mechanism**: The current player $p_t$ acts as the leader and the next player $p_{t+1}$ as the follower. Given the game rules $\mathcal{R}$, game state $G_t$, dialogue history $D_t$, and hidden role $r_t$, a backend LLM generates $K=3$ desired responses $\hat{u}_{t+1}^{+,(k)}$ and undesired responses $\hat{u}_{t+1}^{-,(k)}$.
-    - **Design Motivation**: Explicitly defining "what constitutes effective persuasion" converts an ambiguous persuasion objective into a measurable probability shift.
+    - **Function**: Models each speaking turn as a leader-follower interaction to clarify optimization goals.
+    - **Mechanism**: The current player $p_t$ acts as the leader, and the next player $p_{t+1}$ acts as the follower. Based on game rules $\mathcal{R}$, game state $G_t$, dialogue history $D_t$, and hidden role $r_t$, the leader uses a backend LLM to generate K=3 sets of desired responses $\hat{u}_{t+1}^{+,(k)}$ and undesired responses $\hat{u}_{t+1}^{-,(k)}$.
+    - **Design Motivation**: To explicitly define "what constitutes a good persuasive effect," transforming vague persuasion goals into measurable probability shifts.
 
-2. **Persuasive Impact Measurement**:
+2. **Impact Measurement**:
 
-    - **Function**: Computes a persuasion reward for each candidate utterance based on its effect on follower behavior.
-    - **Mechanism**: Qwen2.5-72B serves as the Measurer to simulate follower response patterns. For a candidate utterance $u_t^{(i)}$, the reward is defined as: $R(u_t^{(i)}) = \sum_k \log P_\mathcal{F}(\hat{u}_{t+1}^{+,(k)} | \text{ctx} \cup \{u_t^{(i)}\}) - \sum_k \log P_\mathcal{F}(\hat{u}_{t+1}^{-,(k)} | \text{ctx} \cup \{u_t^{(i)}\})$
-    - **Design Motivation**: Measuring persuasive effect directly in the follower's probability space is more objective than human annotation or heuristic evaluation.
+    - **Function**: Calculates a persuasive reward for each candidate discourse based on its effect on the follower's behavior.
+    - **Mechanism**: Qwen2.5-72B is used as a Measurer to simulate the follower's response patterns. For a candidate discourse $u_t^{(i)}$, the reward $R(u_t^{(i)}) = \sum_k \log P_\mathcal{F}(\hat{u}_{t+1}^{+,(k)} | \text{ctx} \cup \{u_t^{(i)}\}) - \sum_k \log P_\mathcal{F}(\hat{u}_{t+1}^{-,(k)} | \text{ctx} \cup \{u_t^{(i)}\})$.
+    - **Design Motivation**: Measuring persuasive effects directly in the follower's probability space is more objective than manual labeling or heuristic evaluation.
 
-3. **GRPO Policy Optimization**:
+3. **GRPO Strategy Optimization**:
 
-    - **Function**: Trains the Refiner to optimize utterance persuasiveness in the continuous natural language space.
-    - **Mechanism**: Qwen2.5-7B with LoRA (rank 16) serves as the Refiner; $n=8$ candidates are sampled, and GRPO computes within-group relative advantage for policy optimization, with KL divergence regularization to prevent excessive deviation.
-    - **Design Motivation**: GRPO eliminates the need for an additional critic model and directly leverages the in-batch reward distribution to compute relative advantage.
+    - **Function**: Trains the Refiner to optimize the persuasiveness of discourse within the natural language space.
+    - **Mechanism**: Qwen2.5-7B + LoRA (rank 16) serves as the Refiner, sampling n=8 candidates. GRPO computes the relative advantage within the group for strategy optimization, with KL divergence regularization to prevent excessive deviation.
+    - **Design Motivation**: GRPO eliminates the need for an additional critic model by utilizing the reward distribution within the batch to calculate relative advantages.
 
 ### Loss & Training
 
-GRPO objective: $\mathcal{J}(\theta) = \mathbb{E}_c[\frac{1}{n}\sum_i \mathcal{L}_i - \beta D_{KL}(\pi_\theta || \pi_{ref})]$, with $n=8$, $\varepsilon=0.2$, $\beta=0.04$. Training uses 500 self-play games per game type, selecting 4,000 instances. Backend LLMs are randomly sampled from GPT-4o, Gemini-2.5-Flash, and Claude-3.5-Haiku. Learning rate: $1 \times 10^{-6}$; trained for 3 epochs on 4×A800 GPUs for approximately 50 hours.
+The GRPO objective function is: $\mathcal{J}(\theta) = \mathbb{E}_c[\frac{1}{n}\sum_i \mathcal{L}_i - \beta D_{KL}(\pi_\theta || \pi_{ref})]$, with n=8, ε=0.2, and β=0.04. Training involves 4,000 instances selected from 500 self-play games per game type. Backend LLMs are randomly selected from GPT-4o/Gemini-2.5-Flash/Claude-3.5-Haiku. Training was conducted with a learning rate of $1 \times 10^{-6}$ on 4×A800 for 3 epochs (approximately 50 hours).
 
 ## Key Experimental Results
 
@@ -84,71 +88,41 @@ GRPO objective: $\mathcal{J}(\theta) = \mathbb{E}_c[\frac{1}{n}\sum_i \mathcal{L
 
 | Reward Variant | Werewolf Avg | Avalon Avg | ONUW Avg |
 |---------|-----------|-----------|---------|
-| ReAct (baseline) | 49.0 | 44.0 | 48.0 |
+| ReAct (Baseline) | 49.0 | 44.0 | 48.0 |
 | Pos-Only + ReAct | 64.0 | 58.0 | 60.0 |
 | Neg-Only + ReAct | 49.0 | 46.0 | 47.0 |
 | **Ours + ReAct** | **70.0** | **61.0** | **61.0** |
 
 ### Key Findings
 
-- Positive reward (increasing desired response probability) contributes substantially more than negative reward (decreasing undesired response probability).
-- The Refiner yields greater gains when combined with stronger baselines, indicating it is complementary to rather than a replacement for existing strategies.
-- Improvements are especially pronounced for deceptive roles — the Werewolf win rate increases from 79% to 84.2%.
-- The method generalizes successfully to the Sotopia social simulation environment, demonstrating applicability beyond SDGs.
+- Positive rewards (increasing desired response probability) contribute far more than negative rewards (decreasing undesired response probability).
+- The Refiner performs better when combined with strong baselines, indicating the method complements rather than replaces existing strategies.
+- Improvement is particularly significant for deceptive roles—in Werewolf, the Werewolf win rate increased from 79% to 84.2%.
+- The method generalizes successfully to the Sotopia social simulation environment, beyond just SDGs.
 
 ## Highlights & Insights
 
-- Modeling turn-based dialogue as a Stackelberg game is highly natural — quantifying persuasive impact as "the shift in the opponent's response probability" offers a more fine-grained signal than directly optimizing win rates.
-- Employing a separate large model to simulate the follower's response distribution elegantly circumvents the limitation that API LLMs do not expose token probabilities.
-- Positioning the Refiner as an "utterance polisher" is practically effective — it preserves the semantic understanding of strong API LLMs while using a smaller model for persuasion enhancement.
+- Modeling turn-based dialogue as a Stackelberg game is highly natural—quantifying persuasion as the "shift in the opponent's response probability" is more granular than directly optimizing for win rates.
+- Using an independent LLM to simulate the follower's response distribution cleverly bypasses the limitation of API LLMs not providing probabilities.
+- Positioning the Refiner as a "discourse polisher" is practical—it retains the semantic understanding of strong API LLMs while using smaller models for persuasive enhancement.
 
 ## Limitations & Future Work
 
-- The Measurer uses a fixed large model to simulate follower behavior, which may not accurately reflect actual opponent actions.
-- Training assumes full information (opponent roles are known), which is unavailable at inference time.
-- A separate checkpoint must be trained for each game; cross-game transfer remains unexplored.
+- The Measurer uses a fixed LLM to simulate the follower, while actual opponent behavior may vary.
+- Full information (knowledge of opponent roles) is used during training but is unavailable during inference.
+- A separate checkpoint must be trained for each game; cross-game transfer has not been explored.
 
 ## Related Work & Insights
 
-- **vs. SLA/LSPO**: These methods reduce language to a selection among finite candidates, whereas this work optimizes directly in the continuous language space. The Refiner can be stacked on top of such methods.
-- **vs. Cicero**: Cicero seeks global equilibria in the game of Diplomacy; this paper employs local Stackelberg optimization to avoid computational intractability.
+- **vs SLA/LSPO**: These methods simplify language to a finite set of candidates, whereas this work optimizes directly in the continuous language space. The Refiner can be used as a supplementary layer.
+- **vs Cicero**: Cicero seeks a global equilibrium in Diplomacy, whereas this work uses local Stackelberg optimization to avoid computational intractability.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ The combination of Stackelberg modeling and persuasion-based reward is original.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Three SDGs + Sotopia, multiple stacked baselines, and complete ablations.
-- Writing Quality: ⭐⭐⭐⭐ Theoretically clear, though some sections are notation-dense.
-- Value: ⭐⭐⭐⭐ Provides a viable framework for persuasive communication in LLM agents.
-**Code**: To be confirmed  
-**Area**: reinforcement_learning
-**Keywords**: To be supplemented
-
-## TL;DR
-To be supplemented after thorough reading.
-
-## Background & Motivation
-To be supplemented after thorough reading.
-
-## Method
-To be supplemented after thorough reading.
-
-## Key Experimental Results
-To be supplemented after thorough reading.
-
-## Highlights & Insights
-To be supplemented after thorough reading.
-
-## Limitations & Future Work
-To be supplemented after thorough reading.
-
-## Related Work & Insights
-To be supplemented after thorough reading.
-
-## Rating
-- Novelty: Pending
-- Experimental Thoroughness: Pending
-- Writing Quality: Pending
-- Value: Pending
+- **Novelty**: ⭐⭐⭐⭐⭐ The combination of Stackelberg modeling and persuasive rewards is novel.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Covers three SDGs plus Sotopia, evaluates multiple baseline integrations, and includes complete ablations.
+- **Writing Quality**: ⭐⭐⭐⭐ The theory is clear, though some sections are formula-dense.
+- **Value**: ⭐⭐⭐⭐ Provides a feasible framework for persuasive communication in LLM agents.
 
 <!-- RELATED:START -->
 
@@ -156,11 +130,11 @@ To be supplemented after thorough reading.
 
 ## Related Papers
 
-- [\[ACL 2026\] HEALing Entropy Collapse: Enhancing Exploration in Few-Shot RLVR via Hybrid-Domain Entropy Dynamics Alignment](healing_entropy_collapse_enhancing_exploration_in_few-shot_rlvr_via_hybrid-domai.md)
-- [\[ACL 2026\] Easy Samples Are All You Need: Self-Evolving LLMs via Data-Efficient Reinforcement Learning](easy_samples_are_all_you_need_self-evolving_llms_via_data-efficient_reinforcemen.md)
+- [\[ICML 2026\] Learning in Structured Stackelberg Games](../../ICML2026/reinforcement_learning/learning_in_structured_stackelberg_games.md)
 - [\[ICLR 2026\] Learning to Play Multi-Follower Bayesian Stackelberg Games](../../ICLR2026/reinforcement_learning/learning_to_play_multi-follower_bayesian_stackelberg_games.md)
-- [\[ACL 2026\] Savoir: Learning Social Savoir-Faire via Shapley-based Reward Attribution](savoir_learning_social_savoir-faire_via_shapley-based_reward_attribution.md)
 - [\[ICLR 2026\] Nearly-Optimal Bandit Learning in Stackelberg Games with Side Information](../../ICLR2026/reinforcement_learning/nearly-optimal_bandit_learning_in_stackelberg_games_with_side_information.md)
+- [\[ACL 2026\] Savoir: Learning Social Savoir-Faire via Shapley-based Reward Attribution](savoir_learning_social_savoir-faire_via_shapley-based_reward_attribution.md)
+- [\[ACL 2026\] Breaking the Impasse: Dual-Scale Evolutionary Policy Training for Social Language Agents](breaking_the_impasse_dual-scale_evolutionary_policy_training_for_social_language.md)
 
 </div>
 

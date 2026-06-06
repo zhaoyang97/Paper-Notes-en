@@ -128,7 +128,7 @@ Two secret-keeping model organisms: (1) **User Gender**—Gemma 2 9B fine-tuned 
 - [\[ACL 2026\] LLM Prompt Duel Optimizer: Efficient Label-Free Prompt Optimization](../../ACL2026/model_compression/llm_prompt_duel_optimizer_efficient_label-free_prompt_optimization.md)
 - [\[ICLR 2026\] HiFo-Prompt: Prompting with Hindsight and Foresight for LLM-based Automatic Heuristic Design](hifo-prompt_prompting_with_hindsight_and_foresight_for_llm-based_automatic_heuri.md)
 - [\[ICLR 2026\] TiTok: Transfer Token-level Knowledge via Contrastive Excess to Transplant LoRA](titok_transfer_token-level_knowledge_via_contrastive_excess_to_transplant_lora.md)
-- [\[AAAI 2026\] Prototype-Based Semantic Consistency Alignment for Domain Adaptive Retrieval](../../AAAI2026/model_compression/prototype-based_semantic_consistency_alignment_for_domain_adaptive_retrieval.md)
+- [\[ICML 2026\] Hallucination is a Consequence of Space-Optimality: A Rate-Distortion Theorem for Membership Testing](../../ICML2026/model_compression/hallucination_is_a_consequence_of_space-optimality_a_rate-distortion_theorem_for.md)
 
 </div>
 

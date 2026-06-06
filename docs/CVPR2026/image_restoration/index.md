@@ -20,7 +20,7 @@ tags:
 
 **📷 CVPR2026** · **39** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (5)](../../ICML2026/image_restoration/index.md) · [🔬 ICLR2026 (14)](../../ICLR2026/image_restoration/index.md) · [🤖 AAAI2026 (13)](../../AAAI2026/image_restoration/index.md) · [🧠 NeurIPS2025 (26)](../../NeurIPS2025/image_restoration/index.md) · [📹 ICCV2025 (30)](../../ICCV2025/image_restoration/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (18)](../../ICML2026/image_restoration/index.md) · [🔬 ICLR2026 (14)](../../ICLR2026/image_restoration/index.md) · [🤖 AAAI2026 (13)](../../AAAI2026/image_restoration/index.md) · [🧠 NeurIPS2025 (26)](../../NeurIPS2025/image_restoration/index.md) · [📹 ICCV2025 (30)](../../ICCV2025/image_restoration/index.md)
 
 🔥 **Top topics:** Image Restoration ×11 · Super-Resolution ×9 · Diffusion Models ×5 · Adversarial Robustness ×4 · Multimodal/VLM ×2
 

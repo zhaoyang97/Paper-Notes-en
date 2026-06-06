@@ -202,8 +202,8 @@ Selected operating point comparison (MUST-C, low latency):
 - [\[NeurIPS 2025\] SimulMEGA: MoE Routers are Advanced Policy Makers for Simultaneous Speech Translation](../../NeurIPS2025/audio_speech/simulmega_moe_routers_are_advanced_policy_makers_for_simultaneous_speech_transla.md)
 - [\[AAAI 2026\] Modelling the Effects of Hearing Loss on Neural Coding in the Auditory Midbrain with Variational Conditioning](modelling_the_effects_of_hearing_loss_on_neural_coding_in_the_auditory_midbrain_.md)
 - [\[ICLR 2026\] Scalable Multilingual Multimodal Machine Translation with Speech-Text Fusion](../../ICLR2026/audio_speech/scalable_multilingual_multimodal_machine_translation_with_speech-text_fusion.md)
-- [\[AAAI 2026\] DualSpeechLM: Towards Unified Speech Understanding and Generation via Dual Speech Token Modeling](dualspeechlm_towards_unified_speech_understanding_and_generation_via_dual_speech.md)
-- [\[ICML 2026\] Probing Cross-modal Information Hubs in Audio-Visual LLMs](../../ICML2026/audio_speech/probing_cross-modal_information_hubs_in_audio-visual_llms.md)
+- [\[ACL 2026\] From Flat Language Labels to Typological Priors: Structured Language Conditioning for Multilingual Speech-to-Speech Translation](../../ACL2026/audio_speech/from_flat_language_labels_to_typological_priors_structured_language_conditioning.md)
+- [\[ACL 2026\] Speculative End-Turn Detector for Efficient Speech Chatbot Assistant](../../ACL2026/audio_speech/speculative_end-turn_detector_for_efficient_speech_chatbot_assistant.md)
 
 </div>
 

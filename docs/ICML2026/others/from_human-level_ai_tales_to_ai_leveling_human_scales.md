@@ -126,11 +126,11 @@ On TIMSS, MAE rises to $0.12$-$0.16$ and Pearson drops to $0.5$-$0.7$, reflectin
 
 ## Related Papers
 
+- [\[ICML 2026\] Mapping Human Anti-collusion Mechanisms to Multi-agent AI Systems](mapping_human_anti-collusion_mechanisms_to_multi-agent_ai_systems.md)
 - [\[ICML 2026\] Position: Reliable AI Needs to Externalize Implicit Knowledge: A Human-AI Collaboration Perspective](reliable_ai_needs_to_externalize_implicit_knowledge_a_human-ai_collaboration_per.md)
 - [\[AAAI 2026\] Align When They Want, Complement When They Need! Human-Centered Ensembles for Adaptive Human-AI Collaboration](../../AAAI2026/others/align_when_they_want_complement_when_they_need_human-centere.md)
 - [\[AAAI 2026\] Intrinsic Barriers and Practical Pathways for Human-AI Alignment: An Agreement-Based Complexity Analysis](../../AAAI2026/others/intrinsic_barriers_and_practical_pathways_for_human-ai_alignment_an_agreement-ba.md)
 - [\[ICML 2026\] AI Cap-and-Trade: Efficiency Incentives for Accessibility and Sustainability](ai_cap-and-trade_efficiency_incentives_for_accessibility_and_sustainability.md)
-- [\[CVPR 2026\] LoViF 2026 Challenge on Human-oriented Semantic Image Quality Assessment](../../CVPR2026/others/lovif_2026_semantic_quality_assessment_challenge.md)
 
 </div>
 

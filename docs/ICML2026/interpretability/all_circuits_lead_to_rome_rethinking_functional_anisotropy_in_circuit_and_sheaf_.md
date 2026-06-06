@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] All Circuits Lead to Rome: Rethinking Functional Anisotropy in Circuit and Sheaf Discovery for LLMs
 description: >-
-  [ICML 2026][Interpretability][circuit discovery] This paper systematically falsifies a core implicit assumption in mechanistic interpretability—"one LLM capability corresponds to a unique circuit"—using the Overlap-Aware…
+  [ICML 2026][Interpretability][circuit discovery] This paper systematically disproves a hidden assumption in mechanistic interpretability—that "one LLM capability corresponds to a single unique circuit"—using the Overlap-…
 tags:
   - "ICML 2026"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "superposition"
   - "IOI"
 date: 2026-05-08
-content_hash: 43b8c84147631e9f
+content_hash: 05387472314ecf89
 ---
 
 # All Circuits Lead to Rome: Rethinking Functional Anisotropy in Circuit and Sheaf Discovery for LLMs
@@ -20,58 +20,55 @@ content_hash: 43b8c84147631e9f
 **Conference**: ICML 2026  
 **arXiv**: [2605.12671](https://arxiv.org/abs/2605.12671)  
 **Code**: <https://github.com/TonyXiChen/OASR>  
-**Area**: LLM Interpretability / Mechanistic Interpretability / Circuit & Sheaf Discovery  
+**Area**: LLM Mechanistic Interpretability / Circuit & Sheaf Discovery  
 **Keywords**: circuit discovery, sheaf discovery, functional anisotropy, superposition, IOI
 
 ## TL;DR
-This paper systematically falsifies a core implicit assumption in mechanistic interpretability—"one LLM capability corresponds to a unique circuit"—using the Overlap-Aware Sheaf Repulsion (OASR) algorithm. It finds that the same task can be supported by multiple, nearly non-overlapping (IoU ~4–11%) but all faithful/sparse/complete circuits or sheaves, and proposes the "Distributive Dense Circuit Hypothesis" as a theoretical explanation.
+This paper systematically disproves a hidden assumption in mechanistic interpretability—that "one LLM capability corresponds to a single unique circuit"—using the Overlap-Aware Sheaf Repulsion (OASR) algorithm. It finds that the same task can be supported by multiple circuits or sheaves that exhibit minimal overlap (IoU ~4–11%) while remaining faithful, sparse, and complete. The authors propose the "Distributed Dense Circuit Hypothesis" as a theoretical explanation.
 
 ## Background & Motivation
 
-**Background**: Circuit and sheaf discovery (CSD) is a mainstream approach in mechanistic interpretability. From ACDC, EAP to EP, DiscoGP, these methods encode LLMs as residual flow computation DAGs, then use heuristic or gradient-based edge mask optimization to find sparse subgraphs that maintain accuracy on tasks like IOI, Docstring, BLiMP.
+**Background**: Circuit and Sheaf Discovery (CSD) is a mainstream route in mechanistic interpretability. Methods like ACDC, EAP, EP, and DiscoGP represent an LLM as a Directed Acyclic Graph (DAG) of the residual stream and use heuristic or gradient-based edge mask optimization to identify sparse subgraphs that maintain accuracy on tasks such as IOI, Docstring, and BLiMP.
 
-**Limitations of Prior Work**: Existing evaluation paradigms assume a "unique minimal circuit"—either by comparing to preset ground-truths (e.g., Tracr) or by seeking "fewest edges + maintained performance," implicitly assuming each task is implemented by a structurally unique submechanism. However, the authors find that when using current methods to find two sheaves, their edges barely overlap yet both achieve 100% task performance.
+**Limitations of Prior Work**: Existing evaluation paradigms default to a "unique minimal circuit" assumption—either by comparing against a predefined ground-truth (e.g., Tracr) or by pursuing "minimal edge count + performance maintenance." This implicitly assumes each task is implemented by a structurally unique sub-mechanism. However, the authors find that when searching for two sheaves using existing methods, their edges barely overlap despite both being 100% capable of performing the task.
 
-**Key Challenge**: The authors term this implicit assumption the **Functional Anisotropy Hypothesis**—"model capabilities are anisotropically localized in a particular submechanism." If multiple structurally distinct sheaves can independently support the same task, then "finding the unique circuit" loses mechanistic explanatory value; prior phenomena like backup head/hydra effect are only "revealed after ablation" and cannot explain "multiple circuits coexisting during normal inference."
+**Key Challenge**: The authors name this implicit assumption the **Functional Anisotropy Hypothesis**—the idea that "model capabilities are anisotropically localized within a specific sub-mechanism." If multiple structurally distinct sheaves can independently support the same task, the goal of "finding the unique circuit" loses its mechanistic significance. Prior redundant phenomena like backup heads or the hydra effect are merely standby mechanisms that "appear only after ablation," which fails to explain the co-existence of multiple circuits during normal inference.
 
-**Goal**: (1) Design an algorithm that actively discovers "mutually non-overlapping but all faithful" multiple circuits; (2) Systematically falsify the anisotropy hypothesis on several standard benchmarks; (3) Provide a theoretical explanation for why such non-uniqueness naturally exists in LLMs.
+**Goal**: (1) Design an algorithm capable of actively discovering multiple "non-overlapping but faithful" circuits; (2) Systematically disprove the anisotropy hypothesis across multiple common benchmarks; (3) Provide a theoretical explanation for why this non-uniqueness naturally exists in LLMs.
 
-**Key Insight**: Add a "repel discovered circuits" regularizer to the differentiable sheaf optimization objective in DiscoGP, explicitly turning "finding the next sheaf" into "structurally distancing from the previous one" in solution space.
+**Key Insight**: Incorporate an "already discovered circuit repulsion" regularization term into the differentiable sheaf optimization objective of DiscoGP. This explicitly reformulates "finding the next sheaf" as "moving away from the previous one in the structural space."
 
-**Core Idea**: Use Overlap-Aware Sheaf Repulsion (OASR) to reframe CSD from "finding the unique minimal subgraph" to "enumerating multiple solutions within the functional equivalence class," and use high-dimensional superposition theory to argue that these solutions are so numerous they cannot be reduced to a single canonical circuit.
+**Core Idea**: Use Overlap-Aware Sheaf Repulsion (OASR) to restructure CSD from "finding the unique minimal subgraph" to "enumerating multiple solutions within a functional equivalence class." High-dimensional superposition is then used to argue that these solutions are too numerous to be reduced to a single canonical circuit.
 
 ## Method
 
 ### Overall Architecture
-The authors adopt DiscoGP's differentiable sheaf discovery framework: each edge $e$ in the residual flow computation graph is associated with a learnable logit $l_e$, relaxed to a continuous score $s_e=\sigma((l_e-\log(\log\mathcal{U}_1/\log\mathcal{U}_2))/\tau)$ via Gumbel-Sigmoid, and a hard mask is obtained via straight-through estimator. The original objective includes fidelity (reproducing task behavior), sparsity (encouraging sparsity), and completeness (mask graph is independently executable). OASR adds a repulsion term, running $K$ rounds of discovery, each time requiring the new sheaf to be structurally almost non-overlapping with all previously found sheaves.
+The authors build upon the differentiable sheaf discovery framework of DiscoGP. Each edge $e$ in the residual stream computation graph is associated with a learnable logit $l_e$. A continuous score $s_e = \sigma((l_e - \log(\log\mathcal{U}_1/\log\mathcal{U}_2))/\tau)$ is obtained via Gumbel-Sigmoid relaxation, and a hard mask is derived using a straight-through estimator. The original objective includes three terms: fidelity (reproducing task behavior), sparsity (encouraging fewer edges), and completeness (ensuring the masked graph is independently executable). OASR introduces a repulsion term and runs $K$ discovery cycles, requiring each new sheaf to be structurally non-overlapping with all previously discovered sheaves.
 
 ### Key Designs
 
-1. **Overlap-Aware Sheaf Repulsion (OASR) Loss**:
+1.  **Overlap-Aware Sheaf Repulsion (OASR) Loss**:
+    - **Function**: Explicitly penalizes the "reuse of edges from previous sheaves" during each new discovery cycle, forcing the optimizer to explore untouched regions of the structural space.
+    - **Mechanism**: Let $R$ be the set of edges in discovered sheaves. The total loss for a new round is $\mathcal{L} = \mathcal{L}_{fidelity} + \lambda_s\mathcal{L}_{sparsity} + \lambda_c\mathcal{L}_{complete} + \lambda_o\mathcal{L}_{overlap}(R)$, where $\mathcal{L}_{overlap}(R) = \frac{1}{|E|}\sum_{e\in R}\sigma(l_e)$ penalizes the expected activation of edges in $R$. This effectively adds gradients in the logit space to move "away from existing solutions." Repeating this yields $K$ non-overlapping sheaves $\{R_1, \dots, R_K\}$.
+    - **Design Motivation**: While re-running DiscoGP with random initialization can yield different sheaves, they often remain highly overlapping as optimization tends to fall into the same attractors. Explicit repulsion turns non-uniqueness into an active discovery process, finding solutions with IoU far below random levels.
 
-    - **Function**: Explicitly penalizes "reusing edges from previous sheaf" in each new discovery, pushing the optimizer to explore unexplored regions of the structural space.
-    - **Mechanism**: Let $R$ be the set of edges in discovered sheaves; the total loss for a new round is $\mathcal{L}=\mathcal{L}_{fidelity}+\lambda_s\mathcal{L}_{sparsity}+\lambda_c\mathcal{L}_{complete}+\lambda_o\mathcal{L}_{overlap}(R)$, where $\mathcal{L}_{overlap}(R)=\frac{1}{|E|}\sum_{e\in R}\sigma(l_e)$ penalizes expected activation only on edges in $R$, effectively adding gradient in logit space away from existing solutions. Repeating this yields $K$ mutually non-overlapping sheaves $\{R_1,\dots,R_K\}$.
-    - **Design Motivation**: Simply re-running DiscoGP with random initialization can yield different sheaves, but they may still heavily overlap (optimizer tends to fall into the same attractor). The explicit repulsion term turns "non-uniqueness" from a passive phenomenon into active discovery, enabling solutions with IoU far below random baseline.
+2.  **Complementary/Complexity Validation Protocol**:
+    - **Function**: Rules out the trivial explanation that "low IoU is due to large circuits being randomly partitioned" and proves each discovered subgraph is truly "independently competent."
+    - **Mechanism**: (a) Evaluate IOI accuracy (task maintenance); (b) Evaluate complement accuracy—removing the discovered edges $E_A$ and checking if the remaining graph can perform the task, verifying if $E_A$ is necessary; (c) Report edge density and count, comparing against "random initialization" baselines; (d) Perform "edge-by-edge ablation" on extremely sparse 3-edge sheaves to check if every edge is indispensable.
+    - **Design Motivation**: High task accuracy plus low IoU is insufficient to refute anisotropy, as two sheaves might just be rotations or re-parameterizations of the same canonical circuit. Through layer-wise distribution analysis and complement tests, the authors confirm differences are structural rather than superficial rearrangements.
 
-2. **Complement/Complex Validation Protocol**:
-
-    - **Function**: Rules out trivial explanations like "low IoU is because circuits are too large and any random cut won't overlap," proving each discovered subgraph is truly "independently competent."
-    - **Mechanism**: (a) Evaluate IoI accuracy (task retention); (b) Evaluate complement accuracy—remove the discovered edge set $E_A$, test if the remaining graph can perform the task, verifying $E_A$ is necessary; (c) Report edge density (selected edges/total edges) and edge count, comparing to "random init rerun" baseline; (d) For extremely sparse three-edge sheaves, perform "edge-by-edge ablation" to check if any edge is indispensable.
-    - **Design Motivation**: Task accuracy consistency + low IoU alone is insufficient to refute anisotropy, as two sheaves might just be rotations/reparameterizations of the same canonical circuit. Layer-wise distribution analysis + complement tests confirm the differences are structural, not superficial rearrangements.
-
-3. **Distributive Dense Circuit Hypothesis (Theoretical Hypothesis)**:
-
-    - **Function**: Provides a theoretical explanation for "why LLMs must have multiple low-overlap faithful circuits."
-    - **Mechanism**: Based on Elhage et al.'s superposition theory—in high-dimensional residual flows, the model uses nearly orthogonal directions to superpose multiple feature sets, and any specific "computation implementation" routes these directions to downstream via some linear combination. For a given task behavior $b$, the set of subgraphs satisfying fidelity grows exponentially with model depth/width, so "sparse yet faithful solutions" proliferate exponentially. The paper formalizes: under mild assumptions, for sufficiently large models, there exist $\Omega(\exp(d))$ mutually disjoint faithful sheaves.
-    - **Design Motivation**: Explains why the observed non-uniqueness is not an optimization artifact of DiscoGP, but a structural consequence of LLM representations—unifying backup heads/hydra effect/multi-circuit phenomena under a "global distributive dense circuit" perspective.
+3.  **Distributive Dense Circuit Hypothesis (Theoretical Hypothesis)**:
+    - **Function**: Provides a theoretical explanation for why multiple low-overlap faithful circuits must exist in LLMs.
+    - **Mechanism**: Based on the superposition theory of Elhage et al.—in high-dimensional residual streams, models represent multiple feature sets via near-orthogonal directional overlays. Any specific "computational implementation" is a linear combination of these directions routed downstream. Given a task behavior $b$, the set of subgraphs satisfying fidelity expands combinatorially with depth and width in high dimensions, causing the number of "sparse yet faithful solutions" to grow exponentially. The paper provides a formal proposition: under mild assumptions, for a sufficiently large model, there exist $\Omega(\exp(d))$ disjoint faithful sheaves.
+    - **Design Motivation**: This explains that the observed non-uniqueness is not an optimization artifact of DiscoGP but a structural consequence of LLM representation. It unifies phenomena like backup heads and the hydra effect into a "global distributive circuit" perspective.
 
 ### Loss & Training
-The four losses are weighted and summed: $\mathcal{L}=\mathcal{L}_{fid}+\lambda_s\mathcal{L}_{sp}+\lambda_c\mathcal{L}_{comp}+\lambda_o\mathcal{L}_{overlap}$. GPT-2 small (12L × 12H) is the main experimental subject, with hyperparameters following DiscoGP defaults. To obtain 20 sheaves, OASR fixes the previously found $R$ each round, reinitializes logits, and optimizes the joint fidelity/sparsity/completeness/overlap objective.
+The weighted sum of four loss terms is used: $\mathcal{L} = \mathcal{L}_{fid} + \lambda_s\mathcal{L}_{sp} + \lambda_c\mathcal{L}_{comp} + \lambda_o\mathcal{L}_{overlap}$. GPT-2 small (12L × 12H) is the primary subject, with hyperparameters following DiscoGP defaults. To obtain 20 sheaves, OASR fixes the $R$ from previous rounds in each iteration, re-initializes logits, and optimizes the joint objective.
 
 ## Key Experimental Results
 
 ### Main Results
-On GPT-2 small, OASR discovers two sheaves for the IOI task:
+Discovery of two sheaves for the IOI task on GPT-2 small:
 
 | Sheaf | IoI Acc | Comp. Acc | Edge Density | Edge # |
 |-------|---------|-----------|--------------|--------|
@@ -79,7 +76,7 @@ On GPT-2 small, OASR discovers two sheaves for the IOI task:
 | B | 100% | 45.80% | 3.97% | 1289 |
 | Overlap | $\|A\cap B\|=96$ | $\|A\cup B\|=2351$ | **IoU = 4.1%** | — |
 
-Across 9 standard CSD benchmark tasks, two sheaves are found per task:
+Discovery of two sheaves across 9 common CSD benchmark tasks:
 
 | Task | Sheaf A Acc | Sheaf B Acc | IoU(A,B) |
 |------|------------|-------------|----------|
@@ -94,9 +91,9 @@ Across 9 standard CSD benchmark tasks, two sheaves are found per task:
 | Docstring | 98.9% | 100% | 11.0% |
 
 ### Ablation Study
-Analysis of "mutual intersection" for 20 sheaves (Mutual IoU = total intersection/total union for 20 sheaves):
+Analysis of "Mutual IoU" extended to 20 sheaves (Mutual IoU = Intersection of 20 sheaves / Union of 20 sheaves):
 
-| Task | Method | \|E_∩\| | \|E_∪\| | Mutual IoU | Mean Acc |
+| Task | Method | \|E_∩\| | \|E_∪\| | Mutual IoU | Avg. Acc |
 |------|--------|--------|--------|------------|----------|
 | IOI | Random Init | 20 | 6560 | 0.30% | 99.95% |
 | IOI | **OASR** | 11 | 7382 | **0.15%** | 99.59% |
@@ -106,35 +103,35 @@ Analysis of "mutual intersection" for 20 sheaves (Mutual IoU = total intersectio
 | ANA | **OASR** | 10 | 4890 | **0.20%** | 95.00% |
 
 ### Key Findings
-- The "common intersection among multiple sheaves" approaches zero as the number of discovered sheaves increases: from 2 sheaves with IoU ≈ 4–11% to 20 sheaves with Mutual IoU < 1%, indicating that task capability is not carried by any "essential core."
-- An extremely sparse IOI sheaf with only 3 edges was found; edge-by-edge ablation shows that removing any edge still allows OASR to find another high-quality sheaf, falsifying the weakened "necessary core edge" hypothesis.
-- OASR achieves lower Mutual IoU than "rerunning DiscoGP with random initialization" on all tasks, with almost no drop in accuracy, indicating the repulsion term is not a trivial random perturbation.
-- Layer-wise analysis (Fig. 2) shows the two sheaves differ most in mid-layer MLP input edge distributions, not just superficial reparameterization.
+- The "common intersection among multiple sheaves" approaches zero as the number of discovered sheaves increases: IoU dropped from ~4–11% for 2 sheaves to Mutual IoU < 1% for 20 sheaves, indicating that task capability is not carried by any "essential core."
+- An extremely sparse IOI sheaf with only 3 edges was discovered. Removing any one of these 3 edges still allowed OASR to find another high-quality sheaf, disproving the weakened hypothesis of "essential core edges."
+- OASR achieved lower Mutual IoU than the "random initialization with DiscoGP" baseline across all tasks while maintaining accuracy, showing the repulsion term is more than trivial random perturbation.
+- Layer-wise analysis (Fig. 2) shows that the two sheaves differ most in the distribution of incoming edges to mid-layer MLPs, indicating deeper structural differences rather than surface-level re-parameterization.
 
 ## Highlights & Insights
-- **Paradigm-level Impact**: The authors directly challenge the mechanistic interpretability community's core goal of "finding the circuit." If a task has countless faithful solutions, then minimality-based evaluation (MIB) and ground-truth comparison (Tracr) must be reconsidered. This is a "problem definition is wrong" level discovery.
-- **OASR's Generalizability**: Encoding "diversity search" as a repulsion term in a differentiable objective is applicable to any problem where one wants to enumerate functionally equivalent solutions—e.g., sparse feature dictionaries, multi-solution NAS, adversarial example multi-mode discovery, etc.
-- **Theory-Empirics Synergy**: The authors not only present experimental phenomena but also provide a mathematical explanation via superposition, unifying backup head/hydra effect/multi-circuit phenomena under the "distributive dense circuit" framework, elevating the contribution.
-- **Significance of 3-edge Sheaf**: The existence of an extremely sparse sheaf with no indispensable edge suggests that "minimal" solutions found by sparse optimization may be the least interpretable—any edge can be replaced in other sheaves.
+- **Paradigm Shift**: The authors directly challenge the core goal of the mechanistic interpretability community—"finding *the* circuit." If a task has countless faithful solutions, the validity of minimality-based metrics (MIB) and ground-truth comparisons (Tracr) must be reconsidered. This is a "wrong problem definition" level discovery.
+- **Generalizable OASR Concept**: Encoding "diverse retrieval" into a differentiable objective via a repulsion term is applicable to any problem seeking to enumerate functionally equivalent solutions—such as sparse dictionaries, multi-solution NAS, or uncovering multiple modes of adversarial samples.
+- **Theoretical and Empirical Synergy**: Rather than just reporting experimental phenomena, the authors use superposition to provide a mathematical explanation. They unify backup heads, the hydra effect, and multi-circuits under the "Distributed Dense Circuit" framework.
+- **Significance of the 3-edge Sheaf**: The existence of an extremely sparse sheaf where no single edge is indispensable suggests that "minimal" solutions found under sparse optimization might be the least interpretable, as any single edge can be replaced in other sheaves.
 
 ## Limitations & Future Work
-- Experiments are mainly on GPT-2 small (since all CSD baselines only support it); extension to larger models (Llama/Pythia) is only in Appendix H, not fully addressing whether anisotropy returns at scale.
-- Tasks are all short-context, single-step linguistic diagnostics (IOI/BLiMP/Docstring); non-uniqueness of circuits for long reasoning, code, math, etc., remains untested.
-- OASR requires $K$ rounds of training, with computational cost growing linearly with $K$; 20 sheaves is already expensive, possibly infeasible for larger models.
-- The Distributive Dense Circuit Hypothesis provides an existence lower bound but no quantitative construction, and relies on mild assumptions—whether these hold in real transformers remains to be tested.
-- Is "circuit non-uniqueness → mechanistic explanation failure" too pessimistic? The authors do not offer constructive approaches for extracting consensus mechanisms in the multi-solution case.
+- Experiments were primarily conducted on GPT-2 small (the authors acknowledge this is due to CSD baseline compatibility). Larger models (Llama/Pythia) were only explored in Appendix H, leaving it partially unresolved whether anisotropy returns as model scale increases.
+- Tasks are limited to short-context, single-step linguistic diagnostics (IOI/BLiMP/Docstring). Circuit non-uniqueness for long-context reasoning, coding, or math tasks has not been verified.
+- OASR requires $K$ cycles of training, with computational costs scaling linearly with $K$. Setting 20 sheaves is expensive and may be infeasible for larger models.
+- The Distributive Dense Circuit Hypothesis provides an existential lower bound but lacks a quantitative construction and relies on "mild assumptions" that require verification in real transformers.
+- Is "circuit non-uniqueness → failure of mechanistic interpretation" too pessimistic? The authors suggest no constructive solution for extracting a "consensus mechanism" amidst multiple solutions.
 
 ## Related Work & Insights
-- **vs Wang et al. 2022a (Original IOI Circuit)**: Proposed the Backup Name-Mover Heads concept, but explained it as "ablation-triggered backup mechanism"; this paper shows backups are active during normal inference, and redundancy is the default, not an exception.
-- **vs ACDC / EAP / EP / DiscoGP**: This work adopts DiscoGP's differentiable optimization framework but shifts from "finding the unique optimal solution" to "enumerating multiple solutions," and uses these methods to verify they all suffer from the anisotropy assumption.
-- **vs McGrath et al. 2023 (Hydra effect)**: Hydra describes backup activation after ablation; this paper shows multiple circuits are simultaneously active, so hydra is just one aspect of distributive circuits from the ablation perspective.
-- **vs Méloux et al. 2025**: They formally proved circuit non-uniqueness in simple models; this paper extends the perspective to pretrained LMs and real tasks, providing a unified explanation via superposition.
+- **vs Wang et al. 2022a (Original IOI Circuit)**: Proposed "Backup Name-Mover Heads" but interpreted them as mechanisms triggered by ablation. This paper proves backup circuits are active during normal inference; redundancy is the default state rather than an anomaly.
+- **vs ACDC / EAP / EP / DiscoGP**: This work utilizes the DiscoGP framework but shifts from "finding the unique optimal" to "enumerating multiple solutions," ultimately proving these methods are affected by the anisotropy assumption.
+- **vs McGrath et al. 2023 (Hydra effect)**: While "hydra" describes compensatory activation after ablation, this paper shows multiple circuits are active simultaneously. Thus, the hydra effect is just one perspective of the distributed circuit under ablation.
+- **vs Méloux et al. 2025**: They formally proved circuit non-uniqueness in simple models; this paper extends that view to pre-trained LMs and real-world tasks, providing a unified explanation via superposition.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Directly challenges the implicit assumption of the interpretability community, proposing a new hypothesis + algorithm + evaluation protocol—a paradigm-level impact.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Systematic design with 9 tasks × 20 sheaves is convincing, but model scale and task complexity are still limited to GPT-2 small.
-- Writing Quality: ⭐⭐⭐⭐⭐ Concept naming (Functional Anisotropy / Distributive Dense Circuit) is clear and precise, logical structure is excellent, with theory and empirics mutually reinforcing.
-- Value: ⭐⭐⭐⭐⭐ Forces the mechanistic interpretability community to reassess the explanatory power of its work, with far-reaching impact.
+- Novelty: ⭐⭐⭐⭐⭐ Challenges the implicit assumptions of the interpretability community with a new hypothesis, algorithm, and evaluation protocol.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Systematic design across 9 tasks and 20 sheaves is convincing, though scale is currently limited to GPT-2 small/medium.
+- Writing Quality: ⭐⭐⭐⭐⭐ Terminology (Functional Anisotropy / Distributive Dense Circuit) is clear and accurate, with excellent logical flow between theory and evidence.
+- Value: ⭐⭐⭐⭐⭐ Forces the entire mechanistic interpretability community to re-evaluate the explanatory power of their work.
 
 <!-- RELATED:START -->
 
@@ -142,11 +139,11 @@ Analysis of "mutual intersection" for 20 sheaves (Mutual IoU = total intersectio
 
 ## Related Papers
 
+- [\[ICML 2026\] Certified Circuits: Stability Guarantees for Mechanistic Circuits](certified_circuits_stability_guarantees_for_mechanistic_circuits.md)
 - [\[ICCV 2025\] Granular Concept Circuits: Toward a Fine-Grained Circuit Discovery for Concept Representations](../../ICCV2025/interpretability/granular_concept_circuits_toward_a_fine-grained_circuit_discovery_for_concept_re.md)
 - [\[ICLR 2026\] Formal Mechanistic Interpretability: Automated Circuit Discovery with Provable Guarantees](../../ICLR2026/interpretability/formal_mechanistic_interpretability_automated_circuit_discovery_with_provable_gu.md)
+- [\[ICML 2026\] Query Circuits: Explaining How Language Models Answer User Prompts](query_circuits_explaining_how_language_models_answer_user_prompts.md)
 - [\[ICML 2026\] Circuit Fingerprints: How Answer Tokens Encode Their Geometrical Path](circuit_fingerprints_how_answer_tokens_encode_their_geometrical_path.md)
-- [\[NeurIPS 2025\] Discovering Transformer Circuits via a Hybrid Attribution and Pruning Framework](../../NeurIPS2025/interpretability/discovering_transformer_circuits_via_a_hybrid_attribution_and_pruning_framework.md)
-- [\[CVPR 2026\] Rethinking Concept Bottleneck Models: From Pitfalls to Solutions](../../CVPR2026/interpretability/rethinking_concept_bottleneck_models_from_pitfalls_to_solutions.md)
 
 </div>
 

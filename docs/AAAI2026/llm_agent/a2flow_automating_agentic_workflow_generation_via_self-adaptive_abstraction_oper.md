@@ -176,8 +176,8 @@ Initial operator generation contributes the most (-11.7%), followed by deep extr
 - [\[ICML 2026\] AgentXRay: White-Boxing Agentic Systems via Workflow Reconstruction](../../ICML2026/llm_agent/agentxray_white-boxing_agentic_systems_via_workflow_reconstruction.md)
 - [\[AAAI 2026\] Automating Complex Document Workflows via Stepwise and Rollback-Enabled Operations](automating_complex_document_workflows_via_stepwise_and_rollback-enabled_operatio.md)
 - [\[ACL 2026\] HAG: Hierarchical Demographic Tree-based Agent Generation for Topic-Adaptive Simulation](../../ACL2026/llm_agent/hag_hierarchical_demographic_tree-based_agent_generation_for_topic-adaptive_simu.md)
+- [\[ICML 2026\] Towards Feedback-to-Plan Decisions for Self-Evolving LLM Agents in CUDA Kernel Generation](../../ICML2026/llm_agent/towards_feedback-to-plan_decisions_for_self-evolving_llm_agents_in_cuda_kernel_g.md)
 - [\[ACL 2026\] Supplement Generation Training for Enhancing Agentic Task Performance](../../ACL2026/llm_agent/supplement_generation_training_for_enhancing_agentic_task_performance.md)
-- [\[CVPR 2026\] Gen-n-Val: Agentic Image Data Generation and Validation](../../CVPR2026/llm_agent/gen_n_val_agentic_image_data_generation_and_validation.md)
 
 </div>
 

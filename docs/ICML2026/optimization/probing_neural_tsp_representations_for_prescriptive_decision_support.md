@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Probing Neural TSP Representations for Prescriptive Decision Support
 description: >-
-  [ICML 2026][Optimization][TSP] The authors treat a trained TSP neural solver as a "transferable encoder," using frozen representations and lightweight probes to predict two types of expensive operations research sensitiv…
+  [ICML 2026][Optimization][TSP] The authors treat trained TSP neural solvers as "transferable encoders," utilizing frozen representations with lightweight probes to predict two types of expensive operations research sensi…
 tags:
   - "ICML 2026"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "sensitivity analysis"
   - "transfer learning"
 date: 2026-05-08
-content_hash: 08cfd30ffd9783bf
+content_hash: 5ff0d2a06176bcec
 ---
 
 # Probing Neural TSP Representations for Prescriptive Decision Support
@@ -24,56 +24,55 @@ content_hash: 08cfd30ffd9783bf
 **Keywords**: TSP, neural CO, probing, sensitivity analysis, transfer learning
 
 ## TL;DR
-The authors treat a trained TSP neural solver as a "transferable encoder," using frozen representations and lightweight probes to predict two types of expensive operations research sensitivity queries (node removal and edge forbidding). They systematically demonstrate that probe accuracy improves monotonically with solver quality and that ensembling with traditional heuristics achieves SOTA.
+The authors treat trained TSP neural solvers as "transferable encoders," utilizing frozen representations with lightweight probes to predict two types of expensive operations research sensitivity queries (node removal and edge forbidding). They systematically demonstrate that probe accuracy improves monotonically with solver quality and achieves SOTA through integration with traditional heuristics.
 
 ## Background & Motivation
 
-**Background**: Neural combinatorial optimization (NCO) has enabled end-to-end solvers for TSP/VRP using attention-based policies and reinforcement learning (e.g., Pointer Network, Kool 2018, POMO), offering fast and flexible inference. However, compared to classical exact/heuristic solvers like Concorde/LKH, NCO methods remain less robust and are thus positioned as "alternative solvers."
+**Background**: Neural Combinatorial Optimization (NCO) has enabled the training of end-to-end solvers for problems like TSP/VRP using attention strategies and Reinforcement Learning (Pointer Network, Kool 2018, POMO, etc.). While fast and flexible, they remain less robust than classical exact/heuristic solvers like Concorde/LKH and have been primarily positioned as "alternative solvers."
 
-**Limitations of Prior Work**: Nearly all NCO evaluations focus solely on tour cost or optimality gap, discarding model representations as "byproducts." This means that even if the solver encodes valuable logistics structures (e.g., bottleneck nodes, irreplaceable edges), these are not exploited.
+**Limitations of Prior Work**: Almost all NCO evaluations focus solely on tour cost or optimality gaps, discarding model representations as "by-products." This means that even if the solver learns structures valuable for logistics (e.g., node bottlenecks or critical edges), these insights are never extracted.
 
-**Key Challenge**: Real-world logistics decisions involve more than constructing a good tour; they require "what-if" queries—e.g., which warehouse removal most impacts total length? Which road closure is most critical? These queries are prohibitively expensive to answer via repeated re-solving, yet NCO solvers may encode the answers in a single forward pass.
+**Key Challenge**: Practical logistics decisions involve more than constructing a good tour; they require "what-if" queries—such as which warehouse removal impacts the total length most, or which road closure is most critical. Answering these through repeated re-solving is computationally prohibitive, yet NCO solvers may already encode these answers within a single forward pass.
 
-**Goal**: To formalize two "operations research canonical" downstream tasks (node-removal sensitivity and edge-forbid sensitivity) and systematically test: (1) Can frozen NCO encoders predict these sensitivities? (2) Does encoder utility improve with training? (3) Can simple probe-heuristic ensembles outperform strong baselines?
+**Goal**: To formalize two "prescriptive operations" downstream tasks (node-removal sensitivity and edge-forbid sensitivity) and systematically examine: (1) whether frozen NCO encoders can predict these sensitivities; (2) whether encoders become more useful as training progresses; and (3) whether simple probe-heuristic ensembles can beat strong baselines.
 
-**Key Insight**: Adapting the "probing" paradigm from NLP—fixing pretrained representations and training only a lightweight classifier/regressor to recover target properties. This approach isolates whether information is explicitly encoded, decoupling "representation quality" from "probe capacity."
+**Key Insight**: Borrowing the "probing" paradigm from NLP—fixing pre-trained representations and training only a lightweight classifier/regressor to recover target attributes. This determines whether "information is explicitly encoded" while controlling for probe capacity, naturally decoupling representation quality from probe architecture.
 
-**Core Idea**: Treat the TSP solver as a foundation encoder; train DeepSets/Set Transformer probes on node embeddings to directly predict sensitivity scores for each candidate node/edge. Use ensembling to convexly combine probe scores with geometric heuristics, achieving both speed and strength.
+**Core Idea**: Treat the TSP solver as a foundation encoder. Train DeepSets/Set Transformer probes on node embeddings to directly predict sensitivity scores for each candidate node/edge. Use ensembling to combine probe scores with geometric heuristics via convex combination for speed and performance.
 
 ## Method
 
 ### Overall Architecture
-The pipeline consists of three steps: (i) Train the NCO solver—an attention model based on Kool 2018 with REINFORCE rollout baseline, sweeping three residual dimensions (64/128/256), saving checkpoints every 2000 steps; (ii) Offline label generation—use Concorde to find the optimum for each 100-node instance, then enumerate each candidate (node or tour edge), re-solve, and record the optimal length change $\Delta_i$ or $\Delta_e$; (iii) Probe training—freeze the encoder, extract the final layer node embedding $h_i$, use $h_i$ directly for node tasks, and symmetric features $[h_u, h_v, |h_u-h_v|]$ for edge tasks, inputting into linear / DeepSets / Set Transformer heads to predict top-k sensitivities.
+The pipeline consists of three steps: (i) Train NCO solver—based on the Attention Model (Kool 2018) + REINFORCE rollout baseline, scanning three residual dimensions (64/128/256) and saving checkpoints every 2000 steps; (ii) Offline label generation—for each 100-node instance, find the optimum using Concorde, then enumerate each candidate (node or tour edge) for a re-solve to record the optimal length change $\Delta_i$ or $\Delta_e$; (iii) Train probes—freeze the encoder, extract the final layer node embeddings $h_i$. Use $h_i$ directly for node tasks, and symmetric features $[h_u, h_v, |h_u-h_v|]$ for edge tasks, feeding into Linear / DeepSets / Set Transformer heads to predict top-k sensitivity.
 
 ### Key Designs
 
-1. **Two Prescriptive Tasks Aligned with Query Timing**:
+1. **Two prescriptive tasks and temporal alignment**:
 
-    - *Function*: Ground vague "what-if" decisions into quantifiable, labelable, and query-aligned supervised tasks.
-    - *Mechanism*: Node-removal is *pre-solve advisory*—before route selection, ask "which customer removal saves most," so only instance geometry is allowed, not the tour. Edge-forbid is *post-solve contingency*—the route is fixed but a segment is blocked, so candidates are limited to the $n$ tour edges. Labels are defined as $\Delta_i^{(\%)}=100\cdot(L^\star(X)-L^\star(X\setminus\{i\}))/L^\star(X)$ and $\Delta_e^{(\%)}=100\cdot(L^\star(X|\text{forbid }e)-L^\star(X))/L^\star(X)$, both obtained via repeated Concorde solving.
-    - *Design Motivation*: Explicitly incorporate "what information is available at query time" into task definitions, avoiding incomparable oracle baselines; node task candidates are $O(n)$, edge tasks limited to $O(n)$ on the tour, keeping probe training tractable.
+    - **Function**: Grounding vague "what-if" decisions into quantifiable, labeled supervised tasks consistent with actual query scenarios.
+    - **Mechanism**: Node-removal is a *pre-solve advisory*—asking "which customer removal saves most" before a route is decided, thus only allowing instance geometry. Edge-forbid is a *post-solve contingency*—asking about road closures after a route is fixed, restricting candidates to $n$ edges on the tour. Labels are defined as $\Delta_i^{(\%)}=100\cdot(L^\star(X)-L^\star(X\setminus\{i\}))/L^\star(X)$ and $\Delta_e^{(\%)}=100\cdot(L^\star(X|\text{forbid }e)-L^\star(X))/L^\star(X)$, obtained via repeated Concorde calls.
+    - **Design Motivation**: Explicitly incorporating "what information is available at query time" into the task definition to avoid incomparable oracle baselines; keeping candidate sets at $O(n)$ makes probe training scalable.
 
-2. **Frozen Encoder + Multi-Capacity Probe Family**:
+2. **Frozen encoder + multi-capacity probe families**:
 
-    - *Function*: Reveal "how much sensitivity information is encoded in the representation" under controlled variables.
-    - *Mechanism*: For each checkpoint, extract the encoder's final per-node representation $h_i \in \mathbb R^d$, using only forward passes (no autoregressive rollout), so all representations are cached in one inference. The probe family spans a capacity spectrum: linear readout, DeepSets (MLP over sets), Set Transformer (permutation-invariant attention). Training objectives include regression, hard CE, and soft listwise CE, selected automatically by validation; evaluation metrics are top-1/top-5 accuracy and Spearman $\rho$.
-    - *Design Motivation*: Use "geometric features + same probe family" as a representation-free control, and "randomly initialized encoder + same probe family" as a representation-quality control, isolating the contributions of "probe capacity" and "solver training" to final performance.
+    - **Function**: Investigating the amount of sensitivity information encoded in representations while controlling variables.
+    - **Mechanism**: Extract per-node representations $h_i \in \mathbb R^d$ from the final encoder layer at each checkpoint. Only forward passes are used without autoregressive rollout, allowing one-time caching. Probe families span the capacity spectrum: Linear readout, DeepSets (MLP over sets), and Set Transformer (permutation-invariant attention). Training targets include regression, hard CE, and soft listwise CE; evaluation uses top-1/top-5 accuracy and Spearman $\rho$.
+    - **Design Motivation**: Using "geometry features + same probe" as a representation-free control and "randomly initialized encoder + same probe" as a representation-quality control isolates the contributions of probe capacity versus solver training.
 
-3. **Probe × Heuristic Ensemble + Solver Quality–Representation Quality Correlation**:
+3. **Probe × Heuristic Ensemble + Solver-Representation Correlation**:
 
-    - *Function*: Achieve the strongest predictor in practice and reveal the "better solver ⇒ better probe" pattern.
-    - *Mechanism*: For node-removal, per-instance z-score the Set Transformer probe and geometry-only Set Transformer scores, then convexly combine; for edge-forbid, ensemble with 2-opt repair proxy. Coefficients are tuned on a small validation set. To verify scaling laws, probe training is repeated across 3 model sizes (0.44M/1.10M/3.36M) and every 2000-step checkpoint, tracking Spearman $\rho$ between "probe accuracy" and "negative suboptimality."
-    - *Design Motivation*: Probe and heuristic signals have complementary errors across instances; convex combination automatically learns when to trust each. The solver quality–representation quality curve directly answers whether "better-trained NCOs provide better downstream representations," the paper's core scientific contribution.
+    - **Function**: Achieving high-performance predictors while revealing the relationship: "Better Solver ⇒ Better Probes."
+    - **Mechanism**: For node-removal, Set Transformer probe scores and geometry-only scores are combined via per-instance z-score convex combination. For edge-forbid, combination is done with a 2-opt repair proxy. For scaling laws, probe training is repeated for 3 model sizes (0.44M/1.10M/3.36M) and every 2000 steps to measure the Spearman $\rho$ between probe accuracy and negative gap.
+    - **Design Motivation**: Errors of probes and heuristics are complementary across instances; the quality curve answers whether better NCO training serves downstream representations, a core scientific contribution.
 
 ### Loss & Training
-
-Solver: REINFORCE + rollout baseline, Adam lr $10^{-4}$, exponential decay $\gamma=0.998$, batch 512, 600k steps, temperature 0.5 sampling, greedy evaluation. Probe: encoder is frozen, trained only on cached representations; data split 2500/250/250 (node) and 800/100/100 (edge), with training set standardization.
+Solver: REINFORCE + rollout baseline, Adam lr $10^{-4}$, exponential decay $\gamma=0.998$, batch 512, 600k steps, temperature 0.5 sampling, greedy evaluation. Probes: Encoder remains frozen; trained on cached representations with data splits of 2500/250/250 (node) and 800/100/100 (edge).
 
 ## Key Experimental Results
 
 ### Main Results
 
-On TSP100, node-removal and edge-forbid top-1 / top-5 accuracy and Spearman $\rho$ (excerpt from Table 1):
+Top-1 / Top-5 accuracy and Spearman $\rho$ for node-removal and edge-forbid on TSP100 (selected from Table 1):
 
 | Method | Node Top-1 | Node Top-5 | Node $\rho$ | Edge Top-1 | Edge Top-5 | Edge $\rho$ |
 |---|---|---|---|---|---|---|
@@ -87,51 +86,39 @@ On TSP100, node-removal and edge-forbid top-1 / top-5 accuracy and Spearman $\rh
 
 ### Ablation Study
 
-| Configuration | Edge Top-1 | Notes |
+| Configuration | Edge Top-1 | Description |
 |---|---|---|
 | Linear probe, untrained policy | 0.130 | Probe capacity only, no representation signal |
-| Transformer probe, untrained policy | 0.220 | Large probe on random representations |
-| Transformer probe, trained policy | 0.462 | Full model; representation brings 24+ point gain |
-| 2-opt repair (oracle) | 0.670 | Assumes optimal tour known |
-| Ensemble (probe + 2-opt) | 0.730 | Probe complements oracle heuristic's weaknesses |
+| Transformer probe, untrained policy | 0.220 | High-capacity probe on random representations |
+| Transformer probe, trained policy | 0.462 | Full model; representations yield 24+ point gain |
+| 2-opt repair (oracle) | 0.670 | Assuming optimal tour is known |
+| Ensemble (probe + 2-opt) | 0.730 | Probe compensates for oracle heuristic weaknesses |
 
 ### Key Findings
-- The edge-forbid task, which is "globally structure-sensitive," best demonstrates representation value: geometry-only Set Transformer achieves only 0.14 top-1, but adding solver representations jumps to 0.462, a 3× improvement.
-- "Better solver ⇒ better probe" holds monotonically for most model sizes: on the 1.10M model, linear/transformer probe accuracy and solver suboptimality Spearman $\rho$ are 0.71/0.45 (node) and 0.65/0.40 (edge), i.e., representations improve steadily with training.
-- Probe accuracy continues to rise even after tour cost plateaus, indicating that traditional NCO metrics (tour length) severely underestimate progress in representation learning.
+- Tasks involving "global structural sensitivity" like Edge-forbid best demonstrate representation value: geometry-only models reach only 0.14 top-1, while adding solver representations jumps to 0.462 (3× improvement).
+- "Better Solver ⇒ Better Probes" holds monotonically across most sizes. In the 1.10M model, Spearman $\rho$ between probe accuracy and solver status was 0.71/0.45 (node) and 0.65/0.40 (edge) for linear/transformer probes, indicating representations improve throughout training.
+- Probe accuracy continues to rise even after tour cost has plateaued, suggesting traditional NCO metrics underestimate the progress of representation learning.
 
 ## Highlights & Insights
-- Distinguishing pre-solve/post-solve tasks by query timing and aligning allowed baseline information is an effective way to avoid oracle loopholes; this meta-method can generalize to any prescriptive analytics.
-- Viewing NCO solvers as foundation encoders is novel, effectively telling the operations research community that "training NCOs not only yields good solutions but also transferable features," potentially opening the "NCO foundation model" research direction.
-- The ensemble scheme is extremely simple (per-instance z-score + convex combination) yet consistently surpasses strong baselines, reminding us that "representation learning" and "traditional heuristics" are complementary, not substitutes.
+- Using "query timing" to distinguish pre-solve/post-solve tasks and aligning them with baseline information is an excellent way to avoid oracle loopholes; this meta-method generalizes to any prescriptive analytics.
+- Viewing the NCO solver as a "foundation encoder" for the first time implies that training NCO yields transferable features, potentially opening the "NCO foundation model" research direction.
+- The ensemble scheme is simple (z-score + convex combination) yet consistently outperforms strong baselines, highlighting that "learned representations" and "traditional heuristics" are complementary rather than mutually exclusive.
 
 ## Limitations & Future Work
-- Evaluation is limited to Euclidean TSP100; it is unknown whether results hold for larger $n$, non-uniform distributions, or constrained VRP.
-- Label generation depends on repeated Concorde solving; for edge-forbid, each instance averages 49.6s, making larger probe training sets costly.
-- Currently, only two sensitivities are examined; real logistics scenarios involve more complex what-if queries (e.g., dynamic node addition, vehicle capacity adjustment), motivating the design of a unified multi-task probing framework.
+- Evaluations are limited to Euclidean TSP100; results for larger $n$, non-uniform distributions, or constrained VRP remain unknown.
+- Label generation relies on repeated Concorde solves, averaging 49.6s per edge-forbid instance, impacting the cost of larger probe training sets.
+- Currently only two sensitivities are examined; actual logistics involve complex "what-ifs" like dynamic point addition or capacity adjustments requiring a unified multi-task probing framework.
 
 ## Related Work & Insights
-- **vs Zhang 2025 (CS-Probing)**: They use probes to describe whether NCO representations encode certain structures; this work shifts to "using representations to predict economically meaningful decision support metrics," closer to practical deployment.
-- **vs Narad 2025 (sparse autoencoders for TSP)**: SAE extracts human-interpretable features, while this work directly supervises probe training on task-relevant signals; the two can be combined—first use SAE to find units, then probes to assess which units contribute to which sensitivities.
-- **vs Lozano 2017 (TSP interdiction)**: Classical OR uses integer programming for interdiction; this work replaces exact solving with learned ranking, enabling millisecond-level decision support.
+- **vs Zhang 2025 (CS-Probing)**: While they use probes to check for structural encoding, this paper focuses on "predicting economically meaningful decision support metrics," which is closer to real-world application.
+- **vs Narad 2025 (sparse autoencoders for TSP)**: SAE extracts human-interpretable features; this paper supervises task-relevant probes. These could be combined to identify which interpretability units contribute to specific sensitivities.
+- **vs Lozano 2017 (TSP interdiction)**: Classical OR solves interdiction with integer programming; this work replaces exact solving with learned ranking, returning decision suggestions in milliseconds.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ First to evaluate NCO solvers as transferable encoders for prescriptive downstream tasks.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Multiple probe families, model sizes, training dynamics, and two controls—very systematic.
-- Writing Quality: ⭐⭐⭐⭐ Clear task definitions, rigorous heuristic and control experiment design.
-- Value: ⭐⭐⭐⭐ Provides new perspectives for both OR and ML communities; code is open-sourced and easily reproducible.
-
-## Related Papers
-
-- [\[NeurIPS 2025\] Probing Neural Combinatorial Optimization Models](../../NeurIPS2025/optimization/probing_neural_combinatorial_optimization_models.md)
-- [\[NeurIPS 2025\] Contribution of Task-Irrelevant Stimuli to Drift of Neural Representations](../../NeurIPS2025/optimization/contribution_of_task-irrelevant_stimuli_to_drift_of_neural_representations.md)
-- [\[ICML 2026\] Learning to Approximate Uniform Facility Location via Graph Neural Networks](learning_to_approximate_uniform_facility_location_via_graph_neural_networks.md)
-- [\[ICML 2026\] Neural QAOA$^2$: Differentiable Joint Graph Partitioning and Parameter Initialization for Quantum Combinatorial Optimization](neural_qaoa2_differentiable_joint_graph_partitioning_and_parameter_initializatio.md)
-- [\[ICML 2025\] Adjustment for Confounding using Pre-Trained Representations](../../ICML2025/optimization/adjustment_for_confounding_using_pre-trained_representations.md)
-
-</div>
-
-<!-- RELATED:END -->
+- **Novelty**: ⭐⭐⭐⭐ First to evaluate NCO solvers as transferable encoders for prescriptive downstream tasks.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Systematic approach involving multiple probe families, model sizes, training dynamics, and controls.
+- **Writing Quality**: ⭐⭐⭐⭐ Clear task definitions and rigorous design of heuristics and control experiments.
+- **Value**: ⭐⭐⭐⭐ Provides new perspectives for both OR and ML communities; code is open-source and reproducible.
 
 <!-- RELATED:START -->
 
@@ -142,8 +129,8 @@ On TSP100, node-removal and edge-forbid top-1 / top-5 accuracy and Spearman $\rh
 - [\[NeurIPS 2025\] Probing Neural Combinatorial Optimization Models](../../NeurIPS2025/optimization/probing_neural_combinatorial_optimization_models.md)
 - [\[ICML 2026\] Support-Proximity Augmented Diffusion Estimation for Offline Black-Box Optimization](support-proximity_augmented_diffusion_estimation_for_offline_black-box_optimizat.md)
 - [\[NeurIPS 2025\] Contribution of Task-Irrelevant Stimuli to Drift of Neural Representations](../../NeurIPS2025/optimization/contribution_of_task-irrelevant_stimuli_to_drift_of_neural_representations.md)
+- [\[ICML 2026\] URS: A Unified Neural Routing Solver](urs_a_unified_neural_routing_solver_for_cross-problem_zero-shot_generalization.md)
 - [\[ICML 2026\] Learning to Approximate Uniform Facility Location via Graph Neural Networks](learning_to_approximate_uniform_facility_location_via_graph_neural_networks.md)
-- [\[ICML 2026\] Learning-Augmented Scalable Linear Assignment Problem Optimization via Neural Dual Warm-Starts](learning-augmented_scalable_linear_assignment_problem_optimization_via_neural_du.md)
 
 </div>
 

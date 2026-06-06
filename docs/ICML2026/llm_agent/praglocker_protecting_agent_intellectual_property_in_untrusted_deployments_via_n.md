@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PragLocker: Protecting Agent Intellectual Property in Untrusted Deployments via Non-Portable Prompts
 description: >-
-  [ICML 2026][LLM Agent][prompt obfuscation] PragLocker employs a two-stage strategy of "code-symbol initialization + noise injection under black-box target model feedback" to encode the agent system prompt into an obfusca…
+  [ICML 2026][LLM Agent][prompt obfuscation] PragLocker employs a two-stage strategy—"code-symbol initialization + noise injection under black-box feedback from the target model"—to encode agent system prompts into obfusca…
 tags:
   - "ICML 2026"
   - "LLM Agent"
@@ -12,7 +12,7 @@ tags:
   - "black-box optimization"
   - "random search"
 date: 2026-05-08
-content_hash: 317cfa86502cd5ab
+content_hash: 13f2d924dd915a1f
 ---
 
 # PragLocker: Protecting Agent Intellectual Property in Untrusted Deployments via Non-Portable Prompts
@@ -24,106 +24,97 @@ content_hash: 317cfa86502cd5ab
 **Keywords**: prompt obfuscation, agent IP, non-portability, black-box optimization, random search
 
 ## TL;DR
-PragLocker employs a two-stage strategy of "code-symbol initialization + noise injection under black-box target model feedback" to encode the agent system prompt into an obfuscated text that only works on the target LLM and fails on any other LLM. Thus, even if the prompt is stolen from the deployment side, attackers cannot reuse it on their own LLMs.
+PragLocker employs a two-stage strategy—"code-symbol initialization + noise injection under black-box feedback from the target model"—to encode agent system prompts into obfuscated text. This text maintains utility only on the target LLM and fails on any other LLM, preventing attackers from reusing stolen prompts on their own models.
 
 ## Background & Motivation
-**Background**: For commercial LLM Agents such as Cursor, Manus, and Zapier, the core IP lies in the system prompt. Even when using the same GPT-4o, different prompt designs result in entirely different product experiences, making the prompt a high-value asset refined by expert iteration.
+**Background**: The core IP of commercial LLM Agents (e.g., Cursor, Manus, Zapier) lies in the system prompt. Even when using the same GPT-4o, different prompt designs create entirely different product experiences. Thus, prompts are high-value assets iteratively refined by experts.
 
-**Limitations of Prior Work**: Agents are often deployed on user devices, third-party clouds, or multi-tenant infrastructures, where malicious end users or internal cloud personnel can directly dump the prompt and replicate or even surpass the original Agent on any stronger LLM. Existing solutions—prompt watermarking (post-hoc verification), encryption (requires decryption to plaintext at runtime for API calls), emoji obfuscation (decodable by other LLMs), and representation-space obfuscation (requires white-box access, but GPT/Gemini are black-box)—cannot simultaneously satisfy proactivity, runtime protection, usability, and non-portability.
+**Limitations of Prior Work**: Agents are often deployed on user devices, third-party clouds, or multi-tenant infrastructure. Malicious end-users or cloud insiders can dump the prompt and replicate or even surpass the original Agent on more powerful LLMs. Existing solutions—prompt watermarking (post-hoc verification), encryption (must be decrypted to plaintext via API at runtime), emoji obfuscation (decodable by other LLMs), and representation-space obfuscation like Pape (requires white-box access)—fail to simultaneously satisfy the requirements of proactivity, runtime efficiency, usability, and non-portability.
 
-**Key Challenge**: The essential requirement is to construct a prompt that "retains utility on the target LLM but fails on others," meaning the prompt must preserve the original semantics while overfitting to the target model's unique loss landscape geometry, using only API-level input/output and log-prob feedback.
+**Key Challenge**: Constructing a prompt that maintains utility on a target LLM while failing on others fundamentally requires the prompt to preserve original semantics while over-fitting to the specific geometry of the target model's loss landscape, all while being restricted to API-level input-output and log-prob feedback.
 
-**Goal**: (1) Formalize the four requirements (C1–C4) for prompt protection; (2) Provide an existence proof for theoretical feasibility; (3) Design a purely black-box, API-only optimization algorithm to construct such prompts; (4) Validate portability loss and utility retention across multiple models, agents, and tasks.
+**Goal**: (1) Formalize the four requirements for prompt protection (C1-C4); (2) provide an existence proof to guarantee theoretical feasibility; (3) design a black-box, API-only optimization algorithm; and (4) verify portability loss and utility maintenance across multiple models, agents, and tasks.
 
-**Key Insight**: The authors leverage the "attention dilution" property of transformer attention—networks are insensitive to perturbations of certain tokens, so there theoretically exists an $\epsilon$-ball stability region $S_{\bm{x}}$ where utility is preserved. The geometric shape of the stability region differs across models, making target-specific perturbations unlikely to fall within other models' regions.
+**Key Insight**: The authors leverage the "attention dilution" property of transformers—networks are insensitive to perturbations of certain tokens. Theoretically, an $\epsilon$-sphere stability region $S_{\bm{x}}$ exists where utility remains unchanged. Simultaneously, the geometry of stability regions differs across models, making it unlikely for target-specific perturbations to fall within the regions of other models.
 
-**Core Idea**: Treat prompt obfuscation as "gradient-free discrete optimization over the target-LLM-specific loss landscape," using random search to optimize prompt token sequences under a joint loss for utility, obfuscation, and non-portability.
+**Core Idea**: Obfuscation is treated as "gradient-free discrete optimization over a target-LLM-specific loss landscape," using random search to optimize a joint loss involving utility, obfuscation, and non-portability.
 
 ## Method
-PragLocker decomposes the abstract "non-portable obfuscation" into a formal existence problem and an engineering two-stage pipeline, with each component directly corresponding to one of the C1–C4 requirements.
+PragLocker decomposes the abstract concept of "non-portable obfuscation" into a formal existence problem and an engineered two-stage pipeline.
 
 ### Overall Architecture
-Input: plaintext prompt $\bm{x}$ + target LLM API + task training set $\mathcal{D}$.  
-Stage 1 (Initialization Transformation): The target LLM encodes $\bm{x}$ into a "code-symbol form" $\tilde{\bm{x}}_0$, preserving semantics but no longer in natural language.  
-Stage 2 (Noise-Injected Obfuscation Optimization): Random search repeatedly injects character-level noise, with each step accepting or rejecting based on a joint objective of task loss, obfuscation loss, and non-language loss.  
-The final output $\tilde{\bm{x}}$ is deployed in untrusted environments and used directly at runtime without deobfuscation.
+The input consists of a plaintext prompt $\bm{x}$, the target LLM API, and a task dataset $\mathcal{D}$. In Stage 1 (Initialization Transformation), the target LLM encodes $\bm{x}$ into a "code-symbol form" $\tilde{\bm{x}}_0$ that preserves semantics but is no longer natural language. In Stage 2 (Noise-Injected Obfuscation Optimization), random search is used to iteratively inject character-level noise. Each step is determined by a joint loss covering task performance, obfuscation distance, and non-language distribution. The final obfuscated prompt $\tilde{\bm{x}}$ is deployed in untrusted environments and used directly at runtime without deobfuscation.
 
 ### Key Designs
 
-1. **Theoretical Motivation: Functional Equivalence + Stability Region**:
+1.  **Theoretical Motivation: Functional Equivalence + Stability Region**:
+    *   **Function**: Functional equivalence is defined such that embeddings $\tilde{\bm{h}}$ and $\bm{h}$ under query $\bm{q}_i$ are equivalent if they produce the same greedy decoding. By defining a correct-class margin $m(\tilde{\bm{h}}, \bm{q}_i, y_i) = f(\tilde{\bm{h}}, \bm{q}_i)_{y_i} - \max_{k \neq y_i} f(\tilde{\bm{h}}, \bm{q}_i)_k$, any point in the $\epsilon$-sphere $B_\epsilon(\bm{h})$ maintains utility as long as the margin $> 0$.
+    *   **Mechanism**: The authors prove a theorem for the "Existence of obfuscated prompts"—by perturbing $k$ low-attention tokens, the cumulative embedding shift $\|\Delta\bm{h}\| \le \sum_{j} \|\bm{\delta}_j\|$ can be kept within $\epsilon$ to maintain utility, while the discrete distance $d(\tilde{\bm{x}}, \bm{x})$ grows large enough for obfuscation. Non-portability arises from "manifold mismatch," where $S_{\bm{x}}(\theta)$ and $S_{\bm{x}}(\theta')$ are nearly disjoint in high-dimensional space.
+    *   **Design Motivation**: To move beyond ad-hoc claims, the existence proof via attention dilution and high-dimensional geometry provides a theoretical foundation.
 
-    - **Function**: The authors formally define functional equivalence—embeddings $\tilde{\bm{h}}$ and $\bm{h}$ are equivalent if they produce the same greedy decoding for query $\bm{q}_i$. The correct-class margin is defined as $m(\tilde{\bm{h}}, \bm{q}_i, y_i) = f(\tilde{\bm{h}}, \bm{q}_i)_{y_i} - \max_{k \neq y_i} f(\tilde{\bm{h}}, \bm{q}_i)_k$. As long as the margin $> 0$, there exists an $\epsilon$-ball $B_\epsilon(\bm{h})$ where all points maintain functional equivalence, defining the "stability region" $S_{\bm{x}}$.
-    - **Mechanism**: The "Existence of obfuscated prompts" theorem is proven—by perturbing $k$ low-attention tokens, the cumulative embedding shift $\|\Delta\bm{h}\| \le \sum_{j} \|\bm{\delta}_j\|$ can be controlled within $\epsilon$ to preserve utility, while the discrete prompt distance $d(\tilde{\bm{x}}, \bm{x})$ increases with $k$ to ensure obfuscation. Non-portability arises from "manifold mismatch": the stability regions $S_{\bm{x}}(\theta)$ and $S_{\bm{x}}(\theta')$ for models $\theta$ and $\theta'$ are almost disjoint in high-dimensional space.
-    - **Design Motivation**: The position-paper claim that "prompts can be obfuscated" is often criticized as ad hoc; the authors provide a theoretical foundation using attention dilution and high-dimensional sparsity. Non-portability is elevated from an empirical phenomenon to an interpretable geometric property.
+2.  **Stage 1: Code-Symbol Initialization**:
+    *   **Function**: The target LLM translates the original prompt into a code-symbol format as a warm start $\tilde{\bm{x}}_0$.
+    *   **Mechanism**: Using the target LLM itself to generate a symbolic version acts as "target-conditioned" preliminary obfuscation. This representation introduces redundancy, creating space for subsequent noise injection.
+    *   **Design Motivation**: Starting from scratch is unlikely to hit the stability region; using the LLM for semantic-preserving transformation sets the search starting point inside the manifold.
 
-2. **Stage 1: Code-Symbol Initialization**:
-
-    - **Function**: The target LLM translates the original prompt into a code-symbol form as the warm start $\tilde{\bm{x}}_0$. This initialization preserves semantics and utility while shifting the representation from natural language to a "code + symbol" format that the target LLM can still interpret but is more compact.
-    - **Mechanism**: The target LLM generates the symbolic version itself, serving as a "target-conditioned" preliminary obfuscation with inherent target bias. This representation introduces redundancy, providing room for subsequent noise injection during random search.
-    - **Design Motivation**: Random search from scratch is unlikely to hit a functionally equivalent prompt; using the LLM to perform a semantic-preserving transformation places the search starting point within the stability region.
-
-3. **Stage 2: Random-Search Noise Injection + Joint Loss**:
-
-    - **Function**: At each step, a noise vector $\bm{n}_t$ (from common printable chars) is sampled and injected in-place into the current prompt $\tilde{\bm{x}}_t$, yielding candidate $\tilde{\bm{x}}'_{t+1}$. Acceptance is based on whether the loss decreases. The objective is $\mathcal{L} = \mathcal{L}_{\text{task}} + \lambda \mathcal{L}_{\text{dist}} + \gamma \mathcal{L}_{\text{non-lang}}$, where $\mathcal{L}_{\text{task}} = -\log p(\bm{y}|\bm{q}, \tilde{\bm{x}})$ preserves utility, $\mathcal{L}_{\text{dist}} = -\log \sigma(\mathrm{Dist}(\tilde{\bm{x}}, \bm{x}))$ (Levenshtein distance) increases divergence from the original, and $\mathcal{L}_{\text{non-lang}} = -H(\tilde{\bm{x}})$ minimizes character Shannon entropy to push the result away from natural language distribution.
-    - **Mechanism**: Random search is a classic gradient-free discrete optimization method (Rastrigin 1963), recently used in jailbreak suffix optimization. Each loss term addresses a requirement: task for C3, dist for C2, and non-lang for both C2 and C4—since natural language is inherently portable, pushing the prompt away from natural language distribution effectively destroys cross-model transferability.
-    - **Design Motivation**: The black-box constraint precludes gradients, so only sampling and filtering are feasible. The non-language term is a key trick, making the final prompt resemble a random token salad that still works on the target LLM—equivalent to finding a "model-conditioned trigger" on the target's loss landscape.
+3.  **Stage 2: Random-Search Noise Injection + Joint Loss**:
+    *   **Function**: At each step, character noise $\bm{n}_t$ is sampled and injected in-place. The candidate $\tilde{\bm{x}}'_{t+1}$ is accepted or rejected based on the joint loss $\mathcal{L} = \mathcal{L}_{\text{task}} + \lambda \mathcal{L}_{\text{dist}} + \gamma \mathcal{L}_{\text{non-lang}}$.
+    *   **Mechanism**: $\mathcal{L}_{\text{task}} = -\log p(\bm{y}|\bm{q}, \tilde{\bm{x}})$ preserves utility; $\mathcal{L}_{\text{dist}} = -\log \sigma(\mathrm{Dist}(\tilde{\bm{x}}, \bm{x}))$ uses Levenshtein distance to push the prompt away from the original; $\mathcal{L}_{\text{non-lang}} = -H(\tilde{\bm{x}})$ minimizes character Shannon entropy to deviate from natural language.
+    *   **Design Motivation**: In a black-box setting, random search replaces gradients. The non-language term is a key trick; by diverging from natural language distributions (which are naturally portable), portability is broken.
 
 ### Loss & Training
-Training follows Algorithm 1: at each step, sample a mini-batch $(\bm{q}_t, \bm{y}_t)$ and noise $\bm{n}_t$, compare the loss before and after injection, and update via greedy random search if the loss decreases. No gradients or white-box access are required; only the target LLM API's log-prob and text output are needed.
+The process follows a greedy random search (Algorithm 1) using mini-batches $(\bm{q}_t, \bm{y}_t)$. It requires only log-probs and text outputs from the target LLM API, with no white-box access needed.
 
 ## Key Experimental Results
 
 ### Main Results
-Portability is measured by optimizing a prompt for a target LLM, then running it as-is on other LLMs to assess task performance (e.g., LessonL agent + HumanEval/MBPP):
+Portability is measured by optimizing a prompt for a target LLM and then deploying it on other LLMs to observe task performance (e.g., LessonL agent on HumanEval/MBPP):
 
-| Agent / Task | Target LLM | Original Prompt → GPT-4o | Original Prompt → Gemini2 | PragLocker → GPT-4o | PragLocker → Gemini2 |
-|------|------|------|------|------|------|
-| LessonL / HumanEval | Gemini 2 | 93.90 | - | 0.61 | - |
-| LessonL / HumanEval | DeepSeek | 93.90 | 98.78 | 0.61 | 2.44 |
-| LessonL / MBPP | Gemini 2 | 91.89 | - | 0.51 | - |
-| LessonL / MBPP | DeepSeek | 91.89 | 97.33 | 0.62 | (near 0) |
+| Agent / Task | Target LLM | Original → GPT-4o | Original → Gemini2 | PragLocker → GPT-4o | PragLocker → Gemini2 |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| LessonL / HumanEval | Gemini 2 | 93.90 | - | **0.61** | - |
+| LessonL / HumanEval | DeepSeek | 93.90 | 98.78 | **0.61** | **2.44** |
+| LessonL / MBPP | Gemini 2 | 91.89 | - | **0.51** | - |
+| LessonL / MBPP | DeepSeek | 91.89 | 97.33 | **0.62** | **~0** |
 
-PragLocker reduces cross-model transfer performance to nearly zero, while the original prompt's cross-model performance often exceeds 90, demonstrating extremely strong protection.
+PragLocker successfully reduces cross-model performance to near zero, whereas original prompts typically maintain over 90% performance.
 
 ### Ablation Study
-The paper presents two ablation variants—PragLocker_tune (task loss tuning only, no non-lang noise) and PragLocker_code (code-symbol initialization only, no noise optimization):
+The study compares PragLocker with variants: *PragLocker_tune* (task loss only) and *PragLocker_code* (initialization only).
 
-| Configuration | Cross-Model Transfer Performance | Notes |
-|------|------|------|
+| Configuration | Portability (Cross-model Perf) | Description |
+| :--- | :--- | :--- |
 | Original Prompt | 93-99 | Fully portable |
-| PragLocker_code (init only) | 85-95 | Code-form slightly reduces portability, still usable |
-| PragLocker_tune (task tune only) | 80-93 | Task loss alone insufficient to block cross-model transfer |
-| **PragLocker (full)** | 0-3 | Joint loss + random search reduces portability to near zero |
+| PragLocker_code | 85-95 | Symbolization reduces portability slightly but remains usable |
+| PragLocker_tune | 80-93 | Task tuning alone is insufficient to block portability |
+| **PragLocker (Full)** | **0-3** | Portability vanishes after joint loss optimization |
 
 ### Key Findings
-- The non-language loss is the key contributor to non-portability: task tuning or code-form alone cannot significantly reduce cross-model transfer; only by pushing the prompt outside the natural language distribution does it fail on other LLMs.
-- Even for the same model with different precisions (FP16 vs 4-bit quantized), PragLocker's obfuscated prompt barely transfers, indicating the stability region is sensitive to model weight precision—strong empirical evidence for the "manifold mismatch" geometric hypothesis.
-- The target LLM itself cannot interpret the obfuscated prompt's semantics (i.e., cannot deobfuscate to the original), indicating it degenerates into a "model-conditioned trigger" with no recoverable text-level information, enhancing robustness against adaptive attacks.
+*   The `non-language loss` is the primary driver of non-portability.
+*   Even between different precisions of the same model (FP16 vs. 4-bit), the obfuscated prompt fails to migrate, supporting the "manifold mismatch" hypothesis.
+*   The target LLM itself cannot explain the semantics of the obfuscated prompt, indicating it has evolved into a "model-conditioned trigger" rather than recoverable text.
 
 ## Highlights & Insights
-- Modeling prompt IP protection as "gradient-free discrete optimization" is an apt framing—gradients are unavailable (black-box), fluent generation is undesirable (need non-language), and random search with joint loss fits these constraints.
-- The non-language entropy regularizer is the most transferable trick: any scenario aiming to block "semantic cross-model transfer" can leverage it—by pushing intermediate representations away from natural language, cross-model readability collapses.
-- Using the target LLM for code-symbol initialization is an elegant warm start—essentially placing the search starting point within the target-specific manifold, greatly reducing the effective search space for random search.
-- The existence theorem, explained via attention dilution and high-dimensional sparsity, provides a geometric foundation for previously "empirically effective but theoretically lacking" prompt obfuscation work, offering insights for other prompt attack/defense research.
+*   Framing prompt protection as "gradient-free discrete optimization" is highly effective for black-box environments.
+*   The `non-language entropy regularizer` is a valuable insight: deviating from natural language distributions is a robust way to block semantic portability.
+*   Using the target LLM's own symbolic transformation as a warm start significantly narrows the search space for random search.
 
 ## Limitations & Future Work
-- Assumes attackers cannot access large numbers of query-output pairs to train their own deobfuscators, but in commercial deployments, attackers may continuously farm data; long-term attack risks are not fully discussed.
-- The weights $\lambda, \gamma$ for the three loss terms require manual tuning and may need to be re-optimized for different agents/tasks.
-- Random search converges slowly on long prompts, with potentially low acceptance rates; lacks comparison with alternative optimizers such as evolution strategies or GCG.
-- Non-portability is mainly validated on GPT-4o, Gemini 2, and DeepSeek model families; robustness to unseen closed-source models (e.g., Claude) or minor fine-tunes within the same family remains unclear.
-- The method indirectly increases token count, potentially raising API costs and latency, but the paper does not provide quantification.
+*   Assumes attackers cannot farm large query-output pairs to train their own deobfuscator.
+*   Weighting for $\lambda, \gamma$ requires manual tuning per task.
+*   Random search convergence is slow on long prompts; alternative optimizers (e.g., evolution strategies) are not compared.
+*   The trade-off regarding increased token counts and latency is not fully quantified.
 
 ## Related Work & Insights
-- **vs prompt watermarking (PromptCARE / PromptCOS)**: Watermarking only enables post-hoc accountability and does not prevent misuse; PragLocker is proactive, preventing reuse after theft.
-- **vs encryption-based (K8s secrets / TEE)**: Encryption only protects at rest; at runtime, prompts must be decrypted to plaintext for black-box LLM APIs. PragLocker ensures the runtime prompt is already obfuscated.
-- **vs EmojiPrompt / Pape's representation obfuscation**: Emojis can still be decoded by other LLMs; representation methods require white-box access. PragLocker combines pure black-box, non-portability, and utility.
-- **vs GCG-style jailbreak suffix optimization**: Technically also gradient-free discrete optimization, but PragLocker is defensive, with objectives including non-portability rather than attack success rate.
+*   **vs. Prompt Watermarking**: Watermarking is reactive (detection only); PragLocker is proactive (prevents unauthorized reuse).
+*   **vs. Encryption**: Encryption only protects data at rest; PragLocker protects the prompt during runtime execution.
+*   **vs. Representation Obfuscation**: Approaches like Pape require white-box access, whereas PragLocker is strictly black-box.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ First systematic proposal for agent prompt IP protection and a "non-portable obfuscation" solution, novel in both theory and engineering.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Covers multiple agents, tasks, and model families, including adaptive attack evaluation.
-- Writing Quality: ⭐⭐⭐⭐ Clear requirement breakdown, existence proof, algorithm description, and ablation study.
-- Value: ⭐⭐⭐⭐⭐ Directly addresses the core IP pain point in commercial LLM Agent deployment; method is plug-and-play.
+*   Novelty: ⭐⭐⭐⭐⭐ 
+*   Experimental Thoroughness: ⭐⭐⭐⭐ 
+*   Writing Quality: ⭐⭐⭐⭐ 
+*   Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
 
@@ -131,11 +122,11 @@ The paper presents two ablation variants—PragLocker_tune (task loss tuning onl
 
 ## Related Papers
 
+- [\[ICML 2026\] Skill-Pro: Learning Reusable Skills from Experience via Non-Parametric PPO for LLM Agents](skill-pro_learning_reusable_skills_from_experience_via_non-parametric_ppo_for_ll.md)
+- [\[ICML 2026\] Agent JIT Compilation for Latency-Optimizing Web Agent Planning and Scheduling](agent_jit_compilation_for_latency-optimizing_web_agent_planning_and_scheduling.md)
 - [\[ICML 2026\] A Minimal Agent for Automated Theorem Proving](a_minimal_agent_for_automated_theorem_proving.md)
 - [\[ICML 2026\] BioAgent Bench: An AI Agent Evaluation Suite for Bioinformatics](bioagent_bench_an_ai_agent_evaluation_suite_for_bioinformatics.md)
 - [\[ICML 2026\] Agent-Omit: Adaptive Context Omission for Efficient LLM Agents](agent-omit_adaptive_context_omission_for_efficient_llm_agents.md)
-- [\[ICML 2026\] Video2GUI: Synthesizing Large-Scale Interaction Trajectories for Generalized GUI Agent Pretraining](video2gui_synthesizing_large-scale_interaction_trajectories_for_generalized_gui_.md)
-- [\[ICLR 2026\] M²-Miner: Multi-Agent Enhanced MCTS for Mobile GUI Agent Data Mining](../../ICLR2026/llm_agent/m2-miner_multi-agent_enhanced_mcts_for_mobile_gui_agent_data_mining.md)
 
 </div>
 

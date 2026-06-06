@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Networked Information Aggregation for Binary Classification
 description: >-
-  [ICML 2026][vertical federated learning] Extends the Kearns-Roth-Ryu 2026 result—"sequentially passing prediction columns among linear regression agents on a DAG nearly achieves global optimum"—to binary classification:…
+  [ICML 2026][vertical federated learning] This paper extends the conclusion from Kearns-Roth-Ryu 2026—stateing that "linear regression agents on a DAG can approach global optimality by passing prediction sequences"—to bin…
 tags:
   - "ICML 2026"
   - "vertical federated learning"
@@ -11,7 +11,7 @@ tags:
   - "Bregman divergence"
   - "excess loss lower bound"
 date: 2026-05-08
-content_hash: 8ae43cdacb585812
+content_hash: 9bcea1c5e82d6866
 ---
 
 # Networked Information Aggregation for Binary Classification
@@ -23,100 +23,99 @@ content_hash: 8ae43cdacb585812
 **Keywords**: vertical federated learning, logistic regression, DAG sequential learning, Bregman divergence, excess loss lower bound
 
 ## TL;DR
-Extends the Kearns-Roth-Ryu 2026 result—"sequentially passing prediction columns among linear regression agents on a DAG nearly achieves global optimum"—to binary classification: each agent observes only a subset of feature columns and sequentially forwards its logit to downstream agents. Under the $M$-coverage condition, this achieves global logistic regression optimum with $O(M/\sqrt{D})$ excess BCE loss; a matching hard instance proves an $\Omega(k/D)$ lower bound, characterizing network depth as the fundamental bottleneck for information aggregation.
+This paper extends the conclusion from Kearns-Roth-Ryu 2026—stateing that "linear regression agents on a DAG can approach global optimality by passing prediction sequences"—to binary classification. Each agent observes only a subset of feature columns and sequentially forwards its logit downstream. Under $M$-coverage conditions, they achieve the global logistic regression optimum with an $O(M/\sqrt{D})$ excess BCE loss. Simultaneously, a hard instance is constructed to prove an $\Omega(k/D)$ lower bound, characterizing network depth as the fundamental bottleneck for information aggregation.
 
 ## Background & Motivation
 
-**Background**: Social learning/networked learning has a half-century lineage—DeGroot model, Bayesian observational learning, information cascades, Vertical Federated Learning (VFL), Split Learning, etc. These models address whether "dispersed partial information at different nodes can be aggregated for globally correct decisions." Kearns-Roth-Ryu (2026) provided a clean result for linear regression with squared loss: on a DAG, each agent observes a subset of features and passes local linear predictions to downstream neighbors; the final agent's excess loss is controlled by network depth $D$ and coverage parameter $M$.
+**Background**: Social and network learning have a lineage spanning half a century, including the DeGroot model, Bayesian observational learning, information cascades, Vertical Federated Learning (VFL), and Split Learning. These models address whether partial information dispersed across different nodes can be aggregated into a globally correct decision. Kearns-Roth-Ryu (2026) provided a clear result for linear regression with squared loss: on a DAG, each agent sees a subset of feature columns and passes local linear prediction sequences to downstream neighbors; the excess loss of the final agent can be controlled by network depth $D$ and coverage parameter $M$.
 
-**Limitations of Prior Work**: In practice, classification is more common than regression (e.g., medical diagnosis, fraud detection are binary labels), but Kearns et al.'s proof crucially relies on squared loss's "residual orthogonality + Pythagoras variance decomposition," which do not exist for BCE + sigmoid. Practical VFL schemes (SecureBoost, Split Learning) rely on multi-round communication exchanging gradients/activations; none address whether "one-shot unidirectional logit passing can aggregate."
+**Limitations of Prior Work**: In practical deployment, classification is more common than regression (e.g., medical diagnosis, fraud detection). However, the proofs by Kearns et al. rely heavily on "residual orthogonality + Pythagoras variance decomposition" for squared loss, both of which do not exist under BCE + sigmoid links. Practical schemes in VFL literature (SecureBoost, Split Learning) rely on multi-round communication to exchange gradients or activations, and none address whether "one-way logit passing" can achieve aggregation.
 
-**Key Challenge**: The probability space for classification is not Euclidean—linear combination in probability does not equal linear combination in features. This is why the authors emphasize passing logits rather than probabilities, but it also means the original geometry does not apply.
+**Key Challenge**: The probability space for classification is not Euclidean—linear combination in probability space $\neq$ linear combination in feature space. This is why the authors emphasize passing logits rather than probabilities, but it also means the original geometry no longer applies.
 
-**Goal**: To formalize the "sequential logit passing on DAG" protocol; prove that under $M$-coverage it achieves global MLE; and provide matching lower bounds showing depth is indeed the bottleneck.
+**Goal**: To define the "sequential logit passing on a DAG" protocol; prove it achieves global MLE under the $M$-coverage condition; and provide a matching lower bound proving that depth is indeed the bottleneck.
 
-**Key Insight**: Replace the Euclidean geometry of squared loss with the Bregman/KL geometry of BCE—the loss difference is the KL divergence between predictive distributions, and Pinsker's inequality translates KL progress into prediction error. The technical core is the observation that the BCE optimum still satisfies residual orthogonality $\mathbb{E}[x(p^*(x) - y)] = 0$ (the geometry differs, but the first-order condition remains).
+**Key Insight**: Replace Euclidean geometry of squared loss with the Bregman/KL geometry of BCE—where the loss difference is the KL divergence between predicted distributions—then use Pinsker's inequality to translate KL progress into prediction error. The technical core is the discovery that the optimal solution for BCE still satisfies residual orthogonality $\mathbb{E}[x(p^*(x) - y)] = 0$ (though the geometry differs, the first-order necessary condition remains).
 
-**Core Idea**: Aggregate "loss decrease along each chain segment" into a telescoping sum; use Pinsker to translate KL progress into squared error, and control all feature prediction residuals via the orthogonality at the segment where feature $x_l$ is observed by agent $j$.
+**Core Idea**: Formulate the "loss reduction per segment on the chain" into a telescoping sum. Combine Pinsker (KL progress $\to$ squared error) with orthogonality from segments where "feature $x_l$ is observed by agent $j$" to bound the prediction residuals for all features.
 
 ## Method
 
 ### Overall Architecture
-Each agent $A_i$ on the DAG holds a feature subset $S_i \subseteq [d]$ and learns in topological order; when it is its turn, it receives all parent logits $\{z_j : A_j \in \mathrm{Pa}(A_i)\}$, concatenates them with its local features $x_{S_i}$, and trains a logistic regression $z_i(x) = w_i^T x_{S_i} + \sum_{j} v_{ij} z_j(x)$ minimizing BCE, then passes its logit $z_i$ to successors. The final output is given by the sink agent (or terminal $A_D$). Note that logits, not probabilities, are passed: this preserves exponential family information geometry, allowing downstream agents to continue linear combinations without loss.
+On a DAG, each agent $A_i$ holds a feature subset $S_i \subseteq [d]$ and learns in topological order. Upon their turn, they receive logits $\{z_j : A_j \in \mathrm{Pa}(A_i)\}$ from all parent nodes, concatenate them with local features $x_{S_i}$ to train a logistic regression $z_i(x) = w_i^T x_{S_i} + \sum_{j} v_{ij} z_j(x)$, minimize BCE, and forward their own logit $z_i$ to successors. The final output is given by the sink agent (or $A_D$ at the end of the path). Note that logits are passed instead of probabilities to preserve the information geometry of the exponential family, allowing downstream agents to continue linear combination without loss.
 
 ### Key Designs
 
-1. **Residual Orthogonality Lemma + Bregman Loss Decomposition**:
+1.  **Residual Orthogonality Lemma + Bregman Loss Decomposition**:
+    *   Function: Rewrites the "binary cross-entropy loss difference of logistic regression" as expected KL divergence, bridging loss reduction and predicted distribution approximation.
+    *   Mechanism: Lemma 3.1 proves $\mathbb{E}[x(p^*(x) - y)] = 0$ holds for the optimal BCE solution (derived from $\nabla_\theta L = 0$). Lemma 3.3 uses the identity $\log \sigma(z) = z - \log(1 + e^z)$ to expand the loss difference, then adds/subtracts $p^*(x)(\theta - \theta^*)^T x$, eliminating one term via orthogonality to obtain $L(q) = L(p^*) + D(p^* \| q)$, where $D$ is the Bernoulli KL. This is the equivalent of "variance decomposition" under BCE.
+    *   Design Motivation: The original Kearns proof relied on $\|p - q\|^2 = \text{loss diff}$, which does not exist for BCE. The Bregman decomposition shows that the excess loss of any sub-optimal predictor is exactly the KL divergence to the optimum, enabling the telescoping sum.
 
-    - **Function**: Rewrites "BCE loss difference in logistic regression" as expected KL divergence, bridging loss decrease and predictive distribution approximation.
-    - **Mechanism**: Lemma 3.1 proves $\mathbb{E}[x(p^*(x) - y)] = 0$ holds for BCE optimum (directly by taking expectation of $\nabla_\theta L = 0$). Lemma 3.3 expands the loss difference using the identity $\log \sigma(z) = z - \log(1 + e^z)$, adds and subtracts $p^*(x)(\theta - \theta^*)^T x$, and uses orthogonality to cancel a term, yielding $L(q) = L(p^*) + D(p^* \| q)$, where $D$ is Bernoulli KL. This is the BCE analogue of squared loss "variance decomposition."
-    - **Design Motivation**: The original Kearns proof relies on $\|p - q\|^2 = $ loss diff, which lacks quadratic structure under BCE; Bregman decomposition provides that "any suboptimal predictor's excess loss equals its KL to the optimum," enabling telescoping.
+2.  **Path Residual Control (Lemma 3.5)**:
+    *   Function: Bounds the "difference between global optimal logit and current predictor" by $O(\sqrt{k \varepsilon})$ on a coverage path of length $k$, where $\varepsilon$ is the total loss reduction on that path.
+    *   Mechanism: For any linear logit $z_g(x) = \sum \alpha_l x_l$, bound $|\mathbb{E}[(p_k - y) z_g]|$ using the triangle inequality over correlation terms $\sum |\alpha_l| |\mathbb{E}[x_l (p_k - y)]|$. For each $x_l$, find an agent $A_j$ who previously observed it; the orthogonality of that step gives $\mathbb{E}[x_l (p_j - y)] = 0$. Use Cauchy-Schwarz and Pinsker ($D(p \| q) \geq 2 \mathbb{E}[(p-q)^2]$) to get $\|p_k - p_j\|_2 \leq \sqrt{k \varepsilon / 2}$.
+    *   Design Motivation: The core is using the "intermediate agent who observed the feature" to perform a telescoping reduction on any feature residual, reducing the global information aggregation problem to the "cumulative reduction on a segment of the chain."
 
-2. **Path Residual Control (Lemma 3.5)**:
-
-    - **Function**: On a length-$k$ coverage path, controls the "difference between global optimal logit and current predictor" to $O(\sqrt{k \varepsilon})$, where $\varepsilon$ is total loss decrease along the path.
-    - **Mechanism**: For any linear logit $z_g(x) = \sum \alpha_l x_l$, decomposes $|\mathbb{E}[(p_k - y) z_g]|$ via triangle inequality into $\sum |\alpha_l| |\mathbb{E}[x_l (p_k - y)]|$; for each $x_l$, finds the agent $A_j$ that observed it, whose orthogonality gives $\mathbb{E}[x_l (p_j - y)] = 0$; Cauchy-Schwarz and Pinsker ($D(p \| q) \geq 2 \mathbb{E}[(p-q)^2]$) yield $\|p_k - p_j\|_2 \leq \sqrt{k \varepsilon / 2}$.
-    - **Design Motivation**: The core is to reduce "any feature's residual" via "intermediate agent that observed it," telescoping the global information aggregation problem to "cumulative decrease along a chain segment."
-
-3. **Pigeonhole Parameter Selection + Global Convergence (Theorem 3.7)**:
-
-    - **Function**: Divides the length-$D$ path into $K = \lfloor D/M \rfloor$ disjoint blocks; by the pigeonhole principle, some block's total loss decrease $\leq L(p_1) / K \leq 2M L(p_1) / D$.
-    - **Mechanism**: For the stable block spanning indices $s..t$, applying Lemmas 3.4 and 3.5 yields $L(p_t) \leq L(p^*) + B_{p^*} B_X \sqrt{M \varepsilon / 2}$; since $L(p_1) \leq \log 2 < 1$ (achievable with $\theta = 0$), finally $L(p_D) - L(p^*) \leq B_{p^*} B_X M / \sqrt{D} = O(M / \sqrt{D})$.
-    - **Design Motivation**: The pigeonhole argument avoids the need for fine-grained control over each segment—"there must exist a segment whose progress is no worse than average" suffices.
+3.  **Pigeonhole Parameter Selection + Global Convergence (Theorem 3.7)**:
+    *   Function: Partitions a path of length $D$ into $K = \lfloor D/M \rfloor$ disjoint blocks. By the pigeonhole principle, there must exist a block where the total loss reduction is $\leq L(p_1) / K \leq 2M L(p_1) / D$.
+    *   Mechanism: Let this stable block span indices $s..t$. Applying Lemma 3.4 and 3.5 on this path yields $L(p_t) \leq L(p^*) + B_{p^*} B_X \sqrt{M \varepsilon / 2}$. Since $L(p_1) \leq \log 2 < 1$ (achievable with $\theta = 0$), the final $L(p_D) - L(p^*) \leq B_{p^*} B_X M / \sqrt{D} = O(M / \sqrt{D})$.
+    *   Design Motivation: The pigeonhole argument avoids the difficulty of fine-grained control over every segment; it suffices to show that "there is always one segment where progress is no worse than average."
 
 ### Loss & Training
-Each agent's local optimization target is standard BCE, with no regularization or extra structure; communication is each agent passing the scalar logit (pre-sigmoid) rather than the probability. This maintains linear additivity in the exponential family: downstream agents can directly perform linear regression on parent logits, avoiding the nonlinearity of sigmoid that would disrupt information geometry.
+The local optimization objective for all agents is standard BCE without regularization or additional structure. The communication method involves each agent forwarding the scalar logit inside the sigmoid rather than the probability after the sigmoid. This is to maintain linear additivity within the exponential family: downstream agents can perform linear regression directly on parent logits, avoiding the destruction of information geometry by sigmoid nonlinearity.
 
 ## Key Experimental Results
-This is a purely theoretical paper with no numerical experiment tables. However, the authors present upper and lower bounds in a conceptual "complexity comparison table."
+
+This is a purely theoretical paper with no numerical experimental tables. However, the authors place upper and lower bounds in a conceptual "complexity comparison table."
 
 ### Main Results
 
 | Method | Task | Loss | Upper Bound | Lower Bound |
-|--------|------|------|-------------|-------------|
+| :--- | :--- | :--- | :--- | :--- |
 | Kearns-Roth-Ryu 2026 | Regression | MSE | $O(M/\sqrt{D})$ | — |
 | **Ours** | Binary Classification | BCE | $O(M/\sqrt{D})$ | $\Omega(k/D)$ |
 
-Upper bound conditions: path length $D$, every $M$ consecutive agents jointly cover all features; constants depend on $\mathbb{E}[x_l^2] \leq B_X^2$ and $\|\alpha^*\|_1 \leq B_{p^*}$.
+Upper bound conditions: path length $D$, every $M$ consecutive agents cover all features; constants depend on $\mathbb{E}[x_l^2] \leq B_X^2$ and $\|\alpha^*\|_1 \leq B_{p^*}$.
 
 ### Ablation Study
-Key designs in the lower bound construction (Theorem 4.5):
+
+Key designs for the lower bound construction (Theorem 4.5):
 
 | Design | Function | Key Lemma |
-|--------|----------|-----------|
-| Latent variables $Z_i \sim \mathcal{N}(0,1)$ iid, features $x_i = Z_i - Z_{i-1}$ | Ensures $Z_k = \sum x_j$, and any prefix of features is independent of label $y \sim \text{Ber}(\sigma(Z_k))$ | 4.1 (information relevance recursion) |
-| Agents on the path observe one feature each in cyclic order $\ell = ((i-1) \mod k) + 1$ | Forces only one effective feature to be unlocked per pass | — |
-| After $p$ passes, optimal logit is $z_D = c(Z_k + \xi/\sqrt{p})$, $\xi \sim \mathcal{N}(0, V_p)$ | Noise variance can only decay at $1/p$ rate | 4.2, 4.3 |
-| Optimal $c \in (0,1)$ comes from sigmoid's second-order smoothness; MVT translates probability gap back to logit gap | Yields $L(p_D) - L(p^*) \geq C/(p+1) = \Omega(k/D)$ | 4.4, 4.5 |
+| :--- | :--- | :--- |
+| Latent variables $Z_i \sim \mathcal{N}(0,1)$ iid, features $x_i = Z_i - Z_{i-1}$ | Ensures $Z_k = \sum x_j$, but any feature prefix is independent of label $y \sim \text{Ber}(\sigma(Z_k))$ | 4.1 (Info Correlation Recursion) |
+| Agents on path look at 1D features in cyclic order $\ell = ((i-1) \mod k) + 1$ | Forces only one effective feature to be "unlocked" per pass | — |
+| Optimal logit after pass $p$ is $z_D = c(Z_k + \xi/\sqrt{p})$, $\xi \sim \mathcal{N}(0, V_p)$ | Noise variance only decays at rate $1/p$ | 4.2, 4.3 |
+| Optimal $c \in (0,1)$ from sigmoid second-order smoothness + MVT | Derives $L(p_D) - L(p^*) \geq C/(p+1) = \Omega(k/D)$ | 4.4, 4.5 |
 
 ### Key Findings
-- The $O(M/\sqrt{D})$ upper bound matches the order in Kearns regression, indicating that the $\sqrt{D}$ rate is not unique to squared loss—BCE also benefits.
-- The $\Omega(k/D)$ lower bound, for fixed $M = O(k)$, differs from the upper bound $O(k/\sqrt{D})$ by only a $\sqrt{D}$ factor—an acknowledged open gap.
-- In the lower bound construction, features are "differentially encoded," so any single $x_i$ is independent of $y$; only a sufficiently long chain can recover $Z_k$. This shows that the protocol's "feature-by-feature disentanglement" is the essential rate-limiting factor, not a loose analysis.
-- The paper also discusses that the regression-to-classification gap is nontrivial in compressed sensing, second-order acceleration, conformal prediction, etc., providing a broader context that "BCE is not a minor tweak of MSE."
+- The $O(M/\sqrt{D})$ upper bound is of the same order as the original Kearns regression result, showing that the $\sqrt{D}$ rate is not exclusive to squared loss and can be achieved by BCE.
+- The $\Omega(k/D)$ lower bound differs from the $O(k/\sqrt{D})$ upper bound only by a factor of $\sqrt{D}$ when $M = O(k)$—an open gap acknowledged by the authors.
+- In the lower bound construction, features are "differential encoded"—any $x_i$ alone is independent of $y$. Only a sufficiently long sequence can decode $Z_k$. This construction shows that the "feature-by-feature disentanglement" of the protocol itself is the fundamental cause limiting the rate.
+- The paper also discusses that the "regression-to-classification" gap is non-trivial across several directions, including compressed sensing, second-order acceleration, and conformal prediction, arguing that "BCE is not a minor adjustment to MSE."
 
 ## Highlights & Insights
-- Replacing Euclidean decomposition with Bregman/KL is standard for extending regression to classification, but the authors' Lemma 3.5 cleverly uses "orthogonality on a coverage path segment" to decompose "global residual of feature $x_l$" into "local subpath cumulative KL progress." This telescoping technique can be reused for other distributed GLM problems.
-- Emphasizing logit transmission over probability is an underrated design principle: sigmoid projects the exponential family to $(0,1)$, but for downstream linear combinations, logit is the natural coordinate. This insight is instructive for practical industrial VFL system design.
-- The lower bound's differential encoding $x_i = Z_i - Z_{i-1}$ is an economical "information bottleneck" instance: just $k$-dimensional Gaussian suffices to irrefutably demonstrate that "at least $k$ passes are needed to disentangle."
+- Replacing Euclidean decomposition with Bregman/KL is a standard approach for extending regression to classification, but the author cleverly uses "orthogonality of a segment on the coverage path" to decompose the "global residual of feature $x_l$" into "cumulative KL progress of local sub-paths."
+- Emphasizing logits over probabilities is an underrated design principle: sigmoid maps the exponential family to $(0,1)$, but when downstream agents want to perform further linear combinations, the logit is the natural coordinate.
+- The differential encoding $x_i = Z_i - Z_{i-1}$ in the lower bound construction is a highly economical instance of a "bottleneck": it demonstrates that $k$ passes are required for disentanglement.
 
 ## Limitations & Future Work
-- There remains a $\sqrt{D}$ gap between upper and lower bounds, which the authors clearly hope future work will close.
-- The protocol is "non-interactive + unidirectional single logit," which is quite restrictive for practical VFL—real systems prefer multi-round gradient or activation exchange for better performance. The theoretical result shows "if you insist on minimal communication, then $\sqrt{D}$ is the best rate achievable," but engineering value is limited.
-- Does not consider privacy/noise/partial alignment and other real VFL issues; it is purely a statistical learning rate analysis.
-- Assumes bounded second moment of features and bounded $\ell_1$ norm of optimal logit coefficients, which may not hold for real industrial data.
+- There remains a $\sqrt{D}$ gap between the upper and lower bounds, which future work might tighten.
+- The protocol is "non-interactive + one-way single logit," which is restrictive compared to industrial VFL systems that exchange gradients or activations for better performance.
+- Real VFL issues like privacy, noise, and partial alignment are not considered; this is purely a statistical learning rate analysis.
+- Assumes bounded second moments of features and bounded $\ell_1$ norm of optimal logit coefficients.
 
 ## Related Work & Insights
-- **vs Kearns-Roth-Ryu 2026 (regression)**: Same protocol, but proof framework is completely rewritten—Bregman replaces Euclidean, KL replaces variance, Pinsker replaces Pythagoras; this is a clean example of the "standard reduction" from regression to classification.
-- **vs VFL (e.g., SecureBoost)**: Industrial VFL relies on multi-round interaction + encrypted summation; this work is single-pass, providing a theoretical guarantee that "even in the worst case, single-pass can aggregate," but empirical accuracy cannot match multi-round schemes.
-- **vs Split Learning**: Split learning communicates intermediate activations, theoretically closer to this work (also passing intermediate representations downstream), but this work gives convergence rates strictly for linear logistic models, whereas split learning in deep networks lacks such clean results.
-- **Inspiration**: Could the protocol be modified to "pass sufficient statistics instead of logits"—e.g., in GLMs, pass score + Fisher information? This might enable better trade-offs between interaction rounds and depth; this is an open direction.
+- **vs Kearns-Roth-Ryu 2026 (regression)**: Same protocol, but the proof framework is completely rewritten—Bregman instead of Euclidean, KL instead of variance, Pinsker instead of Pythagoras.
+- **vs VFL (SecureBoost, etc.)**: Industrial VFL relies on multi-round interaction. This paper is single-pass, providing theoretical guarantees that aggregation can happen in a single-pass even in worst-case scenarios.
+- **vs Split Learning**: Split learning uses intermediate activations as communication. This paper provides strict convergence rates within linear logistic models, whereas split learning lacks clean corresponding results in deep networks.
+- **Insight**: Could the protocol be modified to "pass sufficient statistics instead of logits"—e.g., passing scores + Fisher info in GLMs—to achieve a better trade-off between interaction rounds and depth?
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Extending regression to classification is a solid contribution; the lower bound construction is especially elegant
-- Experimental Thoroughness: ⭐⭐⭐ Purely theoretical, no numerical experiments; the $\sqrt{D}$ gap between bounds is not empirically tested for tightness
-- Writing Quality: ⭐⭐⭐⭐⭐ Lemma dependency chain is very clear; Section 1.2's discussion of "why regression-to-classification is nontrivial" is insightful
-- Value: ⭐⭐⭐ Mainly for the theory community; industrial VFL systems are unlikely to change architecture, but this sets a baseline for theoretical analysis
+- Novelty: ⭐⭐⭐⭐ 
+- Experimental Thoroughness: ⭐⭐⭐ 
+- Writing Quality: ⭐⭐⭐⭐⭐ 
+- Value: ⭐⭐⭐ 
 
 <!-- RELATED:START -->
 
@@ -124,11 +123,11 @@ Key designs in the lower bound construction (Theorem 4.5):
 
 ## Related Papers
 
+- [\[ICML 2026\] Structure-Induced Information for Rerooting Levin Tree Search](structure-induced_information_for_rerooting_levin_tree_search.md)
 - [\[AAAI 2026\] Improved Differentially Private Algorithms for Rank Aggregation](../../AAAI2026/others/improved_differentially_private_algorithms_for_rank_aggregation.md)
-- [\[AAAI 2026\] Tractable Weighted First-Order Model Counting with Bounded Treewidth Binary Evidence](../../AAAI2026/others/tractable_weighted_first-order_model_counting_with_bounded_treewidth_binary_evid.md)
-- [\[ICLR 2026\] On the Lipschitz Continuity of Set Aggregation Functions and Neural Networks for Sets](../../ICLR2026/others/on_the_lipschitz_continuity_of_set_aggregation_functions_and_neural_networks_for.md)
-- [\[AAAI 2026\] LeanRAG: Knowledge-Graph-Based Generation with Semantic Aggregation and Hierarchical Retrieval](../../AAAI2026/others/leanrag_knowledge-graph-based_generation_with_semantic_aggregation_and_hierarchi.md)
-- [\[AAAI 2026\] ShortageSim: Simulating Drug Shortages under Information Asymmetry](../../AAAI2026/others/shortagesim_simulating_drug_shortages_under_information_asymmetry.md)
+- [\[ICML 2026\] Multi-Level Strategic Classification: Incentivizing Improvement Through Promotion and Relegation Dynamics](multi-level_strategic_classification_incentivizing_improvement_through_promotion.md)
+- [\[ICML 2026\] Coupled Training with Privileged Information and Unlabeled Data](coupled_training_with_privileged_information_and_unlabeled_data.md)
+- [\[ICML 2026\] ParalESN: Enabling Parallel Information Processing in Reservoir Computing](paralesn_enabling_parallel_information_processing_in_reservoir_computing.md)
 
 </div>
 

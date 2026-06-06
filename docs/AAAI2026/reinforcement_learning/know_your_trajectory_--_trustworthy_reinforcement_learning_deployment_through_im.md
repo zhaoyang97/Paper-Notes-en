@@ -190,11 +190,11 @@ This paper does not involve training a new model; it is a post-hoc analysis fram
 
 ## Related Papers
 
+- [\[ICML 2026\] Offline Reinforcement Learning with Generative Trajectory Policies](../../ICML2026/reinforcement_learning/offline_reinforcement_learning_with_generative_trajectory_policies.md)
 - [\[ICML 2026\] Trajectory-Level Data Augmentation for Offline Reinforcement Learning](../../ICML2026/reinforcement_learning/trajectory-level_data_augmentation_for_offline_reinforcement_learning.md)
 - [\[NeurIPS 2025\] Learning Human-Like RL Agents through Trajectory Optimization with Action Quantization](../../NeurIPS2025/reinforcement_learning/learning_human-like_rl_agents_through_trajectory_optimization_with_action_quanti.md)
-- [\[AAAI 2026\] Revealing POMDPs: Qualitative and Quantitative Analysis for Parity Objectives](revealing_pomdps_qualitative_and_quantitative_analysis_for_parity_objectives.md)
-- [\[AAAI 2026\] Speculative Sampling with Reinforcement Learning](speculative_sampling_with_reinforcement_learning.md)
-- [\[AAAI 2026\] Vision-Language Reasoning for Geolocalization: A Reinforcement Learning Approach](vision-language_reasoning_for_geolocalization_a_reinforcement_learning_approach.md)
+- [\[ICML 2026\] DARTS: Distribution-Aware Active Rollout Trajectory Shaping for Accelerating LLM Reinforcement Learning](../../ICML2026/reinforcement_learning/darts_distribution-aware_active_rollout_trajectory_shaping_for_accelerating_llm_.md)
+- [\[ICML 2026\] Beyond the Proxy: Trajectory-Distilled Guidance for Offline GFlowNet Training](../../ICML2026/reinforcement_learning/beyond_the_proxy_trajectory-distilled_guidance_for_offline_gflownet_training.md)
 
 </div>
 

@@ -20,7 +20,7 @@ tags:
 
 **🔬 ICLR2026** · **14** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (5)](../../ICML2026/image_restoration/index.md) · [📷 CVPR2026 (39)](../../CVPR2026/image_restoration/index.md) · [🤖 AAAI2026 (13)](../../AAAI2026/image_restoration/index.md) · [🧠 NeurIPS2025 (26)](../../NeurIPS2025/image_restoration/index.md) · [📹 ICCV2025 (30)](../../ICCV2025/image_restoration/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (18)](../../ICML2026/image_restoration/index.md) · [📷 CVPR2026 (39)](../../CVPR2026/image_restoration/index.md) · [🤖 AAAI2026 (13)](../../AAAI2026/image_restoration/index.md) · [🧠 NeurIPS2025 (26)](../../NeurIPS2025/image_restoration/index.md) · [📹 ICCV2025 (30)](../../ICCV2025/image_restoration/index.md)
 
 🔥 **Top topics:** Diffusion Models ×6 · Speech & Audio ×2
 

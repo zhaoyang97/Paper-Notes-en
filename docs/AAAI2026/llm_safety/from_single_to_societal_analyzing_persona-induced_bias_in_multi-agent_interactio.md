@@ -145,8 +145,8 @@ A three-stage progressive analysis: (1) isolating the effect of individual perso
 - [\[NeurIPS 2025\] PatientSim: A Persona-Driven Simulator for Realistic Doctor-Patient Interactions](../../NeurIPS2025/llm_safety/patientsim_a_persona-driven_simulator_for_realistic_doctor-patient_interactions.md)
 - [\[ACL 2026\] Conjunctive Prompt Attacks in Multi-Agent LLM Systems](../../ACL2026/llm_safety/conjunctive_prompt_attacks_in_multi-agent_llm_systems.md)
 - [\[AAAI 2026\] Gender Bias in Emotion Recognition by Large Language Models](gender_bias_in_emotion_recognition_by_large_language_models.md)
+- [\[ACL 2026\] Privacy-R1: Privacy-Aware Multi-LLM Agent Collaboration via Reinforcement Learning](../../ACL2026/llm_safety/privacy-r1_privacy-aware_multi-llm_agent_collaboration_via_reinforcement_learnin.md)
 - [\[ACL 2026\] MemoPhishAgent: Memory-Augmented Multi-Modal LLM Agent for Phishing URL Detection](../../ACL2026/llm_safety/memophishagent_memory-augmented_multi-modal_llm_agent_for_phishing_url_detection.md)
-- [\[AAAI 2026\] AUVIC: Adversarial Unlearning of Visual Concepts for Multi-modal Large Language Models](auvic_adversarial_unlearning_of_visual_concepts_for_multi-mo.md)
 
 </div>
 

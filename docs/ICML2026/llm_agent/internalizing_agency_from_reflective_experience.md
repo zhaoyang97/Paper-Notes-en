@@ -2,122 +2,118 @@
 title: >-
   [Paper Note] Internalizing Agency from Reflective Experience
 description: >-
-  [ICML 2026][LLM Agent][agentic LLM] This paper proposes the LEAFE framework, enabling LLM agents to generate "failure→rollback→correction→success" experience data by reflecting on failed trajectories…
+  [ICML 2026][LLM Agent][agentic LLM] This paper proposes the LEAFE framework, which enables LLM agents to generate "failure $\rightarrow$ rollback $\rightarrow$ correction $\rightarrow$ success" experience data by reflect…
 tags:
   - "ICML 2026"
   - "LLM Agent"
   - "agentic LLM"
   - "reflective experience"
-  - "rollback exploration"
+  - "backtracking exploration"
   - "experience distillation"
   - "Pass@k"
 date: 2026-05-08
-content_hash: c5b20f4e33925e58
+content_hash: 881ebe0ed39f571b
 ---
 
 # Internalizing Agency from Reflective Experience
 
 **Conference**: ICML 2026  
 **arXiv**: [2603.16843](https://arxiv.org/abs/2603.16843)  
-**Code**: Not released  
+**Code**: Undisclosed  
 **Area**: LLM Agent / Long-horizon Interaction Training  
-**Keywords**: agentic LLM, reflective experience, rollback exploration, experience distillation, Pass@k
+**Keywords**: agentic LLM, reflective experience, backtracking exploration, experience distillation, Pass@k
 
 ## TL;DR
-This paper proposes the LEAFE framework, enabling LLM agents to generate "failure→rollback→correction→success" experience data by reflecting on failed trajectories, and then distilling feedback-grounded recovery ability via SFT. On long-horizon tasks such as CodeContests, WebShop, and ALFWorld, Pass@128 is improved by up to 14%, significantly outperforming outcome-driven RL methods like GRPO.
+This paper proposes the LEAFE framework, which enables LLM agents to generate "failure $\rightarrow$ rollback $\rightarrow$ correction $\rightarrow$ success" experience data by reflecting on failed trajectories. It then uses SFT to distill feedback-grounded recovery capabilities, improving Pass@128 by up to 14% on long-horizon tasks such as CodeContests, WebShop, and ALFWorld, significantly outperforming outcome-driven RL like GRPO.
 
 ## Background & Motivation
 
-**Background**: LLMs are shifting from passive answering to autonomous agents. The common post-training approach is RL with verifiable rewards (RLVR / GRPO)—multiple rollouts, a scalar reward at the end, and policy gradients to increase the probability of successful trajectories.
+**Background**: LLMs are transitioning from passive responders to autonomous agents. Common post-training methods involve RL with verifiable rewards (RLVR / GRPO), which use multi-turn sampling, a scalar reward at the end of the episode, and policy gradients to increase the probability of successful trajectories.
 
-**Limitations of Prior Work**: In long-horizon interactive scenarios, terminal scalar rewards are extremely sparse. Most rollouts receive no reward, and updates are dominated by the few already successful samples, so the model only learns to "do what it already knows" more reliably. The environment actually provides rich feedback at every step (error messages, state transitions, compilation errors), but all are compressed into a 0/1 signal and discarded. The result is distribution sharpening: Pass@1 increases, but Pass@1024 remains unchanged or even drops.
+**Limitations of Prior Work**: In long-horizon interaction scenarios, the information density of end-of-episode scalar rewards is extremely low. Most rollouts fail to receive a reward, and updates are dominated by a few samples that are already successful; the model merely learns to stabilize what it "already knows how to do." Although the environment provides rich feedback at every step (error messages, state transitions, compilation errors), this is often compressed into 0/1 signals and discarded. This results in distribution sharpening: Pass@1 increases while Pass@1024 remains stagnant or decreases.
 
-**Key Challenge**: Distribution sharpening and agency internalization are distinct. To truly expand the set of problems the model can solve, it must learn "my trajectory failed, where did it go wrong, how to fix it," whereas outcome-driven training only teaches "this trajectory as a whole is good."
+**Key Challenge**: Distribution sharpening and agency internalization are distinct phenomena. To genuinely expand the set of solvable problems, a model must learn "where the current trajectory failed and how to fix it," whereas outcome-driven training only teaches that "this trajectory is overall good."
 
-**Goal**: Internalize the recovery process of "identify key decision points → rollback at that point → use environment feedback for targeted correction" into model weights, rather than relying on best-of-$k$ retries or Tree-of-Thoughts external search at inference.
+**Goal**: Internalize the recovery procedure—identifying key decision points, rolling back at those points, and making targeted corrections based on environment feedback—into the model weights, rather than relying on best-of-$k$ retries or Tree-of-Thoughts external searches during inference.
 
-**Key Insight**: Instead of only rewarding entire successful trajectories, explicitly create failure cases, locate error points, and supervise corrective actions. Environment feedback is no longer compressed into a scalar but structured as natural language "diagnosis + repair instructions" (experience summary) for training supervision.
+**Key Insight**: Instead of only rewarding successful trajectories, one should explicitly create failure cases, locate errors, and supervise correction actions. Environment feedback is not compressed into a scalar but structured into natural language "diagnoses + repair instructions" (experience summary) to serve as training supervision.
 
-**Core Idea**: Use reflection to generate experimental trajectories of "failure→rollback→correction→success," then distill post-rollback corrective actions via SFT, thereby encoding recovery agency into the weights.
+**Core Idea**: Generate experimental trajectories of "failure $\rightarrow$ rollback $\rightarrow$ correction $\rightarrow$ success" through reflection, and then use SFT to distill post-rollback corrective actions, thereby embedding recovery agency into the weights.
 
 ## Method
 
 ### Overall Architecture
-LEAFE consists of two stages: (1) Tree-Based Experience Generation with Rollback: Roll out trajectories on the base policy $\pi_\theta$, periodically triggering reflection. The reflection module determines if the current trajectory is deviating; if so, it outputs a rollback point $\tau$ and an experience summary (including failure diagnosis and repair suggestions). From $\tau$, restart and branch out one or more corrective actions. (2) Experience Distillation: From all "eventually successful" corrected trajectories, extract the "corrective action at $\tau$" as the target token for SFT, so that at inference, even without explicit experience, the model can output corresponding corrections when encountering similar failure signals.
+LEAFE consists of two stages: (1) Tree-Based Experience Generation with Rollback: Rollouts are performed using the base policy $\pi_\theta$. Every few steps, a reflection module determines if the trajectory is deviating. If so, it generates a rollback point $\tau$ and an experience summary $e$ (containing failure diagnosis and repair suggestions), restarts from $\tau$, and branches out one or more corrective actions. (2) Experience Distillation: Corrective actions at $\tau$ are extracted from all "eventually successful" correction trajectories as target tokens for SFT. This enables the model to output corrections under similar failure signals during inference without explicitly providing the experience summary.
 
 ### Key Designs
 
-1. **Tree-based Reflective Rollback Experience Generation**:
+1.  **Tree-Based Experience Generation with Rollback**:
+    - **Function**: Expands single-trajectory rollouts into a "failure detection + counterfactual correction" search tree, allowing a failed trace to derive multiple "successful after correction" traces for training data.
+    - **Mechanism**: Under the ReAct paradigm, the state at each time step $t$ is $h_t=(o_0, a_0, \ldots, o_t)$, and actions $a_t \sim \pi_\theta(\cdot|h_t, q)$. Reflection prompts are inserted periodically for the model to decide on a rollback. If triggered, it outputs (i) a rollback point $\tau$ and (ii) a natural language experience summary $e$. New actions are then sampled via $\pi_\theta(\cdot|h_\tau, q, e)$ to create branches. One original rollout can derive multiple (failure $\rightarrow$ rollback $\rightarrow$ fix $\rightarrow$ success) triplets.
+    - **Design Motivation**: Scalar rewards cannot pinpoint "which step went wrong," but LLMs possess the ability to read environment feedback and locate errors. Externalizing this in-context ability into explicit rollback and correction signals provides much higher information density than GRPO's group-relative rewards.
 
-    - **Function**: Expands a single trajectory rollout into a "failure detection + counterfactual correction" search tree, allowing one failed trace to generate multiple "corrected and successful" traces as training data.
-    - **Mechanism**: Under the ReAct paradigm, the state at each time step $t$ is $h_t=(o_0,a_0,\ldots,o_t)$, with action $a_t\sim\pi_\theta(\cdot|h_t,q)$. Every few steps, a reflection prompt is inserted, and the model itself decides whether to rollback; if so, it outputs (i) rollback point $\tau$, (ii) natural language experience summary $e$ (including "where it went wrong + how to fix"). Then, $\pi_\theta(\cdot|h_\tau,q,e)$ samples new actions to branch. One original rollout can yield multiple (failure→rollback→fix→success) triplets.
-    - **Design Motivation**: Scalar rewards cannot identify "which step went wrong," but LLMs inherently have the ability to read environment feedback and locate errors. Externalizing this in-context ability into explicit rollback + correction training signals provides much denser information than GRPO's group-relative reward.
+2.  **Experience to Policy Distillation**:
+    - **Function**: Distills the generated corrective actions into the model weights, allowing the model to naturally make corrections at deployment without experience prompts.
+    - **Mechanism**: For each (failure $\rightarrow$ rollback $\rightarrow$ fix $\rightarrow$ success) trajectory, the corrected sub-trajectory generated with experience prompts is intercepted from $\tau$. SFT data $(h_\tau, a^{\rm fix}_\tau, \ldots, o_T)$ is constructed. **During training, the experience summary is not provided; the model is trained to directly produce the sequence of corrective actions following $h_\tau$.** Consequently, during testing, the model can endogenously switch to a correction mode when encountering similar failure patterns.
+    - **Design Motivation**: Either the model runs expensive reflection and retries for every inference (high deployment cost), or this capability is stored in the weights. The key to distillation is conditioning on $h_\tau$ without $e$ to predict the fix, forcing the model to infer the necessary correction from the environment feedback itself.
 
-2. **Experience-to-Policy Distillation**:
-
-    - **Function**: Distills the corrective actions generated in the first stage into model weights, so that at deployment, the model can naturally make corrections without experience prompts.
-    - **Mechanism**: For each (failure→rollback→fix→success) trajectory, extract the "corrected sub-trajectory with experience prompt" from the rollback point $\tau$, constructing SFT data $(h_\tau, a^{\rm fix}_\tau,\ldots,o_T)$. **During training, experience is not provided; the model is required to output the corrective action sequence directly after $h_\tau$**. Thus, at test time, the model can autonomously switch to correction mode when encountering similar failure patterns, without external reflection prompts.
-    - **Design Motivation**: Either the model runs expensive reflection + retries at every inference (high deployment cost), or this ability is stored in the weights. The key to distillation is "conditioning on $h_\tau$ without experience to predict corrective actions," forcing the model to infer corrections from environment feedback alone.
-
-3. **Comparison with GRPO: Sparse Rewards vs Decision-level Supervision**:
-
-    - **Function**: Provides decision-level reflect→revise supervision under the same interaction budget, rather than episode-level scalar scoring.
-    - **Mechanism**: GRPO computes group-relative advantage $\hat{A}_i=(r_i-\bar{r})/\sigma_r$ for $G$ traces of the same prompt, then applies policy gradient, essentially weighting entire traces. LEAFE directly supervises "what should be output after rollback" at the token level. The former encourages exploitation of known successful modes, while the latter pushes the behavior distribution into new regions.
-    - **Design Motivation**: On long-horizon tasks, GRPO tends to sharpen only the few modes already present in the base model's long tail, with Pass@k for large $k$ unchanged; explicit correction supervision expands coverage.
+3.  **Contrast with GRPO: Sparse Rewards vs. Decision-Level Supervision**:
+    - **Function**: Provides decision-level reflect $\rightarrow$ revise supervision under the same interaction budget, rather than episode-level scalar ratings.
+    - **Mechanism**: GRPO calculates group-relative advantage $\hat{A}_i = (r_i - \bar{r})/\sigma_r$ for $G$ traces of the same prompt for policy gradient, essentially weighting the entire trace. LEAFE provides token-by-token supervision on "what should be output after rollback." The former encourages exploitation of known success patterns, while the latter pushes the behavioral distribution into new regions.
+    - **Design Motivation**: On long-horizon tasks, GRPO tends to sharpen onto a few patterns the base model already knows in its long tail, failing to improve Pass\@$k$ for large $k$. Explicit error-correction supervision expands coverage.
 
 ### Loss & Training
-
-Stage 1 uses only base policy self-sampling and reflection to generate data, with no gradient updates; Stage 2 uses standard SFT cross-entropy $\mathcal{L}=-\sum_t \log \pi_\theta(a^{\rm fix}_t|h_t)$, with loss computed only on corrected action tokens, not environment feedback tokens. Hyperparameters such as reflection frequency and rollback budget are detailed in the appendix.
+Stage 1 solely uses base policy self-sampling and reflection for data generation with no gradient updates. Stage 2 uses standard SFT cross-entropy: $\mathcal{L} = -\sum_t \log \pi_\theta(a^{\rm fix}_t|h_t)$. The loss is calculated only on the corrected action tokens, not the environment feedback tokens. Hyperparameters such as reflection frequency and rollback budget are detailed in the appendix.
 
 ## Key Experimental Results
 
 ### Main Results
-Five agentic benchmarks: CodeContests (program synthesis + execution feedback), WebShop (shopping agent), ALFWorld (household agent), ScienceWorld (scientific exploration), Sokoban (box-pushing). All methods are evaluated under a fixed interaction budget.
+Evaluation on 5 agentic benchmarks: CodeContests (program synthesis with execution feedback), WebShop (shopping agent), ALFWorld (household agent), ScienceWorld (scientific exploration), and Sokoban (box-pushing). All methods are evaluated under a fixed interaction budget.
 
-| Task | Metric | Base | GRPO | Early Exp. | LEAFE | Gain over strongest baseline |
-|--------|------|------|----------|---|---|---|
-| CodeContests | Pass@1 | base | slight ↑ | slight ↑ | significant ↑ | Gain |
-| Long-horizon Avg | Pass@128 | base | ≈base | + | +14% | +14% |
-| General | Pass@1 | base | + | + | ++ | consistently leads |
+| Task | Metric | Base | GRPO | Early Exp. | Ours (LEAFE) | Rel. Strongest Baseline |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| CodeContests | Pass@1 | base | Slight gain | Slight gain | Significant gain | Gain |
+| Average (Long-horizon) | Pass@128 | base | ≈base | + | +14% | +14% |
+| General | Pass@1 | base | + | + | ++ | Consistently leading |
 
 ### Ablation Study
 
-| Configuration | Pass@1 | Pass@128 | Notes |
-|------|---------|---------|------|
+| Configuration | Pass@1 | Pass@128 | Description |
+| :--- | :--- | :--- | :--- |
 | Base | Low | Low | No post-training |
-| GRPO (outcome RL) | Medium-High | ≈Base | Typical sharpening |
-| Early Experience (no rollback) | Medium | Medium | Only distills successful trajectories, no recovery signal |
-| LEAFE w/o rollback | Medium | Medium | Removes tree branching, degrades to linear SFT |
-| LEAFE w/o experience summary | Medium-High | Medium-High | Only "correction actions," no diagnostic explanation |
+| GRPO (outcome RL) | Mid-High | ≈Base | Typical sharpening |
+| Early Experience (no rollback) | Mid | Mid | Distills success traces only, no recovery signal |
+| LEAFE w/o rollback | Mid | Mid | No tree-based branching, degrades to linear SFT |
+| LEAFE w/o experience summary | Mid-High | Mid-High | Fix actions only, no diagnostic explanation |
 | **Full LEAFE** | **High** | **High (+14%)** | Complete framework |
 
 ### Key Findings
-- Large $k$ reveals true differences: GRPO also improves Pass@1, but Pass@128 is almost unchanged, while LEAFE excels—indicating RLVR only sharpens high-frequency modes in the existing support set without expanding coverage.
-- Experience summary and rollback are synergistic: Removing either causes a significant drop in Pass@128, showing that "diagnosis + corrective action" together constitute decision-level supervision.
-- Models trained with LEAFE spontaneously trigger corrections internally at inference, even without being prompted to "reflect"—demonstrating that agency is truly internalized into the weights.
-- Higher data efficiency than Early Experience: With the same SFT sample size, LEAFE's rollback construction utilizes "failure traces" as well, with each failure producing multiple successful sub-trajectories on average.
+- Large $k$ reveals the true difference: While GRPO improves Pass@1, its Pass@128 remains stagnant. LEAFE excels at large $k$, indicating that RLVR merely sharpens high-frequency patterns in the existing support set without expanding coverage.
+- Experience summaries and rollback are synergistic: Removing either significantly decreases Pass@128, proving that "diagnosis + corrective action" together form effective decision-level supervision.
+- The model trained by LEAFE triggers corrections internally even if not prompted to "reflect" during inference, verifying that agency is internalized into the weights.
+- Higher data efficiency than Early Experience: With the same SFT sample volume, LEAFE utilizes failed traces, producing multiple successful sub-trajectories per failure on average.
 
 ## Highlights & Insights
-- The distinction between "distribution sharpening vs agency internalization" is very clear and helps the community avoid the "Pass@1 improvement is enough" evaluation trap.
-- Structuring environment feedback as "natural language diagnosis + repair suggestions" is a reusable pattern: applicable to any scenario where the environment provides error signals, such as tool use, code agents, and web agents.
-- Training with experience but not providing it at inference—this "training-assisted, inference-consistent" design forces the model to derive correction logic from environment signals itself, outperforming simple experience prompting for generalization.
+- The distinction between "distribution sharpening vs. agency internalization" is a clear conceptual split that helps the community move beyond the "Pass@1 is enough" evaluation pitfall.
+- Structuring environment feedback into "natural language diagnosis + repair suggestions" is a reusable pattern applicable to any scenario where the environment reports errors (tool use, code agents, web agents).
+- Distilling without feeding the experience summary during training—a "train-time auxiliary, inference-time self-consistency" design—forces the model to derive correction logic from environmental signals, leading to better generalization than simply using experience as a prompt.
 
 ## Limitations & Future Work
-- Reflection trigger frequency and rollback budget are hyperparameters and may require retuning for different tasks; automatically deciding when to reflect remains an open problem.
-- The reflection module relies on the base policy's self-assessment ability; if the base is too weak (e.g., sub-7B models), it may not recognize failures at all.
-- Experiments are mainly in scenarios with rich environment feedback and verifiers; further validation is needed in sparse or delayed feedback settings (e.g., open-domain dialogue).
-- No direct computational cost comparison with best-of-$N$ + self-reflection methods (e.g., Reflexion); systematic measurement of real deployment costs is needed.
+- Reflection frequency and rollback budget are hyperparameters that may require tuning for different tasks; automatically determining when to reflect remains an open problem.
+- The reflection module depends on the base policy's self-assessment capability; if the base is too weak (e.g., small models under 7B), it may fail to recognize failures.
+- Experiments focused on scenarios with rich feedback and verifiers; further validation is needed for sparse feedback (e.g., open dialogue) or delayed feedback scenarios.
+- There is no direct computational cost comparison with best-of-$N$ + self-reflection (e.g., Reflection); the real cost difference during deployment needs systematic measurement.
 
 ## Related Work & Insights
-- **vs GRPO / DeepSeek-R1 style RLVR**: This work also conducts post-training on LLMs, but uses structured reflection instead of scalar rewards; GRPO does not improve large $k$, whereas this method does.
-- **vs Early Experience**: Early Experience also uses reflective trajectories but does not perform rollback branching, thus only distilling successful traces without utilizing failure signals; this work further uses failure traces as data sources.
-- **vs Reflexion / Tree-of-Thoughts**: Those methods keep reflection/tree search at inference, requiring multiple calls each time; this work internalizes such agency into the weights, enabling single-pass inference.
+- **vs. GRPO / DeepSeek-R1 style RLVR**: Like these, LEAFE performs post-training on LLMs but replaces scalar rewards with structured reflection; LEAFE improves for large $k$ where GRPO does not.
+- **vs. Early Experience**: Early Experience uses reflective trajectories but lacks rollback branching, meaning it only distills successful traces without utilizing failure signals. LEAFE uses failed traces as a data source.
+- **vs. Reflexion / Tree-of-Thoughts**: Those methods keep reflection/tree search at inference time, requiring multiple calls; LEAFE internalizes this agency into the weights for single-pass inference.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The combination of "reflection-generated data + distillation into weights" is not entirely original, but the explicit rollback + decision-level supervision framework and Pass@k perspective are clear contributions.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Five agentic benchmarks covering coding/web/household/science/box-pushing, but lacks direct cost comparison with inference-time methods like Reflexion.
-- Writing Quality: ⭐⭐⭐⭐ The "sharpening vs internalization" narrative is clear, and Pass@k curves are highly convincing.
-- Value: ⭐⭐⭐⭐ Provides a complementary new paradigm to RLVR for agentic LLM post-training, with low deployment cost and reusable methods for tool/code agent scenarios.
+- **Novelty**: ⭐⭐⭐⭐ The combination of "reflection-generated data + distillation" is not entirely original, but the framework of explicit rollback + decision-level supervision and the Pass@k perspective are clear contributions.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Covers 5 agentic benchmarks (coding/web/household/science/Sokoban), though lacks a direct cost comparison with inference-time methods like Reflexion.
+- **Writing Quality**: ⭐⭐⭐⭐ The "sharpening vs. internalization" narrative is clear, and the Pass@k curves are highly persuasive.
+- **Value**: ⭐⭐⭐⭐ Provides a new paradigm for agentic LLM post-training that is complementary to RLVR, with low deployment costs and high reusability across tool/code agent scenarios.
 
 <!-- RELATED:START -->
 
@@ -126,10 +122,10 @@ Five agentic benchmarks: CodeContests (program synthesis + execution feedback), 
 ## Related Papers
 
 - [\[ICML 2026\] EvolveR: Self-Evolving LLM Agents through an Experience-Driven Lifecycle](evolver_self-evolving_llm_agents_through_an_experience-driven_lifecycle.md)
+- [\[ICML 2026\] Skill-Pro: Learning Reusable Skills from Experience via Non-Parametric PPO for LLM Agents](skill-pro_learning_reusable_skills_from_experience_via_non-parametric_ppo_for_ll.md)
 - [\[ACL 2026\] ExpSeek: Self-Triggered Experience Seeking for Web Agents](../../ACL2026/llm_agent/expseek_self-triggered_experience_seeking_for_web_agents.md)
 - [\[ACL 2026\] Mem²Evolve: Towards Self-Evolving Agents via Co-Evolutionary Capability Expansion and Experience Distillation](../../ACL2026/llm_agent/mem2evolve_towards_self-evolving_agents_via_co-evolutionary_capability_expansion.md)
-- [\[ICML 2026\] BioAgent Bench: An AI Agent Evaluation Suite for Bioinformatics](bioagent_bench_an_ai_agent_evaluation_suite_for_bioinformatics.md)
-- [\[ICML 2026\] When Hallucination Costs Millions: Benchmarking AI Agents in High-Stakes Adversarial Financial Markets (CAIA)](when_hallucination_costs_millions_benchmarking_ai_agents_in_high-stakes_adversar.md)
+- [\[ACL 2026\] From Storage to Experience: A Survey on the Evolution of LLM Agent Memory Mechanisms](../../ACL2026/llm_agent/from_storage_to_experience_a_survey_on_the_evolution_of_llm_agent_memory_mechani.md)
 
 </div>
 

@@ -2,81 +2,78 @@
 title: >-
   [Paper Note] Temporal Contrastive Decoding: A Training-Free Method for Large Audio-Language Models
 description: >-
-  [ACL 2026][Audio & Speech][audio-language models] This paper proposes TCD, a training-free inference-time decoding method that contrasts logits from the original audio path against a temporally blurred slow path…
+  [ACL 2026][Audio & Speech][Audio-Language Models] TCD is proposed as a training-free inference-time decoding method. By contrasting logits from raw audio with those from a temporally blurred "slow path…
 tags:
   - "ACL 2026"
   - "Audio & Speech"
-  - "audio-language models"
-  - "contrastive decoding"
-  - "temporal smoothing bias"
-  - "training-free inference"
-  - "gated update"
+  - "Audio-Language Models"
+  - "Contrastive Decoding"
+  - "Temporal Smoothing Bias"
+  - "Training-free Inference"
+  - "Gated Updates"
 date: 2026-05-08
-content_hash: 92cc4efb48833aeb
+content_hash: 9704c38abd79ec73
 ---
 
 # Temporal Contrastive Decoding: A Training-Free Method for Large Audio-Language Models
 
-**Conference**: ACL 2026
+**Conference**: ACL 2026  
 **arXiv**: [2604.15383](https://arxiv.org/abs/2604.15383)  
 **Code**: None  
-**Area**: Audio & Speech
-**Keywords**: audio-language models, contrastive decoding, temporal smoothing bias, training-free inference, gated update
+**Area**: Audio & Speech  
+**Keywords**: Audio-Language Models, Contrastive Decoding, Temporal Smoothing Bias, Training-free Inference, Gated Updates
 
 ## TL;DR
 
-This paper proposes TCD, a training-free inference-time decoding method that contrasts logits from the original audio path against a temporally blurred slow path, combined with stability-guided blur window selection and uncertainty-based gating, to help unified audio-language models better exploit transient acoustic cues. Consistent improvements are demonstrated on MMAU and AIR-Bench.
+TCD is proposed as a training-free inference-time decoding method. By contrasting logits from raw audio with those from a temporally blurred "slow path," and incorporating stability-guided blurring windows along with uncertainty-based gating, unified audio-language models can better utilize transient acoustic cues. Consistent improvements are achieved on MMAU and AIR-Bench.
 
 ## Background & Motivation
 
-**Background**: Large audio-language models (LALMs) such as Qwen2-Audio and Qwen2.5-Omni adopt unified architectures that represent audio as temporally aligned token sequences sharing a causal decoder with text.
+**Background**: Large Audio-Language Models (LALMs) such as Qwen2-Audio and Qwen2.5-Omni employ unified architectures where audio is represented as time-aligned token sequences sharing a causal decoder with text.
 
-**Limitations of Prior Work**: Unified decoders exhibit a *temporal smoothing bias* — transient acoustic cues (e.g., the number of telephone rings, brief sound effect changes) tend to be suppressed by temporally smooth context and language priors, making generated content insensitive to critical transient events.
+**Limitations of Prior Work**: Unified decoders suffer from "temporal smoothing bias" — transient acoustic cues (e.g., the number of phone rings, brief sound effect changes) may be suppressed by temporally smoothed contexts and language priors, leading to generations that are insensitive to key transient events.
 
-**Key Challenge**: The autoregressive nature of language models inherently favors temporally smooth predictions, whereas critical information in audio is often transient.
+**Key Challenge**: The autoregressive nature of language models naturally favors temporally smooth predictions, whereas critical information in audio is often transient.
 
-**Goal**: Design a training-free decoding-time intervention that enables models to better leverage transient acoustic cues.
+**Goal**: Design a training-free decoding-time intervention to enable models to better leverage transient acoustic cues.
 
-**Key Insight**: Drawing an analogy to visual contrastive decoding — construct a temporally blurred "slow path" audio view and contrast the logit difference between the two views to identify the contribution of transient cues.
+**Key Insight**: Drawing an analogy to visual contrastive decoding, a temporally blurred "slow path" audio view is constructed. The contribution of transient cues is identified by contrasting the logit differences between the two views.
 
-**Core Idea**: Generate the slow path by applying Hann-window temporal blurring to the original audio; use the positive component of the logit difference as the transient cue signal; constrain updates via stability-adaptive window selection and uncertainty- plus audio-dependency-based gating.
+**Core Idea**: Generate the slow path by applying temporal blurring to raw audio using a Hann window. Use the positive differences between the two paths' logits as the transient signal, while restricting the update range through stability-based adaptation and a gate dependent on uncertainty and audio relevance.
 
 ## Method
 
 ### Overall Architecture
 
-At inference time, TCD maintains two forward passes at each decoding step: an original audio path and a temporally blurred slow path. The logit difference $d_t = z_t - \tilde{z}_t$ is computed, and its positive component serves as the transient cue signal. A gating mechanism selectively applies sparse updates to the original logits.
+TCD maintains two forward passes for each decoding step during inference: the raw audio path and the temporally blurred slow path. The logit difference $d_t = z_t - \tilde{z}_t$ is calculated, and the positive component is taken as the transient signal. A gating mechanism is used to selectively perform sparse updates on the original logits.
 
 ### Key Designs
 
-1. **Slow Path Construction and Stability-Guided Blurring**:
-
+1.  **Slow Path Construction & Stability-guided Blurring**:
     - **Function**: Generate a reference audio representation with transient features removed.
-    - **Mechanism**: Apply a normalized Hann window to temporally smooth the original waveform $\tilde{x} = \mathcal{K}(x)$, then re-encode to obtain $\tilde{H}$. The window size $W$ is set adaptively via a self-normalized stability score $S$, computed from the magnitude and temporal flux of each encoder layer's hidden states and weighted by audio attention weights.
-    - **Design Motivation**: Large differences in hidden-state scales across encoder layers make self-normalization necessary to eliminate cross-model discrepancies.
+    - **Mechanism**: The raw waveform is temporally smoothed using a normalized Hann window $\tilde{x} = \mathcal{K}(x)$, then re-encoded to obtain $\tilde{H}$. The window size $W$ is adaptively set by a self-normalized stability score $S$, calculated from the magnitude and temporal flux of encoder layers, weighted by audio attention weights.
+    - **Design Motivation**: Encoder hidden states vary significantly across different scales; self-normalization eliminates cross-model discrepancies.
 
-2. **Gated Logit Fusion**:
+2.  **Gated Logit Fusion**:
+    - **Function**: Apply updates only when audio evidence is required and the model is uncertain.
+    - **Mechanism**: The gate is defined as $g_t = \min\{\gamma \cdot r_t \cdot \hat{H}_t^\alpha, 1.0\}$, where $r_t$ is the audio attention ratio and $\hat{H}_t$ is the top-K normalized entropy. Updates are restricted to the candidate set $\Omega_t$.
+    - **Design Motivation**: A conservative design ensures confident steps remain unchanged, activating only when audio is critical and uncertainty is high.
 
-    - **Function**: Apply updates only when audio evidence is needed and the model is uncertain.
-    - **Mechanism**: Gate $g_t = \min\{\gamma \cdot r_t \cdot \hat{H}_t^\alpha, 1.0\}$, where $r_t$ is the audio attention ratio and $\hat{H}_t$ is the top-K normalized entropy. Updates are restricted to the candidate set $\Omega_t$.
-    - **Design Motivation**: Conservative design — confident decoding steps remain unchanged; the gate activates only when audio is critical and uncertainty is high.
-
-3. **Positive-Difference Update Strategy**:
-
-    - **Function**: Amplify only those tokens that the original audio path prefers over the slow path.
-    - **Mechanism**: $d_t^+ = \max(z_t - \tilde{z}_t, 0)$, yielding the final update $z_t^{\text{TCD}}(j) = z_t(j) + \lambda \cdot g_t \cdot d_t^+(j)$.
-    - **Design Motivation**: Negative differences reflect language priors that need not be suppressed; only positive differences capture transient cue contributions.
+3.  **Positive Difference Update Strategy**:
+    - **Function**: Enhance only those tokens preferred by the raw audio more than the slow path.
+    - **Mechanism**: $d_t^+ = \max(z_t - \tilde{z}_t, 0)$, resulting in $z_t^{\text{TCD}}(j) = z_t(j) + \lambda \cdot g_t \cdot d_t^+(j)$.
+    - **Design Motivation**: Negative differences reflect language priors that do not require suppression; only positive differences reflect the contribution of transient cues.
 
 ### Loss & Training
 
-Entirely training-free; only one additional slow-path forward pass is required per decoding step.
+Completely training-free, requiring only one additional slow-path forward pass.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Model | Sound | Music | Speech | Avg |
-|-------|-------|-------|--------|-----|
+| :--- | :--- | :--- | :--- | :--- |
 | Qwen2.5-Omni | 73.9 | 62.9 | 76.7 | 71.2 |
 | + TCD | **75.2** | **68.0** | 75.8 | **73.2** |
 | Qwen2-Audio | 63.5 | 48.3 | 67.1 | 59.6 |
@@ -84,40 +81,40 @@ Entirely training-free; only one additional slow-path forward pass is required p
 
 ### Ablation Study
 
-| Configuration | Avg Δ | Notes |
-|---------------|-------|-------|
-| w/o gating | −1.2 | excessive intervention |
-| w/o stability adaptation | −0.8 | fixed window size |
-| full difference (including negatives) | −0.5 | negative differences introduce noise |
+| Configuration | Avg Δ | Description |
+| :--- | :--- | :--- |
+| Remove Gating | -1.2 | Excessive intervention |
+| Remove Stability Adaptation | -0.8 | Fixed window |
+| Full Difference (incl. Negative) | -0.5 | Negative differences introduce noise |
 
 ### Key Findings
 
-- TCD consistently benefits unified LALMs but is ineffective for semantic-bottleneck architectures, which lack the temporally aligned audio representations the method requires.
-- The largest gains appear in the Music and Sound domains (which rely on transient cues); gains in the Speech domain are smaller.
+- TCD is consistently effective for unified LALMs but ineffective for semantic bottleneck architectures, as it requires time-aligned audio representations.
+- The largest improvements occur in Music and Sound domains (relying on transient cues), while gains in Speech are smaller.
 
 ## Highlights & Insights
 
-- The concept of **"temporal smoothing bias"** is explicitly articulated for the first time.
-- The **self-normalized stability score** is an elegant design that requires no dataset-specific calibration.
-- The **gating mechanism** ensures conservative behavior — the majority of decoding steps are left unaffected.
+- The concept of **"temporal smoothing bias"** is explicitly proposed for the first time.
+- The **self-normalized stability score** is elegantly designed, requiring no dataset calibration.
+- The **gating design** ensures conservatism, leaving most steps unaffected.
 
 ## Limitations & Future Work
 
-- Not applicable to semantic-bottleneck architectures.
-- The 2× inference overhead may be unacceptable in real-time scenarios.
-- The Hann window is a heuristic choice; the effectiveness of alternative time-frequency transforms remains unexplored.
+- Not applicable to semantic bottleneck architectures.
+- Double the inference overhead may be unacceptable in real-time scenarios.
+- The Hann window is a heuristic choice; the effects of other time-frequency transforms remain to be explored.
 
 ## Related Work & Insights
 
-- **vs. AAD**: Full-modality ablation vs. temporal-resolution contrast; TCD operates at a finer granularity.
-- **vs. Visual Contrastive Decoding**: TCD transfers this paradigm to the temporal dimension of audio.
+- **vs AAD**: Modality-level ablation vs. temporal resolution contrast; TCD is more fine-grained.
+- **vs Visual Contrastive Decoding**: TCD migrates this paradigm to the audio temporal dimension.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — The temporal contrastive decoding idea is original and draws inspiration from visual contrastive decoding.
-- Experimental Thoroughness: ⭐⭐⭐⭐ — MMAU + AIR-Bench + ablations + architectural analysis.
-- Writing Quality: ⭐⭐⭐⭐ — Architecture diagrams are clear.
-- Value: ⭐⭐⭐⭐ — Practically useful for inference optimization in unified LALMs.
+- Novelty: ⭐⭐⭐⭐ The temporal contrastive decoding approach is novel, drawing inspiration from visual contrastive decoding.
+- Experimental Thoroughness: ⭐⭐⭐⭐ MMAU + AIR-Bench + ablations + architecture analysis.
+- Writing Quality: ⭐⭐⭐⭐ Clear architectural diagrams.
+- Value: ⭐⭐⭐⭐ Practical value for optimizing unified LALM inference.
 
 <!-- RELATED:START -->
 
@@ -127,8 +124,8 @@ Entirely training-free; only one additional slow-path forward pass is required p
 
 - [\[ACL 2026\] Towards Fine-Grained and Multi-Granular Contrastive Language-Speech Pre-training](towards_fine-grained_and_multi-granular_contrastive_language-speech_pre-training.md)
 - [\[ACL 2026\] HalluAudio: A Comprehensive Benchmark for Hallucination Detection in Large Audio-Language Models](halluaudio_a_comprehensive_benchmark_for_hallucination_detection_in_large_audio-.md)
-- [\[ACL 2026\] Closing the Modality Reasoning Gap for Speech Large Language Models](closing_the_modality_reasoning_gap_for_speech_large_language_models.md)
 - [\[ACL 2026\] SEPT: Semantically Expanded Prompt Tuning for Audio-Language Models](generalizable_prompt_tuning_for_audio-language_models_via_semantic_expansion.md)
+- [\[ACL 2026\] Closing the Modality Reasoning Gap for Speech Large Language Models](closing_the_modality_reasoning_gap_for_speech_large_language_models.md)
 - [\[ACL 2026\] SpeakerSleuth: Can Large Audio-Language Models Judge Speaker Consistency across Multi-turn Dialogues?](speakersleuth_can_large_audio-language_models_judge_speaker_consistency_across_m.md)
 
 </div>

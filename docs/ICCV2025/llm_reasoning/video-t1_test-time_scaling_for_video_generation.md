@@ -174,8 +174,8 @@ Three multimodal reward models are employed: VisionReward (human preference acro
 - [\[ICLR 2026\] PrismAudio: Decomposed Chain-of-Thoughts and Multi-dimensional Rewards for Video-to-Audio Generation](../../ICLR2026/llm_reasoning/prismaudio_decomposed_chain-of-thoughts_and_multi-dimensional_rewards_for_video-.md)
 - [\[NeurIPS 2025\] TTS-VAR: A Test-Time Scaling Framework for Visual Auto-Regressive Generation](../../NeurIPS2025/llm_reasoning/tts-var_a_test-time_scaling_framework_for_visual_auto-regressive_generation.md)
 - [\[NeurIPS 2025\] Atom of Thoughts for Markov LLM Test-Time Scaling](../../NeurIPS2025/llm_reasoning/atom_of_thoughts_for_markov_llm_testtime_scaling.md)
-- [\[NeurIPS 2025\] LIMOPro: Reasoning Refinement for Efficient and Effective Test-time Scaling](../../NeurIPS2025/llm_reasoning/limopro_reasoning_refinement_for_efficient_and_effective_test-time_scaling.md)
 - [\[CVPR 2026\] Reinforcing Structured Chain-of-Thought for Video Understanding](../../CVPR2026/llm_reasoning/reinforcing_structured_chain-of-thought_for_video_understanding.md)
+- [\[ICML 2026\] Lookahead Sample Reward Guidance for Test-Time Scaling of Diffusion Models](../../ICML2026/llm_reasoning/lookahead_sample_reward_guidance_for_test-time_scaling_of_diffusion_models.md)
 
 </div>
 

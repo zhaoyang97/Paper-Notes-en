@@ -171,7 +171,7 @@ The memory-guided approach achieves a 4× improvement in success rate, with the 
 - [\[AAAI 2026\] RENEW: Risk- and Energy-Aware Navigation in Dynamic Waterways](renew_risk-_and_energy-aware_navigation_in_dynamic_waterways.md)
 - [\[NeurIPS 2025\] Zero-Shot Embedding Drift Detection: A Lightweight Defense Against Prompt Injections in LLMs](../../NeurIPS2025/robotics/zero-shot_embedding_drift_detection_a_lightweight_defense_against_prompt_injecti.md)
 - [\[AAAI 2026\] EvoEmpirBench: Dynamic Spatial Reasoning with Agent-ExpVer](evoempirbench_dynamic_spatial_reasoning_with_agent-expver.md)
-- [\[ICML 2026\] Mitigating Error Accumulation in Continuous Navigation via Memory-Augmented Kalman Filtering](../../ICML2026/robotics/mitigating_error_accumulation_in_continuous_navigation_via_memory-augmented_kalm.md)
+- [\[ICML 2026\] PSG-Nav: Probabilistic Scene Graph Navigation via Multiverse Decision Making](../../ICML2026/robotics/psg-nav_probabilistic_scene_graph_navigation_via_multiverse_decision_making.md)
 
 </div>
 

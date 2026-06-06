@@ -134,9 +134,9 @@ MA-CLIP achieves an average SRCC improvement of 9.6% and PLCC improvement of 4.0
 
 - [\[ICLR 2026\] Soft Quality-Diversity Optimization](../../ICLR2026/llm_evaluation/soft_quality-diversity_optimization.md)
 - [\[AAAI 2026\] MicroEvoEval: A Systematic Evaluation Framework for Image-Based Microstructure Evolution Prediction](microevoeval_a_systematic_evaluation_framework_for_image-based_microstructure_ev.md)
+- [\[ACL 2026\] LLMs as annotators of credibility assessment in Danish asylum decisions: evaluating classification performance and errors beyond aggregated metrics](../../ACL2026/llm_evaluation/llms_as_annotators_of_credibility_assessment_in_danish_asylum_decisions_evaluati.md)
 - [\[ICCV 2025\] BATCLIP: Bimodal Online Test-Time Adaptation for CLIP](../../ICCV2025/llm_evaluation/batclip_bimodal_online_test-time_adaptation_for_clip.md)
-- [\[AAAI 2026\] Beyond Accuracy: A Cognitive Load Framework for Mapping the Capability Boundaries of Tool-use Agents](beyond_accuracy_a_cognitive_load_framework_for_mapping_the_c.md)
-- [\[CVPR 2026\] Pioneering Perceptual Video Fluency Assessment: A Novel Task with Benchmark Dataset and Baseline](../../CVPR2026/llm_evaluation/pioneering_perceptual_video_fluency_assessment_a_novel_task_with_benchmark_datas.md)
+- [\[ACL 2026\] VC-Inspector: Advancing Reference-free Evaluation of Video Captions with Factual Analysis](../../ACL2026/llm_evaluation/vc-inspector_advancing_reference-free_evaluation_of_video_captions_with_factual_.md)
 
 </div>
 

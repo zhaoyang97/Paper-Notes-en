@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] SLQ: Bridging Modalities via Shared Latent Queries for Retrieval with Frozen MLLMs
 description: >-
-  [ICML 2026][Multimodal VLM][Frozen MLLM] SLQ appends a small set of "shared latent queries" $\mathbf{Q}$ to the end of image/text token sequences…
+  [ICML 2026][Multimodal VLM][Frozen MLLM] SLQ appends a small set of "Shared Latent Queries" $\mathbf{Q}$ to the end of image/text token sequences…
 tags:
   - "ICML 2026"
   - "Multimodal VLM"
   - "Frozen MLLM"
   - "Shared Latent Queries"
-  - "Knowledge-aware Reasoning Retrieval"
+  - "Knowledge-Aware Reasoning Retrieval"
   - "Contrastive Learning"
   - "KARR-Bench"
 date: 2026-05-08
-content_hash: 565941cba8ab1311
+content_hash: b40b12e28d562c47
 ---
 
 # SLQ: Bridging Modalities via Shared Latent Queries for Retrieval with Frozen MLLMs
@@ -20,118 +20,108 @@ content_hash: 565941cba8ab1311
 **Conference**: ICML 2026  
 **arXiv**: [2604.13710](https://arxiv.org/abs/2604.13710)  
 **Code**: <https://github.com/CnFaker/SLQ>  
-**Area**: Multimodal VLM / Cross-modal Retrieval / Parameter-efficient Fine-tuning  
-**Keywords**: Frozen MLLM, Shared Latent Queries, Knowledge-aware Reasoning Retrieval, Contrastive Learning, KARR-Bench
+**Area**: Multi-modal VLM / Cross-modal Retrieval / Parameter-Efficient Fine-Tuning  
+**Keywords**: Frozen MLLM, Shared Latent Queries, Knowledge-Aware Reasoning Retrieval, Contrastive Learning, KARR-Bench
 
 ## TL;DR
-SLQ appends a small set of "shared latent queries" $\mathbf{Q}$ to the end of image/text token sequences, leveraging the MLLM's own causal attention to aggregate global context. **By training only a few thousand query parameters**, a frozen MLLM is turned into a retriever, outperforming full fine-tuning and LoRA on COCO/Flickr30K, and introduces KARR-Bench to evaluate "implicit knowledge reasoning" capabilities.
+SLQ appends a small set of "Shared Latent Queries" $\mathbf{Q}$ to the end of image/text token sequences, utilizing the causal attention of MLLMs to aggregate global context. By **training only a few thousand query parameters**, frozen MLLMs are transformed into retrievers that outperform full fine-tuning and LoRA on COCO/Flickr30K. The authors also release KARR-Bench to evaluate "implicit knowledge reasoning" capabilities.
 
 ## Background & Motivation
 
-**Background**: Multimodal large models (MLLMs) such as InternVL3 and Qwen3-VL process interleaved image-text inputs via a unified Transformer, capturing richer cross-modal semantic interactions compared to CLIP/BLIP's dual-tower architectures. Recent works (GME, MM-Embed, VLM2VEC, MMRet) aim to adapt MLLMs for retrieval to leverage their reasoning abilities.
+**Background**: Multi-modal Large Language Models (MLLMs), such as InternVL3 and Qwen3-VL, process interleaved image-text inputs through a unified Transformer, capturing richer cross-modal semantic interactions than dual-tower architectures like CLIP/BLIP. Recent works (GME, MM-Embed, VLM2VEC, MMRet) attempt to convert MLLMs into retrievers to leverage their reasoning capabilities.
 
-**Limitations of Prior Work**: (1) **Intrusive fine-tuning**—Mainstream approaches use full fine-tuning or LoRA with contrastive objectives, but this **generative alignment → discriminative alignment** mismatch distorts the pretrained semantic space, causing catastrophic forgetting (semantic degradation); (2) **Training inefficiency**—Contrastive learning requires huge batch sizes for negative sample diversity, and full fine-tuning of billion-parameter backbones is computationally prohibitive at such scales; (3) Most baselines use the `<EOS>` (last token) hidden state as the global embedding—however, the last token is an "information bottleneck" and struggles to compress complex semantics. Diagnostic experiments (Figure 2) show it fails completely on implicit reasoning tasks (e.g., "animal with 9 lives" implying cat).
+**Limitations of Prior Work**: (1) **Invasive fine-tuning**—the common practice of full fine-tuning or LoRA with contrastive objectives causes a mismatch between **generative alignment → discriminative alignment**, distorting pre-trained semantic spaces and leading to semantic degradation. (2) **Training inefficiency**—contrastive learning requires large batches for negative sample diversity, making full fine-tuning of billion-parameter backbones computationally prohibitive. (3) Most baselines use the hidden state of the last `<EOS>` token as the global embedding—however, the last token acts as an "information bottleneck" that fails to compress complex semantics. Diagonal experiments (Figure 2) show it fails completely on implicit reasoning tasks (e.g., "an animal with 2+7 lives" implying a cat).
 
-**Key Challenge**: MLLM pretraining already aligns vision and language into a **shared representation space** (enabling zero-shot VQA), but either no fine-tuning (poor zero-shot retrieval) or heavy parameter modification (damaging the pretrained space) is used—there is a lack of a "lightweight yet effective" intermediate solution.
+**Key Challenge**: MLLM pre-training has already aligned vision and language into the **same representation space** (enabling zero-shot VQA). However, models either lack fine-tuning (poor zero-shot retrieval) or undergo significant parameter changes (destroying the pre-trained space)—there is a lack of a "lightweight yet effective" intermediate solution.
 
-**Goal**: (1) **Keep the backbone frozen**—not touching any pretrained parameters; (2) Use a lightweight mechanism to **activate** the MLLM's implicit knowledge and reasoning for retrieval; (3) Solve "which token to use for embedding"—neither last token nor pooling all tokens; (4) Provide a benchmark that truly distinguishes "pattern matching vs knowledge reasoning" in retrieval.
+**Goal**: (1) **Keep the backbone frozen**—no pre-trained parameters are modified; (2) Use a lightweight mechanism to **elicit** implicit knowledge and reasoning for retrieval; (3) Solve the "which token to use for embedding" problem—avoiding both the last token and simple pooling; (4) Provide a specialized benchmark to distinguish "pattern matching vs. knowledge reasoning."
 
-**Key Insight**: The authors conducted a diagnostic experiment—feeding a frozen InternVL3-1B with a **zero-initialized extra query token** appended to the sequence, allowing it to "see" all previous tokens via causal attention; its final hidden state is used for retrieval. Results: On "pattern matching" tasks, both query and last token succeed; on "knowledge retrieval (basic associations)", the last token gives nearly indistinguishable low scores, while the query maintains a high margin; on "logical reasoning", the last token fails completely, but the query successfully finds the target. This shows MLLMs **already have** reasoning retrieval capabilities, but the last token is stuck at the information bottleneck.
+**Key Insight**: A diagnostic experiment was conducted where a **zero-initialized additional query token** was appended to the sequence in a frozen InternVL3-1B. Its final hidden state was used for retrieval via causal attention. Results showed that while both the query and the last token succeeded in "pattern matching," the last token provided low-discriminative scores for "basic associations" and failed entirely in "logical reasoning," whereas the query succeeded. This suggests MLLMs **already possess** reasoning-retrieval capabilities, blocked only by the last token's information bottleneck.
 
-**Core Idea**: Use a small set of "shared, learnable latent queries" as a **modality-agnostic global aggregator**, leveraging the MLLM's own causal attention to extract unified retrieval embeddings from image/text sequences—**only learning the queries, keeping the backbone untouched**.
+**Core Idea**: Use a small set of "shared learnable latent queries" as **modality-agnostic global aggregators**. These extract unified retrieval embeddings from image/text sequences via the MLLM's own causal attention—**learning only the queries while freezing the backbone**.
 
 ## Method
 
 ### Overall Architecture
-Freeze the MLLM backbone + a small set of $N$ learnable Shared Latent Queries $\mathbf{Q} \in \mathbb{R}^{N \times D}$ (for InternVL3-8B, $N=20$, totaling only $20 \times D \approx$ tens of thousands of parameters). Text input: $\mathbf{X}_T = [\mathbf{E}_T; \mathbf{E}_{P_T}; \mathbf{Q}]$ (text embedding + text instruction prompt + shared queries); image input: $\mathbf{X}_I = [\mathbf{E}_I; \mathbf{E}_{P_I}; \mathbf{Q}]$. Both inputs are fed into the frozen MLLM $\mathcal{M}$ for causal attention; the **last $N$ positions** (corresponding to the queries) are mean-pooled and L2-normalized to obtain embeddings $\mathbf{z}_T, \mathbf{z}_I \in \mathbb{R}^D$. A symmetric InfoNCE loss aligns the two embedding spaces. At inference, the outputs at these query positions serve as modality-agnostic global embeddings for retrieval. Only $\mathbf{Q}$ and temperature $\tau$ are updated during training; the backbone remains completely frozen.
+The framework consists of a frozen MLLM backbone and a small set of $N$ learnable Shared Latent Queries $\mathbf{Q} \in \mathbb{R}^{N \times D}$ (e.g., $N=20$ for InternVL3-8B, with total parameters $\approx$ tens of thousands). Text input: $\mathbf{X}_T = [\mathbf{E}_T; \mathbf{E}_{P_T}; \mathbf{Q}]$ (text embeddings + instruction prompt + shared queries); Image input: $\mathbf{X}_I = [\mathbf{E}_I; \mathbf{E}_{P_I}; \mathbf{Q}]$. Both inputs are processed by the frozen MLLM $\mathcal{M}$ via causal attention. The hidden states at the **last $N$ positions** (corresponding to queries) are taken, and mean pooling + L2 normalization yield embeddings $\mathbf{z}_T, \mathbf{z}_I \in \mathbb{R}^D$. A symmetric InfoNCE loss aligns the two embedding spaces. During inference, these query outputs serve as modality-agnostic global embeddings for retrieval. Only $\mathbf{Q}$ and the temperature $\tau$ are updated.
 
 ### Key Designs
 
 1. **Shared Latent Queries + Tail Appending + Causal Attention Aggregation**:
+    - **Function**: Compresses variable-length image/text sequences into fixed-length, modality-aligned retrieval embeddings.
+    - **Mechanism**: Appending $N$ learnable queries to the **end of the sequence** (instead of prepending like CoOp/VPT) allows them to attend to **all** preceding tokens under the **causal attention** of a decoder-only MLLM, acting as natural "global aggregators." The same $\mathbf{Q}$ is used for both image and text inputs. The final hidden states are $\mathbf{H}^Q_T = \mathbf{H}_T[-N:]$ and $\mathbf{H}^Q_I = \mathbf{H}_I[-N:]$, resulting in $\mathbf{z}_T = \bar{\mathbf{h}}_T / \|\bar{\mathbf{h}}_T\|_2$.
+    - **Design Motivation**: (1) Tail appending + causal attention ensures queries "see the entire context," matching the global requirements of retrieval. Prepending makes queries conditioning signals, requiring a summary token like [CLS], which decoder-only MLLMs lack. (2) Using $N=20$ queries rather than one provides a wider information bandwidth. (3) Sharing queries maps image and text into the **same parametric space**, avoiding alignment difficulties seen in dual-tower projection methods.
 
-    - **Function**: Compress variable-length image/text sequences into fixed-length, modality-aligned retrieval embeddings.
-    - **Mechanism**: $N$ learnable queries are **appended to the end** of the sequence (unlike CoOp/VPT which prepend), so in decoder-only MLLMs with **causal attention**, these queries can attend to **all** preceding tokens—naturally acting as "global aggregators". The same set of $\mathbf{Q}$ is attached to both image and text ("Shared"), and the same frozen model is used for both; the last $N$ hidden states are taken: $\mathbf{H}^Q_T = \mathbf{H}_T[-N:], \mathbf{H}^Q_I = \mathbf{H}_I[-N:]$, mean-pooled and L2-normalized to get the final embedding $\mathbf{z}_T = \bar{\mathbf{h}}_T / \|\bar{\mathbf{h}}_T\|_2$.
-    - **Design Motivation**: (1) Tail appending + causal attention allows queries to "see all context", matching the need for global information in retrieval; prepending (CoOp/VPT) treats queries as conditioning signals, requiring a [CLS]-like summary token—which decoder-only MLLMs lack. (2) Using multiple ($N=20$) queries instead of one provides "multi-head aggregation + averaging", alleviating the information bottleneck of a single last token. (3) Sharing queries across modalities projects image/text into the **same parameterized space**, avoiding the alignment difficulties of dual-tower approaches where each modality learns independent projections.
+2. **Frozen Backbone + Parameter-Efficient Retrieval Adaptation**:
+    - **Function**: Retains the MLLM's pre-trained knowledge and reasoning capabilities while avoiding semantic distortion.
+    - **Mechanism**: Backpropagation updates only $\mathbf{Q}$ and $\tau$; all attention, FFN, and embedding parameters of the MLLM remain fixed. For InternVL3-8B, trainable parameters are only $N \times D$, compared to millions in LoRA or billions in full fine-tuning.
+    - **Design Motivation**: Direct response to the diagnostic experiment—MLLMs **already** have an aligned semantic space. Retrieval should elicit existing capabilities rather than "re-teach" the model, which might damage the space. Furthermore, a small parameter set (~$10^4$) requires fewer negative samples to learn effectively.
 
-2. **Frozen Backbone + Query-only Training (Parameter-Efficient Retrieval Adaptation)**:
-
-    - **Function**: **Fully preserve** the MLLM's pretrained knowledge and reasoning, avoiding semantic distortion from contrastive fine-tuning.
-    - **Mechanism**: During training, only $\mathbf{Q}$ and $\tau$ are updated; all MLLM attention/FFN/embedding parameters remain untouched. InternVL3-8B has 8B total parameters, but only $N \times D = 20 \times D$ (tens of thousands) are trained. In contrast, LoRA updates millions, and full fine-tuning updates the entire backbone.
-    - **Design Motivation**: Directly addresses the diagnostic experiment—MLLMs **already** have aligned multimodal semantic spaces; retrieval is about "activating existing capabilities" rather than "retraining the model". Modifying the backbone can damage this space. Also, the small training set (~$10^4$ parameters) does not require large negative sample batches, avoiding contrastive learning's batch size escalation.
-
-3. **KARR-Bench: Knowledge-aware Reasoning Retrieval Benchmark**:
-
-    - **Function**: Truly tests whether MLLMs can perform retrieval using **implicit knowledge and reasoning**, rather than superficial "red car matches red car" pattern matching.
-    - **Mechanism**: Starting from 5,000 COCO test images, a three-stage pipeline: (1) **Visual anchor entity selection**—removing abstract concepts, ensuring each target is visually verifiable; (2) **Knowledge-enhanced query generation**—using GPT-5-mini to encode target identity into **implicit reasoning queries** without mentioning the target name or synonyms (e.g., "the animal with 9 lives" instead of "cat"), yielding ~4,500 candidates; (3) **Manual cross-validation by four annotators**—removing MLLM hallucinations and weak associations, with a 60-70% acceptance rate, resulting in 2,915 high-quality image-text pairs. Queries span six dimensions: Tool & Appliance Utility (18.8%), Contextual & Spatial Relations (18.1%), Functional Relationship (17.4%), Cultural Symbolism (19.4%), Encyclopedic Knowledge (14.9%), Logical & Mathematical (11.4%).
-    - **Design Motivation**: Existing COCO/Flickr30K use descriptive captions ("a red car") that directly match visual features, masking the MLLM's reasoning strengths; KARR-Bench requires retrieval systems to perform "implicit knowledge + logic" to succeed, providing a fairer evaluation for MLLM retrievers.
+3. **KARR-Bench: Knowledge-Aware Reasoning Retrieval Benchmark**:
+    - **Function**: Specifically evaluates whether MLLMs use **implicit knowledge and reasoning** for retrieval rather than superficial pattern matching.
+    - **Mechanism**: Based on 5,000 images from the COCO test set, the pipeline follows three stages: (1) **Visual anchored entity filtering**—ensuring targets are visually verifiable. (2) **Knowledge-enhanced query generation**—using GPT-5-mini to encode target identities into **implicit reasoning queries** without mentioning the target name (e.g., "animal with 9 lives" instead of "cat"). (3) **Human cross-validation**—filtering hallucinations and weak associations, resulting in 2,915 high-quality pairs across 6 dimensions: Tool Utility, Contextual Relations, Functional Relationship, Cultural Symbolism, Encyclopedic Knowledge, and Logical & Mathematical.
+    - **Design Motivation**: Standard datasets like COCO use descriptive captions ("a red car") that rely on pattern matching. KARR-Bench requires "implicit knowledge + logic" for successful retrieval, providing a fairer evaluation for MLLM-based retrievers.
 
 ### Loss & Training
-
-Symmetric InfoNCE loss $\mathcal{L} = \frac{1}{2}(\mathcal{L}_{I2T} + \mathcal{L}_{T2I})$, with each direction being a standard in-batch contrastive softmax loss and learnable temperature $\tau$. Four backbones: InternVL3 (1B, 8B) / Qwen3-VL (2B, 4B). On Flickr30K/COCO/KARR-Bench, train on COCO for 5 epochs; on MMEB, train on MMEB-train for 1 epoch; global batch size 1024 (512 for 8B), $N = 20$.
+Symmetric InfoNCE loss $\mathcal{L} = \frac{1}{2}(\mathcal{L}_{I2T} + \mathcal{L}_{T2I})$ is used with a learnable temperature $\tau$. Backbones include InternVL3 (1B, 8B) and Qwen3-VL (2B, 4B). Training lasts 5 epochs on COCO for general benchmarks and 1 epoch for MMEB, with a global batch size of 1024 (512 for 8B) and $N=20$.
 
 ## Key Experimental Results
 
 ### Main Results
+Comparison between dual-tower models (CLIP, BLIP), MLLM-based full fine-tuning baselines (E5-V, VLM2VEC, GME), and SLQ variants.
 
-Comparison with dual-tower models (CLIP, BLIP, FLAME), MLLM-based full fine-tuning baselines (E5-V-7B, VLM2VEC-7B, GME-7B, etc.), and SLQ at various scales.
-
-| Dataset | Method | I→T R@5 | T→I R@5 | Params |
-|---------|--------|---------|---------|--------|
+| Dataset | Method | I→T R@5 | T→I R@5 | Parameters |
+| :--- | :--- | :--- | :--- | :--- |
 | Flickr30K | CLIP ViT-L | 98.3 | 89.0 | Full |
 | Flickr30K | VLM2VEC-7B (full FT) | **99.5** | 95.0 | 7B FT |
-| Flickr30K | SLQ (InternVL3-8B) | 99.4 | **95.1** | **~10K** |
+| Flickr30K | SLQ (InternVL3-8B) | 99.4 | **95.1** | **~K-level** |
 | COCO 5K | VLM2VEC-7B (full FT) | 88.4 | 73.8 | 7B FT |
-| COCO 5K | SLQ (InternVL3-8B) | **89.1** | **79.7** | **~10K** |
+| COCO 5K | SLQ (InternVL3-8B) | **89.1** | **79.7** | **~K-level** |
 | MMEB Overall | VLM2VEC-7B† | 62.9 | — | 7B FT |
 | MMEB Overall | UniME-7B† | 66.6 | — | 7B FT |
-| MMEB Overall | **SLQ-8B†** | **67.5** | — | **~10K** |
+| MMEB Overall | **SLQ-8B†** | **67.5** | — | **~K-level** |
 
 ### Ablation Study
 
-| Configuration | Key Metric | Notes |
-|---------------|------------|-------|
-| Full SLQ (frozen backbone + $N$=20 queries) | Best | — |
-| Last token baseline (zero shot) | Succeeds on pattern matching, fails on knowledge reasoning | Diagnostic: query outperforms last token |
-| Single query (N=1) | Performance drops | Multiple queries provide wider information bandwidth |
-| Full fine-tune | Comparable or weaker, much higher GPU hours | Non-intrusive is better |
-| LoRA | Between SLQ and full FT | Still slightly distorts pretrained space |
+| Configuration | Key Metric | Description |
+| :--- | :--- | :--- |
+| SLQ Full (Frozen backbone + $N$=20 queries) | Optimal | — |
+| Last token baseline (Zero-shot) | Passed pattern match, failed reasoning | Query outperforms last token |
+| Single query (N=1) | Performance drop | Multi-query provides wider bandwidth |
+| Full fine-tune | Comparable or weaker, higher GPU hours | Non-invasive is superior |
+| LoRA | Between SLQ and Full FT | Still slightly distorts pre-trained space |
 
 ### Key Findings
-
-- **Remarkable parameter efficiency**: SLQ-8B achieves 67.5 average on MMEB with only ~10K parameters, outperforming 7B full fine-tuned VLM2VEC (62.9) and UniME (66.6)—validating the "activation > retraining" principle.
-- **Multimodal shared queries are crucial**: Sharing $\mathbf{Q}$ between image and text forces the backbone to project both modalities into the same latent space, achieving better alignment than dual-tower separate projections.
-- **Tail appending + causal attention** is better suited for decoder-only MLLMs than prepending (CoOp/VPT)—causal masking allows appended queries to attend to all context.
-- On KARR-Bench, SLQ shows "substantial improvement" over last token baselines, indicating the benchmark effectively distinguishes pattern matching from reasoning ability.
+- **Stunning Parameter Efficiency**: SLQ-8B achieves an average score of 67.5 on MMEB using only K-level parameters, outperforming full fine-tuned VLM2VEC (62.9) and UniME (66.6), validating the "elicit > retrain" philosophy.
+- **Multi-modal Shared Query is Key**: Forcing the backbone to project both modalities into the same latent space using the same $\mathbf{Q}$ yields better alignment than dual-projection strategies.
+- **Tail Appending + Causal Attention** is more suitable for decoder-only MLLMs than prepending strategies (CoOp/VPT), as the causal mask allows queries to attend to the entire context.
+- SLQ shows "substantial gains" over last-token baselines on KARR-Bench, proving the benchmark's ability to distinguish reasoning from pattern matching.
 
 ## Highlights & Insights
-
-- **"Activating pretrained capabilities" vs "retraining" paradigm**: The paper provides clear arguments—LLM/MLLM pretraining already learns the required alignment space; only an "interface" is needed to expose it, not intrusive modification.
-- **Excellent diagnostic experiment design**: Figure 2's three difficulty levels (pattern matching / knowledge retrieval / logical reasoning) almost single-handedly demonstrate the last token bottleneck and query advantage.
-- **KARR-Bench is a needed community tool**: Systematically evaluates "knowledge-aware + implicit reasoning" retrieval, avoiding shortcutting in existing benchmarks.
-- This "add a few query tokens + freeze backbone" PEFT strategy is transferable to: retrieval-augmented generation (RAG), vector indexing services, cross-modal re-ranking, multilingual alignment, etc.
+- **"Eliciting Capabilities" vs. "Retraining" Paradigm**: The paper provides a clear argument that LLM/MLLM pre-training already possesses the necessary alignment; one only needs an "interface" to expose it without invasive modification.
+- **Elegant Diagnostic Design**: The three difficulty levels in Figure 2 (Pattern Matching / Knowledge Retrieval / Logical Reasoning) effectively prove the last token bottleneck and query advantage.
+- **KARR-Bench Utility**: Systematizing retrieval evaluation for "knowledge awareness + implicit reasoning" prevents existing benchmarks from being trivialized by "shortcut" scores.
+- This PEFT strategy (frozen backbone + few query tokens) is transferable to RAG, vector indexing, cross-modal re-ranking, and multi-lingual alignment.
 
 ## Limitations & Future Work
-
-- The number of queries $N$ is a hyperparameter; the paper fixes $N=20$ without large-scale sweeps; optimal $N$ may vary by task.
-- Only validated on COCO/Flickr30K/MMEB/KARR-Bench; **long-document retrieval**, **video retrieval**, **audio-text retrieval**, etc., require further study.
-- KARR-Bench queries are generated by GPT-5-mini + manual filtering—GPT generation may introduce stylistic bias; larger samples and multi-LLM generation may be more robust in the future.
-- Inference still requires a full MLLM forward pass per image/text (though parameters are not updated)—slower than CLIP-like dual-tower models; SLQ's advantage is mainly in **training cost**, not **inference speed**.
-- Fully freezing the backbone means new domain knowledge cannot be absorbed—if the target domain differs greatly from pretraining (e.g., medical images), performance may be limited.
+- The number of queries $N$ is a hyperparameter; the paper fixes $N=20$ without a large-scale sweep; optimal $N$ may vary by task.
+- Validated only on COCO/Flickr30K/MMEB/KARR-Bench; further verification is needed for **long-document**, **video**, and **audio-text retrieval**.
+- KARR-Bench queries generated by GPT-5-mini may include stylistic biases; future versions could use more diverse generators.
+- Inference still requires a full MLLM forward pass for each image/text, making it slower than CLIP-style dual-tower models; the advantage lies in **training cost**, not **inference speed**.
+- A completely frozen backbone cannot absorb domain-specific knowledge (e.g., medical imaging) if the target domain differs significantly from the pre-training distribution.
 
 ## Related Work & Insights
-
-- **vs VLM2VEC / MMRet / GME / MM-Embed (full FT or LoRA + last token)**: They modify parameters + use `<EOS>` hidden state; SLQ keeps parameters fixed + uses query hidden states. On MMEB, SLQ-8B (67.5) outperforms VLM2VEC-7B (62.9) and UniME-7B (66.6), with orders of magnitude fewer trainable parameters.
-- **vs ColPali / VisRAG (multi-vector)**: They use multi-vector representations (finer-grained but higher storage cost); SLQ uses a single vector + multi-query aggregation, which is more concise.
-- **vs CoOp / MaPLe / VPT (prompt tuning)**: Those prepend learned tokens for CLIP-like encoder-only models; SLQ appends for decoder-only MLLMs, leveraging causal attention for "global aggregation".
-- **vs BLIP-2 Q-Former**: Q-Former introduces an extra cross-attention module; SLQ relies entirely on the MLLM's own self-attention, with zero extra modules.
-- **vs E5-V (last token + Matryoshka)**: They also adapt MLLMs for retrieval but use the last token, which suffers from the information bottleneck; SLQ uses multiple queries to overcome this.
+- **vs. VLM2VEC / MMRet / GME / MM-Embed**: These update parameters and use `<EOS>` states; SLQ freezes parameters and uses query states, achieving higher MMEB scores with orders of magnitude fewer trainable parameters.
+- **vs. ColPali / VisRAG**: These use multi-vector representations (fine-grained but high storage cost); SLQ uses single-vector output via multi-query aggregation, remaining concise.
+- **vs. CoOp / MaPLe / VPT**: These prepend tokens for encoder-only CLIP; SLQ appends tokens for decoder-only MLLMs to leverage "global aggregation" through causal attention.
+- **vs. BLIP-2 Q-Former**: Q-Former introduces an additional cross-attention module; SLQ utilizes the MLLM's existing self-attention with zero additional modules.
+- **vs. E5-V**: Also converts MLLMs to retrievers but is limited by the last token bottleneck; SLQ solves this via multi-querying.
 
 ## Rating
-
-- Novelty: ⭐⭐⭐⭐ "Tail-appended shared queries + frozen backbone" is a simple and effective design; KARR-Bench construction is also independently valuable
-- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive comparison across four backbone scales × four benchmarks; lacks more ablations (e.g., $N$ sweep, prompt content effects)
-- Writing Quality: ⭐⭐⭐⭐⭐ Clear three-part structure (diagnostic experiment → method → benchmark), Figure 2 is highly convincing
-- Value: ⭐⭐⭐⭐⭐ Reduces MLLM retrieval training cost by orders of magnitude, immediately usable in engineering; KARR-Bench provides a reasoning retrieval evaluation tool for the community
+- Novelty: ⭐⭐⭐⭐ "Tail-appended shared queries + frozen backbone" is a concise and effective design; KARR-Bench has independent value.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive comparison across four backbone scales and four benchmarks; could benefit from more ablation on $N$ and prompt content.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear structure (diagnostic → method → benchmark) with highly persuasive figures.
+- Value: ⭐⭐⭐⭐⭐ Significantly reduces the cost of MLLM retrieval fine-tuning; immediately applicable for engineering; KARR-Bench provides a critical evaluation tool.
 
 <!-- RELATED:START -->
 

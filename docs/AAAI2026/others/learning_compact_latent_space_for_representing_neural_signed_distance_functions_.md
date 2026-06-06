@@ -167,7 +167,7 @@ Training details: grid feature learning rate $10^{-1}$, shape code learning rate
 - [\[ICCV 2025\] Hi3DGen: High-fidelity 3D Geometry Generation from Images via Normal Bridging](../../ICCV2025/others/hi3dgen_high-fidelity_3d_geometry_generation_from_images_via_normal_bridging.md)
 - [\[ICLR 2026\] A Single Architecture for Representing Invariance Under Any Space Group](../../ICLR2026/others/a_single_architecture_for_representing_invariance_under_any_space_group.md)
 - [\[AAAI 2026\] I2E: Real-Time Image-to-Event Conversion for High-Performance Spiking Neural Networks](i2e_real-time_image-to-event_conversion_for_high-performance_spiking_neural_netw.md)
-- [\[ICCV 2025\] HiNeuS: High-fidelity Neural Surface Mitigating Low-texture and Reflective Ambiguity](../../ICCV2025/others/hineus_high-fidelity_neural_surface_mitigating_low-texture_and_reflective_ambigu.md)
+- [\[AAAI 2026\] Formal Abductive Latent Explanations for Prototype-Based Networks](formal_abductive_latent_explanations_for_prototype-based_networks.md)
 
 </div>
 

@@ -132,11 +132,11 @@ The suffix generator uses Llama-3.1-8B; the auxiliary LLM uses the same weights 
 
 ## Related Papers
 
-- [\[CVPR 2026\] LumiCtrl: Learning Illuminant Prompts for Lighting Control in Personalized Text-to-Image Models](../../CVPR2026/image_generation/lumictrl_learning_illuminant_prompts_for_lighting_control_in_personalized_text-t.md)
+- [\[ACL 2026\] ANCHOR: LLM-driven Subject Conditioning for Text-to-Image Synthesis](../../ACL2026/image_generation/anchor_llm-driven_subject_conditioning_for_text-to-image_synthesis.md)
 - [\[ICCV 2025\] DIA: The Adversarial Exposure of Deterministic Inversion in Diffusion Models](dia_the_adversarial_exposure_of_deterministic_inversion_in_diffusion_models.md)
-- [\[CVPR 2026\] AutoDebias: An Automated Framework for Detecting and Mitigating Backdoor Biases in Text-to-Image Models](../../CVPR2026/image_generation/autodebias_automated_framework_for_debiasing_text-to-image_models.md)
+- [\[CVPR 2026\] LumiCtrl: Learning Illuminant Prompts for Lighting Control in Personalized Text-to-Image Models](../../CVPR2026/image_generation/lumictrl_learning_illuminant_prompts_for_lighting_control_in_personalized_text-t.md)
 - [\[ICCV 2025\] Transformed Low-rank Adaptation via Tensor Decomposition and Its Applications to Text-to-image Models](transformed_low-rank_adaptation_via_tensor_decomposition_and_its_applications_to.md)
-- [\[ICCV 2025\] Discovering Divergent Representations between Text-to-Image Models](discovering_divergent_representations_between_text-to-image_models.md)
+- [\[CVPR 2026\] AutoDebias: An Automated Framework for Detecting and Mitigating Backdoor Biases in Text-to-Image Models](../../CVPR2026/image_generation/autodebias_automated_framework_for_debiasing_text-to-image_models.md)
 
 </div>
 

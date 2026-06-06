@@ -157,8 +157,8 @@ $$D_{\text{rank}}(c) = \Pr(X \in A_c^* \setminus A_c) + \Pr(X \in A_c \setminus 
 - [\[NeurIPS 2025\] Generalization Error Analysis for Selective State-Space Models Through the Lens of Attention](generalization_error_analysis_for_selective_state-space_models_through_the_lens_.md)
 - [\[NeurIPS 2025\] Keep It on a Leash: Controllable Pseudo-label Generation Towards Realistic Long-Tailed Semi-Supervised Learning](keep_it_on_a_leash_controllable_pseudo-label_generation_towards_realistic_long-t.md)
 - [\[ICLR 2026\] LCA: Local Classifier Alignment for Continual Learning](../../ICLR2026/llm_evaluation/lca_local_classifier_alignment_for_continual_learning.md)
+- [\[ACL 2026\] Language Models Don't Know What You Want: Evaluating Personalization in Deep Research Needs Real Users](../../ACL2026/llm_evaluation/language_models_dont_know_what_you_want_evaluating_personalization_in_deep_resea.md)
 - [\[NeurIPS 2025\] Semi-Supervised Regression with Heteroscedastic Pseudo-Labels](semi-supervised_regression_with_heteroscedastic_pseudo-labels.md)
-- [\[NeurIPS 2025\] Your Pre-trained LLM is Secretly an Unsupervised Confidence Calibrator](your_pre-trained_llm_is_secretly_an_unsupervised_confidence_calibrator.md)
 
 </div>
 

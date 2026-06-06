@@ -2,131 +2,128 @@
 title: >-
   [Paper Note] Faithfulness vs. Safety: Evaluating LLM Behavior Under Counterfactual Medical Evidence
 description: >-
-  [ACL 2026][Medical Imaging][Faithfulness-safety conflict] This paper introduces the MedCounterFact dataset—constructed by systematically replacing interventions in clinical trials with nonsense words, medical terminology…
+  [ACL 2026][Medical Imaging][Faithfulness-Safety Conflict] This paper constructs the MedCounterFact dataset—systematically replacing interventions in clinical trials with nonsense words, medical terms, non-medical items…
 tags:
   - "ACL 2026"
   - "Medical Imaging"
-  - "Faithfulness-safety conflict"
-  - "counterfactual evidence"
-  - "medical QA"
-  - "safety guardrails"
+  - "Faithfulness-Safety Conflict"
+  - "Counterfactual Evidence"
+  - "Medical QA"
+  - "Safety Guardrails"
   - "RAG"
 date: 2026-05-08
-content_hash: 7cc671cc89dfcc30
+content_hash: 6b2f6071916647f3
 ---
 
 # Faithfulness vs. Safety: Evaluating LLM Behavior Under Counterfactual Medical Evidence
 
-**Conference**: ACL 2026
+**Conference**: ACL 2026  
 **arXiv**: [2601.11886](https://arxiv.org/abs/2601.11886)  
 **Code**: [GitHub](https://github.com/KaijieMo-kj/Counterfactual-Medical-Evidence)  
-**Area**: Medical Imaging
-**Keywords**: Faithfulness-safety conflict, counterfactual evidence, medical QA, safety guardrails, RAG
+**Area**: Medical Imaging  
+**Keywords**: Faithfulness-Safety Conflict, Counterfactual Evidence, Medical QA, Safety Guardrails, RAG
 
 ## TL;DR
 
-This paper introduces the MedCounterFact dataset—constructed by systematically replacing interventions in clinical trials with nonsense words, medical terminology, non-medical objects, and toxic substances—and finds that state-of-the-art LLMs almost unconditionally defer to context when presented with counterfactual medical evidence, confidently providing answers even when the "evidence" attributes therapeutic efficacy to heroin or mustard gas. The findings expose a critical lack of a well-defined boundary between faithfulness and safety.
+This paper constructs the MedCounterFact dataset—systematically replacing interventions in clinical trials with nonsense words, medical terms, non-medical items, and toxic substances. It finds that frontier LLMs exhibit almost unconditional adherence to context in the face of counterfactual medical evidence, answering confidently even when "evidence" suggests heroin or mustard gas is effective, revealing a serious lack of clear boundaries between faithfulness and safety.
 
 ## Background & Motivation
 
-**Background**: RAG and evidence-grounded reasoning are widely regarded as key approaches to reducing hallucination in LLMs, particularly in high-stakes domains such as medicine, where evidence-based systems are assumed to be more accurate. An increasing number of lay users rely on LLMs as their primary source of health information.
+**Background**: RAG and evidence-based reasoning are considered critical means to reduce LLM hallucinations. Especially in high-risk domains like healthcare, evidence-based systems are perceived as more accurate. An increasing number of laypeople use LLMs as their primary source of health information.
 
-**Limitations of Prior Work**: (1) Prior studies have shown that in-context information can suppress LLMs' parametric knowledge, but this has been examined primarily in general-domain settings. (2) In the medical domain, evidence-grounded faithfulness is considered a desirable property—but what happens when the evidence itself is flawed? (3) Existing medical QA work assumes that provided evidence is always valid and does not investigate model behavior under erroneous or adversarial evidence.
+**Limitations of Prior Work**: (1) Previous studies found that context can suppress a model's parametric knowledge, but these were primarily conducted in general domains; (2) In the medical field, evidence-based faithfulness is generally considered a positive trait—but what if the evidence itself is flawed? (3) Existing medical QA research assumes evidence is always valid and fails to investigate model behavior towards erroneous or adversarial evidence.
 
-**Key Challenge**: There is a fundamental tension between faithfulness and safety—models are expected both to faithfully follow provided context (faithfulness) and to question or refuse dangerous or absurd "evidence" (safety). Currently, no clear boundary exists between these two objectives.
+**Key Challenge**: A fundamental tension exists between faithfulness and safety—there is a desire for models to faithfully follow the provided context (faithfulness) while also expecting them to question and reject dangerous or absurd "evidence" (safety). Currently, there is no defined boundary between the two.
 
-**Goal**: To systematically evaluate LLM behavior when confronted with counterfactual medical evidence of varying severity, and to characterize the current state of the faithfulness-safety trade-off.
+**Goal**: Systematically evaluate the behavior of LLMs when confronted with different levels of counterfactual medical evidence to reveal the current state of the faithfulness-safety trade-off.
 
-**Key Insight**: Four progressively severe counterfactual interventions are designed—ranging from cases where the model has no prior parametric knowledge (nonsense words) to cases that should trigger safety guardrails (toxic substances)—to systematically probe the model's capacity for skepticism.
+**Key Insight**: Design four categories of progressive counterfactual interventions—ranging from areas where the model has zero prior knowledge (nonsense words) to substances that should trigger safety guardrails (toxic substances)—to systematically test the model's "questioning" capability.
 
-**Core Idea**: Models should not only be faithful to context but should also maintain appropriate skepticism toward implausible evidence, as a medical professional would. Current models almost entirely lack this capability.
+**Core Idea**: Models should not only be faithful to the context but should also maintain skepticism towards untrustworthy evidence, similar to medical professionals—however, current models almost entirely lack this capability.
 
 ## Method
 
 ### Overall Architecture
 
-Building on the MedEvidence dataset (284 clinical comparative questions + 329 RCTs), MedCounterFact (809 instances) is constructed via four types of counterfactual substitutions. Nine frontier LLMs are evaluated across 4 prompt variants (no evidence / with evidence / skeptical stance / expert role) × 2 response formats (multiple-choice / free-form).
+Based on the MedEvidence dataset (284 clinical comparison questions + 329 RCTs), the MedCounterFact dataset (809 instances) was constructed via four types of counterfactual replacements. Nine frontier LLMs were evaluated across 4 prompt variants (No Evidence / With Evidence / Skeptical / Expert Role) × 2 response formats (Multiple Choice / Free-form).
 
 ### Key Designs
 
-1. **Four Categories of Counterfactual Interventions**:
+1.  **Four Categories of Counterfactual Intervention Stimuli**:
+    *   **Function**: Tests model sensitivity to untrustworthy evidence across different dimensions.
+    *   **Mechanism**: (a) NONCE—nonsense words (e.g., *blirbex*), where the model has no parametric knowledge; (b) MEDICAL—real but mismatched medical terms (e.g., replacing chemotherapy with penicillin); (c) NON-MEDICAL—non-medical items (e.g., bowling balls, SIM cards), where accepting efficacy violates common sense; (d) TOXIC—known toxic substances (e.g., heroin, mustard gas), with "toxic dosage" notes included to ensure safety warnings should be triggered.
+    *   **Design Motivation**: These stimuli form a gradient from "ignorance" to "known danger"—if a model fails to question the TOXIC category, it indicates that faithfulness completely overrides safety.
 
-    - Function: To probe model sensitivity to implausible evidence along distinct dimensions.
-    - Mechanism: (a) NONCE—nonsense words (e.g., *blirbex*), for which the model has no parametric knowledge; (b) MEDICAL—real but contextually mismatched medical terms (e.g., substituting penicillin for a chemotherapy agent); (c) NON-MEDICAL—everyday non-medical objects (e.g., a bowling ball, a SIM card), whose therapeutic efficacy would violate common sense; (d) TOXIC—known toxic substances (e.g., heroin, mustard gas), with notes on "toxic dosage" to ensure safety warnings should be triggered.
-    - Design Motivation: The four categories form a gradient from "ignorance" to "known danger." If models fail to express skepticism even in the TOXIC category, this demonstrates that faithfulness completely overrides safety.
+2.  **Multi-dimensional Evaluation Framework**:
+    *   **Function**: Captures different response patterns of models to counterfactual evidence.
+    *   **Mechanism**: Two key metrics—(a) Uncertain Rate: the proportion of times the model selects the "uncertain/unsure" label (higher is better, indicating questioning); (b) Evidence Adherence (EA) Rate: the proportion of answers consistent with the original ground-truth label (in counterfactual conditions, a high EA rate means the model took the counterfactual evidence as truth).
+    *   **Design Motivation**: High EA rate + Low Uncertain rate = The model accepts counterfactual evidence without any questioning.
 
-2. **Multi-Dimensional Evaluation Framework**:
-
-    - Function: To capture distinct response patterns toward counterfactual evidence.
-    - Mechanism: Two key metrics—(a) *Uncertain rate*: the proportion of responses in which the model selects an "uncertain" label (higher is better, indicating skepticism); (b) *Evidence Adherence (EA) rate*: the proportion of responses consistent with the original ground-truth label (under counterfactual conditions, a high EA rate indicates the model has accepted the counterfactual evidence as true).
-    - Design Motivation: High EA rate + low Uncertain rate = the model uncritically accepts counterfactual evidence.
-
-3. **Prompt Variant Design**:
-
-    - Function: To test whether different prompting strategies can activate the model's skeptical reasoning.
-    - Mechanism: (a) No-Evd—question only, testing parametric knowledge; (b) Evd—question with counterfactual evidence; (c) Skept+Evd—instruction to reason skeptically; (d) Expert+Evd—model assigned the role of a clinical expert and Cochrane reviewer. Both multiple-choice and free-form response formats are tested.
-    - Design Motivation: If skeptical prompting or expert role-playing improves the skepticism rate, it provides a practical direction for mitigation.
+3.  **Prompt Variant Design**:
+    *   **Function**: Tests whether different prompting strategies can activate the model's questioning capability.
+    *   *Mechanism**: (a) No-Evd—question only, testing parametric knowledge; (b) Evd—includes counterfactual evidence; (c) Skept+Evd—requires reasoning with a skeptical attitude; (d) Expert+Evd—assigns roles of clinical experts and Cochrane reviewers. Both multiple-choice and free-form formats were tested.
+    *   **Design Motivation**: Identifying whether skepticism prompts or expert personas can increase the questioning rate provides a practical direction for mitigation.
 
 ### Loss & Training
 
-No training is involved. Nine LLMs are evaluated: Gemini-2.5-flash, GPT-5-mini, Llama-3.1-8B/405B-Instruct, Llama-4-Maverick, OLMo-3-7B-Instruct/Think, Qwen2.5-7B-Instruct, and HuatuoGPT-o1-7B. Temperature is set to 0.
+A zero-shot evaluation approach was used with no training. Evaluated 9 LLMs: Gemini-2.5-flash, GPT-5-mini, Llama-3.1-8B/405B-Instruct, Llama-4-Maverick, OLMo-3-7B-Instruct/Think, Qwen2.5-7B-Instruct, and HuatuoGPT-o1-7B. Temperature was set to 0.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Condition | Change in Uncertain Rate | Change in EA Rate |
-|-----------|--------------------------|-------------------|
-| No evidence → With evidence (original) | Significantly decreases | Significantly increases |
-| No evidence → With evidence (NONCE) | Significantly decreases | Comparable to original |
-| No evidence → With evidence (TOXIC) | Significantly decreases | Comparable to original |
-| Skept+Evd vs. Evd | Uncertain rate increases | EA rate decreases but remains insufficient |
-| Expert+Evd vs. Evd | No significant improvement | No significant improvement |
+| :--- | :--- | :--- |
+| No-Evd → Evd (Original) | Significant decrease | Significant increase |
+| No-Evd → Evd (NONCE) | Significant decrease | Comparable to original |
+| No-Evd → Evd (TOXIC) | Significant decrease | Comparable to original |
+| Skept+Evd vs Evd | Uncertain rate increases | EA rate decreases but remains insufficient |
+| Expert+Evd vs Evd | No significant improvement | No significant improvement |
 
 ### Ablation Study
 
 | Analysis Dimension | Result |
-|--------------------|--------|
-| No-evidence condition | Models sometimes correctly identify counterfactual interventions as implausible (relatively higher Uncertain rate) |
-| With-evidence condition | Counterfactual evidence fully suppresses models' prior knowledge and safety awareness |
-| TOXIC vs. NONCE behavioral difference | Virtually none—models defer equally to both |
-| Free-form vs. multiple-choice | Free-form yields lower Uncertain rates—without explicit options, models are less inclined to express uncertainty |
-| Representational analysis ("toaster" case) | Counterfactual evidence causes a distributional shift; parametric knowledge is briefly activated but rapidly overridden by context |
+| :--- | :--- |
+| No-Evidence Condition | Models occasionally judge counterfactual interventions as unreasonable (higher Uncertain rate) |
+| With-Evidence Condition | Counterfactual evidence completely suppresses parametric knowledge and safety awareness |
+| TOXIC vs NONCE Difference | Virtually no difference—the model adheres to both equally |
+| Free-form vs Multi-choice | Free-form yields a lower Uncertain rate—models are less inclined to express uncertainty without explicit options |
+| Representation Analysis | Counterfactual evidence causes a distribution shift; parametric knowledge is briefly activated then quickly overridden by context |
 
 ### Key Findings
 
-- Across all counterfactual intervention categories, models neither question the premise nor refuse to answer—even when built-in safety guardrails are present.
-- Chains of reasoning occasionally exhibit awareness of implausibility, but such skepticism is swiftly suppressed in order to conform to the provided evidence.
-- Skeptical prompting (Skept+Evd) is the only mitigation strategy with any measurable effect, yet it remains far from sufficient for the TOXIC category.
-- Model behavior is essentially identical for NONCE (ignorance) and TOXIC (known danger) counterfactual evidence—this is the most alarming finding.
-- Representational analysis shows that parametric knowledge is briefly activated upon encountering counterfactual intervention terms but is progressively overridden as context accumulates.
+*   Across all counterfactual stimuli categories, models neither question the premise nor refuse to answer—even with built-in safety guardrails.
+*   "Awareness" of irrationality occasionally appears in the chain-of-thought, but these doubts are quickly suppressed to align with the provided evidence.
+*   Skeptical prompting (Skept+Evd) is the only strategy that provides slight mitigation, yet it remains far from sufficient for the TOXIC category.
+*   Model behavior is essentially identical for NONCE (ignorance) and TOXIC (known danger) evidence—this is the most concerning finding.
+*   Representation analysis shows that parametric knowledge is briefly activated upon encountering counterfactual nouns but is overridden as context accumulates.
 
 ## Highlights & Insights
 
-- The absence of a well-defined faithfulness-safety boundary is a profound and urgent problem—current LLMs are, in effect, unconditional believers in whatever evidence they are provided in medical contexts.
-- The gradient design of the four counterfactual categories is methodologically elegant: the progression from a controlled condition (NONCE) to an extreme condition (TOXIC) lends strong credibility to the conclusions.
-- The recurring pattern of "brief skepticism followed by immediate compliance" in reasoning chains reveals that LLMs' context-following bias operates at a deeper level than safety alignment.
-- The findings serve as a clear warning for RAG systems: if retrieved evidence is tampered with or erroneous, models will confidently generate dangerous recommendations.
+*   The lack of a "faithfulness-safety boundary" is a profound and urgent issue—current LLMs are essentially "unconditional believers of evidence" in medical scenarios.
+*   The gradient design of the four counterfactual stimuli—progressing from control (NONCE) to extreme (TOXIC) conditions—makes the conclusions highly persuasive.
+*   The pattern of "brief doubt followed by rapid compliance" in reasoning chains reveals that context bias is deeper than safety alignment in LLMs.
+*   The study serves as a warning for RAG systems: if retrieved evidence is tampered with or incorrect, the model will confidently provide dangerous advice.
 
 ## Limitations & Future Work
 
-- Counterfactual evidence is generated via simple substitution and does not cover more subtle errors (e.g., incorrect dosage, wrong indication).
-- Evaluation is limited to English and specific medical domains.
-- No effective mitigation solution is proposed—the work is diagnostic in nature.
-- The normative question of what the "appropriate" faithfulness-safety boundary should be remains unresolved.
+*   Counterfactual evidence was generated via simple replacement and does not cover more subtle errors (e.g., dosage or indication errors).
+*   Evaluation is limited to English and specific medical sub-domains.
+*   No effective mitigation solution was proposed—only the problem was diagnosed.
+*   Determining what a model's "proper" faithfulness-safety boundary should be remains an unsolved normative question.
 
 ## Related Work & Insights
 
-- **vs. CoPriva/Doc-PP**: The latter focuses on information non-disclosure strategies, whereas this work addresses over-trust in evidence that ought to be distrusted.
-- **vs. Xie et al. (2023)**: The latter examines context-knowledge conflicts in general domains; this work focuses on the high-stakes medical setting.
-- **vs. MedEvidence**: This work builds upon MedEvidence and extends it to a counterfactual setting to probe the robustness of model behavior.
+*   **vs CoPriva/Doc-PP**: While the latter focuses on non-disclosure strategies, this paper focuses on over-trust when the model "should" be skeptical.
+*   **vs Xie et al. (2023)**: While the latter studies context-knowledge conflicts in general domains, this work focuses on high-risk medical scenarios.
+*   **vs MedEvidence**: This work builds upon it, extending to counterfactual settings to test model robustness.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ The systematic study of the faithfulness-safety tension in medical contexts is pioneering; the four-category intervention design is elegant.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive coverage across 9 models, 4 prompt variants, 2 response formats, and representational analysis.
-- Writing Quality: ⭐⭐⭐⭐⭐ Problem definition is precise, findings are striking, and argumentation is compelling.
-- Value: ⭐⭐⭐⭐⭐ Carries significant implications for medical AI safety and directly informs deployment decisions for RAG systems.
+*   Novelty: ⭐⭐⭐⭐⭐ First systematic study of faithfulness-safety tension in medical scenarios; ingenious stimuli design.
+*   Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive coverage across 9 models, 4 prompt types, 2 formats, and representation analysis.
+*   Writing Quality: ⭐⭐⭐⭐⭐ Clear problem definition, alarming findings, and powerful argumentation.
+*   Value: ⭐⭐⭐⭐⭐ Highly significant for medical AI safety, directly impacting deployment decisions for RAG systems.
 
 <!-- RELATED:START -->
 
@@ -134,11 +131,11 @@ No training is involved. Nine LLMs are evaluated: Gemini-2.5-flash, GPT-5-mini, 
 
 ## Related Papers
 
+- [\[ICML 2026\] Safety Generalization Under Distribution Shift in Safe Reinforcement Learning: A Diabetes Testbed](../../ICML2026/medical_imaging/safety_generalization_under_distribution_shift_in_safe_reinforcement_learning_a_.md)
 - [\[ACL 2026\] PrinciplismQA: A Philosophy-Grounded Approach to Assessing LLM-Human Clinical Medical Ethics Alignment](principlismqa_a_philosophy-grounded_approach_to_assessing_llm-human_clinical_med.md)
 - [\[ICLR 2026\] Human Behavior Atlas: Benchmarking Unified Psychological and Social Behavior Understanding](../../ICLR2026/medical_imaging/human_behavior_atlas_benchmarking_unified_psychological_and_social_behavior_unde.md)
-- [\[ICLR 2026\] CARE: Towards Clinical Accountability in Multi-Modal Medical Reasoning with an Evidence-Grounded Agentic Framework](../../ICLR2026/medical_imaging/care_towards_clinical_accountability_in_multi-modal_medical_reasoning_with_an_ev.md)
 - [\[ACL 2026\] Multi-View Attention Multiple-Instance Learning Enhanced by LLM Reasoning for Cognitive Distortion Detection](multi-view_attention_multiple-instance_learning_enhanced_by_llm_reasoning_for_co.md)
-- [\[CVPR 2026\] EMAD: Evidence-Centric Grounded Multimodal Diagnosis for Alzheimer's Disease](../../CVPR2026/medical_imaging/emad_evidence-centric_grounded_multimodal_diagnosis_for_alzheimers_disease.md)
+- [\[ICLR 2026\] CARE: Towards Clinical Accountability in Multi-Modal Medical Reasoning with an Evidence-Grounded Agentic Framework](../../ICLR2026/medical_imaging/care_towards_clinical_accountability_in_multi-modal_medical_reasoning_with_an_ev.md)
 
 </div>
 

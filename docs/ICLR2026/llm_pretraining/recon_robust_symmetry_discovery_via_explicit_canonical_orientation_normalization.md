@@ -162,8 +162,8 @@ Experiments are conducted on image datasets and molecular conformation datasets.
 - [\[ICLR 2026\] Imagine How To Change: Explicit Procedure Modeling for Change Captioning](imagine_how_to_change_explicit_procedure_modeling_for_change_captioning.md)
 - [\[NeurIPS 2025\] A Practical Guide for Incorporating Symmetry in Diffusion Policy](../../NeurIPS2025/llm_pretraining/a_practical_guide_for_incorporating_symmetry_in_diffusion_policy.md)
 - [\[NeurIPS 2025\] Superposition Yields Robust Neural Scaling](../../NeurIPS2025/llm_pretraining/superposition_yields_robust_neural_scaling.md)
-- [\[ICCV 2025\] ConstStyle: Robust Domain Generalization with Unified Style Transformation](../../ICCV2025/llm_pretraining/conststyle_robust_domain_generalization_with_unified_style_transformation.md)
 - [\[ICML 2026\] MOOSE-Star: Unlocking Tractable Training for Scientific Discovery by Breaking the Complexity Barrier](../../ICML2026/llm_pretraining/moose-star_unlocking_tractable_training_for_scientific_discovery_by_breaking_the.md)
+- [\[ICCV 2025\] ConstStyle: Robust Domain Generalization with Unified Style Transformation](../../ICCV2025/llm_pretraining/conststyle_robust_domain_generalization_with_unified_style_transformation.md)
 
 </div>
 

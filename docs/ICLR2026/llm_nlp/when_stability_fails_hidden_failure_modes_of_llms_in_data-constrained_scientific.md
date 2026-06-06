@@ -143,11 +143,11 @@ Gemini's Jaccard of 0.08 indicates that two nearly identical prompts produce alm
 
 ## Related Papers
 
+- [\[ACL 2026\] When Gradients Collide: Failure Modes of Multi-Objective Prompt Optimization for LLM Judges](../../ACL2026/llm_nlp/when_gradients_collide_failure_modes_of_multi-objective_prompt_optimization_for_.md)
 - [\[ICLR 2026\] Trapped by simplicity: When Transformers fail to learn from noisy features](trapped_by_simplicity_when_transformers_fail_to_learn_from_noisy_features.md)
 - [\[ICLR 2026\] Is the Reversal Curse a Binding Problem? Uncovering Limitations of Transformers from a Basic Generalization Failure](is_the_reversal_curse_a_binding_problem_uncovering_limitations_of_transformers_f.md)
-- [\[ACL 2026\] Understanding Structured Financial Data with LLMs: A Case Study on Fraud Detection](../../ACL2026/llm_nlp/understanding_structured_financial_data_with_llms_a_case_study_on_fraud_detectio.md)
-- [\[AAAI 2026\] Control Illusion: The Failure of Instruction Hierarchies in Large Language Models](../../AAAI2026/llm_nlp/control_illusion_the_failure_of_instruction_hierarchies_in_large_language_models.md)
-- [\[CVPR 2026\] GUIDE: Guided Updates for In-context Decision Evolution in LLM-Driven Spacecraft Operations](../../CVPR2026/llm_nlp/guide_guided_updates_for_in-context_decision_evolution_in_llm-driven_spacecraft_.md)
+- [\[ICML 2026\] Position: Adversarial ML for LLMs Is Not Making Any Progress](../../ICML2026/llm_nlp/position_adversarial_ml_for_llms_is_not_making_any_progress.md)
+- [\[ACL 2026\] From Fallback to Frontline: When Can LLMs be Superior Annotators of Human Perspectives?](../../ACL2026/llm_nlp/from_fallback_to_frontline_when_can_llms_be_superior_annotators_of_human_perspec.md)
 
 </div>
 

@@ -183,10 +183,10 @@ FICGen's advantage is even more pronounced when evaluated with the stronger Defo
 ## Related Papers
 
 - [\[ICCV 2025\] The Silent Assistant: NoiseQuery as Implicit Guidance for Goal-Driven Image Generation](the_silent_assistant_noisequery_as_implicit_guidance_for_goal-driven_image_gener.md)
+- [\[ICML 2026\] OcclusionFormer: Arranging Z-Order for Layout-Grounded Image Generation](../../ICML2026/image_generation/occlusionformer_arranging_z-order_for_layout-grounded_image_generation.md)
 - [\[ICCV 2025\] Lay-Your-Scene: Natural Scene Layout Generation with Diffusion Transformers](lay-your-scene_natural_scene_layout_generation_with_diffusion_transformers.md)
 - [\[ICCV 2025\] DCT-Shield: A Robust Frequency Domain Defense against Malicious Image Editing](dct-shield_a_robust_frequency_domain_defense_against_malicious_image_editing.md)
 - [\[NeurIPS 2025\] Contextual Thompson Sampling via Generation of Missing Data](../../NeurIPS2025/image_generation/contextual_thompson_sampling_via_generation_of_missing_data.md)
-- [\[ICCV 2025\] SCFlow: Implicitly Learning Style and Content Disentanglement with Flow Models](scflow_implicitly_learning_style_and_content_disentanglement_with_flow_models.md)
 
 </div>
 

@@ -127,11 +127,11 @@ Linear probes are trained with an 80/20 train–validation split; layer and toke
 
 ## Related Papers
 
+- [\[ICML 2026\] Easier to Judge Than to Find: Predicting In-Context Learning Success for Demonstration Selection](../../ICML2026/model_compression/easier_to_judge_than_to_find_predicting_in-context_learning_success_for_demonstr.md)
 - [\[ICLR 2026\] QKV Projections Require a Fraction of Their Memory](qkv_projections_require_a_fraction_of_their_memory.md)
 - [\[ICLR 2026\] LightMem: Lightweight and Efficient Memory-Augmented Generation](lightmem_lightweight_and_efficient_memory-augmented_generation.md)
 - [\[ICLR 2026\] π-Flow: Policy-Based Few-Step Generation via Imitation Distillation](pi-flow_policy-based_few-step_generation_via_imitation_distillation.md)
-- [\[AAAI 2026\] Failures to Surface Harmful Contents in Video Large Language Models](../../AAAI2026/model_compression/failures_to_surface_harmful_contents_in_video_large_language_models.md)
-- [\[ICLR 2026\] Draft-based Approximate Inference for LLMs](draft-based_approximate_inference_for_llms.md)
+- [\[ICLR 2026\] PTQ4ARVG: Post-Training Quantization for AutoRegressive Visual Generation Models](ptq4arvg_post-training_quantization_for_autoregressive_visual_generation_models.md)
 
 </div>
 

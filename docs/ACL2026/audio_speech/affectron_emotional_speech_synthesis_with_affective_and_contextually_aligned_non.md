@@ -2,124 +2,121 @@
 title: >-
   [Paper Note] Affectron: Emotional Speech Synthesis with Affective and Contextually Aligned Nonverbal Vocalizations
 description: >-
-  [ACL 2026][Audio & Speech][Nonverbal Vocalizations] This paper proposes Affectron, a framework that achieves diverse and emotionally aligned nonverbal vocalization (NV) synthesis—such as laughter and sighs—on small-scale…
+  [ACL 2026][Audio & Speech][non-verbal vocalization] Ours proposes the Affectron framework, which implements two training-time augmentation strategies—emotion-driven Top-K NV matching and emotion-aware Top-K routing—to ac…
 tags:
   - "ACL 2026"
   - "Audio & Speech"
-  - "Nonverbal Vocalizations"
-  - "Emotional Speech Synthesis"
-  - "NV-Augmented Training"
-  - "Affective Routing"
-  - "Neural Codec Language Model"
+  - "non-verbal vocalization"
+  - "emotional speech synthesis"
+  - "NV-augmented training"
+  - "affective routing"
+  - "neural codec language model"
 date: 2026-05-08
-content_hash: d096a561a684f645
+content_hash: 219f001ba6342b2f
 ---
 
 # Affectron: Emotional Speech Synthesis with Affective and Contextually Aligned Nonverbal Vocalizations
 
-**Conference**: ACL 2026
+**Conference**: ACL 2026  
 **arXiv**: [2603.14432](https://arxiv.org/abs/2603.14432)  
 **Code**: [https://github.com/choddeok/Affectron](https://github.com/choddeok/Affectron)  
-**Area**: Audio & Speech / Speech Synthesis
-**Keywords**: Nonverbal Vocalizations, Emotional Speech Synthesis, NV-Augmented Training, Affective Routing, Neural Codec Language Model
+**Area**: Audio & Speech / Speech Synthesis  
+**Keywords**: non-verbal vocalization, emotional speech synthesis, NV-augmented training, affective routing, neural codec language model
 
 ## TL;DR
-This paper proposes Affectron, a framework that achieves diverse and emotionally aligned nonverbal vocalization (NV) synthesis—such as laughter and sighs—on small-scale open-source disentangled corpora, via two training-time augmentation strategies: emotion-driven Top-K NV matching and emotion-aware Top-K routing. The proposed method substantially outperforms the purely language-pretrained VoiceCraft baseline.
+Ours proposes the Affectron framework, which implements two training-time augmentation strategies—emotion-driven Top-K NV matching and emotion-aware Top-K routing—to achieve diverse and emotion-aligned synthesis of non-verbal vocalizations (e.g., laughter, sighs) using small-scale open-source decoupled corpora, significantly outperforming the VoiceCraft baseline.
 
 ## Background & Motivation
 
-**Background**: Nonverbal vocalizations (NVs), such as laughter, sighs, and crying, are critical means of conveying emotion in expressive speech synthesis. Existing expressive TTS systems primarily adopt two paradigms: label-controlled TTS (manually inserting NV labels to control type and position) and spontaneous-style TTS (implicitly predicting NVs from contextual cues).
+**Background**: Non-verbal vocalizations (NVs), such as laughter, sighs, and crying, are key means of expressing emotion in emotional speech synthesis. Existing expressive TTS systems primarily rely on two types of methods: label-controlled TTS (manual insertion of NV labels to control type and position) and spontaneous style TTS (implicit prediction of NVs from contextual cues).
 
-**Limitations of Prior Work**: Label-controlled approaches rely on alignment annotations or NV detection models, whose biases and error propagation lead to temporal inconsistencies in NV placement. Spontaneous-style approaches are constrained by the irreproducibility of proprietary datasets. Publicly available NV corpora are overwhelmingly biased toward basic types (e.g., breath and laughter) and suffer from acoustic artifacts, making fine-grained NV variant modeling (e.g., distinguishing chuckles, giggles, and snickers) infeasible.
+**Limitations of Prior Work**: Label-controlled methods rely on alignment annotations or NV detection models; biases and error propagation in detection models lead to temporal inconsistencies in NV placement. Spontaneous methods are limited by the non-reproducibility of proprietary datasets. Publicly available NV corpora are generally biased towards basic types (e.g., breathing and laughter) and contain acoustic artifacts, failing to model fine-grained NV variants (e.g., the difference between a chuckle, giggle, and snicker).
 
-**Key Challenge**: The fundamental bottleneck is the absence of large-scale, diverse, high-quality public NV corpora. While neural codec language models (NCLMs) can generate natural speech from low-quality data, they are primarily designed for voice cloning and lack fine-grained prosodic control over NV variants.
+**Key Challenge**: The lack of large-scale, diverse, and high-quality public NV corpora is the fundamental bottleneck. Although existing neural codec language models (NCLMs) can generate natural speech on low-quality corpora, they are primarily oriented toward voice cloning and lack the ability to control prosodic variations of fine-grained NVs.
 
-**Goal**: To achieve emotionally consistent and contextually aligned diverse NV generation on small-scale open-source disentangled corpora, where linguistic speech and NVs are recorded separately.
+**Goal**: To achieve emotion-consistent and contextually aligned diverse NV generation using small-scale open-source decoupled corpora (where linguistic speech and NVs are recorded separately).
 
-**Key Insight**: The authors observe that affective attributes typically transition gradually rather than abruptly between adjacent utterance segments—segments with shorter temporal gaps exhibit smaller emotional angular distances. Consequently, positions with minimal emotional change serve as natural anchor points for NV insertion.
+**Key Insight**: The authors observe that emotional attributes typically evolve gradually rather than abruptly between adjacent segments; segments with shorter time intervals exhibit smaller emotional angular distances. Therefore, positions with minimal emotional change can serve as natural anchors for NV insertion.
 
-**Core Idea**: Design training-time NV augmentation strategies that select appropriate NV types via affective embedding matching and determine appropriate insertion positions via emotional angular distance routing, then fine-tune a pretrained VoiceCraft model on the augmented samples.
+**Core Idea**: Design training-time NV augmentation strategies to select appropriate NV types via emotion embedding matching and determine suitable insertion positions via emotional angular distance routing, then fine-tune a pre-trained VoiceCraft model using the augmented samples.
 
 ## Method
 
 ### Overall Architecture
-Affectron adopts VoiceCraft (330M parameters), pretrained on linguistic speech only, as its backbone. During training, NV augmentation constructs training samples containing NVs, and the backbone is fine-tuned to acquire NV generation capability. At inference, the model directly generates output from NV-annotated text and an affective reference utterance, without requiring the matching and routing procedures.
+Affectron uses VoiceCraft (330M parameters), pre-trained on pure linguistic speech, as the backbone. During training, it constructs NV-containing samples through NV augmentation to fine-tune the backbone, granting it NV generation capabilities. During inference, the model generates output directly from NV-tagged text and emotional reference speech, without requiring the matching and routing processes.
 
 ### Key Designs
 
 1. **Emotion-Driven Top-K NV Matching (EDNM)**:
-
-    - Function: Selects emotionally consistent and diverse NV candidates for each linguistic utterance.
-    - Mechanism: Given a linguistic utterance $u$ and speaker $s$, all NV candidates from that speaker are retrieved. Emotion2Vec is used to compute the cosine similarity between the affective embeddings of each NV candidate and the utterance. The Top-K candidates are selected and normalized into a probability distribution via temperature-scaled softmax, from which at most 2 NVs are sampled. The temperature parameter is set to $\tau=0.7$ and Top-K to 10.
-    - Design Motivation: Random NV pairing increases diversity but lacks emotional coherence. Affective-embedding-based matching ensures the selected NVs are aligned with the emotional state of the utterance, while probabilistic sampling rather than deterministic selection preserves diversity.
+    - **Function**: Selects emotion-consistent and diverse NV candidates for each linguistic speech sample.
+    - **Mechanism**: Given a linguistic speech $u$ and speaker $s$, all NV candidates for that speaker are retrieved. Emotion2Vec is used to calculate the cosine similarity of emotional embeddings between each NV candidate and the speech. Top-K candidates are selected and normalized into a probability distribution via temperature-scaled softmax, with a maximum of 2 NVs sampled. The temperature parameter $\tau=0.7$ and Top-K is set to 10.
+    - **Design Motivation**: Randomly pairing NVs increases diversity but lacks emotional consistency. Matching based on emotional embeddings ensures the selected NVs align with the emotional state of the speech, while probabilistic sampling preserves diversity.
 
 2. **Emotion-Aware Top-K Routing (EAR)**:
+    - **Function**: Determines the optimal insertion positions for NVs within the speech.
+    - **Mechanism**: Word-level segments are extracted using the Montreal Forced Aligner, and emotional pseudo-labels are generated for each segment using an emotional attribute predictor. Attributes are converted to spherical coordinates to calculate angular distances. For each NV candidate, the emotional distance $\Delta$ (based on arccosine distance on the sphere) to all potential insertion locations is calculated. The Top-K positions with the smallest distances are selected, and the final insertion position is sampled via a softmax distribution of negative distances.
+    - **Design Motivation**: NVs should be inserted at positions with minimal changes in emotional attributes (i.e., emotional steady points) to maintain emotional coherence while enhancing expressiveness. Using spherical coordinates rather than direct Euclidean distance better captures directional shifts in emotional attributes.
 
-    - Function: Determines the optimal insertion position for NVs within an utterance.
-    - Mechanism: Word-level segments are extracted using the Montreal Forced Aligner, and an affective attribute predictor generates affective pseudo-labels for each segment. Affective attributes are converted to spherical coordinates to compute angular distances. For each NV candidate, the emotional distance $\Delta$ (based on arc-cosine distance on the sphere) to all potential insertion positions is computed, and the Top-K positions with the smallest distances are selected. The final insertion position is sampled from the softmax distribution over negative distances.
-    - Design Motivation: NVs should be inserted at positions where affective attributes change least (i.e., emotional stable points), which preserves emotional coherence while enhancing expressiveness. Spherical coordinates capture the directional variation of affective attributes more faithfully than Euclidean distance.
-
-3. **NV Structure Masking (NSM)**:
-
-    - Function: Enables the model to generate NVs conditioned on the affective context of surrounding linguistic speech.
-    - Mechanism: The causal masking strategy of VoiceCraft is extended—NV codec token sequences are reordered according to routing-determined positions. A random NV segment along with surrounding linguistic tokens is selected to form a masking span, the masked content is moved to the end of the sequence, and delayed stacking is applied for efficient multi-codebook autoregressive modeling.
-    - Design Motivation: Through masking and reordering, the model can leverage both preceding and following affective context (bidirectional conditioning) when generating NVs, rather than relying solely on historical information. This is critical for NV naturalness and affective expression.
+3. **NV Structural Masking (NSM)**:
+    - **Function**: Allows the model to generate NVs based on the emotional context of the surrounding linguistic speech.
+    - **Mechanism**: The causal masking strategy of VoiceCraft is extended—NV codec token sequences are rearranged according to the routed positions. An NV segment and its surrounding linguistic tokens are randomly selected to form a mask span, which is moved to the end of the sequence. Delay stacking is then applied for efficient multi-codebook autoregressive modeling.
+    - **Design Motivation**: Through masking and rearrangement, the model can utilize bidirectional emotional context (both preceding and succeeding) when generating NVs, which is critical for NV naturalness and emotional expression.
 
 ### Loss & Training
-The AdamW optimizer is used with a learning rate of $1\times10^{-5}$, batch size of 100 (via gradient accumulation), and training for 50,000 steps on 4 NVIDIA RTX A6000 GPUs for approximately 5 days. Training data is sourced from the EARS dataset (approximately 100 hours of clean speech and 4 hours of NVs, from 107 speakers).
+The AdamW optimizer is used with a learning rate of $1\times10^{-5}$ and a batch size of 100 (via gradient accumulation), training for 50,000 steps. Training took approximately 5 days on 4 NVIDIA RTX A6000 GPUs. Training data is from the EARS dataset (~100 hours of clean speech + 4 hours of NV, 107 speakers).
 
 ## Key Experimental Results
 
 ### Main Results (Seen Speakers)
 
 | Method | NV-Acc↑ | NV-Sim↑ | NV-EECS↑ | NV-SECS↑ | WER↓ | V-EECS↑ |
-|--------|---------|---------|----------|----------|------|---------|
-| VoiceCraft (baseline) | 10.49 | 0.5898 | 0.6149 | 0.8950 | 9.05 | 0.6212 |
-| Affectron (full) | 37.75 | 0.6118 | 0.5748 | 0.8906 | 6.59 | 0.6216 |
+|------|---------|---------|----------|----------|------|---------|
+| VoiceCraft (Baseline) | 10.49 | 0.5898 | 0.6149 | 0.8950 | 9.05 | 0.6212 |
+| Affectron (Full) | 37.75 | 0.6118 | 0.5748 | 0.8906 | 6.59 | 0.6216 |
 
 ### Ablation Study
 
-| Configuration | NV-Acc↑ | NV-EECS↑ | Notes |
-|---------------|---------|----------|-------|
-| w/ DA only | 58.78 | 0.5455 | Data augmentation only; high Acc but poor emotional alignment |
-| w/ DA + EDNM | 35.83 | 0.5648 | EECS improves with affective matching |
-| w/ DA + EDNM + EAR | 32.93 | 0.5707 | EECS further improves with routing |
-| Full (+ NSM) | 37.75 | 0.5748 | Complete model; best NV quality |
+| Configuration | NV-Acc↑ | NV-EECS↑ | Description |
+|------|---------|----------|------|
+| w/ DA only | 58.78 | 0.5455 | Data augmentation only; high Acc but emotional misalignment |
+| w/ DA + EDNM | 35.83 | 0.5648 | EECS improves after adding emotional matching |
+| w/ DA + EDNM + EAR | 32.93 | 0.5707 | EECS further improves after adding routing |
+| Full (+ NSM) | 37.75 | 0.5748 | Full model, optimal NV quality |
 
-### NV Type and Position Prediction vs. LLM
+### NV Type and Location Prediction vs. LLMs
 
 | Method | Type JSD↓ | Type Acc@1↑ | Location JSD↓ |
-|--------|-----------|-------------|--------------|
+|------|-----------|-------------|--------------|
 | GPT-oss-20B | 0.1130 | 16.98 | 0.1278 |
 | Affectron-330M | **0.0051** | **75.77** | **0.0523** |
 
 ### Key Findings
-- Affectron's NV type distribution alignment far exceeds all LLM baselines (JSD of only 0.0051 vs. the best LLM's 0.1130).
-- Removing EDNM paradoxically increases NV-Acc (random matching enhances diversity) but causes a significant drop in EECS, confirming the importance of emotional alignment.
-- NSM leverages bidirectional affective context and is better suited for NV generation than standard causal masking.
-- Consistent trends on unseen speakers validate zero-shot generalization capability.
+- The alignment of Affectron's NV type distribution far exceeds all LLM baselines (JSD of only 0.0051 vs. 0.1130 for the best LLM).
+- Removing EDNM actually increases NV-Acc (random matching increases diversity), but EECS significantly drops, confirming the importance of emotional alignment.
+- NSM leverages bidirectional emotional context and is better suited for NV generation than standard causal masking.
+- Trends remain consistent on unseen speakers, validating zero-shot generalization capabilities.
 
 ## Highlights & Insights
-- **Training-time augmentation, zero inference overhead**: The matching and routing modules are used only during training; at inference the model directly generates from annotated text without additional cost. This train-time augmentation → inference-time simplification paradigm is worth borrowing.
-- **Spherical coordinate modeling of affective dynamics**: Mapping multi-dimensional affective attributes onto a sphere and measuring change via angular distance captures directional variation more faithfully than Euclidean distance, and is transferable to other affective computing tasks.
-- **330M specialized model outperforms 7B–20B LLMs**: On NV type prediction, the domain-specific small model substantially outperforms general-purpose large models, demonstrating that domain-specific explicit affective modeling is more effective than pure textual reasoning.
+- **Training-time augmentation, zero inference cost**: The matching and routing modules are used only during training. During inference, the model generates directly from annotated text without additional overhead. This "train-time augmentation → inference-time simplification" paradigm is highly referenceable.
+- **Modeling emotional dynamics via spherical coordinates**: Mapping multi-dimensional emotional attributes to a sphere and measuring changes with angular distance captures emotional directionality better than Euclidean distance, a method transferable to other affective computing tasks.
+- **330M small model outperforming 7B-20B LLMs**: Domain-specific explicit emotional modeling in small models is significantly more effective than general text reasoning in large models for NV type prediction.
 
 ## Limitations & Future Work
-- Validation is limited to the EARS dataset (approximately 100 hours), restricting scale.
-- Linguistic speech and NVs are recorded separately, precluding modeling of their overlapping occurrences in natural settings.
-- NV types cover only 15 categories, leaving richer nonverbal expressions unaddressed.
-- No direct comparison with large-scale NV-capable TTS systems such as CosyVoice.
+- Validation was limited to the EARS dataset (~100 hours).
+- Linguistic speech and NVs are recorded separately, precluding the modeling of overlap phenomena seen in real-world scenarios.
+- NV types only cover 15 categories, omitting richer non-verbal expressions.
+- No direct comparison with the latest large-scale NV-capable TTS systems like CosyVoice.
 
 ## Related Work & Insights
-- **vs. VoiceCraft**: The original model supports only voice cloning with minimal NV capability. Affectron endows it with NV generation through augmented training.
-- **vs. label-controlled TTS (ELaTE, EmoCtrl-TTS)**: These methods rely on NV detection models for data annotation, suffering from severe error propagation. Affectron's affective routing is based on affective attribute computation.
-- **vs. CosyVoice**: Requires large-scale high-quality annotated corpora. Affectron operates effectively on small-scale open-source disentangled data.
+- **vs. VoiceCraft**: The original only supports voice cloning with very weak NV capabilities. Affectron grants NV generation through augmented training.
+- **vs. Label-controlled TTS (ELaTE, EmoCtrl-TTS)**: These depend on NV detection models for data annotation, which suffer from error propagation. Affectron's emotional routing is calculated based on emotional attributes.
+- **vs. CosyVoice**: Requires large-scale, high-quality annotated corpora. Affectron works on small-scale open-source decoupled corpora.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Emotion-driven NV matching and routing constitute novel augmentation strategies.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Ablation study is meticulous; LLM comparisons are convincing.
-- Writing Quality: ⭐⭐⭐⭐ Logic from background to method to experiments is clear and well-structured.
-- Value: ⭐⭐⭐ The application domain is relatively specialized, but the augmentation strategy is broadly transferable.
+- Novelty: ⭐⭐⭐⭐ Emotion-driven NV matching and routing are novel augmentation strategies.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Detailed ablation studies and convincing LLM comparisons.
+- Writing Quality: ⭐⭐⭐⭐ Clear logic from background to methodology and experiments.
+- Value: ⭐⭐⭐ The niche domain is specific, but the augmentation strategies are generalizable.
 
 <!-- RELATED:START -->
 
@@ -127,11 +124,11 @@ The AdamW optimizer is used with a learning rate of $1\times10^{-5}$, batch size
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] E2E-VGuard: Adversarial Prevention for Production LLM-based End-To-End Speech Synthesis](../../NeurIPS2025/audio_speech/e2e-vguard_adversarial_prevention_for_production_llm-based_end-to-end_speech_syn.md)
+- [\[ACL 2026\] UniVocal: Unified Speech-Singing Code-mixed Synthesis](univocal_unified_speech-singing_code-switching_synthesis.md)
+- [\[ACL 2026\] ReStyle-TTS: Relative and Continuous Style Control for Zero-Shot Speech Synthesis](restyle-tts_relative_and_continuous_style_control_for_zero-shot_speech_synthesis.md)
+- [\[ACL 2026\] LLM-MC-Affect: LLM-Based Monte Carlo Modeling of Affective Trajectories and Latent Ambiguity for Interpersonal Dynamic Insight](llm-mc-affect_llm-based_monte_carlo_modeling_of_affective_trajectories_and_laten.md)
 - [\[ICLR 2026\] Incentive-Aligned Multi-Source LLM Summaries](../../ICLR2026/audio_speech/incentive-aligned_multi-source_llm_summaries.md)
-- [\[ICLR 2026\] AC-Foley: Reference-Audio-Guided Video-to-Audio Synthesis with Acoustic Transfer](../../ICLR2026/audio_speech/ac-foley_reference-audio-guided_video-to-audio_synthesis_with_acoustic_transfer.md)
-- [\[AAAI 2026\] PaSE: Prototype-aligned Calibration and Shapley-based Equilibrium for Multimodal Sentiment Analysis](../../AAAI2026/audio_speech/pase_prototype-aligned_calibration_and_shapley-based_equilibrium_for_multimodal_.md)
-- [\[ACL 2026\] Do We Need Distinct Representations for Every Speech Token? Unveiling and Exploiting Redundancy in Large Speech Language Models](do_we_need_distinct_representations_for_every_speech_token_unveiling_and_exploit.md)
+- [\[NeurIPS 2025\] E2E-VGuard: Adversarial Prevention for Production LLM-based End-To-End Speech Synthesis](../../NeurIPS2025/audio_speech/e2e-vguard_adversarial_prevention_for_production_llm-based_end-to-end_speech_syn.md)
 
 </div>
 

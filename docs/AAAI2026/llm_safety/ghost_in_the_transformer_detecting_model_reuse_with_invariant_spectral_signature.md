@@ -159,8 +159,8 @@ The problem is important and practically relevant; the method offers mathematica
 - [\[AAAI 2026\] Multi-Faceted Attack: Exposing Cross-Model Vulnerabilities in Defense-Equipped Vision-Language Models](multi-faceted_attack_exposing_cross-model_vulnerabilities_in_defense-equipped_vi.md)
 - [\[ICLR 2026\] Unlearning Evaluation through Subset Statistical Independence](../../ICLR2026/llm_safety/unlearning_evaluation_through_subset_statistical_independence.md)
 - [\[AAAI 2026\] Hallucination Stations: On Some Basic Limitations of Transformer-Based Language Models](hallucination_stations_on_some_basic_limitations_of_transformer-based_language_m.md)
+- [\[ICML 2026\] Gradient Transformer: Learning to Generate Updates for LLMs](../../ICML2026/llm_safety/gradient_transformer_learning_to_generate_updates_for_llms.md)
 - [\[ACL 2026\] FaithLens: Detecting and Explaining Faithfulness Hallucination](../../ACL2026/llm_safety/faithlens_detecting_and_explaining_faithfulness_hallucination.md)
-- [\[NeurIPS 2025\] TRUST -- Transformer-Driven U-Net for Sparse Target Recovery](../../NeurIPS2025/llm_safety/trust_--_transformer-driven_u-net_for_sparse_target_recovery.md)
 
 </div>
 

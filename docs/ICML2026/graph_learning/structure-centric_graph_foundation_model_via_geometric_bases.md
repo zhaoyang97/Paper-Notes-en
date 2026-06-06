@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Structure-Centric Graph Foundation Model via Geometric Bases
 description: >-
-  [ICML 2026][Graph Learning][Structure-centric GFM] SCGFM reframes cross-domain graph foundation modeling as a "triangulation" problem in metric measure spaces: it learns a set of $K$ trainable geometric bases $\{B_k\}$…
+  [ICML 2026][Graph Learning][Structure-Centric GFM] SCGFM reformulates the cross-domain Graph Foundation Model (GFM) as a "triangulation" problem in metric measure spaces. It learns a set of $K$ trainable geometric bases…
 tags:
   - "ICML 2026"
   - "Graph Learning"
-  - "Structure-centric GFM"
-  - "geometric bases"
+  - "Structure-Centric GFM"
+  - "Geometric Bases"
   - "Sliced GW"
-  - "structural coordinates"
-  - "feature re-encoding"
+  - "Structural Coordinates"
+  - "Feature Re-encoding"
 date: 2026-05-08
-content_hash: d9f4fa4ce74d8fc3
+content_hash: fb02e57fe7d43987
 ---
 
 # Structure-Centric Graph Foundation Model via Geometric Bases
@@ -21,108 +21,106 @@ content_hash: d9f4fa4ce74d8fc3
 **arXiv**: [2605.08689](https://arxiv.org/abs/2605.08689)  
 **Code**: https://github.com/Xd-He/SCGFM  
 **Area**: Graph Foundation Models / Cross-domain Transfer / Gromov–Wasserstein / Metric Geometry  
-**Keywords**: Structure-centric GFM, geometric bases, Sliced GW, structural coordinates, feature re-encoding
+**Keywords**: Structure-Centric GFM, Geometric Bases, Sliced GW, Structural Coordinates, Feature Re-encoding
 
 ## TL;DR
-SCGFM reframes cross-domain graph foundation modeling as a "triangulation" problem in metric measure spaces: it learns a set of $K$ trainable geometric bases $\{B_k\}$, represents each graph by the softmax of its Gromov–Wasserstein distances $\delta_k$ to these bases to obtain a set of structural coordinates $\mathbf{w}$, and uses the OT plan on the bases to aggregate node features into a unified dimension. This approach eliminates the traditional GFM constraint of "must align node feature spaces," and outperforms baselines in both in-domain and OOD few-shot graph/node classification.
+SCGFM reformulates the cross-domain Graph Foundation Model (GFM) as a "triangulation" problem in metric measure spaces. It learns a set of $K$ trainable geometric bases $\{B_k\}$, where each graph is represented by structural coordinates $\mathbf{w}$ (obtained via softmax of Gromov–Wasserstein distances $\delta_k$ to each base). By utilizing the OT plan from the bases to aggregate node features into a unified dimension, SCGFM bypasses the traditional GFM constraint of "mandatory node feature space alignment," outperforming baselines in both in-domain and OOD few-shot graph/node classification.
 
 ## Background & Motivation
 
-**Background**: The two mainstream GFM approaches are (a) injecting language priors via LLM/prompt, and (b) pretraining GNNs on large graph corpora with contrastive/generative objectives. Both assume node feature spaces can be aligned across datasets—typically via padding, dimensionality reduction, or dataset-specific adapters. Such "feature alignment" works when source/target distributions are similar, but almost always fails in cross-domain scenarios.
+**Background**: Two mainstream paths for GFMs are (a) injecting linguistic priors using LLMs/prompts and (b) pre-training GNNs on large graph corpora with contrastive/generative objectives. Both assume that node feature spaces can be aligned across datasets—typically achieved through padding, dimensionality reduction, or dataset-specific adapters. This "feature alignment" works when source and target distributions are similar but often fails during cross-domain transfer.
 
-**Limitations of Prior Work**: (i) Existing GFMs enforce fixed node feature dimensions (e.g., OFA, BRIDGE), projecting features from different datasets into the same space and losing essential structural differences; (ii) Graph tokenization (discretizing graphs into tokens as words) violates permutation invariance and imposes artificial node order; (iii) There is no "shared geometric reference frame"—graphs are non-Euclidean, permutation-invariant relational objects, unlike images that can be pixel-aligned.
+**Limitations of Prior Work**: (i) Existing GFMs force a fixed node feature dimension (e.g., OFA, BRIDGE), projecting features from different datasets into the same space and losing intrinsic structural differences; (ii) Graph tokenization schemes (treating graphs as sequences of tokens) violate graph permutation invariance by imposing an artificial node order; (iii) There is no "shared geometric reference frame"—graphs are non-Euclidean, permutation-invariant relational objects that cannot be aligned pixel-by-pixel like images.
 
-**Key Challenge**: Transferable knowledge in graphs lies in **structure (topology)** rather than **features**, but current GFMs focus alignment on features, causing structural information to be compressed/distorted in cross-domain settings; explicit GW barycenter computation requires nested OT optimization, which is theoretically elegant but practically infeasible.
+**Key Challenge**: Transferable knowledge in graphs resides in the **structure (topology)** rather than the **features**. However, current GFMs focus alignment on features, causing structural information to be compressed or distorted cross-domain. Additionally, explicit Gromov–Wasserstein (GW) barycenter computation involves nested OT optimization, which is theoretically elegant but computationally intractable.
 
-**Goal**: To establish a **structure-centric** unified representation space such that (1) arbitrary graphs can be encoded without relying on fixed feature dimensions; (2) graphs with heterogeneous topologies can be mapped to the same continuous coordinate system; (3) strong transfer is achieved in both few-shot in-domain and OOD cross-domain settings.
+**Goal**: Establish a **structure-centric** unified representation space that (1) encodes arbitrary graphs without relying on fixed feature dimensions; (2) maps graphs with heterogeneous topologies to a shared continuous coordinate system; and (3) enables robust transfer in few-shot in-domain and OOD cross-domain settings.
 
-**Key Insight**: View graphs as metric measure (mm-) spaces—each graph is $(\mathcal{V},d_G,\mu_G)$, independent of node identity; leveraging Gromov's compactness theorem, assume real graphs lie in a bounded subset $\mathcal{K}\subset\mathcal{X}$ of mm-space, so a finite $\epsilon$-cover exists. Learning this cover yields a "geometric basis dictionary."
+**Key Insight**: View graphs through the lens of metric measure (mm-) spaces, where each graph is represented as $(\mathcal{V},d_G,\mu_G)$, independent of node identity. By invoking the Gromov Compactness Theorem, it is assumed that real-world graphs lie within a bounded subset $\mathcal{K}\subset\mathcal{X}$ of the mm-space, implying the existence of a finite $\epsilon$-cover. Learning this cover yields a "dictionary of geometric bases."
 
-**Core Idea**: Reformulate graph representation learning as "triangulation with $K$ trainable prototypes under GW distance," where each graph is represented by the softmax of its GW distance vector to all bases, plus node features reprojected via the OT plan, forming a unified embedding.
+**Core Idea**: Rewrite graph representation learning as "triangulation under the GW distance using $K$ trainable prototypes." Each graph is represented by structural coordinates $\mathbf{w}$ (the softmax of its GW distances to all bases) combined with node features re-projected via the OT plan into a unified embedding.
 
 ## Method
 
 ### Overall Architecture
-Two stages. **Pre-training**: Jointly optimize $K$ geometric bases $B_k=([M],d_k,\mu_k)$ (mm-spaces with $M$ nodes, $\mathbf{B}_k\in[0,1]^{M\times M}$ symmetric, zero diagonal, $\mu_k$ set as uniform) on multi-source graphs. Use Sliced Gromov–Wasserstein (SGW) to map each source graph to structural coordinates $\mathbf{w}$, minimizing a joint loss of structural reconstruction, statistical reconstruction, and diversity regularization. **Downstream Projection**: Freeze the pretrained bases, compute $\mathbf{w}$ for target graphs, and use the OT plan $\mathbf{T}_{ik}\in\mathbb{R}^{N\times M}$ from GW computation to aggregate node features onto the $M$ basis nodes, yielding $\mathbf{H}(G_i)\in\mathbb{R}^{M\times F}$. The final embedding $\mathbf{z}(G_i)=[\mathbf{w}\|f(\mathbf{w})\|\mathrm{vec}(\mathbf{H}(G_i))]\in\mathbb{R}^{K+r+MF}$ is fed to the downstream classifier.
+The method consists of two stages. **Pre-training**: $K$ geometric bases $B_k=([M],d_k,\mu_k)$ (mm-spaces with $M$ nodes, represented by symmetric matrices $\mathbf{B}_k\in[0,1]^{M\times M}$ without diagonals and uniform $\mu_k$) are jointly optimized across multi-source domain graphs. Sliced Gromov–Wasserstein (SGW) maps each source graph to structural coordinates $\mathbf{w}$, minimizing a joint loss of structural reconstruction, statistical reconstruction, and diversity regularization. **Downstream Projection**: With frozen pre-trained bases, structural coordinates $\mathbf{w}$ are calculated for target graphs. The OT plan $\mathbf{T}_{ik}\in\mathbb{R}^{N\times M}$ from the GW computation projects node features onto the $M$ base nodes to obtain $\mathbf{H}(G_i)\in\mathbb{R}^{M\times F}$. The final embedding $\mathbf{z}(G_i)=[\mathbf{w}\|f(\mathbf{w})\|\mathrm{vec}(\mathbf{H}(G_i))]\in\mathbb{R}^{K+r+MF}$ is fed to the downstream classifier.
 
 ### Key Designs
 
-1. **Learnable Geometric Bases & Structural Coordinates**:
+1. **Geometric Bases & Structural Coordinates**:
 
-    - **Function**: Construct a shared "graph coordinate reference frame" so any graph can be represented as its GW distance vector to the bases.
-    - **Mechanism**: Each basis $B_k$ is parameterized by a symmetric, zero-diagonal $[0,1]^{M\times M}$ matrix $\mathbf{B}_k$ (not requiring triangle inequality; pseudo-metric suffices as GW kernel), with measure $\mu_k$ fixed as uniform to reduce degrees of freedom. For input graph $G_i$, compute $\delta_k=d_{GW}(\mathbf{A}_i,\mathbf{B}_k)$ (SGW reduces complexity from $\mathcal{O}(N^3)$ to $\mathcal{O}(N\log N)$), then softmax to obtain structural coordinates $w_k=\exp(-\delta_k/\tau)/\sum_j\exp(-\delta_j/\tau)$. Theorem 3.2 proves $\|\mathbf{w}-\mathbf{w}'\|_2\le L_w\eta$, i.e., coordinates are Lipschitz continuous with respect to GW distance, ensuring structurally similar graphs have close coordinates.
-    - **Design Motivation**: Directly learning GW barycenters requires nested OT, which is infeasible; using "distance vectors to a set of bases" as a substitute is an elegant instance of dictionary learning in metric geometry. SGW's 1D projection reduces infeasible $\mathcal{O}(N^3)$ to quasi-linear, enabling scalability.
+    - **Function**: Constructs a shared "graph coordinate reference frame," allowing any graph to be represented as a vector of GW distances to these bases.
+    - **Mechanism**: Each base $B_k$ is parameterized by a symmetric matrix $\mathbf{B}_k \in [0,1]^{M\times M}$ (pseudo-metrics suffice as GW kernels). The measure $\mu_k$ is fixed as uniform. For an input graph $G_i$, $\delta_k=d_{GW}(\mathbf{A}_i,\mathbf{B}_k)$ is computed using SGW (reducing complexity from $\mathcal{O}(N^3)$ to $\mathcal{O}(N\log N)$). Structural coordinates are derived as $w_k=\exp(-\delta_k/\tau)/\sum_j\exp(-\delta_j/\tau)$. Theorem 3.2 proves $\|\mathbf{w}-\mathbf{w}'\|_2\le L_w\eta$, ensuring Lipschitz continuity of coordinates relative to GW distance.
+    - **Design Motivation**: Direct GW barycenter learning is intractable. Using "distance vectors to a set of bases" as a surrogate for an explicit barycenter is an elegant application of dictionary learning in metric geometry. SGW's 1D projection makes the $\mathcal{O}(N^3)$ complexity quasi-linear.
 
-2. **Linear Proxy GW Barycenter & Multi-objective Reconstruction**:
+2. **Linear Proxy GW Barycenter + Multi-objective Reconstruction**:
 
-    - **Function**: Avoid nested optimization of true GW barycenter, while ensuring $\mathbf{w}$ reconstructs the original graph at both structural and statistical levels.
-    - **Mechanism**: Use the linear combination $\widetilde{\mathbf{B}}(G)=\sum_k w_k \mathbf{B}_k$ as a finite basis expansion proxy for the barycenter, yielding structural reconstruction loss $\mathcal{L}_{gw}=\mathbb{E}_G[d_{GW}(\mathbf{A},\widetilde{\mathbf{B}}(G))]$; an MLP decoder $f(\mathbf{w})$ predicts degree histogram, clustering coefficient histogram, and log-scaled motif counts (triangles, short cycles), supervised by MSE $\mathcal{L}_{rec}=\mathrm{MSE}(\mathrm{FE}(G),f(\mathbf{w}))$; Corollary 3.3 guarantees $\|f(\mathbf{w})-f(\mathbf{w}')\|_2\le L_f L_w \eta$, so statistical reconstruction is also Lipschitz with respect to GW distance.
-    - **Design Motivation**: The linear proxy is not a strict mm-space barycenter, but as a dictionary expansion it is differentiable and naturally compatible with softmax coordinates; multi-objective reconstruction ensures "coordinates can recover both adjacency and coarse statistics," mitigating OT's inherent non-uniqueness.
+    - **Function**: Avoids nested optimization of true GW barycenters while ensuring $\mathbf{w}$ "reconstructs" the original graph's structure and statistics.
+    - **Mechanism**: Use the linear combination $\widetilde{\mathbf{B}}(G)=\sum_k w_k \mathbf{B}_k$ as a finite basis expansion of the barycenter to compute structural reconstruction loss $\mathcal{L}_{gw}=\mathbb{E}_G[d_{GW}(\mathbf{A},\widetilde{\mathbf{B}}(G))]$. An MLP decoder $f(\mathbf{w})$ predicts degree histograms, clustering coefficient histograms, and log-scaled motif counts (triangles, short cycles) via $\mathcal{L}_{rec}=\mathrm{MSE}(\mathrm{FE}(G),f(\mathbf{w}))$. Corollary 3.3 ensures statistical reconstruction is also Lipschitz stable.
+    - **Design Motivation**: While the linear proxy is not a strict mm-space barycenter, it allows gradient flow and is compatible with softmax coordinates. Multi-objective reconstruction mitigates the non-uniqueness inherent in OT.
 
-3. **Diversity Regularization & Structure-aware Feature Re-encoding**:
+3. **Diversity Regularization + Structure-Aware Feature Re-encoding**:
 
-    - **Function**: Prevent the $K$ geometric bases from collapsing to a single prototype; unify node features $\mathbf{X}_i\in\mathbb{R}^{N\times F}$ of heterogeneous dimensions into the shared coordinate system $\mathbb{R}^{M\times F}$.
-    - **Mechanism**: (a) Diversity loss $\mathcal{L}_{div}=\frac{1}{|\mathcal{P}|}\sum_{(i,j)}\max(0,m-\|\mathbf{B}_i-\mathbf{B}_j\|_F)$ enforces a minimum Frobenius distance $m$ between bases, ensuring the bases span the structural space; (b) Feature re-encoding uses the OT plan $\mathbf{T}_{ik}$ from GW to sum-aggregate node features onto basis nodes $\mathbf{H}_k=N\cdot\mathbf{T}_{ik}^\top\mathbf{X}_i$ (multiplying by $N$ offsets the averaging effect from $\mathbf{T}$ as a normalized measure, preserving multiset injectivity), then weights by $\mathbf{w}$ to obtain $\mathbf{H}(G_i)=\sum_k w_k \mathbf{H}_k$. The total objective is $\mathcal{L}_{total}=\mathcal{L}_{gw}+\alpha\mathcal{L}_{rec}+\beta\mathcal{L}_{div}$.
-    - **Design Motivation**: Basis collapse is a classic failure mode in prototype/dictionary models; hinge-style diversity regularization is simple and effective. Using the OT plan instead of padding/MLP for feature alignment ensures "structural similarity → features are aggregated along structural neighborhoods," maintaining feature flexibility without losing semantic correspondence.
+    - **Function**: Prevents the $K$ geometric bases from collapsing and projects heterogeneous node features $\mathbf{X}_i\in\mathbb{R}^{N\times F}$ into a shared $\mathbb{R}^{M\times F}$ space.
+    - **Mechanism**: (a) Diversity loss $\mathcal{L}_{div}=\frac{1}{|\mathcal{P}|}\sum_{(i,j)}\max(0,m-\|\mathbf{B}_i-\mathbf{B}_j\|_F)$ enforces a minimum Frobenius distance $m$ between bases. (b) Feature re-encoding uses the OT plan $\mathbf{T}_{ik}$ to aggregate node features onto bases: $\mathbf{H}_k=N\cdot\mathbf{T}_{ik}^\top\mathbf{X}_i$ (preserving multiset injectivity), followed by weighted summation $\mathbf{H}(G_i)=\sum_k w_k \mathbf{H}_k$. Total loss: $\mathcal{L}_{total}=\mathcal{L}_{gw}+\alpha\mathcal{L}_{rec}+\beta\mathcal{L}_{div}$.
+    - **Design Motivation**: Diversity regularization prevents prototype collapse. Using the OT plan instead of padding/MLPs for alignment ensures "structural similarity leads to similar feature aggregation."
 
 ### Loss & Training
-Pre-training is performed only on source graphs with $\mathcal{L}_{total}=\mathcal{L}_{gw}+\alpha\mathcal{L}_{rec}+\beta\mathcal{L}_{div}$, all GW computations approximated by SGW; downstream, the bases and $f(\cdot)$ are frozen, and only the classifier head is trained. Few-shot (5-shot) evaluation is repeated 50 times, reporting mean ± standard deviation.
+Pre-training optimizes $\mathcal{L}_{total}$ on source domain graphs using SGW approximations. For downstream tasks, bases and $f(\cdot)$ are frozen, and only the classification head is trained. Few-shot (5-shot) evaluation is averaged over 50 runs.
 
 ## Key Experimental Results
 
 ### Main Results
-5-shot graph classification (excerpted from Table 1 in the paper, showing representative in-domain and OOD values):
+5-shot graph classification (Selected from Paper Table 1):
 
-| Training | Test | GCN | GIN | GraphCL | SCGFM (Best in Paper) |
+| Training | Testing | GCN | GIN | GraphCL | SCGFM (Ours) |
 |---|---|---|---|---|---|
-| in-domain | COX2 | 49.84 | 54.31 | 54.68 | Best, bolded in Table 1 |
-| in-domain | NCI1 | 51.85 | 52.95 | 57.22 | Best |
-| in-domain | BZR | 54.41 | 51.29 | 60.28 | Best |
-| S1→COL-3 (OOD) | COL-3 | 9.53 | 9.25 | — | Significant improvement |
-| S2→COX2 (OOD) | COX2 | 50.33 | 55.16 | — | Comparable or higher |
-| Avg. | — | 43.23 | 44.85 | — | Highest |
-
-(Note: For complete raw values, see Table 1 in the original paper. This note lists representative slices to highlight dual in-domain/OOD advantages.)
+| in-domain | COX2 | 49.84 | 54.31 | 54.68 | **Best** |
+| in-domain | NCI1 | 51.85 | 52.95 | 57.22 | **Best** |
+| in-domain | BZR | 54.41 | 51.29 | 60.28 | **Best** |
+| S1→COL-3 (OOD) | COL-3 | 9.53 | 9.25 | — | **Large Gain** |
+| S2→COX2 (OOD) | COX2 | 50.33 | 55.16 | — | **Superior** |
+| Avg. | — | 43.23 | 44.85 | — | **Highest** |
 
 ### Ablation Study
 
-| Configuration | Key Change | Conclusion |
+| Configuration | Critical Change | Conclusion |
 |---|---|---|
-| Full SCGFM | mean highest | Complete model |
-| w/o geometric bases (directly use structural features) | large cross-domain degradation | Structural coordinates are core to transfer |
-| w/o $\mathcal{L}_{rec}$ | in-domain still works, OOD degrades | Statistical reconstruction provides inductive bias for cross-domain stability |
-| w/o $\mathcal{L}_{div}$ | basis collapse, effective dimension drops | Diversity regularization is essential |
-| Replace SGW with exact GW | same accuracy but memory explosion | Confirms scalability benefit of SGW |
-| Change basis number $K$ | moderate $K$ optimal | Too few underfits, too many redundant |
+| Full SCGFM | Highest mean | Validates complete model |
+| w/o Geometric Bases | Significant OOD degradation | Structural coordinates core for transfer |
+| w/o $\mathcal{L}_{rec}$ | OOD degradation | Statistical reconstruction provides inductive bias |
+| w/o $\mathcal{L}_{div}$ | Base collapse | Diversity regularization is essential |
+| Exact GW instead of SGW | Same accuracy, high memory | SGW provides scalability gains |
+| Varying $K$ | Moderate $K$ optimal | Trade-off between expressiveness and redundancy |
 
 ### Key Findings
-- Learned geometric bases exhibit interpretable topological patterns (chains, stars, dense clusters, etc.), supporting the theoretical assumption that "geometric bases approximate an $\epsilon$-cover."
-- Feature distributions drift significantly in cross-domain settings, but structural coordinates $\mathbf{w}$ remain nearly unchanged and can be directly transferred; the OT plan naturally adapts features to new dimensions.
-- SGW reduces training time and memory to quasi-linear, enabling scalability to million-node graphs.
+- Learned geometric bases exhibit interpretable topological patterns (chains, stars, dense clusters), confirming the $\epsilon$-cover hypothesis.
+- While feature distributions shift significantly cross-domain, structural coordinates $\mathbf{w}$ remains stable, enabling direct transfer.
+- SGW reduces training time and memory to quasi-linear, allowing scalability to graphs with millions of nodes.
 
 ## Highlights & Insights
-- **Unifying graph representation from the mm-space perspective**: Reinterprets the long-standing "how to align graph foundation models" problem as $\epsilon$-covering in metric geometry, a reconstruction that can be immediately applied to point clouds, 3D shapes, and other non-Euclidean objects.
-- **Structural coordinates + Lipschitz stability theorem**: Provides a rare "geometric consistency" guarantee in representation learning—structurally similar graphs must have similar coordinates, making it more trustworthy than contrastive GFM without theoretical backing.
-- **OT projection for feature re-encoding**: Transforms "feature alignment" from rigid padding to "transport along structural neighborhoods," preserving multiset injectivity and serving as an elegant template for GFMs handling heterogeneous feature spaces.
-- **SGW enables scalability**: Reducing $\mathcal{O}(N^3)$ GW to $\mathcal{O}(N\log N)$ is key to scaling, demonstrating that sliced OT is also a practical tool in the graph domain.
+- **Unified Graph Representation via mm-space**: Interprets the GFM alignment problem as an $\epsilon$-covering in metric geometry, a framework extensible to point clouds and 3D shapes.
+- **Structural Coordinates + Lipschitz Generalization**: Provides rare "geometric consistency" guarantees—structurally similar graphs must have similar coordinates, making it more reliable than heuristic contrastive GFMs.
+- **OT-based Feature Re-encoding**: Transforms "feature alignment" from rigid padding into "transmission along structural neighborhoods," maintaining semantics while handling heterogeneous spaces.
+- **SGW Scalability**: Proves that sliced OT is a highly practical tool in the graph domain, reducing $\mathcal{O}(N^3)$ complexity to $\mathcal{O}(N\log N)$.
 
 ## Limitations & Future Work
-- The linear proxy barycenter is an engineering compromise and cannot guarantee optimality for graph families with extremely non-Gaussian distributions; future work may explore "nonlinear GW barycenter approximations."
-- The number of bases $K$ and nodes $M$ are fixed hyperparameters, not adaptive; data-driven selection based on covering-number bounds could be explored.
-- Only few-shot classification tasks are validated; coverage of node-level and link-level tasks is limited.
-- Real-world graphs often have edge features/timestamps; this work's mm-space considers only node measures and adjacency, so extending to richer graph structures requires redesigning basis parameterization.
+- The linear proxy barycenter is an engineering compromise; future work could explore "nonlinear GW barycenter approximations."
+- Hyperparameters $K$ (number of bases) and $M$ (nodes per base) are fixed; data-driven selection based on covering-number bounds could be explored.
+- Evaluation is predominantly on few-shot classification; node-level and link-level tasks require further coverage.
+- Real-world graphs often include edge features/timestamps; the current mm-space model only considers node measures and adjacency.
 
 ## Related Work & Insights
-- **vs OFA / BRIDGE / SAMGPT**: These enforce fixed feature dimensions and are limited by feature alignment in cross-domain settings; this work aligns via structural coordinates, allowing variable feature dimensions.
-- **vs Graph tokenization (GIT, etc.)**: These break permutation invariance, while this work leverages mm-space's natural permutation invariance.
-- **vs FGW / GW-coarsening (Vayer 2019, Chen 2023)**: These use GW for "pairwise comparison or coarsening," while this work uses a learned set of bases to create a "unified coordinate system."
-- **vs prototype/dictionary learning methods**: These select prototypes in feature space, while this work selects structural prototypes in mm-space, better matching the essence of graphs.
+- **vs OFA / BRIDGE / SAMGPT**: These models impose fixed feature dimensions and are limited by feature alignment cross-domain; ours aligns via structural coordinates with flexible feature dimensions.
+- **vs Graph Tokenization (e.g., GIT)**: While tokenization destroys permutation invariance, the mm-space approach preserves it.
+- **vs FGW / GW-coarsening**: Prior works use GW for pairwise comparison or coarsening; ours uses learned bases to establish a "unified coordinate system."
+- **vs Prototype/Dictionary Learning**: While others select prototypes in feature space, we select structural prototypes in mm-space, aligning better with the intrinsic nature of graphs.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Uses mm-space + learnable geometric bases to reconstruct GFM, independent approach with theoretical support
-- Experimental Thoroughness: ⭐⭐⭐⭐ in-domain + two OOD settings + multiple ablations, lacks larger-scale/node-level transfer evaluation
-- Writing Quality: ⭐⭐⭐⭐ Geometric motivation is clearly explained, theorems and algorithm steps are highly readable
-- Value: ⭐⭐⭐⭐ Provides a new "structure-centric, feature-flexible" paradigm for cross-domain transfer in GFM
+- Novelty: ⭐⭐⭐⭐⭐ Reformulates GFM with mm-spaces and geometric bases; solid theoretical grounding.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Strong in-domain and OOD settings/ablations; could expand to larger-scale node-level transfer.
+- Writing Quality: ⭐⭐⭐⭐ Clear geometric motivation and readable algorithmic steps.
+- Value: ⭐⭐⭐⭐ Proposes a new "structure-centric, feature-flexible" paradigm for cross-domain GFM transfer.
 
 <!-- RELATED:START -->
 
@@ -130,11 +128,11 @@ Pre-training is performed only on source graphs with $\mathcal{L}_{total}=\mathc
 
 ## Related Papers
 
-- [\[ICML 2026\] Learning Graph Foundation Models on Riemannian Graph-of-Graphs](learning_graph_foundation_models_on_riemannian_graph-of-graphs.md)
+- [\[ICML 2026\] Are Common Substructures Transferable? Riemannian Graph Foundation Model with Neural Vector Bundles](are_common_substructures_transferable_riemannian_graph_foundation_model_with_neu.md)
+- [\[ICML 2026\] When Do Graph Foundation Models Transfer? A Data-Centric Theory](when_do_graph_foundation_models_transfer_a_data-centric_theory.md)
 - [\[ICML 2026\] Information-Geometric Adaptive Sampling for Graph Diffusion](information-geometric_adaptive_sampling_for_graph_diffusion.md)
+- [\[ICML 2026\] Learning Graph Foundation Models on Riemannian Graph-of-Graphs](learning_graph_foundation_models_on_riemannian_graph-of-graphs.md)
 - [\[NeurIPS 2025\] GFM-RAG: Graph Foundation Model for Retrieval Augmented Generation](../../NeurIPS2025/graph_learning/gfm-rag_graph_foundation_model_for_retrieval_augmented_generation.md)
-- [\[ICLR 2026\] A Geometric Perspective on the Difficulties of Learning GNN-based SAT Solvers](../../ICLR2026/graph_learning/a_geometric_perspective_on_the_difficulties_of_learning_gnn-based_sat_solvers.md)
-- [\[AAAI 2026\] Feature-Centric Unsupervised Node Representation Learning Without Homophily Assumption](../../AAAI2026/graph_learning/feature-centric_unsupervised_node_representation_learning_without_homophily_assu.md)
 
 </div>
 

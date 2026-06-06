@@ -182,7 +182,7 @@ Achieves state-of-the-art results on the simpler motion transfer task as well.
 - [\[ICLR 2026\] DiffVax: Optimization-Free Image Immunization Against Diffusion-Based Editing](../../ICLR2026/model_compression/diffvax_optimization-free_image_immunization_against_diffusion-based_editing.md)
 - [\[ICCV 2025\] Multi-Object Sketch Animation by Scene Decomposition and Motion Planning](multi-object_sketch_animation_by_scene_decomposition_and_motion_planning.md)
 - [\[CVPR 2026\] F²HDR: Two-Stage HDR Video Reconstruction via Flow Adapter and Physical Motion Modeling](../../CVPR2026/model_compression/textf2texthdr_two-stage_hdr_video_reconstruction_via_flow_adapter_and_physical_m.md)
-- [\[ICCV 2025\] Gain-MLP: Improving HDR Gain Map Encoding via a Lightweight MLP](gain-mlp_improving_hdr_gain_map_encoding_via_a_lightweight_mlp.md)
+- [\[ICML 2026\] Active Tabular Augmentation via Policy-Guided Diffusion Inpainting](../../ICML2026/model_compression/active_tabular_augmentation_via_policy-guided_diffusion_inpainting.md)
 
 </div>
 

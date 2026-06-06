@@ -138,11 +138,11 @@ Here, $\mathcal L_{\text{loc}}=\sum_m\mathbb E\ell_\tau(q_m^\tau(h_m),y)$ superv
 
 ## Related Papers
 
+- [\[ICML 2026\] Post-Training LLMs as Better Decision-Making Agents: A Regret-Minimization Approach](post-training_llms_as_better_decision-making_agents_a_regret-minimization_approa.md)
+- [\[ICML 2026\] Scaling Small Agents Through Strategy Auctions](scaling_small_agents_through_strategy_auctions.md)
 - [\[ICML 2026\] EvolveR: Self-Evolving LLM Agents through an Experience-Driven Lifecycle](evolver_self-evolving_llm_agents_through_an_experience-driven_lifecycle.md)
-- [\[NeurIPS 2025\] Group-in-Group Policy Optimization for LLM Agent Training](../../NeurIPS2025/llm_agent/groupingroup_policy_optimization_for_llm_agent_training.md)
-- [\[ACL 2026\] HeLa-Mem: Hebbian Learning and Associative Memory for LLM Agents](../../ACL2026/llm_agent/hela-mem_hebbian_learning_and_associative_memory_for_llm_agents.md)
-- [\[ICLR 2026\] CoMind: Towards Community-Driven Agents for Machine Learning Engineering](../../ICLR2026/llm_agent/comind_towards_community-driven_agents_for_machine_learning_engineering.md)
-- [\[AAAI 2026\] Promoting Sustainable Web Agents: Benchmarking and Estimating Energy Consumption Through Empirical and Theoretical Analysis](../../AAAI2026/llm_agent/promoting_sustainable_web_agents_benchmarking_and_estimating_energy_consumption_.md)
+- [\[ICML 2026\] Weasel: Domain-Generalizable Web Agents through Importance-Diversity Data Selection](weasel_out-of-domain_generalization_for_web_agents_via_importance-diversity_data.md)
+- [\[ICML 2026\] Learning Efficient Guardrails for Compliance](learning_efficient_guardrails_for_compliance.md)
 
 </div>
 

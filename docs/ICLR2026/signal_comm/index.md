@@ -19,7 +19,7 @@ tags:
 
 **🔬 ICLR2026** · **8** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (1)](../../ICML2026/signal_comm/index.md) · [📷 CVPR2026 (5)](../../CVPR2026/signal_comm/index.md) · [🤖 AAAI2026 (3)](../../AAAI2026/signal_comm/index.md) · [🧠 NeurIPS2025 (12)](../../NeurIPS2025/signal_comm/index.md) · [📹 ICCV2025 (3)](../../ICCV2025/signal_comm/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (2)](../../ICML2026/signal_comm/index.md) · [📷 CVPR2026 (5)](../../CVPR2026/signal_comm/index.md) · [🤖 AAAI2026 (3)](../../AAAI2026/signal_comm/index.md) · [🧠 NeurIPS2025 (12)](../../NeurIPS2025/signal_comm/index.md) · [📹 ICCV2025 (3)](../../ICCV2025/signal_comm/index.md)
 
 **[Deterministic Bounds and Random Estimates of Metric Tensors on Neuromanifolds](deterministic_bounds_and_random_estimates_of_metric_tensors_on_neuromanifolds.md)**
 

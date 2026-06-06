@@ -125,11 +125,11 @@ The ego driving policy is trained using SAC (Soft Actor-Critic). Normal and chal
 
 ## Related Papers
 
-- [\[AAAI 2026\] Phantom Menace: Exploring and Enhancing the Robustness of VLA Models Against Physical Sensor Attacks](phantom_menace_exploring_and_enhancing_the_robustness_of_vla_models_against_phys.md)
 - [\[CVPR 2026\] Devil is in Narrow Policy: Unleashing Exploration in Driving VLA Models](../../CVPR2026/multimodal_vlm/devil_is_in_narrow_policy_unleashing_exploration_in_driving_vla_models.md)
+- [\[AAAI 2026\] Phantom Menace: Exploring and Enhancing the Robustness of VLA Models Against Physical Sensor Attacks](phantom_menace_exploring_and_enhancing_the_robustness_of_vla_models_against_phys.md)
+- [\[ICML 2026\] Any3D-VLA: Enhancing VLA Robustness via Diverse Point Clouds](../../ICML2026/multimodal_vlm/any3d-vla_enhancing_vla_robustness_via_diverse_point_clouds.md)
 - [\[ICCV 2025\] Hints of Prompt: Enhancing Visual Representation for Multimodal LLMs in Autonomous Driving](../../ICCV2025/multimodal_vlm/hints_of_prompt_enhancing_visual_representation_for_multimodal_llms_in_autonomou.md)
-- [\[AAAI 2026\] Format Matters: The Robustness of Multimodal LLMs in Reviewing Evidence from Tables and Charts](format_matters_the_robustness_of_multimodal_llms_in_reviewing_evidence_from_tabl.md)
-- [\[AAAI 2026\] SatireDecoder: Visual Cascaded Decoupling for Enhancing Satirical Image Comprehension](satiredecoder_visual_cascaded_decoupling_for_enhancing_satirical_image_comprehen.md)
+- [\[ICML 2026\] Benchmarking and Enhancing VLM for Compressed Image Understanding](../../ICML2026/multimodal_vlm/benchmarking_and_enhancing_vlm_for_compressed_image_understanding.md)
 
 </div>
 

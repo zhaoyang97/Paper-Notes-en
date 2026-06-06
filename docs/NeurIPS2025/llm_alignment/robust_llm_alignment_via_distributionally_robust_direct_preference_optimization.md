@@ -126,7 +126,7 @@ WDPO appends a gradient regularization term directly to the DPO loss; KLDPO rewe
 - [\[NeurIPS 2025\] On Extending Direct Preference Optimization to Accommodate Ties](on_extending_direct_preference_optimization_to_accommodate_ties.md)
 - [\[NeurIPS 2025\] KL Penalty Control via Perturbation for Direct Preference Optimization](kl_penalty_control_via_perturbation_for_direct_preference_optimization.md)
 - [\[NeurIPS 2025\] DP²O-SR: Direct Perceptual Preference Optimization for Real-World Image Super-Resolution](dp2o-sr_direct_perceptual_preference_optimization_for_real-world_image_super-res.md)
-- [\[NeurIPS 2025\] LLM Safety Alignment is Divergence Estimation in Disguise](llm_safety_alignment_is_divergence_estimation_in_disguise.md)
+- [\[ICML 2026\] Adaptive Probe-based Steering for Robust LLM Jailbreaking](../../ICML2026/llm_alignment/adaptive_probe-based_steering_for_robust_llm_jailbreaking.md)
 
 </div>
 

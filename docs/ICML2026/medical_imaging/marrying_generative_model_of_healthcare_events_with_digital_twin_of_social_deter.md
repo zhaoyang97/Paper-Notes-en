@@ -2,18 +2,18 @@
 title: >-
   [Paper Note] Marrying Generative Model of Healthcare Events with Digital Twin of Social Determinants of Health for Disease Reasoning
 description: >-
-  [ICML 2026][Medical Imaging][digital twin] This paper proposes DiffDT: a conditional Latent Diffusion framework that connects electronic health records (ICD-coded event sequences) with multi-organ biomarker digital twins…
+  [ICML 2026][Medical Imaging][digital twin] This paper proposes DiffDT: a conditional Latent Diffusion framework that bridges Electronic Health Records (ICD-coded event sequences) with multi-organ biomarker digital twins…
 tags:
   - "ICML 2026"
   - "Medical Imaging"
   - "digital twin"
-  - "ICD autoregression"
+  - "ICD autoregressive"
   - "latent diffusion"
   - "SPD manifold"
   - "Cholesky decomposition"
-  - "multi-organ biomarker"
+  - "multi-organ biomarkers"
 date: 2026-05-08
-content_hash: fdfbc6978cc6270c
+content_hash: 8bb14e80ffba615f
 ---
 
 # Marrying Generative Model of Healthcare Events with Digital Twin of Social Determinants of Health for Disease Reasoning
@@ -22,58 +22,54 @@ content_hash: fdfbc6978cc6270c
 **arXiv**: [2605.09771](https://arxiv.org/abs/2605.09771)  
 **Code**: None  
 **Area**: Medical Imaging / Generative Models / Digital Twin / Disease Prediction  
-**Keywords**: digital twin, ICD autoregression, latent diffusion, SPD manifold, Cholesky decomposition, multi-organ biomarker
+**Keywords**: digital twin, ICD autoregressive, latent diffusion, SPD manifold, Cholesky decomposition, multi-organ biomarkers
 
 ## TL;DR
-This paper proposes DiffDT: a conditional Latent Diffusion framework that connects electronic health records (ICD-coded event sequences) with multi-organ biomarker digital twins (tabular features derived from brain/heart/liver/kidney imaging and brain functional connectivity SPD matrices). The key innovation is an SPD-VQVAE based on Cholesky decomposition, which reduces $\mathcal{O}(N^3)$ SPD manifold diffusion to a manifold-preserving and efficient latent space. An AR model then performs multi-pathway disease reasoning via the mediation path “generate digital twin → predict next ICD.” On UKB, next-event prediction AUC for 1944 diseases reaches 0.91, setting a new SOTA.
+This paper proposes DiffDT: a conditional Latent Diffusion framework that bridges Electronic Health Records (ICD-coded event sequences) with multi-organ biomarker digital twins (imaging-derived tabular features for brain/heart/liver/kidney and brain functional connectivity SPD matrices). The key innovation is an SPD-VQVAE based on Cholesky decomposition that reduces $\mathcal{O}(N^3)$ SPD manifold diffusion to a manifold-preserving and efficient latent space. This allows an AR model to perform multi-pathway disease reasoning via the intermediary path of "generating digital twins $\rightarrow$ predicting next ICD." On the UKB dataset, the AUC for predicting the next occurrence of 1,944 disease categories reached 0.91, setting a new SOTA.
 
 ## Background & Motivation
 
-**Background**: There are two mainstream routes in medical AI—(a) **EHR-to-event** uses transformer autoregression to model ICD event sequences (MOTOR, Delphi), treating disease progression as next-token prediction but ignoring concrete physiological biomarkers; (b) **DT-to-event** uses pretrained imaging foundation models (BrainMass, NeuroPath) to predict diseases from single-organ in-vivo biomarkers, but lacks cross-temporal causal chains. Both struggle with long-term, multi-pathway, personalized disease reasoning.
+**Background**: Two mainstream routes in medical AI exist: (a) **EHR-to-event**, which uses transformer autoregression to learn ICD event sequences (e.g., MOTOR, Delphi), treating disease progression as next-token prediction but ignoring specific physiological biomarkers; (b) **DT-to-event**, which uses pre-trained imaging foundation models (e.g., BrainMass, NeuroPath) to predict diseases from single-organ in-vivo biomarkers but lacks cross-temporal causal chains. Neither can perform long-term, multi-pathway, personalized disease reasoning.
 
-**Limitations of Prior Work**: (1) Pure EHR approaches learn healthcare utilization patterns rather than disease mechanisms; Figure 2 shows prediction accuracy is negatively correlated with the “semantic distance” between current and historical diseases—predictions for diseases far from the main diagnosis chapter are poor, exposing the lack of multi-pathway probabilistic mediation. (2) Pure DT approaches only use current biomarkers and cannot predict future physiological states based on past medical history. (3) Existing AR-diffusion hybrid architectures (e.g., ye2025hybrid, HybridVLA) are designed in Euclidean space; directly adding Gaussian noise to brain functional connectivity SPD matrices destroys geometry (no longer positive definite). (4) Geometric diffusion methods like SPD-DDPM use affine-invariant/log-Euclidean metrics, which are rigorous but computationally prohibitive at $\mathcal{O}(N^3)$ complexity (AAL atlas $N=116$).
+**Limitations of Prior Work**: (1) Pure EHR routes learn medical utilization patterns rather than disease mechanisms; Figure 2 shows that prediction accuracy is negatively correlated with the "semantic distance between current and historical diseases"—prediction is poor for diseases far from the primary diagnosis chapter, exposing the lack of multi-pathway probabilistic mediation. (2) Pure DT routes rely only on current biomarkers and cannot predict future physiological states based on past medical history. (3) Existing AR-diffusion hybrid architectures (e.g., ye2025hybrid, HybridVLA) are designed in Euclidean space; applying Gaussian noise directly to brain functional connectivity SPD matrices destroys the geometry (violating positive definiteness). (4) Geometric diffusion methods like SPD-DDPM using affine-invariant / log-Euclidean metrics are rigorous but computationally prohibitive due to $\mathcal{O}(N^3)$ complexity ($N=116$ under the AAL atlas).
 
-**Key Challenge**: To combine EHR temporal causality and multi-organ physiological states, it is necessary to (i) make the generative model closely follow ICD history, (ii) ensure generated brain networks remain on the SPD manifold, and (iii) keep complexity low enough to train on 50K+ subjects; the first two are inherently conflicting under Euclidean latent diffusion frameworks.
+**Key Challenge**: To combine EHR temporal causality with multi-organ physiological states, one must: (i) make the generative model responsive to ICD history, (ii) ensure generated brain networks remain on the SPD manifold, and (iii) maintain low enough complexity to train on 50K+ subjects. The first two requirements naturally conflict within Euclidean latent diffusion frameworks.
 
-**Goal**: (1) Establish an SDoH-to-event paradigm: use ICD-coded SDoH proxies (including chapter Z and V–Y) as conditions, generate multi-organ DTs as biological mediators, then predict future ICDs; (2) Design a manifold-preserving SPD latent diffusion to reduce $\mathcal{O}(N^3)$ to a tractable scale; (3) Validate next-event prediction for 1944 long-tail diseases on UKB.
+**Goal**: (1) Establish an SDoH-to-event paradigm: use ICD-coded SDoH proxies (including chapters Z and V–Y) as conditions to generate multi-organ DTs as biological mediators, then predict future ICDs. (2) Design manifold-preserving SPD latent diffusion that reduces $\mathcal{O}(N^3)$ to a computable scale. (3) Validate on next-occurrence prediction for 1,944 long-tail disease categories in UKB.
 
-**Key Insight**: Cholesky decomposition $M = LL^\top$ provides a **unique and smooth** factorization for the SPD manifold (Theorem 3.1: $\mathcal{S}_{++}^N \to \mathcal{L}_{++}^N$ is a diffeomorphism). Diffusion on Cholesky factors allows use of Euclidean machinery, while $LL^\top$ reconstruction guarantees the output remains SPD.
+**Key Insight**: Cholesky decomposition $M = LL^\top$ provides a **unique and smooth** factorization for SPD manifolds (Theorem 3.1: $\mathcal{S}_{++}^N \to \mathcal{L}_{++}^N$ is a diffeomorphism). Performing diffusion on Cholesky factors allows the use of Euclidean machinery while guaranteeing the reconstruction remains SPD through $LL^\top$.
 
-**Core Idea**: An SPD-VQVAE encodes brain functional connectivity matrices into a discrete latent space (decoder outputs a lower-triangular matrix, then $LL^\top$ reconstructs SPD), and Cholesky LDM is run in this latent space conditioned on ICD history. Tabular biomarkers use TabDiff for hybrid SDE/absorbing diffusion. Finally, the AR model treats “generate DT → predict next ICD” as mediation inference via $P(\text{Future}|\text{Biomarker})\cdot P(\text{Biomarker}|\text{History})$.
+**Core Idea**: An SPD-VQVAE encodes brain functional connectivity matrices into a discrete latent space (where the decoder outputs a lower-triangular matrix, then computes $LL^\top$ for SPD reconstruction). A Cholesky LDM then runs on this latent space conditioned on ICD history. Tabular biomarkers use TabDiff with mixed SDE/absorbing diffusion. Finally, an AR model treats "generating DT $\rightarrow$ predicting next ICD" as a mediated reasoning path: $P(\text{Future}|\text{Biomarker})\cdot P(\text{Biomarker}|\text{History})$.
 
 ## Method
 
 ### Overall Architecture
-Three core components work in concert: (1) **Adaptive medical history tokenizer + AR model $\phi$**: ICD sequences are mapped to a unified yearly time grid, with `[healthy]` tokens filling years without diagnoses; token embedding + age embedding are fed to causal self-attention for next-token prediction. (2) **Multi-organ DT generation**: Tabular biomarkers use TabDiff-style hybrid diffusion (continuous via VE SDE, discrete via absorbing process); brain functional connectivity uses SPD-VQVAE + Cholesky LDM. (3) **Prediction model**: Organ-specific FMs (BrainMass for brain, Transformer encoder for tabular) are fine-tuned on generated DTs for next ICD classification. **At inference**, for each causal node to be predicted, the AR model encodes past ICDs → diffusion model generates hypothetical multi-organ DT → fine-tuned FM predicts next ICD, completing multi-pathway mediation via $\sum_{\text{organ}} P(s_{t+1}|\text{DT}_t^{\text{organ}}) P(\text{DT}_t^{\text{organ}}|S_{<t})$.
+Three core components collaborate: (1) **Adaptive Medical History Tokenizer + AR Model $\phi$**: ICD sequences are mapped to a uniform temporal grid with 1-year granularity, using `[healthy]` tokens for years without events. Token embeddings + age embeddings are fed into a causal self-attention block for next-token prediction. (2) **Multi-organ DT Generation**: Tabular biomarkers use TabDiff-style mixed diffusion (continuous via VE SDE, discrete via absorbing process). Brain functional connectivity uses SPD-VQVAE + Cholesky LDM. (3) **Prediction Model**: Organ-specific FMs (BrainMass for brain, Transformer encoder for tabular) are fine-tuned on generated DTs for next-ICD classification. **During inference**, for each multi-pathway causal node, history is encoded by the AR model $\rightarrow$ hypothetical multi-organ DTs are generated by the diffusion model $\rightarrow$ fine-tuned FMs predict the next ICD, completing the multi-pathway mediation of $\sum_{\text{organ}} P(s_{t+1}|\text{DT}_t^{\text{organ}}) P(\text{DT}_t^{\text{organ}}|S_{<t})$.
 
 ### Key Designs
 
-1. **SPD-VQVAE: Manifold-Preserving VQVAE for SPD via Cholesky Decomposition**:
+1.  **SPD-VQVAE: Cholesky-based Manifold-Preserving VQVAE**:
+    *   **Function**: Compresses $116\times 116$ brain functional connectivity SPD matrices into a discrete latent space while ensuring decodings always land on the SPD manifold.
+    *   **Mechanism**: The encoder $\mathcal{E}$ uses an MLP to flatten and project $\mathbf{M}$ to $z_e \in \mathbb{R}^{N_q \times d}$, then quantizes to a codebook $\mathcal{Z} \in \mathbb{R}^{N_{code} \times d}$ to get $z$. The decoder $\mathcal{D}$ **does not directly predict $\hat{\mathbf{M}}$**; it predicts a lower-triangular $\hat L$ (with softplus on the diagonal to ensure positivity), then $\hat{\mathbf{M}} = \hat L \hat L^\top$. The loss $\mathcal{L}_{\text{VAE}} = \mathcal{L}_{\text{SPD}}(L, \hat L) + \mathcal{L}_{\text{recon}}(\mathbf{M}, \hat{\mathbf{M}}) + \|\text{sg}[z_e]-e\|_2^2 + \beta\|z_e-\text{sg}[e]\|_2^2$ simultaneously supervises Cholesky factors, final SPD reconstruction, codebook, and commitment.
+    *   **Design Motivation**: Direct VQVAE decoding of SPD matrices has no structural guarantees, and adding Gaussian noise immediately breaks positive definiteness. SPD-DDPM diffusion under affine-invariant metrics is $\mathcal{O}(N^3)$. Theorem 3.1 guarantees that the Cholesky map is a diffeomorphism between SPD and lower-triangular matrices with positive diagonals. Training in this factor space is equivalent to training on the manifold using Euclidean MSE loss, reducing complexity to $\mathcal{O}(N^2)$. This "finding a diffeomorphism to satisfy manifold constraints automatically" is the most elegant engineering trick in the paper.
 
-    - **Function**: Compresses $116\times 116$ brain functional connectivity SPD matrices into a discrete latent space, with decoding guaranteed to return to the SPD manifold.
-    - **Mechanism**: Encoder $\mathcal{E}$ uses an MLP to flatten $\mathbf{M}$ and project to $z_e \in \mathbb{R}^{N_q \times d}$, then quantizes to codebook $\mathcal{Z} \in \mathbb{R}^{N_{code} \times d}$ to obtain $z$. The decoder $\mathcal{D}$ **does not directly predict $\hat{\mathbf{M}}$**, but predicts a lower-triangular $\hat L$ (diagonal via softplus for positivity), then $\hat{\mathbf{M}} = \hat L \hat L^\top$. The loss $\mathcal{L}_{\text{VAE}} = \mathcal{L}_{\text{SPD}}(L, \hat L) + \mathcal{L}_{\text{recon}}(\mathbf{M}, \hat{\mathbf{M}}) + \|\text{sg}[z_e]-e\|_2^2 + \beta\|z_e-\text{sg}[e]\|_2^2$ supervises Cholesky factors, final SPD reconstruction, codebook, and commitment.
-    - **Design Motivation**: Directly decoding SPD matrices in VQVAE lacks structural guarantees; adding Gaussian noise immediately breaks positive definiteness. SPD-DDPM uses affine-invariant metrics but at $\mathcal{O}(N^3)$. Theorem 3.1 ensures Cholesky is a diffeomorphism between SPD and lower-triangular positive diagonal matrices, so training in factor space is equivalent to training on the manifold, but with Euclidean MSE loss and $\mathcal{O}(N^2)$ complexity. This “**find a diffeomorphism to automatically satisfy manifold constraints**” is the most elegant engineering trick in the paper.
+2.  **Cholesky Conditional LDM + Cross-attention for ICD History**:
+    *   **Function**: Runs conditional diffusion on the SPD-VQVAE latent space, conditioned on medical history embeddings $\hat{\mathbf{y}}$ from the AR model.
+    *   **Mechanism**: A U-Net backbone uses Residual MLP Blocks to process latent sequences. Two conditioning paths are used: (i) timestep embeddings $\text{Embed}_\text{diff}(t)$ added to each layer; (ii) Cross-attention treating $\hat{\mathbf{y}} \in \mathbb{R}^{T \times d_\phi}$ as key/value and $\hat z$ as query, outputting $\hat z = \text{Softmax}(QK^\top/\sqrt{C_{hid}})V$. Loss follows standard noise prediction: $\mathcal{L}_{\text{LDM}} = \mathbb{E}\|\epsilon - \epsilon_\theta(z_t, t, \hat{\mathbf{y}})\|^2$. **SPD-VQVAE-Dual**: Empirical evidence showed a single codebook tends to generate "average brains" lacking personalization. Thus, two SPD-VQVAEs model low-pass and high-pass Fourier components separately (threshold 25), allowing the LDM to learn global structure and personalized details simultaneously.
+    *   **Design Motivation**: Cross-attention allows generation to attend to any critical ICD record in history (e.g., how a hypertension diagnosis years ago affects today's brain network). The Dual design addresses the mode collapse tendency of generative models on highly symmetric medical data.
 
-2. **Cholesky Conditional LDM + Cross-Attention Injection of ICD History**:
-
-    - **Function**: Runs conditional diffusion in the SPD-VQVAE latent space, conditioned on AR model’s medical history embedding $\hat{\mathbf{y}}$.
-    - **Mechanism**: U-Net backbone uses Residual MLP Blocks for latent vector sequences. Conditioning is injected via: (i) diffusion timestep embedding $\text{Embed}_\text{diff}(t)$ added to each layer input; (ii) Cross-attention uses $\hat{\mathbf{y}} \in \mathbb{R}^{T \times d_\phi}$ as key/value, $\hat z$ as query, $Q = \hat z \hat{\bm{\alpha}}_h$, $K = \hat{\mathbf{y}}\hat{\bm{\beta}}_h$, $V = \hat{\mathbf{y}}\hat{\bm{\gamma}}_h$, output $\hat z = \text{Softmax}(QK^\top/\sqrt{C_{hid}})V$. Loss is standard noise prediction $\mathcal{L}_{\text{LDM}} = \mathbb{E}\|\epsilon - \epsilon_\theta(z_t, t, \hat{\mathbf{y}})\|^2$. **SPD-VQVAE-Dual**: Empirically, a single codebook tends to generate similar “average brains,” lacking personalized patterns; thus, two SPD-VQVAEs are used for low- and high-frequency Fourier components (threshold 25), so LDM learns both “global structure” and “personalized details.”
-    - **Design Motivation**: Cross-attention allows generation to condition not just on recent events but to attend to any key ICD in history (e.g., how a hypertension diagnosis years ago affects today’s brain network). The dual design is an engineering finding—pure generative models on highly symmetric medical data tend to mode collapse; frequency splitting enforces diversity.
-
-3. **Adaptive ICD Tokenizer + Multi-Pathway Mediation Reasoning**:
-
-    - **Function**: Enables AR model $\phi$ to handle sparse, uneven ICD timestamps and provide causality-aware conditions for downstream generative models.
-    - **Mechanism**: Constructs a unified annual time grid $\tau = (\tau_t \mid \tau_{t+1}-\tau_t \in \{0,1\})$ covering the cohort’s age range; for each year $\tau_t$: if subject has ICD $c$, $s_t = c$, else fill `[healthy]`. Input token $\mathbf{y}_t = \text{Embed}_\text{ICD}(s_t) + \text{Embed}_\text{age}(\tau_t)$ is fed to transformer, next-token target $\mathcal{L}_\text{AR} = -\sum_t \log p(s_{t+1}|s_{\leq t}; \phi)$. **At inference**, for each mediation node, $\phi$’s output is used as $\hat{\mathbf{y}}$ for LDM to generate multi-organ DT, then fine-tuned FM computes $P(s_{t+1}|\hat{\mathbf{M}}_t)$, forming an explicit causal chain from “current observed events” → “physiological biomarker state” → “future events.”
-    - **Design Motivation**: Previous AR medical models (Delphi) use time-to-event embedding, with token intervals up to decades, causing discontinuous conditioning for downstream diffusion. This work’s unified annual grid + `[healthy]` filler ensures temporally dense conditioning, stabilizing cross-attention in diffusion.
+3.  **Adaptive ICD Tokenizer + Multi-pathway Mediated Reasoning**:
+    *   **Function**: Enables the AR model $\phi$ to handle sparse/irregular ICD timestamps and provide causality-aware conditions for diffusion.
+    *   **Mechanism**: A uniform yearly grid $\tau$ is constructed. For each year $\tau_t$, if a subject has ICD $c$, then $s_t = c$; otherwise, the token is `[healthy]`. Input tokens $\mathbf{y}_t = \text{Embed}_\text{ICD}(s_t) + \text{Embed}_\text{age}(\tau_t)$ are fed into a transformer. The next-token objective is $\mathcal{L}_\text{AR} = -\sum_t \log p(s_{t+1}|s_{\leq t}; \phi)$. **During inference**, for each mediation node, the $\phi$ output is fed as $\hat{\mathbf{y}}$ to the LDM to generate multi-organ DTs, which are then processed by fine-tuned FMs to calculate $P(s_{t+1}|\hat{\mathbf{M}}_t)$.
+    *   **Design Motivation**: Prior AR medical models (e.g., Delphi) used time-to-event embeddings where intervals could reach decades, causing discontinuous signals for diffusion. The uniform grid with `[healthy]` fillers defines conditions densely over time, stabilizing the cross-attention in the diffusion model.
 
 ### Loss & Training
-
-Three stages: (i) AR model $\phi$ is pretrained on 7.28M ICD tokens / 448,651 subjects for next-token prediction; (ii) SPD-VQVAE and TabDiff are trained on paired imaging + ICD data (brain 44,834; heart 23,987; liver 28,722; kidney 32,155 samples), with losses $\mathcal{L}_{\text{VAE}}$ and $\mathcal{L}_{tab} = \lambda_{num}\mathcal{L}_{num} + \lambda_{cat}\mathcal{L}_{cat}$; (iii) Organ FMs are fine-tuned on generated DTs for next ICD classification. Tabular generation uses Classifier-Free Guidance: $\tilde\mu^{num}(\Gamma_t, S, t) = (1+\omega)\mu_\theta^{num}(\Gamma_t, S, t) - \omega\mu_\phi(\Gamma_t, t)$. Subject-level 80:20 splits are strictly maintained across all stages to prevent data leakage.
+The process involves three stages: (i) AR model $\phi$ pre-training on next-token prediction using 7.28M ICD tokens from 448,651 subjects; (ii) Training SPD-VQVAE and TabDiff on paired imaging + ICD data (Brain: 44,834; Heart: 23,987; Liver: 28,722; Kidney: 32,155 samples) with losses $\mathcal{L}_{\text{VAE}}$ and $\mathcal{L}_{tab} = \lambda_{num}\mathcal{L}_{num} + \lambda_{cat}\mathcal{L}_{cat}$; (iii) Fine-tuning organ FMs on generated DTs for next-ICD classification. Tabular generation uses Classifier-Free Guidance: $\tilde\mu^{num}(\Gamma_t, S, t) = (1+\omega)\mu_\theta^{num}(\Gamma_t, S, t) - \omega\mu_\phi(\Gamma_t, t)$. A subject-level 80:20 split is strictly maintained across all stages.
 
 ## Key Experimental Results
 
 ### Main Results
-On the UKB dataset, next-event prediction for 1944 diseases:
+UKB dataset, next-occurrence prediction for 1,944 disease categories:
 
 | Method | Backbone | AUC ↑ | F1 ↑ |
 |---|---|---|---|
@@ -82,7 +78,7 @@ On the UKB dataset, next-event prediction for 1944 diseases:
 | **DiffDT** | GPT2 | **0.9087 ± 0.050** | **18.60 ± 16.29** |
 | **DiffDT** | Qwen3 | **0.9171 ± 0.049** | **20.92 ± 20.40** |
 
-F1 by organ mediation group (vs DT-to-event baselines):
+F1 scores grouped by organ mediation (compared against DT-to-event baselines):
 
 | Mediation Organ | Brain F1 | Heart F1 | Liver F1 | Kidney F1 |
 |---|---|---|---|---|
@@ -93,51 +89,49 @@ F1 by organ mediation group (vs DT-to-event baselines):
 | **DiffDT-Liver** | 59.88 | 52.23 | **61.65** | 53.52 |
 | **DiffDT-Kidney** | 53.91 | 54.72 | 57.92 | **64.32** |
 
-**Key Observation**: Using the same pretrained BrainMass as predictor, DiffDT-Brain (generated DT as input) outperforms BrainMass (real GT as input) by ≈18 pp F1, indicating multi-pathway mediation captures additional causal signals from ICD history.
+**Key Observation**: Using the same pre-trained BrainMass as a predictor, DiffDT-Brain (generated DT as input) outperforms BrainMass (real GT as input) by $\approx$18 pp F1, suggesting that multi-pathway mediation captures additional causal signals from the ICD history.
 
 ### Ablation Study
 
 | LDM Config | RMSE ↓ | WD ↓ | r ↑ | mAcc ↑ |
 |---|---|---|---|---|
-| Plain VQVAE | 0.261 | 7.110 | 0.503 | 90.87 |
+| Standard VQVAE | 0.261 | 7.110 | 0.503 | 90.87 |
 | SPD-VQVAE | 0.220 | 6.019 | 0.677 | 95.71 |
 | **SPD-VQVAE-Dual** | **0.203** | **5.841** | **0.726** | **98.36** |
 
-Tabular DT: heart RMSE 0.265 / WD 17.27 (112 traits), liver 0.184 / 2.48, kidney 0.146 / 0.99; organ mediation F1 correlates positively with generation quality (higher quality, better downstream classification). **Counterfactual evaluation**: Replacing an exposure ICD with `[healthy]` to generate do(healthy) DT, compared to real healthy vs diseased subjects by FID/WD/r, do(healthy) is significantly closer to GT healthy ($p=2.5e\text{-}5$ on FID), demonstrating biological plausibility of DT counterfactual interventions.
+Tabular DT: Heart RMSE 0.265 / WD 17.27 (112 traits), Liver 0.184 / 2.48, Kidney 0.146 / 0.99. Performance is positively correlated with organ mediation F1 scores. **Counterfactual Evaluation**: Replacing an exposure ICD with `[healthy]` to generate do(healthy) DTs and comparing against real healthy vs. real diseased subjects (FID/WD/r) showed do(healthy) was significantly closer to GT healthy ($p=2.5e\text{-}5$ on FID), proving biological plausibility.
 
 ### Key Findings
-- **Multi-pathway mediation is effective**: Generated DT as input > real GT as input (DiffDT-Brain outperforms BrainMass by 18 pp F1), indicating LDM injects causal signals from ICD history into generated DTs, and FM indirectly accesses richer disease context via DT.
-- **SPD-VQVAE-Dual is essential**: Single-branch SPD-VQVAE already surpasses plain VQVAE, but dual low/high-frequency branches further improve by 4–7%, showing that global structure and personalized details in medical imaging require decoupled learning.
-- **Backbone upgrade and DiffDT gains are orthogonal**: Replacing GPT2 with Qwen3, DiffDT still consistently adds +0.12 AUC, indicating mediation benefits are not subsumed by larger LLMs.
-- **Efficiency**: Cholesky LDM is much faster per step than SPD-DDPM (Fig. 6); end-to-end, single-subject mediation takes 1.2s, five mediations only 5.6s, enabling large-scale cohort inference.
-- **Off-diagonal pairs are performance amplifiers**: Fig. 4 shows AUC improvement is most pronounced for ICD pairs across chapters (semantically distant), directly addressing EHR-only model weaknesses.
+- **Multi-pathway mediation is effective**: Generated DT as input > Real GT as input (DiffDT-Brain is 18 pp F1 higher than BrainMass), indicating the LDM injects causal signals from history into the generated DT.
+- **SPD-VQVAE-Dual is essential**: While the single-branch SPD-VQVAE outperforms standard VQVAE, the dual-branch setup adds another 4–7%, proving that global structure and personalized details need decoupled learning.
+- **Backbone upgrades are orthogonal to DiffDT contributions**: When using Qwen3 instead of GPT2, DiffDT still provides a stable +0.12 AUC gain.
+- **Operational Efficiency**: Cholesky LDM is significantly faster than SPD-DDPM. End-to-end inference takes 1.2s per subject/mediation, making large-scale cohort reasoning feasible.
+- **Off-diagonal pairs provide high gain**: AUC gains are most significant for ICD pairs across different chapters (semantically distant), addressing the primary weakness of EHR-only models.
 
 ## Highlights & Insights
-- **Cholesky decomposition as SPD manifold diffeomorphism is the core trick**: Compared to SPD-DDPM’s affine-invariant metric requiring eigendecomposition, Theorem 3.1 enables diffusion on lower-triangular factors, strictly preserving the SPD manifold and reducing per-step complexity from $\mathcal{O}(N^3)$ to $\mathcal{O}(N^2)$. This “find a diffeomorphism to absorb manifold constraints” approach is transferable to any generative task with geometric structure (e.g., SO(3) rotations, covariance matrices, probability simplices).
-- **SDoH-to-event paradigm reshapes EHR modeling**: Using ICD-coded SDoH proxies as digital surrogates allows large-scale EHRs without explicit SDoH fields (like UKB) to support social determinant analysis, expanding EHR model applicability.
-- **Generated DT outperforms real GT as input**: This counterintuitive result shows that **the generative model encodes historical signals into latent biological states**; the FM receives not just a current physiological snapshot but a causally structured “augmented observation”—equivalent to distilling AR model’s temporal memory into image representations.
-- **Dual SPD-VQVAE’s Fourier frequency splitting**: Medical images have strong structural symmetry; a single codebook easily collapses to “average healthy brain.” Frequency decoupling forces the generator to reproduce both global structure and personalized details, serving as a practical defense against mode collapse.
+- **Cholesky Diffeomorphism as a Core Trick**: Unlike SPD-DDPM which requires eigendecomposition for affine-invariant metrics, Theorem 3.1 transforms SPD diffusion into Euclidean diffusion on lower-triangular factors. This ensures manifold consistency while reducing complexity from $\mathcal{O}(N^3)$ to $\mathcal{O}(N^2)$.
+- **SDoH-to-event Paradigm**: Utilizing ICD-coded SDoH proxies allows large-scale EHR datasets without explicit SDoH fields (like UKB) to undergo social determinant analysis.
+- **Generated DT > Real GT as Input**: This counter-intuitive result suggests the **generative model encodes historical signals into latent biological states**. The FM receives an "enhanced observation" containing causal temporal structure rather than just a physiological snapshot.
+- **Dual SPD-VQVAE Fourier Design**: Decoupling frequency components prevents mode collapse toward the "average healthy brain" in highly symmetric medical data.
 
 ## Limitations & Future Work
-- Data source is single (UKB), predominantly European white, relatively healthy middle-aged/elderly; model’s transferability to low-income countries, children, or critically ill patients is untested.
-- Only four organs (brain/heart/liver/kidney) are mediated; other key organs (lung, digestive, endocrine) are not covered. Extending to more organs requires retraining corresponding SPD-VQVAE/TabDiff, with high engineering cost.
-- F1 remains in the 50–65% range; ultra-long-tail ICDs (rare diseases seen only a few times per year) remain hard to predict; the paper acknowledges macro-average is dragged down by the long tail.
-- Counterfactual evaluation is only at the group level (FID/WD) to show do(healthy) DT approaches real healthy distribution; no rigorous individual-level causal validation (e.g., true longitudinal two-timepoint interventions).
-- SPD-VQVAE-Dual uses a fixed Fourier threshold of 25 for frequency splitting, with hyperparameters selected via ablation; future work could explore learnable frequency partitioning or graph spectral decomposition.
-- Future directions include extending Cholesky LDM to other geometric structures (e.g., brain surface mesh, cellular ECM topology), or integrating RAG-like mechanisms for AR retrieval of similar cases to enhance conditioning.
+- Data source is limited to UKB, which is dominated by European white individuals and relatively healthy older adults; generalization to other demographics remains unverified.
+- Only four organs are covered (brain/heart/liver/kidney); extending to lungs or endocrine systems requires training new SPD-VQVAEs/TabDiffs.
+- Absolute F1 values remain in the 50-65% range; predicting ultra-long-tail rare diseases remains difficult.
+- Counterfactual evidence is currently at the group level (FID/WD); individual-level verification with longitudinal intervention data is still needed.
+- The Fourier threshold is fixed; learnable frequency splitting or graph spectral decomposition could be explored.
 
 ## Related Work & Insights
-- **vs Delphi / MOTOR (pure EHR AR)**: These only model ICD causality, lacking biological mediation; DiffDT uses generated DT as mediator, raising AUC from 0.70–0.89 to 0.91, especially reversing negative correlation for off-diagonal pairs in EHR-only models.
-- **vs BrainMass / NeuroPath (pure DT-to-event)**: These only use real biomarkers for prediction; DiffDT’s generated “history-infused” DT is 18 pp more accurate than real GT, proving the value of mediation.
-- **vs SPD-DDPM (li2024spd) / Riemannian Flow Matching**: These rigorously diffuse on SPD at $\mathcal{O}(N^3)$; this work diffuses on $\mathcal{L}_{++}^N$ via Cholesky, achieving geometric alignment and efficiency.
-- **vs HybridVLA / vision-language AR-diffusion hybrids**: These combine AR + diffusion in Euclidean space; DiffDT handles non-Euclidean SPD manifolds + long-term sparse ICD conditioning, fundamentally different problem structure.
-- **Insights**: (1) “Diffusing on manifold-constrained latent spaces, letting constraints be automatically satisfied by decoder geometry” is a general recipe, applicable to molecular conformations, pose estimation, point cloud generation; (2) “Generated DT as input outperforms real GT” suggests generative models are not just for data augmentation, but can serve as information-distilling mediators.
+- **vs Delphi / MOTOR (Pure EHR AR)**: These models lack biological intermediaries; DiffDT improves AUC from 0.70-0.89 to 0.91, particularly for semantically distant disease pairs.
+- **vs BrainMass / NeuroPath (Pure DT-to-event)**: DiffDT's use of generated DTs with "history signals" makes it more accurate than using real GT biomarkers by 18 pp F1.
+- **vs SPD-DDPM / Riemannian Flow Matching**: DiffDT achieves manifold alignment efficiently via Cholesky decomposition instead of $\mathcal{O}(N^3)$ metric-based diffusion.
+- **Insight**: "Performing diffusion on a manifold-constrained latent space, where constraints are naturally satisfied by the decoder geometry" is a universal recipe applicable to molecular conformations and point cloud generation.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ SDoH-to-event paradigm + Cholesky LDM is the first strictly manifold-preserving and scalable solution in this direction
-- Experimental Thoroughness: ⭐⭐⭐⭐ 33K–44K real UKB subjects + 1944 diseases + 4 organs + counterfactual evaluation + backbone scaling controls
-- Writing Quality: ⭐⭐⭐⭐ Geometric motivation—algorithm—experiments—counterfactuals are tightly linked; occasional formula typos do not affect understanding
-- Value: ⭐⭐⭐⭐⭐ Provides a framework for digital twin medical AI capable of long-term multi-pathway reasoning, with strong potential for clinical decision support deployment
+- Novelty: ⭐⭐⭐⭐⭐ First rigorously manifold-preserving and scalable SDoH-to-event framework.
+- Experimental Thoroughness: ⭐⭐⭐⭐ 33K-44K real UKB subjects, 1,944 diseases, 4 organs, and counterfactual validation.
+- Writing Quality: ⭐⭐⭐⭐ Logical flow from geometric motivation to counterfactual loops is tight.
+- Value: ⭐⭐⭐⭐⭐ High potential for clinical decision support via long-term multi-pathway reasoning.
 
 <!-- RELATED:START -->
 
@@ -145,11 +139,11 @@ Tabular DT: heart RMSE 0.265 / WD 17.27 (112 traits), liver 0.184 / 2.48, kidney
 
 ## Related Papers
 
+- [\[ICML 2026\] Position: Beyond Sensitive Attributes, ML Fairness Should Quantify Structural Injustice via Social Determinants](position_beyond_sensitive_attributes_ml_fairness_should_quantify_structural_inju.md)
 - [\[ICML 2026\] Evidential Reasoning Advances Interpretable Real-World Disease Screening](evidential_reasoning_advances_interpretable_real-world_disease_screening.md)
-- [\[NeurIPS 2025\] MIRA: Medical Time Series Foundation Model for Real-World Health Data](../../NeurIPS2025/medical_imaging/mira_medical_time_series_foundation_model_for_real-world_health_data.md)
-- [\[ICLR 2026\] Can SAEs Reveal and Mitigate Racial Biases of LLMs in Healthcare?](../../ICLR2026/medical_imaging/can_saes_reveal_and_mitigate_racial_biases_of_llms_in_healthcare.md)
+- [\[ICML 2026\] Controllable Generative Sandbox for Causal Inference](controllable_generative_sandbox_for_causal_inference.md)
 - [\[ICML 2026\] Auditing Sybil: Explaining Deep Lung Cancer Risk Prediction Through Generative Interventional Attributions](auditing_sybil_explaining_deep_lung_cancer_risk_prediction_through_generative_in.md)
-- [\[ICLR 2026\] Human Behavior Atlas: Benchmarking Unified Psychological and Social Behavior Understanding](../../ICLR2026/medical_imaging/human_behavior_atlas_benchmarking_unified_psychological_and_social_behavior_unde.md)
+- [\[ICLR 2026\] Can SAEs Reveal and Mitigate Racial Biases of LLMs in Healthcare?](../../ICLR2026/medical_imaging/can_saes_reveal_and_mitigate_racial_biases_of_llms_in_healthcare.md)
 
 </div>
 

@@ -102,7 +102,7 @@ No training is required; the entire framework is driven by prompt engineering ov
 - [\[AAAI 2026\] Structural Approach to Guiding a Present-Biased Agent](structural_approach_to_guiding_a_present-biased_agent.md)
 - [\[AAAI 2026\] Local Guidance for Configuration-Based Multi-Agent Pathfinding](local_guidance_for_configuration-based_multi-agent_pathfinding.md)
 - [\[AAAI 2026\] Controllable Financial Market Generation with Diffusion Guided Meta Agent](controllable_financial_market_generation_with_diffusion_guided_meta_agent.md)
-- [\[AAAI 2026\] Area-Optimal Control Strategies for Heterogeneous Multi-Agent Pursuit](area-optimal_control_strategies_for_heterogeneous_multi-agen.md)
+- [\[ICML 2026\] AutoNumerics-Zero: Automated Discovery of State-of-the-Art Mathematical Functions](../../ICML2026/others/autonumerics-zero_automated_discovery_of_state-of-the-art_mathematical_functions.md)
 
 </div>
 

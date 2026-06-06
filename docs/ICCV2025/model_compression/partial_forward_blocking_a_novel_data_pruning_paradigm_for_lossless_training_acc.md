@@ -172,7 +172,7 @@ PFB partitions the training network into a **shallow sub-network** $Net^{sh}$ an
 - [\[CVPR 2026\] A Paradigm Shift: Fully End-to-End Training for Temporal Sentence Grounding in Videos](../../CVPR2026/model_compression/a_paradigm_shift_fully_end-to-end_training_for_temporal_sentence_grounding_in_vi.md)
 - [\[CVPR 2026\] Batch Loss Score for Dynamic Data Pruning](../../CVPR2026/model_compression/batch_loss_score_for_dynamic_data_pruning.md)
 - [\[ICCV 2025\] OuroMamba: A Data-Free Quantization Framework for Vision Mamba](ouromamba_a_data-free_quantization_framework_for_vision_mamba.md)
-- [\[ICCV 2025\] StolenLoRA: Exploring LoRA Extraction Attacks via Synthetic Data](stolenlora_exploring_lora_extraction_attacks_via_synthetic_data.md)
+- [\[ICCV 2025\] Scheduling Weight Transitions for Quantization-Aware Training](scheduling_weight_transitions_for_quantization-aware_training.md)
 
 </div>
 

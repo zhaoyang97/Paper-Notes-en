@@ -129,8 +129,8 @@ ResNet-18 on CIFAR-10/100: 100 epochs, SGD momentum=0.9, lr=0.1, weight decay 5e
 - [\[CVPR 2026\] Stronger Normalization-Free Transformers](stronger_normalization-free_transformers.md)
 - [\[NeurIPS 2025\] Normalization in Attention Dynamics](../../NeurIPS2025/others/normalization_in_attention_dynamics.md)
 - [\[AAAI 2026\] Certified Branch-and-Bound MaxSAT Solving (Extended Version)](../../AAAI2026/others/certified_branch-and-bound_maxsat_solving_extended_version.md)
+- [\[ICML 2026\] Optimal Design for Multinomial Logit Model with Applications to Best Assortment Identification](../../ICML2026/others/optimal_design_for_multinomial_logit_model_with_applications_to_best_assortment_.md)
 - [\[CVPR 2026\] Integration of Deep Generative Anomaly Detection Algorithm in High-Speed Industrial Line](integration_of_deep_generative_anomaly_detection_algorithm_in_high-speed_industr.md)
-- [\[CVPR 2026\] Novel Anomaly Detection Scenarios and Evaluation Metrics to Address the Ambiguity in the Definition of Normal Samples](novel_anomaly_detection_scenarios_and_evaluation_metrics_to_address_the_ambiguit.md)
 
 </div>
 

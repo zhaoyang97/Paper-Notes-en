@@ -140,9 +140,9 @@ ESM involves no training; it requires only a single forward pass of 32 unlabeled
 
 - [\[CVPR 2026\] Defending Unauthorized Model Merging via Dual-Stage Weight Protection](defending_unauthorized_model_merging_via_dual-stage_weight_protection.md)
 - [\[ICML 2026\] Model Merging Scaling Laws in Large Language Models](../../ICML2026/llm_pretraining/model_merging_scaling_laws_in_large_language_models.md)
+- [\[ICML 2026\] FlexRank: Nested Low-Rank Knowledge Decomposition for Adaptive Model Deployment](../../ICML2026/llm_pretraining/flexrank_nested_low-rank_knowledge_decomposition_for_adaptive_model_deployment.md)
 - [\[NeurIPS 2025\] Breaking the Frozen Subspace: Importance Sampling for Low-Rank Optimization in LLM Pretraining](../../NeurIPS2025/llm_pretraining/breaking_the_frozen_subspace_importance_sampling_for_low-rank_optimization_in_ll.md)
 - [\[ACL 2026\] KoCo: Conditioning Language Model Pre-training on Knowledge Coordinates](../../ACL2026/llm_pretraining/koco_conditioning_language_model_pre-training_on_knowledge_coordinates.md)
-- [\[ICML 2026\] Predicting Large Model Test Losses with a Noisy Quadratic System](../../ICML2026/llm_pretraining/predicting_large_model_test_losses_with_a_noisy_quadratic_system.md)
 
 </div>
 

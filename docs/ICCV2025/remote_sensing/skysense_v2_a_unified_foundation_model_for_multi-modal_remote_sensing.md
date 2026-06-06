@@ -152,7 +152,7 @@ Training configuration: batch size 1024, 128 H20 GPUs, 600K iterations, AdamW op
 - [\[ICCV 2025\] Towards a Unified Copernicus Foundation Model for Earth Vision](towards_a_unified_copernicus_foundation_model_for_earth_vision.md)
 - [\[NeurIPS 2025\] GeoLink: Empowering Remote Sensing Foundation Model with OpenStreetMap Data](../../NeurIPS2025/remote_sensing/geolink_empowering_remote_sensing_foundation_model_with_openstreetmap_data.md)
 - [\[ICCV 2025\] SMARTIES: Spectrum-Aware Multi-Sensor Auto-Encoder for Remote Sensing Images](smarties_spectrum-aware_multi-sensor_auto-encoder_for_remote_sensing_images.md)
-- [\[NeurIPS 2025\] RSCC: A Large-Scale Remote Sensing Change Caption Dataset for Disaster Events](../../NeurIPS2025/remote_sensing/rscc_a_large-scale_remote_sensing_change_caption_dataset_for_disaster_events.md)
+- [\[ICML 2026\] Any2Any: Unified Arbitrary Modality Translation for Remote Sensing](../../ICML2026/remote_sensing/any2any_unified_arbitrary_modality_translation_for_remote_sensing.md)
 
 </div>
 

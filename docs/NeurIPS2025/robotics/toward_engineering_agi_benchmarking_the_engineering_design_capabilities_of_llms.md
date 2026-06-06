@@ -135,10 +135,10 @@ No training is involved. The evaluation protocol runs each LLM three times per t
 
 ## Related Papers
 
-- [\[AAAI 2026\] Do LLMs Really Struggle at NL-FOL Translation? Revealing Their Strengths via a Novel Benchmarking Strategy](../../AAAI2026/robotics/do_llms_really_struggle_at_nl-fol_translation_revealing_their_strengths_via_a_no.md)
-- [\[NeurIPS 2025\] MineAnyBuild: Benchmarking Spatial Planning for Open-world AI Agents](mineanybuild_benchmarking_spatial_planning_for_openworld_ai.md)
 - [\[NeurIPS 2025\] Predicting the Performance of Black-Box LLMs through Follow-Up Queries](predicting_the_performance_of_black-box_llms_through_follow-up_queries.md)
+- [\[AAAI 2026\] Do LLMs Really Struggle at NL-FOL Translation? Revealing Their Strengths via a Novel Benchmarking Strategy](../../AAAI2026/robotics/do_llms_really_struggle_at_nl-fol_translation_revealing_their_strengths_via_a_no.md)
 - [\[ICLR 2026\] Token Taxes: Mitigating AGI's Economic Risks](../../ICLR2026/robotics/token_taxes_mitigating_agis_economic_risks.md)
+- [\[NeurIPS 2025\] MineAnyBuild: Benchmarking Spatial Planning for Open-world AI Agents](mineanybuild_benchmarking_spatial_planning_for_openworld_ai.md)
 - [\[NeurIPS 2025\] Zero-Shot Embedding Drift Detection: A Lightweight Defense Against Prompt Injections in LLMs](zero-shot_embedding_drift_detection_a_lightweight_defense_against_prompt_injecti.md)
 
 </div>

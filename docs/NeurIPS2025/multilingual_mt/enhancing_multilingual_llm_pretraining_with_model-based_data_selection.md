@@ -177,11 +177,11 @@ The proposed method also achieves the best overall ranking on English.
 
 ## Related Papers
 
-- [\[AAAI 2026\] MIDB: Multilingual Instruction Data Booster for Enhancing Cultural Equality in Multilingual Instruction Synthesis](../../AAAI2026/multilingual_mt/midb_multilingual_instruction_data_booster_for_enhancing_cultural_equality_in_mu.md)
 - [\[NeurIPS 2025\] ParallelPrompt: Extracting Parallelism from Large Language Model Queries](parallelprompt_extracting_parallelism_from_large_language_model_queries.md)
+- [\[AAAI 2026\] MIDB: Multilingual Instruction Data Booster for Enhancing Cultural Equality in Multilingual Instruction Synthesis](../../AAAI2026/multilingual_mt/midb_multilingual_instruction_data_booster_for_enhancing_cultural_equality_in_mu.md)
 - [\[NeurIPS 2025\] DCAD-2000: A Multilingual Dataset across 2000+ Languages with Data Cleaning as Anomaly Detection](dcad-2000_a_multilingual_dataset_across_2000_languages_with_data_cleaning_as_ano.md)
-- [\[NeurIPS 2025\] How Data Mixing Shapes In-Context Learning: Asymptotic Equivalence for Transformers with MLPs](how_data_mixing_shapes_in-context_learning_asymptotic_equivalence_for_transforme.md)
-- [\[ICCV 2025\] SignRep: Enhancing Self-Supervised Sign Representations](../../ICCV2025/multilingual_mt/signrep_enhancing_self-supervised_sign_representations.md)
+- [\[ACL 2026\] LLM-XTM: Enhancing Cross-Lingual Topic Models with Large Language Models](../../ACL2026/multilingual_mt/llm-xtm_enhancing_cross-lingual_topic_models_with_large_language_models.md)
+- [\[ACL 2026\] Multilingual Steering by Design: Multilingual Sparse Autoencoders and Principled Layer Selection](../../ACL2026/multilingual_mt/multilingual_steering_by_design_multilingual_sparse_autoencoders_and_principled_.md)
 
 </div>
 

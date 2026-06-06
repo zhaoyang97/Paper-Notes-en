@@ -2,77 +2,73 @@
 title: >-
   [Paper Note] Privacy-Aware Video Anomaly Detection through Orthogonal Subspace Projection
 description: >-
-  [ICML 2026][Video Understanding][Video anomaly detection] The authors propose OPL (Orthogonal Projection Layer) and its enhanced version G-OPL…
+  [ICML 2026][Video Understanding][Video Anomaly Detection] The authors propose the Orthogonal Projection Layer (OPL) and its enhanced version G-OPL. By utilizing a learnable orthogonal subspace derived from QR decompositi…
 tags:
   - "ICML 2026"
   - "Video Understanding"
-  - "Video anomaly detection"
-  - "orthogonal projection"
-  - "face suppression"
-  - "privacy-aware"
-  - "subspace disentanglement"
+  - "Video Anomaly Detection"
+  - "Orthogonal Projection"
+  - "Facial Suppression"
+  - "Privacy-Aware"
+  - "Subspace Decoupling"
 date: 2026-05-08
-content_hash: 656405ac5f202442
+content_hash: 9fdc5701736d2323
 ---
 
 # Privacy-Aware Video Anomaly Detection through Orthogonal Subspace Projection
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.08651](https://arxiv.org/abs/2605.08651)  
-**Code**: Not explicitly released  
+**Code**: Not explicitly disclosed in the paper  
 **Area**: Human Understanding / Video Anomaly Detection / Privacy-Preserving Representation Learning  
-**Keywords**: Video anomaly detection, orthogonal projection, face suppression, privacy-aware, subspace disentanglement
+**Keywords**: Video Anomaly Detection, Orthogonal Projection, Facial Suppression, Privacy-Aware, Subspace Decoupling
 
 ## TL;DR
-The authors propose OPL (Orthogonal Projection Layer) and its enhanced version G-OPL, which use a learnable orthogonal subspace derived from QR decomposition to explicitly project out "task-irrelevant variables" and "facial privacy components" from the feature space of video anomaly detection. Four privacy-aware metrics (SSC/ARD/PD/FPD) are introduced. While maintaining or improving VAD AUC, the accuracy of linear SVM probes for facial prediction drops significantly.
+The authors propose the Orthogonal Projection Layer (OPL) and its enhanced version G-OPL. By utilizing a learnable orthogonal subspace derived from QR decomposition, they explicitly project out "task-irrelevant variables" and "facial privacy components" from the video anomaly detection feature space. They also introduce four privacy-aware metrics (SSC/ARD/PD/FPD), demonstrating that facial prediction accuracy by linear SVM probes significantly decreases while VAD AUC is maintained or improved.
 
 ## Background & Motivation
 
-**Background**: Mainstream video anomaly detection (VAD) approaches use backbones like I3D or Swin Transformer to extract spatiotemporal features, followed by weakly supervised heads such as RTFM, MGFN, TEVAD, or EGO for scoring. As models grow larger and AUC improves, deployment in surveillance and public safety scenarios inevitably leads to representations encoding sensitive attributes like faces, clothing, and pose.
+**Background**: The dominant approach in Video Anomaly Detection (VAD) utilizes backbones such as I3D or Swin Transformer to extract spatio-temporal features, followed by weakly supervised heads like RTFM, MGFN, TEVAD, or EGO for scoring. While models grow larger and AUC improved, their deployment in surveillance and public safety scenarios inevitably captures sensitive attributes like faces, clothing, and poses within the representation.
 
-**Limitations of Prior Work**: Existing VAD systems lack explicit mechanisms to suppress task-irrelevant or ethically sensitive information. If an attacker accesses intermediate features, identity can be inferred. Current privacy-preserving methods (INLP’s nullspace projection, DAMS, CAE-LSP, OPL-2021) suffer from: (i) reliance on explicit sensitive attribute labels (typical VAD datasets lack face/identity annotations); (ii) unstable adversarial training with gradient reversal; (iii) restriction to static images or low-dimensional settings; (iv) post-hoc auditing (dataset balancing, saliency visualization) that cannot alter representations.
+**Limitations of Prior Work**: Existing VAD systems lack explicit mechanisms to suppress task-irrelevant or ethically sensitive information. Attackers obtaining intermediate features could potentially reverse-engineer identities. Current privacy preservation methods (e.g., INLP's nullspace projection, DAMS, CAE-LSP, OPL-2021) face several issues: (i) reliance on explicit sensitive attribute labels (VAD datasets typically lack face/identity annotations); (ii) unstable optimization due to adversarial training with gradient reversal; (iii) limitation to static images or low-dimensional scenarios; and (iv) inability to modify representations through post-hoc auditing (dataset balancing, saliency visualization).
 
-**Key Challenge**: Privacy and utility are entangled at the representation level—simply removing face information risks discarding pose/motion cues crucial for anomaly detection, while adversarial training alone is unstable and lacks interpretability.
+**Key Challenge**: Privacy and utility are entangled at the representation level—simply removing facial information often discards pose/motion cues useful for anomaly detection, while adversarial training alone is unstable and uninterpretable.
 
-**Goal**: (i) Design a differentiable module that does not require sensitive labels or adversarial training, capable of "filtering out a class of information" by inserting a single layer; (ii) Remove facial components while retaining pose/motion without identity supervision; (iii) Provide privacy evaluation metrics tailored for VAD, jointly measuring privacy, utility, and interpretability.
+**Goal**: (i) Design a differentiable module that does not rely on sensitive labels or adversarial training, allowing the filtration of specific information by simply "inserting a layer"; (ii) directionally remove facial components while retaining pose/motion without identity supervision; (iii) establish a suite of privacy evaluation metrics tailored for VAD to measure privacy, utility, and interpretability simultaneously.
 
-**Key Insight**: Projecting onto the orthogonal complement of a learned low-dimensional subspace offers a geometrically clean, differentiable, and controllable way to delete information—if the subspace captures redundant/sensitive directions, their energy can be precisely removed without affecting other directions.
+**Key Insight**: The authors observe that "projecting onto the orthogonal complement of a learned low-dimensional subspace" is a geometrically clean, differentiable, and controllable way to delete information—provided the subspace learns directions carrying redundant/sensitive components, the corresponding energy can be precisely removed without affecting other directions.
 
-**Core Idea**: Replace "adversarial training to suppress sensitive attributes" with "geometric projection + cosine alignment weak supervision," parameterizing a sensitive subspace via QR decomposition and projecting onto its orthogonal complement.
+**Core Idea**: Replace "adversarial suppression of sensitive attributes" with "geometric projection + weakly supervised cosine alignment." An orthogonal subspace parameterized by QR decomposition carries the sensitive components, which are then discarded by projecting features onto its orthogonal complement.
 
 ## Method
 
 ### Overall Architecture
-Given an intermediate feature $\bm f\in\mathbb R^d$ (from the backbone or a certain layer), OPL learns a matrix $\bm W\in\mathbb R^{k\times d}$ ($1<k<d$). QR decomposition is performed on $\bm W^\top$ to obtain $\bm W^\top=\bm Q\bm R$, where $\bm Q\in\mathbb R^{d\times k}$ forms an orthogonal basis for the $k$-dimensional nuisance subspace. The projection matrix is $\bm P=\bm I_d-\bm Q\bm Q^\top$, and the purified feature is $\bm f_{\text{proj}}=\bm P\bm f=\bm f-\bm Q\bm Q^\top\bm f$. The entire layer is differentiable and trained jointly with the main task loss. G-OPL adds a cosine alignment loss: an off-the-shelf face detector (RetinaFace) extracts face crops, which are encoded to $\bm f_{\text{face}}$; $\bm Q\bm Q^\top\bm f$ is encouraged to be cosine-similar to $\bm f_{\text{face}}$, actively injecting the "face direction" into the subspace to be discarded. OPL is placed in deeper layers for general nuisance removal, while G-OPL is inserted right after the backbone for early face suppression.
+For an intermediate feature $\bm f\in\mathbb R^d$ (from the backbone or a specific layer), OPL learns a matrix $\bm W\in\mathbb R^{k\times d}$ ($1<k<d$). QR decomposition is applied to $\bm W^\top$ to obtain $\bm W^\top=\bm Q\bm R$, where $\bm Q\in\mathbb R^{d\times k}$ provides the orthogonal basis for a $k$-dimensional nuisance subspace. The projection matrix is $\bm P=\bm I_d-\bm Q\bm Q^\top$, and the purified feature is $\bm f_{\text{proj}}=\bm P\bm f=\bm f-\bm Q\bm Q^\top\bm f$. The entire layer is differentiable and trained alongside the primary task loss. G-OPL enhances this by adding a cosine alignment loss: facial crops detected by an off-the-shelf RetinaFace detector are passed through the same encoder to obtain $\bm f_{\text{face}}$, forcing $\bm Q\bm Q^\top\bm f$ to be cosine-similar to $\bm f_{\text{face}}$, thereby actively pushing "facial directions" into the subspace to be discarded. OPL is placed in deeper layers for general nuisance removal, while G-OPL is placed immediately after the backbone to excise facial information early.
 
 ### Key Designs
 
-1. **QR-Decomposition-Parameterized Learnable Orthogonal Projection Layer (OPL)**:
+1.  **OPL: Learnable Orthogonal Projection Layer via QR Decomposition**:
+    - **Function**: Differentiably projects features into the orthogonal complement of a learned low-dimensional subspace, removing "task-irrelevant" components while preserving task-useful directions. It acts as a task-adaptive "feature purifier."
+    - **Mechanism**: Explicitly parameterizes the subspace to be deleted as a trainable matrix $\bm W\in\mathbb R^{k\times d}$. Before each forward pass, QR decomposition on $\bm W^\top$ yields the orthogonal basis $\bm Q$, followed by projection using $\bm P=\bm I_d-\bm Q\bm Q^\top$. The process is backpropagated through the main VAD loss—subspace directions are pushed by task gradients toward directions that "do not affect detection if deleted," similar to a PCA-style geometric method but optimized for "maximum task retention + maximum projection deletion."
+    - **Design Motivation**: Compared to fixed subspaces in PCA or iterative nullspace projection in INLP, QR decomposition ensures that $\bm Q$ remains a numerically stable orthogonal basis during every forward pass, avoiding gradient reversal in adversarial training and eliminating reliance on sensitive attribute labels. The structure is more interpretable than adversarial discriminators (the projected content is $\bm Q\bm Q^\top\bm f$, which can be visualized).
 
-    - **Function**: Differentiably projects features onto the orthogonal complement of a learned low-dimensional subspace, removing "task-irrelevant" components while retaining useful directions—a task-adaptive "feature purifier."
-    - **Mechanism**: Explicitly parameterize the subspace to be removed as a trainable matrix $\bm W\in\mathbb R^{k\times d}$. Before each forward pass, QR decomposition on $\bm W^\top$ yields orthogonal basis $\bm Q$, then project with $\bm P=\bm I_d-\bm Q\bm Q^\top$. The process is end-to-end differentiable with respect to the main VAD loss—subspace directions are pushed by task gradients toward "removable without harming detection," akin to a PCA-style geometric method but targeting "maximal task retention + maximal projection deletion."
-    - **Design Motivation**: Compared to PCA’s fixed subspace and INLP’s iterative nullspace projection, QR decomposition ensures numerically stable orthogonal bases per forward pass, avoids adversarial gradient reversal, and does not require sensitive attribute labels. The structure is more interpretable than adversarial discriminators (the projected-out component is $\bm Q\bm Q^\top\bm f$, which can be visualized).
+2.  **Guided OPL (G-OPL) + Weakly Supervised Facial Suppression via Cosine Alignment**:
+    - **Function**: Pushes "facial directions" into the discarded subspace without identity labels, explicitly removing biometric components related to the face.
+    - **Mechanism**: Original video frames and face crops detected by RetinaFace (averaged across faces, with 50 segments from Georgia Tech Face DB as source control) are passed through the same encoder (I3D/SwinT) to obtain $\bm f$ and $\bm f_{\text{face}}$ in the same latent space. A loss term $\mathcal L_{\text{task}}=\mathcal L_{\text{ori}}+\lambda_{\text{face}}(1-\cos(\bm f_{\text{face}},\bm Q\bm Q^\top\bm f))$ is added to the primary VAD loss, forcing $\bm Q\bm Q^\top\bm f$ to align angularly with facial embeddings—effectively *attracting* facial directions into the subspace to be projected out. This loss is only active for frames where faces are detected.
+    - **Design Motivation**: The authors avoid adversarial training (unstable, requires discriminators) and explicit attribute classifiers (requires identity labels). Using geometric signals like cosine similarity as "soft labels" is both unsupervised and stable. RetinaFace provides only binary face-presence and embeddings, requiring no identity ground truth during deployment. This can be generalized to other attributes by replacing/concatenating facial embeddings with other weak signals (e.g., torso, clothing).
 
-2. **Guided OPL (G-OPL) + Cosine Alignment Weakly-Supervised Face Suppression**:
-
-    - **Function**: Without identity labels, inject the "face direction" into the subspace to be removed, explicitly discarding facial biometric components.
-    - **Mechanism**: Both original video frames and RetinaFace-detected face crops (averaged over multiple faces, plus 50 segments from Georgia Tech Face DB as controls) are encoded (I3D/SwinT) to $\bm f,\bm f_{\text{face}}$, ensuring they reside in the same latent space. The main VAD loss is augmented as $\mathcal L_{\text{task}}=\mathcal L_{\text{ori}}+\lambda_{\text{face}}(1-\cos(\bm f_{\text{face}},\bm Q\bm Q^\top\bm f))$, forcing $\bm Q\bm Q^\top\bm f$ to align in angle with the face embedding—i.e., attracting the face direction into the subspace to be projected out. This loss is activated only on frames where faces are detected.
-    - **Design Motivation**: The approach deliberately avoids adversarial training (unstable, requires discriminator) and explicit attribute classifiers (needs identity labels), using cosine as a geometric "soft label" for unsupervised, stable supervision. RetinaFace provides only binary face-presence and face embedding, so no identity ground truth is needed at deployment. The method generalizes to multiple attributes by replacing/concatenating other weak signals (e.g., torso, clothing) with the face embedding.
-
-3. **Orthogonality Regularization + Privacy-Aware Metric Suite (SSC/ARD/PD-FPD)**:
-
-    - **Function**: (i) Prevents $\bm Q$ from drifting away from orthogonality during training; (ii) Provides quantifiable metrics distinguishing "sensitive subspace capture," "task retention," and "layerwise information decay."
-    - **Mechanism**: (a) Orthogonality regularization $\mathcal L_{\text{orth}}=\|\bm Q^\top\bm Q-\bm I_k\|_F^2$, with total loss $\mathcal L_{\text{total}}=\mathcal L_{\text{task}}+\lambda_{\text{orth}}\mathcal L_{\text{orth}}$. (b) Sensitive Subspace Capture $\mathrm{SSC}=\cos(\bm Q\bm Q^\top\bm f_{\text{attr}}^{(i)},\bm f_{\text{attr}}^{(i)})$ measures whether the learned subspace captures sensitive attributes; (c) Anomaly Retention Distance $\mathrm{ARD}=\mathrm{KL}(P_{\text{raw}}(y)\|P_{\text{proj}}(y))$, the KL divergence (via KDE) between anomaly score distributions before/after projection—smaller values indicate better utility retention; (d) Privacy Decay $\{(l,\mathrm{Acc}^{(l)})\}_{l=1}^L$ uses a linear SVM probe after each G-OPL to predict face presence—lower accuracy indicates stronger suppression; first-layer PD (FPD) refers to accuracy after the first G-OPL.
-    - **Design Motivation**: QR decomposition yields orthogonal bases per forward pass, but gradient updates can break orthogonality, especially with stacked G-OPLs, necessitating explicit regularization. The SSC/ARD/PD suite fills the gap in VAD privacy evaluation—previously, only AUC was available, which cannot assess face suppression.
+3.  **Orthogonality Regularization + Privacy-Aware Metric Trio (SSC/ARD/PD-FPD)**:
+    - **Function**: (i) Prevents $\bm Q$ from drifting away from an orthogonal basis during training; (ii) provides quantifiable metrics to distinguish "sensitive subspace capture," "task retention," and "progressive information decay."
+    - **Mechanism**: (a) Orthogonality regularization $\mathcal L_{\text{orth}}=\|\bm Q^\top\bm Q-\bm I_k\|_F^2$ is added to form the total loss $\mathcal L_{\text{total}}=\mathcal L_{\text{task}}+\lambda_{\text{orth}}\mathcal L_{\text{orth}}$. (b) Sensitive Subspace Capture $\mathrm{SSC}=\cos(\bm Q\bm Q^\top\bm f_{\text{attr}}^{(i)},\bm f_{\text{attr}}^{(i)})$ measures if the learned subspace truly captures sensitive attributes. (c) Anomaly Retention Distance $\mathrm{ARD}=\mathrm{KL}(P_{\text{raw}}(y)\|P_{\text{proj}}(y))$, where KDE estimates the KL divergence between anomaly score distributions before and after projection; lower values indicate better utility retention. (d) Privacy Decay $\{(l,\mathrm{Acc}^{(l)})\}_{l=1}^L$ uses linear SVM probes after each G-OPL to predict face presence; lower accuracy indicates stronger suppression. First-layer PD (FPD) specifically refers to accuracy after the first G-OPL.
+    - **Design Motivation**: QR decomposition yields an orthogonal basis per forward pass, but gradient updates can destroy orthogonality, especially when stacking multiple G-OPL layers. The SSC/ARD/PD trio fills the gap in VAD privacy evaluation, as prior work focused solely on AUC.
 
 ### Loss & Training
-
-The total loss is $\mathcal L_{\text{total}}=\mathcal L_{\text{ori}}+\lambda_{\text{face}}(1-\cos(\bm f_{\text{face}},\bm Q\bm Q^\top\bm f))+\lambda_{\text{orth}}\|\bm Q^\top\bm Q-\bm I_k\|_F^2$, where $\mathcal L_{\text{ori}}$ is the original weakly supervised VAD baseline loss (RTFM/MGFN/TEVAD/EGO, respectively). The face alignment term is activated only on frames with detected faces; other frames are skipped.
+The total loss is $\mathcal L_{\text{total}}=\mathcal L_{\text{ori}}+\lambda_{\text{face}}(1-\cos(\bm f_{\text{face}},\bm Q\bm Q^\top\bm f))+\lambda_{\text{orth}}\|\bm Q^\top\bm Q-\bm I_k\|_F^2$, where $\mathcal L_{\text{ori}}$ is the original loss of the integrated weakly supervised VAD baseline (e.g., RTFM, MGFN, TEVAD, or EGO). The facial alignment term is only active when faces are detected, automatically skipped for other frames.
 
 ## Key Experimental Results
 
 ### Main Results
-On five VAD datasets (ShanghaiTech, UCF-Crime, CUHK Avenue, UCSD Ped2, MSAD), OPL/G-OPL are inserted into four SOTA baselines (RTFM, MGFN, TEVAD, EGO), using unified I3D/Swin Transformer features. Table 1 from the paper shows ShanghaiTech ablation (AUC %):
+OPL/G-OPL were integrated into 4 SOTA baselines (RTFM, MGFN, TEVAD, EGO) using I3D / Swin Transformer features across 5 VAD datasets (ShanghaiTech, UCF-Crime, CUHK Avenue, UCSD Ped2, MSAD). Decoupling ablation on ShanghaiTech (AUC %):
 
 | $k_{\text{OPL}}\backslash k_{\text{G-OPL}}$ | $2$ | $4$ | $8$ | $16$ | $32$ | $64$ | $128$ |
 |---|---|---|---|---|---|---|---|
@@ -82,54 +78,54 @@ On five VAD datasets (ShanghaiTech, UCF-Crime, CUHK Avenue, UCSD Ped2, MSAD), OP
 | $32$ | $94.5$ | $95.1$ | $94.6$ | $93.8$ | $92.8$ | $91.5$ | $90.8$ |
 | $128$ | $92.8$ | $93.1$ | $92.4$ | $91.5$ | $89.8$ | $88.4$ | $87.9$ |
 
-The optimal $k_{\text{OPL}}=k_{\text{G-OPL}}=4$ yields AUC $=97.3\%$, clearly higher than the baseline RTFM (RTFM I3D on ShT in the paper is about $97.0\%$); overly large $k$ (e.g., $128$) excessively removes information, dropping AUC to $87.9\%$.
+At optimal $k_{\text{OPL}}=k_{\text{G-OPL}}=4$, the AUC reaches $97.3\%$, significantly higher than the RTFM baseline (approx. $97.0\%$ with I3D on ShT). Excessive $k$ (e.g., $128$) causes over-deletion of information, dropping AUC to $87.9\%$.
 
-MSAD multi-anomaly comparison (excerpt from Table 2, AUC %):
+Multi-anomaly type comparison on MSAD (Table 2 excerpt, AUC %):
 
 | Method | Assault | Explosion | Fighting | Robbery | Shooting | Traffic Acc. | Overall AUC |
 |------|---------|-----------|----------|---------|----------|--------------|-------------|
-| RTFM (I3D) baseline | $53.9$ | $66.0$ | $79.8$ | … | … | … | … |
-| + OPL / G-OPL (Ours) | Comprehensive improvement or parity | — | — | — | — | — | — |
+| RTFM (I3D) baseline | $53.9$ | $66.0$ | $79.8$ | ... | ... | ... | ... |
+| + OPL / G-OPL (Ours) | Comprehensive gain/parity | — | — | — | — | — | — |
 
-(See the original table for specific OPL/G-OPL gains; the main trend is that utility does not decrease and may slightly increase, while privacy metrics drop significantly.)
+(Specific gains for OPL/G-OPL show the trend of maintaining or slightly increasing utility while significantly reducing privacy metrics.)
 
 ### Ablation Study
 
-| Configuration | Key Metrics | Notes |
+| Configuration | Key Metrics | Description |
 |------|---------|------|
-| baseline RTFM (I3D) | High AUC, but FPD close to baseline backbone (face can be accurately predicted by linear SVM) | No privacy mechanism |
-| + OPL | AUC unchanged/slightly increased, UMAP shows nuisance clusters dispersed | General nuisance removed |
-| + G-OPL (cosine alignment) | FPD drops sharply, SSC rises significantly, AUC unaffected | Facial components are actively injected into subspace and projected out |
-| Remove $\mathcal L_{\text{orth}}$ | After a few epochs, $\bm Q$ deviates from orthogonality, AUC fluctuates | Orthogonality must be maintained |
-| $k$ too large ($\ge 64$) | AUC drops sharply | Subspace too wide, useful information lost |
+| Baseline RTFM (I3D) | High AUC, but FPD close to baseline backbone | No privacy mechanism in place. |
+| + OPL | AUC stable/slightly higher; UMAP shows nuisance clusters dispersing. | General nuisance components successfully removed. |
+| + G-OPL (Cosine Alignment) | FPD drops sharply, SSC increases significantly, AUC maintained. | Facial components directionally absorbed into the subspace and discarded. |
+| W/O $\mathcal L_{\text{orth}}$ | $\bm Q$ deviates from orthogonality after a few epochs; AUC fluctuates. | Orthogonal basis must be explicitly preserved. |
+| $k$ too large ($\ge 64$) | Sharp decrease in AUC. | Discarded subspace is too wide, losing useful information. |
 
 ### Key Findings
-- Placing G-OPL immediately after the backbone (early stage) is more effective than in deeper layers—the lowest FPD (first-layer post-linear SVM face prediction accuracy) indicates privacy should be intercepted before information diffuses through the network.
-- ARD (KL divergence) increases monotonically with $k$, but AUC peaks at $k=4$, indicating utility does not monotonically vary with $k$—removing a small amount of nuisance can reduce overfitting and improve discrimination.
-- Using ArcFace as an attacker-style rank-1 re-identification probe, retrieval accuracy drops significantly after G-OPL, showing not only coarse metrics like face presence but also fine-grained identity are suppressed.
+- Placing G-OPL immediately after the backbone (early stage) is more effective than in deeper layers—FPD (face prediction accuracy by linear SVM after the first layer) is lowest, indicating privacy should be intercepted before information diffuses through the network.
+- ARD (KL divergence) increases monotonically with $k$, but AUC peaks at $k=4$, indicating that utility does not change monotonically with $k$. Removing a small amount of nuisance can reduce overfitting and improve discriminative power.
+- Using ArcFace as an attacker-style rank-1 re-identification probe, retrieval accuracy significantly decreases after G-OPL, validating that fine-grained identity is suppressed alongside coarse facial presence.
 
 ## Highlights & Insights
-- "Replacing adversarial training with geometric projection" is the most noteworthy paradigm—sensitive components can be removed with stable training and interpretability (directly inspect $\bm Q\bm Q^\top\bm f$), without identity labels. This can be transferred to face anti-spoofing, human keypoint, medical imaging, and other privacy-sensitive tasks.
-- Using cosine alignment as a *weak supervision* signal is particularly clever—any off-the-shelf detector providing a "concept vector" (face embedding, clothing embedding) allows geometric injection of "what is sensitive" into $\bm Q$, which can then be plugged into any VAD baseline.
-- The SSC/ARD/PD-FPD suite fills the gap in VAD privacy evaluation; future vision tasks (action recognition, re-ID defense) can directly adopt these metrics.
+- "Geometric projection in place of adversarial training" is a paradigm worth adopting—it removes sensitive components with stable training, interpretability (visualizing $\bm Q\bm Q^\top\bm f$), and no need for identity labels. This is applicable to face anti-spoofing, human pose estimation, and medical imaging.
+- Using cosine alignment as a *weakly supervised* signal is ingenious—as long as an off-the-shelf detector provides "concept vectors" (face or clothing embeddings), "what is sensitive" can be injected into $\bm Q$ geometrically and plugged into any VAD baseline.
+- The SSC/ARD/PD-FPD trio fills the gap in VAD privacy evaluation and can be directly applied to other vision tasks like action recognition or re-ID defense/privacy.
 
 ## Limitations & Future Work
-- Using RetinaFace as the sole weak supervision source for faces means failure to detect small, occluded, or low-resolution faces causes G-OPL to fail; the paper acknowledges that MSAD is already face-blurred, so only pre-extracted features can be validated.
-- Current G-OPL targets only "face" as a sensitive attribute; suppressing multiple attributes (face + clothing + gait) with a shared $\bm Q$ may cause interference among attributes, requiring finer alignment design.
-- $k$ is a critical hyperparameter and must be tuned per dataset; the paper provides the best $k=4$ for ShanghaiTech, but cross-dataset generalization is not fully tested.
-- No robustness evaluation against *adaptive attackers* (who know OPL exists and train inversion networks); current privacy conclusions are for *non-adaptive* SVM/ArcFace probes.
+- Relying on RetinaFace as the sole face-weak-supervision source means G-OPL fails when faces are small, occluded, or low-resolution; the authors admit MSAD results rely on pre-extracted features since faces are already blurred.
+- Current G-OPL targets only "facial" sensitive attributes. Simultaneous suppression of multiple attributes (face + clothing + gait) sharing one $\bm Q$ might lead to interference and requires more refined alignment designs.
+- $k$ is a critical hyperparameter that requires per-dataset tuning; while $k=4$ worked for ShanghaiTech, cross-dataset generalization remains under-explored.
+- Robustness against *adaptive attackers* (who know OPL exists and train specialized inversion networks) is not evaluated; current conclusions apply to *non-adaptive* SVM/ArcFace probes.
 
 ## Related Work & Insights
-- **vs INLP / nullspace projection (Ravfogel 2020)**: INLP uses iterative nullspace removal but requires sensitive attribute ground truth; G-OPL uses cosine weak supervision + differentiable QR for one-shot end-to-end training.
-- **vs OPL-2021 (Ranasinghe 2021)**: Previous work used generic decorrelation loss without "sensitive direction" control; this work adds face cosine alignment for controllable, targeted subspace removal.
-- **vs Adversarial Training + Gradient Reversal (GANIN, etc.)**: Unstable, requires discriminator training; this work circumvents with geometric methods.
-- **vs Data-Level Privacy (face blurring, DP-SGD)**: Data-level methods require pipeline changes; G-OPL is a model-level plug-in without altering data.
+- **vs INLP / Nullspace Projection (Ravfogel 2020)**: INLP uses iterative nullspace erasure but requires attribute ground truth. G-OPL uses cosine weak supervision + differentiable QR for one-stage end-to-end training.
+- **vs OPL-2021 (Ranasinghe 2021)**: Prior work used generic decorrelation losses without the concept of "sensitive directions." This work adds face cosine alignment to make the subspace controllable and directional.
+- **vs Adversarial Training + Gradient Reversal (Ganin et al.)**: Eliminates the instability and the need to train discriminators by using geometric methods directly.
+- **vs Data-level Privacy (Facial Blurring, DP-SGD)**: Data-level methods require pipeline overhauls; G-OPL is a model-level plug-in that does not alter raw data.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ First to combine "differentiable QR orthogonal projection + cosine weak supervision" for VAD; the privacy metric suite is also a new contribution.
-- Experimental Thoroughness: ⭐⭐⭐⭐ 5 datasets × 4 baselines × multiple $k$ settings + ArcFace inversion attacker validation, broad coverage.
-- Writing Quality: ⭐⭐⭐⭐ Clear flow from motivation → OPL → G-OPL → metrics → experiments; appendix supplements theory and practical details.
-- Value: ⭐⭐⭐⭐ Engineering-friendly (plug-in module, backbone-agnostic), fixed $\bm Q$ at inference with no extra cost, practically meaningful for deployment in surveillance cameras, etc.
+- Novelty: ⭐⭐⭐⭐ Combining "differentiable QR orthogonal projection + cosine weak supervision" for VAD is a first; the trio of privacy metrics is also a new contribution.
+- Experimental Thoroughness: ⭐⭐⭐⭐ 5 datasets × 4 baselines × multiple $k$ configurations + ArcFace inversion attacker validation provides broad coverage.
+- Writing Quality: ⭐⭐⭐⭐ Clear logical progression from motivation → OPL → G-OPL → metrics → experiments. Appendices provide theoretical and operational details.
+- Value: ⭐⭐⭐⭐ Engineering-friendly (plug-in module, immutable backbone), with no extra overhead during inference once $\bm Q$ is fixed. Highly practical for deployment in surveillance cameras.
 
 <!-- RELATED:START -->
 
@@ -137,11 +133,11 @@ MSAD multi-anomaly comparison (excerpt from Table 2, AUC %):
 
 ## Related Papers
 
+- [\[ICML 2026\] VSCD: Video Scene Change Detection in Unaligned Scenarios](vscd_video-based_scene_change_detection_in_unaligned_scenes.md)
 - [\[AAAI 2026\] StegaVAR: Privacy-Preserving Video Action Recognition via Steganographic Domain Analysis](../../AAAI2026/video_understanding/stegavar_privacy-preserving_video_action_recognition_via_steganographic_domain_a.md)
 - [\[AAAI 2026\] Balancing Multimodal Domain Generalization via Gradient Modulation and Projection](../../AAAI2026/video_understanding/balancing_multimodal_domain_generalization_via_gradient_modulation_and_projectio.md)
 - [\[ICCV 2025\] Aligning Effective Tokens with Video Anomaly in Large Language Models](../../ICCV2025/video_understanding/aligning_effective_tokens_with_video_anomaly_in_large_language_models.md)
 - [\[AAAI 2026\] Group Orthogonal Low-Rank Adaptation for RGB-T Tracking](../../AAAI2026/video_understanding/group_orthogonal_low-rank_adaptation_for_rgb-t_tracking.md)
-- [\[AAAI 2026\] Learning Topology-Driven Multi-Subspace Fusion for Grassmannian Deep Networks](../../AAAI2026/video_understanding/learning_topology-driven_multi-subspace_fusion_for_grassmannian_deep_network.md)
 
 </div>
 

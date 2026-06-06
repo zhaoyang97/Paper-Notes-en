@@ -118,7 +118,7 @@ Inputs: MODIS satellite data (500 m) + ERA5-Land meteorological data (0.1°), da
 - [\[CVPR 2026\] FAAR: Efficient Frequency-Aware Multi-Task Fine-Tuning via Automatic Rank Selection](../../CVPR2026/signal_comm/faar_efficient_frequency-aware_multi-task_fine-tuning_via_automatic_rank_selecti.md)
 - [\[ICLR 2026\] FASA: Frequency-Aware Sparse Attention](../../ICLR2026/signal_comm/fasa_frequency-aware_sparse_attention.md)
 - [\[CVPR 2026\] CLAY: Conditional Visual Similarity Modulation in Vision-Language Embedding Space](../../CVPR2026/signal_comm/clay_conditional_visual_similarity.md)
-- [\[AAAI 2026\] Toward Gaze Target Detection in Young Autistic Children](toward_gaze_target_detection_of_young_autistic_children.md)
+- [\[ICML 2026\] Meta-learning Structure-Preserving Dynamics](../../ICML2026/signal_comm/meta-learning_structure-preserving_dynamics.md)
 
 </div>
 

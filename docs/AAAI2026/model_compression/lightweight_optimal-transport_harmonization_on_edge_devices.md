@@ -168,8 +168,8 @@ The encoder is EfficientNet-B0 with 256×256, 4-channel (RGB+mask) input, traine
 
 - [\[ICLR 2026\] Cross-Domain Lossy Compression via Rate- and Classification-Constrained Optimal Transport](../../ICLR2026/model_compression/cross_domain_lossy_compression_optimal_transport.md)
 - [\[NeurIPS 2025\] Optimizing Distributional Geometry Alignment with Optimal Transport for Generative Dataset Distillation](../../NeurIPS2025/model_compression/optimizing_distributional_geometry_alignment_with_optimal_transport_for_generati.md)
-- [\[AAAI 2026\] SparseRM: A Lightweight Preference Modeling with Sparse Autoencoder](sparserm_a_lightweight_preference_modeling_with_sparse_autoencoder.md)
 - [\[CVPR 2026\] MEMO: Human-like Crisp Edge Detection Using Masked Edge Prediction](../../CVPR2026/model_compression/memo_human-like_crisp_edge_detection_using_masked_edge_prediction.md)
+- [\[AAAI 2026\] SparseRM: A Lightweight Preference Modeling with Sparse Autoencoder](sparserm_a_lightweight_preference_modeling_with_sparse_autoencoder.md)
 - [\[AAAI 2026\] Satisficing and Optimal Generalised Planning via Goal Regression (Extended Version)](satisficing_and_optimal_generalised_planning_via_goal_regression_extended_versio.md)
 
 </div>

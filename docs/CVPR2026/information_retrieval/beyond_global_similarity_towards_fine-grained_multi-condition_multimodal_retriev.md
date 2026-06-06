@@ -165,7 +165,7 @@ The MCMR dataset is constructed from the Amazon Reviews (2023) corpus, covering 
 - [\[CVPR 2026\] M4-RAG: A Massive-Scale Multilingual Multi-Cultural Multimodal RAG](m4-rag_a_massive-scale_multilingual_multi-cultural_multimodal_rag.md)
 - [\[CVPR 2026\] BRIDGE: Multimodal-to-Text Retrieval via Reinforcement-Learned Query Alignment](bridge_multimodal-to-text_retrieval_via_reinforcement-learned_query_alignment.md)
 - [\[ACL 2026\] RARE: Redundancy-Aware Retrieval Evaluation Framework for High-Similarity Corpora](../../ACL2026/information_retrieval/rare_redundancy-aware_retrieval_evaluation_framework_for_high-similarity_corpora.md)
-- [\[ICLR 2026\] Fine-tuning with RAG for Improving LLM Learning of New Skills](../../ICLR2026/information_retrieval/fine-tuning_with_rag_for_improving_llm_learning_of_new_skills.md)
+- [\[AAAI 2026\] Beyond Perplexity: Let the Reader Select Retrieval Summaries via Spectrum Projection Score](../../AAAI2026/information_retrieval/beyond_perplexity_let_the_reader_select_retrieval_summaries_via_spectrum_project.md)
 
 </div>
 

@@ -2,77 +2,78 @@
 title: >-
   [Paper Note] Easy Samples Are All You Need: Self-Evolving LLMs via Data-Efficient Reinforcement Learning
 description: >-
-  [ACL 2026][Reinforcement Learning][To be supplemented] To be supplemented after thorough reading.
+  [ACL 2026][Reinforcement Learning][Data-Efficient RL] The EasyRL framework is proposed, inspired by cognitive development theory. It initializes the model using only 10% simple labeled data via knowledge transfer…
 tags:
   - "ACL 2026"
   - "Reinforcement Learning"
-  - "To be supplemented"
+  - "Data-Efficient RL"
+  - "Self-Evolving LLM"
+  - "Pseudo-labeling"
+  - "Simple-to-Hard"
+  - "Cognitive Learning Theory"
 date: 2026-05-08
-content_hash: 2dc8c59083d3f1c2
+content_hash: a835ec7da8afc76e
 ---
 
 # Easy Samples Are All You Need: Self-Evolving LLMs via Data-Efficient Reinforcement Learning
 
-**Conference**: ACL 2026
+**Conference**: ACL 2026  
 **arXiv**: [2604.18639](https://arxiv.org/abs/2604.18639)  
 **Code**: [https://github.com/YuZhiyin/EasyRL](https://github.com/YuZhiyin/EasyRL)  
-**Area**: Reinforcement Learning / Data-Efficient Training
-**Keywords**: Data-efficient RL, self-evolving LLM, pseudo-labeling, easy-to-hard curriculum, cognitive learning theory
+**Area**: Reinforcement Learning / Data-Efficient Training  
+**Keywords**: Data-Efficient RL, Self-Evolving LLM, Pseudo-labeling, Simple-to-Hard, Cognitive Learning Theory
 
 ## TL;DR
 
-This paper proposes EasyRL, a cognitively inspired framework that uses only 10% easy labeled data for warmup initialization via knowledge transfer, then progressively masters hard unlabeled data through divide-and-conquer pseudo-labeling and difficulty-progressive self-training, consistently outperforming supervised GRPO trained on the full dataset.
+The EasyRL framework is proposed, inspired by cognitive development theory. It initializes the model using only 10% simple labeled data via knowledge transfer, then progressively masters difficult unlabeled data through divide-and-conquer pseudo-labeling and difficulty-based self-training, consistently outperforming GRPO supervised with full data.
 
 ## Background & Motivation
 
-**Background**: RLVR has emerged as a key post-training paradigm for enhancing LLM reasoning. Existing approaches fall into two categories: supervised (relying on annotated answers or reward models at high annotation cost) and unsupervised (constructing rewards via voting or entropy estimation, prone to collapse or reward hacking).
+**Background**: RLVR has become a key post-training paradigm for enhancing the reasoning capabilities of LLMs. Existing methods are categorized into supervised (relying on ground-truth answers or reward models, with high labeling costs) and unsupervised (constructing rewards via voting or entropy estimation, prone to collapse or reward hacking).
 
-**Limitations of Prior Work**: (1) Supervised methods require large amounts of high-quality labeled data, with annotation costs particularly prohibitive for hard problems; (2) unsupervised methods yield limited and unstable performance gains, susceptible to model collapse or reward hacking; (3) neither category accounts for the difficulty distribution of data — in practice, easy problems are far cheaper to annotate than hard ones.
+**Limitations of Prior Work**: (1) Supervised methods require large amounts of high-quality labeled data, with extremely high costs for labeling difficult problems; (2) Unsupervised methods offer limited and unstable performance gains, often leading to model collapse or reward hacking; (3) Neither considers the distribution of data difficulty—practically, labeling costs for simple problems are much lower than for hard problems.
 
-**Key Challenge**: Hard problems are costly to annotate yet highly informative, while easy problems are cheap to annotate but insufficient on their own. The central question is how to leverage a small amount of easy labeled data to progressively master a large corpus of hard unlabeled data.
+**Key Challenge**: Labeling costs for hard problems are high but their value is significant, while simple problems are cheap to label but insufficient for training alone. How can a model gradually master a large amount of hard unlabeled data using only a small amount of simple labeled data?
 
-**Goal**: To design a cognitively inspired RL framework that, starting from limited easy labeled data, self-evolves to handle increasingly difficult reasoning tasks.
+**Goal**: Design a cognitive-inspired RL framework to self-evolve and learn increasingly difficult reasoning tasks starting from limited simple labeled data.
 
-**Key Insight**: Vygotsky's Zone of Proximal Development (ZPD) theory — learners first internalize knowledge from simple, accessible examples, then progressively extend to harder challenges with minimal external guidance.
+**Key Insight**: Vygotsky's "Zone of Proximal Development" (ZPD) theory—learners first internalize knowledge from simple, reachable cases and then gradually expand to more difficult challenges with minimal external guidance.
 
-**Core Idea**: (1) Train a warmup model via GRPO on a small set of easy labeled data; (2) apply a divide-and-conquer strategy to pseudo-label unlabeled data — consistency selection for low-uncertainty samples and reflective resolution for medium-uncertainty samples; (3) iteratively expand the model's capability boundary through difficulty-progressive self-training.
+**Core Idea**: (1) Use a small amount of simple labeled data to train a warmup model via GRPO; (2) Apply a divide-and-conquer strategy for pseudo-labeling unlabeled data—consistency selection for low-uncertainty samples and reflection for medium-uncertainty samples; (3) Use difficulty-based self-training iterations to expand the model's capability boundaries.
 
 ## Method
 
 ### Overall Architecture
 
-EasyRL proceeds in three stages: (1) **Knowledge Transfer** — train a warmup model on easy labeled data using GRPO; (2) **Divide-and-Conquer Pseudo-Labeling** — the warmup model performs multiple inference passes on unlabeled data, partitioning samples into low/medium/high uncertainty groups, with high-quality pseudo-labels constructed via consistency selection and reflective resolution respectively; (3) **Difficulty-Progressive Self-Training** — iterative RL training on a mixture of labeled and pseudo-labeled data, with high-uncertainty samples from each round re-pseudo-labeled in the next.
+EasyRL consists of three stages: (1) Knowledge Transfer—training a warmup model using GRPO on simple labeled data; (2) Divide-and-Conquer Pseudo-labeling—the warmup model performs multiple inferences on unlabeled data, categorizing them into low/medium/high uncertainty groups to construct high-quality pseudo-labels via consistency selection and reflection; (3) Progressive Difficulty Self-Training—iterative RL training using a mix of labeled and pseudo-labeled data, with high-uncertainty samples from the previous round being re-labeled in each new iteration.
 
 ### Key Designs
 
-1. **Divide-and-Conquer Pseudo-Labeling Strategy**:
+1.  **Divide-and-Conquer Pseudo-labeling Strategy**:
+    - **Function**: Constructs high-quality pseudo-labels from unlabeled data.
+    - **Mechanism**: Generates $N$ independent reasoning paths for each unlabeled sample. Consistency Selection—if all $N$ outputs yield the same answer, it is directly used as a pseudo-label (low uncertainty). Reflection-based Solution—if answers are inconsistent, the predictive entropy $H(x)$ is calculated; if $H(x) \leq \tau_t$, the candidate answers are re-evaluated through a reflection mechanism to obtain a pseudo-label (medium uncertainty). High-uncertainty samples ($H(x) > \tau_t$) are deferred to the next iteration.
+    - **Design Motivation**: Simple majority voting is insufficient for high-quality pseudo-labels. A three-tier strategy is used: high-confidence adoption for full consistency, reflection-based correction for partial consistency, and deferred processing for high uncertainty to maximize pseudo-label quality.
 
-    - **Function**: Construct high-quality pseudo-labels from unlabeled data.
-    - **Mechanism**: Generate $N$ independent inference passes for each unlabeled sample. *Consistency selection* — if all $N$ outputs agree on the same answer, it is directly adopted as the pseudo-label (low uncertainty). *Reflective resolution* — when outputs disagree, the predictive entropy $H(x)$ is computed; if $H(x) \leq \tau_t$, a reflection mechanism re-evaluates candidate answers to produce a pseudo-label (medium uncertainty). High-uncertainty samples ($H(x) > \tau_t$) are deferred to the next iteration.
-    - **Design Motivation**: Naïve majority voting yields insufficient pseudo-label quality. The three-tier treatment — confidently adopt fully consistent outputs, correct partially consistent outputs via reflection, and defer highly uncertain ones — maximizes overall pseudo-label quality.
+2.  **Progressive Difficulty Self-Training**:
+    - **Function**: Enables the model to gradually extend its capability boundaries to harder problems.
+    - **Mechanism**: In each iteration, the current model $\pi_i$ re-labels and filters the high-uncertainty samples left over from the previous round. These are mixed with labeled data for RL training to obtain $\pi_{i+1}$. As model capability improves, difficult samples that could not be labeled confidently before are gradually incorporated. $\pi_1, \pi_2, ..., \pi_n$ form a sequence of models with increasing capabilities.
+    - **Design Motivation**: Corresponds to Vygotsky’s ZPD theory—the pseudo-labeled dataset in each round specifically targets the model's current "Zone of Proximal Development," i.e., tasks slightly beyond current capabilities but learnable.
 
-2. **Difficulty-Progressive Self-Training**:
-
-    - **Function**: Gradually extend the model's capability boundary to harder problems.
-    - **Mechanism**: In each iteration, the current model $\pi_i$ re-pseudo-labels the high-uncertainty samples left from the previous round, filters them, and mixes them with labeled data for RL training to obtain $\pi_{i+1}$. As model capability improves, previously unconfident hard samples are progressively incorporated. The sequence $\pi_1, \pi_2, \ldots, \pi_n$ forms a chain of models with monotonically increasing capability.
-    - **Design Motivation**: This directly instantiates Vygotsky's ZPD theory — the pseudo-labeled dataset at each round corresponds precisely to the model's current "zone of proximal development," i.e., tasks that slightly exceed current capability yet remain learnable.
-
-3. **Cognitive Learning Curve Simulation**:
-
-    - **Function**: Theoretical foundation unifying the framework.
-    - **Mechanism**: EasyRL simulates the human cognitive acquisition curve: first learning basic rules from simple examples (knowledge transfer), then transferring knowledge to novel, harder problems via analogy and self-reflection (divide-and-conquer + self-training). The consistency rate (ConsRate) of pseudo-labels increases across iterations, empirically confirming progressive capability growth.
-    - **Design Motivation**: Importing learning theory from cognitive science into RL framework design provides principled methodological guidance.
+3.  **Cognitive Learning Curve Simulation**:
+    - **Function**: Provides a unified theoretical foundation for the framework.
+    - **Mechanism**: EasyRL simulates the human cognitive acquisition curve: learning basic rules from simple cases (Knowledge Transfer), then transferring knowledge to new, harder problems through analogy and self-reflection (Divide-and-Conquer + Self-Training). The consistency rate (ConsRate) of pseudo-labels increases across iterations, confirming progressive growth in capability.
+    - **Design Motivation**: Introduces learning theories from cognitive science into RL framework design to provide methodological guidance.
 
 ### Loss & Training
 
-Standard GRPO objective. Correctness rewards: $r=1$ (correct), $r=-0.5$ (format error), $r=0$ (otherwise). Evaluated on Qwen2.5-Math-1.5B/7B and Llama-3.2-3B. Easy labeled data constitutes 10% of the full dataset (easy subsets selected by AoPS difficulty ratings).
+Standard GRPO objective function is used. Correctness reward $r=1$ (match), $r=-0.5$ (format error), $r=0$ (otherwise). Evaluated on Qwen2.5-Math-1.5B/7B and Llama-3.2-3B. Simple labeled data accounts for 10% of the total (selected as a simple subset according to AoPS difficulty levels).
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Model / Method | Math Avg. | Science Avg. | Labeled Data |
-|---|---|---|---|
+| Model / Method | Math Avg | Science Avg | Labeled Data |
+|----------|---------|---------|----------|
 | Qwen2.5-Math-1.5B Base | 32.6 | 1.5 | 0 |
 | w/ Supervised GRPO (10%) | 35.7 | 7.9 | 10% |
 | w/ Unsupervised EMPO | 38.5 | 15.6 | 0 |
@@ -83,74 +84,44 @@ Standard GRPO objective. Correctness rewards: $r=1$ (correct), $r=-0.5$ (format 
 
 ### Ablation Study
 
-| Configuration | Effect | Note |
-|---|---|---|
-| Knowledge transfer only (warmup) | Baseline | Easy data only |
-| + Divide-and-conquer pseudo-labeling Iter1 | Improvement | Incorporates easy unlabeled data |
-| + Iter2 | Further improvement | Incorporates medium-difficulty data |
-| + Iter3 | Best | Incorporates more hard data |
+| Configuration | Gain | Description |
+|------|------|------|
+| Knowledge Transfer only (warmup) | Baseline | Simple data only |
+| + Divide-and-Conquer Iter1 | Improvement | Includes easy unlabeled data |
+| + Iter2 | Further Improvement | Includes medium difficult data |
+| + Iter3 | Optimal | Includes more difficult data |
 
 ### Key Findings
 
-- EasyRL with only 10% easy labeled data surpasses Supervised GRPO trained on the full dataset.
-- Iterative self-training yields consistent gains: Iter1→Iter2→Iter3 shows steady improvement across both math and science benchmarks.
-- Pseudo-label consistency rate increases across iterations, confirming progressive capability self-evolution.
-- EasyRL generalizes to out-of-domain tasks (science reasoning), indicating acquisition of general reasoning ability rather than domain-specific patterns.
-- The reflection mechanism significantly improves pseudo-label quality for medium-uncertainty samples.
+- EasyRL using only 10% simple labeled data outperforms Supervised GRPO using 100% of the data.
+- Iterative self-training leads to continuous improvement: Iter1 → Iter2 → Iter3 shows steady growth on both math and science benchmarks.
+- The consistency rate of pseudo-labels increases with iterations, confirming the self-evolution of model capability.
+- EasyRL is also effective on out-of-distribution tasks (scientific reasoning), indicating the acquisition of general reasoning abilities.
+- The reflection mechanism significantly helps improve pseudo-label quality for medium-uncertainty samples.
 
 ## Highlights & Insights
 
-- **The "easy samples are all you need" finding has practical value**: Annotating hard problems is prohibitively expensive; EasyRL demonstrates that labeling only easy problems is sufficient to cover hard ones through self-evolution — a finding of significant relevance for annotation-constrained real-world scenarios.
-- **The divide-and-conquer strategy offers a natural uncertainty-stratified data treatment**: The three-tier pipeline — fully consistent → reflective correction → deferred processing — provides an optimal handling strategy at each level.
-- **Grounding in cognitive science theory provides principled methodological guidance**: ZPD theory is not merely an analogy here, but actively informs concrete design choices (easy-to-hard ordering, progressive expansion).
+- **The finding that "easy samples are enough" has practical value**: Labeling hard problems is expensive; EasyRL proves that labeling only simple problems allows for covering hard problems through self-evolution. This is highly meaningful for practical scenarios with limited labeling resources.
+- **The divide-and-conquer strategy for uncertainty-graded data is natural**: A three-tier strategy (full consistency → reflection correction → deferred processing) applies the optimal handling method to each level.
+- **The introduction of cognitive science provides methodological guidance**: ZPD theory is not a simple analogy but guides specific design choices (simple-to-hard, progressive expansion).
 
 ## Limitations & Future Work
 
-- The pseudo-labeling process with multiple inference passes incurs non-trivial computational overhead.
-- The convergence speed and performance ceiling of iterative self-training depend on the quality of the initial warmup model.
-- The definition of "easy" and "hard" relies on AoPS difficulty ratings, which are not available in all domains.
-- Behavior at larger model scales (>7B) remains unexplored.
+- Multiple inferences for pseudo-label evaluation involve certain computational costs.
+- The convergence speed and final upper bound of iterative self-training depend on the quality of the initial warmup model.
+- The definition of "simple" and "hard" depends on AoPS difficulty labels, which may not be available in all domains.
+- Behavior on larger models (>7B) has not been explored.
 
 ## Related Work & Insights
 
-- **vs. Standard GRPO (full supervision)**: EasyRL surpasses full-data supervised GRPO using only 10% easy labeled data via self-evolution, demonstrating that data quality and learning strategy matter more than data quantity.
-- **vs. Unsupervised EMPO**: EMPO requires no labeled data at all, but yields limited and unstable gains. EasyRL uses a small amount of easy labeled data as an anchor, enabling more stable and effective self-evolution.
+- **vs Standard GRPO (Full Supervision)**: EasyRL outperforms full-supervision GRPO using only 10% simple data via self-evolution, proving that data quality and learning strategy are more important than data quantity.
+- **vs Unsupervised EMPO**: EMPO uses no labels, but its performance gains are limited and unstable. EasyRL uses a small amount of simple labels as anchors to achieve more stable self-evolution.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ — The integration of cognitive learning theory is inspiring; the combination of divide-and-conquer pseudo-labeling and progressive self-training is elegantly designed.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Three model backbones, math and science benchmarks, multi-round iteration ablations, and pseudo-label quality analysis; very comprehensive.
-- **Writing Quality**: ⭐⭐⭐⭐ — Motivation is clearly articulated; the correspondence between theoretical motivation and method design is well presented.
-**Code**: To be confirmed  
-**Area**: reinforcement_learning
-**Keywords**: To be supplemented
-
-## TL;DR
-To be supplemented after thorough reading.
-
-## Background & Motivation
-To be supplemented after thorough reading.
-
-## Method
-To be supplemented after thorough reading.
-
-## Key Experimental Results
-To be supplemented after thorough reading.
-
-## Highlights & Insights
-To be supplemented after thorough reading.
-
-## Limitations & Future Work
-To be supplemented after thorough reading.
-
-## Related Work & Insights
-To be supplemented after thorough reading.
-
-## Rating
-- Novelty: Pending
-- Experimental Thoroughness: Pending
-- Writing Quality: Pending
-- Value: Pending
+- Novelty: ⭐⭐⭐⭐ The introduction of cognitive learning theory is inspiring; the combination of divide-and-conquer pseudo-labeling and progressive self-training is cleverly designed.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Very thorough, covering 3 models plus math and science benchmarks, multi-round iteration ablations, and pseudo-label quality analysis.
+- Writing Quality: ⭐⭐⭐⭐ Clear motivation; the correspondence between theoretical motivation and method design is well-explained.
 
 <!-- RELATED:START -->
 
@@ -158,11 +129,11 @@ To be supplemented after thorough reading.
 
 ## Related Papers
 
-- [\[ACL 2026\] HEALing Entropy Collapse: Enhancing Exploration in Few-Shot RLVR via Hybrid-Domain Entropy Dynamics Alignment](healing_entropy_collapse_enhancing_exploration_in_few-shot_rlvr_via_hybrid-domai.md)
-- [\[ACL 2026\] The Stackelberg Speaker: Optimizing Persuasive Communication in Social Deduction Games](the_stackelberg_speaker_optimizing_persuasive_communication_in_social_deduction_.md)
+- [\[ICML 2026\] D$^2$Evo: Dual Difficulty-Aware Self-Evolution for Data-Efficient Reinforcement Learning](../../ICML2026/reinforcement_learning/d2evo_dual_difficulty-aware_self-evolution_for_data-efficient_reinforcement_lear.md)
+- [\[ICML 2026\] Metis: Learning to Jailbreak LLMs via Self-Evolving Metacognitive Policy Optimization](../../ICML2026/reinforcement_learning/metis_learning_to_jailbreak_llms_via_self-evolving_metacognitive_policy_optimiza.md)
 - [\[ICLR 2026\] SPELL: Self-Play Reinforcement Learning for Evolving Long-Context Language Models](../../ICLR2026/reinforcement_learning/spell_self-play_reinforcement_learning_for_evolving_long-context_language_models.md)
-- [\[ICML 2026\] From Self-Evolving Synthetic Data to Verifiable-Reward RL: Post-Training Multi-turn Interactive Tool-Using Agents](../../ICML2026/reinforcement_learning/from_self-evolving_synthetic_data_to_verifiable-reward_rl_post-training_multi-tu.md)
-- [\[ACL 2026\] A Survey of Reinforcement Learning for Large Language Models under Data Scarcity: Challenges and Solutions](a_survey_of_reinforcement_learning_for_large_language_models_under_data_scarcity.md)
+- [\[ACL 2026\] EvoCoT: Overcoming the Exploration Bottleneck in Reinforcement Learning for LLMs](evocot_overcoming_the_exploration_bottleneck_in_reinforcement_learning.md)
+- [\[ACL 2026\] ARGUS: Policy-Adaptive Ad Governance via Evolving Reinforcement with Adversarial Umpiring](argus_policy-adaptive_ad_governance_via_evolving_reinforcement_with_adversarial_.md)
 
 </div>
 

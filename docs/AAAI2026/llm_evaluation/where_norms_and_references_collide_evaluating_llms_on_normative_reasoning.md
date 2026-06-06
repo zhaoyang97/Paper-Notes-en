@@ -128,10 +128,10 @@ Evaluation only — zero-shot, no training.
 ## Related Papers
 
 - [\[ACL 2026\] Are They Lovers or Friends? Evaluating LLMs' Social Reasoning in English and Korean Dialogues](../../ACL2026/llm_evaluation/are_they_lovers_or_friends_evaluating_llms39_social_reasoning_in_english_and_kor.md)
+- [\[ACL 2026\] Evaluating Reasoning Models for Queries with Presuppositions](../../ACL2026/llm_evaluation/evaluating_reasoning_models_for_queries_with_presuppositions.md)
 - [\[NeurIPS 2025\] On Evaluating LLM Alignment by Evaluating LLMs as Judges](../../NeurIPS2025/llm_evaluation/on_evaluating_llm_alignment_by_evaluating_llms_as_judges.md)
 - [\[ACL 2026\] Personalized Benchmarking: Evaluating LLMs by Individual Preferences](../../ACL2026/llm_evaluation/personalized_benchmarking_evaluating_llms_by_individual_preferences.md)
-- [\[ICLR 2026\] Truthfulness Despite Weak Supervision: Evaluating and Training LLMs Using Peer Prediction](../../ICLR2026/llm_evaluation/truthfulness_despite_weak_supervision_evaluating_and_training_llms_using_peer_pr.md)
-- [\[ICLR 2026\] DARE-bench: Evaluating Modeling and Instruction Fidelity of LLMs in Data Science](../../ICLR2026/llm_evaluation/dare-bench_evaluating_modeling_and_instruction_fidelity_of_llms_in_data_science.md)
+- [\[ACL 2026\] Presupposition and Reasoning in Conditionals: A Theory-Based Study of Humans and LLMs](../../ACL2026/llm_evaluation/presupposition_and_reasoning_in_conditionals_a_theory-based_study_of_humans_and_.md)
 
 </div>
 

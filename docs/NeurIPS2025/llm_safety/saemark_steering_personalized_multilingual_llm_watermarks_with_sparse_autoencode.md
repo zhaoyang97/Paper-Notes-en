@@ -130,11 +130,11 @@ With $N=50$, the per-unit success rate exceeds 99%; with $N=10$, it remains at 6
 
 ## Related Papers
 
+- [\[ACL 2026\] CRISP: Persistent Concept Unlearning via Sparse Autoencoders](../../ACL2026/llm_safety/crisp_persistent_concept_unlearning_via_sparse_autoencoders.md)
 - [\[ICCV 2025\] SAUCE: Selective Concept Unlearning in Vision-Language Models with Sparse Autoencoders](../../ICCV2025/llm_safety/sauce_selective_concept_unlearning_in_vision-language_models_with_sparse_autoenc.md)
 - [\[NeurIPS 2025\] On Optimal Steering to Achieve Exact Fairness](on_optimal_steering_to_achieve_exact_fairness.md)
 - [\[NeurIPS 2025\] TRUST -- Transformer-Driven U-Net for Sparse Target Recovery](trust_--_transformer-driven_u-net_for_sparse_target_recovery.md)
 - [\[NeurIPS 2025\] Securing the Language of Life: Inheritable Watermarks from DNA Language Models to Proteins](securing_the_language_of_life_inheritable_watermarks_from_dna_language_models_to.md)
-- [\[ICLR 2026\] Robustness and Radioactivity of Watermarks in Federated Learning May Be at Odds](../../ICLR2026/llm_safety/watermark_robustness_and_radioactivity_may_be_at_odds_in_federated_learning.md)
 
 </div>
 

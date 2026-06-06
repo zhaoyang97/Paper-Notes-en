@@ -121,11 +121,11 @@ Compared to pruning methods (Llama3-8B, 50%): SPON PPL=7.83, outperforming Spars
 
 ## Related Papers
 
+- [\[ICML 2026\] Model Merging Scaling Laws in Large Language Models](model_merging_scaling_laws_in_large_language_models.md)
+- [\[ICML 2026\] NanoQuant: Efficient Sub-1-Bit Quantization of Large Language Models](nanoquant_efficient_sub-1-bit_quantization_of_large_language_models.md)
+- [\[ICML 2026\] The Shape of Addition: Geometric Structures of Arithmetic in Large Language Models](the_shape_of_addition_geometric_structures_of_arithmetic_in_large_language_model.md)
 - [\[NeurIPS 2025\] DuoGPT: Training-free Dual Sparsity through Activation-aware Pruning in LLMs](../../NeurIPS2025/model_compression/duogpt_training-free_dual_sparsity_through_activation-aware_pruning_in_llms.md)
 - [\[ICCV 2025\] MixA-Q: Revisiting Activation Sparsity for Vision Transformers from a Mixed-Precision Quantization Perspective](../../ICCV2025/model_compression/mixa-q_revisiting_activation_sparsity_for_vision_transformers_from_a_mixed-preci.md)
-- [\[ICLR 2026\] Knowledge Fusion of Large Language Models Via Modular Skillpacks](../../ICLR2026/model_compression/knowledge_fusion_of_large_language_models_via_modular_skillpacks.md)
-- [\[ICLR 2026\] Distillation of Large Language Models via Concrete Score Matching](../../ICLR2026/model_compression/distillation_of_large_language_models_via_concrete_score_matching.md)
-- [\[AAAI 2026\] Failures to Surface Harmful Contents in Video Large Language Models](../../AAAI2026/model_compression/failures_to_surface_harmful_contents_in_video_large_language_models.md)
 
 </div>
 

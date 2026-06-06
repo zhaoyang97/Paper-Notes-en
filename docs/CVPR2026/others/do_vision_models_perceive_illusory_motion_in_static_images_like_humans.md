@@ -126,10 +126,10 @@ This work is purely inference-based; no training is involved. All models are use
 ## Related Papers
 
 - [\[CVPR 2026\] Next-Scale Autoregressive Models for Text-to-Motion Generation](next-scale_autoregressive_models_for_text-to-motion_generation.md)
-- [\[CVPR 2026\] ViT3: Unlocking Test-Time Training in Vision](vit3_unlocking_test_time_training_in_vision.md)
+- [\[ICML 2026\] Position: Age Estimation Models Do Not Process Biometric Data](../../ICML2026/others/position_age_estimation_models_do_not_process_biometric_data.md)
+- [\[ICML 2026\] FOVI: Bio-inspired Foveated Interface for Deep Vision Models](../../ICML2026/others/fovi_a_biologically-inspired_foveated_interface_for_deep_vision_models.md)
 - [\[NeurIPS 2025\] Brain-Like Processing Pathways Form in Models With Heterogeneous Experts](../../NeurIPS2025/others/brain-like_processing_pathways_form_in_models_with_heterogeneous_experts.md)
-- [\[CVPR 2026\] Your Classifier Can Do More: Towards Balancing the Gaps in Classification, Robustness, and Generation](your_classifier_can_do_more_towards_balancing_the.md)
-- [\[AAAI 2026\] Beyond World Models: Rethinking Understanding in AI Models](../../AAAI2026/others/beyond_world_models_rethinking_understanding_in_ai_models.md)
+- [\[CVPR 2026\] ViT3: Unlocking Test-Time Training in Vision](vit3_unlocking_test_time_training_in_vision.md)
 
 </div>
 

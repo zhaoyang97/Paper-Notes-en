@@ -149,10 +149,10 @@ Core insight: **LLM safety evaluation must transition from static single-turn to
 ## Related Papers
 
 - [\[ICLR 2026\] Understanding Sensitivity of Differential Attention through the Lens of Adversarial Robustness](understanding_sensitivity_of_differential_attention_through_the_lens_of_adversar.md)
+- [\[ACL 2026\] Understanding and Mitigating Bias Inheritance in LLM-based Data Augmentation on Downstream Tasks](../../ACL2026/llm_safety/understanding_and_mitigating_bias_inheritance_in_llm-based_data_augmentation_on_.md)
 - [\[ICLR 2026\] Fair in Mind, Fair in Action? A Synchronous Benchmark for Understanding and Generation in UMLLMs](fair_in_mind_fair_in_action_a_synchronous_benchmark_for_understanding_and_genera.md)
-- [\[ICML 2026\] Internalizing Safety Understanding in Large Reasoning Models via Verification](../../ICML2026/llm_safety/internalizing_safety_understanding_in_large_reasoning_models_via_verification.md)
+- [\[ICML 2026\] Understanding Generalization and Forgetting in In-Context Continual Learning](../../ICML2026/llm_safety/understanding_generalization_and_forgetting_in_in-context_continual_learning.md)
 - [\[AAAI 2026\] From Single to Societal: Analyzing Persona-Induced Bias in Multi-Agent Interactions](../../AAAI2026/llm_safety/from_single_to_societal_analyzing_persona-induced_bias_in_multi-agent_interactio.md)
-- [\[ICLR 2026\] LLM Unlearning with LLM Beliefs](llm_unlearning_with_llm_beliefs.md)
 
 </div>
 

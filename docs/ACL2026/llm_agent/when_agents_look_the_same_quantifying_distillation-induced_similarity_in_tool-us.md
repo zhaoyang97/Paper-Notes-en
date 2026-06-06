@@ -2,71 +2,71 @@
 title: >-
   [Paper Note] When Agents Look the Same: Quantifying Distillation-Induced Similarity in Tool-Use Behaviors
 description: >-
-  [ACL 2026][LLM Agent][model distillation] This paper proposes two complementary metrics, RPS and AGS, to quantify distillation-induced behavioral homogenization in LLM agents' tool-use behaviors. By distinguishing necess…
+  [ACL 2026][LLM Agent][Model Distillation] This paper proposes two complementary metrics, RPS and AGS, to quantify the homogenization of LLM Agent tool-use behaviors resulting from distillation. By distinguishing between…
 tags:
   - "ACL 2026"
   - "LLM Agent"
-  - "model distillation"
-  - "behavioral homogenization"
-  - "tool use"
-  - "agent evaluation"
-  - "behavioral similarity"
+  - "Model Distillation"
+  - "Behavioral Homogenization"
+  - "Tool Use"
+  - "Agent Evaluation"
+  - "Behavioral Similarity"
 date: 2026-05-08
-content_hash: f41fb24a94ac2616
+content_hash: fe6c68ae6b48bf66
 ---
 
 # When Agents Look the Same: Quantifying Distillation-Induced Similarity in Tool-Use Behaviors
 
-**Conference**: ACL 2026
+**Conference**: ACL 2026  
 **arXiv**: [2604.21255](https://arxiv.org/abs/2604.21255)  
 **Code**: [https://github.com/Syuchin/AgentEcho](https://github.com/Syuchin/AgentEcho)  
-**Area**: LLM Agent
-**Keywords**: model distillation, behavioral homogenization, tool use, agent evaluation, behavioral similarity
+**Area**: LLM Agent  
+**Keywords**: Model Distillation, Behavioral Homogenization, Tool Use, Agent Evaluation, Behavioral Similarity
 
 ## TL;DR
-This paper proposes two complementary metrics, RPS and AGS, to quantify distillation-induced behavioral homogenization in LLM agents' tool-use behaviors. By distinguishing necessary from unnecessary behaviors, the framework reveals cross-family behavioral inheritance patterns across 18 models, finding that Kimi-K2 exhibits greater behavioral similarity to Claude Sonnet 4.5 than Anthropic's own models do.
+This paper proposes two complementary metrics, RPS and AGS, to quantify the homogenization of LLM Agent tool-use behaviors resulting from distillation. By distinguishing between mandatory and non-mandatory behaviors across 18 models, it reveals cross-family behavior inheritance patterns, finding that the behavioral similarity between Kimi-K2 and Claude Sonnet 4.5 even exceeds that of Anthropic's own models.
 
 ## Background & Motivation
 
-**Background**: The LLM agent landscape is experiencing a Cambrian explosion, with a growing number of high-performance agents emerging from diverse sources. Despite their varied origins, these models exhibit strikingly consistent behaviors in reasoning steps, tool-calling habits, and even failure modes, suggesting that many may be "distillation echoes" of a small number of dominant teacher models.
+**Background**: The current LLM Agent landscape is undergoing a "Cambrian explosion" with the emergence of numerous high-performance agents. However, despite diverse origins, these models exhibit highly consistent behaviors in reasoning steps, tool-calling habits, and even failure modes, suggesting many may be "distillation echoes" of a few dominant teacher models.
 
-**Limitations of Prior Work**: Existing similarity metrics focus primarily on response-level similarity in static dialogues and fail to capture the dynamic nature of multi-step tool-use trajectories. More critically, they do not distinguish between *necessary behaviors* (actions required for task success) and *unnecessary behaviors* (actions reflecting a model's autonomous preferences), causing similarity scores to be inflated by the shared correct paths imposed by the task itself.
+**Limitations of Prior Work**: Existing similarity measures primarily focus on response-level similarity in static dialogues, failing to capture the dynamic nature of multi-step tool-use trajectories. More critically, these methods cannot distinguish between "mandatory behaviors" (actions required for task success) and "non-mandatory behaviors" (actions reflecting autonomous model preferences), leading to similarity scores inflated by shared correct paths required by the task itself.
 
-**Key Challenge**: Without distinguishing necessary from unnecessary behaviors, it is impossible to determine whether two models converge because only one correct path exists, or because one model is blindly imitating the other's habits — a fundamental obstacle to quantifying distillation effects.
+**Key Challenge**: Without distinguishing mandatory from non-mandatory behaviors, it is impossible to determine whether two models converge because there is only one correct path or because one model is blindly imitating the habits of another—a fundamental obstacle to quantifying distillation impact.
 
-**Goal**: To design a systematic framework that isolates unnecessary behavioral patterns and quantifies distillation-induced behavioral homogenization between agents along two dimensions: linguistic expression and tool operation.
+**Goal**: Design a systematic framework to isolate non-mandatory behavior patterns and quantify distillation-induced behavioral homogenization between agents across verbal expression and tool operation dimensions.
 
-**Key Insight**: The authors observe that many agents perform redundant tool calls (e.g., exhaustively trying all available tools even when the answer is obvious). These unnecessary behavioral choices serve as "behavioral fingerprints" for identifying whether a model has been distilled.
+**Key Insight**: Authors observe that many agents perform redundant tool calls (e.g., trying all available tools sequentially even when the answer is obvious); these non-mandatory behavioral choices serve as "behavioral fingerprints" for identifying distilled models.
 
-**Core Idea**: By decomposing agent trajectories into necessary and unnecessary behaviors, the framework captures behavioral inheritance signals along two dimensions using RPS (Response Pattern Similarity) for linguistic expression and AGS (Action Graph Similarity) for tool-operation patterns.
+**Core Idea**: By decomposing agent trajectories into mandatory and non-mandatory behaviors, the framework uses RPS (Response Pattern Similarity) and AGS (Action Graph Similarity) to capture signals of behavioral inheritance across different dimensions.
 
 ## Method
 
 ### Overall Architecture
-Given a set of models and a collection of tool-use tasks, execution trajectories are collected for each model and analyzed for similarity along two orthogonal dimensions: RPS captures *how* models express responses verbally (verbal fingerprint), while AGS captures *how* models select and organize tool calls (behavioral fingerprint). Claude Sonnet 4.5 (thinking) serves as the reference oracle model against which all other models' behavioral similarity is computed.
+Given a set of models and tool-use tasks, execution trajectories are collected for each model. Similarity analysis is then conducted across two orthogonal dimensions: RPS focuses on how models express responses verbally (verbal fingerprint), while AGS focuses on how they select and organize tool calls (behavioral fingerprint). Using Claude Sonnet 4.5 (thinking) as the reference "oracle" model, behavioral similarity is calculated for other models relative to it.
 
 ### Key Designs
 
 1. **Response Pattern Similarity (RPS)**:
 
-    - **Function**: Quantifies the degree of linguistic similarity between two models' responses.
-    - **Mechanism**: A two-stage pipeline is employed. First, Stage Annotation semantically aligns trajectories to five canonical stages (authentication, information retrieval, execution, verification, notification), resolving the issue of different models requiring different numbers of turns for the same task. Then, within shared stages, an LLM Judge scores responses on three dimensions — Style, Structure, and Alignment — on a 1–5 scale, and the mean Overall score is computed.
-    - **Design Motivation**: Directly comparing full trajectories or aligning turn-by-turn risks matching unrelated content, yielding unreliable scores. Semantic-level stage alignment ensures that only functionally equivalent interaction segments are compared.
+    - **Function**: Quantifies how similar two models are in their verbal expressions.
+    - **Mechanism**: Employs a two-stage pipeline—first, Stage Annotation aligns trajectory semantics to five canonical stages (Authorization, Info Acquisition, Execution, Verification, Notification), addressing the varying turn counts across models for the same task. Then, on shared stages, an LLM Judge scores the similarity across three dimensions: Style, Structure, and Alignment (1-5 scale), using the mean Overall score.
+    - **Design Motivation**: Direct comparison of full trajectories or turn-by-turn alignment often matches irrelevant content, leading to unreliable ratings. Semantic-level stage alignment ensures only functionally equivalent interaction segments are compared.
 
 2. **Action Graph Similarity (AGS)**:
 
-    - **Function**: Analyzes structured behavioral patterns from tool-call sequences.
-    - **Mechanism**: Dialogue trajectories are constructed as directed graphs $G=(V, E_s, E_d)$, where nodes represent tool calls, $E_s$ denotes sequential order edges, and $E_d$ denotes dependency edges (where the output of one tool is consumed by another). Similarity is measured along three sub-dimensions: $S_{\text{node}}$ (optional-tool agreement rate, excluding mandatory tools that all successful models must call), $S_{\text{seq}}$ (sequential pattern similarity, computed as cosine similarity over a three-dimensional feature vector encoding write-then-verify rate, pre-write confirmation rate, and error retry rate), and $S_{\text{dep}}$ (dependency pattern similarity, computed as cosine similarity over output reuse rate, longest dependency chain length, and output fan-out rate).
-    - **Design Motivation**: The core innovation lies in $S_{\text{node}}$, which identifies and excludes mandatory tools via the intersection operation $\mathcal{F}_t^{\text{mandatory}} = \bigcap_{M \in \mathcal{M}_t^*} \text{Tools}(M, t)$, computing agreement only over optional tools. This avoids score inflation caused by shared correctness (average inflation of 12.2pp).
+    - **Function**: Analyzes structured behavioral patterns from tool-calling sequences.
+    - **Mechanism**: Constructs dialogue trajectories as directed graphs $G=(V, E_s, E_d)$, where nodes are tool calls, $E_s$ represents temporal sequence edges, and $E_d$ represents dependency edges (output of a previous tool used by a subsequent one). Similarity is measured via three sub-dimensions: $S_{\text{node}}$ (optional tool consistency, excluding mandatory tools), $S_{\text{seq}}$ (sequence pattern similarity using cosine similarity of 3D feature vectors: write-after-verify, write-before-confirm, and error-retry rates), and $S_{\text{dep}}$ (dependency pattern similarity using cosine similarity of output reuse, max dependency chain length, and output fan-out rates).
+    - **Design Motivation**: The key innovation, $S_{\text{node}}$, identifies and excludes mandatory tools via an intersection operation $\mathcal{F}_t^{\text{mandatory}} = \bigcap_{M \in \mathcal{M}_t^*} \text{Tools}(M, t)$. Calculating consistency only on optional tools avoids score inflation caused by shared correctness (average inflation of 12.2pp).
 
-3. **LLM-Based Dependency Edge Validation**:
+3. **LLM Verification for Dependency Edges**:
 
-    - **Function**: Accurately identifies output-to-input dependency relationships between tool calls.
-    - **Mechanism**: Simple string matching produces numerous false positives (e.g., common dates or IDs appearing coincidentally). An LLM Judge therefore validates each candidate dependency edge semantically, determining whether a matched value genuinely originates from the source tool's output or was known a priori (e.g., from user input).
-    - **Design Motivation**: Ensures the accuracy of the dependency graph and prevents noisy edges from distorting similarity computation.
+    - **Function**: Accurately identifies output-input dependencies between tools.
+    - **Mechanism**: Simple string matching generates many false positives (e.g., common dates or IDs repeating by chance). An LLM Judge validates the semantic validity of each candidate dependency edge, determining if the matched value truly originates from a source tool's output or is prior knowledge (e.g., user input).
+    - **Design Motivation**: Ensures the accuracy of the dependency graph and prevents noisy edges from interfering with similarity calculations.
 
 ### Loss & Training
-This paper presents an evaluation framework and does not involve model training. In controlled distillation experiments, LoRA is used to fine-tune Qwen2.5-14B-Instruct on 200 Claude Sonnet 4.5 trajectories from τ-Bench, with DeepSeek R1 as a non-teacher control, in order to validate the directional detection capability of the proposed metrics.
+This is an evaluation framework and does not involve model training. In controlled distillation experiments, Qwen2.5-14B-Instruct was fine-tuned using LoRA on 200 Claude Sonnet 4.5 trajectories from τ-Bench. DeepSeek R1 was used as a non-teacher control group to verify the directional detection capability of the metrics.
 
 ## Key Experimental Results
 
@@ -84,37 +84,37 @@ This paper presents an evaluation framework and does not involve model training.
 
 ### Ablation Study
 
-| Configuration | AGS toward Teacher | AGS toward Control | Notes |
+| Configuration | AGS toward Teacher | AGS toward Control | Description |
 |------|-------------------|-------------------|------|
-| Baseline (undistilled) | 0.59 | 0.64 | Original Qwen2.5-14B |
-| Distilled | 0.72 (+0.13) | 0.59 (−0.05) | AGS shows directional signal |
-| GED Baseline | 0.42 | 0.39 | Reference comparison |
+| Baseline (Undistilled) | 0.59 | 0.64 | Original Qwen2.5-14B |
+| Distilled | 0.72 (+0.13) | 0.59 (-0.05) | AGS shows directional signal |
+| GED Baseline | 0.42 | 0.39 | Original comparison |
 | GED Distilled | 0.65 (+0.23) | 0.59 (+0.20) | GED cannot distinguish direction |
 
 ### Key Findings
-- Within-family model pairs exhibit AGS scores 5.9pp higher than cross-family pairs, validating the metric's ability to capture behavioral inheritance.
-- Kimi-K2 (thinking) surpasses Anthropic's own Opus 4.1 on both $S_{\text{node}}$ and $S_{\text{dep}}$, suggesting strong cross-family behavioral inheritance.
-- The Pearson correlation between RPS and AGS is only 0.491, indicating that the two metrics capture independent behavioral dimensions.
+- Within-family model pairs show AGS scores 5.9pp higher than cross-family pairs, validating that the metrics capture behavioral inheritance.
+- Kimi-K2 (thinking) exceeds Anthropic's own Opus 4.1 in both $S_{\text{node}}$ and $S_{\text{dep}}$, suggesting strong cross-family behavior inheritance.
+- The Pearson correlation coefficient between RPS and AGS is only 0.491, indicating that the two metrics capture independent behavioral dimensions.
 
 ## Highlights & Insights
-- The distinction between mandatory and optional tools is an elegant design contribution. Excluding mandatory tools reduces $S_{\text{node}}$ by an average of 12.2pp, demonstrating that omitting this distinction substantially overestimates cross-model similarity. This principle generalizes naturally to other agent behavior analysis settings.
-- The controlled distillation experiment's directional validation is particularly well-designed: AGS increases toward the teacher direction (+0.13) while decreasing toward the control direction (−0.05), whereas GED increases in both directions (+0.23/+0.20). This cleanly demonstrates that AGS distinguishes teacher-specific convergence from general capability improvement.
-- Case analyses reveal that Kimi-K2 and Claude share an enthusiastic affirmative tone (e.g., "Excellent!", "Perfect!") and a preference for redundant verification (calling `find_user_id_by_email` before proceeding), while GPT-5 exhibits an entirely different style. These fine-grained behavioral fingerprints are highly compelling.
+- Incorporating the distinction between mandatory and optional tools into distillation detection is a clever design. Excluding mandatory tools reduces $S_{\text{node}}$ by an average of 12.2pp, showing that failing to make this distinction severely overestimates cross-model similarity. This approach is generalizable to other agent behavior analyses.
+- The directional validation in controlled distillation experiments is well-designed: AGS increased toward the teacher (+0.13) while decreasing toward the control (-0.05). In contrast, GED increased toward both (+0.23/+0.20), clearly proving that AGS distinguishes "specific teacher-oriented convergence" from "general capability improvement."
+- Case studies reveal that Kimi-K2 and Claude share an "enthusiastic affirmative tone" (e.g., "Excellent!", "Perfect!") and redundant verification preferences (calling `find_user_id_by_email` before proceeding), whereas GPT-5 has a completely different style. These fine-grained behavioral fingerprints are highly convincing.
 
 ## Limitations & Future Work
-- Results are reported relative to a single reference model, Claude Sonnet 4.5 (thinking); exhaustive pairwise comparison across all 18 models would require 153 comparisons, entailing substantial computational cost.
-- Evaluation covers only three English-language customer service domains from τ-Bench and τ²-Bench; generalization to other domains, task types, and languages remains to be validated.
-- RPS relies on a domain-specific stage taxonomy; extending the framework to non-tool-use paradigms such as code generation or multi-agent collaboration requires additional methodological work.
+- Results are reported using only Claude Sonnet 4.5 (thinking) as the reference model; a full pairwise comparison of all 18 models would require 153 comparisons, which is computationally expensive.
+- Evaluation only covers three English customer service domains in τ-Bench and τ²-Bench; generalization to other domains, task types, and languages remains to be verified.
+- RPS relies on domain-specific stage taxonomies. Extending it to non-tool-use paradigms like code generation or multi-agent collaboration requires further methodological work.
 
 ## Related Work & Insights
-- **vs. RSE (Lee et al., 2025)**: RSE computes semantic similarity over model responses but does not distinguish necessary from unnecessary behaviors, making it unable to detect distillation directionality (similarity increases toward both teacher and control).
-- **vs. GED (Graph Edit Distance)**: GED measures structural graph differences but similarly cannot distinguish behavioral necessity; after distillation, GED increases substantially toward both teacher and non-teacher directions, losing directional discriminative power.
+- **vs RSE (Lee et al., 2025)**: RSE calculates semantic similarity on model responses but does not distinguish between mandatory/non-mandatory behaviors, making it unable to detect distillation directionality (it increases toward both teacher and control).
+- **vs GED (Graph Edit Distance)**: GED measures graph structure differences but similarly fails to distinguish the necessity of behaviors. After distillation, GED increases significantly toward both teacher and non-teacher models, losing directional discriminative power.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐⭐ — The first framework to distinguish necessary from unnecessary behaviors for distillation detection in tool-use settings; the framing is highly original.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Covers 18 models from 8 providers with rigorous controlled experiments, though limited to English customer service domains.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ — Clear structure, vivid case analyses, and a complete argumentative chain from intuition to quantification.
-- **Overall Recommendation**: ⭐⭐⭐⭐⭐ — Highly valuable for understanding behavioral homogenization in the current LLM ecosystem.
+- **Novelty**: ⭐⭐⭐⭐⭐ First framework to distinguish mandatory/non-mandatory behaviors for tool-use distillation detection; very unique entry point.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Covers 18 models from 8 providers with rigorous controlled experiments, though limited to English customer service domains.
+- **Writing Quality**: ⭐⭐⭐⭐⭐ Clear structure, vivid case studies, and a complete logical chain from intuition to quantification.
+- **Value**: ⭐⭐⭐⭐⭐ Provides significant value for understanding behavioral homogenization within the current LLM ecosystem.
 
 <!-- RELATED:START -->
 
@@ -123,10 +123,10 @@ This paper presents an evaluation framework and does not involve model training.
 ## Related Papers
 
 - [\[ACL 2026\] Robust Tool Use via Fission-GRPO: Learning to Recover from Execution Errors](robust_tool_use_via_fission-grpo_learning_to_recover_from_execution_errors.md)
+- [\[ICML 2026\] Reward Hacking Benchmark: Measuring Exploits in LLM Agents with Tool Use](../../ICML2026/llm_agent/reward_hacking_benchmark_measuring_exploits_in_llm_agents_with_tool_use.md)
 - [\[ACL 2026\] Your LLM Agents are Temporally Blind: The Misalignment Between Tool Use Decisions and Human Time Perception](your_llm_agents_are_temporally_blind_the_misalignment_between_tool_use_decisions.md)
 - [\[ACL 2026\] Feedback-Driven Tool-Use Improvements in Large Language Models via Automated Build Environments](feedback-driven_tool-use_improvements_in_large_language_models_via_automated_bui.md)
-- [\[ACL 2026\] ToolOmni: Enabling Open-World Tool Use via Agentic Learning with Proactive Retrieval and Grounded Execution](toolomni_enabling_open-world_tool_use_via_agentic_learning_with_proactive_retrie.md)
-- [\[ACL 2026\] Mem²Evolve: Towards Self-Evolving Agents via Co-Evolutionary Capability Expansion and Experience Distillation](mem2evolve_towards_self-evolving_agents_via_co-evolutionary_capability_expansion.md)
+- [\[ACL 2026\] ToolGrad: Efficient Tool-use Dataset Generation with Textual "Gradients"](toolgrad_efficient_tool-use_dataset_generation_with_textual_gradients.md)
 
 </div>
 

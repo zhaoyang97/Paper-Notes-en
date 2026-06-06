@@ -161,7 +161,7 @@ NcPU even surpasses supervised learning on CIFAR-10 (97.36 vs. 96.96), narrows t
 - [\[ICLR 2026\] Learning Adaptive Distribution Alignment with Neural Characteristic Function for Graph Domain Adaptation](learning_adaptive_distribution_alignment_with_neural_characteristic_function_for.md)
 - [\[ICML 2026\] From Generalist to Specialist Representation](../../ICML2026/others/from_generalist_to_specialist_representation.md)
 - [\[ICCV 2025\] Joint Asymmetric Loss for Learning with Noisy Labels](../../ICCV2025/others/joint_asymmetric_loss_for_learning_with_noisy_labels.md)
-- [\[ICLR 2026\] Latent Equivariant Operators for Robust Object Recognition: Promises and Challenges](latent_equivariant_operators_for_robust_object_recognition_promises_and_challeng.md)
+- [\[ICML 2026\] Over-Alignment vs Over-Fitting: The Role of Feature Learning Strength in Generalization](../../ICML2026/others/over-alignment_vs_over-fitting_the_role_of_feature_learning_strength_in_generali.md)
 
 </div>
 

@@ -124,10 +124,10 @@ RAG experiments on GPT-4o, Llama-3.3, Claude-3.7, and DeepSeek-V3 are conducted 
 ## Related Papers
 
 - [\[NeurIPS 2025\] L-MTP: Leap Multi-Token Prediction Beyond Adjacent Context for Large Language Models](l-mtp_leap_multi-token_prediction_beyond_adjacent_context_for_large_language_mod.md)
+- [\[ICML 2026\] Efficient Training-Free Multi-Token Prediction via Embedding-Space Probing](../../ICML2026/llm_efficiency/efficient_training-free_multi-token_prediction_via_embedding-space_probing.md)
 - [\[NeurIPS 2025\] Let the Experts Speak: Improving Survival Prediction & Calibration via Mixture-of-Experts Heads](let_the_experts_speak_improving_survival_prediction_calibration_via_mixture-of-e.md)
+- [\[ICML 2026\] Sparser Block-Sparse Attention via Token Permutation](../../ICML2026/llm_efficiency/sparser_block-sparse_attention_via_token_permutation.md)
 - [\[NeurIPS 2025\] Scale-invariant Attention](scale-invariant_attention.md)
-- [\[NeurIPS 2025\] Tensor Product Attention Is All You Need](tensor_product_attention_is_all_you_need.md)
-- [\[NeurIPS 2025\] UMoE: Unifying Attention and FFN with Shared Experts](umoe_unifying_attention_and_ffn_with_shared_experts.md)
 
 </div>
 

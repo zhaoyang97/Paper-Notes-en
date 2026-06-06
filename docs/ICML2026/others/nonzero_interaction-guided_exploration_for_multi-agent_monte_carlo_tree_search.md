@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] NonZero: Interaction-Guided Exploration for Multi-Agent Monte Carlo Tree Search
 description: >-
-  [ICML 2026][MCTS] An asinh-linked GLM surrogate compresses the multi-agent MCTS joint-action space $d^n$ into a low-dimensional nonlinear bandit. Using "first-order difference + second-order mixed difference" as the NonU…
+  [ICML 2026][MCTS] NonZero utilizes an asinh-linked GLM surrogate to compress the $d^n$ joint-action space of multi-agent MCTS into a low-dimensional nonlinear bandit. By employing "first-order difference + second-order m…
 tags:
   - "ICML 2026"
   - "MCTS"
@@ -11,7 +11,7 @@ tags:
   - "curvature-aware exploration"
   - "asinh-GLM"
 date: 2026-05-08
-content_hash: ed59fba15458e7e4
+content_hash: 691d2c923f5928f2
 ---
 
 # NonZero: Interaction-Guided Exploration for Multi-Agent Monte Carlo Tree Search
@@ -23,57 +23,56 @@ content_hash: ed59fba15458e7e4
 **Keywords**: MCTS, joint action explosion, second-order difference interaction, curvature-aware exploration, asinh-GLM
 
 ## TL;DR
-An asinh-linked GLM surrogate compresses the multi-agent MCTS joint-action space $d^n$ into a low-dimensional nonlinear bandit. Using "first-order difference + second-order mixed difference" as the NonUCT proposal rule, only a small candidate set $\mathcal{C}(s)$ is maintained at each node. It is proven to achieve $\widetilde{O}(T^{3/4})$ local regret (independent of $d^n$). On MatGame/SMAC/SMACv2, both sample efficiency and final performance surpass strong baselines such as MAZero.
+NonZero utilizes an asinh-linked GLM surrogate to compress the $d^n$ joint-action space of multi-agent MCTS into a low-dimensional nonlinear bandit. By employing "first-order difference + second-order mixed difference" as the NonUCT proposal rule, it maintains a small candidate set $\mathcal{C}(s)$ at each node. The method achieves a local regret bound of $\widetilde{O}(T^{3/4})$ (independent of $d^n$) and outperforms strong baselines like MAZero in sample efficiency and final performance on MatGame, SMAC, and SMACv2.
 
 ## Background & Motivation
 
-**Background**: MCTS with UCT is an industrial-grade solution for single-agent decision-making (AlphaZero, MuZero), balancing exploration vs exploitation via confidence intervals. Extending to multi-agent cooperative tasks (e.g., SMAC, SMACv2, MatGame) immediately faces joint-action explosion: $n$ agents each with $d$ actions, joint set size $|\mathcal{A}| = d^n$. MAZero improves this via distributed model learning, MALinZero reduces search by assuming linear reward structure, VDN/QMIX use value decomposition.
+**Background**: MCTS combined with UCT is an industrial-standard solution for single-agent decision-making (e.g., AlphaZero, MuZero), balancing exploration and exploitation through confidence intervals. However, extending this to multi-agent cooperative tasks (e.g., SMAC, SMACv2, MatGame) leads to a joint-action explosion, where $|\mathcal{A}| = d^n$ for $n$ agents with $d$ actions each. Existing methods like MAZero use distributed models, MALinZero assumes linear reward structures, and VDN/QMIX utilize value decomposition to mitigate this.
 
-**Limitations of Prior Work**: (1) Sampled MuZero / MAZero rely on the quality of proposal $\beta$; in high-dimensional, sparsely optimal joint action settings, key combinations are rarely sampled. (2) MALinZero assumes rewards are independent linear contributions from each agent, failing in "coordination traps"—where individual deviations worsen outcomes, but joint deviations improve them. (3) The additivity/monotonicity assumptions of VDN/QMIX cannot support "uncertainty-aware action expansion" and are incompatible with tree search.
+**Limitations of Prior Work**: (1) Random sampling in Sampled MuZero/MAZero relies heavily on the quality of the proposal $\beta$, often failing to capture critical joint actions in high-dimensional sparse reward scenarios. (2) MALinZero assumes rewards are a linear sum of independent agent contributions, failing in "coordination traps" where simultaneous deviations are required for gain. (3) Structural assumptions in VDN/QMIX (additivity/monotonicity) do not support "uncertainty-aware action expansion" and are incompatible with tree search.
 
-**Key Challenge**: To achieve sample-efficient multi-agent planning, coordinated actions must be covered (not just marginal gains per agent), but enumerating all $d^n$ joint actions is statistically intractable (requires $\Omega(d^n)$ samples for global optimality).
+**Key Challenge**: To achieve sample-efficient multi-agent planning, a method must cover coordinated actions (avoiding single-agent marginalism) without enumerating $d^n$ joint actions, which is statistically intractable ($\Omega(d^n)$ samples required for global optimality).
 
-**Goal**: At each tree node, maintain a size-$K$ candidate set $\mathcal{C}(s)$, and use a proposal rule capable of sensing "two-agent coordination gains" to incrementally add new candidates; also provide a sublinear regret guarantee to prove the protocol is "sufficient".
+**Goal**: To maintain a size-$K$ candidate set $\mathcal{C}(s)$ at each tree node and incrementally add new candidates using a proposal rule capable of perceiving "two-agent coordination benefits," while providing a sublinear regret guarantee.
 
-**Key Insight**: Relax the objective from "global optimum" to "graph-local optimum" (i.e., no joint action can be improved by a 1-agent or 2-agent deviation). Under this relaxed goal, only the "neighbors" (first-order difference $\Delta_u \eta$) and "neighbors of neighbors" (mixed second-order difference $\Delta_{u,v}^2 \eta$) of each candidate need to be considered to identify coordination opportunities. Reward modeling uses asinh-GLM $\eta(\theta, a) = c \cdot \text{asinh}(\alpha \langle w(\theta), \psi(a)\rangle)$, ensuring polynomial decay of derivatives (vs. exponential saturation of sigmoid), supporting curvature-aware optimization.
+**Key Insight**: The objective is relaxed from "global optimum" to "graph local optimum" (where no 1-agent or 2-agent deviation improves the joint action). Under this relaxation, coordination opportunities are identified by examining "neighbors" (first-order difference $\Delta_u \eta$) and "neighbors of neighbors" (mixed second-order difference $\Delta_{u,v}^2 \eta$). Rewards are modeled using an asinh-GLM $\eta(\theta, a) = c \cdot \text{asinh}(\alpha \langle w(\theta), \psi(a)\rangle)$, which ensures polynomial derivative decay (vs. exponential saturation in sigmoid) to support curvature-aware optimization.
 
-**Core Idea**: Use "low-dimensional nonlinear GLM surrogate + first/second-order discrete differences as bandit proposal signals" to reduce $d^n$ joint action exploration to an action-dimension-free, curvature-aware local search problem.
+**Core Idea**: By combining a low-dimensional nonlinear GLM surrogate with first- and second-order discrete differences as bandit proposal signals, the problem of exploring $d^n$ joint actions is reduced to an action-dimension-free curvature-aware local search problem.
 
 ## Method
 
 ### Overall Architecture
-NonZero follows MuZero's (i) representation, (ii) dynamics, and (iii) prediction modules, adding a fourth: (iv) a hypernetwork that outputs node-specific GLM parameters $\theta_s$ based on the node state. The MCTS process is modified into four steps. **Selection**: Select $a^* = \arg\max_{a \in \mathcal{C}(s)} \eta(\theta_s, a)$ within the candidate set $\mathcal{C}(s)$ at node $s$, using the surrogate for scoring instead of UCB. **Expansion**: When adding a new node, NonUCT proposes new candidates—sample direction $u = (i \leftarrow j)$ (agent $i$ switches to action $j$) and independent $v = (k \leftarrow \ell)$, compute $\Delta_u \eta = \eta(\theta, a^{(u)}) - \eta(\theta, a)$ and mixed $\Delta_{u,v}^2 \eta = \eta(\theta, a^{(u,v)}) - \eta(\theta, a^{(u)}) - \eta(\theta, a^{(v)}) + \eta(\theta, a)$, and select high-scoring neighbors. **Simulation**: MuZero-style latent rollout. **Back-propagation**: Use real environment rewards and model reward head to compute first/second-order difference targets, minimizing $\mathcal{L}_{\text{NonUCT}}$ to update $\theta_s$. The hypernetwork provides cross-node warm-starts, predicting initial $\theta$ from the root state, effectively sharing statistical strength across tree nodes, so a few updates within a single MCTS rollout suffice to fit $\theta_s$.
+NonZero follows the MuZero framework consisting of (i) representation, (ii) dynamics, and (iii) prediction, adding a fourth component: (iv) a hypernetwork that outputs initial GLM parameters $\theta_s$ based on the node state. The MCTS process is modified into four steps. **Selection**: Within the candidate set $\mathcal{C}(s)$, the best action $a^* = \arg\max_{a \in \mathcal{C}(s)} \eta(\theta_s, a)$ is chosen using surrogate scores instead of UCB. **Expansion**: New candidates are proposed via NonUCT. Directions $u$ and $v$ are sampled (e.g., agent $i$ switching to action $j$), and scores are calculated using $\Delta_u \eta = \eta(\theta, a^{(u)}) - \eta(\theta, a)$ and mixed $\Delta_{u,v}^2 \eta = \eta(\theta, a^{(u,v)}) - \eta(\theta, a^{(u)}) - \eta(\theta, a^{(v)}) + \eta(\theta, a)$. **Simulation**: Latent rollout in the MuZero style. **Back-propagation**: Update $\theta_s$ by minimizing $\mathcal{L}_{\text{NonUCT}}$ using targets derived from the reward model. The hypernetwork provides cross-node warm-starts, sharing statistical strength across the tree.
 
 ### Key Designs
 
 1. **Asinh-GLM Reward Surrogate**:
+    - **Function**: Compresses the joint action $a$ (an $n$-hot vector) into a low-dimensional parameter space using $\eta(\theta, a) = c \cdot \text{asinh}(\alpha \langle w(\theta), \psi(a) \rangle)$.
+    - **Mechanism**: A score $z = \langle w, \psi \rangle$ is computed via feature map $\psi(a)$ and parameters $w(\theta)$. The asinh link $g(z) = c \cdot \text{asinh}(\alpha z)$ is strictly monotonic, unbounded, and infinitely differentiable. Its derivative $g'(z) = c\alpha / \sqrt{1 + (\alpha z)^2}$ decays polynomially.
+    - **Design Motivation**: Global differentiability and polynomial decay satisfy discrete smoothness assumptions, enabling the $O(T^{3/4})$ regret analysis. The asinh-GLM is "invex," meaning approximate local maxima align well with global optimism.
 
-    - **Function**: Uses $\eta(\theta, a) = c \cdot \text{asinh}(\alpha \langle w(\theta), \psi(a) \rangle)$ to compress the true reward of joint action $a$ ($n$-hot vector) into a low-dimensional parameter space.
-    - **Mechanism**: Each joint action $a \in \{0,1\}^{nd}$ computes score $z = \langle w, \psi \rangle$ via feature map $\psi(a)$ and parameters $w(\theta) \in \mathbb{R}^{nd}$; the asinh link $g(z) = c \cdot \text{asinh}(\alpha z)$ is strictly monotonic, unbounded, and infinitely differentiable, with derivative $g'(z) = c\alpha / \sqrt{1 + (\alpha z)^2}$ decaying polynomially (unlike sigmoid's exponential saturation or ReLU's lack of higher-order smoothness).
-    - **Design Motivation**: (1) Asinh's global differentiability + polynomial decay ensures the discrete smoothness in Assumption 3.2, enabling Theorem 3.5's regret analysis; (2) asinh-GLM is invex in the sense of Kalai-Sastry 2009, so approximate local maxima are equivalent to global optimism, meaning relaxing the objective to local does not lose much.
+2. **First-order + Second-order Mixed Difference Proposal (NonUCT)**:
+    - **Function**: Identifies neighbors to add to $\mathcal{C}(s)$ based on single-agent deviation gains $\Delta_u \eta$ and dual-agent coordination gains $\Delta_{u,v}^2 \eta$.
+    - **Mechanism**: Decomposes dual-deviation gain using $\eta(a^{(u,v)}) - \eta(a) = \Delta_u \eta + \Delta_v \eta + \Delta_{u,v}^2 \eta$. The mixed difference $\Delta_{u,v}^2 \eta$ serves as a pure signal for coordination—it is significantly positive when individual deviations are negative but combined deviation is positive. Evaluations are performed counter-factually via the learned reward model.
+    - **Design Motivation**: Unlike UCB which requires $\widetilde{O}(d^n)$ samples for global optimism, using $\Delta_{u,v}^2$ as a curvature signal allows action-dimension-free exploration by sampling a finite number of directions.
 
-2. **First-Order + Second-Order Mixed Difference Proposal Rule NonUCT**:
-
-    - **Function**: Computes single-agent deviation gain $\Delta_u \eta$ and two-agent coordination gain $\Delta_{u,v}^2 \eta$, selecting the best neighbors to add to $\mathcal{C}(s)$ based on predicted scores.
-    - **Mechanism**: Uses the identity $\eta(a^{(u,v)}) - \eta(a) = \Delta_u \eta + \Delta_v \eta + \Delta_{u,v}^2 \eta$ to decompose "double deviation gain" into "two single deviations + one interaction"; the mixed difference $\Delta_{u,v}^2 \eta = \eta(a^{(u,v)}) - \eta(a^{(u)}) - \eta(a^{(v)}) + \eta(a)$ is a pure signal of coordination gain—when individual deviations are unprofitable but joint deviation is profitable (i.e., coordination trap), this value is significantly positive. The NonUCT proposal rule selects the highest-scoring $u$ or $(u,v)$ to add to the candidate set; all counterfactual evaluations are performed by the learned reward model, requiring no extra environment interaction.
-    - **Design Motivation**: UCB-style methods rely on global optimism, requiring $\widetilde{O}(d^n)$ samples; using $\Delta_{u,v}^2$ as a curvature signal, only a finite number of directions (independent of $d^n$, only related to the statistical complexity of the surrogate class) need to be sampled to achieve action-dimension-free exploration.
-
-3. **Hypernetwork for Cross-Node Warm-Start of $\theta_s$**:
-
-    - **Function**: Whenever a new tree node $s$ is added, the hypernetwork predicts an initial value $\theta_s$ from the state $s_t$, serving as the starting point for the node's GLM.
-    - **Mechanism**: $\theta_s = \text{HyperNetwork}(s_t)$, then $\theta_s$ is fine-tuned via gradient descent on $\mathcal{L}_{\text{NonUCT}}$ during subsequent MCTS iterations. The hypernetwork itself is trained end-to-end in the main training loop.
-    - **Design Motivation**: The number of samples in a single MCTS rollout is limited, so fitting $\theta_s$ from scratch does not converge; the hypernetwork shares statistical strength across nodes, injecting "global experience" into each new node's initialization, allowing local fine-tuning to quickly approach $\theta^*$. Ablation shows removing the hypernetwork hurts performance less than removing curvature, but it is still a significant contributor.
+3. **Hypernetwork for $\theta_s$ Warm-start**:
+    - **Function**: Predicts initial $\theta_s$ values from state $s_t$ when a new node is created.
+    - **Mechanism**: $\theta_s = \text{HyperNetwork}(s_t)$ serves as the starting point for gradient descent during MCTS iterations. The hypernetwork is trained end-to-end in the main loop.
+    - **Design Motivation**: Fitting $\theta_s$ from scratch within a single MCTS rollout is difficult due to limited samples. The hypernetwork injects "global experience" into local initialization, allowing convergence within a few updates.
 
 ### Loss & Training
-The loss regresses on four quantities (Equation 7): $\mathcal{L}_{\text{NonUCT}} = \min_\theta \mathbb{E}_{a,u,v} \frac{1}{4} [(\eta(\theta, a) - \eta(\theta^*, a))^2 + (\eta(\theta, a^{(u)}) - \eta(\theta^*, a^{(u)}))^2 + (\Delta_u \eta(\theta, a) - \Delta_u \eta(\theta^*, a))^2 + (\Delta_{u,v}^2 \eta(\theta, a) - \Delta_{u,v}^2 \eta(\theta^*, a))^2]$. The supervision signal $\theta^*$ is the model-side reward head evaluation for the node; the real environment only provides a reward for the selected legal joint action. Theoretically, Theorem 3.5 gives $\mathbb{E}[\text{Regret}_T] \leq (1 + C_1 \sqrt{4 T R_T}) \cdot \mathcal{K}(\epsilon)$, where $\mathcal{K}(\epsilon) = \max(4\zeta_h \epsilon^{-2}, \sqrt{\zeta_{3rd}} \epsilon^{-3/2})$, and Corollary 3.6 gives $\widetilde{O}(T^{3/4})$; Theorem 3.7 shows that compared to standard UCB, the separation $\zeta_{\text{sep}} \geq \exp(c \cdot nd) / \text{poly}(nd, \epsilon^{-1})$, i.e., exponential acceleration.
+The loss function performs regression on four terms (Equation 7):
+$$\mathcal{L}_{\text{NonUCT}} = \min_\theta \mathbb{E}_{a,u,v} \frac{1}{4} [(\eta(\theta, a) - \eta(\theta^*, a))^2 + (\eta(\theta, a^{(u)}) - \eta(\theta^*, a^{(u)}))^2 + (\Delta_u \eta(\theta, a) - \Delta_u \eta(\theta^*, a))^2 + (\Delta_{u,v}^2 \eta(\theta, a) - \Delta_{u,v}^2 \eta(\theta^*, a))^2]$$
+The target $\theta^*$ comes from the model's reward head. Theorem 3.5 provides $\mathbb{E}[\text{Regret}_T] \leq (1 + C_1 \sqrt{4 T R_T}) \cdot \mathcal{K}(\epsilon)$, with Corollary 3.6 yielding $\widetilde{O}(T^{3/4})$. Theorem 3.7 demonstrates an exponential separation $\zeta_{\text{sep}}$ over standard UCB.
 
 ## Key Experimental Results
 
 ### Main Results
-On the MatGame benchmark with varying agent numbers, action numbers, and reward types, compared with MAZero, MAZero-NP, MA-AlphaZero, MAPPO, QMIX:
+Performance on MatGame with varying agent counts and action spaces:
 
 | Agent × Action | Type | Steps | MAZero | QMIX | **NonZero** |
-|----------------|------|-------|--------|------|-------------|
+|----------------|------|------|--------|------|-------------|
 | 2×3 | Linear | 1000 | 57.8 | 54.3 | **59.8** |
 | 2×3 | Non-Linear | 1000 | 47.6 | 49.1 | **49.9** |
 | 4×5 | Non-Linear | 2000 | 195.4 | 190.3 | **199.1** |
@@ -81,50 +80,48 @@ On the MatGame benchmark with varying agent numbers, action numbers, and reward 
 | 8×10 | Linear | 2000 | 692.7 | 679.4 | **712.4** |
 | 8×10 | Non-Linear | 2000 | 672.3 | 648.2 | **697.1** |
 
-The performance gap widens with increasing complexity—at 8 agents and 10 actions (i.e., $10^8$ joint action space), NonZero improves by about 14% over the strongest baseline, with even greater advantage in nonlinear reward scenarios.
+NonZero shows an approximate 14% improvement over the strongest baseline in the $10^8$ joint-action space scenario (8 agents, 10 actions).
 
 ### Ablation Study
 
 | Configuration | MatGame Performance | Description |
-|---------------|--------------------|-------------|
+|------|--------------|------|
 | Full NonZero | High | Includes hypernetwork + curvature |
-| w/o Curvature | Medium-low | Reverts to first-order gradient, removes mixed second-order term |
-| w/o Mixing Net | Slightly lower | Removes hypernetwork initialization |
-| w/o Both | Lowest | Coordination fails |
+| w/o Curvature | Medium-Low | First-order gradient only, no mixed second-order |
+| w/o Mixing Net | Slightly Low | No hypernetwork initialization |
+| w/o Both | Lowest | Failure to coordinate |
 
-Both components are necessary, but removing curvature causes a greater loss than removing the mixing net—confirming that the "second-order difference signal" is the main driver of NonZero's performance. On three SMAC maps, NonZero achieves >96% win rate, surpassing MAZero/MAPPO/QMIX, and is $2-3\times$ more sample efficient than MAZero (50%-70% fewer environment steps); on SMACv2 in high-stochasticity scenarios such as protoss_5v5 and zerg_5v5, NonZero's win rate is nearly double that of the baselines.
+Removing curvature leads to higher performance loss than removing the mixing net, identifying the second-order difference as the primary driver.
 
 ### Key Findings
-- The "coordination trap" phenomenon is perfectly captured by $\Delta_{u,v}^2$: when single-agent deviations are negative but joint deviations are positive, traditional single-agent UCB can never find such actions, while the mixed difference signal directly amplifies them.
-- The performance gap increases with action space dimensionality—an empirical manifestation of the action-dimension-free theoretical guarantee, indicating the advantage mainly comes from "avoiding dimensional explosion".
-- The warm-start provided by the hypernetwork makes $\theta_s$ optimization within a single MCTS rollout highly efficient, so even with a simulation budget of only 100, performance still surpasses MAZero.
-- Theorem 3.7's separation is exponential vs. polynomial, corresponding to the observed trend that "the larger the action space, the more pronounced NonZero's advantage".
+- **Coordination Traps**: Successfully captured by $\Delta_{u,v}^2$. While single-agent UCB misses actions where individual gains are negative, the mixed difference signal highlights joint benefits.
+- **Dimensionality Scaling**: The performance gap widens as the action space grows, empirically validating the action-dimension-free theory.
+- **Efficiency**: The hypernetwork allows effective planning even with a small simulation budget (e.g., 100).
+- **SMAC/SMACv2**: NonZero achieves >96% win rate in SMAC and nearly doubles baseline win rates in high-stochasticity SMACv2 maps.
 
 ## Highlights & Insights
-- Explicitly modeling "coordination"—the core challenge of MARL—as the mixed second-order difference $\Delta_{u,v}^2$ is a clean abstraction. Previous methods like VDN/QMIX hid coordination in the mixing function for implicit learning; here, it is explicitly used as a score, theoretically controllable and practically sample-efficient.
-- Choosing the asinh link instead of sigmoid/ReLU is a nontrivial decision—not just an engineering preference, but to enable Wiener chaos-style curvature analysis. This approach of "trading activation function smoothness for theoretical guarantees" is inspiring for deep RL algorithm design.
-- Relaxing multi-agent MCTS exploration-exploitation from global UCB (infeasible) to graph-local optimism is a key conceptual shift: local optimum in an invex landscape is equivalent to global optimism, so giving up global does not lose much. This "relaxing objective definition for feasible algorithms" approach is worth learning for many combinatorial RL problems.
-- The hypernetwork's cross-node sharing of $\theta$ initialization draws on meta-learning ideas, injecting "experience priors" into MCTS and making statistical estimation within a single rollout feasible.
+- Modeling coordination as a mixed second-order difference $\Delta_{u,v}^2$ provides a clean, explicit signal compared to the implicit learning in VDN/QMIX.
+- The choice of asinh over sigmoid/ReLU is theoretically motivated to enable curvature analysis via polynomial derivative decay.
+- Relaxing MCTS exploration from global UCB to graph-local optimism is a critical shift, leveraging the invex nature of the landscape where local optima are sufficient.
+- The hypernetwork serves as a "prior" that makes statistical estimation feasible within sparse MCTS rollouts.
 
 ## Limitations & Future Work
-- Theoretical analysis only covers deterministic reward nonlinear bandits; real multi-agent environments often have partial observability and stochastic transitions, leaving a theoretical gap.
-- $\widetilde{O}(T^{3/4})$ is slower than the standard bandit's $\widetilde{O}(\sqrt{T})$; the authors acknowledge this as the price for action-dimension-free performance; whether it can be further tightened is unanswered.
-- The mixed difference $\Delta_{u,v}^2$ only considers two-agent coordination; there is no mechanism for higher-order coordination among more than three agents, which may still miss cases in tasks like SMAC 5v5.
-- The candidate set size $K$ is a fixed hyperparameter, not adaptive; the optimal $K$ may vary greatly across nodes.
-- Hypernetwork training depends on the global training loop; during cold start, the hypernetwork's output is unreliable, which can slow down $\theta_s$ convergence.
+- Theoretical analysis is focused on deterministic rewards; the gap for stochastic transitions in partially observable environments remains.
+- The $\widetilde{O}(T^{3/4})$ bound is slower than the standard $\widetilde{O}(\sqrt{T})$ in exchange for being action-dimension-free.
+- Mixed differences only consider 2-agent coordination; higher-order (3+ agents) coordination mechanisms are not explicitly handled.
+- Hypernetwork reliability depends on the main training loop; cold-start issues may initially slow down $\theta_s$ convergence.
 
 ## Related Work & Insights
-- **vs Sampled MuZero / MAZero**: Both use candidate sets + importance sampling to handle large action spaces, but proposals are sampled from policy priors, while this work uses surrogate + curvature for targeted construction, achieving much higher targeting.
-- **vs MALinZero**: Both are surrogate-guided MARL MCTS, but MALinZero assumes linear additive structure, while this work uses asinh-GLM to support non-additive interactions, covering "coordination trap" scenarios.
-- **vs VDN / QMIX / NDQ**: All are value decomposition methods, but only support evaluation at decision time and cannot support uncertainty-aware expansion in tree search; this work is search-native by design.
-- **vs LinUCB / Neural UCB**: All are contextual bandit frameworks; this work customizes NonUCT for the discrete structure of joint actions, replacing the "feature space" of contextual bandits with a "neighbor graph".
-- **Insights**: Can the mixed difference signal be applied to RLHF / multi-task selection / agent routing and other high-dimensional discrete decisions? As long as "local neighbors" and "coordination gains" can be defined, this mechanism can be transferred.
+- **vs Sampled MuZero / MAZero**: Replaces importance sampling from a policy prior with targeted proposals constructed via curvature.
+- **vs MALinZero**: Extends linear assumptions to nonlinear asinh-GLM, covering non-additive coordination rewards.
+- **vs VDN / QMIX**: Provides search-native uncertainty-aware expansion, whereas value decomposition is typically restricted to decision-time evaluation.
+- **Insight**: The mixed difference signal could be applicable to RLHF or multi-task routing, provided a "local neighborhood" can be defined.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Mixed second-order difference as a MARL exploration signal is a clear new contribution; asinh-GLM is also relatively rare
-- Experimental Thoroughness: ⭐⭐⭐⭐ MatGame + SMAC + SMACv2, covering agent numbers from 2 to 8, with clear ablation
-- Writing Quality: ⭐⭐⭐⭐ Theory and algorithm boxes are complete, notation is complex but traceable
-- Value: ⭐⭐⭐⭐ Practically meaningful for large-scale multi-agent planning, with both theoretical and empirical support
+- **Novelty**: ⭐⭐⭐⭐ Mixed second-order difference as an exploration signal is a distinct contribution.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Extensive testing across MatGame, SMAC, and SMACv2 with varying complexity.
+- **Writing Quality**: ⭐⭐⭐⭐ Well-structured algorithms and theoretical support.
+- **Value**: ⭐⭐⭐⭐ Practical for large-scale multi-agent planning with strong theoretical grounding.
 
 <!-- RELATED:START -->
 
@@ -133,10 +130,10 @@ Both components are necessary, but removing curvature causes a greater loss than
 ## Related Papers
 
 - [\[AAAI 2026\] Extreme Value Monte Carlo Tree Search for Classical Planning](../../AAAI2026/others/extreme_value_monte_carlo_tree_search_for_classical_planning.md)
+- [\[ICML 2026\] Markov Chain Monte Carlo without Evaluating the Target: An Auxiliary Variable Approach](markov_chain_monte_carlo_without_evaluating_the_target_an_auxiliary_variable_app.md)
+- [\[ICML 2026\] Structure-Induced Information for Rerooting Levin Tree Search](structure-induced_information_for_rerooting_levin_tree_search.md)
+- [\[ICML 2026\] Mapping Human Anti-collusion Mechanisms to Multi-agent AI Systems](mapping_human_anti-collusion_mechanisms_to_multi-agent_ai_systems.md)
 - [\[ICML 2026\] Decision Tree Learning on Product Spaces](decision_tree_learning_on_product_spaces.md)
-- [\[ICML 2026\] Active Tabular Augmentation via Policy-Guided Diffusion Inpainting](active_tabular_augmentation_via_policy-guided_diffusion_inpainting.md)
-- [\[ICML 2026\] Adaptive Multi-Round Allocation with Stochastic Arrivals](adaptive_multi-round_allocation_with_stochastic_arrivals.md)
-- [\[ICLR 2026\] Compositional Diffusion with Guided Search for Long-Horizon Planning](../../ICLR2026/others/compositional_diffusion_long_horizon_planning.md)
 
 </div>
 

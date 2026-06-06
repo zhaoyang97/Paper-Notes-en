@@ -191,8 +191,8 @@ Effect of varying step count $N$ (HunyuanVideo, 8 cores):
 - [\[ICCV 2025\] Accelerating Diffusion Sampling via Exploiting Local Transition Coherence](accelerating_diffusion_sampling_via_exploiting_local_transition_coherence.md)
 - [\[ICCV 2025\] HypDAE: Hyperbolic Diffusion Autoencoders for Hierarchical Few-shot Image Generation](hypdae_hyperbolic_diffusion_autoencoders_for_hierarchical_few-shot_image_generat.md)
 - [\[NeurIPS 2025\] Hierarchical Koopman Diffusion: Fast Generation with Interpretable Diffusion Trajectory](../../NeurIPS2025/image_generation/hierarchical_koopman_diffusion_fast_generation_with_interpretable_diffusion_traj.md)
-- [\[ICCV 2025\] End-to-End Multi-Modal Diffusion Mamba](end-to-end_multi-modal_diffusion_mamba.md)
-- [\[ICML 2026\] Conditional Diffusion Sampling](../../ICML2026/image_generation/conditional_diffusion_sampling.md)
+- [\[NeurIPS 2025\] Fast Solvers for Discrete Diffusion Models: Theory and Applications of High-Order Algorithms](../../NeurIPS2025/image_generation/fast_solvers_for_discrete_diffusion_models_theory_and_applications_of_high-order.md)
+- [\[ICCV 2025\] A0: An Affordance-Aware Hierarchical Model for General Robotic Manipulation](a0_an_affordance-aware_hierarchical_model_for_general_robotic_manipulation.md)
 
 </div>
 

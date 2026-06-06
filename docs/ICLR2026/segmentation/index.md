@@ -20,7 +20,7 @@ tags:
 
 **🔬 ICLR2026** · **11** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (4)](../../ICML2026/segmentation/index.md) · [💬 ACL2026 (1)](../../ACL2026/segmentation/index.md) · [📷 CVPR2026 (83)](../../CVPR2026/segmentation/index.md) · [🤖 AAAI2026 (31)](../../AAAI2026/segmentation/index.md) · [🧠 NeurIPS2025 (47)](../../NeurIPS2025/segmentation/index.md) · [📹 ICCV2025 (74)](../../ICCV2025/segmentation/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (14)](../../ICML2026/segmentation/index.md) · [💬 ACL2026 (1)](../../ACL2026/segmentation/index.md) · [📷 CVPR2026 (83)](../../CVPR2026/segmentation/index.md) · [🤖 AAAI2026 (31)](../../AAAI2026/segmentation/index.md) · [🧠 NeurIPS2025 (47)](../../NeurIPS2025/segmentation/index.md) · [📹 ICCV2025 (74)](../../ICCV2025/segmentation/index.md)
 
 🔥 **Top topics:** Diffusion Models ×2
 

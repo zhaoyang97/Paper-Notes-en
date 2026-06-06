@@ -132,9 +132,9 @@ ADASAP is 45% faster than SDD-10 (saving 14 hours); PCG cannot run due to out-of
 
 - [\[AAAI 2026\] Streaming Generated Gaussian Process Experts for Online Learning and Control: Extended Version](../../AAAI2026/llm_evaluation/streaming_generated_gaussian_process_experts_for_online_learning_and_control_ext.md)
 - [\[ICCV 2025\] SketchSplat: 3D Edge Reconstruction via Differentiable Multi-view Sketch Splatting](../../ICCV2025/llm_evaluation/sketchsplat_3d_edge_reconstruction_via_differentiable_multi-view_sketch_splattin.md)
+- [\[ICML 2026\] Whose Alignment? Comparing LLM Process Alignment Across Diverse Organizational Decision Contexts](../../ICML2026/llm_evaluation/whose_alignment_comparing_llm_process_alignment_across_diverse_organizational_de.md)
 - [\[AAAI 2026\] OptScale: Probabilistic Optimality for Inference-time Scaling](../../AAAI2026/llm_evaluation/optscale_probabilistic_optimality_for_inference-time_scaling.md)
 - [\[NeurIPS 2025\] LTD-Bench: Evaluating Large Language Models by Letting Them Draw](ltd-bench_evaluating_large_language_models_by_letting_them_draw.md)
-- [\[NeurIPS 2025\] PARROT: A Benchmark for Evaluating LLMs in Cross-System SQL Translation](parrot_a_benchmark_for_evaluating_llms_in_cross-system_sql_translation.md)
 
 </div>
 

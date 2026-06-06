@@ -173,11 +173,11 @@ The joint use of the semantic loss $\mathcal{L}_d$ and pseudo-supervision $\math
 
 ## Related Papers
 
+- [\[ICML 2026\] AREA: Attribute Extraction and Aggregation for CLIP-Based Class-Incremental Learning](../../ICML2026/model_compression/area_attribute_extraction_and_aggregation_for_clip-based_class-incremental_learn.md)
+- [\[ACL 2026\] BaseCal: Unsupervised Confidence Calibration via Base Model Signals](../../ACL2026/model_compression/basecal_unsupervised_confidence_calibration_via_base_model_signals.md)
 - [\[AAAI 2026\] Correcting False Alarms from Unseen: Adapting Graph Anomaly Detectors at Test Time](correcting_false_alarms_from_unseen_adapting_graph_anomaly_detectors_at_test_tim.md)
+- [\[ICML 2026\] Parameters as Experts: Adapting Vision Models with Dynamic Parameter Routing](../../ICML2026/model_compression/parameters_as_experts_adapting_vision_models_with_dynamic_parameter_routing.md)
 - [\[ICCV 2025\] Perspective-Aware Teaching: Adapting Knowledge for Heterogeneous Distillation](../../ICCV2025/model_compression/perspective-aware_teaching_adapting_knowledge_for_heterogeneous_distillation.md)
-- [\[ICCV 2025\] Soft Separation and Distillation: Toward Global Uniformity in Federated Unsupervised Learning](../../ICCV2025/model_compression/soft_separation_and_distillation_toward_global_uniformity_in_federated_unsupervi.md)
-- [\[NeurIPS 2025\] Towards Unsupervised Open-Set Graph Domain Adaptation via Dual Reprogramming](../../NeurIPS2025/model_compression/towards_unsupervised_open-set_graph_domain_adaptation_via_dual_reprogramming.md)
-- [\[ICLR 2026\] Distilling and Adapting: A Topology-Aware Framework for Zero-Shot Interaction Prediction in Multiplex Biological Networks](../../ICLR2026/model_compression/distilling_and_adapting_a_topology-aware_framework_for_zero-shot_interaction_pre.md)
 
 </div>
 

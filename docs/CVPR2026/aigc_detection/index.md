@@ -15,7 +15,7 @@ tags:
 
 **📷 CVPR2026** · **1** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (4)](../../ICML2026/aigc_detection/index.md) · [💬 ACL2026 (8)](../../ACL2026/aigc_detection/index.md) · [🔬 ICLR2026 (6)](../../ICLR2026/aigc_detection/index.md) · [🤖 AAAI2026 (3)](../../AAAI2026/aigc_detection/index.md) · [🧠 NeurIPS2025 (8)](../../NeurIPS2025/aigc_detection/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (9)](../../ICML2026/aigc_detection/index.md) · [💬 ACL2026 (16)](../../ACL2026/aigc_detection/index.md) · [🔬 ICLR2026 (6)](../../ICLR2026/aigc_detection/index.md) · [🤖 AAAI2026 (3)](../../AAAI2026/aigc_detection/index.md) · [🧠 NeurIPS2025 (8)](../../NeurIPS2025/aigc_detection/index.md)
 
 **[Fine-grained Image Aesthetic Assessment: Learning Discriminative Scores from Relative Ranks](fine-grained_image_aesthetic_assessment_learning_discriminative_scores_from_rela.md)**
 

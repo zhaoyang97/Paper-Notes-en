@@ -135,7 +135,7 @@ Scene-VLM is built upon fine-tuned Qwen2.5-VL-7B. The input consists of multimod
 - [\[CVPR 2026\] BUSSARD: Normalizing Flows for Bijective Universal Scene-Specific Anomalous Relationship Detection](bussard_normalizing_flows_for_bijective_universal_scene-specific_anomalous_relat.md)
 - [\[CVPR 2026\] Towards Real-World Document Parsing via Realistic Scene Synthesis and Document-Aware Training](towards_real-world_document_parsing_via_realistic_scene_synthesis_and_document-a.md)
 - [\[NeurIPS 2025\] Nautilus: A Large Multimodal Model for Underwater Scene Understanding](../../NeurIPS2025/multimodal_vlm/nautilus_a_large_multimodal_model_for_underwater_scene_understanding.md)
-- [\[CVPR 2026\] Scaling the Long Video Understanding of Multimodal Large Language Models via Visual Memory Mechanism](scaling_the_long_video_understanding_of_multimodal_large_language_models_via_vis.md)
+- [\[ICML 2026\] Pair2Scene: Learning Local Object Relations for Procedural Scene Generation](../../ICML2026/multimodal_vlm/pair2scene_learning_local_object_relations_for_procedural_scene_generation.md)
 
 </div>
 

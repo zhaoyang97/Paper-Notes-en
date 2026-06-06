@@ -129,11 +129,11 @@ FID reduction: InterHuman −9% (5.149 → 4.677), InterX −22% (0.469 → 0.29
 
 ## Related Papers
 
+- [\[ICML 2026\] TEAM: Temporal-Spatial Consistency Guided Expert Activation for MoE Diffusion Language Model Acceleration](../../ICML2026/llm_efficiency/team_temporal-spatial_consistency_guided_expert_activation_for_moe_diffusion_lan.md)
+- [\[ICLR 2026\] Ultra-Fast Language Generation via Discrete Diffusion Divergence Instruct](../../ICLR2026/llm_efficiency/ultra-fast_language_generation_via_discrete_diffusion_divergence_instruct.md)
 - [\[ICLR 2026\] IterResearch: Rethinking Long-Horizon Agents with Interaction Scaling](../../ICLR2026/llm_efficiency/iterresearch_rethinking_long-horizon_agents_with_interaction_scaling.md)
-- [\[ICML 2026\] OServe: Accelerating LLM Serving via Spatial-Temporal Workload Orchestration](../../ICML2026/llm_efficiency/oserve_accelerating_llm_serving_via_spatial-temporal_workload_orchestration.md)
 - [\[CVPR 2026\] GeoCodeBench: Benchmarking PhD-Level Coding in 3D Geometric Computer Vision](../../CVPR2026/llm_efficiency/benchmarking_phd-level_coding_in_3d_geometric_computer_vision.md)
 - [\[ICLR 2026\] DND: Boosting Large Language Models with Dynamic Nested Depth](../../ICLR2026/llm_efficiency/dnd_boosting_large_language_models_with_dynamic_nested_depth.md)
-- [\[AAAI 2026\] MoETTA: Test-Time Adaptation Under Mixed Distribution Shifts with MoE-LayerNorm](moetta_test-time_adaptation_under_mixed_distribution_shifts_with_moe-layernorm.md)
 
 </div>
 

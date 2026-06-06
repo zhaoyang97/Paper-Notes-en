@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AgentXRay: White-Boxing Agentic Systems via Workflow Reconstruction
 description: >-
-  [ICML 2026][LLM Agent][Agentic Workflow Reconstruction] The authors propose a new task, AWR, which aims to reconstruct an equivalent white-box workflow from a black-box agent system. They use MCTS to search the agent pri…
+  [ICML 2026][LLM Agent][Agentic Workflow Reconstruction] The authors define "Agentic Workflow Reconstruction" (AWR) as the task of reverse-engineering an equivalent white-box workflow from a black-box agent system. They e…
 tags:
   - "ICML 2026"
   - "LLM Agent"
@@ -10,121 +10,116 @@ tags:
   - "MCTS"
   - "Red-Black Pruning"
   - "Black-Box Explanation"
-  - "Multi-Agent"
+  - "Multi-Agent Systems"
 date: 2026-05-08
-content_hash: 1e1bd6eca05c082b
+content_hash: fdfc19781ae43f81
 ---
 
 # AgentXRay: White-Boxing Agentic Systems via Workflow Reconstruction
 
 **Conference**: ICML 2026  
 **arXiv**: [2602.05353](https://arxiv.org/abs/2602.05353)  
-**Code**: Not explicitly provided in the paper (no clear link)  
+**Code**: Not explicitly labeled in the paper (no explicit link)  
 **Area**: LLM Agent / Interpretability / Combinatorial Optimization  
-**Keywords**: Agentic Workflow Reconstruction, MCTS, Red-Black Pruning, Black-Box Explanation, Multi-Agent
+**Keywords**: Agentic Workflow Reconstruction, MCTS, Red-Black Pruning, Black-Box Explanation, Multi-Agent Systems
 
 ## TL;DR
-The authors propose a new task, AWR, which aims to reconstruct an equivalent white-box workflow from a black-box agent system. They use MCTS to search the agent primitive sequence space, combined with a Red-Black pruning method based on dynamic score coloring to balance depth and breadth, achieving interpretable white-box reconstruction in five real-world domains.
+The authors define "Agentic Workflow Reconstruction" (AWR) as the task of reverse-engineering an equivalent white-box workflow from a black-box agent system. They employ MCTS to search the sequence space of agent primitives, integrated with a score-driven dynamic Red-Black pruning mechanism to balance depth and width, achieving interpretable white-box reconstruction across five real-world domains.
 
 ## Background & Motivation
 
-**Background**: LLM agent/multi-agent systems (MAS) solve complex tasks via role specialization and tool use (e.g., ChatDev, MetaGPT). However, high-performance agents in deployment are often black boxes—their prompts, agent topology, and toolchains are not visible.
+**Background**: LLM agent and multi-agent systems (MAS) solve complex tasks through role specialization and tool calling (e.g., ChatDev, MetaGPT). However, high-performance agents in practical deployment are typically black-boxes, where internal prompts, agent topologies, and toolchains remain invisible.
 
-**Limitations of Prior Work**: Users can only observe inputs and outputs, with no insight into the decision process; debugging, modification, and security auditing are hindered. Existing agent interpretability research either targets single-step LLM reasoning or requires white-box access (e.g., model distillation), and cannot handle pure black-box APIs.
+**Limitations of Prior Work**: Users only observe inputs and outputs, leaving decision-making processes opaque. This hinders debugging, modification, and security auditing. Existing interpretability research focuses either on single-step LLM reasoning or requires white-box access (e.g., model distillation), making them inapplicable to pure black-box APIs.
 
-**Key Challenge**: The internal state space of black-box systems is enormous (agent roles × models × thought patterns × toolsets × order). Even if input-output pairs can be sampled, exhaustive search is infeasible; classic distillation requires model parameters, which is not applicable.
+**Key Challenge**: The internal state space of black-box systems is immense (roles $\times$ models $\times$ thought patterns $\times$ toolsets $\times$ sequences). Even with input-output pair sampling, exhaustive search is infeasible, and classic distillation requires model parameters, which are unavailable for black-box APIs.
 
-**Goal**: Define a new task, Agentic Workflow Reconstruction (AWR): synthesize an explicit, interpretable, and editable white-box workflow using only $(\tau, o^\ast)$ input-output pairs, such that its execution output matches the black box as closely as possible.
+**Goal**: To define a new task, Agentic Workflow Reconstruction (AWR): synthesizing an explicit, interpretable, and editable white-box workflow using only $(\tau, o^\ast)$ input-output pairs, such that the workflow execution matches the black-box output as closely as possible.
 
-**Key Insight**: (1) Linearity Hypothesis—most real-world agent systems, when executed, are serialized into an action-observation sequence (even if designed as a graph), so the search space can be limited to primitive chains of length $\le L_{\max}$. (2) Output similarity is used as a proxy metric, circumventing the challenge of determining true functional equivalence.
+**Key Insight**: (1) Linearity Hypothesis—Most practical agent systems, even those designed as graphs, serialize into an action-observation sequence during execution; thus, the search space can be restricted to a primitive chain of length $\le L_{\max}$. (2) Use output similarity as a proxy metric to bypass the undecidability of true functional equivalence.
 
-**Core Idea**: Formulate AWR as a combinatorial optimization over discrete primitive sequence space, and use MCTS + Red-Black pruning to efficiently approximate the optimal workflow under a token budget.
+**Core Idea**: Formulate AWR as a combinatorial optimization problem over a discrete primitive sequence space, utilizing MCTS with Red-Black pruning to efficiently approximate the optimal workflow under a token budget.
 
 ## Method
 
 ### Overall Architecture
-Input is a dataset $\mathcal{D}=\{(\tau_i, o_i^\ast)\}$, each from the black-box system $\mathcal{M}_{\text{black}}$. The unified primitive space $\Omega$ is defined: each primitive $p=\langle \rho, \mu, \pi, T_{\text{local}}\rangle$ (role, base model, thought pattern, toolset), covering both pure reasoning agents and tool-augmented agents. A workflow is represented as a linear sequence $\mathbf{s}=[s_1,\dots,s_L]$, $L \le L_{\max}$. The objective is
-$$
-\mathbf{s}^\ast = \arg\max_{\mathbf{s}} \mathbb{E}_{(\tau,o^\ast)}[\mathrm{Sim}(\Phi(\mathbf{s},\tau), o^\ast)]
-$$
-where $\mathrm{Sim}$ is a task-specific proxy metric (AST for code, cosine for text). AgentXRay uses MCTS: each node is a workflow prefix, each edge appends a primitive; Red-Black coloring decides whether a node prefers "deepening (refine)" or "branching (expand)".
+The input is a dataset $\mathcal{D}=\{(\tau_i, o_i^\ast)\}$, where each pair is generated by a black-box system $\mathcal{M}_{\text{black}}$. A unified primitive space $\Omega$ is defined: each primitive $p=\langle \rho, \mu, \pi, T_{\text{local}}\rangle$ represents a role, underlying model, thought pattern, and toolset, covering both pure reasoning and tool-augmented agents. A workflow is represented as a linear sequence $\mathbf{s}=[s_1,\dots,s_L]$, where $L \le L_{\max}$. The objective is:
+$$\mathbf{s}^\ast = \arg\max_{\mathbf{s}} \mathbb{E}_{(\tau,o^\ast)}[\mathrm{Sim}(\Phi(\mathbf{s},\tau), o^\ast)]$$
+where $\mathrm{Sim}$ is a task-specific proxy metric (AST for code, cosine similarity for text). AgentXRay utilizes MCTS where nodes represent workflow prefixes and edges represent appended primitives; Red-Black coloring determines whether a node prefers "refine" (depth) or "branch" (width).
 
 ### Key Designs
 
-1. **Unified Primitive Space + Linearity Hypothesis**:
+1.  **Unified Primitive Space + Linearity Hypothesis**:
+    - **Function**: Unifies heterogeneous agents, tools, and multi-agent systems into a single search unit, reducing search complexity from graph topology $O(2^{|\Omega|^2})$ to sequential $O(|\Omega|^{L_{\max}})$.
+    - **Mechanism**: Each primitive is standardized as $\langle$role, model, thought pattern, local tools$\rangle$. Pure reasoning agents have $T_{\text{local}}=\emptyset$, while tool-augmented agents have $T_{\text{local}}\ne\emptyset$. Drawing from observations in MacNet (Qian 2025), multi-agent DAGs are topologically sorted during execution, and interactions in ReAct/WebArena are naturally ordered traces, justifying the restriction to linear sequences.
+    - **Design Motivation**: Pure graph topology search is infeasible for medium-scale $\Omega$. "Behavioral fidelity" (input-output matching) only requires replicating observable sequences rather than internal topology, making linearization a task-aligned pruning strategy.
 
-    - **Function**: Unifies heterogeneous agents/tools/single-agent and multi-agent systems under a single search unit, reducing search complexity from graph topology $O(2^{|\Omega|^2})$ to sequence $O(|\Omega|^{L_{\max}})$.
-    - **Mechanism**: Each primitive is $\langle$role, model, thought pattern, local tools$\rangle$; pure reasoning agents have $T_{\text{local}}=\emptyset$, tool-augmented agents have $T_{\text{local}}\ne\emptyset$. Drawing on MacNet (Qian 2025), which shows multi-agent DAGs are topologically sorted at execution, and that ReAct/WebArena interactions are naturally ordered traces, the search space is restricted to linear sequences.
-    - **Design Motivation**: Pure graph topology search is infeasible even for moderate $\Omega$; "behavioral fidelity" (input-output matching) only requires reproducing observable sequences, not internal topology, so linearization is a task-aligned pruning.
+2.  **MCTS Search Loop (with UCB + Early-Stopping Rollout)**:
+    - **Function**: Handles sparse/delayed reward signals from $\mathrm{Sim}$, which can only be observed near the completion of a workflow.
+    - **Mechanism**: Each iteration samples a $(\tau, o^\ast)$ pair. A path is selected from the root via UCB; upon reaching an expansion node, a sample-rollout is performed by sampling primitives up to $L_{\max}$ and executing the workflow to get output $o$. If execution fails, $r=0$; otherwise, $r=\mathrm{Sim}(o, o^\ast)$. $N(v)$ and $Q(v)$ are updated via backpropagation.
+    - **Design Motivation**: Unlike exhaustive search of $|\Omega|^{L_{\max}}$, MCTS amortizes search costs through statistical sampling. UCB balances exploration/exploitation across heterogeneous action spaces, while early stopping prevents wasting tokens on rollouts with invalid primitives.
 
-2. **MCTS Search Loop (with UCB + Early-Stopping Rollout)**:
-
-    - **Function**: Handles $\mathrm{Sim}$, a sparse/delayed reward signal observable only near-complete workflows.
-    - **Mechanism**: Each iteration samples a $(\tau, o^\ast)$; from the root, a path is selected, and at the expansion node, a sample-rollout is performed: the sequence is sampled to $L_{\max}$ and the workflow is executed to obtain output $o$; if execution fails, $r=0$, else $r=\mathrm{Sim}(o, o^\ast)$; backpropagate updates to $N(v), Q(v)$ along the path. Child selection at each node uses UCB to balance exploration/exploitation.
-    - **Design Motivation**: Unlike "exhaustive $|\Omega|^{L_{\max}}$" search, MCTS amortizes search cost via statistical sampling; UCB is robust in heterogeneous action spaces (different roles, models, tools); early stopping prevents wasting tokens on invalid primitives.
-
-3. **Red-Black Pruning (Score-Driven Dynamic Coloring)**:
-
-    - **Function**: Under fixed iteration/token budget, automatically decides which nodes to deepen (depth refine) and which to branch (width expand), mitigating combinatorial explosion.
-    - **Mechanism**: Before each iteration, ColorTree recolors the current tree: Red nodes indicate current choices are "stable" (high score + sufficient visits), so child selection uses UCB to go deeper; Black nodes are insufficiently explored, so new child nodes are prioritized for expansion. The search loop (Algorithm 1) consists of color-guided descent (Line 9), early-stopping rollout (Lines 11–13), and reward backpropagation (Line 22).
-    - **Design Motivation**: Standard MCTS on large $\Omega$ often gets stuck in "too wide to go deep" or "deep in a bad branch"; Red-Black dynamically quantifies "confidence to refine current path" via scores, guiding search resources to subtrees with both potential and depth, enabling deeper and better search within the same iteration budget.
+3.  **Red-Black Pruning (Score-Driven Dynamic Coloring)**:
+    - **Function**: Automatically decides which nodes warrant deeper exploration (depth refine) or new branches (width expand) under a fixed iteration/token budget.
+    - **Mechanism**: Before each iteration, the ColorTree re-colors the current tree. "Red" nodes signify "stable" choices (high scores + sufficient visits) where UCB prioritizes depth. "Black" nodes signify insufficient exploration, where the system prioritizes creating new child nodes to expand width. The search loop consists of color-guided descent, early-stopping rollouts, and reward backpropagation.
+    - **Design Motivation**: Standard MCTS in large $\Omega$ often gets trapped either in excessive width or singular bad branches. Red-Black pruning quantifies the confidence to continue refining a path, directing resources to subtrees with both potential and depth.
 
 ### Loss & Training
-This is a non-gradient method with no training phase. The "loss" is negative proxy similarity $-\mathrm{Sim}(\Phi(\mathbf{s},\tau), o^\ast)$, and the "optimizer" is MCTS + Red-Black Pruning. Each workflow execution calls a real LLM API (e.g., GPT/Gemini), so budget is measured by iteration count $N$ and total tokens.
+This is a non-gradient method with no training phase. The "loss" is the negative proxy similarity $-\mathrm{Sim}(\Phi(\mathbf{s},\tau), o^\ast)$, and the "optimizer" is MCTS with Red-Black Pruning. Budget is measured by the number of iterations $N$ and total tokens consumed by LLM API calls.
 
 ## Key Experimental Results
 
 ### Main Results
-Five domains, five target systems: software development (ChatDev), data analysis (MetaGPT), education (TeachMaster), 3D modeling (ChatGPT GPT-5.2 API), scientific computing (Gemini 3 Pro). Proxy similarity uses Static Functional Equivalence (SFE).
+Evaluated on five domains and five target systems: software development (ChatDev), data analysis (MetaGPT), education (TeachMaster), 3D modeling (ChatGPT GPT-5.2 API), and scientific computing (Gemini 3 Pro). Proxy similarity is measured by Static Functional Equivalence (SFE).
 
-| Area / Target System | Metric | AgentXRay Avg. SFE | Notes |
-|---------------------|--------|--------------------|-------|
-| Software Dev / ChatDev | AST-based | High SFE (overall mean 0.426) | Reconstructed executable dev workflow |
-| Data Analysis / MetaGPT | AST + Text | Same | Multi-agent collaboration linearized and reproduced |
-| Education / TeachMaster | Text Similarity | Same | Teaching process restored |
-| 3D Modeling / ChatGPT | Output Comparison | Same | Single agent + tool call chain |
-| Scientific Computing / Gemini 3 Pro | Output Comparison | Same | Long-chain scientific reasoning also approximated |
-| Overall | — | 0.426 SFE | Significantly higher than baseline without pruning |
+| Domain / Target System | Metric | AgentXRay Avg SFE | Remarks |
+|-----------------|------|--------------------|------|
+| Software Dev / ChatDev | AST-based | High SFE (Mean 0.426) | Reconstructs executable dev workflows |
+| Data Analysis / MetaGPT | AST + Text | 0.426 | Reconstructs multi-agent collaboration via linearization |
+| Education / TeachMaster | Text Similarity | 0.426 | Recovers teaching processes |
+| 3D Modeling / ChatGPT | Output Contrast | 0.426 | Handles single-agent + toolchains |
+| Scientific Computing / Gemini 3 Pro | Output Contrast | 0.426 | Approximates long-chain scientific reasoning |
+| Overall | — | 0.426 SFE | Significantly outperforms baseline without pruning |
 
 ### Ablation Study
 
 | Configuration | Phenomenon | Interpretation |
-|---------------|------------|----------------|
-| Full AgentXRay (MCTS + Red-Black) | Best SFE, 8–22% fewer tokens | Pruning enables deeper search under same budget |
-| No Red-Black Pruning (pure MCTS) | Lower SFE + more tokens | Node selection lacks score guidance, resources spread evenly |
-| No Linearity Hypothesis (graph topology search) | Infeasible | $O(2^{|\Omega|^2})$ search explosion |
-| Different $L_{\max}$ | Medium length optimal | Too short lacks expressiveness, too long increases rollout failure |
-| Different scoring functions (Sim only vs Sim + depth) | Multi-dimensional scoring better | "Proxy quality + search depth" joint scoring makes Red-Black more sensitive |
+|------|------|------|
+| Full AgentXRay (MCTS + Red-Black) | Best SFE, 8–22% token reduction | Pruning enables deeper search under same budget |
+| w/o Red-Black Pruning (Pure MCTS) | Lower SFE + higher token count | Node selection lacks score guidance; resources are spread thin |
+| w/o Linearity Hypothesis (Graph Search) | Infeasible | $O(2^{|\Omega|^2})$ leads to search explosion |
+| Variable $L_{\max}$ | Mid-length is optimal | Short sequences lack expressivity; long ones increase rollout failure |
+| Score Function (Sim vs Sim + Depth) | Multi-dimensional score is superior | Joint "proxy quality + search depth" score makes Red-Black more sensitive |
 
 ### Key Findings
-- Red-Black pruning is the key switch for token efficiency: with the same iteration budget, pruning enables deeper workflow levels, achieving better fidelity.
-- The Linearity Hypothesis yields usable fidelity across five distinct domains (including true multi-agent ChatDev, MetaGPT), validating that "execution-time topological order" is the main observable signal in black boxes.
-- Even for target systems like GPT-5.2 or Gemini 3 Pro (closed APIs), AgentXRay can approximate behavior with IO access only; this shows white-box reconstruction is effective for real "commercial black boxes".
-- The reconstructed workflow is editable—users can replace roles/tools for downstream adaptation; this is fundamentally different from model distillation.
+- Red-Black pruning is the critical mechanism for token efficiency, allowing the search to reach deeper workflow levels for higher fidelity.
+- The Linearity Hypothesis provides usable fidelity across five distinct domains, validating that topological execution order is the primary observable signal.
+- AgentXRay approximates behavior even for closed-source APIs like GPT-5.2 or Gemini 3 Pro via IO access alone.
+- Reconstructed workflows are editable, allowing users to replace roles/tools for downstream adaptation, unlike model distillation.
 
 ## Highlights & Insights
-- Transforms interpretability into "behavioral equivalence + structural white-box" at the observable level, avoiding the impossible task of accessing model parameters; this is a pragmatic paradigm for "interpretability".
-- Unified primitive definition covers both agents and tools, making the search space conceptually valid for single-agent + tool-use systems—broadening applicability beyond multi-agent systems.
-- Red-Black pruning makes "prune or not" a node-level dynamic decision (score-dependent), more robust than static threshold pruning, and transferable to any sparse-reward LLM agent search.
-- Using SFE as a proxy metric circumvents the undecidability of "true functional equivalence", a practical compromise for open-ended multi-file outputs; this approach is reusable for code synthesis/agent evaluation.
+- Transforms interpretability into "behavioral equivalence + structural white-boxing," avoiding the impossible task of accessing model weights.
+- The unified primitive definition covers both agents and tools, expanding the scope beyond multi-agent systems to single-agent tool-use systems.
+- Red-Black pruning makes the "prune vs. explore" decision dynamic at the node level, proving more robust than static thresholds.
+- Using SFE as a proxy metric is a practical compromise for open-ended multi-file outputs, a strategy transferable to code synthesis and agent evaluation.
 
 ## Limitations & Future Work
-- The Linearity Hypothesis is an upper bound: systems that truly depend on concurrency/asynchronous multi-agent (synchronous dialogue, cyclic feedback) may have essential behaviors missed by linear sequences.
-- The evaluation metric SFE is a proxy; for some tasks, AST matching or text similarity cannot distinguish true functional differences—potentially misleading MCTS.
-- Rollout requires real workflow execution, with each run incurring multiple LLM calls; after $N$ searches, token cost is substantial. The current 8–22% savings are relative; absolute cost remains high.
-- The primitive space $\Omega$ requires pre-prepared role/model/pattern/tool candidates; if the black box uses tricks not in $\Omega$, they can never be reconstructed.
+- The Linearity Hypothesis is an upper bound; systems heavily reliant on concurrent/asynchronous multi-agent feedback or loops may lose essential behaviors.
+- SFE is a proxy metric; in some tasks, AST matching or text similarity might not distinguish true functional differences, potentially misleading the MCTS.
+- Rollouts require real execution, where the cost of a single search iteration involves multiple LLM calls. Token overhead remains high despite savings.
+- The primitive space $\Omega$ must be predefined. If a black-box uses a specific "trick" not represented in the candidate roles/patterns, reconstruction will fail.
 
 ## Related Work & Insights
-- **vs Model Distillation**: Distillation requires parameter access and produces a black-box small model; AWR only needs IO and produces an editable white-box workflow.
-- **vs MacNet / Multi-Agent Graph Structures (Qian 2025)**: MacNet trains new agents with DAGs; this work does the opposite—infers an equivalent linear workflow from a black-box agent.
-- **vs ReAct / WebArena and other interactive agents**: Those works design agents; this work reverses agents via observation, providing interpretable representations.
-- **vs MCTS-for-LLM approaches (e.g., ToT, AgentTrek)**: They use MCTS to search a single reasoning path; this work uses MCTS to search the "agent construction graph" itself, a higher-level abstraction.
+- **vs. Model Distillation**: Distillation requires weight access and produces black-box small models; AWR requires only IO and produces white-box editable workflows.
+- **vs. MacNet/Multi-agent Graph Structures (Qian 2025)**: MacNet uses DAGs to train new agents; this work reverse-engineers a linear workflow from a black-box.
+- **vs. Interactive Agents (ReAct/WebArena)**: Those works design agents; this work reverses them via observation.
+- **vs. MCTS-for-LLM (ToT, AgentTrek)**: Those search for single reasoning paths; AgentXRay searches for the "agent configuration graph" itself, a higher level of abstraction.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ The AWR task definition is new, and Red-Black score pruning is a substantive improvement to MCTS.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Five domains + real closed APIs covered, but details per domain could be expanded, and statistical significance could be strengthened.
-- Writing Quality: ⭐⭐⭐⭐ Task motivation, unified primitives, and Linearity argument are all clear; Algorithm 1 is directly reproducible.
-- Value: ⭐⭐⭐⭐ Directly aids interpretability/control/auditability of agent deployment, and could be a practical tool for "reverse engineering closed agent APIs".
+- Novelty: ⭐⭐⭐⭐⭐ The AWR task definition is novel, and Red-Black pruning is a substantive improvement to MCTS.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Coverage of five domains and closed APIs is strong, though statistical significance across more seeds could be strengthened.
+- Writing Quality: ⭐⭐⭐⭐ Motivations, primitives, and linearity arguments are clear and Algorithm 1 is reproducible.
+- Value: ⭐⭐⭐⭐ Directly assists in interpretable/controllable agent deployment; a practical tool for reverse-engineering closed-source agent APIs.
 
 <!-- RELATED:START -->
 
@@ -133,10 +128,10 @@ Five domains, five target systems: software development (ChatDev), data analysis
 ## Related Papers
 
 - [\[AAAI 2026\] A2Flow: Automating Agentic Workflow Generation via Self-Adaptive Abstraction Operators](../../AAAI2026/llm_agent/a2flow_automating_agentic_workflow_generation_via_self-adaptive_abstraction_oper.md)
+- [\[ICML 2026\] Answer Only as Precisely as Justified: Calibrated Claim-Level Specificity Control for Agentic Systems](answer_only_as_precisely_as_justified_calibrated_claim-level_specificity_control.md)
+- [\[ACL 2026\] Rethinking Reasoning-Intensive Retrieval: Evaluating and Advancing Retrievers in Agentic Search Systems](../../ACL2026/llm_agent/rethinking_reasoning-intensive_retrieval_evaluating_and_advancing_retrievers_in_.md)
 - [\[AAAI 2026\] With Great Capabilities Come Great Responsibilities: Introducing the Agentic Risk & Capability Framework for Governing Agentic AI Systems](../../AAAI2026/llm_agent/with_great_capabilities_come_great_responsibilities_introducing_the_agentic_risk.md)
 - [\[NeurIPS 2025\] Benchmarking Agentic Systems in Automated Scientific Information Extraction with ChemX](../../NeurIPS2025/llm_agent/benchmarking_agentic_systems_in_automated_scientific_information_extraction_with.md)
-- [\[AAAI 2026\] Parallelism Meets Adaptiveness: Scalable Documents Understanding in Multi-Agent LLM Systems](../../AAAI2026/llm_agent/parallelism_meets_adaptiveness_scalable_documents_understanding_in_multi-agent_l.md)
-- [\[ACL 2026\] FedGUI: Benchmarking Federated GUI Agents across Heterogeneous Platforms, Devices, and Operating Systems](../../ACL2026/llm_agent/fedgui_benchmarking_federated_gui_agents_across_heterogeneous_platforms_devices_.md)
 
 </div>
 

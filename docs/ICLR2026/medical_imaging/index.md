@@ -20,7 +20,7 @@ tags:
 
 **🔬 ICLR2026** · **48** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (10)](../../ICML2026/medical_imaging/index.md) · [💬 ACL2026 (21)](../../ACL2026/medical_imaging/index.md) · [📷 CVPR2026 (102)](../../CVPR2026/medical_imaging/index.md) · [🤖 AAAI2026 (88)](../../AAAI2026/medical_imaging/index.md) · [🧠 NeurIPS2025 (89)](../../NeurIPS2025/medical_imaging/index.md) · [📹 ICCV2025 (31)](../../ICCV2025/medical_imaging/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (34)](../../ICML2026/medical_imaging/index.md) · [💬 ACL2026 (35)](../../ACL2026/medical_imaging/index.md) · [📷 CVPR2026 (102)](../../CVPR2026/medical_imaging/index.md) · [🤖 AAAI2026 (88)](../../AAAI2026/medical_imaging/index.md) · [🧠 NeurIPS2025 (89)](../../NeurIPS2025/medical_imaging/index.md) · [📹 ICCV2025 (31)](../../ICCV2025/medical_imaging/index.md)
 
 🔥 **Top topics:** Medical Imaging ×9 · Diffusion Models ×3 · Few-/Zero-Shot Learning ×3 · LLM ×3 · Agents ×3
 

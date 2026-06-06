@@ -203,11 +203,11 @@ Event-level encoding outperforms token-level encoding across all complexity cond
 
 ## Related Papers
 
+- [\[ACL 2026\] ANCHOR: LLM-driven Subject Conditioning for Text-to-Image Synthesis](../../ACL2026/image_generation/anchor_llm-driven_subject_conditioning_for_text-to-image_synthesis.md)
 - [\[AAAI 2026\] ReAlign: Text-to-Motion Generation via Step-Aware Reward-Guided Alignment](../../AAAI2026/image_generation/realign_text-to-motion_generation_via_step-aware_reward-guided_alignment.md)
 - [\[ICLR 2026\] Localized Concept Erasure in Text-to-Image Diffusion Models via High-Level Representation Misdirection](localized_concept_erasure_in_text-to-image_diffusion_models_via_high-level_repre.md)
 - [\[ICLR 2026\] COSMO-INR: Complex Sinusoidal Modulation for Implicit Neural Representations](cosmo-inr_complex_sinusoidal_modulation_for_implicit_neural_representations.md)
-- [\[ICCV 2025\] Efficient Input-Level Backdoor Defense on Text-to-Image Synthesis via Neuron Activation Variation](../../ICCV2025/image_generation/efficient_input-level_backdoor_defense_on_text-to-image_synthesis_via_neuron_act.md)
-- [\[CVPR 2026\] High-Fidelity Diffusion Face Swapping with ID-Constrained Facial Conditioning](../../CVPR2026/image_generation/high-fidelity_diffusion_face_swapping_with_id-constrained_facial_conditioning.md)
+- [\[ICLR 2026\] Continual Unlearning for Text-to-Image Diffusion Models: A Regularization Perspective](continual_unlearning_for_text-to-image_diffusion_models_a_regularization_perspec.md)
 
 </div>
 

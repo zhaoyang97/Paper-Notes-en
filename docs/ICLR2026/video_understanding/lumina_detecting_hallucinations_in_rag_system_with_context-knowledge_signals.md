@@ -172,11 +172,11 @@ Lumina achieves over 0.9 AUROC on HalluRAG across all models, improving over ReD
 
 ## Related Papers
 
+- [\[ACL 2026\] Automated Knowledge Component Generation and Interpretable Knowledge Tracing in Coding Problems](../../ACL2026/video_understanding/automated_knowledge_component_generation_for_interpretable_knowledge_tracing_in_.md)
 - [\[AAAI 2026\] Beyond Fact Retrieval: Episodic Memory for RAG with Generative Semantic Workspaces](../../AAAI2026/video_understanding/beyond_fact_retrieval_episodic_memory_for_rag_with_generative_semantic_workspace.md)
-- [\[AAAI 2026\] SUGAR: Learning Skeleton Representation with Visual-Motion Knowledge for Action Recognition](../../AAAI2026/video_understanding/sugar_learning_skeleton_representation_with_visual-motion_knowledge_for_action_r.md)
 - [\[CVPR 2026\] Wavelet-based Frame Selection by Detecting Semantic Boundary for Long Video Understanding](../../CVPR2026/video_understanding/wavelet-based_frame_selection_by_detecting_semantic_boundary_for_long_video_unde.md)
+- [\[AAAI 2026\] SUGAR: Learning Skeleton Representation with Visual-Motion Knowledge for Action Recognition](../../AAAI2026/video_understanding/sugar_learning_skeleton_representation_with_visual-motion_knowledge_for_action_r.md)
 - [\[ICML 2026\] Find, Fix, Reason: Context Repair for Video Reasoning](../../ICML2026/video_understanding/find_fix_reason_context_repair_for_video_reasoning.md)
-- [\[AAAI 2026\] KineST: A Kinematics-guided Spatiotemporal State Space Model for Human Motion Tracking from Sparse Signals](../../AAAI2026/video_understanding/kinest_a_kinematics-guided_spatiotemporal_state_space_model_for_human_motion_tra.md)
 
 </div>
 

@@ -129,9 +129,9 @@ MF-Speech consists of three training stages: Stage 1 trains a high-fidelity wave
 
 - [\[AAAI 2026\] Rethinking Flow and Diffusion Bridge Models for Speech Enhancement](rethinking_flow_and_diffusion_bridge_models_for_speech_enhancement.md)
 - [\[ICCV 2025\] SemTalk: Holistic Co-speech Motion Generation with Frame-level Semantic Emphasis](../../ICCV2025/others/semtalk_holistic_co-speech_motion_generation_with_frame-level_semantic_emphasis.md)
-- [\[NeurIPS 2025\] MiCADangelo: Fine-Grained Reconstruction of Constrained CAD Models from 3D Scans](../../NeurIPS2025/others/micadangelo_fine-grained_reconstruction_of_constrained_cad_models_from_3d_scans.md)
 - [\[AAAI 2026\] Enhancing Control Policy Smoothness by Aligning Actions with Predictions from Preceding States](enhancing_control_policy_smoothness_by_aligning_actions_with_predictions_from_pr.md)
 - [\[AAAI 2026\] Area-Optimal Control Strategies for Heterogeneous Multi-Agent Pursuit](area-optimal_control_strategies_for_heterogeneous_multi-agen.md)
+- [\[NeurIPS 2025\] MiCADangelo: Fine-Grained Reconstruction of Constrained CAD Models from 3D Scans](../../NeurIPS2025/others/micadangelo_fine-grained_reconstruction_of_constrained_cad_models_from_3d_scans.md)
 
 </div>
 

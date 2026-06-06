@@ -122,10 +122,10 @@ The framework has direct implications for understanding **information manipulati
 ## Related Papers
 
 - [\[AAAI 2026\] Deviation Dynamics in Cardinal Hedonic Games](deviation_dynamics_in_cardinal_hedonic_games.md)
+- [\[ICML 2026\] Torus Graphs for Large-Scale Neural Phase Analysis](../../ICML2026/others/torus_graphs_for_large_scale_neural_phase_analysis.md)
 - [\[AAAI 2026\] LILAD: Learning In-context Lyapunov-stable Adaptive Dynamics Models](lilad_learning_in-context_lyapunov-stable_adaptive_dynamics_models.md)
-- [\[NeurIPS 2025\] Normalization in Attention Dynamics](../../NeurIPS2025/others/normalization_in_attention_dynamics.md)
-- [\[ICML 2026\] Local and Mixing-Based Algorithms for Gaussian Graphical Model Selection from Glauber Dynamics](../../ICML2026/others/local_and_mixing-based_algorithms_for_gaussian_graphical_model_selection_from_gl.md)
-- [\[ICLR 2026\] LPWM: Latent Particle World Models for Object-Centric Stochastic Dynamics](../../ICLR2026/others/latent_particle_world_models_self-supervised_object-centric_stochastic_dynamics_.md)
+- [\[ICML 2026\] Less Data, Faster Training: Repeating Smaller Datasets Speeds Up Learning via Sampling Biases](../../ICML2026/others/less_data_faster_training_repeating_smaller_datasets_speeds_up_learning_via_samp.md)
+- [\[ICML 2026\] Learning Permutation-Invariant Macroscopic Dynamics](../../ICML2026/others/learning_permutation-invariant_macroscopic_dynamics.md)
 
 </div>
 

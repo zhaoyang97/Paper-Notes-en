@@ -119,10 +119,10 @@ The world model is trained with a standard diffusion denoising loss. The policy 
 ## Related Papers
 
 - [\[ICLR 2026\] Activation Steering for Masked Diffusion Language Models](activation_steering_for_masked_diffusion_language_models.md)
+- [\[ICML 2026\] Consistent Diffusion Language Models](../../ICML2026/image_restoration/consistent_diffusion_language_models.md)
 - [\[AAAI 2026\] RefiDiff: Progressive Refinement Diffusion for Efficient Missing Data Imputation](../../AAAI2026/image_restoration/refidiff_progressive_refinement_diffusion_for_efficient_missing_data_imputation.md)
 - [\[ICML 2026\] Image Restoration via Diffusion Models with Dynamic Resolution](../../ICML2026/image_restoration/image_restoration_via_diffusion_models_with_dynamic_resolution.md)
-- [\[NeurIPS 2025\] MRO: Enhancing Reasoning in Diffusion Language Models via Multi-Reward Optimization](../../NeurIPS2025/image_restoration/mro_enhancing_reasoning_in_diffusion_language_models_via_multi-reward_optimizati.md)
-- [\[ICLR 2026\] Are Deep Speech Denoising Models Robust to Adversarial Noise?](are_deep_speech_denoising_models_robust_to_adversarial_noise.md)
+- [\[ICML 2026\] DyLLM: Efficient Diffusion LLM Inference via Saliency-based Token Selection and Partial Attention](../../ICML2026/image_restoration/dyllm_efficient_diffusion_llm_inference_via_saliency-based_token_selection_and_p.md)
 
 </div>
 

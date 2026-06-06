@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] LabBuilder: Protocol-Grounded 3D Layout Generation for Interactable and Safe Laboratory
 description: >-
-  [ICML 2026][3D Vision][Laboratory Scene Generation] LabBuilder compiles free-text experimental descriptions into "asset-chemical protocol" pairs, then employs hierarchical generation…
+  [ICML 2026][3D Vision][Lab Scene Generation] LabBuilder compiles free-text experimental descriptions into "asset-chemical protocols," then employs hierarchical generation, multi-objective geometric/chemical optimization…
 tags:
   - "ICML 2026"
   - "3D Vision"
-  - "Laboratory Scene Generation"
-  - "Protocol Implementation"
+  - "Lab Scene Generation"
+  - "Protocol Grounding"
   - "Chemical Safety"
   - "Navigation Reachability"
   - "Hierarchical Layout"
 date: 2026-05-08
-content_hash: e4558ddb5691d024
+content_hash: 9dac5396d2b1c9fa
 ---
 
 # LabBuilder: Protocol-Grounded 3D Layout Generation for Interactable and Safe Laboratory
@@ -21,96 +21,96 @@ content_hash: e4558ddb5691d024
 **arXiv**: [2605.02288](https://arxiv.org/abs/2605.02288)  
 **Code**: None  
 **Area**: 3D Vision / Embodied Environment Generation  
-**Keywords**: Laboratory Scene Generation, Protocol Implementation, Chemical Safety, Navigation Reachability, Hierarchical Layout
+**Keywords**: Lab Scene Generation, Protocol Grounding, Chemical Safety, Navigation Reachability, Hierarchical Layout
 
 ## TL;DR
-LabBuilder compiles free-text experimental descriptions into "asset-chemical protocol" pairs, then employs hierarchical generation, geometric/chemical multi-objective optimization, and navigation repair to produce 3D chemical laboratory layouts that are both visually plausible and executable by robots.
+LabBuilder compiles free-text experimental descriptions into "asset-chemical protocols," then employs hierarchical generation, multi-objective geometric/chemical optimization, and navigation repair to produce 3D chemical laboratory layouts that are visually plausible and practically executable for robotic experimental workflows.
 
 ## Background & Motivation
-**Background**: Most 3D indoor scene generation focuses on household environments, relying on datasets like 3D-FRONT, with the goal of "looking realistic"—avoiding geometric conflicts and ensuring harmonious furniture arrangements. Recent works use LLMs as layout planners, converting text to structured JSON and rendering interactive scenes.
+**Background**: 3D indoor scene generation predominantly serves domestic environments, relying on datasets like 3D-FRONT. The primary objective is visual plausibility—ensuring geometric non-interference and reasonable furniture color coordination. Recent works leverage Large Language Models (LLMs) as layout planners, utilizing pipelines that transform text to structured JSON and then to rendered scenes to convert linguistic descriptions into interactive environments.
 
-**Limitations of Prior Work**: This pipeline fails when applied to chemical laboratories. Household scenes only require "fitting and non-overlapping" placements for furniture, while laboratories involve **protocol-level semantics**: reagents must be placed according to reaction types, flammable materials must be far from heat sources, glassware must not be near table edges, and robotic arms must reach all necessary equipment. Household generators treat reagent bottles as decorations, ignoring their chemical properties and failing to verify whether robots can navigate from workstation A to fume hood B.
+**Limitations of Prior Work**: Directly migrating these methods to chemical laboratories often results in failure. In domestic settings, furniture only needs to "fit without overlapping." Conversely, equipment such as fume hoods, alcohol lamps, flammable reagents, and glassware in a laboratory possess **protocol-level semantics**: chemicals must be arranged by reaction type, flammables must remain distant from heat sources, glassware should not sit near table edges, and robotic arms must be able to reach them. Generic generators treat reagent bottles as decorative objects, lacking knowledge of their chemical properties or verification of robotic traversability between workstations.
 
-**Key Challenge**: Existing methods constrain "static geometric validity + visual plausibility" during generation, leaving executability and safety for post-evaluation. However, in laboratories, executability is a design constraint itself—a minor geometric adjustment (e.g., moving a Bunsen burner by 20 cm) can invalidate the entire experimental workflow or even cause safety hazards.
+**Key Challenge**: Existing methods constrain only "static geometric validity + visual plausibility" during generation, leaving executability and safety for post-hoc evaluation. However, in a laboratory, executability is the design constraint itself—a minor geometric shift (e.g., moving an alcohol lamp 20 cm) can invalidate the entire experimental workflow or even trigger safety incidents.
 
-**Goal**: Given a free-text experimental requirement (e.g., "perform an SN2 substitution reaction"), automatically generate a 3D laboratory layout that ensures: (i) all protocol-required assets are instantiated; (ii) geometric conflicts are resolved, and placements comply with wall alignment; (iii) chemical safety constraints are satisfied; (iv) robots can navigate to all required equipment in protocol order.
+**Goal**: Given a free-text experimental requirement (e.g., "Set up an SN2 substitution reaction"), automatically generate a 3D lab layout where: (i) all assets required by the protocol are instantiated; (ii) geometry is conflict-free and compliant with wall-alignment rules; (iii) chemical safety constraints are satisfied; and (iv) the robot can reach required equipment station-by-station following the protocol steps.
 
-**Key Insight**: The authors reformulate scene generation as "protocol-grounded constraint optimization"—using LLMs and knowledge bases to convert free text into machine-verifiable structured protocols, which then directly drive layout search and repair, integrating executability into the generation loop.
+**Key Insight**: The authors reformulate scene generation as "constrained optimization for protocol grounding." They first use an LLM combined with a knowledge base to transform free text into machine-verifiable structured protocols. These protocols then directly drive layout search and repair, shifting executability from post-hoc evaluation to the front-end of the generation loop.
 
-**Core Idea**: By leveraging "asset knowledge base + chemical knowledge base" as priors, experimental requirements are compiled into schema-based protocols. A three-stage closed-loop process—hierarchical initialization, geometric/chemical violation-prioritized local search, and navigation reachability repair—generates laboratory layouts.
+**Core Idea**: Utilizing "Asset Knowledge Bases + Chemical Knowledge Bases" as priors, the method compiles experimental requirements into schema-based protocols. It then generates the laboratory through three stages: hierarchical initialization, local search prioritized by geometric/chemical violations, and navigation reachability repair.
 
 ## Method
 
 ### Overall Architecture
-LabBuilder consists of three tightly coupled modules: **LabForge**, the "frontend compiler," converts free text and heterogeneous assets into structured protocols $\mathcal{P}$ and an asset library $\mathcal{A}$; **LabGen**, the core generator, performs hierarchical initialization to produce candidate layouts $\mathcal{L}_0$, followed by geometric/chemical optimization $\Phi$ and navigation-aware repair $\Upsilon$, outputting the optimal layout $\mathcal{L}^\star$; **LabTouchstone**, the evaluation suite, scores layouts across geometric compliance, feasibility (FSR), chemical safety, and semantic plausibility, supplemented by point-goal navigation evaluation. The pipeline's key innovation is that the protocol $\mathcal{P}$ serves as both a "goal specification" and a "constraint template," guiding the generator on what to place and the optimizer on what constitutes a violation.
+LabBuilder consists of three tightly coupled modules: **LabForge** is the "front-end compiler" responsible for compiling free text and heterogeneous assets into a structured protocol $\mathcal{P}$ and an asset library $\mathcal{A}$. **LabGen** is the core generator which performs hierarchical initialization to produce a candidate layout $\mathcal{L}_0$, followed by geometric and chemical optimization $\Phi$, and finally navigation-aware repair $\Upsilon$ to output the optimal layout $\mathcal{L}^\star$. **LabTouchstone** is the evaluation suite, scoring across four dimensions: geometric compliance, feasibility (FSR), chemical safety, and semantic plausibility, supplemented by point-goal navigation assessment. The pipeline's key lies in protocol $\mathcal{P}$ serving dual roles as both a "target specification" and a "constraint template"—informing the generator what to place and the optimizer which placements constitute violations.
 
 ### Key Designs
 
-1. **LabForge Protocol Synthesis and Validation**:
-    - **Function**: Converts coarse-grained text like "I want to perform a reflux reaction" into verifiable protocols $\mathcal{P}$ containing reagents, instruments, steps, and navigation actions.
-    - **Mechanism**: Constructs an asset annotation library for 176 laboratory entities (geometric, semantic, and safety dimensions) and extracts an experimental library covering seven reaction types (substitution, protection/deprotection, condensation, cyclization, redox, functional group transformation, alkylation/acylation) from chemical literature. LLMs perform retrieval-augmented generation on $(x, \mathcal{C})$, producing schema-compliant, asset-normalized protocols, validated against constraints in $\mathcal{A}$. On average, protocols include 5.27 reagents, 9.87 instruments, 9.00 steps, and 4.30 navigation actions.
-    - **Design Motivation**: Directly generating "placement JSON" with LLMs leads to physical conflicts and lacks safety semantics. Compiling protocols first adds a schema validator layer, preventing hallucinated assets or missing instruments.
+1.  **LabForge Protocol Synthesis and Verification**:
+    - **Function**: Converts coarse-grained text (e.g., "I want to perform a reflux reaction") into a verifiable protocol $\mathcal{P}$ containing reagents, instruments, steps, and movement actions.
+    - **Mechanism**: A library of 176 laboratory entities is constructed with annotations (geometric, semantic, safety). An experimental library covering 7 reaction types (substitution, protection/deprotection, condensation, cyclization, redox, functional group transformation, alkylation/acylation) is extracted from chemical literature. The LLM performs Retrieval-Augmented Generation (RAG) on $(x, \mathcal{C})$ to produce schema-strict protocols with normalized asset references. Constraint checks based on asset library $\mathcal{A}$ ensure executability. Statistically, each protocol averages 5.27 reagents, 9.87 instruments, 9.00 steps, and 4.30 navigations.
+    - **Design Motivation**: LLMs generating "placement JSON" directly often produce physical conflicts and lack safety semantics. Compiling into a protocol first provides a schema validator for the generator, preventing hallucinated assets or missing instruments.
 
-2. **Hierarchical Layout Initialization + Geometric/Chemical Multi-Objective Optimization**:
-    - **Function**: Produces feasible initial layouts in a vast continuous configuration space, then refines them to maximize the objective function.
-    - **Mechanism**: Decomposes layouts into room-level partitions $(\mathcal{R}, \pi) \sim p_\theta(\cdot \mid x, \mathcal{P}, \mathcal{A})$ (functional zones and 6-DoF poses of large equipment) and desktop-level organizations $\mathcal{D}_s \sim p_\theta(\cdot \mid \cdot, s, \mathcal{R}, \pi)$ (placements of small instruments and reagents on each table), merging into $\mathcal{L}_0$. The objective function $\mathbb{F} = w_{\text{geo}} f_{\text{geo}} + w_{\text{chem}} f_{\text{chem}}$ rewards geometric validity and chemical safety. The search adopts a **violation-prioritized** acceptance criterion: first minimizing hard-constraint violations $v(\mathcal{L})$, then optimizing $\mathbb{F}$. Operators $\Phi$ combine FastRepair for simple geometric conflicts and LLMAdjust for semantic pose adjustments (e.g., "move acetone into the fume hood"). Optimization converges locally at the room level before fine-tuning at the desktop level.
-    - **Design Motivation**: Directly generating entire laboratories with LLMs is infeasible. Layered decomposition and violation prioritization constrain combinatorial search to manageable scales ($O(10)$ objects per layer) while reserving LLM calls for high-semantic-difficulty tasks.
+2.  **Hierarchical Layout Initialization + Geometric/Chemical Multi-Objective Optimization**:
+    - **Function**: Produces feasible initial layouts in a vast continuous configuration space and optimizes them toward the objective function's peak.
+    - **Mechanism**: The layout is decomposed into room-level partitioning $(\mathcal{R}, \pi) \sim p_\theta(\cdot \mid x, \mathcal{P}, \mathcal{A})$ (functional zones and 6-DoF poses of large equipment) and desktop-level organization $\mathcal{D}_s \sim p_\theta(\cdot \mid \cdot, s, \mathcal{R}, \pi)$ (placement of small instruments and reagents on each desktop), merged to form $\mathcal{L}_0$. The objective function $\mathbb{F} = w_{\text{geo}} f_{\text{geo}} + w_{\text{chem}} f_{\text{chem}}$ rewards both geometric validity and chemical safety. The search adopts a **violation-first** acceptance criterion: first comparing the number of hard-constraint violations $v(\mathcal{L})$, then comparing $\mathbb{F}$. The operator $\Phi$ blends two repairs: FastRepair for simple geometric conflicts and LLMAdjust for pose modifications requiring semantic reasoning (e.g., "move acetone inside the fume hood"). Optimization converges at the room-level before refined desktop-level adjustment.
+    - **Design Motivation**: Generating an entire lab with an LLM in one pass is prone to failure. Hierarchical partitioning + violation-prioritization constrains combinatorial search to $O(10)$ objects per layer, while reserving the LLM for high-semantic-difficulty tasks.
 
-3. **Navigation-Aware Repair**:
-    - **Function**: Ensures robots can navigate between all protocol steps without collisions.
-    - **Mechanism**: Projects 3D scenes into 2D occupancy grids, inflates them by robot radius, and uses $A^\star$ to plan paths for each (start, goal) pair in the protocol. Failures are categorized into endpoint occupation, boundary overflow, and topological disconnection, unified into a binary metric $f_{\text{reach}} \in \{0, 1\}$. If $f_{\text{reach}} = 0$, repair operators $\mathcal{L}_{t+1} = \Upsilon(\mathcal{L}_t, \mathcal{P}, \mathcal{A})$ iteratively adjust blocking objects or functional zones until all paths are reachable.
-    - **Design Motivation**: Physically valid layouts may still block robot arms between workstations. Treating reachability as a hard constraint avoids generating "visually correct but unusable" laboratories.
+3.  **Navigation-Aware Repair**:
+    - **Function**: Ensures the robot can reach each station according to protocol steps via collision-free paths.
+    - **Mechanism**: The 3D scene is projected onto a 2D occupancy grid, inflated by the robot's radius. $A^\star$ planning is used for every (start, goal) pair in the protocol. Failures are categorized into endpoint occupancy, out-of-bounds, and topological disconnection, unified into a binary metric $f_{\text{reach}} \in \{0, 1\}$. If $f_{\text{reach}} = 0$, the repair operator $\mathcal{L}_{t+1} = \Upsilon(\mathcal{L}_t, \mathcal{P}, \mathcal{A})$ iteratively moves obstacles or adjusts functional zones until all paths are reachable.
+    - **Design Motivation**: Physically valid layouts may still trap robotic arms between workstations. Treating reachability as a hard constraint rather than a post-hoc metric prevents the generation of "correct-looking but unusable" laboratories.
 
 ### Loss & Training
-LabBuilder is a search-validation pipeline, not a trainable model. The optimization objective is $\mathcal{L}^\star = \arg\max_\mathcal{L} \mathbb{F}(\mathcal{L}, \mathcal{P}, \mathcal{A})$, where $f_{\text{geo}}$ encodes asset-level geometric constraints, and $f_{\text{chem}}$ derives from protocol safety annotations, including flammable material isolation, reagent storage, incompatible chemical separation, and glassware edge distances.
+LabBuilder is a search-and-verify pipeline rather than a trainable model; thus, there is no gradient-based training. The optimization objective is defined as $\mathcal{L}^\star = \arg\max_\mathcal{L} \mathbb{F}(\mathcal{L}, \mathcal{P}, \mathcal{A})$, where $f_{\text{geo}}$ encodes asset-level geometric constraints and $f_{\text{chem}}$ is derived from hazard annotations in the protocol. Constraints include flammable isolation, reagent storage, separation of incompatible chemicals, and glassware distance from table edges.
 
 ## Key Experimental Results
 
 ### Main Results
-Comparison on 30 real chemical experiments against Holodeck and SceneWeaver (Table 2):
+Comparison with Holodeck and SceneWeaver across 30 real chemical experiments (Table 2):
 
 | Method | OB↓ | CN↓ | Asset↑ | Nav↑ | Flam.↑ | Lay↑ |
-|--------|-----|-----|--------|------|--------|------|
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | Holodeck | 10.8 | 0.20 | 0.700 | – | 0.239 | 5.61 |
 | SceneWeaver | 5.61 | 0.35 | 0.226 | – | 0.097 | 4.57 |
 | **LabBuilder** | **0.07** | **0.17** | **0.833** | **0.966** | **0.725** | **9.00** |
 
-Boundary violations are nearly eliminated, with significant improvements in chemical safety and asset usability. LLM semantic scores reach 9/10.
+Boundary violations (OB) are nearly zero, while chemical safety and asset availability significantly outperform baselines. The LLM semantic score (Lay) reaches 9/10.
 
 ### Ablation Study
 
 | Configuration | OB↓ | CN↓ | Asset↑ | Nav↑ | Flam.↑ |
-|---------------|-----|-----|--------|------|--------|
+| :--- | :--- | :--- | :--- | :--- | :--- |
 | Ours (w/o annotation) | 0.25 | 0.36 | 0.786 | 0.952 | — |
 | Ours (full) | 0.07 | 0.17 | 0.833 | 0.966 | 0.725 |
 
-Removing asset annotations doubles collision counts and significantly increases boundary violations, highlighting the critical role of $\mathcal{A}$'s geometric and chemical semantics.
+Removing asset annotations doubles collisions and increases boundary violations, proving that geometric and chemical semantics in $\mathcal{A}$ are critical for the optimizer.
 
 ### Key Findings
-- Violation-prioritized optimization is crucial: it eliminates "illegal geometry" first, then optimizes for "better semantics," avoiding oscillations in invalid solution spaces.
-- Asset count (23.2 vs. 10-15 in baselines) shows the generator fulfills all protocol requirements without cutting corners.
-- Navigation success rate reaches 96.6%, though failures often involve narrow instruments blocking pathways, suggesting future improvements in shape abstraction for occupancy grids.
+- The violation-first criterion for geometric/chemical optimization is crucial: it forces the search to eliminate "illegal geometry" before pursuing "higher semantic scores," preventing oscillation within invalid solution spaces.
+- The object count (Obj) is higher than baselines (23.2 vs 10-15), indicating the generator provides all protocol-required instruments rather than simplifying the scene.
+- Navigation reachability success is 96.6%. Common failures involve slender instruments (e.g., distillation setups) blocking aisles, suggesting future improvements could use finer shape abstractions for occupancy grids.
 
 ## Highlights & Insights
-- "Embedding executability into the generation loop" represents a paradigm shift. Household generators fail in laboratories because they treat chemical safety as an optional metric; this work encodes it as a hard constraint, directly influencing acceptance/rejection criteria.
-- Layered + violation-prioritized search offers a reusable LLM-in-the-loop framework: cheap tasks like geometric conflicts are handled algorithmically, reserving LLM calls for high-semantic-difficulty repairs.
-- Protocols as intermediate representations elegantly decouple upstream free-text inputs from downstream schema-based layouts, enabling easy extension to new reaction types by updating the experiment library without modifying the generator.
+- "Placing executability at the front of the generation loop" represents a significant conceptual shift. Domestic generators fail in labs because they treat chemical safety as an optional metric; this work defines it as a hard constraint integrated into the acceptance criteria.
+- The hierarchical + violation-prioritized search provides a reusable LLM-in-the-loop paradigm: algorithmic layers handle "cheap" tasks like geometric conflict resolution, while the LLM is reserved for repairs requiring semantic reasoning, minimizing API costs.
+- Using a protocol as an intermediate representation is an elegant decoupling: the upstream handles arbitrary free text, while the downstream only processes structured protocols. Adding new reaction types only requires expanding the experiment library without modifying the generator.
 
 ## Limitations & Future Work
-- The asset library currently includes only 176 entities, with limited coverage of rare instruments (e.g., gloveboxes, cryogenic setups), requiring ongoing annotation efforts.
-- Chemical safety constraints are discrete hard rules, lacking temporal dimensions for long-duration reactions (e.g., ventilation states).
-- Navigation evaluation focuses on point-goal tasks, omitting reachability and graspability during robotic arm operations, which may reveal issues in dual-arm platforms.
+- The asset library currently contains only 176 entities. Coverage of niche instruments (e.g., gloveboxes, cryogenic apparatus) is limited, and expanding the library requires continuous annotation costs.
+- Chemical safety constraints are currently a discrete set of hard rules, making it difficult to express temporal safety semantics, such as "ventilation status during long-duration reactions."
+- Navigation evaluation is limited to point-goal; reachability during robotic arm manipulation (reach + grasp) was not assessed, which may pose issues during physical deployment on dual-arm platforms.
 
 ## Related Work & Insights
-- **vs Holodeck**: Holodeck targets open-vocabulary indoor scene generation, with assets lacking functional semantics. LabBuilder outperforms in OB/Flam., demonstrating the ineffectiveness of household priors in laboratories.
-- **vs SceneWeaver**: SceneWeaver incorporates geometric constraint validation but lacks protocol grounding, achieving only 0.226 asset usability, with most experiments failing, highlighting that "geometric validity" ≠ "experimental feasibility."
-- **vs UP-VLA / Protocol-Driven Robots**: This work bridges "protocol → executable environment" for embodied intelligence, enabling VLA models to directly consume $\mathcal{P}$ for supervision, bypassing manual scene scripting.
+- **vs. Holodeck**: Holodeck focuses on open-vocabulary indoor scene generation where assets lack functional semantics. LabBuilder's superior OB/Flam. scores suggest that domestic priors do not transfer well to laboratories.
+- **vs. SceneWeaver**: SceneWeaver introduces geometric constraint verification but lacks protocol grounding. Its low asset availability (0.226) demonstrates that "geometric correctness" does not equate to "experimental readiness."
+- **vs. UP-VLA / Protocol-driven Robots**: This work provides a "protocol to executable environment" bridge for the embodied AI community. Future VLA models could directly consume $\mathcal{P}$ for supervision, eliminating the need for manual scene setup.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Protocol grounding + chemical hard constraints are systematically introduced into scene generation for the first time.
-- Experimental Thoroughness: ⭐⭐⭐⭐ 30 experiments + three baselines + ablation + navigation evaluation provide comprehensive coverage.
-- Writing Quality: ⭐⭐⭐⭐ Clear modular structure, with well-presented formulas and pseudocode.
-- Value: ⭐⭐⭐⭐⭐ Automated laboratories address a real-world demand, offering a deployable environment synthesis solution.
+- Novelty: ⭐⭐⭐⭐ Protocol grounding + systematic chemical hard constraints in scene generation for the first time.
+- Experimental Thoroughness: ⭐⭐⭐⭐ 30 experiments + 2 baselines + ablation + navigation evaluation.
+- Writing Quality: ⭐⭐⭐⭐ Clear three-module structure with supporting formulas and pseudo-code.
+- Value: ⭐⭐⭐⭐⭐ Automated laboratories represent a high-value domain; this work provides a viable environment synthesis solution.
 
 <!-- RELATED:START -->
 
@@ -118,11 +118,11 @@ Removing asset annotations doubles collision counts and significantly increases 
 
 ## Related Papers
 
+- [\[ICML 2026\] STABLE: Simulation-Ready Tabletop Layout Generation via a Semantics–Physics Dual System](stable_simulation-ready_tabletop_layout_generation_via_a_semantics-physics_dual_.md)
 - [\[ICCV 2025\] REPARO: Compositional 3D Assets Generation with Differentiable 3D Layout Alignment](../../ICCV2025/3d_vision/reparo_compositional_3d_assets_generation_with_differentiable_3d_layout_alignmen.md)
 - [\[ICML 2026\] PhysForge: Generating Physics-Grounded 3D Assets for Interactive Virtual World](physforge_generating_physics-grounded_3d_assets_for_interactive_virtual_world.md)
 - [\[NeurIPS 2025\] PhysX-3D: Physical-Grounded 3D Asset Generation](../../NeurIPS2025/3d_vision/physx-3d_physical-grounded_3d_asset_generation.md)
-- [\[ICCV 2025\] LACONIC: A 3D Layout Adapter for Controllable Image Creation](../../ICCV2025/3d_vision/laconic_a_3d_layout_adapter_for_controllable_image_creation.md)
-- [\[CVPR 2026\] GGPT: Geometry-Grounded Point Transformer](../../CVPR2026/3d_vision/ggpt_geometry_grounded_point_transformer.md)
+- [\[ICML 2026\] RelaxFlow: Text-Driven Amodal 3D Generation](relaxflow_text-driven_amodal_3d_generation.md)
 
 </div>
 

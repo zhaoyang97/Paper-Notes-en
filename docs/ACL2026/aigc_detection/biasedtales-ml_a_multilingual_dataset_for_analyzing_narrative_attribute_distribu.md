@@ -2,117 +2,117 @@
 title: >-
   [Paper Note] BIASEDTALES-ML: A Multilingual Dataset for Analyzing Narrative Attribute Distributions in LLM-Generated Stories
 description: >-
-  [ACL 2026][AIGC Detection][multilingual bias] BiasedTales-ML constructs a corpus of ~350K LLM-generated children's stories across 8 languages…
+  [ACL 2026][AIGC Detection][Multilingual bias] BiasedTales-ML constructs a multilingual corpus of approximately 350,000 LLM-generated children's stories across 8 languages. Through an exhaustive combinatorial prompt desig…
 tags:
   - "ACL 2026"
   - "AIGC Detection"
-  - "multilingual bias"
+  - "Multilingual bias"
   - "narrative generation"
   - "social attribute distribution"
   - "cross-lingual consistency"
-  - "children stories"
-date: 2025-05-08
-content_hash: 0c54cb1278e57b87
+  - "children's stories"
+date: 2026-05-08
+content_hash: bffe063a7e684dca
 ---
 
 # BIASEDTALES-ML: A Multilingual Dataset for Analyzing Narrative Attribute Distributions in LLM-Generated Stories
 
-**Conference**: ACL 2026
+**Conference**: ACL 2026  
 **arXiv**: [2604.17008](https://arxiv.org/abs/2604.17008)  
 **Code**: [https://huggingface.co/spaces/Linyuana/BIASEDTALES-ML](https://huggingface.co/spaces/Linyuana/BIASEDTALES-ML)  
-**Area**: AIGC Detection
-**Keywords**: multilingual bias, narrative generation, social attribute distribution, cross-lingual consistency, children stories
+**Area**: AIGC Detection  
+**Keywords**: Multilingual bias, narrative generation, social attribute distribution, cross-lingual consistency, children's stories
 
 ## TL;DR
-BiasedTales-ML constructs a corpus of ~350K LLM-generated children's stories across 8 languages, using full-permutation prompt design and a distributional analysis framework to reveal that **social attribute distributions in narratives vary significantly across languages**, and English-centric evaluation fails to capture bias patterns in multilingual settings.
+BiasedTales-ML constructs a multilingual corpus of approximately 350,000 LLM-generated children's stories across 8 languages. Through an exhaustive combinatorial prompt design and a distributional analysis framework, it reveals that **social attribute distributions in narratives vary significantly across languages**, and English-centric evaluations fail to reflect bias patterns in multilingual scenarios.
 
 ## Background & Motivation
 
-**Background**: LLMs are increasingly used to generate narrative content (especially children's stories), which implicitly conveys notions about social roles, occupations, and environments. Existing social bias research primarily focuses on English short-text tasks (e.g., sentence completion, classification).
+**Background**: LLMs are increasingly utilized to generate narrative content (especially children's stories), which implicitly convey notions of social roles, occupations, and environments. Existing social bias research primarily focuses on English short-text tasks such as sentence completion and classification.
 
-**Limitations of Prior Work**: (1) Short-text bias evaluation cannot capture biases expressed indirectly through characters, scenes, and plot structures in long-form narratives; (2) existing bias benchmarks (e.g., StereoSet, BBQ) are static classification tasks disconnected from real generation scenarios; (3) virtually no work has systematically studied cross-lingual consistency of bias in multilingual narrative generation.
+**Limitations of Prior Work**: (1) Short-text bias assessment cannot capture biases indirectly expressed through characters, settings, and plot structures in long-form narratives; (2) Existing bias benchmarks (e.g., StereoSet, BBQ) are static classification tasks, which are decoupled from real-world generation scenarios; (3) There is almost no systematic research on the cross-lingual consistency of biases in multilingual narrative generation.
 
-**Key Challenge**: RLHF and other safety alignment techniques are primarily developed on English data and Western norms, but model bias behavior in other languages may be entirely different — conclusions of "safe" from English evaluation may not hold in low-resource languages.
+**Key Challenge**: Safety alignment techniques like RLHF are predominantly developed based on English data and Western norms. However, a model's bias performance in other languages might be entirely different—conclusions of "safety" derived from English evaluations may not hold in low-resource languages.
 
-**Goal**: (1) Construct a large-scale multilingual parallel narrative corpus; (2) propose a systematic narrative-level social attribute distribution analysis framework; (3) empirically study cross-lingual bias consistency.
+**Goal**: (1) Construct a large-scale multilingual parallel narrative corpus; (2) Propose a systematic narrative-level social attribute distribution analysis framework; (3) Empirically investigate cross-lingual bias consistency.
 
-**Key Insight**: Children's stories are chosen as a controlled yet expressive narrative domain — encouraging positive and imaginative content while requiring models to make structured choices about characters, settings, and social roles.
+**Key Insight**: Children's stories are selected as a controlled yet expressive narrative domain—they encourage positive and imaginative content while requiring the model to make structured choices regarding characters, settings, and social roles.
 
-**Core Idea**: Generate parallel stories across 8 languages through full-permutation prompt design (systematically varying nationality × religion × social class × parental role × child gender), and analyze bias using distributional metrics rather than instance-level annotation.
+**Core Idea**: By employing an exhaustive combinatorial prompt design (systematically varying nationality × religion × social class × parental roles × child gender), parallel stories are generated across 8 languages. Bias is then analyzed using distributional measures rather than instance-level annotations.
 
 ## Method
 
 ### Overall Architecture
-Three-stage pipeline: (1) **Prompt design and localization**: construct standardized prompt templates, localized into 8 target languages by native speakers; (2) **Large-scale parallel generation**: use 3 LLMs to generate stories across all prompt configurations (5 independent samples per configuration); (3) **Narrative feature extraction and distributional analysis**: use LLM extractors to extract character traits, environments, and cultural references from stories, then compare distributions using statistical metrics.
+The pipeline consists of three stages: (1) **Prompt Design and Localization**: Constructing a standardized prompt template localized into 8 target languages by native speakers; (2) **Large-scale Parallel Generation**: Generating stories using 3 LLMs across all prompt configurations (with 5 independent samples per configuration); (3) **Narrative Feature Extraction and Distributional Analysis**: Using an LLM-based extractor to pull character traits, settings, and cultural references from stories, followed by statistical measures to compare distributional differences.
 
 ### Key Designs
 
-1. **Full-Permutation Prompt Design**:
+1. **Exhaustive Combinatorial Prompt Design**:
 
-    - Function: Construct controlled cross-lingual comparative experiments
-    - Mechanism: Systematically combine 27 nationalities × 6 religions × 2 social classes × 3 parental roles × 3 child genders = 2,916 unique prompt configurations, generated across 8 languages × 3 models with 5 samples per configuration, totaling ~350K stories. Language selection covers languages without grammatical gender (EN/ZH/JA/KO), with grammatical gender (ES/RU/AR), and low-resource (Swahili)
-    - Design Motivation: Full-permutation design allows separating the effects of language medium from cultural content, avoiding language-specific patterns that translation benchmarks might mask
+    - **Function**: Constructing controlled cross-lingual comparative experiments.
+    - **Mechanism**: Systematically combining 27 nationalities × 6 religions × 2 social classes × 3 parental roles × 3 child genders = 2,916 unique prompt configurations. Generation is performed for 8 languages × 3 models, with 5 samples per configuration, totaling 350,000 stories. Language selection covers non-gendered (EN/ZH/JA/KO), grammatical gender (ES/RU/AR), and low-resource (SW) languages.
+    - **Design Motivation**: This design allows for the isolation of the impact of the language medium from cultural content, avoiding language-specific patterns that might be obscured by translation benchmarks.
 
 2. **LLM-based Narrative Feature Extractor**:
 
-    - Function: Extract structured social attribute representations from long-form stories
-    - Mechanism: Use Qwen-3-14B to extract three-dimensional representations $E = (A_{\text{adj}}, V_{\text{env}}, C_{\text{cul}})$ from each story $S$: character descriptive adjectives (e.g., brave, obedient), environment keywords (e.g., forest, kitchen), and cultural references (e.g., menorah, dates). Human validation on 800 stories achieves 85.6% precision with Cohen's $\kappa = 0.618$
-    - Design Motivation: Narrative bias is expressed indirectly through character descriptions and scene settings, requiring structured extraction beyond surface keywords
+    - **Function**: Extracting structured social attribute representations from long-form stories.
+    - **Mechanism**: Utilizing Qwen-3-14B to extract a three-dimensional representation $E = (A_{\text{adj}}, V_{\text{env}}, C_{\text{cul}})$ from each story $S$: character description adjectives (e.g., brave, obedient), setting keywords (e.g., forest, kitchen), and cultural references (e.g., menorah, dates). Manual verification of 800 stories showed 85.6% accuracy with a Cohen's $\kappa = 0.618$.
+    - **Design Motivation**: Narrative bias is expressed indirectly via character descriptions and scene settings, necessitating structured extraction beyond surface-level keywords.
 
-3. **Multi-Dimensional Distributional Bias Metrics**:
+3. **Multi-dimensional Distributional Bias Measures**:
 
-    - Function: Quantify and compare cross-lingual social attribute distribution differences
-    - Mechanism: Four complementary metrics: (1) Directional bias $S_C = \ln(P(C|g_m)/P(C|g_f))$ measures the association direction between specific attribute categories and gender; (2) JSD measures overall distributional divergence; (3) cosine similarity measures cross-lingual bias pattern consistency; (4) valid story rate (VSR) controls generation quality
-    - Design Motivation: No single metric can fully characterize bias — direction, magnitude, cross-lingual consistency, and generation quality require multi-dimensional synthesis
+    - **Function**: Quantifying and comparing cross-lingual social attribute distribution differences.
+    - **Mechanism**: Four complementary metrics: (1) Directional Bias $S_C = \ln(P(C|g_m)/P(C|g_f))$ measuring the association direction between specific attribute categories and gender; (2) JSD measuring overall distributional divergence; (3) Cosine similarity measuring cross-lingual consistency of bias patterns; (4) Valid Story Rate (VSR) to monitor generation quality.
+    - **Design Motivation**: A single metric cannot fully characterize bias—a multi-dimensional synthesis of direction, magnitude, consistency, and generation quality is required.
 
 ### Loss & Training
-Pure evaluation/analysis work with no model training involved. Uses the vLLM inference framework with higher sampling temperature to encourage narrative diversity.
+This is an evaluation and analysis study; no model training was performed. The vLLM inference framework was used with a relatively high sampling temperature to encourage narrative diversity.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Analysis Dimension | Key Finding | Model |
-|---|---|---|
-| Directional bias | Communality descriptions skew toward female stories across all languages; intellect descriptions skew toward males in Arabic/Russian | 8B model |
-| Grammatical gender effect | Llama-3.1-8B shows higher JSD (greater bias divergence) in gendered languages; Qwen-3-8B shows no significant difference | - |
-| Cross-lingual consistency | Qwen-3 shows high cross-lingual cosine similarity (consistent); Llama-3 shows large bias pattern differences between English and low-resource languages | - |
-| Small model effect | 1B model bias directionality approaches zero, not due to better safety but due to **insufficient vocabulary diversity** falling back to generic patterns | Llama-3.2-1B |
+| Analysis Dimension | Key Findings | Model |
+|--------|------|------|
+| Directional Bias | Communality descriptions bias towards female stories in all languages; intellect descriptions bias towards males in Arabic and Russian. | 8B models |
+| Grammatical Gender Influence | Llama-3.1-8B shows higher JSD (greater bias divergence) in languages with grammatical gender; Qwen-3-8B shows no significant difference. | - |
+| Cross-lingual Consistency | Qwen-3 shows high cross-lingual cosine similarity (consistent); Llama-3 shows large differences in bias patterns between English and low-resource languages. | - |
+| Small Model Effect | 1B models show near-zero directional bias, not due to better safety, but because of **insufficient lexical diversity** reverting to generic patterns. | Llama-3.2-1B |
 
 ### Ablation Study
 
-| Config | Effect | Note |
-|---|---|---|
-| Gender condition | Male → outdoor/activity words; Female → home/relationship words | Consistent across languages |
-| Social class condition | Working class → practical/labor words; Affluent → leisure/aesthetic words | Qwen-3 data |
-| Low-resource language | Swahili: low VSR, high JSD | Especially pronounced in 1B models |
+| Configuration | Effect | Description |
+|------|---------|------|
+| Gender Conditioning | Male → outdoor/action words; Female → family/relationship words | Consistent across languages |
+| Social Class Conditioning | Working class → practical/labor words; Wealthy → leisure/aesthetic words | Observed in Qwen-3 data |
+| Low-resource Languages | Swahili exhibits low VSR and high JSD | Particularly evident in 1B models |
 
 ### Key Findings
-- Bias patterns observed in English **cannot** be simply extrapolated to other languages, especially low-resource languages
-- The relationship between model scale and bias is non-monotonic: smaller models are not "safer" but "more mediocre" (vocabulary diversity bottleneck)
-- The effect of grammatical gender on bias divergence varies by model, not a universal rule
-- Qwen-3 shows higher cross-lingual consistency than Llama-3, possibly reflecting differences in multilingual coverage of training data
+- Bias patterns observed in English **cannot** be simply extrapolated to other languages, especially low-resource ones.
+- The relationship between model scale and bias is non-monotonic: small models are not "safer" but rather "more mediocre" due to lexical diversity bottlenecks.
+- The impact of grammatical gender on bias divergence varies by model and is not a universal rule.
+- Qwen-3 exhibits higher cross-lingual consistency than Llama-3, possibly reflecting differences in the multilingual coverage of their training data.
 
 ## Highlights & Insights
-- **Full-permutation experimental design** is the paper's greatest highlight: by systematically varying each social attribute dimension, the influence of each factor can be precisely isolated. This methodology is transferable to any NLP evaluation involving multi-factor analysis
-- **The finding that "small model bias appears low but is actually due to capability limitations"** is very important: it warns against using surface distributional uniformity to assert safety, as vocabulary poverty can also produce uniform distributions
-- Distribution-level bias analysis (rather than instance-level annotation) is better suited for large-scale generation scenarios, avoiding the unscalability of per-sample annotation
+- The **exhaustive combinatorial experimental design** is the primary highlight: by systematically varying each social attribute dimension, the influence of various factors can be precisely isolated. This methodology is transferable to any NLP evaluation involving multi-factor analysis.
+- The insight that **"small model bias appears low but is actually due to lack of capability"** is significant: it warns against using surface-level distributional uniformity to assert safety, as lexical poverty can also produce uniform distributions.
+- Distributional bias analysis (as opposed to instance-level annotation) is better suited for large-scale generation scenarios, avoiding the lack of scalability inherent in sample-by-sample labeling.
 
 ## Limitations & Future Work
-- All stories are generated by LLMs and cannot directly reflect bias patterns in human narratives
-- Feature extraction relies on LLMs, which may introduce extraction bias themselves
-- While 8 languages are representative, many low-resource languages remain uncovered
-- Analysis is limited to the distributional level, without delving into individual story quality or actual impact on children
+- The stories are exclusively LLM-generated and may not directly reflect bias patterns in human narratives.
+- Feature extraction depends on LLMs, which may introduce its own extraction biases.
+- Although the 8 selected languages are representative, they do not cover the vast array of low-resource languages.
+- The analysis is limited to the distributional level and does not delve into individual story quality or the actual psychological impact on children.
 
 ## Related Work & Insights
-- **vs Biased Tales (Rooein et al., 2025)**: The latter covers only English + a few languages; BiasedTales-ML extends to 8-language full-permutation design
-- **vs StereoSet/BBQ**: Static classification benchmarks; this paper analyzes bias closer to real scenarios through long-form generation
-- **vs Yong et al., 2025**: The latter studies cross-lingual transfer of safety interventions; this paper complements with representational safety analysis in non-adversarial scenarios
+- **vs Biased Tales (Rooein et al., 2025)**: The latter covers only English and a few other languages; BiasedTales-ML expands this to an 8-language exhaustive design.
+- **vs StereoSet/BBQ**: While those are static classification benchmarks, this work analyzes bias performance through long-form generation, which is closer to real-world scenarios.
+- **vs Yong et al., 2025**: The latter focuses on the cross-lingual transfer of safety interventions, whereas this work complements that by providing representational safety analysis in non-adversarial contexts.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Large-scale multilingual narrative bias analysis is a novel research direction; the full-permutation design methodology is valuable
-- Experimental Thoroughness: ⭐⭐⭐⭐ 350K stories, 8 languages, 3 models, multi-dimensional analysis, but lacks comparison with human narratives
-- Writing Quality: ⭐⭐⭐⭐ Clear structure, rich visualizations, but discussion section is somewhat generic
+- Novelty: ⭐⭐⭐⭐ Large-scale multilingual narrative bias analysis is a novel direction; the combinatorial design methodology is valuable.
+- Experimental Thoroughness: ⭐⭐⭐⭐ 350k stories, 8 languages, 3 models, and multi-dimensional analysis, though missing comparison with human narratives.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure and rich visualizations, though the discussion section is somewhat general.
 
 <!-- RELATED:START -->
 
@@ -120,11 +120,11 @@ Pure evaluation/analysis work with no model training involved. Uses the vLLM inf
 
 ## Related Papers
 
+- [\[ACL 2026\] DetectRL-X: Towards Reliable Multilingual and Real-World LLM-Generated Text Detection](detectrl-x_towards_reliable_multilingual_and_real-world_llm-generated_text_detec.md)
 - [\[ACL 2026\] Temporal Flattening in LLM-Generated Text: Comparing Human and LLM Writing Trajectories](temporal_flattening_in_llm-generated_text_comparing_human_and_llm_writing_trajec.md)
-- [\[NeurIPS 2025\] DuoLens: A Framework for Robust Detection of Machine-Generated Multilingual Text and Code](../../NeurIPS2025/aigc_detection/duolens_a_framework_for_robust_detection_of_machine-generated_multilingual_text_.md)
 - [\[ACL 2026\] GigaCheck: Detecting LLM-generated Content via Object-Centric Span Localization](gigacheck_detecting_llm-generated_content_via_object-centric_span_localization.md)
 - [\[ACL 2026\] Who Wrote This Line? Evaluating the Detection of LLM-Generated Classical Chinese Poetry](who_wrote_this_line_evaluating_the_detection_of_llm-generated_classical_chinese_.md)
-- [\[ACL 2026\] Beyond the Final Actor: Modeling the Dual Roles of Creator and Editor for Fine-Grained LLM-Generated Text Detection](beyond_the_final_actor_modeling_the_dual_roles_of_creator_and_editor_for_fine-gr.md)
+- [\[NeurIPS 2025\] DuoLens: A Framework for Robust Detection of Machine-Generated Multilingual Text and Code](../../NeurIPS2025/aigc_detection/duolens_a_framework_for_robust_detection_of_machine-generated_multilingual_text_.md)
 
 </div>
 

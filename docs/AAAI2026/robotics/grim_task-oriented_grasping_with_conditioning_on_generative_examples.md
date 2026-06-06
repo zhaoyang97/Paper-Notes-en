@@ -178,11 +178,11 @@ Tested on a Kinova Gen3 Lite with two RGB-D cameras across 5 novel objects × 10
 
 ## Related Papers
 
+- [\[ICML 2026\] Lagrangian Perturbation Diffusion Steering: Latent Reinforcement Learning for Generative Policies](../../ICML2026/robotics/lagrangian_perturbation_diffusion_steering_latent_reinforcement_learning_for_gen.md)
+- [\[ACL 2026\] Capability-Oriented Failure Attribution for Vision-Language Navigation Agents](../../ACL2026/robotics/where_did_it_go_wrong_capability-oriented_failure_attribution_for_vision-and-lan.md)
 - [\[ICLR 2026\] Grounding Generative Planners in Verifiable Logic: A Hybrid Architecture for Trustworthy Embodied AI](../../ICLR2026/robotics/grounding_generative_planners_in_verifiable_logic_a_hybrid_architecture_for_trus.md)
 - [\[ICML 2026\] Plug-and-Play Label Map Diffusion for Universal Goal-Oriented Navigation](../../ICML2026/robotics/plug-and-play_label_map_diffusion_for_universal_goal-oriented_navigation.md)
 - [\[CVPR 2026\] ManipArena: Comprehensive Real-world Evaluation of Reasoning-Oriented Generalist Robot Manipulation](../../CVPR2026/robotics/maniparena_comprehensive_real-world_evaluation_of_reasoning-oriented_generalist_.md)
-- [\[AAAI 2026\] Human-Centric Open-Future Task Discovery: Formulation, Benchmark, and Scalable Tree-Based Search](human-centric_open-future_task_discovery_formulation_benchmark_and_scalable_tree.md)
-- [\[ICCV 2025\] Rep-MTL: Unleashing the Power of Representation-Level Task Saliency for Multi-Task Learning](../../ICCV2025/robotics/rep-mtl_unleashing_the_power_of_representation-level_task_saliency_for_multi-tas.md)
 
 </div>
 

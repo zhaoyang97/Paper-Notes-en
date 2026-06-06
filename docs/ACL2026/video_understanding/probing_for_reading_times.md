@@ -2,120 +2,120 @@
 title: >-
   [Paper Note] Probing for Reading Times
 description: >-
-  [ACL 2026][Video Understanding][reading time prediction] This paper probes the ability of representations from individual layers of language models to predict reading times…
+  [ACL 2026][Video Understanding][Reading time prediction] This paper probes the ability of language model representations across different layers to predict reading times…
 tags:
   - "ACL 2026"
   - "Video Understanding"
-  - "reading time prediction"
-  - "language model probing"
-  - "eye-tracking"
-  - "surprisal theory"
-  - "cross-lingual analysis"
+  - "Reading time prediction"
+  - "Language model probing"
+  - "Eye-tracking"
+  - "Surprisal theory"
+  - "Cross-lingual analysis"
 date: 2026-05-08
-content_hash: 9c797ea3ab554dcc
+content_hash: 3dee166db43d522a
 ---
 
 # Probing for Reading Times
 
-**Conference**: ACL 2026
+**Conference**: ACL 2026  
 **arXiv**: [2604.18712](https://arxiv.org/abs/2604.18712)  
 **Code**: [GitHub](https://github.com/rycolab/llm-representations-rt)  
-**Area**: Video Understanding / Cognitive Science
-**Keywords**: reading time prediction, language model probing, eye-tracking, surprisal theory, cross-lingual analysis
+**Area**: Video Understanding / Cognitive Science  
+**Keywords**: Reading time prediction, Language model probing, Eye-tracking, Surprisal theory, Cross-lingual analysis
 
 ## TL;DR
 
-This paper probes the ability of representations from individual layers of language models to predict reading times, finding that early-layer representations outperform surprisal on early fixation measures, while surprisal performs better on late measures, and that the best predictor varies by language and metric.
+This paper probes the ability of language model representations across different layers to predict reading times, finding that early layer representations outperform surprisal in predicting early fixation metrics, while surprisal performs better on late metrics, with the best predictor varying by language and metric.
 
 ## Background & Motivation
 
-**State of the Field**: The field has accumulated substantial prior work, yet critical gaps remain.
+**Background**: The field has accumulated certain knowledge, but key gaps remain.
 
-**Limitations of Prior Work**: Existing approaches fail to adequately address core challenges, with limitations in accuracy, scalability, or generalizability.
+**Limitations of Prior Work**: Existing methods fail to fully address core issues, with limitations in accuracy, scalability, or applicability.
 
-**Root Cause**: The fundamental tension lies in the mismatch between implicit assumptions of prevailing paradigms and actual requirements.
+**Key Challenge**: The fundamental tension lies in the mismatch between the implicit assumptions of existing paradigms and actual requirements.
 
-**Paper Goals**: To propose a new framework/method/benchmark that systematically addresses the above issues.
+**Goal**: Propose new frameworks/methods/benchmarks to systematically address the aforementioned issues.
 
-**Starting Point**: A novel observation or theoretical perspective is leveraged to identify a new path toward solving the problem.
+**Key Insight**: Start from unique observations or theories to identify new pathways for problem-solving.
 
-**Core Idea**: The core contradiction is resolved through innovative technical means.
+**Core Idea**: Resolve core contradictions through innovative technical means.
 
 ## Method
 
 ### Overall Architecture
 
-The proposed method comprises multiple collaborating components that form a complete processing pipeline.
+The proposed method consists of multiple components working collaboratively to form a complete processing pipeline.
 
 ### Key Designs
 
-1. **Core Component 1**:
+1.  **Core Component 1**:
 
-    - Function: Addresses the primary technical challenge
-    - Mechanism: Achieves the objective through innovative algorithmic or architectural design
-    - Design Motivation: Grounded in a deep understanding of the nature of the problem
+    - **Function**: Solve major technical challenges
+    - **Mechanism**: Achieve goals through innovative algorithms or architectural designs
+    - **Design Motivation**: Based on a deep understanding of the problem's nature
 
-2. **Core Component 2**:
+2.  **Core Component 2**:
 
-    - Function: Provides auxiliary support or regularization
-    - Mechanism: Complements the limitations of the primary component
-    - Design Motivation: Demonstrated necessary by empirical or theoretical analysis
+    - **Function**: Provide auxiliary support or regularization
+    - **Mechanism**: Complement the shortcomings of major components
+    - **Design Motivation**: Necessity indicated by experimental or theoretical analysis
 
-3. **Core Component 3**:
+3.  **Core Component 3**:
 
-    - Function: Optimizes training or inference efficiency
-    - Mechanism: Balances performance and efficiency
-    - Design Motivation: Required for practical deployment
+    - **Function**: Optimize training or inference efficiency
+    - **Mechanism**: Balance performance and efficiency
+    - **Design Motivation**: Requirements for practical deployment
 
 ### Loss & Training
 
-An optimization strategy and evaluation metrics suited to the task are adopted.
+Adopt optimization strategies and evaluation metrics suitable for the task.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Method | Core Metric | Notes |
-|--------|-------------|-------|
-| Baseline | Lower | Previous best |
-| **Ours** | **Highest** | Significant gain |
+| Method | Key Metric | Description |
+|------|---------|------|
+| Baseline | Lower | Prev. SOTA |
+| **Ours** | **Highest** | **Gain** |
 
 ### Ablation Study
 
-| Configuration | Result | Notes |
-|---------------|--------|-------|
+| Configuration | Result | Description |
+|------|------|------|
 | Full | Highest | Complete model |
-| w/o Core Component | Degraded | Validates necessity |
+| w/o Core Component | Decrease | Verifies criticality |
 
 ### Key Findings
 
-- The proposed method consistently outperforms baselines across multiple benchmarks
-- Ablation studies validate the necessity of each component
-- Performance is particularly strong in specific scenarios
+- The proposed method consistently outperforms baselines across multiple benchmarks.
+- Ablation experiments verify the necessity of each component.
+- The method performs particularly well in specific scenarios.
 
 ## Highlights & Insights
 
-- The core technical innovation addresses a long-standing problem
-- The method demonstrates strong scalability and practical utility
-- Analysis reveals valuable and generalizable patterns
+- Core technical innovation addresses long-standing problems.
+- The method demonstrates strong scalability and practicality.
+- Analysis reveals valuable patterns and laws.
 
 ## Limitations & Future Work
 
-- The scope of evaluation can be further extended
-- The applicability of certain assumptions requires further validation
-- Additional application scenarios are worth exploring in future work
+- The evaluation scope can be further expanded.
+- The applicability of specific assumptions needs verification.
+- Future research can explore more application scenarios.
 
 ## Related Work & Insights
 
-- **vs. Most Related Work A**: This paper improves upon key dimensions
-- **vs. Most Related Work B**: This paper offers a distinct solution strategy
+- **vs Most Related Work A**: This work improves upon key dimensions.
+- **vs Most Related Work B**: This work provides different solution approaches.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ Innovative, though some techniques combine existing methods
-- Experimental Thoroughness: ⭐⭐⭐⭐ Evaluation is fairly comprehensive
-- Writing Quality: ⭐⭐⭐⭐ Well-structured and clear
-- Value: ⭐⭐⭐⭐ Makes a tangible contribution to the field
+- **Novelty**: ⭐⭐⭐⭐ Innovative, though some techniques are combinations of existing methods.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Comprehensive evaluation.
+- **Writing Quality**: ⭐⭐⭐⭐ Clear structure.
+- **Value**: ⭐⭐⭐⭐ Practical contribution to the field.
 
 <!-- RELATED:START -->
 

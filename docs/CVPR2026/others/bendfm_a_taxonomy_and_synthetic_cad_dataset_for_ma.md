@@ -156,8 +156,8 @@ Classification tasks: BCE loss; regression tasks: MSE loss. Adam optimizer, lr =
 - [\[CVPR 2026\] SldprtNet: A Large-Scale Multimodal Dataset for CAD Generation in Language-Driven 3D Design](sldprtnet_a_large-scale_multimodal_dataset_for_cad_generation_in_language-driven.md)
 - [\[CVPR 2026\] What Is Wrong with Synthetic Data for Scene Text Recognition? A Strong Synthetic Engine with Diverse Simulations and Self-Evolution](what_is_wrong_with_synthetic_data_for_scene_text_recognition_a_strong_synthetic_.md)
 - [\[CVPR 2026\] LoViF 2026 Challenge on Human-oriented Semantic Image Quality Assessment](lovif_2026_semantic_quality_assessment_challenge.md)
+- [\[ICML 2026\] Rethinking FID Through the Geometry of the Reference Dataset](../../ICML2026/others/rethinking_fid_through_the_geometry_of_the_reference_dataset.md)
 - [\[ICLR 2026\] cadrille: Multi-modal CAD Reconstruction with Reinforcement Learning](../../ICLR2026/others/cadrille_multi-modal_cad_reconstruction_with_reinforcement_learning.md)
-- [\[ICLR 2026\] Completing Missing Annotation: Multi-Agent Debate for Accurate and Scalable Relevance Assessment](../../ICLR2026/others/completing_missing_annotation_multi-agent_debate_for_accurate_and_scalable_relev.md)
 
 </div>
 

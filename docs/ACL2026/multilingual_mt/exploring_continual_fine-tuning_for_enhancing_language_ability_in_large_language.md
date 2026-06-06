@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Exploring Two-Phase Continual Instruction Fine-tuning for Multilingual Adaptation in Large Language Models
 description: >-
-  [ACL 2026][Multilingual & Machine Translation][Continual Fine-tuning] This paper proposes a two-phase continual fine-tuning (CFT) framework—first fine-tuning on English instruction data…
+  [ACL 2026][Multilingual & Machine Translation][Continual Fine-tuning] This paper proposes a two-phase continual fine-tuning (CFT) framework—fine-tuning first on English instruction data and then on multilingual data. It…
 tags:
   - "ACL 2026"
   - "Multilingual & Machine Translation"
@@ -12,71 +12,68 @@ tags:
   - "Dataset Similarity"
   - "Representation Drift"
 date: 2026-05-08
-content_hash: 08f6cf2e3361b335
+content_hash: 51a171bc78aa538a
 ---
 
 # Exploring Two-Phase Continual Instruction Fine-tuning for Multilingual Adaptation in Large Language Models
 
-**Conference**: ACL 2026
+**Conference**: ACL 2026  
 **arXiv**: [2410.16006](https://arxiv.org/abs/2410.16006)  
 **Code**: None  
-**Area**: Multilingual / Continual Learning
+**Area**: Multilingual / Continual Learning  
 **Keywords**: Continual Fine-tuning, Multilingual Adaptation, Catastrophic Forgetting, Dataset Similarity, Representation Drift
 
 ## TL;DR
 
-This paper proposes a two-phase continual fine-tuning (CFT) framework—first fine-tuning on English instruction data, then on multilingual data—and finds that instruction similarity between the two phases is the key factor determining whether English capability degrades. Generative replay and heuristic layer freezing are shown to effectively mitigate representation drift and English forgetting caused by dissimilar datasets.
+This paper proposes a two-phase continual fine-tuning (CFT) framework—fine-tuning first on English instruction data and then on multilingual data. It identifies that the instruction similarity between datasets across phases is the key factor determining whether English proficiency degrades. Furthermore, it effectively mitigates representation drift and English forgetting caused by dissimilar datasets through generative replay and heuristic layer freezing.
 
 ## Background & Motivation
 
-**Background**: The multilingual user base of LLMs continues to grow, yet models perform substantially worse on low-resource languages. Training from scratch is prohibitively expensive, making fine-tuning the preferred approach. Joint fine-tuning on mixed multilingual datasets introduces an English bias, while fine-tuning exclusively on non-English data leads to catastrophic forgetting of English performance.
+**Background**: The multilingual user base of LLMs is growing steadily, yet models perform significantly worse in low-resource languages. Since training from scratch is extremely costly, fine-tuning is the preferred solution. Fine-tuning on mixed multilingual datasets often leads to English bias, while fine-tuning solely on non-English data results in English performance degradation due to catastrophic forgetting.
 
-**Limitations of Prior Work**: (1) Existing methods such as InstructAlign require parallel data and data from previous tasks, incurring high computational overhead; (2) Direct fine-tuning on mixed datasets results in an imbalance between English and multilingual performance; (3) There is no systematic understanding of under what conditions multilingual fine-tuning degrades English capability; (4) Regularization methods such as EWC require storing both old and new parameters, reducing computational efficiency.
+**Limitations of Prior Work**: (1) Existing methods like InstructAlign require parallel data and old task data, incurring high computational overhead; (2) direct fine-tuning on mixed datasets leads to an imbalance between English and multilingual performance; (3) there is a lack of systematic understanding regarding "under what conditions multilingual fine-tuning harms English proficiency"; (4) regularization methods such as EWC require saving both new and old parameters, leading to low computational efficiency.
 
-**Key Challenge**: A fundamental tension exists between improving multilingual ability (MA) and preserving English ability (EA)—ideally a single model should excel at both, avoiding the cost of maintaining multiple models.
+**Key Challenge**: A tension exists between improving Multilingual Adaptation (MA) and maintaining English Adaptation (EA)—ideally, a single model should excel in both to avoid the cost of maintaining multiple models.
 
-**Goal**: Within a two-phase CFT framework, understand the mechanism underlying English degradation during multilingual adaptation and propose efficient mitigation strategies.
+**Goal**: To understand the mechanism of English degradation during multilingual adaptation within a two-phase CFT framework and propose efficient mitigation strategies.
 
-**Key Insight**: The paper focuses on the *instruction similarity* between phases—if both phases encode the same instructions in different languages, English capability can be preserved or even improved.
+**Key Insight**: The study focuses on "instruction similarity" between datasets across phases—if both phases encode the same instructions (merely in different languages), English proficiency can be maintained or even improved.
 
-**Core Idea**: The root cause of English degradation is representation drift—dissimilar phase datasets cause large shifts in the model's hidden representation space, which can be controlled through data distribution replay and layer freezing.
+**Core Idea**: The fundamental cause of English degradation is representation drift—dissimilar phase datasets cause significant shifts in the model's hidden representation space. This drift can be controlled through data distribution replay and layer freezing.
 
 ## Method
 
 ### Overall Architecture
 
-Two-phase CFT: Phase 1 fine-tunes on English instruction datasets (Alpaca/OpenOrca); Phase 2 fine-tunes on multilingual datasets (MultiAlpaca/mOpenOrca). Compared to single-phase mixed fine-tuning, two-phase CFT achieves consistently better average performance under the same number of training steps.
+Two-phase CFT: Phase 1 involves fine-tuning on an English instruction dataset (Alpaca/OpenOrca), followed by Phase 2 fine-tuning on a multilingual dataset (MultiAlpaca/mOpenOrca). Compared to single-phase mixed fine-tuning, two-phase CFT achieves better average performance under the same number of training steps.
 
 ### Key Designs
 
-1. **Dataset Embedding Similarity (DES)**:
+1.  **Dataset Embedding Similarity (DES)**:
+    *   **Function**: Quantifies the instruction similarity between two phase datasets.
+    *   **Mechanism**: Uses the language-agnostic sentence encoder LaBSE to encode instructions in the datasets and calculates the normalized dot product of the average embeddings. Higher DES values indicate higher instruction similarity. Experiments show DES = 0.924 for Alpaca-MultiAlpaca (homologous pair), while it is only 0.746 for Instruct-MultiAlpaca (heterologous pair).
+    *   **Design Motivation**: A language-independent metric is needed to predict whether Phase 2 will cause English degradation.
 
-    - Function: Quantifies instruction similarity between the two phase datasets.
-    - Mechanism: Uses the language-agnostic sentence encoder LaBSE to encode instructions from each dataset and computes the normalized dot product of the two mean embeddings. A higher DES indicates greater instruction similarity. Experiments show DES = 0.924 for the Alpaca–MultiAlpaca pair (same-source) versus 0.746 for the Instruct–MultiAlpaca pair (cross-source).
-    - Design Motivation: A language-agnostic metric is needed to predict whether Phase 2 will cause English degradation.
+2.  **Model Parameter Difference (MPD)**:
+    *   **Function**: Quantifies the difference in the impact of datasets on the model from the parameter space perspective.
+    *   **Mechanism**: Fine-tunes from the same base model on two different datasets separately, then calculates the $L_2$ norm difference of the parameters. Smaller MPD indicates higher dataset similarity—MPD = 0.29 for Alpaca-MultiAlpaca and 1.00 for Instruct-MultiAlpaca.
+    *   **Design Motivation**: DES measures similarity from a data perspective, while MPD measures it from a model perspective—the two complement each other to validate the similarity hypothesis.
 
-2. **Model Parameter Divergence (MPD)**:
-
-    - Function: Quantifies the differential impact of each dataset on the model from a parameter-space perspective.
-    - Mechanism: Fine-tunes from the same base model separately on each dataset and computes the L2 norm of the parameter difference between the two resulting models. A smaller MPD indicates greater dataset similarity—Alpaca–MultiAlpaca yields MPD = 0.29, while Instruct–MultiAlpaca yields 1.00.
-    - Design Motivation: DES measures similarity from a data perspective; MPD measures it from a model perspective—the two are complementary and jointly validate the similarity hypothesis.
-
-3. **Representation Drift Mitigation Strategies**:
-
-    - Function: Controls hidden-layer representation shifts induced by Phase 2 fine-tuning.
-    - Mechanism: (a) *Generative Replay (GR)*—uses the Phase 1 model to generate responses to the English counterpart instructions of the Phase 2 dataset, which are then mixed into Phase 2 training at a 5% or 10% ratio. The intuition is that generated data bridges the distribution gap between phases. (b) *English Replay (ER)*—uses actual English parallel data for replay. (c) *Layer Freezing (LF)*—selectively freezes layers based on the highest change during Phase 1 fine-tuning (LF_H2), random selection (LF_H1), or signal-to-noise ratio (Spectrum).
-    - Design Motivation: Representation drift is the core mechanism of English forgetting—replay reduces drift by maintaining distributional continuity between phases, while layer freezing physically constrains the drift space.
+3.  **Representation Drift Mitigation Strategies**:
+    *   **Function**: Controls the hidden representation shift caused by Phase 2 fine-tuning.
+    *   **Mechanism**: (a) Generative Replay (GR)—using the Phase 1 model to generate responses for English-translated instructions of the Phase 2 dataset, mixing these as 5%/10% replay data into Phase 2 training. The intuition is that generated data bridges the distributions of the two phases; (b) English Replay (ER)—using actual parallel English data; (c) Layer Freezing (LF)—selectively freezing parts of the model based on layers with the largest changes in Phase 1 (LF_H2), random layers (LF_H1), or Signal-to-Noise Ratio (Spectrum).
+    *   **Design Motivation**: Representation drift is the core mechanism of English degradation—replay reduces drift by maintaining data distribution continuity, while layer freezing limits the drift space through physical constraints.
 
 ### Loss & Training
 
-Full-parameter fine-tuning in bf16 precision. Phase 1 and Phase 2 each use their respective full datasets. English ability is evaluated on IFEval, Alpaca Eval, MMLU, HellaSwag, and XLSUM_en; multilingual ability is evaluated on MLQA, XQuAD, XLSUM, and GMMLU, covering 11 languages (French, Arabic, German, Spanish, Indonesian, Japanese, Korean, Portuguese, Russian, Thai, Vietnamese).
+Full-parameter fine-tuning with bf16 precision. Each phase uses the full respective dataset for training. Evaluation of English proficiency uses IFEval, Alpaca Eval, MMLU, HellaSwag, and XLSUM_en; multilingual proficiency is evaluated using MLQA, XQuAD, XLSUM, and GMMLU. Multilingual coverage includes 11 languages (FR, AR, DE, ES, ID, JA, KO, PT, RU, TH, VI).
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Model | Phase 1 | Phase 2 | EA Avg. | MA Avg. | Overall |
-|-------|---------|---------|---------|---------|---------|
+| Model | Phase 1 | Phase 2 | Avg. EA | Avg. MA | Overall |
+| :--- | :--- | :--- | :--- | :--- | :--- |
 | Mistral-7B | Alpaca | MultiAlpaca | 0.371 ↑ | 0.338 ↑ | 0.355 |
 | Mistral-7B | Instruct | MultiAlpaca | 0.332 ↓ | 0.302 ↑ | 0.317 |
 | LLaMA-3-8B | Alpaca | MultiAlpaca | 0.265 ↑ | 0.427 ↑ | 0.346 |
@@ -87,8 +84,8 @@ Full-parameter fine-tuning in bf16 precision. Phase 1 and Phase 2 each use their
 ### Ablation Study
 
 | Strategy | Mistral EA | Mistral MA | LLaMA EA | LLaMA MA |
-|----------|-----------|-----------|----------|----------|
-| No mitigation (Instruct→MA) | 0.332 | 0.302 | 0.178 | 0.302 |
+| :--- | :--- | :--- | :--- | :--- |
+| No Mitigation (Instruct→MA) | 0.332 | 0.302 | 0.178 | 0.302 |
 | GR_5 | 0.394 | 0.298 | 0.236 | 0.348 |
 | GR_10 | 0.394 | 0.274 | 0.173 | 0.204 |
 | ER_10 | 0.404 | 0.276 | 0.345 | 0.359 |
@@ -98,39 +95,39 @@ Full-parameter fine-tuning in bf16 precision. Phase 1 and Phase 2 each use their
 
 ### Key Findings
 
-- Two-phase CFT consistently outperforms mixed fine-tuning—Mistral-7B overall 0.355 vs. 0.325; LLaMA-3-8B 0.346 vs. 0.312.
-- Similar dataset pairs (Alpaca→MultiAlpaca) not only preserve English ability but improve it, as both phases encode the same instructions.
-- Dissimilar dataset pairs (Instruct→MultiAlpaca) cause severe English degradation—LLaMA-3-8B IFEval drops from 0.735 to 0.182.
-- Representation drift visualization confirms that dissimilar datasets induce 3–4× greater covariance shift in upper layers compared to similar datasets.
-- ER_10 achieves the best overall performance on Mistral; GR_5 achieves the strongest multilingual performance on LLaMA.
-- LoRA yields extremely poor multilingual performance on LLaMA (0.075), indicating that parameter-efficient methods do not necessarily preserve multilingual capability.
+*   Two-phase CFT consistently outperforms mixed fine-tuning—Mistral-7B overall 0.355 vs 0.325, LLaMA-3-8B 0.346 vs 0.312.
+*   Similar datasets (Alpaca→MultiAlpaca) do not harm English proficiency but rather improve it, as both phases encode identical instructions.
+*   Dissimilar datasets (Instruct→MultiAlpaca) cause severe English degradation—IFEval for LLaMA-3-8B plummeted from 0.735 to 0.182.
+*   Visualization of representation drift confirms that dissimilar datasets produce covariance shifts at higher layers that are 3-4 times larger than those of similar datasets.
+*   ER_10 achieves the best overall performance on Mistral, while GR_5 is strongest for LLaMA multilingual tasks.
+*   LoRA exhibits extremely poor multilingual performance on LLaMA (0.075), indicating that parameter-efficient methods may not effectively maintain multilingual capability.
 
 ## Highlights & Insights
 
-- The finding that "instruction similarity determines the degree of forgetting" is highly practical—when selecting Phase 2 data, datasets encoding the same instructions as Phase 1 in different languages should be preferred over arbitrary multilingual data.
-- DES and MPD provide complementary validation of the similarity hypothesis from data and model perspectives respectively, strengthening the credibility of the conclusions.
-- Generative replay does not require access to the original Phase 1 data (satisfying real-world constraints), and as little as 5% replay data suffices to effectively mitigate drift.
-- Covariance matrix drift analysis intuitively reveals the layer-wise distribution of English forgetting—concentrated in upper layers for Mistral and distributed across all layers for LLaMA.
+*   The discovery that "instruction similarity determines the extent of forgetting" is highly practical—when selecting Phase 2 datasets, preference should be given to versions encoding the same instructions as Phase 1, rather than using arbitrary multilingual data.
+*   The DES and MPD metrics complement each other from data and model perspectives to validate the similarity hypothesis, enhancing the reliability of the conclusions.
+*   Generative replay does not require original Phase 1 data (satisfying real-world constraints); merely 5% replay data can effectively mitigate drift.
+*   Covariance matrix drift analysis intuitively reveals the hierarchical distribution of English degradation—concentrated in high layers for Mistral and across all layers for LLaMA.
 
 ## Limitations & Future Work
 
-- Experiments are conducted only on Mistral-7B and LLaMA-3-8B; generalizability to larger models or different architectures is unknown.
-- DES and MPD as similarity proxies may not capture all instruction-level differences.
-- The best performance of ER_10 depends on the availability of parallel data, which may not always be accessible in practice.
-- Extension to multi-phase (>2) continual fine-tuning is not explored.
+*   Only validated on Mistral-7B and LLaMA-3-8B; generalization to larger models or different architectures remains unknown.
+*   DES and MPD as similarity proxies might not capture all instruction-level differences.
+*   The optimal performance of ER_10 depends on the availability of parallel data, which may not always be accessible in practice.
+*   Multi-phase (>2) continual fine-tuning extension has not been explored.
 
 ## Related Work & Insights
 
-- **vs. InstructAlign**: The latter requires cross-lingual alignment, episodic replay, and parallel data, incurring high costs; the proposed GR requires only the Phase 1 model to generate English responses.
-- **vs. Shaham et al. (2024)**: The latter introduces multilinguality in the first phase; this work introduces it in the second phase and systematically analyzes the conditions for forgetting.
-- **vs. EWC and other regularization methods**: These require storing both old and new parameters at high computational cost; layer freezing achieves a similar effect in a more lightweight manner.
+*   **vs InstructAlign**: The latter requires cross-lingual alignment, exemplar replay, and parallel data, which are costly; the GR in this paper only requires the Phase 1 model to generate English responses.
+*   **vs Shaham et al. (2024)**: The latter introduces multilinguality in the first phase, whereas this paper introduces it in the second phase and systematically analyzes forgetting conditions.
+*   **vs EWC and other regularization**: These require saving both new and old parameters, leading to low computational efficiency; layer freezing achieves similar effects in a more lightweight manner.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ The two-phase CFT framework and similarity metrics are novel, though individual components have precedents.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Multiple dataset pairs, multiple models, detailed ablations, and mitigation strategies, though model scale is limited.
-- Writing Quality: ⭐⭐⭐⭐ Clear structure and effective visualizations, though the notation system is slightly complex.
-- Value: ⭐⭐⭐⭐ Provides practical guidance for multilingual continual fine-tuning—selecting similar datasets and applying lightweight replay can substantially mitigate forgetting.
+*   Novelty: ⭐⭐⭐⭐ The two-phase CFT framework and similarity metrics are innovative, though individual components have precedents.
+*   Experimental Thoroughness: ⭐⭐⭐⭐ Includes various dataset pairs, multiple models, detailed ablations, and mitigation strategies, though model scales are limited.
+*   Writing Quality: ⭐⭐⭐⭐ Clear structure and effective visualizations, though the notation system is slightly complex.
+*   Value: ⭐⭐⭐⭐ Provides practical guidance for multilingual continual fine-tuning—forgetting can be significantly mitigated by selecting similar datasets and using lightweight replay.
 
 <!-- RELATED:START -->
 
@@ -139,10 +136,10 @@ Full-parameter fine-tuning in bf16 precision. Phase 1 and Phase 2 each use their
 ## Related Papers
 
 - [\[AAAI 2026\] Consensus-Aligned Neuron Efficient Fine-Tuning Large Language Models for Multi-Domain Machine Translation](../../AAAI2026/multilingual_mt/consensus-aligned_neuron_efficient_fine-tuning_large_language_models_for_multi-d.md)
+- [\[ACL 2026\] Evaluating Robustness of Large Language Models Against Multilingual Typographical Errors](evaluating_robustness_of_large_language_models_against_multilingual_typographica.md)
 - [\[ACL 2026\] Mitigating Catastrophic Forgetting in Target Language Adaptation of LLMs via Source-Shielded Updates](mitigating_catastrophic_forgetting_in_target_language_adaptation_of_llms_via_sou.md)
+- [\[ACL 2026\] LaoBench: A Large-Scale Multidimensional Lao Benchmark for Large Language Models](laobench_a_large-scale_multidimensional_lao_benchmark_for_large_language_models.md)
 - [\[NeurIPS 2025\] Exploring the Translation Mechanism of Large Language Models](../../NeurIPS2025/multilingual_mt/exploring_the_translation_mechanism_of_large_language_models.md)
-- [\[ACL 2026\] The GaoYao Benchmark: A Comprehensive Framework for Evaluating Multilingual and Multicultural Abilities of Large Language Models](the_gaoyao_benchmark_a_comprehensive_framework_for_evaluating_multilingual_and_m.md)
-- [\[NeurIPS 2025\] XIFBench: Evaluating Large Language Models on Multilingual Instruction Following](../../NeurIPS2025/multilingual_mt/xifbench_evaluating_large_language_models_on_multilingual_instruction_following.md)
 
 </div>
 

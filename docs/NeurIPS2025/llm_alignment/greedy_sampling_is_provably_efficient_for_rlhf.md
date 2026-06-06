@@ -127,7 +127,7 @@ The paper considers a KL-regularized contextual bandit (CB) problem: a policy $\
 - [\[NeurIPS 2025\] GASP: Efficient Black-Box Generation of Adversarial Suffixes for Jailbreaking LLMs](gasp_efficient_black-box_generation_of_adversarial_suffixes_for_jailbreaking_llm.md)
 - [\[NeurIPS 2025\] ResponseRank: Data-Efficient Reward Modeling through Preference Strength Learning](responserank_data-efficient_reward_modeling_through_preference_strength_learning.md)
 - [\[ICML 2026\] $f$-Divergence Regularized RLHF: Two Tales of Sampling and Unified Analyses](../../ICML2026/llm_alignment/f-divergence_regularized_rlhf_two_tales_of_sampling_and_unified_analyses.md)
-- [\[NeurIPS 2025\] Generalizing while Preserving Monotonicity in Comparison-based Preference Learning Models](generalizing_while_preserving_monotonicity_in_comparison-based_preference_learni.md)
+- [\[ICML 2026\] Efficient Preference Poisoning Attack on Offline RLHF](../../ICML2026/llm_alignment/efficient_preference_poisoning_attack_on_offline_rlhf.md)
 
 </div>
 

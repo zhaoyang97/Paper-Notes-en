@@ -136,7 +136,7 @@ FreeCus is completely training-free and requires no loss function design. All op
 - [\[ICCV 2025\] DiTFastAttnV2: Head-wise Attention Compression for Multi-Modality Diffusion Transformers](ditfastattnv2_head-wise_attention_compression_for_multi-modality_diffusion_trans.md)
 - [\[ICCV 2025\] FreeScale: Unleashing the Resolution of Diffusion Models via Tuning-Free Scale Fusion](freescale_unleashing_the_resolution_of_diffusion_models_via_tuning-free_scale_fu.md)
 - [\[CVPR 2026\] Just-in-Time: Training-Free Spatial Acceleration for Diffusion Transformers](../../CVPR2026/image_generation/just-in-time_training-free_spatial_acceleration_for_diffusion_transformers.md)
-- [\[ICCV 2025\] IntroStyle: Training-Free Introspective Style Attribution using Diffusion Features](introstyle_training-free_introspective_style_attribution_using_diffusion_feature.md)
+- [\[ICCV 2025\] Towards Robust Defense against Customization via Protective Perturbation Resistant to Diffusion-based Purification](towards_robust_defense_against_customization_via_protective_perturbation_resista.md)
 
 </div>
 

@@ -2,81 +2,81 @@
 title: >-
   [Paper Note] Retrieving to Recover: Towards Incomplete Audio-Visual Question Answering via Semantic-consistent Purification
 description: >-
-  [ACL 2026][Audio & Speech][Audio-visual question answering] This paper proposes the R2ScP framework, which shifts the missing-modality paradigm in AVQA from conventional generative completion to retrieval-based recovery.…
+  [ACL 2026][Audio & Speech][Audio-Visual Question Answering] This paper proposes the R2ScP framework, which transforms the missing modality handling paradigm in AVQA from traditional generative completion to retrieval-bas…
 tags:
   - "ACL 2026"
   - "Audio & Speech"
-  - "Audio-visual question answering"
-  - "missing modality"
-  - "retrieval-based recovery"
-  - "semantic purification"
-  - "mixture of experts"
+  - "Audio-Visual Question Answering"
+  - "Missing Modality"
+  - "Retrieval-based Recovery"
+  - "Semantic Purification"
+  - "Mixture-of-Experts"
 date: 2026-05-08
-content_hash: bd5d31f3e2aa49b3
+content_hash: 5ecc74ac8e7dc141
 ---
 
 # Retrieving to Recover: Towards Incomplete Audio-Visual Question Answering via Semantic-consistent Purification
 
-**Conference**: ACL 2026
+**Conference**: ACL 2026  
 **arXiv**: [2604.10695](https://arxiv.org/abs/2604.10695)  
-**Code**: N/A  
-**Area**: Audio & Speech / Multimodal Learning
-**Keywords**: Audio-visual question answering, missing modality, retrieval-based recovery, semantic purification, mixture of experts
+**Code**: None  
+**Area**: Audio and Speech / Multimodal Learning  
+**Keywords**: Audio-Visual Question Answering, Missing Modality, Retrieval-based Recovery, Semantic Purification, Mixture-of-Experts
 
 ## TL;DR
 
-This paper proposes the R2ScP framework, which shifts the missing-modality paradigm in AVQA from conventional generative completion to retrieval-based recovery. By combining cross-modal retrieval with a context-aware adaptive purification mechanism to eliminate retrieval noise, R2ScP achieves substantial performance gains in modality-incomplete settings.
+This paper proposes the R2ScP framework, which transforms the missing modality handling paradigm in AVQA from traditional generative completion to retrieval-based recovery. By employing cross-modal retrieval and a context-aware adaptive purification mechanism to eliminate retrieval noise, it significantly enhances question-answering performance in incomplete modality scenarios.
 
 ## Background & Motivation
 
-**Background**: Audio-visual question answering (AVQA) requires models to reason across visual, audio, and textual modalities to understand dynamic scenes. Existing methods typically assume complete availability of all modalities, causing severe performance degradation under practical conditions such as device failures, sensor occlusion, or data transmission interruptions.
+**Background**: Audio-Visual Question Answering (AVQA) requires models to perform reasoning across visual, audio, and textual modalities to understand dynamic scenes. Current methods typically assume that all modality data is fully available, but performance degrades severely in practical scenarios such as equipment failure, sensor occlusion, or data transmission interruption.
 
-**Limitations of Prior Work**: The dominant approach to handling missing modalities relies on generative completion—synthesizing pseudo-features for the missing modality from available ones. However, generative models tend to produce representations of "common knowledge," i.e., generalized embeddings that lack fine-grained modality-specific information. For instance, when inferring missing audio from a concert's visual scene, a generative model may synthesize a generic "music" embedding while failing to capture the timbre of the specific instruments visible in the frame, thereby introducing semantic hallucinations and noise.
+**Limitations of Prior Work**: Mainstream approaches for handling missing modalities rely on generative completion—synthesizing pseudo-features of the missing modality using available modalities. However, generative models tend to produce "common knowledge," i.e., generalized representations that lack fine-grained modality-specific information. For example, when inferring missing audio from a visual scene of a concert, a generative model might synthesize a generic "music" embedding but fail to capture the specific instrument timbre visible in the frame, thereby introducing semantic hallucinations and noise.
 
-**Key Challenge**: Generative approaches inherently "imagine" missing information from available modalities, and their outputs are constrained by cross-modal shared knowledge, making it impossible to recover modality-specific unique information. This information loss directly impairs question answering tasks that demand precise reasoning.
+**Key Challenge**: Generative methods essentially "imagine" missing information from existing modalities, and their output is limited by cross-modal shared knowledge, failing to recover unique modality-specific information. This information loss directly impacts question-answering tasks that require precise reasoning.
 
-**Goal**: To shift the missing-modality paradigm from generation to retrieval—recalling genuine, high-quality feature segments from a semantic database rather than synthesizing imperfect hallucinations.
+**Goal**: To shift the paradigm of handling missing modalities from generation to retrieval—recalling real, high-quality feature segments from a semantic database rather than synthesizing imperfect hallucinations.
 
-**Key Insight**: The authors observe that real-world feature repositories contain abundant reusable modality-specific knowledge; the key challenge lies in accurate retrieval and denoising.
+**Key Insight**: The authors observe that real-world feature libraries contain a vast amount of reusable modality-specific knowledge; the key lies in how to accurately retrieve and denoise it.
 
-**Core Idea**: Replace generative completion with cross-modal retrieval, and filter retrieval noise via a context-aware purification mechanism to preserve fine-grained, modality-specific knowledge.
+**Core Idea**: Replace generative completion with cross-modal retrieval and filter retrieval noise through a context-aware purification mechanism to preserve fine-grained modality-specific knowledge.
 
 ## Method
 
 ### Overall Architecture
 
-R2ScP takes audio/visual/text data—potentially with a missing modality—as input and produces a question answering response. The framework consists of three core modules: (1) a Cross-Modal Retrieval module (CMR) that retrieves candidate features for the missing modality from an external memory bank via a unified semantic space; (2) a Context-Aware Adaptive Purification mechanism (CAP) that filters retrieval noise and injects high-quality semantics; and (3) a two-stage expert training strategy that explicitly models the reliability of different information sources through a mixture-of-experts architecture.
+The input to R2ScP consists of audio/visual/textual data where a modality might be missing, and the output is the answer to the question. The framework comprises three core modules: (1) The Cross-Modal Retrieval (CMR) module retrieves candidate features of the missing modality from an external memory bank via a unified semantic space; (2) The Context-Aware adaptive Purification (CAP) mechanism filters retrieval noise and injects high-quality semantics; (3) A two-stage expert training strategy explicitly models the reliability of different information sources through a Mixture-of-Experts (MoE) architecture.
 
 ### Key Designs
 
-1. **Cross-Modal Retrieval Module (CMR)**:
+1.  **Cross-Modal Retrieval Module (CMR)**:
 
-    - **Function**: Retrieves candidate features for the missing modality from an external memory bank.
-    - **Mechanism**: Constructs an external memory bank $\mathcal{B} = \{(\mathbf{k}_i, \mathbf{v}_i)\}_{i=1}^{M}$, where key-value pairs are generated as unified semantic embeddings by a pretrained multimodal model (e.g., ImageBind). Given a missing modality (e.g., audio), the available modality (e.g., visual) is used as a query, and top-$n$ candidates are retrieved via cosine similarity $S_i = \frac{\mathbf{Q}_{avl} \cdot \mathbf{k}_i}{\|\mathbf{Q}_{avl}\| \|\mathbf{k}_i\| + \epsilon}$.
-    - **Design Motivation**: The unified semantic space enables cross-modal alignment so that visual queries can locate semantically related audio features, thereby preserving modality-specific knowledge present in real-world data.
+    - **Function**: Retrieves candidate features of missing modalities from an external memory bank.
+    - **Mechanism**: An external memory bank $\mathcal{B} = \{(\mathbf{k}_i, \mathbf{v}_i)\}_{i=1}^{M}$ is constructed, where key-value pairs are generated as unified semantic embeddings by a pre-trained multimodal model (e.g., ImageBind). Given a missing modality (e.g., missing audio), the available modality (e.g., visual) is used as a query to retrieve the top-n candidate set via cosine similarity $S_i = \frac{\mathbf{Q}_{avl} \cdot \mathbf{k}_i}{\|\mathbf{Q}_{avl}\| \|\mathbf{k}_i\| + \epsilon}$.
+    - **Design Motivation**: Leveraging a unified semantic space facilitates cross-modal alignment, allowing visual queries to find semantically relevant audio features and preserving modality-specific knowledge found in real-world data.
 
-2. **Context-Aware Adaptive Purification Mechanism (CAP)**:
+2.  **Context-Aware adaptive Purification (CAP)**:
 
-    - **Function**: Eliminates semantic noise from retrieved candidates and injects high-quality features.
-    - **Mechanism**: Executes three stages: (a) *Consistency noise identification*—computes an inconsistency score $\delta_i = 1 - \text{sim}(H_{miss} \cdot \mathbf{W}_{proj}, \mathbf{g}_{avl})$ between retrieved features and the global context anchor of the available modality, selecting the top-$k$ inconsistent tokens to form the noise index set $\Omega_{noise}$; (b) *Text-guided semantic acquisition*—uses multi-head cross-attention and self-attention to identify salient semantic indices $\Omega_{salient}$ most relevant to the question from common knowledge; (c) *Selective feature injection*—replaces noise positions with high-quality semantics: $H_{miss}^{pur} = (\mathbf{1} - \mathcal{M}_{noise}) \odot H_{miss} + \mathcal{M}_{noise} \odot \text{Gather}(H_{guided}, \Omega_{salient})$.
-    - **Design Motivation**: Raw retrieval inevitably introduces irrelevant information (e.g., cello or applause features retrieved for a violin performance). CAP applies dual filtering through available-modality contextual constraints and question-guided attention to ensure semantic consistency.
+    - **Function**: Eliminates semantic noise in retrieval candidates and injects high-quality features.
+    - **Mechanism**: Executed in three stages—(a) Consistency noise identification: Calculate the inconsistency score $\delta_i = 1 - \text{sim}(H_{miss} \cdot \mathbf{W}_{proj}, \mathbf{g}_{avl})$ between retrieved features and the global context anchor of available modalities, selecting the top-k discordant tokens to form a noise index set $\Omega_{noise}$; (b) Text-guided semantic acquisition: Use the textual question to guide the identification of high-quality semantic indices $\Omega_{salient}$ most relevant to question answering from common knowledge via multi-head cross-attention and self-attention; (c) Selective feature injection: Replace noise positions with high-quality semantics $H_{miss}^{pur} = (\mathbf{1} - \mathcal{M}_{noise}) \odot H_{miss} + \mathcal{M}_{noise} \odot \text{Gather}(H_{guided}, \Omega_{salient})$.
+    - **Design Motivation**: Raw retrieval inevitably introduces irrelevant information (e.g., retrieving cello or applause features for a violin performance). CAP ensures semantic consistency through double filtering using both context constraints from available modalities and question guidance.
 
-3. **Two-Stage Mixture-of-Experts Training**:
+3.  **Two-Stage Mixture-of-Experts Training**:
 
     - **Function**: Explicitly models the reliability of different information sources (original vs. recovered).
-    - **Mechanism**: In the first stage, three modality experts ($\mathcal{E}_v$, $\mathcal{E}_a$, $\mathcal{E}_t$) are pretrained independently to extract discriminative representations without relying on cross-modal shortcuts. In the second stage, the experts are frozen and a gating network (Router) is trained to dynamically assign importance weights $\alpha_{m'} = \frac{\exp(g_{m'})}{\sum_{m} \exp(g_m)}$, yielding the joint representation $\mathbf{Z}_{joint} = \alpha_a H_a + \alpha_t H_t + \alpha_v H_v$.
-    - **Design Motivation**: Decoupled training prevents mutual dependence among experts. The gating network dynamically adjusts modality weights based on input context, allowing recovered modalities to receive lower weights that reflect their inherent uncertainty.
+    - **Mechanism**: In the first stage, three modal experts (Visual Expert $\mathcal{E}_v$, Audio Expert $\mathcal{E}_a$, Text Expert $\mathcal{E}_t$) are independently pre-trained to extract discriminative representations without relying on cross-modal shortcuts. In the second stage, the experts are frozen, and a gating network (Router) is trained to dynamically allocate importance weights $\alpha_{m'} = \frac{\exp(g_{m'})}{\sum_{m} \exp(g_m)}$. The final joint representation is the weighted sum $\mathbf{Z}_{joint} = \alpha_a H_a + \alpha_t H_t + \alpha_v H_v$.
+    - **Design Motivation**: Decoupled training prevents interdependence between experts. The gating network dynamically adjusts modal weights based on input context; recovered modalities can be assigned lower weights to reflect uncertainty.
 
 ### Loss & Training
 
-In addition to the standard cross-entropy loss $\mathcal{L}_{task}$, a semantic ranking loss $\mathcal{L}_{rank}$ is introduced to enforce that positively retrieved recovered features outrank negative samples but remain below ground-truth features in quality: $\mathcal{L}_{total} = \mathcal{L}_{task} + \lambda(\mathcal{L}_{rank}^+ + \mathcal{L}_{rank}^-)$. This ensures that retrieval-purified features lie within a valid semantic manifold.
+In addition to the standard cross-entropy loss $\mathcal{L}_{task}$, a semantic ranking loss $\mathcal{L}_{rank}$ is introduced to force features recovered from positive samples to be superior to negative samples but inferior to ground-truth features: $\mathcal{L}_{total} = \mathcal{L}_{task} + \lambda(\mathcal{L}_{rank}^+ + \mathcal{L}_{rank}^-)$. This ensures that retrieved and purified features remain within an effective semantic manifold.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Dataset | Modality Setting | Ours (R2ScP) | Prev. SOTA (IMOL) | Gain |
-|---------|-----------------|-------------|-------------------|------|
+| Dataset | Modality Setting | Ours | Prev. SOTA (IMOL) | Gain |
+|--------|---------|-----------|---------------|------|
 | Music-AVQA | Missing Audio | 69.37 | 67.11 | +2.26 |
 | Music-AVQA | Missing Visual | 72.06 | 69.21 | +2.85 |
 | Music-AVQA | Complete | 73.19 | 71.86 | +1.33 |
@@ -86,46 +86,46 @@ In addition to the standard cross-entropy loss $\mathcal{L}_{task}$, a semantic 
 
 ### Ablation Study
 
-| Configuration | Music-AVQA | AVQA | Note |
-|--------------|-----------|------|------|
-| w/o CMR, w/o CAP | 62.43 | 57.43 | Baseline (missing audio) |
-| +CMR only | 67.21 | 61.78 | Retrieval contributes +4.78/+4.35 |
+| Configuration | Music-AVQA | AVQA | Description |
+|------|-----------|------|------|
+| w/o CMR w/o CAP | 62.43 | 57.43 | Baseline (Missing Audio) |
+| +CMR only | 67.21 | 61.78 | Retrieval provides +4.78/+4.35 |
 | +CAP only | 64.11 | 59.64 | Purification alone is also effective |
-| +CMR+CAP (full) | 69.37 | 63.25 | Combination yields best performance |
+| +CMR+CAP (Full) | 69.37 | 63.25 | Combination yields best results |
 
 ### Key Findings
 
-- Retrieval-based recovery outperforms generative completion, with the advantage particularly pronounced for missing visual modality (+2.85 vs. IMOL).
-- CMR and CAP are each independently effective, but their combination achieves the best results, indicating that retrieval and purification are complementary.
-- R2ScP surpasses competing methods even in the complete-modality setting, demonstrating that the retrieval-recovery framework benefits multimodal fusion beyond missing-modality scenarios.
-- The two-stage training strategy avoids cross-modal feature collapse by decoupling expert pretraining from gated mixing.
+- Retrieval-based recovery is more effective than generative completion, with the advantage being more pronounced when the visual modality is missing (+2.85 vs IMOL).
+- CMR and CAP are independently effective, but their combined use is optimal, suggesting that retrieval and purification are complementary.
+- In complete modality settings, R2ScP still outperforms comparison methods, indicating that the retrieval-recovery framework serves as a beneficial tool for modality fusion as well.
+- The two-stage training strategy avoids cross-modal feature collapse by decoupling expert pre-training and gated mixing.
 
 ## Highlights & Insights
 
-- **Paradigm innovation**: The conceptual shift from "generative completion" to "retrieval-based recovery" is concise and compelling, circumventing the hallucination problem inherent in generative approaches.
-- The three-stage CAP design (noise identification → semantic acquisition → selective injection) is logically rigorous and effectively leverages guidance signals from both the available modality and the question.
-- The semantic ranking loss elegantly establishes a quality gradient of "ground-truth > positive retrieval > negative retrieval."
-- Performance improvements in the complete-modality setting suggest that the retrieval mechanism can serve as a general-purpose modality augmentation strategy.
+- Paradigm Innovation: The conceptual shift from "generative completion" to "retrieval-based recovery" is simple yet powerful, effectively avoiding the hallucination problems inherent in generative methods.
+- The three-stage purification design of CAP (noise identification → semantic acquisition → selective injection) is logically rigorous, making full use of guidance signals from available modalities and questions.
+- The semantic ranking loss cleverly establishes a quality gradient of "Ground Truth > Positive Retrieval > Negative Retrieval."
+- The ability to improve performance even in complete modality scenarios suggests that the retrieval mechanism can serve as a general modality enhancement technique.
 
 ## Limitations & Future Work
 
-- Constructing and storing the external memory bank incurs significant overhead, which may be a bottleneck for large-scale deployment.
-- The current formulation assumes complete absence of the missing modality and does not address partial missingness or noise-degraded scenarios.
+- The construction and storage overhead of the external memory bank are significant, which may be a bottleneck for large-scale deployment.
+- It is currently assumed that modalities are completely missing; scenarios with partial loss or noise degradation have not been addressed.
 - Retrieval quality is highly dependent on the alignment quality of the unified semantic space (ImageBind).
-- Validation is limited to the AVQA task; generalization to other multimodal reasoning tasks (e.g., visual question answering, dialogue) remains unexplored.
+- The method has only been validated on AVQA tasks; its generalization to other multimodal reasoning tasks (e.g., VQA, multimodal dialogue) remains to be explored.
 
 ## Related Work & Insights
 
-- **vs. Missing-AVQA (ECCV 2024)**: Missing-AVQA employs a relation-aware generator to synthesize missing features, but the output represents common knowledge; R2ScP preserves modality-specific information through retrieval.
-- **vs. IMOL (ACL 2025)**: Although IMOL also employs retrieval, it is used primarily for contrastive alignment rather than direct feature recovery; R2ScP directly substitutes retrieved features for missing ones.
-- **vs. MoMKE (MM 2024)**: MoMKE preserves modality-specific knowledge via mixture of experts but does not address feature recovery; R2ScP combines retrieval with a MoE architecture for a more complete solution.
+- **vs Missing-AVQA (ECCV 2024)**: Missing-AVQA uses relation-aware generators to synthesize missing features, which results in common knowledge; R2ScP preserves modality-specific information through retrieval.
+- **vs IMOL (ACL 2025)**: While IMOL also utilizes retrieval, it is primarily for contrastive alignment rather than direct feature recovery; R2ScP directly replaces missing information with retrieved features.
+- **vs MoMKE (MM 2024)**: MoMKE preserves modality-specific knowledge through Mixture-of-Experts but does not handle feature recovery; R2ScP provides a more comprehensive solution by combining retrieval with an MoE architecture.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ The paradigm shift from generation to retrieval is a clear contribution, and the CAP purification mechanism is elegantly designed.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Two datasets, multiple missing-modality configurations, and detailed ablation studies.
-- **Writing Quality**: ⭐⭐⭐⭐ Problem motivation is clearly articulated and the method is described in thorough detail.
-- **Value**: ⭐⭐⭐⭐ Opens a new research direction for handling missing modalities in multimodal systems.
+- Novelty: ⭐⭐⭐⭐ The paradigm shift from generation to retrieval is a clear innovation, and the CAP purification mechanism is exquisitely designed.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covering two datasets, multiple modality missing settings, and detailed ablation studies.
+- Writing Quality: ⭐⭐⭐⭐ Clear problem motivation and detailed method description.
+- Value: ⭐⭐⭐⭐ Provides a new research direction for handling missing modalities in multimodal learning.
 
 <!-- RELATED:START -->
 

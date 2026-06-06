@@ -174,11 +174,11 @@ Dataset construction is a notable contribution of this work:
 
 ## Related Papers
 
+- [\[ICML 2026\] SphericalDreamer: Generating Navigable Immersive 3D Worlds with Panorama Fusion](../../ICML2026/llm_nlp/sphericaldreamer_generating_navigable_immersive_3d_worlds_with_panorama_fusion.md)
+- [\[ICML 2026\] Position: The Turing-Completeness of Autoregressive Transformers Relies Heavily on Context Management](../../ICML2026/llm_nlp/position_the_turing-completeness_of_autoregressive_transformers_relies_heavily_o.md)
 - [\[ICLR 2026\] ELLMob: Event-Driven Human Mobility Generation with Self-Aligned LLM Framework](ellmob_event-driven_human_mobility_generation_with_self-aligned_language_models.md)
-- [\[AAAI 2026\] TransMamba: A Sequence-Level Hybrid Transformer-Mamba Language Model](../../AAAI2026/llm_nlp/transmamba_a_sequence-level_hybrid_transformer-mamba_language_model.md)
-- [\[NeurIPS 2025\] Spectral Conditioning of Attention Improves Transformer Performance](../../NeurIPS2025/llm_nlp/spectral_conditioning_of_attention_improves_transformer_performance.md)
+- [\[ICML 2026\] How Many Different Outputs Can a Transformer Generate?](../../ICML2026/llm_nlp/how_many_different_outputs_can_a_transformer_generate.md)
 - [\[ICML 2026\] Escaping Mode Collapse in LLM Generation via Geometric Regulation](../../ICML2026/llm_nlp/escaping_mode_collapse_in_llm_generation_via_geometric_regulation.md)
-- [\[NeurIPS 2025\] Characterizing the Expressivity of Fixed-Precision Transformer Language Models](../../NeurIPS2025/llm_nlp/characterizing_the_expressivity_of_fixed-precision_transformer_language_models.md)
 
 </div>
 

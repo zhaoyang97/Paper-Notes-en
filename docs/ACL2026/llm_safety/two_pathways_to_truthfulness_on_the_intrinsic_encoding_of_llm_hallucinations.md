@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Two Pathways to Truthfulness: On the Intrinsic Encoding of LLM Hallucinations
 description: >-
-  [ACL 2026][LLM Safety][Hallucination Detection] This paper identifies two distinct information pathways through which LLMs internally encode truthfulness signals: Question-Anchored (relying on information flow from quest…
+  [ACL 2026][LLM Safety][Hallucination Detection] This paper discovers two distinct information pathways for truthfulness signals within LLMs: Question-Anchored (relying on the flow from question to answer) and Answer-Anch…
 tags:
   - "ACL 2026"
   - "LLM Safety"
@@ -12,115 +12,112 @@ tags:
   - "Information Pathways"
   - "Knowledge Boundary"
 date: 2026-05-08
-content_hash: 607775f3595d14de
+content_hash: a81140d4d3583b7e
 ---
 
 # Two Pathways to Truthfulness: On the Intrinsic Encoding of LLM Hallucinations
 
-**Conference**: ACL 2026
+**Conference**: ACL 2026  
 **arXiv**: [2601.07422](https://arxiv.org/abs/2601.07422)  
 **Code**: [https://github.com/RowanWenLuo/llm-truthfulness-pathways](https://github.com/RowanWenLuo/llm-truthfulness-pathways)  
-**Area**: LLM Safety
+**Area**: LLM Safety  
 **Keywords**: Hallucination Detection, Truthfulness Encoding, Attention Mechanism, Information Pathways, Knowledge Boundary
 
 ## TL;DR
 
-This paper identifies two distinct information pathways through which LLMs internally encode truthfulness signals: Question-Anchored (relying on information flow from question to answer) and Answer-Anchored (extracting self-contained evidence from the generated answer itself). Both pathways are closely associated with knowledge boundaries. Building on this finding, the paper proposes two pathway-aware hallucination detection methods—Mixture-of-Probes and Pathway Reweighting—achieving AUC improvements of up to 10%.
+This paper discovers two distinct information pathways for truthfulness signals within LLMs: Question-Anchored (relying on the flow from question to answer) and Answer-Anchored (extracting self-contained evidence from the generated answer itself). These pathways are closely linked to knowledge boundaries. Based on this, two pathway-aware hallucination detection methods, Mixture-of-Probes and Pathway Reweighting, are proposed, achieving AUC improvements of up to 10%.
 
 ## Background & Motivation
 
-**Background**: LLMs frequently produce hallucinations—outputs that appear plausible but are factually incorrect. Prior work has demonstrated that LLM internal representations encode rich truthfulness signals detectable via linear probes. However, the origins and underlying mechanisms of these signals remain poorly understood.
+**Background**: LLMs frequently produce hallucinations—plausible but factually incorrect outputs. Previous work has demonstrated that internal representations encode rich truthfulness signals, which can be detected via linear probes. However, the sources and mechanisms of these signals remain unclear.
 
-**Limitations of Prior Work**: Existing internal probing methods treat all samples as homogeneous and apply a single probe to detect all hallucinations. In practice, truthfulness signals may arise through different mechanisms for different samples, and a unified approach yields suboptimal performance.
+**Limitations of Prior Work**: Existing internal probing methods treat all samples as homogeneous, using a single probe for all hallucinations. However, truthfulness signals in different samples may arise from different mechanisms; using a unified approach leads to suboptimal performance.
 
-**Key Challenge**: Saliency analysis reveals a bimodal distribution in the importance of question-to-answer information flow: a subset of samples relies heavily on question information, while another subset does not. This suggests the existence of two fundamentally distinct truthfulness encoding mechanisms.
+**Key Challenge**: Saliency analysis reveals a bimodal distribution in the importance of information flow from the question to the answer—some samples rely heavily on question information, while others do not. This suggests the existence of two fundamentally different truthfulness encoding mechanisms.
 
-**Goal**: (1) Validate and disentangle the two truthfulness pathways; (2) characterize their emergent properties; (3) leverage pathway distinction to improve hallucination detection performance.
+**Goal**: (1) Validate and decouple the two truthfulness pathways; (2) Reveal their emergent properties; (3) Leverage pathway distinction to improve hallucination detection performance.
 
-**Key Insight**: Two causal intervention techniques—attention knockout and token patching—are employed to disentangle and validate the two pathways.
+**Key Insight**: Decouple and verify the two pathways through causal intervention experiments, specifically attention knockout and token patching.
 
-**Core Idea**: Truthfulness signals arise through two independent pathways. The Q-Anchored pathway relies on information flow from the question to the answer and is associated with facts within the model's knowledge scope, while the A-Anchored pathway extracts self-contained evidence from the generated text itself and is associated with long-tail facts beyond the model's knowledge boundary.
+**Core Idea**: Truthfulness signals are generated via two independent pathways—Q-Anchored relies on question-to-answer information flow (applicable to facts within the model's knowledge), while A-Anchored extracts self-contained evidence from the generated text (applicable to long-tail facts outside the knowledge boundary).
 
 ## Method
 
 ### Overall Architecture
 
-The approach proceeds in three stages: (1) saliency analysis reveals the bimodal distribution and motivates the two-pathway hypothesis; (2) attention knockout and token patching are used to validate the hypothesis; (3) the properties of each pathway (knowledge boundary association, self-awareness capacity) are characterized, and pathway-aware hallucination detection methods are designed. Experiments span 12 models (base/instruct/reasoning) and 4 QA datasets.
+The study consists of three stages: (1) Discovery of the bimodal distribution via saliency analysis and proposal of the two-pathway hypothesis; (2) Verification of the hypothesis using attention knockout and token patching; (3) Exploration of pathway characteristics (knowledge boundary correlation, self-perception ability) and design of pathway-aware hallucination detection methods. Experiments cover 12 models (base/instruct/reasoning) and 4 QA datasets.
 
 ### Key Designs
 
-1. **Attention Knockout for Pathway Disentanglement**:
+1. **Attention Knockout Decoupling Experiment**:
+    - **Function**: Validates the existence and independence of the two pathways.
+    - **Mechanism**: For a probe trained at layer k, attention weights from exact question tokens to subsequent positions in layers 1 to k are set to 0, blocking the question-to-answer information flow. Samples are classified as Q-Anchored if the probe prediction flips, and A-Anchored if it does not. Across all models and datasets, behaviors bifurcate—one group shows significant probability shifts, while the other remains nearly unchanged.
+    - **Design Motivation**: If truthfulness signals were homogeneous, blocking the question flow should affect all samples uniformly. The bimodal behavior directly proves the existence of two distinct mechanisms.
 
-    - **Function**: Validate the existence and independence of the two pathways.
-    - **Mechanism**: For a probe trained at layer $k$, the attention weights from exact question tokens to subsequent positions across layers 1 through $k$ are zeroed out, blocking information flow from the question to the answer. Samples are then divided into Q-Anchored (probe prediction flips) and A-Anchored (prediction unchanged). Across all models and datasets, the two groups exhibit clearly divergent behavior—one group shows large probability shifts, the other remains nearly invariant.
-    - **Design Motivation**: If truthfulness signals were homogeneous, blocking question information flow should affect all samples uniformly. The bimodal behavior directly evidences the existence of two distinct mechanisms.
-
-2. **Pathway Association with Knowledge Boundaries**:
-
-    - **Function**: Reveal the cognitive significance of the two pathways.
-    - **Mechanism**: Three metrics—answer accuracy, I-don't-know rate, and entity popularity—are used to characterize knowledge boundaries. Q-Anchored samples exhibit significantly higher accuracy and involve more popular entities (within the model's knowledge scope), while A-Anchored samples show lower accuracy and involve long-tail entities (beyond the knowledge boundary). This indicates that the model encodes truthfulness primarily via the question-answer information flow when it possesses relevant knowledge, and falls back to extracting cues from the intrinsic patterns of the generated text when knowledge is insufficient.
-    - **Design Motivation**: Understanding the cognitive basis of each pathway facilitates the design of more targeted detection strategies.
+2. **Correlation between Pathways and Knowledge Boundaries**:
+    - **Function**: Reveals the cognitive significance of the two pathways.
+    - **Mechanism**: Knowledge boundaries are measured using three metrics (answer accuracy, I-don't-know rate, entity popularity). Q-Anchored samples show significantly higher accuracy and involve more popular entities (within knowledge). A-Anchored samples show low accuracy and involve long-tail entities (outside knowledge). This indicates that the model encodes truthfulness through the QA flow when it possesses knowledge, but shifts to extracting clues from intrinsic patterns of the generated text when knowledge is lacking.
+    - **Design Motivation**: Understanding the cognitive basis of the pathways helps in designing targeted detection strategies.
 
 3. **Pathway-Aware Hallucination Detection (MoP + PR)**:
-
-    - **Function**: Exploit pathway distinction to improve detection performance.
-    - **Mechanism**: (a) *Mixture-of-Probes (MoP)*: Multiple expert probes are trained, each specializing in a particular truthfulness encoding mechanism; the model's pathway self-awareness (>87% classification accuracy) is leveraged to automatically route each sample to the appropriate expert. (b) *Pathway Reweighting (PR)*: Based on which pathway a given sample belongs to, the pathway-relevant internal signals are selectively amplified, enhancing the most informative activation dimensions. Both methods consistently outperform single-probe baselines across multiple datasets and models.
-    - **Design Motivation**: Given that the two pathways have fundamentally different signal origins, pathway-specialized detectors are more effective than a generic detector.
+    - **Function**: Leverages pathway distinction to enhance detection performance.
+    - **Mechanism**: (a) Mixture-of-Probes (MoP): Multiple expert probes are trained, each focusing on a specific encoding mechanism. Samples are automatically routed to the appropriate expert using the model's pathway self-perception capability (>87% classification accuracy). (b) Pathway Reweighting (PR): Internal signal strength related to a specific pathway is selectively enhanced based on the sample's category, magnifying the most informative activation dimensions. Both methods consistently outperform single-probe baselines.
+    - **Design Motivation**: Since the two pathways have fundamentally different signal sources, pathway-specific detectors are more effective than a general-purpose one.
 
 ### Loss & Training
 
-Probes are trained as linear classifiers using binary cross-entropy loss. The pathway classifier is likewise a linear probe trained on raw internal representations, validating the model's self-awareness of pathway membership.
+Probes are trained as linear classifiers using binary cross-entropy loss. Pathway classifiers are also trained as linear probes on raw internal representations to verify the model's self-perception ability.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Method | PopQA AUC | TriviaQA AUC | HotpotQA AUC | NQ AUC |
-|--------|-----------|--------------|--------------|--------|
+|--------|------|------|----------|------|
 | Standard Probing | Baseline | Baseline | Baseline | Baseline |
-| MoP (Ours) | +5–10% | +3–8% | +2–5% | +3–7% |
-| PR (Ours) | Similar gain | Similar gain | Similar gain | Similar gain |
+| MoP (Ours) | +5-10% | +3-8% | +2-5% | +3-7% |
+| PR (Ours) | Similar Gain | Similar Gain | Similar Gain | Similar Gain |
 
 ### Ablation Study
 
-| Analysis | Result | Note |
-|----------|--------|------|
-| Pathway self-awareness accuracy | 75–93% | Models can distinguish pathways from raw representations |
-| Q-Anchored accuracy | Significantly higher than A-Anchored | In-scope facts use Q-Anchored |
-| Entity popularity | Q-Anchored >> A-Anchored | Q-Anchored involves high-frequency entities |
-| Random token knockout | No significant effect | Confirms specificity to exact question tokens |
+| Analysis | Result | Description |
+|------|---------|------|
+| Pathway Self-perception Accuracy | 75-93% | Models can distinguish the two pathways from raw representations |
+| Q-Anchored Accuracy | Significantly > A-Anchored | Q-Anchored is used for facts within knowledge |
+| Entity Popularity | Q-Anchored >> A-Anchored | Q-Anchored involves high-frequency entities |
+| Random Token Knockout | No significant effect | Confirms the effect is specific to exact question tokens |
 
 ### Key Findings
 
-- **Two pathways are robust across models and datasets**: The bimodal pattern appears consistently across all 12 models (1B to 70B; base, instruct, and reasoning variants) and all 4 datasets.
-- **Knowledge boundary determines pathway selection**: When the model "knows the answer," it adopts the Q-Anchored pathway (assessing truthfulness through question understanding); when it does not, it adopts the A-Anchored pathway (relying on statistical patterns in the answer itself).
-- **Models possess pathway self-awareness**: Internal representations contain sufficient information to distinguish the two pathways, with classification accuracy of 75–93%, forming the basis of the MoP approach.
-- **Self-contained property of the A-Anchored pathway**: When the question is removed and only the answer is passed through the forward pass, predictions for A-Anchored samples remain nearly unchanged, whereas those for Q-Anchored samples shift substantially.
+- **Robust presence across models and datasets**: The bimodal pattern consistently appears across all 12 models (1B to 70B, base to reasoning) and 4 datasets.
+- **Knowledge boundaries dictate pathway selection**: Models use Q-Anchored (truthfulness via question understanding) when they "know the answer" and A-Anchored (truthfulness via statistical patterns of the answer) when they "don't know."
+- **Model self-perception of pathways**: Internal representations contain sufficient information to distinguish the two pathways with 75-93% accuracy, forming the foundation of the MoP method.
+- **Self-contained nature of A-Anchored**: After removing the question and performing a forward pass on the answer alone, predictions for A-Anchored samples remain nearly identical, whereas Q-Anchored samples change drastically.
 
 ## Highlights & Insights
 
-- **Depth of mechanistic understanding**: The paper not only demonstrates the existence of two pathways but also reveals their association with knowledge boundaries, providing a cognitively grounded interpretation.
-- **Clear path from discovery to application**: The connection between findings and methods is direct—MoP and PR exploit mechanistic insights to improve detection performance, making this more than a purely analytical study.
-- **Experimental scale**: Comprehensive validation across 12 models (including the recent Qwen3) and 4 datasets ensures high credibility.
+- **Depth of mechanistic understanding**: Provides a cognitive explanation by not only proving the pathways' existence but also linking them to knowledge boundaries.
+- **Practical application of pathway separation**: Offers a clear path from discovery to application—MoP and PR utilize mechanistic insights to directly improve detection performance.
+- **Scale of experiments**: High credibility due to comprehensive validation across 12 models (including the latest Qwen3) and 4 datasets.
 
 ## Limitations & Future Work
 
-- The current study focuses on factual QA settings; pathway patterns in open-ended generation, multi-turn dialogue, and other scenarios remain unexplored.
-- Pathway self-awareness accuracy is not 100%, and misrouting degrades MoP performance.
-- The possibility of enhancing the reliability of specific pathways through training interventions is not investigated.
+- Currently focused on factual QA; pathway patterns in open-ended generation or multi-turn dialogues remain unknown.
+- Pathway self-perception accuracy is not 100%, and routing errors can degrade MoP performance.
+- Training interventions to enhance specific pathway reliability have not been explored.
 - The definition of exact tokens relies on semantic frame theory, and automated extraction may introduce noise.
 
 ## Related Work & Insights
 
-- **vs. Burns et al. (2023)**: CCS identifies linear truthfulness directions in LLMs but does not distinguish signal origins. This paper reveals the dual-pathway structure underlying those signals.
-- **vs. Orgad et al. (2025)**: Their work shows that probing on exact answer tokens yields the best performance; this paper further explains why—the Q-Anchored pathway concentrates its signals in the information flow through exact tokens.
+- **vs Burns et al. (2023)**: CCS identifies linear truthfulness directions in LLMs but does not distinguish signal sources. This paper reveals a dual-pathway structure.
+- **vs Orgad et al. (2025)**: While they show that probing works best on exact answer tokens, this paper explains why—signals in the Q-Anchored pathway are concentrated in the information flow of exact tokens.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ First to reveal the dual-pathway structure of truthfulness encoding in LLMs; a profound finding.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 12 models and 4 datasets with rigorous causal intervention validation.
-- Writing Quality: ⭐⭐⭐⭐⭐ The narrative arc from hypothesis to validation to application is clear and well-structured.
-- Value: ⭐⭐⭐⭐⭐ Contributes meaningfully to both mechanistic understanding and practical improvement of hallucination detection.
+- Novelty: ⭐⭐⭐⭐⭐ First to reveal the dual-pathway structure of truthfulness encoding in LLMs.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Rigorous causal intervention across 12 models and 4 datasets.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear narrative logic from hypothesis to validation to application.
+- Value: ⭐⭐⭐⭐⭐ Significant contribution to both mechanistic understanding and practical improvement of hallucination detection.
 
 <!-- RELATED:START -->
 
@@ -128,11 +125,11 @@ Probes are trained as linear classifiers using binary cross-entropy loss. The pa
 
 ## Related Papers
 
+- [\[ACL 2026\] Illusions of Confidence? Diagnosing LLM Truthfulness via Neighborhood Consistency](illusions_of_confidence_diagnosing_llm_truthfulness_via_neighborhood_consistency.md)
+- [\[ACL 2026\] Modeling LLM Unlearning as an Asymmetric Two-Task Learning Problem](modeling_llm_unlearning_as_an_asymmetric_two-task_learning_problem.md)
 - [\[ACL 2026\] TPA: Next Token Probability Attribution for Detecting Hallucinations in RAG](tpa_next_token_probability_attribution_for_detecting_hallucinations_in_rag.md)
 - [\[ACL 2026\] MeasHalu: Mitigation of Scientific Measurement Hallucinations for LLMs](meashalu_mitigation_of_scientific_measurement_hallucinations_for_large_language_.md)
-- [\[ICML 2026\] REALISTA: Realistic Latent Adversarial Attacks that Elicit LLM Hallucinations](../../ICML2026/llm_safety/realista_realistic_latent_adversarial_attacks_that_elicit_llm_hallucinations.md)
-- [\[NeurIPS 2025\] SWE-SQL: Illuminating LLM Pathways to Solve User SQL Issues in Real-World Applications](../../NeurIPS2025/llm_safety/swe-sql_illuminating_llm_pathways_to_solve_user_sql_issues_in_real-world_applica.md)
-- [\[NeurIPS 2025\] SECA: Semantically Equivalent and Coherent Attacks for Eliciting LLM Hallucinations](../../NeurIPS2025/llm_safety/seca_semantically_equivalent_and_coherent_attacks_for_eliciting_llm_hallucinatio.md)
+- [\[ACL 2026\] FinGround: Detecting and Grounding Financial Hallucinations via Atomic Claim Verification](finground_detecting_and_grounding_financial_hallucinations_via_atomic_claim_veri.md)
 
 </div>
 

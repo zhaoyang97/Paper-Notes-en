@@ -160,8 +160,8 @@ ATLAS's core advantages are: (1) unified single-stage fitting, (2) fine-grained 
 - [\[NeurIPS 2025\] Zero-Shot Performance Prediction for Probabilistic Scaling Laws](../../NeurIPS2025/multilingual_mt/zero-shot_performance_prediction_for_probabilistic_scaling_laws.md)
 - [\[ICLR 2026\] SASFT: Sparse Autoencoder-guided Supervised Finetuning to Mitigate Unexpected Code-Switching in LLMs](sasft_sparse_autoencoder-guided_supervised_finetuning_to_mitigate_unexpected_cod.md)
 - [\[ICLR 2026\] Multilingual Routing in Mixture-of-Experts](multilingual_routing_in_mixture-of-experts.md)
+- [\[ACL 2026\] Cross-Cultural Transfer of Emoji Semantics and Sentiment in Financial Social Media](../../ACL2026/multilingual_mt/cross-cultural_transfer_of_emoji_semantics_and_sentiment_in_financial_social_med.md)
 - [\[NeurIPS 2025\] Enhancing Multilingual LLM Pretraining with Model-Based Data Selection](../../NeurIPS2025/multilingual_mt/enhancing_multilingual_llm_pretraining_with_model-based_data_selection.md)
-- [\[NeurIPS 2025\] Adaptive Originality Filtering: Rejection-Based Prompting and RiddleScore for Culturally Grounded Multilingual Riddle Generation](../../NeurIPS2025/multilingual_mt/adaptive_originality_filtering_rejection_based_prompting_and_riddlescore_for_cul.md)
 
 </div>
 

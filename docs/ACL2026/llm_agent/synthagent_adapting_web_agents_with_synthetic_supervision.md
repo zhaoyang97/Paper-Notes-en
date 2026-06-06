@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SynthAgent: Adapting Web Agents with Synthetic Supervision
 description: >-
-  [ACL 2026][LLM Agent][Synthetic Data] This paper proposes SynthAgent, a web agent adaptation framework built entirely on synthetic supervision. It employs categorized exploration to systematically cover functional region…
+  [ACL 2026][LLM Agent][Synthetic Data] This paper proposes SynthAgent, a Web Agent adaptation framework based entirely on synthetic supervision. It systematically covers webpage functional areas via categorized exploratio…
 tags:
   - "ACL 2026"
   - "LLM Agent"
@@ -12,7 +12,7 @@ tags:
   - "Categorized Exploration"
   - "Trajectory Quality"
 date: 2026-05-08
-content_hash: e97f268297df2f5c
+content_hash: 13ff1df7c285cc6d
 ---
 
 # SynthAgent: Adapting Web Agents with Synthetic Supervision
@@ -25,117 +25,116 @@ content_hash: e97f268297df2f5c
 
 ## TL;DR
 
-This paper proposes SynthAgent, a web agent adaptation framework built entirely on synthetic supervision. It employs categorized exploration to systematically cover functional regions of webpages for diverse task synthesis, followed by a dual refinement strategy—task refinement (conflict-triggered correction of hallucinations) and trajectory refinement (global-context denoising)—to improve synthetic data quality. SynthAgent significantly outperforms existing synthetic methods on WebArena and Online-Mind2Web.
+This paper proposes SynthAgent, a Web Agent adaptation framework based entirely on synthetic supervision. It systematically covers webpage functional areas via categorized exploration to synthesize diverse tasks. A dual refinement strategy—comprising task refinement (triggered by conflict detection to correct hallucinations) and trajectory refinement (post-hoc denoising via a global perspective)—improves synthetic data quality. SynthAgent significantly outperforms existing synthesis methods on WebArena and Online-Mind2Web.
 
 ## Background & Motivation
 
-**Background**: LLM-driven web agents demonstrate strong web interaction capabilities on standardized benchmarks, yet performance degrades sharply when deployed to unseen websites. Adapting to new environments requires environment-specific tasks and demonstration data, but manual annotation is costly and does not scale.
+**Background**: LLM-driven Web Agents demonstrate strong interaction capabilities on standardized benchmarks but suffer sharp performance declines when deployed to new websites not seen during training. Adapting to new environments requires environment-specific tasks and demonstration data, yet manual annotation is costly and unscalable.
 
-**Limitations of Prior Work**: (1) Self-Instruct prompts LLMs to "imagine" tasks without environmental grounding, resulting in simple and repetitive tasks; (2) OS-Genesis synthesizes tasks by back-translating from single-step observations, where insufficient context leads to substantial hallucinations (referencing non-existent elements or states); (3) Explorer continuously refines tasks during execution, but frequent intent changes (8.6 times on average) cause 68.3% of trajectories to exceed the step budget.
+**Limitations of Prior Work**: (1) Self-Instruct lets LLMs "imagine" tasks without environment grounding, leading to simple and repetitive tasks; (2) OS-Genesis synthesizes tasks backward from single-step observations, where insufficient context leads to frequent hallucinations (referencing non-existent elements or states); (3) Explorer continuously refines tasks during execution, but frequent intent shifts (averaging 8.6 times) cause 68.3% of trajectories to exceed step budgets.
 
-**Key Challenge**: Task synthesis requires environmental grounding to avoid hallucinations, yet over-grounding tasks during execution introduces trajectory noise—a fundamental design tension in synthetic supervision.
+**Key Challenge**: Task synthesis requires environment grounding to avoid hallucinations, but over-grounding tasks during execution introduces trajectory noise—a fundamental design tension in synthetic supervision.
 
-**Goal**: To design a fully synthetic supervision framework that efficiently adapts web agents to new environments without human involvement or test-set leakage.
+**Goal**: Design a purely synthetic supervision framework to efficiently adapt Web Agents to new environments without human intervention or test-set leakage.
 
-**Key Insight**: Decouple task refinement and trajectory refinement into two complementary stages: task refinement ensures feasibility but introduces noise, while trajectory refinement subsequently eliminates that noise.
+**Key Insight**: Decouple task refinement and trajectory refinement into two synergistic stages: task refinement ensures feasibility while potentially introducing noise, which trajectory refinement subsequently eliminates.
 
-**Core Idea**: Dual refinement—during execution, tasks are refined only when explicit conflicts are detected (conflict-triggered rather than continuous); after execution, trajectories are refined using global context. This simultaneously guarantees task feasibility and trajectory quality.
+**Core Idea**: Dual refinement—refining tasks only when explicit conflicts are detected during execution (conflict-triggered, rather than continuous), and using global context to refine trajectories post-execution to guarantee both task feasibility and trajectory quality.
 
 ## Method
 
 ### Overall Architecture
 
-SynthAgent consists of four stages: (1) **Categorized Exploration for Task Synthesis**—webpage elements are grouped by function, interaction triples $(o_t, a_t, o_{t+1})$ are uniformly sampled, and an LLM proposes multi-step tasks grounded in real interface transitions; (2) **Conflict-Triggered Task Refinement**—conflicts between tasks and observations are detected during trajectory collection, with refinement invoked only upon triggering (2.0 times on average); (3) **Global Trajectory Refinement**—noisy and misaligned actions are removed post-hoc using the complete trajectory and the final task $\tau^{\star}$; (4) **Agent Fine-Tuning**—open-source models are fine-tuned via SFT on the refined synthetic data. The training objective is standard autoregressive cross-entropy:
+SynthAgent consists of four stages: (1) **Categorized Exploration Task Synthesis**: Grouping webpage elements by function and uniformly sampling interaction triples $(o_t, a_t, o_{t+1})$ for the LLM to propose multi-step tasks based on real interface transitions; (2) **Conflict-Triggered Task Refinement**: Detecting conflicts between tasks and observations during trajectory collection, refining tasks only when triggered (averaging only 2.0 times); (3) **Global Trajectory Refinement**: Using the complete trajectory and final task $\tau^{\star}$ post-hoc to remove noise and misaligned actions; (4) **Agent Fine-tuning**: Performing SFT on open-source models using the refined synthetic data. The training loss follows the standard autoregressive cross-entropy:
 
-$$\mathcal{L}_{\text{SFT}} = \mathbb{E}_{(\tau^{\star}, h^{\star}) \sim \mathcal{D}} \left[ -\sum_{t=1}^{T} \log p_\theta(a_t | \tau^{\star}, o_{\leq t}, a_{<t}) \right]$$
+$$
+\mathcal{L}_{\text{SFT}} = \mathbb{E}_{(\tau^{\star}, h^{\star}) \sim \mathcal{D}} \left[ -\sum_{t=1}^{T} \log p_\theta(a_t | \tau^{\star}, o_{\leq t}, a_{<t}) \right]
+$$
 
 ### Key Designs
 
-1. **Categorized Exploration**:
+1.  **Categorized Exploration**:
+    *   **Function**: Systematically covers functional areas of webpages to enhance task diversity.
+    *   **Mechanism**: On each page $o_t$, the LLM categorizes interactive elements by semantic roles (e.g., "Account Management", "Search Filter"). Up to 2 unvisited elements are sampled per category for interaction. Sampling budgets per category prevent dense regions from dominating exploration.
+    *   **Design Motivation**: Random exploration (OS-Genesis) often visits redundant elements repeatedly while missing critical functional areas; categorized exploration treats this as a function-aware coverage problem, discovering an average of 6.0 functional categories per page.
 
-    - Function: Systematically covers functional regions of webpages to improve task diversity.
-    - Mechanism: On each page $o_t$, an LLM categorizes interactive elements by semantic role (e.g., "account management," "search filters"), and at most 2 unvisited elements per category are sampled for interaction. Per-category sampling budgets prevent any single dense region from dominating exploration.
-    - Design Motivation: Random exploration (as in OS-Genesis) repeatedly visits redundant elements while missing important functional regions. Categorized exploration reframes this as a function-aware coverage problem, discovering an average of 6.0 functional categories per page.
+2.  **Conflict-Triggered Task Refinement**:
+    *   **Function**: Corrects hallucinations in tasks while minimizing trajectory disruption.
+    *   **Mechanism**: Defines a lightweight conflict predicate $\mathcal{C}(h_t, \tau_t) = \neg\textsf{ExistsUI} \vee \textsf{MissingArgs} \vee \textsf{Stall}$, detecting missing UI elements, missing parameters, and execution stalls respectively. LLM refinement is called only upon conflict, following four principles: specifying missing details, aligning with actual observations, reducing scope, and maintaining category.
+    *   **Design Motivation**: Unlike Explorer’s continuous per-step refinement (8.6 times average, 68.3% timeouts), conflict-triggered refinement averages 2.0 times with only a 6.3% timeout rate—the initial task is sufficiently specified, and refinement focuses on "correction" rather than "redefinition".
 
-2. **Conflict-Triggered Task Refinement**:
-
-    - Function: Corrects hallucinations in tasks while minimizing disruption to trajectories.
-    - Mechanism: A lightweight conflict predicate is defined as $\mathcal{C}(h_t, \tau_t) = \neg\textsf{ExistsUI} \vee \textsf{MissingArgs} \vee \textsf{Stall}$, detecting absent UI elements, missing arguments, and execution stalls, respectively. LLM refinement is invoked only upon conflict, following four principles: specify missing details, align with actual observations, reduce scope, and preserve category.
-    - Design Motivation: Unlike Explorer's continuous per-step refinement (8.6 times/trajectory on average, 68.3% timeout rate), conflict-triggered refinement averages only 2.0 invocations/trajectory with a 6.3% timeout rate—initial tasks are sufficiently specified, and refinement focuses on *correcting* rather than *redefining* intent.
-
-3. **Trajectory Refinement with Global Context**:
-
-    - Function: Post-hoc removal of noisy and misaligned segments from trajectories.
-    - Mechanism: The complete trajectory $h_T$ and final task $\tau^{\star}$ are reviewed offline. Four editing operations are applied: Remove(i) deletes irrelevant/redundant steps, Reorder(i,j) swaps commutable steps, Drop($h_T$) discards excessively noisy trajectories, and Keep($h_T$) retains high-quality ones. The design deliberately favors precision—uncertain swaps are rejected rather than risking causal dependency violations.
-    - Design Motivation: Noise introduced by task refinement requires a post-hoc global perspective to clean up. Reorder accounts for only 4.1% of editing operations, yet reordered trajectories achieve higher preference win rates (42% vs. 27%).
+3.  **Trajectory Refinement with Global Context**:
+    *   **Function**: Removes noise and misaligned segments from trajectories post-hoc.
+    *   **Mechanism**: Off-line review of the full trajectory $h_T$ and final task $\tau^{\star}$ using four editing operations: Remove(i) for irrelevant/redundant steps, Reorder(i,j) for swappable steps, Drop($h_T$) for overly noisy trajectories, and Keep($h_T$) for good trajectories. The design is intentionally biased toward precision—uncertain swaps are rejected rather than risking causal dependency breaks.
+    *   **Design Motivation**: Noise introduced during task refinement requires a post-hoc global view for cleaning; while Reorder accounts for only 4.1% of edits, reordered trajectories achieve higher preference win rates (42% vs 27%).
 
 ### Loss & Training
 
-Standard SFT paradigm with a history context window of 3 recent steps. Up to 500 task-trajectory pairs are synthesized per website, and a single model is trained on data mixed from five websites (learning rate 1e-5, batch size 32, 3 epochs).
+Standard SFT paradigm with a historical context window of the 3 most recent steps. Synthesizes up to 500 task-trajectory pairs per website, training a single model on a mix of five websites (learning rate 1e-5, batch size 32, 3 epochs).
 
 ## Key Experimental Results
 
 ### Main Results
 
-**WebArena (5 websites) — Qwen2.5-VL-7B backbone**
+**WebArena (5 Websites) - Qwen2.5-VL-7B Backbone**
 
 | Method | Training Data | Shopping | CMS | Reddit | Gitlab | Maps | Overall |
-|--------|--------------|---------|-----|--------|--------|------|---------|
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | Base Qwen | - | 13.71 | 8.24 | 9.43 | 6.18 | 5.50 | 8.80 |
 | +Self-Instruct | Synthetic | 18.18 | 8.77 | 3.85 | 12.50 | 9.38 | 11.50 |
 | +OS-Genesis | Synthetic | 14.55 | 10.53 | 11.54 | 16.07 | 12.50 | 13.27 |
 | +Explorer | Synthetic | 10.91 | 3.51 | 0.00 | 1.82 | 3.12 | 4.44 |
 | **+SynthAgent** | **Synthetic** | **20.00** | **21.05** | **15.38** | **19.64** | **28.12** | **20.80** |
 
-**Online-Mind2Web (136 real websites)**
+**Online-Mind2Web (136 Real Websites)**
 
-| Method | GPT-4.1 Judge | GPT-5.1 Judge | WebJudge | Average |
-|--------|-------------|-------------|---------|---------|
+| Method | GPT-4.0 Judge | GPT-4.5 Judge | WebJudge | Average |
+| :--- | :--- | :--- | :--- | :--- |
 | Self-Instruct | 17.67 | 13.00 | 19.67 | 16.78 |
 | OS-Genesis | 19.53 | 11.00 | 19.33 | 16.62 |
 | **SynthAgent** | **31.67** | **15.67** | **23.33** | **23.56** |
 
 ### Ablation Study
 
-| Configuration | Overall | Change |
-|--------------|---------|--------|
-| SynthAgent (full) | 20.80 | — |
-| w/o Categorized Exploration | 17.26 | −3.54 |
-| w/o Task Refinement | 15.93 | −4.87 |
-| w/o Trajectory Refinement | 16.81 | −3.99 |
-| w/o Dual Refinement | 15.93 | −4.87 |
+| Configuration | Overall | Gain |
+| :--- | :--- | :--- |
+| SynthAgent (Full) | 20.80 | - |
+| w/o Categorized Exploration | 17.26 | -3.54 |
+| w/o Task Refinement | 15.93 | -4.87 |
+| w/o Trajectory Refinement | 16.81 | -3.99 |
+| w/o Dual Refinement | 15.93 | -4.87 |
 
 ### Key Findings
 
-- Explorer performs even below the base model—continuous refinement produces excessively long, misaligned trajectories that act as negative supervision.
-- Synthetic data quality: SynthAgent trajectories score 82.6, far exceeding Explorer (36.4) and OS-Genesis (52.0).
-- SynthAgent achieves a trajectory completion rate of 96.5% vs. Explorer's 30.5%, at lower API cost ($0.13 vs. $0.22 per trajectory).
-- Performance further improves on the stronger Qwen3 backbone (15.93→24.34), validating the model-agnostic nature of the approach.
+*   Explorer performs worse than the base model—continuous refinement yields overly long, misaligned "negative supervision" trajectories.
+*   Synthetic Data Quality: SynthAgent trajectory quality (82.6) far exceeds Explorer (36.4) and OS-Genesis (52.0).
+*   SynthAgent achieves a 96.5% trajectory completion rate vs. Explorer's 30.5%, with lower API costs ($0.13 vs $0.22 per trajectory).
+*   Gains persist on stronger backbones like Qwen2-7B (15.93→24.34), validating the model-agnostic nature of the method.
 
 ## Highlights & Insights
 
-- The core design insight—that task refinement and trajectory refinement are complementary—is precisely motivated: the former ensures feasibility but introduces noise, while the latter eliminates it.
-- The contrast between conflict-triggered and continuous refinement reveals a key design principle: the quality of initial tasks determines the appropriate refinement strategy.
-- Categorized exploration transforms random exploration into a structured coverage problem—a simple yet effective contribution.
+*   The design insight "task refinement and trajectory refinement are synergistic" is precise—the former ensures feasibility but adds noise, while the latter removes it.
+*   The comparison between conflict-triggered and continuous refinement reveals a key design principle: the strategy for refinement depends on the quality of the initial task.
+*   Categorized exploration converts random exploration into structured coverage, which is simple yet highly effective.
 
 ## Limitations & Future Work
 
-- Validation is limited to offline and restricted online environments; synthesis on real, actively changing websites remains unexplored.
-- Task and trajectory synthesis rely entirely on GPT-4.1; more advanced LLMs or hyperparameter optimization are not investigated.
-- Only standard SFT is employed; more advanced training paradigms such as DPO or online RL are not explored.
+*   Validation was restricted to offline and limited online environments; synthesis on real-world active websites remains unexplored.
+*   Task and trajectory synthesis depend entirely on GPT-4; the use of more advanced LLMs or parameter optimization has not been explored.
+*   Only standard SFT was used; advanced methods like DPO or online RL haven't been integrated.
 
 ## Related Work & Insights
 
-- **vs. OS-Genesis**: OS-Genesis synthesizes tasks from single-step observations, leading to hallucinations; SynthAgent addresses this via categorized exploration and conflict-triggered refinement.
-- **vs. Explorer**: Explorer's continuous refinement causes intent drift and excessively long trajectories; SynthAgent's conflict-triggered refinement preserves intent consistency.
-- **vs. AgentTrek**: AgentTrek relies on offline tutorials that may be outdated; SynthAgent synthesizes data by directly interacting with the environment.
+*   **vs OS-Genesis**: OS-Genesis synthesizes tasks from single-step observations leading to hallucinations; SynthAgent resolves this via Categorized Exploration and Conflict-Triggered Refinement.
+*   **vs Explorer**: Explorer's continuous refinement causes intent drift and excessive length; SynthAgent's conflict-triggered approach maintains intent consistency.
+*   **vs AgentTrek**: AgentTrek relies on potentially outdated offline tutorials; SynthAgent synthesizes directly through environment interaction.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ The synergistic design of dual refinement and the conflict-triggered mechanism constitute clear contributions.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Two benchmarks, multiple backbones, detailed ablations, data quality analysis, and scaling experiments.
-- Writing Quality: ⭐⭐⭐⭐⭐ Problem motivation is clearly articulated with in-depth analysis of the core design tension.
-- Value: ⭐⭐⭐⭐ Provides a practical, high-quality synthetic data solution for unsupervised web agent adaptation.
+*   Novelty: ⭐⭐⭐⭐ The synergistic design of dual refinement and the conflict-triggered mechanism are clear innovations.
+*   Experimental Thoroughness: ⭐⭐⭐⭐⭐ Two benchmarks, multiple backbones, detailed ablations, data quality analysis, and scaling experiments.
+*   Writing Quality: ⭐⭐⭐⭐⭐ Clear problem motivation and deep analysis of design tensions.
+*   Value: ⭐⭐⭐⭐ Provides a practical, high-quality synthetic data solution for unsupervised Web Agent adaptation.
 
 <!-- RELATED:START -->
 
@@ -144,10 +143,10 @@ Standard SFT paradigm with a history context window of 3 recent steps. Up to 500
 ## Related Papers
 
 - [\[ACL 2026\] ExpSeek: Self-Triggered Experience Seeking for Web Agents](expseek_self-triggered_experience_seeking_for_web_agents.md)
-- [\[ICLR 2026\] Web-CogReasoner: Towards Knowledge-Induced Cognitive Reasoning for Web Agents](../../ICLR2026/llm_agent/web-cogreasoner_towards_knowledge-induced_cognitive_reasoning_for_web_agents.md)
 - [\[ACL 2026\] Waking Up Blind: Cold-Start Optimization of Supervision-Free Agentic Trajectories](waking_up_blind_cold-start_optimization_of_supervision-free_agentic_trajectories.md)
-- [\[NeurIPS 2025\] Web-Shepherd: Advancing PRMs for Reinforcing Web Agents](../../NeurIPS2025/llm_agent/web-shepherd_advancing_prms_for_reinforcing_web_agents.md)
+- [\[ICLR 2026\] Web-CogReasoner: Towards Knowledge-Induced Cognitive Reasoning for Web Agents](../../ICLR2026/llm_agent/web-cogreasoner_towards_knowledge-induced_cognitive_reasoning_for_web_agents.md)
 - [\[ICLR 2026\] Towards Scalable Oversight via Partitioned Human Supervision](../../ICLR2026/llm_agent/towards_scalable_oversight_via_partitioned_human_supervision.md)
+- [\[ACL 2026\] Why LLM Web Agents Fail: A Hierarchical Planning Perspective](why_do_llm-based_web_agents_fail_a_hierarchical_planning_perspective.md)
 
 </div>
 

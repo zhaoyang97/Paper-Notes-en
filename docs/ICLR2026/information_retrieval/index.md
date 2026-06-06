@@ -19,7 +19,7 @@ tags:
 
 **🔬 ICLR2026** · **33** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (2)](../../ICML2026/information_retrieval/index.md) · [💬 ACL2026 (39)](../../ACL2026/information_retrieval/index.md) · [📷 CVPR2026 (9)](../../CVPR2026/information_retrieval/index.md) · [🤖 AAAI2026 (29)](../../AAAI2026/information_retrieval/index.md) · [🧠 NeurIPS2025 (31)](../../NeurIPS2025/information_retrieval/index.md) · [📹 ICCV2025 (7)](../../ICCV2025/information_retrieval/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (22)](../../ICML2026/information_retrieval/index.md) · [💬 ACL2026 (74)](../../ACL2026/information_retrieval/index.md) · [📷 CVPR2026 (9)](../../CVPR2026/information_retrieval/index.md) · [🤖 AAAI2026 (29)](../../AAAI2026/information_retrieval/index.md) · [🧠 NeurIPS2025 (31)](../../NeurIPS2025/information_retrieval/index.md) · [📹 ICCV2025 (7)](../../ICCV2025/information_retrieval/index.md)
 
 🔥 **Top topics:** RAG ×8 · LLM ×5 · Multimodal/VLM ×3 · Reasoning ×3
 

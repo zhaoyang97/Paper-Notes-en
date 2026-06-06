@@ -136,10 +136,10 @@ Standard self-attention is replaced by BCCB-based Circulant Attention, which can
 ## Related Papers
 
 - [\[AAAI 2026\] Learning Spatial Decay for Vision Transformers](learning_spatial_decay_for_vision_transformers.md)
+- [\[ACL 2026\] Characterizing the Expressivity of Local Attention in Transformers](../../ACL2026/llm_nlp/characterizing_the_expressivity_of_local_attention_in_transformers.md)
 - [\[NeurIPS 2025\] CAT: Circular-Convolutional Attention for Sub-Quadratic Transformers](../../NeurIPS2025/llm_nlp/cat_circular-convolutional_attention_for_sub-quadratic_transformers.md)
 - [\[NeurIPS 2025\] Strassen Attention, Split VC Dimension and Compositionality in Transformers](../../NeurIPS2025/llm_nlp/strassen_attention_split_vc_dimension_and_compositionality_in_transformers.md)
-- [\[ICLR 2026\] Statistical Advantage of Softmax Attention: Insights from Single-Location Regression](../../ICLR2026/llm_nlp/statistical_advantage_of_softmax_attention_insights_from_single-location_regress.md)
-- [\[ICLR 2026\] Trapped by simplicity: When Transformers fail to learn from noisy features](../../ICLR2026/llm_nlp/trapped_by_simplicity_when_transformers_fail_to_learn_from_noisy_features.md)
+- [\[ICML 2026\] SLAY: Geometry-Aware Spherical Linearized Attention with Yat-Kernel](../../ICML2026/llm_nlp/slay_geometry-aware_spherical_linearized_attention_with_yat-kernel.md)
 
 </div>
 

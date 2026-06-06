@@ -21,7 +21,7 @@ tags:
 
 **📹 ICCV2025** · **213** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (25)](../../ICML2026/image_generation/index.md) · [📷 CVPR2026 (210)](../../CVPR2026/image_generation/index.md) · [🔬 ICLR2026 (149)](../../ICLR2026/image_generation/index.md) · [🤖 AAAI2026 (77)](../../AAAI2026/image_generation/index.md) · [🧠 NeurIPS2025 (242)](../../NeurIPS2025/image_generation/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (131)](../../ICML2026/image_generation/index.md) · [💬 ACL2026 (5)](../../ACL2026/image_generation/index.md) · [📷 CVPR2026 (210)](../../CVPR2026/image_generation/index.md) · [🔬 ICLR2026 (149)](../../ICLR2026/image_generation/index.md) · [🤖 AAAI2026 (77)](../../AAAI2026/image_generation/index.md) · [🧠 NeurIPS2025 (242)](../../NeurIPS2025/image_generation/index.md)
 
 🔥 **Top topics:** Diffusion Models ×87 · Text-to-Image ×17 · Image Editing ×15 · Adversarial Robustness ×12 · Few-/Zero-Shot Learning ×8
 

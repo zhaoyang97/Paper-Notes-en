@@ -120,8 +120,8 @@ $$\mathcal{L} = \mathcal{L}_{focal} + \alpha \mathcal{L}_{dice} + \mathcal{L}_{I
 
 - [\[CVPR 2026\] S2AM3D: Scale-controllable Part Segmentation of 3D Point Clouds](../../CVPR2026/3d_vision/s2am3d_scale-controllable_part_segmentation_of_3d_point_cloud.md)
 - [\[ICLR 2026\] GeoPurify: A Data-Efficient Geometric Distillation Framework for Open-Vocabulary 3D Segmentation](geopurify_a_data-efficient_geometric_distillation_framework_for_open-vocabulary_.md)
-- [\[ICCV 2025\] Find Any Part in 3D](../../ICCV2025/3d_vision/find_any_part_in_3d.md)
 - [\[CVPR 2026\] Action-guided Generation of 3D Functionality Segmentation Data](../../CVPR2026/3d_vision/action-guided_generation_of_3d_functionality_segmentation_data.md)
+- [\[ICCV 2025\] Find Any Part in 3D](../../ICCV2025/3d_vision/find_any_part_in_3d.md)
 - [\[ICLR 2026\] PD²GS: Part-Level Decoupling and Continuous Deformation of Articulated Objects via Gaussian Splatting](pd2gs_part-level_decoupling_and_continuous_deformation_of_articulated_objects_vi.md)
 
 </div>

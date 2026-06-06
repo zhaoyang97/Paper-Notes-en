@@ -151,7 +151,7 @@ HybriDLA achieves 83.5% mAP with vision-only input, trailing the multimodal DLAF
 - [\[AAAI 2026\] Axis-Aligned Document Dewarping](axis-aligned_document_dewarping.md)
 - [\[ICCV 2025\] Lay2Story: Extending Diffusion Transformers for Layout-Togglable Story Generation](../../ICCV2025/llm_evaluation/lay2story_extending_diffusion_transformers_for_layout-togglable_story_generation.md)
 - [\[AAAI 2026\] Structured Language Generation Model: Loss Calibration and Formatted Decoding for Efficient Text](structured_language_generation_model_loss_calibration_and_formatted_decoding_for.md)
-- [\[NeurIPS 2025\] Document Summarization with Conformal Importance Guarantees](../../NeurIPS2025/llm_evaluation/document_summarization_with_conformal_importance_guarantees.md)
+- [\[ACL 2026\] Stress Testing Factual Consistency Metrics for Long-Document Summarization](../../ACL2026/llm_evaluation/stress_testing_factual_consistency_metrics_for_long-document_summarization.md)
 - [\[NeurIPS 2025\] HybridNorm: Towards Stable and Efficient Transformer Training via Hybrid Normalization](../../NeurIPS2025/llm_evaluation/hybridnorm_towards_stable_and_efficient_transformer_training_via_hybrid_normaliz.md)
 
 </div>

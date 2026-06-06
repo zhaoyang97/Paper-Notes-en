@@ -206,8 +206,8 @@ Optimal strategy: precompute $\mathcal{G}_{co}$ and $\mathcal{G}_s$ (lightweight
 - [\[AAAI 2026\] TruthfulRAG: Resolving Factual-level Conflicts in Retrieval-Augmented Generation with Knowledge Graphs](truthfulrag_resolving_factual-level_conflicts_in_retrieval-augmented_generation_.md)
 - [\[NeurIPS 2025\] Can Knowledge-Graph-based Retrieval Augmented Generation Really Retrieve What You Need?](../../NeurIPS2025/image_generation/can_knowledge-graph-based_retrieval_augmented_generation_really_retrieve_what_yo.md)
 - [\[AAAI 2026\] Laytrol: Preserving Pretrained Knowledge in Layout Control for Multimodal Diffusion Transformers](laytrol_preserving_pretrained_knowledge_in_layout_control_fo.md)
+- [\[ICML 2026\] WISE: A World Knowledge-Informed Semantic Evaluation for Text-to-Image Generation](../../ICML2026/image_generation/wise_a_world_knowledge-informed_semantic_evaluation_for_text-to-image_generation.md)
 - [\[CVPR 2026\] BiGain: Unified Token Compression for Joint Generation and Classification](../../CVPR2026/image_generation/bigain_unified_token_compression_for_joint_generation_and_classification.md)
-- [\[NeurIPS 2025\] Conditional Panoramic Image Generation via Masked Autoregressive Modeling](../../NeurIPS2025/image_generation/conditional_panoramic_image_generation_via_masked_autoregres.md)
 
 </div>
 

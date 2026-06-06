@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] ToolMATH: A Math Tool Benchmark for Realistic Long-Horizon Multi-Tool Reasoning
 description: >-
-  [ICML 2026][LLM Reasoning][Tool invocation evaluation] The authors translate the human-annotated solution steps of the MATH dataset into "reusable Python tools with descriptions and type signatures…
+  [ICML 2026][LLM Reasoning][Tool-calling evaluation] The authors translate human-annotated solution steps from the MATH dataset into "reusable Python tools with descriptions and type signatures…
 tags:
   - "ICML 2026"
   - "LLM Reasoning"
-  - "Tool invocation evaluation"
+  - "Tool-calling evaluation"
   - "long-horizon multi-tool reasoning"
   - "distractor tools"
-  - "tool-missing scenarios"
+  - "missing tool scenarios"
   - "Plan+ReAct"
 date: 2026-05-08
-content_hash: 756f8df258edaae7
+content_hash: 264f3d232b22fbbf
 ---
 
 # ToolMATH: A Math Tool Benchmark for Realistic Long-Horizon Multi-Tool Reasoning
@@ -20,116 +20,111 @@ content_hash: 756f8df258edaae7
 **Conference**: ICML 2026  
 **arXiv**: [2602.21265](https://arxiv.org/abs/2602.21265)  
 **Code**: None  
-**Area**: LLM Agent / Tool Use Benchmark  
-**Keywords**: Tool invocation evaluation, long-horizon multi-tool reasoning, distractor tools, tool-missing scenarios, Plan+ReAct
+**Area**: LLM Agent / Tool-use Benchmark  
+**Keywords**: Tool-calling evaluation, long-horizon multi-tool reasoning, distractor tools, missing tool scenarios, Plan+ReAct
 
 ## TL;DR
-The authors translate the human-annotated solution steps of the MATH dataset into "reusable Python tools with descriptions and type signatures," constructing the ToolMATH benchmark with 8K problems and 12K tools. It covers long-horizon multi-tool composition (hop 1-8+), controllable distractor tool similarity (5 levels × 4 densities), and scenarios where all gold tools are removed. Validation shows that the dominant failure factor is not tool selection but reasoning itself—thought errors account for over 90%, and distractor tools amplify early minor deviations into irreversible execution drift.
+The authors translate human-annotated solution steps from the MATH dataset into "reusable Python tools with descriptions and type signatures," constructing the ToolMATH benchmark containing 8K problems and 12K tools. It simultaneously covers long-horizon multi-tool combinations (1-8+ hop), controllable distractor tool similarity (5 levels × 4 densities), and "Distractors-only" scenarios where gold tools are removed. Evaluations demonstrate that the dominant factor for model failure is not tool selection but the reasoning itself—thought errors account for over 90%, while distractor tools amplify early minor biases into irreversible execution drift.
 
 ## Background & Motivation
-**Background**: Tool-augmented LLMs have become the standard agent paradigm. From Toolformer and Gorilla to BFCL and ToolLLM, a series of works have standardized function calling. However, existing benchmarks mostly focus on one or two axes: (i) standardized schema comparison (BFCL), (ii) robustness under tool unavailability (Treviño et al. 2025), (iii) tool control interfaces (ReAct/DFSDT), and (iv) tool dependency graph construction (TaskBench).
+**Background**: Tool-augmented LLMs have become a standard agent paradigm. A series of works from Toolformer and Gorilla to BFCL and ToolLLM have standardized function calling. However, most existing benchmarks only capture one or two axes among: (i) standardized schema comparison (BFCL), (ii) robustness under tool unavailability (Treviño et al. 2025), (iii) tool control interfaces (ReAct/DFSDT), and (iv) tool dependency graph construction (TaskBench).
 
-**Limitations of Prior Work**: In real-world deployment, agents face complex joint scenarios of "large, semantically overlapping tool catalogs + long-horizon multi-step dependencies + occasional missing key capabilities," but no benchmark simultaneously covers these three dimensions on a single, automatically verifiable task. Existing math reasoning benchmarks (GSM8K, MATH) allow objective correctness verification but lack the tool dimension; existing tool benchmarks often rely on manual correctness judgment or lack long-horizon dependencies.
+**Limitations of Prior Work**: Realistic deployments present agents with complex joint scenarios involving "huge and semantically overlapping tool catalogs + long-horizon multi-step dependencies + occasionally missing key capabilities." Yet, no benchmark covers these three dimensions within a **single automatically verifiable** task. Existing math reasoning benchmarks (GSM8K, MATH) provide objective correctness but lack the tool dimension, while existing tool benchmarks often rely on manual judgment or lack long-horizon dependencies.
 
-**Key Challenge**: To simultaneously achieve (i) objective automatic verifiability (not relying on LLM judge), (ii) inherent long-horizon dependencies (step coupling), (iii) controllable distractor tool structure, and (iv) controllable tool-missing scenarios—only with all four can agent failure modes be precisely dissected. The stepwise solutions in MATH naturally provide: each step can be extracted as a Python tool, steps are logically tightly coupled, and answers can be machine-verified.
+**Key Challenge**: To precisely analyze agent failure modes, a benchmark must simultaneously satisfy four characteristics: (i) **objective automatic verification** (not relying on LLM judges), (ii) **natural long-horizon dependency** (inter-step coupling), (iii) **controllable distractor tool structures**, and (iv) **controllable tool missing scenarios**. MATH’s step-by-step solutions provide exactly this: each step can be extracted as a Python tool, the logic is hard-coupled, and answers are machine-decodable.
 
-**Goal**: (i) Transform MATH solution steps into reusable tools to construct long-horizon composition tasks; (ii) Design distractor tool sampling strategies and "distractors-only" environments, allowing controlled variation of distractor similarity and density; (iii) Ensure benchmark reliability through tool-level and problem-level dual validation plus manual review; (iv) Use hop count to decouple long-horizon difficulty from distractor difficulty.
+**Goal**: (i) Convert MATH solution steps into reusable tools to construct long-horizon compositional tasks; (ii) design distractor tool sampling strategies and "Distractors-only" environments to controllably vary similarity and density; (iii) ensure benchmark reliability through tool-level and question-level verification plus manual review; (iv) decouple long-range difficulty from distractor difficulty using hop counts.
 
-**Key Insight**: Treat the "stepwise logical chain" of mathematics as a natural scaffold for tool composition—each step corresponds to a Python implementation + natural language description + type signature, with models only seeing the description and schema, not the code. This "one wrong step, all wrong" property amplifies both long-horizon reasoning and tool selection failures.
+**Key Insight**: Utilize the "logical chain of steps" in mathematics as a natural scaffolding for tool composition. Each step corresponds to a Python implementation, a natural language description, and a type signature. Models see only descriptions and schemas, not the code. This "one-wrong-step-fails-all" characteristic allows both "long-horizon reasoning failures" and "tool selection failures" to be amplified and exposed.
 
-**Core Idea**: Using the MATH step-tool mapping, distractor tools, and missing tools as three independent dimensions, construct a benchmark that can simultaneously dissect "tool selection / long-horizon planning / fallback under missing tools."
+**Core Idea**: Use the MATH step-tool mapping, distractor tools, and missing tools as three independent dimensions to construct a benchmark that can simultaneously analyze "tool selection, long-horizon planning, and missing tool fallback."
 
 ## Method
 
 ### Overall Architecture
-ToolMATH construction has two stages: (1) **Tool extraction & validation**: Feed MATH's annotated solution steps to an LLM, which returns several small Python functions (with name, description, typed input schema, code), then perform tool-level consistency validation (each tool gets 5 test cases, LLM judge checks if description matches execution, allowing floating-point tolerance) + problem-level trace validation (run Plan+ReAct with 7 validation models; if at least one model uses the tool and gets the correct answer, the tool passes); (2) **Tool-grounded evaluation**: For each problem $p$, the environment = gold tool set $\mathcal G(p)$ + distractor tools $\mathcal D_{\ell,k}(p)$ sampled from the global pool (5 similarity levels, density $k \in \{5,10,20,50\}$), or in Distractors-only mode, remove $\mathcal G(p)$ and leave only distractors, forcing model fallback. Each problem is annotated with hop count (dynamically computed parallel post-logic steps) as an independent long-horizon difficulty axis.
+ToolMATH construction is divided into two phases: (1) **Tool extraction & validation**: Human-annotated MATH steps are fed to an LLM to return small Python functions (with name, description, typed input schema, and code). This is followed by tool-level consistency verification (5 test cases per tool judged by an LLM for consistency between description and execution) and question-level trace verification (Plan+ReAct is run using 7 validation models; if at least one model uses the tool and answers correctly, the tool passes). (2) **Tool-grounded evaluation**: The environment for each problem $p$ consists of gold tools $\mathcal G(p)$ plus distractor tools $\mathcal D_{\ell,k}(p)$ sampled from a global pool (5 similarity levels, density $k \in \{5,10,20,50\}$). In Distractors-only mode, $\mathcal G(p)$ is removed. Each problem is annotated with a hop count (parallel-aware logical steps calculated via dynamic programming) as an independent axis for long-horizon difficulty.
 
 ### Key Designs
 
-1. **Two-stage validation pipeline for MATH steps → reusable tools**:
+1. **MATH Step → Reusable Tool Two-Round Validation Pipeline**:
+    - **Function**: Converts human-annotated steps into a toolset where models only see descriptions and schemas, ensuring tool quality (not benchmark noise).
+    - **Mechanism**: Tool-wise verification—5 valid inputs are prepared for each extracted tool to verify description-execution consistency via GPT-4o; tools pass only with a 100% score. Question-wise verification—7 models ({GPT-4o-mini, Llama 3-8B, Mistral-7B, Qwen2-7B, Qwen2.5-7B, Phi-3 Medium, Yi 1.5-9B}) run Plan+ReAct with only descriptions; if at least one model succeeds and calls tool $t$, it passes. Otherwise, it enters a manual repair loop. The final set includes 12,369 tools and 7,699 problems.
+    - **Design Motivation**: Single-layer verification is inadequate—consistency checks might pass tools that are correctly described but unusable, while trace checks might misattribute model errors to tool faults.
 
-    - **Function**: Convert human-annotated solution steps into a tool set where only the description and schema are visible (not code), ensuring tool quality (not benchmark noise).
-    - **Mechanism**: Tool-wise validation—prepare 5 schema-valid inputs for each extracted tool, execute to get actual outputs, use GPT-4o as judge to check if description matches output (allowing floating-point tolerance); all 5 must pass. Question-wise validation—give 7 validation models ({GPT-4o-mini, Llama 3-8B, Mistral-7B, Qwen2-7B, Qwen2.5-7B, Phi-3 Medium, Yi 1.5-9B}) only the problem and gold tool set (no code), run Plan+ReAct; if at least one model gets the correct answer and the trace shows successful invocation of tool $t$, then $t$ passes; otherwise, enter manual repair loop (fix description/implementation and re-validate). Final main set: 12,369 tools + 7,699 problems, plus ToolMATH-Hard with 329 problems that cannot be automatically validated.
-    - **Design Motivation**: Single-layer validation is insufficient—tool consistency alone may select "well-described but unused" tools; trace-only may attribute tool errors to the model. Dual validation plus manual repair is the engineering best practice for benchmarks, systematized here for large-scale reliability.
+2. **5 Levels Similarity × 4 Levels Density Distractor Structure**:
+    - **Function**: Controllably adjusts the "semantic overlap between gold and non-gold tools" to separate catalog size from confusion difficulty.
+    - **Mechanism**: Similarity levels range from Level 1 (different-category random) to Level 5 (keyword overlap + embedding tiebreak). Density $k$ uses **nested guarantees** $\mathcal D_{\ell,k_1}(p) \subseteq \mathcal D_{\ell,k_2}(p)$ to ensure comparisons reflect only increased density.
+    - **Design Motivation**: Previous benchmarks used weak or fixed distractors. Level 1–5 allows for "Accuracy vs. Similarity" curves, clearly proving that high-similarity distractors amplify long-horizon failures.
 
-2. **5-level similarity × 4-level density distractor tool structure**:
-
-    - **Function**: Adjust the "semantic overlap between gold and non-gold tools" in a controllable way, decoupling catalog size from confusion difficulty.
-    - **Mechanism**: Level 1 (different-category random) → Level 2 (pure random) → Level 3 (same-category random) → Level 4 (embedding similarity retrieval) → Level 5 (keyword overlap + embedding tiebreak), with increasing similarity. Density $k \in \{5,10,20,50\}$, and **nesting ensures** $\mathcal D_{\ell,k_1}(p) \subseteq \mathcal D_{\ell,k_2}(p)$, so density changes only reflect increased interference, not sample variation. Each sampling is deterministically reproducible (fixed seed + fixed tool pool serialization order).
-    - **Design Motivation**: Previous benchmarks either had weak interference (low overlap) or fixed distractors (no ladder), making it impossible to quantitatively analyze "the effect of tool similarity on failure modes." Levels 1→5 allow plotting "accuracy vs. distractor similarity" curves, cleanly proving that "high-similarity distractors amplify long-horizon failures" (Figure 2).
-
-3. **Difficulty decoupling via Distractors-only + logical-hop annotation**:
-
-    - **Function**: Separate the axes of "tool availability" and "long-horizon reasoning difficulty" to independently diagnose model failure modes.
-    - **Mechanism**: Distractors-only mode removes all gold tools, leaving only distractors, forcing the model to either fallback to tool-free reasoning or give up; Logical-hop annotation uses "step extraction + parallelism check" via two LLM prompts to compute each problem's hop count (not simply counting tools, but removing parallelizable steps). Evaluation buckets accuracy by hop, revealing: (i) accuracy monotonically decreases with hop (even for No-tools baseline, proving hop captures inherent difficulty); (ii) high-similarity distractors mainly amplify the drop at high hops.
-    - **Design Motivation**: Previous benchmarks mixed "problem difficulty" and "tool confusion," making it unclear which side caused poor model performance. Two independent axes enable clean ablation. Distractors-only also reveals an interesting phenomenon: Qwen2.5-7B can compose alternative solutions using generic distractor tools, indicating multiple solution paths in math problems.
+3. **Distractors-only + Logical-hop Annotation for Difficulty Decoupling**:
+    - **Function**: Separates "tool availability" from "long-horizon reasoning difficulty" to diagnose specific failure modes.
+    - **Mechanism**: Distractors-only mode removes all gold tools, forcing models to fallback or quit. Logical-hop annotation uses LLMs to calculate the hop count (removing parallel steps). Accuracy curves plotted by hop count show a monotonic decrease, indicating that hop count captures inherent difficulty.
+    - **Design Motivation**: Previous benchmarks conflated problem difficulty with tool noise. These independent axes ensure clean ablation. Distractors-only also reveals that models like Qwen2.5-7B can combine generic tools for alternative solutions.
 
 ### Loss & Training
-This is a pure benchmark/evaluation paper; no models are trained. Main evaluation protocol: Plan+ReAct (write plan first, then alternate reasoning and structured tool calls), evaluated models = {GPT-4o-mini, Llama 3-8B, Qwen 2.5-7B}. Metric = exact-match accuracy (standardized). On ToolMATH-Hard, also compare ReAct, DFSDT, and Plan+ReAct frameworks.
+This is a benchmark paper and does not train models. The primary evaluation protocol is Plan+ReAct (writing a plan first, then alternating reasoning with structured tool calls). Evaluation models include {GPT-4o-mini, Llama 3-8B, Qwen 2.5-7B}. The metric is exact-match accuracy.
 
 ## Key Experimental Results
 
 ### Main Results
-Average gold-present accuracy by hop and similarity (GPT-4o-mini as representative):
+Gold-present average accuracy variations with hop and similarity (represented by GPT-4o-mini):
 
 | Setting | hop 1-2 | hop 5 | hop 7 | hop 8+ |
 |---|---|---|---|---|
-| No tools | ~High | Medium | Low | Very low |
-| Gold-only | Near ceiling | High | Medium | Low (still collapses at hop 8+) |
-| Gold + Level 1-2 distractors | Near Gold-only | Medium-high | Medium | Low |
-| Gold + Level 4-5 distractors | Still high | Noticeable drop | Sharp drop | Worst |
+| No tools | ~High | Mid | Low | Very Low |
+| Gold-only | Near ceiling | High | Mid | Low |
+| Gold + Level 1-2 Distractor | Near Gold-only | Mid-High | Mid | Low |
+| Gold + Level 4-5 Distractor | Still High | Significant Drop | Rapid Drop | Worst |
 
 ToolMATH-Hard framework comparison (gold-only):
 
-| Framework | Low hop | High hop | Overall trend |
+| Framework | Low hop | High hop | General Trend |
 |---|---|---|---|
-| No tools | High | Sharp drop | Long-horizon always fails |
-| ReAct | High | Medium | Limited local reasoning |
-| DFSDT | Medium-high | Medium-high | Best in mid-range |
-| **Plan+ReAct** | High | **Strongest** | No drop in long-horizon |
+| No tools | High | Sharp Drop | Long-horizon failure |
+| ReAct | High | Mid | Limited local reasoning |
+| DFSDT | Mid-High | Mid-High | Best for mid-range |
+| **Plan+ReAct** | High | **Strongest** | No long-horizon drop |
 
-### Ablation Study (manual failure annotation, 100 problems per model)
+### Ablation Study (Failure Type Manual Annotation, n=100 per model)
 
 | Failure Type | Llama 3-8B | Qwen 2.5-7B | GPT-4o-mini |
 |---|---|---|---|
 | Thought Error | >90% | >90% | >90% |
-| Plan Error | **89** | Medium | Medium |
-| Incomplete Execution | 59 | **8** | Medium |
-| Observation Omission | Medium | **63** | Medium |
-| Repeated Call | Medium | Medium | **67** |
+| Plan Error | **89** | Mid | Mid |
+| Incomplete Execution | 59 | **8** | Mid |
+| Observation Omission | Mid | **63** | Mid |
+| Repeated Call | Mid | Mid | **67** |
 | Tool Hallucination | Low | Low | Low |
-| Wrong Parameter Value | Medium | Medium | Medium |
+| Wrong Parameter Value | Mid | Mid | Mid |
 
 ### Key Findings
-- Thought Error exceeds 90% for all models, proving that **reasoning ability itself** rather than tool understanding is the main bottleneck for agents.
-- Models show distinct behavioral profiles: Llama 3-8B is conservative and brittle (high Plan Error + Incomplete), Qwen 2.5-7B is impulsive (lowest Incomplete but highest Observation Omission, aggressively outputs answers), GPT-4o-mini is overall strongest but suffers from "repeated call paradox" (no self-correction when stuck in loops).
-- Plan+ReAct significantly outperforms ReAct/DFSDT at high hops, indicating that "explicit global planning" becomes more valuable as long-horizon execution lengthens; at low hops, the three are similar, and planning overhead is not worthwhile.
-- High-similarity distractors do not directly cause errors but **amplify early deviations**, making failure rates at hop 8+ much steeper than in low-similarity scenarios.
-- In Distractors-only mode, Qwen 2.5-7B can use non-gold tools to substitute for gold tools and complete tasks (accuracy higher than No-tools baseline), indicating that the multiplicity of solutions in math allows "using the wrong tool but getting the right answer."
+- Thought Error exceeds 90% across all models, proving that **reasoning capability itself**, rather than tool understanding, is the primary bottleneck for agents.
+- Models exhibit distinct behavioral profiles: Llama 3-8B is conservative and fragile (High Plan Error + Incomplete); Qwen 2.5-7B is impulsive (Lowest Incomplete but highest Observation Omission); GPT-4o-mini is overall strongest but suffers from the "repeated call paradox" (trapped in loops without self-correction).
+- Plan+ReAct significantly outperforms ReAct/DFSDT at higher hop counts, indicating the value of "explicit global planning" increases with long-horizon execution.
+- High-similarity distractors do not cause direct errors but **amplify early deviations**, leading to a steeper failure rate at hop 8+ compared to low-similarity scenarios.
+- In Distractors-only mode, Qwen 2.5-7B can use non-gold tools as substitutes to complete tasks, suggesting the multi-path nature of math problems.
 
 ## Highlights & Insights
-- The observation that **MATH steps = natural tool scaffolding** is very clever: translating human step-by-step solutions into Python functions + descriptions preserves the logical coupling while making "tool description/schema" the object the model must understand. This approach of "using mathematical rigor to build tool benchmarks" can be extended to code, theorem proving, and other domains.
-- The finding that **thought error is the main bottleneck** is counterintuitive: the tool-calling community has long focused on function calling schema standardization and ReAct/DFSDT control flow, but this work quantitatively shows these are not the main issues—the real bottleneck is reasoning. This recalibrates research priorities.
-- The **behavioral profiles (Llama conservative / Qwen impulsive / GPT looping)** are valuable engineering references: when selecting agents, model temperament can be matched to task characteristics.
+- The observation that **MATH steps = natural tool scaffolding** is ingenious: translating human steps into Python functions preserves logic coupling while making tool schemas a test of model understanding.
+- The finding that **"thought error is the primary bottleneck"** is counter-intuitive. While the community focuses on function calling schemas and control flows, this work quantitatively proves reasoning is the main conflict.
+- **Behavioral profiling** (Conservative Llama / Impulsive Qwen / Looping GPT) provides a valuable engineering reference for matching model temperaments to specific tasks.
 
 ## Limitations & Future Work
-- Domain is math-specific, lacking the openness, ambiguity, and under-specified goals of real-world tasks; cannot be directly extrapolated to web agents, coding agents, scientific agents, etc.
-- Tool consistency relies on LLM judge, and 5 test cases may not cover all corner-case inconsistencies.
-- Evaluation frameworks are limited to Plan+ReAct/ReAct/DFSDT; newly emerging reasoning model agents (o1/R1 series with embedded reasoning + tool use) are not evaluated, so the proportion of thought errors may already be decreasing.
-- ToolMATH-Hard has only 329 problems, limiting statistical power, with even sparser samples in the hop 8+ bucket.
-- Future directions: extend to non-math domains (especially code tasks with objective correctness); include reasoning model agents and self-correction loop baselines; perform factor analysis of hop and distractor to estimate independent contributions.
+- Focus is limited to the math domain, lacking the openness and ambiguity of real-world goals.
+- Tool consistency relies on LLM judges; 5 test cases may not cover corner-case behavioral inconsistencies.
+- Modern reasoning models (o1/R1 series) were not evaluated; their internal reasoning might reduce thought error ratios.
+- The ToolMATH-Hard set is small (329 problems), leading to sparse samples in the hop 8+ bin.
 
 ## Related Work & Insights
-- **vs ToolLLM / API-Bank**: These use large-scale APIs to test function calling standardization but lack long-horizon multi-step dependencies and objective automatic scoring; ToolMATH uses MATH's hard logical chains to fill these gaps.
-- **vs BFCL (Patil et al. 2025)**: BFCL focuses on function calling format correctness and missing tool behavior, but tools have no compositional dependencies; ToolMATH makes long-horizon composition explicit via hop count.
-- **vs TaskBench (Shen et al. 2024)**: TaskBench uses graph structures to generate tool dependency tasks but is synthetic; ToolMATH is based on human solution steps, making dependencies more realistic.
-- **vs Treviño et al. 2025 (tool failure benchmark)**: They focus on tool unavailability; ToolMATH treats this as the Distractors-only axis and jointly evaluates with long-horizon difficulty.
+- **vs ToolLLM / API-Bank**: These focus on large-scale API function calling but lack long-horizon dependencies and objective scoring; ToolMATH uses math logic chains to fill this gap.
+- **vs BFCL (Patil et al. 2025)**: BFCL focuses on schema correctness and missing tools without compositional dependencies; ToolMATH explicitly models long-range compositions via hop counts.
+- **vs TaskBench (Shen et al. 2024)**: TaskBench uses synthetic graph structures for dependencies; ToolMATH uses real human solution steps.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ "Using MATH steps as tool scaffolding" is a simple but overlooked idea, and three-dimensional joint evaluation is urgently needed for real deployment.
-- Experimental Thoroughness: ⭐⭐⭐⭐ 3 models × 5 distractor similarity levels × 4 distractor densities × 8+ hop buckets × 3 frameworks, plus ToolMATH-Hard and 100-problem manual failure analysis, coverage is very high.
-- Writing Quality: ⭐⭐⭐⭐ Three challenges and three designs correspond one-to-one, logic is clear; lacks some main table values (relies on figures), readers need to check the appendix.
-- Value: ⭐⭐⭐⭐ Provides the agent research community with a much-needed objectively verifiable benchmark, and the finding that "thought error is the main bottleneck" can guide future research directions.
+- Novelty: ⭐⭐⭐⭐
+- Experimental Thoroughness: ⭐⭐⭐⭐
+- Writing Quality: ⭐⭐⭐⭐
+- Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
 
@@ -137,11 +132,22 @@ ToolMATH-Hard framework comparison (gold-only):
 
 ## Related Papers
 
+- [\[ICML 2026\] The Deterministic Horizon: When Extended Reasoning Fails and Tool Delegation Becomes Necessary](the_deterministic_horizon_when_extended_reasoning_fails_and_tool_delegation_beco.md)
+- [\[ACL 2026\] Evo-Attacker: Memory-Augmented Reinforcement Learning for Long-Horizon Tool Attacks on LLM-MAS](../../ACL2026/llm_reasoning/evo-attacker_memory-augmented_reinforcement_learning_for_long-horizon_tool_attac.md)
+- [\[ICML 2026\] MOSAIC: Learning When to Act or Refuse — Guarding Agentic Reasoning Models for Safe Multi-step Tool Use](learning_when_to_act_or_refuse_guarding_agentic_reasoning_models_for_safe_multi-.md)
+- [\[ICML 2026\] Diversity Over Frequency: Rethinking Tool Use in Visual Chain-of-Thought Agents](diversity_over_frequency_rethinking_tool_use_in_visual_chain-of-thought_agents.md)
 - [\[ICML 2026\] Lifting Traces to Logic: Programmatic Skill Induction with Neuro-Symbolic Learning for Long-Horizon Agentic Tasks](lifting_traces_to_logic_programmatic_skill_induction_with_neuro-symbolic_learnin.md)
-- [\[ICLR 2026\] Generalizable End-to-End Tool-Use RL with Synthetic CodeGym](../../ICLR2026/llm_reasoning/generalizable_end-to-end_tool-use_rl_with_synthetic_codegym.md)
-- [\[ICLR 2026\] AgentMath: Empowering Mathematical Reasoning for Large Language Models via Tool-Augmented Agent](../../ICLR2026/llm_reasoning/agentmath_empowering_mathematical_reasoning_for_large_language_models_via_tool-a.md)
-- [\[ICLR 2026\] The Illusion of Diminishing Returns: Measuring Long Horizon Execution in LLMs](../../ICLR2026/llm_reasoning/the_illusion_of_diminishing_returns_measuring_long_horizon_execution_in_llms.md)
-- [\[ACL 2026\] JTPRO: A Joint Tool-Prompt Reflective Optimization Framework for Language Agents](../../ACL2026/llm_reasoning/jtpro_a_joint_tool-prompt_reflective_optimization_framework_for_language_agents.md)
+
+</div>
+
+<!-- RELATED:END -->
+## Related Papers
+
+- [\[ICML 2026\] The Deterministic Horizon: When Extended Reasoning Fails and Tool Delegation Becomes Necessary](the_deterministic_horizon_when_extended_reasoning_fails_and_tool_delegation_beco.md)
+- [\[ACL 2026\] Evo-Attacker: Memory-Augmented Reinforcement Learning for Long-Horizon Tool Attacks on LLM-MAS](../../ACL2026/llm_reasoning/evo-attacker_memory-augmented_reinforcement_learning_for_long-horizon_tool_attac.md)
+- [\[ICML 2026\] MOSAIC: Learning When to Act or Refuse — Guarding Agentic Reasoning Models for Safe Multi-step Tool Use](learning_when_to_act_or_refuse_guarding_agentic_reasoning_models_for_safe_multi-.md)
+- [\[ICML 2026\] Diversity Over Frequency: Rethinking Tool Use in Visual Chain-of-Thought Agents](diversity_over_frequency_rethinking_tool_use_in_visual_chain-of-thought_agents.md)
+- [\[ICML 2026\] DenseSteer: Steering Small Language Models towards Dense Math Reasoning](densesteer_steering_small_language_models_towards_dense_math_reasoning.md)
 
 </div>
 

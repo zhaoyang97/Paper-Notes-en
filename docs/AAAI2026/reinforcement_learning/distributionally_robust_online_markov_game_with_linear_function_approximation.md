@@ -180,8 +180,8 @@ In a simulated game with 5 states, 2 players, and $H=3$ (structured as in Figure
 - [\[ICLR 2026\] Is Pure Exploitation Sufficient in Exogenous MDPs with Linear Function Approximation?](../../ICLR2026/reinforcement_learning/is_pure_exploitation_sufficient_in_exogenous_mdps_with_linear_function_approxima.md)
 - [\[NeurIPS 2025\] A Unifying View of Linear Function Approximation in Off-Policy RL Through Matrix Splitting and Preconditioning](../../NeurIPS2025/reinforcement_learning/a_unifying_view_of_linear_function_approximation_in_offpolic.md)
 - [\[ICLR 2026\] Distributionally Robust Cooperative Multi-Agent Reinforcement Learning via Robust Value Factorization](../../ICLR2026/reinforcement_learning/distributionally_robust_cooperative_multi-agent_reinforcement_learning_via_robus.md)
+- [\[ICML 2026\] Game of Thought: Robust Information Seeking with Large Language Models Using Game Theory](../../ICML2026/reinforcement_learning/game_of_thought_robust_information_seeking_with_large_language_models_using_game.md)
 - [\[NeurIPS 2025\] Sample Complexity of Distributionally Robust Average-Reward Reinforcement Learning](../../NeurIPS2025/reinforcement_learning/sample_complexity_of_distributionally_robust_average-reward_reinforcement_learni.md)
-- [\[AAAI 2026\] TowerMind: A Tower Defence Game Learning Environment and Benchmark for LLM as Agents](towermind_a_tower_defence_game_learning_environment_and_benchmark_for_llm_as_age.md)
 
 </div>
 

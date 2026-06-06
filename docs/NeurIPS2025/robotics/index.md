@@ -21,7 +21,7 @@ tags:
 
 **🧠 NeurIPS2025** · **54** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (13)](../../ICML2026/robotics/index.md) · [💬 ACL2026 (1)](../../ACL2026/robotics/index.md) · [📷 CVPR2026 (34)](../../CVPR2026/robotics/index.md) · [🔬 ICLR2026 (47)](../../ICLR2026/robotics/index.md) · [🤖 AAAI2026 (37)](../../AAAI2026/robotics/index.md) · [📹 ICCV2025 (26)](../../ICCV2025/robotics/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (45)](../../ICML2026/robotics/index.md) · [💬 ACL2026 (10)](../../ACL2026/robotics/index.md) · [📷 CVPR2026 (34)](../../CVPR2026/robotics/index.md) · [🔬 ICLR2026 (47)](../../ICLR2026/robotics/index.md) · [🤖 AAAI2026 (37)](../../AAAI2026/robotics/index.md) · [📹 ICCV2025 (26)](../../ICCV2025/robotics/index.md)
 
 🔥 **Top topics:** Robotics ×8 · Agents ×7 · Reasoning ×7 · Multimodal/VLM ×4 · Navigation ×4
 

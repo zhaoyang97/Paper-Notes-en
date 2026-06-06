@@ -130,8 +130,8 @@ During VLA execution → extract the last-layer hidden state $\mathbf{e}_t$ at e
 - [\[CVPR 2026\] Adaptive Action Chunking at Inference-time for Vision-Language-Action Models](../../CVPR2026/robotics/adaptive_action_chunking_at_inference-time_for_vision-language-action_models.md)
 - [\[NeurIPS 2025\] ThinkAct: Vision-Language-Action Reasoning via Reinforced Visual Latent Planning](thinkact_vision-language-action_reasoning_via_reinforced_visual_latent_planning.md)
 - [\[CVPR 2026\] SaPaVe: Towards Active Perception and Manipulation in Vision-Language-Action Models for Robotics](../../CVPR2026/robotics/sapave_active_perception_manipulation_vla_roboti.md)
+- [\[ACL 2026\] Capability-Oriented Failure Attribution for Vision-Language Navigation Agents](../../ACL2026/robotics/where_did_it_go_wrong_capability-oriented_failure_attribution_for_vision-and-lan.md)
 - [\[NeurIPS 2025\] CogVLA: Cognition-Aligned Vision-Language-Action Model via Instruction-Driven Routing & Sparsification](cogvla_cognition-aligned_vision-language-action_model_via_instruction-driven_rou.md)
-- [\[AAAI 2026\] 10 Open Challenges Steering the Future of Vision-Language-Action Models](../../AAAI2026/robotics/10_open_challenges_steering_the_future_of_vision-language-ac.md)
 
 </div>
 

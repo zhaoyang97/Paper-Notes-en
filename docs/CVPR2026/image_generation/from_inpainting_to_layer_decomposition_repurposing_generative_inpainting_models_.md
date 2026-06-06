@@ -136,7 +136,7 @@ Compared to the baseline FLUX.1-Fill-dev, the proposed method achieves a gain of
 - [\[CVPR 2026\] Cycle-Consistent Tuning for Layered Image Decomposition](cycle-consistent_tuning_for_layered_image_decomposition.md)
 - [\[CVPR 2026\] Reparameterized Tensor Ring Functional Decomposition for Multi-Dimensional Data Recovery](reparameterized_tensor_ring_functional_decomposition_for_multi-dimensional_data_.md)
 - [\[CVPR 2026\] Pluggable Pruning with Contiguous Layer Distillation for Diffusion Transformers](pluggable_pruning_with_contiguous_layer_distillation_for_diffusion_transformers.md)
-- [\[CVPR 2026\] Layer Consistency Matters: Elegant Latent Transition Discrepancy for Generalizable Synthetic Image Detection](layer_consistency_matters_elegant_latent_transition_discrepancy_for_generalizabl.md)
+- [\[AAAI 2026\] FreeInpaint: Tuning-free Prompt Alignment and Visual Rationality Enhancement in Image Inpainting](../../AAAI2026/image_generation/freeinpaint_tuning-free_prompt_alignment_and_visual_rationality_enhancement_in_i.md)
 
 </div>
 

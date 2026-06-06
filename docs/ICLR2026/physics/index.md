@@ -15,7 +15,7 @@ tags:
 
 **🔬 ICLR2026** · **12** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (6)](../../ICML2026/physics/index.md) · [📷 CVPR2026 (5)](../../CVPR2026/physics/index.md) · [🤖 AAAI2026 (10)](../../AAAI2026/physics/index.md) · [🧠 NeurIPS2025 (41)](../../NeurIPS2025/physics/index.md) · [📹 ICCV2025 (2)](../../ICCV2025/physics/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (24)](../../ICML2026/physics/index.md) · [📷 CVPR2026 (5)](../../CVPR2026/physics/index.md) · [🤖 AAAI2026 (10)](../../AAAI2026/physics/index.md) · [🧠 NeurIPS2025 (41)](../../NeurIPS2025/physics/index.md) · [📹 ICCV2025 (2)](../../ICCV2025/physics/index.md)
 
 **[Astral: Training Physics-Informed Neural Networks with Error Majorants](astral_training_physics-informed_neural_networks_with_error_majorants.md)**
 

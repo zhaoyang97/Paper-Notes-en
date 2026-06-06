@@ -125,9 +125,9 @@ Built upon HyPlaneHead (StyleGAN2 backbone + hybrid plane representation). Train
 
 - [\[CVPR 2026\] Order Matters: 3D Shape Generation from Sequential VR Sketches](../../CVPR2026/others/order_matters_3d_shape_generation_from_sequential_vr_sketches.md)
 - [\[ICLR 2026\] Implicit Bias of Per-sample Adam on Separable Data: Departure from the Full-batch Regime](implicit_bias_of_per-sample_adam_on_separable_data_departure_from_the_full-batch.md)
+- [\[ICML 2026\] Riemannian Networks over Full-Rank Correlation Matrices](../../ICML2026/others/riemannian_networks_over_full-rank_correlation_matrices.md)
 - [\[NeurIPS 2025\] Learning to Condition: A Neural Heuristic for Scalable MPE Inference](../../NeurIPS2025/others/learning_to_condition_a_neural_heuristic_for_scalable_mpe_inference.md)
 - [\[AAAI 2026\] CASL: Curvature-Augmented Self-supervised Learning for 3D Anomaly Detection](../../AAAI2026/others/casl_curvature-augmented_self-supervised_learning_for_3d_anomaly_detection.md)
-- [\[CVPR 2026\] SldprtNet: A Large-Scale Multimodal Dataset for CAD Generation in Language-Driven 3D Design](../../CVPR2026/others/sldprtnet_a_large-scale_multimodal_dataset_for_cad_generation_in_language-driven.md)
 
 </div>
 

@@ -188,9 +188,9 @@ Key ablation findings:
 ## Related Papers
 
 - [\[ICLR 2026\] BOTS: A Unified Framework for Bayesian Online Task Selection in LLM Reinforcement Finetuning](bots_a_unified_framework_for_bayesian_online_task_selection_in_llm_reinforcement.md)
+- [\[ACL 2026\] EVE: A Domain-Specific LLM Framework for Earth Intelligence](../../ACL2026/llm_nlp/eve_a_domain-specific_llm_framework_for_earth_intelligence.md)
 - [\[AAAI 2026\] IROTE: Human-like Traits Elicitation of Large Language Model via In-Context Self-Reflective Optimization](../../AAAI2026/llm_nlp/irote_human-like_traits_elicitation_of_large_language_model_via_in-context_self-.md)
 - [\[ICLR 2026\] Optimas: Optimizing Compound AI Systems with Globally Aligned Local Rewards](optimas_optimizing_compound_ai_systems_with_globally_aligned_local_rewards.md)
-- [\[ICLR 2026\] GASP: Guided Asymmetric Self-Play For Coding LLMs](gasp_guided_asymmetric_self-play_for_coding_llms.md)
 - [\[ICML 2026\] Escaping Mode Collapse in LLM Generation via Geometric Regulation](../../ICML2026/llm_nlp/escaping_mode_collapse_in_llm_generation_via_geometric_regulation.md)
 
 </div>

@@ -2,71 +2,68 @@
 title: >-
   [Paper Note] How 'Neural' is a Neural Foundation Model?
 description: >-
-  [ICML 2026][Self-Supervised Learning][Neural Foundation Model] The authors treat a "state-of-the-art foundation model (FNN) of mouse visual cortex" as a physiological experimental subject, analyzing its encoder…
+  [ICML 2026][Self-Supervised Learning][Neural Foundation Model] The authors treat a "SOTA foundation model for mouse visual cortex (FNN)" as a physiological experimental subject. By analyzing its encoder, recurrent…
 tags:
   - "ICML 2026"
   - "Self-Supervised Learning"
   - "Neural Foundation Model"
-  - "decoding manifold"
-  - "encoding manifold"
+  - "Decoding Manifold"
+  - "Encoding Manifold"
   - "tubularity metric"
-  - "digital twin"
+  - "Digital Twin"
 date: 2026-05-08
-content_hash: a7e2923fb7e72b47
+content_hash: 898253df3630e0c1
 ---
 
 # How 'Neural' is a Neural Foundation Model?
 
 **Conference**: ICML 2026  
 **arXiv**: [2601.21508](https://arxiv.org/abs/2601.21508)  
-**Code**: None (reuses public FNN + public manifolds pipeline)  
-**Area**: Neural Foundation Models / Interpretability / Representation Learning  
-**Keywords**: Neural Foundation Model, decoding manifold, encoding manifold, tubularity metric, digital twin
+**Code**: None (Based on public FNN + reuse of public manifolds pipelines)  
+**Area**: Neuroscience Foundation Models / Interpretability / Representation Learning  
+**Keywords**: Neural Foundation Model, Decoding Manifold, Encoding Manifold, tubularity metric, Digital Twin
 
 ## TL;DR
-The authors treat a "state-of-the-art foundation model (FNN) of mouse visual cortex" as a physiological experimental subject, analyzing its encoder, recurrent, and readout modules using the trio of decoding manifold, encoding manifold, and decoding trajectory. They find that FNN's fitting accuracy mainly relies on the readout's homogeneous feature maps, while only the recurrent module is truly "brain-like." Using a newly proposed tubularity metric, they quantitatively show that early encoding layers lack biological temporal structure, and provide clear recommendations for future neural foundation models: "add recurrence early, reduce feature dimensions in readout."
+The authors treat a "SOTA foundation model for mouse visual cortex (FNN)" as a physiological experimental subject. By analyzing its encoder, recurrent, and readout modules using a toolkit consisting of decoding manifolds, encoding manifolds, and decoding trajectories, they find that FNN's fitting accuracy is primarily sustained by a set of homogeneous feature maps in the readout, while only the recurrent module is truly "brain-like." Using a newly proposed "tubularity" metric, they quantitatively show that "early encoding layers lack biological-grade temporal structures," providing explicit recommendations for future neural foundation models to "add recurrence early and reduce feature dimensions in the readout."
 
 ## Background & Motivation
 
-**Background**: In the era of digital twins, neuroscience has seen the emergence of "neural foundation models" capable of directly predicting spike sequences in mouse primary visual cortex (V1) from input videos. FNN achieves state-of-the-art performance (normalized response correlation close to 70%) on large-scale functional connectomics data such as MICrONS, and is often used as a "silicon twin" for interventional brain science experiments.
+**Background**: In the era of digital twins, a series of "neural foundation models" have emerged in neuroscience, capable of directly predicting spike sequences in regions like the mouse primary visual cortex (V1) from input videos. FNN has achieved SOTA performance on the largest-scale functional connectomics data (MICrONS), with normalized response correlations approaching 70%, and is frequently used as a "silicon twin" for interventional brain science experiments.
 
-**Limitations of Prior Work**: Response correlation is a "forward prediction" metric that ignores the "inverse problem"—how many different inputs can produce the same output. With over a million units in FNN and only pairwise RSA-type analyses possible, current alignment evaluations cannot guarantee brain-like behavior on OOD data. In other words, "good fit" does not equal "correct mechanism."
+**Limitations of Prior Work**: Response correlation is a "forward prediction" metric that ignores the "inverse problem"—how many different inputs can correspond to the same output. Furthermore, FNN contains millions of units and can typically only be analyzed via pairwise RSA-like methods. Current alignment evaluations do not guarantee that the model works like the brain on OOD (Out-of-Distribution) data. In other words, "good fitting" does not equal "correct mechanism."
 
-**Key Challenge**: One must treat the model as a black box to compute alignment scores, yet also "look inside" to verify mechanisms. Existing interpretability tools (RSA / CCA / Linear Predictivity / DSA) are pairwise or single-layer, unable to capture population-level temporal dynamics.
+**Key Challenge**: There is a need to treat the model as a black box to calculate alignment scores while simultaneously "investigating the black box" to verify mechanisms. However, existing interpretability tools (RSA / CCA / Linear Predictivity / DSA) are either pairwise or single-layered, failing to capture population-level temporal dynamics.
 
-**Goal**: (a) Perform physiology-style population analysis on each FNN module without retraining; (b) introduce quantitative metrics to compare "model temporal structure vs. real retina/V1 temporal structure"; (c) propose feasible architectural improvements.
+**Goal**: (a) Perform module-wise physiological-style population analysis without retraining FNN; (b) introduce quantitative metrics to compare "model temporal structure vs. real retinal/V1 temporal structure"; (c) propose feasible architectural improvement suggestions.
 
-**Key Insight**: Drawing from control theory's "identifiability"—when a perfect forward model is lacking, one must open the box. The authors borrow the neuroscientist's toolkit: decoding manifold (how stimuli cluster in population activity space), encoding manifold (how neurons cluster in stimulus-response space), and decoding trajectory (how population activity evolves over time), applying all three to the same foundation model for the first time.
+**Key Insight**: The authors start from the perspective of "identifiability" in control theory—when a perfect forward model is unavailable, one must open the box. They borrow a toolkit from neuroscientists: decoding manifolds (how stimuli cluster in the population activity space), encoding manifolds (how neurons cluster in the stimulus-response space), and decoding trajectories (how population activity evolves over time), applying all three to a single foundation model for the first time.
 
-**Core Idea**: Using the "decoding manifold + encoding manifold + decoding trajectory + tubularity metric" quartet, treat each FNN module as a candidate brain region and examine whether its population-level dynamics match those of real retina/V1.
+**Core Idea**: Use a four-part suite—"decoding manifold + encoding manifold + decoding trajectory + tubularity metric"—to inspect each FNN module as a candidate brain region and check if its population-level dynamics are consistent with the real retina / V1.
 
 ## Method
 
 ### Overall Architecture
-The FNN's encoder (10 convolutional layers, including 3D convolutions for 12 time steps), recurrent (attention-based Conv-LSTM), and readout (Gaussian readout + per-mouse linear mapping) modules are each sampled for unit activity. A set of parameterized stimuli (8 directions of drifting square-wave gratings + naturalistic optical flow, totaling 88 sequences) is used to elicit PSTH. For each module: ① PCA on population activity averaged over all time yields the decoding manifold; ② population activity unfolded over time yields decoding trajectories; ③ tensor decomposition (Williams et al., 2018) embeds neurons into 2D by their spatiotemporal response patterns to 88 stimuli, yielding the encoding manifold; ④ the above are quantified into tubularity (tightness + crossings), cross-validated with existing RSA / CCA / LP / DSA.
+Unit activities were sampled from each of FNN's three modules: the encoder (10 convolutional layers, including 3D convolutions capturing 12 temporal steps), the recurrent module (Conv-LSTM with attention), and the readout (Gaussian readout + one linear map per mouse). PSTHs were stimulated using a set of parameterized stimuli (8 directions of drifting square-wave gratings + naturalistic optical flow, totaling 88 sequences). On each module, the following were performed: ① PCA on time-averaged population activity to obtain the decoding manifold; ② time-step expansion of population activity to obtain decoding trajectories; ③ tensor decomposition (Williams et al., 2018) to embed neurons into 2D based on "spatiotemporal response patterns to 88 stimuli" to obtain the encoding manifold; ④ quantification of the above comparisons using tubularity (tightness + crossings), cross-validated with existing RSA / CCA / LP / DSA.
 
 ### Key Designs
 
-1. **Trio of Population-Level Manifold Analyses**:
+1.  **Triple Population-Level Manifold Analysis**:
+    - **Function**: Replaces pairwise RSA by separating "how the population encodes stimuli" from "how neurons are driven by stimuli."
+    - **Mechanism**: In the decoding manifold, each point represents a stimulus trial, with coordinates being PCA-reduced population activity; the same stimulus should form clusters (readability). In the encoding manifold, each point is a unit, with coordinates formed by "stimulus-response" features from tensor decomposition; functionally similar units should be proximate. Decoding trajectories expand each trial over time into a curve; integrating activity along the trajectory returns to the decoding manifold.
+    - **Design Motivation**: Traditional RSA only calculates one-to-one similarity and misses "population geometry." Manifolds visualize "global topology + local similarity + temporal evolution" simultaneously, corresponding exactly to the "encoding-decoding-dynamics" questions of greatest interest to neuroscientists.
 
-    - **Function**: Replaces pairwise RSA, separating "how the population encodes stimuli" from "how neurons are driven by stimuli."
-    - **Mechanism**: In the decoding manifold, each point is a stimulus trial, coordinates are PCA-reduced population activity; same stimuli should cluster (readable). In the encoding manifold, each point is a unit, coordinates are tensor-decomposed "stimulus-response" features; functionally similar units should be neighbors. Decoding trajectories unfold each stimulus trial over time as a curve, whose activity integral returns to the decoding manifold.
-    - **Design Motivation**: Traditional RSA only computes pairwise similarity, missing "population geometry"; manifolds visualize "global topology + local similarity + temporal evolution" at once, matching neuroscientists' core questions of "encoding—decoding—dynamics."
+2.  **Tubularity Metric (tightness + crossings)**:
+    - **Function**: Converts the difference between "biological-grade temporal structure vs. model temporal structure" into comparable numbers.
+    - **Mechanism**: For each stimulus class bundle, $S_{\text{tight}}$ measures whether trajectories of the same stimulus cluster tightly into a "tube" (biological retina $S_{\text{tight}} \approx 1.99$, FNN encoder L8 only $\approx 0.07$, indicating a failure to form tubes). $S_{\text{cross}}$ measures the number of crossings between different stimulus trajectories (biology shows significantly more crossings than FNN, $p < 0.005$). Together, they answer whether the activity expands into stable but interacting bundles based on stimuli.
+    - **Design Motivation**: Existing dynamic similarity metrics like DSA may judge two trajectories as aligned if they have similar shapes but different causes. The authors found that L1 naturally forms loops due to convolutional translation equivariance, leading to false high DSA scores. Tubularity evaluates "shape pairs" and "semantic pairs" separately, thus exposing DSA's false alarms.
 
-2. **Tubularity Metric (tightness + crossings)**:
-
-    - **Function**: Quantifies differences between "biological vs. model temporal structure."
-    - **Mechanism**: For each stimulus class's trajectory bundle, $S_{\text{tight}}$ measures whether trajectories tightly form a "tube" (biological retina $S_{\text{tight}} \approx 1.99$, FNN encoder L8 only $\approx 0.07$ indicates no tube), $S_{\text{cross}}$ measures the number of crossings between different stimulus trajectories (biological cross is significantly higher than FNN, $p < 0.005$). Together, they answer whether the system forms stable yet interacting bundles like neural populations.
-    - **Design Motivation**: Existing dynamic similarity metrics like DSA may align "different causes but similar shapes"; the authors find L1 naturally forms loops due to convolutional translation invariance, causing DSA to give false positives. Tubularity separates "shape alignment" from "semantic alignment," exposing DSA's false positives.
-
-3. **Module-by-Module Comparison: Retina vs V1**:
-
-    - **Function**: Anchors each stage with a clear biological counterpart for evaluation.
-    - **Mechanism**: Real retina data serves as the "early + strongly clustered" example (encoding manifold highly clustered), V1 as "late + smoothly continuous" (encoding manifold smoothly transitions). Each FNN layer is checked: encoder should resemble retina, recurrent should resemble V1, readout should maintain V1 style. Results: encoder resembles neither retina nor V1 (shows a "non-selective intensity arm" $\gamma$ absent in biology); recurrent finally shows direction selectivity and tubular trajectories, most V1-like; readout collapses into many highly homogeneous discrete clusters (far from V1's continuity); output is a linear combination of readout, appearing smooth but PSTH is mostly transient, still unlike V1.
-    - **Design Motivation**: Foundation models are often praised for "good end-to-end fit," but module-by-module comparison with corresponding brain regions clarifies "which layer contributes biological relevance, which just fits individual differences."
+3.  **Module-wise Comparison (Retina vs. V1)**:
+    - **Function**: Provides explicit biological counterparts as anchors for evaluation at each stage.
+    - **Mechanism**: Real retinal data serves as an example of "early + strong discrete clusters" (highly clustered encoding manifold), while V1 serves as a "late + smooth continuous" example (continuous transition in encoding manifold). FNN layers are then checked: early encoder should resemble the retina, recurrent should resemble V1, and readout should maintain V1-style. Results: the encoder resembles neither (possessing a "non-selective intensity arm" $\gamma$ not found in biology); the recurrent module finally shows directional selectivity and tubular trajectories, most resembling V1; the readout collapses into numerous highly homogeneous discrete clusters (deviating from V1's continuity); the output is a linear combination of readouts, appearing smooth but with transient PSTHs, still unlike V1.
+    - **Design Motivation**: Foundation models are often praised for "end-to-end fitting," but module-wise auditing—comparing "what should look like what"—clearly delineates which layers contribute biological relevance versus those merely fitting individual variance.
 
 ### Loss & Training
-No new models are trained; all analyses are performed on the public FNN checkpoint from Wang et al. 2025. Only a new tubularity computation pipeline is added, with all parameters being descriptive geometric statistics, requiring no training.
+No new models were trained; all analyses were conducted on the FNN checkpoints published by Wang et al. 2025. A new tubularity calculation pipeline was added, consisting of descriptive geometric statistics requiring no training.
 
 ## Key Experimental Results
 
@@ -74,13 +71,13 @@ No new models are trained; all analyses are performed on the public FNN checkpoi
 
 | Region | Enc L1 | Enc L2 | Enc L4 | Enc L5 | Enc L7 | Enc L8 | Rec | Readout | Output |
 |---|---|---|---|---|---|---|---|---|---|
-| Mean Alignment with Retina (RSA/CCA/LP/DSA) | 0.26 | 0.26 | 0.30 | 0.33 | 0.28 | 0.28 | **0.40** | 0.34 | 0.34 |
-| Mean Alignment with V1 | 0.29 | 0.21 | 0.32 | 0.30 | 0.30 | 0.32 | **0.53** | 0.38 | 0.48 |
+| Avg. Alignment (Retina) | 0.26 | 0.26 | 0.30 | 0.33 | 0.28 | 0.28 | **0.40** | 0.34 | 0.34 |
+| Avg. Alignment (V1) | 0.29 | 0.21 | 0.32 | 0.30 | 0.30 | 0.32 | **0.53** | 0.38 | 0.48 |
 
-| Stage | Decoding Acc | $S_{\text{tight}}$ (higher = more tubular) | $S_{\text{cross}}$ (biological significantly higher) |
+| Stage | Decoding Acc | $S_{\text{tight}}$ (Higher = Tube-like) | $S_{\text{cross}}$ (Significant in Bio) |
 |---|---|---|---|
-| Retina (biological) | — | 1.99 | $1.8\times 10^{-6}$ |
-| V1 (biological) | — | 0.33 | $4.0\times 10^{-6}$ |
+| Retina (Bio) | — | 1.99 | $1.8\times 10^{-6}$ |
+| V1 (Bio) | — | 0.33 | $4.0\times 10^{-6}$ |
 | FNN Encoder L8 | 0.74 | 0.07 | $1.3\times 10^{-5}$ |
 | FNN Recurrent | **0.89** | 0.12 | $2.7\times 10^{-7}$ |
 | FNN Readout | 0.88 | 0.15 | $3.5\times 10^{-6}$ |
@@ -88,41 +85,41 @@ No new models are trained; all analyses are performed on the public FNN checkpoi
 
 ### Ablation Study
 
-| Removed Component | Phenomenon |
+| Removal Item | Phenomenon |
 |---|---|
-| "Non-selective intensity arm" $\gamma$ in Encoder L8 | Decoding trajectories immediately become highly stationary, barely changing over time, proving that the previous "pseudo-temporal structure" was entirely due to intensity increase, not true temporal coding |
-| Encoding manifold only / Decoding manifold only | Neither single perspective can reveal the contradiction that readout is "highly clustered but output resembles V1"; only the trio together shows that "output fakes continuity by linearly combining readout's rich PSTH" |
-| DSA only vs tubularity | DSA falsely rates L1 as "highly aligned" (due to convolutional translation invariance causing natural stimulus loops), tubularity exposes this false alignment |
+| Intensity arm $\gamma$ in Enc L8 | Decoding trajectories immediately become highly steady-state, proving "pseudo-temporal structure" comes from intensity rise rather than true temporal encoding. |
+| Single Manifold Only | Neither perspective alone reveals the contradiction of the readout being "highly clustered while output resembles V1"; the triple-set is required. |
+| DSA vs. Tubularity | DSA mislabels L1 as "highly aligned" (due to translation equivariance); tubularity exposes this false alignment. |
 
 ### Key Findings
-- FNN's classification accuracy peaks at the recurrent module (0.89), then declines—contradicting the intuition that "deeper is better," indicating that readout and output mainly perform "per-mouse spike fitting" rather than higher-order encoding.
-- The retina's encoding manifold is "clearly clustered," V1 is "smoothly continuous"; FNN's readout does the opposite—many highly homogeneous discrete clusters, marking its biggest mechanistic mismatch with biology; output appears continuous but is achieved by linearly combining many feature maps' transients, not true population dynamics.
-- Biological trajectories' $S_{\text{cross}}$ is significantly higher than FNN: even when both form tubes, biological populations show more group-level interactions (possibly from traveling waves, clique interactions), which FNN lacks in dynamical complexity.
-- Early encoder lacks any tubular temporal structure, meaning that even with 3D convolutions, FNN's early processing only "extracts intensity features" rather than "forms temporal codes"—a strong hint for future architectural improvements.
+- FNN's classification accuracy peaks at the recurrent module (0.89) then decreases—counterintuitive to the "deeper is better" heuristic, implying readout/output primarily perform personalized spike fitting rather than higher-order encoding.
+- The retinal encoding manifold is "distinctly clustered" while V1 is "smoothly continuous." FNN's readout goes the opposite way—large numbers of highly homogeneous discrete clusters—representing its largest mechanistic mismatch with biology.
+- Biological trajectories show significantly higher $S_{\text{cross}}$ than FNN: even within tubes, biological populations exhibit more population-level interactions (likely from traveling waves or clique interactions) that FNN lacks.
+- The early encoder lacks tubular temporal structure, meaning even with 3D convolutions, early processing merely "extracts intensity features" rather than "forming temporal codes."
 
 ## Highlights & Insights
-- Transplants the physiologist's "slice experiment" mindset to foundation models: not asking "what is the alignment score," but "which layer does what, and which brain region does it resemble"—this diagnostic interpretability is far more meaningful than a single alignment number.
-- Tubularity is a simple yet sharp geometric metric, specifically exposing "shape-aligned but semantically misaligned" false alignments; revealing DSA's blind spot is the paper's most practical methodological contribution.
-- Exposes the readout as an "appendage module"—it carries most of the fitting accuracy but uses mechanisms unlike V1, suggesting future neural foundation models should not keep stacking feature maps, but instead inject neural diversity inductive bias into earlier layers.
-- The two improvement suggestions—"add recurrence early to mimic amacrine connectivity, reduce feature count in readout"—are directly data-driven and easily testable in future work.
+- Migrating the "slice experiment" logic of physiologists to foundation models: instead of asking "what is the alignment score," asking "which layer does what, and which brain region does it resemble"—this diagnostic interpretability is far more meaningful than a single number.
+- Tubularity is a simple yet sharp geometric metric designed to detect "correct shape, incorrect semantics" pseudo-alignment; revealing DSA's blind spots is a substantial methodological contribution.
+- Exposing the readout as an "appendage" module—it carries most of the fitting accuracy but uses mechanisms unlike V1, suggesting future models should stop stacking feature maps and instead place inductive biases for neural diversity in earlier layers.
+- Actionable advice: "add early recurrence to simulate amacrine connectivity" and "reduce feature counts in readout" are direct data-driven observations.
 
 ## Limitations & Future Work
-- Only one FNN model is analyzed; cross-model consistency is unverified. If other video-based neural foundation models also show "only recurrent is V1-like," the conclusion would be stronger.
-- The stimulus set is limited to 88 parameterized sequences to match biological controls, still narrower than the natural videos used in FNN training; OOD behavior cannot be fully inferred.
-- Tubularity is a new metric, with no established baseline or robustness tests on synthetic data; like RSA/DSA, it may have its own biases.
-- No empirical evidence is provided for "if the architecture is modified as suggested, alignment scores will improve"—the next step of most interest to engineering.
+- Only a single FNN model was analyzed; cross-model consistency remains unverified.
+- Stimulus sets were restricted to 88 sequences for biological comparison, which is narrower than the natural videos used for FNN training; OOD behavior cannot be fully inferred.
+- Tubularity is a new metric without established baselines or robustness testing on synthetic data; like RSA/DSA, it may have inherent biases.
+- No empirical evidence was provided showing how much alignment scores would increase if the architecture were modified as suggested.
 
 ## Related Work & Insights
-- **vs RSA / CCA / Linear Predictivity / DSA**: Traditional alignment metrics are pairwise or single-layer summaries, unable to capture population dynamics; this work adds "manifold + tubularity" for a population geometry perspective, and finds DSA can be fooled by convolutional loops.
-- **vs Doerig et al. 2023 and other "DNN as brain model" reviews**: Reviews emphasize "good end-to-end fit proves DNN is a brain model," while this work takes a "mechanism reconciliation" stance, cautioning that high predictive accuracy ≠ brain-like internal representations.
-- **vs Klindt et al. / Lurz et al. on readout**: Gaussian readout has long been considered "efficient and interpretable," but this work shows its readout representations are far from V1 manifold structure, challenging this popular approach.
-- **Insight**: Foundation model interpretability can be more "biological"—using real brain data's population manifolds as ground-truth, reconciling each model layer with a brain region is more robust than LLM-as-judge or custom scoring; this approach could be applied to LLMs (using human fMRI as anchor).
+- **vs RSA / CCA / Linear Predictivity / DSA**: Traditional metrics are pairwise or single-layer summaries. This work adds a population geometry perspective and finds that DSA can be deceived by convolutional recurrent structures.
+- **vs Doerig et al. 2023, etc.**: While surveys emphasize that "good end-to-end fitting proves DNNs are brain models," this work provides a "mechanistic reconciliation" reality check, noting that high prediction accuracy $\neq$ brain-like internal representation.
+- **vs Klindt et al. / Lurz et al. on readout**: Gaussian readout designs have been considered efficient and interpretable, but this work proves they produce readout representations far from V1 manifold structures, challenging this convention.
+- **Insight**: Foundation model interpretability can be more "biologized"—using population manifolds of real brain data as ground-truth to "audit" each model layer. This path could be inversely applied to LLMs using human fMRI as an anchor.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Combining the trio on foundation models + proposing tubularity is a rare methodological contribution; but each component has precedent.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Multiple layers + metrics + standard alignment comparisons, but only one model covered.
-- Writing Quality: ⭐⭐⭐⭐⭐ Each manifold/trajectory plot is presented side-by-side with biological ground-truth, highly readable.
-- Value: ⭐⭐⭐⭐ Provides actionable architectural improvement suggestions, directly advancing neural digital twin research.
+- **Novelty**: ⭐⭐⭐⭐ Applying the triple-set to foundation models + tubulartiy is a rare methodological contribution; individual components exist.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Crosses multiple layers and metrics with standard alignment controls, but limited to one model.
+- **Writing Quality**: ⭐⭐⭐⭐⭐ Excellent readability with manifolds/trajectories presented alongside biological ground-truth.
+- **Value**: ⭐⭐⭐⭐ Provides actionable architectural improvements for the neural digital twin field.
 
 <!-- RELATED:START -->
 
@@ -132,9 +129,9 @@ No new models are trained; all analyses are performed on the public FNN checkpoi
 
 - [\[NeurIPS 2025\] Manifolds and Modules: How Function Develops in a Neural Foundation Model](../../NeurIPS2025/self_supervised/manifolds_and_modules_how_function_develops_in_a_neural_foundation_model.md)
 - [\[AAAI 2026\] Spikingformer: A Key Foundation Model for Spiking Neural Networks](../../AAAI2026/self_supervised/spikingformer_a_key_foundation_model_for_spiking_neural_networks.md)
+- [\[ICML 2026\] InfoAtlas: A Foundation Model for Zero-Shot Statistical Dependence Estimation](infoatlas_a_foundation_model_for_zero-shot_statistical_dependence_estimate.md)
 - [\[ICLR 2026\] Maximizing Asynchronicity in Event-based Neural Networks](../../ICLR2026/self_supervised/maximizing_asynchronicity_in_event-based_neural_networks.md)
-- [\[CVPR 2026\] SpHOR: A Representation Learning Perspective on Open-set Recognition for Identifying Unknown Classes in Deep Neural Networks](../../CVPR2026/self_supervised/sphor_a_representation_learning_perspective_on_open-set_recognition_for_identify.md)
-- [\[CVPR 2026\] MOMO: Mars Orbital Model — Foundation Model for Mars Orbital Applications](../../CVPR2026/self_supervised/momo_mars_orbital_model_foundation_model_for_mars_orbital_applications.md)
+- [\[ICML 2026\] FLAG: Foundation Model Representation with Latent Diffusion Alignment via Graph for Spatial Gene Expression Prediction](flag_foundation_model_representation_with_latent_diffusion_alignment_via_graph_f.md)
 
 </div>
 

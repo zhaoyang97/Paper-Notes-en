@@ -129,9 +129,9 @@ Starting from the webdev-arena-preference-10k dataset, instances undergo query f
 ## Related Papers
 
 - [\[ICLR 2026\] Evaluating Text Creativity across Diverse Domains: A Dataset and Large Language Model Evaluator](evaluating_text_creativity_across_diverse_domains_a_dataset_and_large_language_m.md)
-- [\[AAAI 2026\] ParetoHqD: Fast Offline Multiobjective Alignment of Large Language Models Using Pareto High-Quality Data](../../AAAI2026/llm_nlp/paretohqd_fast_offline_multiobjective_alignment_of_large_language_models_using_p.md)
+- [\[ICML 2026\] Optimizing Diversity and Quality through Base-Aligned Model Collaboration](../../ICML2026/llm_nlp/optimizing_diversity_and_quality_through_base-aligned_model_collaboration.md)
 - [\[ICLR 2026\] First is Not Really Better Than Last: Evaluating Layer Choice and Aggregation Strategies in Language Model Data Influence Estimation](first_is_not_really_better_than_last_evaluating_layer_choice_and_aggregation_str.md)
-- [\[ACL 2026\] Why Did Apple Fall: Evaluating Curiosity in Large Language Models](../../ACL2026/llm_nlp/why_did_apple_fall_evaluating_curiosity_in_large_language_models.md)
+- [\[AAAI 2026\] ParetoHqD: Fast Offline Multiobjective Alignment of Large Language Models Using Pareto High-Quality Data](../../AAAI2026/llm_nlp/paretohqd_fast_offline_multiobjective_alignment_of_large_language_models_using_p.md)
 - [\[ICLR 2026\] d²Cache: Accelerating Diffusion-Based LLMs via Dual Adaptive Caching](d2cache_accelerating_diffusion-based_llms_via_dual_adaptive_caching.md)
 
 </div>

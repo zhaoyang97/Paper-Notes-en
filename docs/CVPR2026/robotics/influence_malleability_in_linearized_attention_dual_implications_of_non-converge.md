@@ -140,11 +140,11 @@ The paper proposes a linearized attention architecture, MLP-Attn, amenable to pr
 
 ## Related Papers
 
+- [\[ICML 2026\] Dual Advantage Fields](../../ICML2026/robotics/dual_advantage_fields.md)
 - [\[AAAI 2026\] Attention as Binding: A Vector-Symbolic Perspective on Transformer Reasoning](../../AAAI2026/robotics/attention_as_binding_a_vector-symbolic_perspective_on_transformer_reasoning.md)
 - [\[ICCV 2025\] TransiT: Transient Transformer for Non-line-of-sight Videography](../../ICCV2025/robotics/transit_transient_transformer_for_non-line-of-sight_videography.md)
-- [\[CVPR 2026\] Test-time Ego-Exo-centric Adaptation for Action Anticipation via Multi-Label Prototype Growing and Dual-Clue Consistency](test-time_ego-exo-centric_adaptation_for_action_anticipation_via_multi-label_pro.md)
+- [\[ICML 2026\] Dual Quaternion SE(3) Synchronization with Recovery Guarantees](../../ICML2026/robotics/dual_quaternion_se3_synchronization_with_recovery_guarantees.md)
 - [\[NeurIPS 2025\] A Snapshot of Influence: A Local Data Attribution Framework for Online Reinforcement Learning](../../NeurIPS2025/robotics/a_snapshot_of_influence_a_local_data_attribution_framework_f.md)
-- [\[ICLR 2026\] JanusVLN: Decoupling Semantics and Spatiality with Dual Implicit Memory for Vision-Language Navigation](../../ICLR2026/robotics/janusvln_decoupling_semantics_and_spatiality_with_dual_implicit_memory_for_visio.md)
 
 </div>
 

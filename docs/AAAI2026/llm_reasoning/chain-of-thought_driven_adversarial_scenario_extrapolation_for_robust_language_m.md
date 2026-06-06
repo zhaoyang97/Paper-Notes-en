@@ -131,10 +131,10 @@ ASE prepends two CoT reasoning steps as a "warm-up" at inference time: $x \right
 ## Related Papers
 
 - [\[ICLR 2026\] Are Reasoning LLMs Robust to Interventions on Their Chain-of-Thought?](../../ICLR2026/llm_reasoning/are_reasoning_llms_robust_to_interventions_on_their_chain-of-thought.md)
-- [\[ICML 2026\] Game of Thought: Robust Information Seeking with Large Language Models Using Game Theory](../../ICML2026/llm_reasoning/game_of_thought_robust_information_seeking_with_large_language_models_using_game.md)
 - [\[ICLR 2026\] AIMCoT: Active Information-driven Multimodal Chain-of-Thought for Vision-Language Reasoning](../../ICLR2026/llm_reasoning/aimcot_active_information-driven_multimodal_chain-of-thought_for_vision-language.md)
+- [\[ICML 2026\] Game of Thought: Robust Information Seeking with Large Language Models Using Game Theory](../../ICML2026/llm_reasoning/game_of_thought_robust_information_seeking_with_large_language_models_using_game.md)
 - [\[ACL 2026\] AIM-CoT: Active Information-driven Multimodal Chain-of-Thought for Vision-Language Reasoning](../../ACL2026/llm_reasoning/aim-cot_active_information-driven_multimodal_chain-of-thought_for_vision-languag.md)
-- [\[CVPR 2026\] Harnessing Chain-of-Thought Reasoning in Multimodal Large Language Models for Face Anti-Spoofing](../../CVPR2026/llm_reasoning/harnessing_chain-of-thought_reasoning_in_multimodal_large_language_models_for_fa.md)
+- [\[ACL 2026\] LegalDrill: Diagnosis-Driven Synthesis for Legal Reasoning in Small Language Models](../../ACL2026/llm_reasoning/legaldrill_diagnosis-driven_synthesis_for_legal_reasoning_in_small_language_mode.md)
 
 </div>
 

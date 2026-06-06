@@ -130,11 +130,11 @@ The method is further validated on text-only tasks requiring disambiguation of d
 
 ## Related Papers
 
+- [\[ICML 2026\] Benchmarking and Enhancing VLM for Compressed Image Understanding](../../ICML2026/multimodal_vlm/benchmarking_and_enhancing_vlm_for_compressed_image_understanding.md)
 - [\[ICLR 2026\] DIVA-GRPO: Enhancing Multimodal Reasoning through Difficulty-Adaptive Variant Advantage](diva-grpo_enhancing_multimodal_reasoning_through_difficulty-adaptive_variant_adv.md)
 - [\[ICLR 2026\] TableDART: Dynamic Adaptive Multi-Modal Routing for Table Understanding](tabledart_dynamic_adaptive_multi-modal_routing_for_table_understanding.md)
-- [\[ICLR 2026\] Index-Preserving Lightweight Token Pruning for Efficient Document Understanding](index-preserving_lightweight_token_pruning_for_efficient_document_understanding_.md)
 - [\[ICLR 2026\] MMR-Life: Piecing Together Real-life Scenes for Multimodal Multi-image Reasoning](mmr-life_piecing_together_real-life_scenes_for_multimodal_multi-image_reasoning.md)
-- [\[AAAI 2026\] SatireDecoder: Visual Cascaded Decoupling for Enhancing Satirical Image Comprehension](../../AAAI2026/multimodal_vlm/satiredecoder_visual_cascaded_decoupling_for_enhancing_satirical_image_comprehen.md)
+- [\[ICLR 2026\] Index-Preserving Lightweight Token Pruning for Efficient Document Understanding](index-preserving_lightweight_token_pruning_for_efficient_document_understanding_.md)
 
 </div>
 

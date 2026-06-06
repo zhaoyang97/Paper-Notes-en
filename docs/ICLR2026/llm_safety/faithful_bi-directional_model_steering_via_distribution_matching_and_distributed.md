@@ -135,10 +135,10 @@ The idea of replacing strong supervision with distribution matching deserves bro
 ## Related Papers
 
 - [\[ICLR 2026\] Self-Destructive Language Model](self-destructive_language_model.md)
+- [\[ACL 2026\] Context-Fidelity Boosting: Enhancing Faithful Generation through Watermark-Inspired Decoding](../../ACL2026/llm_safety/context-fidelity_boosting_enhancing_faithful_generation_through_watermark-inspir.md)
 - [\[NeurIPS 2025\] On Optimal Steering to Achieve Exact Fairness](../../NeurIPS2025/llm_safety/on_optimal_steering_to_achieve_exact_fairness.md)
-- [\[ICLR 2026\] Revisiting the Past: Data Unlearning with Model State History](revisiting_the_past_data_unlearning_with_model_state_history.md)
 - [\[AAAI 2026\] PANDA: Patch and Distribution-Aware Augmentation for Long-Tailed Exemplar-Free Continual Learning](../../AAAI2026/llm_safety/panda_--_patch_and_distribution-aware_augmentation_for_long-tailed_exemplar-free.md)
-- [\[ACL 2026\] Compiling Activation Steering into Weights via Null-Space Constraints for Stealthy Backdoors](../../ACL2026/llm_safety/compiling_activation_steering_into_weights_via_null-space_constraints_for_stealt.md)
+- [\[ICLR 2026\] Revisiting the Past: Data Unlearning with Model State History](revisiting_the_past_data_unlearning_with_model_state_history.md)
 
 </div>
 

@@ -158,10 +158,10 @@ Functional parameter steering: updating ~3% of parameters yields comprehensive s
 ## Related Papers
 
 - [\[AAAI 2026\] How Does Alignment Enhance LLMs' Multilingual Capabilities? A Language Neurons Perspective](how_does_alignment_enhance_llms_multilingual_capabilities_a_language_neurons_per.md)
+- [\[ACL 2026\] EMCEE: Improving Multilingual Capability of LLMs via Bridging Knowledge and Reasoning with Extracted Synthetic Multilingual Context](../../ACL2026/multilingual_mt/emcee_improving_multilingual_capability_of_llms_via_bridging_knowledge_and_reaso.md)
 - [\[ICML 2026\] ML-Embed: Inclusive and Efficient Embeddings for a Multilingual World](../../ICML2026/multilingual_mt/ml-embed_inclusive_and_efficient_embeddings_for_a_multilingual_world.md)
-- [\[ACL 2026\] MORPHOGEN: A Multilingual Benchmark for Evaluating Gender-Aware Morphological Generation](../../ACL2026/multilingual_mt/morphogen_a_multilingual_benchmark_for_evaluating_gender-aware_morphological_gen.md)
 - [\[AAAI 2026\] GloCTM: Cross-Lingual Topic Modeling via a Global Context Space](gloctm_cross-lingual_topic_modeling_via_a_global_context_space.md)
-- [\[AAAI 2026\] STELLAR: Scene Text Editor for Low-Resource Languages and Real-World Data](stellar_scene_text_editor_for_low-resource_languages_and_real-world_data.md)
+- [\[ACL 2026\] MORPHOGEN: A Multilingual Benchmark for Evaluating Gender-Aware Morphological Generation](../../ACL2026/multilingual_mt/morphogen_a_multilingual_benchmark_for_evaluating_gender-aware_morphological_gen.md)
 
 </div>
 

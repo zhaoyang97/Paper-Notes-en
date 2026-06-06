@@ -2,122 +2,119 @@
 title: >-
   [Paper Note] An Existence Proof for Neural Language Models That Can Explain Garden-Path Effects via Surprisal
 description: >-
-  [ACL 2026][LLM/NLP][surprisal theory] By fine-tuning neural language models on garden-path sentences, this paper demonstrates the existence of a neural LM that can simultaneously explain garden-path effects and naturalis…
+  [ACL 2026][LLM/NLP][Surprisal Theory] By fine-tuning neural language models on garden-path sentences, this study demonstrates the existence of a neural LM that can simultaneously explain garden-path effects and natural r…
 tags:
   - "ACL 2026"
   - "LLM/NLP"
-  - "surprisal theory"
-  - "garden-path effects"
+  - "Surprisal Theory"
+  - "Garden-path effects"
   - "human reading times"
   - "language model fine-tuning"
   - "psycholinguistics"
 date: 2026-05-08
-content_hash: f7deeabb282a630e
+content_hash: 6e5eac14d8e0ecb3
 ---
 
 # An Existence Proof for Neural Language Models That Can Explain Garden-Path Effects via Surprisal
 
-**Conference**: ACL 2026
+**Conference**: ACL 2026  
 **arXiv**: [2604.18293](https://arxiv.org/abs/2604.18293)  
 **Code**: [github](https://github.com/osekilab/RE-GPE)  
-**Area**: LLM/NLP
-**Keywords**: surprisal theory, garden-path effects, human reading times, language model fine-tuning, psycholinguistics
+**Area**: LLM/NLP  
+**Keywords**: Surprisal Theory, Garden-path effects, human reading times, language model fine-tuning, psycholinguistics
 
 ## TL;DR
 
-By fine-tuning neural language models on garden-path sentences, this paper demonstrates the existence of a neural LM that can simultaneously explain garden-path effects and naturalistic reading times via surprisal, providing an existence proof for surprisal theory.
+By fine-tuning neural language models on garden-path sentences, this study demonstrates the existence of a neural LM that can simultaneously explain garden-path effects and natural reading times through surprisal, providing an existence proof for surprisal theory.
 
 ## Background & Motivation
 
-**Background**: Surprisal Theory posits that the difficulty of human sentence processing is linearly related to the negative log-probability (surprisal) of each word. Researchers have used language models as proxies for human predictions to validate this hypothesis.
+**Background**: Surprisal Theory posits that the difficulty of human sentence processing is linearly related to the negative log-probability (surprisal) of a word. In recent years, researchers have used language models as proxies for human prediction to validate this hypothesis.
 
-**Limitations of Prior Work**: Although neural LM surprisal captures human reading times on naturalistic corpora reasonably well, it severely underestimates processing difficulty on sentences requiring syntactic disambiguation (e.g., garden-path sentences such as "the horse raced past the barn fell"), predicting only 1/10 to 1/30 of the observed human slowdown.
+**Limitations of Prior Work**: Although the surprisal of neural LMs captures human reading times on natural corpora relatively well, it severely underestimates processing difficulty on sentences requiring syntactic disambiguation (e.g., garden-path sentences like "the horse raced past the barn fell")—predicting only 1/10 to 1/30 of the human reading slowdown.
 
-**Key Challenge**: This failure has sparked debate between two possible explanations — either neural LM probability estimates differ from those of humans, or garden-path effects are fundamentally irreducible to surprisal. Recent work has tended toward the latter, concluding that surprisal theory is insufficient to account for such phenomena.
+**Key Challenge**: This failure has sparked a debate between two possible explanations: either the probability distributions estimated by neural LMs differ from those of humans, or garden-path effects inherently cannot be reduced to surprisal. Several recent studies favor the latter, suggesting that surprisal theory is insufficient to explain such phenomena.
 
-**Goal**: To investigate the first possibility — whether it is truly impossible to construct a neural language model capable of explaining garden-path effects via surprisal.
+**Goal**: To investigate the first possibility—whether it is truly impossible to construct a neural language model that can explain garden-path effects via surprisal.
 
-**Key Insight**: Rather than evaluating off-the-shelf LMs, the paper fine-tunes LMs to align their surprisal estimates with actual human reading times.
+**Key Insight**: Rather than evaluating off-the-shelf LMs, this work fine-tunes LMs to align their surprisal estimates with actual human reading times.
 
-**Core Idea**: By fine-tuning GPT-2 on garden-path sentences so that its surprisal better matches human reading times, the paper provides an existence proof — demonstrating that a neural LM can simultaneously account for garden-path effects and naturalistic reading times.
+**Core Idea**: By fine-tuning GPT-2 on garden-path sentences to better match human reading times, the authors provide an "existence proof"—showing that a neural LM can indeed explain both garden-path effects and natural reading times.
 
 ## Method
 
 ### Overall Architecture
 
-Following the fine-tuning methodology of Kiegeland et al. (2024), the approach aligns surprisal-driven reading time estimates with actual human reading times. GPT-2 (S/M/L) is fine-tuned on garden-path sentences and evaluated along three dimensions: (i) whether it generalizes to unseen garden-path items; (ii) whether it retains predictive power on naturalistic reading times; and (iii) whether it preserves general LM capabilities.
+The study adopts the fine-tuning method from Kiegeland et al. (2024), aligning surprisal-driven reading time estimates with actual human reading times. GPT-2 (S/M/L) is fine-tuned on garden-path sentences and then evaluated across three dimensions: (i) generalization to unseen garden-path items; (ii) maintenance of predictive power for natural reading times; and (iii) preservation of general LM capabilities.
 
 ### Key Designs
 
-1. **Ridge Regression-Based Reading Time Estimation**:
+1.  **Ridge Regression-based Reading Time Estimation**:
+    - **Function**: Maps LM surprisal to reading time estimates.
+    - **Mechanism**: The feature vector includes surprisal at the current and two preceding positions (to capture spillover effects) along with control variables (word length, position, etc.). Regression coefficients are estimated via ridge regression.
+    - **Design Motivation**: Coefficients estimated on "ordinary" reading times outside the Region of Interest (ROI) should also be able to explain reading times within the ROI affected by syntactic disambiguation.
 
-    - Function: Maps LM surprisal to reading time estimates.
-    - Mechanism: The feature vector includes surprisal at the current position and the two preceding positions (capturing spillover effects), along with control variables (word length, position, etc.); regression coefficients are estimated via ridge regression.
-    - Design Motivation: Coefficients are estimated on "ordinary" reading times outside the region of interest (ROI), and these same coefficients should also explain reading times at the ROI affected by syntactic disambiguation.
+2.  **Regularized Fine-tuning Loss Function**:
+    - **Function**: Guides the LM to produce surprisal distributions that more closely resemble human reading patterns.
+    - **Mechanism**: The loss function consists of two terms—minimizing the squared residual between actual and estimated reading times, and penalizing the deviation of regression coefficients from their initial values.
+    - **Design Motivation**: The second regularization term prevents the LM from artificially inflating estimated reading times at the ROI by lowering surprisal outside the ROI, ensuring the model learns plausible probability distribution shifts.
 
-2. **Fine-Tuning Loss with Regularization**:
-
-    - Function: Guides the LM toward a surprisal distribution that more closely matches human reading patterns.
-    - Mechanism: The loss function comprises two terms — minimizing the squared residuals between actual and estimated reading times, and penalizing deviation of regression coefficients from their initial values.
-    - Design Motivation: The regularization term prevents the LM from artificially inflating estimated reading times at the ROI by reducing surprisal elsewhere, ensuring that the model learns meaningful changes to its probability distribution.
-
-3. **Leave-One-Out Cross-Validation Framework**:
-
-    - Function: Rigorously evaluates generalization on small-scale data.
-    - Mechanism: Each fold holds out one sentence pair per garden-path construction type for testing; training and test sets share no overlap in ambiguous verbs or ROI words.
-    - Design Motivation: Ensures that evaluation results reflect genuine generalization rather than overfitting.
+3.  **Leave-One-Out Cross-Validation Framework**:
+    - **Function**: Rigorously evaluates generalization capabilities on small-scale data.
+    - **Mechanism**: One pair of sentences from each garden-path construction is held out for testing in each fold. There is no overlap between the training and test sets regarding ambiguous verbs or ROI words.
+    - **Design Motivation**: To ensure that the evaluation results reflect genuine generalization rather than overfitting.
 
 ### Loss & Training
 
-The loss function $\mathcal{L}_B(\theta)$ comprises: (1) a mean squared residual term measuring the discrepancy between predicted and actual reading times; and (2) a coefficient drift penalty term preventing regression coefficients from deviating too far from their initial values. A balanced batch sampling strategy is employed, with each batch containing equal numbers of sentence pairs from each garden-path construction type.
+The loss function $\mathcal{L}_B(\theta)$ includes: (1) a mean squared residual term measuring the discrepancy between predicted and actual reading times; (2) a coefficient drift penalty to prevent regression coefficients from moving too far from their initial values. A balanced batch sampling strategy is employed, where each batch contains an equal number of sentence pairs from each garden-path construction.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Model | Construction | ROI 1 Pre-FT Coverage | ROI 1 Post-FT Coverage |
-|------|------|-------------------|-------------------|
+| Model | Construction | Pre-tuning ROI 1 Coverage | Post-tuning ROI 1 Coverage |
+|-------|--------------|---------------------------|----------------------------|
 | GPT-2 Small | MVRR | 7% | 73% |
 | GPT-2 Small | NPS | 19% | 83% |
 | GPT-2 Small | NPZ | 15% | 73% |
 
 ### Ablation Study
 
-| Configuration | Key Findings | Notes |
-|------|---------|------|
-| Single-construction FT → cross-construction transfer | MVRR FT → NPS 51.5ms (baseline 9.6ms) | Cross-construction transfer is effective |
-| SRC/ORC asymmetry FT | Captures only 22% of human effect | Limited effectiveness where surprisal theory does not apply |
-| Naturalistic corpus prediction | Improved across the board after FT | Garden-path FT unexpectedly improves naturalistic text prediction |
+| Configuration | Key Findings | Description |
+|---------------|--------------|-------------|
+| Single-construction tuning → Cross-construction transfer | MVRR tuning → NPS 51.5ms (Baseline 9.6ms) | Cross-construction transfer is effective |
+| SRC/ORC asymmetric tuning | Captured only 22% of human effect | Limited effectiveness where surprisal theory is considered inapplicable |
+| Natural corpora predictive power | Improved across the board | Garden-path tuning unexpectedly improved natural text prediction |
 
 ### Key Findings
-- Fine-tuned GPT-2 Small performs best, capturing approximately 73%–83% of the human reading slowdown at ROI 1, far exceeding the pre-fine-tuning baseline of 7%–19%.
-- The fine-tuned model correctly reproduces the cross-construction ordering of human reading slowdown magnitudes (MVRR > NPZ > NPS).
-- On naturalistic corpora, the fine-tuned LM shows improved predictive power for human reading times.
-- Single-construction fine-tuning also transfers to other constructions, suggesting the model has learned a general mechanism underlying garden-path effects.
-- However, fine-tuning shows limited effectiveness on SRC/ORC asymmetries — a phenomenon where surprisal theory is considered inapplicable — indicating that the method is not universally effective.
+- The fine-tuned GPT-2 Small performed best, capturing approximately 73%-83% of the human reading slowdown at ROI 1, a significant improvement over the 7%-19% before fine-tuning.
+- The fine-tuned model correctly reproduced the ranking of slowdown magnitudes across constructions (MVRR > NPZ > NPS).
+- On natural corpora, the predictive power of the fine-tuned LM for human reading times actually increased.
+- Fine-tuning on a single construction could transfer to other constructions, suggesting the model learned a general mechanism for garden-path effects.
+- However, the effect of fine-tuning was limited on SRC/ORC asymmetry (a phenomenon where surprisal theory is often deemed inapplicable), indicating the method is not a universal solution.
 
 ## Highlights & Insights
-- The paper features an elegant research design that transforms a theoretical debate into an operationalizable empirical question — not proving surprisal theory "correct," but providing a constructive existence proof.
-- Improvements from fine-tuning on garden-path sentences simultaneously enhance prediction on naturalistic corpora, suggesting that pre-trained LMs exhibit systematic deviations from human predictions.
-- The negative results on SRC/ORC are equally informative, showing that the method's limitations align with the known boundaries of surprisal theory's applicability.
-- The paper raises a profound theoretical question: if the LM space is unbounded, surprisal theory may be practically unfalsifiable.
+- **Clever Research Design**: The study transforms a theoretical debate into an actionable empirical question—instead of trying to prove surprisal theory is "correct," it provides an existence proof.
+- Improvement on garden-path sentences also enhanced natural corpus prediction, implying that original LMs have systematic biases relative to human expectations.
+- The negative results on SRC/ORC are equally valuable, as they show that the limitations of the method align with the boundaries of surprisal theory.
+- The paper raises a profound theoretical challenge: if the space of LMs is unbounded, surprisal theory might become unfalsifiable in practice.
 
 ## Limitations & Future Work
-- The dataset is small (24 pairs × 3 construction types); validation on larger-scale data is needed.
-- The paper does not investigate which internal mechanisms of the LM are altered by fine-tuning.
-- An existence proof, while important, does not demonstrate that existing LMs naturally acquire the correct human probability distributions.
-- The authors propose two directions for improving the falsifiability of surprisal theory: constraining the probability distribution space, and requiring psychological plausibility of the parsing distribution.
+- The data scale is small (24 pairs × 3 constructions) and requires validation on larger datasets.
+- The internal mechanisms through which fine-tuning changes the LM were not explored.
+- An existence proof, while important, does not imply that existing LMs naturally learn the correct human-like probability distributions.
+- The authors suggest two directions to improve the falsifiability of surprisal theory: constraining probability distributions and requiring the psychological reality of parsing distributions.
 
 ## Related Work & Insights
-- **vs. van Schijndel & Linzen (2021)**: They treated the failure of neural LM surprisal to explain garden-path effects as evidence against surprisal theory; this paper challenges that conclusion.
-- **vs. Kiegeland et al. (2024)**: They fine-tuned LMs on naturalistic corpora; this paper extends their method to garden-path sentences.
-- **vs. Huang et al. (2024)**: They systematically demonstrated the extent to which LM surprisal underestimates garden-path effects; this paper provides a counterexample.
+- **vs van Schijndel & Linzen (2021)**: They argued that the inability of neural LM surprisal to explain garden-path effects serves as evidence against surprisal theory; this paper challenges that conclusion.
+- **vs Kiegeland et al. (2024)**: While they fine-tuned LMs on natural corpora, this work extends the methodology to garden-path sentences.
+- **vs Huang et al. (2024)**: They systematically demonstrated how much LM surprisal underestimates garden-path effects; this work providing a counterexample.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Transforms a theoretical debate into a constructive existence proof — a novel approach.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Multi-dimensional evaluation with both positive and negative results, though the dataset scale is limited.
-- Writing Quality: ⭐⭐⭐⭐⭐ Theoretical background is clearly articulated; argumentation is logically rigorous.
-- Value: ⭐⭐⭐⭐ Makes a significant contribution to theoretical discussions in computational psycholinguistics.
+- **Novelty**: ⭐⭐⭐⭐ Converts a theoretical debate into a constructive existence proof; highly original approach.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Multidimensional evaluation with both positive and negative results, though constrained by data scale.
+- **Writing Quality**: ⭐⭐⭐⭐⭐ Clear exposition of theoretical background and rigorous logical flow.
+- **Value**: ⭐⭐⭐⭐ Significant contribution to the theoretical discourse in computational psycholinguistics.
 
 <!-- RELATED:START -->
 
@@ -125,11 +122,11 @@ The loss function $\mathcal{L}_B(\theta)$ comprises: (1) a mean squared residual
 
 ## Related Papers
 
+- [\[ACL 2026\] Clozing the Gap: Exploring Why Language Model Surprisal Outperforms Cloze Surprisal](clozing_the_gap_exploring_why_language_model_surprisal_outperforms_cloze_surpris.md)
 - [\[ACL 2026\] Expect the Unexpected? Testing the Surprisal of Salient Entities](expect_the_unexpected_testing_the_surprisal_of_salient_entities.md)
-- [\[ACL 2026\] Foresight Optimization for Strategic Reasoning in Large Language Models](foresight_optimization_for_strategic_reasoning_in_large_language_models.md)
-- [\[ACL 2026\] Adam's Law: Textual Frequency Law on Large Language Models](adam39s_law_textual_frequency_law_on_large_language_models.md)
-- [\[ACL 2026\] Why Did Apple Fall: Evaluating Curiosity in Large Language Models](why_did_apple_fall_evaluating_curiosity_in_large_language_models.md)
-- [\[ACL 2026\] From Static Inference to Dynamic Interaction: A Survey of Streaming Large Language Models](from_static_inference_to_dynamic_interaction_a_survey_of_streaming_large_languag.md)
+- [\[ACL 2026\] Big AI is Accelerating the Metacrisis: What Can We Do?](big_ai_is_accelerating_the_metacrisis_what_can_we_do.md)
+- [\[ACL 2026\] Generative Interfaces for Language Models](generative_interfaces_for_language_models.md)
+- [\[ACL 2026\] From Fallback to Frontline: When Can LLMs be Superior Annotators of Human Perspectives?](from_fallback_to_frontline_when_can_llms_be_superior_annotators_of_human_perspec.md)
 
 </div>
 

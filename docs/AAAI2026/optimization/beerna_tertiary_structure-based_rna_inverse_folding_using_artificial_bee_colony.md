@@ -142,9 +142,9 @@ The successful transfer of the ABC algorithm from protein inverse folding to RNA
 
 - [\[NeurIPS 2025\] Unveiling m-Sharpness Through the Structure of Stochastic Gradient Noise](../../NeurIPS2025/optimization/unveiling_m-sharpness_through_the_structure_of_stochastic_gradient_noise.md)
 - [\[NeurIPS 2025\] Learning Sparse Approximate Inverse Preconditioners for Conjugate Gradient Solvers on GPUs](../../NeurIPS2025/optimization/learning_sparse_approximate_inverse_preconditioners_for_conjugate_gradient_solve.md)
+- [\[ICML 2026\] Dynamics and Representation Structure of Local Approximations to Gradient-Based Learning in Linear Recurrent Neural Networks](../../ICML2026/optimization/dynamics_and_representation_structure_of_local_approximations_to_gradient-based_.md)
 - [\[AAAI 2026\] ECPv2: Fast, Efficient, and Scalable Global Optimization of Lipschitz Functions](ecpv2_fast_efficient_and_scalable_global_optimization_of_lipschitz_functions.md)
 - [\[AAAI 2026\] Efficient and Reliable Hitting-Set Computations for the Implicit Hitting Set Approach](efficient_and_reliable_hitting-set_computations_for_the_implicit_hitting_set_app.md)
-- [\[AAAI 2026\] Parametrized Multi-Agent Routing via Deep Attention Models](parametrized_multi-agent_routing_via_deep_attention_models.md)
 
 </div>
 

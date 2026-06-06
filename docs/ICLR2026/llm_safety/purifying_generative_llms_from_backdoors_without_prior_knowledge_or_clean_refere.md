@@ -148,8 +148,8 @@ A three-stage pipeline: (1) **Mechanistic Analysis** — ablation experiments re
 - [\[ICLR 2026\] Inference-Time Backdoors via Hidden Instructions in LLM Chat Templates](inference-time_backdoors_via_hidden_instructions_in_llm_chat_templates.md)
 - [\[AAAI 2026\] Learning from the Undesirable: Robust Adaptation of Language Models without Forgetting](../../AAAI2026/llm_safety/learning_from_the_undesirable_robust_adaptation_of_language_models_without_forge.md)
 - [\[ICLR 2026\] Unmasking Backdoors: An Explainable Defense via Gradient-Attention Anomaly Scoring for Pre-trained Language Models](unmasking_backdoors_an_explainable_defense_via_gradient-attention_anomaly_scorin.md)
+- [\[ICML 2026\] Federated Variational Preference Alignment with Gumbel-Softmax Prior for Personalized User Preferences](../../ICML2026/llm_safety/federated_variational_preference_alignment_with_gumbel-softmax_prior_for_persona.md)
 - [\[CVPR 2026\] Phantasia: Context-Adaptive Backdoors in Vision Language Models](../../CVPR2026/llm_safety/phantasia_context-adaptive_backdoors_in_vision_language_models.md)
-- [\[NeurIPS 2025\] DeepPersona: A Generative Engine for Scaling Deep Synthetic Personas](../../NeurIPS2025/llm_safety/deeppersona_a_generative_engine_for_scaling_deep_synthetic_personas.md)
 
 </div>
 

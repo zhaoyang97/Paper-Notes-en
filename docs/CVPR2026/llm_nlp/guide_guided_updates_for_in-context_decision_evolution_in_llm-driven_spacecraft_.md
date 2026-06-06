@@ -122,8 +122,8 @@ Validated in spacecraft operation simulation environments: (a) orbital adjustmen
 - [\[ICLR 2026\] ELLMob: Event-Driven Human Mobility Generation with Self-Aligned LLM Framework](../../ICLR2026/llm_nlp/ellmob_event-driven_human_mobility_generation_with_self-aligned_language_models.md)
 - [\[AAAI 2026\] ICL-Router: In-Context Learned Model Representations for LLM Routing](../../AAAI2026/llm_nlp/icl-router_in-context_learned_model_representations_for_llm_routing.md)
 - [\[AAAI 2026\] CoEvo: Continual Evolution of Symbolic Solutions Using Large Language Models](../../AAAI2026/llm_nlp/coevo_continual_evolution_of_symbolic_solutions_using_large_language_models.md)
-- [\[ICLR 2026\] GASP: Guided Asymmetric Self-Play For Coding LLMs](../../ICLR2026/llm_nlp/gasp_guided_asymmetric_self-play_for_coding_llms.md)
 - [\[ICLR 2026\] Unsupervised Evaluation of Multi-Turn Objective-Driven Interactions](../../ICLR2026/llm_nlp/unsupervised_evaluation_of_multi-turn_objective-driven_interactions.md)
+- [\[ACL 2026\] Wait, There's a Way Out: A Decision Mechanism for Conversational Derailment Prediction](../../ACL2026/llm_nlp/wait_theres_a_way_out_a_decision_mechanism_for_forecasting_conversational_derail.md)
 
 </div>
 

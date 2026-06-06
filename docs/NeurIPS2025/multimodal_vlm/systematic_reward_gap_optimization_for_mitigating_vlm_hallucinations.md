@@ -134,7 +134,7 @@ TPR-CL reduces hallucinations on ObjHal by ~93% relative to the baseline LLaVA-1
 - [\[ICCV 2025\] DASH: Detection and Assessment of Systematic Hallucinations of VLMs](../../ICCV2025/multimodal_vlm/dash_detection_and_assessment_of_systematic_hallucinations_of_vlms.md)
 - [\[NeurIPS 2025\] Seeing is Believing? Mitigating OCR Hallucinations in Multimodal Large Language Models](seeing_is_believing_mitigating_ocr_hallucinations_in_multimodal_large_language_m.md)
 - [\[NeurIPS 2025\] When Semantics Mislead Vision: Mitigating Large Multimodal Models Hallucinations](when_semantics_mislead_vision_mitigating_large_multimodal_models_hallucinations_.md)
-- [\[NeurIPS 2025\] Enhancing Outcome Reward-Based RL Training of MLLMs with Self-Consistency Sampling](enhancing_the_outcome_reward-based_rl_training_of_mllms_with_self-consistency_sa.md)
+- [\[ICML 2026\] Learning from Fine-Grained Visual Discrepancies: Mitigating Multimodal Hallucinations via In-Context Visual Contrastive Optimization](../../ICML2026/multimodal_vlm/learning_from_fine-grained_visual_discrepancies_mitigating_multimodal_hallucinat.md)
 
 </div>
 

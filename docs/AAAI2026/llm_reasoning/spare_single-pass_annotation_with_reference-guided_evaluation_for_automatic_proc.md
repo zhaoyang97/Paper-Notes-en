@@ -160,8 +160,8 @@ PRM training uses a standard binary classification loss. Offline RL fine-tuning 
 - [\[ICLR 2026\] Annotation-Efficient Universal Honesty Alignment](../../ICLR2026/llm_reasoning/annotation-efficient_universal_honesty_alignment.md)
 - [\[NeurIPS 2025\] Large Language Models Can Learn and Generalize Steganographic Chain-of-Thought under Process Supervision](../../NeurIPS2025/llm_reasoning/large_language_models_can_learn_and_generalize_steganographic_chain-of-thought_u.md)
 - [\[AAAI 2026\] RPM-MCTS: Knowledge-Retrieval as Process Reward Model with Monte Carlo Tree Search for Code Generation](rpm-mcts_knowledge-retrieval_as_process_reward_model_with_monte_carlo_tree_searc.md)
-- [\[AAAI 2026\] Improving Value-based Process Verifier via Low-Cost Variance Reduction](improving_value-based_process_verifier_via_low-cost_variance_reduction.md)
 - [\[AAAI 2026\] LLMs for Game Theory: Entropy-Guided In-Context Learning and Adaptive CoT Reasoning](llms_for_game_theory_entropy-guided_in-context_learning_and_adaptive_cot_reasoni.md)
+- [\[AAAI 2026\] Improving Value-based Process Verifier via Low-Cost Variance Reduction](improving_value-based_process_verifier_via_low-cost_variance_reduction.md)
 
 </div>
 

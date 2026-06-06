@@ -155,11 +155,11 @@ vs. **PhotoArtAgent/MonetGPT and similar Agent retouching systems**: these rely 
 
 ## Related Papers
 
-- [\[AAAI 2026\] Reflection-Driven Control for Trustworthy Code Agents](reflection-driven_control_for_trustworthy_code_agents.md)
+- [\[ACL 2026\] ProPer Agents: Proactivity Driven Personalized Agents for Advancing Knowledge Gap Navigation](../../ACL2026/llm_agent/proper_agents_proactivity_driven_personalized_agents_for_advancing_knowledge_gap.md)
+- [\[ACL 2026\] AVA: Attentive VLM Agent for Mastering StarCraft II](../../ACL2026/llm_agent/ava_attentive_vlm_agent_for_mastering_starcraft_ii.md)
 - [\[AAAI 2026\] MedLA: A Logic-Driven Multi-Agent Framework for Complex Medical Reasoning with Large Language Models](medla_a_logic-driven_multi-agent_framework_for_complex_medic.md)
-- [\[ICCV 2025\] GTR: Guided Thought Reinforcement Prevents Thought Collapse in RL-based VLM Agent Training](../../ICCV2025/llm_agent/gtr_guided_thought_reinforcement_prevents_thought_collapse_i.md)
-- [\[ICCV 2025\] Embodied Image Captioning: Self-supervised Learning Agents for Spatially Coherent Image Descriptions](../../ICCV2025/llm_agent/embodied_image_captioning_self-supervised_learning_agents_for_spatially_coherent.md)
-- [\[ICLR 2026\] FingerTip 20K: A Benchmark for Proactive and Personalized Mobile LLM Agents](../../ICLR2026/llm_agent/fingertip_20k_a_benchmark_for_proactive_and_personalized_mobile_llm_agents.md)
+- [\[AAAI 2026\] Reflection-Driven Control for Trustworthy Code Agents](reflection-driven_control_for_trustworthy_code_agents.md)
+- [\[ICML 2026\] HawkesLLM: Semantic Uncertainty Propagation in Agentic Text Simulation](../../ICML2026/llm_agent/hawkesllm_semantic_uncertainty_propagation_in_agentic_text_simulation.md)
 
 </div>
 

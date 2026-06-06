@@ -133,10 +133,10 @@ Training uses the REINFORCE algorithm with an exponential moving average baselin
 ## Related Papers
 
 - [\[ICLR 2026\] SPELL: Self-Play Reinforcement Learning for Evolving Long-Context Language Models](../../ICLR2026/reinforcement_learning/spell_self-play_reinforcement_learning_for_evolving_long-context_language_models.md)
+- [\[ACL 2026\] Why Does Reinforcement Learning Generalize? A Feature-Level Mechanistic Study of Post-Training in Large Language Models](../../ACL2026/reinforcement_learning/why_does_reinforcement_learning_generalize_a_feature-level_mechanistic_study_of_.md)
 - [\[ICLR 2026\] Co-rewarding: Stable Self-supervised RL for Eliciting Reasoning in Large Language Models](../../ICLR2026/reinforcement_learning/co-rewarding_stable_self-supervised_rl_for_eliciting_reasoning_in_large_language.md)
 - [\[ICLR 2026\] Towards Strategic Persuasion with Language Models](../../ICLR2026/reinforcement_learning/towards_strategic_persuasion_with_language_models.md)
 - [\[AAAI 2026\] A Course Correction in Steerability Evaluation: Revealing Miscalibration and Side Effects in LLMs](a_course_correction_in_steerability_evaluation_revealing_mis.md)
-- [\[NeurIPS 2025\] Self-Improving Embodied Foundation Models](../../NeurIPS2025/reinforcement_learning/self-improving_embodied_foundation_models.md)
 
 </div>
 

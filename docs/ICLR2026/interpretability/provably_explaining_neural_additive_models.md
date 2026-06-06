@@ -156,11 +156,11 @@ Key observation: The proposed algorithm solves a harder problem (cardinally-mini
 
 ## Related Papers
 
+- [\[ICML 2026\] Provably Learning Attention with Queries](../../ICML2026/interpretability/provably_learning_attention_with_queries.md)
 - [\[NeurIPS 2025\] FaCT: Faithful Concept Traces for Explaining Neural Network Decisions](../../NeurIPS2025/interpretability/fact_faithful_concept_traces_for_explaining_neural_network_decisions.md)
 - [\[NeurIPS 2025\] Additive Models Explained: A Computational Complexity Approach](../../NeurIPS2025/interpretability/additive_models_explained_a_computational_complexity_approach.md)
-- [\[ICML 2026\] Provably Learning Attention with Queries](../../ICML2026/interpretability/provably_learning_attention_with_queries.md)
 - [\[ICLR 2026\] Modal Logical Neural Networks for Financial AI](modal_logical_neural_networks_for_financial_ai.md)
-- [\[AAAI 2026\] Distribution-Based Feature Attribution for Explaining the Predictions of Any Classifier](../../AAAI2026/interpretability/distribution-based_feature_attribution_for_explaining_the_predictions_of_any_cla.md)
+- [\[ICML 2026\] Query Circuits: Explaining How Language Models Answer User Prompts](../../ICML2026/interpretability/query_circuits_explaining_how_language_models_answer_user_prompts.md)
 
 </div>
 

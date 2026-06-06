@@ -147,10 +147,10 @@ T2SMark is a training-free watermarking scheme requiring no additional training.
 
 ## Related Papers
 
+- [\[ICML 2026\] Balancing Fidelity and Diversity in Diffusion Models via Symmetric Attention Decomposition: Hopfield Perspective](../../ICML2026/image_generation/balancing_fidelity_and_diversity_in_diffusion_models_via_symmetric_attention_dec.md)
 - [\[ICCV 2025\] Golden Noise for Diffusion Models: A Learning Framework](../../ICCV2025/image_generation/golden_noise_for_diffusion_models_a_learning_framework.md)
 - [\[NeurIPS 2025\] Robustness in Both Domains: CLIP Needs a Robust Text Encoder](robustness_in_both_domains_clip_needs_a_robust_text_encoder.md)
 - [\[NeurIPS 2025\] Understanding Representation Dynamics of Diffusion Models via Low-Dimensional Models](understanding_representation_dynamics_of_diffusion_models_via_low-dimensional_mo.md)
-- [\[ICCV 2025\] Improved Noise Schedule for Diffusion Training](../../ICCV2025/image_generation/improved_noise_schedule_for_diffusion_training.md)
 - [\[NeurIPS 2025\] When Are Concepts Erased From Diffusion Models?](when_are_concepts_erased_from_diffusion_models.md)
 
 </div>

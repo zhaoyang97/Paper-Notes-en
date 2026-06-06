@@ -2,127 +2,119 @@
 title: >-
   [Paper Note] Beyond Reproduction: A Paired-Task Framework for Assessing LLM Comprehension and Creativity in Literary Translation
 description: >-
-  [ACL 2026][LLM Evaluation][Literary translation] This paper proposes a paired-task framework for jointly evaluating LLMs' literary text comprehension and translational creativity…
+  [ACL 2026][LLM Evaluation][Literary Translation] A paired-task framework is proposed to jointly evaluate the literary text comprehension and translational creativity of LLMs. Based on a large-scale evaluation of 23 model…
 tags:
   - "ACL 2026"
   - "LLM Evaluation"
-  - "Literary translation"
-  - "translational creativity"
-  - "source text comprehension"
-  - "paired-task framework"
+  - "Literary Translation"
+  - "Translational Creativity"
+  - "Source Text Comprehension"
+  - "Paired-task Framework"
 date: 2026-05-08
-content_hash: c38228812d107b5d
+content_hash: 17ff342fe85f510a
 ---
 
 # Beyond Reproduction: A Paired-Task Framework for Assessing LLM Comprehension and Creativity in Literary Translation
 
-**Conference**: ACL 2026
+**Conference**: ACL 2026  
 **arXiv**: [2604.18169](https://arxiv.org/abs/2604.18169)  
 **Code**: [github](https://github.com/NL2G/Beyond-Reproduction)  
-**Area**: LLM Evaluation
-**Keywords**: Literary translation, translational creativity, source text comprehension, LLM evaluation, paired-task framework
+**Area**: LLM Evaluation  
+**Keywords**: Literary Translation, Translational Creativity, Source Text Comprehension, LLM Evaluation, Paired-task Framework
 
 ## TL;DR
 
-This paper proposes a paired-task framework for jointly evaluating LLMs' literary text comprehension and translational creativity, conducting a large-scale benchmark of 23 models across 11 classic English novels, and finding that strong comprehension ability does not transfer to human-level translational creativity.
+A paired-task framework is proposed to jointly evaluate the literary text comprehension and translational creativity of LLMs. Based on a large-scale evaluation of 23 models across 11 classic English novels, it is found that strong comprehension performance does not translate into human-level creativity in translation.
 
 ## Background & Motivation
 
-**Background**: LLMs are increasingly applied to creative tasks such as literary translation, with some studies claiming human-level performance. Nevertheless, translational creativity remains severely underexplored in large-scale evaluations.
+**Background**: LLMs are increasingly deployed for creative tasks such as literary translation, with some studies even claiming human-level performance. However, translational creativity remains severely overlooked in large-scale evaluations.
 
-**Limitations of Prior Work**: (1) Existing literary translation evaluations focus primarily on accuracy and adequacy, almost entirely neglecting the creativity dimension; (2) Research on translational creativity is small in scale and costly, typically comparing only 1–2 traditional MT systems; (3) Comprehension ability is usually studied in isolation, whereas in professional translation it is tightly intertwined with creativity.
+**Limitations of Prior Work**: (1) Existing literary translation evaluations primarily focus on accuracy and adequacy, almost entirely neglecting the creativity dimension; (2) Research on translational creativity is typically small-scale and high-cost, often comparing only 1-2 traditional MT systems; (3) Comprehension is usually studied in isolation, whereas in professional translation, comprehension and creativity are deeply intertwined.
 
-**Key Challenge**: LLMs can produce fluent, low-cost translations in large quantities, yet little is known about how they handle the creative challenges inherent to literary texts—does understanding the source text entail the ability to make creative translation choices?
+**Key Challenge**: While LLMs can generate large volumes of fluent, low-cost translations, little is known about how they handle the creative challenges unique to literary texts—specifically, whether understanding the source text implies the ability to make creative translational choices.
 
-**Goal**: To construct a scalable evaluation framework that jointly measures LLMs' source text comprehension and creative translation ability.
+**Goal**: Construct a scalable evaluation framework to jointly measure the source text comprehension and creative translation capabilities of LLMs.
 
-**Key Insight**: Drawing on the translation studies concept of "units of creative potential" (UCPs), the framework focuses on segments involving metaphors, wordplay, cultural allusions, and similar phenomena that require creative handling.
+**Key Insight**: Leveraging the concept of "Units of Creative Potential" (UCP) from translation studies, focusing on text segments requiring creative handling such as metaphors, puns, and cultural allusions.
 
-**Core Idea**: A paired-task design is proposed—Task 1 assesses source text comprehension via statement verification, while Task 2 evaluates creative transfer through annotation of UCP translation techniques. Expert annotation is combined with LLM-as-Judge automatic evaluation to enable large-scale, scalable assessment.
+**Core Idea**: Design a paired-task framework—Task 1 assesses source text comprehension through claim verification, and Task 2 evaluates creative transfer through UCP translation technique annotation. Large-scale scalable evaluation is achieved by combining expert annotation with LLM-as-Judge.
 
 ## Method
 
 ### Overall Architecture
 
-A two-task paired framework: Task 1 uses statements generated from literary criticism analyses to verify source text comprehension; Task 2 applies the CREAMT taxonomy to annotate creative shifts in translation. The benchmark covers 11 classic English novels, 23 models, 4 prompting strategies, and two language pairs (English–Chinese and English–Dutch).
+A paired-task framework: Task 1 verifies source text comprehension using claims generated from literary critical analysis; Task 2 annotates Creative Shifts (CS) in translation using the CREAMT taxonomy. The evaluation covers 11 classic English novels, 23 models, 4 prompting strategies, and two language pairs: English-to-Chinese (En-Zh) and English-to-Dutch (En-Nl).
 
 ### Key Designs
 
-1. **Task 1: Source Text Comprehension Evaluation**
+1.  **Task 1: Source Text Comprehension Evaluation**:
+    - **Function**: Evaluates the interpretive reasoning capabilities of LLMs regarding literary texts.
+    - **Mechanism**: Based on literary criticism entries from the RELIC dataset, GPT-5 is used to generate candidate true/false claims. These are validated through three rounds (authors → 3 crowdsourced annotators → 2 trained students + authors) to construct 299 claim-reasoning pairs.
+    - **Design Motivation**: Claims require interpretive reasoning rather than simple paraphrasing or factual recall; the three-stage "sandwich" validation ensures high quality.
 
-    - **Function**: Assess LLMs' interpretive reasoning ability over literary texts.
-    - **Mechanism**: Candidate true/false statements are generated by GPT-4o from literary criticism entries in the RELIC dataset, then validated through three rounds (authors → 3 crowdworkers → 2 trained students + authors), yielding 299 statement–rationale pairs.
-    - **Design Motivation**: Statements require interpretive reasoning rather than simple paraphrase or factual recall; the three-stage "sandwich" validation ensures high quality.
+2.  **Task 2: Translation Creativity Evaluation**:
+    - **Function**: Evaluates the creative strategies utilized by LLMs when addressing literary translation challenges.
+    - **Mechanism**: Annotates translation techniques for UCPs (metaphors, puns, cultural allusions, etc.)—Error/Not Applicable/Reproduction/Omission/Creative Shift (CS). The creativity score is defined as $$S_{creativity} = (\#CS - \#UN) / \#UCPs$$. A two-stage design is employed: expert annotation (approx. €1000) followed by LLM-as-Judge for automatic expansion.
+    - **Design Motivation**: Creativity assessment requires domain expertise; the two-stage design balances evaluation quality and scalability.
 
-2. **Task 2: Translational Creativity Evaluation**
-
-    - **Function**: Assess the creative strategies LLMs employ when handling literary translation challenges.
-    - **Mechanism**: Translation techniques for UCPs (metaphors, wordplay, cultural allusions, etc.) are annotated across five categories—erroneous/not applicable/reproduction/omission/creative shift (CS). The creativity score is defined as $S_{creativity} = (\#CS - \#UN) / \#UCPs$. A two-stage design is adopted: expert annotation (~1,000€) followed by LLM-as-Judge automatic scaling.
-    - **Design Motivation**: Creativity evaluation requires domain expertise; the two-stage design balances evaluation quality and scalability.
-
-3. **Creativity-Oriented Prompting Strategies**
-
-    - **Function**: Investigate the effect of different prompting strategies on translational creativity.
-    - **Mechanism**: A baseline prompt (minimal instruction) is paired with three progressively creativity-liberating prompts—P1 preserves meaning, style, and culture; P2 explicitly permits selective creative adjustments; P3 foregrounds creative shift techniques.
-    - **Design Motivation**: To measure models' intrinsic lower bound of translational creativity (baseline) and the room for improvement afforded by prompting.
+3.  **Creativity-Oriented Prompting Strategies**:
+    - **Function**: Explores the impact of different prompting strategies on translational creativity.
+    - **Mechanism**: Includes a baseline prompt (minimal instructions) plus three strategies with increasing creative freedom—P1: preserve meaning/style/culture; P2: explicitly allow selective creative adjustments; P3: foreground creative shift techniques.
+    - **Design Motivation**: Measures the lower bound of intrinsic translational creativity (baseline) and the margin for improvement via prompting.
 
 ### Loss & Training
 
-This paper presents an evaluation framework and involves no model training. Task 1 is evaluated with Macro F1; Task 2 uses the creativity score $S_{creativity} \in [-1, 1]$ (+1 indicates all UCPs are creative shifts; −1 indicates all are unacceptable).
+This work focuses on an evaluation framework and does not involving training. Task 1 is evaluated using Macro F1, while Task 2 uses a creativity score $S_{creativity} \in [-1, 1]$ (where +1 indicates all UCPs are creative shifts, and -1 indicates all are unacceptable).
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Evaluation Dimension | Human | Best LLM | Typical LLM |
-|---|---|---|---|
-| Task 1 F1 (all) | — | 0.94 (Mistral-Large) | 0.85–0.94 |
-| Task 1 F1 (hard) | — | ~0.60 (best) | 0.42–0.60 |
-| Creativity Score (En-Zh) | 0.246 | 0.167 (Mistral-Large) | −0.10 ~ 0.03 |
-| High Acceptability + High Creativity (En-Zh) | 21% | 2% | — |
+|---------|------|---------|---------|
+| Task 1 F1 (Overall) | - | 0.94 (Mistral-Large) | 0.85-0.94 |
+| Task 1 F1 (Hard) | - | ~0.60 (Best) | 0.42-0.60 |
+| Creativity Score (En-Zh) | 0.246 | 0.167 (Mistral-Large) | -0.10 ~ 0.03 |
+| High Accept. + High Creativity (En-Zh) | 21% | 2% | - |
 
 ### Ablation Study
 
-| Configuration | Key Finding | Notes |
-|---|---|---|
-| Baseline prompt vs. P1–P3 | Score distributions overlap substantially | Creativity prompts have little effect |
-| Model size vs. Task 1 | $\rho=0.311, p=0.149$ | Scale is not a strong predictor |
-| Task 1 vs. Task 2 | $\rho=0.278, p=0.007$ | Comprehension and creativity are weakly correlated |
-| En-Zh vs. En-Nl | En-Zh yields lower creativity | Greater linguistic distance increases translation difficulty |
+| Configuration | Key Finding | Description |
+|------|---------|------|
+| Baseline vs. P1-P3 | High overlap in score distributions | Creativity prompts yield marginal gains |
+| Model Size vs. Task 1 | $\rho=0.311, p=0.149$ | Scale is not a strong predictor of performance |
+| Task 1 vs. Task 2 | $\rho=0.278, p=0.007$ | Weak correlation between comprehension and creativity |
+| En-Zh vs. En-Nl | Lower creativity in En-Zh | Linguistic distance increases translation difficulty |
 
 ### Key Findings
-
-- Only 3 model–prompt combinations achieve a creativity score above 0.1; the remainder fall between −0.10 and 0.03. Only Mistral-Large approaches human-level performance (0.167 vs. 0.246).
-- 77% of UCPs in human translations are rated as highly acceptable, with 38% showing moderate creativity and 21% high creativity. LLM translations achieve 60% high acceptability but only 2% high creativity.
-- Creativity-oriented prompts yield only marginal and uneven gains, and for many systems prove counterproductive by eliciting out-of-context over-elaboration.
-- Thinking/reasoning modes inconsistently improve comprehension performance: Qwen3-235B-Thinking outperforms its non-thinking counterpart, while Qwen3-30B-Thinking performs worse.
+- Only 3 model-prompt combinations achieved creativity scores exceeding 0.1, with others ranging between -0.10 and 0.03. Only Mistral-Large approached human levels (0.167 vs. 0.246).
+- For human translations, 77% of UCPs were rated with high acceptability, including 38% moderate creativity and 21% high creativity. While 60% of LLM translations had high acceptability, only 2% reached high creativity.
+- Creativity-oriented prompts produced only slight and inconsistent effects, sometimes backfiring for many systems by producing out-of-context over-translation.
+- Reasoning/Thinking modes improved comprehension performance inconsistently: Qwen3-235B-Thinking outperformed its non-thinking counterpart, while Qwen3-30B-Thinking performed worse.
 
 ## Highlights & Insights
-
-- Operationalizing the UCP/CS constructs from translation studies into quantifiable computational evaluation metrics is an exemplary instance of interdisciplinary integration.
-- The paired-task design elegantly links comprehension and creativity, revealing a weak correlation between the two.
-- The two-stage design combining expert annotation with LLM-as-Judge achieves a sound balance between evaluation quality and scalability.
-- The findings constitute a strong empirical rebuttal to claims that LLMs have reached human-level translation performance.
+- Operationalizing UCP/CS theories from translation studies into quantifiable computational evaluation metrics serves as an excellent case of interdisciplinary integration.
+- The paired-task design effectively links comprehension and creativity, revealing the weak association between the two.
+- The two-stage design (expert annotation + LLM-as-Judge) achieves a strong balance between evaluation quality and scale.
+- Provides a robust counter-argument to claims that "LLMs have reached human parity in translation."
 
 ## Limitations & Future Work
-
-- The corpus consists primarily of 19th–20th century classic English literature, which may appear in LLM pretraining data, making results potentially an optimistic upper bound.
-- More advanced prompting strategies (e.g., multi-agent systems, decoding adjustments, fine-tuning) are not systematically explored.
-- The annotated dataset covers a limited set of languages, with low-resource languages absent.
-- LLM-as-Judge is reliable at the system level but should be interpreted with caution for segment-level annotation.
+- The corpus consists primarily of 19th-20th century classic English literature, which may exist in LLM pre-training data, suggesting evaluation results might represent an optimistic upper bound.
+- Advanced prompt engineering (e.g., multi-agent systems, decoding adjustments, fine-tuning) was not systematically explored.
+- The annotated dataset covers limited languages and lacks low-resource languages.
+- While LLM-as-Judge is reliable for system-level comparisons, caution is required for segment-level annotations.
 
 ## Related Work & Insights
-
-- **vs. CREAMT project**: CREAMT compares only 1–2 traditional MT systems; this paper scales to a large-scale evaluation of 23 LLMs.
-- **vs. NoCha/KRISTEVA**: These benchmarks focus respectively on long-context reasoning and close-reading comprehension; this paper connects comprehension with translational creativity.
-- **vs. psychometric creativity tests (e.g., Torrance)**: This paper adopts a task-specific definition of translational creativity, avoiding the cross-domain instability of general-purpose creativity tests.
+- **vs. CREAMT Project**: CREAMT only compared 1-2 traditional MT systems; this work extends testing to a large-scale evaluation of 23 LLMs.
+- **vs. NoCha/KRISTEVA**: These focus on long-text reasoning and close-reading comprehension, respectively; this work connects comprehension to translational creativity.
+- **vs. Psychometric Creativity Tests (e.g., Torrance)**: This work adopts a task-specific definition of translational creativity, avoiding the domain-instability issues of general creativity tests.
 
 ## Rating
-
-- Novelty: ⭐⭐⭐⭐⭐ First large-scale joint evaluation of LLM literary comprehension and translational creativity
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 23 models, 4 prompting strategies, 2 language pairs, ~1,000€ in human annotation
-- Writing Quality: ⭐⭐⭐⭐ Framework is clearly articulated with a solid theoretical foundation
-- Value: ⭐⭐⭐⭐⭐ Provides important quantitative evidence against claims of human-level LLM translation performance
+- Novelty: ⭐⭐⭐⭐⭐ First large-scale joint evaluation of LLM literary comprehension and translational creativity.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 23 models, 4 prompt types, 2 language pairs, and €1000 in manual annotation.
+- Writing Quality: ⭐⭐⭐⭐ Clear framework presentation with a solid theoretical foundation.
+- Value: ⭐⭐⭐⭐⭐ Provides critical quantitative evidence refuting claims of human-level LLM translation.
 
 <!-- RELATED:START -->
 
@@ -130,11 +122,11 @@ This paper presents an evaluation framework and involves no model training. Task
 
 ## Related Papers
 
-- [\[ACL 2026\] Beyond Marginal Distributions: A Framework to Evaluate the Representativeness of Demographic-Aligned LLMs](beyond_marginal_distributions_a_framework_to_evaluate_the_representativeness_of_.md)
+- [\[ICML 2026\] Resolution Diagnostics for Paired LLM Evaluation](../../ICML2026/llm_evaluation/resolution_diagnostics_for_paired_llm_evaluation.md)
 - [\[ACL 2026\] Multi-Task Reinforcement Learning for Enhanced Multimodal LLM-as-a-Judge](multi-task_reinforcement_learning_for_enhanced_multimodal_llm-as-a-judge.md)
+- [\[ACL 2026\] Beyond Marginal Distributions: A Framework to Evaluate the Representativeness of Demographic-Aligned LLMs](beyond_marginal_distributions_a_framework_to_evaluate_the_representativeness_of_.md)
 - [\[ACL 2026\] AutoReproduce: Automatic AI Experiment Reproduction with Paper Lineage](autoreproduce_automatic_ai_experiment_reproduction_with_paper_lineage.md)
-- [\[ACL 2026\] PolicyLLM: Towards Excellent Comprehension of Public Policy for Large Language Models](policyllm_towards_excellent_comprehension_of_public_policy_for_large_language_mo.md)
-- [\[AAAI 2026\] Beyond Accuracy: A Cognitive Load Framework for Mapping the Capability Boundaries of Tool-use Agents](../../AAAI2026/llm_evaluation/beyond_accuracy_a_cognitive_load_framework_for_mapping_the_c.md)
+- [\[ACL 2026\] SessionIntentBench: A Multi-Task Inter-Session Intention-Shift Modeling Benchmark](sessionintentbench_a_multi-task_inter-session_intention-shift_modeling_benchmark.md)
 
 </div>
 

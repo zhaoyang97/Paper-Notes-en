@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] ToxiTrace: Gradient-Aligned Training for Explainable Chinese Toxicity Detection
 description: >-
-  [ACL 2026][Social Computing][Chinese Toxicity Detection] ToxiTrace proposes an explainable Chinese toxicity detection method for BERT-class encoders, combining CuSA (LLM-guided weak annotation)…
+  [ACL 2026][Social Computing][Chinese toxicity detection] ToxiTrace proposes an explainable Chinese toxicity detection method for BERT-style encoders. By utilizing three components—CuSA (LLM-guided weak labeling)…
 tags:
   - "ACL 2026"
   - "Social Computing"
-  - "Chinese Toxicity Detection"
-  - "Explainability"
-  - "Gradient Constraint"
-  - "Fine-grained Evidence Extraction"
-  - "Contrastive Learning"
-date: 2025-05-08
-content_hash: c68664a8f379679b
+  - "Chinese toxicity detection"
+  - "explainability"
+  - "gradient constraint"
+  - "fine-grained evidence extraction"
+  - "contrastive learning"
+date: 2026-05-08
+content_hash: e128b72192d0e0ea
 ---
 
 # ToxiTrace: Gradient-Aligned Training for Explainable Chinese Toxicity Detection
@@ -21,67 +21,65 @@ content_hash: c68664a8f379679b
 **arXiv**: [2604.12321](https://arxiv.org/abs/2604.12321)  
 **Code**: [https://huggingface.co/ArdLi/ToxiTrace](https://huggingface.co/ArdLi/ToxiTrace)  
 **Area**: Social Computing  
-**Keywords**: Chinese Toxicity Detection, Explainability, Gradient Constraint, Fine-grained Evidence Extraction, Contrastive Learning
+**Keywords**: Chinese toxicity detection, explainability, gradient constraint, fine-grained evidence extraction, contrastive learning
 
 ## TL;DR
 
-ToxiTrace proposes an explainable Chinese toxicity detection method for BERT-class encoders, combining CuSA (LLM-guided weak annotation), GCLoss (gradient-constrained loss), and ARCL (adversarial reasoning contrastive learning) to achieve both high sentence-level classification accuracy and contiguous toxic span extraction while maintaining efficient encoder inference.
+ToxiTrace proposes an explainable Chinese toxicity detection method for BERT-style encoders. By utilizing three components—CuSA (LLM-guided weak labeling), GCLoss (Gradient Constraint Loss), and ARCL (Adversarial Reasoning Contrastive Learning)—it achieves simultaneous improvements in sentence-level classification accuracy and continuous toxic span extraction while maintaining efficient encoder inference.
 
 ## Background & Motivation
 
-**Background**: Existing Chinese toxicity detection methods primarily target sentence-level classification and have achieved strong performance through pre-trained language models (e.g., RoBERTa, MacBERT) and large language models.
+**Background**: Existing Chinese toxicity detection methods primarily target sentence-level classification tasks and have achieved high performance using pre-trained language models (e.g., RoBERTa, MacBERT) and Large Language Models (LLMs).
 
 **Limitations of Prior Work**:
-- Most methods only perform sentence-level classification and cannot pinpoint which specific spans within a sentence are toxic, lacking explainability
-- Chinese uses character-level tokenization, causing gradient/attention attribution signals to fragment across individual characters and fail to form human-readable contiguous spans
-- LLMs have strong explanation capabilities but underperform encoders in direct classification and incur high inference costs
+- Most methods perform only sentence-level classification and fail to pinpoint specific toxic spans, lacking explainability.
+- Chinese utilizes character-level tokenization; attribution signals like gradients or attention are fragmented across individual characters, making it difficult to form human-readable continuous spans.
+- While LLMs possess strong explanatory capabilities, their direct classification performance is often inferior to encoders, and they incur high inference overhead.
 
-**Key Challenge**: Encoder models are accurate classifiers but poor explainers (fragmented attributions), while LLMs excel at explanation but are weak classifiers with slow inference—the strengths of both cannot be combined.
+**Key Challenge**: Encoder models are accurate but lack explainability (fragmented attribution), while LLMs are explainable but have weaker classification performance and slower inference. The advantages of both cannot be easily combined.
 
-**Goal**: Maintain efficient encoder inference while enabling the model to both classify accurately and extract contiguous, readable toxic spans as explanations.
+**Goal**: To enable the model to accurately classify text and extract continuous, readable toxic spans as explanations, all while maintaining the high inference efficiency of an encoder.
 
-**Key Insight**: By explicitly constraining gradient signals during training, the encoder's token-level attributions naturally focus on toxic evidence, enabling direct contiguous span extraction from saliency maps at inference time.
+**Key Insight**: Explicitly constrain gradient signals during the training phase so that token-level attributions within the encoder naturally converge on toxic evidence, allowing continuous spans to be extracted directly from saliency maps during inference.
 
-**Core Idea**: Elevate gradient attribution from "post-hoc explanation" to "training objective"—use LLM-generated weak annotations to guide gradients toward toxic tokens while sharpening the toxic/non-toxic semantic boundary through contrastive learning.
+**Core Idea**: Elevate gradient attribution from a "post-hoc explanation" to a "training objective"—using weak labels generated by an LLM to guide gradient focus on toxic tokens, while employing contrastive learning to sharpen the semantic boundaries between toxic and non-toxic content.
 
 ## Method
 
 ### Overall Architecture
 
-ToxiTrace follows a four-stage pipeline: (1) warm-up training for baseline classification; (2) CuSA leverages encoder attribution cues + LLM refinement to generate weakly annotated toxic spans; (3) GCLoss explicitly boosts gradient responses on toxic tokens and suppresses non-toxic ones; (4) ARCL sharpens the semantic boundary between toxic and non-toxic content. At inference, the model first classifies, then applies the BiCSE algorithm to extract contiguous spans from the saliency map for toxic inputs.
+The ToxiTrace workflow consists of four steps: (1) Warm-up training to obtain basic classification capabilities; (2) CuSA utilizes encoder attribution clues combined with LLM refinement to generate weakly labeled toxic spans; (3) GCLoss explicitly enhances gradient response for toxic tokens and suppresses non-toxic ones; (4) ARCL sharpens semantic boundaries via adversarial reasoning contrastive learning. During inference, if a sentence is classified as toxic, the BiCSE algorithm extracts continuous spans from the saliency map.
 
 ### Key Designs
 
 1. **CuSA (Clue-guided Span Annotation)**:
+    - **Function**: Automatically generates weak supervision signals for toxic spans in the absence of fine-grained annotations.
+    - **Mechanism**: The encoder is first warmed up for basic classification. Token-level saliency scores are then calculated, and the BiCSE (Bidirectional Cliff Scanning) algorithm extracts initial high-saliency spans as clues. These are refined by an LLM (Gemini 2.5 Pro) to finalize span boundaries.
+    - **Design Motivation**: Existing Chinese toxicity datasets only provide coarse-grained labels, yet direct LLM labeling often lacks localization clues. Combining the encoder's own attribution signals for candidate regions with the LLM's understanding for refinement creates a complementary effect.
 
-    - Function: Automatically generates weak supervision signals for toxic spans without fine-grained annotations
-    - Mechanism: First warm-up trains the encoder for baseline classification, then computes token-level saliency scores. The BiCSE (Bidirectional Cliff Scan and Extraction) algorithm extracts initial high-saliency spans as clues, which are fed to an LLM (Gemini 2.5 Pro) to refine span boundaries
-    - Design Motivation: Existing Chinese toxicity datasets have only coarse-grained labels, but direct LLM annotation lacks localization cues. Using the encoder's own attribution signals to provide candidate regions, then leveraging the LLM's comprehension ability to refine them, achieves complementary strengths
-
-2. **GCLoss (Gradient-Constrained Loss)**:
-
-    - Function: Explicitly shapes token-level gradient distributions so that toxic tokens have higher gradient responses than non-toxic ones
-    - Mechanism: Comprises two components—PGR Loss enforces a margin between toxic/non-toxic token gradients; PPT Loss uses within-sample statistics (15th percentile + α·max) to cap the gradient upper bound for non-toxic tokens and set a gradient lower bound for toxic tokens
-    - Design Motivation: Models trained solely with classification loss produce scattered, inaccurate token-level attributions. Directly constraining gradients concentrates attributions on toxic evidence, making span extraction at inference more reliable
+2. **GCLoss (Gradient Constraint Loss)**:
+    - **Function**: Explicitly shapes the token-level gradient distribution so that the gradient response of toxic tokens is higher than that of non-toxic tokens.
+    - **Mechanism**: Comprised of two parts—PGR Loss, which enforces a margin between toxic and non-toxic token gradients, and PPT Loss, which uses intra-sample statistics (15th percentile + $\alpha \cdot \max$) to constrain the upper bound of non-toxic gradients and the lower bound of toxic gradients, respectively.
+    - **Design Motivation**: Models trained solely with classification loss exhibit scattered and inaccurate token-level attribution. Direct constraints on gradients ensure that attribution is more concentrated on toxic evidence, making span extraction during inference more reliable.
 
 3. **ARCL (Adversarial Reasoning Contrastive Learning)**:
-
-    - Function: Sharpens the semantic boundary between toxic and non-toxic text
-    - Mechanism: Uses an LLM (Gemini 2.5 Flash) to generate pro and con reasoning arguments ("Assume the text is toxic/non-toxic, generate supporting rationales"), which serve as positive and negative samples for adaptive InfoNCE contrastive learning
-    - Design Motivation: GCLoss only constrains intra-sentence token-level gradient relationships and cannot capture inter-sentence semantic differences. Reasoning content generated via the LLM debate mechanism is more targeted and semantically deeper than simple data augmentation
+    - **Function**: Sharpens the semantic boundary between toxic and non-toxic text.
+    - **Mechanism**: An LLM (Gemini 2.5 Flash) generates both positive and negative reasoning arguments ("Assuming the text is toxic/non-toxic, generate supporting reasons"). These serve as positive and negative samples for adaptive InfoNCE contrastive learning.
+    - **Design Motivation**: GCLoss only constrains intra-sentence token-level gradient relationships and fails to capture inter-sentence semantic differences. Reasoning content generated via an LLM debate mechanism is more targeted and semantically deep than simple data augmentation.
 
 ### Loss & Training
 
-Overall training objective: $\mathcal{L} = \mathcal{L}_{CE} + \lambda_{grad}(\mathcal{L}_{PGR} + \mathcal{L}_{PPT}) + \lambda_{sem}\mathcal{L}_{con}$
+Overall training objective: 
+$$\mathcal{L} = \mathcal{L}_{CE} + \lambda_{grad}(\mathcal{L}_{PGR} + \mathcal{L}_{PPT}) + \lambda_{sem}\mathcal{L}_{con}$$
 
-Training procedure: warm-up for 3 epochs (cross-entropy only) → introduce GCLoss + ARCL for joint training. Too many or too few warm-up steps both degrade final performance.
+Training strategy: Warm up for 3 epochs (cross-entropy only), then introduce GCLoss + ARCL for joint training. Performance degrades if the warm-up period is too short or too long.
 
 ## Key Experimental Results
 
 ### Main Results (Classification)
 
 | Dataset | Metric | Ours (RoBERTa+ToxiTrace) | Prev. SOTA (RoBERTa) | Gain |
-|---------|--------|--------------------------|----------------------|------|
+|--------|------|------|----------|------|
 | COLD | Macro-F1 | **83.68%** | 82.56% | +1.12% |
 | COLD | Acc | **83.84%** | 82.68% | +1.16% |
 | ToxiCN | Macro-F1 | **83.83%** (MacBERT) | 82.81% | +1.02% |
@@ -89,53 +87,48 @@ Training procedure: warm-up for 3 epochs (cross-entropy only) → introduce GCLo
 ### Span Extraction (CNTP)
 
 | Model | Overlap F1 | Character F1 | IoU | Inference Time |
-|-------|-----------|-------------|-----|----------------|
-| RoBERTa+ToxiTrace* | **77.90%** | **77.63%** | **61.56%** | 1m 58s |
+|------|-----------|-------------|-----|---------|
+| Ours (RoBERTa+ToxiTrace)* | **77.90%** | **77.63%** | **61.56%** | 1m 58s |
 | Qwen3-8B | 77.87% | 74.74% | 59.67% | 14m 33s |
 | Gemini 2.5 Pro | 80.39% | 79.67% | 66.22% | ~1.5h |
 
 ### Ablation Study
 
-| Config | Classification Macro-F1 | Extraction F1 | Note |
-|--------|------------------------|---------------|------|
-| Full model | 83.68% | 77.90% | full model |
-| w/o CuSA | 82.90% | 71.96% | Weak annotation degrades to raw BiCSE; extraction recall drops sharply |
-| w/o ARCL | 83.12% | 75.16% | Missing semantic contrast; both classification and extraction decline |
-| w/o GCLoss | 83.36% | 65.15% | **Largest extraction F1 drop (−12.75%)** |
+| Configuration | Classification Macro-F1 | Extraction F1 | Description |
+|------|-------------|---------|------|
+| Full model | 83.68% | 77.90% | Full model |
+| w/o CuSA | 82.90% | 71.96% | Weak labels degrade to raw BiCSE; extraction recall drops significantly |
+| w/o ARCL | 83.12% | 75.16% | Semantic contrast missing; both metrics drop |
+| w/o GCLoss | 83.36% | 65.15% | **Largest drop in Extraction F1 (-12.75%)** |
 | RoBERTa baseline | 82.76% | 65.08% | Baseline |
 
 ### Key Findings
-
-- GCLoss contributes far more to span extraction than ARCL (−12.75% vs −2.74%), making it the core component
-- Encoder+ToxiTrace achieves span extraction F1 comparable to the strongest LLM (Qwen3-8B) in ~1/7 of the inference time
-- The BiCSE algorithm significantly outperforms traditional top-k selection for extraction (RoBERTa 52.34→65.08 F1)
-- Masking toxic spans causes a sharp drop in model confidence, validating the causal faithfulness of gradient attributions
+- GCLoss contributes far more to span extraction than ARCL (-12.75% vs -2.74%), making it the core component of the method.
+- The Encoder+ToxiTrace achieves span extraction F1 comparable to the strongest LLM (Qwen3-8B) in approximately 1/7 of the inference time.
+- The BiCSE algorithm significantly improves extraction performance over traditional top-k selection (RoBERTa 52.34 $\rightarrow$ 65.08 F1).
+- Model confidence drops significantly after masking toxic spans, verifying the causal faithfulness of the gradient attribution.
 
 ## Highlights & Insights
-
-- The idea of elevating gradient attribution from a passive analysis tool to an active training objective is novel, closing the loop from "shaping gradients during training → extracting spans at inference"
-- Clever dual use of LLMs: as a weak annotation refiner in CuSA and as an adversarial reasoning generator in ARCL—neither role involves direct classification, avoiding the LLM's classification weakness
-- The BiCSE bidirectional cliff scan algorithm addresses the practical problem of attribution fragmentation under Chinese character-level tokenization
-- Clear efficiency advantage: encoder inference ~2 min vs LLM ~15 min, with comparable span extraction quality
+- The novel approach of elevating gradient attribution from a passive analysis tool to an active training goal bridges the gap between "gradient shaping during training" and "span extraction during inference."
+- The methods cleverly utilize LLMs in two roles: as weak label refiners in CuSA and as adversarial reasoning generators in ARCL—rather than direct classifiers, avoiding the weakness of LLMs in direct classification.
+- The BiCSE (Bidirectional Cliff Scanning) algorithm effectively addresses the issue of fragmented attribution caused by Chinese character-level tokenization.
+- Clear efficiency advantage: Encoder inference takes ~2min compared to ~15min for the LLM, with comparable span extraction quality.
 
 ## Limitations & Future Work
-
-- Does not handle homophone substitution, pinyin obfuscation, or other "implicit toxic expressions"
-- Validated only on Chinese; applicability to other character-level languages (Japanese, Korean) requires further investigation
-- LoRA-based transfer to decoder LLMs yields limited results; deeper parameter-efficient gradient shaping strategies may be needed
-- CuSA depends on an external LLM for annotation refinement, introducing additional cost
+- "Invisible toxic expressions," such as homophone replacements or Pinyin obfuscation, remain unaddressed.
+- Only validated on Chinese; applicability to other character-based languages like Japanese or Korean requires further research.
+- LoRA-based transfer to decoder LLMs shows limited effectiveness, potentially requiring more intensive parameter-efficient gradient shaping strategies.
+- CuSA relies on external LLMs for label refinement, introducing additional costs.
 
 ## Related Work & Insights
-
-- **vs Traditional Attribution Methods (LIME/IG/Attention)**: Traditional methods provide post-hoc explanations with scattered token selections; ToxiTrace shapes gradients during training to extract contiguous spans
-- **vs Direct LLM Detection**: LLMs explain well but classify poorly and slowly; ToxiTrace gives encoders the best of both worlds
-- **vs CRF Sequence Labeling**: CRF requires explicit annotation for training; ToxiTrace achieves comparable results via weak supervision + gradient constraints
+- **vs. Traditional Attribution (LIME/IG/Attention)**: Traditional methods are post-hoc and select scattered tokens; ToxiTrace shapes gradients during training to extract continuous spans.
+- **vs. Direct LLM Detection**: LLMs are explainable but slow and weaker in classification; ToxiTrace provides the encoder with the strengths of both.
+- **vs. CRF Sequence Labeling**: CRF requires explicit label training, whereas ToxiTrace achieves results through weak supervision and gradient constraints.
 
 ## Rating
-
-- Novelty: ⭐⭐⭐⭐ Gradient attribution as a training objective + LLM debate contrastive learning is a creative combination
-- Experimental Thoroughness: ⭐⭐⭐⭐ Multi-dataset, multi-model comparisons, ablations, and faithfulness verification are comprehensive
-- Writing Quality: ⭐⭐⭐⭐ Clear framework with logically sound motivation
+- **Novelty**: ⭐⭐⭐⭐ The combination of gradient attribution as a training objective and LLM-debate contrastive learning is highly creative.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Multi-dataset and multi-model comparisons, ablation studies, and faithfulness verifications are all comprehensive.
+- **Writing Quality**: ⭐⭐⭐⭐ The framework is clear, and the motivation is logically derived.
 
 <!-- RELATED:START -->
 
@@ -143,11 +136,11 @@ Training procedure: warm-up for 3 epochs (cross-entropy only) → introduce GCLo
 
 ## Related Papers
 
+- [\[ACL 2026\] Estimating the Black-box LLM Uncertainty with Distribution-Aligned Adversarial Distillation](estimating_the_black-box_llm_uncertainty_with_distribution-aligned_adversarial_d.md)
+- [\[ACL 2026\] Probing Multimodal Large Language Models on Cognitive Biases in Chinese Short-Video Misinformation](probing_multimodal_large_language_models_on_cognitive_biases_in_chinese_short-vi.md)
+- [\[ACL 2026\] SMARTER: A Data-efficient Framework to Improve Toxicity Detection with Explanation via Self-augmenting Large Language Models](smarter_a_data-efficient_framework_to_improve_toxicity_detection_with_explanatio.md)
 - [\[ACL 2026\] ToxReason: A Benchmark for Mechanistic Chemical Toxicity Reasoning via Adverse Outcome Pathway](toxreason_a_benchmark_for_mechanistic_chemical_toxicity_reasoning_via_adverse_ou.md)
-- [\[CVPR 2026\] Learning from Synthetic Data via Provenance-Based Input Gradient Guidance](../../CVPR2026/social_computing/learning_from_synthetic_data_via_provenance-based_input_gradient_guidance.md)
-- [\[ICCV 2025\] Gradient Extrapolation for Debiased Representation Learning](../../ICCV2025/social_computing/gradient_extrapolation_for_debiased_representation_learning.md)
-- [\[ACL 2026\] Is this chart lying to me? Automating the detection of misleading visualizations](is_this_chart_lying_to_me_automating_the_detection_of_misleading_visualizations.md)
-- [\[ACL 2026\] Debating the Unspoken: Role-Anchored Multi-Agent Reasoning for Half-Truth Detection](debating_the_unspoken_role-anchored_multi-agent_reasoning_for_half-truth_detecti.md)
+- [\[ACL 2026\] PSK@EEUCA 2026: Fine-Tuning Large Language Models with Synthetic Data Augmentation for Multi-Class Toxicity Detection in Gaming Chat](pskeeuca_2026_fine-tuning_large_language_models_with_synthetic_data_augmentation.md)
 
 </div>
 

@@ -2,121 +2,121 @@
 title: >-
   [Paper Note] An Exploration of Mamba for Speech Self-Supervised Models
 description: >-
-  [ACL 2026][Audio & Speech][Mamba] This work presents the first comprehensive exploration of the Mamba architecture as a backbone for speech self-supervised learning (SSL)…
+  [ACL 2026][Audio & Speech][Mamba] This paper presents the first comprehensive exploration of the Mamba architecture as a foundation model for Speech Self-Supervised Learning (SSL). The findings demonstrate that Mamba-bas…
 tags:
   - "ACL 2026"
   - "Audio & Speech"
   - "Mamba"
-  - "speech self-supervised learning"
+  - "Speech SSL"
   - "HuBERT"
-  - "state space model"
-  - "streaming ASR"
+  - "State Space Models"
+  - "Streaming ASR"
 date: 2026-05-08
-content_hash: 6ae30010af3df406
+content_hash: 16f72256c1bc8a3a
 ---
 
 # An Exploration of Mamba for Speech Self-Supervised Models
 
-**Conference**: ACL 2026
+**Conference**: ACL 2026  
 **arXiv**: [2506.12606](https://arxiv.org/abs/2506.12606)  
 **Code**: [GitHub](https://github.com/hckuo145/Mamba-based-HuBERT)  
-**Area**: Speech / Self-Supervised Learning
-**Keywords**: Mamba, speech self-supervised learning, HuBERT, state space model, streaming ASR
+**Area**: Speech / Self-Supervised Learning  
+**Keywords**: Mamba, Speech SSL, HuBERT, State Space Models, Streaming ASR
 
 ## TL;DR
 
-This work presents the first comprehensive exploration of the Mamba architecture as a backbone for speech self-supervised learning (SSL), demonstrating that Mamba-based HuBERT outperforms Transformers in long-context ASR, streaming ASR, and causal probing tasks while maintaining linear time complexity.
+This paper presents the first comprehensive exploration of the Mamba architecture as a foundation model for Speech Self-Supervised Learning (SSL). The findings demonstrate that Mamba-based HuBERT outperforms Transformers in long-context ASR, streaming ASR, and causal probing tasks while maintaining linear time complexity.
 
 ## Background & Motivation
 
-**Background**: Transformer-based speech SSL models (e.g., HuBERT, wav2vec 2.0) have achieved remarkable success, yet their quadratic complexity incurs high computational costs and memory bottlenecks when processing long sequences.
+**Background**: Transformer-based speech SSL models (e.g., HuBERT, wav2vec 2.0) have achieved significant success, but their quadratic complexity leads to high computational costs and memory bottlenecks when processing long sequences.
 
-**Limitations of Prior Work**: (1) Although Mamba has demonstrated superior performance over Transformers in language modeling, its application in speech has been limited to isolated single-task studies. (2) Existing speech Mamba works typically report performance on par with or slightly below Transformers and often require hybrid designs. (3) A unified cross-task evaluation is lacking.
+**Limitations of Prior Work**: (1) While Mamba has shown capabilities surpassing Transformers in language modeling, its application in speech has been limited to isolated studies on single tasks; (2) Existing speech Mamba works often report performance comparable to or slightly worse than Transformers and frequently require hybrid designs; (3) There is a lack of unified evaluation across multiple tasks.
 
-**Key Challenge**: While Mamba's linear time complexity is theoretically well-suited to the long-sequence nature of speech, its overall performance in speech SSL remains unclear.
+**Key Challenge**: The linear time complexity of Mamba is theoretically ideal for the long-sequence nature of speech, but its comprehensive performance in speech SSL remains unclear.
 
-**Goal**: To systematically train and evaluate Mamba-based HuBERT models, comprehensively exploring their potential as speech foundation models and feature extractors.
+**Goal**: Systematically train and evaluate Mamba-based HuBERT models to comprehensively explore their potential as speech foundation models and feature extractors.
 
-**Key Insight**: Mamba blocks replace Transformer blocks in HuBERT while retaining the same training pipeline (two-iteration k-means pseudo-label training), with evaluation conducted across multiple tasks including ASR and SUPERB.
+**Key Insight**: Replace Transformer blocks in HuBERT with Mamba blocks while maintaining the same training pipeline (two-round iterative k-means pseudo-label training) and evaluate across ASR, SUPERB, and other tasks.
 
-**Core Idea**: Mamba's inherently causal architecture makes it particularly suitable for building causal speech SSL models, yielding distinctive advantages in streaming ASR and long-context scenarios.
+**Core Idea**: The inherent causal architecture of Mamba makes it particularly suitable for building causal speech SSL models, demonstrating unique advantages in streaming ASR and long-context scenarios.
 
 ## Method
 
 ### Overall Architecture
 
-Mamba blocks replace the Transformer blocks in HuBERT, while the CNN feature encoder and positional encoder are retained. The training pipeline follows HuBERT's two-iteration scheme: the first iteration trains for 250k steps with MFCC targets, and the second iteration trains for 400k steps using the sixth-layer outputs of the first iteration as targets. Pre-training is performed on LibriSpeech 960h.
+The Transformer blocks in HuBERT are replaced with Mamba blocks, while the CNN feature encoder and positional encoder are retained. The training process follows the two-round HuBERT iteration: the first round targets MFCCs for 250k steps, and the second round uses the 6th-layer output from the first round as targets for 400k steps. Pre-training is conducted on LibriSpeech 960h.
 
 ### Key Designs
 
-1. **Systematic Comparison of Multiple Mamba Variants**:
+1. **Systematic Comparison of Mamba Variants**:
 
-    - Function: Comprehensively evaluate the speech representation capability of different Mamba configurations.
-    - Mechanism: Test causal settings (Mamba, Mamba+MLP) and bidirectional settings (ExtBiMamba, InnBiMamba), with fair comparison against corresponding Transformer variants.
-    - Design Motivation: Mamba's causal nature may be advantageous in certain tasks (streaming ASR) while disadvantageous in others (tasks requiring global context).
+    - Function: Comprehensively evaluate the speech representation capabilities of different Mamba configurations.
+    - Mechanism: Test causal settings (Mamba, Mamba+MLP) and bidirectional settings (ExtBiMamba, InnBiMamba), providing fair comparisons with corresponding Transformer variants.
+    - Design Motivation: The causal nature of Mamba may be an advantage in some tasks (streaming ASR) and a disadvantage in others (tasks requiring global information).
 
-2. **Long-Context and Streaming ASR Evaluation**:
+2. **Long-context and Streaming ASR Evaluation**:
 
-    - Function: Validate the practical value of Mamba's linear complexity in real-world scenarios.
-    - Mechanism: Process entire speech utterances without sentence segmentation for long-context ASR; perform streaming ASR under the constraint of using only past information. MACs/second and RTF are quantified as a function of sequence length.
-    - Design Motivation: This represents Mamba's greatest theoretical advantage over Transformers — Transformers run out of memory beyond 80 seconds, whereas Mamba can handle sequences exceeding 5 minutes.
+    - Function: Verify the value of Mamba's linear complexity in practical scenarios.
+    - Mechanism: Process entire speech segments without sentence segmentation for long-context ASR; perform streaming ASR under the constraint of using only past information. Quantify changes in MACs/sec and RTF relative to sequence length.
+    - Design Motivation: This is Mamba's greatest theoretical advantage over Transformers—Transformers encounter OOM beyond 80 seconds, while Mamba can handle over 5 minutes.
 
 3. **Representation Quality Analysis**:
 
-    - Function: Gain deeper understanding of the characteristics of speech representations learned by Mamba.
-    - Mechanism: Phone purity is used to assess the phonetic quality of discrete representations; CCA analysis examines how phoneme and speaker features are encoded.
-    - Design Motivation: The goal is not only to determine whether representations are good, but also to understand why and in what respects.
+    - Function: Deeply understand the characteristics of speech representations learned by Mamba.
+    - Mechanism: Use phone purity assessments to quantify the phonetic quality of representations and CCA analysis to examine how phoneme and speaker features are encoded.
+    - Design Motivation: To understand not just "if it is good," but "why it is good" and "where it excels."
 
 ### Loss & Training
 
-The standard HuBERT training objective is followed: masked prediction loss. The Adam optimizer is used with linear warm-up over the first 8% of training steps followed by linear decay. Due to computational constraints, training is conducted on a single V100 GPU with a batch size one-quarter of the original.
+Ours follows the standard HuBERT training: masked prediction loss. It uses the Adam optimizer with a linear warm-up (first 8%) followed by linear decay. Due to computational resource constraints, training was performed on a single V100 with a batch size $1/4$ of the original.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Setting | Model | Parameters | WER | Key Finding |
-|---------|-------|------------|-----|-------------|
-| Streaming ASR | Mamba HuBERT | 78M | 15.77% | Outperforms causal Transformer (94M, 16.66%) |
-| Long-context ASR | ExtBiMamba | — | 11.08% | Transformer fails due to OOM |
-| Standard ASR | ExtBiMamba (Small) | — | Comparable to Transformer | Effective at small scale |
+| Setting | Model | Params | WER | Key Findings |
+|------|------|--------|-----|--------|
+| Streaming ASR | Mamba HuBERT | 78M | 15.77% | Outperforms 94M Causal Transformer (16.66%) |
+| Long-context ASR | ExtBiMamba | - | 11.08% | Transformer failed due to OOM |
+| Standard ASR | ExtBiMamba (Small) | - | Close to Transformer | Effective at small scales |
 
 ### Ablation Study
 
-| Configuration | Key Metric | Note |
-|---------------|------------|------|
-| Causal SUPERB | Mamba > Causal Transformer | Superior on phoneme and speaker tasks |
-| Phone Purity | Higher for Mamba | Better phonetic quality of discrete representations |
-| CCA Analysis | Speaker features more distinct | Mamba encodes speaker information more clearly |
-| ExtBiMamba Base | Below Transformer | Large-scale bidirectional Mamba still needs improvement |
+| Configuration | Key Metrics | Description |
+|------|---------|------|
+| Causal SUPERB | Mamba > Causal Transformer | Superior in phoneme and speaker tasks |
+| Phone Purity | Mamba Higher | Quantized representations have better phonetic quality |
+| CCA Analysis | More distinct speaker features | Mamba encodes speaker information more clearly |
+| ExtBiMamba Base | Lower than Transformer | Large-scale bidirectional Mamba still requires improvement |
 
 ### Key Findings
-- Mamba's causal nature is a natural advantage in streaming speech scenarios — 78M parameters outperform a 94M causal Transformer.
-- Computational cost remains nearly constant with sequence length, while Transformers run out of memory beyond 80 seconds.
-- Mamba produces discrete representations with higher phone purity, benefiting spoken language models that take SSL units as input.
-- Large-scale bidirectional Mamba (Base) remains comprehensively below Transformer, suggesting that scalability still requires improvement.
+- Mamba's causal nature is a natural advantage for streaming speech scenarios—78M parameters outperform a 94M Causal Transformer.
+- Computational cost remains almost constant relative to sequence length, whereas Transformers hit OOM beyond 80 seconds.
+- Mamba produces quantized representations with higher phone purity, which benefits spoken language models using SSL units as input.
+- Large-scale bidirectional Mamba (Base) still performs worse than Transformers across the board, suggesting that scalability remains a key challenge.
 
 ## Highlights & Insights
-- This is the first work to systematically evaluate Mamba as a speech foundation model across multiple tasks, rather than testing it in isolation on a single benchmark.
-- The finding that "causal nature is an advantage rather than a limitation" reshapes the understanding of Mamba's applicability in speech.
-- The findings on discrete representation quality have direct implications for the spoken language model community.
+- This is the first systematic evaluation of Mamba as a speech foundation model across multiple domains rather than a single task.
+- The finding that "causality is an advantage rather than a limitation" shifts the perception of using Mamba in speech.
+- Insights into the quality of quantized representations have direct implications for the field of spoken language modeling.
 
 ## Limitations & Future Work
-- Large-scale training of bidirectional Mamba underperforms; scalability remains a key challenge.
-- Pre-training and evaluation are conducted solely on LibriSpeech; multilingual and noisy settings are not tested.
-- Training scale is far smaller than the original HuBERT due to the constraint of a single V100 GPU.
-- Future work may explore improved architectures such as Mamba2 and larger-scale training.
+- Large-scale training of bidirectional Mamba yields suboptimal results; scalability is a critical challenge.
+- Pre-training and evaluation were limited to LibriSpeech; multilingual and noisy scenarios remain untested.
+- Restricted by a single V100, the training scale is significantly smaller than the original HuBERT.
+- Future work could explore improved architectures like Mamba2 and larger-scale training.
 
 ## Related Work & Insights
-- **vs. Hybrid Mamba-Transformer**: This work uses a pure Mamba architecture, more clearly revealing the strengths and weaknesses of Mamba.
-- **vs. SSAM**: SSAM focuses on general audio rather than speech; this work is dedicated to speech SSL.
-- **vs. Mamba Streaming ASR**: Prior works require additional mechanisms (e.g., lookahead), whereas this work demonstrates that pure Mamba already holds an advantage.
+- **vs. Hybrid Mamba-Transformer**: Ours uses a pure Mamba architecture to more clearly reveal its strengths and weaknesses.
+- **vs. SSAM**: While SSAM focuses on general audio, Ours focuses specifically on speech SSL.
+- **vs. Mamba Streaming ASR**: Previous works required additional mechanisms (e.g., lookahead), whereas Ours demonstrates that pure Mamba inherently possesses advantages.
 
 ## Rating
 - Novelty: ⭐⭐⭐⭐ First comprehensive exploration of Mamba as a speech SSL foundation model.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Multi-dimensional evaluation covering ASR, SUPERB, representation analysis, long-context, and streaming settings.
-- Writing Quality: ⭐⭐⭐⭐ Well-structured with careful experimental design.
-- Value: ⭐⭐⭐⭐ Provides important empirical evidence for efficient architecture selection in the speech domain.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Multi-dimensional evaluation including ASR, SUPERB, representation analysis, long-context, and streaming.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure and detailed experiments.
+- Value: ⭐⭐⭐⭐ Provides important empirical evidence for selecting efficient architectures in the speech domain.
 
 <!-- RELATED:START -->
 
@@ -126,9 +126,9 @@ The standard HuBERT training objective is followed: masked prediction loss. The 
 
 - [\[ACL 2026\] \[b\] = \[d\] − \[t\] + \[p\]: Self-supervised Speech Models Discover Phonological Vector Arithmetic](bd-tp_self-supervised_speech_models_discover_phonological_vector_arithmetic.md)
 - [\[ACL 2026\] XLSR-MamBo: Scaling the Hybrid Mamba-Attention Backbone for Audio Deepfake Detection](xlsr-mambo_scaling_the_hybrid_mamba-attention_backbone_for_audio_deepfake_detect.md)
+- [\[ACL 2026\] Exploration of Perceptual Speech Features for Clinical Decision-Support in Mental Health Care](exploration_of_perceptual_speech_features_for_clinical_decision-support_in_menta.md)
 - [\[ACL 2026\] Closing the Modality Reasoning Gap for Speech Large Language Models](closing_the_modality_reasoning_gap_for_speech_large_language_models.md)
 - [\[ACL 2026\] Do We Need Distinct Representations for Every Speech Token? Unveiling and Exploiting Redundancy in Large Speech Language Models](do_we_need_distinct_representations_for_every_speech_token_unveiling_and_exploit.md)
-- [\[ACL 2026\] MTR-DuplexBench: Towards a Comprehensive Evaluation of Multi-Round Conversations for Full-Duplex Speech Language Models](mtr-duplexbench_towards_a_comprehensive_evaluation_of_multi-round_conversations_.md)
 
 </div>
 

@@ -130,9 +130,9 @@ A user study with 22 participants on the 3D-Front setting shows Ours-Beyond achi
 
 - [\[ICML 2026\] R$^3$L: Reasoning 3D Layouts from Relative Spatial Relations](r3l_reasoning_3d_layouts_from_relative_spatial_relations.md)
 - [\[CVPR 2026\] Learning Multi-View Spatial Reasoning from Cross-View Relations](../../CVPR2026/3d_vision/learning_multi-view_spatial_reasoning_from_cross-view_relations.md)
+- [\[ICML 2026\] PhyScene3D: Physically Consistent Interactive 3D Tabletop Scene Generation](physcene3d_physically_consistent_interactive_3d_tabletop_scene_generation.md)
 - [\[AAAI 2026\] Graph Smoothing for Enhanced Local Geometry Learning in Point Cloud Analysis](../../AAAI2026/3d_vision/graph_smoothing_for_enhanced_local_geometry_learning_in_point_cloud_analysis.md)
-- [\[ICCV 2025\] CL-Splats: Continual Learning of Gaussian Splatting with Local Optimization](../../ICCV2025/3d_vision/cl-splats_continual_learning_of_gaussian_splatting_with_local_optimization.md)
-- [\[NeurIPS 2025\] Object-Centric Representation Learning for Enhanced 3D Semantic Scene Graph Prediction](../../NeurIPS2025/3d_vision/object-centric_representation_learning_for_enhanced_3d_semantic_scene_graph_pred.md)
+- [\[ICML 2026\] Geometry-Guided Modeling of Foundation Features Enables Generalizable Object Shape Deformation Learning](geometry-guided_modeling_of_foundation_features_enables_generalizable_object_sha.md)
 
 </div>
 

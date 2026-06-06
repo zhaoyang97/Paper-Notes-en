@@ -164,8 +164,8 @@ The temperature parameter is $\alpha=2$ and the balancing coefficients are $\bet
 - [\[ICLR 2026\] WARP: Weight-Space Linear Recurrent Neural Networks](../../ICLR2026/time_series/weight-space_linear_recurrent_neural_networks.md)
 - [\[AAAI 2026\] Urban Incident Prediction with Graph Neural Networks: Integrating Government Ratings and Crowdsourced Reports](../../AAAI2026/time_series/urban_incident_prediction_with_graph_neural_networks_integrating_government_rati.md)
 - [\[AAAI 2026\] Transparent Networks for Multivariate Time Series](../../AAAI2026/time_series/transparent_networks_for_multivariate_time_series.md)
+- [\[AAAI 2026\] SELDON: Supernova Explosions Learned by Deep ODE Networks](../../AAAI2026/time_series/seldon_supernova_explosions_learned_by_deep_ode_networks.md)
 - [\[ICML 2026\] DAG: A Dual Correlation Network for Time Series Forecasting with Exogenous Variables](../../ICML2026/time_series/dag_a_dual_correlation_network_for_time_series_forecasting_with_exogenous_variab.md)
-- [\[ACL 2026\] A Unified Framework for Modeling Heterogeneous Financial Data via Dual-Granularity Prompting](../../ACL2026/time_series/a_unified_framework_for_modeling_heterogeneous_financial_data_via_dual-granulari.md)
 
 </div>
 

@@ -273,7 +273,7 @@ The framework's effectiveness is validated on model ensembling tasks using langu
 - [\[ICLR 2026\] Steering Language Models with Weight Arithmetic](steering_language_models_with_weight_arithmetic.md)
 - [\[ICML 2026\] Consistent Diffusion Language Models](../../ICML2026/llm_pretraining/consistent_diffusion_language_models.md)
 - [\[ACL 2026\] Compact Example-Based Explanations for Language Models](../../ACL2026/llm_pretraining/compact_example-based_explanations_for_language_models.md)
-- [\[NeurIPS 2025\] Vocabulary Customization for Efficient Domain-Specific LLM Deployment](../../NeurIPS2025/llm_pretraining/vocabulary_customization_for_efficient_domain-specific_llm_deployment.md)
+- [\[ICML 2026\] Names Don't Matter: Symbol-Invariant Transformer for Open-Vocabulary Learning](../../ICML2026/llm_pretraining/names_dont_matter_symbol-invariant_transformer_for_open-vocabulary_learning.md)
 - [\[ICML 2026\] Edit-Based Refinement for Parallel Masked Diffusion Language Models](../../ICML2026/llm_pretraining/edit-based_refinement_for_parallel_masked_diffusion_language_models.md)
 
 </div>

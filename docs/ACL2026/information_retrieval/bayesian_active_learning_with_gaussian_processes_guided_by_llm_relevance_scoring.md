@@ -2,81 +2,78 @@
 title: >-
   [Paper Note] Bayesian Active Learning with Gaussian Processes Guided by LLM Relevance Scoring
 description: >-
-  [ACL 2026][Information Retrieval & RAG][Passage Retrieval] This paper proposes BAGEL, a Bayesian active learning framework based on Gaussian Processes (GP) that propagates sparse LLM relevance signals across the embeddin…
+  [ACL 2026][Information Retrieval & RAG][Passage Retrieval] Ours proposes BAGEL, a Bayesian active learning framework based on Gaussian Processes (GP). Under limited LLM budgets…
 tags:
   - "ACL 2026"
   - "Information Retrieval & RAG"
   - "Passage Retrieval"
   - "Gaussian Processes"
   - "Active Learning"
-  - "LLM Re-ranking"
+  - "LLM Reranking"
   - "Bayesian Optimization"
 date: 2026-05-08
-content_hash: 3ff2a39d189b3779
+content_hash: 6de14335c7ac9e0d
 ---
 
 # Bayesian Active Learning with Gaussian Processes Guided by LLM Relevance Scoring
 
-**Conference**: ACL 2026
+**Conference**: ACL 2026  
 **arXiv**: [2604.17906](https://arxiv.org/abs/2604.17906)  
 **Code**: [GitHub](https://github.com/junieberry/BAGEL)  
-**Area**: Information Retrieval
-**Keywords**: Passage Retrieval, Gaussian Processes, Active Learning, LLM Re-ranking, Bayesian Optimization
+**Area**: Information Retrieval  
+**Keywords**: Passage Retrieval, Gaussian Processes, Active Learning, LLM Reranking, Bayesian Optimization
 
 ## TL;DR
 
-This paper proposes BAGEL, a Bayesian active learning framework based on Gaussian Processes (GP) that propagates sparse LLM relevance signals across the embedding space via an exploration–exploitation strategy under a limited LLM budget, enabling global passage retrieval that substantially outperforms conventional LLM re-ranking methods.
+Ours proposes BAGEL, a Bayesian active learning framework based on Gaussian Processes (GP). Under limited LLM budgets, it propagates sparse LLM relevance signals through an exploration-exploitation balancing strategy, achieving passage retrieval across the global embedding space and significantly outperforming traditional LLM reranking methods.
 
 ## Background & Motivation
 
-**Background**: LLMs exhibit strong zero-shot relevance modeling capabilities, but their high computational cost renders passage retrieval a budget-constrained global optimization problem. The dominant paradigm employs LLM re-ranking: a dense retriever first retrieves top-$K$ candidates, which are then re-ranked by an LLM.
+**Background**: LLMs possess excellent zero-shot relevance modeling capabilities, but high computational costs turn passage retrieval into a budget-constrained global optimization problem. Prevailing methods adopt an LLM reranking paradigm: first using a dense retriever to obtain top-K candidates, then performing LLM reranking.
 
-**Limitations of Prior Work**: (1) Relevant passages are often distributed across multiple disjoint clusters in the semantic space, yet dense retrievers only retrieve neighbors near the query embedding, failing to discover distant relevant clusters. (2) Existing methods cannot propagate relevance signals from already-scored passages to unseen ones, thereby ignoring the semantic structure of the embedding space.
+**Limitations of Prior Work**: (1) Relevant passages are often distributed across multiple distinct clusters in the semantic space, while dense retrievers only retrieve local neighborhoods near the query embedding, failing to discover distant relevant clusters; (2) existing methods cannot propagate relevance signals from scored passages to unseen ones, ignoring the semantic structure of the embedding space.
 
-**Key Challenge**: Exploring the entire embedding space under a limited LLM inference budget is necessary, yet conventional methods passively rely on a single-stage retriever and are incapable of global exploration.
+**Key Challenge**: The need to explore the entire embedding space under a limited LLM inference budget, whereas traditional methods passively rely on first-stage retrievers and cannot perform global exploration.
 
-**Goal**: To leverage GP's kernel-based relevance propagation and uncertainty estimation to actively navigate the embedding space and discover multimodal relevance distributions.
+**Goal**: Utilize the kernel correlation propagation and uncertainty estimation capabilities of GPs to actively navigate the embedding space and discover multimodal relevance distributions.
 
-**Key Insight**: Passage retrieval is formulated as a Bayesian optimization problem, where the GP provides predictive mean and uncertainty, and an acquisition function balances exploration and exploitation.
+**Key Insight**: Modeling passage retrieval as a Bayesian optimization problem, where the GP provides predicted means and uncertainties, and an acquisition function balances exploration and exploitation.
 
-**Core Idea**: GPs are naturally suited to this task—the kernel function propagates relevance signals, and the posterior variance guides active learning toward uncertain regions.
+**Core Idea**: GPs are naturally suited for this task—kernels propagate relevance signals, and posterior variance guides active learning to explore uncertain regions.
 
 ## Method
 
 ### Overall Architecture
 
-BAGEL proceeds in two stages: (1) **Warm-start initialization**—the query itself is treated as the highest-relevance observation, supplemented by LLM scores for top-$M$ densely retrieved passages; (2) **Active learning exploration**—an acquisition function (UCB) iteratively selects the next passage for LLM scoring, updates the GP posterior, and ultimately generates rankings over all passages.
+BAGEL consists of two stages: (1) Warm-up initialization—treating the query itself as the highest relevance observation, combined with LLM scores of the top-M dense-retrieved passages; (2) Active learning exploration—iteratively selecting the next passage for LLM scoring via an acquisition function (UCB), updating the GP posterior, and finally generating rankings for all passages.
 
 ### Key Designs
 
-1. **Query-Specific Gaussian Process**:
+1.  **Query-specific Gaussian Process**:
+    - **Function**: Models the query-passage relevance function over the embedding space.
+    - **Mechanism**: The GP takes passage embeddings $\mathbf{x}_p$ as input and LLM relevance scores as output. The posterior predictive mean $\mu_q(\mathbf{x}_{p_*})$ and variance $\sigma_q^2(\mathbf{x}_{p_*})$ provide relevance estimation and uncertainty, respectively.
+    - **Design Motivation**: The GP kernel (e.g., RBF) naturally models the smooth relevance structure in the embedding space, supporting signal propagation.
 
-    - **Function**: Models the query–passage relevance function over the embedding space.
-    - **Mechanism**: The GP takes passage embeddings $\mathbf{x}_p$ as input and LLM relevance scores as output; the posterior predictive mean $\mu_q(\mathbf{x}_{p_*})$ and variance $\sigma_q^2(\mathbf{x}_{p_*})$ provide relevance estimates and uncertainty, respectively.
-    - **Design Motivation**: The GP kernel (RBF) naturally models smooth relevance structure in the embedding space and supports signal propagation.
+2.  **UCB Acquisition Function Guided Active Exploration**:
+    - **Function**: Balances the exploration of high-uncertainty regions and the exploitation of high-predicted-relevance regions.
+    - **Mechanism**: $a^{\text{UCB}}(\mathbf{x}) = \mu_q(\mathbf{x}) + \sqrt{\beta}\,\sigma_q(\mathbf{x})$, where $\beta$ controls the exploration-exploitation trade-off, selecting the highest-scoring unlabeled passage at each step.
+    - **Design Motivation**: Pure exploitation traps the model in local optima, while pure exploration wastes budget; UCB naturally balances both.
 
-2. **UCB Acquisition Function for Active Exploration**:
-
-    - **Function**: Balances exploration of high-uncertainty regions with exploitation of high predicted relevance.
-    - **Mechanism**: $a^{\text{UCB}}(\mathbf{x}) = \mu_q(\mathbf{x}) + \sqrt{\beta}\,\sigma_q(\mathbf{x})$, where $\beta$ controls the exploration–exploitation trade-off; at each step, the unlabeled passage with the highest acquisition score is selected.
-    - **Design Motivation**: Pure exploitation risks local optima, while pure exploration wastes the budget; UCB naturally balances both.
-
-3. **Warm-Start Initialization Strategy**:
-
+3.  **Warm-up Initialization Strategy**:
     - **Function**: Mitigates the cold-start problem and provides high-quality initial signals.
-    - **Mechanism**: The query embedding $\mathbf{x}_q$ is treated as the maximum-relevance observation, combined with LLM scores for top-$M$ densely retrieved passages to form the initial observation set $\mathcal{D}_q^{(0)}$.
-    - **Design Motivation**: The query itself is naturally the most relevant "passage," providing a strong positive signal and an initial anchor for the GP.
+    - **Mechanism**: Uses the query embedding $\mathbf{x}_q$ as a maximum relevance observation, combined with LLM scores of top-M dense-retrieved passages to form the initial observation set $\mathcal{D}_q^{(0)}$.
+    - **Design Motivation**: The query is inherently the most "relevant" passage, providing a strong positive signal and an initial anchor for the GP.
 
 ### Loss & Training
 
-No training is required. GP hyperparameters (kernel length-scale $\ell$, noise $\alpha$) are set via standard procedures. Two LLM scoring modes are supported: Expected Relevance (ER) and Peak Relevance (PR). Anytime prediction is supported—the GP can generate rankings over all passages after any iteration.
+Training-free. GP hyperparameters (kernel length scale $\ell$, noise $\alpha$) are set via standard methods. Supports two LLM scoring modes: Expected Relevance (ER) and Peak Relevance (PR). Supports anytime prediction—the GP can generate rankings for all passages after any number of iterations.
 
 ## Key Experimental Results
 
-### Main Results (LLM budget = 50/query)
+### Main Results (LLM Budget = 50 per query)
 
 | Dataset | Metric | BM25 | Dense Retr. | LLM Point. | BAGEL (Qwen3) | BAGEL (GPT-4o) |
-|--------|------|------|-------------|-----------|---------------|----------------|
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | Covid | N@50 | 42.8 | 48.7 | 52.9 | **61.4** | **62.1** |
 | Robust04 | N@50 | 34.9 | 33.2 | 38.2 | **44.4** | **48.7** |
 | TravelDest | N@10 | 21.1 | 22.3 | 45.8 | 49.8 | **57.0** |
@@ -84,46 +81,46 @@ No training is required. GP hyperparameters (kernel length-scale $\ell$, noise $
 
 ### Ablation Study
 
-| Configuration | Key Findings |
-|------|------|
-| RBF vs. Linear vs. Matérn kernel | RBF and Matérn perform best; Linear underperforms |
-| UCB vs. EI vs. PI acquisition function | Uncertainty-aware acquisition functions (UCB) are critical |
-| With/without warm-start | Warm-start substantially improves early-stage performance |
+| Configuration | Finding |
+| :--- | :--- |
+| RBF vs Linear vs Matérn Kernels | RBF and Matérn perform best; Linear is inferior. |
+| UCB vs EI vs PI Acquisition | Uncertainty-related acquisition functions (UCB) are critical. |
+| With vs Without Warm-up | Warm-up significantly improves early-stage performance. |
 
 ### Key Findings
 
-- BAGEL outperforms LLM re-ranking baselines (under the same LLM budget) on all four datasets.
-- NDCG@50 improves from 29.3 to 41.6 (+42%) on the TravelDest dataset.
+- BAGEL outperforms LLM reranking baselines on all four datasets under the same LLM budget.
+- On the TravelDest dataset, NDCG@50 increased from 29.3 to 41.6 (+42%).
 - Stationary kernels (RBF, Matérn) effectively capture multimodal relevance structures.
-- Uncertainty-guided exploration is critical for discovering relevant clusters distant from the query.
+- Uncertainty-guided exploration is crucial for discovering relevant clusters far from the query.
 
 ## Highlights & Insights
 
-- Passage retrieval is elegantly reformulated as a Bayesian optimization problem, with GPs naturally fitting this setting.
-- The framework addresses two core limitations of existing methods: inability to propagate relevance signals and failure to explore distant clusters.
-- Anytime prediction support accommodates varying budget constraints.
-- The warm-start design—treating the query as the maximum-relevance observation—is both simple and effective.
+- Elegantly transforms passage retrieval into a Bayesian optimization problem, with GPs naturally fitting this scenario.
+- Addresses two major limitations of existing methods: the inability to propagate relevance signals and the failure to explore distant clusters.
+- Supports anytime prediction, adapting to different budget constraints.
+- The design of warm-up plus using the query as the maximum relevance observation is simple yet effective.
 
 ## Limitations & Future Work
 
-- The $O(n^3)$ computational complexity of GPs limits scalability to large observation sets.
-- The framework assumes that semantically similar passages in the embedding space share similar relevance, which may not always hold.
-- Evaluation is conducted exclusively on English retrieval benchmarks.
-- Future work may explore sparse GPs or neural kernel functions to improve scalability.
+- The $O(n^3)$ computational complexity of GPs limits the size of the observation set.
+- The assumption that semantically close passages in the embedding space have similar relevance may not always hold.
+- Evaluation was limited to English retrieval.
+- Future work could explore sparse GPs or neural kernels to improve scalability.
 
 ## Related Work & Insights
 
-- **LLM re-ranking** (Zhuang et al., 2024; Sun et al., 2023): The dominant paradigm, yet fundamentally constrained by the first-stage candidate set.
-- **Bayesian optimization / GP**: A classical methodology innovatively applied to a new domain (retrieval).
-- **Active learning for document annotation**: Typically employed for classification rather than ranking.
-- The application of GPs to information retrieval represents a direction worthy of further investigation.
+- LLM Reranking (Zhuang et al., 2024; Sun et al., 2023): Dominant but limited by the first-stage candidate set.
+- Bayesian Optimization/GP: Innovative application of classic methods in a new scenario (retrieval).
+- Active Learning for Document Annotation: Usually applied to classification rather than ranking.
+- The application of GPs in Information Retrieval is a direction worth further exploration.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐⭐ Combining GP and active learning for passage retrieval offers a uniquely original perspective.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Four datasets, two LLMs, and ablations over kernels and acquisition functions.
-- **Writing Quality**: ⭐⭐⭐⭐ Intuitive visualizations; the connection between GP and retrieval is clearly articulated.
-- **Value**: ⭐⭐⭐⭐ Substantially improves retrieval effectiveness under budget-constrained settings.
+- Novelty: ⭐⭐⭐⭐⭐ Unique perspective using GP + Active Learning for passage retrieval.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Four datasets, two LLMs, and ablations on kernels/acquisition functions.
+- Writing Quality: ⭐⭐⭐⭐ Intuitive diagrams; clear explanation of the link between GP and retrieval.
+- Value: ⭐⭐⭐⭐ Significantly improves retrieval effectiveness in budget-constrained scenarios.
 
 <!-- RELATED:START -->
 

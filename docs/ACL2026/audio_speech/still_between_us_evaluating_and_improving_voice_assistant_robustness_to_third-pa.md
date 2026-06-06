@@ -2,121 +2,121 @@
 title: >-
   [Paper Note] Still Between Us? Evaluating and Improving Voice Assistant Robustness to Third-Party Interruptions
 description: >-
-  [ACL 2026][Audio & Speech][voice assistant] To address the inability of voice assistants to distinguish third-party interruptions (TPI) from primary-user speech, this work proposes TPI-Train…
+  [ACL 2026][Audio & Speech][Voice Assistants] Addressing the inability of voice assistants to distinguish between Third-Party Interruptions (TPI) and primary user speech…
 tags:
   - "ACL 2026"
   - "Audio & Speech"
-  - "voice assistant"
-  - "third-party interruption"
-  - "speaker awareness"
-  - "hard negative mining"
-  - "semantic shortcut learning"
+  - "Voice Assistants"
+  - "Third-Party Interruption"
+  - "Speaker Awareness"
+  - "Hard Negative Mining"
+  - "Semantic Shortcut Learning"
 date: 2026-05-08
-content_hash: 11e78acde5582198
+content_hash: 3dd84a23e8ac69bb
 ---
 
 # Still Between Us? Evaluating and Improving Voice Assistant Robustness to Third-Party Interruptions
 
-**Conference**: ACL 2026
+**Conference**: ACL 2026  
 **arXiv**: [2604.17358](https://arxiv.org/abs/2604.17358)  
 **Code**: [GitHub](https://github.com/pleasedpenguin/tpi-va)  
-**Area**: Audio & Speech
-**Keywords**: voice assistant, third-party interruption, speaker awareness, hard negative mining, semantic shortcut learning
+**Area**: Audio and Speech  
+**Keywords**: Voice Assistants, Third-Party Interruption, Speaker Awareness, Hard Negative Mining, Semantic Shortcut Learning
 
 ## TL;DR
 
-To address the inability of voice assistants to distinguish third-party interruptions (TPI) from primary-user speech, this work proposes TPI-Train, a dataset of 88K training instances, along with the TPI-Bench evaluation framework. A speaker-aware hard negative mining strategy is introduced to eliminate semantic shortcut learning, enabling models to rely genuinely on acoustic cues for interruption detection.
+Addressing the inability of voice assistants to distinguish between Third-Party Interruptions (TPI) and primary user speech, this paper proposes the TPI-Train dataset with 88K instances and the TPI-Bench evaluation framework. Through a speaker-aware hard negative mining strategy, semantic shortcut learning is eliminated, forcing models to rely on acoustic cues for interruption detection.
 
 ## Background & Motivation
 
-**Background**: Spoken Language Models (SLMs) have been widely deployed in real-world voice assistant scenarios, supporting human-like natural conversation, but are primarily designed for one-on-one interactions.
+**Background**: Spoken Language Models (SLMs) are widely deployed in real-world voice assistant scenarios, enabling human-like natural conversations, but are primarily designed for one-on-one interactions.
 
-**Limitations of Prior Work**: In everyday settings, third parties frequently interject during a user's conversation with a voice assistant (e.g., bystander comments or background dialogue). Current SLMs cannot distinguish such third-party interruptions and blindly concatenate multi-speaker utterances as a single continuous stream, resulting in incorrect or nonsensical responses.
+**Limitations of Prior Work**: In real life, users often encounter third-party interruptions (e.g., bystander comments, background dialogue) while talking to voice assistants. Current SLMs fail to distinguish these interruptions and blindly concatenate multi-person speech into a single continuous utterance, leading to incorrect or nonsensical responses.
 
-**Key Challenge**: "Semantic shortcut learning" emerges during multimodal speech training—models tend to exploit textual semantic patterns (e.g., contradictions, topic shifts) to detect interruptions while ignoring acoustic signals (e.g., speaker voice changes), making them extremely fragile in semantically ambiguous scenarios.
+**Key Challenge**: Multimodal speech training suffers from "semantic shortcut learning"—models tend to exploit semantic patterns in text (e.g., contradictions, topic shifts) to detect interruptions while ignoring acoustic signals (e.g., changes in speaker voice), making them extremely vulnerable in semantically ambiguous scenarios.
 
-**Goal**: Construct a comprehensive TPI-aware framework encompassing training data, evaluation benchmarks, and training strategies that enable voice assistants to correctly identify and handle third-party interruptions.
+**Goal**: Construct a comprehensive TPI perception framework, including training data, evaluation benchmarks, and training strategies, to enable voice assistants to correctly identify and handle third-party interruptions.
 
-**Key Insight**: Drawing on a linguistically grounded interruption taxonomy, the work defines 26 real-world interruption scenarios and systematically constructs training and evaluation data.
+**Key Insight**: Starting from a linguistic taxonomy of interruptions, 26 real-world interruption scenarios are defined to systematically construct training and evaluation data.
 
-**Core Idea**: By applying speaker-aware hard negative mining—re-synthesizing two-speaker interruption transcripts with a single speaker's voice—the model is forced to abandon semantic shortcuts and genuinely learn acoustic cues.
+**Core Idea**: Utilize speaker-aware hard negative mining (re-synthesizing dual-speaker interruption text with a single speaker's voice) to force models to abandon semantic shortcuts and truly learn acoustic cues.
 
 ## Method
 
 ### Overall Architecture
 
-The framework comprises three core components: (1) **TPI-Train**—an 88K training dataset covering 26 interruption scenarios, where each interruption is categorized as either "actionable" (to be incorporated into the response) or "ignorable" (to be disregarded); (2) **TPI-Bench**—an evaluation framework consisting of TPI-Test (2K samples) and Janus-Test (2K adversarial samples); and (3) a speaker-aware hard negative training strategy.
+The framework consists of three core components: (1) TPI-Train—an 88K training dataset covering 26 interruption scenarios, categorized into "actionable" (to be included in response) and "ignorable" (to be discarded); (2) TPI-Bench—an evaluation framework comprising TPI-Test (2K samples) and Janus-Test (2K adversarial samples); (3) A speaker-aware hard negative training strategy.
 
 ### Key Designs
 
-1. **TPI-Train Dataset Construction**:
-    - Function: Provides large-scale, diverse training data for third-party interruptions.
-    - Mechanism: Based on a linguistically grounded interruption taxonomy, 26 real-world scenarios are designed (e.g., agreement/disagreement, topic deviation, emotional expression), and 88K training instances are generated from voice assistant data. Each interruption is labeled as "actionable" or "ignorable" and paired with a corresponding response strategy.
-    - Design Motivation: Existing spoken dialogue data lacks systematic coverage of third-party interruption scenarios and provides no explicit guidance on response strategies.
+1.  **TPI-Train Dataset Construction**:
+    *   **Function**: Provides large-scale, diverse third-party interruption training data.
+    *   **Mechanism**: Based on a linguistic interruption taxonomy, 26 real-world scenarios (e.g., agreement/disagreement, topic shift, emotional expression) are designed to generate 88K training instances from voice assistant data. Each interruption is labeled as "actionable" or "ignorable" with corresponding response strategies.
+    *   **Design Motivation**: Existing voice dialogue data lacks systematic coverage of third-party interruption scenarios and lacks explicit response strategy guidance.
 
-2. **TPI-Bench Evaluation Framework (including Janus-Test)**:
-    - Function: Rigorously evaluates a model's TPI-awareness, particularly its ability to distinguish acoustic cues from semantic cues.
-    - Mechanism: TPI-Test contains 2K real two-speaker interruption samples to assess context-sensitive response capability; Janus-Test contains 2K adversarial samples in which content that textually resembles an interruption is re-synthesized using the primary speaker's voice, testing whether the model genuinely relies on acoustic cues.
-    - Design Motivation: The key insight behind Janus-Test is that if the textual content is identical but the voice originates from a single speaker, the model should not classify it as an interruption—this serves as a litmus test for acoustic dependence versus semantic dependence.
+2.  **TPI-Bench Evaluation Framework (including Janus-Test)**:
+    *   **Function**: Strictly evaluates a model's TPI perception capability, specifically the ability to distinguish between acoustic and semantic cues.
+    *   **Mechanism**: TPI-Test contains 2K real dual-speaker interruption samples to test situational response capabilities. Janus-Test contains 2K adversarial samples where content that semantically resembles an interruption is re-synthesized using the primary speaker's voice to test if the model truly relies on acoustic cues.
+    *   **Design Motivation**: The key insight of Janus-Test is that if the textual content is identical but the voice belongs to the same person, the model should not identify it as an interruption—this serves as a litmus test for acoustic vs. semantic dependence.
 
-3. **Speaker-Aware Hard Negative Mining**:
-    - Function: Eliminates semantic shortcut learning and compels the model to rely on acoustic signals.
-    - Mechanism: Training samples are created whose transcripts are identical to genuine two-speaker interruptions but whose audio is re-synthesized with a single speaker. Since the textual content is identical, the model cannot exploit semantic cues and must rely on voice changes to determine whether an interruption is present.
-    - Design Motivation: t-SNE visualizations show that without hard negatives, embeddings for different speaker configurations heavily overlap; after introducing hard negatives, the embedding space forms clearly separated clusters.
+3.  **Speaker-aware Hard Negative Mining**:
+    *   **Function**: Eliminates semantic shortcut learning and forces model reliance on acoustic signals.
+    *   **Mechanism**: Creates training samples that are textually identical to real dual-speaker interruptions but where the audio is re-synthesized by a single speaker. In these samples, models cannot use semantic cues (as the text is identical) and must rely on voice changes to determine if an interruption exists.
+    *   **Design Motivation**: t-SNE visualizations show that without hard negatives, embeddings for different speaker configurations overlap heavily; with hard negatives, the embedding space forms clearly separated clusters.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Test Set | Metric | Baseline SLM | TPI-Full | Gain |
-|----------|--------|-------------|----------|------|
-| TPI-Test | Interruption detection accuracy | Low (blind concatenation) | High | Significant |
-| Janus-Test | Adversarial robustness | Near-complete failure | Robust | Significant |
-| Human Evaluation | Response naturalness preference | Low | Strongly preferred | — |
+| :--- | :--- | :--- | :--- | :--- |
+| TPI-Test | Detection Accuracy | Low (Concatenation) | High | Significant |
+| Janus-Test | Adversarial Robustness | Near Failure | Robust | Significant |
+| Human Eval | Naturalness Preference | Low | Highly Preferred | - |
 
 ### Ablation Study
 
-| Configuration | Key Metric | Notes |
-|---------------|-----------|-------|
-| Without hard negatives | t-SNE clusters overlap | Model relies on semantic shortcuts |
-| With hard negatives (TPI-Full) | t-SNE clusters clearly separated | Model relies on acoustic cues |
-| Semantic-only training | Janus-Test fails | Single-speaker self-correction misclassified as interruption |
-| Full training | Robust on both test sets | Balanced acoustic and semantic signals |
+| Configuration | Key Metric | Remarks |
+| :--- | :--- | :--- |
+| w/o Hard Negatives | t-SNE Overlap | Model relies on semantic shortcuts |
+| w/ Hard Negatives (TPI-Full) | t-SNE Separation | Model relies on acoustic cues |
+| Semantic-only Training | Janus-Test Failure | Misclassifies self-correction as interruption |
+| Full Training | Robust on both sets | Balanced acoustic and semantic signals |
 
 ### Key Findings
 
-- Semantic shortcut learning is a critical pitfall in multimodal speech model training: models exploit patterns such as contradictions and topic shifts in text to detect interruptions rather than genuinely "listening" for voice changes.
-- After hard negative training, the model's embedding space transitions from a disordered mixture to clearly separated clusters, confirming that the model has learned to discriminate based on acoustic identity.
-- Human evaluation confirms that the response strategies embedded in the framework are strongly preferred by users in both effectiveness and naturalness.
-- The actionable vs. ignorable distinction is crucial for response strategy—the model must know when to incorporate interruption content and when to disregard it.
+*   Semantic shortcut learning is a critical trap in multimodal speech model training: models exploit patterns like contradictions and topic shifts in text for detection rather than truly "listening" to voice changes.
+*   After hard negative training, the model's embedding space shifts from a chaotic mix to clearly separated clusters, proving the model has learned to distinguish based on acoustic identity.
+*   Human evaluation confirms that the response strategies embedded in the framework are highly preferred by users in terms of effectiveness and naturalness.
+*   The classification of Actionable vs. Ignorable is crucial for response strategies—the model needs to know when to incorporate interruption content and when to ignore it.
 
 ## Highlights & Insights
 
-- The concept of **semantic shortcut learning** has broad implications: beyond the TPI scenario, models in any multimodal training setting may take "text shortcuts" and ignore signals from other modalities.
-- **The design of Janus-Test is elegant**: by controlling variables (identical text, different voices), it strictly tests whether the model genuinely understands acoustic signals.
-- **Grounding the dataset construction in a linguistic taxonomy** ensures systematic and comprehensive scenario coverage (26 interruption types).
-- **High practical utility**: the framework directly addresses a real pain point in voice assistants, and the response strategies are immediately deployable.
+*   The concept of **semantic shortcut learning** has broad significance: it applies beyond TPI; in any multimodal training, models might take "textual shortcuts" and ignore other modality signals.
+*   **The design of Janus-Test is ingenious**: By controlling variables (same text, different voice), it strictly tests whether the model truly understands acoustic signals.
+*   Constructing the dataset from a **linguistic taxonomy** ensures the systematicity and comprehensiveness of scenarios (26 interruption types).
+*   **High practicality**: Directly targets real pain points of voice assistants, and the response strategies are ready for deployment.
 
 ## Limitations & Future Work
 
-- The work primarily targets English; generalization across languages and accents remains to be validated.
-- Although systematic, the 26 interruption scenarios may not exhaust all real-world cases.
-- The current framework relies on TTS re-synthesis to construct hard negatives; synthesis quality may affect training outcomes.
-- Complex multi-party conversation scenarios involving more than two speakers have not been addressed.
-- Performance and latency in real-time streaming settings remain to be evaluated.
+*   Primarily focused on English; generalization across languages and accents remains to be verified.
+*   While systematic, the 26 scenarios may not exhaust all real-world possibilities.
+*   The current framework relies on TTS synthesis for hard negatives; the quality of synthesis may affect training outcomes.
+*   Complex multi-party dialogue scenarios with more than two speakers have not yet been addressed.
+*   Performance and latency in real-time streaming scenarios require further evaluation.
 
 ## Related Work & Insights
 
-- **vs. Traditional Speaker Diarization**: TPI requires not only detecting speaker changes but also determining whether an interruption should influence the response strategy—a higher-level semantic understanding task.
-- **vs. Multi-turn Dialogue Models**: Existing multi-turn dialogue research primarily focuses on continuous conversation with a single user and does not account for third-party intrusion.
-- **vs. Hard Negative Mining**: The work draws inspiration from hard negatives in contrastive learning but innovatively applies the concept to cross-modal shortcut elimination (text vs. acoustics).
+*   **vs. Traditional Speaker Diarization**: TPI requires not only detecting speaker changes but also judging whether the interruption should influence the response strategy, representing higher-level semantic understanding.
+*   **vs. Multi-turn Dialogue Models**: Existing research focuses on continuous dialogue with a single user, overlooking third-party interventions.
+*   **vs. Hard Negative Mining**: Borrows ideas from contrastive learning but innovatively applies them to cross-modal (text vs. acoustic) shortcut elimination.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ First systematic definition and solution for third-party interruptions in voice assistants; the discovery of semantic shortcut learning is insightful.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Includes a large-scale dataset, adversarial test set, ablation studies, and human evaluation.
-- Writing Quality: ⭐⭐⭐⭐ Problem definition is clear; the project page provides intuitive demonstrations.
-- Value: ⭐⭐⭐⭐ Targets a genuine voice assistant pain point with direct engineering applicability.
+*   Novelty: ⭐⭐⭐⭐ First to systematically define and solve the TPI problem for voice assistants; findings on semantic shortcuts are insightful.
+*   Experimental Thoroughness: ⭐⭐⭐⭐ Includes large-scale datasets, adversarial sets, ablation studies, and human evaluation.
+*   Writing Quality: ⭐⭐⭐⭐ Clear problem definition and intuitive project presentation.
+*   Value: ⭐⭐⭐⭐ Addresses real-world voice assistant pain points with direct engineering application value.
 
 <!-- RELATED:START -->
 
@@ -124,11 +124,11 @@ The framework comprises three core components: (1) **TPI-Train**—an 88K traini
 
 ## Related Papers
 
+- [\[ACL 2026\] Speculative End-Turn Detector for Efficient Speech Chatbot Assistant](speculative_end-turn_detector_for_efficient_speech_chatbot_assistant.md)
+- [\[ACL 2026\] DRInQ: Evaluating Conversational Implicature with Controlled Context Variation](drinq_evaluating_conversational_implicature_with_controlled_context_variation.md)
+- [\[ACL 2026\] DuIVRS-2: An LLM-based Interactive Voice Response System for Large-scale POI Attribute Acquisition](duivrs-2_an_llm-based_interactive_voice_response_system_for_large-scale_poi_attr.md)
 - [\[ICML 2026\] Alethia: A Foundational Encoder for Voice Deepfakes](../../ICML2026/audio_speech/alethia_a_foundational_encoder_for_voice_deepfakes.md)
-- [\[ICLR 2026\] SiNGER: A Clearer Voice Distills Vision Transformers Further](../../ICLR2026/audio_speech/singer_a_clearer_voice_distills_vision_transformers_further.md)
 - [\[ICLR 2026\] Improving Black-Box Generative Attacks via Generator Semantic Consistency](../../ICLR2026/audio_speech/improving_black-box_generative_attacks_via_generator_semantic_consistency.md)
-- [\[ICLR 2026\] EchoMind: An Interrelated Multi-level Benchmark for Evaluating Empathetic Speech Language Models](../../ICLR2026/audio_speech/echomind_an_interrelated_multi-level_benchmark_for_evaluating_empathetic_speech_.md)
-- [\[AAAI 2026\] Improving Multimodal Sentiment Analysis via Modality Optimization and Dynamic Primary Modality Selection](../../AAAI2026/audio_speech/improving_multimodal_sentiment_analysis_via_modality_optimization_and_dynamic_pr.md)
 
 </div>
 

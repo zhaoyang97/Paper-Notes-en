@@ -186,8 +186,8 @@ Maximum Hit@1 improvement of 4.8% on FBDB15K, 9.9% on FBYG15K, and 4.3% on DBP15
 
 - [\[ACL 2026\] EA-Agent: A Structured Multi-Step Reasoning Agent for Entity Alignment](../../ACL2026/graph_learning/ea-agent_a_structured_multi-step_reasoning_agent_for_entity_alignment.md)
 - [\[AAAI 2026\] GSAP-ERE: Fine-Grained Scholarly Entity and Relation Extraction Focused on Machine Learning](gsap-ere_fine-grained_scholarly_entity_and_relation_extraction_focused_on_machin.md)
+- [\[ACL 2026\] Collaboration of Fusion and Independence: Hypercomplex-driven Robust Multi-Modal Knowledge Graph Completion](../../ACL2026/graph_learning/collaboration_of_fusion_and_independence_hypercomplex-driven_robust_multi-modal_.md)
 - [\[AAAI 2026\] NTSFormer: A Self-Teaching Graph Transformer for Multimodal Isolated Cold-Start Node Classification](ntsformer_a_self-teaching_graph_transformer_for_multimodal_isolated_cold-start_n.md)
-- [\[AAAI 2026\] S-DAG: A Subject-Based Directed Acyclic Graph for Multi-Agent Heterogeneous Reasoning](s-dag_a_subject-based_directed_acyclic_graph_for_multi-agent.md)
 - [\[AAAI 2026\] PCoKG: Personality-aware Commonsense Reasoning with Debate](pcokg_personality-aware_commonsense_reasoning_with_debate.md)
 
 </div>

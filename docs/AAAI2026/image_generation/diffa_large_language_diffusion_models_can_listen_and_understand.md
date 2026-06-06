@@ -198,10 +198,10 @@ DIFFA surpasses Qwen2-Audio-Instruct by nearly 3 points on MMSU, with particular
 ## Related Papers
 
 - [\[NeurIPS 2025\] MMaDA: Multimodal Large Diffusion Language Models](../../NeurIPS2025/image_generation/mmada_multimodal_large_diffusion_language_models.md)
+- [\[ACL 2026\] From AR to Diffusion: Efficiently Adapting Large Language Models with Strictly Causal and Elastic Horizons](../../ACL2026/image_generation/from_ar_to_diffusion_efficiently_adapting_large_language_models_with_strictly_ca.md)
 - [\[AAAI 2026\] HierarchicalPrune: Position-Aware Compression for Large-Scale Diffusion Models](hierarchicalprune_position-aware_compression_for_large-scale_diffusion_models.md)
+- [\[ACL 2026\] Multimodal Large Language Models for Multi-Subject In-Context Image Generation](../../ACL2026/image_generation/multimodal_large_language_models_for_multi-subject_in-context_image_generation.md)
 - [\[AAAI 2026\] LongLLaDA: Unlocking Long Context Capabilities in Diffusion LLMs](longllada_unlocking_long_context_capabilities_in_diffusion_llms.md)
-- [\[NeurIPS 2025\] Reinforcing the Diffusion Chain of Lateral Thought with Diffusion Language Models](../../NeurIPS2025/image_generation/reinforcing_the_diffusion_chain_of_lateral_thought_with_diffusion_language_model.md)
-- [\[AAAI 2026\] Realistic Face Reconstruction from Facial Embeddings via Diffusion Models](realistic_face_reconstruction_from_facial_embeddings_via_diffusion_models.md)
 
 </div>
 

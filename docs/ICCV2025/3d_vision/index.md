@@ -21,7 +21,7 @@ tags:
 
 **📹 ICCV2025** · **264** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (9)](../../ICML2026/3d_vision/index.md) · [📷 CVPR2026 (230)](../../CVPR2026/3d_vision/index.md) · [🔬 ICLR2026 (63)](../../ICLR2026/3d_vision/index.md) · [🤖 AAAI2026 (76)](../../AAAI2026/3d_vision/index.md) · [🧠 NeurIPS2025 (112)](../../NeurIPS2025/3d_vision/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (27)](../../ICML2026/3d_vision/index.md) · [💬 ACL2026 (1)](../../ACL2026/3d_vision/index.md) · [📷 CVPR2026 (230)](../../CVPR2026/3d_vision/index.md) · [🔬 ICLR2026 (63)](../../ICLR2026/3d_vision/index.md) · [🤖 AAAI2026 (76)](../../AAAI2026/3d_vision/index.md) · [🧠 NeurIPS2025 (112)](../../NeurIPS2025/3d_vision/index.md)
 
 🔥 **Top topics:** 3D Gaussian Splatting ×48 · Diffusion Models ×27 · Point Cloud ×16 · Dynamic Scenes ×15 · Adversarial Robustness ×12
 

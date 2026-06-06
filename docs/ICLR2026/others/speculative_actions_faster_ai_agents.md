@@ -131,9 +131,9 @@ where Actor and Speculator latencies follow $\text{Exp}(\beta)$ and $\text{Exp}(
 
 - [\[ICLR 2026\] DA-AC: Distributions as Actions — A Unified RL Framework for Diverse Action Spaces](distributions_as_actions_a_unified_framework_for_diverse_action_spaces.md)
 - [\[ICLR 2026\] ANO: Faster is Better in Noisy Landscapes](ano_faster_is_better_in_noisy_landscape.md)
+- [\[ICML 2026\] CyberGym-E2E: Scalable Real-World Benchmark for AI Agents' End-to-End Cybersecurity Capabilities](../../ICML2026/others/cybergym-e2e_scalable_real-world_benchmark_for_ai_agents_end-to-end_cybersecurit.md)
 - [\[AAAI 2026\] Whispering Agents: An Event-Driven Covert Communication Protocol for the Internet of Agents](../../AAAI2026/others/whispering_agents_an_event-driven_covert_communication_protocol_for_the_internet.md)
 - [\[AAAI 2026\] Faster Certified Symmetry Breaking Using Orders With Auxiliary Variables](../../AAAI2026/others/faster_certified_symmetry_breaking_using_orders_with_auxiliary_variables.md)
-- [\[ICML 2026\] From Human-Level AI Tales to AI Leveling Human Scales](../../ICML2026/others/from_human-level_ai_tales_to_ai_leveling_human_scales.md)
 
 </div>
 

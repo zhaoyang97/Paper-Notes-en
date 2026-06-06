@@ -2,70 +2,67 @@
 title: >-
   [Paper Note] How Do Answer Tokens Read Reasoning Traces? Self-Reading Patterns in Thinking LLMs
 description: >-
-  [ACL 2026][LLM/NLP][reasoning models] This paper identifies a "benign self-reading" pattern in reasoning LLMs (e.g., DeepSeek-R1) during quantitative reasoning: answer tokens' attention over reasoning traces exhibits for…
+  [ACL 2026][LLM/NLP][Reasoning Models] This paper identifies a "benign self-reading" pattern in reasoning LLMs (such as DeepSeek-R1) during quantitative reasoning—where answer tokens exhibit forward centroid drift (advanc…
 tags:
   - "ACL 2026"
   - "LLM/NLP"
-  - "reasoning models"
-  - "self-reading patterns"
-  - "attention analysis"
-  - "activation steering"
-  - "quantitative reasoning"
+  - "Reasoning Models"
+  - "Self-Reading Patterns"
+  - "Attention Analysis"
+  - "Activation Steering"
+  - "Quantitative Reasoning"
 date: 2026-05-08
-content_hash: 4b1b453f837cb17e
+content_hash: bc6e4ade214599d5
 ---
 
 # How Do Answer Tokens Read Reasoning Traces? Self-Reading Patterns in Thinking LLMs
 
-**Conference**: ACL 2026
+**Conference**: ACL 2026  
 **arXiv**: [2604.19149](https://arxiv.org/abs/2604.19149)  
 **Code**: None  
-**Area**: LLM/NLP
-**Keywords**: reasoning models, self-reading patterns, attention analysis, activation steering, quantitative reasoning
+**Area**: LLM/NLP  
+**Keywords**: Reasoning Models, Self-Reading Patterns, Attention Analysis, Activation Steering, Quantitative Reasoning
 
 ## TL;DR
 
-This paper identifies a "benign self-reading" pattern in reasoning LLMs (e.g., DeepSeek-R1) during quantitative reasoning: answer tokens' attention over reasoning traces exhibits forward drift (progressively advancing along the reasoning chain) and semantic anchor concentration (repeatedly revisiting key steps), and this pattern strongly correlates with correctness. Building on this finding, the authors propose a training-free activation steering method driven by Self-Reading Quality (SRQ) scores, achieving accuracy improvements of up to 2.6% across multiple benchmarks.
+This paper identifies a "benign self-reading" pattern in reasoning LLMs (such as DeepSeek-R1) during quantitative reasoning—where answer tokens exhibit forward centroid drift (advancing along the reasoning chain) and concentration on semantic anchors (repeatedly revisiting key steps). This pattern strongly correlates with correctness. Based on this, a training-free activation steering method driven by SRQ (Self-Reading Quality) is proposed, improving accuracy by up to 2.6% across multiple benchmarks.
 
 ## Background & Motivation
 
-**Background**: Reasoning LLMs (e.g., DeepSeek-R1, GPT-5, Gemini 3) generate reasoning traces before producing answers (delimited by `</think>`). Activation steering has been shown to control the behavior of reasoning traces, such as compressing redundant output and inducing verification and backtracking.
+**Background**: Reasoning LLMs (e.g., DeepSeek-R1, GPT-5, Gemini 3) generate reasoning traces (delimited by `</think>`) before producing an answer. Activation steering has been proven effective in controlling reasoning traces, such as compressing redundant outputs or guiding verification and backtracking.
 
-**Limitations of Prior Work**: Existing work primarily focuses on shaping the reasoning traces themselves, leaving unclear how answer tokens "read" and integrate reasoning traces to produce reliable outputs. How answer tokens navigate noise and exploit critical information in reasoning chains spanning thousands of tokens remains an open question.
+**Limitations of Prior Work**: Existing research primarily focuses on shaping the reasoning traces themselves, while how answer tokens "read" and integrate these traces to produce reliable outputs remains unclear. Navigating thousands of tokens of reasoning to utilize key information amidst noise is a critical challenge for answer tokens.
 
-**Key Challenge**: Reasoning traces contain both critical reasoning steps and exploratory attempts alongside redundant content. Answer tokens must engage in "selective reading," yet it remains unknown how the model achieves this or how reading patterns relate to correctness.
+**Key Challenge**: Reasoning traces contain both critical steps and exploratory trials or redundancies. Answer tokens require "selective reading"—yet the mechanism behind this and its relationship with correctness remain unknown.
 
-**Goal**: (1) Understand how answer tokens read reasoning traces; (2) establish the association between self-reading patterns and correctness; (3) leverage self-reading quality signals for training-free steering.
+**Goal**: (1) Understand how answer tokens read reasoning traces; (2) Establish a correlation between self-reading patterns and correctness; (3) Utilize self-reading quality signals for training-free guidance.
 
-**Key Insight**: Analyze the attention distribution of answer tokens over reasoning tokens—trajectories and concentration points of the attention centroid reveal the model's "reading strategy."
+**Key Insight**: By analyzing the attention distribution of answer tokens over reasoning tokens, the trajectory of attention centroids and focus points reveals the model's "reading strategy."
 
-**Core Idea**: Benign self-reading constitutes a behavioral signature of internal certainty: the model has committed to a solution path and relies on a small number of key reasoning steps as evidence for answer generation. Forward drift of the attention centroid reflects "control" (advancing along the selected branch), while sustained focus on semantic anchors reflects "monitoring" (repeatedly verifying evidence).
+**Core Idea**: Benign self-reading acts as a behavioral signature of internal certainty—the model has committed to a solution path and relies on a few key reasoning steps as evidence for generating the answer. Forward drift of attention centroids reflects "control" (advancing along the selected branch), while persistent focusing on semantic anchors reflects "monitoring" (repeatedly verifying evidence).
 
 ## Method
 
 ### Overall Architecture
 
-Three phases: (1) Self-reading analysis—analyze answer-reasoning attention patterns of three reasoning LLMs on GSM8K to identify benign self-reading characteristics; (2) SRQ score design—quantify self-reading quality along geometric dimensions (process structure of the control strategy) and semantic dimensions (content anchoring of monitoring quality); (3) Activation steering—construct steering vectors from activation differences between high- and low-SRQ samples and inject them into hidden states at inference time to promote benign self-reading.
+The method consists of three stages: (1) Self-reading analysis—analyzing answer-reasoning attention patterns across three reasoning LLMs on GSM8K to identify benign features; (2) SRQ score design—quantifying self-reading quality from geometric (process structure of control strategies) and semantic (content anchoring of monitoring quality) dimensions; (3) Activation steering—constructing steering vectors using samples with different SRQ scores and injecting them during inference to promote benign self-reading.
 
 ### Key Designs
 
-1. **Benign Self-Reading Pattern Identification**:
+1.  **Identification of Benign Self-Reading Patterns**:
+    *   **Function**: Discovering structured patterns in how answer tokens read reasoning traces.
+    *   **Mechanism**: The weighted average position (centroid) of the attention distribution for each answer token over reasoning tokens is calculated, normalized to [0,1]. In correct samples, the centroid trajectory follows a clear diagonal pattern—the focus shifts forward along the reasoning chain as the answer progresses. Simultaneously, attention concentrates on "semantic anchors" (constraints, plans, reflections, final conclusions). In incorrect samples, attention is scattered and irregular.
+    *   **Design Motivation**: Reasoning tokens perform "object-level" computation, while answer tokens perform "meta-level" operations—control (advancing the reading focus) and monitoring (reviewing evidence). This aligns with metacognition frameworks in classical cognitive theory (Nelson 1990, Koriat 1997).
 
-    - **Function**: Discover structured patterns in how answer tokens read reasoning traces.
-    - **Mechanism**: Compute the weighted average position (centroid) of each answer token's attention distribution over reasoning tokens, normalized to $[0, 1]$. In correct samples, the centroid trajectory exhibits a clear diagonal pattern—as answer generation progresses, the reading focus advances along the reasoning chain. Simultaneously, attention repeatedly concentrates on "semantic anchors" (problem constraints, solution plans, reflections, and final conclusions). In incorrect samples, attention is scattered and irregular.
-    - **Design Motivation**: Reasoning tokens implement "object-level" computation, while answer tokens implement "meta-level" operations—control (advancing the reading focus) and monitoring (reviewing evidence). This aligns with the metacognitive framework of classical cognitive theory (Nelson 1990; Koriat 1997).
+2.  **SRQ (Self-Reading Quality) Score**:
+    *   **Function**: Quantifying the quality of self-reading patterns for sample selection and steering vector construction.
+    *   **Mechanism**: The geometric dimension measures the forward progression and smoothness of centroid trajectories. The semantic dimension measures focus on critical semantic steps. These dimensions are combined into the SRQ score.
+    *   **Design Motivation**: Geometric metrics alone might select "smooth but semantically meaningless" samples, while semantic metrics alone might select "correctly anchored but structurally chaotic" samples. Combining them ensures high-quality self-reading.
 
-2. **SRQ (Self-Reading Quality) Score**:
-
-    - **Function**: Quantify the quality of self-reading patterns for sample selection and steering vector construction.
-    - **Mechanism**: Geometric dimension—measures the degree of forward advancement and smoothness of the attention centroid trajectory (i.e., whether it progresses along the diagonal). Semantic dimension—measures whether attention concentrates on critical semantic steps (constraints, plans, conclusions). The two dimensions are combined into a unified SRQ score.
-    - **Design Motivation**: Using the geometric dimension alone may select samples that are "smooth but semantically meaningless," while using the semantic dimension alone may select samples that are "correctly anchored but procedurally disordered." The two dimensions are complementary, ensuring that genuinely high-quality self-reading samples are selected.
-
-3. **SRQ-Driven Activation Steering**:
-
-    - **Function**: Training-free promotion of better self-reading patterns at inference time.
-    - **Mechanism**: High-SRQ and low-SRQ samples are selected; activation differences at intermediate layers are extracted to construct steering vectors. At inference time, the steering vectors are added to hidden states at target layers to steer the model away from disordered reading and toward structured reading. No model parameters are modified and no additional training is required.
-    - **Design Motivation**: Benign self-reading is associated with correctness (human annotation confirms 159 out of 171 correct samples exhibit benign self-reading); therefore, steering the model toward benign self-reading patterns should improve accuracy.
+3.  **SRQ-Driven Activation Steering**:
+    *   **Function**: Promoting better self-reading patterns during inference without additional training.
+    *   **Mechanism**: Steering vectors are built from the activation differences between high-SRQ and low-SRQ samples. During inference, these vectors are added to hidden states to push the model away from chaotic reading and toward ordered reading. This requires no parameter updates.
+    *   **Design Motivation**: Benign self-reading correlates with correctness (manual verification shows 159/171 correct samples exhibit this pattern); thus, encouraging this behavior should improve performance.
 
 ### Loss & Training
 
@@ -75,62 +72,62 @@ Entirely training-free. Steering vectors are extracted from activation differenc
 
 ### Main Results
 
-**Accuracy improvements from SRQ steering across multiple benchmarks**
+**Accuracy improvement from SRQ steering across multiple benchmarks**
 
-| Model | Benchmark | Baseline Accuracy | + SRQ Steering | Gain |
-|---|---|---|---|---|
+| Model | Benchmark | Baseline Acc | + SRQ Steering | Gain |
+| :--- | :--- | :--- | :--- | :--- |
 | R1-Distill-Llama-8B | GSM8K | ~82% | ~84.6% | +2.6% |
 | R1-Distill-Qwen-7B | GSM8K | ~83% | ~85% | +2% |
 | Qwen3-4B-Thinking | GSM8K | ~80% | ~81.5% | +1.5% |
 
 ### Ablation Study
 
-| Configuration | Effect | Notes |
-|---|---|---|
-| Geometric dimension only | Smaller gain | Missing semantic anchoring signal |
-| Semantic dimension only | Moderate gain | Missing process structure signal |
-| **Geometric + Semantic** | **Optimal** | Two dimensions are complementary |
+| Configuration | Effect | Description |
+| :--- | :--- | :--- |
+| Geometric Only | Small Gain | Lacks semantic anchoring signals |
+| Semantic Only | Moderate Gain | Lacks process structure signals |
+| **Geometric + Semantic** | **Optimal** | Both dimensions are complementary |
 
-**Human Annotation Validation (200 samples)**
+**Manual Annotation Verification (200 samples)**
 
-| Type | Count | Notes |
-|---|---|---|
-| Correct + benign self-reading | 159/171 correct | 93% of correct samples exhibit benign self-reading |
-| Incorrect + benign self-reading | 3/26 incorrect | Only 12% of incorrect samples exhibit benign self-reading |
-| Balanced subset (50+50) | 48 correct with benign vs. 46 incorrect without | Trend consistent |
+| Type | Count | Description |
+| :--- | :--- | :--- |
+| Correct + Benign | 159/171 correct | 93% of correct samples show benign self-reading |
+| Incorrect + Benign | 3/26 incorrect | Only 12% of incorrect samples show benign self-reading |
+| Balanced Subset (50+50) | 48 Correct/Benign vs 46 Incorrect/Non-Benign | Consistent trends |
 
 ### Key Findings
 
-- Benign self-reading patterns are nearly universal among correct samples (93%) and rare among incorrect samples (12%).
-- Aggregating attention maps from 100 correct samples still yields a clear diagonal ridge, confirming stable and systematic behavior.
-- SRQ steering consistently improves accuracy without modifying model parameters, validating a causal association between self-reading patterns and correctness.
-- The geometric and semantic dimensions are complementary—either dimension alone is less effective than the combination.
+*   Benign self-reading patterns are nearly universal in correct samples (93%) and rare in incorrect ones (12%).
+*   Aggregating attention maps across 100 correct samples still yields a clear diagonal ridge, proving it is a stable systematic behavior.
+*   SRQ steering consistently improves accuracy without parameter modification, validating the causal link between self-reading patterns and correctness.
+*   Geometric and semantic dimensions are complementary; neither is as effective alone as when combined.
 
 ## Highlights & Insights
 
-- Identifying the "self-reading" behavior of reasoning LLMs and its association with correctness constitutes a significant contribution to understanding LLM internal mechanisms.
-- The introduction of a metacognitive framework (control + monitoring) provides a cognitive-scientific theoretical basis for interpreting LLM behavior.
-- SRQ-driven activation steering demonstrates a complete pipeline from mechanistic understanding to practical application.
+*   The discovery of "self-reading" behavior in reasoning LLMs and its link to correctness is a significant contribution to understanding internal mechanisms.
+*   The introduction of a metacognitive framework (control + monitoring) provides a theoretical foundation from cognitive science to explain LLM behavior.
+*   SRQ-driven activation steering demonstrates a complete loop from mechanistic understanding to practical application.
 
 ## Limitations & Future Work
 
-- Validation is limited to quantitative reasoning tasks; applicability to other reasoning types (logical, commonsense) remains unexplored.
-- Accuracy improvements are modest (up to 2.6%).
-- Identification of semantic anchors may be task-specific.
-- Future work could explore how to guide models to learn better self-reading patterns during training.
+*   Validated only on quantitative reasoning; applicability to logical or commonsense reasoning is unknown.
+*   Accuracy gains are relatively modest (up to 2.6%).
+*   Identification of semantic anchors may be task-specific.
+*   Future work could explore guiding models to learn better self-reading patterns during the training phase.
 
 ## Related Work & Insights
 
-- **vs. Venhoff et al. (2025)**: Steers verification and backtracking behavior within reasoning traces; this work steers reading behavior during the answer phase.
-- **vs. Azizi et al. (2025)**: Focuses on steering to compress reasoning length; this work examines how answers leverage reasoning.
-- **vs. Zhang et al. (2025)**: Confirms the existence of answer-reasoning attention links; this work provides in-depth analysis of their structural patterns and functional significance.
+*   **vs Venhoff et al. (2025)**: Approaches focus on steering verification and backtracking within traces; this work focuses on reading behavior during the answer stage.
+*   **vs Azizi et al. (2025)**: Focuses on trace compression; this work focuses on how answers utilize reasoning content.
+*   **vs Zhang et al. (2025)**: Confirms the existence of answer-reasoning attention links; this work provides deep analysis of their structural patterns and functional significance.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ First systematic analysis of self-reading behavior in answer tokens of reasoning LLMs; conceptually novel with cognitive-scientific depth.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Three models, human annotation, and activation steering validation, though the task scope is limited.
-- Writing Quality: ⭐⭐⭐⭐⭐ Visualizations are compelling, analysis is thorough, and cognitive analogies are apt.
-- Value: ⭐⭐⭐⭐ Provides a new analytical perspective and practical tool for understanding and improving reasoning LLMs.
+*   Novelty: ⭐⭐⭐⭐⭐ First systematic analysis of answer token self-reading in reasoning LLMs with cognitive science depth.
+*   Experimental Thoroughness: ⭐⭐⭐⭐ Tested across three models with manual validation, though restricted in task variety.
+*   Writing Quality: ⭐⭐⭐⭐⭐ Excellent visualization, deep analysis, and appropriate cognitive analogies.
+*   Value: ⭐⭐⭐⭐ Provides a new analytical perspective and practical tools for improving reasoning LLMs.
 
 <!-- RELATED:START -->
 
@@ -139,10 +136,10 @@ Entirely training-free. Steering vectors are extracted from activation differenc
 ## Related Papers
 
 - [\[NeurIPS 2025\] AceSearcher: Bootstrapping Reasoning and Search for LLMs via Reinforced Self-Play](../../NeurIPS2025/llm_nlp/acesearcher_bootstrapping_reasoning_and_search_for_llms_via_reinforced_self-play.md)
+- [\[ACL 2026\] Big AI is Accelerating the Metacrisis: What Can We Do?](big_ai_is_accelerating_the_metacrisis_what_can_we_do.md)
+- [\[ACL 2026\] SteerEval: How Controllable Are Large Language Models? A Unified Evaluation across Behavioral Granularities](how_controllable_are_large_language_models_a_unified_evaluation_across_behaviora.md)
 - [\[ICLR 2026\] How Far Are LLMs from Professional Poker Players? Revisiting Game-Theoretic Reasoning with Agentic Tool Use](../../ICLR2026/llm_nlp/how_far_are_llms_from_professional_poker_players_revisiting_game-theoretic_reaso.md)
 - [\[ACL 2026\] Text-to-Distribution Prediction with Quantile Tokens and Neighbor Context](text-to-distribution_prediction_with_quantile_tokens_and_neighbor_context.md)
-- [\[ICLR 2026\] GASP: Guided Asymmetric Self-Play For Coding LLMs](../../ICLR2026/llm_nlp/gasp_guided_asymmetric_self-play_for_coding_llms.md)
-- [\[AAAI 2026\] Do Not Merge My Model! Safeguarding Open-Source LLMs Against Unauthorized Model Merging](../../AAAI2026/llm_nlp/do_not_merge_my_model_safeguarding_open-source_llms_against_unauthorized_model_m.md)
 
 </div>
 

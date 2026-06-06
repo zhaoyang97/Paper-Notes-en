@@ -2,78 +2,78 @@
 title: >-
   [Paper Note] MCGA: A Multi-task Classical Chinese Literary Genre Audio Corpus
 description: >-
-  [ACL 2026][Audio & Speech][classical literary speech corpus] This paper introduces MCGA, the first large-scale (119 hours, 22,000 samples) fully copyright-cleared audio corpus for classical Chinese literature…
+  [ACL 2026][Audio & Speech][Classical Chinese literary speech corpus] This paper constructs MCGA, the first large-scale (119 hours, 22,000 samples) copyright-cleared audio corpus for Classical Chinese literature. It cover…
 tags:
   - "ACL 2026"
   - "Audio & Speech"
-  - "classical literary speech corpus"
+  - "Classical Chinese literary speech corpus"
   - "multimodal large language models"
   - "speech emotion analysis"
   - "cross-modal consistency"
-  - "classical Chinese literary studies"
+  - "Classical Chinese studies"
 date: 2026-05-08
-content_hash: 00509eb6cf74dea2
+content_hash: a7362e3a4cf59ba4
 ---
 
 # MCGA: A Multi-task Classical Chinese Literary Genre Audio Corpus
 
-**Conference**: ACL 2026
+**Conference**: ACL 2026  
 **arXiv**: [2601.09270](https://arxiv.org/abs/2601.09270)  
 **Code**: [https://github.com/yxduir/MCGA](https://github.com/yxduir/MCGA)  
-**Area**: Speech & Natural Language Processing / Classical Chinese Literature
-**Keywords**: classical literary speech corpus, multimodal large language models, speech emotion analysis, cross-modal consistency, classical Chinese literary studies
+**Area**: Speech and Natural Language Processing / Classical Chinese Literature  
+**Keywords**: Classical Chinese literary speech corpus, multimodal large language models, speech emotion analysis, cross-modal consistency, Classical Chinese studies
 
 ## TL;DR
 
-This paper introduces MCGA, the first large-scale (119 hours, 22,000 samples) fully copyright-cleared audio corpus for classical Chinese literature, spanning five major literary genres (Fu, Shi, Wen, Ci, Qu) and six speech tasks (ASR/S2TT/SEC/SQA/SU/SR). An evaluation of 10 multimodal large models reveals substantial deficiencies in current models' ability to understand classical literary speech.
+This paper constructs MCGA, the first large-scale (119 hours, 22,000 samples) copyright-cleared audio corpus for Classical Chinese literature. It covers five genres (Fu, Poetry, Prose, Ci, and Qu) and six speech tasks (ASR/S2TT/SEC/SQA/SU/SR). Evaluations of 10 multimodal large language models (MLLMs) reveal significant deficiencies in current models regarding the comprehension of Classical Chinese speech.
 
 ## Background & Motivation
 
-**Background**: The rapid development of multimodal large language models (MLLMs) has opened new possibilities for classical Chinese studies (CCS). However, existing research focuses primarily on text (ACLUE, WenMind, etc.) and visual (Oracle-Bench, MCS-Bench, etc.) modalities, leaving the speech dimension of classical literature virtually unexplored. The absence of high-quality domain-specific audio corpora makes it impossible to systematically evaluate or improve MLLM capabilities in classical Chinese speech understanding.
+**Background**: The rapid development of Multimodal Large Language Models (MLLM) has brought new possibilities to Classical Chinese Studies (CCS). However, existing research primarily focuses on text (ACLUE, WenMind, etc.) and visual (Oracle-Bench, MCS-Bench, etc.) modalities, while the speech dimension of classical literature remains nearly blank. The absence of high-quality, domain-specific audio corpora prevents systematic evaluation and improvement of MLLM capabilities in understanding classical Chinese speech.
 
-**Limitations of Prior Work**: (1) Most existing Chinese cultural datasets cover only text or image modalities, with no parallel classical literary speech data; (2) the few resources addressing Chinese speech target modern Mandarin and cannot capture the rhetorical devices, literary allusions, and prosodic features unique to classical literature; (3) copyright issues have persistently hindered the construction of open-source CCS audio datasets, as recitation audio found online is typically rights-restricted and cannot be freely distributed for research.
+**Limitations of Prior Work**: (1) Existing Chinese cultural datasets mostly involve text or image modalities without parallel classical literature speech data; (2) Rare resources involving Chinese speech are mainly oriented toward modern Chinese and fail to cover the unique rhetoric, allusions, and prosodic features of classical literature; (3) Copyright issues have hindered the construction of open-source CCS audio datasets, as recitations available online are often restricted for research distribution.
 
-**Key Challenge**: MLLMs have acquired strong text and visual understanding capabilities, yet the infrastructure for evaluating classical Chinese speech understanding is entirely absent. Without a speech corpus, evaluation is impossible; without evaluation, progress in this domain cannot be driven.
+**Key Challenge**: While MLLMs possess strong text and visual understanding capabilities, the evaluation infrastructure for classical Chinese speech comprehension is entirely missing. Without a speech corpus, evaluation is impossible, which in turn stalls model progress in this field.
 
-**Goal**: To construct a multi-genre, multi-task, fully copyright-cleared audio corpus for classical Chinese literature, establish a systematic evaluation framework, and comprehensively assess current MLLM capabilities in classical literary speech understanding.
+**Goal**: To construct a copyright-cleared, multi-genre, and multi-task Classical Chinese audio corpus and establish a systematic evaluation framework to comprehensively assess the current capabilities of MLLMs in classical literature speech understanding.
 
-**Key Insight**: The corpus is organized along two axes — genre diversity, covering the five most historically significant literary genres in Chinese literature (Fu, Shi, Wen, Ci, Qu), and task diversity, comprising a six-level progressive task hierarchy ranging from foundational (ASR) to advanced (speech reasoning, SR).
+**Key Insight**: Approaching the problem from two dimensions: genre diversity and task diversity. In terms of genre, it covers the five most important forms in Chinese literary history (Fu, Poetry, Prose, Ci, and Qu). In terms of tasks, it designs a six-level progressive task system ranging from basic perception (ASR) to advanced reasoning (SR).
 
-**Core Idea**: Twenty-eight native speakers are recruited to manually record all audio with copyright assignment agreements. LLMs generate question–answer pairs that are validated through a triple-verification process to ensure quality, yielding a parallel corpus supporting six speech tasks and four text tasks.
+**Core Idea**: Recruit 28 native speakers to manually record all audio with copyright transfers, utilize LLMs to generate Q&A pairs with triple-verification to ensure quality, and build a parallel corpus supporting 6 speech tasks and 4 text tasks.
 
 ## Method
 
 ### Overall Architecture
 
-MCGA is constructed in three stages: (1) *Data collection and preprocessing* — classical literary texts and their pinyin transcriptions are collected from the public domain, cleaned, and segmented to keep individual recordings within 30 seconds; (2) *Human recording* — 28 native speakers record all texts under unified guidelines, with quality control conducted through two rounds of inspection (MLLM-based and manual); (3) *Text data construction* — DeepSeek-V3.2 generates multi-task question–answer pairs grounded in the full literary context of each segment, followed by triple verification using DeepSeek-V3.2, GPT-5-mini, and Gemini-3-Flash to filter invalid samples.
+The construction of the MCGA corpus consists of three stages: (1) Data collection and preprocessing—collecting public domain classical texts and Pinyin, cleaning them, and segmenting the text to limit recording duration to under 30 seconds; (2) Manual recording—28 native speakers recorded all texts according to unified specifications, followed by two rounds of quality control via MLLM and human inspection; (3) Text data construction—utilizing DeepSeek-V3.2 to generate multi-task Q&A pairs based on the full literary context of each segment, followed by triple-verification (DeepSeek-V3.2, GPT-5-mini, and Gemini-3-Flash) to filter invalid samples.
 
 ### Key Designs
 
-1. **Six-Level Progressive Task Hierarchy**
-    - Function: Covers the full spectrum of speech understanding capabilities, from low-level perception to high-level reasoning.
-    - Mechanism: Six core speech tasks are designed — ASR (automatic speech recognition), S2TT (speech-to-text translation), SEC (speech emotion characterization), SQA (spoken question answering), SU (speech understanding), and SR (speech reasoning). ASR tests basic transcription; S2TT requires cross-lingual translation from classical Chinese to modern English; SEC requires identification of speaker characteristics and sentence-level emotion analysis; SQA is open-ended factual question answering; SU tests comprehension based on speech content; SR requires external knowledge for inference. The parallel text data additionally supports four text tasks: MT, QA, LU, and LR.
-    - Design Motivation: A single task cannot comprehensively assess MLLM capabilities in classical literary understanding. The progressive task design enables precise localization of model bottlenecks at different cognitive levels.
+1. **Six-level Progressive Task System**:
+    - **Function**: Covers the full spectrum of speech understanding from low-level perception to high-level reasoning.
+    - **Mechanism**: Designs six core speech tasks—ASR (Automatic Speech Recognition), S2TT (Speech-to-Text Translation), SEC (Speech Emotion Characterization), SQA (Spoken Question Answering), SU (Speech Understanding), and SR (Speech Reasoning). ASR tests basic transcription; S2TT requires cross-lingual translation from ancient Chinese to modern English; SEC requires the model to identify speaker characteristics and perform sentence-by-sentence emotion analysis; SQA is open-ended factual Q&A; SU and SR test content-based understanding and external knowledge-based reasoning, respectively. Parallel text data also supports MT, QA, LU, and LR tasks.
+    - **Design Motivation**: A single task cannot comprehensively evaluate the classical literature understanding of MLLMs. The progressive design allows for precise pinpointing of model bottlenecks at different cognitive levels.
 
-2. **Emotion Characterization Fidelity Metric (ECF)**
-    - Function: Provides fine-grained automatic evaluation for classical literary speech emotion characterization.
-    - Mechanism: ECF comprises three sub-metrics — ECF-P (person recognition, 0–2, assessing accuracy of age and gender identification, with 1 point deducted per error); ECF-G (global emotional tone, 0–3, evaluating richness and accuracy of the overall emotional atmosphere description); and ECF-S (sentence-level emotion fidelity, 0–5, assessing transcription quality and sentence-level emotion analysis, with 1 point deducted per emotional error and a score of 0 for hallucinations). The final score is normalized to a 100-point scale.
-    - Design Motivation: Existing speech emotion evaluation metrics primarily target emotion classification (e.g., happy/sad) in modern speech and cannot capture the complex emotional layers characteristic of classical literary recitation — such as the intertwined reluctance, equanimity, and ambition in a farewell poem.
+2. **Emotion Characterization Fidelity (ECF)**:
+    - **Function**: Provides a fine-grained automatic evaluation metric for classical literature speech emotion characterization tasks.
+    - **Mechanism**: ECF consists of three sub-metrics—ECF-P (Person identification, 0-2 points, detecting age and gender accuracy); ECF-G (Global sentiment tone, 0-3 points, assessing the richness and accuracy of the overall emotional atmosphere); and ECF-S (Sentence-level fidelity, 0-5 points, assessing transcription and sentiment analysis quality per sentence). The final score is normalized to a 100-point scale.
+    - **Design Motivation**: Existing metrics focus on modern speech emotion classification (e.g., happy/sad) and fail to capture the complex emotional layers in classical recitations—such as the mixture of reluctance, open-mindedness, and ambition in a parting poem.
 
-3. **Cross-Modal Consistency Metric (CMC)**
-    - Function: Quantifies the consistency of MLLM performance across speech and text input modalities.
-    - Mechanism: $CMC = \frac{1}{3}\left(\frac{SQA}{QA} + \frac{SU}{LU} + \frac{SR}{LR}\right) \times 100$, computed as the average ratio of scores on the three speech tasks (SQA/SU/SR) to their corresponding text counterparts (QA/LU/LR). A CMC value approaching 100 indicates that the model's speech understanding ability is consistent with its text understanding ability.
-    - Design Motivation: An ideal MLLM should produce consistent answers whether given speech or text input. CMC reveals whether a model genuinely "understands" spoken content or merely relies on text-channel capabilities.
+3. **Cross-Modal Consistency (CMC)**:
+    - **Function**: Quantifies the consistency of MLLM performance between speech and text input modalities.
+    - **Mechanism**: $CMC = \frac{1}{3}\left(\frac{SQA}{QA} + \frac{SU}{LU} + \frac{SR}{LR}\right) \times 100$. It represents the average ratio of scores between the three speech tasks (SQA/SU/SR) and their corresponding text tasks (QA/LU/LR). A CMC value closer to 100 indicates that the model's speech understanding is more consistent with its text understanding.
+    - **Design Motivation**: An ideal MLLM should provide consistent answers regardless of speech or text input. CMC reveals whether a model truly "understands" speech content or merely relies on its text-channel capabilities.
 
 ### Loss & Training
 
-Fine-tuning experiments use Qwen2.5-Omni-7B as the base model, applying LoRA ($r=8, \alpha=32$) trained for 3 epochs on the MCGA training set with the AdamW optimizer at a learning rate of $1 \times 10^{-4}$, on 4 A100 GPUs.
+Fine-tuning experiments used Qwen2.5-Omni-7B as the base model, employing LoRA ($r=8, \alpha=32$) trained for 3 epochs on the MCGA training set. The AdamW optimizer was used with a learning rate of $1 \times 10^{-4}$ on 4 A100 GPUs.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Model | ASR (CER↓) | S2TT (LLM-B↑) | SEC (ECF↑) | SQA (F1↑) | SU (Acc↑) | SR (Acc↑) | Total↑ |
-|---|---|---|---|---|---|---|---|
+| Model | ASR (CER↓) | S2TT (LLM-B↑) | SEC (ECF↑) | SQA (F1↑) | SU (Acc↑) | SR (Acc↑) | Total Score↑ |
+|------|-----------|---------------|------------|----------|----------|----------|------|
 | GPT-4o-mini-Audio | 20.6 | 43.5 | 5.7 | 30.6 | 74.8 | 70.2 | 304.2 |
 | Gemini-3-Flash | 6.1 | 74.0 | 54.0 | 48.7 | 86.6 | 83.7 | 440.9 |
 | Qwen2.5-Omni-7B | 10.1 | 49.7 | 37.0 | 43.5 | 81.3 | 79.3 | 380.7 |
@@ -81,59 +81,58 @@ Fine-tuning experiments use Qwen2.5-Omni-7B as the base model, applying LoRA ($r
 | Step-Audio-2-mini | 9.9 | 41.9 | 36.8 | 45.2 | 80.5 | 80.4 | 374.9 |
 | Phi-4-Multimodal | 59.6 | 27.5 | 12.7 | 24.5 | 50.6 | 54.4 | 210.1 |
 
-Qwen3-Omni achieves the highest total score (442.9), leading on ASR, SEC, SQA, and SU; Gemini-3-Flash performs best on S2TT and SR, reflecting the advantage of closed-source models in English generation and reasoning.
+Qwen3-Omni achieved the highest total score (442.9), leading in ASR, SEC, SQA, and SU. Gemini-3-Flash performed best in S2TT and SR, reflecting the strengths of closed-source models in English generation and reasoning.
 
-| Model | Shi CER | Ci CER | Qu CER | Fu CER | Wen CER |
-|---|---|---|---|---|---|
+| Model | Poetry CER | Ci CER | Qu CER | Fu CER | Prose CER |
+|------|--------|--------|--------|--------|--------|
 | Qwen3-Omni-30B | 3.8 | 2.8 | 4.1 | 6.2 | 4.3 |
 | Qwen2.5-Omni-7B | 9.9 | 7.5 | 8.9 | 14.8 | 8.8 |
-| Qwen-Omni-MCGA (fine-tuned) | 2.8 | 3.1 | 7.8 | 5.3 | 4.1 |
+| **Ours** (Qwen-Omni-MCGA) | 2.8 | 3.1 | 7.8 | 5.3 | 4.1 |
 
 ### Ablation Study
 
 | Configuration | ASR CER↓ | S2TT↑ | SEC↑ | SQA↑ | SU↑ | SR↑ |
-|---|---|---|---|---|---|---|
-| Qwen2.5-Omni-7B (original) | 10.1 | 49.7 | 37.0 | 43.5 | 81.3 | 79.3 |
-| Qwen-Omni-MCGA (fine-tuned) | — | — | — | — | — | — |
+|------|---------|-------|------|------|-----|-----|
+| Qwen2.5-Omni-7B (Original) | 10.1 | 49.7 | 37.0 | 43.5 | 81.3 | 79.3 |
+| **Ours** (Qwen-Omni-MCGA) | — | — | — | — | — | — |
 
-The fine-tuned Qwen-Omni-MCGA surpasses the 30B-parameter Qwen3-Omni on ASR for Shi and Wen (CER 2.8 vs. 3.8), demonstrating the high value of MCGA as a training resource.
+The fine-tuned Qwen-Omni-MCGA outperformed the 30B parameter Qwen3-Omni in ASR for Poetry and Prose (CER 2.8 vs 3.8), proving the high value of MCGA as a training resource.
 
 ### Key Findings
 
-- **Fu is the most challenging genre**: All models yield the highest CER on Fu, attributed to its elaborate rhetoric, dense allusions, and abundant modal particles.
-- **SEC is the most challenging task**: Even the strongest model, Qwen3-Omni, scores only 58.4 on SEC; GPT-4o-mini-Audio scores just 5.7 due to safety protocols that cause it to refuse emotion analysis requests.
-- **High data consistency**: CER differences across training/validation/test splits are only 0.1 (Qwen3-Omni), confirming the effectiveness of recording quality control.
-- **Open-source models match closed-source**: Qwen3-Omni's total score (442.9) surpasses Gemini-3-Flash (440.9), indicating that open-source models have reached a competitive level in the classical Chinese domain.
-- **Large gains from fine-tuning small models**: Qwen2.5-Omni (7B) fine-tuned on MCGA outperforms Qwen3-Omni (30B) on ASR for several genres.
+- **Fu is the most difficult genre**: All models showed the highest CER on Fu, due to its ornate rhetoric, frequent allusions, and numerous modal particles.
+- **SEC is the hardest task**: Even the strongest Qwen3-Omni scored only 58.4 in SEC; GPT-4o-mini-Audio scored only 5.7 due to safety protocols refusing sentiment analysis requests.
+- **High data consistency**: The CER difference between train/val/test sets was only 0.1 (Qwen3-Omni), validating the effectiveness of recording quality control.
+- **Open-source models bridging the gap**: Qwen3-Omni's total score (442.9) surpassed Gemini-3-Flash (440.9), indicating that open-source models have reached competitive levels in the Classical Chinese domain.
+- **Significant gains for small models**: After fine-tuning on MCGA, the 7B Qwen2.5-Omni surpassed the 30B Qwen3-Omni in ASR for certain genres.
 
 ## Highlights & Insights
 
-- **Filling a domain gap**: MCGA is the first large-scale, fully copyright-cleared audio corpus specifically targeting classical Chinese literature, genuinely resolving the absence of audio data in this field. All 22,000 recordings are accompanied by signed copyright assignment agreements from the original speakers, definitively addressing the intellectual property challenges of open-source speech datasets.
-- **Elegant ECF metric design**: Decomposing speech emotion evaluation into three levels — person recognition, global emotional tone, and sentence-level fidelity — accommodates the particularities of classical literary recitation while remaining operationally tractable for automatic evaluation.
-- **Insight afforded by CMC**: Measuring cross-modal consistency via the ratio of speech-to-text task scores clearly exposes the phenomenon of models "relying on text-channel capabilities rather than genuinely understanding speech."
-- **Genre-level analysis**: The finding that Fu is the most difficult genre and Ci the easiest provides directional guidance for future genre-specific model optimization.
+- **Filling the domain gap**: MCGA is the first large-scale, copyright-cleared audio corpus specifically for Classical Chinese literature, moving the field from zero to one in speech data availability. All 22,000 audio clips involve signed copyright transfers, resolving intellectual property dilemmas for open-source speech datasets.
+- **Sophisticated ECF metric**: Decomposing speech emotion evaluation into person identification, global tone, and sentence-level fidelity accommodates the specifics of classical recitation while remaining operationally feasible for automatic evaluation.
+- **Insight from the CMC metric**: Measuring cross-modal consistency through speech-to-text task ratios clearly exposes models that "depend on the text channel rather than truly understanding speech."
+- **Analysis by genre**: The discovery that "Fu is the hardest while Ci is the easiest" provides direction for future model optimizations targeting specific genres.
 
 ## Limitations & Future Work
 
-- The corpus contains only standard Mandarin recordings and does not cover dialectal recitation or traditional performance forms such as classical chanting.
-- SEC evaluation relies on an LLM judge (DeepSeek API); automatic evaluation of subjective emotional judgments remains an open problem.
-- Fine-tuning experiments are validated only on Qwen2.5-Omni-7B and do not cover other base models.
-- Cached file truncation prevented complete retrieval of detailed SQA/SU/SR analysis and specific CMC experimental results.
-- Future work may extend the corpus to richer audio forms such as classical literary chanting and traditional opera.
+- The corpus currently only includes standard Mandarin recordings and does not cover traditional performance forms like dialect recitations or chanting.
+- SEC evaluation relies on LLM judges (DeepSeek API); automatic evaluation of subjective emotional judgment remains an open problem.
+- Training experiments were only validated on Qwen2.5-Omni-7B, without covering fine-tuning effects for other base models.
+- Future work could extend to richer audio forms such as classical chanting and traditional opera.
 
 ## Related Work & Insights
 
-- **vs. ACLUE/WenMind**: These benchmarks cover only the text modality; MCGA is the first to extend classical literary evaluation to the speech dimension.
-- **vs. MCS-Bench/Oracle-Bench**: These multimodal benchmarks focus on text + vision; MCGA fills the gap in text + speech evaluation.
-- **vs. LibriSpeech/Common Voice**: General-purpose speech datasets target modern languages and cannot handle the allusions, rhetoric, and prosodic features of classical Chinese.
-- **vs. CII-Bench**: CII-Bench addresses text–image understanding of Chinese cultural common knowledge; MCGA focuses on deep speech understanding and emotion analysis of classical literature.
+- **vs ACLUE/WenMind**: These benchmarks only cover the text modality; MCGA extends classical literature evaluation to the speech dimension for the first time.
+- **vs MCS-Bench/Oracle-Bench**: These multimodal benchmarks focus on text+vision; MCGA fills the text+speech gap.
+- **vs LibriSpeech/Common Voice**: General speech datasets target modern languages and cannot handle the allusions, rhetoric, and phonological features of classical Chinese.
+- **vs CII-Bench**: While CII-Bench focuses on image-text understanding of Chinese cultural common sense, MCGA focuses on deep speech understanding and sentiment analysis of classical literature.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ First large-scale, fully copyright-cleared audio corpus for classical Chinese literature, filling a clear domain gap
-- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive evaluation across 10 models, 6 tasks, and 5 genres, with rich analytical dimensions
-- Writing Quality: ⭐⭐⭐⭐ Clear structure, rigorous metric definitions, and thorough data presentation
-- Value: ⭐⭐⭐⭐ Significant contribution to advancing digital classical literary research and MLLM speech capability evaluation
+- Novelty: ⭐⭐⭐⭐ First copyright-cleared audio corpus for Classical Chinese; fills a clear gap.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive evaluation across 10 models, 6 tasks, and 5 genres.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure, rigorous metric definitions, and sufficient data presentation.
+- Value: ⭐⭐⭐⭐ Significant for driving digitized classical literature research and MLLM speech capability evaluation.
 
 <!-- RELATED:START -->
 

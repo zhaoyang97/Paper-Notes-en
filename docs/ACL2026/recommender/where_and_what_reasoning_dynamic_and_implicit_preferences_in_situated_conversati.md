@@ -2,123 +2,120 @@
 title: >-
   [Paper Note] Where and What: Reasoning Dynamic and Implicit Preferences in Situated Conversational Recommendation
 description: >-
-  [ACL 2026][Recommender Systems][Situated Conversational Recommendation] SiPeR addresses the challenge of dynamically shifting and implicitly expressed user preferences in situated conversational recommendation (SCR) via…
+  [ACL 2026][Recommender Systems][Situated Conversational Recommendation] SiPeR addresses the challenges of dynamic environment-dependent user preferences and implicit expressions in situated conversational recommendation…
 tags:
   - "ACL 2026"
   - "Recommender Systems"
   - "Situated Conversational Recommendation"
   - "Scene Transition"
-  - "Bayesian Inverse Inference"
+  - "Bayesian Inverse Reasoning"
   - "Implicit Preference"
   - "Multimodal"
 date: 2026-05-08
-content_hash: 5238eba7ec3af7dd
+content_hash: ab180fa5fcd190d9
 ---
 
 # Where and What: Reasoning Dynamic and Implicit Preferences in Situated Conversational Recommendation
 
-**Conference**: ACL 2026
+**Conference**: ACL 2026  
 **arXiv**: [2604.20749](https://arxiv.org/abs/2604.20749)  
 **Code**: [https://github.com/DongdingLin/SiPeR](https://github.com/DongdingLin/SiPeR)  
-**Area**: Recommender Systems / Conversational Recommendation
-**Keywords**: Situated Conversational Recommendation, Scene Transition, Bayesian Inverse Inference, Implicit Preference, Multimodal
+**Area**: Recommender Systems / Conversational Recommendation  
+**Keywords**: Situated Conversational Recommendation, Scene Transition, Bayesian Inverse Reasoning, Implicit Preference, Multimodal
 
 ## TL;DR
 
-SiPeR addresses the challenge of dynamically shifting and implicitly expressed user preferences in situated conversational recommendation (SCR) via two mechanisms — Scene Transition Estimation ("Where") and Bayesian Inverse Inference ("What") — achieving improvements of 10.9% and 10.6% on SIMMC 2.1 and SCREEN, respectively.
+SiPeR addresses the challenges of dynamic environment-dependent user preferences and implicit expressions in situated conversational recommendation via Scene Transition Estimation ("Where") and Bayesian Inverse Reasoning ("What"), achieving improvements of 10.9% and 10.6% on SIMMC 2.1 and SCREEN, respectively.
 
 ## Background & Motivation
 
-**State of the Field**: Conversational recommender systems (CRS) provide recommendations through natural language interaction, but most existing work focuses solely on textual exchanges, neglecting visual information and environmental context. Situated Conversational Recommendation (SCR) leverages visual scenes alongside dialogue to deliver context-aware recommendations, more closely mirroring real-world shopping scenarios.
+**Background**: Conversational Recommender Systems (CRS) provide recommendations through natural language interaction. However, most focus solely on text, ignoring visual information and environmental factors. Situated Conversational Recommendation (SCR) utilizes visual scenes and dialogue to provide context-aware recommendations, aligning more closely with real-world shopping scenarios.
 
-**Limitations of Prior Work**: SCR presents two unique challenges — (1) User preferences are dynamic and shift with the scene: when a user in the formal wear section expresses interest in "outdoor hiking," the system must proactively navigate to the outdoor section, yet existing work ignores scene transition decisions; (2) User preferences are often implicit: a user saying "the size is right" but requesting other options signals that the recommended blue jeans do not match their true preference, and the system must infer that the user actually wants gray pants.
+**Limitations of Prior Work**: SCR faces two unique challenges: (1) user preferences are dynamic and vary with the scene—when a user expresses interest in "outdoor hiking" while in a formal wear section, the system must proactively transition to the outdoor section, yet existing work ignores scene transition decisions; (2) user preferences are often implicit—if a user says "the size is right" but asks for other options, it implies the recommended blue jeans do not meet the true preference, requiring the system to infer that the user actually wants gray pants.
 
-**Root Cause**: SCR requires simultaneously resolving two decisions — "Where" (in which scene to recommend) and "What" (which item to recommend) — yet prior research has focused primarily on dataset construction rather than framework design.
+**Key Challenge**: SCR must simultaneously address "Where" (in which scene to recommend) and "What" (which items to recommend) decisions, but existing research primarily focuses on dataset construction rather than framework design.
 
-**Paper Goals**: (1) Design a scene transition estimation mechanism to determine when and where to transition between scenes; (2) Apply Bayesian inverse inference to deduce users' true implicit preferences from dialogue.
+**Goal**: (1) Design a Scene Transition Estimation mechanism to determine when and where to transition scenes; (2) use Bayesian Inverse Reasoning to infer the user's true implicit preferences from the dialogue.
 
-**Starting Point**: Users are modeled as rational agents (inspired by Bayesian inverse planning), whose utterances are "actions" executed to achieve latent goals. Preferences are inferred by comparing the likelihood ratio of two hypotheses — "like" versus "dislike."
+**Key Insight**: Users are treated as rational agents (inspired by Bayesian Inverse Planning) whose utterances are "actions" performed to achieve latent goals. Preferences are reasoned by comparing the likelihood ratios of "like" and "dislike" hypotheses.
 
-**Core Idea**: Scene transitions are handled via a generate-then-retrieve strategy (first generating a target scene description, then retrieving the best-matching scene); item preference is inferred via Bayesian inverse inference (treating user utterances as observational signals of latent goals).
+**Core Idea**: Scene transitions utilize a "generation-retrieval" strategy (generating target scene descriptions before retrieving matching scenes), while item preferences use Bayesian Inverse Reasoning (treating user utterances as observed signals of latent goals).
 
 ## Method
 
 ### Overall Architecture
 
-SiPeR comprises two core mechanisms: (1) **Scene Transition Estimation (STE)** — employs an MLLM to determine whether a scene transition is needed and to predict the target scene, using a coarse-to-fine retrieval strategy to identify the best-matching scene; (2) **Bayesian Inverse Inference (BI-INF)** — formalizes preference reasoning as a POMDP, extracts user intent via dialogue state tracking, and ranks candidate items by comparing their preference probabilities through likelihood ratios.
+SiPeR consists of two core mechanisms: (1) Scene Transition Estimation (STE), which uses an MLLM to determine if a transition is needed and predicts the target scene via a coarse-to-fine retrieval strategy; (2) Bayesian Inverse Inference (BI-INF), which formalizes preference reasoning as a POMDP, extracts user intent through Dialogue State Tracking, and compares preference probabilities for candidate items via likelihood ratios.
 
 ### Key Designs
 
-1. **Scene Transition Estimation (STE)**:
+1.  **Scene Transition Estimation (STE)**:
+    *   **Function**: Determines whether to transition scenes and identifies the target scene.
+    *   **Mechanism**: A three-step process: (a) each candidate scene is converted into a textual "situated profile" using an MLLM; (b) given dialogue history and the current scene, an MLLM jointly generates the transition decision (Yes/No) and a target scene description; (c) coarse-to-fine retrieval—first retrieving Top-N candidates by embedding similarity, then re-ranking with a trained LLM reranker. Transition probability is calculated by normalizing the logits of the Yes/No tokens.
+    *   **Design Motivation**: Direct semantic reasoning over large-scale candidate scenes is infeasible; the generation-retrieval decomposition reduces computational complexity.
 
-    - **Function**: Decides whether to transition scenes and, if so, to which scene.
-    - **Mechanism**: A three-step pipeline — (a) each candidate scene is converted into a textual description (situated profile) by an MLLM; (b) given the dialogue history and current scene, an MLLM jointly generates a transition decision (Yes/No) and a target scene description; (c) coarse-to-fine retrieval — Top-N candidates are first retrieved via embedding similarity, then re-ranked by a fine-tuned LLM reranker. The transition probability is computed by normalizing the logits of the Yes/No tokens.
-    - **Design Motivation**: Direct semantic reasoning over a large candidate scene pool is computationally intractable; the generate-then-retrieve decomposition reduces complexity.
+2.  **Bayesian Inverse Inference (BI-INF)**:
+    *   **Function**: Infers true user preferences for candidate items from dialogue.
+    *   **Mechanism**: Formalizes the user as a rational agent in a POMDP, where utterances are actions taken to reach a goal (obtaining the target item). Dialogue State Tracking extracts structured intent tuples. For each candidate item $m_i$, the likelihood ratio of two hypotheses is compared: $r_i = \mathbb{P}(\text{like} | \text{dialogue}) / \mathbb{P}(\text{dislike} | \text{dialogue})$. In practice, a fine-tuned MLLM calculates the probability of generating the observed dialogue state under the hypotheses "user wants the item" and "user does not want the item."
+    *   **Design Motivation**: LLMs struggle to distinguish subtle preferences from surface-level dialogue; the Bayesian framework provides more rigorous probabilistic reasoning.
 
-2. **Bayesian Inverse Inference (BI-INF)**:
-
-    - **Function**: Infers the user's true preferences over candidate items from dialogue.
-    - **Mechanism**: Users are formalized as rational agents in a POMDP, where utterances are actions executed to achieve a goal (acquiring a target item). Structured intent tuples are extracted via dialogue state tracking. For each candidate item $m_i$, the likelihood ratio under two hypotheses is compared: $r_i = \mathbb{P}(\text{like} | \text{dialogue}) / \mathbb{P}(\text{dislike} | \text{dialogue})$. Concretely, a fine-tuned MLLM computes the probability of generating the observed dialogue state under the hypotheses that the user does or does not want the item.
-    - **Design Motivation**: LLMs struggle to discern nuanced preferences from surface-level dialogue; the Bayesian framework provides more rigorous probabilistic reasoning.
-
-3. **Dialogue State Tracking**:
-
-    - **Function**: Converts natural language dialogue into structured intent representations.
-    - **Mechanism**: A capable LLM is directly prompted to extract $\langle\text{intent, slot, value}\rangle$ tuples from dialogue history; manual validation yields 98.8% accuracy.
-    - **Design Motivation**: Structured representations reduce the unpredictability of natural language inputs within the Bayesian inference process.
+3.  **Dialogue State Tracking**:
+    *   **Function**: Converts natural language dialogue into structured intent representations.
+    *   **Mechanism**: Instructs a strong LLM to extract ⟨intent, slot, value⟩ tuples from the dialogue history, achieving 98.8% manual verification accuracy.
+    *   **Design Motivation**: Structured representations reduce the uncontrollability of the natural language space during Bayesian inference.
 
 ### Loss & Training
 
-The reranker is optimized with negative log-likelihood. MLLM fine-tuning is applied for dialogue state generation and likelihood computation.
+The Reranker is optimized using Negative Log-Likelihood (NLL). MLLM fine-tuning is applied for dialogue state generation and likelihood computation.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Method | SIMMC 2.1 R@1 | SCREEN R@1 |
-|--------|--------------|------------|
+| :--- | :--- | :--- |
 | GPT-4o (CoT) | 28.12 | 33.45 |
 | Qwen2.5-VL (CoT) | 16.72 | 21.05 |
-| **SiPeR** | **~39** | **~44** |
+| **SiPeR (Ours)** | **~39** | **~44** |
 
 ### Ablation Study
 
-| Configuration | Key Metric | Notes |
-|---------------|-----------|-------|
-| SiPeR (full) | Best | STE + BI-INF |
-| w/o STE | Degraded | Unable to handle scene transitions |
-| w/o BI-INF | Degraded | Unable to infer implicit preferences |
-| BI-INF → CoT | Significantly degraded | Validates probabilistic reasoning over heuristic reasoning |
+| Configuration | Key Metrics | Description |
+| :--- | :--- | :--- |
+| SiPeR Full | Optimal | STE + BI-INF |
+| w/o STE | Decrease | Unable to handle scene transitions |
+| w/o BI-INF | Decrease | Unable to infer implicit preferences |
+| Replace BI-INF with CoT | Significant Decrease | Verifies probabilistic reasoning outperforming heuristic reasoning |
 
 ### Key Findings
 
-- SiPeR outperforms the best baselines by an average of 10.9% on SIMMC 2.1 and 10.6% on SCREEN.
-- The likelihood ratio approach of Bayesian inverse inference substantially outperforms simple CoT reasoning, validating the advantage of a probabilistic framework for implicit preference reasoning.
-- Scene transition estimation is critical for recommendations in dynamic, shifting environments — without STE, the system cannot recommend within the correct scene.
+*   SiPeR outperforms the best baselines by an average of 10.9% on SIMMC 2.1 and 10.6% on SCREEN.
+*   The likelihood ratio approach in Bayesian Inverse Reasoning significantly outperforms simple CoT reasoning, validating the advantage of the probabilistic framework for implicit preference inference.
+*   Scene Transition Estimation is critical for recommendation in dynamic scene changes—without STE, the system cannot recommend within the correct context.
 
 ## Highlights & Insights
 
-- Applying Bayesian inverse planning from cognitive science to conversational recommendation — treating user utterances as "actions" rather than "statements" — constitutes an elegant theoretical framework.
-- The "Where + What" problem decomposition cleanly maps onto the two core challenges of SCR.
-- The generate-then-retrieve scene transition strategy effectively balances semantic reasoning capability with computational efficiency.
+*   Applying Bayesian Inverse Planning from cognitive science to conversational recommendation by treating user utterances as "actions" rather than "statements" is an elegant theoretical framework.
+*   The "Where + What" problem decomposition clearly addresses the two core challenges of SCR.
+*   The generation-retrieval scene transition strategy effectively balances semantic reasoning capability with computational efficiency.
 
 ## Limitations & Future Work
 
-- Experiments are conducted solely on simulated datasets; real-world e-commerce scenarios entail substantially greater complexity.
-- The Bayesian inference framework assumes users are rational agents, whereas actual user behavior may be non-rational.
-- Dialogue state tracking relies on a capable LLM, which may be unsuitable for low-resource settings.
+*   Experiments were validated only on simulated datasets; real-world e-commerce scenarios involve higher complexity.
+*   Bayesian reasoning assumes users are "rational agents," but real user behavior may be irrational.
+*   Dialogue State Tracking relies on strong LLMs, which may not be applicable in low-resource scenarios.
 
 ## Related Work & Insights
 
-- **vs. Traditional CRS**: Conventional systems operate on text only; SiPeR jointly processes visual scenes and textual dialogue.
-- **vs. BIP / Theory of Mind**: SiPeR introduces Bayesian inverse planning from computational cognitive science into recommender systems.
+*   **vs Traditional CRS**: Traditional systems handle only text, while SiPeR processes visual scenes plus textual dialogue.
+*   **vs BIP/Theory of Mind**: SiPeR introduces Bayesian Inverse Planning from computational cognitive science into recommender systems.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐⭐ The application of Bayesian inverse inference to SCR and the Where+What problem decomposition are highly novel.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Two benchmarks, comparisons with multiple baselines, and complete ablations, though real-world validation is absent.
-- **Writing Quality**: ⭐⭐⭐⭐ Motivation and methodology are articulated clearly.
-- **Value**: ⭐⭐⭐⭐ Provides the first systematic framework for situated conversational recommendation.
+*   **Novelty**: ⭐⭐⭐⭐⭐ Functional application of Bayesian Inverse Reasoning in SCR and the "Where+What" problem decomposition are highly novel.
+*   **Experimental Thoroughness**: ⭐⭐⭐⭐ Solid across two benchmarks with multiple baselines and complete ablations, though lacking real-world scenario validation.
+*   **Writing Quality**: ⭐⭐⭐⭐ Clear exposition of motivation and methodology.
+*   **Value**: ⭐⭐⭐⭐ Provides the first systematic framework for situated conversational recommendation.
 
 <!-- RELATED:START -->
 
@@ -127,10 +124,10 @@ The reranker is optimized with negative log-likelihood. MLLM fine-tuning is appl
 ## Related Papers
 
 - [\[ACL 2026\] HARPO: Hierarchical Agentic Reasoning for User-Aligned Conversational Recommendation](harpo_hierarchical_agentic_reasoning_for_user-aligned_conversational_recommendat.md)
+- [\[ACL 2026\] Intent-Driven Semantic ID Generation for Grounded Conversational News Recommendation](intent-driven_semantic_id_generation_for_grounded_conversational_news_recommenda.md)
 - [\[ACL 2026\] ReRec: Reasoning-Augmented LLM-based Recommendation Assistant via Reinforcement Fine-tuning](rerec_reasoning-augmented_llm-based_recommendation_assistant_via_reinforcement_f.md)
 - [\[ACL 2026\] IceBreaker for Conversational Agents: Breaking the First-Message Barrier with Personalized Starters](icebreaker_for_conversational_agents_breaking_the_first-message_barrier_with_per.md)
 - [\[ACL 2026\] What Makes an Ideal Quote? Recommending "Unexpected yet Rational" Quotations via Novelty](what_makes_an_ideal_quote_recommending_34unexpected_yet_rational34_quotations_vi.md)
-- [\[ACL 2026\] What Makes LLMs Effective Sequential Recommenders? A Study on Preference Intensity and Temporal Context](what_makes_llms_effective_sequential_recommenders_a_study_on_preference_intensit.md)
 
 </div>
 

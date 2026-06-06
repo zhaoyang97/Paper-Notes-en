@@ -155,11 +155,11 @@ Wormhole completely fails on MERFISH ($R^2 = -3.6$), while RG-se unconstrained a
 
 ## Related Papers
 
+- [\[ICML 2026\] Streaming Sliced Optimal Transport](../../ICML2026/3d_vision/streaming_sliced_optimal_transport.md)
 - [\[CVPR 2026\] Fast SceneScript: Fast and Accurate Language-Based 3D Scene Understanding via Multi-Token Prediction](../../CVPR2026/3d_vision/fast_scenescript_fast_and_accurate_language-based_3d_scene_understanding_via_mul.md)
+- [\[ICML 2026\] Fast-SAM3D: 3Dfy Anything in Images but Faster](../../ICML2026/3d_vision/fast-sam3d_3dfy_anything_in_images_but_faster.md)
 - [\[AAAI 2026\] Fast 3D Surrogate Modeling for Data Center Thermal Management](../../AAAI2026/3d_vision/fast_3d_surrogate_modeling_for_data_center_thermal_management.md)
 - [\[ICCV 2025\] Unleashing Vecset Diffusion Model for Fast Shape Generation (FlashVDM)](../../ICCV2025/3d_vision/unleashing_vecset_diffusion_model_for_fast_shape_generation.md)
-- [\[ICCV 2025\] CF³: Compact and Fast 3D Feature Fields](../../ICCV2025/3d_vision/cf3_compact_and_fast_3d_feature_fields.md)
-- [\[ICCV 2025\] Sparfels: Fast Reconstruction from Sparse Unposed Imagery](../../ICCV2025/3d_vision/sparfels_fast_reconstruction_from_sparse_unposed_imagery.md)
 
 </div>
 

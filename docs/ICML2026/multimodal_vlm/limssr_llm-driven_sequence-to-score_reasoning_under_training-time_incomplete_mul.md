@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LIMSSR: LLM-Driven Sequence-to-Score Reasoning under Training-Time Incomplete Multimodal Observations
 description: >-
-  [ICML 2026][Multimodal VLM][Incomplete Multimodal Learning] The authors reformulate multimodal action quality assessment with "missing modalities during training" as a "LLM-based conditional sequence-to-score reasoning"…
+  [ICML 2026][Multimodal VLM][Incomplete Multimodal Learning] The authors reformulate "training-time incomplete" multimodal action quality assessment as an "LLM-based conditional sequence-to-score reasoning" problem. By ut…
 tags:
   - "ICML 2026"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "Mask-Aware Fusion"
   - "Token-level Regularization"
 date: 2026-05-08
-content_hash: 85f3990925f87e24
+content_hash: ef561047e773a0a0
 ---
 
 # LIMSSR: LLM-Driven Sequence-to-Score Reasoning under Training-Time Incomplete Multimodal Observations
@@ -24,54 +24,50 @@ content_hash: 85f3990925f87e24
 **Keywords**: Incomplete Multimodal Learning, LLM Reasoning, Action Quality Assessment, Mask-Aware Fusion, Token-level Regularization
 
 ## TL;DR
-The authors reformulate multimodal action quality assessment with "missing modalities during training" as a "LLM-based conditional sequence-to-score reasoning" problem. By using prompts and special tokens, the LLM is guided to complete missing semantics without full data supervision. Combined with mask-aware dual-path fusion to suppress hallucination, the method outperforms SOTA models that rely on complete training data across three AQA datasets.
+The authors reformulate "training-time incomplete" multimodal action quality assessment as an "LLM-based conditional sequence-to-score reasoning" problem. By utilizing prompts and special tokens, the LLM completes missing semantics without full-data supervision. Combined with mask-aware dual-path fusion to suppress hallucinations, the model outperforms SOTA methods that rely on complete training data across three AQA datasets.
 
 ## Background & Motivation
 
-**Background**: In real-world scenarios, multimodal data often lack certain modalities—sensor failures, privacy filtering, and collection costs can result in missing video/audio/flow data. Academic research on Incomplete Multimodal Learning (IML) mainly follows two lines: (a) reconstruction-based (ActionMAE, IMDer, GAIN, DMVG) directly reconstruct missing modality features; (b) distillation/prior-based (CorrKD, MoMKE, MCMoE) use complete modalities as teachers for distillation or priors.
+**Background**: In real-world scenarios, multimodal data often suffers from missing modalities due to sensor failure, privacy desensitization, or collection costs. Current Incomplete Multimodal Learning (IML) research follows two main lines: (a) reconstruction-based (ActionMAE, IMDer, GAIN, DMVG), which directly reconstructs missing features; (b) distillation/prior-based (CorrKD, MoMKE, MCMoE), which uses complete modalities as teachers for distillation or priors.
 
-**Limitations of Prior Work**: Both approaches implicitly assume a "god's-eye view"—complete modalities must be available during training as reconstruction targets or distillation teachers. However, in real data collection, missingness is inherent (e.g., some subjects never recorded audio). When training data itself is incomplete, there is no GT for reconstruction or teacher for distillation, causing the IML framework to collapse.
+**Limitations of Prior Work**: Both categories implicitly assume a "God's perspective"—complete modalities must be available during training as targets or teachers. However, real data may be incomplete from the source (e.g., some subjects never recorded audio). If the training data itself is incomplete, there is no GT for reconstruction and no teacher for distillation, causing the entire IML framework to collapse.
 
-**Key Challenge**: When modalities are missing during training, how can the missing semantics be "imagined out of thin air"? Traditional reconstruction-distillation routes require "complete-incomplete" pairs, but such pairs do not exist; simply zero-filling leads the model to treat "missingness" as noise, hurting the main task. A mechanism is needed to "infer" missing semantics without paired supervision.
+**Key Challenge**: When modalities are missing during the training phase, how can missing semantics be "imagined" from thin air? Traditional reconstruction-distillation routes require "complete-incomplete" pairs, which do not exist here. Simple zero-padding leads the model to learn "missingness" as noise, degrading performance. A mechanism to "infer" missing semantics without paired supervision is required.
 
-**Goal**: (i) Formalize the more realistic setting of "incomplete observations during training"; (ii) Propose a framework that infers missing semantics without relying on complete training data; (iii) Validate on long-video Action Quality Assessment (AQA), a task highly dependent on multimodality.
+**Goal**: (i) Formalize the more realistic setting of "incomplete observations during training"; (ii) Propose a framework that infers missing semantics without relying on complete training data; (iii) Validate this on long-video Action Quality Assessment (AQA), a task highly dependent on multimodality.
 
-**Key Insight**: The authors observe that LLMs are not only sequence models but also possess vast world knowledge and reasoning ability—given observable modalities and a description of missing structure, LLMs should be able to "fill in the blanks" and infer semantic representations for missing parts, without pixel-level reconstruction.
+**Key Insight**: The authors observe that LLMs are not just sequence models but possess vast world knowledge and reasoning capabilities. Given descriptions of observable modalities and the missing structure, an LLM should be able to infer the semantic representation of missing parts like a "cloze test" without pixel-level reconstruction.
 
-**Core Idea**: Reformulate incomplete multimodal learning as "conditional sequence reasoning"—use prompts to describe the task and missing status, missing tokens as placeholders, and fusion tokens for aggregation, enabling the LLM to infer latent semantics under missing modalities. Mask-aware gating calibrates the uncertainty of reasoning.
+**Core Idea**: Reformulate incomplete multimodal learning as "conditional sequence reasoning"—using prompts to describe the task and missing status, missing tokens as placeholders, and fusion tokens for collection. This allows the LLM to infer latent semantics under invisible missing conditions, followed by mask-aware gating to calibrate reasoning uncertainty.
 
 ## Method
 
 ### Overall Architecture
-Given a sample $(\mathbf{X} \odot \boldsymbol{m}, \boldsymbol{m}, y)$ ($\boldsymbol{m}\in\{0,1\}^M$ is the missing mask), LIMSSR proceeds in three steps: (1) Context Construction $\Phi_{in}$ concatenates instruction prompt, visible modality features $\tilde{\mathbf{X}}^m$, missing token placeholder sequences, and fusion tokens into a unified embedding $\mathbf{Z}_{in}$; (2) LLM Reasoning $\mathbf{H}_{out} = \mathrm{LLM}(\mathbf{Z}_{in})$ simultaneously infers missing semantics and performs multimodal fusion; (3) Mask-Aware Dual-Path Aggregation $\Psi_{agg}$ fuses high-level semantic and low-level cross-modal paths with mask-weighted fusion to output the action quality score $\hat{y}$. Modality features are extracted using frozen VST/AST/I3D for video/audio/flow, projected into the LLM input space via two conv layers.
+For a sample $(\mathbf{X} \odot \boldsymbol{m}, \boldsymbol{m}, y)$ (where $\boldsymbol{m}\in\{0,1\}^M$ is the mask), LIMSSR follows three steps: (1) Context Construction $\Phi_{in}$ combines instruction prompts, visible features $\tilde{\mathbf{X}}^m$, missing token placeholders, and fusion tokens into a unified embedding $\mathbf{Z}_{in}$; (2) LLM Reasoning $\mathbf{H}_{out} = \mathrm{LLM}(\mathbf{Z}_{in})$ performs both missing semantic inference and multimodal fusion; (3) Mask-Aware Dual-Path Aggregation $\Psi_{agg}$ fuses high-level semantic and low-level cross-modal paths using mask-weighting to output the quality score $\hat{y}$. Modality features are extracted by frozen VST/AST/I3D and projected to the LLM space via 2-layer convolutions.
 
 ### Key Designs
 
-1. **Prompt-Guided Context-Aware Modality Imputation (PCMI)**:
+1.  **Prompt-Guided Context-Aware Modality Imputation (PCMI)**:
+    - **Function**: Elevates missing modalities from "zero vectors" to "latent variables to be inferred," allowing the LLM to treat missing positions as fill-in-the-blank tokens.
+    - **Mechanism**: Each modality $m$ is wrapped with boundary tokens `<m_start>, <m_end>`. Visible modalities contain $\tilde{\mathbf{X}}^m$, while missing modalities contain $T$ repeated learnable `<missing_m>` embeddings. A task prompt explicitly describes the status: "Given the available {avail} features... The {miss} modality is missing. Based on the available modalities, please infer and reconstruct the useful latent representations for the missing {miss} modalities at the designated positions." The LLM outputs $\mathbf{H}_{miss}^m = \mathrm{LLM}(\mathbf{Z}_{in})|_{\text{positions of }\mathbf{E}_{miss}^m}$ as the inferred representation.
+    - **Design Motivation**: Traditional zero-padding causes signals to be "buried" in attention. PCMI encodes the missing structure directly into the sequence, making the LLM's next-token reasoning naturally suited—"predicting the next token" and "inferring missing latents" are mathematically similar.
 
-    - **Function**: Elevates missing modalities from "zero vectors" to "latent variables to be inferred," allowing the LLM to treat missing positions as fillable tokens for reasoning.
-    - **Mechanism**: Each modality $m$ is wrapped with boundary tokens `<m_start>, <m_end>`. For visible modalities, $\tilde{\mathbf{X}}^m$ is placed inside; for missing modalities, $T$ repeated learnable `<missing_m>` embeddings are used. A task prompt explicitly describes visible and missing modalities: "Given the available {avail} features... The {miss} modality is missing. Based on the available modalities, please infer and reconstruct the useful latent representations for the missing {miss} modalities at the designated positions." After LLM output, hidden states at missing token positions $\mathbf{H}_{miss}^m = \mathrm{LLM}(\mathbf{Z}_{in})|_{\text{positions of }\mathbf{E}_{miss}^m}$ are extracted as inferred missing representations.
-    - **Design Motivation**: Traditional zero-filling causes missing signals to be "buried" in attention; MissRAG/TAMML use RAG or text bridging, requiring extra retrieval or pre-alignment. PCMI encodes missing structure directly into the sequence, making LLM's next-token reasoning naturally suitable—"guessing the next token" and "inferring missing latent" are mathematically equivalent.
+2.  **LLM-Driven Multidimensional Representation Fusion (LMRF)**:
+    - **Function**: Distills cross-modal information into $K$ fusion slots without disrupting the LLM output space.
+    - **Mechanism**: Appends $K$ special tokens `<emb_dim_1>, ..., <emb_dim_K>` as "information slots" to the prompt, instructing the LLM to "integrate and enhance all multimodal features for action quality assessment." The output $\mathbf{H}_{fusion} = \{\boldsymbol{h}_1, \dots, \boldsymbol{h}_K\}$ at these positions represents different evaluation dimensions (e.g., difficulty, execution). A learnable role weight $\boldsymbol{w}_{role}$ computes $\boldsymbol{z}_{main} = \sum_k \mathrm{Softmax}(\boldsymbol{w}_{role})_k \cdot \boldsymbol{h}_k$.
+    - **Design Motivation**: Mean-pooling LLM outputs disrupts sequence generation. Borrowing from BERT's `[CLS]` but generalized to multiple dimensions, this allows the LLM to learn to "pack different aspects into different slots."
 
-2. **LLM-Driven Multidimensional Representation Fusion (LMRF)**:
-
-    - **Function**: Distills cross-modal information into $K$ fusion slots without disrupting the LLM output space, yielding a compact task-relevant representation.
-    - **Mechanism**: Appends $K$ special tokens `<emb_dim_1>, ..., <emb_dim_K>` at the end of the prompt as "information slots," and explicitly instructs the LLM to "integrate and enhance all multimodal features for action quality assessment. Output the fused multi-dimensional feature representations at the designated feature dimension positions." The LLM's final layer outputs at these positions $\mathbf{H}_{fusion} = \{\boldsymbol{h}_1, \dots, \boldsymbol{h}_K\}$ are assumed to encode different evaluation dimensions (e.g., difficulty, execution, artistry). Learnable role weights $\boldsymbol{w}_{role}$ compute $\boldsymbol{z}_{main} = \sum_k \mathrm{Softmax}(\boldsymbol{w}_{role})_k \cdot \boldsymbol{h}_k$ as the main fusion vector.
-    - **Design Motivation**: Mean-pooling LLM outputs destroys long-sequence generation ability; inspired by BERT's `[CLS]` but generalized to multiple dimensions, the LLM learns to "pack different aspects into different slots," which is more structured than pooling and more interpretable than attention heads.
-
-3. **Mask-Aware Dual-Path Aggregation (MDA)**:
-
-    - **Function**: Uses the LLM reasoning path for high-level semantics and the cross-modal attention path for low-level features, dynamically calibrating the reliability of both paths based on the missing mask to avoid hallucination under severe missingness.
-    - **Mechanism**: Path 1 (Uncertainty-Calibrated Reasoning)—compute gating $\boldsymbol{g} = \sigma(\mathrm{MLP}_{gate}([\boldsymbol{z}_{main}, \boldsymbol{m}]))$ and residual $\boldsymbol{\delta} = \mathrm{MLP}_{res}([\boldsymbol{z}_{main}, \boldsymbol{m}])$, yielding refined representation $\tilde{\boldsymbol{z}}_{main} = \boldsymbol{z}_{main} + \boldsymbol{g}\odot \boldsymbol{\delta}$. Path 2 (Cross-Modal Pattern Recovery)—temporal pooling of LLM hidden states at each modality yields $\boldsymbol{h}_v, \boldsymbol{h}_a, \boldsymbol{h}_f$, stacked and self-attended to get $\mathbf{Z}_{attn}$; weighted by $\alpha_{m_j} = \boldsymbol{m}_j \cdot 1 + (1-\boldsymbol{m}_j)\cdot \gamma_{m_j}$ according to availability ($\gamma_m = \sigma(\lambda_m)$ is a learnable modality-level confidence), finally $\boldsymbol{z}_{aux} = \sum_m \alpha_m (\boldsymbol{z}_{attn}^m \odot \mathcal{G}(\mathbf{H}_{stack})^m)$. The two paths are fused for the final score.
-    - **Design Motivation**: Relying solely on LLM reasoning risks hallucination under severe missingness; relying only on statistical aggregation lacks high-level semantics. Mask-aware adaptive fusion of both paths gives the model a "meta-cognitive" ability to assess its own confidence, which is crucial for extreme missing cases.
+3.  **Mask-Aware Dual-Path Aggregation (MDA)**:
+    - **Function**: Processes high-level semantics via the LLM and low-level features via cross-modal attention, dynamically calibrating reliability based on the mask to avoid hallucinations.
+    - **Mechanism**: Path 1 (Reasoning) computes gating $\boldsymbol{g} = \sigma(\mathrm{MLP}_{gate}([\boldsymbol{z}_{main}, \boldsymbol{m}]))$ and residual $\boldsymbol{\delta} = \mathrm{MLP}_{res}([\boldsymbol{z}_{main}, \boldsymbol{m}])$ to get $\tilde{\boldsymbol{z}}_{main} = \boldsymbol{z}_{main} + \boldsymbol{g}\odot \boldsymbol{\delta}$. Path 2 (Pattern Recovery) performs temporal pooling on LLM hidden states to get $\boldsymbol{h}_v, \boldsymbol{h}_a, \boldsymbol{h}_f$ and applies self-attention. Weights $\alpha_{m_j} = \boldsymbol{m}_j \cdot 1 + (1-\boldsymbol{m}_j)\cdot \gamma_{m_j}$ adjust based on availability, where $\gamma_m$ is a learnable confidence.
+    - **Design Motivation**: Pure LLM reasoning causes hallucinations under severe loss; pure statistical aggregation lacks high-level semantics. Mask-aware mixing provides the model with "meta-cognitive" ability to trust itself.
 
 ### Loss & Training
-
-In addition to the main regression loss, the authors introduce: (1) Consistency Learning to enforce agreement between the two paths, encouraging mutual verification; (2) Token-Level Metric Regularization to ensure different fusion tokens learn distinct feature dimensions (avoiding collapse), specifically maximizing off-diagonal distances in the token similarity matrix with a regularization term; (3) Optional LoRA fine-tuning for the LLM backbone to avoid full-parameter training.
+In addition to the regression loss, the authors introduce: (1) Consistency Learning to align the two paths; (2) Token-Level Metric Regularization to ensure fusion tokens learn different dimensions by maximizing distances in a similarity matrix; (3) LoRA fine-tuning for the LLM backbone.
 
 ## Key Experimental Results
 
-### Main Results (FS1000, 7-class, Spearman ↑ / MSE ↓, T-Miss indicates missing modalities during training)
+### Main Results (FS1000, 7-class, Spearman ↑ / MSE ↓, T-Miss denotes incomplete training)
 
 | Method | T-Miss | {v,f} | {v,a} | {v} | {a} | Average | {v,f,a} |
 |------|--------|-------|-------|------|------|---------|---------|
@@ -86,50 +82,48 @@ In addition to the main regression loss, the authors introduce: (1) Consistency 
 | ΔSpearman | ↑1.1% | ↑1.0% | ↑0.9% | ↑11.7% | ↑0.9% | ↑1.1% |
 | ΔMSE | ↓1.2% | ↓11.1% | ↓8.4% | ↓7.2% | ↓8.4% | ↓9.5% |
 
-Note: LIMSSR is the only model in the table trained under T-Miss ✓, yet it outperforms all T-Miss ✗ (i.e., trained with complete data) methods in almost all missing combinations. This is the strongest "qualitative difference" evidence in the paper.
+Note: LIMSSR is the only model trained under **T-Miss ✓**, yet it outperforms all methods trained with complete data (**T-Miss ✗**) across nearly all missing combinations.
 
 ### Ablation Study
 
-| Configuration | Average Spearman | Notes |
+| Configuration | Average Spearman | Description |
 |------|------------------|------|
-| Full LIMSSR | 0.789 | Complete framework |
-| w/o PCMI (zero-filling missing modalities) | Significant drop | LLM cannot infer missing semantics |
-| w/o LMRF (mean pooling instead of fusion tokens) | Drop | Multidimensional info collapse |
-| w/o MDA Path 1 (cross-modal aggregation only) | Drop | Lacks high-level semantic calibration |
-| w/o MDA Path 2 (LLM reasoning only) | Drop | Hallucination under severe missingness |
-| w/o Consistency Loss | Drop | Lacks mutual verification |
-| w/o Token-Level Regularization | Drop | Fusion tokens become redundant |
+| Full LIMSSR | 0.789 | Full framework |
+| w/o PCMI | Significant Drop | Missing semantics cannot be inferred by LLM |
+| w/o LMRF | Drop | Multi-dimensional information collapses |
+| w/o MDA Path 1 | Drop | Lacks high-level semantic calibration |
+| w/o MDA Path 2 | Drop | Hallucinations under severe missingness |
+| w/o Consistency Loss | Drop | Paths lack mutual verification |
+| w/o Token Regularization | Drop | Fusion tokens become redundant |
 
 ### Key Findings
-- **Training with missing modalities can outperform training with complete data**: The most counterintuitive result—under the extreme case of audio-only, LIMSSR achieves 11.7% higher Spearman and 7.2% lower MSE than SOTA, indicating that LLM world knowledge provides a qualitative advantage in inferring missing semantics.
-- **Path 1 + Path 2 are complementary**: Either path alone leads to performance drop; mask-aware adaptive fusion in MDA is key to resisting hallucination.
-- **Sweet spot for number of fusion tokens $K$**: $K=3$ best matches AQA's three dimensions (difficulty/execution/artistry); more leads to overfitting.
-- **Audio modality is hardest to impute**: All methods perform worst in {a}-only setting, as audio is least correlated with action quality, but LIMSSR still far exceeds baselines, showing LLM's relative gain is greatest for low-information modalities.
+- **Winning with incomplete training data**: LIMSSR outperforms SOTA even with severe audio missingness (Spearman +11.7%, MSE -7.2%), showing that LLM world knowledge offers a qualitative advantage.
+- **Path 1 + Path 2 Complementarity**: Either path alone results in performance drops; MDA's mask-adaptive fusion is critical for anti-hallucination.
+- **Fusion Token Count $K$**: $K=3$ matches the AQA structure (difficulty/execution/artistry).
+- **Audio is most difficult**: Performance is lowest in {a}-only settings across all methods, but LIMSSR shows the largest relative gain, proving LLM inference is most effective for low-information modalities.
 
 ## Highlights & Insights
-- **Task reformulation is the main contribution**: Recasting IML from "reconstruction/distillation" to "conditional sequence reasoning" turns a supervision-limited problem into an LLM-friendly next-token problem; this "reformulate as LM task" idea is transferable to many incomplete multimodal scenarios.
-- **Special token design is elegant**: Missing token placeholders, boundary tokens for segmentation, and fusion tokens for aggregation turn the LLM into a programmable "semantic calculator," enabling custom functions without modifying the LLM architecture.
-- **Mask-aware dual-path adaptation**: Encoding "how confident am I" into the network, with learnable modality-level confidence $\gamma_m$, reflects an engineering approach to reasoning uncertainty.
-- **Training with missing data outperforms training with complete data**: This finding offers the IML community a new perspective—LLM priors may be more valuable than paired data, suggesting a need to rethink the "paired data paradigm."
+- **Task reformulation is the primary contribution**: Shifting IML from "reconstruction/distillation" to "conditional sequence reasoning" transforms a supervision-limited problem into a next-token problem that LLMs excel at.
+- **Elegant token design**: Using placeholders and boundary tokens treats the LLM as a programmable "semantic calculator" without architectural changes.
+- **Mask-aware meta-cognition**: Encoding confidence into the network via MDA handles the engineering of inference uncertainty.
+- **Superiority over complete data methods**: Suggests that LLM priors might be more valuable than paired data, challenging the traditional paradigm of IML.
 
 ## Limitations & Future Work
-- Validation is mainly on AQA; effectiveness in other IML scenarios (emotion recognition, medical diagnosis) needs further study.
-- LLM reasoning introduces significant computational cost, making it impractical for real-time applications (e.g., live scoring).
-- Lacks systematic experiments on LLM scale (7B/13B/70B); LLM world knowledge is only effective when task-relevant, possibly less so for low-resource languages or rare action types.
-- "Hallucination" is not quantitatively defined or measured, only indirectly mitigated via MDA.
-- No experiments on modalities beyond text-vision-audio (e.g., physiological signals, depth maps).
+- Primarily validated on AQA; generalizability to emotion recognition or medical diagnosis requires further study.
+- LLM inference introduces significant computational overhead, impacting real-time applications.
+- Lacks systematic experiments on LLM scale (7B vs 70B) and performance on low-resource or niche action types.
+- Hallucination is not quantitatively measured directly, only mitigated via MDA.
 
 ## Related Work & Insights
-- **vs ActionMAE / IMDer / DMVG (reconstruction)**: These methods rely on complete training pairs; this work breaks that constraint.
-- **vs MoMKE / MCMoE / CorrKD (distillation/prior)**: They still require complete modalities as teachers; LIMSSR replaces this with LLM priors, essentially "using general world knowledge instead of domain paired supervision."
-- **vs MissRAG / TAMML (LLM-based IML)**: MissRAG requires a pre-built modality prototype pool; TAMML textualizes all modalities, losing fine-grained information; LIMSSR lets the LLM reason directly in the original embedding space, making it more general and dependency-free.
-- **vs Hedgehog / LoLCATs (LLM for other tasks)**: Similar in spirit—leveraging LLM non-linguistic abilities for domain problems; LIMSSR focuses on "missing information inference" rather than "long sequence modeling."
+- **vs ActionMAE/IMDer (reconstruction)**: These depend on complete training pairs; LIMSSR breaks this constraint.
+- **vs MoMKE/MCMoE (distillation/prior)**: These require complete modality teachers; LIMSSR replaces them with LLM priors (general knowledge vs. paired supervision).
+- **vs MissRAG/TAMML (LLM-based IML)**: MissRAG requires prototype pools; TAMML loses detail through textification. LIMSSR reasons directly in the embedding space.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Proposes a new "incomplete observation during training" setting and reshapes the IML paradigm with LLM sequence reasoning; both problem and method are novel.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Three public AQA benchmarks, multiple missing combinations, and comparison with 10+ baselines; but only validated on AQA, lacking cross-task generalization evidence.
-- Writing Quality: ⭐⭐⭐⭐ Clear narrative, Figure 1's comparison of three paradigms is intuitive; formulas are numerous but well-explained.
-- Value: ⭐⭐⭐⭐ Offers the IML community a new paradigm and a convincing non-linguistic use case for LLM-as-tool applications.
+- Novelty: ⭐⭐⭐⭐⭐ New "training-time incomplete" setting and reformulation of IML as sequence reasoning.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive benchmarks and ablation; however, task diversity is limited to AQA.
+- Writing Quality: ⭐⭐⭐⭐ Clear narrative and intuitive comparisons.
+- Value: ⭐⭐⭐⭐ Provides a new paradigm for the IML community and a convincing non-linguistic use case for LLMs.
 
 <!-- RELATED:START -->
 
@@ -138,10 +132,10 @@ Note: LIMSSR is the only model in the table trained under T-Miss ✓, yet it out
 ## Related Papers
 
 - [\[ICLR 2026\] Reasoning-Driven Multimodal LLM for Domain Generalization](../../ICLR2026/multimodal_vlm/reasoning-driven_multimodal_llm_for_domain_generalization.md)
+- [\[ACL 2026\] STELLA: A Multimodal LLM for Protein Functional Annotation via Unified Sequence-Structure Encoding](../../ACL2026/multimodal_vlm/stella_a_multimodal_llm_for_protein_functional_annotation_via_unified_sequence-s.md)
 - [\[AAAI 2026\] MCMoE: Completing Missing Modalities with Mixture of Experts for Incomplete Multimodal Action Quality Assessment](../../AAAI2026/multimodal_vlm/mcmoe_completing_missing_modalities_with_mixture_of_experts_for_incomplete_multi.md)
 - [\[ICML 2026\] Learn to Think: Improving Multimodal Reasoning through Vision-Aware Self-Improvement Training](learn_to_think_improving_multimodal_reasoning_through_vision-aware_self-improvem.md)
 - [\[ICML 2026\] Instruction Lens Score: Your Instruction Contributes a Powerful Object Hallucination Detector for Multimodal Large Language Models](instruction_lens_score_your_instruction_contributes_a_powerful_object_hallucinat.md)
-- [\[CVPR 2026\] MODIX: Training-Free Multimodal Information-Driven Positional Index Scaling for VLMs](../../CVPR2026/multimodal_vlm/modix_positional_index_scaling.md)
 
 </div>
 

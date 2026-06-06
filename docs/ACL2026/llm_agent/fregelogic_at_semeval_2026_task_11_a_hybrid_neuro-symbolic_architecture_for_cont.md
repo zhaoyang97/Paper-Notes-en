@@ -2,124 +2,121 @@
 title: >-
   [Paper Note] FregeLogic at SemEval 2026 Task 11: A Hybrid Neuro-Symbolic Architecture for Content-Robust Syllogistic Validity Prediction
 description: >-
-  [ACL 2026][LLM Agent][syllogistic reasoning] FregeLogic is a hybrid neuro-symbolic system that combines a five-member LLM ensemble with a Z3 SMT solver as a tiebreaker…
+  [ACL 2026][LLM Agent][Syllogistic reasoning] This paper proposes FregeLogic, a hybrid neuro-symbolic system that combines a five-member LLM ensemble with a Z3 SMT solver acting as a tie-breaking judge. It reduces the con…
 tags:
   - "ACL 2026"
   - "LLM Agent"
-  - "syllogistic reasoning"
-  - "belief bias"
+  - "Syllogistic reasoning"
+  - "content effect"
   - "neuro-symbolic"
   - "LLM ensemble"
   - "Z3 solver"
 date: 2026-05-08
-content_hash: 9c8f901ae0fe186f
+content_hash: 5c67d43e1870964a
 ---
 
 # FregeLogic at SemEval 2026 Task 11: A Hybrid Neuro-Symbolic Architecture for Content-Robust Syllogistic Validity Prediction
 
-**Conference**: ACL 2026
+**Conference**: ACL 2026  
 **arXiv**: [2604.18328](https://arxiv.org/abs/2604.18328)  
 **Code**: None  
-**Area**: LLM Agent / Neuro-Symbolic Reasoning
-**Keywords**: syllogistic reasoning, belief bias, neuro-symbolic, LLM ensemble, Z3 solver
+**Area**: LLM Agent / Neuro-Symbolic Reasoning  
+**Keywords**: Syllogistic reasoning, content effect, neuro-symbolic, LLM ensemble, Z3 solver
 
 ## TL;DR
 
-FregeLogic is a hybrid neuro-symbolic system that combines a five-member LLM ensemble with a Z3 SMT solver as a tiebreaker, achieving a 16% reduction in belief bias alongside a 0.9% accuracy improvement on syllogistic validity prediction.
+This paper proposes FregeLogic, a hybrid neuro-symbolic system that combines a five-member LLM ensemble with a Z3 SMT solver acting as a tie-breaking judge. It reduces the content effect by 16% while improving accuracy by 0.9% in syllogistic validity judgment.
 
 ## Background & Motivation
 
-**Background**: Syllogistic reasoning is a fundamental form of deductive inference. SemEval-2026 Task 11 requires systems to judge the logical validity of syllogisms while also measuring the degree to which predictions are influenced by the believability of the content (belief bias). The scoring formula $\text{Score} = \text{Accuracy} / (1 + \ln(1 + \text{CE}))$ simultaneously rewards high accuracy and low belief bias.
+**Background**: Syllogistic reasoning is a fundamental form of deductive reasoning. SemEval-2026 Task 11 requires systems to judge the logical validity of syllogisms while assessing the degree to which the system is influenced by content believability (the content effect). The scoring formula $\text{Score} = \text{Accuracy} / (1 + \ln(1 + \text{CE}))$ rewards both high accuracy and low content effect simultaneously.
 
-**Limitations of Prior Work**: LLMs exhibit human-like belief bias — they tend to judge syllogisms as valid when the content is believable in the real world, and invalid otherwise. Mechanistic analyses suggest that reasoning circuits developed during LLM pretraining are susceptible to contamination by world knowledge.
+**Limitations of Prior Work**: LLMs exhibit human-like content effects—they tend to judge a syllogism as valid when the content is believable in reality, and vice versa. Mechanistic analysis suggests that the reasoning circuits developed by LLMs during pre-training are easily contaminated by world knowledge.
 
 **Key Challenge**: How can the powerful reasoning capabilities of LLMs be leveraged while overcoming their systematic sensitivity to content believability?
 
-**Goal**: To design a reasoning system that minimizes belief bias while maintaining high accuracy.
+**Goal**: To design a reasoning system capable of minimizing the content effect while maintaining high accuracy.
 
-**Key Insight**: The degree of disagreement within an LLM ensemble vote is used as a signal for belief-biased cases, which are then delegated to a content-agnostic formal logic solver.
+**Key Insight**: The degree of disagreement in LLM ensemble voting can be used to signal cases of content bias, which are then delegated to a content-agnostic formal logic solver.
 
-**Core Idea**: Narrow margins in ensemble voting (3–2 splits) disproportionately correspond to belief-biased errors — precisely the cases where a formal verifier can add value.
+**Core Idea**: Narrow voting margins (3-2 splits) in an ensemble disproportionately correspond to content-biased errors—precisely the cases where a formal verifier can add value.
 
 ## Method
 
 ### Overall Architecture
 
-The system consists of three components: (1) a five-member LLM ensemble providing high-accuracy predictions; (2) a Z3 formal verification pipeline for structured logical judgments; and (3) a tiebreaker decision module that delegates to Z3 only when the ensemble vote results in a narrow margin (3–2 split).
+The system consists of three components: (1) A five-member LLM ensemble providing high-accuracy predictions; (2) A Z3 formal verification pipeline for structured logical judgment; (3) A selective tie-breaking module that delegates decisions to Z3 only when the ensemble vote results in a narrow split (3-2).
 
 ### Key Designs
 
-1. **Diversified LLM Ensemble**:
+1.  **Diversified LLM Ensemble**:
+    - **Function**: Provides a high-accuracy baseline through the combination of uncorrelated errors.
+    - **Mechanism**: Utilizes three open-source models (Llama 4 Maverick, Llama 4 Scout, Qwen3-32B) across four prompting strategies (Zero-shot, Few-shot, Few-shot CoT, Simple CoT) for a total of 12 combinations. The top-5 configurations with the highest combined scores are selected for each fold.
+    - **Design Motivation**: Architectural diversity (MoE vs. Dense, two different model families) and prompting diversity maximize error uncorrelation among ensemble members.
 
-    - Function: Provides a high-accuracy baseline by combining uncorrelated errors across members.
-    - Mechanism: Three open-source models (Llama 4 Maverick, Llama 4 Scout, Qwen3-32B) × four prompting strategies (zero-shot, few-shot, few-shot CoT, simple CoT) yield 12 combinations in total; the top-5 configurations by combined score are selected per fold.
-    - Design Motivation: Architectural diversity (MoE vs. dense, two distinct model families) and prompting diversity maximize error decorrelation among ensemble members.
+2.  **Z3 Formal Verification Pipeline**:
+    - **Function**: Provides content-neutral logical validity judgments.
+    - **Mechanism**: (a) Uses LLM + Structured Output API to extract the logical structure of the syllogism into JSON; (b) Encodes the structure into First-Order Logic (adopting Aristotelian existential import); (c) Performs a two-step satisfiability check—first verifying premise consistency, then checking if $P_1 \wedge P_2 \wedge \neg C$ is unsatisfiable.
+    - **Design Motivation**: Z3 encoding strips away all semantic content and is content-neutral by construction. The Structured Output API reduced extraction failure rates from approximately 22% to near zero.
 
-2. **Z3 Formal Verification Pipeline**:
-
-    - Function: Provides content-neutral logical validity judgments.
-    - Mechanism: (a) An LLM with a structured output API extracts the logical structure of the syllogism as JSON; (b) the structure is encoded in first-order logic (adopting Aristotelian existential import); (c) a two-step satisfiability check first verifies premise consistency, then tests whether $P_1 \wedge P_2 \wedge \neg C$ is unsatisfiable.
-    - Design Motivation: The Z3 encoding strips all semantic content, making it structurally content-neutral. Using a structured output API reduces extraction failure rates from approximately 22% to near zero.
-
-3. **Selective Tiebreaker Mechanism**:
-
-    - Function: Pinpoints belief-biased ensemble cases and corrects them via formal logic.
-    - Mechanism: The vote margin $m = |2 \sum v_i - 5|$ is computed; the Z3 result overrides the ensemble majority only when $m \leq 1$ (a 3–2 split) and Z3 returns a valid judgment.
-    - Design Motivation: Empirical observation shows that 3–2 splits disproportionately correspond to belief-biased cases. Extending Z3 authority to higher-consensus cases degrades performance, as Z3 achieves only 48.6% accuracy on valid syllogisms.
+3.  **Selective Tie-breaking Mechanism**:
+    - **Function**: Precisely identifies biased ensemble cases and corrects them using formal logic.
+    - **Mechanism**: Calculates the voting margin $m = |2 \sum v_i - 5|$; the Z3 result replaces the ensemble majority vote only when $m \leq 1$ (a 3-2 split) and Z3 returns a valid judgment.
+    - **Design Motivation**: Empirical observations show that 3-2 splits disproportionately correspond to content-biased cases. Expanding Z3's authority to cases with higher consensus would decrease performance because Z3 has lower accuracy on valid syllogisms (48.6%).
 
 ### Loss & Training
 
-The system involves no parametric training. Model and prompt selection, as well as fusion strategy selection, are performed via nested 5-fold cross-validation. In each fold, all 12 combinations are evaluated on a 200-sample internal subset, and the top-5 configurations are selected.
+The system utilizes parameter-free training. Model and prompt selection, as well as fusion strategy selection, are completed via nested 5-fold cross-validation. For each fold, all 12 combinations are evaluated on an internal subset of 200 samples to select the top-5 configurations.
 
 ## Key Experimental Results
 
-### Main Results (Nested 5-Fold Cross-Validation, N=960)
+### Main Results (Nested 5-fold CV, N=960)
 
-| Strategy | Accuracy | Belief Bias | Combined Score |
-|----------|----------|-------------|----------------|
-| Ensemble only | 93.4% | 3.39 | 39.12 |
-| **+ Z3 tiebreaker** | **94.3%** | **2.85** | **41.88** |
-| Z3 only | 74.7% | 26.28 | 17.39 |
+| Strategy | Accuracy | Content Effect | Combined Score |
+|----------|----------|----------------|----------------|
+| Pure Ensemble | 93.4% | 3.39 | 39.12 |
+| **+ Z3 Tie-break** | **94.3%** | **2.85** | **41.88** |
+| Z3 Only | 74.7% | 26.28 | 17.39 |
 | Confidence + Z3 | 91.7% | 6.15 | 31.77 |
 
 ### Subgroup Accuracy Analysis
 
 | Strategy | Valid-Believable | Valid-Unbelievable | Invalid-Believable | Invalid-Unbelievable |
-|----------|-----------------|-------------------|-------------------|---------------------|
-| Ensemble only | 95.9% | 96.0% | 90.2% | 91.9% |
-| + Z3 tiebreaker | 95.6% | 93.8% | **94.5%** | 93.5% |
+|----------|------------------|--------------------|--------------------|----------------------|
+| Pure Ensemble | 95.9% | 96.0% | 90.2% | 91.9% |
+| + Z3 Tie-break | 95.6% | 93.8% | **94.5%** | 93.5% |
 
 ### Key Findings
-- The tiebreaker mechanism yields the largest gains on the Invalid-Believable subgroup (90.2% → 94.5%), which represents the most strongly belief-biased cases.
-- 3–2 splits account for only 7.9% of cases, yet across 30 Z3 override decisions, Z3 achieved a net gain of 8 correct flips.
-- Z3 exhibits a pronounced "invalidity bias" — 97.6% accuracy on invalid syllogisms versus 52.2% on valid ones — rooted in structural extraction errors.
-- All 11 incorrect overrides are unidirectional: Z3 erroneously rejects valid syllogisms, primarily due to extraction errors involving double negations and compound term boundaries.
-- The Scout model appears most frequently in the minority coalition (53.9%), suggesting it is more susceptible to belief bias.
+- The tie-breaking mechanism primarily gains performance in the "Invalid-Believable" subgroup (90.2% → 94.5%), which contains the cases with the strongest content bias.
+- 3-2 splits account for only 7.9% of cases, but Z3 achieved a net gain of 8 correct decisions out of 30 overrides.
+- Z3 exhibits a significant "invalid bias"—97.6% accuracy on invalid syllogisms but only 52.2% on valid ones, rooted in structural extraction errors.
+- All 11 erroneous flips occurred in the same direction: Z3 incorrectly rejected valid syllogisms, primarily due to extraction errors involving double negatives or complex term boundaries.
+- The Scout model appeared most frequently in minority alliances (53.9%), indicating it is more susceptible to content bias.
 
 ## Highlights & Insights
-- The system design is elegant: rather than simply replacing LLMs with formal logic, ensemble consensus degree is used as a bias signal to precisely identify cases warranting formal verification.
-- The in-depth analysis of Z3's invalidity bias reveals that the bottleneck lies in extraction rather than encoding, and that the directional asymmetry is consistent (valid → invalid).
-- The engineering insight that structured output APIs substantially reduce extraction failure rates has practical value.
-- The choice of Aristotelian existential import is validated by the annotation of Felapton-type syllogisms in the dataset.
+- Sophisticated system design: Rather than simply replacing the LLM with formal logic, the system uses ensemble consensus as a bias signal to precisely target cases requiring formal verification.
+- In-depth analysis of Z3's invalid bias reveals that the bottleneck lies in extraction rather than encoding, showing directional asymmetry (Valid → Invalid).
+- Engineering insights regarding Structured Output APIs significantly lowering extraction failure rates provide practical value.
+- The choice of Aristotelian existential import was validated by the labeling of Felapton-type syllogisms in the dataset.
 
 ## Limitations & Future Work
-- Each sample requires 6 LLM calls plus one Z3 solve, resulting in relatively high inference cost.
-- Model and prompt selection requires nested cross-validation, introducing considerable setup complexity.
-- The Z3 pipeline relies on an LLM for structure extraction, making extraction errors the primary system bottleneck.
-- No comparison is made against larger monolithic models (70B+), leaving open the question of whether architectural diversity outperforms a single large model.
-- Adaptive tuning of the tiebreaker threshold $\tau=1$ has not been explored.
+- Each sample requires 6 LLM calls + 1 Z3 solver execution, resulting in high inference costs.
+- Model and prompt selection require nested cross-validation, leading to high setup complexity.
+- The Z3 pipeline relies on the LLM for structure extraction; extraction errors remain the primary system bottleneck.
+- No comparison was made with larger monolithic models (70B+); whether architectural diversity is superior to a single large model remains an open question.
+- No exploration was conducted regarding adaptive adjustment of the tie-breaking threshold $\tau=1$.
 
 ## Related Work & Insights
-- **vs. pure LLM approaches**: FregeLogic compensates for LLM belief bias via formal verification rather than relying on improved prompting.
-- **vs. purely formal methods such as LINC**: FregeLogic applies formal verification only to low-consensus cases, preventing extraction errors from contaminating high-confidence predictions.
-- **vs. activation steering approaches (Valentino et al., 2025)**: FregeLogic requires no access to model internals and operates as a black-box solution.
-- **Insight**: The use of ensemble disagreement as a bias signal is generalizable to other reasoning tasks.
+- **vs. Pure LLM Methods**: FregeLogic compensates for LLM content bias through formal verification rather than relying solely on better prompting.
+- **vs. Pure Formal Methods (e.g., LINC)**: FregeLogic uses formal verification only in low-consensus cases, preventing extraction errors from contaminating high-confidence cases.
+- **vs. Activation Guidance (Valentino et al., 2025)**: FregeLogic is a black-box solution that does not require access to internal model states.
+- **Insight**: The idea of using ensemble disagreement as a bias signal could be generalized to other reasoning tasks.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The selective hybrid strategy — using ensemble disagreement to trigger formal verification — is cleverly designed.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Nested cross-validation is rigorous; subgroup analysis and error attribution are thorough.
-- Writing Quality: ⭐⭐⭐⭐⭐ System description is clear and well-analyzed; every design choice is fully justified.
-- Value: ⭐⭐⭐ A shared-task system paper; the methodological ideas are inspiring but direct generalizability is limited.
+- Novelty: ⭐⭐⭐⭐ The selective hybrid strategy using ensemble disagreement for formal verification intervention is cleverly designed.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Rigorous nested cross-validation with deep subgroup and error attribution analysis.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clearly described system with thorough analysis and well-justified design choices.
+- Value: ⭐⭐⭐ As a shared-task system paper, the methodological approach is inspiring but has limited direct generalizability.
 
 <!-- RELATED:START -->
 
@@ -127,11 +124,11 @@ The system involves no parametric training. Model and prompt selection, as well 
 
 ## Related Papers
 
+- [\[ICML 2026\] Lifting Traces to Logic: Programmatic Skill Induction with Neuro-Symbolic Learning for Long-Horizon Agentic Tasks](../../ICML2026/llm_agent/lifting_traces_to_logic_programmatic_skill_induction_with_neuro-symbolic_learnin.md)
+- [\[ACL 2026\] MAGMA: A Multi-Graph based Agentic Memory Architecture for AI Agents](magma_a_multi-graph_based_agentic_memory_architecture_for_ai_agents.md)
 - [\[ACL 2026\] Robust Tool Use via Fission-GRPO: Learning to Recover from Execution Errors](robust_tool_use_via_fission-grpo_learning_to_recover_from_execution_errors.md)
 - [\[ACL 2026\] Supplement Generation Training for Enhancing Agentic Task Performance](supplement_generation_training_for_enhancing_agentic_task_performance.md)
-- [\[ACL 2026\] Don't Act Blindly: Robust GUI Automation via Action-Effect Verification and Self-Correction](don39t_act_blindly_robust_gui_automation_via_action-effect_verification_and_self.md)
-- [\[ICLR 2026\] PerfGuard: A Performance-Aware Agent for Visual Content Generation](../../ICLR2026/llm_agent/radiometrically_consistent_gaussian_surfels_for_inverse_rendering.md)
-- [\[ACL 2026\] Context-Value-Action Architecture for Value-Driven Large Language Model Agents](context-value-action_architecture_for_value-driven_large_language_model_agents.md)
+- [\[ACL 2026\] IntrAgent: An LLM Agent for Content-Grounded Information Retrieval through Literature Review](intragent_an_llm_agent_for_content-grounded_information_retrieval_through_litera.md)
 
 </div>
 

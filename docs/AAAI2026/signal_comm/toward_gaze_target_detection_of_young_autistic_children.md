@@ -133,9 +133,9 @@ An input image $I$ and the child's head bounding box $B_\text{head}$ are passed 
 
 - [\[AAAI 2026\] Task Aware Modulation Using Representation Learning for Upscaling of Terrestrial Carbon Fluxes](task_aware_modulation_using_representation_learning_for_upsaling_of_terrestrial_.md)
 - [\[AAAI 2026\] Text-Guided Channel Perturbation and Pretrained Knowledge Integration for Unified Multi-Modality Image Fusion](text-guided_channel_perturbation_and_pretrained_knowledge_integration_for_unifie.md)
+- [\[ICML 2026\] Joint Model and Data Sparsification via the Marginal Likelihood](../../ICML2026/signal_comm/joint_model_and_data_sparsification_via_the_marginal_likelihood.md)
 - [\[ICLR 2026\] Multi-Agent Design: Optimizing Agents with Better Prompts and Topologies](../../ICLR2026/signal_comm/multi-agent_design_optimizing_agents_with_better_prompts_and_topologies.md)
 - [\[ICLR 2026\] Spectrum Tuning: Post-Training for Distributional Coverage and In-Context Steerability](../../ICLR2026/signal_comm/spectrum_tuning_post-training_for_distributional_coverage_and_in-context_steerab.md)
-- [\[ICLR 2026\] FASA: Frequency-Aware Sparse Attention](../../ICLR2026/signal_comm/fasa_frequency-aware_sparse_attention.md)
 
 </div>
 

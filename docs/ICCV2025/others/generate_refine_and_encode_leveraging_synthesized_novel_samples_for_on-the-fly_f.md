@@ -205,7 +205,7 @@ $$\mathcal{L} = \mathcal{L}_{sup} + \mathcal{L}_{reg} + \alpha \cdot \mathcal{L}
 - [\[ICCV 2025\] Intra-view and Inter-view Correlation Guided Multi-view Novel Class Discovery](intra-view_and_inter-view_correlation_guided_multi-view_novel_class_discovery.md)
 - [\[NeurIPS 2025\] MiCADangelo: Fine-Grained Reconstruction of Constrained CAD Models from 3D Scans](../../NeurIPS2025/others/micadangelo_fine-grained_reconstruction_of_constrained_cad_models_from_3d_scans.md)
 - [\[ICCV 2025\] Membership Inference Attacks with False Discovery Rate Control](membership_inference_attacks_with_false_discovery_rate_control.md)
-- [\[AAAI 2026\] MF-Speech: Achieving Fine-Grained and Compositional Control in Speech Generation via Factor Disentanglement](../../AAAI2026/others/mf-speech_achieving_fine-grained_and_compositional_control_in_speech_generation_.md)
+- [\[CVPR 2026\] Novel Anomaly Detection Scenarios and Evaluation Metrics to Address the Ambiguity in the Definition of Normal Samples](../../CVPR2026/others/novel_anomaly_detection_scenarios_and_evaluation_metrics_to_address_the_ambiguit.md)
 
 </div>
 

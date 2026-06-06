@@ -134,8 +134,8 @@ Only the gating $\mathbf{g}^l$ is trained, with negligible parameter count compa
 
 - [\[ICCV 2025\] FREE-Merging: Fourier Transform for Efficient Model Merging](../../ICCV2025/multimodal_vlm/free-merging_fourier_transform_for_efficient_model_merging.md)
 - [\[CVPR 2026\] HandVQA: Diagnosing and Improving Fine-Grained Spatial Reasoning about Hands in Vision-Language Models](../../CVPR2026/multimodal_vlm/handvqa_diagnosing_and_improving_fine-grained_spatial_reasoning_about_hands_in_v.md)
-- [\[ICML 2026\] Vision-aligned Latent Reasoning for Multi-modal Large Language Model](vision-aligned_latent_reasoning_for_multi-modal_large_language_model.md)
 - [\[CVPR 2026\] DC-Merge: Improving Model Merging with Directional Consistency](../../CVPR2026/multimodal_vlm/dc-merge_improving_model_merging_with_directional_consistency.md)
+- [\[ICML 2026\] Vision-aligned Latent Reasoning for Multi-modal Large Language Model](vision-aligned_latent_reasoning_for_multi-modal_large_language_model.md)
 - [\[NeurIPS 2025\] Unveiling Chain of Step Reasoning for Vision-Language Models with Fine-grained Rewards](../../NeurIPS2025/multimodal_vlm/unveiling_chain_of_step_reasoning_for_visionlanguage_models.md)
 
 </div>

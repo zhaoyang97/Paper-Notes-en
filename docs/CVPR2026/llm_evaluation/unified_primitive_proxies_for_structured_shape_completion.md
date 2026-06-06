@@ -139,8 +139,8 @@ At inference, valid primitives are selected via a confidence score: $s_k = \pi_k
 - [\[NeurIPS 2025\] Learning Generalizable Shape Completion with SIM(3) Equivariance](../../NeurIPS2025/llm_evaluation/learning_generalizable_shape_completion_with_sim3_equivariance.md)
 - [\[CVPR 2026\] VGA-Bench: A Unified Benchmark for Video Aesthetics and Generation Quality Evaluation](vga_bench_unified_benchmark_for_video_aesthetics_and_generation_quality.md)
 - [\[AAAI 2026\] Structured Language Generation Model: Loss Calibration and Formatted Decoding for Efficient Text](../../AAAI2026/llm_evaluation/structured_language_generation_model_loss_calibration_and_formatted_decoding_for.md)
+- [\[ACL 2026\] SCAN: Structured Capability Assessment and Navigation for LLMs](../../ACL2026/llm_evaluation/scan_structured_capability_assessment_and_navigation_for_llms.md)
 - [\[CVPR 2026\] CryoHype: Reconstructing a Thousand Cryo-EM Structures with Transformer-Based Hypernetworks](cryohype_reconstructing_a_thousand_cryo-em_structures_with_transformer-based_hyp.md)
-- [\[CVPR 2026\] Cross-Scale Pansharpening via ScaleFormer and the PanScale Benchmark](cross-scale_pansharpening_via_scaleformer_and_the_panscale_benchmark.md)
 
 </div>
 

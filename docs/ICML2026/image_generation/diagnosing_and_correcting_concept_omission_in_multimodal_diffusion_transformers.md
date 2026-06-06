@@ -2,70 +2,67 @@
 title: >-
   [Paper Note] Diagnosing and Correcting Concept Omission in Multimodal Diffusion Transformers
 description: >-
-  [ICML 2026][Image Generation][MM-DiT] This paper uses linear probes to discover that in MM-DiT (FLUX / SD3.5), certain attention heads in intermediate layers naturally encode a binary signal in the key vectors of text to…
+  [ICML 2026][Image Generation][MM-DiT] The paper utilizes linear probes to discover that in MM-DiT (FLUX / SD3.5), the key vectors of text tokens in certain middle-layer attention heads naturally encode a binary signal of…
 tags:
   - "ICML 2026"
   - "Image Generation"
   - "MM-DiT"
   - "Concept Omission"
-  - "Linear Probe"
+  - "Linear Probes"
   - "Attention Key Intervention"
   - "Training-free Guidance"
 date: 2026-05-08
-content_hash: b1a4f6427dc001e1
+content_hash: 0f2a5cc7cebab7f2
 ---
 
 # Diagnosing and Correcting Concept Omission in Multimodal Diffusion Transformers
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.14270](https://arxiv.org/abs/2605.14270)  
-**Code**: No public repository link provided  
+**Code**: No public repository link provided in the paper  
 **Area**: Diffusion Models / Text-to-Image Generation / Representation Intervention  
-**Keywords**: MM-DiT, Concept Omission, Linear Probe, Attention Key Intervention, Training-free Guidance
+**Keywords**: MM-DiT, Concept Omission, Linear Probes, Attention Key Intervention, Training-free Guidance
 
 ## TL;DR
-This paper uses linear probes to discover that in MM-DiT (FLUX / SD3.5), certain attention heads in intermediate layers naturally encode a binary signal in the key vectors of text tokens, indicating whether a target concept will appear. Based on this, the authors propose Omission Signal Intervention (OSI): during inference, they inject the mean difference direction between "omission" and "existence" classes into the key vectors of the top-K heads with strength $\alpha\sigma\boldsymbol{\theta}$, thereby activating the model's "self-awareness" of missing concepts and prompting completion. On FLUX, GenEval 6-object accuracy improves from 0.18 → 0.40, without any fine-tuning.
+The paper utilizes linear probes to discover that in MM-DiT (FLUX / SD3.5), the key vectors of text tokens in certain middle-layer attention heads naturally encode a binary signal of "whether the target concept will appear." Based on this, it proposes Omission Signal Intervention (OSI): during inference, the mean difference direction of "absent class - present class" is injected into the key vectors of the Top-K heads with an intensity of $\alpha\sigma\boldsymbol{\theta}$. This stimulates the model's "self-awareness" of missing concepts to complete the generation. On FLUX, GenEval 6-object accuracy improves from 0.18 to 0.40 without any fine-tuning.
 
 ## Background & Motivation
-**Background**: T2I diffusion models have largely transitioned to the MM-DiT architecture (FLUX, SD3, SD3.5), which concatenates text tokens and image patch tokens into a single sequence for joint attention. Compared to U-Net + cross-attention's unidirectional injection, this is better suited for learning cross-modal semantic alignment.
+**Background**: T2I diffusion models have largely transitioned to the MM-DiT architecture (FLUX, SD3, SD3.5), which concatenates text tokens and image patch tokens into a single sequence for joint attention. This is more suitable for learning cross-modal semantic alignment compared to the unidirectional injection of U-Net + cross-attention.
 
-**Limitations of Prior Work**: Despite architectural advances, concept omission (e.g., generating "cat and dog and book" but missing the book) remains a persistent issue in MM-DiT. Existing remedies either add optimization constraints to visual attention maps (Attend-and-Excite, A-STAR, Rassin et al.) or require extra training (GLIGEN, reward fine-tuning), both incurring high inference costs or disrupting the original model distribution.
+**Limitations of Prior Work**: Despite architectural progress, concept omission (e.g., failing to generate a "book" when prompted for "a cat, a dog, and a book") remains a persistent issue in MM-DiT. Existing mitigation strategies either add optimization constraints to visual attention maps (Attend-and-Excite, A-STAR, Rassin et al.) or require additional training (GLIGEN, reward fine-tuning), both of which entail high inference costs or disrupt the original model distribution.
 
-**Key Challenge**: Prior research focuses only on visual embeddings; how text embeddings internally encode "concept presence" within diffusion models remains a black box. Chen et al. (2024) analyzed CLIP text outputs but did not trace down to diffusion's internal attention heads. In other words, the model may "know" what it has omitted, but we lack tools to query this.
+**Key Challenge**: Existing research focuses primarily on visual embeddings; how text embeddings encode the "whether a concept will appear" signal **internally** within the diffusion model remains a black box. While Chen et al. (2024) analyzed CLIP text outputs, they did not track this to the level of diffusion-internal attention heads. In other words, the model might "know" what it has missed, but tools to query this state are lacking.
 
-**Goal**: (1) Use probing tools to check whether MM-DiT's internal text tokens truly carry "omission state" information; (2) If so, identify the specific layers/heads/timesteps carrying this signal; (3) Amplify this signal at inference time with minimal cost to force the model to generate missing concepts.
+**Goal**: (1) Use probing tools to examine if internal text tokens in MM-DiT carry "omission state" information; (2) If so, identify the specific layers, heads, and timesteps carrying this signal; (3) Use minimal-cost inference-time intervention to amplify this signal and force the model to generate the missing concepts.
 
-**Key Insight**: MM-DiT's joint attention allows text tokens to receive visual feedback from image tokens at every layer, making their key/value vectors dynamic reflections of what has already been generated in the latent. In intermediate layers (where image tokens carry semantics but generation is incomplete), the key vectors of text tokens may encode "has my concept appeared in the noisy latent?"
+**Key Insight**: The joint attention of MM-DiT allows text tokens to receive visual feedback from image tokens at every layer. Consequently, the key/value of a text token is no longer a "static text description" but dynamically reflects what has already been generated in the current latent. In middle layers (where image tokens carry semantics but generation is incomplete), the text token's key vector may encode "has my corresponding concept appeared in the noisy latent."
 
-**Core Idea**: First, use a linear probe to explicitly extract this "omission signal" from attention keys (the mean difference direction between "absent" and "present"); then, during inference, apply a mass mean shift to move the key in the "reverse omission" direction, making the model "believe" it has omitted more, thus actively compensating for missing concepts.
+**Core Idea**: First, a linear probe is used to explicitly extract this "omission signal" from the attention keys (the mean difference direction of "absent $\rightarrow$ present"). Then, a mass mean shift is applied during inference to shift the key in the **direction of the absent class**, effectively making the model "think it has missed more," thereby triggering it to actively remedy the missing concept.
 
 ## Method
 
 ### Overall Architecture
-Two stages. **Diagnose**: On the GenEval two-object subset of FLUX.1-Dev, generate images and use Mask2Former + BLIP-VQA dual annotation to determine whether each concept token was successfully generated ($y\in\{0,1\}$); collect text token key vectors $\mathbf{k}_c^{(t,l,h)}$ at intermediate timesteps to form dataset $\mathcal{D}_{l,h}^{\text{train}}$, and train a linear probe for each $(l, h)$ to classify absent/present. **Correct (OSI)**: For each head, compute the mass mean shift direction $\boldsymbol{\delta}^{(l,h)} = \mathbb{E}[\mathbf{k}|y=0]-\mathbb{E}[\mathbf{k}|y=1]$, normalize to get $\boldsymbol{\theta}^{(l,h)}$; during inference, for only the top-K most accurate heads and only in the early denoising phase $t\in[t_{\text{stop}}, 1]$, shift the concept token's key vector as $\mathbf{k}_c \leftarrow \mathbf{k}_c + \alpha\sigma^{(l,h)}\boldsymbol{\theta}^{(l,h)}$. The addition is in the "absent - present" direction, effectively making the model internally "feel" it has omitted more, thus triggering its built-in correction mechanism.
+The method consists of two phases. **Diagnose**: Generations are run on the GenEval two-object subset using FLUX.1-Dev. Each image is annotated via Mask2Former + BLIP-VQA to determine if each concept token was successfully generated ($y\in\{0,1\}$). Text token key vectors $\mathbf{k}_c^{(t,l,h)}$ from intermediate timesteps are collected to form a dataset $\mathcal{D}_{l,h}^{\text{train}}$. A linear probe is trained for each $(l, h)$ to distinguish between absent and present states. **Correct (OSI)**: The mass mean shift direction $\boldsymbol{\delta}^{(l,h)} = \mathbb{E}[\mathbf{k}|y=0]-\mathbb{E}[\mathbf{k}|y=1]$ is calculated from the training set of each head and normalized to $\boldsymbol{\theta}^{(l,h)}$. During inference, for top-K heads with the highest accuracy during the early denoising stage ($t\in[t_{\text{stop}}, 1]$), the concept token key vector is shifted as $\mathbf{k}_c \leftarrow \mathbf{k}_c + \alpha\sigma^{(l,h)}\boldsymbol{\theta}^{(l,h)}$. Notably, adding the "absent - present" direction makes the model internalize that it has "missed more," triggering its built-in remedy mechanism.
 
 ### Key Designs
 
-1. **Concept-aware Probing Dataset Construction with Noise Filtering**:
+1.  **Concept-aware Probing Dataset Construction with Noise Filtering**:
+    - **Function**: Collects clean (key vector, present-label) pairs from the FLUX generation process specifically for training linear probes to identify the omission signal.
+    - **Mechanism**: Batch generations use the template "a photo of {obj1} and {obj2}," recording the text token key vector $\mathbf{k}^{(t,l,h)}$ at every step, layer, and head. Labels come from the final image, determined by dual annotation with Mask2Former (mmdetection) and BLIP-VQA; samples are only accepted if both agree to avoid single-annotator noise. Two traps are addressed: (a) **Early timestep label misalignment**—the target has not appeared in steps 1-3, but if it ultimately succeeds, it is labeled $y=1$. This creates conflict as the key encodes "not yet generated" while the label says "will generate." (b) **Late timestep signal weakening**—later stages focus on details, and the omission signal vanishes. Table 1 provides quantitative evidence: agreement between early steps and final labels is only 0.409, jumping to 0.965 at intermediate steps, and 1.000 at late steps. The paper only retains samples from the intermediate interval $\mathcal{T}$ for the probe training set.
+    - **Design Motivation**: Probing is a sanity check; data must reflect "this token, at this moment, knows whether its concept will appear." Filtering data by generation dynamics embedding the diffusion model's temporal structure into the probe design.
 
-    - **Function**: Collects clean (key vector, present-label) pairs from the FLUX generation process, specifically for training linear probes to detect omission signals.
-    - **Mechanism**: Uses the template "a photo of {obj1} and {obj2}" for batch generation, recording text token key vectors $\mathbf{k}^{(t,l,h)}$ at each step, layer, and head. Labels are derived from the final image—adopted only if both Mask2Former (mmdetection) and BLIP-VQA agree, avoiding single annotator noise. Two types of traps are filtered: (a) **Early timestep label misalignment**—the target hasn't appeared in steps 1-3, but is labeled $y=1$ due to eventual success (the key encodes "not yet generated" but the label says "will be generated," causing training contradiction); (b) **Late timestep weak signal**—in late diffusion, omission signal fades as details are refined. Table 1 quantifies this: early step agreement with final label is only 0.409, intermediate jumps to 0.965, late reaches 1.000. Thus, only intermediate interval $\mathcal{T}$ samples are kept for probe training, with a 4:1 train/val split.
-    - **Design Motivation**: The probe is essentially a sanity check, so data must truly reflect "this token, at this moment, knows whether its concept will appear"—otherwise, identified "important heads" are just noise. Filtering data by generation dynamics embeds diffusion's temporal structure into probe design.
+2.  **Head-Localization via Linear Probing**:
+    - **Function**: Accurately locates "specialist heads" encoding the omission signal within a massive search space of 1368 attention heads across multiple timesteps.
+    - **Mechanism**: A linear classifier is trained for each $(l, h)$ taking the text token key vector as input to predict absent vs. present. Fig. 2(a) shows probe accuracy peaking at intermediate timesteps (aligned with Table 1). The head-wise heatmap in Fig. 2(b) reveals a counter-intuitive pattern: **early layers stay near chance** (as text tokens haven't absorbed visual feedback), **middle layers rise significantly** (up to 91.0% accuracy), and **late layers drop again**. The top-300 heads (22% of the 1368 total, all exceeding 80% accuracy) are selected as "omission signal heads." Fig. 3 and Fig. 4 use box plots to show probe outputs evolving over timesteps: as visual objects gradually appear in the predicted $\hat{x}_0$ (first row), the "present" probability from the probe rises synchronously (second row).
+    - **Design Motivation**: Signals are sparse—not all heads encode omission. Head-wise probing ensures intervention is only performed on useful heads, avoiding degradation of other capabilities.
 
-2. **Head-Localization via Linear Probing**:
-
-    - **Function**: Precisely locates "expert heads" encoding the omission signal within the vast space of 1368 attention heads × multiple timesteps, avoiding indiscriminate intervention.
-    - **Mechanism**: Trains a linear classifier for each $(l, h)$, inputting the text token key vector from that head and outputting absent vs present. Fig. 2(a) shows probe accuracy peaks at intermediate timesteps (matching Table 1). Fig. 2(b)'s head-wise heatmap reveals a counterintuitive pattern: **early layers are near chance** (text tokens haven't absorbed enough visual feedback), **intermediate layers rise sharply** (up to 91.0% accuracy), **late layers drop again**. Thus, the top-300 heads (22% of 1368, all above 80% accuracy) are selected as "omission signal heads." Figs. 3 and 4 use box plots to show probe outputs evolving with timestep: the first row shows predicted $\hat{x}_0$ visual objects gradually appearing, the second row shows the probe's "present" probability rising in sync—a vivid visualization of "model self-awareness" dynamics.
-    - **Design Motivation**: The signal is sparse—not all heads encode omission, so per-head probing ensures intervention only where useful, avoiding broad disruption. Training a probe for each $(l, h)$ is laborious but yields precise localization, minimizing negative side effects of subsequent OSI.
-
-3. **Mass Mean Shift Intervention (OSI)**:
-
-    - **Function**: At inference, injects the "absent → present" direction into key vectors with minimal cost and no training, prompting the model to complete missing concepts.
-    - **Mechanism**: For each top-K head, computes the mass mean shift direction $\boldsymbol{\delta}^{(l,h)} = \mathbb{E}[\mathbf{k}^{(t,l,h)}|y=0] - \mathbb{E}[\mathbf{k}^{(t,l,h)}|y=1]$ (note: "absent minus present"), normalizes to $\boldsymbol{\theta}^{(l,h)}$. During inference, modifies as $\mathbf{k}_c \leftarrow \mathbf{k}_c + \alpha\sigma^{(l,h)}\boldsymbol{\theta}^{(l,h)}$, where $\sigma^{(l,h)}$ is the standard deviation along this direction (adaptive scaling), and $\alpha$ is a scalar (5.0 for FLUX, 7.5 for SD3.5). Only active in the first 15 of 30 steps, $t\in[0.78, 1]$, as concept formation mainly occurs early. The addition is in the "omission direction" (not "present direction"); the paper explains this as "making the model believe it has omitted more → triggering stronger correction"—an intentional hallucination of severity.
-    - **Design Motivation**: Traditional methods either modify attention maps with constraints or require fine-tuning; OSI uses the mass mean shift + steering vector paradigm (Li et al. 2023a) for fully training-free, surgical intervention. The counterintuitive choice to "amplify the absence signal" rather than "inject the presence signal" is validated by Table 4's direction ablation—reversing the direction ($-\boldsymbol{\theta}$) collapses performance (two object 0.81 → 0.72, six object 0.18 → 0.02), showing that only the correct direction enables recovery, while the wrong direction suppresses.
+3.  **Mass Mean Shift Intervention (OSI)**:
+    - **Function**: Injects the "absent $\rightarrow$ present" direction into key vectors during inference in a training-free manner to stimulate the completion of missing concepts.
+    - **Mechanism**: For each top-K head, the mass mean shift direction $\boldsymbol{\delta}^{(l,h)} = \mathbb{E}[\mathbf{k}^{(t,l,h)}|y=0] - \mathbb{E}[\mathbf{k}^{(t,l,h)}|y=1]$ is computed and normalized into $\boldsymbol{\theta}^{(l,h)}$. During inference, the modification $\mathbf{k}_c \leftarrow \mathbf{k}_c + \alpha\sigma^{(l,h)}\boldsymbol{\theta}^{(l,h)}$ is applied, where $\sigma^{(l,h)}$ is the standard deviation of probe data in that direction (adaptive scale normalization) and $\alpha$ is a scalar (5.0 for FLUX, 7.5 for SD3.5). This is active during the first 15 steps (out of 30) within $t\in[0.78, 1]$. Adding the "omission direction" is explained as making the model perceive the omission as more severe, triggering a stronger correction impulse—an intentional hallucination of severity.
+    - **Design Motivation**: Unlike traditional methods that modify attention maps or fine-tune, OSI uses the mass mean shift + steering vector paradigm for training-free surgical intervention. The choice to amplify the "absent" signal instead of the "present" signal is validated by Table 4, where the opposite direction ($-\boldsymbol{\theta}$) collapses performance.
 
 ### Loss & Training
-OSI is training-free: the model itself is unchanged, only the key vectors are modified during inference as described above. The only training required is for the 1368 lightweight linear probes ($\ll$ main model), using BCE loss. 30 total sampling steps, CFG=3.5 (FLUX)/7.0 (SD3.5), top-K=300 (FLUX)/100 (SD3.5), $\alpha=5.0/7.5$, $t_{\text{stop}}=0.78/0.76$, active for the first 15 steps. Token selection: GenEval uses template rules for parsing, T2I-CompBench uses Llama-3.1-8B to extract target spans.
+OSI is training-free: the model itself is not modified; only key vectors are altered during inference. Only the 1368 lightweight linear probes (≪ main model) are trained using BCE loss. Sampling: 30 steps total, CFG=3.5 (FLUX)/7.0 (SD3.5), top-K=300 (FLUX)/100 (SD3.5), $\alpha=5.0/7.5$, $t_{\text{stop}}=0.78/0.76$, active for the first 15 steps. Token selection: GenEval uses template rules; T2I-CompBench uses Llama-3.1-8B to extract target spans.
 
 ## Key Experimental Results
 
@@ -92,7 +89,7 @@ Attribute neglect (T2I-CompBench attribute binding):
 | SD3.5 | Base | 0.7955 | 0.5820 | 0.7305 |
 | SD3.5 | **OSI** | **0.8048** | **0.6119** | **0.7480** |
 
-Most notably, the 6-object scenario improves from 0.18 → 0.40, more than doubling, demonstrating OSI's true power in "hard cases where the baseline nearly collapses."
+The most significant gain is in the 6-object scenario, doubling from 0.18 to 0.40, demonstrating OSI's power in difficult scenarios where the baseline collapses.
 
 ### Ablation Study
 Direction + head selection + token-specific (FLUX):
@@ -110,7 +107,7 @@ Direction + head selection + token-specific (FLUX):
 Token-specific (100 FLUX omission failure cases):
 
 | Method | Accuracy (omitted obj) | Probe Prob (omitted obj) |
-|--------|------------------------|--------------------------|
+|--------|------------------------|---------------------------|
 | FLUX (no OSI) | 0.00 | 0.292 |
 | OSI on omitted token | **0.70** | **0.658** |
 | OSI on present token | 0.14 | 0.298 |
@@ -123,39 +120,37 @@ Intervention duration ($t_{\text{stop}}$):
 | MANIQA | 0.473 | 0.479 | 0.480 | **0.480** | 0.481 | 0.480 | 0.480 |
 
 ### Key Findings
-- **Direction is everything**: Reversing the intervention causes 6-obj accuracy to collapse from 0.18 to 0.02, showing that the mass mean shift direction is not an arbitrary steering—it precisely corresponds to the "concept realization" semantic axis; the wrong direction is worse than no intervention.
-- **Surgical intervention on top heads is essential**: Bottom-K is almost ineffective or even regressive, random is weak, all heads (1368) are strong but top-K surpasses them, indicating "few but precise" is better than "broad coverage," validating probe-based head selection.
-- **OSI's effect is token-specific**: Applying the same intervention to "already successfully generated" tokens yields little improvement (0.14 vs 0.70), proving OSI is not a universal "image enhancer" but truly targeted—it amplifies the "concept absence signal," ineffective for concepts not absent. This establishes a "causal link to concept generation."
-- **Major gains achieved in the first 5 steps**: At $t_{\text{stop}}=0.95$ (intervening only in the first 5 steps), accuracy is already 0.88, saturating at 0.92 by step 15; this confirms concept formation mainly occurs in early denoising, consistent with "perception prioritized" training theory. MANIQA remains stable, showing OSI does not degrade image quality.
-- **Trained on objects, generalizes to attributes**: The probe is trained only with object-level labels, but OSI is effective for color/shape/texture attribute binding, indicating the omission signal is a more general "semantic realization" concept.
+- **Direction is Everything**: Reverse intervention collapses 6-obj performance from 0.18 to 0.02, indicating that the mass mean shift direction is not arbitrary—it precisely corresponds to the semantic axis of concept realization.
+- **Surgical Intervention on Top Heads is Mandatory**: Intervention on bottom-K heads is ineffective, and "all heads" (1368) is outperformed by top-K. This validates the value of probe-based head selection.
+- **Token-Specific Effects**: Applying intervention to "already present" tokens yields almost no gain, proving OSI is not a universal quality enhancer but a targeted treatment for concept omission signals.
+- **Early Gains matter**: Intervention at $t_{\text{stop}}=0.95$ (first 5 steps) already achieves 0.88 accuracy, saturating at 0.92 by step 15. This aligns with training theories where perception is prioritized in early denoising.
+- **Generalization from Objects to Attributes**: Probes trained only on object-level labels enable OSI to improve color, shape, and texture binding, suggesting the omission signal is a general semantic realization concept.
 
 ## Highlights & Insights
-- **"The model actually knows what it has omitted" is a striking finding**: Using a 91% accuracy probe to quantify this internal awareness, then amplifying it into a controllable guidance signal via mass mean shift, the full chain of "diagnosis → intervention → verification" is established.
-- **Training-free with minimal extra computation**: Only key vectors are modified, only in top-K heads, only in the first 15 steps, with negligible overhead; this "surgical inference-time intervention" paradigm is a major engineering advance over fine-tuning or adding extra loss.
-- **"Amplifying the absence signal rather than injecting the presence signal" is counterintuitive but precise**: Intuitively, one might "make the model believe it has already drawn it," but in reality, "making the model believe it has omitted more" triggers its built-in correction mechanism. This suggests diffusion models may have learned an implicit "self-correction loop," and OSI simply amplifies its input signal.
-- **Mass Mean Shift + Probe is a general recipe for Diffusion Steering**: This approach (find signal-carrying heads → compute inter-class mean difference → push on key) can be directly transferred to style control, composition correction, concept fusion, and other controllability problems; essentially, it brings ITI (Inference-Time Intervention) from LLMs to MM-DiT.
-- **Data filtering tied to temporal structure**: The 0.409 / 0.965 / 1.000 agreement numbers precisely distinguish the usability of early/mid/late timestep data, embedding diffusion dynamics into representation analysis.
+- **"The model knows what it missed" is a profound discovery**: Quantifying this internal awareness with a 91% accurate probe and amplifying it into a steerable signal completes a "Diagnosis -> Intervention -> Verification" pipeline.
+- **Training-free with minimal computation**: Modifying only key vectors in top-K heads for 15 steps introduces negligible overhead, representing a major engineering leap over fine-tuning.
+- **Amplifying the "Absent" signal is counter-intuitive but effective**: Instead of making the model believe it has already drawn the object, the design makes the model believe it has missed more, triggering its internal self-correction loop.
+- **A General Formula for Diffusion Steering**: The methodology (identify signal heads -> compute mean difference -> steer keys) can be transferred to style control, composition, or concept fusion. 
+- **Temporal Data Filtering**: Distinguishing data availability between early, middle, and late timesteps (0.409/0.965/1.000 agreement) provides a masterclass in embedding diffusion dynamics into representation analysis.
 
 ## Limitations & Future Work
-- **Over-generation side effect** (Fig. 7): The authors acknowledge OSI sometimes "draws too much"—generating two or three objects when only one is needed. This requires tuning $\alpha$ and $K$, fundamentally due to the lack of a closed-loop stopping criterion.
-- Relies on "binary absent/present labels," making it hard to apply to ambiguous or subjective concepts (aesthetic style, relative quantities like "two or three")—the signal itself cannot be binarized.
-- Top-K and $\alpha$ are empirically set via grid search and must be retuned for different backbones; lacks automated calibration.
-- Probe reliability in dense 4-6 object scenarios is not separately evaluated; whether head selection should be prompt-conditional when prompts contain 5 concepts is not discussed.
-- The time window $[t_{\text{stop}}, 1]$ is static; theoretically, dynamic intervention could be implemented—monitoring real-time probe probabilities and extending intervention for tokens with persistently low probability, potentially further improving results.
-- Experiments focus on FLUX and SD3.5, not validated on other MM-DiT derivatives like Imagen / DALLE; the location and number of signal heads may be architecture-specific.
+- **Over-generation Side Effects** (Fig. 7): OSI can sometimes generate too many instances of an object (e.g., getting three when asking for one). This requires tuning $\alpha$ and $K$ due to a lack of a closed-loop stopping criterion.
+- **Binary Label Dependency**: Hard to apply to ambiguous or subjective concepts (aesthetic style, relative quantity "a few") where signals cannot be easily binarized.
+- **Empirical Hyperparameters**: Values for top-K and $\alpha$ are determined via grid search and may need re-tuning for different backbones.
+- **High-Density Reliability**: Probe reliability in scenes with 4-6 objects hasn't been independently evaluated.
+- **Static Time Window**: The window $[t_{\text{stop}}, 1]$ is static; monitoring real-time probe probabilities to dynamically adjust intervention duration could further improve results.
 
 ## Related Work & Insights
-- **vs Attend-and-Excite / A-STAR / Rassin et al.**: These methods add loss or optimization constraints to the cross-attention map, requiring backpropagation at each step and slowing inference; OSI only modifies keys during the forward pass, with negligible delay.
-- **vs TACA / PLADIS**: TACA balances text-image token counts via LoRA, PLADIS uses sparse attention, both altering attention computation; OSI does not change the process, only specific key values, making it lighter.
-- **vs Chen et al. (2024)**: They also analyze "concept confusion" in text embeddings but only at CLIP output (outside diffusion); OSI probes inside MM-DiT at the head level.
-- **vs ITI (Inference-Time Intervention, Li et al. 2023a)**: This work directly adopts the mass mean shift idea and transfers it from LLMs to diffusion key vectors; the contribution is discovering that "intermediate layer + intermediate timestep" in MM-DiT is the signal-rich region.
-- **Insights**: This paradigm of "probing semantic signals in internal representations → steering in the opposite direction at inference" is not only applicable to concept omission, but can also be extended to attribute binding (color leakage), spatial omission, negation understanding, long prompt consistency, and all controllability issues where "the model can sense but fails to execute."
+- **vs. Attend-and-Excite / A-STAR**: These methods add losses or optimization constraints to cross-attention maps, slowing inference due to backpropagation at each step. OSI operates on the forward pass with negligible latency.
+- **vs. TACA / PLADIS**: TACA balances text-image token counts via LoRA; PLADIS uses sparse attention. Both change attention computation, whereas OSI is a lighter modification of key values.
+- **vs. Chen et al. (2024)**: They analyzed concept confusion in CLIP outputs; OSI goes deeper into the internal head levels of MM-DiT.
+- **vs. ITI (Li et al. 2023a)**: OSI adapts mass mean shift from LLMs to diffusion key vectors, discovering that middle layers and timesteps are the signal-rich zones for MM-DiT.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ First to systematically transfer the ITI / mass mean shift paradigm from LLMs to MM-DiT internal key vectors, and to discover the counterintuitive but effective "amplify absence signal" direction.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Two MM-DiT backbones × 5 object densities × 3 attribute types × token-specific causal experiments × 4 hyperparameter ablations, covering a wide range.
-- Writing Quality: ⭐⭐⭐⭐⭐ Smooth "diagnosis → intervention → verification" narrative, with intuitive dynamic visualizations of probe probabilities in Figs. 3-4; clear correspondence between formulas and experiments.
-- Value: ⭐⭐⭐⭐⭐ Training-free, near-zero overhead, more than doubling FLUX 6-obj performance, with immediate value for industrial T2I deployment; paradigm extensible to other controllability problems.
+- **Novelty**: ⭐⭐⭐⭐⭐ Systematically transfers ITI/mass mean shift to MM-DiT keys and discovers the effective counter-intuitive "absent signal" direction.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Comprehensive coverage across backbones, object densities, attributes, and causality experiments.
+- **Writing Quality**: ⭐⭐⭐⭐⭐ Clear narrative flow from diagnosis to verification; excellent dynamic visualization of probe probabilities.
+- **Value**: ⭐⭐⭐⭐⭐ Training-free, zero-overhead, significant gains (doubled 6-obj accuracy on FLUX). Highly practical for industrial T2I deployment.
 
 <!-- RELATED:START -->
 
@@ -164,10 +159,10 @@ Intervention duration ($t_{\text{stop}}$):
 ## Related Papers
 
 - [\[ICCV 2025\] Rethinking Cross-Modal Interaction in Multimodal Diffusion Transformers](../../ICCV2025/image_generation/rethinking_cross-modal_interaction_in_multimodal_diffusion_transformers.md)
+- [\[ICML 2026\] Orthogonal Concept Erasure for Diffusion Models](orthogonal_concept_erasure_for_diffusion_models.md)
 - [\[ICCV 2025\] Exploring Multimodal Diffusion Transformers for Enhanced Prompt-based Image Editing](../../ICCV2025/image_generation/exploring_multimodal_diffusion_transformers_for_enhanced_prompt-based_image_edit.md)
 - [\[AAAI 2026\] Laytrol: Preserving Pretrained Knowledge in Layout Control for Multimodal Diffusion Transformers](../../AAAI2026/image_generation/laytrol_preserving_pretrained_knowledge_in_layout_control_fo.md)
-- [\[ICML 2026\] Krause Synchronization Transformers](krause_synchronization_transformers.md)
-- [\[AAAI 2026\] Mass Concept Erasure in Diffusion Models with Concept Hierarchy](../../AAAI2026/image_generation/mass_concept_erasure_in_diffusion_models_with_concept_hierarchy.md)
+- [\[ICML 2026\] Forget-It-All: Multi-Concept Machine Unlearning via Concept-Aware Neuron Masking](forget-it-all_multi-concept_machine_unlearning_via_concept-aware_neuron_masking.md)
 
 </div>
 

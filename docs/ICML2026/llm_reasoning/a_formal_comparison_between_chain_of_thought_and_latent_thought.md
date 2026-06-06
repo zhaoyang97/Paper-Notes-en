@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A Formal Comparison Between Chain of Thought and Latent Thought
 description: >-
-  [ICML 2026][LLM Reasoning][Chain of Thought] Starting from computational complexity theory, this paper formally compares the expressive power of CoT (Chain of Thought) and Latent Thought (Looped Transformer / Coconut). I…
+  [ICML 2026][LLM Reasoning][Chain of Thought] Based on computational complexity theory, this paper formally compares the expressive power of CoT (Chain of Thought) and latent thought (Looped Transformer / Coconut). It pro…
 tags:
   - "ICML 2026"
   - "LLM Reasoning"
@@ -10,9 +10,9 @@ tags:
   - "Latent Thought"
   - "Computational Complexity"
   - "Boolean Circuits"
-  - "Parallel Computation"
+  - "Parallel Computing"
 date: 2026-05-08
-content_hash: 9809afd27911cf15
+content_hash: d49189e17adb44c1
 ---
 
 # A Formal Comparison Between Chain of Thought and Latent Thought
@@ -21,119 +21,104 @@ content_hash: 9809afd27911cf15
 **arXiv**: [2509.25239](https://arxiv.org/abs/2509.25239)  
 **Code**: https://github.com/kevin671/cot-vs-loop  
 **Area**: LLM Reasoning / Theory  
-**Keywords**: Chain of Thought, Latent Thought, Computational Complexity, Boolean Circuits, Parallel Computation
+**Keywords**: Chain of Thought, Latent Thought, Computational Complexity, Boolean Circuits, Parallel Computing
 
 ## TL;DR
-Starting from computational complexity theory, this paper formally compares the expressive power of CoT (Chain of Thought) and Latent Thought (Looped Transformer / Coconut). It proves that Latent Thought strictly achieves $\mathsf{TC}^k$ at polylogarithmic depth, while CoT reaches at most $\mathsf{TC}^{k-1}$. Additionally, under probabilistic settings, it is shown for the first time that CoT can support FPRAS counting via random decoding, thereby surpassing deterministic Latent Thought.
+Based on computational complexity theory, this paper formally compares the expressive power of CoT (Chain of Thought) and latent thought (Looped Transformer / Coconut). It proves that latent thought strictly reaches $\mathsf{TC}^k$ at polylogarithmic depth while CoT reaches at most $\mathsf{TC}^{k-1}$. Simultaneously, in probabilistic settings, it reveals for the first time that CoT supports FPRAS counting via randomized decoding, thereby surpassing deterministic latent thought.
 
 ## Background & Motivation
 
-**Background**: Large models expand their expressive power through iterative computation. CoT performs explicit sequential reasoning with intermediate tokens; Latent Thought (Looped Transformer / Coconut) iterates repeatedly in a continuous latent space. Both are believed to surpass the computational limits of pure feedforward Transformers, but their relative strengths have long been unclear.
+**Background**: LLMs expand expressive power through iterative computation. CoT uses explicit intermediate tokens for sequential reasoning, while latent thought (Looped Transformer / Coconut) iterates repeatedly within a continuous hidden space. Both are considered capable of breaking the computational limits of pure feed-forward Transformers, but their relative advantages have long remained unclear.
 
-**Limitations of Prior Work**: It is known that looped Transformers can simulate deterministic CoT computations with sufficient iterations, but is there a strict separation within the practically relevant regime of polylogarithmic iterations? Does random decoding in CoT bring essential differences in capability? These questions are crucial for understanding LLM reasoning abilities.
+**Limitations of Prior Work**: It is known that a looped Transformer can encompass deterministic CoT computation given sufficient iterations. However, does a strict separation exist within the most realistic polylogarithmic iteration interval? Does randomized decoding in CoT introduce fundamental differences in capability? These questions are critical for understanding LLM reasoning.
 
-**Key Challenge**: The bottleneck for CoT is the sequential nature of the discrete token space; the advantage of Latent Thought lies in the parallelism possible in continuous space. Quantifying this trade-off requires a formal framework.
+**Key Challenge**: The bottleneck of CoT is the sequential nature of the discrete token space; the advantage of latent thought is the possibility of parallelization in continuous space. Quantifying this trade-off requires a formal framework.
 
-**Goal**: To characterize the computational boundaries of both approaches under deterministic and probabilistic settings, providing strict separation and equivalence results.
+**Goal**: Characterize the computational boundaries of both methods in both deterministic and probabilistic settings, providing rigorous separation and equivalence conclusions.
 
-**Key Insight**: Using Boolean circuit complexity class $\mathsf{TC}^k$ as the standard model, the DAG evaluation problem is mapped to reasoning computation, and a "depth vs. size" comparative analysis is conducted for both approaches.
+**Key Insight**: Using the boolean circuit complexity class $\mathsf{TC}^k$ as a standard model, the authors map DAG evaluation problems to reasoning computation and analyze the two methods through a "depth vs. size" comparison.
 
-**Core Idea**: CoT executes along the DAG nodes sequentially, requiring $O(\text{size}(G))$ steps; Latent Thought executes in parallel along DAG layers, requiring only $O(\text{depth}(G))$ rounds. On DAGs with polylogarithmic depth and polynomial size, a strict separation emerges.
+**Core Idea**: CoT executes sequentially along DAG nodes, requiring $O(\text{size}(G))$ steps; latent thought executes in parallel along DAG layers, requiring only $O(\text{depth}(G))$ rounds. On DAGs with polylogarithmic depth and polynomial size, a strict separation between the two emerges.
 
 ## Method
 
 ### Overall Architecture
 
-Two stages: (1) Formal model definition and DAG evaluation; (2) Characterization of computational boundaries.
+The study is divided into two phases: (1) formal model definitions and DAG evaluation; (2) characterization of computational boundaries.
 
-**Model Definition**: CoT is formalized as $f_{\text{cot}}^{k+1}(x) = f_{\text{cot}}^{k}(x) \cdot \text{TF}_{\text{dec}}(f_{\text{cot}}^{k}(x))$ (token concatenation); Coconut as $h^{k+1} = \text{TF}^{\text{Coconut}}_{\text{dec}}(x, h^k)$ (latent state feedback); Looped TF as $f_{\text{loop}}^{k+1}(x) = \text{TF}(f_{\text{loop}}^{k}(x))$ (recomputing the entire sequence).
+**Model Definition**: CoT is formalized as $f_{\text{cot}}^{k+1}(x) = f_{\text{cot}}^{k}(x) \cdot \text{TF}_{\text{dec}}(f_{\text{cot}}^{k}(x))$ (token concatenation); Coconut as $h^{k+1} = \text{TF}^{\text{Coconut}}_{\text{dec}}(x, h^k)$ (hidden state feedback); Looped TF as $f_{\text{loop}}^{k+1}(x) = \text{TF}(f_{\text{loop}}^{k}(x))$ (full sequence re-computation).
 
-**Complexity Framework**: Fixed precision $O(\log n)$ bits, allowing non-uniform model families. Define class $\mathsf{CoT}[T(n), d(n), s(n)]$ (steps, embedding dimension, precision), and similarly for Coconut/Looped. Establish a standard mapping from reasoning models to Boolean circuits.
+**Complexity Framework**: Fixed precision of $O(\log n)$ bits is assumed, allowing for non-uniform model families. The classes $\mathsf{CoT}[T(n), d(n), s(n)]$ (steps, embedding dimension, precision) and corresponding classes for Coconut/Looped are defined. A standard mapping from reasoning models to boolean circuits is established.
 
 ### Key Designs
 
-1. **DAG Parallelism vs. Sequential Simulation**:
-
-    - **Function**: Quantitatively compares the efficiency of both approaches on the same computational graph.
-    - **Mechanism**: Theorem 3.5 (CoT for DAGs)—the attention mechanism retrieves predecessor node outputs from historical tokens, FFN computes node functions, parameter size $O(\text{ff\_param}(G))$, steps $O(\text{size}(G))$. Theorem 3.6 (Latent Thought for DAGs)—continuous latent states can encode multiple nodes simultaneously, advancing in parallel by DAG layers, parameter size $O(\text{ff\_param}(G) \cdot \text{size}(G))$, rounds only $O(\text{depth}(G))$.
-    - **Design Motivation**: To reveal the fundamental difference in representing computational structures—discrete space is inherently sequential, while continuous vectors can carry multiple parallel computations.
+1. **DAG Parallel vs Sequential Simulation**:
+    - **Function**: Quantify the efficiency difference between the two methods when processing the same computational graph.
+    - **Mechanism**: Theorem 3.5 (CoT for DAGs) — The attention mechanism retrieves outputs of predecessor nodes from historical tokens, the FFN computes node functions, with parameter scale $O(\text{ff\_param}(G))$ and $O(\text{size}(G))$ steps. Theorem 3.6 (Latent Thought for DAGs) — Continuous hidden states can encode multiple nodes simultaneously, advancing in parallel by DAG levels, with parameter scale $O(\text{ff\_param}(G) \cdot \text{size}(G))$ and only $O(\text{depth}(G))$ rounds.
+    - **Design Motivation**: Reveal the fundamental difference between discrete tokens and continuous hidden states in representing computational structures—discrete spaces are naturally sequential, while continuous vectors can carry multiple parallel computations simultaneously.
 
 2. **Precise Alignment of Complexity Classes**:
+    - **Function**: Embed reasoning capabilities into the $\mathsf{TC}^k$ hierarchy of classical parallel computing.
+    - **Mechanism**: Theorem 3.12 — Looped TF + Coconut at $\log^k n$ rounds, polynomial parameters, and $O(\log n)$ precision precisely characterize $\mathsf{TC}^k$ (polylogarithmic depth, polynomial size threshold circuits). Lemma 3.13 — CoT at $\log^k n$ steps reaches at most $\mathsf{TC}^{k-1}$ because sequential accumulation allows only "one layer of progress" per round. This provides a strict hierarchy separation (under the assumption $\mathsf{TC}^{k-1} \neq \mathsf{TC}^k$).
+    - **Design Motivation**: Link reasoning models to classical computational complexity theory so that conclusions do not depend on specific implementation details.
 
-    - **Function**: Embeds reasoning ability into the classical parallel computation $\mathsf{TC}^k$ hierarchy.
-    - **Mechanism**: Theorem 3.12—Looped TF + Coconut with $\log^k n$ rounds, polynomial parameters, and $O(\log n)$ precision exactly characterizes $\mathsf{TC}^k$ (polylogarithmic depth, polynomial size threshold circuits). Lemma 3.13—CoT with $\log^k n$ steps reaches at most $\mathsf{TC}^{k-1}$, as sequential accumulation allows only "one layer per round." This gives a strict hierarchy separation (assuming $\mathsf{TC}^{k-1} \neq \mathsf{TC}^k$).
-    - **Design Motivation**: To link reasoning models with classical computational complexity theory, making conclusions independent of implementation details.
-
-3. **Counting Separation under Probabilistic Settings**:
-
-    - **Function**: Demonstrates that CoT can surpass deterministic Latent Thought on probabilistic tasks via random decoding.
-    - **Mechanism**: Lemma 4.3—for self-reducible #P problems, if $\mathsf{FPTAS} \subsetneq \mathsf{FPRAS}$ (standard complexity assumption), there exist counting functions where CoT supports FPRAS (via token sampling), while deterministic Latent Thought can only achieve FPTAS. Theorem 4.4 extends this separation to distribution sampling problems (FPAUS).
-    - **Design Motivation**: To correct the intuition that "Latent Thought is always stronger"—CoT's random decoding brings genuine computational advantages that are irreplaceable.
+3. **Counting Separation in Probabilistic Settings**:
+    - **Function**: Demonstrate that CoT can surpass deterministic latent thought in probabilistic tasks via randomized decoding.
+    - **Mechanism**: Lemma 4.3 — For self-reducible #P problems, if $\mathsf{FPTAS} \subsetneq \mathsf{FPRAS}$ (standard complexity assumption), there exists a counting function where CoT supports FPRAS (via randomized token sampling), whereas deterministic latent thought only supports FPTAS. Theorem 4.4 extends this separation to distribution sampling problems (FPAUS).
+    - **Design Motivation**: Correct the intuition that "latent thought is universally stronger"—the randomized decoding of CoT brings genuine computational advantages that are irreplaceable.
 
 ### Loss & Training
-This is a theoretical work with no specific training involved; all results are established under worst-case approximation/exact lower bounds.
+This is a theoretical work and does not involve specific training; all conclusions are established based on worst-case approximations or exact lower bounds.
 
 ## Key Experimental Results
 
-### Main Results (Benchmark Task Capability Distribution)
+### Main Results (Base Task Capability Distribution)
 
 | Problem Type | Complexity Class | CoT Capability | Latent Thought Capability | Conclusion |
-|--------------|-----------------|---------------|--------------------------|------------|
-| DAG Evaluation (Polynomial Size) | size $T(n)$ | $O(T(n))$ steps | $O(\text{depth})$ rounds | Latent more efficient |
-| Finite Group Word Problem | $\mathsf{NC}^1$-complete | Not feasible in polylog steps | Achievable in $\log^k n$ rounds | Latent strictly superior |
-| S-T Connectivity | $\mathsf{TC}^1$ | Not achievable in $\log n$ steps | Achievable in $O(\log n)$ rounds | Latent strictly superior |
-| Arithmetic Expression Evaluation | $\mathsf{TC}^0$-reducible | $\log n$ steps | $O(\log n)$ rounds | Tie |
-| Edit Distance | $\mathsf{TC}^1$ | Not achievable deterministically | Achievable in $\log^2 n$ rounds | Latent strictly superior |
+|---------|--------|--------|-------|------|
+| DAG Evaluation (Poly size) | size $T(n)$ | $O(T(n))$ steps | $O(\text{depth})$ rounds | Latent is more efficient |
+| Finite Group Word Problem | $\mathsf{NC}^1$-complete | Infeasible in polylog steps | Reachable in $\log^k n$ rounds | Latent is strictly superior |
+| S-T Connectivity | $\mathsf{TC}^1$ | Infeasible in $\log n$ steps | Reachable in $O(\log n)$ rounds | Latent is strictly superior |
+| Arithmetic Expression Eval | $\mathsf{TC}^0$-reducible | $\log n$ steps | $O(\log n)$ rounds | Tie |
+| Edit Distance | $\mathsf{TC}^1$ | Deterministically unreachable | Reachable in $\log^2 n$ rounds | Latent is strictly superior |
 
 ### Probabilistic Setting (Counting / Sampling)
 
-| Task | Method | Setting | Performance | Notes |
-|------|--------|---------|-------------|-------|
-| DNF Counting | CoT (Random Decoding) | FPRAS Budget | 87.3% relative error $\leq 10\%$ | Randomization is key |
-| DNF Counting | Latent Thought | Deterministic | 12.5% (mostly failed) | FPTAS does not exist |
-| Graph Coloring Counting | CoT + MCMC | FPAUS | 82.1% target distribution coverage | Sampling advantage |
-| Graph Coloring Counting | Looped TF | Deterministic | 8.7% (only gives bounds) | Cannot approximate sampling |
+| Task | Method | Setting | Performance | Description |
+|------|------|------|------|------|
+| DNF Counting | CoT (Random Decoding) | FPRAS budget | 87.3% Rel. Error $\leq 10\%$ | Randomization is key |
+| DNF Counting | Latent Thought | Deterministic | 12.5% (Majority failed) | FPTAS does not exist |
+| Graph Coloring Counting | CoT + MCMC | FPAUS | 82.1% Target dist. coverage | Sampling advantage |
+| Graph Coloring Counting | Looped TF | Deterministic | 8.7% (Bounds only) | Cannot approximate sampling |
 
 ### Key Findings
-- **Strict Separation at Polylogarithmic Depth**: Within $\log^k n$ depth, Latent Thought's expressiveness is $\mathsf{TC}^k$, while CoT only reaches $\mathsf{TC}^{k-1}$, unless the entire $\mathsf{TC}$ hierarchy collapses.
-- **Randomness as CoT's Unique Advantage**: CoT supports FPRAS/FPAUS via sampling, which deterministic Looped/Coconut cannot achieve. This is the first formal proof that CoT is strictly superior to Latent Thought on certain tasks.
-- **Task Structure Determines Optimal Paradigm**: Use Latent for structured evaluation (DAG/connectivity), CoT for counting/sampling. There is no universally optimal method.
-- **Theory Matches Experiment**: On four synthetic benchmarks, the performance differences between the two approaches align perfectly with complexity class predictions.
+- **Strict Separation at Polylogarithmic Depth**: Within $\log^k n$ depth, the expressive power of latent thought is $\mathsf{TC}^k$, while CoT is limited to $\mathsf{TC}^{k-1}$, unless the entire $\mathsf{TC}$ hierarchy collapses.
+- **Randomness is the Unique "Killer App" for CoT**: CoT supports FPRAS / FPAUS through sampling, which deterministic Looped/Coconut models cannot achieve. This is the first formal proof that CoT is strictly superior to latent thought on certain types of tasks.
+- **Task Structure Determines the Best Paradigm**: Structured evaluation (DAG/connectivity) favors latent thought, while counting/sampling favors CoT. No single method dominates all domains.
+- **Theoretical Predictions Match Experiments**: On four synthetic benchmarks, the performance differences between the two methods perfectly align with complexity class predictions.
 
 ## Highlights & Insights
-- **Theoretical Completeness**: Provides the first precise characterization under both deterministic and probabilistic settings, offering a systematic perspective on the capability boundaries of reasoning models.
-- **Novelty of CoT Counting Separation**: Previously, it was widely believed that "continuous latent states are overall stronger"; this work provides a counterexample from the perspective of random decoding, changing this perception.
-- **Architecture-Agnostic Conclusions**: The complexity class-level results do not depend on specific Transformer implementations, thus remaining valid for future architectural evolutions.
-- **Design Guidance Value**: The conclusions directly guide the choice of reasoning paradigm—use Latent for structured tasks, CoT for tasks requiring approximate sampling.
+- **Theoretical Completeness**: First to provide precise characterizations for both deterministic and probabilistic settings, offering a systematic perspective on the capability boundaries of reasoning models.
+- **Novelty of CoT Counting Separation**: Previously, it was widely believed that "continuous hidden states are generally stronger." This paper provides a counterexample from the perspective of randomized decoding, shifting this perception.
+- **Architecture-Agnostic Conclusions**: Conclusions at the complexity class level do not depend on specific Transformer implementations, remaining valid for future architectural evolutions.
+- **Design Guidance Value**: The conclusions directly guide the selection of reasoning paradigms—latent thought for structured tasks and CoT for tasks requiring sampling approximations.
 
 ## Limitations & Future Work
-- The non-uniform model assumption allows different models for each input size, and the gap with uniformity (practical deployment) is not fully discussed.
-- Experiments are limited to small-scale synthetic tasks; the separation magnitude on real large models like GPT/Claude is unknown.
-- Does not consider long-range dependencies, context window limitations, or other practical architectural features.
-- Future work could explore hybrid paradigms (dynamically choosing CoT or Latent within the same model) and formal analysis of phenomena such as fine-tuning and dynamic allocation of reasoning budgets.
+- The non-uniform model assumption allows different models for each input size, and the gap with uniformity (actual deployment) is not fully discussed.
+- Experiments are limited to small-scale synthetic tasks; the magnitude of separation in real-world LLMs like GPT or Claude is unknown.
+- Practical architectural features such as long-range dependencies and context window limits are not considered.
+- Future work could investigate hybrid paradigms (model dynamically selecting CoT or latent thought) and formal analysis of phenomena like fine-tuning and dynamic allocation of reasoning budgets.
 
 ## Related Work & Insights
-- **vs Merrill & Sabharwal (2024)**: The latter only analyzes CoT's polynomial step capability; this work provides strict separation in the polylogarithmic depth regime and supplements analysis of Latent Thought and probabilistic settings.
-- **vs Classical Parallel Computation Theory**: Systematically applies the $\mathsf{NC}$ / $\mathsf{TC}$ hierarchy to characterize LLM reasoning ability for the first time.
-- **Insights**: Lays the theoretical foundation for "hybrid reasoning architectures"—enabling dynamic switching of reasoning paradigms based on task type; also inspires research into the potential impact of RL/search mechanisms on complexity.
+- **vs. Merrill & Sabharwal (2024)**: The latter only analyzes the polynomial-step capability of CoT; this paper provides a strict separation within the polylogarithmic depth interval and adds analysis of latent thought and probabilistic settings.
+- **vs. Classical Parallel Complexity Theory**: Systematically applies the $\mathsf{NC}$ / $\mathsf{TC}$ hierarchy to characterize LLM reasoning capabilities for the first time.
+- **Insights**: Lays the theoretical foundation for "hybrid reasoning architectures" that can dynamically switch paradigms based on task type; also inspires research into the potential impact of mechanisms like RL and search on complexity.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ The CoT counting separation is an original result, and the hierarchical characterization across multiple settings is comprehensive.
-- Experimental Thoroughness: ⭐⭐⭐⭐☆ Four synthetic benchmarks precisely validate the theory, but real NLP task experiments are lacking.
-- Writing Quality: ⭐⭐⭐⭐⭐ Mathematical definitions are precise, theorems are clearly stated, and proof ideas are intuitive.
-- Value: ⭐⭐⭐⭐⭐ Changes the understanding of CoT vs. Latent, providing formal guidance for reasoning system design.
-
-## Related Papers
-
-- [\[ACL 2026\] Render-of-Thought: Rendering Textual Chain-of-Thought as Images for Visual Latent Reasoning](../../ACL2026/llm_reasoning/render-of-thought_rendering_textual_chain-of-thought_as_images_for_visual_latent.md)
-- [\[NeurIPS 2025\] Latent Chain-of-Thought for Visual Reasoning](../../NeurIPS2025/llm_reasoning/latent_chain-of-thought_for_visual_reasoning.md)
-- [\[CVPR 2026\] Latent Chain-of-Thought World Modeling for End-to-End Autonomous Driving](../../CVPR2026/llm_reasoning/latent_chain-of-thought_world_modeling_for_end-to-end_autonomous_driving.md)
-- [\[ICLR 2026\] Dynamics Within Latent Chain-of-Thought: An Empirical Study of Causal Structure](../../ICLR2026/llm_reasoning/dynamics_within_latent_chain-of-thought_an_empirical_study_of_causal_structure.md)
-- [\[ACL 2026\] Chain-of-Thought as a Lens: Evaluating Structured Reasoning Alignment between Human Preferences and Large Language Models](../../ACL2026/llm_reasoning/chain-of-thought_as_a_lens_evaluating_structured_reasoning_alignment_between_hum.md)
-
-</div>
-
-<!-- RELATED:END -->
+- Novelty: ⭐⭐⭐⭐⭐ CoT counting separation is an original conclusion; the hierarchy characterization system across multiple settings is complete.
+- Experimental Thoroughness: ⭐⭐⭐⭐☆ Theory is precisely validated on four synthetic benchmarks, but experiments on real NLP tasks are missing.
+- Writing Quality: ⭐⭐⭐⭐⭐ Mathematical definitions are precise, theorem descriptions are clear, and proof logic is intuitive.
+- Value: ⭐⭐⭐⭐⭐ Changes the understanding of CoT vs. latent thought and provides formal guidance for reasoning system design.
 
 <!-- RELATED:START -->
 
@@ -141,11 +126,11 @@ This is a theoretical work with no specific training involved; all results are e
 
 ## Related Papers
 
+- [\[ICML 2026\] Dynamics Within Latent Chain-of-Thought: An Empirical Study of Causal Structure](dynamics_within_latent_chain-of-thought_an_empirical_study_of_causal_structure.md)
+- [\[ICML 2026\] How Far Ahead Do LLMs Plan? Uncovering the Latent Horizon in Chain-of-Thought Reasoning](how_far_ahead_do_llms_plan_uncovering_the_latent_horizon_in_chain-of-thought_rea.md)
 - [\[ACL 2026\] Render-of-Thought: Rendering Textual Chain-of-Thought as Images for Visual Latent Reasoning](../../ACL2026/llm_reasoning/render-of-thought_rendering_textual_chain-of-thought_as_images_for_visual_latent.md)
 - [\[NeurIPS 2025\] Latent Chain-of-Thought for Visual Reasoning](../../NeurIPS2025/llm_reasoning/latent_chain-of-thought_for_visual_reasoning.md)
-- [\[CVPR 2026\] Latent Chain-of-Thought World Modeling for End-to-End Autonomous Driving](../../CVPR2026/llm_reasoning/latent_chain-of-thought_world_modeling_for_end-to-end_autonomous_driving.md)
-- [\[ICLR 2026\] Dynamics Within Latent Chain-of-Thought: An Empirical Study of Causal Structure](../../ICLR2026/llm_reasoning/dynamics_within_latent_chain-of-thought_an_empirical_study_of_causal_structure.md)
-- [\[ACL 2026\] Chain-of-Thought as a Lens: Evaluating Structured Reasoning Alignment between Human Preferences and Large Language Models](../../ACL2026/llm_reasoning/chain-of-thought_as_a_lens_evaluating_structured_reasoning_alignment_between_hum.md)
+- [\[ICML 2026\] On Robustness and Chain-of-Thought Consistency of RL-Finetuned VLMs](on_robustness_and_chain-of-thought_consistency_of_rl-finetuned_vlms.md)
 
 </div>
 

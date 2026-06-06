@@ -2,128 +2,125 @@
 title: >-
   [Paper Note] Common to Whom? Regional Cultural Commonsense and LLM Bias in India
 description: >-
-  [ACL 2026][LLM Evaluation][Cultural commonsense] This paper introduces Indica, the first benchmark for evaluating LLM performance on sub-national cultural commonsense…
+  [ACL 2026][LLM Evaluation][Cultural Commonsense] This paper introduces Indica, the first benchmark for evaluating sub-national cultural commonsense in LLMs. Focusing on cultural variations across five major regions of In…
 tags:
   - "ACL 2026"
   - "LLM Evaluation"
-  - "Cultural commonsense"
-  - "regional bias"
-  - "Indian cultural diversity"
-  - "benchmark construction"
-  - "LLM bias"
+  - "Cultural Commonsense"
+  - "Regional Bias"
+  - "Indian Cultural Diversity"
+  - "Benchmark Construction"
+  - "LLM Bias"
 date: 2026-05-08
-content_hash: 52022e004d6f3adf
+content_hash: 09886484cab4f012
 ---
 
 # Common to Whom? Regional Cultural Commonsense and LLM Bias in India
 
-**Conference**: ACL 2026
+**Conference**: ACL 2026  
 **arXiv**: [2601.15550](https://arxiv.org/abs/2601.15550)  
 **Code**: None  
-**Area**: LLM Evaluation
-**Keywords**: Cultural commonsense, regional bias, Indian cultural diversity, benchmark construction, LLM bias
+**Area**: LLM Evaluation  
+**Keywords**: Cultural Commonsense, Regional Bias, Indian Cultural Diversity, Benchmark Construction, LLM Bias
 
 ## TL;DR
 
-This paper introduces Indica, the first benchmark for evaluating LLM performance on sub-national cultural commonsense, focusing on cultural differences across five regions of India in eight domains of everyday life. Only 39.4% of questions reach consensus across all five regions, and all evaluated LLMs exhibit geographic bias—systematically over-selecting Central and North India as the "default" cultural representative.
+This paper introduces Indica, the first benchmark for evaluating sub-national cultural commonsense in LLMs. Focusing on cultural variations across five major regions of India across eight daily life domains, the study finds that only 39.4% of questions reach consensus across all five regions. Furthermore, all evaluated LLMs exhibit geographic bias, frequently selecting Central and North India as the "default" cultural representatives.
 
 ## Background & Motivation
 
-**Background**: Cultural commonsense benchmarks (e.g., CultureBank, CulturalBench) have begun addressing cross-cultural variation, but treat nations as culturally monolithic entities, assuming uniform cultural practices within a country.
+**Background**: Cultural commonsense benchmarks (e.g., CultureBank, CulturalBench) have begun to address cross-cultural differences, but they often treat countries as cultural monoliths, assuming uniform cultural practices within national borders.
 
-**Limitations of Prior Work**: (1) Existing benchmarks evaluate cultural commonsense at the national level, ignoring sub-national cultural diversity. (2) Existing Indian NLP benchmarks focus on factual knowledge from textbooks and examinations, treating Indian culture as a single homogeneous entity. (3) LLMs may exhibit systematic bias toward certain regions within culturally diverse countries, yet no tool exists to detect this.
+**Limitations of Prior Work**: (1) Existing benchmarks evaluate cultural commonsense at the national level, ignoring sub-national cultural diversity; (2) Current Indian NLP benchmarks focus on factual knowledge from textbooks and exams, treating Indian culture as a singular entity; (3) LLMs may harbor systematic biases toward specific regions in culturally diverse countries, yet tools to detect such biases are lacking.
 
-**Key Challenge**: In a country like India—with 28 states, 8 union territories, and 22 official languages—"cultural commonsense" cannot be nationally uniform. Yet LLMs must implicitly make regional choices when generating cultural information, and these implicit choices may reflect geographic biases in training data.
+**Key Challenge**: In a country like India, with 28 states, 8 union territories, and 22 official languages, "cultural commonsense" cannot be nationally uniform. However, LLMs must make regional choices when describing a cultural practice; these implicit choices may reflect geographic biases present in training data.
 
-**Goal**: (1) Quantify the degree of regional variation in Indian cultural commonsense. (2) Evaluate LLM accuracy on region-specific cultural knowledge. (3) Detect implicit regional bias in LLMs when geographic context is absent.
+**Goal**: (1) Quantify the extent of regional variation in Indian cultural commonsense; (2) Evaluate LLM accuracy on region-specific cultural knowledge; (3) Detect implicit regional biases in LLMs when geographic context is absent.
 
-**Key Insight**: Eight everyday cultural domains are designed based on the Outline of Cultural Materials (OCM) anthropological taxonomy. Human-annotated answers are collected from five Indian regions to construct a region-specific cultural commonsense benchmark.
+**Key Insight**: Design eight everyday cultural domains based on the Outline of Cultural Materials (OCM) and collect human-annotated responses from five Indian regions to build a region-specific cultural commonsense benchmark.
 
-**Core Idea**: Cultural commonsense in a multicultural country is primarily regional rather than national; LLMs exhibit systematic geographic bias when handling such knowledge.
+**Core Idea**: Cultural commonsense in multicultural nations is primarily regional rather than national; LLMs exhibit systematic geographic bias when processing such knowledge.
 
 ## Method
 
 ### Overall Architecture
 
-The Indica construction pipeline proceeds as follows: (1) Eight cultural domains are selected based on OCM → 39 topics → 515 questions. (2) Five participants per region are recruited from five Indian regions (North, South, East, West, Central) to answer all questions (15,275 responses total). (3) A gold standard is established through three levels of consensus: intra-regional, inter-regional, and pan-regional.
+The construction process of Indica: (1) Select 8 cultural domains → 39 themes → 515 questions based on OCM; (2) Recruit 5 participants from each of the five regions (North, South, East, West, Central) to answer all questions (totaling 15,275 responses); (3) Establish gold standards through three-tier consensus: intra-region, inter-region, and all-India consensus.
 
 ### Key Designs
 
-1. **OCM-Based Question Design**:
+1.  **Anthropology-based Question Design**:
+    *   **Function**: Ensure questions cover key dimensions of daily cultural practices.
+    *   **Mechanism**: Select 8 domains related to everyday cultural knowledge (Interpersonal Relations, Education, Clothing, Food/Drink, Communication, Finance, Festivals/Rituals, Transportation) from over 90 OCM categories. Select 2-4 non-overlapping sub-themes per domain, generate questions using GPT-4, and perform manual review.
+    *   **Design Motivation**: Ensure focus on everyday practices rather than institutional knowledge, with sufficient diversity to reveal regional differences.
 
-    - Function: Ensures questions cover key dimensions of everyday cultural practice.
-    - Mechanism: Eight domains relevant to everyday cultural knowledge are selected from OCM's 90+ top-level categories (interpersonal relations, education, clothing, food, communication, finance, festivals and rituals, transportation behavior). For each domain, 2–4 non-overlapping sub-topics are chosen; GPT-4 assists in question generation, followed by human review.
-    - Design Motivation: Ensures questions target everyday practices rather than institutional knowledge, with sufficient diversity to surface regional differences.
+2.  **Dual-Task Evaluation (RASA + RA-MCQ)**:
+    *   **Function**: Separately evaluate regional knowledge accuracy and implicit geographic bias.
+    *   **Mechanism**: RASA (Region-Anchored Short Answer) — provides regional context (e.g., "In South India...") to test the ability to generate accurate regional knowledge. RA-MCQ (Region-Agnostic Multiple Choice Question) — removes geographic context to observe which regional practice the model selects by default.
+    *   **Design Motivation**: RASA tests knowledge, while RA-MCQ tests bias, providing two complementary perspectives for a comprehensive cultural representation evaluation.
 
-2. **Dual-Task Evaluation Design (RASA + RA-MCQ)**:
-
-    - Function: Separately evaluates regional knowledge accuracy and implicit geographic bias.
-    - Mechanism: RASA (Region-Anchored Short Answer)—given regional context (e.g., "In South India…"), tests the model's ability to generate accurate region-specific cultural knowledge. RA-MCQ (Region-Agnostic Multiple Choice)—removes geographic context and observes which region's cultural practices the model defaults to, revealing implicit bias.
-    - Design Motivation: RASA tests knowledge; RA-MCQ tests bias—two complementary perspectives for a comprehensive evaluation of LLM cultural representation.
-
-3. **Three-Level Consensus Gold Standard**:
-
-    - Function: Establishes reliable region-specific cultural commonsense annotations.
-    - Mechanism: Intra-regional consensus (≥4/5 participants' answers are semantically equivalent); inter-regional consensus (two regions' answers are fully consistent); pan-regional consensus (all five regions' answers agree). GPT-4o performs initial classification, followed by complete review by two human annotators.
-    - Design Motivation: Rigorous consensus criteria ensure the gold standard reflects genuine regional cultural practices rather than individual preferences.
+3.  **Three-Tier Consensus Gold Standard**:
+    *   **Function**: Establish reliable regional cultural commonsense annotations.
+    *   **Mechanism**: Intra-region consensus ($\geq 4/5$ participants' answers are semantically equivalent), Inter-region consensus (two regional answers match perfectly), and All-India consensus (answers from all five regions match). After initial GPT-4o classification, two human annotators perform a full review.
+    *   **Design Motivation**: Strict consensus standards ensure the gold standard reflects actual regional practices rather than individual preferences.
 
 ### Loss & Training
 
-Indica is an evaluation benchmark and does not involve model training. Evaluation uses Gemini 3.0 Flash as the LLM judge; each question is run 30 times to mitigate randomness, and a chi-square goodness-of-fit test is applied to assess the statistical significance of bias.
+Indica is an evaluation benchmark and does not involve model training. Evaluation utilizes Gemini 1.5 Flash as an LLM judge. Each question is run 30 times to eliminate randomness, and Chi-square Goodness-of-Fit tests are used to evaluate the statistical significance of bias.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**RASA Region-Specific Knowledge Accuracy (%)**
+**RASA Regional Knowledge Accuracy (%)**
 
-| Model | North | South | East | West | Central | Avg. |
-|-------|-------|-------|------|------|---------|------|
+| Model | North | South | East | West | Central | Average |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | GPT-4o | ~20 | ~19 | ~15 | ~18 | ~20 | 20.9 |
 | Claude 3.5 | ~19 | ~18 | ~14 | ~17 | ~19 | 19.3 |
-| Lowest model | - | - | - | - | - | 13.4 |
+| Lowest Model | - | - | - | - | - | 13.4 |
 
 ### Ablation Study
 
 | Analysis Dimension | Finding |
-|--------------------|---------|
-| Pan-regional consensus rate | Only 39.4% of questions reach consensus across all regions |
-| Domain-level variation | Transportation behavior is highest (22.6%); festivals and rituals is lowest (1.8%) |
-| Regional pair bias | North–Central is highest (68.3%); South–East is lowest (60.1%) |
+| :--- | :--- |
+| All-India Consensus Rate | Only 39.4% of questions reach consensus across all regions. |
+| Domain Differences | Transportation highest (22.6%), Festivals/Rituals lowest (1.8%). |
+| Regional Pair Bias | North-Central highest (68.3%), South-East lowest (60.1%). |
 
 ### Key Findings
 
-- Only 39.4% of questions have a consensus answer across all five regions—cultural commonsense in India is primarily regional.
-- All 8 LLMs achieve only 13.4%–20.9% accuracy on region-specific questions, far below a usable level.
-- RA-MCQ reveals systematic bias in all models: responses associated with Central and North India are over-selected (30–40% above expectation), while East and West are underrepresented.
-- Even in domains such as education, which has a nationally unified curriculum, regional practice variation remains significant (only 13.8% pan-regional consensus).
-- The festivals and rituals domain exhibits the greatest divergence (1.8% pan-regional consensus), reflecting strong regional traditions.
+*   Only 39.4% of questions have consensus answers across all five regions — cultural commonsense in India is predominantly regional.
+*   All 8 LLMs show low accuracy (13.4%-20.9%) on region-specific questions, far below practical utility levels.
+*   RA-MCQ reveals systematic bias in all models: Central and North Indian responses are over-selected (30-40% higher than expected), while East and West are underrepresented.
+*   Even in domains like Education with national curricula, regional practice differences remain significant (only 13.8% all-India consensus).
+*   The Festivals/Rituals domain shows the greatest variation (1.8% all-India consensus), reflecting strong regional traditions.
 
 ## Highlights & Insights
 
-- This work is the first to systematically challenge the "nation = cultural monolith" assumption, opening a sub-national dimension for cultural NLP research.
-- The dual-task evaluation design (knowledge accuracy + implicit bias) provides a comprehensive framework for assessing cultural representation in LLMs.
-- The OCM-based question design methodology is generalizable and transferable to any culturally diverse country.
+*   Systematically challenges the "nation = cultural monolith" assumption, opening a sub-national dimension for cultural NLP research.
+*   The dual-task evaluation design (accuracy + implicit bias) provides a comprehensive framework for cultural representation assessment.
+*   The question design methodology based on anthropology (OCM) is generalizable and can be transferred to any culturally diverse nation.
 
 ## Limitations & Future Work
 
-- The five-region partition may be too coarse; significant diversity remains within each region.
-- Only five participants per region represents a relatively small sample size.
-- Gold standard construction relies on subjective judgments of semantic equivalence.
-- The study focuses exclusively on India; cross-national transferability of the methodology requires validation.
+*   Partitioning into five regions may be too coarse; significant diversity still exists within each region.
+*   The sample size of 5 participants per region is relatively small.
+*   The gold standard relies on subjective semantic equivalence judgments.
+*   The study focuses only on India; the cross-national transferability of the methodology needs verification.
 
 ## Related Work & Insights
 
-- **vs. CultureBank/CulturalBench**: These benchmarks evaluate cultural commonsense at the national level; Indica is the first to descend to the sub-national level.
-- **vs. Indian NLP benchmarks**: Existing Indian benchmarks focus on textbook knowledge; Indica focuses on everyday cultural practices.
-- **vs. CANDLE**: CANDLE evaluates national-level cultural norms; Indica reveals cultural fragmentation within a nation.
+*   **vs CultureBank/CulturalBench**: These benchmarks evaluate cultural commonsense at the national level, whereas Indica delves into the sub-national level.
+*   **vs Indian NLP Benchmarks**: Existing Indian benchmarks focus on textbook knowledge, while Indica focuses on daily cultural practices.
+*   **vs CANDLE**: While CANDLE evaluates national cultural norms, Indica reveals internal cultural cleavages within a nation.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ The first sub-national cultural commonsense benchmark, with a distinctive and important perspective.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Eight models, dual-task evaluation, and rigorous gold standard construction, though sample size is limited.
-- Writing Quality: ⭐⭐⭐⭐⭐ Compelling motivation and thorough data analysis.
-- Value: ⭐⭐⭐⭐⭐ Significant implications for cultural AI and LLM fairness research.
+*   Novelty: ⭐⭐⭐⭐⭐ First sub-national cultural commonsense benchmark with a unique and important perspective.
+*   Experimental Thoroughness: ⭐⭐⭐⭐ 8 models, dual-task evaluation, strict gold standards, though the human sample size is small.
+*   Writing Quality: ⭐⭐⭐⭐⭐ Thought-provoking motivation with detailed data analysis.
+*   Value: ⭐⭐⭐⭐⭐ Significant implications for research on cultural AI and LLM fairness.
 
 <!-- RELATED:START -->
 
@@ -131,11 +128,11 @@ Indica is an evaluation benchmark and does not involve model training. Evaluatio
 
 ## Related Papers
 
+- [\[ACL 2026\] Fin-Bias: Comprehensive Evaluation for LLM Decision-Making under human bias in Finance Domain](fin-bias_comprehensive_evaluation_for_llm_decision-making_under_human_bias_in_fi.md)
 - [\[ACL 2026\] Contrastive Decoding Mitigates Score Range Bias in LLM-as-a-Judge](contrastive_decoding_mitigates_score_range_bias_in_llm-as-a-judge.md)
-- [\[ICLR 2026\] BiasScope: Towards Automated Detection of Bias in LLM-as-a-Judge Evaluation](../../ICLR2026/llm_evaluation/biasscope_towards_automated_detection_of_bias_in_llm-as-a-judge_evaluation.md)
 - [\[AAAI 2026\] Towards a Common Framework for Autoformalization](../../AAAI2026/llm_evaluation/towards_a_common_framework_for_autoformalization.md)
+- [\[ICLR 2026\] BiasScope: Towards Automated Detection of Bias in LLM-as-a-Judge Evaluation](../../ICLR2026/llm_evaluation/biasscope_towards_automated_detection_of_bias_in_llm-as-a-judge_evaluation.md)
 - [\[ACL 2026\] ReTraceQA: Evaluating Reasoning Traces of Small Language Models in Commonsense Question Answering](retraceqa_evaluating_reasoning_traces_of_small_language_models_in_commonsense_qu.md)
-- [\[ACL 2026\] When Vision-Language Models Judge Without Seeing: Exposing Informativeness Bias](when_vision-language_models_judge_without_seeing_exposing_informativeness_bias.md)
 
 </div>
 

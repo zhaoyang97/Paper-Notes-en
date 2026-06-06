@@ -173,8 +173,8 @@ A hierarchical Semi-Markov decision process:
 - [\[ICCV 2025\] Rethinking the Embodied Gap in Vision-and-Language Navigation: A Holistic Study of Physical and Visual Disparities](../../ICCV2025/image_generation/rethinking_the_embodied_gap_in_vision-and-language_navigation_a_holistic_study_o.md)
 - [\[CVPR 2026\] ViHOI: Human-Object Interaction Synthesis with Visual Priors](vihoi_human-object_interaction_synthesis_with_visual_priors.md)
 - [\[CVPR 2026\] Language-Free Generative Editing from One Visual Example](language-free_generative_editing_from_one_visual_example.md)
-- [\[CVPR 2026\] Organizing Unstructured Image Collections using Natural Language](organizing_unstructured_image_collections_using_natural_language.md)
 - [\[CVPR 2026\] VOSR: A Vision-Only Generative Model for Image Super-Resolution](vosr_a_vision_only_generative_model_for_image_super_resolution.md)
+- [\[CVPR 2026\] Organizing Unstructured Image Collections using Natural Language](organizing_unstructured_image_collections_using_natural_language.md)
 
 </div>
 

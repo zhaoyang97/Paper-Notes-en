@@ -146,7 +146,7 @@ The total loss is $\mathcal{L} = \|\hat{\rho} \cdot \hat{\eta} - I_v\|_2 + \lamb
 - [\[CVPR 2026\] D2Dewarp: Dual Dimensions Geometric Representation Learning Based Document Image Dewarping](d2dewarp_dual_dimensions_geometric_representation_learning_based_document_image_.md)
 - [\[CVPR 2026\] Text-Phase Synergy Network with Dual Priors for Unsupervised Cross-Domain Image Retrieval](text-phase_synergy_network_with_dual_priors_for_unsupervised_cross-domain_image_.md)
 - [\[ICLR 2026\] SNAP-UQ: Self-supervised Next-Activation Prediction for Single-Pass Uncertainty](../../ICLR2026/self_supervised/snap-uq_self-supervised_next-activation_prediction_for_single-pass_uncertainty_i.md)
-- [\[ICCV 2025\] A Token-level Text Image Foundation Model for Document Understanding (TokenFD/TokenVL)](../../ICCV2025/self_supervised/a_tokenlevel_text_image_foundation_model_for_document_unders.md)
+- [\[ICML 2026\] TRACER: Robust Multimodal Fine-Tuning Proven by WMA Teacher + Geometric Decomposition](../../ICML2026/self_supervised/tracer_persistent_regularization_for_robust_multimodal_finetuning.md)
 
 </div>
 

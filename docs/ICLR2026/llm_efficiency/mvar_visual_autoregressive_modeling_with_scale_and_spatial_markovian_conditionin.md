@@ -178,10 +178,10 @@ Conditioning on only the single adjacent scale yields the best results, improvin
 ## Related Papers
 
 - [\[CVPR 2026\] SparVAR: Exploring Sparsity in Visual Autoregressive Modeling for Training-Free Acceleration](../../CVPR2026/llm_efficiency/sparvar_exploring_sparsity_in_visual_autoregressive_modeling_for_training-free_a.md)
+- [\[ICML 2026\] Proxy Compression for Language Modeling](../../ICML2026/llm_efficiency/proxy_compression_for_language_modeling.md)
 - [\[ICML 2026\] OServe: Accelerating LLM Serving via Spatial-Temporal Workload Orchestration](../../ICML2026/llm_efficiency/oserve_accelerating_llm_serving_via_spatial-temporal_workload_orchestration.md)
 - [\[ACL 2026\] Native Hybrid Attention for Efficient Sequence Modeling](../../ACL2026/llm_efficiency/native_hybrid_attention_for_efficient_sequence_modeling.md)
 - [\[CVPR 2026\] StoryTailor: A Zero-Shot Pipeline for Action-Rich Multi-Subject Visual Narratives](../../CVPR2026/llm_efficiency/storytailora_zero-shot_pipeline_for_action-rich_multi-subject_visual_narratives.md)
-- [\[NeurIPS 2025\] Scale-invariant Attention](../../NeurIPS2025/llm_efficiency/scale-invariant_attention.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Angel or Demon: Investigating the Plasticity Interventions' Impact on Backdoor Threats in Deep Reinforcement Learning
 description: >-
-  [ICML 2026][AI Safety][DRL backdoor] The authors systematically evaluate, for the first time, the impact of 7 mainstream plasticity interventions (SAM/Shrink&Perturb/Weight Clip/SN/WD/LN/ReDo) on deep reinforcement learn…
+  [ICML 2026][AI Safety][DRL backdoor] This work presents the first systematic evaluation of the impact of seven mainstream plasticity interventions (SAM, Shrink&Perturb, Weight Clip, SN, WD, LN…
 tags:
   - "ICML 2026"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "loss landscape sharpness"
   - "robust backdoor injection"
 date: 2026-05-08
-content_hash: 3805bd3597bf7e08
+content_hash: b064cabb5798e699
 ---
 
 # Angel or Demon: Investigating the Plasticity Interventions' Impact on Backdoor Threats in Deep Reinforcement Learning
@@ -20,125 +20,115 @@ content_hash: 3805bd3597bf7e08
 **Conference**: ICML 2026  
 **arXiv**: [2605.14587](https://arxiv.org/abs/2605.14587)  
 **Code**: <https://github.com/maoubo/Plasticity>  
-**Area**: AI Security / Deep RL Backdoor Attacks / Plasticity Intervention  
+**Area**: AI Security / DRL Backdoor Attack / Plasticity Intervention  
 **Keywords**: DRL backdoor, plasticity intervention, SAM, loss landscape sharpness, robust backdoor injection
 
 ## TL;DR
-The authors systematically evaluate, for the first time, the impact of 7 mainstream plasticity interventions (SAM/Shrink&Perturb/Weight Clip/SN/WD/LN/ReDo) on deep reinforcement learning (DRL) backdoor attacks (14,664 experiments), finding that only SAM is a "demon"—significantly exacerbating backdoor threats. Based on this, they propose the "Sweeper-Converter-Connector" robust backdoor injection framework and provide a detection signal based on loss landscape sharpness.
+This work presents the first systematic evaluation of the impact of seven mainstream plasticity interventions (SAM, Shrink&Perturb, Weight Clip, SN, WD, LN, ReDo) on deep reinforcement learning (DRL) backdoor attacks through 14,664 experiments. It identifies SAM as a "demon" that significantly exacerbates backdoor threats. Consequently, the "Sweeper-Converter-Connector" robust backdoor injection framework is proposed, along with a detection signal based on loss landscape sharpness.
 
 ## Background & Motivation
 
-**Background**: DRL is widely used in robotics control, UAV navigation, and autonomous driving, but is vulnerable to backdoor attacks (TrojDRL/BadRL/SleeperNets/UNIDOOR, etc.). Meanwhile, DRL training suffers from "plasticity loss" (non-stationary input + drifting objectives cause agents to lose learning ability), so modern DRL pipelines routinely include plasticity interventions: Shrink & Perturb, Weight Clipping, Spectral Normalization, Weight Decay, Layer Normalization, ReDo, SAM, etc.
+**Background**: DRL is widely applied in robotic control, UAV navigation, and autonomous driving, yet it is susceptible to backdoor attacks (e.g., TrojDRL, BadRL, SleeperNets, UNIDOOR). Conversely, DRL suffers from "loss of plasticity" due to non-stationary inputs and drifting optimization targets. Modern DRL pipelines thus incorporate plasticity interventions: Shrink & Perturb, Weight Clipping, Spectral Normalization, Weight Decay, Layer Normalization, ReDo, and SAM.
 
-**Limitations of Prior Work**: (1) Backdoor and plasticity research have long been separate, and no one has systematically asked "do plasticity interventions make backdoors easier or harder?" (2) In real DRL deployment, both techniques are almost always present, but lack of guidance can lead to "thinking LN/SAM improves performance, but actually introducing a security vulnerability."
+**Limitations of Prior Work**: (1) Research on backdoors and plasticity has historically developed independently; no systematic study has investigated whether plasticity interventions facilitate or hinder backdoors. (2) Both technologies are often co-present in practical DRL deployments, but a lack of guidance may lead users to adopt interventions like LN or SAM for performance, unaware of potential security vulnerabilities.
 
-**Key Challenge**: Plasticity interventions are designed to stabilize training, but do they have side effects on learning the "malicious trigger → target action" mapping? If some interventions actually help backdoors become more stable and potent, they inadvertently become "attack amplifiers."
+**Key Challenge**: Since plasticity interventions are designed to stabilize training, do they have the side effect of facilitating the mapping from "malicious triggers" to "target actions"? If certain interventions inadvertently strengthen backdoors, they act as unintentional "attack amplifiers."
 
-**Goal**: (1) Quantify the effect of each intervention on ASR (attack success rate) and BTP (benign task performance) under two threat models (TM-Scratch: injected during training / TM-Post: injected post-training); (2) Identify the underlying mechanisms; (3) Design a more robust backdoor injection framework and propose a detection signal based on these mechanisms.
+**Goal**: (1) Quantify the impact of each intervention on Attack Success Rate (ASR) and Benign Task Performance (BTP) under two threat models: TM-Scratch (injection during training) and TM-Post (injection into a pre-trained model). (2) Uncover the underlying mechanisms of these effects. (3) Design a robust backdoor injection framework based on these mechanisms and propose detection signals.
 
-**Key Insight**: Directly repurpose three mature pathological metrics from the plasticity field—**weight magnitude / effective rank / loss landscape sharpness**—as a diagnostic dashboard for backdoor properties, ranking backdoored agents under each intervention.
+**Key Insight**: Three established pathological metrics from the plasticity field—**weight magnitude**, **effective rank**, and **loss landscape sharpness**—are utilized as diagnostic tools to analyze the internal attributes of backdoored agents under different interventions.
 
-**Core Idea**: Use large-scale (14,664 cases) controlled experiments + three pathological metrics to decompose "intervention effects" into three mechanisms (M1 activation pathway disturbance / M2 representation space compression / M3 backdoor gradient amplification), then use these mechanisms to reverse-engineer robust attack and detection strategies.
+**Core Idea**: Through large-scale (14,664 cases) controlled experiments and pathological diagnosis, the intervention effects are decomposed into three mechanisms: M1 (Activation Pathway Perturbation), M2 (Representation Space Compression), and M3 (Backdoor Gradient Amplification). These mechanisms then inform robust attack and detection strategies.
 
 ## Method
 
 ### Overall Architecture
-This is a "systematic empirical + mechanistic analysis + derived design" three-stage work: (1) **Empirical RQ1**—construct 2 (TM-Scratch/Post) × 8 (interventions) × 47 (backdoor tasks) × 4 (attack algorithms) × 3 (seed) = 9,024 cases, plus 5,640 cases for intervention combinations, totaling 14,664 cases, to map ASR/BTP spectra; (2) **Mechanistic RQ2**—for each intervention, measure three pathological metrics (weight magnitude / effective rank / loss landscape sharpness) on backdoored agents, forming an 8×3 pathological vector $\mathbf{v}(p_i)$ and ranking them; (3) **Design RQ3**—design the SCC injection framework and sharpness-based detection based on mechanisms; quantify synergy of intervention combinations using Pathological Distance.
+The work follows a three-stage structure: (1) **Empirical RQ1**: Construction of 14,664 cases (encompassing 2 threat models, 8 interventions, 47 tasks, 4 attack algorithms, and 3 seeds) to map the ASR/BTP spectrum. (2) **Mechanism RQ2**: Analysis of backdoored agents via three pathological metrics to establish and rank intervention pathology vectors $\mathbf{v}(p_i)$. (3) **Design RQ3**: Development of the SCC injection framework and sharpness-based detection based on the identified mechanisms.
 
 ### Key Designs
 
-1. **Empirical Decomposition of Three Pathological Mechanisms (M1 / M2 / M3)**:
+1.  **Empirical Decomposition of Three Pathological Mechanisms (M1 / M2 / M3)**:
+    - **Function**: To reduce complex ASR observations into three interpretable internal mechanisms.
+    - **Mechanism**: (M1) **Activation Pathway Perturbation**—Interventions like Shrink&Perturb, Weight Clipping, and ReDo reset or clip weights, causing "backdoor pathways" and "benign pathways" to compete for resources. (M2) **Representation Space Compression**—Spectral Norm, Weight Decay, and Layer Norm limit Lipschitz constants or smooth activations, aligning backdoor gradients (originally near-orthogonal, dot product $\approx 0$) with benign gradients ($\approx 1.0$), forcing backdoors to share multi-pathway structures with benign tasks. (M3) **Backdoor Gradient Amplification**—SAM captures sharp loss directions via adversarial perturbations, which correspond to backdoor directions. SAM amplifies these gradients and guides the backdoor pathway toward a flat minimum, enhancing robustness to parameter perturbations.
+    - **Design Motivation**: ASR/BTP metrics alone cannot explain counter-intuitive results like SAM's behavior. Pathological diagnosis links statistical results to specific network changes, ensuring the conclusions are generalizable.
 
-    - Function: Reduce the complex "intervention ASR ±x%" phenomena to three interpretable internal mechanisms.
-    - Mechanism: (M1) **Activation Pathway Disturbance**—Shrink&Perturb / Weight Clipping / ReDo prune or reset weights, making "backdoor pathway" and "benign pathway" compete for resources; Fig.6 shows backdoor attacks cause a few weights in the actor net's second layer to surge (sparse backdoor pathway), Weight Clip suppresses them, leading to renewed competition. (M2) **Representation Space Compression**—Spectral Norm / Weight Decay / Layer Norm restrict the Lipschitz constant or smooth activations, aligning backdoor gradients (originally nearly orthogonal to benign gradients, dot product ≈ 0) to almost fully aligned (≈1.0), turning the backdoor from a sparse single pathway to a multi-pathway shared with benign, making it less stable under non-stationary training. (M3) **Backdoor Gradient Amplification**—SAM captures sharp loss directions via adversarial perturbation, which coincides with the backdoor direction (backdoor samples expand loss landscape sharpness by over 6×); SAM amplifies these gradients and pushes the backdoor pathway to flat minima, making it robust to parameter perturbations.
-    - Design Motivation: ASR/BTP numbers alone cannot explain counterintuitive results like "why does SAM have the opposite effect"; pathological diagnosis links statistics to concrete network changes, making conclusions generalizable (not just hyperparameter-specific).
+2.  **SCC Robust Backdoor Injection Framework (Sweeper-Converter-Connector)**:
+    - **Function**: To translate findings about beneficial interventions into a "cookbook" for designing highly robust backdoors under TM-Post.
+    - **Mechanism**: Observing that combined interventions (e.g., SSW) outperform single ones, a three-step process is defined: (a) **Sweeper**: Use M1-type interventions (Shrink&Perturb) to clear benign pathways. (b) **Converter**: Use M2-type interventions (SN/WD/LN) to transition the backdoor from orthogonal to aligned, creating multi-pathway structures. (c) **Connector**: Use SAM (M3) to optimize these pathways toward flat minima for stable co-existence. The Pathological Distance $PD(A)=\sum_{i<j}\|\mathbf{v}(p_i)-\mathbf{v}(p_j)\|_2$ measures the synergy between interventions.
+    - **Design Motivation**: Since real-world deployments often combine interventions, attackers can select complementary ones using the SCC template to amplify attack effectiveness.
 
-2. **SCC Robust Backdoor Injection Framework (Sweeper-Converter-Connector)**:
-
-    - Function: Reverse-engineer "which interventions benefit attacks" into an attack design cookbook, constructing robust backdoors under TM-Post.
-    - Mechanism: Observing that combined interventions (Plastic/SLac/SSW) outperform SAM alone (ASR 0.178→0.418, BTP 0.745→0.915), the injection process is distilled into three steps—(a) **Sweeper**: Use Shrink&Perturb / Weight Clip / ReDo to clear part of the benign pathway, making room for the backdoor (leveraging M1); (b) **Converter**: Use Spectral Norm / Weight Decay / LN to align backdoor gradients with benign gradients, turning the backdoor into a multi-pathway structure (leveraging M2); (c) **Connector**: Use SAM to jointly optimize multi-pathways to flat minima, stabilizing representations (leveraging M3). Pathological Distance $PD(A)=\sum_{i<j}\|\mathbf{v}(p_i)-\mathbf{v}(p_j)\|_2$ measures pathological differences among interventions; experiments confirm that higher $PD$ (e.g. SSW=18.64) correlates with stronger backdoor threats.
-    - Design Motivation: Real deployments commonly use multiple interventions (Plastic/Swiss Cheese, etc.), so attackers can simply follow the SCC template to select complementary interventions for free attack amplification; this provides a concrete threat model for "plasticity-aware security assessment."
-
-3. **Loss Landscape Sharpness-Based Backdoor Detection Signal**:
-
-    - Function: Transform the most prominent external manifestation of backdoors (abnormal loss sharpness) into a monitorable defense-side metric.
-    - Mechanism: Backdoor attacks expand the fluctuation range of loss landscape sharpness by 635.22%, the most significant among the three pathologies; all interventions except SAM further exacerbate this anomaly ($v_{i3}>v_{13}$). Defenders can monitor sharpness time series throughout agent training; significant spikes or drops are suspicious. With task-adaptive thresholds and multi-source noise decoupling, this can serve as a general DRL backdoor warning.
-    - Design Motivation: Existing DRL backdoor detection mostly relies on triggers or special probes; the proposed sharpness signal requires no trigger knowledge and is compatible with any DRL training process. Drawbacks are large baseline differences in sharpness across tasks and potential false positives from other anomalies—both are acknowledged as open problems.
+3.  **Loss Landscape Sharpness-based Backdoor Detection**:
+    - **Function**: To convert the most significant pathological manifestation (sharpness anomaly) into a monitorable defense metric.
+    - **Mechanism**: Backdoor attacks increase the fluctuation range of loss landscape sharpness by 635.22%. Almost all interventions (except SAM) further exacerbate this anomaly ($v_{i3} > v_{13}$). Defenders can monitor the sharpness time series during training; significant spikes or drops indicate potential backdoor activity.
+    - **Design Motivation**: Unlike existing DRL detectors that require triggers or probes, sharpness signals are trigger-agnostic and compatible with standard DRL training workflows.
 
 ### Loss & Training
-No new loss is proposed; the focus is on evaluation protocol design—attacks use transition tampering to inject triggers into (state, action, reward) tuples, with backdoor reward for reinforcement; no defense-side interventions are applied (only side effects of interventions are studied). Tasks cover OpenAI Gym's 4 classic control + 2 physical control + PyBullet's 3 robotics, including discrete/continuous actions, sparse/dense rewards, cold/non-cold starts; 4 attack types (TrojDRL/BadRL/SleeperNets/UNIDOOR), 47 backdoor tasks, single/multi-backdoor. Hyperparameters for each intervention follow their respective original papers.
+The study utilizes transition tampering to inject triggers into (state, action, reward) triplets and reinforces the backdoor via a specific reward. The evaluation covers 4 classic control, 2 physical control (OpenAI Gym), and 3 robotic (PyBullet) tasks, including discrete/continuous actions and sparse/dense rewards. Four attack algorithms (TrojDRL, BadRL, SleeperNets, UNIDOOR) are tested. Hyperparameters for each intervention follow the original literature.
 
 ## Key Experimental Results
 
 ### Main Results
-In the TM-Post scenario (interventions have greater impact on pre-trained agents), representative ASR / BTP changes for robotics control tasks:
+Representing ASR / BTP changes in robotic control tasks under TM-Post (where interventions significantly impact pre-trained agents):
 
-| Intervention | ASR (Robotics) | BTP (Robotics) | Main Pathological Effect |
-|--------------|---------------|---------------|-------------------------|
+| Intervention | ASR (Robot) | BTP (Robot) | Primary Pathological Impact |
+| :--- | :--- | :--- | :--- |
 | None (baseline) | 0.178 ± 0.157 | 0.745 ± 0.230 | — |
-| Weight Clipping | ↓ 17.46% | ↓ 20.19% | M1 pathway disturbance |
-| Spectral Norm | ↓ 11.78% | ↓ moderate | M2 representation compression |
-| Layer Norm | ↓ moderate | ↓ 11.93% | M2 representation compression |
-| Weight Decay | ↓ mild | ↓ mild | M2 representation compression |
-| Shrink & Perturb | ↓ mild | ↓ mild | M1 soft disturbance |
-| ReDo | ↓ mild | ↓ mild | M1 neuron reset |
-| **SAM** | **↑ 0.326 (+83%)** | **↑ 0.814 (+9%)** | **M3 gradient amplification** |
+| Weight Clipping | ↓ 17.46% | ↓ 20.19% | M1 Pathway Perturbation |
+| Spectral Norm | ↓ 11.78% | ↓ Moderate | M2 Rep. Compression |
+| Layer Norm | ↓ Moderate | ↓ 11.93% | M2 Rep. Compression |
+| Weight Decay | ↓ Slight | ↓ Slight | M2 Rep. Compression |
+| Shrink & Perturb | ↓ Slight | ↓ Slight | M1 Soft Perturbation |
+| ReDo | ↓ Slight | ↓ Slight | M1 Neuron Reset |
+| **SAM** | **↑ 0.326 (+83%)** | **↑ 0.814 (+9%)** | **M3 Gradient Amplification** |
 
-Comparison of intervention combinations (robotics control + SAM series):
+Comparison of intervention combinations (Robot control + SAM variants):
 
 | Combination | Includes SAM? | ASR | BTP | Pathological Distance |
-|-------------|--------------|------|------|----------------------|
+| :--- | :--- | :--- | :--- | :--- |
 | None | — | 0.178 ± 0.157 | 0.745 ± 0.230 | N/A |
 | Plastic | ✓ | 0.368 ± 0.144 | 0.724 ± 0.362 | 9.43 |
 | SLac | ✓ | 0.417 ± 0.146 | 0.816 ± 0.276 | 17.42 |
 | **SSW** | ✓ | **0.418 ± 0.092** | **0.915 ± 0.131** | **18.64** |
-| Swiss Cheese (WD+LN) | ✗ | ≈ LN alone | ≈ LN alone | 0.52 |
+| Swiss Cheese | ✗ | $\approx$ LN Alone | $\approx$ LN Alone | 0.52 |
 
 ### Ablation Study
 
-| Configuration | Phenomenon | Interpretation |
-|---------------|------------|----------------|
-| TM-Scratch (injection during training) | ASR only slightly changes (LN max -8.84%) | Representations not yet stable, intervention effects diluted by training dynamics |
-| TM-Post (post-training injection) | Significant ASR/BTP changes | Only stabilized models reveal intervention effects |
-| Backdoor vs. normal training (Fig.4) | weight magnitude range +98.63%, effective rank +19.16%, sharpness +635.22% | sharpness is the strongest external backdoor marker |
-| Single vs. multi-intervention combination | Higher $PD$ yields stronger attacks; same-mechanism combo (Swiss Cheese) has almost no gain | Only complementary mechanisms jointly amplify threats |
-| Spectral Norm gradient alignment analysis (Fig.7) | Backdoor-benign gradient rises from ≈0 to ≈1.00 | Confirms M2 representation compression → pathway sharing |
-| Weight Clipping 3D weight visualization (App. Fig.13) | TM-Scratch minor effect, TM-Post strong | Parameter flexibility is key variable |
+| Configuration | Observation | Interpretation |
+| :--- | :--- | :--- |
+| TM-Scratch | Minor ASR changes (LN max -8.84%) | Training dynamics dilute intervention effects. |
+| TM-Post | Significant ASR/BTP changes | Effects manifest only after representations stabilize. |
+| Backdoor vs. Normal | Sharpness range +635.22% | Sharpness is the strongest external sign of a backdoor. |
+| Single vs. Combined | Higher $PD$ leads to stronger attacks | Complementary mechanisms are required for synergy. |
+| SN Gradient Alignment | Backdoor-Benign alignment $0 \to 1.0$ | Validates M2 mechanism (pathway sharing). |
 
 ### Key Findings
-- **Counterintuitive**: SAM (intended to stabilize training) is the only intervention that exacerbates backdoors, as it is sensitive to and amplifies sharp loss directions caused by backdoors.
-- **TM-Post is more sensitive than TM-Scratch**: Injecting into a converged benign representation requires "squeezing out space" for the backdoor, making intervention-imposed parameter flexibility constraints more impactful.
-- **BTP is more sensitive than ASR**: Benign representations are complex and require many cooperating parameters; once disrupted by interventions, they are hard to recover. Backdoor representations are sparse and local, easily rebuilt.
-- **Intervention combinations are non-additive**: Same-mechanism combos (Swiss Cheese = WD+LN, $PD$=0.52) have almost no cumulative effect; cross-mechanism combos (SSW, $PD$=18.64) significantly amplify attacks—SCC's Pathological Distance is an effective design metric.
-- **Among the three pathologies, sharpness is most valuable for detection**: Backdoor attacks expand sharpness fluctuation range by 6×; all interventions (except SAM) further exacerbate this anomaly, which can be exploited by defenders.
+- **Counter-intuitive**: SAM, intended to stabilize training, is the only intervention that exacerbates backdoors because it amplifies and flattens the sharp loss directions introduced by the backdoor.
+- **TM-Post is more sensitive than TM-Scratch**: Injecting backdoors into converged representations requires "squeezing out" space, magnifying the constraints interventions place on parameter flexibility.
+- **BTP is more sensitive than ASR**: Benign representations are complex/coordinated and hard to rebuild after disruption; backdoor pathways are sparse and easier to recover.
+- **Intervention combinations are non-additive**: Combinations using the same mechanism (e.g., Swiss Cheese) provide no gain, while heterogeneous combinations (SSW) significantly amplify threats.
 
 ## Highlights & Insights
-- **Large-scale controlled experimental design**: 14,664 cases covering the Cartesian product of 2 threat models × 8 interventions × 5 combinations × 4 attacks × 9 tasks × multiple seeds; such scale is rare in DRL security literature, lending high credibility to conclusions.
-- **Cross-domain bridging**: Connects "plasticity" and "backdoor security" subcommunities via three pathological metrics—a rare "cross-subfield diagnosis" effort; offers methodological inspiration for other security areas (fairness, privacy).
-- **"Role reuse" thinking**: SAM is lauded in defense literature for improving generalization, but this work reveals it is also an attack amplifier, reminding that any generalization tool can be a double-edged sword.
-- **From mechanism to design**: The SCC triangle (Sweeper-Converter-Connector) translates diagnostic results directly into an attack design cookbook, providing PD as a quantifiable synergy metric—this "mechanism→process→metric" trio is a reusable pattern.
-- **Feasibility of sharpness detection**: Since sharpness is already a routine optimizer monitoring metric, deployment cost is extremely low; this is an underrated free defense signal.
+- **Scale of Evaluation**: 14,664 cases provide a robust statistical foundation rarely seen in DRL security literature.
+- **Cross-Domain Bridge**: Linking "plasticity" and "backdoor security" via pathological metrics provides a methodological template for other security domains (e.g., fairness, privacy).
+- **"Dual-Role" Awareness**: Reveals that generalization tools like SAM can act as unintended security vulnerabilities.
+- **Mechanistic to Practical**: The SCC framework translates diagnostic insights into an actionable attack design cookbook.
 
 ## Limitations & Future Work
-- Experiments focus on low-dimensional control tasks (Gym/PyBullet); applicability to high-dimensional pixel-based tasks (Atari/StarCraft) is unknown.
-- The SCC framework is only conceptually designed, not formally implemented or compared with real "unified injection algorithms"—readers must assemble it themselves.
-- Sharpness-based detection faces two major challenges (as acknowledged): (1) Large baseline variance in sharpness across tasks, making unified thresholds difficult; (2) Other training anomalies (reward hacking, unstable critic) may also cause abnormal sharpness.
-- Although intervention hyperparameter sensitivity is ablated in App.E, only "trend consistency" is verified, not the worst-case combinations.
-- The "combination intervention amplifies attack" conclusion relies on five existing combos (Plastic/Swiss Cheese/Lac/SLac/SSW), without systematic combination search; theoretically, even stronger combos may exist.
-- No defense strategies are proposed (except sharpness detection); a closed-loop security solution is still lacking.
+- Tasks are primarily low-dimensional state space controls; generalizability to pixel-based observations (Atari) is unverified.
+- The SCC framework is a conceptual design; a unified implementation for automated optimization is lacking.
+- Sharpness-based detection faces challenges with high baseline variance across tasks and potential false positives from other training instabilities.
+- Specific worst-case hyperparameter combinations for interventions were not exhaustively searched.
 
 ## Related Work & Insights
-- **vs TrojDRL/BadRL/SleeperNets/UNIDOOR**: These works only study attacks on vanilla DRL; this work evaluates with "modern DRL pipeline defaults," revealing compound effects of attacks/interventions.
-- **vs Klein et al. 2024 (plasticity survey)**: Provides four categories of intervention motivations; this work adopts their framework but shifts perspective from "plasticity preservation" to "security side effects."
-- **vs Lee et al. 2023 (SAM for DRL)**: Treats SAM as a plasticity-preserving panacea; this work effectively adds a "security warning label" to SAM.
-- **vs deep learning backdoor defenses (Li et al. 2024b)**: DL backdoors can be mitigated by finetune-pruning; this work shows that "pruning" interventions (Weight Clip) in DRL have similar effects but at the cost of BTP, so the trade-off remains open.
-- **vs Lyle et al. 2024 (Swiss Cheese / multi-intervention plasticity)**: They advocate combined interventions for better generalization; this work shows the same combos may become "vulnerability amplifiers" from a backdoor perspective, leaving "plasticity-aware security assessment" as an open problem.
+- **vs. TrojDRL/BadRL**: These focus on vanilla DRL; this work introduces standard modern pipeline interventions to reveal composite effects.
+- **vs. Lee et al. 2023 (SAM for DRL)**: SAM was promoted as a cure for plasticity loss; this work attaches a "security warning label" to its use.
+- **vs. Lyle et al. 2024 (Swiss Cheese)**: Advocates for combined interventions to improve generalization; this work shows these same combinations can act as "vulnerability amplifiers."
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ First systematic characterization of the interaction between plasticity interventions and DRL backdoors, proposing SCC + sharpness detection as two new approaches.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Cartesian evaluation of 14,664 cases, with three pathological diagnostic analyses, providing robust evidence.
-- Writing Quality: ⭐⭐⭐⭐ RQ-driven structure, clear concept naming (M1/M2/M3 → SCC), well-integrated formulas and figures.
-- Value: ⭐⭐⭐⭐⭐ Directly impacts security practices for all DRL systems with plasticity interventions, providing actionable signals for both attackers and defenders.
+- Novelty: ⭐⭐⭐⭐ (First to characterize plasticity-backdoor interaction).
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ (massive 14k+ case study).
+- Writing Quality: ⭐⭐⭐⭐ (Clear RQ-driven structure).
+- Value: ⭐⭐⭐⭐⭐ (Directly impacts safety practices in modern DRL deployment).
 
 <!-- RELATED:START -->
 
@@ -148,9 +138,9 @@ Comparison of intervention combinations (robotics control + SAM series):
 
 - [\[ICLR 2026\] Beware Untrusted Simulators -- Reward-Free Backdoor Attacks in Reinforcement Learning](../../ICLR2026/ai_safety/beware_untrusted_simulators_--_reward-free_backdoor_attacks_in_reinforcement_lea.md)
 - [\[NeurIPS 2025\] Impact of Dataset Properties on Membership Inference Vulnerability of Deep Transfer Learning](../../NeurIPS2025/ai_safety/impact_of_dataset_properties_on_membership_inference_vulnerability_of_deep_trans.md)
+- [\[ICML 2026\] Regret-Based Federated Causal Discovery with Unknown Interventions](regret-based_federated_causal_discovery_with_unknown_interventions.md)
 - [\[ICML 2026\] DP-KFC: Data-Free Preconditioning for Privacy-Preserving Deep Learning](dp-kfc_data-free_preconditioning_for_privacy-preserving_deep_learning.md)
 - [\[CVPR 2026\] Tutor-Student Reinforcement Learning: A Dynamic Curriculum for Robust Deepfake Detection](../../CVPR2026/ai_safety/tutor-student_reinforcement_learning_a_dynamic_curriculum_for_robust_deepfake_de.md)
-- [\[CVPR 2026\] Monte Carlo Stochastic Depth for Uncertainty Estimation in Deep Learning](../../CVPR2026/ai_safety/mcsd_uncertainty_estimation.md)
 
 </div>
 

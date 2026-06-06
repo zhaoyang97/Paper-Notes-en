@@ -159,7 +159,7 @@ SFT degrades across all metrics on Qwen2.5-Coder-7B, while DFT consistently impr
 - [\[ICLR 2026\] MVR: Multi-view Video Reward Shaping for Reinforcement Learning](mvr_multi-view_video_reward_shaping_for_reinforcement_learning.md)
 - [\[ICLR 2026\] How LLMs Learn to Reason: A Complex Network Perspective](how_llms_learn_to_reason_a_complex_network_perspective.md)
 - [\[ICLR 2026\] ARM-FM: Automated Reward Machines via Foundation Models for Compositional Reinforcement Learning](arm-fm_automated_reward_machines_via_foundation_models_for_compositional_reinfor.md)
-- [\[AAAI 2026\] Reasoning with Exploration: An Entropy Perspective](../../AAAI2026/reinforcement_learning/reasoning_with_exploration_an_entropy_perspective.md)
+- [\[ICML 2026\] Learning to Search and Searching to Learn for Generalization in Planning](../../ICML2026/reinforcement_learning/learning_to_search_and_searching_to_learn_for_generalization_in_planning.md)
 
 </div>
 

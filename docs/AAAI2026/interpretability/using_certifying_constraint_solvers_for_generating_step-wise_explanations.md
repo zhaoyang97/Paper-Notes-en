@@ -122,9 +122,9 @@ This work does not involve deep learning; the core algorithms are combinatorial 
 
 ## Related Papers
 
+- [\[AAAI 2026\] QGShap: Quantum Acceleration for Faithful GNN Explanations](qgshap_quantum_acceleration_for_faithful_gnn_explanations.md)
 - [\[ACL 2026\] Diffusion-CAM: Faithful Visual Explanations for dMLLMs](../../ACL2026/interpretability/diffusion-cam_faithful_visual_explanations_for_dmllms.md)
 - [\[CVPR 2026\] Measuring the (Un)Faithfulness of Concept-Based Explanations](../../CVPR2026/interpretability/measuring_the_unfaithfulness_of_concept-based_explanations.md)
-- [\[AAAI 2026\] QGShap: Quantum Acceleration for Faithful GNN Explanations](qgshap_quantum_acceleration_for_faithful_gnn_explanations.md)
 - [\[ACL 2026\] Aligning What LLMs Do and Say: Towards Self-Consistent Explanations](../../ACL2026/interpretability/aligning_what_llms_do_and_say_towards_self-consistent_explanations.md)
 - [\[CVPR 2026\] Why Does It Look There? Structured Explanations for Image Classification](../../CVPR2026/interpretability/why_does_it_look_there_structured_explanations_for_image_classification.md)
 

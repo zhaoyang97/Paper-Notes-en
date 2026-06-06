@@ -140,10 +140,10 @@ Average ALE size (lower is better) across three paradigms on 7 datasets:
 ## Related Papers
 
 - [\[ICLR 2026\] Latent Fourier Transform](../../ICLR2026/others/latent_fourier_transform.md)
-- [\[AAAI 2026\] Decomposition and Preprocessing of Ternary Constraint Networks](decomposition_and_preprocessing_of_ternary_constraint_networks.md)
+- [\[ICML 2026\] Guaranteed Optimal Compositional Explanations for Neurons](../../ICML2026/others/guaranteed_optimal_compositional_explanations_for_neurons.md)
 - [\[ICLR 2026\] Latent Equivariant Operators for Robust Object Recognition: Promises and Challenges](../../ICLR2026/others/latent_equivariant_operators_for_robust_object_recognition_promises_and_challeng.md)
 - [\[ICLR 2026\] Out of the Shadows: Exploring a Latent Space for Neural Network Verification](../../ICLR2026/others/out_of_the_shadows_exploring_a_latent_space_for_neural_network_verification.md)
-- [\[AAAI 2026\] Learning Fair Representations with Kolmogorov-Arnold Networks](learning_fair_representations_with_kolmogorov-arnold_networks.md)
+- [\[AAAI 2026\] Decomposition and Preprocessing of Ternary Constraint Networks](decomposition_and_preprocessing_of_ternary_constraint_networks.md)
 
 </div>
 

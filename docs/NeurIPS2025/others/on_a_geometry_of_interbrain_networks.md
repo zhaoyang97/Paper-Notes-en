@@ -133,8 +133,8 @@ The paper uses simulations of small-world networks (Watts-Strogatz model) to ill
 - [\[NeurIPS 2025\] Johnson-Lindenstrauss Lemma Beyond Euclidean Geometry](johnson-lindenstrauss_lemma_beyond_euclidean_geometry.md)
 - [\[NeurIPS 2025\] Reliable Active Learning from Unreliable Labels via Neural Collapse Geometry](reliable_active_learning_from_unreliable_labels_via_neural_collapse_geometry.md)
 - [\[NeurIPS 2025\] On Universality Classes of Equivariant Networks](on_universality_classes_of_equivariant_networks.md)
+- [\[ICML 2026\] Rethinking FID Through the Geometry of the Reference Dataset](../../ICML2026/others/rethinking_fid_through_the_geometry_of_the_reference_dataset.md)
 - [\[NeurIPS 2025\] Learning (Approximately) Equivariant Networks via Constrained Optimization](learning_approximately_equivariant_networks_via_constrained_optimization.md)
-- [\[NeurIPS 2025\] Depth-Bounds for Neural Networks via the Braid Arrangement](depth-bounds_for_neural_networks_via_the_braid_arrangement.md)
 
 </div>
 

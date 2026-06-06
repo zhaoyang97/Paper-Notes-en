@@ -163,8 +163,8 @@ Benchmarks are divided into two difficulty tiers: Easy & Medium (GSM8K, MATH-500
 - [\[AAAI 2026\] TextShield-R1: Reinforced Reasoning for Tampered Text Detection](textshield-r1_reinforced_reasoning_for_tampered_text_detection.md)
 - [\[ICLR 2026\] Learning from Synthetic Data Improves Multi-hop Reasoning](../../ICLR2026/reinforcement_learning/learning_from_synthetic_data_improves_multi-hop_reasoning.md)
 - [\[ICLR 2026\] RuleReasoner: Reinforced Rule-based Reasoning via Domain-aware Dynamic Sampling](../../ICLR2026/reinforcement_learning/rulereasoner_reinforced_rule-based_reasoning_via_domain-aware_dynamic_sampling.md)
-- [\[AAAI 2026\] In-Token Rationality Optimization: Towards Accurate and Concise LLM Reasoning via Self-Feedback](in-token_rationality_optimization_towards_accurate_and_concise_llm_reasoning_via.md)
 - [\[ICLR 2026\] Solving Parameter-Robust Avoid Problems with Unknown Feasibility using Reinforcement Learning](../../ICLR2026/reinforcement_learning/solving_parameter-robust_avoid_problems_with_unknown_feasibility_using_reinforce.md)
+- [\[AAAI 2026\] In-Token Rationality Optimization: Towards Accurate and Concise LLM Reasoning via Self-Feedback](in-token_rationality_optimization_towards_accurate_and_concise_llm_reasoning_via.md)
 
 </div>
 

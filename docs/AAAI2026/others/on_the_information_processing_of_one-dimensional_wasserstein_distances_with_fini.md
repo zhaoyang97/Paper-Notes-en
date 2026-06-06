@@ -168,11 +168,11 @@ The radial ordering of Wasserstein distance embeddings exhibits substantially hi
 
 ## Related Papers
 
+- [\[ICML 2026\] ParalESN: Enabling Parallel Information Processing in Reservoir Computing](../../ICML2026/others/paralesn_enabling_parallel_information_processing_in_reservoir_computing.md)
 - [\[AAAI 2026\] ShortageSim: Simulating Drug Shortages under Information Asymmetry](shortagesim_simulating_drug_shortages_under_information_asymmetry.md)
 - [\[AAAI 2026\] DiffMM: Efficient Method for Accurate Noisy and Sparse Trajectory Map Matching via One Step Diffusion](diffmm_efficient_method_for_accurate_noisy_and_sparse_trajectory_map_matching_vi.md)
-- [\[ICML 2026\] Networked Information Aggregation for Binary Classification](../../ICML2026/others/networked_information_aggregation_for_binary_classification.md)
 - [\[AAAI 2026\] CompTrack: Information Bottleneck-Guided Low-Rank Dynamic Token Compression for Point Cloud Tracking](comptrack_information_bottleneckguided_lowrank_dynamic_token_compres.md)
-- [\[NeurIPS 2025\] Finite-Time Analysis of Stochastic Nonconvex Nonsmooth Optimization on the Riemannian Manifolds](../../NeurIPS2025/others/finite-time_analysis_of_stochastic_nonconvex_nonsmooth_optimization_on_the_riema.md)
+- [\[ICML 2026\] Networked Information Aggregation for Binary Classification](../../ICML2026/others/networked_information_aggregation_for_binary_classification.md)
 
 </div>
 

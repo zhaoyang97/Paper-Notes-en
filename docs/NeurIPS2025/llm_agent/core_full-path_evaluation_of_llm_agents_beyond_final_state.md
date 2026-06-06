@@ -148,7 +148,7 @@ The CORE framework comprises three layers:
 - [\[NeurIPS 2025\] AgentChangeBench: A Multi-Dimensional Evaluation Framework for Goal-Shift Robustness](agentchangebench_a_multi-dimensional_evaluation_framework_for_goal-shift_robustn.md)
 - [\[AAAI 2026\] Beyond ReAct: A Planner-Centric Framework for Complex Tool-Augmented LLM Reasoning](../../AAAI2026/llm_agent/beyond_react_a_planner-centric_framework_for_complex_tool-au.md)
 - [\[NeurIPS 2025\] A-MEM: Agentic Memory for LLM Agents](a-mem_agentic_memory_for_llm_agents.md)
-- [\[NeurIPS 2025\] LLM Agents for Knowledge Discovery in Atomic Layer Processing](llm_agents_for_knowledge_discovery_in_atomic_layer_processing.md)
+- [\[ICML 2026\] BioAgent Bench: An AI Agent Evaluation Suite for Bioinformatics](../../ICML2026/llm_agent/bioagent_bench_an_ai_agent_evaluation_suite_for_bioinformatics.md)
 
 </div>
 

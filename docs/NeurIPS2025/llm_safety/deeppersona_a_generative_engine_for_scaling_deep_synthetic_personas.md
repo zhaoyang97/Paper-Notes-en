@@ -139,8 +139,8 @@ DeepPersona is a generation framework rather than a trained model. GPT-4.1 and G
 - [\[NeurIPS 2025\] Virus Infection Attack on LLMs: Your Poisoning Can Spread "VIA" Synthetic Data](virus_infection_attack_on_llms_your_poisoning_can_spread_via_synthetic_data.md)
 - [\[NeurIPS 2025\] Unlearning as Ablation: Toward a Falsifiable Benchmark for Generative Scientific Discovery](unlearning_as_ablation_toward_a_falsifiable_benchmark_for_generative_scientific_.md)
 - [\[CVPR 2026\] Designing to Forget: Deep Semi-parametric Models for Unlearning](../../CVPR2026/llm_safety/designing_to_forget_deep_semi-parametric_models_for_unlearning.md)
-- [\[ICLR 2026\] Purifying Generative LLMs from Backdoors without Prior Knowledge or Clean Reference](../../ICLR2026/llm_safety/purifying_generative_llms_from_backdoors_without_prior_knowledge_or_clean_refere.md)
-- [\[ICML 2026\] STARE: Step-wise Temporal Alignment and Red-teaming Engine for Multi-modal Toxicity Attack](../../ICML2026/llm_safety/stare_step-wise_temporal_alignment_and_red-teaming_engine_for_multi-modal_toxici.md)
+- [\[ACL 2026\] Differentially Private Synthetic Text Generation for Retrieval-Augmented Generation (RAG)](../../ACL2026/llm_safety/differentially_private_synthetic_text_generation_for_retrieval-augmented_generat.md)
+- [\[ICML 2026\] Deep Sequence Models Tend to Memorize Geometrically; It Is Unclear Why](../../ICML2026/llm_safety/deep_sequence_models_tend_to_memorize_geometrically_it_is_unclear_why.md)
 
 </div>
 

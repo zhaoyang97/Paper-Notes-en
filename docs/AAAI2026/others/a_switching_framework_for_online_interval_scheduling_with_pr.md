@@ -126,9 +126,9 @@ The trust-and-switch paradigm is transferable to other online maximization probl
 
 - [\[NeurIPS 2025\] Non-Clairvoyant Scheduling with Progress Bars](../../NeurIPS2025/others/non-clairvoyant_scheduling_with_progress_bars.md)
 - [\[AAAI 2026\] Enhancing Control Policy Smoothness by Aligning Actions with Predictions from Preceding States](enhancing_control_policy_smoothness_by_aligning_actions_with_predictions_from_pr.md)
-- [\[NeurIPS 2025\] Learning-Augmented Online Bipartite Fractional Matching](../../NeurIPS2025/others/learning-augmented_online_bipartite_fractional_matching.md)
+- [\[ICML 2026\] Parsimonious Learning-Augmented Online Metric Matching](../../ICML2026/others/parsimonious_learning-augmented_online_metric_matching.md)
 - [\[AAAI 2026\] DeToNATION: Decoupled Torch Network-Aware Training on Interlinked Online Nodes](detonation_decoupled_torch_network-aware_training_on_interlinked_online_nodes.md)
-- [\[AAAI 2026\] Online Linear Regression with Paid Stochastic Features](online_linear_regression_with_paid_stochastic_features.md)
+- [\[NeurIPS 2025\] Learning-Augmented Online Bipartite Fractional Matching](../../NeurIPS2025/others/learning-augmented_online_bipartite_fractional_matching.md)
 
 </div>
 

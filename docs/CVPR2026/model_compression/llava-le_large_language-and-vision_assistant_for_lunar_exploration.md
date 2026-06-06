@@ -127,7 +127,7 @@ LLaVA-LE Stage 2 achieves a 3.3× overall improvement over Base LLaVA. The reaso
 - [\[CVPR 2026\] Quant Experts: Token-aware Adaptive Error Reconstruction with Mixture of Experts for Large Vision-Language Models Quantization](quant_experts_token_aware_vlm_quantization.md)
 - [\[NeurIPS 2025\] Vision-centric Token Compression in Large Language Model](../../NeurIPS2025/model_compression/vision-centric_token_compression_in_large_language_model.md)
 - [\[ICCV 2025\] B-VLLM: A Vision Large Language Model with Balanced Spatio-Temporal Tokens](../../ICCV2025/model_compression/b_vllm_a_vision_large_language_model_with_balanced_spatio_temporal_tokens.md)
-- [\[ICLR 2026\] AMiD: Knowledge Distillation for LLMs with α-mixture Assistant Distribution](../../ICLR2026/model_compression/amid_knowledge_distillation_for_llms_with_α-mixture_assistant_distribution.md)
+- [\[NeurIPS 2025\] Ensemble++: Scalable Exploration via Ensemble](../../NeurIPS2025/model_compression/scalable_exploration_via_ensemble.md)
 
 </div>
 

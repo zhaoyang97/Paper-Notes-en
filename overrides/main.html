@@ -26,6 +26,13 @@
 <meta name="msvalidate.01" content="{{ config.extra.bing_site_verification }}" />
 {% endif %}
 
+{# Cloudflare Web Analytics — cookieless, no consent banner needed.
+   Token set in mkdocs.yml extra.cloudflare_analytics_token; empty = no script. #}
+{% if config.extra.cloudflare_analytics_token %}
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+        data-cf-beacon='{"token": "{{ config.extra.cloudflare_analytics_token }}"}'></script>
+{% endif %}
+
 <meta name="robots" content="index,follow,max-snippet:180,max-image-preview:large" />
 <meta name="googlebot" content="index,follow,max-snippet:180,max-image-preview:large" />
 

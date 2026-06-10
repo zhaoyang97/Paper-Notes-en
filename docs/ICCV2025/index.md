@@ -1,10 +1,12 @@
 ---
 title: >-
-  ICCV2025 · 1303 Paper Notes
+  ICCV2025 Accepted Papers List · 1303 Notes
 description: >-
   1303 ICCV2025 paper notes covering 3D Vision (264), Image Generation (213), Multimodal VLM (134), Autonomous Driving (93), Segmentation (74), Video Understanding (57), Model Compression (49), Video Generation (48) and other 41 areas. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "ICCV2025"
+  - "ICCV2025 accepted papers"
+  - "ICCV2025 paper list"
   - "AI paper notes"
   - "top conference papers"
   - "3D Vision"
@@ -15,10 +17,72 @@ tags:
   - "Video Understanding"
   - "Model Compression"
   - "Video Generation"
+item_list:
+  - u: "3d_vision/2d_gaussian_splattingbased_sparseview_transparent_object_dep/"
+    t: "TRAN-D: 2D Gaussian Splatting-based Sparse-view Transparent Object Depth Reconstruction via Physics Simulation for Scene Update"
+  - u: "3d_vision/3d_gaussian_map_with_openset_semantic_grouping_for_visionlan/"
+    t: "3D Gaussian Map with Open-Set Semantic Grouping for Vision-Language Navigation"
+  - u: "3d_vision/3d_mesh_editing_using_masked_lrms/"
+    t: "3D Mesh Editing using Masked LRMs"
+  - u: "3d_vision/3d_testtime_adaptation_via_graph_spectral_driven_point_shift/"
+    t: "3D Test-time Adaptation via Graph Spectral Driven Point Shift"
+  - u: "3d_vision/3dgraphllm_combining_semantic_graphs_and_large_language_models_for_3d_scene_unde/"
+    t: "3DGraphLLM: Combining Semantic Graphs and Large Language Models for 3D Scene Understanding"
+  - u: "3d_vision/3dgs_lm_faster_gaussian_splatting_optimization_with_levenberg_marquardt/"
+    t: "3DGS-LM: Faster Gaussian-Splatting Optimization with Levenberg-Marquardt"
+  - u: "3d_vision/3dgslm_faster_gaussiansplatting_optimization_with_levenbergm/"
+    t: "3DGS-LM: Faster Gaussian-Splatting Optimization with Levenberg-Marquardt"
+  - u: "3d_vision/4d_gaussian_splatting_slam/"
+    t: "4D Gaussian Splatting SLAM"
+  - u: "3d_vision/4d_visual_pretraining_for_robot_learning/"
+    t: "4D Visual Pre-training for Robot Learning"
+  - u: "3d_vision/7dgs_unified_spatial-temporal-angular_gaussian_splatting/"
+    t: "7DGS: Unified Spatial-Temporal-Angular Gaussian Splatting"
+  - u: "3d_vision/a3gs_arbitrary_artistic_style_into_arbitrary_3d_gaussian_spl/"
+    t: "A3GS: Arbitrary Artistic Style into Arbitrary 3D Gaussian Splatting"
+  - u: "3d_vision/a_lesson_in_splats_teacher-guided_diffusion_for_3d_gaussian_splats_generation_wi/"
+    t: "A Lesson in Splats: Teacher-Guided Diffusion for 3D Gaussian Splats Generation with 2D Supervision"
+  - u: "3d_vision/a_recipe_for_generating_3d_worlds_from_a_single_image/"
+    t: "A Recipe for Generating 3D Worlds from a Single Image"
+  - u: "3d_vision/a_simple_yet_mighty_hartley_diffusion_versatilist_for_genera/"
+    t: "A Simple yet Mighty Hartley Diffusion Versatilist for Generalizable Dense Vision Tasks"
+  - u: "3d_vision/a_unified_interpretation_of_training-time_out-of-distribution_detection/"
+    t: "A Unified Interpretation of Training-Time Out-of-Distribution Detection"
+  - u: "3d_vision/aaa-gaussians_anti-aliased_and_artifact-free_3d_gaussian_rendering/"
+    t: "AAA-Gaussians: Anti-Aliased and Artifact-Free 3D Gaussian Rendering"
+  - u: "3d_vision/aaa_gaussians_anti_aliased_artifact_free_3d_gaussian_rendering/"
+    t: "AAA-Gaussians: Anti-Aliased and Artifact-Free 3D Gaussian Rendering"
+  - u: "3d_vision/accelerate_3d_object_detection_models_via_zero-shot_attention_key_pruning/"
+    t: "Accelerate 3D Object Detection Models via Zero-Shot Attention Key Pruning"
+  - u: "3d_vision/adahuman_animatable_detailed_3d_human_generation_with_compositional_multiview_di/"
+    t: "AdaHuman: Animatable Detailed 3D Human Generation with Compositional Multiview Diffusion"
+  - u: "3d_vision/advancing_text-to-3d_generation_with_linearized_lookahead_variational_score_dist/"
+    t: "Advancing Text-to-3D Generation with Linearized Lookahead Variational Score Distillation"
+  - u: "3d_vision/adversarial_exploitation_of_data_diversity_improves_visual_localization/"
+    t: "Adversarial Exploitation of Data Diversity Improves Visual Localization"
+  - u: "3d_vision/ajahr_amputated_joint_aware_3d_human_mesh_recovery/"
+    t: "AJAHR: Amputated Joint Aware 3D Human Mesh Recovery"
+  - u: "3d_vision/amodal3r_amodal_3d_reconstruction_from_occluded_2d_images/"
+    t: "Amodal3R: Amodal 3D Reconstruction from Occluded 2D Images"
+  - u: "3d_vision/amodal_depth_anything_amodal_depth_estimation_in_the_wild/"
+    t: "Amodal Depth Anything: Amodal Depth Estimation in the Wild"
+  - u: "3d_vision/animateanymesh_a_feedforward_4d_foundation_model_for_textdri/"
+    t: "AnimateAnyMesh: A Feed-Forward 4D Foundation Model for Text-Driven Universal Mesh Animation"
+  - u: "3d_vision/anyi2v_animating_any_conditional_image_with_motion_control/"
+    t: "AnyI2V: Animating Any Conditional Image with Motion Control"
+  - u: "3d_vision/ar1to3_single_image_to_consistent_3d_object_via_nextview_pre/"
+    t: "AR-1-to-3: Single Image to Consistent 3D Object Generation via Next-View Prediction"
+  - u: "3d_vision/articulate3d_holistic_understanding_of_3d_scenes_as_universal_scene_description/"
+    t: "Articulate3D: Holistic Understanding of 3D Scenes as Universal Scene Description"
+  - u: "3d_vision/atlas_decoupling_skeletal_and_shape_parameters_for_expressive_parametric_human_m/"
+    t: "ATLAS: Decoupling Skeletal and Shape Parameters for Expressive Parametric Human Modeling"
+  - u: "3d_vision/auto-regressively_generating_multi-view_consistent_images/"
+    t: "Auto-Regressively Generating Multi-View Consistent Images"
+item_total: 1303
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->
-# 📹 ICCV2025 Paper Notes
+# 📹 ICCV2025 Accepted Papers
 
 1303 ICCV2025 paper notes covering 3D Vision (264), Image Generation (213), Multimodal VLM (134), Autonomous Driving (93), Segmentation (74), Video Understanding (57), Model Compression (49), Video Generation (48) and other 41 areas. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 

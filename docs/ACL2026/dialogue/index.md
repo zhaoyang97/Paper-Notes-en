@@ -1,6 +1,6 @@
 ---
 title: >-
-  ACL2026 · Dialogue Systems · 27 Paper Notes
+  ACL2026 Dialogue Systems Papers · 27 Notes
 description: >-
   27 ACL2026 papers in the Dialogue Systems area, covering Dialogue, Reasoning, Sentiment Analysis, Agents, LLM, Alignment/RLHF and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
@@ -14,6 +14,62 @@ tags:
   - "Agents"
   - "LLM"
   - "Alignment/RLHF"
+item_list:
+  - u: "apex-mem_agentic_semi-structured_memory_with_temporal_reasoning_for_long-term_co/"
+    t: "APEX-MEM: Agentic Semi-Structured Memory with Temporal Reasoning for Long-Term Conversational AI"
+  - u: "author-in-the-loop_response_generation_and_evaluation_integrating_author_experti/"
+    t: "Author-in-the-Loop Response Generation and Evaluation: Integrating Author Expertise and Intent in Responses to Peer Review"
+  - u: "codebook-injected_dialogue_segmentation_for_multi-utterance_constructs_annotatio/"
+    t: "Codebook-Injected Dialogue Segmentation for Multi-Utterance Constructs Annotation: LLM-Assisted and Gold-Label-Free Evaluation"
+  - u: "codial_interpretable_task-oriented_dialogue_systems_through_dialogue_flow_alignm/"
+    t: "CoDial: Interpretable Task-Oriented Dialogue Systems Through Dialogue Flow Alignment"
+  - u: "cognitive_policy-driven_llm_for_diagnosis_and_intervention_of_cognitive_distorti/"
+    t: "Cognitive Policy-Driven LLM for Diagnosis and Intervention of Cognitive Distortions in Emotional Support Conversation"
+  - u: "context-agent_dynamic_discourse_trees_for_non-linear_dialogue/"
+    t: "Context-Agent: Dynamic Discourse Trees for Non-Linear Dialogue"
+  - u: "disambiguation-centric_finetuning_makes_enterprise_tool-calling_llms_more_realis/"
+    t: "Disambiguation-Centric Finetuning Makes Enterprise Tool-Calling LLMs More Realistic and Less Risky"
+  - u: "discourse_coherence_and_response-guided_context_rewriting_for_multi-party_dialog/"
+    t: "Discourse Coherence and Response-Guided Context Rewriting for Multi-Party Dialogue Generation"
+  - u: "dual_hierarchical_dialogue_policy_learning_for_legal_inquisitive_conversational_/"
+    t: "Dual Hierarchical Dialogue Policy Learning for Legal Inquisitive Conversational Agents"
+  - u: "ethicmind_a_risk-aware_framework_for_ethical-emotional_alignment_in_multi-turn_d/"
+    t: "ETHICMIND: A Risk-Aware Framework for Ethical-Emotional Alignment in Multi-Turn Dialogue"
+  - u: "frame_of_reference_addressing_the_challenges_of_common_ground_representation_in_/"
+    t: "Frame of Reference: Addressing the Challenges of Common Ground Representation in Dialogue"
+  - u: "genesisfunc_multi-agent_data_generation_for_accurate_and_generalizable_function-/"
+    t: "GenesisFunc: Multi-Agent Data Generation for Accurate and Generalizable Function-Calling"
+  - u: "locket_robust_feature-locking_technique_for_language_models/"
+    t: "LOCKET: Robust Feature-Locking Technique for Language Models"
+  - u: "ma2p_a_meta-cognitive_autonomous_intelligent_agents_framework_for_complex_persua/"
+    t: "MA$^2$P: A Meta-Cognitive Autonomous Intelligent Agents Framework for Complex Persuasion"
+  - u: "metro_towards_strategy_induction_from_expert_dialogue_transcripts_for_non-collab/"
+    t: "Metro: Towards Strategy Induction from Expert Dialogue Transcripts for Non-collaborative Dialogues"
+  - u: "odutqa-mdc_a_task_for_open-domain_underspecified_tabular_qa_with_multi-turn_dial/"
+    t: "ODUTQA-MDC: A Task for Open-Domain Underspecified Tabular QA with Multi-turn Dialogue-based Clarification"
+  - u: "preference_learning_unlocks_llms_psycho-counseling_skills/"
+    t: "Preference Learning Unlocks LLMs' Psycho-Counseling Skills"
+  - u: "reactod_bounded_neuro-symbolic_agentic_nlu_for_zero-shot_dialogue_state_tracking/"
+    t: "ReacTOD: Bounded Neuro-Symbolic Agentic NLU for Zero-Shot Dialogue State Tracking"
+  - u: "reasoning_gets_harder_for_llms_inside_a_dialogue/"
+    t: "Reasoning Gets Harder for LLMs Inside A Dialogue"
+  - u: "simulated_students_in_tutoring_dialogues_substance_or_illusion/"
+    t: "Simulated Students in Tutoring Dialogues: Substance or Illusion?"
+  - u: "spasm_stable_persona-driven_agent_simulation_for_multi-turn_dialogue_generation/"
+    t: "SPASM: Stable Persona-driven Agent Simulation for Multi-turn Dialogue Generation"
+  - u: "stress-testing_emotional_support_models_moving_from_homogeneous_to_diverse_help_/"
+    t: "Stress-Testing Emotional Support Models: Moving from Homogeneous to Diverse Help Seekers"
+  - u: "stride-ed_a_strategy-grounded_stepwise_reasoning_framework_for_empathetic_dialog/"
+    t: "STRIDE-ED: A Strategy-Grounded Stepwise Reasoning Framework for Empathetic Dialogue Systems"
+  - u: "surprisal_minimisation_over_goal-directed_alternatives_predicts_production_choic/"
+    t: "Surprisal Minimisation over Goal-directed Alternatives Predicts Production Choice in Dialogue"
+  - u: "template-assisted_contrastive_learning_of_task-oriented_dialogue_sentence_embedd/"
+    t: "Template-assisted Contrastive Learning of Task-oriented Dialogue Sentence Embeddings"
+  - u: "towards_proactive_information_probing_customer_service_chatbots_harvesting_value/"
+    t: "Towards Proactive Information Probing: Customer Service Chatbots Harvesting Value from Conversation"
+  - u: "your_students_dont_use_llms_like_you_wish_they_did/"
+    t: "Your Students Don't Use LLMs Like You Wish They Did"
+item_total: 27
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->

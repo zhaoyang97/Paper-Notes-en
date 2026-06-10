@@ -1,10 +1,12 @@
 ---
 title: >-
-  CVPR2026 · 1643 Paper Notes
+  CVPR2026 Accepted Papers List · 1643 Notes
 description: >-
   1643 CVPR2026 paper notes covering Multimodal VLM (232), 3D Vision (230), Image Generation (210), Medical Imaging (102), Autonomous Driving (89), Segmentation (83), Video Understanding (78), Human Understanding (56) and other 42 areas. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "CVPR2026"
+  - "CVPR2026 accepted papers"
+  - "CVPR2026 paper list"
   - "AI paper notes"
   - "top conference papers"
   - "Multimodal VLM"
@@ -15,10 +17,72 @@ tags:
   - "Segmentation"
   - "Video Understanding"
   - "Human Understanding"
+item_list:
+  - u: "multimodal_vlm/a3_towards_advertising_aesthetic_assessment/"
+    t: "A3: Towards Advertising Aesthetic Assessment"
+  - u: "multimodal_vlm/activation_matters_test-time_activated_negative_labels_for_ood_detection_with_vi/"
+    t: "Activation Matters: Test-time Activated Negative Labels for OOD Detection with Vision-Language Models"
+  - u: "multimodal_vlm/adaptive_vision-language_model_routing_for_computer_use_agents/"
+    t: "AVR: Adaptive VLM Routing for Computer Use Agents"
+  - u: "multimodal_vlm/adaptvision_efficient_vision-language_models_via_adaptive_visual_acquisition/"
+    t: "AdaptVision: Efficient Vision-Language Models via Adaptive Visual Acquisition"
+  - u: "multimodal_vlm/agft_alignment-guided_fine-tuning_for_zero-shot_adversarial_robustness_of_vision/"
+    t: "AGFT: Alignment-Guided Fine-Tuning for Zero-Shot Adversarial Robustness of Vision-Language Models"
+  - u: "multimodal_vlm/aif_adaptive_information_flow_vlm/"
+    t: "Aligning What Vision-Language Models See and Perceive with Adaptive Information Flow"
+  - u: "multimodal_vlm/anomalyvfm_--_transforming_vision_foundation_models_into_zero-shot_anomaly_detec/"
+    t: "AnomalyVFM -- Transforming Vision Foundation Models into Zero-Shot Anomaly Detectors"
+  - u: "multimodal_vlm/apet_approximation-error_guided_token_compression_for_efficient_vlms/"
+    t: "ApET: Approximation-Error Guided Token Compression for Efficient VLMs"
+  - u: "multimodal_vlm/asking_like_socrates_socrates_helps_vlms_understand_remote_sensing_images/"
+    t: "Asking like Socrates: Socrates helps VLMs understand remote sensing images"
+  - u: "multimodal_vlm/ava-bench_atomic_visual_ability_benchmark_for_vision_foundation_models/"
+    t: "AVA-Bench: Atomic Visual Ability Benchmark for Vision Foundation Models"
+  - u: "multimodal_vlm/ava_vla_improving_vision_language_action_models_with_active_visual_attention/"
+    t: "AVA-VLA: Improving Vision-Language-Action models with Active Visual Attention"
+  - u: "multimodal_vlm/balm_a_model-agnostic_framework_for_balanced_multimodal_learning_under_imbalance/"
+    t: "BALM: A Model-Agnostic Framework for Balanced Multimodal Learning under Imbalanced Missing Rates"
+  - u: "multimodal_vlm/benchmarking_vision-language_models_under_contradictory_virtual_content_attacks_/"
+    t: "Benchmarking Vision-Language Models under Contradictory Virtual Content Attacks in Augmented Reality"
+  - u: "multimodal_vlm/beyond_heuristic_prompting_a_concept-guided_bayesian_framework_for_zero-shot_ima/"
+    t: "Beyond Heuristic Prompting: A Concept-Guided Bayesian Framework for Zero-Shot Image Recognition"
+  - u: "multimodal_vlm/beyond_recognition_evaluating_visual_perspective_taking_in_vision_language_model/"
+    t: "Beyond Recognition: Evaluating Visual Perspective Taking in Vision Language Models"
+  - u: "multimodal_vlm/beyond_static_artifacts_a_forensic_benchmark_for_video_deepfake_reasoning_in_vis/"
+    t: "Beyond Static Artifacts: A Forensic Benchmark for Video Deepfake Reasoning in Vision Language Models"
+  - u: "multimodal_vlm/beyond_the_mean_modelling_annotation_distributions_in_continuous_affect_predicti/"
+    t: "Beyond the Mean: Modelling Annotation Distributions in Continuous Affect Prediction"
+  - u: "multimodal_vlm/biclip_domain_canonicalization_via_structured_geometric_transformation/"
+    t: "BiCLIP: Domain Canonicalization via Structured Geometric Transformation"
+  - u: "multimodal_vlm/brima_bridged_modality_adaptation_for_multi-modal_continual_action_quality_asses/"
+    t: "BriMA: Bridged Modality Adaptation for Multi-Modal Continual Action Quality Assessment"
+  - u: "multimodal_vlm/bussard_normalizing_flows_for_bijective_universal_scene-specific_anomalous_relat/"
+    t: "BUSSARD: Normalizing Flows for Bijective Universal Scene-Specific Anomalous Relationship Detection"
+  - u: "multimodal_vlm/can_vision-language_models_count_a_synthetic_benchmark_and_analysis_of_attention/"
+    t: "Can Vision-Language Models Count? A Synthetic Benchmark and Analysis of Attention-Based Interventions"
+  - u: "multimodal_vlm/capt_confusion-aware_prompt_tuning_for_reducing_vision-language_misalignment/"
+    t: "CAPT: Confusion-Aware Prompt Tuning for Reducing Vision-Language Misalignment"
+  - u: "multimodal_vlm/circuit_tracing_in_vision-language_models_understanding_the_internal_mechanisms_/"
+    t: "Circuit Tracing in Vision-Language Models: Understanding the Internal Mechanisms of Multimodal Thinking"
+  - u: "multimodal_vlm/clip-free_label_free_unsupervised_concept_bottleneck_models/"
+    t: "CLIP-Free, Label-Free, Unsupervised Concept Bottleneck Models"
+  - u: "multimodal_vlm/coat_cbm_concept_wise_attention/"
+    t: "Concept-wise Attention for Fine-grained Concept Bottleneck Models"
+  - u: "multimodal_vlm/codedance_a_dynamic_tool-integrated_mllm_for_executable_visual_reasoning/"
+    t: "CodeDance: A Dynamic Tool-integrated MLLM for Executable Visual Reasoning"
+  - u: "multimodal_vlm/codepercept_code-grounded_visual_stem_perception_for_mllms/"
+    t: "CodePercept: Code-Grounded Visual STEM Perception for MLLMs"
+  - u: "multimodal_vlm/comp_collaborative_multi-mode_pruning_for_vision-language_models/"
+    t: "CoMP: Collaborative Multi-Mode Pruning for Vision-Language Models"
+  - u: "multimodal_vlm/conditional_factuality_controlled_llms_with_generalization_certificates_via_conf/"
+    t: "Conditional Factuality Controlled LLMs with Generalization Certificates via Conformal Sampling"
+  - u: "multimodal_vlm/continual_learning_with_vision-language_models_via_semantic-geometry_preservatio/"
+    t: "Continual Learning with Vision-Language Models via Semantic-Geometry Preservation"
+item_total: 1643
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->
-# 📷 CVPR2026 Paper Notes
+# 📷 CVPR2026 Accepted Papers
 
 1643 CVPR2026 paper notes covering Multimodal VLM (232), 3D Vision (230), Image Generation (210), Medical Imaging (102), Autonomous Driving (89), Segmentation (83), Video Understanding (78), Human Understanding (56) and other 42 areas. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 

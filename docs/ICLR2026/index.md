@@ -1,10 +1,12 @@
 ---
 title: >-
-  ICLR2026 · 1527 Paper Notes
+  ICLR2026 Accepted Papers List · 1527 Notes
 description: >-
   1527 ICLR2026 paper notes covering Image Generation (149), Reinforcement Learning (138), Model Compression (90), Multimodal VLM (88), 3D Vision (63), LLM Reasoning (63), Interpretability (55), LLM Safety (54) and other 45 areas. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "ICLR2026"
+  - "ICLR2026 accepted papers"
+  - "ICLR2026 paper list"
   - "AI paper notes"
   - "top conference papers"
   - "Image Generation"
@@ -15,10 +17,72 @@ tags:
   - "LLM Reasoning"
   - "Interpretability"
   - "LLM Safety"
+item_list:
+  - u: "image_generation/a_hidden_semantic_bottleneck_in_conditional_embeddings_of_diffusion_transformers/"
+    t: "A Hidden Semantic Bottleneck in Conditional Embeddings of Diffusion Transformers"
+  - u: "image_generation/aligntok_aligning_visual_foundation_encoders_to_tokenizers_for_diffusion_models/"
+    t: "AlignTok: Aligning Visual Foundation Encoders to Tokenizers for Diffusion Models"
+  - u: "image_generation/amortising_inference_and_meta-learning_priors_in_neural_networks/"
+    t: "Amortising Inference and Meta-Learning Priors in Neural Networks (BNNP)"
+  - u: "image_generation/asynchronous_denoising_diffusion_models_for_aligning_text-to-image_generation/"
+    t: "Asynchronous Denoising Diffusion Models for Aligning Text-to-Image Generation"
+  - u: "image_generation/autoregressive_image_generation_with_randomized_parallel_decoding/"
+    t: "Autoregressive Image Generation with Randomized Parallel Decoding"
+  - u: "image_generation/beyond_confidence_the_rhythms_of_reasoning_in_generative_models/"
+    t: "Beyond Confidence: The Rhythms of Reasoning in Generative Models"
+  - u: "image_generation/blueprint-bench_comparing_spatial_intelligence_of_llms_agents_and_image_models/"
+    t: "Blueprint-Bench: Comparing Spatial Intelligence of LLMs, Agents and Image Models"
+  - u: "image_generation/branched_schrödinger_bridge_matching/"
+    t: "Branched Schrödinger Bridge Matching"
+  - u: "image_generation/bridging_degradation_discrimination_and_generation_for_universal_image_restorati/"
+    t: "Bridging Degradation Discrimination and Generation for Universal Image Restoration"
+  - u: "image_generation/bridging_generalization_gap_of_heterogeneous_federated_clients_using_generative_/"
+    t: "Bridging Generalization Gap of Heterogeneous Federated Clients Using Generative Models"
+  - u: "image_generation/cmt_mid-training_for_efficient_learning_of_consistency_mean_flow_and_flow_map_mo/"
+    t: "CMT: Mid-Training for Efficient Learning of Consistency, Mean Flow, and Flow Map Models"
+  - u: "image_generation/compose_your_policies_improving_diffusion-based_or_flow-based_robot_policies_via/"
+    t: "Compose Your Policies! Improving Diffusion-based or Flow-based Robot Policies via Test-time Distribution-level Composition"
+  - u: "image_generation/compositional_amortized_inference_for_large-scale_hierarchical_bayesian_models/"
+    t: "Compositional amortized inference for large-scale hierarchical Bayesian models"
+  - u: "image_generation/concept-trak_understanding_how_diffusion_models_learn_concepts_through_concept-l/"
+    t: "Concept-TRAK: Understanding how diffusion models learn concepts through concept-level attribution"
+  - u: "image_generation/condition_errors_refinement_in_autoregressive_image_generation_with_diffusion_lo/"
+    t: "Condition Errors Refinement in Autoregressive Image Generation with Diffusion Loss"
+  - u: "image_generation/conditionally_whitened_generative_models_for_probabilistic_time_series_forecasti/"
+    t: "Conditionally Whitened Generative Models for Probabilistic Time Series Forecasting"
+  - u: "image_generation/conjuring_semantic_similarity/"
+    t: "Conjuring Semantic Similarity"
+  - u: "image_generation/consistent_text-to-image_generation_via_scene_de-contextualization/"
+    t: "Consistent Text-to-Image Generation via Scene De-Contextualization"
+  - u: "image_generation/contact-guided_3d_genome_structure_generation_of_e_coli_via_diffusion_transforme/"
+    t: "Contact-Guided 3D Genome Structure Generation of E. coli via Diffusion Transformers"
+  - u: "image_generation/contact_wasserstein_geodesics_for_non-conservative_schrödinger_bridges/"
+    t: "Contact Wasserstein Geodesics for Non-Conservative Schrödinger Bridges"
+  - u: "image_generation/contextbench_modifying_contexts_for_targeted_latent_activation/"
+    t: "ContextBench: Modifying Contexts for Targeted Latent Activation"
+  - u: "image_generation/continual_unlearning_for_text-to-image_diffusion_models_a_regularization_perspec/"
+    t: "Continual Unlearning for Text-to-Image Diffusion Models: A Regularization Perspective"
+  - u: "image_generation/contractive_diffusion_policies_robust_action_diffusion_via_contractive_score-bas/"
+    t: "Contractive Diffusion Policies: Robust Action Diffusion via Contractive Score-Based Sampling with Differential Equations"
+  - u: "image_generation/cosmo-inr_complex_sinusoidal_modulation_for_implicit_neural_representations/"
+    t: "COSMO-INR: Complex Sinusoidal Modulation for Implicit Neural Representations"
+  - u: "image_generation/crepe_controlling_diffusion_with_replica_exchange/"
+    t: "CREPE: Controlling Diffusion with Replica Exchange"
+  - u: "image_generation/densegrpo_from_sparse_to_dense_reward_for_flow_matching_model_alignment/"
+    t: "DenseGRPO: From Sparse to Dense Reward for Flow Matching Model Alignment"
+  - u: "image_generation/detecting_and_mitigating_memorization_in_diffusion_models_through_anisotropy_of_/"
+    t: "Detecting and Mitigating Memorization in Diffusion Models through Anisotropy of the Log-Probability"
+  - u: "image_generation/diffink_glyph-_and_style-aware_latent_diffusion_transformer_for_text_to_online_h/"
+    t: "DiffInk: Glyph- and Style-Aware Latent Diffusion Transformer for Text to Online Handwriting Generation"
+  - u: "image_generation/diffusion_alignment_as_variational_expectation-maximization/"
+    t: "Diffusion Alignment as Variational Expectation-Maximization"
+  - u: "image_generation/diffusion_blend_inference-time_multi-preference_alignment_for_diffusion_models/"
+    t: "Diffusion Blend: Inference-Time Multi-Preference Alignment for Diffusion Models"
+item_total: 1527
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->
-# 🔬 ICLR2026 Paper Notes
+# 🔬 ICLR2026 Accepted Papers
 
 1527 ICLR2026 paper notes covering Image Generation (149), Reinforcement Learning (138), Model Compression (90), Multimodal VLM (88), 3D Vision (63), LLM Reasoning (63), Interpretability (55), LLM Safety (54) and other 45 areas. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 

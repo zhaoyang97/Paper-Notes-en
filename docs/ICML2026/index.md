@@ -1,10 +1,12 @@
 ---
 title: >-
-  ICML2026 · 1605 Paper Notes
+  ICML2026 Accepted Papers List · 1605 Notes
 description: >-
   1605 ICML2026 paper notes covering Image Generation (131), Multimodal VLM (111), Model Compression (108), Reinforcement Learning (103), Interpretability (81), LLM Reasoning (74), Optimization & Theory (67), LLM Safety (61) and other 48 areas. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "ICML2026"
+  - "ICML2026 accepted papers"
+  - "ICML2026 paper list"
   - "AI paper notes"
   - "top conference papers"
   - "Image Generation"
@@ -15,10 +17,72 @@ tags:
   - "LLM Reasoning"
   - "Optimization & Theory"
   - "LLM Safety"
+item_list:
+  - u: "image_generation/a_diffusive_classification_loss_for_learning_energy-based_generative_models/"
+    t: "A Diffusive Classification Loss for Learning Energy-based Generative Models"
+  - u: "image_generation/a_kinetic_energy_perspective_of_flow_matching/"
+    t: "A Kinetic Energy Perspective of Flow Matching"
+  - u: "image_generation/a_systematic_investigation_of_rl-jailbreaking_in_llms/"
+    t: "A Systematic Investigation of RL-Jailbreaking in LLMs"
+  - u: "image_generation/a_unified_framework_for_diffusion_model_unlearning_with_f-divergence/"
+    t: "A Unified Framework for Diffusion Model Unlearning with f-Divergence"
+  - u: "image_generation/adaeraser_training-free_object_removal_via_adaptive_attention_suppression/"
+    t: "AdaEraser: Training-Free Object Removal via Adaptive Attention Suppression"
+  - u: "image_generation/adapting_noise_to_data_generative_flows_from_1d_processes/"
+    t: "Adapting Noise to Data: Generative Flows from Learned 1D Processes"
+  - u: "image_generation/adversarial_flow_models/"
+    t: "Adversarial Flow Models"
+  - u: "image_generation/aesformer_transform_everyday_photos_into_beautiful_memories/"
+    t: "AesFormer: Transform Everyday Photos into Beautiful Memories"
+  - u: "image_generation/ag-repa_causal_layer_selection_for_representation_alignment_in_audio_flow_matchi/"
+    t: "AG-REPA: Causal Layer Selection for Representation Alignment in Audio Flow Matching"
+  - u: "image_generation/alignment-guided_score_matching_for_text-to-image_alignment_in_diffusion_models/"
+    t: "Alignment-Guided Score Matching for Text-to-Image Alignment in Diffusion Models"
+  - u: "image_generation/anomaly-preference_image_generation/"
+    t: "Anomaly-Preference Image Generation (APO)"
+  - u: "image_generation/arcvq-vae_a_spherical_vector_quantization_framework_with_arccosine_additive_marg/"
+    t: "ArcVQ-VAE: A Spherical Vector Quantization Framework with ArcCosine Additive Margin"
+  - u: "image_generation/ateliereval_agentic_evaluation_of_humans_llms_as_text-to-image_prompters/"
+    t: "AtelierEval: Agentic Evaluation of Humans & LLMs as Text-to-Image Prompters"
+  - u: "image_generation/balancing_fidelity_and_diversity_in_diffusion_models_via_symmetric_attention_dec/"
+    t: "Balancing Fidelity and Diversity in Diffusion Models via Symmetric Attention Decomposition: Hopfield Perspective"
+  - u: "image_generation/barriers_to_counterfactual_credit_attribution_for_autoregressive_models/"
+    t: "Barriers to Counterfactual Credit Attribution for Autoregressive Models"
+  - u: "image_generation/bayesian_tensor_decomposition_with_diffusion_model_prior/"
+    t: "Bayesian Tensor Decomposition with Diffusion Model Prior"
+  - u: "image_generation/bootstrap_your_generator_unpaired_visual_editing_with_flow_matching/"
+    t: "Bootstrap Your Generator: Unpaired Visual Editing with Flow Matching"
+  - u: "image_generation/caracal_causal_architecture_via_spectral_mixing/"
+    t: "Caracal: Causal Architecture via Spectral Mixing"
+  - u: "image_generation/card_coarse-to-fine_autoregressive_modeling_with_radix-based_decomposition_for_t/"
+    t: "CARD: Coarse-to-fine Autoregressive Modeling with Radix-based Decomposition for Transferable Free Energy Estimation"
+  - u: "image_generation/clear_context-aware_learning_with_end-to-end_mask-free_inference_for_adaptive_vi/"
+    t: "CLEAR: Context-Aware Learning with End-to-End Mask-Free Inference for Adaptive Video Subtitle Removal"
+  - u: "image_generation/coarse-grained_boltzmann_generators/"
+    t: "Coarse-Grained Boltzmann Generators"
+  - u: "image_generation/cocoedit_content-consistent_image_editing_via_region_regularized_reinforcement_l/"
+    t: "CoCoEdit: Content-Consistent Image Editing via Region Regularized Reinforcement Learning"
+  - u: "image_generation/cofrgenet_continued_fraction_architectures_for_language_generation/"
+    t: "CoFrGeNet: Continued Fraction Architectures for Language Generation"
+  - u: "image_generation/compression_as_adaptation_implicit_visual_representation_with_diffusion_foundati/"
+    t: "Compression as Adaptation: Implicit Visual Representation with Diffusion Foundation Models"
+  - u: "image_generation/conditional_diffusion_sampling/"
+    t: "Conditional Diffusion Sampling"
+  - u: "image_generation/conf-gen_conformal_uncertainty_quantification_for_generative_models/"
+    t: "Conf-Gen: Conformal Uncertainty Quantification for Generative Models"
+  - u: "image_generation/conflict-aware_additive_guidance_for_flow_models_under_compositional_rewards/"
+    t: "Conflict-Aware Additive Guidance for Flow Models under Compositional Rewards"
+  - u: "image_generation/conformal_reliability_a_new_evaluation_metric_for_conditional_generation/"
+    t: "Conformal Reliability: A New Evaluation Metric for Conditional Generation"
+  - u: "image_generation/content-style_identification_via_differential_independence/"
+    t: "Content-Style Identification via Differential Independence"
+  - u: "image_generation/dflash_block_diffusion_for_flash_speculative_decoding/"
+    t: "DFlash: Block Diffusion for Flash Speculative Decoding"
+item_total: 1605
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->
-# 🧪 ICML2026 Paper Notes
+# 🧪 ICML2026 Accepted Papers
 
 1605 ICML2026 paper notes covering Image Generation (131), Multimodal VLM (111), Model Compression (108), Reinforcement Learning (103), Interpretability (81), LLM Reasoning (74), Optimization & Theory (67), LLM Safety (61) and other 48 areas. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 

@@ -1,10 +1,12 @@
 ---
 title: >-
-  NeurIPS2025 · 2493 Paper Notes
+  NeurIPS2025 Accepted Papers List · 2493 Notes
 description: >-
   2493 NeurIPS2025 paper notes covering Image Generation (242), Reinforcement Learning (168), Multimodal VLM (146), Model Compression (131), 3D Vision (112), Optimization & Theory (110), Medical Imaging (89), LLM Safety (82) and other 46 areas. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "NeurIPS2025"
+  - "NeurIPS2025 accepted papers"
+  - "NeurIPS2025 paper list"
   - "AI paper notes"
   - "top conference papers"
   - "Image Generation"
@@ -15,10 +17,72 @@ tags:
   - "Optimization & Theory"
   - "Medical Imaging"
   - "LLM Safety"
+item_list:
+  - u: "image_generation/70_size_100_accuracy_lossless_llm_compression_for_efficient/"
+    t: "70% Size, 100% Accuracy: Lossless LLM Compression for Efficient GPU Inference via Dynamic-Length Float (DFloat11)"
+  - u: "image_generation/a_closer_look_at_model_collapse_from_a_generalization-to-memorization_perspectiv/"
+    t: "A Closer Look at Model Collapse: From a Generalization-to-Memorization Perspective"
+  - u: "image_generation/a_connection_between_score_matching_and_local_intrinsic_dimension/"
+    t: "A Connection Between Score Matching and Local Intrinsic Dimension"
+  - u: "image_generation/a_data-driven_prism_multi-view_source_separation_with_diffusion_model_priors/"
+    t: "A Data-Driven Prism: Multi-View Source Separation with Diffusion Model Priors"
+  - u: "image_generation/a_diffusion_model_for_regular_time_series_generation_from_irregular_data_with_co/"
+    t: "A Diffusion Model for Regular Time Series Generation from Irregular Data with Completion and Masking"
+  - u: "image_generation/a_gradient_flow_approach_to_solving_inverse_problems_with_latent_diffusion_model/"
+    t: "A Gradient Flow Approach to Solving Inverse Problems with Latent Diffusion Models"
+  - u: "image_generation/accelerating_parallel_diffusion_model_serving_with_residual_compression/"
+    t: "Accelerating Parallel Diffusion Model Serving with Residual Compression"
+  - u: "image_generation/accuquant_simulating_multiple_denoising_steps_for_quantizing/"
+    t: "AccuQuant: Simulating Multiple Denoising Steps for Quantizing Diffusion Models"
+  - u: "image_generation/adapting_speech_language_model_to_singing_voice_synthesis/"
+    t: "Adapting Speech Language Model to Singing Voice Synthesis"
+  - u: "image_generation/alebench_a_benchmark_for_longhorizon_objectivedriven_algorit/"
+    t: "ALE-Bench: A Benchmark for Long-Horizon Objective-Driven Algorithm Engineering"
+  - u: "image_generation/aligning_compound_ai_systems_via_system-level_dpo/"
+    t: "Aligning Compound AI Systems via System-level DPO"
+  - u: "image_generation/aligning_text_to_image_in_diffusion_models_is_easier_than_you_think/"
+    t: "Aligning Text to Image in Diffusion Models is Easier Than You Think"
+  - u: "image_generation/amortized_sampling_with_transferable_normalizing_flows/"
+    t: "Amortized Sampling with Transferable Normalizing Flows"
+  - u: "image_generation/auggen_synthetic_augmentation_using_diffusion_models_can_imp/"
+    t: "AugGen: Synthetic Augmentation using Diffusion Models Can Improve Recognition"
+  - u: "image_generation/badiff_bandwidth_adaptive_diffusion_model/"
+    t: "BADiff: Bandwidth Adaptive Diffusion Model"
+  - u: "image_generation/balanced_conic_rectified_flow/"
+    t: "Balanced Conic Rectified Flow"
+  - u: "image_generation/beyond_masked_and_unmasked_discrete_diffusion_models_via_par/"
+    t: "Beyond Masked and Unmasked: Discrete Diffusion Models via Partial Masking"
+  - u: "image_generation/bitmark_watermarking_bitwise_autoregressive_image_generative_models/"
+    t: "BitMark: Watermarking Bitwise Autoregressive Image Generative Models"
+  - u: "image_generation/blameless_users_in_a_clean_room_defining_copyright_protection_for_generative_mod/"
+    t: "Blameless Users in a Clean Room: Defining Copyright Protection for Generative Models"
+  - u: "image_generation/blind_strong_gravitational_lensing_inversion_joint_inference_of_source_and_lens_/"
+    t: "Blind Strong Gravitational Lensing Inversion: Joint Inference of Source and Lens Mass with Score-Based Models"
+  - u: "image_generation/blurdm_a_blur_diffusion_model_for_image_deblurring/"
+    t: "BlurDM: A Blur Diffusion Model for Image Deblurring"
+  - u: "image_generation/blurguard_a_simple_approach_for_robustifying_image_protection_against_ai-powered/"
+    t: "BlurGuard: A Simple Approach for Robustifying Image Protection Against AI-Powered Edit"
+  - u: "image_generation/boltznce_learning_likelihoods_for_boltzmann_generation_with_stochastic_interpola/"
+    t: "BoltzNCE: Learning Likelihoods for Boltzmann Generation with Stochastic Interpolants"
+  - u: "image_generation/boosting_generative_image_modeling_via_joint_imagefeature_sy/"
+    t: "Boosting Generative Image Modeling via Joint Image-Feature Synthesis"
+  - u: "image_generation/breaking_ars_sampling_bottleneck_provable_acceleration_via_d/"
+    t: "Breaking AR's Sampling Bottleneck: Provable Acceleration via Diffusion Language Models"
+  - u: "image_generation/cadmorph_geometry-driven_parametric_cad_editing_via_a_plan-generate-verify_loop/"
+    t: "CADMorph: Geometry-Driven Parametric CAD Editing via a Plan-Generate-Verify Loop"
+  - u: "image_generation/camila_contextaware_masking_for_image_editing_with_language/"
+    t: "CAMILA: Context-Aware Masking for Image Editing with Language Alignment"
+  - u: "image_generation/camit_a_time-aware_car_model_dataset_for_classification_and_generation/"
+    t: "CaMiT: A Time-Aware Car Model Dataset for Classification and Generation"
+  - u: "image_generation/can_knowledge-graph-based_retrieval_augmented_generation_really_retrieve_what_yo/"
+    t: "Can Knowledge-Graph-based Retrieval Augmented Generation Really Retrieve What You Need?"
+  - u: "image_generation/cdflow_building_invertible_layers_with_circulant_and_diagonal_matrices/"
+    t: "CDFlow: Building Invertible Layers with Circulant and Diagonal Matrices"
+item_total: 2493
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->
-# 🧠 NeurIPS2025 Paper Notes
+# 🧠 NeurIPS2025 Accepted Papers
 
 2493 NeurIPS2025 paper notes covering Image Generation (242), Reinforcement Learning (168), Multimodal VLM (146), Model Compression (131), 3D Vision (112), Optimization & Theory (110), Medical Imaging (89), LLM Safety (82) and other 46 areas. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 

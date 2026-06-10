@@ -1,6 +1,6 @@
 ---
 title: >-
-  NeurIPS2025 · Image Restoration · 26 Paper Notes
+  NeurIPS2025 Image Restoration Papers · 26 Notes
 description: >-
   26 NeurIPS2025 papers in the Image Restoration area, covering Image Restoration, Super-Resolution, Adversarial Robustness, Diffusion Models, Model Compression, Layout & Composition and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
@@ -13,6 +13,60 @@ tags:
   - "Diffusion Models"
   - "Model Compression"
   - "Layout & Composition"
+item_list:
+  - u: "adaptive_discretization_for_consistency_models/"
+    t: "Adaptive Discretization for Consistency Models"
+  - u: "audio_super-resolution_with_latent_bridge_models/"
+    t: "Audio Super-Resolution with Latent Bridge Models"
+  - u: "denoiserotator_enhance_pruning_robustness_for_llms_via_importance_concentration/"
+    t: "DenoiseRotator: Enhance Pruning Robustness for LLMs via Importance Concentration"
+  - u: "dynaguide_steering_diffusion_polices_with_active_dynamic_guidance/"
+    t: "DynaGuide: Steering Diffusion Policies with Active Dynamic Guidance"
+  - u: "enhancing_infrared_vision_progressive_prompt_fusion_network_and_benchmark/"
+    t: "Enhancing Infrared Vision: Progressive Prompt Fusion Network and Benchmark"
+  - u: "fiper_factorized_features_for_robust_image_super-resolution_and_compression/"
+    t: "FIPER: Factorized Features for Robust Image Super-Resolution and Compression"
+  - u: "gc4nc_a_benchmark_framework_for_graph_condensation_on_node_classification_with_n/"
+    t: "GC4NC: A Benchmark Framework for Graph Condensation on Node Classification with New Insights"
+  - u: "implicit_augmentation_from_distributional_symmetry_in_turbulence_super-resolutio/"
+    t: "Implicit Augmentation from Distributional Symmetry in Turbulence Super-Resolution"
+  - u: "improving_diffusion-based_inverse_algorithms_under_few-step_constraint_via_learn/"
+    t: "Improving Diffusion-based Inverse Algorithms under Few-Step Constraint via Learnable Linear Extrapolation"
+  - u: "latent_harmony_synergistic_unified_uhd_image_restoration_via_latent_space_regula/"
+    t: "Latent Harmony: Synergistic Unified UHD Image Restoration via Latent Space Regularization and Controllable Refinement"
+  - u: "latent_harmony_synergistic_unified_uhd_image_restoration_with_pre-trained_diffus/"
+    t: "Latent Harmony: Synergistic Unified UHD Image Restoration via Latent Space Regularization and Controllable Refinement"
+  - u: "learning_cocoercive_conservative_denoisers_via_helmholtz_decomposition_for_poiss/"
+    t: "Learning Cocoercive Conservative Denoisers via Helmholtz Decomposition for Poisson Inverse Problems"
+  - u: "luminance-aware_statistical_quantization_unsupervised_hierarchical_learning_for_/"
+    t: "Luminance-Aware Statistical Quantization: Unsupervised Hierarchical Learning for Illumination Enhancement"
+  - u: "map_estimation_with_denoisers_convergence_rates_and_guarantees/"
+    t: "MAP Estimation with Denoisers: Convergence Rates and Guarantees"
+  - u: "modem_a_morton-order_degradation_estimation_mechanism_for_adverse_weather_image_/"
+    t: "MoDEM: A Morton-Order Degradation Estimation Mechanism for Adverse Weather Image Restoration"
+  - u: "moe-gyro_self-supervised_over-range_reconstruction_and_denoising_for_mems_gyrosc/"
+    t: "MoE-Gyro: Self-Supervised Over-Range Reconstruction and Denoising for MEMS Gyroscopes"
+  - u: "mro_enhancing_reasoning_in_diffusion_language_models_via_multi-reward_optimizati/"
+    t: "MRO: Enhancing Reasoning in Diffusion Language Models via Multi-Reward Optimization"
+  - u: "ms-bart_unified_modeling_of_mass_spectra_and_molecules_for_structure_elucidation/"
+    t: "MS-BART: Unified Modeling of Mass Spectra and Molecules for Structure Elucidation"
+  - u: "real-world_adverse_weather_image_restoration_via_dual-level_reinforcement_learni/"
+    t: "Real-World Adverse Weather Image Restoration via Dual-Level Reinforcement Learning with High-Quality Cold Start"
+  - u: "rethinking_circuit_completeness_in_language_models_and_or_and_adder_gates/"
+    t: "Rethinking Circuit Completeness in Language Models: AND, OR, and ADDER Gates"
+  - u: "rethinking_nighttime_image_deraining_via_learnable_color_space_transformation/"
+    t: "Rethinking Nighttime Image Deraining via Learnable Color Space Transformation"
+  - u: "scan_self-denoising_monte_carlo_annotation_for_robust_process_reward_learning/"
+    t: "SCAN: Self-Denoising Monte Carlo Annotation for Robust Process Reward Learning"
+  - u: "scsplit_bringing_severity_cognizance_to_image_decomposition_in_fluorescence_micr/"
+    t: "scSplit: Bringing Severity Cognizance to Image Decomposition in Fluorescence Microscopy"
+  - u: "spend_wisely_maximizing_post-training_gains_in_iterative_synthetic_data_bootstra/"
+    t: "Spend Wisely: Maximizing Post-Training Gains in Iterative Synthetic Data Bootstrapping"
+  - u: "spiking_meets_attention_efficient_remote_sensing_image_super-resolution_with_att/"
+    t: "Spiking Meets Attention: Efficient Remote Sensing Image Super-Resolution with Attention Spiking Neural Networks"
+  - u: "the_effect_of_optimal_self-distillation_in_noisy_gaussian_mixture_model/"
+    t: "The Effect of Optimal Self-Distillation in Noisy Gaussian Mixture Model"
+item_total: 26
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->

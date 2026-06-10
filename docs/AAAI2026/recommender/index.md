@@ -1,6 +1,6 @@
 ---
 title: >-
-  AAAI2026 · Recommender Systems · 26 Paper Notes
+  AAAI2026 Recommender Systems Papers · 26 Notes
 description: >-
   26 AAAI2026 papers in the Recommender Systems area, covering Recommendation, LLM, Alignment/RLHF, Personalized Generation, Multimodal/VLM, Reasoning and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
@@ -14,6 +14,60 @@ tags:
   - "Personalized Generation"
   - "Multimodal/VLM"
   - "Reasoning"
+item_list:
+  - u: "align3gr_unified_multi-level_alignment_for_llm-based_generat/"
+    t: "Align³GR: Unified Multi-Level Alignment for LLM-based Generative Recommendation"
+  - u: "autopp_towards_automated_product_poster_generation_and_optimization/"
+    t: "AutoPP: Towards Automated Product Poster Generation and Optimization"
+  - u: "behavior_tokens_speak_louder_disentangled_explainable_recommendation_with_behavi/"
+    t: "Behavior Tokens Speak Louder: Disentangled Explainable Recommendation with Behavior Vocabulary"
+  - u: "bid_farewell_to_seesaw_towards_accurate_long-tail_session-based_recommendation_v/"
+    t: "Bid Farewell to Seesaw: Towards Accurate Long-tail Session-based Recommendation via Dual Constraints of Hybrid Intents"
+  - u: "crops_improving_dense_retrieval_with_cross-perspective_positive_samples_in_short/"
+    t: "CroPS: Improving Dense Retrieval with Cross-Perspective Positive Samples in Short-Video Search"
+  - u: "evaluating_llms_for_police_decision-making_a_framework_based_on_police_action_sc/"
+    t: "Evaluating LLMs for Police Decision-Making: A Framework Based on Police Action Scenarios"
+  - u: "exploiting_inter-session_information_with_frequency-enhanced_dual-path_networks_/"
+    t: "FreqRec: Exploiting Inter-Session Information with Frequency-enhanced Dual-Path Networks for Sequential Recommendation"
+  - u: "from_ids_to_semantics_a_generative_framework_for_cross-domain_recommendation_wit/"
+    t: "From IDs to Semantics: A Generative Framework for Cross-Domain Recommendation with Adaptive Semantic Tokenization"
+  - u: "from_parameter_to_representation_a_closed-form_approach_for_controllable_model_m/"
+    t: "From Parameter to Representation: A Closed-Form Approach for Controllable Model Merging"
+  - u: "generalization_bounds_for_semi-supervised_matrix_completion_with_distributional_/"
+    t: "Generalization Bounds for Semi-supervised Matrix Completion with Distributional Side Information"
+  - u: "hymoerec_hybrid_mixture-of-experts_for_sequential_recommendation/"
+    t: "HyMoERec: Hybrid Mixture-of-Experts for Sequential Recommendation"
+  - u: "inductive_generative_recommendation_via_retrieval-based_speculation/"
+    t: "Inductive Generative Recommendation via Retrieval-based Speculation"
+  - u: "inference-aware_prompt_optimization_for_aligning_black-box_large_language_models/"
+    t: "Inference-Aware Prompt Optimization for Aligning Black-Box Large Language Models"
+  - u: "interpretable_reward_model_via_sparse_autoencoder/"
+    t: "Interpretable Reward Model via Sparse Autoencoder"
+  - u: "length-adaptive_interest_network_for_balancing_long_and_short_sequence_modeling_/"
+    t: "Length-Adaptive Interest Network for Balancing Long and Short Sequence Modeling in CTR Prediction"
+  - u: "moral_change_or_noise_on_problems_of_aligning_ai_with_temporally_unstable_human_/"
+    t: "Moral Change or Noise? On Problems of Aligning AI With Temporally Unstable Human Feedback"
+  - u: "multitab_a_scalable_foundation_for_multitask_learning_on_tabular_data/"
+    t: "MultiTab: A Scalable Foundation for Multitask Learning on Tabular Data"
+  - u: "preference_is_more_than_comparisons_rethinking_dueling_bandits_with_augmented_hu/"
+    t: "Preference is More Than Comparisons: Rethinking Dueling Bandits with Augmented Human Feedback"
+  - u: "probabilistic_hash_embeddings_for_online_learning_of_categorical_features/"
+    t: "Probabilistic Hash Embeddings for Online Learning of Categorical Features"
+  - u: "semi-supervised_synthetic_data_generation_with_fine-grained_relevance_control_fo/"
+    t: "Semi-Supervised Synthetic Data Generation with Fine-Grained Relevance Control for Short Video Search Relevance Modeling"
+  - u: "slidetailor_personalized_presentation_slide_generation_for_scientific_papers/"
+    t: "SlideTailor: Personalized Presentation Slide Generation for Scientific Papers"
+  - u: "tokenize_once_recommend_anywhere_unified_item_tokenization_for_multi-domain_llm-/"
+    t: "Tokenize Once, Recommend Anywhere: Unified Item Tokenization for Multi-domain LLM-based Recommendation"
+  - u: "tool4poi_a_tool-augmented_llm_framework_for_next_poi_recommendation/"
+    t: "Tool4POI: A Tool-Augmented LLM Framework for Next POI Recommendation"
+  - u: "travellama_a_multimodal_travel_assistant_with_large-scale_dataset_and_structured/"
+    t: "TraveLLaMA: A Multimodal Travel Assistant with Large-Scale Dataset and Structured Reasoning"
+  - u: "wavelet_enhanced_adaptive_frequency_filter_for_sequential_re/"
+    t: "Wavelet Enhanced Adaptive Frequency Filter for Sequential Recommendation"
+  - u: "when_top-ranked_recommendations_fail_modeling_multi-granular_negative_feedback_f/"
+    t: "When Top-ranked Recommendations Fail: Modeling Multi-Granular Negative Feedback for Explainable and Robust Video Recommendation"
+item_total: 26
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->

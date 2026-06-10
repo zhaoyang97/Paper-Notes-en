@@ -1,6 +1,6 @@
 ---
 title: >-
-  ICLR2026 · AI Safety · 27 Paper Notes
+  ICLR2026 AI Safety Papers · 27 Notes
 description: >-
   27 ICLR2026 papers in the AI Safety area, covering Adversarial Robustness, Federated Learning, Reinforcement Learning, Agents, Watermarking and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
@@ -13,6 +13,62 @@ tags:
   - "Reinforcement Learning"
   - "Agents"
   - "Watermarking"
+item_list:
+  - u: "action-free_offline-to-online_rl_via_discretised_state_policies/"
+    t: "Action-Free Offline-to-Online RL via Discretised State Policies"
+  - u: "adaptive_methods_are_preferable_in_high_privacy_settings_an_sde_perspective/"
+    t: "Adaptive Methods Are Preferable in High Privacy Settings: An SDE Perspective"
+  - u: "atex-cf_attack-informed_counterfactual_explanations_for_graph_neural_networks/"
+    t: "ATEX-CF: Attack-Informed Counterfactual Explanations for Graph Neural Networks"
+  - u: "back_to_square_roots_an_optimal_bound_on_the_matrix_factorization_error_for_mult/"
+    t: "Back to Square Roots: An Optimal Bound on the Matrix Factorization Error for Multi-Epoch Differentially Private SGD"
+  - u: "beware_untrusted_simulators_--_reward-free_backdoor_attacks_in_reinforcement_lea/"
+    t: "Beware Untrusted Simulators -- Reward-Free Backdoor Attacks in Reinforcement Learning"
+  - u: "beyond_match_maximization_and_fairness_retention-optimized_two-sided_matching/"
+    t: "Beyond Match Maximization and Fairness: Retention-Optimized Two-Sided Matching"
+  - u: "bridging_fairness_and_explainability_can_input-based_explanations_promote_fairne/"
+    t: "Bridging Fairness and Explainability: Can Input-Based Explanations Promote Fairness in Hate Speech Detection?"
+  - u: "co-lora_collaborative_model_personalization_on_heterogeneous_multi-modal_clients/"
+    t: "Co-LoRA: Collaborative Model Personalization on Heterogeneous Multi-Modal Clients"
+  - u: "dataless_weight_disentanglement_in_task_arithmetic_via_kronecker-factored_approx/"
+    t: "Dataless Weight Disentanglement in Task Arithmetic via Kronecker-Factored Approximate Curvature"
+  - u: "efficient_resource-constrained_training_of_transformers_via_subspace_optimizatio/"
+    t: "Efficient Resource-Constrained Training of Transformers via Subspace Optimization"
+  - u: "extending_sequence_length_is_not_all_you_need_effective_integration_of_multimoda/"
+    t: "Extending Sequence Length is Not All You Need: Effective Integration of Multimodal Signals for Gene Expression Prediction"
+  - u: "hide_and_find_a_distributed_adversarial_attack_on_federated_graph_learning/"
+    t: "Hide and Find: A Distributed Adversarial Attack on Federated Graph Learning"
+  - u: "learnability_and_privacy_vulnerability_are_entangled_in_a_few_critical_weights/"
+    t: "Learnability and Privacy Vulnerability are Entangled in a Few Critical Weights"
+  - u: "less_is_more_towards_simple_graph_contrastive_learning/"
+    t: "Less is More: Towards Simple Graph Contrastive Learning"
+  - u: "policy_myopia_as_a_mechanism_of_gradual_disempowerment_in_post-agi_governance_ci/"
+    t: "Policy Myopia as a Mechanism of Gradual Disempowerment in Post-AGI Governance"
+  - u: "risk-sensitive_agent_compositions/"
+    t: "Risk-Sensitive Agent Compositions"
+  - u: "robust_spiking_neural_networks_against_adversarial_attacks/"
+    t: "Robust Spiking Neural Networks Against Adversarial Attacks"
+  - u: "sam_membership_privacy_risks/"
+    t: "Membership Privacy Risks of Sharpness Aware Minimization"
+  - u: "sample-efficient_distributionally_robust_multi-agent_reinforcement_learning_via_/"
+    t: "Sample-Efficient Distributionally Robust Multi-Agent Reinforcement Learning via Online Interaction"
+  - u: "skirting_additive_error_barriers_for_private_turnstile_streams/"
+    t: "Skirting Additive Error Barriers for Private Turnstile Streams"
+  - u: "time_is_all_it_takes_spike-retiming_attacks_on_event-driven_spiking_neural_netwo/"
+    t: "Time Is All It Takes: Spike-Retiming Attacks on Event-Driven Spiking Neural Networks"
+  - u: "toward_enhancing_representation_learning_in_federated_multi-task_settings/"
+    t: "Toward Enhancing Representation Learning in Federated Multi-Task Settings"
+  - u: "traceable_black-box_watermarks_for_federated_learning/"
+    t: "Traceable Black-box Watermarks for Federated Learning"
+  - u: "unified_privacy_guarantees_for_decentralized_learning_via_matrix_factorization/"
+    t: "Unified Privacy Guarantees for Decentralized Learning via Matrix Factorization"
+  - u: "vpi-bench_visual_prompt_injection_attacks_for_computer-use_agents/"
+    t: "VPI-Bench: Visual Prompt Injection Attacks for Computer-Use Agents"
+  - u: "watermark-based_attribution_of_ai-generated_content/"
+    t: "Watermark-based Detection and Attribution of AI-Generated Content"
+  - u: "why_do_unlearnable_examples_work_a_novel_perspective_of_mutual_information/"
+    t: "Why Do Unlearnable Examples Work: A Novel Perspective of Mutual Information"
+item_total: 27
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->

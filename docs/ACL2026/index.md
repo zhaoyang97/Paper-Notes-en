@@ -1,10 +1,12 @@
 ---
 title: >-
-  ACL2026 · 1375 Paper Notes
+  ACL2026 Accepted Papers List · 1375 Notes
 description: >-
   1375 ACL2026 paper notes covering LLM Safety (129), Multimodal VLM (99), LLM Evaluation (92), LLM Agent (81), LLM Reasoning (81), Information Retrieval & RAG (74), Audio & Speech (69), Interpretability (63) and other 40 areas. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "ACL2026"
+  - "ACL2026 accepted papers"
+  - "ACL2026 paper list"
   - "AI paper notes"
   - "top conference papers"
   - "LLM Safety"
@@ -15,10 +17,72 @@ tags:
   - "Information Retrieval & RAG"
   - "Audio & Speech"
   - "Interpretability"
+item_list:
+  - u: "llm_safety/a_linguistics-aware_llm_watermarking_via_syntactic_predictability/"
+    t: "STELA: A Linguistics-Aware LLM Watermarking via Syntactic Predictability"
+  - u: "llm_safety/a_survey_on_the_safety_and_security_threats_of_computer-using_agents_jarvis_or_u/"
+    t: "A Survey on the Safety and Security Threats of Computer-Using Agents: JARVIS or Ultron?"
+  - u: "llm_safety/abstain-r1_calibrated_abstention_and_post-refusal_clarification_via_verifiable_r/"
+    t: "Abstain-R1: Calibrated Abstention and Post-Refusal Clarification via Verifiable RL"
+  - u: "llm_safety/aciarena_toward_unified_evaluation_for_agent_cascading_injection/"
+    t: "ACIArena: Toward Unified Evaluation for Agent Cascading Injection"
+  - u: "llm_safety/adaptive_text_anonymization_learning_privacy-utility_trade-offs_via_prompt_optim/"
+    t: "Adaptive Text Anonymization: Learning Privacy-Utility Trade-offs via Prompt Optimization"
+  - u: "llm_safety/advice_answer-dependent_verbalized_confidence_estimation/"
+    t: "ADVICE: Answer-Dependent Verbalized Confidence Estimation"
+  - u: "llm_safety/agentcoma_a_compositional_benchmark_mixing_commonsense_and_mathematical_reasonin/"
+    t: "AgentCoMa: A Compositional Benchmark Mixing Commonsense and Mathematical Reasoning in Real-World Scenarios"
+  - u: "llm_safety/agentmark_utility-preserving_behavioral_watermarking_for_agents/"
+    t: "AgentMark: Utility-Preserving Behavioral Watermarking for Agents"
+  - u: "llm_safety/agsc_adaptive_granularity_and_semantic_clustering_for_uncertainty_quantification/"
+    t: "AGSC: Adaptive Granularity and Semantic Clustering for Uncertainty Quantification in Long-text Generation"
+  - u: "llm_safety/aligning_with_your_own_voice_self-corrected_preference_learning_for_hallucinatio/"
+    t: "Aligning with Your Own Voice: Self-Corrected Preference Learning for Hallucination Mitigation in LVLMs"
+  - u: "llm_safety/appsi-139_a_parallel_corpus_of_english_application_privacy_policy_summarization_/"
+    t: "APPSI-139: A Parallel Corpus of English Application Privacy Policy Summarization and Interpretation"
+  - u: "llm_safety/astra_an_automated_framework_for_strategy_discovery_retrieval_and_evolution_for_/"
+    t: "ASTRA: An Automated Framework for Strategy Discovery, Retrieval, and Evolution for Jailbreaking LLMs"
+  - u: "llm_safety/ataat_adaptive_threat-aware_adversarial_tuning_framework_against_backdoor_attack/"
+    t: "ATAAT: Adaptive Threat-Aware Adversarial Tuning Framework against Backdoor Attacks on Vision-Language-Action Models"
+  - u: "llm_safety/autoran_automated_hijacking_of_safety_reasoning_in_large_reasoning_models/"
+    t: "AutoRAN: Automated Hijacking of Safety Reasoning in Large Reasoning Models"
+  - u: "llm_safety/before_forgetting_learn_to_remember_revisiting_foundational_learning_failures_in/"
+    t: "Before Forgetting, Learn to Remember: Revisiting Foundational Learning Failures in LVLM Unlearning Benchmarks"
+  - u: "llm_safety/beyond_end-to-end_dynamic_chain_optimization_for_private_llm_adaptation_on_the_e/"
+    t: "Beyond End-to-End: Dynamic Chain Optimization for Private LLM Adaptation on the Edge"
+  - u: "llm_safety/beyond_explicit_refusals_soft-failure_attacks_on_retrieval-augmented_generation/"
+    t: "Beyond Explicit Refusals: Soft-Failure Attacks on Retrieval-Augmented Generation"
+  - u: "llm_safety/calibration_vs_decision_making_revisiting_the_reliability_paradox_in_unlearned_l/"
+    t: "Calibration vs Decision Making: Revisiting the Reliability Paradox in Unlearned Language Models"
+  - u: "llm_safety/can_persona-prompted_llms_emulate_subgroup_values_an_empirical_analysis_of_gener/"
+    t: "Can Persona-Prompted LLMs Emulate Subgroup Values? An Empirical Analysis of Generalisability and Fairness in Cultural Alignment"
+  - u: "llm_safety/cap_controllable_alignment_prompting_for_unlearning_in_llms/"
+    t: "CAP: Controllable Alignment Prompting for Unlearning in LLMs"
+  - u: "llm_safety/caro_chain-of-analogy_reasoning_optimization_for_robust_content_moderation/"
+    t: "CarO: Chain-of-Analogy Reasoning Optimization for Robust Content Moderation"
+  - u: "llm_safety/causaldetox_causal_head_selection_and_intervention_for_language_model_detoxifica/"
+    t: "CausalDetox: Causal Head Selection and Intervention for Language Model Detoxification"
+  - u: "llm_safety/ci-work_benchmarking_contextual_integrity_in_enterprise_llm_agents/"
+    t: "CI-Work: Benchmarking Contextual Integrity in Enterprise LLM Agents"
+  - u: "llm_safety/cipo_counterfactual_unlearning_for_large_reasoning_models_through_iterative_pref/"
+    t: "CiPO: Counterfactual Unlearning for Large Reasoning Models through Iterative Preference Optimization"
+  - u: "llm_safety/compiling_activation_steering_into_weights_via_null-space_constraints_for_stealt/"
+    t: "Compiling Activation Steering into Weights via Null-Space Constraints for Stealthy Backdoors"
+  - u: "llm_safety/conjunctive_prompt_attacks_in_multi-agent_llm_systems/"
+    t: "Conjunctive Prompt Attacks in Multi-Agent LLM Systems"
+  - u: "llm_safety/context-fidelity_boosting_enhancing_faithful_generation_through_watermark-inspir/"
+    t: "Context-Fidelity Boosting: Enhancing Faithful Generation through Watermark-Inspired Decoding"
+  - u: "llm_safety/crisp_persistent_concept_unlearning_via_sparse_autoencoders/"
+    t: "CRISP: Persistent Concept Unlearning via Sparse Autoencoders"
+  - u: "llm_safety/crossguard_safeguarding_mllms_against_joint-modal_implicit_malicious_attacks/"
+    t: "CrossGuard: Safeguarding MLLMs against Joint-Modal Implicit Malicious Attacks"
+  - u: "llm_safety/curate_continual_unlearning_in_real_time_with_ensured_preservation_of_llm_knowle/"
+    t: "CURaTE: Continual Unlearning in Real Time with Ensured Preservation of LLM Knowledge"
+item_total: 1375
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->
-# 💬 ACL2026 Paper Notes
+# 💬 ACL2026 Accepted Papers
 
 1375 ACL2026 paper notes covering LLM Safety (129), Multimodal VLM (99), LLM Evaluation (92), LLM Agent (81), LLM Reasoning (81), Information Retrieval & RAG (74), Audio & Speech (69), Interpretability (63) and other 40 areas. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 

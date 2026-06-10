@@ -1,6 +1,6 @@
 ---
 title: >-
-  ICML2026 · 3D Vision · 27 Paper Notes
+  ICML2026 3D Vision Papers · 27 Notes
 description: >-
   27 ICML2026 papers in the 3D Vision area, covering Layout & Composition, Image Restoration, 3D Reconstruction, Point Cloud and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
@@ -12,6 +12,62 @@ tags:
   - "Image Restoration"
   - "3D Reconstruction"
   - "Point Cloud"
+item_list:
+  - u: "avatar_learning_to_align_via_active_optimal_transport/"
+    t: "AvAtar: Learning to Align via Active Optimal Transport"
+  - u: "convex_distance_operator_transport_a_convex_and_geometry-preserving_formulation/"
+    t: "Convex Distance Operator Transport: A Convex and Geometry-Preserving Formulation"
+  - u: "distilling_neuro-symbolic_programs_into_3d_multi-modal_llms/"
+    t: "APEIRIA: Distilling Neuro-Symbolic Programs into 3D Multi-modal LLMs"
+  - u: "fast-sam3d_3dfy_anything_in_images_but_faster/"
+    t: "Fast-SAM3D: 3Dfy Anything in Images but Faster"
+  - u: "foundobj_self-supervised_foundation_models_as_rewards_for_label-free_3d_object_s/"
+    t: "FoundObj: Self-supervised Foundation Models as Rewards for Label-free 3D Object Segmentation"
+  - u: "fs-i2pa_hierarchical_focus-sweep_registration_network_with_dynamically_allocated/"
+    t: "FSI2P: A Hierarchical Focus–Sweep Registration Network with Dynamically Allocated Depth"
+  - u: "geodesic_flow_matching_for_denoising_high-dimensional_structured_representations/"
+    t: "Geodesic Flow Matching for Denoising High-Dimensional Structured Representations"
+  - u: "geometry-guided_modeling_of_foundation_features_enables_generalizable_object_sha/"
+    t: "Geometry-Guided Modeling of Foundation Features Enables Generalizable Object Shape Deformation Learning"
+  - u: "hoi-page_zero-shot_human-object_interaction_generation_with_part_affordance_guid/"
+    t: "HOI-PAGE: Zero-Shot Human-Object Interaction Generation with Part Affordance Guidance"
+  - u: "labbuilder_protocol-grounded_3d_layout_generation_for_interactable_and_safe_labo/"
+    t: "LabBuilder: Protocol-Grounded 3D Layout Generation for Interactable and Safe Laboratory"
+  - u: "pair2scene_learning_local_object_relations_for_procedural_scene_generation/"
+    t: "Pair2Scene: Learning Local Object Relations for Procedural Scene Generation"
+  - u: "physcene3d_physically_consistent_interactive_3d_tabletop_scene_generation/"
+    t: "PhyScene3D: Physically Consistent Interactive 3D Tabletop Scene Generation"
+  - u: "physforge_generating_physics-grounded_3d_assets_for_interactive_virtual_world/"
+    t: "PhysForge: Generating Physics-Grounded 3D Assets for Interactive Virtual World"
+  - u: "physhandi_physics-based_reconstruction_of_hand-deformable_object_interactions/"
+    t: "PhysHanDI: Physics-Based Reconstruction of Hand-Deformable Object Interactions"
+  - u: "plaid_a_unified_data_model_for_machine_learning_on_heterogeneous_physics_simulat/"
+    t: "PLAID: A Unified Data Model for Machine Learning on Heterogeneous Physics Simulations"
+  - u: "r3l_reasoning_3d_layouts_from_relative_spatial_relations/"
+    t: "R$^3$L: Reasoning 3D Layouts from Relative Spatial Relations"
+  - u: "relaxflow_text-driven_amodal_3d_generation/"
+    t: "RelaxFlow: Text-Driven Amodal 3D Generation"
+  - u: "revisiting_photometric_ambiguity_for_accurate_gaussian-splatting_surface_reconst/"
+    t: "Revisiting Photometric Ambiguity for Accurate Gaussian-Splatting Surface Reconstruction"
+  - u: "simpc_learning_self-induced_mirror-point_consistency_for_unsupervised_point_clou/"
+    t: "SIMPC: Learning Self-Induced Mirror-Point Consistency for Unsupervised Point Cloud Denoising"
+  - u: "smoothness_errors_in_dynamics_models_and_how_to_avoid_them/"
+    t: "Smoothness Errors in Dynamics Models and How to Avoid Them"
+  - u: "splattn_bridging_2d_and_3d_with_gaussian_soft_splatting_and_attention_for_point_/"
+    t: "SplAttN: Bridging 2D and 3D with Gaussian Soft Splatting and Attention for Point Cloud Completion"
+  - u: "stable_simulation-ready_tabletop_layout_generation_via_a_semantics-physics_dual_/"
+    t: "STABLE: Simulation-Ready Tabletop Layout Generation via a Semantics–Physics Dual System"
+  - u: "streaming_sliced_optimal_transport/"
+    t: "Streaming Sliced Optimal Transport"
+  - u: "svl_spike-based_vision-language_pretraining_for_efficient_3d_open-world_understa/"
+    t: "SVL: Spike-based Vision-Language Pretraining for Efficient 3D Open-World Understanding"
+  - u: "the_structural_origin_of_attention_sink_variance_discrepancy_super_neurons_and_d/"
+    t: "The Structural Origin of Attention Sink: Variance Discrepancy, Super Neurons, and Dimension Disparity"
+  - u: "tidegs_scalable_training_of_over_one_billion_3d_gaussian_splatting_primitives_vi/"
+    t: "TideGS: Scalable Training of Over One Billion 3D Gaussian Splatting Primitives via Out-of-Core Optimization"
+  - u: "trust_it_or_not_evidential_uncertainty_for_feed-forward_3d_reconstruction_with_t/"
+    t: "Trust3R: Evidential Uncertainty for Feed-Forward 3D Reconstruction"
+item_total: 27
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->

@@ -1,6 +1,6 @@
 ---
 title: >-
-  CVPR2026 · LLM Safety · 26 Paper Notes
+  CVPR2026 LLM Safety Papers · 26 Notes
 description: >-
   26 CVPR2026 papers in the LLM Safety area, covering Multimodal/VLM, Adversarial Robustness, Face & Gaze, LLM, Domain Adaptation, Few-/Zero-Shot Learning and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
@@ -14,6 +14,60 @@ tags:
   - "LLM"
   - "Domain Adaptation"
   - "Few-/Zero-Shot Learning"
+item_list:
+  - u: "a_closedform_solution_for_debiasing_visionlanguage/"
+    t: "A Closed-Form Solution for Debiasing Vision-Language Models with Utility Guarantees Across Modalities and Tasks"
+  - u: "beyond_global_scores_fine_grained_token_grounding_as_robust_detector_of_lvlm_hallucinations/"
+    t: "Beyond the Global Scores: Fine-Grained Token Grounding as a Robust Detector of LVLM Hallucinations"
+  - u: "damp_class_unlearning_via_depth_aware_removal_of_forget_specific_directions/"
+    t: "DAMP: Class Unlearning via Depth-Aware Removal of Forget-Specific Directions"
+  - u: "demographic_fairness_in_multimodal_llms_a_benchmark_of_gender_and_ethnicity_bias/"
+    t: "Demographic Fairness in Multimodal LLMs: A Benchmark of Gender and Ethnicity Bias in Face Verification"
+  - u: "designing_to_forget_deep_semi-parametric_models_for_unlearning/"
+    t: "Designing to Forget: Deep Semi-parametric Models for Unlearning"
+  - u: "fairllava_fairness-aware_parameter-efficient_fine-tuning_for_large_vision-langua/"
+    t: "FairLLaVA: Fairness-Aware Parameter-Efficient Fine-Tuning for Large Vision-Language Models"
+  - u: "force_transferable_visual_jailbreaking_attacks_via_feature_over_reliance_correct/"
+    t: "FORCE: Transferable Visual Jailbreaking Attacks via Feature Over-Reliance CorrEction"
+  - u: "hulluedit_subspace_editing_hallucination/"
+    t: "HulluEdit: Single-Pass Evidence-Consistent Subspace Editing for Mitigating Hallucinations in LVLMs"
+  - u: "iag_input-aware_backdoor_attack_on_vlm-based_visual_grounding/"
+    t: "IAG: Input-aware Backdoor Attack on VLM-based Visual Grounding"
+  - u: "interpretable_debiasing_of_vision-language_models_for_social_fairness/"
+    t: "Interpretable Debiasing of Vision-Language Models for Social Fairness"
+  - u: "learning_from_oblivion_predicting_knowledge_overflowed_weights_via_retrodiction_/"
+    t: "Learning from Oblivion: Predicting Knowledge-Overflowed Weights via Retrodiction of Forgetting"
+  - u: "mitigating_object_hallucinations_in_lvlms_via_attention_imbalance_rectification/"
+    t: "Mitigating Object Hallucination in LVLMs via Attention Imbalance Rectification"
+  - u: "multi-paradigm_collaborative_adversarial_attack_against_multi-modal_large_langua/"
+    t: "Multi-Paradigm Collaborative Adversarial Attack Against Multi-Modal Large Language Models"
+  - u: "oslash_source_models_leak_what_they_shouldnt_nrightarrow_unlearning_zero-shot_tr/"
+    t: "⊘ Source Models Leak What They Shouldn't ↛: Unlearning Zero-Shot Transfer in Domain Adaptation Through Adversarial Optimization"
+  - u: "perturb_and_recover_fine-tuning_for_effective_backdoor_removal_from_clip/"
+    t: "Perturb and Recover: Fine-tuning for Effective Backdoor Removal from CLIP"
+  - u: "phantasia_context-adaptive_backdoors_in_vision_language_models/"
+    t: "Phantasia: Context-Adaptive Backdoors in Vision Language Models"
+  - u: "pixels_dont_lie_but_your_detector_might_bootstrapping_mllm-as-a-judge_for_trustw/"
+    t: "Pixels Don't Lie (But Your Detector Might): Bootstrapping MLLM-as-a-Judge for Trustworthy Deepfake Detection and Reasoning Supervision"
+  - u: "razor_ratio-aware_layer_editing_for_targeted_unlearning_in_vision_transformers_a/"
+    t: "RAZOR: Ratio-Aware Layer Editing for Targeted Unlearning in Vision Transformers and Diffusion Models"
+  - u: "select_hypothesize_and_verify_towards_verified_neuron_concept_interpretation/"
+    t: "Select, Hypothesize and Verify: Towards Verified Neuron Concept Interpretation"
+  - u: "sineproject_machine_unlearning_for_stable_vision_language_alignment/"
+    t: "SineProject: Machine Unlearning for Stable Vision–Language Alignment"
+  - u: "test-time_attention_purification_for_backdoored_large_vision_language_models/"
+    t: "Test-Time Attention Purification for Backdoored Large Vision Language Models"
+  - u: "tridf_evaluating_perception_detection_and_hallucination_for_interpretable_deepfa/"
+    t: "TriDF: Evaluating Perception, Detection, and Hallucination for Interpretable DeepFake Detection"
+  - u: "unsafe2safe_controllable_image_anonymization_for_downstream_utility/"
+    t: "Unsafe2Safe: Controllable Image Anonymization for Downstream Utility"
+  - u: "v-attack_targeting_disentangled_value_features_for_controllable_adversarial_atta/"
+    t: "V-Attack: Targeting Disentangled Value Features for Controllable Adversarial Attacks on LVLMs"
+  - u: "vlm_model_inversion_adaptive_token_weight/"
+    t: "Do Vision-Language Models Leak What They Learn? Adaptive Token-Weighted Model Inversion Attacks"
+  - u: "which_concepts_to_forget_and_how_to_refuse_decomposing_concepts_for_continual_un/"
+    t: "Which Concepts to Forget and How to Refuse? Decomposing Concepts for Continual Unlearning in Large Vision-Language Models"
+item_total: 26
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->

@@ -110,6 +110,21 @@
    sequence in string" errors. HTML-escape produces &amp; / &quot; etc. which
    pollute JSON output, and never escapes the literal \ that crashes the JSON
    parser when titles/descriptions contain LaTeX (\theta, \boldsymbol, ...) #}
+<!-- JSON-LD: Organization (site-wide entity; referenced by @id elsewhere) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://en.papernotes.org/#organization",
+  "name": "AI Paper Notes",
+  "url": "https://en.papernotes.org/",
+  "logo": "https://en.papernotes.org/assets/favicon-512.png",
+  "sameAs": [
+    "https://github.com/zhaoyang97/Paper-Notes",
+    "https://papernotes.org/"
+  ]
+}
+</script>
 {% if page.is_homepage %}
 <!-- JSON-LD: WebSite (homepage) -->
 <script type="application/ld+json">
@@ -120,11 +135,8 @@
   "url": {{ page.canonical_url | tojson }},
   "description": {{ page.meta.description | tojson }},
   "inLanguage": "en",
-  "author": {
-    "@type": "Person",
-    "name": "ZhaoYang",
-    "url": "https://github.com/zhaoyang97"
-  }
+  "publisher": { "@id": "https://en.papernotes.org/#organization" },
+  "author": { "@id": "https://en.papernotes.org/#organization" }
 }
 </script>
 {% elif _is_index %}
@@ -145,11 +157,26 @@
     {%- endfor %}
   ],
   {% endif %}
+  "publisher": { "@id": "https://en.papernotes.org/#organization" },
   "isPartOf": {
     "@type": "WebSite",
     "name": {{ config.site_name | tojson }},
     "url": {{ config.site_url | tojson }}
-  }
+  }{% if page.meta and page.meta.item_list %},
+  "mainEntity": {
+    "@type": "ItemList",
+    "numberOfItems": {{ page.meta.item_total | default(page.meta.item_list | length) }},
+    "itemListElement": [
+    {%- for it in page.meta.item_list %}
+      {
+        "@type": "ListItem",
+        "position": {{ loop.index }},
+        "name": {{ it.t | tojson }},
+        "url": {{ (page.canonical_url ~ it.u) | tojson }}
+      }{% if not loop.last %},{% endif %}
+    {%- endfor %}
+    ]
+  }{% endif %}
 }
 </script>
 {% else %}
@@ -177,15 +204,8 @@
   {% endif %}
   "datePublished": {{ (page.meta.date | default(config.extra.build_date | default(''))) | string | tojson }},
   "dateModified": {{ (page.meta.date | default(config.extra.build_date | default(''))) | string | tojson }},
-  "author": {
-    "@type": "Person",
-    "name": "ZhaoYang",
-    "url": "https://github.com/zhaoyang97"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "AI Paper Notes"
-  }
+  "author": { "@id": "https://en.papernotes.org/#organization" },
+  "publisher": { "@id": "https://en.papernotes.org/#organization" }
 }
 </script>
 {% endif %}

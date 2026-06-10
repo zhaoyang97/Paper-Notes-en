@@ -1,10 +1,12 @@
 ---
 title: >-
-  AAAI2026 · 1381 Paper Notes
+  AAAI2026 Accepted Papers List · 1381 Notes
 description: >-
   1381 AAAI2026 paper notes covering Medical Imaging (88), Multimodal VLM (88), Image Generation (77), 3D Vision (76), Reinforcement Learning (70), Autonomous Driving (57), Model Compression (53), AI Safety (44) and other 47 areas. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "AAAI2026"
+  - "AAAI2026 accepted papers"
+  - "AAAI2026 paper list"
   - "AI paper notes"
   - "top conference papers"
   - "Medical Imaging"
@@ -15,10 +17,72 @@ tags:
   - "Autonomous Driving"
   - "Model Compression"
   - "AI Safety"
+item_list:
+  - u: "medical_imaging/a_disease-aware_dual-stage_framework_for_chest_x-ray_report_/"
+    t: "A Disease-Aware Dual-Stage Framework for Chest X-ray Report Generation"
+  - u: "medical_imaging/a_principle-driven_adaptive_policy_for_group_cognitive_stimu/"
+    t: "A Principle-Driven Adaptive Policy for Group Cognitive Stimulation Dialogue for Elderly with Cognitive Impairment"
+  - u: "medical_imaging/advancing_safe_mechanical_ventilation_using_offline_rl_with_/"
+    t: "Advancing Safe Mechanical Ventilation Using Offline RL With Hybrid Actions and Clinically Aligned Rewards"
+  - u: "medical_imaging/ambiguity-aware_truncated_flow_matching_for_ambiguous_medica/"
+    t: "Ambiguity-aware Truncated Flow Matching for Ambiguous Medical Image Segmentation"
+  - u: "medical_imaging/bayesian_meta-analyses_could_be_more_a_case_study_in_trial_of_labor_after_a_cesa/"
+    t: "Bayesian Meta-Analyses Could Be More: A Case Study in Trial of Labor After a Cesarean-section Outcomes and Complications"
+  - u: "medical_imaging/bidirectional_channel-selective_semantic_interaction_for_semi-supervised_medical/"
+    t: "Bidirectional Channel-selective Semantic Interaction for Semi-Supervised Medical Segmentation"
+  - u: "medical_imaging/bridging_vision_and_language_for_robust_context-aware_surgical_point_tracking_th/"
+    t: "Bridging Vision and Language for Robust Context-Aware Surgical Point Tracking: The VL-SurgPT Dataset and Benchmark"
+  - u: "medical_imaging/cd-dpe_dual-prompt_expert_network_based_on_convolutional_dictionary_feature_deco/"
+    t: "CD-DPE: Dual-Prompt Expert Network Based on Convolutional Dictionary Feature Decoupling for Multi-Contrast MRI Super-Resolution"
+  - u: "medical_imaging/clicare_grounding_large_language_models_in_clinical_guidelines_for_decision_supp/"
+    t: "CliCARE: Grounding Large Language Models in Clinical Guidelines for Decision Support over Longitudinal Cancer Electronic Health Records"
+  - u: "medical_imaging/coarse-to-fine_open-set_graph_node_classification_with_large_language_models/"
+    t: "Coarse-to-Fine Open-Set Graph Node Classification with Large Language Models"
+  - u: "medical_imaging/cocolit_controlnet-conditioned_latent_image_translation_for_mri_to_amyloid_pet_s/"
+    t: "CoCoLIT: ControlNet-Conditioned Latent Image Translation for MRI to Amyloid PET Synthesis"
+  - u: "medical_imaging/cross-sample_augmented_test-time_adaptation_for_personalized_intraoperative_hypo/"
+    t: "Cross-Sample Augmented Test-Time Adaptation for Personalized Intraoperative Hypotension Prediction"
+  - u: "medical_imaging/decoding_with_structured_awareness_integrating_directional_frequency-spatial_and/"
+    t: "Decoding with Structured Awareness: Integrating Directional, Frequency-Spatial, and Structural Attention for Medical Image Segmentation"
+  - u: "medical_imaging/deepgb-tb_a_risk-balanced_cross-attention_gradient-boosted_convolutional_network/"
+    t: "DeepGB-TB: A Risk-Balanced Cross-Attention Gradient-Boosted Convolutional Network for Rapid, Interpretable Tuberculosis Screening"
+  - u: "medical_imaging/denas-vit_data_efficient_nas-optimized_vision_transformer_for_ultrasound_image_s/"
+    t: "DeNAS-ViT: Data Efficient NAS-Optimized Vision Transformer for Ultrasound Image Segmentation"
+  - u: "medical_imaging/dia-gnostic_vlvae_disentangled_alignment-constrained_vision_language_variational/"
+    t: "DiA-gnostic VLVAE: Disentangled Alignment-Constrained Vision Language Variational AutoEncoder for Robust Radiology Reporting with Missing Modalities"
+  - u: "medical_imaging/divide_conquer_and_unite_hierarchical_style-recalibrated_prototype_alignment_for/"
+    t: "Divide, Conquer and Unite: Hierarchical Style-Recalibrated Prototype Alignment for Federated Medical Segmentation"
+  - u: "medical_imaging/do_large_language_models_think_like_the_brain_sentence-level_evidences_from_laye/"
+    t: "Do Large Language Models Think Like the Brain? Sentence-Level Evidences from Layer-Wise Embeddings and fMRI"
+  - u: "medical_imaging/dualfete_revisiting_teacher-student_interactions_from_a_feedback_perspective_for/"
+    t: "DualFete: Revisiting Teacher-Student Interactions from a Feedback Perspective for Semi-supervised Medical Image Segmentation"
+  - u: "medical_imaging/dw-dgat_dynamically_weighted_dual_graph_attention_network_for_neurodegenerative_/"
+    t: "DW-DGAT: Dynamically Weighted Dual Graph Attention Network for Neurodegenerative Disease Diagnosis"
+  - u: "medical_imaging/egoems_a_high-fidelity_multimodal_egocentric_dataset_for_cognitive_assistance_in/"
+    t: "EgoEMS: A High-Fidelity Multimodal Egocentric Dataset for Cognitive Assistance in Emergency Medical Services"
+  - u: "medical_imaging/error_correction_in_radiology_reports_a_knowledge_distillation-based_multi-stage/"
+    t: "Error Correction in Radiology Reports: A Knowledge Distillation-Based Multi-Stage Framework"
+  - u: "medical_imaging/experience_with_single_domain_generalization_in_real_world_medical_imaging_deplo/"
+    t: "Experience with Single Domain Generalization in Real World Medical Imaging Deployments"
+  - u: "medical_imaging/expert-guided_prompting_and_retrieval-augmented_generation_for_emergency_medical/"
+    t: "Expert-Guided Prompting and Retrieval-Augmented Generation for Emergency Medical Service Question Answering"
+  - u: "medical_imaging/fane_towards_fine-grained_cross-modal_contrast_with_false-negative_reduction_and/"
+    t: "FaNe: Towards Fine-Grained Cross-Modal Contrast with False-Negative Reduction and Text-Conditioned Sparse Attention"
+  - u: "medical_imaging/fdp_a_frequency-decomposition_preprocessing_pipeline_for_unsupervised_anomaly_de/"
+    t: "FDP: A Frequency-Decomposition Preprocessing Pipeline for Unsupervised Anomaly Detection in Brain MRI"
+  - u: "medical_imaging/fia-edit_frequency-interactive_attention_for_efficient_and_high-fidelity_inversi/"
+    t: "FIA-Edit: Frequency-Interactive Attention for Efficient and High-Fidelity Inversion-Free Text-Guided Image Editing"
+  - u: "medical_imaging/fine-tuned_llms_know_they_dont_know_a_parameter-efficient_approach_to_recovering/"
+    t: "Fine-Tuned LLMs Know They Don't Know: A Parameter-Efficient Approach to Recovering Honesty"
+  - u: "medical_imaging/from_policy_to_logic_for_efficient_and_interpretable_coverage_assessment/"
+    t: "From Policy to Logic for Efficient and Interpretable Coverage Assessment"
+  - u: "medical_imaging/funkan_functional_kolmogorov-arnold_network_for_medical_image_enhancement_and_se/"
+    t: "FunKAN: Functional Kolmogorov-Arnold Network for Medical Image Enhancement and Segmentation"
+item_total: 1381
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->
-# 🤖 AAAI2026 Paper Notes
+# 🤖 AAAI2026 Accepted Papers
 
 1381 AAAI2026 paper notes covering Medical Imaging (88), Multimodal VLM (88), Image Generation (77), 3D Vision (76), Reinforcement Learning (70), Autonomous Driving (57), Model Compression (53), AI Safety (44) and other 47 areas. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 

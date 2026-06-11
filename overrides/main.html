@@ -1,18 +1,17 @@
 {% extends "base.html" %}
 
 {% block htmltitle %}
-{% if page and page.is_homepage %}
-  {# Homepage: prefer the SEO-tuned frontmatter title so Google search results
-     read "AI Conference Paper Notes | …" instead of the bland site_name
-     ("📚 AI Paper Notes"). Fallback to site_name when no frontmatter title. #}
-  {%- if page.meta and page.meta.title %}
+{# Pages with a frontmatter title (home + conf/area index pages) use it verbatim,
+   dropping Material's " - {site_name}" suffix that otherwise eats ~17 width units
+   and truncates the SEO hook in Google SERPs. Paper pages have no frontmatter
+   title and keep the default suffix via super(). #}
+{%- if page and page.meta and page.meta.title %}
   <title>{{ page.meta.title }}</title>
-  {%- else %}
+{%- elif page and page.is_homepage %}
   <title>{{ config.site_name }}</title>
-  {%- endif %}
-{% else %}
+{%- else %}
   {{ super() }}
-{% endif %}
+{%- endif %}
 {% endblock %}
 
 {% block extrahead %}

@@ -48,7 +48,7 @@ item_total: 14
 
 **🧪 ICML2026** · **14** paper notes
 
-📌 **Same area in other venues:** [💬 ACL2026 (40)](../../ACL2026/multi_agent/index.md)
+📌 **Same area in other venues:** [💬 ACL2026 (39)](../../ACL2026/multi_agent/index.md)
 
 🔥 **Top topics:** Agents ×10 · LLM ×6 · Reasoning ×2
 

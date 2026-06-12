@@ -507,6 +507,18 @@
   {% endif %}
 {% endblock %}
 
+{# B3: MathJax library is loaded only on paper pages. The config
+   (javascripts/mathjax.js) stays global via extra_javascript and is rendered
+   by super() before this script, so window.MathJax is defined first; index /
+   home pages skip the ~1 MB tex-mml-chtml download entirely. #}
+{% block scripts %}
+{{ super() }}
+{% set _src = (page.file.src_uri if page and page.file else '') %}
+{% if page and not page.is_homepage and not _src.endswith('index.md') %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js"></script>
+{% endif %}
+{% endblock %}
+
 {% block content %}
 {% if page %}
   {% set _src = (page.file.src_uri if page.file else '') %}

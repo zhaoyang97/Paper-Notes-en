@@ -128,8 +128,8 @@ The entire process is training-free. Encoders, rerankers, and the agent's LLM (L
 
 - [\[ICML 2026\] LazyAttention: Efficient Retrieval-Augmented Generation with Deferred Positional Encoding](lazyattention_efficient_retrieval-augmented_generation_with_deferred_positional_.md)
 - [\[NeurIPS 2025\] Benchmarking Retrieval-Augmented Multimodal Generation for Document Question Answering](../../NeurIPS2025/information_retrieval/benchmarking_retrievalaugmented_multimodal_generation_for_do.md)
-- [\[ICML 2026\] Vector Linking based on Cross-Model Local Isometry Consistency](vector_linking_via_cross-model_local_isometric_consistency.md)
 - [\[ICML 2026\] Predictive Prefetching for Retrieval-Augmented Generation](predictive_prefetching_for_retrieval-augmented_generation.md)
+- [\[ICML 2026\] Vector Linking based on Cross-Model Local Isometry Consistency](vector_linking_via_cross-model_local_isometric_consistency.md)
 - [\[ACL 2026\] Feedback Adaptation for Retrieval-Augmented Generation](../../ACL2026/information_retrieval/feedback_adaptation_for_retrieval-augmented_generation.md)
 
 </div>

@@ -83,7 +83,7 @@ item_total: 57
 
 **📹 ICCV2025** · **57** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (18)](../../ICML2026/video_understanding/index.md) · [💬 ACL2026 (17)](../../ACL2026/video_understanding/index.md) · [📷 CVPR2026 (78)](../../CVPR2026/video_understanding/index.md) · [🔬 ICLR2026 (22)](../../ICLR2026/video_understanding/index.md) · [🤖 AAAI2026 (33)](../../AAAI2026/video_understanding/index.md) · [🧠 NeurIPS2025 (58)](../../NeurIPS2025/video_understanding/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (18)](../../ICML2026/video_understanding/index.md) · [💬 ACL2026 (16)](../../ACL2026/video_understanding/index.md) · [📷 CVPR2026 (78)](../../CVPR2026/video_understanding/index.md) · [🔬 ICLR2026 (21)](../../ICLR2026/video_understanding/index.md) · [🤖 AAAI2026 (33)](../../AAAI2026/video_understanding/index.md) · [🧠 NeurIPS2025 (58)](../../NeurIPS2025/video_understanding/index.md)
 
 🔥 **Top topics:** Object Tracking ×9 · LLM ×5 · Human Pose ×5 · Model Compression ×4 · Few-/Zero-Shot Learning ×3
 

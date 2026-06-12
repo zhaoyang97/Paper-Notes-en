@@ -83,7 +83,7 @@ item_total: 45
 
 **🧪 ICML2026** · **45** paper notes
 
-📌 **Same area in other venues:** [💬 ACL2026 (10)](../../ACL2026/robotics/index.md) · [📷 CVPR2026 (34)](../../CVPR2026/robotics/index.md) · [🔬 ICLR2026 (47)](../../ICLR2026/robotics/index.md) · [🤖 AAAI2026 (37)](../../AAAI2026/robotics/index.md) · [🧠 NeurIPS2025 (54)](../../NeurIPS2025/robotics/index.md) · [📹 ICCV2025 (26)](../../ICCV2025/robotics/index.md)
+📌 **Same area in other venues:** [💬 ACL2026 (10)](../../ACL2026/robotics/index.md) · [📷 CVPR2026 (34)](../../CVPR2026/robotics/index.md) · [🔬 ICLR2026 (47)](../../ICLR2026/robotics/index.md) · [🤖 AAAI2026 (36)](../../AAAI2026/robotics/index.md) · [🧠 NeurIPS2025 (54)](../../NeurIPS2025/robotics/index.md) · [📹 ICCV2025 (26)](../../ICCV2025/robotics/index.md)
 
 🔥 **Top topics:** Multimodal/VLM ×17 · Robotics ×9 · Diffusion Models ×6 · Navigation ×5 · Agents ×4
 
@@ -265,4 +265,4 @@ item_total: 45
 
 **[WestWorld: Scalable Trajectory World Models with Knowledge Encoding](westworld_a_knowledge-encoded_scalable_trajectory_world_model_for_diverse_roboti.md)**
 
-:   WestWorld enables scalable prediction across diverse robotic systems with a single model by explicitly encoding general robot dynamics knowledge into a trajectory world model—achieving an average 14.3% improvement over specialized models across 7 robot morphologies and supporting zero-shot transfer to novel robot configurations.
+:   WestWorld unifies the trajectory dynamics of diverse heterogeneous robots into one scalable world model using a system-aware MoE (Sys-MoE) plus a knowledge-encoded structural embedding—after pretraining on 89 simulated and real environments, it achieves markedly lower zero-/few-shot trajectory-prediction MAE/MSE than MLP Ensemble, TDM, and TrajWorld, improves downstream MPPI control, and deploys successfully to a real Unitree Go1.

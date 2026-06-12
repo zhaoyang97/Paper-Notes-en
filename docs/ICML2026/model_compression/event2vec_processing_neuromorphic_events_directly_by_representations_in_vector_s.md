@@ -129,7 +129,7 @@ Throughput and Latency (Table 2 in original paper): Training throughput relative
 - [\[ICML 2026\] Exploiting Weight-Space Symmetries for Approximating Curvature](exploiting_weight-space_symmetries_for_approximating_curvature.md)
 - [\[ICLR 2026\] LLM DNA: Tracing Model Evolution via Functional Representations](../../ICLR2026/model_compression/llm_dna_tracing_model_evolution_via_functional_representations.md)
 - [\[ICML 2026\] ArcVQ-VAE: A Spherical Vector Quantization Framework with ArcCosine Additive Margin](arcvq-vae_a_spherical_vector_quantization_framework_with_arccosine_additive_marg.md)
-- [\[ICML 2026\] Hallucination is a Consequence of Space-Optimality: A Rate-Distortion Theorem for Membership Testing](hallucination_is_a_consequence_of_space-optimality_a_rate-distortion_theorem_for.md)
+- [\[ICML 2026\] xKV: Cross-Layer KV-Cache Compression via Aligned Singular Vector Extraction](xkv_cross-layer_kv-cache_compression_via_aligned_singular_vector_extraction.md)
 
 </div>
 

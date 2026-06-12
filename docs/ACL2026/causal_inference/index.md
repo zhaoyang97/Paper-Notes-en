@@ -35,7 +35,7 @@ item_total: 7
 
 **💬 ACL2026** · **7** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (17)](../../ICML2026/causal_inference/index.md) · [📷 CVPR2026 (3)](../../CVPR2026/causal_inference/index.md) · [🔬 ICLR2026 (17)](../../ICLR2026/causal_inference/index.md) · [🤖 AAAI2026 (10)](../../AAAI2026/causal_inference/index.md) · [🧠 NeurIPS2025 (21)](../../NeurIPS2025/causal_inference/index.md) · [📹 ICCV2025 (2)](../../ICCV2025/causal_inference/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (16)](../../ICML2026/causal_inference/index.md) · [📷 CVPR2026 (2)](../../CVPR2026/causal_inference/index.md) · [🔬 ICLR2026 (16)](../../ICLR2026/causal_inference/index.md) · [🤖 AAAI2026 (7)](../../AAAI2026/causal_inference/index.md) · [🧠 NeurIPS2025 (21)](../../NeurIPS2025/causal_inference/index.md) · [📹 ICCV2025 (2)](../../ICCV2025/causal_inference/index.md)
 
 🔥 **Top topics:** LLM ×2
 

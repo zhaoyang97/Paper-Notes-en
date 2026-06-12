@@ -358,7 +358,30 @@
   border-radius: 2px;
 }
 
-/* ── SEO summary strip: first body text for Google snippets + quick human scan ── */
+/* ── Conf index "Browse all N → " entry links ── */
+/* These render as a bare <p><a> (note titles become <dl><dt><strong><a>,
+   already styled above). Without this rule the link inherits the dark navy
+   primary (#2b2d42) in light mode and looks like plain, unclickable text.
+   Dark mode is unaffected (its primary is already a colored value). */
+.md-typeset .conf-index p > a,
+.md-typeset .conf-index p > a:link,
+.md-typeset .conf-index p > a:visited {
+  color: var(--md-accent-fg-color);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  font-weight: 600;
+  transition: color 0.15s, text-decoration-thickness 0.15s, opacity 0.15s;
+}
+.md-typeset .conf-index p > a:hover {
+  opacity: 0.86;
+  text-decoration-thickness: 2px;
+}
+.md-typeset .conf-index p > a:focus-visible {
+  outline: 2px solid var(--md-accent-fg-color);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
 .md-typeset .paper-seo-summary {
   margin: 0 0 0.8rem;
   padding: 0.55rem 0 0.55rem 0.75rem;

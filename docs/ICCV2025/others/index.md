@@ -1,8 +1,8 @@
 ---
 title: >-
-  ICCV2025 Others Papers · 47 Notes
+  ICCV2025 Others Papers · 39 Notes
 description: >-
-  47 ICCV2025 papers in the Others area, covering Adversarial Robustness, Dynamic Scenes, Few-/Zero-Shot Learning, Diffusion Models and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  39 ICCV2025 papers in the Others area, covering Adversarial Robustness, Dynamic Scenes, Few-/Zero-Shot Learning, Diffusion Models and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "ICCV2025"
   - "Others"
@@ -13,8 +13,6 @@ tags:
   - "Few-/Zero-Shot Learning"
   - "Diffusion Models"
 item_list:
-  - u: "a_hidden_stumbling_block_in_generalized_category_discovery_d/"
-    t: "A Hidden Stumbling Block in Generalized Category Discovery: Distracted Attention"
   - u: "a_hyperdimensional_one_place_signature_to_represent_them_all_stackable_descripto/"
     t: "A Hyperdimensional One Place Signature to Represent Them All: Stackable Descriptors For Visual Place Recognition"
   - u: "a_linear_n-point_solver_for_structure_and_motion_from_asynchronous_tracks/"
@@ -29,20 +27,14 @@ item_list:
     t: "Auto-Regressively Generating Multi-View Consistent Images (MV-AR)"
   - u: "c4d_4d_made_from_3d_through_dual_correspondences/"
     t: "C4D: 4D Made from 3D through Dual Correspondences"
-  - u: "despite_exploring_contrastive_deep_skeletonpointcloudimutext/"
-    t: "DeSPITE: Exploring Contrastive Deep Skeleton-Pointcloud-IMU-Text Embeddings for Advanced Point Cloud Human Activity Understanding"
   - u: "doodle_your_keypoints_sketch-based_few-shot_keypoint_detection/"
     t: "Doodle Your Keypoints: Sketch-Based Few-Shot Keypoint Detection"
   - u: "edffdnet_towards_accurate_and_efficient_unsupervised_multi-grid_image_registrati/"
     t: "EDFFDNet: Towards Accurate and Efficient Unsupervised Multi-Grid Image Registration"
-  - u: "failure_cases_are_better_learned_but_boundary_says_sorry_facilitating_smooth_per/"
-    t: "Failure Cases Are Better Learned But Boundary Says Sorry: Facilitating Smooth Perception Change for Accuracy-Robustness Trade-Off in Adversarial Training"
   - u: "fixtalk_taming_identity_leakage_for_high-quality_talking_head_generation_in_extr/"
     t: "FixTalk: Taming Identity Leakage for High-Quality Talking Head Generation in Extreme Cases"
   - u: "from_easy_to_hard_progressive_active_learning_framework_for_infrared_small_targe/"
     t: "From Easy to Hard: Progressive Active Learning Framework for Infrared Small Target Detection with Single Point Supervision"
-  - u: "generate_refine_and_encode_leveraging_synthesized_novel_samples_for_on-the-fly_f/"
-    t: "Generate, Refine, and Encode: Leveraging Synthesized Novel Samples for On-the-Fly Fine-Grained Category Discovery"
   - u: "hi3dgen_high-fidelity_3d_geometry_generation_from_images_via_normal_bridging/"
     t: "Hi3DGen: High-fidelity 3D Geometry Generation from Images via Normal Bridging"
   - u: "hineus_high-fidelity_neural_surface_mitigating_low-texture_and_reflective_ambigu/"
@@ -51,8 +43,6 @@ item_list:
     t: "HyTIP: Hybrid Temporal Information Propagation for Masked Conditional Residual Video Coding"
   - u: "i_am_big_you_are_little_i_am_right_you_are_wrong/"
     t: "I Am Big, You Are Little; I Am Right, You Are Wrong"
-  - u: "iap_invisible_adversarial_patch_attack_through_perceptibility-aware_localization/"
-    t: "IAP: Invisible Adversarial Patch Attack through Perceptibility-Aware Localization"
   - u: "intra-view_and_inter-view_correlation_guided_multi-view_novel_class_discovery/"
     t: "Intra-view and Inter-view Correlation Guided Multi-view Novel Class Discovery"
   - u: "is_meta-learning_out_rethinking_unsupervised_few-shot_classification_with_limite/"
@@ -61,8 +51,6 @@ item_list:
     t: "Jigsaw++: Imagining Complete Shape Priors for Object Reassembly"
   - u: "joint_asymmetric_loss_for_learning_with_noisy_labels/"
     t: "Joint Asymmetric Loss for Learning with Noisy Labels"
-  - u: "kaputt_a_large-scale_dataset_for_visual_defect_detection/"
-    t: "Kaputt: A Large-Scale Dataset for Visual Defect Detection"
   - u: "lacoot_layer_collapse_through_optimal_transport/"
     t: "LaCoOT: Layer Collapse through Optimal Transport"
   - u: "layerd_decomposing_raster_graphic_designs_into_layers/"
@@ -73,21 +61,29 @@ item_list:
     t: "Learning Visual Hierarchies in Hyperbolic Space for Image Retrieval"
   - u: "loss_functions_for_predictor-based_neural_architecture_search/"
     t: "Loss Functions for Predictor-based Neural Architecture Search"
-item_total: 47
+  - u: "magic_insert_style-aware_drag-and-drop/"
+    t: "Magic Insert: Style-Aware Drag-and-Drop"
+  - u: "nappure_adversarial_purification_for_robust_image_classification_under_non-addit/"
+    t: "NAPPure: Adversarial Purification for Robust Image Classification under Non-Additive Perturbations"
+  - u: "omni-dc_highly_robust_depth_completion_with_multiresolution_depth_integration/"
+    t: "Omni-DC: Highly Robust Depth Completion with Multiresolution Depth Integration"
+  - u: "on_the_complexity-faithfulness_trade-off_of_gradient-based_explanations/"
+    t: "On the Complexity-Faithfulness Trade-off of Gradient-Based Explanations"
+  - u: "ph-gan_physics-inspired_gan_for_generating_sar_images_under_limited_data/"
+    t: "Φ-GAN: Physics-Inspired GAN for Generating SAR Images Under Limited Data"
+  - u: "processing_and_acquisition_traces_in_visual_encoders_what_does_clip_know_about_y/"
+    t: "Processing and Acquisition Traces in Visual Encoders: What Does CLIP Know About Your Camera?"
+item_total: 39
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->
 # 📂 Others
 
-**📹 ICCV2025** · **47** paper notes
+**📹 ICCV2025** · **39** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (98)](../../ICML2026/others/index.md) · [💬 ACL2026 (1)](../../ACL2026/others/index.md) · [📷 CVPR2026 (42)](../../CVPR2026/others/index.md) · [🔬 ICLR2026 (74)](../../ICLR2026/others/index.md) · [🤖 AAAI2026 (124)](../../AAAI2026/others/index.md) · [🧠 NeurIPS2025 (141)](../../NeurIPS2025/others/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (69)](../../ICML2026/others/index.md) · [💬 ACL2026 (1)](../../ACL2026/others/index.md) · [📷 CVPR2026 (39)](../../CVPR2026/others/index.md) · [🔬 ICLR2026 (62)](../../ICLR2026/others/index.md) · [🤖 AAAI2026 (116)](../../AAAI2026/others/index.md) · [🧠 NeurIPS2025 (118)](../../NeurIPS2025/others/index.md)
 
-🔥 **Top topics:** Adversarial Robustness ×6 · Dynamic Scenes ×2 · Few-/Zero-Shot Learning ×2 · Diffusion Models ×2
-
-**[A Hidden Stumbling Block in Generalized Category Discovery: Distracted Attention](a_hidden_stumbling_block_in_generalized_category_discovery_d.md)**
-
-:   This paper identifies a previously overlooked issue in GCD—ViT attention on unlabeled data (especially novel categories) tends to disperse onto background regions (distracted attention)—and proposes an Attention Focusing (AF) module that corrects attention via multi-scale token importance measurement combined with adaptive pruning. As a plug-and-play module on top of SimGCD, AF achieves up to 15.4% performance improvement.
+🔥 **Top topics:** Adversarial Robustness ×3 · Dynamic Scenes ×2 · Few-/Zero-Shot Learning ×2 · Diffusion Models ×2
 
 **[A Hyperdimensional One Place Signature to Represent Them All: Stackable Descriptors For Visual Place Recognition](a_hyperdimensional_one_place_signature_to_represent_them_all_stackable_descripto.md)**
 
@@ -117,10 +113,6 @@ item_total: 47
 
 :   This paper proposes C4D, a framework that upgrades existing 3D reconstruction paradigms to full 4D reconstruction by jointly capturing dual temporal correspondences — short-term optical flow and dynamic-aware long-term point tracking (DynPT) — on top of DUSt3R's 3D pointmap predictions. Motion masks are generated to separate static and dynamic regions. Three optimization objectives are introduced: camera motion alignment, camera trajectory smoothing, and point trajectory smoothing. The resulting system produces per-frame point clouds, camera parameters, and 2D/3D trajectories, achieving competitive performance across depth estimation, pose estimation, and point tracking tasks.
 
-**[DeSPITE: Exploring Contrastive Deep Skeleton-Pointcloud-IMU-Text Embeddings for Advanced Point Cloud Human Activity Understanding](despite_exploring_contrastive_deep_skeletonpointcloudimutext.md)**
-
-:   This paper proposes DeSPITE, a contrastive learning framework that aligns four modalities—LiDAR point clouds, skeletal poses, IMU signals, and text—into a joint embedding space. It is the first to adopt LiDAR (rather than RGB) as the primary visual modality, enabling previously infeasible tasks such as cross-modal matching and retrieval, while also serving as an effective HAR pretraining strategy that achieves state-of-the-art performance on MSR-Action3D and HMPEAR.
-
 **[Doodle Your Keypoints: Sketch-Based Few-Shot Keypoint Detection](doodle_your_keypoints_sketch-based_few-shot_keypoint_detection.md)**
 
 :   This paper proposes the first sketch-based cross-modal few-shot keypoint detection framework. By leveraging a prototype network, grid-based locator, prototype domain adaptation, and a de-stylization network, the framework detects novel keypoints on unseen categories in real photographs using only a handful of annotated sketches.
@@ -129,10 +121,6 @@ item_total: 47
 
 :   This paper proposes EDFFDNet, which replaces conventional B-spline FFD and TPS with an Exponentially Decaying Free-Form Deformation (EDFFD) model for image registration. Combined with an Adaptive Sparse Motion Aggregator (ASMA) and a progressive correlation strategy, the method achieves a +0.5 dB PSNR improvement on the UDIS-D dataset while reducing parameter count by 70.5% and GPU memory usage by 32.6%.
 
-**[Failure Cases Are Better Learned But Boundary Says Sorry: Facilitating Smooth Perception Change for Accuracy-Robustness Trade-Off in Adversarial Training](failure_cases_are_better_learned_but_boundary_says_sorry_facilitating_smooth_per.md)**
-
-:   This paper reveals a counterintuitive phenomenon in adversarial training — the model's perceptual change on failure cases is actually smaller than on success cases (i.e., failure cases are "over-learned") — and proposes Robust Perception Adversarial Training (RPAT), which encourages perceptions to change smoothly with perturbations to alleviate the accuracy-robustness trade-off.
-
 **[FixTalk: Taming Identity Leakage for High-Quality Talking Head Generation in Extreme Cases](fixtalk_taming_identity_leakage_for_high-quality_talking_head_generation_in_extr.md)**
 
 :   FixTalk is proposed as a framework that addresses identity leakage in GAN-based talking head generation through two lightweight plug-and-play modules — the Enhanced Motion Indicator (EMI) and the Enhanced Detail Indicator (EDI). EMI eliminates identity information from motion features to suppress identity leakage, while EDI repurposes the leaked identity information to compensate for missing details under extreme poses, thereby removing rendering artifacts.
@@ -140,10 +128,6 @@ item_total: 47
 **[From Easy to Hard: Progressive Active Learning Framework for Infrared Small Target Detection with Single Point Supervision](from_easy_to_hard_progressive_active_learning_framework_for_infrared_small_targe.md)**
 
 :   This paper proposes a Progressive Active Learning (PAL) framework that trains infrared small target detection networks through a three-stage strategy—model pre-start, model enhancement, and model refinement—driving the network to actively identify and learn from hard samples in an easy-to-hard manner. Under single point supervision, PAL substantially narrows the performance gap with fully supervised methods (IoU improvement of 8.53%–29.1%).
-
-**[Generate, Refine, and Encode: Leveraging Synthesized Novel Samples for On-the-Fly Fine-Grained Category Discovery](generate_refine_and_encode_leveraging_synthesized_novel_samples_for_on-the-fly_f.md)**
-
-:   This paper proposes DiffGRE, a diffusion-model-based framework for on-the-fly category discovery. It synthesizes novel samples containing virtual category information via Attribute Composition Generation (ACG), filters low-quality samples through Diversity-Driven Refinement (DDR), and injects additional category knowledge via Semi-supervised Leader Encoding (SLE). DiffGRE achieves substantial performance gains over existing OCD methods across 6 fine-grained datasets (average ACC-ALL improvement of 6.5%).
 
 **[Hi3DGen: High-fidelity 3D Geometry Generation from Images via Normal Bridging](hi3dgen_high-fidelity_3d_geometry_generation_from_images_via_normal_bridging.md)**
 
@@ -161,10 +145,6 @@ item_total: 47
 
 :   This work employs the causal-reasoning XAI tool rex to extract Minimal Pixel Sets (MPS) from image classification models, systematically comparing the "attentional focus" of 15 models across 5 architectures. Large models (EVA/ConvNext) are found to make classification decisions using as little as 5% of image pixels, and statistically significant differences in MPS size and spatial location are observed across architectures.
 
-**[IAP: Invisible Adversarial Patch Attack through Perceptibility-Aware Localization](iap_invisible_adversarial_patch_attack_through_perceptibility-aware_localization.md)**
-
-:   This paper proposes the IAP framework, which achieves — for the first time in targeted attack settings — truly invisible adversarial patches via **perceptibility-aware patch localization** and **color-preserving gradient updates**, while simultaneously bypassing multiple SOTA patch defenses.
-
 **[Intra-view and Inter-view Correlation Guided Multi-view Novel Class Discovery](intra-view_and_inter-view_correlation_guided_multi-view_novel_class_discovery.md)**
 
 :   This paper proposes IICMVNCD, the first framework extending Novel Class Discovery (NCD) to the multi-view setting. It captures distributional consistency between known and novel classes via intra-view matrix factorization, and transfers view relationships learned from known classes to novel classes through inter-view weight learning, eliminating the need for pseudo-labels.
@@ -180,10 +160,6 @@ item_total: 47
 **[Joint Asymmetric Loss for Learning with Noisy Labels](joint_asymmetric_loss_for_learning_with_noisy_labels.md)**
 
 :   This paper extends asymmetric loss functions to the more challenging passive loss setting, proposes Asymmetric Mean Squared Error (AMSE), rigorously establishes the necessary and sufficient conditions for AMSE to satisfy the asymmetric condition, and embeds AMSE into the APL framework to construct the Joint Asymmetric Loss (JAL), achieving comprehensive improvements over existing robust loss methods on CIFAR-10/100 and other datasets.
-
-**[Kaputt: A Large-Scale Dataset for Visual Defect Detection](kaputt_a_large-scale_dataset_for_visual_defect_detection.md)**
-
-:   Kaputt introduces a large-scale retail logistics defect detection dataset comprising 230,000+ images and 48,000+ unique items — 40× the scale of MVTec-AD — and is the first to incorporate significant pose and appearance variation. State-of-the-art anomaly detection methods achieve no more than 56.96% AUROC on this benchmark, exposing critical shortcomings of existing approaches in real-world retail scenarios.
 
 **[LaCoOT: Layer Collapse through Optimal Transport](lacoot_layer_collapse_through_optimal_transport.md)**
 
@@ -208,10 +184,6 @@ item_total: 47
 **[Magic Insert: Style-Aware Drag-and-Drop](magic_insert_style-aware_drag-and-drop.md)**
 
 :   This paper proposes Magic Insert, the first method to formally define and address the "style-aware drag-and-drop" problem—inserting a subject from an arbitrary style into a target image of a different style, such that the subject automatically adapts to the target style while being composited in a physically plausible manner. The core components are style-aware personalization (LoRA + IP-Adapter style injection) and Bootstrap Domain Adaptation (adapting a real-image-trained insertion model to the stylized image domain).
-
-**[Membership Inference Attacks with False Discovery Rate Control](membership_inference_attacks_with_false_discovery_rate_control.md)**
-
-:   This paper proposes MIAFdR, the first membership inference attack (MIA) method with theoretical false discovery rate (FDR) guarantees. By designing a novel non-member conformity score function and an adjusted membership decision strategy, MIAFdR controls FDR and can be integrated as a plug-and-play wrapper into existing MIA methods, maintaining attack performance while providing FDR guarantees.
 
 **[NAPPure: Adversarial Purification for Robust Image Classification under Non-Additive Perturbations](nappure_adversarial_purification_for_robust_image_classification_under_non-addit.md)**
 
@@ -260,10 +232,6 @@ item_total: 47
 **[SyncDiff: Synchronized Motion Diffusion for Multi-Body Human-Object Interaction Synthesis](syncdiff_synchronized_motion_diffusion_for_multi-body_human-object_interaction_s.md)**
 
 :   This paper proposes SyncDiff, a unified multi-body human-object interaction (HOI) motion synthesis framework that achieves precise multi-body synchronization via alignment scores and an explicit synchronization strategy, while introducing frequency-domain decomposition to model high-frequency interaction semantics.
-
-**[Thermal Polarimetric Multi-view Stereo](thermal_polarimetric_multi-view_stereo.md)**
-
-:   This paper proposes a method for high-fidelity 3D shape reconstruction using thermal polarimetric (long-wave infrared polarimetric) cues. It theoretically demonstrates that LWIR polarimetric observations are unaffected by illumination conditions and material optical properties, enabling accurate 3D reconstruction of transparent, translucent, and heterogeneous objects—significantly outperforming visible-light polarimetric methods.
 
 **[Toward Material-Agnostic System Identification from Videos](toward_material-agnostic_system_identification_from_videos.md)**
 

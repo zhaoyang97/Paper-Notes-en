@@ -31,7 +31,7 @@ item_total: 5
 
 **💬 ACL2026** · **5** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (130)](../../ICML2026/image_generation/index.md) · [📷 CVPR2026 (210)](../../CVPR2026/image_generation/index.md) · [🔬 ICLR2026 (149)](../../ICLR2026/image_generation/index.md) · [🤖 AAAI2026 (76)](../../AAAI2026/image_generation/index.md) · [🧠 NeurIPS2025 (241)](../../NeurIPS2025/image_generation/index.md) · [📹 ICCV2025 (213)](../../ICCV2025/image_generation/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (131)](../../ICML2026/image_generation/index.md) · [📷 CVPR2026 (210)](../../CVPR2026/image_generation/index.md) · [🔬 ICLR2026 (149)](../../ICLR2026/image_generation/index.md) · [🤖 AAAI2026 (77)](../../AAAI2026/image_generation/index.md) · [🧠 NeurIPS2025 (241)](../../NeurIPS2025/image_generation/index.md) · [📹 ICCV2025 (214)](../../ICCV2025/image_generation/index.md)
 
 🔥 **Top topics:** LLM ×3 · Multimodal/VLM ×2
 

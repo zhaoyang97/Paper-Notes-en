@@ -83,7 +83,7 @@ item_total: 84
 
 **🤖 AAAI2026** · **84** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (104)](../../ICML2026/multimodal_vlm/index.md) · [💬 ACL2026 (94)](../../ACL2026/multimodal_vlm/index.md) · [📷 CVPR2026 (223)](../../CVPR2026/multimodal_vlm/index.md) · [🔬 ICLR2026 (86)](../../ICLR2026/multimodal_vlm/index.md) · [🧠 NeurIPS2025 (139)](../../NeurIPS2025/multimodal_vlm/index.md) · [📹 ICCV2025 (131)](../../ICCV2025/multimodal_vlm/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (104)](../../ICML2026/multimodal_vlm/index.md) · [💬 ACL2026 (94)](../../ACL2026/multimodal_vlm/index.md) · [📷 CVPR2026 (225)](../../CVPR2026/multimodal_vlm/index.md) · [🔬 ICLR2026 (86)](../../ICLR2026/multimodal_vlm/index.md) · [🧠 NeurIPS2025 (139)](../../NeurIPS2025/multimodal_vlm/index.md) · [📹 ICCV2025 (129)](../../ICCV2025/multimodal_vlm/index.md)
 
 🔥 **Top topics:** Multimodal/VLM ×44 · Reasoning ×10 · Adversarial Robustness ×7 · Alignment/RLHF ×5 · LLM ×5
 

@@ -27,12 +27,12 @@ item_list:
     t: "DISTIL: Data-Free Inversion of Suspicious Trojan Inputs via Latent Diffusion"
   - u: "dynamicdino_finegrained_mixture_of_experts_tuning_for_realti/"
     t: "Dynamic-DINO: Fine-Grained Mixture of Experts Tuning for Real-time Open-Vocabulary Object Detection"
-  - u: "ea-kd_entropy-based_adaptive_knowledge_distillation/"
-    t: "EA-KD: Entropy-based Adaptive Knowledge Distillation"
   - u: "evrt-detr_latent_space_adaptation_of_image_detectors_for_event-based_vision/"
     t: "EvRT-DETR: Latent Space Adaptation of Image Detectors for Event-based Vision"
   - u: "intervening_in_black_box_concept_bottleneck_model_for_enhancing_human_neural_net/"
     t: "Intervening in Black Box: Concept Bottleneck Model for Enhancing Human-Neural Network Mutual Understanding"
+  - u: "kaputt_a_large-scale_dataset_for_visual_defect_detection/"
+    t: "Kaputt: A Large-Scale Dataset for Visual Defect Detection"
   - u: "large-scale_pre-training_for_grounded_video_caption_generation/"
     t: "Large-scale Pre-training for Grounded Video Caption Generation"
   - u: "lmm-det_make_large_multimodal_models_excel_in_object_detection/"
@@ -107,10 +107,6 @@ item_total: 27
 
 :   This work is the first to introduce Mixture of Experts into real-time open-vocabulary object detectors. Through MoE-Tuning, it extends Grounding DINO 1.5 Edge from a dense model into a dynamic inference framework, proposing fine-grained expert decomposition and a pretrained weight allocation strategy. Using only 1.56M open-source data, the resulting model surpasses the original version trained on 20M private data.
 
-**[EA-KD: Entropy-based Adaptive Knowledge Distillation](ea-kd_entropy-based_adaptive_knowledge_distillation.md)**
-
-:   This paper proposes EA-KD, a plug-and-play knowledge distillation method based on information entropy. It dynamically reweights distillation losses by combining the entropy values of teacher and student outputs, prioritizing learning from high-entropy (high-information) samples. EA-KD consistently improves multiple KD frameworks across image classification, object detection, and LLM distillation tasks with negligible computational overhead.
-
 **[EvRT-DETR: Latent Space Adaptation of Image Detectors for Event-based Vision](evrt-detr_latent_space_adaptation_of_image_detectors_for_event-based_vision.md)**
 
 :   This paper proposes I2EvDet, a framework that adapts mainstream image detectors to event-based video detection by inserting lightweight RNN temporal modules into the frozen latent space of RT-DETR, achieving state-of-the-art results of +2.3 and +1.4 mAP on the Gen1 and 1Mpx benchmarks, respectively, with minimal architectural modifications.
@@ -118,6 +114,10 @@ item_total: 27
 **[Intervening in Black Box: Concept Bottleneck Model for Enhancing Human-Neural Network Mutual Understanding](intervening_in_black_box_concept_bottleneck_model_for_enhancing_human_neural_net.md)**
 
 :   This paper proposes the CBM-HNMU framework, which approximates the reasoning process of a black-box model via a Concept Bottleneck Model (CBM), automatically identifies and corrects harmful concepts, and distills the corrected knowledge back into the black-box model, enabling systematic model intervention and accuracy improvement beyond the sample level.
+
+**[Kaputt: A Large-Scale Dataset for Visual Defect Detection](kaputt_a_large-scale_dataset_for_visual_defect_detection.md)**
+
+:   Kaputt introduces a large-scale retail logistics defect detection dataset comprising 230,000+ images and 48,000+ unique items — 40× the scale of MVTec-AD — and is the first to incorporate significant pose and appearance variation. State-of-the-art anomaly detection methods achieve no more than 56.96% AUROC on this benchmark, exposing critical shortcomings of existing approaches in real-world retail scenarios.
 
 **[Large-scale Pre-training for Grounded Video Caption Generation](large-scale_pre-training_for_grounded_video_caption_generation.md)**
 

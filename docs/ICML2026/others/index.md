@@ -1,27 +1,23 @@
 ---
 title: >-
-  ICML2026 Others Papers · 98 Notes
+  ICML2026 Others Papers · 69 Notes
 description: >-
-  98 ICML2026 papers in the Others area, covering Adversarial Robustness, Alignment/RLHF, Diffusion Models, Layout & Composition, Agents and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  69 ICML2026 papers in the Others area, covering Alignment/RLHF, Diffusion Models, Layout & Composition, Adversarial Robustness, Agents and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "ICML2026"
   - "Others"
   - "AI paper notes"
   - "paper summaries"
-  - "Adversarial Robustness"
   - "Alignment/RLHF"
   - "Diffusion Models"
   - "Layout & Composition"
+  - "Adversarial Robustness"
   - "Agents"
 item_list:
-  - u: "a_perturbation_approach_to_unconstrained_linear_bandits/"
-    t: "A Perturbation Approach to Unconstrained Linear Bandits"
   - u: "active_tabular_augmentation_via_policy-guided_diffusion_inpainting/"
     t: "Active Tabular Augmentation via Policy-Guided Diffusion Inpainting"
   - u: "adaptive_multi-round_allocation_with_stochastic_arrivals/"
     t: "Adaptive Multi-Round Allocation with Stochastic Arrivals"
-  - u: "adaptive_preconditioners_trigger_loss_spikes_in_adam/"
-    t: "Adaptive Preconditioners Trigger Loss Spikes in Adam"
   - u: "ai_cap-and-trade_efficiency_incentives_for_accessibility_and_sustainability/"
     t: "AI Cap-and-Trade: Efficiency Incentives for Accessibility and Sustainability"
   - u: "amdp_asynchronous_multi-directional_pipeline_parallelism_for_large-scale_models_/"
@@ -40,20 +36,10 @@ item_list:
     t: "Complexity as Advantage: A Regret-Based Perspective on Emergent Structure"
   - u: "comprehensive_ai_governance_requires_addressing_non-model_gains/"
     t: "Comprehensive AI Governance Requires Addressing Non-Model Gains"
-  - u: "conditional_krr_injecting_unpenalized_features_into_kernel_methods_with_applicat/"
-    t: "Conditional KRR: Injecting Unpenalized Features into Kernel Methods with Applications to Kernel Thresholding"
   - u: "connecting_independently_trained_modes_via_layer-wise_connectivity/"
     t: "Connecting Independently Trained Modes via Layer-Wise Connectivity"
-  - u: "consistency_training_can_entrench_misalignment/"
-    t: "Consistency Training Can Entrench Misalignment"
   - u: "continual_learning_of_domain-invariant_representations/"
     t: "Continual Learning of Domain-Invariant Representations"
-  - u: "core-mtl_rethinking_gradient_balancing_via_causal_orthogonal_representations/"
-    t: "CORE-MTL: Rethinking Gradient Balancing via Causal Orthogonal Representations"
-  - u: "correcting_split_selection_in_online_decision_trees_via_anytime-valid_inference/"
-    t: "Correcting Split Selection in Online Decision Trees via Anytime-Valid Inference"
-  - u: "cost-aware_stopping_for_bayesian_optimization/"
-    t: "Cost-Aware Stopping for Bayesian Optimization"
   - u: "coupled_training_with_privileged_information_and_unlabeled_data/"
     t: "Coupled Training with Privileged Information and Unlabeled Data"
   - u: "cybergym-e2e_scalable_real-world_benchmark_for_ai_agents_end-to-end_cybersecurit/"
@@ -68,27 +54,37 @@ item_list:
     t: "DisjunctiveNet: Neural Symbolic Learning via Differentiable Convexified Optimization Layers"
   - u: "envy-free_allocation_of_indivisible_goods_via_noisy_queries/"
     t: "Envy-Free Allocation of Indivisible Goods via Noisy Queries"
-  - u: "estimating_correlation_clustering_cost_in_node-arrival_stream/"
-    t: "Estimating Correlation Clustering Cost in Node-Arrival Stream"
-  - u: "expectation_consistency_loss_rethink_confidence_calibration_under_covariate_shif/"
-    t: "Expectation Consistency Loss: Rethink Confidence Calibration under Covariate Shift"
-  - u: "foam_frequency_and_operator_error-based_adaptive_damping_method_for_reducing_sta/"
-    t: "FOAM: Frequency and Operator Error-Based Adaptive Damping Method for Reducing Staleness-Oriented Error for Shampoo"
-item_total: 98
+  - u: "fovi_a_biologically-inspired_foveated_interface_for_deep_vision_models/"
+    t: "FOVI: Bio-inspired Foveated Interface for Deep Vision Models"
+  - u: "from_human-level_ai_tales_to_ai_leveling_human_scales/"
+    t: "From Human-Level AI Tales to AI Leveling Human Scales"
+  - u: "gem-fi_gated_evidential_mixtures_with_fisher_modulation/"
+    t: "GEM-FI: Gated Evidential Mixtures with Fisher Modulation"
+  - u: "generative_adaptation_of_dynamics_to_environmental_shifts_via_weight-space_diffu/"
+    t: "DynaDiff: Generative Adaptation of Dynamics to Environmental Shifts via Weight-space Diffusion"
+  - u: "guaranteed_optimal_compositional_explanations_for_neurons/"
+    t: "Guaranteed Optimal Compositional Explanations for Neurons"
+  - u: "haste_hardware-aware_dynamic_sparse_training_for_large_output_spaces/"
+    t: "HASTE: Hardware-Aware Dynamic Sparse Training for Large Output Spaces"
+  - u: "how_the_optimizer_shapes_learned_solutions_in_equivariant_neural_networks/"
+    t: "How the Optimizer Shapes Learned Solutions in Equivariant Neural Networks"
+  - u: "identifiable_equivariant_networks_are_layerwise_equivariant/"
+    t: "Identifiable Equivariant Networks are Layerwise Equivariant"
+  - u: "industrializing_prediction-powered_inference_the_glide_library_for_reliable_gena/"
+    t: "Industrializing Prediction-Powered Inference: The GLIDE Library for Reliable GenAI and Agentic Systems Evaluation"
+  - u: "inference_of_online_newton_methods_with_nesterovs_accelerated_sketching/"
+    t: "Inference of Online Newton Methods with Nesterov's Accelerated Sketching"
+item_total: 69
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->
 # 📂 Others
 
-**🧪 ICML2026** · **98** paper notes
+**🧪 ICML2026** · **69** paper notes
 
-📌 **Same area in other venues:** [💬 ACL2026 (1)](../../ACL2026/others/index.md) · [📷 CVPR2026 (42)](../../CVPR2026/others/index.md) · [🔬 ICLR2026 (74)](../../ICLR2026/others/index.md) · [🤖 AAAI2026 (124)](../../AAAI2026/others/index.md) · [🧠 NeurIPS2025 (141)](../../NeurIPS2025/others/index.md) · [📹 ICCV2025 (47)](../../ICCV2025/others/index.md)
+📌 **Same area in other venues:** [💬 ACL2026 (1)](../../ACL2026/others/index.md) · [📷 CVPR2026 (39)](../../CVPR2026/others/index.md) · [🔬 ICLR2026 (62)](../../ICLR2026/others/index.md) · [🤖 AAAI2026 (116)](../../AAAI2026/others/index.md) · [🧠 NeurIPS2025 (118)](../../NeurIPS2025/others/index.md) · [📹 ICCV2025 (39)](../../ICCV2025/others/index.md)
 
-🔥 **Top topics:** Adversarial Robustness ×6 · Alignment/RLHF ×4 · Diffusion Models ×2 · Layout & Composition ×2 · Agents ×2
-
-**[A Perturbation Approach to Unconstrained Linear Bandits](a_perturbation_approach_to_unconstrained_linear_bandits.md)**
-
-:   This paper revisits the perturbation-based bandit linear optimization approach of Abernethy et al., proposing the PABLO reduction to transform unconstrained linear bandits into a problem that can call any OLO subroutine. This yields comparator-adaptive static/dynamic regret, high-probability bounds, and discussions on several lower bounds.
+🔥 **Top topics:** Alignment/RLHF ×3 · Diffusion Models ×2 · Layout & Composition ×2 · Adversarial Robustness ×2 · Agents ×2
 
 **[Active Tabular Augmentation via Policy-Guided Diffusion Inpainting](active_tabular_augmentation_via_policy-guided_diffusion_inpainting.md)**
 
@@ -97,10 +93,6 @@ item_total: 98
 **[Adaptive Multi-Round Allocation with Stochastic Arrivals](adaptive_multi-round_allocation_with_stochastic_arrivals.md)**
 
 :   This paper formalizes network recruitment as a budget-constrained sequential control problem and proves that single-round optimal allocation is greedy. It reduces multi-round planning dimensionality to $O(b^5\log b)$ complexity via a population-level proxy value function and provides robustness guarantees by decomposing model error into frontier, population, and approximation terms.
-
-**[Adaptive Preconditioners Trigger Loss Spikes in Adam](adaptive_preconditioners_trigger_loss_spikes_in_adam.md)**
-
-:   This paper attributes loss spikes in Adam training to the lagged decoupling between the second-moment preconditioner and the current squared gradient, while explaining and predicting the occurrence of spikes using the gradient-direction curvature of the preconditioned Hessian.
 
 **[AI Cap-and-Trade: Efficiency Incentives for Accessibility and Sustainability](ai_cap-and-trade_efficiency_incentives_for_accessibility_and_sustainability.md)**
 
@@ -138,33 +130,13 @@ item_total: 98
 
 :   This position paper argues that the current model-centric AI governance paradigm is becoming less effective as "non-model gains" (inference, systems, and asset gains) increase in importance. It advocates for a multi-layered complementary governance portfolio involving systems, entities, agents, and cloud layers to fill regulatory gaps.
 
-**[Conditional KRR: Injecting Unpenalized Features into Kernel Methods with Applications to Kernel Thresholding](conditional_krr_injecting_unpenalized_features_into_kernel_methods_with_applicat.md)**
-
-:   This paper proposes the Conditional Kernel Ridge Regression (Conditional KRR) framework, which injects a set of unpenalized features into kernel methods. By reducing it to standard KRR via a residual kernel, the authors prove that the reduction cost is $\mathcal{O}(1/\sqrt{N})$. Furthermore, the study identifies sufficient conditions for Conditional KRR to outperform standard KRR under both hard thresholding (top-k eigenfunctions) and soft thresholding (random Gaussian features) settings.
-
 **[Connecting Independently Trained Modes via Layer-Wise Connectivity](connecting_independently_trained_modes_via_layer-wise_connectivity.md)**
 
 :   Ours proposes the Low-Loss Path Finding (LLPF) algorithm, which reliably constructs low-loss paths between independently trained neural network models through layer-wise connectivity and variance sphere constraints. It supports modern architectures such as MobileNet, EfficientNet, and CCT, with highly reproducible results.
 
-**[Consistency Training Can Entrench Misalignment](consistency_training_can_entrench_misalignment.md)**
-
-:   This paper proposes the "consistency non-neutrality hypothesis." By evaluating 7 consistency training methods on 108 "model organisms," the study finds that consistency training is not alignment-neutral—it systematically suppresses fragile reward hacking and emergent misalignment but amplifies stable sycophancy, with distribution shift (rather than score selection) being the primary driver.
-
 **[Continual Learning of Domain-Invariant Representations](continual_learning_of_domain-invariant_representations.md)**
 
 :   The authors explicitly inject "Domain-Invariant Representation Learning (DIRL)" into continual learning for the first time: using the replay buffer as a medium for multi-domain invariance computation and domain-conditioned alignment. They propose five methods—⋆-CL-{VREX, Fishr, CORAL, MMD, ANDMask}—pushing target domain accuracy to SOTA across six datasets in vision, medicine, manufacturing, and ecology.
-
-**[CORE-MTL: Rethinking Gradient Balancing via Causal Orthogonal Representations](core-mtl_rethinking_gradient_balancing_via_causal_orthogonal_representations.md)**
-
-:   The authors reattribute the root cause of "negative transfer" in multi-task learning from "gradient conflict" to the "entanglement of semantics and noise within shared representations." They propose CORE-MTL: a dual-stream encoder splits representations into semantic $\hat{Z}_s$ and residual $\hat{Z}_r$, implementing "causal orthogonality" via CKA independence constraints + counterfactual style substitution + inverse rendering reconstruction. Theoretically, it provides a tighter OOD upper bound than gradient balancing. Experimentally, it outperforms ten baselines including PCGrad, GradNorm, STCH, and FairGrad across ID settings (NYUv2/Cityscapes) and OOD settings (GTA5→Cityscapes, Cityscapes-C).
-
-**[Correcting Split Selection in Online Decision Trees via Anytime-Valid Inference](correcting_split_selection_in_online_decision_trees_via_anytime-valid_inference.md)**
-
-:   The authors point out that the "fixed sample size" concentration inequality used by the classic Hoeffding Tree (HT) for splitting on data streams is invalidated by its own "data-dependent stopping rule." They reformulate the split criterion using testing-by-betting + Universal Portfolio, allowing both single trees and Adaptive Random Forests to maintain controlled Type-I errors at any stopping time while achieving higher accuracy and smaller tree sizes across 12 real-world streams.
-
-**[Cost-Aware Stopping for Bayesian Optimization](cost-aware_stopping_for_bayesian_optimization.md)**
-
-:   The authors expand Weitzman's Pandora's Box stopping principle to correlated Bayesian Optimization (BO) scenarios. They demonstrate that under a shared stopping rule where "the acquisition function value exceeds the current optimum," both PBGI and LogEIPC acquisition functions ensure that the cost-adjusted simple regret is no worse than "stopping after one evaluation." This provides the first adaptive stopping rule with theoretical guarantees for cost-adjusted simple regret.
 
 **[Coupled Training with Privileged Information and Unlabeled Data](coupled_training_with_privileged_information_and_unlabeled_data.md)**
 
@@ -194,25 +166,9 @@ item_total: 98
 
 :   This paper establishes the first sample complexity benchmark for finding envy-free (EF) allocations using noisy valuation queries. For two agents, additive Gaussian noise, $m$ items, and an optimal negative envy gap $\Delta$, the query complexity is shown to have a tight bound of $\widetilde{\Theta}(m^{2.5}/\Delta^2)$ (when $\Delta\gg m^{1/4}$). The upper bound is achieved by non-adaptive queries with a poly-time single-item threshold algorithm, while the lower bound holds for adaptive queries and arbitrary computation time.
 
-**[Estimating Correlation Clustering Cost in Node-Arrival Stream](estimating_correlation_clustering_cost_in_node-arrival_stream.md)**
-
-:   This paper investigates the approximate estimation of correlation clustering costs under the "node-arrival" streaming model. The authors propose the C4Approx algorithm, which achieves a $(O(1), n^{1-\alpha})$-approximation using **sublinear** space of $O(n^{(3+\alpha)/4}\log n)$ words and a constant number of passes. They also provide two matching lower bounds to prove that both multiple passes and additive errors are inevitable. On real-world data, the algorithm achieves performance comparable to the Pivot algorithm while storing only 2% of the nodes.
-
-**[Expectation Consistency Loss: Rethink Confidence Calibration under Covariate Shift](expectation_consistency_loss_rethink_confidence_calibration_under_covariate_shif.md)**
-
-:   ECL proves that full alignment of input distributions $P_s(X) = P_t(X)$ is not a necessary condition for calibration under covariate shift. Instead, it is sufficient that the "conditional expectation of $P(Y_k=1|X)$ on each confidence level set is consistent across domains." Based on this, it constructs ECL: a differentiable loss with unbiased mini-batch gradients that generalizes across canonical, class-wise, and top-label calibration.
-
-**[FOAM: Frequency and Operator Error-Based Adaptive Damping Method for Reducing Staleness-Oriented Error for Shampoo](foam_frequency_and_operator_error-based_adaptive_damping_method_for_reducing_sta.md)**
-
-:   FOAM couples the damping coefficient $\epsilon$ and the Eigenvalue Decomposition (EVD) trigger frequency of Shampoo into a feedback control loop via a "relative operator error proxy $h_t$" that can be cheaply estimated in the stale feature space. It reduces EVD calls by over 80% during large-scale model training while maintaining convergence quality.
-
 **[FOVI: Bio-inspired Foveated Interface for Deep Vision Models](fovi_a_biologically-inspired_foveated_interface_for_deep_vision_models.md)**
 
 :   Inspired by the human retina—V1 pathway, the authors construct FOVI, a foveated input interface with non-uniform pixel distribution but uniform density on the sensor manifold, using a "cortical magnification function + local isotropic sampling." Combined with a novel kNN convolution + kernel mapping technique, FOVI is compatible with both CNNs and ViTs, allowing a DINOv3-ViT to approach the ImageNet accuracy of a full-resolution baseline using only about 1/16 of the pixels.
-
-**[From Generalist to Specialist Representation](from_generalist_to_specialist_representation.md)**
-
-:   This paper provides the first fully nonparametric (no intervention, no functional constraints) two-layer hierarchical identifiability proof: the temporal-task structure is identifiable via CI tests from the collider perspective, and task-relevant latents can be separated from generalist representations using sparsity regularization.
 
 **[From Human-Level AI Tales to AI Leveling Human Scales](from_human-level_ai_tales_to_ai_leveling_human_scales.md)**
 
@@ -233,10 +189,6 @@ item_total: 98
 **[HASTE: Hardware-Aware Dynamic Sparse Training for Large Output Spaces](haste_hardware-aware_dynamic_sparse_training_for_large_output_spaces.md)**
 
 :   For Extreme Multi-label Classification (XMC) with millions of labels, HASTE transforms "per-label independent fan-in sampling" into "group-shared fan-in based on semantic clustering." Combined with a small dense head for high-frequency labels, this allows sparse training to achieve wall-clock gains proportional to FLOPs on GPUs—reaching up to $4.4\times$ speedup in the forward pass and $25\times$ in the backward pass compared to existing sparse baselines, while nearly closing the accuracy gap with dense models.
-
-**[How Does Bayesian Sampling Help Membership Inference Attacks?](how_does_bayesian_sampling_help_membership_inference_attacks.md)**
-
-:   This paper proposes BMIA, which expands a single reference model into a "virtual model family" using a Laplace posterior. By estimating the conditional score distribution of each sample via Bayesian sampling, it achieves a TPR in low FPR regions on datasets like CIFAR-100 that is 54% higher than LiRA (which requires training 8 reference models), while requiring only a single reference model training budget.
 
 **[How the Optimizer Shapes Learned Solutions in Equivariant Neural Networks](how_the_optimizer_shapes_learned_solutions_in_equivariant_neural_networks.md)**
 
@@ -286,10 +238,6 @@ item_total: 98
 
 :   The authors unify three types of MCMC that "sample without evaluating the target distribution" (Exchange, PoissonMH, and TunaMH) into a meta-algorithm using auxiliary variables. By introducing auxiliary randomness in both the proposal and the acceptance rate, they design gradient-based MCMC methods (Poisson–Barker, Poisson–MALA, Tuna–SGLD) that maintain exact stationary distributions under minibatch settings, significantly outperforming baselines like PoissonMH, TunaMH, and SGLD in empirical tests.
 
-**[Matroid Algorithms Under Size-Sensitive Independence Oracles](matroid_algorithms_under_size-sensitive_independence_oracles.md)**
-
-:   The authors propose a "size-sensitive matroid oracle" model where the query cost grows linearly with the size of the query set. They prove that under this model, the optimal query cost for finding a basis, estimating rank, and estimating the partition number is $\tilde{\Theta}(n^2)$. Furthermore, for matroids with a bounded girth $c$, they present a maximum weight basis algorithm with a complexity of $\mathcal{O}(n^{2-1/c}\log n)$, breaking the quadratic lower bound.
-
 **[Metadata Predictability Is Not Evidence Dependence: An Intervention-Based Audit for Weak-Label Benchmarks](metadata_predictability_is_not_evidence_dependence_an_intervention-based_audit_f.md)**
 
 :   The authors argue that "predictability from metadata" $\neq$ "dependence on evidence." They propose a dual-statistic audit protocol using MPDS to screen for metadata predictability and evidence-shuffling $\Delta\text{Evi}$ to test evidence sensitivity, coupled with a stronger-reader calibration layer and input ablation to form a 4-step reusable diagnostic toolkit for weak-label benchmarks.
@@ -302,17 +250,9 @@ item_total: 98
 
 :   For TabPFN-type "tabular foundation models" that feed the training set directly as in-context input to attention, this work proposes posterior correction—finding that such models severely overfit the majority class in the training set. The authors introduce DistPFN: a one-line posterior reweighting $\tilde{p}(y) \propto \hat{p}(y)^2 / p_{train}(y)$, which lifts TabPFN-v2 accuracy under strong label shift ($\beta=5$) from 72.7% to 76.9% on 253 OpenML datasets—without retraining, estimating test priors, or modifying the architecture.
 
-**[MMD-Balls as Credal Sets: A PAC-Bayesian Framework for Epistemic Uncertainty in Test-Time Adaptation](mmd-balls_as_credal_sets_a_pac-bayesian_framework_for_epistemic_uncertainty_in_t.md)**
-
-:   The paper provides the first PAC-Bayes upper bound for test-time adaptation formulated as "Target Risk $\le$ Source Empirical Risk + KL Complexity + MMD Distribution Shift Term." It interprets MMD-balls as Walley-style credal sets, naturally separating aleatoric and epistemic uncertainty through "upper and lower risk intervals," and provides a computable criterion for "when to adapt and when to abstain."
-
 **[Multi-Level Strategic Classification: Incentivizing Improvement Through Promotion and Relegation Dynamics](multi-level_strategic_classification_incentivizing_improvement_through_promotion.md)**
 
 :   This paper extends traditional single-shot "strategic classification" into a sequential mechanism composed of multi-level ternary classifiers (pass/abstain/fail = promotion/retention/relegation). It proves that by leveraging three intertemporal effects—the discount factor $\beta$, skill retention rate $\gamma$, and "leg-up gain" $\delta$—the non-incentivizable region can be reduced from $c^+ > c^-$ to $(1-\beta\gamma)c^+ > c^-$. Furthermore, it provides a steady-state threshold sequence $\mu_l = \delta(l-1)/(1-\gamma)$, demonstrating that under mild conditions, honest effort can be incentivized to push attributes to arbitrarily high levels.
-
-**[Multi-task Linear Regression without Eigenvalue Lower Bounds: Adaptivity, Robustness and Safety](multi-task_linear_regression_without_eigenvalue_lower_bounds_adaptivity_robustne.md)**
-
-:   This paper proposes a robust multi-task linear regression estimator using $\|\theta_j-\beta\|_{\bm\Sigma_j}$ (matrix-weighted norm) as a regularization term. It replaces the rigid "minimum eigenvalue of the second moment $\Omega(1)$ for every task" assumption in prior work with a relative "balance constant" $B$. This provides minimax, adaptive, and fallback safety guarantees to Independent Task Learning (ITL) in high-dimensional scenarios with ill-conditioned, low-rank, or outlier tasks.
 
 **[Networked Information Aggregation for Binary Classification](networked_information_aggregation_for_binary_classification.md)**
 
@@ -334,14 +274,6 @@ item_total: 98
 
 :   This paper points out that the "epistemic uncertainty" of overparameterized neural networks does not vanish as the data scale increases: because the parameters are unidentifiable (due to permutation and neuron splitting), the parameter space posterior retains continuous uncertainty on the splitting manifold even when the function is fully identified. The authors provide a precise posterior description (Dirichlet on simplex) using single-hidden layer ReLU networks as an example and validate it empirically.
 
-**[On the Learnability of Test-Time Adaptation: A Recovery Complexity Perspective](on_the_learnability_of_test-time_adaptation_a_recovery_complexity_perspective.md)**
-
-:   This paper establishes the first theoretical framework for Test-Time Adaptation (TTA) learnability. It introduces $(\epsilon,\delta)$-Recovery Complexity to measure the time required for a model to reduce excess risk to $\epsilon$ after a distribution shift. By extending local recovery to non-stationary test streams via $(\epsilon,\rho)$-TTA Learnability, the authors derive matching minimax upper/lower bounds, revealing the intrinsic "adaptation speed—information constraint" trade-off in TTA.
-
-**[Optimal Design for Multinomial Logit Model with Applications to Best Assortment Identification](optimal_design_for_multinomial_logit_model_with_applications_to_best_assortment_.md)**
-
-:   This paper provides the first **computationally feasible** G-optimal experimental design for the combinatorial action space of Multinomial Logit (MNL) bandits. By formulating the Frank–Wolfe Linear Maximization Oracle (LMO) as a 0–1 MILP or a polynomial-time Schur complement relaxation, the authors construct the first Best Assortment Identification algorithm for "linear utility + non-uniform rewards" with a sample complexity of $\tilde{\mathcal{O}}(d\log N / \Delta^2)$.
-
 **[Optimal Regularization for Performative Learning](optimal_regularization_for_performative_learning.md)**
 
 :   Under a high-dimensional ridge regression framework, this work systematically characterizes the scaling law of the optimal regularization strength in "performativity" scenarios where model deployment drives data distribution shifts: the optimal $\lambda$ is proportional to the performative intensity $\bar b$. In overparameterized regimes, appropriate regularization can even leverage performative effects to inversely reduce risk.
@@ -353,14 +285,6 @@ item_total: 98
 **[ParalESN: Enabling Parallel Information Processing in Reservoir Computing](paralesn_enabling_parallel_information_processing_in_reservoir_computing.md)**
 
 :   ParalESN injects LRU-style complex diagonal linear recurrences into the "untrained reservoir" of an Echo State Network (ESN). This allows traditional RC sequences to be parallelized over time and scaled to $10^5$ dimensions, while strictly maintaining the Echo State Property (ESP) and the universal approximation properties of fading memory filters.
-
-**[Parsimonious Learning-Augmented Online Metric Matching](parsimonious_learning-augmented_online_metric_matching.md)**
-
-:   This paper resolves an open question posed by Im et al. (2022) by extending "action-based prediction" for Online Metric Matching (OMM) into a "parsimonious prediction" framework—where predictions are issued expensively every $k$ steps. Using a Follow-the-Prediction (FtP) framework combined with a meta-algorithm that automatically generates "virtual predictions," the authors provide deterministic and randomized competitive ratio upper bounds that essentially match known lower bounds.
-
-**[Partitioning for Intrinsic Model Inversion Resistance in Collaborative Inference](partitioning_for_intrinsic_model_inversion_resistance_in_collaborative_inference.md)**
-
-:   Departing from traditional defense paradigms that "add noise or masks to shallow intermediate representations," this paper proves from an information-theoretic perspective that in edge-cloud collaborative inference, the model should be partitioned at the layer where the "feature → decision" mutation occurs (termed the Golden Partition Zone, GPZ). The intra-class mean square radius $R_c^2$ is identified as the key variable for localizing the GPZ and can be actively contracted through label smoothing training dynamics.
 
 **[Polaris: Coupled Orbital Polar Embeddings for Hierarchical Concept Learning](polaris_coupled_orbital_polar_embeddings_for_hierarchical_concept_learning.md)**
 
@@ -378,29 +302,9 @@ item_total: 98
 
 :   This paper is the first to indicate that Test-Time Adaptation (TTA) causes model parameters to leak private information about test data. It systematically transforms five mainstream TTA methods (Tent, EATA, SAR, DeYO, and COME) into Differential Privacy (DP) versions using per-sample gradient clipping and Gaussian noise. On ImageNet-C, the method provides provable $(\epsilon,\delta)$-DP guarantees and unexpectedly discovers that "clipping itself" enhances TTA accuracy by $0.1\%$–$4.1\%$.
 
-**[Provably Data-driven Multiple Hyper-parameter Tuning with Structured Loss Function](provably_data-driven_multiple_hyper-parameter_tuning_with_structured_loss_functi.md)**
-
-:   This paper uses "real algebraic geometry + first-order logic quantifier elimination" to provide the first provable generalization bound for multi-dimensional hyperparameter tuning. It generalizes the Balcan 2025 framework, which was previously limited to one-dimensional scalar hyperparameters, to various practical scenarios including arbitrary $p$ dimensions, bilevel validation loss, and approximate inner optimization, while establishing the first matching lower bound.
-
-**[Realizable Bayes-Consistency for General Metric Losses](realizable_bayes-consistency_for_general_metric_losses.md)**
-
-:   This paper provides a sharp characterization for the open problem of when a hypothesis class $\mathcal{H}$ admits a distribution-free strong universal Bayes-consistent learning algorithm under general (possibly unbounded) metric losses in the realizable setting. The necessary and sufficient condition is that $\mathcal{H}$ does not contain a new combinatorial obstacle termed the "unbounded gap Littlestone tree."
-
 **[Rectified LpJEPA: Joint-Embedding Predictive Architectures with Sparse and Maximum-Entropy Representations](rectified_lpjepa_joint-embedding_predictive_architectures_with_sparse_and_maximu.md)**
 
 :   The authors generalize the "post-projection isotropic Gaussian alignment" in LeJEPA to "post-projection Rectified Generalized Gaussian (RGG) distribution alignment." By employing rectification and truncated generalized Gaussians to obtain explicitly controllable expected $\ell_0$ sparsity, the method achieves $85.08\%$ linear probe accuracy with a ResNet encoder on ImageNet-100 while maintaining $\ell_0$ sparsity at $\sim 73\%$, significantly outperforming the fully dense representations of LeJEPA.
-
-**[Position: Reliable AI Needs to Externalize Implicit Knowledge: A Human-AI Collaboration Perspective](reliable_ai_needs_to_externalize_implicit_knowledge_a_human-ai_collaboration_per.md)**
-
-:   This ICML position paper argues that current AI reliability methods (RAG, self-consistency, RLHF, Agent Memory) can only verify explicit knowledge, while the true power of AI stems from "implicit knowledge"—representing 80-95% of training data—which remains undocumented by humans. The authors propose Knowledge Objects (KOs) as infrastructure to externalize implicit AI reasoning into structured artifacts that are human-checkable, verifiable, and endorsable, allowing the cost of a single human verification to yield long-term compound interest across a community.
-
-**[Rethinking Evaluation Paradigms in IBP-based Certified Training](rethinking_evaluation_paradigms_in_ibp-based_certified_training.md)**
-
-:   The authors point out that comparing IBP-based certified training methods using single "biased configurations" is fundamentally unfair. They propose using multi-objective Bayesian hyperparameter optimization to plot the Pareto front for each method, proving that existing SOTA methods are generally under-tuned—CROWN-IBP's clean accuracy can be increased by approximately $6\%$, and MTL-IBP on Tiny ImageNet achieves a simultaneous gain of $\sim 2\%$ in both clean and certified accuracy.
-
-**[Rethinking FID Through the Geometry of the Reference Dataset](rethinking_fid_through_the_geometry_of_the_reference_dataset.md)**
-
-:   This paper identifies that the "lower is better" assumption of FID systematically fails across different reference datasets. By introducing two geometric descriptors—distribution density $\langle -\log d_k\rangle$ and effective rank $\mathrm{erank}(A)$—and applying hierarchical linear models, the authors demonstrate that these descriptors explain ~70% of the cross-dataset variance in the "sample quality → FID" slope. This work provides the first quantitative attribution of FID's fragility to the reference set itself.
 
 **[Return-to-Go is More Than a Number: Q-Guided Alignment for Return-Conditioned Supervised Learning](return-to-go_is_more_than_a_number_q-guided_alignment_for_return-conditioned_sup.md)**
 
@@ -410,25 +314,13 @@ item_total: 98
 
 :   This paper systematically extends three fundamental layers—MLR, FC, and Conv—to five Riemannian geometries (ECM, LECM, OLM, LSM, PHCM) on the manifold of full-rank correlation matrices $\mathrm{Cor}^+(n)$. Precise backpropagation is derived for OLM and LSM. The constructed CorNet consistently outperforms SPDNet and Grassmann networks of similar size on Radar, HDM05, FPHA, and NTU120 datasets.
 
-**[Semi-Supervised Noise Adaptation: Transferring Knowledge from Noise Domain](semi-supervised_noise_adaptation_transferring_knowledge_from_noise_domain.md)**
-
-:   The authors treat a "synthetic domain generated from Gaussian noise" as an alternative source domain in semi-supervised transfer learning. They first prove that such noise, which lacks semantics but possesses a "discriminative structure," provides quantifiable improvements to generalization bounds for the target domain. They then use the Noise Adaptation Framework (NAF) with three losses to jointly optimize domain risks and distribution discrepancy, achieving a 12.35% improvement for 4-shot ResNet-18 on CIFAR-10 over ERM.
-
 **[Sequential Group Composition: A Window into the Mechanics of Deep Learning](sequential_group_composition_a_window_into_the_mechanics_of_deep_learning.md)**
 
 :   The authors utilize the task of computing the "cumulative product of a sequence of group elements" as a unified lens. Using Fourier analysis on groups and the AGF framework, they prove that two-layer networks learn irreducible representations (irreps) sequentially according to their Fourier energy. They further characterize the expressivity gaps where two-layer networks, RNNs, and deep MLPs require $2^k$ width, $k$ steps, and $\log k$ layers respectively for a sequence of length $k$.
 
-**[Simple Algorithms for Bad Triangle Transversals with Applications to Correlation Clustering](simple_algorithms_for_bad_triangle_transversals_with_applications_to_correlation.md)**
-
-:   This paper presents two simple 2-approximation algorithms for the "Bad Triangle Transversal" (BTT) problem on signed graphs that require only a single LP solve. It proves a unified NP-hardness lower bound of $\tfrac{2137}{2136}$ for BTT, Correlation Clustering (CC), MinSTC, and Cluster Deletion on complete graphs. Additionally, it introduces a new pivot process that converts any feasible BTT cover into a clustering with at most $\tfrac{3}{2}|F|$ errors, tightening the gap between BTT and CC optimal values from 2 to $3/2$.
-
 **[Singular Bayesian Neural Networks](singular_bayesian_neural_networks.md)**
 
 :   This work directly parameterizes the weight matrix as $W=AB^\top$ instead of applying a mean-field distribution to $W$ itself, thereby inducing a **low-rank posterior that is singular with respect to the Lebesgue measure**. The number of parameters is reduced from $O(mn)$ to $O(r(m+n))$, and the PAC-Bayes complexity is tightened from $\sqrt{mn}$ to $\sqrt{r(m+n)}$. On MLP/LSTM/Transformer architectures, the method achieves OOD detection performance surpassing 5-member Deep Ensembles with $33\times$ fewer parameters.
-
-**[SORA: Free Second-Order Attacks in Fast Adversarial Training](sora_free_second-order_attacks_in_fast_adversarial_training.md)**
-
-:   This paper re-examines Catastrophic Overfitting (CO) in single-step adversarial training from a second-order perspective. It proposes PertAlign, a zero-cost curvature metric for early warning of CO, and derives SORA: an adaptive fast adversarial training algorithm that estimates the Hessian "for free" using backpropagated gradients from the previous step and samples optimal step sizes per-channel. SORA consistently avoids CO across 6 datasets and 4 architectures using a single set of hyperparameters, achieving a new state-of-the-art trade-off between robustness and clean accuracy for single-step AT.
 
 **[Structure-Induced Information for Rerooting Levin Tree Search](structure-induced_information_for_rerooting_levin_tree_search.md)**
 
@@ -450,10 +342,6 @@ item_total: 98
 
 :   This paper uses four "memory paradox" counterexamples and a set of rigorous expansion theorems to prove that TTT with KV-binding inner loops (such as LaCT, ViTTT), even with multi-layer MLPs and momentum, is merely a "learned linear attention operator." Based on this, it simplifies and parallelizes the mechanism into standard linear attention, achieving a 4× throughput increase with negligible performance loss.
 
-**[The Implicit Bias of Adam and Muon on Smooth Homogeneous Neural Networks](the_implicit_bias_of_adam_and_muon_on_smooth_homogeneous_neural_networks.md)**
-
-:   This paper proves that under the setting of smooth $L$-homogeneous models + exponential tail loss + learning rate decay, Muon (including Muon-Signum and Muon-Adam), acting as momentum-based "normalized steepest descent," converges to the KKT points of the corresponding norm max-margin problem. Meanwhile, Adam (without the stability constant) converges to the KKT points of the $\ell_\infty$ max-margin problem, thereby extending implicit bias conclusions previously only valid for linear models to all smooth homogeneous networks.
-
 **[The Realignment Problem: When Right becomes Wrong in LLMs](the_realignment_problem_when_right_becomes_wrong_in_llms.md)**
 
 :   This paper formalizes the problem of "what to do when policies change post-deployment" as the Realignment problem and proposes the TRACE framework. TRACE uses a stronger proxy model to classify existing preference pairs into three categories (Invert / Punish / Retain) and performs surgical realignment using a hybrid IPO+NPO+KL objective, keeping pace with policy drift without requiring new rounds of human annotation.
@@ -465,10 +353,6 @@ item_total: 98
 **[Torus Graphs for Large-Scale Neural Phase Analysis](torus_graphs_for_large_scale_neural_phase_analysis.md)**
 
 :   The authors reduce the inference complexity of the Torus Graph (TG)—an exponential family phase model on the $d$-torus $\mathbb{T}^d$—from $\mathcal{O}(d^6)$ to $\mathcal{O}(d^2)$ using stochastic score matching. This enables the first application to thousands of phase variables. They further develop TG-HMM and autoregressive TG extensions, applying them to mouse LFP data to reveal frequency-specific phase reconfiguration during Wake-NREM transitions.
-
-**[Towards Optimal Robustness in Learning-Augmented Paging](towards_optimal_robustness_in_learning-augmented_paging.md)**
-
-:   This paper proposes a unified "Relative Prediction Budget" (RPB) perspective for randomized online paging with predictions. Based on OnlineMin, the RPB-OnOPT framework is designed, pushing the provable robust competitive ratio from the existing $2H_k+O(1)$ to $H_k+O(1)$, which is near the information-theoretic lower bound, while maintaining 1-consistency.
 
 **[Variable Clustering via Distributionally Robust Nodewise Regression](variable_clustering_via_distributionally_robust_nodewise_regression.md)**
 

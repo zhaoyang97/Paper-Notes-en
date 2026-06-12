@@ -83,9 +83,9 @@ item_total: 264
 
 **📹 ICCV2025** · **264** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (27)](../../ICML2026/3d_vision/index.md) · [💬 ACL2026 (1)](../../ACL2026/3d_vision/index.md) · [📷 CVPR2026 (230)](../../CVPR2026/3d_vision/index.md) · [🔬 ICLR2026 (63)](../../ICLR2026/3d_vision/index.md) · [🤖 AAAI2026 (76)](../../AAAI2026/3d_vision/index.md) · [🧠 NeurIPS2025 (112)](../../NeurIPS2025/3d_vision/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (27)](../../ICML2026/3d_vision/index.md) · [💬 ACL2026 (1)](../../ACL2026/3d_vision/index.md) · [📷 CVPR2026 (230)](../../CVPR2026/3d_vision/index.md) · [🔬 ICLR2026 (63)](../../ICLR2026/3d_vision/index.md) · [🤖 AAAI2026 (76)](../../AAAI2026/3d_vision/index.md) · [🧠 NeurIPS2025 (113)](../../NeurIPS2025/3d_vision/index.md)
 
-🔥 **Top topics:** 3D Gaussian Splatting ×48 · Diffusion Models ×27 · Point Cloud ×16 · Dynamic Scenes ×15 · Adversarial Robustness ×12
+🔥 **Top topics:** 3D Gaussian Splatting ×48 · Diffusion Models ×26 · Point Cloud ×16 · Dynamic Scenes ×15 · Adversarial Robustness ×12
 
 **[TRAN-D: 2D Gaussian Splatting-based Sparse-view Transparent Object Depth Reconstruction via Physics Simulation for Scene Update](2d_gaussian_splattingbased_sparseview_transparent_object_dep.md)**
 
@@ -1043,6 +1043,10 @@ item_total: 264
 
 :   This paper proposes a regenerative 3D morphing method based on a 3D diffusion prior. By performing interpolation at three levels — initial noise, model parameters, and conditioning features — and combining three strategies (Attention Fusion, Token Reordering, and Low-Frequency Enhancement), it is the first to achieve smooth and semantically plausible morphing sequences for textured 3D objects across categories.
 
+**[Thermal Polarimetric Multi-view Stereo](thermal_polarimetric_multi-view_stereo.md)**
+
+:   This paper proposes a method for high-fidelity 3D shape reconstruction using thermal polarimetric (long-wave infrared polarimetric) cues. It theoretically demonstrates that LWIR polarimetric observations are unaffected by illumination conditions and material optical properties, enabling accurate 3D reconstruction of transparent, translucent, and heterogeneous objects—significantly outperforming visible-light polarimetric methods.
+
 **[TimeFormer: Capturing Temporal Relationships of Deformable 3D Gaussians for Robust Reconstruction](timeformer_capturing_temporal_relationships_of_deformable_3d_gaussians_for_robus.md)**
 
 :   This paper proposes the TimeFormer module, which implicitly learns temporal relationships among deformable 3D Gaussians via a cross-time Transformer encoder, and introduces a dual-stream optimization strategy that transfers motion knowledge during training with no additional overhead at inference.
@@ -1086,10 +1090,6 @@ item_total: 264
 **[Unified Category-Level Object Detection and Pose Estimation from RGB Images using 3D Prototypes](unified_category-level_object_detection_and_pose_estimation_from_rgb_images_usin.md)**
 
 :   This work presents the first RGB-only, single-model framework that unifies object detection and category-level pose estimation. By leveraging Neural Mesh Models as 3D prototypes, the method performs feature matching and multi-model RANSAC PnP to simultaneously detect objects and estimate their 9D poses. It surpasses the state of the art on all scale-agnostic metrics on REAL275.
-
-**[UniVG: A Generalist Diffusion Model for Unified Image Generation and Editing](univg_a_generalist_diffusion_model_for_unified_image_generation_and_editing.md)**
-
-:   This paper proposes UniVG, a unified image generation model built on MM-DiT that supports T2I generation, editing, identity-preserving generation, layout-guided synthesis, depth estimation, and more within a single set of weights, achieved via channel-wise input concatenation, progressive multi-task training, and external condition injection.
 
 **[Unleashing Vecset Diffusion Model for Fast Shape Generation (FlashVDM)](unleashing_vecset_diffusion_model_for_fast_shape_generation.md)**
 

@@ -77,7 +77,7 @@ item_total: 29
 
 **🧪 ICML2026** · **29** paper notes
 
-📌 **Same area in other venues:** [💬 ACL2026 (4)](../../ACL2026/video_generation/index.md) · [📷 CVPR2026 (56)](../../CVPR2026/video_generation/index.md) · [🔬 ICLR2026 (18)](../../ICLR2026/video_generation/index.md) · [🤖 AAAI2026 (11)](../../AAAI2026/video_generation/index.md) · [🧠 NeurIPS2025 (22)](../../NeurIPS2025/video_generation/index.md) · [📹 ICCV2025 (48)](../../ICCV2025/video_generation/index.md)
+📌 **Same area in other venues:** [💬 ACL2026 (4)](../../ACL2026/video_generation/index.md) · [📷 CVPR2026 (56)](../../CVPR2026/video_generation/index.md) · [🔬 ICLR2026 (18)](../../ICLR2026/video_generation/index.md) · [🤖 AAAI2026 (11)](../../AAAI2026/video_generation/index.md) · [🧠 NeurIPS2025 (22)](../../NeurIPS2025/video_generation/index.md) · [📹 ICCV2025 (49)](../../ICCV2025/video_generation/index.md)
 
 🔥 **Top topics:** Video Generation ×12 · Diffusion Models ×6 · Model Compression ×2
 

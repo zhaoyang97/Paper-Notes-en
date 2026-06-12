@@ -82,7 +82,7 @@ item_total: 90
 
 **🔬 ICLR2026** · **90** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (107)](../../ICML2026/model_compression/index.md) · [💬 ACL2026 (59)](../../ACL2026/model_compression/index.md) · [📷 CVPR2026 (53)](../../CVPR2026/model_compression/index.md) · [🤖 AAAI2026 (53)](../../AAAI2026/model_compression/index.md) · [🧠 NeurIPS2025 (130)](../../NeurIPS2025/model_compression/index.md) · [📹 ICCV2025 (49)](../../ICCV2025/model_compression/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (107)](../../ICML2026/model_compression/index.md) · [💬 ACL2026 (59)](../../ACL2026/model_compression/index.md) · [📷 CVPR2026 (53)](../../CVPR2026/model_compression/index.md) · [🤖 AAAI2026 (53)](../../AAAI2026/model_compression/index.md) · [🧠 NeurIPS2025 (131)](../../NeurIPS2025/model_compression/index.md) · [📹 ICCV2025 (53)](../../ICCV2025/model_compression/index.md)
 
 🔥 **Top topics:** LLM ×19 · Model Compression ×16 · Reasoning ×11 · Compression ×8 · Continual Learning ×4
 

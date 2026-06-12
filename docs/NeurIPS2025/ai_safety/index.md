@@ -82,7 +82,7 @@ item_total: 70
 
 **🧠 NeurIPS2025** · **70** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (43)](../../ICML2026/ai_safety/index.md) · [💬 ACL2026 (4)](../../ACL2026/ai_safety/index.md) · [📷 CVPR2026 (22)](../../CVPR2026/ai_safety/index.md) · [🔬 ICLR2026 (27)](../../ICLR2026/ai_safety/index.md) · [🤖 AAAI2026 (44)](../../AAAI2026/ai_safety/index.md) · [📹 ICCV2025 (21)](../../ICCV2025/ai_safety/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (47)](../../ICML2026/ai_safety/index.md) · [💬 ACL2026 (4)](../../ACL2026/ai_safety/index.md) · [📷 CVPR2026 (23)](../../CVPR2026/ai_safety/index.md) · [🔬 ICLR2026 (27)](../../ICLR2026/ai_safety/index.md) · [🤖 AAAI2026 (44)](../../AAAI2026/ai_safety/index.md) · [📹 ICCV2025 (24)](../../ICCV2025/ai_safety/index.md)
 
 🔥 **Top topics:** Adversarial Robustness ×16 · Federated Learning ×7 · Alignment/RLHF ×2 · GNNs ×2 · Speech & Audio ×2
 

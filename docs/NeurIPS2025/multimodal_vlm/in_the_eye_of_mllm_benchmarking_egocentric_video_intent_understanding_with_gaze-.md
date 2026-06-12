@@ -2,12 +2,14 @@
 title: >-
   [Paper Note] In the Eye of MLLM: Benchmarking Egocentric Video Intent Understanding with Gaze-Guided Prompting
 description: >-
-  [Video Understanding] Proposes the EgoGazeVQA benchmark and three gaze-guided prompting strategies (text/visual/saliency map), systematically validating for the first time the critical value of eye-gaze signals in improving MLLM egocentric video intent understanding; Qwen2.5-VL-72B + GazeS strategy achieves a 5.8 percentage point gain in average accuracy.
+  [Multimodal VLM] This paper proposes the EgoGazeVQA benchmark and three gaze-guided prompting strategies (textual / visual / salience map)…
 tags:
-  - Multimodal VLM
+  - "Multimodal VLM"
 date: 2026-05-08
 content_hash: fd40106af42601f9
 ---
+
+# In the Eye of MLLM: Benchmarking Egocentric Video Intent Understanding with Gaze-Guided Prompting
 
 ## TL;DR
 
@@ -131,11 +133,11 @@ Cross-dataset transfer via LoRA fine-tuning (Qwen2.5-VL-7B):
 
 ## Related Papers
 
+- [\[NeurIPS 2025\] RTV-Bench: Benchmarking MLLM Continuous Perception, Understanding and Reasoning through Real-Time Video](rtv-bench_benchmarking_mllm_continuous_perception_understanding_and_reasoning_th.md)
 - [\[AAAI 2026\] Plug-and-Play Clarifier: A Zero-Shot Multimodal Framework for Egocentric Intent Disambiguation](../../AAAI2026/multimodal_vlm/plug-and-play_clarifier_a_zero-shot_multimodal_framework_for_egocentric_intent_d.md)
+- [\[ICCV 2025\] OrderChain: Towards General Instruct-Tuning for Stimulating the Ordinal Understanding Ability of MLLM](../../ICCV2025/multimodal_vlm/orderchain_towards_general_instruct-tuning_for_stimulating_the_ordinal_understan.md)
 - [\[ICCV 2025\] Physics Context Builders: A Modular Framework for Physical Reasoning in Vision-Language Models](../../ICCV2025/multimodal_vlm/physics_context_builders_a_modular_framework_for_physical_reasoning_in_vision-la.md)
 - [\[ICCV 2025\] SC-Captioner: Improving Image Captioning with Self-Correction by Reinforcement Learning](../../ICCV2025/multimodal_vlm/sc-captioner_improving_image_captioning_with_self-correction_by_reinforcement_le.md)
-- [\[ICCV 2025\] MaTVLM: Hybrid Mamba-Transformer for Efficient Vision-Language Modeling](../../ICCV2025/multimodal_vlm/matvlm_hybrid_mamba-transformer_for_efficient_vision-language_modeling.md)
-- [\[ICCV 2025\] MolParser: End-to-end Visual Recognition of Molecule Structures in the Wild](../../ICCV2025/multimodal_vlm/molparser_end-to-end_visual_recognition_of_molecule_structures_in_the_wild.md)
 
 </div>
 

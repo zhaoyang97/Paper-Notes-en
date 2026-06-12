@@ -499,7 +499,7 @@ item_total: 131
 
 :   This paper proposes OracleFusion, a two-stage semantic typography framework. Stage 1 employs MLLM-enhanced Spatial Awareness Reasoning (SAR) to analyze the glyph structure of oracle bone script (OBS) and localize key components. Stage 2 introduces Structural Oracle Vector Fusion (SOVF), which generates semantically enriched vector glyphs through glyph structure constraints and skeleton-preserving losses, conveying semantic meaning while preserving original glyph integrity to assist expert decipherment of undeciphered OBS characters.
 
-**[orderchain towards general instruct-tuning for stimulating the ordinal understan](orderchain_towards_general_instruct-tuning_for_stimulating_the_ordinal_understan.md)**
+**[OrderChain: Towards General Instruct-Tuning for Stimulating the Ordinal Understanding Ability of MLLM](orderchain_towards_general_instruct-tuning_for_stimulating_the_ordinal_understan.md)**
 
 :   This paper proposes OrderChain, a prompting paradigm that enhances the ordinal understanding capability of multimodal large language models (MLLMs) via task-aware prompts and a Range-Optimized Chain-of-Thought (RO-CoT), achieving for the first time a unified ordinal regression model across diverse tasks.
 

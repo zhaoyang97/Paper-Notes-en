@@ -60,7 +60,7 @@ item_list:
   - u: "scits_scientific_time_series_llm/"
     t: "SciTS: Scientific Time Series Understanding and Generation with LLMs"
   - u: "scits_scientific_time_series_understanding_and_generation_with_llms/"
-    t: "scits scientific time series understanding and generation with llms"
+    t: "SciTS: Scientific Time Series Understanding and Generation with LLMs"
   - u: "swiftts_a_swift_selection_framework_for_time_series_pre-trained_models_via_multi/"
     t: "SwiftTS: A Swift Selection Framework for Time Series Pre-trained Models via Multi-task Meta-Learning"
   - u: "t1_one-to-one_channel-head_binding_for_multivariate_time-series_imputation/"
@@ -175,7 +175,7 @@ item_total: 36
 
 :   This paper proposes SciTS—a scientific time series benchmark spanning 12 scientific domains, 43 tasks, and 54K+ samples—and introduces the TimeOmni framework, which unifies understanding and generation tasks via multi-patch expert routing and an LLM backbone, achieving the best overall performance across the full benchmark.
 
-**[scits scientific time series understanding and generation with llms](scits_scientific_time_series_understanding_and_generation_with_llms.md)**
+**[SciTS: Scientific Time Series Understanding and Generation with LLMs](scits_scientific_time_series_understanding_and_generation_with_llms.md)**
 
 :   This work proposes the SciTS benchmark covering 43 tasks across 12 scientific domains with 54K+ instances (lengths from $10^0$ to $10^7$, frequencies up to 10 MHz), systematically evaluates 17 models and finds that general-purpose LLMs generalize better than specialized time-series models while text/image encodings each have distinct limitations, and accordingly designs the TimeOmni framework, which employs multi-patch experts with a routing mechanism and patch reprogramming to explicitly model temporal dynamics in joint training with an LLM backbone.
 

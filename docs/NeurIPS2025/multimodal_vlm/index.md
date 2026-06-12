@@ -303,7 +303,7 @@ item_total: 139
 
 :   Inspired by sparse coding, this work reinterprets the Transformer attention mechanism as projection onto encoding and decoding dictionaries, explicitly represents compositional rules via sparse coefficients, and transfers compositional rules from in-context tasks to target tasks using a lifting scheme.
 
-**[in the eye of mllm benchmarking egocentric video intent understanding with gaze-](in_the_eye_of_mllm_benchmarking_egocentric_video_intent_understanding_with_gaze-.md)**
+**[In the Eye of MLLM: Benchmarking Egocentric Video Intent Understanding with Gaze-Guided Prompting](in_the_eye_of_mllm_benchmarking_egocentric_video_intent_understanding_with_gaze-.md)**
 
 :   This paper proposes the EgoGazeVQA benchmark and three gaze-guided prompting strategies (textual / visual / salience map), providing the first systematic validation of eye-gaze signals for improving egocentric video intent understanding in MLLMs. The best configuration, Qwen2.5-VL-72B + GazeS, achieves a 5.8 percentage-point gain in average accuracy.
 
@@ -447,7 +447,7 @@ item_total: 139
 
 :   From the perspective of low-rank decomposition, this paper identifies "direction robustness" as the key factor in parameter-efficient module merging (as opposed to sign conflicts in full-parameter merging), and proposes RobustMerge, which maintains singular value direction stability via complementary parameter adaptive scaling and cross-task normalization, achieving average improvements of 3.4% (seen tasks) and 4.5% (unseen tasks) on multimodal generation benchmarks.
 
-**[rtv-bench benchmarking mllm continuous perception understanding and reasoning th](rtv-bench_benchmarking_mllm_continuous_perception_understanding_and_reasoning_th.md)**
+**[RTV-Bench: Benchmarking MLLM Continuous Perception, Understanding and Reasoning through Real-Time Video](rtv-bench_benchmarking_mllm_continuous_perception_understanding_and_reasoning_th.md)**
 
 :   This paper proposes RTV-Bench, a benchmark comprising 552 videos and 4,608 QA pairs, designed to systematically evaluate MLLMs' continuous analysis capabilities in real-time video streams through three core designs: **multi-timestamp QA** (the same question yields different correct answers at different timestamps), **hierarchical question structure**, and **multidimensional evaluation**. Key findings include that online models outperform offline models, and that simply scaling model size or increasing frame count yields limited gains.
 

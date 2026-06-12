@@ -2,18 +2,14 @@
 title: >-
   [Paper Note] From Masks to Pixels and Meaning: A New Taxonomy, Benchmark, and Metrics for VLM Image Tampering
 description: >-
-  [CVPR 2026][Multimodal][Image Forgery Detection] This paper identifies that existing image forgery detection benchmarks rely on coarse mask annotations that are severely misaligned with real editing signals, and proposes PIXAR—a pixel-level, semantically-aware forgery detection benchmark containing 420K+ image pairs, paired with a new training framework and evaluation metrics, significantly outperforming existing methods in precise localization and semantic understanding.
+  [Multimodal VLM] This paper argues that existing image tampering detection benchmarks rely on coarse mask annotations that are severely misaligned with actual edit signals. It proposes PIXAR—a pixel-level…
 tags:
-  - CVPR 2026
-  - Multimodal
-  - Multimodal VLM
-  - Pixel-level Localization
-  - VLM Safety
-  - Benchmark Dataset
-  - Semantic Classification
+  - "Multimodal VLM"
 date: 2026-05-08
 content_hash: 43c5837678fac6be
 ---
+
+# From Masks to Pixels and Meaning: A New Taxonomy, Benchmark, and Metrics for VLM Image Tampering
 
 ## TL;DR
 
@@ -132,11 +128,11 @@ Default settings: $\tau = 0.05$, $\lambda_{sem}=0.5$, $\lambda_{text}=3.0$, $\la
 
 ## Related Papers
 
-- [\[CVPR 2026\] Taxonomy-Aware Representation Alignment for Hierarchical Visual Recognition with Large Multimodal Models](taxonomy-aware_representation_alignment_for_hierarchical_visual_recognition_with.md)
-- [\[CVPR 2026\] VLM-Pruner: Buffering for Spatial Sparsity in an Efficient VLM Centrifugal Token Pruning Paradigm](vlm-pruner_buffering_for_spatial_sparsity_in_an_efficient_vlm_centrifugal_token_.md)
-- [\[CVPR 2026\] UNICBench: UNIfied Counting Benchmark for MLLM](unicbench_unified_counting_benchmark_for_mllm.md)
-- [\[CVPR 2026\] Empowering Semantic-Sensitive Underwater Image Enhancement with VLM](empowering_semanticsensitive_underwater_image_enha.md)
-- [\[CVPR 2026\] AVR: Adaptive VLM Routing for Computer Use Agents](adaptive_vision-language_model_routing_for_computer_use_agents.md)
+- [\[ICLR 2026\] WebDS: An End-to-End Benchmark for Web-based Data Science](../../ICLR2026/multimodal_vlm/webds_an_end-to-end_benchmark_for_web-based_data_science.md)
+- [\[ICLR 2026\] VLM-SubtleBench: How Far Are VLMs from Human-Level Subtle Comparative Reasoning?](../../ICLR2026/multimodal_vlm/vlm-subtlebench_how_far_are_vlms_from_human-level_subtle_comparative_reasoning.md)
+- [\[ICLR 2026\] Vision-Zero: Scalable VLM Self-Improvement via Strategic Gamified Self-Play](../../ICLR2026/multimodal_vlm/vision-zero_scalable_vlm_self-improvement_via_strategic_gamified_self-play.md)
+- [\[ICCV 2025\] SC-Captioner: Improving Image Captioning with Self-Correction by Reinforcement Learning](../../ICCV2025/multimodal_vlm/sc-captioner_improving_image_captioning_with_self-correction_by_reinforcement_le.md)
+- [\[AAAI 2026\] FT-NCFM: An Influence-Aware Data Distillation Framework for Efficient VLA Models](../../AAAI2026/multimodal_vlm/ft-ncfm_an_influence-aware_data_distillation_framework_for_efficient_vla_models.md)
 
 </div>
 

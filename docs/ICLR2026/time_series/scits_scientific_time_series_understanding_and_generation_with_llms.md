@@ -1,14 +1,15 @@
 ---
 title: >-
-  [Paper Note] Untitled
+  [Paper Note] SciTS: Scientific Time Series Understanding and Generation with LLMs
 description: >-
-  [ICLR2026][Time Series] Paper note
+  [Time Series] This work proposes the SciTS benchmark covering 43 tasks across 12 scientific domains with 54K+ instances (lengths from $10^0$ to $10^7$, frequencies up to 10 MHz)…
 tags:
-  - ICLR 2026
-  - Time Series
+  - "Time Series"
 date: 2026-05-08
 content_hash: cf4e543b0492e135
 ---
+
+# SciTS: Scientific Time Series Understanding and Generation with LLMs
 
 ## TL;DR
 This work proposes the SciTS benchmark covering 43 tasks across 12 scientific domains with 54K+ instances (lengths from $10^0$ to $10^7$, frequencies up to 10 MHz), systematically evaluates 17 models and finds that general-purpose LLMs generalize better than specialized time-series models while text/image encodings each have distinct limitations, and accordingly designs the TimeOmni framework, which employs multi-patch experts with a routing mechanism and patch reprogramming to explicitly model temporal dynamics in joint training with an LLM backbone.
@@ -136,11 +137,11 @@ Image encoding offers advantages for high-level understanding tasks (compressing
 
 ## Related Papers
 
-- [\[ICLR 2026\] SciTS: Scientific Time Series Understanding and Generation with LLMs](scits_scientific_time_series_llm.md)
 - [\[ICLR 2026\] Rating Quality of Diverse Time Series Data by Meta-learning from LLM Judgment](rating_quality_of_diverse_time_series_data_by_meta-learning_from_llm_judgment.md)
+- [\[AAAI 2026\] Finding Time Series Anomalies using Granular-ball Vector Data Description](../../AAAI2026/time_series/finding_time_series_anomalies_using_granular-ball_vector_data_description.md)
+- [\[ICML 2026\] TimeOmni-VL: Unified Models for Time Series Understanding and Generation](../../ICML2026/time_series/timeomni-vl_unified_models_for_time_series_understanding_and_generation.md)
 - [\[ICLR 2026\] EDINET-Bench: Evaluating LLMs on Complex Financial Tasks using Japanese Financial Statements](edinet-bench_evaluating_llms_on_complex_financial_tasks_using_japanese_financial.md)
-- [\[ICLR 2026\] Delta-XAI: A Unified Framework for Explaining Prediction Changes in Online Time Series Monitoring](delta-xai_a_unified_framework_for_explaining_prediction_changes_in_online_time_s.md)
-- [\[ICLR 2026\] From Samples to Scenarios: A New Paradigm for Probabilistic Forecasting](from_samples_to_scenarios_a_new_paradigm_for_probabilistic_forecasting.md)
+- [\[ICLR 2026\] Language in the Flow of Time: Time-Series-Paired Texts Weaved into a Unified Temporal Narrative](language_in_the_flow_of_time_time-series-paired_texts_weaved_into_a_unified_temp.md)
 
 </div>
 

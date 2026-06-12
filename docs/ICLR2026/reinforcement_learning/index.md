@@ -606,7 +606,7 @@ item_total: 138
 
 :   Through closed-form gradient analysis, this paper identifies the root causes of instability in hyperbolic deep RL—namely, conformal factor explosion in the Poincaré Ball and PPO trust-region breakdown induced by large-norm embeddings. It proposes Hyper++, a four-component solution comprising RMSNorm, learnable scaling, HL-Gauss categorical value loss, and the Hyperboloid model, achieving comprehensive improvements over prior baselines on ProcGen (16 environments) and Atari-5.
 
-**[unsupervised learning of efficient exploration pre-training adaptive policies vi](unsupervised_learning_of_efficient_exploration_pre-training_adaptive_policies_vi.md)**
+**[Unsupervised Learning of Efficient Exploration: Pre-training Adaptive Policies via Self-Imposed Goals](unsupervised_learning_of_efficient_exploration_pre-training_adaptive_policies_vi.md)**
 
 :   This paper proposes ULEE, an unsupervised meta-learning method that trains adaptive policies via adversarially self-generated goal curricula, achieving efficient exploration and few-shot adaptation on the XLand-MiniGrid benchmark.
 

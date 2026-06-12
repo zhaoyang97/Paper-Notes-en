@@ -767,7 +767,7 @@ item_total: 264
 
 :   This paper proposes an occlusion-aware scene partitioning strategy and region-based rendering technique. By clustering a camera co-visibility graph, it achieves partitions aligned with the scene layout, significantly improving reconstruction quality and rendering speed for large-scale 3DGS.
 
-**[one look is enough seamless patchwise refinement for zero-shot monocular depth e](one_look_is_enough_seamless_patchwise_refinement_for_zero-shot_monocular_depth_e.md)**
+**[One Look is Enough: Seamless Patchwise Refinement for Zero-Shot Monocular Depth Estimation on High-Resolution Images](one_look_is_enough_seamless_patchwise_refinement_for_zero-shot_monocular_depth_e.md)**
 
 :   This paper proposes PRO (Patch Refine Once), which achieves seamless patchwise depth refinement on high-resolution images through Grouped Patch Consistency Training (GPCT) and a Bias-Free Mask (BFM) strategy. PRO eliminates boundary artifacts with only a single refinement pass per patch and achieves a 12× inference speedup over PatchRefiner.
 
@@ -867,7 +867,7 @@ item_total: 264
 
 :   Using algebraic topology and persistent homology ($\mathcal{PH}$) tools, this paper reveals that existing synthetic point cloud datasets lack the rich topological features present in real-world data. It contributes the first real-world industrial point cloud completion dataset RealPC (~40,000 pairs, 21 categories), and proposes BOSHNet, which samples proxy homology skeletons as topological priors to achieve significant improvements on real-world point cloud completion.
 
-**[ri3d few-shot gaussian splatting with repair and inpainting diffusion priors](ri3d_few-shot_gaussian_splatting_with_repair_and_inpainting_diffusion_priors.md)**
+**[RI3D: Few-Shot Gaussian Splatting With Repair and Inpainting Diffusion Priors](ri3d_few-shot_gaussian_splatting_with_repair_and_inpainting_diffusion_priors.md)**
 
 :   RI3D decomposes sparse-view synthesis into two sub-tasks — repairing visible regions and completing missing regions — and introduces two personalized diffusion models (repair + inpainting) combined with a two-stage optimization strategy to achieve high-quality 3DGS reconstruction under extremely sparse inputs.
 

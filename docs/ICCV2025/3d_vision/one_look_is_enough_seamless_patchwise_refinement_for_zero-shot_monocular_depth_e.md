@@ -2,18 +2,14 @@
 title: >-
   [Paper Note] One Look is Enough: Seamless Patchwise Refinement for Zero-Shot Monocular Depth Estimation on High-Resolution Images
 description: >-
-  [3D Vision] Proposes PRO (Patch Refine Once), which achieves seamless patch-wise depth refinement on high-resolution images via Grouped Patch Consistency Training (GPCT) and Bias-Free Masking (BFM) strategies, eliminating boundary artifacts with a single refinement pass per patch—12× faster inference than PatchRefiner.
+  [3D Vision] This paper proposes PRO (Patch Refine Once), which achieves seamless patchwise depth refinement on high-resolution images through Grouped Patch Consistency Training (GPCT) and a Bias-Free Mask (BFM) strategy.…
 tags:
-  - ICCV 2025
-  - 3D Vision
-  - High-Resolution Depth Estimation
-  - Zero-Shot
-  - Patch-Based Refinement
-  - Depth Consistency
-  - DepthAnything
+  - "3D Vision"
 date: 2026-05-08
 content_hash: d63b98213bf65332
 ---
+
+# One Look is Enough: Seamless Patchwise Refinement for Zero-Shot Monocular Depth Estimation on High-Resolution Images
 
 ## Paper Information
 - **Conference**: ICCV 2025
@@ -176,11 +172,11 @@ An overlap of 224 pixels is optimal; excessively large overlaps weaken the consi
 
 ## Related Papers
 
-- [\[ICCV 2025\] MonoMobility: Zero-Shot 3D Mobility Analysis from Monocular Videos](monomobility_zero-shot_3d_mobility_analysis_from_monocular_videos.md)
-- [\[ICCV 2025\] Zero-Shot Inexact CAD Model Alignment from a Single Image](zero-shot_inexact_cad_model_alignment_from_a_single_image.md)
 - [\[ICCV 2025\] Depth AnyEvent: A Cross-Modal Distillation Paradigm for Event-Based Monocular Depth Estimation](depth_anyevent_a_cross-modal_distillation_paradigm_for_event-based_monocular_dep.md)
-- [\[ICCV 2025\] RobuSTereo: Robust Zero-Shot Stereo Matching under Adverse Weather](robustereo_robust_zero-shot_stereo_matching_under_adverse_weather.md)
-- [\[ICCV 2025\] Diorama: Unleashing Zero-shot Single-view 3D Indoor Scene Modeling](diorama_unleashing_zeroshot_singleview_3d_indoor_scene_model.md)
+- [\[ICCV 2025\] JointDiT: Enhancing RGB-Depth Joint Modeling with Diffusion Transformers](jointdit_enhancing_rgb-depth_joint_modeling_with_diffusion_transformers.md)
+- [\[ICCV 2025\] SuperMat: Physically Consistent PBR Material Estimation at Interactive Rates](supermat_physically_consistent_pbr_material_estimation_at_interactive_rates.md)
+- [\[ICCV 2025\] HORT: Monocular Hand-held Objects Reconstruction with Transformers](hort_monocular_hand-held_objects_reconstruction_with_transformers.md)
+- [\[ICCV 2025\] Diving into the Fusion of Monocular Priors for Generalized Stereo Matching](diving_into_the_fusion_of_monocular_priors_for_generalized_stereo_matching.md)
 
 </div>
 

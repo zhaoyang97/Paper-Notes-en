@@ -2,13 +2,15 @@
 title: >-
   [Paper Note] When Identity Skews Debate: Anonymization for Bias-Reduced Multi-Agent Reasoning
 description: >-
-  [ACL 2026][Multi-Agent][Paper Note] This paper highlights that LLMs in Multi-Agent Debate (MAD) change their positions based on "who said it" rather than "what was said." It quantifies and mitigates this identity-driven bias through response anonymization and the Identity Bias Coefficient (IBC).
+  [Multi-Agent] This paper highlights that LLMs in Multi-Agent Debate (MAD) change their positions based on "who said it" rather than "what was said." It quantifies and mitigates this identity-driven bias through response…
 tags:
-  - ACL 2026
-  - Multi-Agent
+  - "Multi-Agent"
 date: 2026-05-08
 content_hash: 0586cfc643316336
 ---
+
+# When Identity Skews Debate: Anonymization for Bias-Reduced Multi-Agent Reasoning
+
 This paper note provides an English translation of the key aspects of the study "When Identity Skews Debate: Anonymization for Bias-Reduced Multi-Agent Reasoning."
 
 ## TL;DR
@@ -109,11 +111,11 @@ Testing Qwen2.5, Llama3.1, Mistral, and GPT-OSS on benchmarks like GPQA and MMLU
 
 ## Related Papers
 
-- [\[ACL 2026\] Topology Matters: Measuring Memory Leakage in Multi-Agent LLMs](topology_matters_measuring_memory_leakage_in_multi-agent_llms.md)
 - [\[ACL 2026\] Latent Agents: A Post-Training Procedure for Internalized Multi-Agent Debate](latent_agents_a_post-training_procedure_for_internalized_multi-agent_debate.md)
+- [\[ICML 2026\] When Cloud Agents Meet Device Agents: Lessons from Hybrid Multi-Agent Systems](../../ICML2026/multi_agent/when_cloud_agents_meet_device_agents_lessons_from_hybrid_multi-agent_systems.md)
 - [\[ACL 2026\] From Query to Counsel: Structured Reasoning with a Multi-Agent Framework and Dataset for Legal Consultation](from_query_to_counsel_structured_reasoning_with_a_multi-agent_framework_and_data.md)
+- [\[ACL 2026\] Topology Matters: Measuring Memory Leakage in Multi-Agent LLMs](topology_matters_measuring_memory_leakage_in_multi-agent_llms.md)
 - [\[ACL 2026\] Debating the Unspoken: Role-Anchored Multi-Agent Reasoning for Half-Truth Detection](debating_the_unspoken_role-anchored_multi-agent_reasoning_for_half-truth_detecti.md)
-- [\[ACL 2026\] Multi-Agent Reasoning Improves Compute Efficiency: Pareto-Optimal Test-Time Scaling](multi-agent_reasoning_improves_compute_efficiency_pareto-optimal_test-time_scali.md)
 
 </div>
 

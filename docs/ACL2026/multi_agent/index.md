@@ -238,6 +238,6 @@ item_total: 39
 
 :   Ours proposes the ErrorProbe framework, which implements self-improving semantic fault attribution in multi-agent systems through MAST taxonomy-driven structured decomposition, symptom-driven backward tracing, and a verifiable memory mechanism, significantly outperforming baselines particularly in step-level error localization.
 
-**[when identity skews debate anonymization for bias-reduced multi-agent reasoning](when_identity_skews_debate_anonymization_for_bias-reduced_multi-agent_reasoning.md)**
+**[When Identity Skews Debate: Anonymization for Bias-Reduced Multi-Agent Reasoning](when_identity_skews_debate_anonymization_for_bias-reduced_multi-agent_reasoning.md)**
 
 :   This paper highlights that LLMs in Multi-Agent Debate (MAD) change their positions based on "who said it" rather than "what was said." It quantifies and mitigates this identity-driven bias through response anonymization and the Identity Bias Coefficient (IBC).

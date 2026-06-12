@@ -13,7 +13,7 @@ tags:
   - "Multimodal/VLM"
 item_list:
   - u: "aligning_information_capacity_between_vision_and_language_via_dense-to-sparse_fe/"
-    t: "aligning information capacity between vision and language via dense-to-sparse fe"
+    t: "Aligning Information Capacity Between Vision and Language via Dense-to-Sparse Feature Distillation"
   - u: "aligning_information_capacity_between_vision_and_language_via_dense_to_sparse_feature_distillation/"
     t: "Aligning Information Capacity Between Vision and Language via Dense-to-Sparse Feature Distillation for Image-Text Matching"
   - u: "external_knowledge_injection_for_clip-based_class-incremental_learning/"
@@ -36,7 +36,7 @@ item_total: 7
 
 📌 **Same area in other venues:** [🧪 ICML2026 (22)](../../ICML2026/information_retrieval/index.md) · [💬 ACL2026 (73)](../../ACL2026/information_retrieval/index.md) · [📷 CVPR2026 (9)](../../CVPR2026/information_retrieval/index.md) · [🔬 ICLR2026 (32)](../../ICLR2026/information_retrieval/index.md) · [🤖 AAAI2026 (28)](../../AAAI2026/information_retrieval/index.md) · [🧠 NeurIPS2025 (31)](../../NeurIPS2025/information_retrieval/index.md)
 
-**[aligning information capacity between vision and language via dense-to-sparse fe](aligning_information_capacity_between_vision_and_language_via_dense-to-sparse_fe.md)**
+**[Aligning Information Capacity Between Vision and Language via Dense-to-Sparse Feature Distillation](aligning_information_capacity_between_vision_and_language_via_dense-to-sparse_fe.md)**
 
 :   This paper proposes D2S-VSE, a two-stage training framework (dense-text pretraining + dense-to-sparse feature distillation fine-tuning) that enhances information capacity in visual-semantic embeddings, addressing the core asymmetry in information density between image and text modalities for image-text matching.
 

@@ -383,7 +383,7 @@ item_total: 223
 
 :   This paper proposes TAR-FAS, a framework that reformulates Face Anti-Spoofing (FAS) as a Chain-of-Thought with Visual Tools (CoT-VT) paradigm for the first time, enabling MLLMs to adaptively invoke external visual tools (LBP/FFT/HOG, etc.) during inference—upgrading from "intuitive judgment" to "fine-grained investigation"—achieving SOTA on the 1-to-11 cross-domain protocol.
 
-**[from masks to pixels and meaning a new taxonomy benchmark and metrics for vlm im](from_masks_to_pixels_and_meaning_a_new_taxonomy_benchmark_and_metrics_for_vlm_im.md)**
+**[From Masks to Pixels and Meaning: A New Taxonomy, Benchmark, and Metrics for VLM Image Tampering](from_masks_to_pixels_and_meaning_a_new_taxonomy_benchmark_and_metrics_for_vlm_im.md)**
 
 :   This paper argues that existing image tampering detection benchmarks rely on coarse mask annotations that are severely misaligned with actual edit signals. It proposes PIXAR—a pixel-level, semantically-aware tampering detection benchmark containing 420K+ image pairs—along with a new training framework and evaluation metrics that substantially outperform existing methods in precise localization and semantic understanding.
 

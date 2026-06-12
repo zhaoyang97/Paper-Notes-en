@@ -755,7 +755,7 @@ item_total: 230
 
 :   This paper presents QuadSync, the first global synchronization algorithm for quadrifocal tensors. By constructing a block quadrifocal tensor and proving that it admits a Tucker decomposition with multilinear rank $(4,4,4,4)$, the method recovers camera poses from four-view measurements via an ADMM-IRLS optimization framework, achieving superior synchronization accuracy over two-view and three-view methods in dense-view settings.
 
-**[r4det 4d radar camera fusion 3d detection](r4det_4d_radar_camera_fusion_3d_detection.md)**
+**[R4Det: 4D Radar-Camera Fusion for High-Performance 3D Object Detection](r4det_4d_radar_camera_fusion_3d_detection.md)**
 
 :   R4Det proposes three plug-and-play modules — Panoramic Depth Fusion (PDF), Deformable Gated Temporal Fusion (DGTF), and Instance-Guided Dynamic Refinement (IGDR) — to address the key challenges in 4D radar-camera fusion: inaccurate depth estimation, ego-pose-dependent temporal fusion, and poor small-object detection. State-of-the-art results are achieved on TJ4DRadSet and VoD.
 

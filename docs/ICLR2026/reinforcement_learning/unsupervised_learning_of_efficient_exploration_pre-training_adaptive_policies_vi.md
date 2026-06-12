@@ -2,18 +2,14 @@
 title: >-
   [Paper Note] Unsupervised Learning of Efficient Exploration: Pre-training Adaptive Policies via Self-Imposed Goals
 description: >-
-  Proposes ULEE, a method that meta-learns exploration-efficient and fast-adaptation pretraining strategies in unsupervised settings via adversarial goal generation and post-adaptation difficulty-based curriculum learning.
-date: 2026-05-08
+  [Reinforcement Learning] This paper proposes ULEE, a method that meta-learns pre-trained policies with efficient exploration and rapid adaptation capabilities in unsupervised environments…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - unsupervised RL
-  - meta-learning
-  - goal generation
-  - curriculum learning
-  - exploration
+  - "Reinforcement Learning"
+date: 2026-05-08
 content_hash: 5bae29ef6a850147
 ---
+
+# Unsupervised Learning of Efficient Exploration: Pre-training Adaptive Policies via Self-Imposed Goals
 
 ## Basic Information
 
@@ -298,11 +294,11 @@ This provides an approximate immediate difficulty estimate, avoiding additional 
 
 ## Related Papers
 
-- [\[ICLR 2026\] How Far Can Unsupervised RLVR Scale LLM Training?](how_far_can_unsupervised_rlvr_scale_llm_training.md)
-- [\[ICLR 2026\] Stop Unnecessary Reflection: Training LRMs for Efficient Reasoning with Adaptive Reflection and Length Coordinated Penalty](stop_unnecessary_reflection_training_lrms_for_efficient_reasoning_with_adaptive_.md)
-- [\[ACL 2026\] Free Energy-Driven Reinforcement Learning with Adaptive Advantage Shaping for Unsupervised Reasoning in LLMs](../../ACL2026/reinforcement_learning/free_energy-driven_reinforcement_learning_with_adaptive_advantage_shaping_for_un.md)
-- [\[ICLR 2026\] AMPED: Adaptive Multi-objective Projection for balancing Exploration and skill Diversification](amped_adaptive_multi-objective_projection_for_balancing_exploration_and_skill_di.md)
 - [\[ICLR 2026\] Sample-efficient and Scalable Exploration in Continuous-Time RL](sample-efficient_and_scalable_exploration_in_continuous-time_rl.md)
+- [\[ICLR 2026\] SPELL: Self-Play Reinforcement Learning for Evolving Long-Context Language Models](spell_self-play_reinforcement_learning_for_evolving_long-context_language_models.md)
+- [\[ICLR 2026\] SPIRAL: Self-Play on Zero-Sum Games Incentivizes Reasoning via Multi-Agent Multi-Turn Reinforcement Learning](spiral_self-play_on_zero-sum_games_incentivizes_reasoning_via_multi-agent_multi-.md)
+- [\[ICLR 2026\] Solving Parameter-Robust Avoid Problems with Unknown Feasibility using Reinforcement Learning](solving_parameter-robust_avoid_problems_with_unknown_feasibility_using_reinforce.md)
+- [\[ICLR 2026\] Shop-R1: Rewarding LLMs to Simulate Human Behavior in Online Shopping via Reinforcement Learning](shop-r1_rewarding_llms_to_simulate_human_behavior_in_online_shopping_via_reinfor.md)
 
 </div>
 

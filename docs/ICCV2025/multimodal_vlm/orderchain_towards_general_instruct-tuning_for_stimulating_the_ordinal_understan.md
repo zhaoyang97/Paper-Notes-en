@@ -2,18 +2,14 @@
 title: >-
   [Paper Note] OrderChain: Towards General Instruct-Tuning for Stimulating the Ordinal Understanding Ability of MLLM
 description: >-
-  [Human Body Understanding] Proposes the OrderChain prompting paradigm, enhancing ordinal understanding in multimodal large language models via task-aware prompting and Range-Optimized Chain-of-Thought (RO-CoT), achieving the first unified ordinal regression model across tasks.
+  [Multimodal VLM] This paper proposes OrderChain, a prompting paradigm that enhances the ordinal understanding capability of multimodal large language models (MLLMs) via task-aware prompts and a Range-Optimized Chain-of-T…
 tags:
-  - ICCV 2025
-  - Multimodal VLM
-  - Ordinal Regression
-  - Multimodal Large Language Models
-  - Chain-of-Thought
-  - Progressive Reasoning
-  - Unified Model
+  - "Multimodal VLM"
 date: 2026-05-08
 content_hash: 53ce68b44eeba454
 ---
+
+# OrderChain: Towards General Instruct-Tuning for Stimulating the Ordinal Understanding Ability of MLLM
 
 ## Meta Information
 - **Conference**: ICCV 2025
@@ -141,11 +137,11 @@ A binary tree is used for tasks with fewer categories (e.g., 5-class aesthetic a
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Learning to Instruct for Visual Instruction Tuning](../../NeurIPS2025/multimodal_vlm/learning_to_instruct_for_visual_instruction_tuning.md)
-- [\[ICCV 2025\] DWIM: Towards Tool-aware Visual Reasoning via Discrepancy-aware Workflow Generation & Instruct-Masking Tuning](dwim_towards_tool-aware_visual_reasoning_via_discrepancy-aware_workflow_generati.md)
-- [\[ICCV 2025\] MMAT-1M: A Large Reasoning Dataset for Multimodal Agent Tuning](mmat1m_a_large_reasoning_dataset_for_multimodal_agent_tuning.md)
-- [\[ICCV 2025\] ChartPoint: Guiding MLLMs with Grounding Reflection for Chart Reasoning](chartpoint_guiding_mllms_with_grounding_reflection_for_chart_reasoning.md)
-- [\[ICCV 2025\] Attention to the Burstiness in Visual Prompt Tuning!](attention_to_the_burstiness_in_visual_prompt_tuning.md)
+- [\[NeurIPS 2025\] In the Eye of MLLM: Benchmarking Egocentric Video Intent Understanding with Gaze-Guided Prompting](../../NeurIPS2025/multimodal_vlm/in_the_eye_of_mllm_benchmarking_egocentric_video_intent_understanding_with_gaze-.md)
+- [\[NeurIPS 2025\] RTV-Bench: Benchmarking MLLM Continuous Perception, Understanding and Reasoning through Real-Time Video](../../NeurIPS2025/multimodal_vlm/rtv-bench_benchmarking_mllm_continuous_perception_understanding_and_reasoning_th.md)
+- [\[ICCV 2025\] SC-Captioner: Improving Image Captioning with Self-Correction by Reinforcement Learning](sc-captioner_improving_image_captioning_with_self-correction_by_reinforcement_le.md)
+- [\[ICCV 2025\] MolParser: End-to-end Visual Recognition of Molecule Structures in the Wild](molparser_end-to-end_visual_recognition_of_molecule_structures_in_the_wild.md)
+- [\[ICCV 2025\] Physics Context Builders: A Modular Framework for Physical Reasoning in Vision-Language Models](physics_context_builders_a_modular_framework_for_physical_reasoning_in_vision-la.md)
 
 </div>
 

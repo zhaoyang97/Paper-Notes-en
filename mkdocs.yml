@@ -2295,7 +2295,7 @@ nav:
     - 'Topology Matters: Measuring Memory Leakage in Multi-Agent LLMs': ACL2026/multi_agent/topology_matters_measuring_memory_leakage_in_multi-agent_llms.md
     - Towards Robust Real-World Spreadsheet Understanding with Multi-Agent Multi-Format Collaboration: ACL2026/multi_agent/towards_robust_real-world_spreadsheet_understanding_with_multi-agent_multi-forma.md
     - Towards Self-Improving Error Diagnosis in Multi-Agent Systems: ACL2026/multi_agent/towards_self-improving_error_diagnosis_in_multi-agent_systems.md
-    - when identity skews debate anonymization for bias-reduced multi-agent reasoning: ACL2026/multi_agent/when_identity_skews_debate_anonymization_for_bias-reduced_multi-agent_reasoning.md
+    - 'When Identity Skews Debate: Anonymization for Bias-Reduced Multi-Agent Reasoning': ACL2026/multi_agent/when_identity_skews_debate_anonymization_for_bias-reduced_multi-agent_reasoning.md
   - ⚖️ Alignment & RLHF (30):
     - ⚖️ Alignment & RLHF: ACL2026/llm_alignment/index.md
     - 'AgentV-RL: Scaling Reward Modeling with Agentic Verifier': ACL2026/llm_alignment/agentv-rl_scaling_reward_modeling_with_agentic_verifier.md
@@ -3572,7 +3572,7 @@ nav:
     - 'FluoCLIP: Stain-Aware Focus Quality Assessment in Fluorescence Microscopy': CVPR2026/multimodal_vlm/fluoclip_stain-aware_focus_quality_assessment_in_fluorescence_microscopy.md
     - 'PinPoint: Focus, Don''t Prune — Identifying Instruction-Relevant Regions for Information-Rich Image Understanding': CVPR2026/multimodal_vlm/focus_dont_prune_identifying_instruction-relevant_regions_for_information-rich_i.md
     - 'From Intuition to Investigation: A Tool-Augmented Reasoning MLLM Framework for Generalizable Face Anti-Spoofing': CVPR2026/multimodal_vlm/from_intuition_to_investigation_a_tool-augmented_reasoning_mllm_framework_for_ge.md
-    - from masks to pixels and meaning a new taxonomy benchmark and metrics for vlm im: CVPR2026/multimodal_vlm/from_masks_to_pixels_and_meaning_a_new_taxonomy_benchmark_and_metrics_for_vlm_im.md
+    - 'From Masks to Pixels and Meaning: A New Taxonomy, Benchmark, and Metrics for VLM Image Tampering': CVPR2026/multimodal_vlm/from_masks_to_pixels_and_meaning_a_new_taxonomy_benchmark_and_metrics_for_vlm_im.md
     - 'From Observation to Action: Latent Action-based Primitive Segmentation for VLA Pre-training in Industrial Settings': CVPR2026/multimodal_vlm/from_observation_to_action_latent_action-based_primitive_segmentation_for_vla_pr.md
     - ? 'G-MIXER: Geodesic Mixup-based Implicit Semantic Expansion and Explicit Semantic
         Re-ranking for Zero-Shot Composed Image Retrieval'
@@ -4232,7 +4232,7 @@ nav:
       : CVPR2026/3d_vision/prune_wisely_reconstruct_sharply_compact_3d_gaussian_splatting_via_adaptive_prun.md
     - 'QD-PCQA: Quality-Aware Domain Adaptation for Point Cloud Quality Assessment': CVPR2026/3d_vision/qd-pcqa_quality-aware_domain_adaptation_for_point_cloud_quality_assessment.md
     - 'QuadSync: Quadrifocal Tensor Synchronization via Tucker Decomposition': CVPR2026/3d_vision/quadsync_quadrifocal_tensor_synchronization_via_tucker_decomposition.md
-    - r4det 4d radar camera fusion 3d detection: CVPR2026/3d_vision/r4det_4d_radar_camera_fusion_3d_detection.md
+    - 'R4Det: 4D Radar-Camera Fusion for High-Performance 3D Object Detection': CVPR2026/3d_vision/r4det_4d_radar_camera_fusion_3d_detection.md
     - ? 'RAP: Fast Feedforward Rendering-Free Attribute-Guided Primitive Importance
         Score Prediction for Efficient 3D Gaussian Splatting Processing'
       : CVPR2026/3d_vision/rap_fast_feedforward_rendering-free_attribute-guided_primitive_importance_score_.md
@@ -6200,7 +6200,7 @@ nav:
     - 'TROLL: Trust Regions improve Reinforcement Learning for Large Language Models': ICLR2026/reinforcement_learning/troll_trust_regions_improve_reinforcement_learning_for_large_language_models.md
     - 'UME-R1: Exploring Reasoning-Driven Generative Multimodal Embeddings': ICLR2026/reinforcement_learning/ume-r1_exploring_reasoning-driven_generative_multimodal_embeddings.md
     - Understanding and Improving Hyperbolic Deep Reinforcement Learning: ICLR2026/reinforcement_learning/understanding_and_improving_hyperbolic_deep_reinforcement_learning.md
-    - unsupervised learning of efficient exploration pre-training adaptive policies vi: ICLR2026/reinforcement_learning/unsupervised_learning_of_efficient_exploration_pre-training_adaptive_policies_vi.md
+    - 'Unsupervised Learning of Efficient Exploration: Pre-training Adaptive Policies via Self-Imposed Goals': ICLR2026/reinforcement_learning/unsupervised_learning_of_efficient_exploration_pre-training_adaptive_policies_vi.md
     - 'Unveiling the Cognitive Compass: Theory-of-Mind-Guided Multimodal Emotion Reasoning': ICLR2026/reinforcement_learning/unveiling_the_cognitive_compass_theory-of-mind-guided_multimodal_emotion_reasoni.md
     - Value Flows: ICLR2026/reinforcement_learning/value_flows.md
     - 'VerifyBench: Benchmarking Reference-based Reward Systems for Large Language Models': ICLR2026/reinforcement_learning/verifybench_benchmarking_reference-based_reward_systems_for_large_language_model.md
@@ -6507,7 +6507,7 @@ nav:
     - 'ResCP: Reservoir Conformal Prediction for Time Series Forecasting': ICLR2026/time_series/rescp_reservoir_conformal_prediction_for_time_series_forecasting.md
     - Routing Channel-Patch Dependencies in Time Series Forecasting with Graph Spectral Decomposition: ICLR2026/time_series/routing_channel-patch_dependencies_in_time_series_forecasting_with_graph_spectra.md
     - 'SciTS: Scientific Time Series Understanding and Generation with LLMs': ICLR2026/time_series/scits_scientific_time_series_llm.md
-    - scits scientific time series understanding and generation with llms: ICLR2026/time_series/scits_scientific_time_series_understanding_and_generation_with_llms.md
+    - 'SciTS: Scientific Time Series Understanding and Generation with LLMs': ICLR2026/time_series/scits_scientific_time_series_understanding_and_generation_with_llms.md
     - 'SwiftTS: A Swift Selection Framework for Time Series Pre-trained Models via Multi-task Meta-Learning': ICLR2026/time_series/swiftts_a_swift_selection_framework_for_time_series_pre-trained_models_via_multi.md
     - 'T1: One-to-One Channel-Head Binding for Multivariate Time-Series Imputation': ICLR2026/time_series/t1_one-to-one_channel-head_binding_for_multivariate_time-series_imputation.md
     - Tensor learning with orthogonal, Lorentz, and symplectic symmetries: ICLR2026/time_series/tensor_learning_with_orthogonal_lorentz_and_symplectic_symmetries.md
@@ -9178,7 +9178,7 @@ nav:
     - 'HoPE: Hybrid of Position Embedding for Long Context Vision-Language Models': NeurIPS2025/multimodal_vlm/hope_hybrid_of_position_embedding_for_long_context_visionlan.md
     - 'iFinder: Structured Zero-Shot VLM Grounding for Dash-Cam Video Reasoning': NeurIPS2025/multimodal_vlm/ifinder_structured_zero-shot_vision-based_llm_grounding_for_dash-cam_video_reaso.md
     - In-Context Compositional Learning via Sparse Coding Transformer: NeurIPS2025/multimodal_vlm/in-context_compositional_learning_via_sparse_coding_transformer.md
-    - in the eye of mllm benchmarking egocentric video intent understanding with gaze-: NeurIPS2025/multimodal_vlm/in_the_eye_of_mllm_benchmarking_egocentric_video_intent_understanding_with_gaze-.md
+    - 'In the Eye of MLLM: Benchmarking Egocentric Video Intent Understanding with Gaze-Guided Prompting': NeurIPS2025/multimodal_vlm/in_the_eye_of_mllm_benchmarking_egocentric_video_intent_understanding_with_gaze-.md
     - 'JailBound: Jailbreaking Internal Safety Boundaries of Vision-Language Models': NeurIPS2025/multimodal_vlm/jailbound_jailbreaking_internal_safety_boundaries_of_vision-language_models.md
     - 'Learning from Videos for 3D World: Enhancing MLLMs with 3D Vision Geometry Priors': NeurIPS2025/multimodal_vlm/learning_from_videos_for_3d_world_enhancing_mllms_with_3d_vision_geometry_priors.md
     - Learning Shared Representations from Unpaired Data: NeurIPS2025/multimodal_vlm/learning_shared_representations_from_unpaired_data.md
@@ -9216,7 +9216,7 @@ nav:
     - Revisiting Logit Distributions for Reliable Out-of-Distribution Detection: NeurIPS2025/multimodal_vlm/revisiting_logit_distributions_for_reliable_out-of-distribution_detection.md
     - 'RoboRefer: Towards Spatial Referring with Reasoning in Vision-Language Models for Robotics': NeurIPS2025/multimodal_vlm/roborefer_towards_spatial_referring_with_reasoning_in_vision-language_models_for.md
     - 'RobustMerge: Parameter-Efficient Model Merging for MLLMs with Direction Robustness': NeurIPS2025/multimodal_vlm/robustmerge_parameter-efficient_model_merging_for_mllms_with_direction_robustnes.md
-    - rtv-bench benchmarking mllm continuous perception understanding and reasoning th: NeurIPS2025/multimodal_vlm/rtv-bench_benchmarking_mllm_continuous_perception_understanding_and_reasoning_th.md
+    - 'RTV-Bench: Benchmarking MLLM Continuous Perception, Understanding and Reasoning through Real-Time Video': NeurIPS2025/multimodal_vlm/rtv-bench_benchmarking_mllm_continuous_perception_understanding_and_reasoning_th.md
     - 'RTV-Bench: Benchmarking MLLM Continuous Perception, Understanding and Reasoning through Real-Time Video': NeurIPS2025/multimodal_vlm/rtv_bench_benchmarking_mllm_continuous_perception_through_realtime_video.md
     - 'Scene-Aware Urban Design: A Human-AI Recommendation Framework Using Co-Occurrence Embeddings and Vision-Language Models': NeurIPS2025/multimodal_vlm/scene-aware_urban_design_a_human-ai_recommendation_framework_using_co-occurrence.md
     - 'SCOPE: Saliency-Coverage Oriented Token Pruning for Efficient Multimodal LLMs': NeurIPS2025/multimodal_vlm/scope_saliency-coverage_oriented_token_pruning_for_efficient_multimodel_llms.md
@@ -11426,7 +11426,7 @@ nav:
     - 'One Perturbation is Enough: On Generating Universal Adversarial Perturbations against Vision-Language Pre-training Models': ICCV2025/multimodal_vlm/one_perturbation_is_enough_on_generating_universal_adversarial_perturbations_aga.md
     - 'OpenVision: A Fully-Open, Cost-Effective Family of Advanced Vision Encoders for Multimodal Learning': ICCV2025/multimodal_vlm/openvision_a_fully-open_cost-effective_family_of_advanced_vision_encoders_for_mu.md
     - 'OracleFusion: Assisting the Decipherment of Oracle Bone Script with Structurally Constrained Semantic Typography': ICCV2025/multimodal_vlm/oraclefusion_assisting_the_decipherment_of_oracle_bone_script_with_structurally_.md
-    - orderchain towards general instruct-tuning for stimulating the ordinal understan: ICCV2025/multimodal_vlm/orderchain_towards_general_instruct-tuning_for_stimulating_the_ordinal_understan.md
+    - 'OrderChain: Towards General Instruct-Tuning for Stimulating the Ordinal Understanding Ability of MLLM': ICCV2025/multimodal_vlm/orderchain_towards_general_instruct-tuning_for_stimulating_the_ordinal_understan.md
     - Perspective-Aware Reasoning in Vision-Language Models via Mental Imagery Simulation: ICCV2025/multimodal_vlm/perspective-aware_reasoning_in_vision-language_models_via_mental_imagery_simulat.md
     - 'Physics Context Builders: A Modular Framework for Physical Reasoning in Vision-Language Models': ICCV2025/multimodal_vlm/physics_context_builders_a_modular_framework_for_physical_reasoning_in_vision-la.md
     - 'PhysSplat: Efficient Physics Simulation for 3D Scenes via MLLM-Guided Gaussian Splatting': ICCV2025/multimodal_vlm/physsplat_efficient_physics_simulation_for_3d_scenes_via_mllm-guided_gaussian_sp.md
@@ -11519,7 +11519,7 @@ nav:
     - 'Zero-AVSR: Zero-Shot Audio-Visual Speech Recognition with LLMs by Learning Language-Agnostic Speech Representations': ICCV2025/audio_speech/zero-avsr_zero-shot_audio-visual_speech_recognition_with_llms_by_learning_langua.md
   - 🔍 Information Retrieval & RAG (7):
     - 🔍 Information Retrieval & RAG: ICCV2025/information_retrieval/index.md
-    - aligning information capacity between vision and language via dense-to-sparse fe: ICCV2025/information_retrieval/aligning_information_capacity_between_vision_and_language_via_dense-to-sparse_fe.md
+    - Aligning Information Capacity Between Vision and Language via Dense-to-Sparse Feature Distillation: ICCV2025/information_retrieval/aligning_information_capacity_between_vision_and_language_via_dense-to-sparse_fe.md
     - Aligning Information Capacity Between Vision and Language via Dense-to-Sparse Feature Distillation for Image-Text Matching: ICCV2025/information_retrieval/aligning_information_capacity_between_vision_and_language_via_dense_to_sparse_feature_distillation.md
     - External Knowledge Injection for CLIP-Based Class-Incremental Learning: ICCV2025/information_retrieval/external_knowledge_injection_for_clip-based_class-incremental_learning.md
     - 'LangBridge: Interpreting Image as a Combination of Language Embeddings': ICCV2025/information_retrieval/langbridge_interpreting_image_as_a_combination_of_language_embeddings.md
@@ -11716,7 +11716,7 @@ nav:
     - 'Noise2Score3D: Tweedie''s Approach for Unsupervised Point Cloud Denoising': ICCV2025/3d_vision/noise2score3d_tweedies_approach_for_unsupervised_point_cloud_denoising.md
     - 'Not All Frame Features Are Equal: Video-to-4D Generation via Decoupling Dynamic-Static Features': ICCV2025/3d_vision/not_all_frame_features_are_equal_video-to-4d_generation_via_decoupling_dynamic-s.md
     - 'OccluGaussian: Occlusion-Aware Gaussian Splatting for Large Scene Reconstruction and Rendering': ICCV2025/3d_vision/occlugaussian_occlusion-aware_gaussian_splatting_for_large_scene_reconstruction_.md
-    - one look is enough seamless patchwise refinement for zero-shot monocular depth e: ICCV2025/3d_vision/one_look_is_enough_seamless_patchwise_refinement_for_zero-shot_monocular_depth_e.md
+    - 'One Look is Enough: Seamless Patchwise Refinement for Zero-Shot Monocular Depth Estimation on High-Resolution Images': ICCV2025/3d_vision/one_look_is_enough_seamless_patchwise_refinement_for_zero-shot_monocular_depth_e.md
     - Online Language Splatting: ICCV2025/3d_vision/online_language_splatting.md
     - Open-Vocabulary Octree-Graph for 3D Scene Understanding: ICCV2025/3d_vision/open-vocabulary_octree-graph_for_3d_scene_understanding.md
     - Outdoor Monocular SLAM with Global Scale-Consistent 3D Gaussian Pointmaps: ICCV2025/3d_vision/outdoor_monocular_slam_with_global_scale-consistent_3d_gaussian_pointmaps.md
@@ -11741,7 +11741,7 @@ nav:
     - Repurposing 2D Diffusion Models with Gaussian Atlas for 3D Generation: ICCV2025/3d_vision/repurposing_2d_diffusion_models_with_gaussian_atlas_for_3d_generation.md
     - 'ResGS: Residual Densification of 3D Gaussian for Efficient Detail Recovery': ICCV2025/3d_vision/resgs_residual_densification_of_3d_gaussian_for_efficient_detail_recovery.md
     - 'Revisiting Point Cloud Completion: Are We Ready For The Real-World?': ICCV2025/3d_vision/revisiting_point_cloud_completion_are_we_ready_for_the_real-world.md
-    - ri3d few-shot gaussian splatting with repair and inpainting diffusion priors: ICCV2025/3d_vision/ri3d_few-shot_gaussian_splatting_with_repair_and_inpainting_diffusion_priors.md
+    - 'RI3D: Few-Shot Gaussian Splatting With Repair and Inpainting Diffusion Priors': ICCV2025/3d_vision/ri3d_few-shot_gaussian_splatting_with_repair_and_inpainting_diffusion_priors.md
     - 'RoboPearls: Editable Video Simulation for Robot Manipulation': ICCV2025/3d_vision/robopearls_editable_video_simulation_for_robot_manipulation.md
     - 'RoboTron-Mani: All-in-One Multimodal Large Model for Robotic Manipulation': ICCV2025/3d_vision/robotron-mani_all-in-one_multimodal_large_model_for_robotic_manipulation.md
     - Robust and Efficient 3D Gaussian Splatting for Urban Scene Reconstruction: ICCV2025/3d_vision/robust_and_efficient_3d_gaussian_splatting_for_urban_scene_reconstruction.md

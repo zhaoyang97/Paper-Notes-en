@@ -21,111 +21,6 @@ content_hash: 81b69ea5a695a332
 **arXiv**: [2508.03100](https://arxiv.org/abs/2508.03100)  
 **Code**: [https://people-robots.github.io/AVATAR/](https://people-robots.github.io/AVATAR/)  
 **Area**: Human Understanding / Multimodal Reasoning
-**Keywords**: Multimodal Reasoning, Reinforcement Learning, GRPO, Audio-Visual Understanding, Temporal Advantage Shaping
-
-## TL;DR
-This paper proposes AVATAR, a framework that addresses three fundamental limitations of GRPO in multimodal video reasoning—data inefficiency, advantage collapse, and uniform credit assignment—via an off-policy training architecture (hierarchical replay buffer) and a Temporal Advantage Shaping (TAS) strategy. AVATAR significantly outperforms standard GRPO on audio-visual understanding benchmarks (OmniBench +3.7, 5× sample efficiency improvement).
-
-## Background & Motivation
-
-**Background**: Multimodal large language models (MLLMs) require alignment across video, audio, and language modalities to support long-horizon reasoning. GRPO has emerged as an effective RL method for enhancing reasoning, demonstrating strong performance in verifiable domains such as mathematics.
-
-**Limitations of Prior Work**: GRPO exhibits three critical limitations in open-domain video tasks: (1) on-policy training causes data inefficiency, particularly severe given the high annotation cost of video data; (2) **advantage collapse**: when all responses within a group receive identical rewards (all correct or all incorrect), advantages vanish to zero, eliminating the learning signal; (3) **uniform credit assignment**: all tokens receive equal reward regardless of their position in the reasoning chain, ignoring the differential importance of distinct reasoning stages.
-
-**Key Challenge**: In video reasoning, the initial planning stage (localizing sound sources) and the final synthesis stage (identifying speakers by combining audio-visual cues) are critical, yet GRPO treats all tokens uniformly, diluting gradient signals.
-
-**Key Insight**: (1) The attention sink phenomenon in Transformers—initial tokens consistently attract attention as planning anchors; (2) final tokens are critical for answer synthesis.
-
-**Core Idea**: An off-policy architecture with a hierarchical replay buffer addresses data efficiency and advantage collapse; U-shaped parabolic weighting (TAS) emphasizes the beginning and end of the reasoning chain.
-
-## Method
-
-### Overall Architecture
-A three-stage RL training pipeline: cold-start SFT (S0) → visual reasoning RL (S1) → audio-visual reasoning RL (S2) → audio source localization RL (S3). Each stage employs distinct datasets and reward configurations.
-
-### Key Designs
-
-1. **Off-Policy Architecture**:
-
-    - **Hierarchical Replay Buffer**: Capacity of 10K, partitioned into three fixed-capacity tiers—Easy (25%), Medium (35%), Hard (40%). Tier assignment is determined by the moving-average reward $\bar{R}(q)$ per prompt, with thresholds set via dynamic quantiles.
-    - **Resolving Advantage Collapse**: Training groups sampled from the buffer contain both successful and failed trajectories, ensuring intra-group reward diversity → non-zero advantages → sustained gradient updates.
-    - **Hinting Mechanism**: When a prompt remains persistently difficult (low $\bar{R}(q)$) and the policy's KL divergence is low, pre-computed hints are injected to guide exploration.
-    - Mixed training objective: $\mathcal{J}_{AVATAR} = \mathcal{J}_{on\text{-}policy} + \alpha \cdot \mathcal{J}_{off\text{-}policy}$, where the off-policy term applies importance sampling to correct for policy drift.
-
-2. **Temporal Advantage Shaping (TAS)**:
-
-    - **Function**: Assigns position-dependent weights to tokens at different positions within the reasoning chain.
-    - **Mechanism**: U-shaped parabolic weighting function $w_t = 1.0 + \lambda_{TAS} \cdot (2\tilde{t} - 1)^2$, where $\tilde{t} = t/(L-1) \in [0,1]$. Tokens at the beginning and end of the sequence receive weight $1.0 + \lambda_{TAS}$, while middle tokens receive weight 1.0.
-    - Shaped advantage: $A_{i,t}^{TAS} = w_{i,t} \cdot A_i$
-    - **Design Motivation**: Grounded in the attention sink phenomenon of Transformers and the critical role of the synthesis stage, TAS amplifies learning signals at the planning and synthesis phases of the reasoning chain.
-
-3. **Multi-Source Reward Functions**:
-
-    - **Format reward** $R_{format}$: Validates the `<think>...</think><answer>...</answer>` structure.
-    - **Accuracy reward** $R_{acc}$: Provides dense reward via rMAE for numerical tasks.
-    - **Self-reward** $R_{self}$: Generates pseudo-correct answers via majority voting within the group for consensus learning.
-    - **Step reasoning judgment** $R_{judge}$: A frozen VLM judge (InternVL3-2B) evaluates reasoning quality.
-
-### Loss & Training
-Reward configurations differ across stages: S1 uses 0.5× format + 0.5× accuracy; S2 adds self-reward; S3 incorporates reasoning judgment.
-
-## Key Experimental Results
-
-### Main Results (Qwen2.5-Omni Baseline)
-
-| Model | OmniBench | DailyOmni | AV-Counting | WorldSense |
-|-------|-----------|-----------|-------------|------------|
-| Qwen2.5-Omni (baseline) | 44.2 | 44.0 | 22.3 | 44.2 |
-| + GRPO | 45.4 (+1.2) | 44.8 (+0.8) | 22.8 (+0.5) | 45.1 (+0.9) |
-| **+ AVATAR** | **49.1 (+4.9)** | **47.0 (+3.0)** | **23.1 (+0.8)** | **46.0 (+1.8)** |
-
-AVATAR vs. GRPO: OmniBench **+3.7**, Video-Holmes +1.9. Sample efficiency: 5× improvement (80% fewer generations to reach target performance).
-
-### Ablation Study
-
-| Configuration | OmniBench | MMVU | Video-Holmes |
-|---------------|-----------|------|-------------|
-| GRPO (baseline) | 45.4 | 56.6 | 39.0 |
-| + Off-Policy | 47.2 | 57.5 | 39.8 |
-| + TAS | 47.8 | 57.9 | 40.2 |
-| + Both (AVATAR) | **49.1** | **58.2** | **40.5** |
-
-### Key Findings
-- Both the off-policy architecture and TAS contribute independently and yield further gains in combination.
-- AVATAR proves effective across two distinct base models (Ola-7B and Qwen2.5-Omni), demonstrating model-agnostic applicability.
-- Consistent improvements are observed on more challenging benchmarks such as AV-Odyssey and IntentBench.
-- The hierarchical buffer design prevents easy samples from being frequently evicted, maintaining training diversity.
-
-## Highlights & Insights
-- **Elegant resolution of advantage collapse**: By introducing intra-group reward diversity through the hierarchical replay buffer, the framework fundamentally avoids zero-advantage gradients—a principle broadly applicable to all GRPO-style methods.
-- **Simplicity of TAS**: A single U-shaped parabolic function effectively reinforces the critical stages of the reasoning chain without requiring a learned critic network.
-- **Three-stage curriculum training**: The progressive curriculum from visual reasoning → audio-visual reasoning → fine-grained localization incrementally increases task difficulty.
-
-## Limitations & Future Work
-- The parabolic shape of TAS is hand-crafted and may not be universally optimal—automatic learning of per-token importance warrants investigation.
-- The hinting mechanism relies on pre-computed hints, increasing data preparation overhead.
-- Importance sampling ratios in the off-policy term may be unstable in practice, requiring clipping for stabilization.
-- Evaluation is limited to multiple-choice formats; performance on open-ended video question answering remains unexplored.
-
-## Related Work & Insights
-- **vs. Video-R1**: Video-R1 employs temporal contrastive rewards but retains standard GRPO, leaving the advantage collapse problem unresolved.
-- **vs. DAPO**: DAPO mitigates uniform groups through modified sampling but still suffers from zero gradients on hard queries; AVATAR addresses this more fundamentally via replay.
-- **vs. HumanOmni**: HumanOmni adopts LLM-based judgment rewards but applies uniform credit assignment; AVATAR resolves this through TAS.
-
-## Rating
-- Novelty: ⭐⭐⭐⭐ Off-policy GRPO and TAS are well-motivated, though the individual components are relatively independent.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Multiple baselines, multiple benchmarks, 95% confidence intervals, and sample efficiency analysis.
-- Writing Quality: ⭐⭐⭐⭐ Problem analysis is clear, though the paper is lengthy.
-- Value: ⭐⭐⭐⭐ Offers broadly applicable improvements to the GRPO training paradigm.
-
----
-
-# AVATAR: Reinforcement Learning to See, Hear, and Reason Over Video
-
-**Conference**: CVPR 2026
-**arXiv**: [2508.03100](https://arxiv.org/abs/2508.03100)  
-**Code**: [https://people-robots.github.io/AVATAR/](https://people-robots.github.io/AVATAR/)  
-**Area**: Human Understanding / Multimodal Reasoning
 **Keywords**: Audio-Visual Reasoning, GRPO Improvement, Off-Policy Reinforcement Learning, Temporal Advantage Shaping, Multimodal Large Language Models
 
 ## TL;DR
@@ -230,11 +125,11 @@ AVATAR vs. GRPO on Qwen2.5-Omni: OmniBench +3.7, Video-Holmes +1.9, while requir
 
 ## Related Papers
 
+- [\[AAAI 2026\] PA-FAS: Towards Interpretable and Generalizable Multimodal Face Anti-Spoofing via Path-Augmented Reinforcement Learning](../../AAAI2026/human_understanding/pa-fas_towards_interpretable_and_generalizable_multimodal_face_anti-spoofing_via.md)
 - [\[CVPR 2026\] Vision-Language Attribute Disentanglement and Reinforcement for Lifelong Person Re-Identification](vision-language_attribute_disentanglement_and_reinforcement_for_lifelong_person_.md)
 - [\[CVPR 2026\] LCA: Large-scale Codec Avatars - The Unreasonable Effectiveness of Large-scale Avatar Pretraining](lca_large-scale_codec_avatars_the_unreasonable_effectiveness_of_large-scale_avata.md)
 - [\[CVPR 2026\] rPPG-VQA: A Video Quality Assessment Framework for Unsupervised rPPG Training](rppg_vqa_video_quality_assessment.md)
 - [\[CVPR 2026\] Unleashing Vision-Language Semantics for Deepfake Video Detection](unleashing_vision-language_semantics_for_deepfake_video_detection.md)
-- [\[CVPR 2026\] FlexAvatar: Learning Complete 3D Head Avatars with Partial Supervision](flexavatar_learning_complete_3d_head_avatars_with_partial_supervision.md)
 
 </div>
 

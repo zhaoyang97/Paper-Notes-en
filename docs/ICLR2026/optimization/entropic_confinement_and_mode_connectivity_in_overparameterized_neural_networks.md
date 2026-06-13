@@ -2,9 +2,10 @@
 title: >-
   [Paper Note] Entropic Confinement and Mode Connectivity in Overparameterized Neural Networks
 description: >-
-  [ICLR 2026][loss landscape] This paper reveals that systematic growth of curvature along low-loss paths generates entropic barriers, such that even when the energy path is flat…
+  [ICLR 2026][Optimization][loss landscape] This paper reveals that systematic growth of curvature along low-loss paths generates entropic barriers, such that even when the energy path is flat…
 tags:
   - "ICLR 2026"
+  - "Optimization"
   - "loss landscape"
   - "mode connectivity"
   - "entropic force"
@@ -119,11 +120,11 @@ Standard SGD with momentum 0.9 and weight decay $5 \times 10^{-4}$, learning rat
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Generalized Linear Mode Connectivity for Transformers](../../NeurIPS2025/others/generalized_linear_mode_connectivity_for_transformers.md)
-- [\[ICML 2026\] Connecting Independently Trained Modes via Layer-Wise Connectivity](../../ICML2026/others/connecting_independently_trained_modes_via_layer-wise_connectivity.md)
-- [\[ICLR 2026\] On the Lipschitz Continuity of Set Aggregation Functions and Neural Networks for Sets](on_the_lipschitz_continuity_of_set_aggregation_functions_and_neural_networks_for.md)
-- [\[ICLR 2026\] Learning on a Razor's Edge: Identifiability and Singularity of Polynomial Neural Networks](learning_on_a_razors_edge_identifiability_and_singularity_of_polynomial_neural_n.md)
-- [\[ICML 2026\] On the Epistemic Uncertainty of Overparametrized Neural Networks](../../ICML2026/others/on_the_epistemic_uncertainty_of_overparametrized_neural_networks.md)
+- [\[NeurIPS 2025\] Neural Thermodynamics: Entropic Forces in Deep and Universal Representation Learning](../../NeurIPS2025/optimization/neural_thermodynamics_entropic_forces_in_deep_and_universal_representation_learn.md)
+- [\[ICLR 2026\] Neural Networks Learn Generic Multi-Index Models Near Information-Theoretic Limit](neural_networks_learn_generic_multi-index_models_near_information-theoretic_limi.md)
+- [\[ICLR 2026\] Πnet: Optimizing Hard-Constrained Neural Networks with Orthogonal Projection Layers](pinet_optimizing_hard-constrained_neural_networks_with_orthogonal_projection_lay.md)
+- [\[ICLR 2026\] Directional Convergence, Benign Overfitting of Gradient Descent in leaky ReLU two-layer Neural Networks](directional_convergence_benign_overfitting_of_gradient_descent_in_leaky_relu_two.md)
+- [\[ICML 2026\] The Implicit Bias of Adam and Muon on Smooth Homogeneous Neural Networks](../../ICML2026/optimization/the_implicit_bias_of_adam_and_muon_on_smooth_homogeneous_neural_networks.md)
 
 </div>
 

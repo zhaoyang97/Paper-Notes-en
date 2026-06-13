@@ -2,9 +2,10 @@
 title: >-
   [Paper Note] In-Context Algebra
 description: >-
-  [ICLR2026][in-context learning] This paper introduces an **in-context algebra task**—where tokens serve as pure variables and each sequence randomly reassigns their meanings—and finds that Transformers in this setting no…
+  [ICLR2026][LLM/NLP][in-context learning] This paper introduces an **in-context algebra task**—where tokens serve as pure variables and each sequence randomly reassigns their meanings—and finds that Transformers in this s…
 tags:
   - "ICLR2026"
+  - "LLM/NLP"
   - "in-context learning"
   - "mechanistic interpretability"
   - "symbolic reasoning"
@@ -189,11 +190,11 @@ This work complements the induction head / n-gram head analysis of Akyürek et a
 
 ## Related Papers
 
-- [\[AAAI 2026\] LILAD: Learning In-context Lyapunov-stable Adaptive Dynamics Models](../../AAAI2026/others/lilad_learning_in-context_lyapunov-stable_adaptive_dynamics_models.md)
-- [\[AAAI 2026\] Verification-Guided Context Optimization for Tool Calling via Hierarchical LLMs-as-editors](../../AAAI2026/others/verification-guided_context_optimization_for_tool_calling_via_hierarchical_llms-.md)
-- [\[ICML 2026\] Mitigating Label Shift in Tabular In-Context Learning via Test-Time Posterior Adjustment](../../ICML2026/others/mitigating_label_shift_in_tabular_in-context_learning_via_test-time_posterior_ad.md)
-- [\[ICLR 2026\] Addressing Divergent Representations from Causal Interventions on Neural Networks](addressing_divergent_representations_causal.md)
-- [\[ICLR 2026\] Chart Deep Research in LVLMs via Parallel Relative Policy Optimization](chart_deep_research_in_lvlms_via_parallel_relative_policy_optimization.md)
+- [\[ACL 2026\] UCS: Estimating Unseen Coverage for Improved In-Context Learning](../../ACL2026/llm_nlp/ucs_estimating_unseen_coverage_for_improved_in-context_learning.md)
+- [\[AAAI 2026\] LILAD: Learning In-context Lyapunov-stable Adaptive Dynamics Models](../../AAAI2026/llm_nlp/lilad_learning_in-context_lyapunov-stable_adaptive_dynamics_models.md)
+- [\[ACL 2026\] OOD Proxy Demonstration Retrieval Scheme for Robust In-Context Learning](../../ACL2026/llm_nlp/toward_robust_in-context_learning_leveraging_out-of-distribution_proxies_for_tar.md)
+- [\[ACL 2026\] Text-to-Distribution Prediction with Quantile Tokens and Neighbor Context](../../ACL2026/llm_nlp/text-to-distribution_prediction_with_quantile_tokens_and_neighbor_context.md)
+- [\[CVPR 2026\] GUIDE: Guided Updates for In-context Decision Evolution in LLM-Driven Spacecraft Operations](../../CVPR2026/llm_nlp/guide_guided_updates_for_in-context_decision_evolution_in_llm-driven_spacecraft_.md)
 
 </div>
 

@@ -2,124 +2,141 @@
 title: >-
   [Paper Note] Jailbreaking Vision-Language Models Through the Visual Modality
 description: >-
-  [ICML 2026][Multimodal VLM][VLM Safety] The authors propose four visual-only jailbreak attacks (Visual Cipher, Object Replacement, Text Replacement…
+  [ICML 2026][Multimodal VLM][VLM Security] The authors propose four attacks that jailbreak state-of-the-art VLMs solely via visual input (visual cipher / object replacement / text replacement / visual analogy riddles). Sy…
 tags:
   - "ICML 2026"
   - "Multimodal VLM"
-  - "VLM Safety"
-  - "Jailbreak Attack"
+  - "VLM Security"
+  - "Jailbreak Attacks"
   - "Visual Cipher"
   - "Cross-modal Alignment Gap"
-  - "Red Teaming"
+  - "Red Team"
 date: 2026-05-08
-content_hash: 5f85fee953641a60
+content_hash: f504acaac8492a4e
 ---
 
 # Jailbreaking Vision-Language Models Through the Visual Modality
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.00583](https://arxiv.org/abs/2605.00583)  
-**Code**: Undisclosed  
-**Area**: Multimodal VLM / AI Safety / Jailbreak Attacks  
-**Keywords**: VLM Safety, Jailbreak Attack, Visual Cipher, Cross-modal Alignment Gap, Red Teaming
+**Code**: Not released  
+**Area**: Multimodal VLM / AI Security / Jailbreak Attacks  
+**Keywords**: VLM Security, Jailbreak Attacks, Visual Cipher, Cross-modal Alignment Gap, Red Team
 
 ## TL;DR
-The authors propose four visual-only jailbreak attacks (Visual Cipher, Object Replacement, Text Replacement, and Visual Analogy Riddle) to target frontier VLMs. By evaluating across six state-of-the-art models, they systematically demonstrate that "safety alignment on the text side does not automatically transfer to the vision side," and reveal the underlying hierarchical mechanism via mechanistic analysis.
+The authors propose four attacks that jailbreak state-of-the-art VLMs solely via visual input (visual cipher / object replacement / text replacement / visual analogy riddles). Systematic evaluation on six advanced VLMs demonstrates that "safety alignment on the text side does not automatically transfer to the visual side," and mechanistic analysis reveals the underlying hierarchical mechanisms.
 
 ## Background & Motivation
-**Background**: LLM jailbreak research has matured, covering RLHF failure, adversarial suffixes, multi-turn jailbreaks, and Best-of-N approaches, alongside established mechanistic tools like refusal directions. However, VLM safety research remains largely confined to adversarial image perturbations (Qi et al.) and typographic attacks (FigStep / MM-SafetyBench), the latter of which have become ineffective against the latest models.
+**Background**: LLM jailbreak research has already covered RLHF failures, adversarial suffixes, multi-turn jailbreaks, Best-of-N, and mechanistic tools like refusal direction are mature. However, VLM security research mainly focuses on adversarial perturbation images (Qi et al.) and typographic attacks (FigStep / MM-SafetyBench), with the latter already ineffective on the latest models.
 
-**Limitations of Prior Work**: Existing VLM defenses generally assume that "text is the primary attack surface" and treat images as passive information sources. Visual attacks that result in real-world harm—relying neither on gradients nor OCR character rendering—have seen little systematic study.
+**Limitations of Prior Work**: Existing VLM defenses generally assume "text is the main attack surface," treating images as passive information sources. Truly harmful visual attacks—those not relying on gradients or OCR rendering—are scarcely studied systematically.
 
-**Key Challenge**: VLM image inputs reside in a continuous high-dimensional space, differing fundamentally from discrete text tokens in both representation and retrieval mechanisms. Safety alignment is primarily performed on textual dialogue data; this cross-modal alignment gap makes "expressing harmful intent through images" an almost undefended attack surface.
+**Key Challenge**: VLM image input is a continuous high-dimensional space, fundamentally different from discrete text tokens in representation and retrieval. Safety alignment is mainly performed on textual dialogue data, and the cross-modal alignment gap leaves "expressing harmful intent via images" as an almost undefended attack vector.
 
-**Goal**: (1) Design a series of ostensibly benign attacks that leverage visual structure, context, or analogy to reconstruct harmful intent; (2) Systematically measure performance on frontier models against existing visual jailbreak methods; (3) Provide a mechanistic explanation and a lightweight mitigation strategy.
+**Goal**: (1) Design a series of attacks that are ostensibly benign on the surface but allow the model to reconstruct harmful intent via visual structure/context/analogy; (2) Systematically evaluate on frontier models and compare with existing visual jailbreak methods; (3) Provide mechanistic explanations and a lightweight mitigation.
 
-**Key Insight**: The authors employ a unified principle: "using visual structures to encode or imply forbidden semantics while maintaining ostensibly harmless text and visible image content." They derive four attack modalities and replace original HarmBench prompts with neutral placeholders $X_1$-$X_4$ to isolate the variable of prompt harmfulness from the analysis.
+**Key Insight**: The authors use a unified principle—"encode or imply prohibited semantics via visual structure, while keeping both surface text and visible image content harmless"—to derive four attack forms. They neutralize original HarmBench prompts with placeholders $X_1$-$X_4$, decoupling "whether the original prompt is dangerous" from the analysis.
 
-**Core Idea**: Jailbreaking is viewed as a cross-modal semantic reconstruction problem—models have the capacity to reconstruct explicitly removed harmful concepts from visual context, while the refusal mechanism fails to detect this implicit intent.
+**Core Idea**: Treat "jailbreak" as a cross-modal semantic reconstruction problem—the model can reconstruct explicitly removed harmful concepts from visual context, while the refusal mechanism cannot detect such implicit intent.
 
 ## Method
 
 ### Overall Architecture
-The methodology centers on a shared prompt neutralization protocol: based on HarmBench behaviors, all harmful nouns in a sentence are replaced with abstract placeholders $X_1, \dots, X_n$ (e.g., "chop shops for stolen cars" becomes "an $X_1$ for selling $X_2$"), making the text channel entirely harmless. Four attack types then use different visual encodings to "hint" at what $X_i$ truly refers to. All attacks utilize decode-first prompting, Best-of-5 sampling, and an ensemble of three LLM judges (Grok-4.1, Gemini-3-Flash, Claude-Haiku-4.5) using a 4-level scoring system (refusal / misunderstanding / partial / compliance) with an 84.3% agreement rate.
+The entire method revolves around a shared prompt neutralization protocol: starting from HarmBench behaviors, all harmful nouns in the sentence are replaced with abstract placeholders $X_1,...,X_4$ ("selling stolen car chop shops" → "selling $X_2$'s $X_1$"), rendering the pure text channel completely harmless. Each of the four attacks then uses different visual encodings to "imply" what $X_i$ actually refers to. All attacks use decode-first prompting (instructing the model to decode before answering), Best-of-5 sampling, and three independent LLM judges (Grok-4.1, Gemini-3-Flash, Claude-Haiku-4.5) with a four-level rating (refusal / misunderstanding / partial / compliance), achieving 84.3% agreement.
 
 ### Key Designs
 
-1.  **Visual Cipher**:
-    - **Function**: Encodes harmful instructions into a sequence of graphical characters, forcing the model to decode using a legend before execution.
-    - **Mechanism**: Harmful instructions (e.g., "write an anonymous death threat") are tokenized at the word level. Each unique word is assigned a graphical glyph defined by shape, color, and internal markers, or a semantically neutral object image. Two images are generated: a legend (a dictionary of glyphs to words, including distractors) and a sentence (a left-to-right sequence of glyphs).
-    - **Design Motivation**: By splitting the process into "understanding → execution" and forcing visual decoding, the attack bypasses keyword-triggered refusal; graphical characters are OCR-free, rendering typography-based filters ineffective.
+1. **Visual Cipher**:
 
-2.  **Visual Object/Text Replacement**:
-    - **Function**: Replaces harmful objects or text in an image with harmless substitutes (e.g., bomb → banana) while retaining scene context so the original reference remains inferable.
-    - **Mechanism**: A base image of a harmful object in a realistic scene is generated using the REVE model, then locally edited to replace the target object with neutral items (e.g., banana, carrot, water bottle). For text replacement, fonts, layouts, and cultural contexts (e.g., book covers, posters) are preserved. Models are instructed to "treat $X_i$ as the concept implied by the image context."
-    - **Design Motivation**: This removes "harmful nouns" from the image surface while retaining the context needed for semantic reconstruction, specifically testing the model's ability to perform "semantic overwriting" using in-context evidence. This is a visual variant of in-context representation hijacking (Yona et al., 2025).
+    - **Function**: Encodes harmful instructions as a sequence of graphic symbols, requiring the model to first decode via a legend before execution.
+    - **Mechanism**: Instructions like "write an anonymous death threat letter" are tokenized at the word level, each unique word assigned a glyph defined by shape, color, and internal markings, or a semantically neutral object image. Two images are generated: a legend (mapping glyphs to words, including distractors) and a sentence (glyph sequence arranged left to right). For Best-of-5, glyph assignments and legend order are varied. The baseline Textual Cipher uses the same structure but replaces glyphs with meaningless text like "Brimova", "Felochi".
+    - **Design Motivation**: Splits "understand → execute" into two steps and enforces visual decoding, bypassing text-side keyword-based refusal detection. Glyphs are OCR-free, rendering typographic filters ineffective.
 
-3.  **Visual Analogy Riddle**:
-    - **Function**: Implicitly derives forbidden concepts represented by each $X_i$ through 3-row visual analogies where each individual component is harmless.
-    - **Mechanism**: Each target concept is encoded as a three-row analogy (e.g., a : b :: c : ?). Models must solve for "?" in each row to assemble the true intent. Templates are generated by Grok-4.1-fast and rendered via Gemini-2.5-flash-image.
-    - **Design Motivation**: Analogical reasoning distributes harmful intent across multiple harmless components. Compositionality is key: individual images appear safe, but their combination decodes into concepts like explosives or illicit drugs.
+2. **Visual Object/Text Replacement**:
+
+    - **Function**: Replaces harmful objects or text in images with harmless substitutes (e.g., bomb → banana, harmful book title → neutral word), while preserving scene context so the original referent remains inferable.
+    - **Mechanism**: Uses the REVE text-to-image model to generate a base image with the harmful object in a realistic scene, then locally edits only the target object to banana/carrot/water bottle/broccoli (fixed dictionary to avoid variable confusion), keeping other layout/affordance/interactions unchanged. For text replacement, font, layout, and cultural context (e.g., book covers, posters) are preserved. The model is instructed to "treat $X_i$ as the concept implied by the image context," then answers the neutralized HarmBench prompt. Each concept is paired with three images to offset generation noise.
+    - **Design Motivation**: Removes "harmful nouns" from the image surface but retains all context needed for semantic reconstruction, specifically testing whether the model can use in-context evidence for "semantic overwriting." This is the visual analogue of Yona et al. (2025)'s in-context representation hijacking for text.
+
+3. **Visual Analogy Riddle**:
+
+    - **Function**: Implicitly derives each $X_i$'s prohibited concept by having the model solve three-line visual analogy riddles, with each component individually harmless.
+    - **Mechanism**: Each target concept is encoded as a three-line analogy riddle (e.g., a:b :: c:?), requiring the model to solve each line's ? to combine into the true intent. Grok-4.1-fast generates text riddle templates, Gemini-2.5-flash-image renders them as images. For each $X_i$, the top-3 candidate riddles are selected, and all combinations are enumerated during attack—any combination judged as compliance counts as a success.
+    - **Design Motivation**: Analogy reasoning disperses harmful intent across multiple harmless components; "compositionality" is key—each image is safe in isolation, but together they reveal concepts like bomb/drugs/terrorism. This is the first systematic use of analogy reasoning for VLM jailbreak.
 
 ### Loss & Training
-Attacks are constructed at inference time without training. Scoring uses a 3-LLM ensemble with "conservative low-score" logic (selecting the lowest score during disagreement). In Best-of-5 sampling, an attack is successful if any attempt achieves a compliance(3) score.
+All attacks are constructed at inference time, with no training involved. Scoring uses 3-LLM voting with "conservative minimum" (lowest score in case of disagreement). For Best-of-5 sampling, any single compliance (3) counts as a successful attack.
 
 ## Key Experimental Results
 
 ### Main Results
-Attack Success Rates (ASR, Best-of-5) of visual attacks vs. textual baselines on 6 frontier VLMs (selected):
+Attack Success Rate (ASR) of visual attacks vs. text-based baselines on six advanced VLMs (Best-of-5, excerpt):
 
 | Attack | Claude-H 4.5 | Gemini-3-Flash | GPT-5.2 | Qwen3-VL-235B | Qwen3-VL-32B |
-| :--- | :--- | :--- | :--- | :--- | :--- |
+|--------|--------------|----------------|---------|---------------|--------------|
 | Textual Cipher | 10.7 | 89.3 | 5.7 | 86.8 | 84.9 |
 | **Visual Cipher** | **40.9** | **97.5** | **8.2** | 86.2 | **87.4** |
 | Textual Replacement | 8.1 | 58.8 | 16.9 | 29.5 | 39.0 |
 | **Visual Obj Repl** | 4.1 | 52.0 | 11.5 | **35.6** | **41.1** |
 | **Visual Text Repl** | **12.9** | 32.8 | 14.4 | **51.5** | **58.1** |
-| **Visual Analogy** | 13.8 | 52.2 | 13.2 | 29.6 | 38.4 |
+| Visual Analogy | 13.8 | 52.2 | 13.2 | 29.6 | 38.4 |
 
-Comparison vs. Prev. SOTA visual jailbreak methods (Qwen3-VL-32B): FigStep 11.3 / HADES 32 / SD+TYPO 60.8 — Ours (Visual Cipher) 87.4, Visual Text Repl 58.1.
+Compared to previous SOTA visual jailbreak methods (strongest Qwen3-VL-32B column): FigStep 11.3 / HADES 32 / SD+TYPO 60.8 — this paper's Visual Cipher 87.4, Visual Text Repl 58.1.
 
 ### Ablation Study
-Breakdown of judge consistency and attack success factors:
+Breakdown of judge agreement and attack success rates:
 
 | Item | Value | Meaning |
-| :--- | :--- | :--- |
-| 3-judge Agreement | 84.3% | Stable evaluation |
-| Refusal↔Compliance Conflict | Only 3.8% | Low divergence in key decisions |
-| Visual Cipher on Claude (K=1) | 15.1% | Single-shot still exceeds textual (4.4%) |
+|------|-------|---------|
+| 3-judge agreement | 84.3% | Stable evaluation |
+| Direct Refusal↔Compliance conflict | Only 3.8% | Key judgments rarely disagree |
+| Visual Cipher on Claude (single K=1) | 15.1% | Single shot still much higher than textual 4.4% |
 | Visual Cipher on Claude (K=5) | 40.9% | Best-of-5 amplifies cross-modal gap |
-| Qwen3Guard-0.6B Interception | High | Lightweight output filtering is viable |
+| Output-side Qwen3Guard-0.6B interception rate | Most compliant flagged | Lightweight output filtering is feasible |
 
 ### Key Findings
-- **Cross-modal alignment gap exists**: Visual Cipher increases Claude-Haiku-4.5's ASR from 10.7% to 40.9% (~4×), indicating that harmful semantics bypass textual refusal training when represented visually.
-- **Modality-specific vulnerabilities**: Qwen is particularly sensitive to Visual Text Replacement (relying on cultural inference), while Gemini-3-Flash is highly vulnerable to Cipher attacks (97.5%).
-- **Superiority over baselines**: HADES averaged 13.2% and FigStep <12% across most models. Ours (Visual Cipher) achieved the highest ASR on 4/6 models using semantically interpretable images rather than gradient noise.
-- **Mechanistic Evidence**: Using refusal direction probes (Arditi, 2024), Visual Replacement was found to crash late-layer refusal activation in Qwen3-VL-32B. Logit Lens analysis shows prohibited tokens maintain high probability in intermediate layers and are only suppressed at the final layer—the model "understands" the intent, but the refusal is not triggered.
+- **Cross-modal alignment gap is real**: Visual Cipher raises Claude-Haiku-4.5's ASR from 10.7% to 40.9% (nearly 4×), showing that the same harmful semantics, when visually encoded, can bypass text-side refusal training.
+- **Different models have different modal vulnerabilities**: Qwen is especially sensitive to Visual Text Replacement (relies on cultural context inference), Gemini-3-Flash is almost completely compromised by Cipher attacks (97.5%), Claude is generally robust but Visual Cipher is its Achilles' heel.
+- **These attacks far surpass existing baselines**: HADES averages 13.2%, FigStep <12% on most models; this paper's Visual Cipher achieves the highest ASR on 4/6 models, and the outputs are semantically interpretable real images (not gradient noise).
+- **Mechanistic evidence: refusal direction suppressed + semantic signals persist**: Using Arditi (2024)'s refusal direction probe, Visual Replacement reduces Qwen3-VL-32B's late-layer refusal activation to nearly harmless sample levels; Logit Lens shows dangerous tokens remain high-probability in intermediate semantic layers, only suppressed at the final layer—the model "understands" but refusal is not triggered.
 
 ## Highlights & Insights
-- "Prompt Neutralization" is the methodological key, isolating the visual channel's contribution to ASR by stripping harmful nouns from the text.
-- The four attacks represent a "spectrum" of semantic reconstruction (decoding, contextual overwriting, cultural priors, analogy), providing more diagnostic value than isolated attack points.
-- The combined use of refusal directions and Logit Lens proves a "timing mismatch": Models decode dangerous concepts in intermediate layers, but visual replacement bypasses the safety gates typically triggered at the final layer.
-- On the defense side, the study demonstrates that lightweight output classifiers like Qwen3Guard-Stream-0.6B are effective against most visual attacks, suggesting their use in defense-in-depth.
+- "Prompt neutralization" is the methodological key: replacing harmful nouns with $X_i$ renders the text channel harmless, removing the confounding variable of "is the text itself harmful," so ASR gains can be attributed to the visual channel.
+- The four attacks correspond to four distinct semantic reconstruction mechanisms (decoding / context overwriting / cultural priors / analogy reasoning), covering multiple layers of VLM information integration. This "attack spectrum" is far more instructive than single-point attacks.
+- In mechanistic analysis, combining refusal direction and Logit Lens reveals an interesting phenomenon—the model decodes dangerous concepts in intermediate layers, only suppressing them at the final layer, and visual replacement just bypasses this last safety gate. This timing mismatch explanation is novel and actionable.
+- On the defense side, a simple and effective solution is provided: lightweight output classifiers like Qwen3Guard-Stream-0.6B are effective against almost all visual attacks and are recommended as standard defense-in-depth.
 
 ## Limitations & Future Work
-- Evaluation is limited to HarmBench and may not cover all harm categories (e.g., child safety, biological weapons).
-- Mechanistic analysis is restricted to open-weight models like Qwen; GPT/Claude mechanisms remain black boxes.
-- Attack efficacy depends on T2I generation quality; Best-of-5 mitigates but does not eliminate variance.
-- High misunderstanding rates suggest failures occur when the model cannot "read" the visual encoding; as VLM reasoning improves, these attacks may become more potent.
+- Evaluation is mainly on HarmBench and may not cover all harm categories (e.g., child harm, bioweapon details).
+- Mechanistic analysis of closed-source models is only possible for open-weight models like Qwen; GPT/Claude internals remain black boxes.
+- Attack effectiveness depends on T2I generation quality; Best-of-5 offsets some but intrinsic variance remains.
+- High misunderstanding rates indicate some failures are due to "the model not understanding the visual encoding." As VLM visual reasoning improves, attacks will only get stronger—a double-edged sword.
+- Cross-model transferability and multi-attack combinations are not studied; future work is promising.
 
 ## Related Work & Insights
-- **vs. Qi et al. (Visual Adversarial Examples)**: They use gradient perturbations requiring white-box access; this work is black-box and uses human-readable images.
-- **vs. FigStep / MM-SafetyBench**: Those rely on OCR for harmful text; Visual Cipher uses glyphs to bypass OCR-based filtering.
-- **vs. Doublespeak / Yona et al.**: These are textual versions of object replacement; this work provides the visual equivalent and demonstrates stronger effects.
-- **vs. CipherChat (Yuan 2024)**: CipherChat uses human ciphers for text jailbreaks; this work extends the cipher concept to the visual modality.
+- **vs Qi et al. (Visual Adversarial Examples)**: Their approach uses gradient-based adversarial perturbations and requires white-box access; this work is black-box, human-interpretable, and closer to real-world threat models.
+- **vs FigStep / MM-SafetyBench**: The former renders harmful text into images relying on OCR; this paper's Visual Cipher uses glyph encoding, bypassing all OCR-based filters.
+- **vs Doublespeak / Yona et al.**: Their "in-context representation hijacking" is the text version of object replacement; this work explicitly provides the visual version and demonstrates stronger effects.
+- **vs CipherChat (Yuan 2024)**: CipherChat uses human ciphers for text jailbreaks; this work extends ciphers to the visual modality.
+- **vs Constitutional Classifiers (Sharma 2025)**: This work shows such output guardrails are also effective against visual attacks, providing empirical support for this direction.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ — Visual Cipher and Visual Analogy Riddle introduce truly new visual jailbreak mechanisms.
-- Experimental Thoroughness: ⭐⭐⭐⭐ — 6 frontier models, 4 attacks, 5 baselines, and rigorous judging protocols.
-- Writing Quality: ⭐⭐⭐⭐ — Clear narrative and logic, though some experimental details require appendix support.
-- Value: ⭐⭐⭐⭐⭐ — Directly reveals vulnerabilities in frontier VLMs with significant implications for the AI safety community.
+- Novelty: ⭐⭐⭐⭐ — Among the four attacks, Visual Cipher and Visual Analogy Riddle are genuinely new visual jailbreak mechanisms, together forming a systematic attack spectrum.
+- Experimental Thoroughness: ⭐⭐⭐⭐ — Six advanced models × four attacks + five baselines, rigorous judging protocol; mechanistic analysis adds further value.
+- Writing Quality: ⭐⭐⭐⭐ — Clear narrative and principles, though some experimental details (e.g., multi-image batch, Best-of-5 protocol) require appendix for full clarity.
+- Value: ⭐⭐⭐⭐⭐ — Directly exposes real-world deployment vulnerabilities in frontier VLMs, providing a major warning to the AI safety community, with responsible disclosure already conducted.
+
+## Related Papers
+
+- [\[ICCV 2025\] Jailbreaking Multimodal Large Language Models via Shuffle Inconsistency](../../ICCV2025/multimodal_vlm/jailbreaking_multimodal_large_language_models_via_shuffle_inconsistency.md)
+- [\[NeurIPS 2025\] JailBound: Jailbreaking Internal Safety Boundaries of Vision-Language Models](../../NeurIPS2025/multimodal_vlm/jailbound_jailbreaking_internal_safety_boundaries_of_vision-language_models.md)
+- [\[ICCV 2025\] IDEATOR: Jailbreaking and Benchmarking Large Vision-Language Models Using Themselves](../../ICCV2025/multimodal_vlm/ideator_jailbreaking_and_benchmarking_large_visionlanguage_m.md)
+- [\[ICML 2026\] Learn to Think: Improving Multimodal Reasoning through Vision-Aware Self-Improvement Training](learn_to_think_improving_multimodal_reasoning_through_vision-aware_self-improvem.md)
+- [\[ICML 2026\] The Perceptual Bandwidth Bottleneck in Vision-Language Models: Active Visual Reasoning via Sequential Experimental Design](the_perceptual_bandwidth_bottleneck_in_vision-language_models_active_visual_reas.md)
+
+</div>
+
+<!-- RELATED:END -->
 
 <!-- RELATED:START -->
 
@@ -127,11 +144,11 @@ Breakdown of judge consistency and attack success factors:
 
 ## Related Papers
 
-- [\[ICCV 2025\] IDEATOR: Jailbreaking and Benchmarking Large Vision-Language Models Using Themselves](../../ICCV2025/multimodal_vlm/ideator_jailbreaking_and_benchmarking_large_visionlanguage_m.md)
 - [\[ICML 2026\] Uncovering Visual Counting Bottlenecks in Vision-Language Models](unveiling_the_visual_counting_bottleneck_in_vision-language_models.md)
-- [\[ICML 2026\] OmniSIFT: Modality-Asymmetric Token Compression for Efficient Omni-modal Large Language Models](omnisift_modality-asymmetric_token_compression_for_efficient_omni-modal_large_la.md)
 - [\[ICML 2026\] AOEPT: Breaking the Implicit Modality-Reduction Bottleneck in Modality-Missing Prompt Tuning](aoept_breaking_the_implicit_modality-reduction_bottleneck_in_modality-missing_pr.md)
-- [\[ICCV 2025\] Jailbreaking Multimodal Large Language Models via Shuffle Inconsistency](../../ICCV2025/multimodal_vlm/jailbreaking_multimodal_large_language_models_via_shuffle_inconsistency.md)
+- [\[ICML 2026\] Visual Persuasion: What Influences the Decision-Making of Vision-Language Models?](visual_persuasion_what_influences_decisions_of_vision-language_models.md)
+- [\[ICML 2026\] On the Adversarial Robustness of Large Vision-Language Models under Visual Token Compression](on_the_adversarial_robustness_of_large_vision-language_models_under_visual_token.md)
+- [\[ICML 2026\] Contextualized Visual Personalization in Vision-Language Models](contextualized_visual_personalization_in_vision-language_models.md)
 
 </div>
 

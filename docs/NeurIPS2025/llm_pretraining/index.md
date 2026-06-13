@@ -1,16 +1,17 @@
 ---
 title: >-
-  NeurIPS2025 Pretraining Papers · 46 Notes
+  NeurIPS2025 Pretraining Papers · 51 Notes
 description: >-
-  46 NeurIPS2025 papers in the Pretraining area, covering LLM, Alignment/RLHF, Diffusion Models, Face & Gaze and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  51 NeurIPS2025 papers in the Pretraining area, covering LLM, Diffusion Models, Alignment/RLHF, Layout & Composition, Face & Gaze and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "NeurIPS2025"
   - "Pretraining"
   - "AI paper notes"
   - "paper summaries"
   - "LLM"
-  - "Alignment/RLHF"
   - "Diffusion Models"
+  - "Alignment/RLHF"
+  - "Layout & Composition"
   - "Face & Gaze"
 item_list:
   - u: "a_practical_guide_for_incorporating_symmetry_in_diffusion_policy/"
@@ -19,14 +20,22 @@ item_list:
     t: "AI Progress Should Be Measured by Capability-Per-Resource, Not Scale Alone: A Framework for Gradient-Guided Resource Allocation in LLMs"
   - u: "alternating_gradient_flows_a_theory_of_feature_learning_in_two-layer_neural_netw/"
     t: "Alternating Gradient Flows: A Theory of Feature Learning in Two-layer Neural Networks"
+  - u: "an_empirical_investigation_of_neural_odes_and_symbolic_regression_for_dynamical_/"
+    t: "An Empirical Investigation of Neural ODEs and Symbolic Regression for Dynamical Systems"
   - u: "beyond_benign_overfitting_in_nadaraya-watson_interpolators/"
     t: "Beyond Benign Overfitting in Nadaraya-Watson Interpolators"
   - u: "born_a_transformer_--_always_a_transformer_on_the_effect_of_pretraining_on_archi/"
     t: "Born a Transformer – Always a Transformer? On the Effect of Pretraining on Architectural Abilities"
   - u: "breaking_the_frozen_subspace_importance_sampling_for_low-rank_optimization_in_ll/"
     t: "Breaking the Frozen Subspace: Importance Sampling for Low-Rank Optimization in LLM Pretraining"
+  - u: "breaking_the_gradient_barrier_unveiling_large_language_models_for_strategic_clas/"
+    t: "Breaking the Gradient Barrier: Unveiling Large Language Models for Strategic Classification"
   - u: "broken_tokens_your_language_model_can_secretly_handle_non-canonical_tokenization/"
     t: "Broken Tokens: Your Language Model Can Secretly Handle Non-Canonical Tokenization"
+  - u: "climb_class-imbalanced_learning_benchmark_on_tabular_data/"
+    t: "CLIMB: Class-Imbalanced Learning Benchmark on Tabular Data"
+  - u: "composition_and_alignment_of_diffusion_models_using_constrai/"
+    t: "Composition and Alignment of Diffusion Models using Constrained Learning"
   - u: "conformal_risk_training_end-to-end_optimization_of_conformal_risk_control/"
     t: "Conformal Risk Training: End-to-End Optimization of Conformal Risk Control"
   - u: "deep_compositional_phase_diffusion_for_long_motion_sequence_generation/"
@@ -49,41 +58,33 @@ item_list:
     t: "Gemstones: A Model Suite for Multi-Faceted Scaling Laws"
   - u: "generalization_bounds_for_rank-sparse_neural_networks/"
     t: "Generalization Bounds for Rank-sparse Neural Networks"
+  - u: "generating_physically_sound_designs_from_text_and_a_set_of_physical_constraints/"
+    t: "Generating Physically Sound Designs from Text and a Set of Physical Constraints"
   - u: "global_minimizers_of_sigmoid_contrastive_loss/"
     t: "Global Minimizers of Sigmoid Contrastive Loss"
   - u: "gradient-weight_alignment_as_a_train-time_proxy_for_generalization_in_classifica/"
     t: "Gradient-Weight Alignment as a Train-Time Proxy for Generalization in Classification Tasks"
+  - u: "heterogeneous_adversarial_play_in_interactive_environments/"
+    t: "Heterogeneous Adversarial Play in Interactive Environments"
   - u: "how_does_sequence_modeling_architecture_influence_base_capabilities_of_pre-train/"
     t: "How Does Sequence Modeling Architecture Influence Base Capabilities of Pre-trained Language Models?"
   - u: "language_model_behavioral_phases_are_consistent_across_archi/"
     t: "Language Model Behavioral Phases are Consistent Across Architecture, Training Data, and Scale"
+  - u: "lcdb_11_a_database_illustrating_learning_curves_are_more_ill-behaved_than_previo/"
+    t: "LCDB 1.1: A Database Illustrating Learning Curves Are More Ill-Behaved Than Previously Thought"
   - u: "learning_in_compact_spaces_with_approximately_normalized_transformer/"
     t: "Learning in Compact Spaces with Approximately Normalized Transformer"
-  - u: "learning_the_wrong_lessons_syntactic-domain_spurious_correlations_in_language_mo/"
-    t: "Learning the Wrong Lessons: Syntactic-Domain Spurious Correlations in Language Models"
-  - u: "learning_to_flow_from_generative_pretext_tasks_for_neural_architecture_encoding/"
-    t: "Learning to Flow from Generative Pretext Tasks for Neural Architecture Encoding"
-  - u: "leveraging_importance_sampling_to_detach_alignment_modules_from_large_language_m/"
-    t: "Leveraging Importance Sampling to Detach Alignment Modules from Large Language Models"
-  - u: "memory_mosaics_at_scale/"
-    t: "Memory Mosaics at Scale"
-  - u: "mouse-guided_gaze_semi-supervised_learning_of_intention-aware_representations_fo/"
-    t: "Mouse-Guided Gaze: Semi-Supervised Learning of Intention-Aware Representations for Reading Detection"
-  - u: "nemotron-climb_clustering-based_iterative_data_mixture_bootstrapping_for_languag/"
-    t: "Nemotron-CLIMB: CLustering-based Iterative Data Mixture Bootstrapping for Language Model Pre-training"
-  - u: "neural_collapse_under_gradient_flow_on_shallow_relu_networks_for_orthogonally_se/"
-    t: "Neural Collapse under Gradient Flow on Shallow ReLU Networks for Orthogonally Separable Data"
-item_total: 46
+item_total: 51
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->
 # 📚 Pretraining
 
-**🧠 NeurIPS2025** · **46** paper notes
+**🧠 NeurIPS2025** · **51** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (32)](../../ICML2026/llm_pretraining/index.md) · [💬 ACL2026 (12)](../../ACL2026/llm_pretraining/index.md) · [📷 CVPR2026 (8)](../../CVPR2026/llm_pretraining/index.md) · [🔬 ICLR2026 (26)](../../ICLR2026/llm_pretraining/index.md) · [🤖 AAAI2026 (5)](../../AAAI2026/llm_pretraining/index.md) · [📹 ICCV2025 (9)](../../ICCV2025/llm_pretraining/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (22)](../../ICML2026/llm_pretraining/index.md) · [💬 ACL2026 (12)](../../ACL2026/llm_pretraining/index.md) · [📷 CVPR2026 (3)](../../CVPR2026/llm_pretraining/index.md) · [🔬 ICLR2026 (25)](../../ICLR2026/llm_pretraining/index.md) · [🤖 AAAI2026 (9)](../../AAAI2026/llm_pretraining/index.md) · [📹 ICCV2025 (9)](../../ICCV2025/llm_pretraining/index.md)
 
-🔥 **Top topics:** LLM ×7 · Alignment/RLHF ×3 · Diffusion Models ×2 · Face & Gaze ×2
+🔥 **Top topics:** LLM ×8 · Diffusion Models ×4 · Alignment/RLHF ×4 · Layout & Composition ×2 · Face & Gaze ×2
 
 **[A Practical Guide for Incorporating Symmetry in Diffusion Policy](a_practical_guide_for_incorporating_symmetry_in_diffusion_policy.md)**
 
@@ -97,6 +98,10 @@ item_total: 46
 
 :   This paper proposes the Alternating Gradient Flow (AGF) theoretical framework to explain the stepwise "saddle-to-saddle" feature learning dynamics in neural networks. Training is modeled as an alternating process between utility maximization for dormant neurons and cost minimization for active neurons, unifying feature selection analysis across diagonal linear networks, attention models, and modular addition. Predictions from AGF exhibit high agreement with actual gradient flow behavior.
 
+**[An Empirical Investigation of Neural ODEs and Symbolic Regression for Dynamical Systems](an_empirical_investigation_of_neural_odes_and_symbolic_regression_for_dynamical_.md)**
+
+:   This paper systematically investigates the extrapolation capability of Neural ODEs (NODEs) on noisy synthetic data, and explores a pipeline that employs NODEs as a data augmentation tool combined with symbolic regression (SR) to recover governing equations from limited data. Results demonstrate that this combined approach can recover two of three governing equations—and a strong approximation of the third—using only 10% of the simulation data.
+
 **[Beyond Benign Overfitting in Nadaraya-Watson Interpolators](beyond_benign_overfitting_in_nadaraya-watson_interpolators.md)**
 
 :   By tuning a single bandwidth parameter $\beta$ in the Nadaraya-Watson interpolator, this paper precisely characterizes the complete phase transition spectrum from catastrophic overfitting ($\beta < d$) → benign overfitting ($\beta = d$) → tempered overfitting ($\beta > d$), demonstrating that overestimating the intrinsic dimensionality of data is safer than underestimating it.
@@ -109,9 +114,21 @@ item_total: 46
 
 :   This paper identifies that the dominant subspace in low-rank optimizers such as GaLore "freezes" during pretraining (cosine overlap between consecutive subspaces approaches 1), trapping weight updates within a fixed low-rank subspace. The authors propose SARA (Sampling-based Adaptive Rank Allocation), which constructs subspaces by sampling singular vectors according to singular value weights, provides convergence guarantees, and reduces the performance gap between low-rank optimizers and full-rank Adam by up to 46%.
 
+**[Breaking the Gradient Barrier: Unveiling Large Language Models for Strategic Classification](breaking_the_gradient_barrier_unveiling_large_language_models_for_strategic_clas.md)**
+
+:   This paper proposes GLIM (Gradient-free Learning In-context Method), which for the first time leverages the In-Context Learning (ICL) mechanism of LLMs to implicitly simulate the bi-level optimization in strategic classification (feature manipulation + decision rule optimization), enabling efficient strategic classification on large-scale data without any fine-tuning.
+
 **[Broken Tokens: Your Language Model Can Secretly Handle Non-Canonical Tokenization](broken_tokens_your_language_model_can_secretly_handle_non-canonical_tokenization.md)**
 
 :   This paper reveals that LLMs can secretly handle non-canonical tokenizations (e.g., splitting "Hello" into "He"+"llo" instead of the canonical whole-word token)—even when the input token sequence differs from training, models exhibit surprising robustness. This capability stems from the property that sub-word embeddings in the embedding space can linearly combine to approximate whole-word embeddings.
+
+**[CLIMB: Class-Imbalanced Learning Benchmark on Tabular Data](climb_class-imbalanced_learning_benchmark_on_tabular_data.md)**
+
+:   This paper presents CLIMB — the most comprehensive benchmark to date for class-imbalanced learning on tabular data — encompassing 73 real-world datasets and 29 CIL algorithms. Large-scale experiments reveal several practical insights: naive rebalancing is often ineffective, ensemble methods are critical, and data quality impacts performance more than the degree of imbalance itself.
+
+**[Composition and Alignment of Diffusion Models using Constrained Learning](composition_and_alignment_of_diffusion_models_using_constrai.md)**
+
+:   This paper proposes a unified constrained optimization framework that formalizes reward alignment and multi-model composition of diffusion models as constrained optimization problems. By applying Lagrangian duality, the framework automatically determines optimal weights, eliminating the need for manual hyperparameter search.
 
 **[Conformal Risk Training: End-to-End Optimization of Conformal Risk Control](conformal_risk_training_end-to-end_optimization_of_conformal_risk_control.md)**
 
@@ -157,6 +174,10 @@ item_total: 46
 
 :   This paper establishes generalization bounds that exploit the approximate low-rank structure of neural network weight matrices. When the Schatten $p$ quasi-norm is small, the sample complexity reduces to $\widetilde{O}(WrL^2)$, where $W$, $L$, and $r$ denote the width, depth, and rank of the weight matrices, respectively.
 
+**[Generating Physically Sound Designs from Text and a Set of Physical Constraints](generating_physically_sound_designs_from_text_and_a_set_of_physical_constraints.md)**
+
+:   This paper proposes TIDES, a framework that combines the visual guidance of pretrained text-image models (CLIP) with a differentiable finite-element physics simulator. By jointly optimizing a visual similarity loss and a structural compliance loss, TIDES generates load-bearing structural designs that satisfy both engineering performance requirements and text-specified visual characteristics, starting from text descriptions and physical constraints. The method is validated through 3D-printed three-point bending experiments.
+
 **[Global Minimizers of Sigmoid Contrastive Loss](global_minimizers_of_sigmoid_contrastive_loss.md)**
 
 :   This work provides the first rigorous characterization of the global minimizer geometry of the Sigmoid contrastive loss (SigLIP) with trainable temperature and bias in the practically relevant regime $N \gg d$. It introduces a novel combinatorial object called the $(m, b_\text{rel})$-Constellation, and uses it to explain retrieval success, the modality gap phenomenon, and to propose an explicit relative bias parameterization that improves training dynamics.
@@ -165,6 +186,10 @@ item_total: 46
 
 :   This paper proposes Gradient-Weight Alignment (GWA), which quantifies the directional consistency (cosine similarity) between the gradient of each training sample and the model weights. During training, GWA accurately predicts generalization performance, identifies the optimal early stopping point, and localizes influential training samples—all without requiring a validation set.
 
+**[Heterogeneous Adversarial Play in Interactive Environments](heterogeneous_adversarial_play_in_interactive_environments.md)**
+
+:   This paper proposes **HAP (Heterogeneous Adversarial Play)**, which formalizes teacher-student interaction as a minimax game: a teacher network automatically generates challenge tasks targeting student weaknesses, while the student policy continuously adapts and evolves, forming an adaptive curriculum without manual design. HAP outperforms state-of-the-art baselines in multi-task RL environments, and the generated curriculum proves effective for human learners as well.
+
 **[How Does Sequence Modeling Architecture Influence Base Capabilities of Pre-trained Language Models?](how_does_sequence_modeling_architecture_influence_base_capabilities_of_pre-train.md)**
 
 :   By introducing a "domain-restricted pre-training + OOD testing" evaluation framework, this paper reveals that stateful architectures such as Mamba and RWKV suffer from degraded base capabilities. It identifies the key design principle of "arbitrary selection over the full sequence" (full-sequence visibility + real relation calculation + non-uniform distribution), and validates this principle using a minimalist Top-1 Element/Chunk Selection architecture that recovers base capabilities to near-Transformer levels.
@@ -172,6 +197,10 @@ item_total: 46
 **[Language Model Behavioral Phases are Consistent Across Architecture, Training Data, and Scale](language_model_behavioral_phases_are_consistent_across_archi.md)**
 
 :   Through systematic analysis of over 1,400 language model checkpoints—spanning Transformer/Mamba/RWKV architectures, 14M–12B parameter scales, and two training datasets—across 110K+ tokens, this work demonstrates that all autoregressive language models exhibit highly consistent behavioral phases during pre-training: predicted probabilities sequentially overfit to n-gram probabilities of increasing order. Three simple heuristics—word frequency, n-gram probability, and semantic similarity—account for up to 98% of behavioral variance.
+
+**[LCDB 1.1: A Database Illustrating Learning Curves Are More Ill-Behaved Than Previously Thought](lcdb_11_a_database_illustrating_learning_curves_are_more_ill-behaved_than_previo.md)**
+
+:   This paper constructs LCDB 1.1, a large-scale high-resolution learning curve database, demonstrating that ill-behaved sample learning curves (non-monotonic, non-convex) are approximately twice as prevalent as previously believed, with roughly 15% of curves exhibiting significant ill-behavior that feature scaling largely fails to remedy.
 
 **[Learning in Compact Spaces with Approximately Normalized Transformer](learning_in_compact_spaces_with_approximately_normalized_transformer.md)**
 
@@ -205,6 +234,10 @@ item_total: 46
 
 :   This paper provides the first provable convergence guarantee that gradient flow (GF) on two-layer ReLU networks with small initialization converges to a Neural Collapse (NC) solution on orthogonally separable data, revealing the critical role of GF's implicit bias—early neuron alignment followed by asymptotic maximum-margin bias—in driving the emergence of NC.
 
+**[Next Semantic Scale Prediction via Hierarchical Diffusion Language Models](next_semantic_scale_prediction_via_hierarchical_diffusion_language_models.md)**
+
+:   This paper proposes HDLM (Hierarchical Diffusion Language Model), which introduces cluster tokens with coarse-grained semantics as an intermediate hierarchy between clean tokens and mask tokens, enabling "next semantic scale prediction" in discrete diffusion language modeling. The method derives a closed-form ELBO, achieves consistently lower perplexity than MDLM/GIDD on OpenWebText, and reduces generation perplexity by 62% after stochastic perturbation.
+
 **[One Prompt Fits All: Universal Graph Adaptation for Pretrained Models](one_prompt_fits_all_universal_graph_adaptation_for_pretrained_models.md)**
 
 :   This paper theoretically proves that representation-level graph prompts are essentially equivalent to linear probes, and on this basis proposes UniPrompt—an input-level method based on a learnable kNN topological prompt graph. By fusing the prompt graph with the original graph via a bootstrapping strategy, UniPrompt consistently outperforms existing graph prompt learning methods on both in-domain and cross-domain few-shot node classification.
@@ -220,10 +253,6 @@ item_total: 46
 **[Predict Training Data Quality via Its Geometry in Metric Space](predict_training_data_quality_via_its_geometry_in_metric_space.md)**
 
 :   This paper proposes a training data diversity metric based on Persistent Homology (PH), demonstrating that geometric and topological structural features of data can effectively predict model performance, outperforming traditional entropy-based metrics such as Vendi Score.
-
-**[PRESCRIBE: Predicting Single-Cell Responses with Bayesian Estimation](prescribe_predicting_single-cell_responses_with_bayesian_estimation.md)**
-
-:   PRESCRIBE is a framework that jointly models epistemic uncertainty (model unfamiliarity with inputs) and aleatoric uncertainty (inherent randomness of biological systems) in single-cell perturbation prediction via multivariate deep evidential regression. It generates a pseudo E-distance as a unified uncertainty proxy; filtering unreliable predictions based on this metric yields accuracy improvements exceeding 3%.
 
 **[Quantifying Task-Relevant Representational Similarity Using Decision Variable Correlation](quantifying_task-relevant_representational_similarity_using_decision_variable_co.md)**
 
@@ -241,10 +270,6 @@ item_total: 46
 
 :   This paper proposes Scone, a method that learns contextualized embeddings for high-frequency n-grams using a separate Transformer model, and offloads these embeddings to main memory/SSD at inference time. This enables a new scaling paradigm in which additional compute is consumed during training without increasing accelerator resource usage at inference. A 1B-parameter Scone model surpasses a 1.9B baseline.
 
-**[Superposition Yields Robust Neural Scaling](superposition_yields_robust_neural_scaling.md)**
-
-:   This paper identifies representational superposition as the core driver of neural scaling laws: in the strong-superposition regime, loss **universally** scales inversely with model dimension ($L \propto 1/m$), independent of the specific form of the data frequency distribution—consistent with empirical scaling behavior in real LLMs.
-
 **[The Atlas of In-Context Learning: How Attention Heads Shape In-Context Retrieval Augmentation](the_atlas_of_in-context_learning_how_attention_heads_shape_in-context_retrieval_.md)**
 
 :   This paper systematically dissects the internal mechanisms of LLMs in in-context retrieval augmented QA using the AttnLRP attribution method. Three functionally specialized attention head types are identified — Task heads (middle layers, parsing instructions/questions), Retrieval heads (later layers, verbatim copying of contextual answers), and Parametric heads (encoding parametric knowledge) — and their functions are validated via Function Vector injection and source-tracking probes, achieving ROC AUC ≥94% on Llama-3.1/Mistral/Gemma.
@@ -256,10 +281,6 @@ item_total: 46
 **[Through the River: Understanding the Benefit of Schedule-Free Methods for Language Model Training](through_the_river_understanding_the_benefit_of_schedule-free_methods_for_languag.md)**
 
 :   From the geometric perspective of the river-valley loss landscape, this paper analyzes why the Schedule-Free (SF) optimizer can continuously track the optimal solution during language model pre-training without requiring learning rate decay or weight averaging. It further reveals that SF implicitly performs weight averaging, and proposes an improved SF-AdamW that decouples the momentum and averaging window parameters.
-
-**[Understanding and Enhancing Mask-Based Pretraining towards Universal Representations](understanding_and_enhancing_mask-based_pretraining_towards_universal_representat.md)**
-
-:   This paper employs high-dimensional linear regression theory to precisely characterize the effect of masking ratio on test risk in mask-based pretraining via a bias-variance decomposition, revealing that the optimal masking ratio depends on both the downstream task and model size. Building on this theory, the paper proposes R2MAE (Random Ratio MAE), which consistently outperforms fixed masking ratios across vision, language, DNA, and single-cell modeling benchmarks.
 
 **[Vocabulary Customization for Efficient Domain-Specific LLM Deployment](vocabulary_customization_for_efficient_domain-specific_llm_deployment.md)**
 

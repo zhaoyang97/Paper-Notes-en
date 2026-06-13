@@ -2,9 +2,10 @@
 title: >-
   [Paper Note] From Generalist to Specialist Representation
 description: >-
-  [ICML 2026][identifiability] This paper provides the first fully nonparametric (no intervention, no functional constraints) two-layer hierarchical identifiability proof: the temporal-task structure is identifiable via CI…
+  [ICML 2026][Physics & Scientific Computing][identifiability] This paper provides the first fully nonparametric (no intervention, no functional constraints) two-layer hierarchical identifiability proof: the temporal-task…
 tags:
   - "ICML 2026"
+  - "Physics & Scientific Computing"
   - "identifiability"
   - "task-relevant representation"
   - "nonparametric"
@@ -142,11 +143,11 @@ Flux cat images + GAN (tasks: "wearing glasses/hat/tie"):
 
 ## Related Papers
 
-- [\[ICLR 2026\] Noisy-Pair Robust Representation Alignment for Positive-Unlabeled Learning](../../ICLR2026/others/noisy-pair_robust_representation_alignment_for_positive-unlabeled_learning.md)
-- [\[NeurIPS 2025\] MaxSup: Overcoming Representation Collapse in Label Smoothing](../../NeurIPS2025/others/maxsup_overcoming_representation_collapse_in_label_smoothing.md)
-- [\[NeurIPS 2025\] ADPretrain: Advancing Industrial Anomaly Detection via Anomaly Representation Pretraining](../../NeurIPS2025/others/adpretrain_advancing_industrial_anomaly_detection_via_anomaly_representation_pre.md)
-- [\[ICML 2026\] Guaranteed Optimal Compositional Explanations for Neurons](guaranteed_optimal_compositional_explanations_for_neurons.md)
-- [\[ICML 2026\] Rethinking FID Through the Geometry of the Reference Dataset](rethinking_fid_through_the_geometry_of_the_reference_dataset.md)
+- [\[NeurIPS 2025\] Latent Representation Learning in Heavy-Ion Collisions with MaskPoint Transformer](../../NeurIPS2025/physics/latent_representation_learning_in_heavy-ion_collisions_with_maskpoint_transforme.md)
+- [\[NeurIPS 2025\] POLARIS: A High-contrast Polarimetric Imaging Benchmark Dataset for Exoplanetary Disk Representation Learning](../../NeurIPS2025/physics/polaris_a_high-contrast_polarimetric_imaging_benchmark_dataset_for_exoplanetary_.md)
+- [\[ICML 2026\] EqGINO: Equivariant Geometry-Informed Fourier Neural Operators for 3D PDEs](eqgino_equivariant_geometry-informed_fourier_neural_operators_for_3d_pdes.md)
+- [\[ICML 2026\] Softplus Attention with Re-weighting Boosts Length Extrapolation in Large Language Models](softplus_attention_with_re-weighting_boosts_length_extrapolation_in_large_langua.md)
+- [\[ICML 2026\] Unveiling Multi-Regime Patterns in SciML: Diverse Failure Modes and Domain-Specific Optimization](unveiling_multi-regime_patterns_in_sciml_distinct_failure_modes_and_regime-speci.md)
 
 </div>
 

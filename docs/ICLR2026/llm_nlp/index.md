@@ -1,22 +1,23 @@
 ---
 title: >-
-  ICLR2026 LLM / NLP Papers · 37 Notes
+  ICLR2026 LLM / NLP Papers · 36 Notes
 description: >-
-  37 ICLR2026 papers in the LLM / NLP area, covering LLM, Reasoning, Diffusion Models, Agents and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  36 ICLR2026 papers in the LLM / NLP area, covering LLM, Diffusion Models, Reasoning and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "ICLR2026"
   - "LLM / NLP"
   - "AI paper notes"
   - "paper summaries"
   - "LLM"
-  - "Reasoning"
   - "Diffusion Models"
-  - "Agents"
+  - "Reasoning"
 item_list:
   - u: "assetformer_modular_3d_assets_generation_with_autoregressive_transformer/"
     t: "AssetFormer: Modular 3D Assets Generation with Autoregressive Transformer"
   - u: "bots_a_unified_framework_for_bayesian_online_task_selection_in_llm_reinforcement/"
     t: "BOTS: A Unified Framework for Bayesian Online Task Selection in LLM Reinforcement Finetuning"
+  - u: "breaking_the_correlation_plateau_on_the_optimization_and_capacity_limits_of_atte/"
+    t: "Breaking the Correlation Plateau: On the Optimization and Capacity Limits of Attention-Based Regressors"
   - u: "compositional-arc_assessing_systematic_generalization_in_abstract_spatial_reason/"
     t: "Compositional-ARC: Assessing Systematic Generalization in Abstract Spatial Reasoning"
   - u: "d2cache_accelerating_diffusion-based_llms_via_dual_adaptive_caching/"
@@ -33,10 +34,6 @@ item_list:
     t: "Fine-Grained Activation Steering: Steering Less, Achieving More"
   - u: "first_is_not_really_better_than_last_evaluating_layer_choice_and_aggregation_str/"
     t: "First is Not Really Better Than Last: Evaluating Layer Choice and Aggregation Strategies in Language Model Data Influence Estimation"
-  - u: "from_assumptions_to_actions_turning_llm_reasoning_into_uncertainty-aware_plannin/"
-    t: "From Assumptions to Actions: Turning LLM Reasoning into Uncertainty-Aware Planning"
-  - u: "function_induction_and_task_generalization_an_interpretability_study_with_off-by/"
-    t: "Function Induction and Task Generalization: An Interpretability Study with Off-by-One Addition"
   - u: "gasp_guided_asymmetric_self-play_for_coding_llms/"
     t: "GASP: Guided Asymmetric Self-Play For Coding LLMs"
   - u: "how_catastrophic_is_your_llm_certifying_risk_in_conversation/"
@@ -47,24 +44,24 @@ item_list:
     t: "In-Context Algebra"
   - u: "is_the_reversal_curse_a_binding_problem_uncovering_limitations_of_transformers_f/"
     t: "Is the Reversal Curse a Binding Problem? Uncovering Limitations of Transformers from a Basic Generalization Failure"
-  - u: "kvcomm_enabling_efficient_llm_communication_through_selective_kv_sharing/"
-    t: "KVComm: Enabling Efficient LLM Communication through Selective KV Sharing"
   - u: "llema_evolutionary_search_with_llms_for_multi-objective_material_design/"
     t: "LLEMA: Evolutionary Search with LLMs for Multi-Objective Materials Discovery"
   - u: "meta-rl_induces_exploration_in_language_agents/"
     t: "Meta-RL Induces Exploration in Language Agents"
   - u: "near-optimal_online_deployment_and_routing_for_streaming_llms/"
     t: "Near-Optimal Online Deployment and Routing for Streaming LLMs"
+  - u: "neural_synchrony_between_socially_interacting_language_models/"
+    t: "Neural Synchrony Between Socially Interacting Language Models"
   - u: "optimas_optimizing_compound_ai_systems_with_globally_aligned_local_rewards/"
     t: "Optimas: Optimizing Compound AI Systems with Globally Aligned Local Rewards"
-  - u: "predicting_llm_reasoning_performance_with_small_proxy_models/"
-    t: "Predicting LLM Reasoning Performance with Small Proxy Models"
   - u: "pt2-llm_post-training_ternarization_for_large_language_models/"
     t: "PT2-LLM: Post-Training Ternarization for Large Language Models"
   - u: "quamo_quaternion_motions_for_vision-based_3d_human_kinematics_capture/"
     t: "ConflictScope: Generative Value Conflicts Reveal LLM Priorities"
   - u: "rethinking_code_similarity_for_automated_algorithm_design_with_llms/"
     t: "Rethinking Code Similarity for Automated Algorithm Design with LLMs"
+  - u: "spectral_attention_steering_for_prompt_highlighting/"
+    t: "Spectral Attention Steering for Prompt Highlighting"
   - u: "speculative_actions_faster_ai_agents/"
     t: "Speculative Actions: A Lossless Framework for Faster AI Agents"
   - u: "statistical_advantage_of_softmax_attention_insights_from_single-location_regress/"
@@ -73,17 +70,19 @@ item_list:
     t: "Stopping Computation for Converged Tokens in Masked Diffusion-LM Decoding"
   - u: "the_lattice_representation_hypothesis_of_large_language_models/"
     t: "The Lattice Representation Hypothesis of Large Language Models"
-item_total: 37
+  - u: "toward_safer_diffusion_language_models_discovery_and_mitigation_of_priming_vulne/"
+    t: "Toward Safer Diffusion Language Models: Discovery and Mitigation of Priming Vulnerabilities"
+item_total: 36
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->
 # 💬 LLM / NLP
 
-**🔬 ICLR2026** · **37** paper notes
+**🔬 ICLR2026** · **36** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (39)](../../ICML2026/llm_nlp/index.md) · [💬 ACL2026 (59)](../../ACL2026/llm_nlp/index.md) · [📷 CVPR2026 (9)](../../CVPR2026/llm_nlp/index.md) · [🤖 AAAI2026 (34)](../../AAAI2026/llm_nlp/index.md) · [🧠 NeurIPS2025 (48)](../../NeurIPS2025/llm_nlp/index.md) · [📹 ICCV2025 (6)](../../ICCV2025/llm_nlp/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (37)](../../ICML2026/llm_nlp/index.md) · [💬 ACL2026 (58)](../../ACL2026/llm_nlp/index.md) · [📷 CVPR2026 (2)](../../CVPR2026/llm_nlp/index.md) · [🤖 AAAI2026 (30)](../../AAAI2026/llm_nlp/index.md) · [🧠 NeurIPS2025 (53)](../../NeurIPS2025/llm_nlp/index.md) · [📹 ICCV2025 (6)](../../ICCV2025/llm_nlp/index.md)
 
-🔥 **Top topics:** LLM ×11 · Reasoning ×5 · Diffusion Models ×4 · Agents ×2
+🔥 **Top topics:** LLM ×7 · Diffusion Models ×4 · Reasoning ×2
 
 **[AssetFormer: Modular 3D Assets Generation with Autoregressive Transformer](assetformer_modular_3d_assets_generation_with_autoregressive_transformer.md)**
 
@@ -92,6 +91,10 @@ item_total: 37
 **[BOTS: A Unified Framework for Bayesian Online Task Selection in LLM Reinforcement Finetuning](bots_a_unified_framework_for_bayesian_online_task_selection_in_llm_reinforcement.md)**
 
 :   This paper proposes BOTS—a unified Bayesian inference framework for online task selection in LLM reinforcement finetuning. BOTS integrates explicit evidence (historical pass rates from direct evaluation) and implicit evidence (difficulty estimates for unevaluated tasks inferred via reference model interpolation), combined with Thompson sampling for exploration–exploitation balance. The framework achieves up to 50% training speedup on math, code, and logic tasks with only 0.2% additional computational overhead.
+
+**[Breaking the Correlation Plateau: On the Optimization and Capacity Limits of Attention-Based Regressors](breaking_the_correlation_plateau_on_the_optimization_and_capacity_limits_of_atte.md)**
+
+:   This paper provides the first theoretical analysis of the "PCC plateau" phenomenon observed when training attention-based regression models with a joint MSE+PCC objective. The root causes are identified as the conflict between MSE optimization and PCC gradients, together with an expressivity upper bound imposed by the convex aggregation of softmax. The authors propose the ECA (Extrapolative Correlation Attention) framework, which breaks through this limitation via three components: scaled residual aggregation, dispersion-aware temperature softmax, and dispersion-normalized PCC loss.
 
 **[Compositional-ARC: Assessing Systematic Generalization in Abstract Spatial Reasoning](compositional-arc_assessing_systematic_generalization_in_abstract_spatial_reason.md)**
 
@@ -125,14 +128,6 @@ item_total: 37
 
 :   Through theoretical analysis and empirical experiments, this paper demonstrates that the widely accepted claim that "the first layer (embedding) is best suited for influence estimation" is unreliable. The work finds that intermediate attention layers are more effective, proposes two novel cross-layer aggregation strategies—Rank and Vote—along with a Noise Detection Rate (NDR) proxy metric, and achieves significant improvements in detecting harmful training samples in LLMs.
 
-**[From Assumptions to Actions: Turning LLM Reasoning into Uncertainty-Aware Planning](from_assumptions_to_actions_turning_llm_reasoning_into_uncertainty-aware_plannin.md)**
-
-:   This paper proposes PCE (Planner-Composer-Evaluator), a framework that explicitly extracts and organizes implicit environmental assumptions from LLM reasoning chains into decision trees, enabling uncertainty-aware action selection via a likelihood-gain-cost scoring function, thereby substantially reducing communication overhead in multi-agent collaboration.
-
-**[Function Induction and Task Generalization: An Interpretability Study with Off-by-One Addition](function_induction_and_task_generalization_an_interpretability_study_with_off-by.md)**
-
-:   Using off-by-one addition (e.g., 1+1=3, 2+2=5) as a counterfactual task, this paper applies path patching to reveal a **function induction** mechanism within large language models — an attention head circuit that performs inductive reasoning at the function level, transcending token-level pattern matching — and demonstrates that this mechanism is reused across tasks.
-
 **[GASP: Guided Asymmetric Self-Play For Coding LLMs](gasp_guided_asymmetric_self-play_for_coding_llms.md)**
 
 :   GASP introduces "goalposts" (hard target problems) into asymmetric self-play to guide the teacher in generating targeted training problems. Through a lemma (simplified variant) → lift (harder variant) curriculum structure, the framework progressively approaches difficult targets, surpassing unguided self-play by 2.5% on LiveCodeBench and solving hard problems that all baselines fail to solve.
@@ -153,10 +148,6 @@ item_total: 37
 
 :   This paper proposes that the Reversal Curse is a manifestation of the cognitive science "binding problem" in Transformers—stemming from inconsistent and entangled concept representations—and for the first time designs an architecture based on JEPA and memory layers that genuinely overcomes (rather than circumvents) the Reversal Curse.
 
-**[KVComm: Enabling Efficient LLM Communication through Selective KV Sharing](kvcomm_enabling_efficient_llm_communication_through_selective_kv_sharing.md)**
-
-:   This paper proposes KVComm, a framework that enables efficient inter-LLM communication via selective KV pair sharing. It identifies an "information concentration bias" in hidden states that renders them unsuitable for cross-model transfer, and designs a layer selection strategy combining attention importance scores with a Gaussian prior. Transmitting only 30% of layers suffices to outperform most baselines.
-
 **[LLEMA: Evolutionary Search with LLMs for Multi-Objective Materials Discovery](llema_evolutionary_search_with_llms_for_multi-objective_material_design.md)**
 
 :   This paper proposes LLEMA, a framework that integrates LLM scientific knowledge with chemistry-rule-guided evolutionary search and memory-driven iterative optimization, achieving superior hit rates, stability, and Pareto front quality across 14 multi-objective materials discovery tasks.
@@ -169,13 +160,13 @@ item_total: 37
 
 :   This work provides the first formal treatment of the joint LLM streaming online deployment and routing problem, where new models continuously arrive and existing models may become obsolete. Under a concurrency deployment cap $M_{\max}$ and cost budget constraints, the paper proposes StageRoute, a hierarchical algorithm that achieves a provable $\tilde{\mathcal{O}}(T^{2/3})$ regret bound with a matching lower bound, establishing near-optimality.
 
+**[Neural Synchrony Between Socially Interacting Language Models](neural_synchrony_between_socially_interacting_language_models.md)**
+
+:   This paper presents the first investigation of neural synchrony between LLMs engaged in social interaction. By training affine transformations to predict a partner model's future representations, it defines the $SyncR^2$ metric to quantify synchrony strength. The results show that synchrony depends on social engagement and temporal proximity, and correlates strongly with LLMs' social behavioral performance (Pearson $r$ = 0.88–0.99), echoing neuroscientific findings on inter-brain synchrony (IBS) in humans.
+
 **[Optimas: Optimizing Compound AI Systems with Globally Aligned Local Rewards](optimas_optimizing_compound_ai_systems_with_globally_aligned_local_rewards.md)**
 
 :   This paper proposes Optimas, a framework that maintains a locally aligned reward function (LRF) per component in compound AI systems, enabling independent optimization of heterogeneous components (prompts, model parameters, hyperparameters, model selection), achieving an average improvement of 11.92% across five real-world systems.
-
-**[Predicting LLM Reasoning Performance with Small Proxy Models](predicting_llm_reasoning_performance_with_small_proxy_models.md)**
-
-:   This paper proposes rBridge, a method that combines NLL evaluation on frontier-model reasoning traces with token-level task alignment weights, enabling models with ≤1B parameters to effectively predict the reasoning performance of 13B–32B models, reducing data ranking computation cost by over 100×.
 
 **[PT2-LLM: Post-Training Ternarization for Large Language Models](pt2-llm_post-training_ternarization_for_large_language_models.md)**
 
@@ -188,6 +179,10 @@ item_total: 37
 **[Rethinking Code Similarity for Automated Algorithm Design with LLMs](rethinking_code_similarity_for_automated_algorithm_design_with_llms.md)**
 
 :   This paper proposes BehaveSim, an algorithm similarity metric based on Problem-Solving Trajectories (PSTrajs) and Dynamic Time Warping (DTW). BehaveSim measures algorithmic differences at the level of execution behavior rather than syntax or output, and when integrated into LLM-AAD frameworks such as FunSearch and EoH, yields significant performance improvements.
+
+**[Spectral Attention Steering for Prompt Highlighting](spectral_attention_steering_for_prompt_highlighting.md)**
+
+:   This paper proposes SEKA/AdaSEKA, which learns a "relevance subspace" via spectral decomposition of key embeddings and directly edits key vectors prior to attention computation to achieve prompt highlighting. The approach requires no storage of the full attention matrix, is fully compatible with FlashAttention, and incurs negligible overhead (+0.03s/sample).
 
 **[Speculative Actions: A Lossless Framework for Faster AI Agents](speculative_actions_faster_ai_agents.md)**
 
@@ -205,10 +200,6 @@ item_total: 37
 
 :   This paper proposes the **Lattice Representation Hypothesis (LRH)** for LLMs: by unifying the Linear Representation Hypothesis with Formal Concept Analysis (FCA), it demonstrates that attribute directions in LLM embedding spaces implicitly encode a **concept lattice** via half-space intersections, thereby bridging continuous geometry and symbolic abstraction.
 
-**[The Path of Least Resistance: Guiding LLM Reasoning Trajectories for Efficient Consistency](the_path_of_least_resistance_guiding_llm_reasoning_trajectories_for_efficient_co.md)**
-
-:   This paper proposes PoLR (Path of Least Resistance), the first inference-time method that exploits reasoning prefix consistency. By clustering short prefixes and expanding only the dominant cluster, PoLR serves as an efficient alternative to Self-Consistency, reducing token usage by up to 60% and latency by up to 50%.
-
 **[Toward Safer Diffusion Language Models: Discovery and Mitigation of Priming Vulnerabilities](toward_safer_diffusion_language_models_discovery_and_mitigation_of_priming_vulne.md)**
 
 :   This paper identifies a *priming vulnerability* in masked diffusion language models (MDLMs)—injecting affirmative tokens at intermediate denoising steps can bypass safety guardrails—and proposes Recovery Alignment (RA), a training method that teaches models to recover safe responses from corrupted intermediate states.
@@ -224,6 +215,10 @@ item_total: 37
 **[WebDevJudge: Evaluating (M)LLMs as Critiques for Web Development Quality](webdevjudge_mllm_web_development.md)**
 
 :   This work introduces WebDevJudge, a meta-evaluation benchmark that systematically assesses the ability of LLMs/MLLMs and agentic workflows to serve as judges for web development quality. Results reveal an approximately 15% agreement gap between the strongest current models and human experts, and identify two fundamental bottlenecks: failure to recognize functional equivalence and inadequate feasibility verification.
+
+**[WebOperator: Action-Aware Tree Search for Autonomous Agents in Web Environment](weboperator_action-aware_tree_search_for_autonomous_agents_in_web_environment.md)**
+
+:   This paper proposes WebOperator, an action-aware tree search framework that enables autonomous web agents to explore safely and efficiently in partially observable, irreversible real-world web environments through speculative backtracking, destructive action detection, action validation, and action merging. WebOperator achieves a 54.6% success rate on WebArena using gpt-4o, establishing a new state of the art.
 
 **[Weight Decay may matter more than μP for Learning Rate Transfer in Practice](weight_decay_may_matter_more_than_mup_for_learning_rate_transfer_in_practice.md)**
 

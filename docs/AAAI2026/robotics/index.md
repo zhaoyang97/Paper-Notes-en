@@ -1,91 +1,91 @@
 ---
 title: >-
-  AAAI2026 Robotics & Embodied AI Papers · 36 Notes
+  AAAI2026 Robotics & Embodied AI Papers · 30 Notes
 description: >-
-  36 AAAI2026 papers in the Robotics & Embodied AI area, covering Robotics, Navigation, Multimodal/VLM, Agents, Alignment/RLHF, Adversarial Robustness and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  30 AAAI2026 papers in the Robotics & Embodied AI area, covering Robotics, Reinforcement Learning, Adversarial Robustness, Multimodal/VLM, Alignment/RLHF, Agents and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "AAAI2026"
   - "Robotics & Embodied AI"
   - "AI paper notes"
   - "paper summaries"
   - "Robotics"
-  - "Navigation"
-  - "Multimodal/VLM"
-  - "Agents"
-  - "Alignment/RLHF"
+  - "Reinforcement Learning"
   - "Adversarial Robustness"
+  - "Multimodal/VLM"
+  - "Alignment/RLHF"
+  - "Agents"
 item_list:
   - u: "10_open_challenges_steering_the_future_of_vision-language-ac/"
     t: "10 Open Challenges Steering the Future of Vision-Language-Action Models"
   - u: "a_computable_game-theoretic_framework_for_multi-agent_theory_of_mind/"
     t: "A Computable Game-Theoretic Framework for Multi-Agent Theory of Mind"
-  - u: "adaptive_theory_of_mind_for_llm-based_multi-agent_coordination/"
-    t: "Adaptive Theory of Mind for LLM-based Multi-Agent Coordination"
+  - u: "actor-critic_for_continuous_action_chunks_a_reinforcement_le/"
+    t: "Actor-Critic for Continuous Action Chunks: A Reinforcement Learning Framework for Long-Horizon Robotic Manipulation with Sparse Reward"
   - u: "affordance-guided_coarse-to-fine_exploration_for_base_placem/"
     t: "Affordance-Guided Coarse-to-Fine Exploration for Base Placement in Open-Vocabulary Mobile Manipulation"
-  - u: "attention_as_binding_a_vector-symbolic_perspective_on_transformer_reasoning/"
-    t: "Attention as Binding: A Vector-Symbolic Perspective on Transformer Reasoning"
-  - u: "causal_inference_under_threshold_manipulation_bayesian_mixtu/"
-    t: "Causal Inference Under Threshold Manipulation: Bayesian Mixture Modeling and Heterogeneous Treatment Effects"
   - u: "continuous_vision-language-action_co-learning_with_semantic-/"
     t: "Continuous Vision-Language-Action Co-Learning with Semantic-Physical Alignment for Behavioral Cloning"
+  - u: "coordinated_humanoid_robot_locomotion_with_symmetry_equivariant_reinforcement_le/"
+    t: "Coordinated Humanoid Robot Locomotion with Symmetry Equivariant Reinforcement Learning Policy"
   - u: "cross_modal_fine-grained_alignment_via_granularity-aware_and_region-uncertain_mo/"
     t: "Cross Modal Fine-Grained Alignment via Granularity-Aware and Region-Uncertain Modeling"
   - u: "dexterous_manipulation_transfer_via_progressive_kinematic-dynamic_alignment/"
     t: "Dexterous Manipulation Transfer via Progressive Kinematic-Dynamic Alignment"
-  - u: "do_llms_really_struggle_at_nl-fol_translation_revealing_their_strengths_via_a_no/"
-    t: "Do LLMs Really Struggle at NL-FOL Translation? Revealing Their Strengths via a Novel Benchmarking Strategy"
-  - u: "evoempirbench_dynamic_spatial_reasoning_with_agent-expver/"
-    t: "EvoEmpirBench: Dynamic Spatial Reasoning with Agent-ExpVer"
-  - u: "from_passive_perception_to_active_memory_a_weakly_supervised_image_manipulation_/"
-    t: "From Passive Perception to Active Memory: A Weakly Supervised Image Manipulation Localization Framework Driven by Coarse-Grained Annotations"
+  - u: "distributionally_robust_online_markov_game_with_linear_function_approximation/"
+    t: "Distributionally Robust Online Markov Game with Linear Function Approximation"
   - u: "from_woofs_to_words_towards_intelligent_robotic_guide_dogs_with_verbal_communica/"
     t: "From Woofs to Words: Towards Intelligent Robotic Guide Dogs with Verbal Communication"
-  - u: "gaming_the_answer_matcher_examining_the_impact_of_text_manipulation_on_automated/"
-    t: "Gaming the Answer Matcher: Examining the Impact of Text Manipulation on Automated Judgment"
-  - u: "generating_sketches_in_a_hierarchical_auto-regressive_proces/"
-    t: "Sketch-HARP: Hierarchical Autoregressive Sketch Generation for Flexible Stroke-Level Drawing Manipulation"
   - u: "grim_task-oriented_grasping_with_conditioning_on_generative_examples/"
     t: "GRIM: Task-Oriented Grasping with Conditioning on Generative Examples"
   - u: "h-gar_a_hierarchical_interaction_framework_via_goal-driven_observation-action_re/"
     t: "H-GAR: A Hierarchical Interaction Framework via Goal-Driven Observation-Action Refinement for Robotic Manipulation"
   - u: "human-centric_open-future_task_discovery_formulation_benchmark_and_scalable_tree/"
     t: "Human-Centric Open-Future Task Discovery: Formulation, Benchmark, and Scalable Tree-Based Search"
-  - u: "human_cognitive_biases_in_explanation-based_interaction_the_case_of_within_and_b/"
-    t: "Human Cognitive Biases in Explanation-based Interaction: The Case of Within and Between Session Order Effect"
-  - u: "laf-grpo_in-situ_navigation_instruction_generation_for_the_visually_impaired_via/"
-    t: "LaF-GRPO: In-Situ Navigation Instruction Generation for the Visually Impaired via GRPO with LLM-as-Follower Reward"
-  - u: "more_than_irrational_modeling_belief-biased_agents/"
-    t: "More Than Irrational: Modeling Belief-Biased Agents"
-  - u: "neural_graph_navigation_for_intelligent_subgraph_matching/"
-    t: "Neural Graph Navigation for Intelligent Subgraph Matching"
+  - u: "manilong-shot_interaction-aware_one-shot_imitation_learning_for_long-horizon_man/"
+    t: "ManiLong-Shot: Interaction-Aware One-Shot Imitation Learning for Long-Horizon Manipulation"
+  - u: "object-centric_latent_action_learning/"
+    t: "Object-Centric Latent Action Learning"
   - u: "panonav_mapless_zero-shot_object_navigation_with_panoramic_scene_parsing_and_dyn/"
     t: "PanoNav: Mapless Zero-Shot Object Navigation with Panoramic Scene Parsing and Dynamic Memory"
   - u: "realistic_synthetic_household_data_generation_at_scale/"
     t: "Realistic Synthetic Household Data Generation at Scale"
-  - u: "recursive_visual_imagination_and_adaptive_linguistic_grounding_for_vision_langua/"
-    t: "Recursive Visual Imagination and Adaptive Linguistic Grounding for Vision Language Navigation"
-  - u: "renew_risk-_and_energy-aware_navigation_in_dynamic_waterways/"
-    t: "RENEW: Risk- and Energy-Aware Navigation in Dynamic Waterways"
+  - u: "rlslm_a_hybrid_reinforcement_learning_framework_aligning_rule-based_social_locom/"
+    t: "RLSLM: A Hybrid Reinforcement Learning Framework Aligning Rule-Based Social Locomotion Model with Human Social Norms"
   - u: "robust_out-of-order_retrieval_for_grid-based_storage_at_maximum_capacity/"
     t: "Robust Out-of-Order Retrieval for Grid-Based Storage at Maximum Capacity"
+  - u: "scalable_multi-objective_and_meta_reinforcement_learning_via_gradient_estimation/"
+    t: "Scalable Multi-Objective and Meta Reinforcement Learning via Gradient Estimation"
   - u: "semanticvla_semantic-aligned_sparsification_and_enhancement_for_efficient_roboti/"
     t: "SemanticVLA: Semantic-Aligned Sparsification and Enhancement for Efficient Robotic Manipulation"
-  - u: "shadows_in_the_code_exploring_the_risks_and_defenses_of_llm-/"
-    t: "Shadows in the Code: Exploring the Risks and Defenses of LLM-based Multi-Agent Software Development Systems"
+  - u: "sim-to-real_an_unsupervised_noise_layer_for_screen-camera_watermarking_robustnes/"
+    t: "Sim-to-Real: An Unsupervised Noise Layer for Screen-Camera Watermarking Robustness"
   - u: "spatialactor_exploring_disentangled_spatial_representations_for_robust_robotic_m/"
     t: "SpatialActor: Exploring Disentangled Spatial Representations for Robust Robotic Manipulation"
-item_total: 36
+  - u: "test-driven_reinforcement_learning_in_continuous_control/"
+    t: "Test-driven Reinforcement Learning in Continuous Control"
+  - u: "theory_of_mind_for_explainable_human-robot_interaction/"
+    t: "Theory of Mind for Explainable Human-Robot Interaction"
+  - u: "touchformer_a_robust_transformer-based_framework_for_multimodal_material_percept/"
+    t: "TouchFormer: A Robust Transformer-based Framework for Multimodal Material Perception"
+  - u: "towards_affordance-aware_robotic_dexterous_grasping_with_human-like_priors/"
+    t: "Towards Affordance-Aware Robotic Dexterous Grasping with Human-like Priors"
+  - u: "towards_reinforcement_learning_from_neural_feedback_mapping_/"
+    t: "Towards Reinforcement Learning from Neural Feedback: Mapping fNIRS Signals to Agent Performance"
+  - u: "ttf-vla_temporal_token_fusion_via_pixel-attention_integratio/"
+    t: "TTF-VLA: Temporal Token Fusion via Pixel-Attention Integration for Vision-Language-Action Models"
+  - u: "urbannav_learning_language-guided_urban_navigation_from_web-scale_human_trajecto/"
+    t: "UrbanNav: Learning Language-Guided Urban Navigation from Web-Scale Human Trajectories"
+item_total: 30
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->
 # 🤖 Robotics & Embodied AI
 
-**🤖 AAAI2026** · **36** paper notes
+**🤖 AAAI2026** · **30** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (45)](../../ICML2026/robotics/index.md) · [💬 ACL2026 (10)](../../ACL2026/robotics/index.md) · [📷 CVPR2026 (34)](../../CVPR2026/robotics/index.md) · [🔬 ICLR2026 (47)](../../ICLR2026/robotics/index.md) · [🧠 NeurIPS2025 (54)](../../NeurIPS2025/robotics/index.md) · [📹 ICCV2025 (26)](../../ICCV2025/robotics/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (42)](../../ICML2026/robotics/index.md) · [💬 ACL2026 (10)](../../ACL2026/robotics/index.md) · [📷 CVPR2026 (42)](../../CVPR2026/robotics/index.md) · [🔬 ICLR2026 (46)](../../ICLR2026/robotics/index.md) · [🧠 NeurIPS2025 (73)](../../NeurIPS2025/robotics/index.md) · [📹 ICCV2025 (26)](../../ICCV2025/robotics/index.md)
 
-🔥 **Top topics:** Robotics ×12 · Navigation ×6 · Multimodal/VLM ×5 · Agents ×5 · Alignment/RLHF ×5
+🔥 **Top topics:** Robotics ×12 · Reinforcement Learning ×6 · Adversarial Robustness ×5 · Multimodal/VLM ×4 · Alignment/RLHF ×3
 
 **[10 Open Challenges Steering the Future of Vision-Language-Action Models](10_open_challenges_steering_the_future_of_vision-language-ac.md)**
 
@@ -95,25 +95,21 @@ item_total: 36
 
 :   This paper proposes a game-theoretic framework based on Poisson cognitive hierarchy, achieving computable multi-agent Theory of Mind via Gamma-Poisson conjugate Bayesian updates. The framework supports recursive bounded-rationality decision-making and online belief revision while avoiding the undecidability of POMDPs.
 
-**[Adaptive Theory of Mind for LLM-based Multi-Agent Coordination](adaptive_theory_of_mind_for_llm-based_multi-agent_coordination.md)**
+**[Actor-Critic for Continuous Action Chunks: A Reinforcement Learning Framework for Long-Horizon Robotic Manipulation with Sparse Reward](actor-critic_for_continuous_action_chunks_a_reinforcement_le.md)**
 
-:   This paper proposes the Adaptive Theory of Mind agent (A-ToM), which formulates ToM order alignment as an online expert advice problem. By employing Follow-the-Leader (FTL) or Hedge algorithms to estimate a partner's ToM order in real time and dynamically adjust its own reasoning depth, A-ToM achieves robust zero-shot multi-agent coordination across four task categories, including repeated matrix games, grid navigation, and Overcooked.
+:   AC3 proposes an actor-critic framework that directly learns continuous action sequences (action chunks), stabilizing long-horizon robotic manipulation under sparse rewards via an asymmetric actor update rule—updating the actor only from successful trajectories—and self-supervised anchor-based intrinsic rewards. The method achieves superior success rates over existing approaches across 25 tasks on BiGym and RLBench.
 
 **[Affordance-Guided Coarse-to-Fine Exploration for Base Placement in Open-Vocabulary Mobile Manipulation](affordance-guided_coarse-to-fine_exploration_for_base_placem.md)**
 
 :   This paper addresses the base placement problem in open-vocabulary mobile manipulation (OVMM) and proposes a zero-shot framework that constructs a cross-modal representation (Affordance RGB + Obstacle Map+) to project semantic affordance cues onto an obstacle map, followed by a coarse-to-fine iterative optimization that balances semantic and geometric constraints. The method achieves an 85% success rate across five manipulation tasks, substantially outperforming both geometric planners and pure VLM-based approaches.
 
-**[Attention as Binding: A Vector-Symbolic Perspective on Transformer Reasoning](attention_as_binding_a_vector-symbolic_perspective_on_transformer_reasoning.md)**
-
-:   This paper proposes reinterpreting the Transformer self-attention mechanism as a soft binding/unbinding operator in Vector Symbolic Architectures (VSA) — where Query/Key define a role space, Value encodes fillers, attention weights implement differentiable unbinding, and residual connections implement superposition — thereby providing an algebraic perspective that unifies explanations of LLM capability and fragility in symbolic reasoning. The paper further proposes VSA-inspired architectural improvements such as explicit binding heads and hyperdimensional memory layers.
-
-**[Causal Inference Under Threshold Manipulation: Bayesian Mixture Modeling and Heterogeneous Treatment Effects](causal_inference_under_threshold_manipulation_bayesian_mixtu.md)**
-
-:   This paper proposes the BMTM/HBMTM Bayesian mixture model framework. In scenarios where consumers strategically manipulate spending to reach reward thresholds, the framework decomposes the observed distribution into bunching and non-bunching sub-distributions to accurately estimate threshold causal effects and heterogeneous treatment effects across subgroups.
-
 **[Continuous Vision-Language-Action Co-Learning with Semantic-Physical Alignment for Behavioral Cloning](continuous_vision-language-action_co-learning_with_semantic-.md)**
 
 :   This paper proposes the CCoL framework, which addresses both physical discontinuity in action sequences and semantic-physical misalignment in Behavioral Cloning through NeuralODE-driven Multimodal Continuous Co-learning (MCC) and bidirectional cross-attention-based Cross-modal Semantic-Physical Alignment (CSA). CCoL achieves an average relative improvement of 8.0% across three simulation platforms, with up to 19.2% on the bimanual insertion task.
+
+**[Coordinated Humanoid Robot Locomotion with Symmetry Equivariant Reinforcement Learning Policy](coordinated_humanoid_robot_locomotion_with_symmetry_equivariant_reinforcement_le.md)**
+
+:   This paper proposes SE-Policy, which directly embeds strict symmetry equivariance (actor) and symmetry invariance (critic) into the neural network architecture without additional hyperparameters, enabling humanoid robots to produce spatiotemporally coordinated natural locomotion. The velocity tracking error is reduced by 40% compared to DreamWaQ, and the policy is successfully deployed on a physical Unitree G1 robot.
 
 **[Cross Modal Fine-Grained Alignment via Granularity-Aware and Region-Uncertain Modeling](cross_modal_fine-grained_alignment_via_granularity-aware_and_region-uncertain_mo.md)**
 
@@ -123,29 +119,13 @@ item_total: 36
 
 :   This paper proposes the PKDA framework, which automatically converts human hand manipulation videos into high-quality manipulation trajectories for multi-fingered dexterous hands via progressive kinematic-dynamic alignment, achieving an average transfer success rate of 73%.
 
-**[Do LLMs Really Struggle at NL-FOL Translation? Revealing Their Strengths via a Novel Benchmarking Strategy](do_llms_really_struggle_at_nl-fol_translation_revealing_their_strengths_via_a_no.md)**
+**[Distributionally Robust Online Markov Game with Linear Function Approximation](distributionally_robust_online_markov_game_with_linear_function_approximation.md)**
 
-:   This paper critically examines existing evaluation methodologies for natural language to first-order logic (FOL) translation — specifically FOLIO and MALLS — exposing fundamental flaws in their datasets and evaluation protocols. The authors propose a novel benchmarking strategy that decomposes the translation task into ontology extraction (OE) and logical translation (LT), augmented with "most similar selection" and "ranking" subtasks. Experiments demonstrate that conversational LLMs (o3-mini, GPT-4o-mini, Qwen3 series) exhibit strong NL-FOL translation capabilities and genuine logical semantic understanding, while embedding-based models perform significantly worse.
-
-**[EvoEmpirBench: Dynamic Spatial Reasoning with Agent-ExpVer](evoempirbench_dynamic_spatial_reasoning_with_agent-expver.md)**
-
-:   This paper proposes EvoEmpirBench (EEB), comprising two dynamic interactive benchmarks (partially observable maze navigation + Match-2), and the Agent-ExpVer three-agent online learning framework (GeoLink for interaction + InsightForce for experience abstraction + TruthWeaver for knowledge management). Through a cognitive cycle of "experience → verification → truth induction," the framework achieves continuous strategy evolution without parameter updates, improving GPT-4.1 success rate by 5.6% and Qwen-32B by 29%.
-
-**[From Passive Perception to Active Memory: A Weakly Supervised Image Manipulation Localization Framework Driven by Coarse-Grained Annotations](from_passive_perception_to_active_memory_a_weakly_supervised_image_manipulation_.md)**
-
-:   This paper proposes BoxPromptIML, a weakly supervised image manipulation localization (IML) framework based on coarse-grained bounding box annotations. It leverages a frozen SAM teacher model to convert rough bounding boxes into high-quality pseudo-masks, and trains a lightweight student model via a memory-guided gated fusion module (MGFM), achieving performance comparable to or surpassing fully supervised methods with an annotation cost of only 7 seconds per image.
+:   This paper studies online distributionally robust Markov games with linear function approximation. It is the first to identify the hardness of learning in this setting, and proposes the DR-CCE-LSI algorithm, which achieves minimax-optimal sample complexity with respect to the feature dimension $d$ under a specific feature mapping condition.
 
 **[From Woofs to Words: Towards Intelligent Robotic Guide Dogs with Verbal Communication](from_woofs_to_words_towards_intelligent_robotic_guide_dogs_with_verbal_communica.md)**
 
 :   This paper proposes a dialogue system for robotic guide dogs that leverages LLMs and a task planner to achieve **Plan Verbalization** and **Scene Verbalization**, supporting multi-turn natural language dialogue to assist visually impaired users in navigation decision-making. The system's effectiveness is validated through a real-user study and simulation experiments.
-
-**[Gaming the Answer Matcher: Examining the Impact of Text Manipulation on Automated Judgment](gaming_the_answer_matcher_examining_the_impact_of_text_manipulation_on_automated.md)**
-
-:   This paper systematically evaluates three text manipulation strategies—verbosity, strategic multi-answer embedding, and correct-answer-first with contradictory suffix—against LLM-based answer-matching judges. The results show that these manipulations **do not improve scores and often reduce them**. Binary scoring proves more robust than continuous scoring, demonstrating that answer matching is resistant to low-cost text manipulation as an evaluation method.
-
-**[Sketch-HARP: Hierarchical Autoregressive Sketch Generation for Flexible Stroke-Level Drawing Manipulation](generating_sketches_in_a_hierarchical_auto-regressive_proces.md)**
-
-:   This paper proposes Sketch-HARP, a hierarchical autoregressive sketch generation framework that achieves, for the first time, flexible stroke-level manipulation during the drawing process through a three-stage hierarchical pipeline (predicting stroke embeddings → determining canvas positions → generating drawing action sequences). The method significantly outperforms SketchEdit on tasks including stroke replacement, erasure, and extension.
 
 **[GRIM: Task-Oriented Grasping with Conditioning on Generative Examples](grim_task-oriented_grasping_with_conditioning_on_generative_examples.md)**
 
@@ -159,21 +139,13 @@ item_total: 36
 
 :   This paper formalizes the **Human-Centric Open-Future Task Discovery (HOTD)** problem—identifying tasks that reduce human burden across multiple possible futures in scenarios where human intentions are concurrent and dynamically evolving. The authors construct the HOTD-Bench benchmark (2K+ real-world videos) and propose **CMAST** (Collaborative Multi-Agent Search Tree), which substantially outperforms existing LMM baselines via a multi-agent system and a scalable search tree.
 
-**[Human Cognitive Biases in Explanation-based Interaction: The Case of Within and Between Session Order Effect](human_cognitive_biases_in_explanation-based_interaction_the_case_of_within_and_b.md)**
+**[ManiLong-Shot: Interaction-Aware One-Shot Imitation Learning for Long-Horizon Manipulation](manilong-shot_interaction-aware_one-shot_imitation_learning_for_long-horizon_man.md)**
 
-:   This paper systematically evaluates the impact of **order effects** on Explanatory Interactive Learning (XIL) through two large-scale user studies (713 participants in total). The findings show that order effects have a **limited and inconsistent** influence on user feedback quality, with a statistically significant but weak effect observed only within sessions (not between sessions). The overall conclusion is that order effects do not constitute a major obstacle to the practical deployment of XIL.
+:   This paper proposes ManiLong-Shot, a framework comprising three modules—interaction-aware task decomposition, invariant region prediction, and region matching—that generalizes to 20 unseen long-horizon manipulation tasks after training on only 10 short-horizon tasks, achieving a one-shot imitation success rate of 30.2%, a relative improvement of 22.8% over the prior state of the art.
 
-**[LaF-GRPO: In-Situ Navigation Instruction Generation for the Visually Impaired via GRPO with LLM-as-Follower Reward](laf-grpo_in-situ_navigation_instruction_generation_for_the_visually_impaired_via.md)**
+**[Object-Centric Latent Action Learning](object-centric_latent_action_learning.md)**
 
-:   This paper proposes the LaF-GRPO framework, which employs an LLM to simulate the responses of visually impaired users to navigation instructions as a reward signal. By applying GRPO-based post-training to a VLM, the framework generates more precise and safer navigation instructions for the visually impaired. The authors also construct the NIG4VI benchmark dataset comprising 27k samples.
-
-**[More Than Irrational: Modeling Belief-Biased Agents](more_than_irrational_modeling_belief-biased_agents.md)**
-
-:   This paper proposes a computational rationality (CR) user model framework that interprets seemingly "irrational" human behavior as optimal decision-making under limited memory (belief bias). A nested particle filter (NPF) is used to online-infer the user's latent memory bound parameter $\theta$ and biased belief state $\tilde{b}$. The posterior mean (PM) error is reduced by 90% within 45 steps, and adaptive AI assistant policies are demonstrated within an assistive POMDP.
-
-**[Neural Graph Navigation for Intelligent Subgraph Matching](neural_graph_navigation_for_intelligent_subgraph_matching.md)**
-
-:   This paper proposes NeuGN (Neural Graph Navigation), the first framework to integrate generative neural navigation into the core enumeration phase of subgraph matching. By combining QSExtractor—which extracts structural signals from query graphs—with GGNavigator—which replaces brute-force enumeration with structure-aware candidate node prioritization—NeuGN reduces First Match Steps by up to 98.2% while guaranteeing completeness.
+:   This paper proposes an object-centric latent action learning framework that leverages self-supervised object decomposition (VideoSAUR) to disentangle task-relevant entities from visual distractions (e.g., dynamic backgrounds), reducing the performance degradation of LAPO on distracted videos by approximately 50%. A linear action probe is used to automatically select control-relevant slots.
 
 **[PanoNav: Mapless Zero-Shot Object Navigation with Panoramic Scene Parsing and Dynamic Memory](panonav_mapless_zero-shot_object_navigation_with_panoramic_scene_parsing_and_dyn.md)**
 
@@ -183,49 +155,53 @@ item_total: 36
 
 :   This paper proposes an LLM-driven bidirectional coupling generation framework that iteratively generates large-scale synthetic datasets — encompassing household environment configurations, human activities, and human-robot interactions (HRI) — through a cycle in which persona profiles drive environment generation and environment semantics in turn guide activity generation, targeting the training of home robots.
 
-**[Recursive Visual Imagination and Adaptive Linguistic Grounding for Vision Language Navigation](recursive_visual_imagination_and_adaptive_linguistic_grounding_for_vision_langua.md)**
+**[RLSLM: A Hybrid Reinforcement Learning Framework Aligning Rule-Based Social Locomotion Model with Human Social Norms](rlslm_a_hybrid_reinforcement_learning_framework_aligning_rule-based_social_locom.md)**
 
-:   This paper proposes a VLN policy based on Implicit Scene Representation (ISR), which compresses historical trajectories into a fixed-size compact neural grid via Recursive Visual Imagination (RVI) to learn high-level scene priors, and employs Adaptive Linguistic Grounding (ALG) to finely align different semantic components of navigation instructions with different grid cells. The approach achieves state-of-the-art performance on two continuous-environment navigation benchmarks: R2R-CE and ObjectNav.
-
-**[RENEW: Risk- and Energy-Aware Navigation in Dynamic Waterways](renew_risk-_and_energy-aware_navigation_in_dynamic_waterways.md)**
-
-:   This paper proposes RENEW, a global path planner for autonomous surface vessels (ASVs) operating in dynamic water current (ocean current) environments. It introduces a unified risk- and energy-aware strategy via adaptive no-go zone identification, best-effort contingency planning, and a hierarchical architecture based on Constrained Delaunay Triangulation (CDT), achieving zero collisions in emergency maneuver tests.
+:   This paper proposes RLSLM, a hybrid framework that embeds a psychology-experiment-driven rule-based Social Locomotion Model (SLM) into the reward function of reinforcement learning, enabling agents to efficiently learn navigation policies aligned with human social norms in crowd environments. VR experiments demonstrate that RLSLM achieves significantly higher comfort ratings than existing rule-based baselines.
 
 **[Robust Out-of-Order Retrieval for Grid-Based Storage at Maximum Capacity](robust_out-of-order_retrieval_for_grid-based_storage_at_maximum_capacity.md)**
 
 :   For the problem of uncertain retrieval order in fully loaded 2D grid-based storage systems, this paper proposes the k-bounded perturbation uncertainty model, proves that $\Theta(k)$ columns is both necessary and sufficient for zero relocation, and presents an efficient robust storage solver and greedy retrieval strategy. The approach nearly eliminates relocations when $k \leq 0.5c$ and still reduces relocations by 50%+ when $k$ reaches $c$.
 
+**[Scalable Multi-Objective and Meta Reinforcement Learning via Gradient Estimation](scalable_multi-objective_and_meta_reinforcement_learning_via_gradient_estimation.md)**
+
+:   This paper proposes PolicyGradEx, which efficiently estimates policy adaptation performance on arbitrary task subsets via first-order gradient approximation and surrogate models, constructs a task affinity matrix, and performs task grouping through convex optimization. PolicyGradEx outperforms state-of-the-art baselines by an average of 16% on multi-objective RL and meta-RL benchmarks, with a speedup of up to 26×.
+
 **[SemanticVLA: Semantic-Aligned Sparsification and Enhancement for Efficient Robotic Manipulation](semanticvla_semantic-aligned_sparsification_and_enhancement_for_efficient_roboti.md)**
 
 :   This paper proposes the SemanticVLA framework, which integrates three modules — a Semantic-guided Dual-encoder Pruner (SD-Pruner), a Semantic-complementary Hierarchical Fuser (SH-Fuser), and a Semantic-conditioned Action Coupler (SA-Coupler) — to substantially reduce visual redundancy while enhancing instruction–vision–action alignment. On the LIBERO benchmark, SemanticVLA achieves a 97.7% success rate, surpassing OpenVLA by 21.1%, while reducing training cost and inference latency by 3.0× and 2.7×, respectively.
 
-**[Shadows in the Code: Exploring the Risks and Defenses of LLM-based Multi-Agent Software Development Systems](shadows_in_the_code_exploring_the_risks_and_defenses_of_llm-.md)**
+**[Sim-to-Real: An Unsupervised Noise Layer for Screen-Camera Watermarking Robustness](sim-to-real_an_unsupervised_noise_layer_for_screen-camera_watermarking_robustnes.md)**
 
-:   The first systematic security analysis of LLM-based multi-agent software development systems (ChatDev/MetaGPT/AgentVerse): proposes the IMBIA attack framework covering two threat scenarios (malicious user + benign agents / benign user + malicious agent) and 12 malicious behaviors across 5 malware families, achieving an attack success rate (ASR) of up to 93% on ChatDev, with the Adv-IMBIA adversarial defense reducing ASR by 40–73%.
+:   This paper proposes the Simulation-to-Real (S2R) framework, which introduces a novel two-stage noise approximation strategy of "mathematical modeling → unsupervised domain transfer": a mathematical transform $T$ first maps clean images to a known noise domain $\mathcal{C}$, and an unsupervised image-to-image network $G$ then maps $\mathcal{C}$ to the real screen-camera (SC) noise domain $\mathcal{U}$. Without requiring paired data, S2R accurately approximates real SC noise and achieves state-of-the-art watermarking robustness (BER reduced by 30–60%) and image quality (PSNR 42.27 dB / SSIM 0.962) across multiple devices, angles, and distances.
 
 **[SpatialActor: Exploring Disentangled Spatial Representations for Robust Robotic Manipulation](spatialactor_exploring_disentangled_spatial_representations_for_robust_robotic_m.md)**
 
 :   This paper proposes SpatialActor, a framework that explicitly disentangles semantic and geometric representations. It introduces a Semantic-Guided Geometry Module (SGM) that adaptively fuses noisy depth features with a pretrained depth estimation expert prior, and a Spatial Transformer (SPT) that encodes low-level spatial position cues. SpatialActor achieves 87.4% success rate on 50+ RLBench tasks (SOTA +6.0%) and outperforms RVT-2 by 19.4% under heavy-noise conditions.
 
+**[Test-driven Reinforcement Learning in Continuous Control](test-driven_reinforcement_learning_in_continuous_control.md)**
+
+:   This paper proposes the Test-driven Reinforcement Learning (TdRL) framework, which replaces a single reward function with multiple test functions — pass-fail tests defining optimality criteria and indicative tests guiding learning — to represent task objectives. A return function is learned via lexicographic-heuristic trajectory comparison, matching or surpassing hand-crafted reward methods on the DeepMind Control Suite while naturally supporting multi-objective optimization.
+
 **[Theory of Mind for Explainable Human-Robot Interaction](theory_of_mind_for_explainable_human-robot_interaction.md)**
 
 :   This paper proposes positioning Theory of Mind (ToM) as a form of Explainable AI (XAI), systematically evaluates existing ToM research in HRI using the seven criteria of the VXAI framework, identifies critical deficiencies (most notably the absence of fidelity assessment), and advocates for integrating ToM into XAI frameworks to achieve user-oriented explanations.
-
-**[To Align or Not to Align: Strategic Multimodal Representation Alignment for Optimal Performance](to_align_or_not_to_align_strategic_multimodal_representation_alignment_for_optim.md)**
-
-:   By introducing a controllable contrastive learning module to systematically regulate alignment strength $\lambda$, and employing the Partial Information Decomposition (PID) framework to quantify the redundancy–uniqueness–synergy structure between modalities, this work reveals that the utility of explicit alignment is highly data-dependent: alignment is beneficial when redundancy dominates, harmful when uniqueness dominates, and an optimal $\lambda^*$ exists in mixed scenarios.
 
 **[TouchFormer: A Robust Transformer-based Framework for Multimodal Material Perception](touchformer_a_robust_transformer-based_framework_for_multimodal_material_percept.md)**
 
 :   This paper proposes TouchFormer, a robust multimodal fusion framework that achieves reliable material perception under vision-impaired conditions through three complementary modules: Modality-Adaptive Gating (MAG), intra- and inter-modal attention mechanisms, and Cross-Instance Embedding Regularization (CER). The approach is validated in a robotic sorting experiment under simulated fire scenarios.
 
+**[Towards Affordance-Aware Robotic Dexterous Grasping with Human-like Priors](towards_affordance-aware_robotic_dexterous_grasping_with_human-like_priors.md)**
+
+:   This paper proposes AffordDex, a two-stage framework: the first stage pre-trains human hand motion priors (natural motion trajectories) via imitation learning; the second stage refines the policy through reinforcement learning using a residual module and VLM-guided Negative Affordance Annotation (NAA), achieving dexterous robotic grasping that is both human-like in naturalness and functionally correct (e.g., avoiding the blade and grasping the handle of a knife). The method significantly outperforms state-of-the-art approaches across multiple generalization levels.
+
 **[Towards Reinforcement Learning from Neural Feedback: Mapping fNIRS Signals to Agent Performance](towards_reinforcement_learning_from_neural_feedback_mapping_.md)**
 
 :   This paper proposes the NEURO-LOOP framework, which leverages fNIRS (functional near-infrared spectroscopy) brain signals as implicit neural feedback to evaluate RL agent performance. The authors release an fNIRS dataset spanning 25 subjects × 3 domains × 6 conditions. Classification F1 reaches 67% (binary) / 46% (multi-class), with cross-subject fine-tuning yielding improvements of 17% and 41% respectively, laying the groundwork for Reinforcement Learning from Neural Feedback (RLNF).
 
-**[Unintended Misalignment from Agentic Fine-Tuning: Risks and Mitigation](unintended_misalignment_from_agentic_fine-tuning_risks_and_m.md)**
+**[TTF-VLA: Temporal Token Fusion via Pixel-Attention Integration for Vision-Language-Action Models](ttf-vla_temporal_token_fusion_via_pixel-attention_integratio.md)**
 
-:   This paper demonstrates that fine-tuning LLMs on benign agentic data causes unintended safety misalignment (attack success rate increases by 32–38%), and proposes PING (Prefix Injection Guard)—an iterative generate-and-evaluate approach that automatically discovers natural language prefixes to guide fine-tuned agents toward refusing harmful requests, achieving an average refusal rate improvement of 66% (Web) and 44% (Code) while preserving task performance (degradation of only 1.8%).
+:   TTF-VLA proposes a training-free temporal token fusion method that selectively reuses visual tokens from historical frames via a dual-dimension mechanism combining grayscale pixel difference and attention-based semantic detection, improving inference quality of VLA models on robotic manipulation tasks with an average gain of 4.0 percentage points on LIBERO.
 
 **[UrbanNav: Learning Language-Guided Urban Navigation from Web-Scale Human Trajectories](urbannav_learning_language-guided_urban_navigation_from_web-scale_human_trajecto.md)**
 

@@ -125,8 +125,8 @@ PALD maintains high jump rates in high dimensions while ALD/LD degrade significa
 
 - [\[ICML 2026\] Conditional Diffusion Sampling](conditional_diffusion_sampling.md)
 - [\[CVPR 2026\] Thinking in Dynamics: How Multimodal Large Language Models Perceive, Track, and Reason Dynamics in Physical 4D World](../../CVPR2026/multimodal_vlm/thinking_in_dynamics_how_multimodal_large_language_models_perceive_track_and_rea.md)
-- [\[CVPR 2026\] Mixture of States (MoS): Routing Token-Level Dynamics for Multimodal Generation](../../CVPR2026/multimodal_vlm/mos_mixture_of_states_multimodal_generation.md)
 - [\[ICML 2026\] FreeRet: MLLMs as Training-Free Retrievers](freeret_mllms_as_training-free_retrievers.md)
+- [\[CVPR 2026\] Mixture of States (MoS): Routing Token-Level Dynamics for Multimodal Generation](../../CVPR2026/multimodal_vlm/mos_mixture_of_states_multimodal_generation.md)
 - [\[ICML 2026\] Model-Dowser: Data-Free Importance Probing to Mitigate Catastrophic Forgetting in Multimodal Large Language Models](model-dowser_data-free_importance_probing_to_mitigate_catastrophic_forgetting_in.md)
 
 </div>

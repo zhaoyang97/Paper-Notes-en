@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FRISM: Fine-Grained Reasoning Injection via Subspace-Level Model Merging for Vision–Language Models
 description: >-
-  [ICML 2026][Model Compression][Model Merging] FRISM refines "VLM × LRM merging" from layer-level granularity to SVD subspace-level granularity. It utilizes the SVD subspaces of LRM task vectors as reasoning priors and em…
+  [ICML 2026][Model Compression][Model Merging] FRISM refines "VLM × LRM merging" from the layer level to the SVD subspace level: it uses the SVD subspaces of LRM task vectors as reasoning priors…
 tags:
   - "ICML 2026"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Vision Preservation"
   - "Unlabeled Self-Distillation"
 date: 2026-05-08
-content_hash: ff7ac246acf9401f
+content_hash: 7e783cfb38e334cd
 ---
 
 # FRISM: Fine-Grained Reasoning Injection via Subspace-Level Model Merging for Vision–Language Models
@@ -24,52 +24,55 @@ content_hash: ff7ac246acf9401f
 **Keywords**: Model Merging, SVD Subspace, Reasoning Injection, Vision Preservation, Unlabeled Self-Distillation
 
 ## TL;DR
-FRISM refines "VLM × LRM merging" from layer-level granularity to SVD subspace-level granularity. It utilizes the SVD subspaces of LRM task vectors as reasoning priors and employs an unlabeled self-distillation process (preserving vision via KL-divergence + maximizing spectral magnitude for reasoning absorption) with learnable gates to find optimal injection intensities, significantly enhancing VL reasoning performance without substantial vision degradation.
+FRISM refines "VLM × LRM merging" from the layer level to the SVD subspace level: it uses the SVD subspaces of LRM task vectors as reasoning priors, then employs an unlabeled self-distillation (with learnable gating only, KL for vision preservation + spectral norm maximization for reasoning absorption) to find the optimal injection strength, thereby significantly improving VL reasoning performance without notable vision degradation.
 
 ## Background & Motivation
-**Background**: VLMs (Qwen2.5-VL, LLaVA, InternVL, etc.) possess strong general capabilities but exhibit clear reasoning shortcomings. LRMs (DeepSeek-R1, OpenAI-o1) excel in math, logic, and programming tasks. Transferring reasoning from LRMs to VLMs follows two paths: ① Large-scale retraining based on RL/SFT; ② Model Merging, which has near-zero training cost and requires no labeled data, thus being widely explored (e.g., BR2V, FRANK, IP-Merging).
+**Background**: VLMs (Qwen2.5-VL, LLaVA, InternVL, etc.) have strong general capabilities but clear reasoning weaknesses; LRMs (DeepSeek-R1, OpenAI-o1) excel at math/logic/programming tasks. There are two main approaches to transfer LRM reasoning to VLMs: (1) large-scale retraining via RL/SFT; (2) model merging. The latter has near-zero training cost and requires no labeled data, making it widely adopted (e.g., BR2V, FRANK, IP-Merging).
 
-**Limitations of Prior Work**: Existing merging methods primarily operate at the "layer" granularity—applying a unified mixing coefficient per layer like $\lambda_{\text{vlm}}\tau_{\text{vlm}}+\lambda_{\text{lrm}}\tau_{\text{lrm}}$. Experiments in Figure 2 show that tuning a single coefficient always results in a vision–reasoning trade-off: "either vision drops, or reasoning remains weak."
+**Limitations of Prior Work**: Existing merging methods mostly operate at the "layer" level—each layer is merged using a single mixing coefficient like $\lambda_{\text{vlm}}\tau_{\text{vlm}}+\lambda_{\text{lrm}}\tau_{\text{lrm}}$. Experiments in Figure 2 show that whether using Task Arithmetic or IP-Merging, tuning a single coefficient always leads to a clear vision–reasoning trade-off: either vision drops or reasoning is weak.
 
-**Key Challenge**: By performing SVD on the task vectors of DeepSeek-R1-Distill-Qwen-7B and injecting them into Qwen2.5-VL rank-by-rank, the authors found that "optimal scaling coefficients vary significantly across different rank subspaces" (Figure 3). Some subspaces peak at $\lambda=0.1$, while others require much higher values. A layer-wide $\lambda$ inevitably entangles this heterogeneity, introducing harmful vision noise alongside useful reasoning. In other words, **the layer is not the atomic unit of capability**; the subspace is.
+**Key Challenge**: By performing SVD on DeepSeek-R1-Distill-Qwen-7B task vectors and injecting them rank by rank into Qwen2.5-VL, the authors find that "the optimal scaling coefficients for different rank subspaces vary greatly" (Figure 3): some subspaces peak at $\lambda=0.1$, others require higher values; a single layer-wise $\lambda$ inevitably entangles this heterogeneity, introducing both useful reasoning and harmful vision noise. In other words, **layers are not atomic units of capability—subspaces are**.
 
-**Goal**: To refine merging granularity to the SVD subspace level, allowing the model to automatically determine which subspaces should be strongly injected and which should be suppressed, without relying on any VL reasoning labels.
+**Goal**: Refine merging granularity to the SVD subspace level, allowing the model to automatically determine which subspaces should be strongly injected and which should be suppressed, all without relying on any VL reasoning labels.
 
-**Key Insight**: Treat the SVD decomposition of LRM task vectors directly as "reasoning prior subspaces." Freeze $\mathbf{U}, \mathbf{S}, \mathbf{V}$ and learn only a per-rank gate vector $\mathbf{g}^l$. Use "unlabeled self-distillation + spectral magnitude maximization" to allow the gates to automatically find the equilibrium between "maximum injection" and "minimum vision loss."
+**Key Insight**: Directly use the SVD decomposition of LRM task vectors as "reasoning prior subspaces," freeze $\mathbf{U},\mathbf{S},\mathbf{V}$, and only learn a per-rank gating vector $\mathbf{g}^l$; then, through "unlabeled self-distillation + spectral norm maximization," let the gating automatically find the balance between "maximum injection + minimal vision loss."
 
-**Core Idea**: Open gates for each SVD subspace within every layer. The "dual-objective + subspace gating" automatically filters out subspaces that damage vision while retaining reasoning subspaces orthogonal to vision.
+**Core Idea**: At each layer, open gates for each SVD subspace—"dual objectives + subspace gating" automatically filter out subspaces that harm vision, retaining reasoning subspaces orthogonal to vision.
 
 ## Method
 
 ### Overall Architecture
-The FRISM workflow consists of two stages. **Stage 1 (Offline Decomposition and Initialization)**: Define task vectors for LRM and VLM as $\tau_{\text{vlm}}=\theta_{\text{vlm}}-\theta_{\text{base}}$ and $\tau_{\text{lrm}}=\theta_{\text{lrm}}-\theta_{\text{base}}$. Perform SVD on $\tau_{\text{lrm}}^l$ for each linear layer to obtain $\mathbf{U}^{(l)}, \mathbf{S}^{(l)}, \mathbf{V}^{(l)\top}$ and freeze them. Introduce a zero-initialized learnable gate $\mathbf{g}^l\in\mathbb{R}^r$ for each layer. **Stage 2 (Online Injection and Training)**: Use the merged model $\theta_{\text{merged}}^l=\theta_{\text{vlm}}^l+\lambda_{\text{lrm}}\cdot\mathbf{U}^{(l)}(\sigma(\mathbf{g}^l)\odot\mathbf{S}^{(l)})\mathbf{V}^{(l)\top}$ for unlabeled self-distillation. Using the original VLM as the teacher, encourage the student to match teacher outputs (KL distance) on pure vision perception data (e.g., VizWiz VQA). Simultaneously, add a loss term to maximize the spectral magnitude of the injected subspaces. This training updates only the gate $\mathbf{g}^l$, which is extremely small in scale and converges quickly.
+FRISM consists of two steps. **Stage 1 (Offline Decomposition & Initialization)**: Define LRM and VLM task vectors as $\tau_{\text{vlm}}=\theta_{\text{vlm}}-\theta_{\text{base}}$, $\tau_{\text{lrm}}=\theta_{\text{lrm}}-\theta_{\text{base}}$; perform SVD on each linear layer's $\tau_{\text{lrm}}^l$ to obtain $\mathbf{U}^{(l)},\mathbf{S}^{(l)},\mathbf{V}^{(l)\top}$, which are frozen; introduce a zero-initialized learnable gating $\mathbf{g}^l\in\mathbb{R}^r$ for each layer. **Stage 2 (Online Injection & Training)**: The merged model is $\theta_{\text{merged}}^l=\theta_{\text{vlm}}^l+\lambda_{\text{lrm}}\cdot\mathbf{U}^{(l)}(\sigma(\mathbf{g}^l)\odot\mathbf{S}^{(l)})\mathbf{V}^{(l)\top}$, which undergoes unlabeled self-distillation: using the original VLM as teacher, the student is trained on pure vision perception data (e.g., VizWiz VQA) to match the teacher's output (KL divergence); an additional loss maximizes the spectral norm of the injected subspace. Only the gating $\mathbf{g}^l$ is updated, making the process lightweight and fast to converge.
 
 ### Key Designs
 
 1. **Subspace-Level Merging Paradigm (Eq. 7)**:
-    - **Function**: Assigns an independent scaling coefficient to each of the $r$ subspaces within a layer, fundamentally escaping the coupling dilemma of "one $\lambda$ per layer."
-    - **Mechanism**: After performing SVD on $\tau_{\text{lrm}}^l$ and freezing $\mathbf{U}, \mathbf{S}, \mathbf{V}$, only $\mathbf{g}^l\in\mathbb{R}^r$ is learned. After passing through a Sigmoid, $\sigma(\mathbf{g}^l)\in(0,1)^r$ is element-wise multiplied with original singular values $\mathbf{S}$ to form "effective singular values" $\mathbf{S}_{\text{eff}}=\sigma(\mathbf{g}^l)\odot\mathbf{S}$. The merged weights are $\theta_{\text{merged}}^l=\theta_{\text{vlm}}^l+\lambda_{\text{lrm}}\,\mathbf{U}^{(l)}\mathbf{S}_{\text{eff}}^{(l)}\mathbf{V}^{(l)\top}$.
-    - **Design Motivation**: The low-rank structure of LRM task vectors aligns with empirical observations that "reasoning concentrates on few directions" (Cai 2025, Ping 2024, Sharma 2024). Keeping the basis fixed while modifying intensity preserves the semantic direction of reasoning while allowing fine-grained adjustment—a classic "frozen basis, learned spectrum" approach.
+
+    - **Function**: Each of the $r$ subspaces within a layer has an independent scaling coefficient, fundamentally breaking the coupling of "one $\lambda$ per layer."
+    - **Mechanism**: After SVD on $\tau_{\text{lrm}}^l$, freeze $\mathbf{U},\mathbf{S},\mathbf{V}$, and only learn $\mathbf{g}^l\in\mathbb{R}^r$; after Sigmoid, $\sigma(\mathbf{g}^l)\in(0,1)^r$ is elementwise multiplied with the original singular values $\mathbf{S}$ to form the "effective singular values" $\mathbf{S}_{\text{eff}}=\sigma(\mathbf{g}^l)\odot\mathbf{S}$. The merged weights are $\theta_{\text{merged}}^l=\theta_{\text{vlm}}^l+\lambda_{\text{lrm}}\,\mathbf{U}^{(l)}\mathbf{S}_{\text{eff}}^{(l)}\mathbf{V}^{(l)\top}$.
+    - **Design Motivation**: The low-rank structure of LRM task vectors aligns with the empirical observation that "reasoning is concentrated in a few directions" (Cai 2025, Ping 2024, Sharma 2024); keeping the basis fixed and only adjusting the strength preserves the semantic direction of reasoning while allowing fine-grained control over the intensity per subspace—a classic "frozen basis, learn spectrum" approach.
 
 2. **Unlabeled Self-Distillation: Vision Preservation Objective (Eq. 8)**:
-    - **Function**: Constrains the merged model to avoid output distribution shifts on pure vision tasks in the absence of VL reasoning labels, keeping vision degradation within acceptable bounds.
-    - **Mechanism**: The teacher is the original VLM $\theta_{\text{vlm}}$ (frozen), and the student is the merged model $\theta_{\text{vlrm}}(\mathbf{g})$. Minimize KL on a calibration dataset $\mathcal{D}$ (e.g., VizWiz VQA): $\mathcal{L}_{\text{distill}}=\mathbb{E}_{x\sim\mathcal{D}}\mathrm{KL}\!\left(P(\cdot|x;\theta_{\text{vlm}})\,\|\,P(\cdot|x;\theta_{\text{vlrm}})\right)$.
-    - **Design Motivation**: VL reasoning data is scarce and unevenly distributed; direct supervision is risky. Self-distillation using the original VLM as a reference transforms "vision preservation" into a data-cheap, clean-objective constraint, turning the merging problem into "finding the strongest reasoning injection within a KL radius."
 
-3. **Spectral Magnitude Maximization for Reasoning Absorption + Total Objective (Eq. 9–10)**:
-    - **Function**: Prevents gates from collapsing to a trivial "zero injection" solution by actively encouraging $\mathbf{S}_{\text{eff}}$ to be as large as possible, stacking as much LRM subspace into the VLM as possible.
-    - **Mechanism**: Define $\mathcal{L}_{\text{inject}}=-\sum_l\|\mathbf{S}_{\text{eff}}^{(l)}\|^2=-\sum_l\|\sigma(\mathbf{g}^{(l)})\odot\mathbf{S}^{(l)}\|^2$; stronger injection results in lower loss. The combined objective is $\mathcal{L}=\mathcal{L}_{\text{distill}}+\alpha\mathcal{L}_{\text{inject}}$. A second-order expansion illustrates that under the Hessian $\mathbf{H}=\nabla^2\mathcal{L}_{\text{vis}}$ and the assumption of decoupled SVD subspaces, $\partial\mathcal{L}/\partial\lambda_i\approx(h_i-2\alpha\|B_i\|_F^2)\lambda_i$. If the vision curvature $h_i$ of a subspace exceeds the injection benefit $2\alpha\|B_i\|_F^2$, the gate suppresses it; otherwise, it opens.
-    - **Design Motivation**: This combination acts as an "automatic filter": subspaces orthogonal to vision perception (low $h_i$) are permitted, while high-curvature subspaces damaging to vision are closed. This mechanism solves the trade-off automatically using data priors and spectral structure without reasoning supervision.
+    - **Function**: Without any VL reasoning labels, constrain the merged model to avoid output distribution drift on pure vision tasks, keeping vision degradation within acceptable bounds.
+    - **Mechanism**: The teacher is the original VLM $\theta_{\text{vlm}}$ (frozen), the student is the current merged model $\theta_{\text{vlrm}}(\mathbf{g})$; on the calibration dataset $\mathcal{D}$ (VizWiz VQA in the paper), minimize KL: $\mathcal{L}_{\text{distill}}=\mathbb{E}_{x\sim\mathcal{D}}\mathrm{KL}\!\left(P(\cdot|x;\theta_{\text{vlm}})\,\|\,P(\cdot|x;\theta_{\text{vlrm}})\right)$.
+    - **Design Motivation**: VL reasoning data is scarce and unevenly distributed, making direct supervision risky; using self-distillation with the original VLM as a reference turns "vision preservation" into a cheap, clean constraint, reframing merging as "finding the strongest reasoning injection within a KL radius."
+
+3. **Spectral Norm Maximization for Reasoning Absorption + Overall Objective (Eq. 9–10)**:
+
+    - **Function**: Prevent the gating from collapsing to the trivial "inject nothing" solution, actively encouraging $\mathbf{S}_{\text{eff}}$ to be as large as possible, i.e., to inject as much of the LRM subspace as possible into the VLM.
+    - **Mechanism**: Define $\mathcal{L}_{\text{inject}}=-\sum_l\|\mathbf{S}_{\text{eff}}^{(l)}\|^2=-\sum_l\|\sigma(\mathbf{g}^{(l)})\odot\mathbf{S}^{(l)}\|^2$; stronger injection yields lower loss. The total loss is $\mathcal{L}=\mathcal{L}_{\text{distill}}+\alpha\mathcal{L}_{\text{inject}}$. The paper further provides a second-order expansion: under the Hessian $\mathbf{H}=\nabla^2\mathcal{L}_{\text{vis}}$ and the assumption of "approximate decoupling of different SVD subspaces," $\partial\mathcal{L}/\partial\lambda_i\approx(h_i-2\alpha\|B_i\|_F^2)\lambda_i$; thus, if a subspace's vision curvature term $h_i$ exceeds the injection benefit $2\alpha\|B_i\|_F^2$, the gating will suppress it; otherwise, it will be allowed.
+    - **Design Motivation**: This combination is equivalent to "automatic filtering": subspaces orthogonal to vision perception (low $h_i$) are allowed, while high-curvature, vision-damaging subspaces are closed. The entire mechanism requires no reasoning supervision, achieving automatic trade-off resolution via data priors and spectral structure.
 
 ### Loss & Training
-Only the gate $\mathbf{g}^l$ is trained, representing negligible parameters compared to the base model. The total loss $\mathcal{L}=\mathcal{L}_{\text{distill}}+\alpha\mathcal{L}_{\text{inject}}$, where $\alpha$ controls injection intensity. $\mathcal{L}_{\text{inject}}$ is normalized before training due to scale differences across models (Appendix H). Only the LLM portion of the VLM layers participates in merging; the vision tower and projector remain unchanged.
+Only the gating $\mathbf{g}^l$ is trained, with negligible parameter count compared to the original model; the total loss is $\mathcal{L}=\mathcal{L}_{\text{distill}}+\alpha\mathcal{L}_{\text{inject}}$, where $\alpha$ controls injection strength. $\mathcal{L}_{\text{inject}}$ varies greatly across model scales, so normalization is performed before training (Appendix H). Only the LLM part of each VLM layer participates in merging; the vision tower and projection layers remain unchanged.
 
 ## Key Experimental Results
 
-### Main Results: Multi-benchmark Average Scores for Qwen2.5-VL × LRM Merging (Tab. 1)
+### Main Results: Multi-Benchmark Average Scores for Qwen2.5-VL × LRM Merging (Tab. 1)
 
-| Method | VL Reasoning Avg | VL Perception Avg |
-|--------|------------------|-------------------|
+| Method | VL Reasoning Avg. | VL Perception Avg. |
+|--------|-------------------|-------------------|
 | **3B Merging SmallThinker-3B** | | |
 | Base | 33.2 | 79.7 |
 | Task Arithmetic Best $\lambda$ | 33.0 | 79.8 |
@@ -78,50 +81,50 @@ Only the gate $\mathbf{g}^l$ is trained, representing negligible parameters comp
 | **FRISM** | **35.0 (+1.8)** | 79.7 |
 | **7B Merging DeepSeek-R1-Distill-Qwen-7B** | | |
 | Base | 47.4 | 82.9 |
-| Task Arithmetic Best $\lambda$ | 47.8 (collapsed at high $\lambda$) | 82.4 |
+| Task Arithmetic Best $\lambda$ | 47.8 (high $\lambda$ collapsed) | 82.4 |
 | Ties-Merging | 45.3 | 78.9 |
 | IP-Merging Best $T$ | 47.7 | 82.3 |
 | **FRISM** | **49.4 (+2.0)** | **83.0** |
 
-### Subspace-level Diagnosis (Fig. 3)
+### Subspace-Level Diagnosis (Figure 3)
 
-| Experiment | Key Finding |
-|------------|-------------|
-| Iterative injection of different rank subspaces | Different ranks peak at different $\lambda$ values, proving subspace heterogeneity and the suboptimality of "layer-wise single $\lambda$." |
-| Standard layer-wise merging | Shows a significant performance gap compared to subspace-level optimization; layer granularity cannot accommodate multiple optimal $\lambda$ values simultaneously. |
+| Experiment | Key Observation | Description |
+|------------|----------------|-------------|
+| Injecting individual rank subspaces | Different ranks peak at different $\lambda$ | Demonstrates subspace heterogeneity; "single $\lambda$ per layer" is necessarily suboptimal |
+| Standard layer-wise merging | Significant gap from subspace-level optimum | Layer granularity cannot accommodate multiple optimal $\lambda$ values simultaneously |
 
-### Vision–Reasoning Trade-off (Fig. 2)
-- In the 2D space of "VL Reasoning vs. VL Perception," Task Arithmetic and IP-Merging form a clear trade-off curve (improving one sacrifices the other).
-- FRISM jumps to the upper-right corner of the curve, proving the gate successfully filters out subspaces that damage vision while contributing little to reasoning.
+### Vision–Reasoning Trade-off (Figure 2)
+- In the "VL reasoning benchmark + VL perception benchmark" 2D space, Task Arithmetic / IP-Merging form a clear trade-off curve (either reasoning increases at the expense of vision, or vision is preserved but reasoning is weak).
+- FRISM jumps directly to the upper right of the curve, showing that gating successfully filters out subspaces that "harm vision but contribute little to reasoning."
 
 ### Key Findings
-- In 7B merging, Task Arithmetic experiences a "vision cliff" starting from $\lambda=0.15$ (POPE drops from 86.4 to 73.9). FRISM maintains vision performance comparable to the Base while gaining ~2pt in reasoning—direct evidence of the success of subspace-level refinement.
-- Removing $\mathcal{L}_{\text{inject}}$ causes gates to shrink toward negative infinity (no injection), proving that "active amplification" is necessary as an observable proxy for reasoning in the absence of labels.
-- The second-order expansion $\partial\mathcal{L}/\partial\lambda_i\approx(h_i-2\alpha\|B_i\|_F^2)\lambda_i$ provides interpretable filtering rules: high-curvature vision directions are suppressed, while low-curvature directions are enabled, corroborating the observations of subspace heterogeneity.
+- For 7B merging, Task Arithmetic shows a "cliff-like drop in vision" (POPE from 86.4 → 73.9) at $\lambda=0.15$, while FRISM achieves a 2pt average reasoning gain with almost no vision metric loss compared to Base—direct evidence of the advantage of subspace-level refinement.
+- Removing $\mathcal{L}_{\text{inject}}$ causes the gating to collapse to negative infinity (no injection), proving the necessity of this "active amplification" term—it serves as an observable proxy for reasoning in the absence of reasoning labels.
+- The second-order expansion $\partial\mathcal{L}/\partial\lambda_i\approx(h_i-2\alpha\|B_i\|_F^2)\lambda_i$ provides an interpretable filtering rule: high-vision-curvature directions are suppressed, low-curvature directions are allowed, corroborating the subspace heterogeneity observed in Figure 3.
 
 ## Highlights & Insights
-- The reframing that "layers are not atomic units of capability, SVD subspaces are" is very sharp. Once accepted, existing "single $\lambda$" merging methods become suboptimal special cases, making FRISM a general solution.
-- Using a minimalist "frozen basis, learned spectrum" gating structure reduces training costs to nearly zero while remaining universal and easy to plug into any VLM, which is highly beneficial for smaller research teams.
-- The combination of "vision preservation + spectral maximization" acts as an implicit subspace filter that distinguishes "vision-neutral" from "vision-destructive" directions without reasoning labels. This can be extended to other capabilities like safety alignment or coding.
-- The analytical derivation of $\partial\mathcal{L}/\partial\lambda_i$ provides mechanism-level interpretability, which is more persuasive than empirical comparisons alone.
+- The reframing that "layers are not atomic units of capability, SVD subspaces are" is particularly sharp: once this assumption is accepted, all existing "single $\lambda$" merging methods become suboptimal special cases, and FRISM naturally emerges as the general solution in this space.
+- The minimalist "frozen basis, learn spectrum" gating structure reduces training cost to nearly zero and is plug-and-play for any VLM, making it especially friendly for small and medium teams.
+- The "vision preservation + spectral norm maximization" dual-objective acts as an implicit subspace filter, distinguishing "vision-irrelevant" from "vision-damaging" directions without reasoning labels; this mechanism can be extended to inject other capabilities (e.g., safety alignment, coding ability) as long as the corresponding capability can be represented as a task vector on the base model.
+- The analytic derivation of $\partial\mathcal{L}/\partial\lambda_i$ in the paper provides mechanism-level interpretability, which is more convincing than mere experimental comparison.
 
 ## Limitations & Future Work
-- Vision preservation relies on "KL on VizWiz." The degree of protection for other tasks (grounding, OCR, video) depends on calibration data distribution; narrow calibration data might cause other vision capabilities to drift.
-- "Approximate decoupling of SVD subspaces in vision loss" is a key analytical assumption, but the Hessian may not be perfectly diagonal in practice.
-- SVD is currently performed independently per linear layer without cross-layer coordination. Layer-wise subspaces might have synergies or conflicts; future work could explore "layer-subspace joint sparse" merging.
-- Only the LLM Reasoning $\to$ VLM direction was evaluated; the reverse (VLM $\to$ LRM) or multi-way merging has yet to be verified.
+- Vision preservation relies on "KL on VizWiz," and the degree of protection for other vision tasks (grounding, OCR, video) depends on the calibration data distribution; if calibration data is narrow, other vision capabilities may drift unnoticed.
+- The key theoretical assumption is "approximate decoupling of different SVD subspaces in vision loss," but in practice the Hessian may not be strictly diagonal; deviation from this assumption reduces the interpretability of the gating.
+- Currently, SVD is performed independently for each linear layer, without cross-layer joint consideration; there may be synergy/conflict between layer-wise subspaces, suggesting future work on "layer-subspace joint sparsity" merging forms.
+- Only LLM reasoning → VLM direction is evaluated; the reverse (VLM vision → LRM) or multi-way merging (multiple domain models into one base) remains untested.
 
 ## Related Work & Insights
-- **Vs. Task Arithmetic / Ties-Merging / DARE**: Traditional multi-task merging emphasizes reducing interference but uses layer-level scalar coefficients, failing to resolve "intra-layer capability aliasing." FRISM pushes the trade-off curve outward using gate vectors.
-- **Vs. IP-Merging / FRANK**: Both still operate at the "layer" granularity for selective merging. FRISM extends this logic by reducing granularity to the subspace and adding learning capabilities.
-- **Vs. LoRA / PiSSA**: PEFT learns low-rank deltas on top of a base. FRISM does the inverse: it decomposes an existing delta into SVD subspaces and decides which ones to include, similar to "subspace pruning" + "subspace weighting."
-- **Vs. SVDiff / SVD Distillation**: While model compression often keeps singular values fixed and changes the basis, FRISM keeps the basis fixed and changes singular values. This "frozen basis, learned spectrum" approach can be applied to compression, alignment, and safety tasks.
+- **vs Task Arithmetic / Ties-Merging / DARE**: Traditional multi-task merging emphasizes interference reduction but uses single-layer scalar coefficients, unable to address "intra-layer capability entanglement"; FRISM's gating vector pushes the trade-off curve outward.
+- **vs IP-Merging (layer-level similarity threshold) / FRANK (Taylor closed-form layer weights)**: Both still operate at the "layer" granularity for selective merging; FRISM lowers the granularity to subspace and adds learning capability, a natural extension of this line of thought.
+- **vs LoRA / PiSSA and other SVD-based PEFT**: PEFT learns a set of low-rank deltas on top of the basis; FRISM does the opposite—decomposing the trained delta into SVD subspaces and deciding which subspaces to inject, akin to "subspace pruning" + "subspace weighting."
+- **vs SVDiff / SVD distillation in model compression**: FRISM is the opposite of "fix singular values, change basis"; it "fixes the basis, changes singular values." This "frozen basis, learn spectrum" approach can be borrowed for compression, alignment, safety, and other tasks.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐⭐ Refining model merging to the SVD subspace level with an unlabeled self-distillation framework is both novel and self-consistent.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Covers 3B/7B/32B scales, multiple benchmarks, and various baselines, supplemented by subspace-level ablations.
-- **Writing Quality**: ⭐⭐⭐⭐ Motivation (Figs 2-3) is very clear, with theoretical analysis and experiments supporting each other.
-- **Value**: ⭐⭐⭐⭐⭐ Provides a low-cost, plug-and-play, highly interpretable framework for capability injection, significantly advancing the reasoning-vision fusion field.
+- Novelty: ⭐⭐⭐⭐⭐ Refines model merging from layer to SVD subspace granularity and provides an unlabeled self-distillation framework; innovative and self-consistent.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covers 3B/7B/32B scales, multiple benchmarks, and baselines, with subspace-level ablation.
+- Writing Quality: ⭐⭐⭐⭐ Motivation and derivation (Figures 2–3) are very clear, with theory and experiments mutually supporting; some derivations rely on the appendix.
+- Value: ⭐⭐⭐⭐⭐ Offers a low-cost, plug-and-play, highly interpretable capability injection framework, significantly advancing reasoning-vision integration.
 
 <!-- RELATED:START -->
 
@@ -133,7 +136,7 @@ Only the gate $\mathbf{g}^l$ is trained, representing negligible parameters comp
 - [\[ICML 2026\] Geo-Expert: Fine-tuning 8B Models into Expert-Level Geological Reasoning LLMs using LoRA](geo-expert_towards_expert-level_geological_reasoning_via_parameter-efficient_fin.md)
 - [\[ICML 2026\] Saliency-Aware Model Merging](saliency-aware_model_merging.md)
 - [\[ICML 2026\] Decouple Searching from Training: Scaling Data Mixing via Model Merging for Large Language Model Pre-training](decouple_searching_from_training_scaling_data_mixing_via_model_merging_for_large.md)
-- [\[ICML 2026\] When Shared Knowledge Hurts: Spectral Over-Accumulation in Model Merging](when_shared_knowledge_hurts_spectral_over-accumulation_in_model_merging.md)
+- [\[ICML 2026\] Jailbreak to Protect: Buffering and Reinforcing via Temporary Jailbreaking for Safe Fine-Tuning in Large Language Models](jailbreak_to_protect_buffering_and_reinforcing_via_temporary_jailbreaking_for_sa.md)
 
 </div>
 

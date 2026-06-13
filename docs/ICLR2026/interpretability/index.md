@@ -1,43 +1,54 @@
 ---
 title: >-
-  ICLR2026 Interpretability Papers · 55 Notes
+  ICLR2026 Interpretability Papers · 60 Notes
 description: >-
-  55 ICLR2026 papers in the Interpretability area, covering Reasoning, LLM, Agents, Multimodal/VLM, Alignment/RLHF and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  60 ICLR2026 papers in the Interpretability area, covering LLM, Reasoning, Multimodal/VLM, Layout & Composition, Alignment/RLHF, Agents and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "ICLR2026"
   - "Interpretability"
   - "AI paper notes"
   - "paper summaries"
-  - "Reasoning"
   - "LLM"
-  - "Agents"
+  - "Reasoning"
   - "Multimodal/VLM"
+  - "Layout & Composition"
   - "Alignment/RLHF"
+  - "Agents"
 item_list:
   - u: "a_cortically_inspired_architecture_for_modular_perceptual_ai/"
     t: "A Cortically Inspired Architecture for Modular Perceptual AI"
-  - u: "activationreasoning_logical_reasoning_in_latent_activation_spaces/"
-    t: "ActivationReasoning: Logical Reasoning in Latent Activation Spaces"
+  - u: "adaem_an_adaptively_and_automated_extensible_measurement_of_llms_value_differenc/"
+    t: "AdAEM: An Adaptively and Automated Extensible Measurement of LLMs' Value Difference"
   - u: "addressing_divergent_representations_causal/"
     t: "Addressing Divergent Representations from Causal Interventions on Neural Networks"
-  - u: "auditing_cascading_risks_in_multi-agent_systems_via_semanti-geometric_co-evolut/"
-    t: "Auditing Cascading Risks in Multi-Agent Systems via Semantic–Geometric Co-evolution"
+  - u: "anveshanaai_a_multimodal_platform_for_adaptive_aiml_education_through_automated_/"
+    t: "AnveshanaAI: A Multimodal Platform for Adaptive AI/ML Education through Automated Question Generation and Interactive Assessment"
   - u: "behavior_learning_bl_learning_hierarchical_optimization_structures_from_data/"
     t: "Behavior Learning (BL): Learning Hierarchical Optimization Structures from Data"
   - u: "beyond_linear_probes_dynamic_safety_monitoring_for_language_models/"
     t: "Beyond Linear Probes: Dynamic Safety Monitoring for Language Models"
+  - u: "bridging_explainability_and_embeddings_bee_aware_of_spuriousness/"
+    t: "Bridging Explainability and Embeddings: BEE Aware of Spuriousness"
+  - u: "causal_interpretation_of_neural_network_computations_with_contribution_decomposi/"
+    t: "Causal Interpretation of Neural Network Computations with Contribution Decomposition"
   - u: "closing_the_curvature_gap_full_transformer_hessians_and_their_implications_for_s/"
     t: "Closing the Curvature Gap: Full Transformer Hessians and Their Implications for Scaling Laws"
   - u: "concepts_information_bottleneck_models/"
     t: "Concepts' Information Bottleneck Models"
+  - u: "conjuring_semantic_similarity/"
+    t: "Conjuring Semantic Similarity"
   - u: "cross-modal_redundancy_and_the_geometry_of_vision-language_embeddings/"
     t: "Cross-Modal Redundancy and the Geometry of Vision-Language Embeddings"
   - u: "decomposing_representation_space_into_interpretable_subspaces_with_unsupervised_/"
     t: "Decomposing Representation Space into Interpretable Subspaces with Unsupervised Learning"
   - u: "decoupling_dynamical_richness_from_representation_learning_towards_practical_mea/"
     t: "Decoupling Dynamical Richness from Representation Learning: Towards Practical Measurement"
+  - u: "domain_expansion_a_latent_space_construction_framework_for_multi-task_learning/"
+    t: "Domain Expansion: A Latent Space Construction Framework for Multi-Task Learning"
   - u: "dynamic_reflections_probing_video_representations_with_text_alignment/"
     t: "Dynamic Reflections: Probing Video Representations with Text Alignment"
+  - u: "emergence_of_superposition_unveiling_the_training_dynamics_of_chain_of_continuou/"
+    t: "Emergence of Superposition: Unveiling the Training Dynamics of Chain of Continuous Thought"
   - u: "evolution_of_concepts_in_language_model_pre-training/"
     t: "Evolution of Concepts in Language Model Pre-Training"
   - u: "exploring_interpretability_for_visual_prompt_tuning_with_cross-layer_concepts/"
@@ -60,47 +71,37 @@ item_list:
     t: "Implicit Statistical Inference in Transformers: Approximating Likelihood-Ratio Tests In-Context"
   - u: "information_shapes_koopman_representation/"
     t: "Information Shapes Koopman Representation"
-  - u: "initialization_schemes_for_kolmogorov-arnold_networks_an_empirical_study/"
-    t: "Initialization Schemes for Kolmogorov-Arnold Networks: An Empirical Study"
   - u: "internal_planning_in_language_models_characterizing_horizon_and_branch_awareness/"
     t: "Internal Planning in Language Models: Characterizing Horizon and Branch Awareness"
   - u: "layer_by_layer_module_by_module_choose_both_for_optimal_ood_probing_of_vit/"
     t: "Layer by layer, module by module: Choose both for optimal OOD probing of ViT"
-  - u: "lore_jointly_learning_the_intrinsic_dimensionality_and_relative_similarity_struc/"
-    t: "LORE: Jointly Learning the Intrinsic Dimensionality and Relative Similarity Structure from Ordinal Data"
-  - u: "mata_a_trainable_hierarchical_automaton_system_for_multi-agent_visual_reasoning/"
-    t: "MATA: A Trainable Hierarchical Automaton System for Multi-Agent Visual Reasoning"
-  - u: "modal_logical_neural_networks_for_financial_ai/"
-    t: "Modal Logical Neural Networks for Financial AI"
-  - u: "narrow_finetuning_leaves_clearly_readable_traces_in_activation_differences/"
-    t: "Narrow Finetuning Leaves Clearly Readable Traces in Activation Differences"
-item_total: 55
+item_total: 60
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->
 # 🔬 Interpretability
 
-**🔬 ICLR2026** · **55** paper notes
+**🔬 ICLR2026** · **60** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (80)](../../ICML2026/interpretability/index.md) · [💬 ACL2026 (60)](../../ACL2026/interpretability/index.md) · [📷 CVPR2026 (28)](../../CVPR2026/interpretability/index.md) · [🤖 AAAI2026 (37)](../../AAAI2026/interpretability/index.md) · [🧠 NeurIPS2025 (78)](../../NeurIPS2025/interpretability/index.md) · [📹 ICCV2025 (10)](../../ICCV2025/interpretability/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (71)](../../ICML2026/interpretability/index.md) · [💬 ACL2026 (60)](../../ACL2026/interpretability/index.md) · [📷 CVPR2026 (25)](../../CVPR2026/interpretability/index.md) · [🤖 AAAI2026 (37)](../../AAAI2026/interpretability/index.md) · [🧠 NeurIPS2025 (76)](../../NeurIPS2025/interpretability/index.md) · [📹 ICCV2025 (10)](../../ICCV2025/interpretability/index.md)
 
-🔥 **Top topics:** Reasoning ×6 · LLM ×5 · Agents ×3 · Multimodal/VLM ×2 · Alignment/RLHF ×2
+🔥 **Top topics:** LLM ×5 · Reasoning ×4 · Multimodal/VLM ×3 · Layout & Composition ×3 · Alignment/RLHF ×3
 
 **[A Cortically Inspired Architecture for Modular Perceptual AI](a_cortically_inspired_architecture_for_modular_perceptual_ai.md)**
 
 :   This paper proposes a cortically inspired modular perceptual AI architecture blueprint grounded in neuroscience, comprising four components — dedicated encoders, a shared cross-modal latent space, a routing controller, and a recursive predictive feedback loop — and validates through sparse autoencoder experiments that modular decomposition improves within-domain feature stability (+15.4pp Jaccard overlap).
 
-**[ActivationReasoning: Logical Reasoning in Latent Activation Spaces](activationreasoning_logical_reasoning_in_latent_activation_spaces.md)**
+**[AdAEM: An Adaptively and Automated Extensible Measurement of LLMs' Value Difference](adaem_an_adaptively_and_automated_extensible_measurement_of_llms_value_differenc.md)**
 
-:   This paper proposes the ActivationReasoning (AR) framework, which embeds explicit logical reasoning into the latent activation space of LLMs (via SAE-extracted features) through a three-stage pipeline: discovering concept representations → detecting activated propositions → reasoning with logical rules. The framework supports multi-hop reasoning, concept composition, and safety control, achieving 95%+ accuracy on PrOntoQA with an 8B model, surpassing GPT-4o.
+:   This paper proposes AdAEM, an adaptive and self-extensible evaluation framework for LLM values. By leveraging information-theoretic optimization, AdAEM automatically generates test questions that maximally reveal value differences across LLMs, addressing the "insufficient informativeness" limitation of existing static benchmarks that fail to distinguish models' value orientations.
 
 **[Addressing Divergent Representations from Causal Interventions on Neural Networks](addressing_divergent_representations_causal.md)**
 
 :   This paper systematically demonstrates that causal interventions (activation patching, DAS, SAEs, etc.) push model internal representations off their natural distribution. It theoretically distinguishes "benign shifts" from "harmful shifts," proposes the Counterfactual Latent (CL) loss to constrain intervened representations to remain near the natural manifold, and validates on a 7B LLM that this approach reduces divergence while preserving intervention accuracy.
 
-**[Auditing Cascading Risks in Multi-Agent Systems via Semantic–Geometric Co-evolution](auditing_cascading_risks_in_multi-agent_systems_via_semanti-geometric_co-evolut.md)**
+**[AnveshanaAI: A Multimodal Platform for Adaptive AI/ML Education through Automated Question Generation and Interactive Assessment](anveshanaai_a_multimodal_platform_for_adaptive_aiml_education_through_automated_.md)**
 
-:   This paper proposes SCCAL, a framework that models semantic–geometric co-evolution in multi-agent systems (MAS) by coupling semantic flow with the Ollivier–Ricci curvature (ORC) of interaction graphs. The joint prediction residual between the two modalities serves as an early warning signal for cascading risks, enabling anomaly detection several rounds before semantic violations become observable.
+:   This paper presents AnveshanaAI, an adaptive AI/ML education platform grounded in Bloom's cognitive taxonomy. The system employs fine-tuned GPT-2 for automated question generation, semantic similarity-based deduplication, explainable AI (XAI) techniques for transparency, and gamification mechanisms (points/badges/leaderboards) to deliver a personalized learning assessment system spanning seven domains from data science to multimodal AI. Experiments demonstrate a significant reduction in perplexity after fine-tuning and a notable improvement in learner engagement.
 
 **[Behavior Learning (BL): Learning Hierarchical Optimization Structures from Data](behavior_learning_bl_learning_hierarchical_optimization_structures_from_data.md)**
 
@@ -110,6 +111,14 @@ item_total: 55
 
 :   This paper proposes the Truncated Polynomial Classifier (TPC), which enables dynamic safety monitoring by training a polynomial over LLM activation spaces order-by-order and evaluating via truncation at inference time. Low-order truncations (≈ linear probes) handle easy inputs quickly, while higher-order terms provide stronger protection for difficult inputs. TPC matches or outperforms MLP baselines on WildGuardMix and BeaverTails while offering built-in interpretability.
 
+**[Bridging Explainability and Embeddings: BEE Aware of Spuriousness](bridging_explainability_and_embeddings_bee_aware_of_spuriousness.md)**
+
+:   This paper proposes the BEE framework, which identifies and names spurious correlations (SCs) directly from learned classifier weights by analyzing how fine-tuning perturbs the weight-space geometry of pre-trained representations. The method requires no counterfactual samples and can discover hidden dataset biases. On ImageNet-1k, BEE uncovers spurious associations that reduce accuracy by up to 95%.
+
+**[Causal Interpretation of Neural Network Computations with Contribution Decomposition](causal_interpretation_of_neural_network_computations_with_contribution_decomposi.md)**
+
+:   This paper proposes CODEC (Contribution Decomposition), which applies Integrated Gradients to compute the contribution of hidden-layer neurons to the output (rather than analyzing activations alone), and then decomposes these contributions into sparse modes via a Sparse Autoencoder. This approach achieves stronger causal interpretability and network control than activation-based analysis, and is successfully applied to ResNet-50 and a retinal biological neural network model.
+
 **[Closing the Curvature Gap: Full Transformer Hessians and Their Implications for Scaling Laws](closing_the_curvature_gap_full_transformer_hessians_and_their_implications_for_s.md)**
 
 :   This paper presents the first explicit Hessian expressions and spectral norm upper bounds for a complete Transformer block (including LayerNorm and FFN), and establishes a theoretical framework showing that the loss landscape converges at an $O(1/k)$ rate as data volume increases, providing a mathematical foundation for scaling laws and curvature-aware training.
@@ -117,6 +126,10 @@ item_total: 55
 **[Concepts' Information Bottleneck Models](concepts_information_bottleneck_models.md)**
 
 :   This paper introduces Information Bottleneck (IB) regularization into the concept layer of Concept Bottleneck Models (CBMs), learning minimal sufficient concept representations by penalizing $I(X;C)$ while preserving $I(C;Y)$. The approach consistently improves both predictive performance and concept intervention reliability across six CBM variants and three benchmarks.
+
+**[Conjuring Semantic Similarity](conjuring_semantic_similarity.md)**
+
+:   This paper proposes a vision-imagination-based measure of textual semantic similarity by computing the Jeffreys divergence between the reverse SDEs induced by a text-conditioned diffusion model under two text prompts. The metric is directly computable via Monte-Carlo sampling and, for the first time, quantifies the alignment between the semantic space learned by diffusion models and human annotations.
 
 **[Cross-Modal Redundancy and the Geometry of Vision-Language Embeddings](cross-modal_redundancy_and_the_geometry_of_vision-language_embeddings.md)**
 
@@ -130,9 +143,17 @@ item_total: 55
 
 :   This paper proposes a computationally efficient, performance-agnostic measure of dynamical richness, $\mathcal{D}_{LR}$, which quantifies rich/lazy training dynamics by comparing activations before and after the last layer, and demonstrates that neural collapse is a special case of this measure.
 
+**[Domain Expansion: A Latent Space Construction Framework for Multi-Task Learning](domain_expansion_a_latent_space_construction_framework_for_multi-task_learning.md)**
+
+:   This paper proposes the Domain Expansion framework, which restructures the latent space into mutually orthogonal subspaces via Orthogonal Pooling, structurally preventing gradient conflicts and representation collapse in multi-objective training, and enabling interpretable, composable concept algebra.
+
 **[Dynamic Reflections: Probing Video Representations with Text Alignment](dynamic_reflections_probing_video_representations_with_text_alignment.md)**
 
 :   This paper is the first to extend the Platonic Representation Hypothesis (PRH) from static image–text to the temporal video–text domain. Through systematic evaluation of 121 visual and language models, it reveals that increasing the number of frames and captions at test time can nearly double alignment scores, and proposes a saturating scaling law with $R^2 > 0.98$ to quantify this behavior.
+
+**[Emergence of Superposition: Unveiling the Training Dynamics of Chain of Continuous Thought](emergence_of_superposition_unveiling_the_training_dynamics_of_chain_of_continuou.md)**
+
+:   This paper theoretically analyzes the training dynamics of a two-layer Transformer trained with continuous Chain-of-Thought (Coconut) on the directed graph reachability problem, revealing how a "superposition" mechanism naturally emerges: the index-matching logit first grows and then remains bounded, thereby achieving a balance between exploration and exploitation.
 
 **[Evolution of Concepts in Language Model Pre-Training](evolution_of_concepts_in_language_model_pre-training.md)**
 
@@ -178,10 +199,6 @@ item_total: 55
 
 :   This paper revisits the problem of finite-dimensional Koopman operator representation learning from the perspective of the Information Bottleneck (IB) framework. The Koopman operator lifts nonlinear dynamical systems into infinite-dimensional linear evolution, yet practical applications require approximation within finite-dimensional subspaces, giving rise to a fundamental tension between compactness and expressiveness. The authors prove that (1) latent mutual information controls an upper bound on prediction error, but excessive maximization leads to mode collapse; and (2) von Neumann entropy prevents collapse and preserves effective dimensionality. Building on these results, an information-theoretic Lagrangian formulation is proposed that jointly balances three objectives—temporal coherence, predictive sufficiency, and structural consistency—and yields a tractable loss function. The method outperforms existing Koopman approaches on three categories of tasks: physics simulation, visual control, and graph-structured dynamics.
 
-**[Initialization Schemes for Kolmogorov-Arnold Networks: An Empirical Study](initialization_schemes_for_kolmogorov-arnold_networks_an_empirical_study.md)**
-
-:   This work presents the first systematic study of initialization strategies for spline-based KANs. It proposes variance-preserving schemes inspired by LeCun/Glorot and a tunable power-law initialization family. Large-scale experiments spanning 126K+ model instances demonstrate that power-law initialization consistently outperforms baselines on function fitting and PDE solving, while the Glorot scheme yields significant gains for larger models. NTK eigenspectrum analysis further reveals the underlying optimization dynamics.
-
 **[Internal Planning in Language Models: Characterizing Horizon and Branch Awareness](internal_planning_in_language_models_characterizing_horizon_and_branch_awareness.md)**
 
 :   This paper proposes an information-theoretic framework based on VQ-VAE to analyze internal planning behavior in language models, finding that planning horizon is task-dependent, that models implicitly retain information about unchosen correct paths, and that next-token decisions rely primarily on the most recent computations.
@@ -218,6 +235,10 @@ item_total: 55
 
 :   Using the Serbian digraphic system (Latin/Cyrillic) as a natural controlled experiment, this paper investigates whether features learned by Sparse Autoencoders (SAEs) capture abstract semantics beyond surface-level tokenization. The study finds that identical sentences across scripts activate highly overlapping SAE features (Jaccard ≈ 0.58), that script switching induces smaller representational differences than same-script paraphrasing, and that this invariance strengthens with model scale — demonstrating that SAE features genuinely capture semantic structure beyond orthography.
 
+**[PERSONA: Dynamic and Compositional Inference-Time Personality Control via Activation Vector Algebra](persona_dynamic_and_compositional_inference-time_personality_control_via_activat.md)**
+
+:   This paper proposes the PERSONA framework, which extracts approximately orthogonal personality vectors from activation space and applies vector algebra operations (scaling, addition, subtraction) to achieve training-free dynamic and compositional personality control. PERSONA attains a score of 9.60 on PersonalityBench, nearly matching the SFT upper bound of 9.61.
+
 **[PolySHAP: Extending KernelSHAP with Interaction-Informed Polynomial Regression](polyshap_extending_kernelshap_with_interaction-informed_polynomial_regression.md)**
 
 :   This paper proposes PolySHAP, which extends KernelSHAP's linear approximation to higher-order polynomial regression to capture nonlinear feature interactions, thereby improving the estimation accuracy of Shapley values. The paper further provides a theoretical proof that paired sampling is equivalent to second-order PolySHAP, offering the first rigorous explanation for the superior performance of this widely used heuristic.
@@ -246,9 +267,13 @@ item_total: 55
 
 :   This paper proposes **Semantic Regexes**, a structured language for automatically describing LLM features. By combining primitives (symbol / lexeme / field) with modifiers (context / composition / quantification), it produces feature descriptions that are equally accurate to natural language, yet more concise, consistent, and amenable to programmatic analysis.
 
-**[Stretching Beyond the Obvious: A Gradient-Free Framework to Unveil the Hidden Landscape of Visual Invariance](stretching_beyond_the_obvious_a_gradient-free_framework_to_unveil_the_hidden_lan.md)**
+**[Specialization after Generalization: Towards Understanding Test-Time Training in Foundation Models](specialization_after_generalization_towards_understanding_test-time_training_in_.md)**
 
-:   This paper proposes the Stretch-and-Squeeze (SnS) algorithm, a gradient-free, model-agnostic bi-objective optimization framework that systematically probes the invariance manifold of visual systems by "stretching" representations at different processing levels while "squeezing" the activation of target units. SnS reveals hierarchical differences in invariance interpretability between standard and robust CNNs.
+:   Grounded in the Linear Representation Hypothesis (LRH), this paper proposes a theoretical framework termed *specialization after generalization*, providing the first systematic explanation of why TTT is effective under in-distribution settings. Foundation models suffer from concept superposition due to global underparameterization; TTT temporarily forgets irrelevant concepts to free model capacity, locally specializing to the small set of concepts relevant to the test task. The theory guarantees generalization even when the feature space is exponentially smaller than the concept space.
+
+**[Stress-Testing Alignment Audits with Prompt-Level Strategic Deception](stress-testing_alignment_audits_with_prompt-level_strategic_deception.md)**
+
+:   This paper constructs an automated prompt-level red-teaming pipeline (powered by Claude Opus 4.5) to augment situational awareness and strategic reasoning in existing fine-tuned model organisms, and stress-tests four black-box and white-box alignment auditing methods across six experimental settings. The pipeline successfully induces high-confidence incorrect guesses from all auditing methods and provides the first documented instance of prompt-level activation deception without any weight modification.
 
 **[STRIDE: Subset-Free Functional Decomposition for XAI in Tabular Settings](stride_subset-free_functional_decomposition_for_xai_in_tabular_settings.md)**
 
@@ -262,10 +287,6 @@ item_total: 55
 
 :   This paper proposes a geometric framework that models the reasoning process of LLMs as "flows" (embedding trajectories) in representation space. Through controlled experiments that decouple logical structure from semantic content, it demonstrates that LLMs internalize logical invariants beyond surface form, and identifies potentially universal representation regularities across model families.
 
-**[The Reasoning Trap — Logical Reasoning as a Mechanistic Pathway to Situational Awareness](the_reasoning_trap_--_logical_reasoning_as_a_mechanistic_pathway_to_situational_.md)**
-
-:   A position paper proposing the RAISE (Reasoning Advancing Into Self Examination) framework, which systematically argues that three improvement pathways for logical reasoning (deductive/inductive/abductive) will inevitably endow LLMs with situational awareness. The paper constructs a five-level escalation ladder from basic self-identification to strategic deception, and demonstrates that current safety mechanisms such as RLHF and Constitutional AI are insufficient to arrest this trend.
-
 **[There Was Never a Bottleneck in Concept Bottleneck Models](there_was_never_a_bottleneck_in_concept_bottleneck_models.md)**
 
 :   This paper identifies that Concept Bottleneck Models (CBMs) do not enforce a true "bottleneck" — the fact that a representation variable $z_j$ can predict concept $c_j$ does not imply it encodes *only* the information of $c_j$. The paper proposes MCBM (Minimal Concept Bottleneck Model), which applies information bottleneck regularization to constrain each $z_j$ to retain only the information of its corresponding concept, thereby achieving genuinely disentangled representations and reliable concept interventions.
@@ -278,6 +299,10 @@ item_total: 55
 
 :   This paper proposes TokenSeek, a general-purpose memory optimization plugin for Transformer fine-tuning. By combining contextual attention information with gradient information for instance-level token importance estimation, TokenSeek retains only the top 10% high-value tokens for gradient updates, achieving up to 65.7% memory savings while matching or surpassing full-token fine-tuning performance.
 
+**[Toward Faithful Retrieval-Augmented Generation with Sparse Autoencoders](toward_faithful_retrieval-augmented_generation_with_sparse_autoencoders.md)**
+
+:   This paper proposes RAGLens, which leverages sparse autoencoders (SAEs) to disentangle RAG-hallucination-specific features from LLM internal activations, and constructs a lightweight, interpretable hallucination detector via mutual information-based feature selection combined with a Generalized Additive Model (GAM). RAGLens surpasses existing methods across multiple benchmarks and supports token-level interpretable feedback and hallucination mitigation.
+
 **[Towards Understanding Subliminal Learning: When and How Hidden Biases Transfer](towards_understanding_subliminal_learning_when_and_how_hidden_biases_transfer.md)**
 
 :   Through controlled experiments and mechanistic analysis, this paper reveals the nature of subliminal learning: hidden preferences of teacher models are transferred to student models via a small number of "divergence tokens," with early layers playing a critical role. The phenomenon is also shown to be fragile and can be suppressed by simple paraphrasing.
@@ -289,10 +314,6 @@ item_total: 55
 **[Universal Properties of Activation Sparsity in Modern Large Language Models](universal_properties_of_activation_sparsity_in_modern_large_language_models.md)**
 
 :   This paper presents a systematic study of activation sparsity in modern LLMs (GLU architecture + SiLU/GELU), proposes a universal top-p sparsification framework and a critical sparsity metric, demonstrates that activation sparsity increases monotonically with model scale, identifies input sparsification as the most practical training-free acceleration scheme, and provides the first empirical evidence that diffusion-based LLMs also exhibit significant activation sparsity.
-
-**[VCWorld: A Biological World Model for Virtual Cell Simulation](vcworld_a_biological_world_model_for_virtual_cell_simulation.md)**
-
-:   This paper proposes VCWorld, a cell-level white-box simulator that integrates structured biological knowledge graphs with the iterative reasoning capabilities of large language models (LLMs) to simulate drug perturbation-induced signaling cascades in a data-efficient manner. The framework generates interpretable step-by-step predictions and explicit mechanistic hypotheses, achieving state-of-the-art performance on drug perturbation benchmarks.
 
 **[When Machine Learning Gets Personal: Evaluating Prediction and Explanation](when_machine_learning_gets_personal_evaluating_prediction_and_explanation.md)**
 

@@ -69,7 +69,7 @@ item_total: 23
 
 **🧪 ICML2026** · **23** paper notes
 
-📌 **Same area in other venues:** [💬 ACL2026 (73)](../../ACL2026/information_retrieval/index.md) · [📷 CVPR2026 (9)](../../CVPR2026/information_retrieval/index.md) · [🔬 ICLR2026 (32)](../../ICLR2026/information_retrieval/index.md) · [🤖 AAAI2026 (28)](../../AAAI2026/information_retrieval/index.md) · [🧠 NeurIPS2025 (31)](../../NeurIPS2025/information_retrieval/index.md) · [📹 ICCV2025 (7)](../../ICCV2025/information_retrieval/index.md)
+📌 **Same area in other venues:** [💬 ACL2026 (73)](../../ACL2026/information_retrieval/index.md) · [📷 CVPR2026 (9)](../../CVPR2026/information_retrieval/index.md) · [🔬 ICLR2026 (31)](../../ICLR2026/information_retrieval/index.md) · [🤖 AAAI2026 (27)](../../AAAI2026/information_retrieval/index.md) · [🧠 NeurIPS2025 (29)](../../NeurIPS2025/information_retrieval/index.md) · [📹 ICCV2025 (7)](../../ICCV2025/information_retrieval/index.md)
 
 🔥 **Top topics:** RAG ×8 · Adversarial Robustness ×2
 
@@ -111,7 +111,7 @@ item_total: 23
 
 **[ML-Embed: Inclusive and Efficient Embeddings for a Multilingual World](ml-embed_inclusive_and_efficient_embeddings_for_a_multilingual_world.md)**
 
-:   ML-Embed extends the Matryoshka concept from one dimension (representation dimension) to **three dimensions**—implementing full-stack nested training across embedding parameters (MEL), model depth (MLL), and representation dimensions (MRL). By constructing a multilingual training set of 50 million samples covering 282 natural languages and 40 programming languages, the authors released a family of open-source models (140M–8B). These models achieve 1st place in 9 out of 17 MTEB benchmarks, with performance gains of +22.89 in Polish and +6.88 in Vietnamese.
+:   ML-Embed extends the Matryoshka concept from one dimension (representation dimension) to **three dimensions**—embedding parameters (MEL), model depth (MLL), and representation dimension (MRL)—enabling **full-stack nested training**. It constructs a multilingual training set with 282 natural languages and 40 programming languages, totaling 50 million samples, and releases a family of open-source models from 140M to 8B parameters. On 17 MTEB benchmarks, it ranks first in 9, with notable gains in Polish (+22.89) and Vietnamese (+6.88).
 
 **[ParisKV: Fast and Drift-Robust KV-Cache Retrieval for Long-Context LLMs](pariskv_fast_and_drift-robust_kv-cache_retrieval_for_long-context_llms.md)**
 
@@ -135,7 +135,7 @@ item_total: 23
 
 **[ReSeek: A Self-Correcting Framework for Search Agents with Instructive Rewards](reseek_a_self-correcting_framework_for_search_agents_with_instructive_rewards.md)**
 
-:   ReSeek adds a JUDGE action to RL-trained search agents and utilizes a BGE-reranker to calculate "ideal judgments" as process rewards. This enables agents to "softly shield" ineffective information and re-query after each retrieval. Simultaneously, the authors propose FictionalHot, an anti-contamination benchmark based on fictional entities. On Qwen2.5-7B, ReSeek achieves an average EM of 0.377, a +3.1 improvement over ZeroSearch.
+:   ReSeek augments RL-trained search agents with a JUDGE action and uses BGE-reranker to compute an "ideal judgment" as a process reward, enabling the agent to softly "mask" irrelevant information and re-query after each retrieval. It also introduces FictionalHot, a contamination-resistant benchmark based on fictional entities. On Qwen2.5-7B, the average EM reaches 0.377, +3.1 higher than ZeroSearch.
 
 **[Retriever Portfolios: A Principled Approach to Adaptive RAG](retriever_portfolios_a_principled_approach_to_adaptive_rag.md)**
 
@@ -143,7 +143,7 @@ item_total: 23
 
 **[Seeing to Generalize: How Visual Data Corrects Binding Shortcuts](seeing_to_generalize_how_visual_data_corrects_binding_shortcuts.md)**
 
-:   This paper replicates the phenomenon where "VLM outperforms its base LLM on pure text tasks" using a controlled synthetic "color-shape-item" retrieval task. Through mechanistic interpretability, it proves that image training shifts the model's variable binding strategy from "positional shortcuts" to "symbolic matching." This shift is preserved when reverting to text, increasing OOD retrieval accuracy from 37.2% to 69.5%. A consistent increase in the "symbolic/positional ratio" is also observed in the real Qwen2/2.5/3 families.
+:   This paper reproduces the puzzling phenomenon that "VLMs outperform their base LLMs on pure text tasks" using a controlled synthetic "color-shape-item" retrieval task, and mechanistically explains it: visual training shifts the model's variable binding strategy from "positional shortcuts" to "semantic-symbolic matching." This shift is retained when switching back to pure text, boosting OOD retrieval accuracy from 37.2% to 69.5%. Consistent increases in the "symbolic/positional ratio" are also observed in real Qwen2/2.5/3 model families.
 
 **[Through the Stealth Lens: Attention-Aware Defenses Against Poisoning in RAG](through_the_stealth_lens_attention-aware_defenses_against_poisoning_in_rag.md)**
 
@@ -151,7 +151,7 @@ item_total: 23
 
 **[Understand and Accelerate Memory Processing Pipeline for Large Language Model Inference](understand_and_accelerate_memory_processing_pipeline_for_disaggregated_llm_infer.md)**
 
-:   This paper unifies optimizations in modern LLM long-context inference—such as sparse attention, RAG, and compressed context memory—into a four-stage "Prepare Memory → Compute Relevancy → Retrieval → Apply to Inference" memory processing pipeline. It quantitatively demonstrates that this pipeline accounts for 22%-97% of the total latency and that each stage possesses highly heterogeneous computational characteristics. Based on these findings, it proposes a GPU-FPGA heterogeneous system: regular/compute-intensive operations remain on the GPU, while sparse/irregular/memory-intensive operations are offloaded to the FPGA. This achieves up to 2.2× end-to-end speedup and a 4.7× reduction in energy consumption on an MI210 + Alveo U55C platform.
+:   This paper unifies optimizations in modern LLM long-context inference—such as sparse attention, RAG, and compressed context memory—into a four-stage "Prepare Memory → Compute Relevancy → Retrieval → Apply to Inference" memory processing pipeline. It quantitatively demonstrates that this pipeline accounts for 22%-97% of total latency and that each stage exhibits highly heterogeneous computational characteristics. Based on this, a GPU-FPGA heterogeneous system is proposed: regular/compute-intensive operations remain on the GPU, while sparse/irregular/memory-intensive operations are offloaded to the FPGA. On MI210 + Alveo U55C, up to 2.2× end-to-end speedup and 4.7× energy reduction are achieved.
 
 **[Understanding LoRA as Knowledge Memory: An Empirical Analysis](understanding_lora_as_knowledge_memory_an_empirical_analysis.md)**
 

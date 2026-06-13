@@ -2,9 +2,10 @@
 title: >-
   [Paper Note] Rethinking Evaluation Paradigms in IBP-based Certified Training
 description: >-
-  [ICML 2026][Interval Bound Propagation (IBP)] The authors point out that comparing IBP-based certified training methods using single "biased configurations" is fundamentally unfair. They propose using multi-objective Bay…
+  [ICML 2026][AI Safety][Interval Bound Propagation (IBP)] The authors point out that comparing IBP-based certified training methods using single "biased configurations" is fundamentally unfair. They propose using multi-ob…
 tags:
   - "ICML 2026"
+  - "AI Safety"
   - "Interval Bound Propagation (IBP)"
   - "Certified Training"
   - "Pareto Front"
@@ -121,11 +122,11 @@ By merging Pareto fronts, the authors found: on CIFAR-10 $2/255$, SABR and MTL-I
 
 ## Related Papers
 
-- [\[AAAI 2026\] Certified but Fooled! Breaking Certified Defences with Ghost Certificates](../../AAAI2026/others/certified_but_fooled_breaking_certified_defences_with_ghost_certificates.md)
-- [\[ICML 2026\] Rethinking FID Through the Geometry of the Reference Dataset](rethinking_fid_through_the_geometry_of_the_reference_dataset.md)
-- [\[ICML 2026\] CORE-MTL: Rethinking Gradient Balancing via Causal Orthogonal Representations](core-mtl_rethinking_gradient_balancing_via_causal_orthogonal_representations.md)
-- [\[CVPR 2026\] Rethinking SNN Online Training and Deployment: Gradient-Coherent Learning via Hybrid-Driven LIF Model](../../CVPR2026/others/rethinking_snn_online_training_and_deployment_grad.md)
-- [\[ICML 2026\] Test-Time Training with KV Binding Is Secretly Linear Attention](test-time_training_with_kv_binding_is_secretly_linear_attention.md)
+- [\[AAAI 2026\] An Information Theoretic Evaluation Metric for Strong Unlearning](../../AAAI2026/ai_safety/an_information_theoretic_evaluation_metric_for_strong_unlearning.md)
+- [\[ICML 2026\] SORA: Free Second-Order Attacks in Fast Adversarial Training](sora_free_second-order_attacks_in_fast_adversarial_training.md)
+- [\[ICML 2026\] Training-Free Coverless Multi-Image Steganography with Access Control](training-free_coverless_multi-image_steganography_with_access_control.md)
+- [\[ICML 2026\] TimeGuard: Channel-wise Pool Training for Backdoor Defense in Time Series Forecasting](timeguard_channel-wise_pool_training_for_backdoor_defense_in_time_series_forecas.md)
+- [\[NeurIPS 2025\] Rewind-to-Delete: Certified Machine Unlearning for Nonconvex Functions](../../NeurIPS2025/ai_safety/rewind-to-delete_certified_machine_unlearning_for_nonconvex_functions.md)
 
 </div>
 

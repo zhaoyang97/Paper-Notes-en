@@ -1,8 +1,8 @@
 ---
 title: >-
-  NeurIPS2025 LLM Reasoning Papers · 66 Notes
+  NeurIPS2025 LLM Reasoning Papers · 81 Notes
 description: >-
-  66 NeurIPS2025 papers in the LLM Reasoning area, covering Reasoning, LLM, Multimodal/VLM, Reinforcement Learning, Model Compression, Speech & Audio and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  81 NeurIPS2025 papers in the LLM Reasoning area, covering Reasoning, LLM, Reinforcement Learning, Multimodal/VLM, Model Compression and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "NeurIPS2025"
   - "LLM Reasoning"
@@ -10,11 +10,14 @@ tags:
   - "paper summaries"
   - "Reasoning"
   - "LLM"
-  - "Multimodal/VLM"
   - "Reinforcement Learning"
+  - "Multimodal/VLM"
   - "Model Compression"
-  - "Speech & Audio"
 item_list:
+  - u: "a_little_depth_goes_a_long_way_the_expressive_power_of_logde/"
+    t: "A Little Depth Goes a Long Way: The Expressive Power of Log-Depth Transformers"
+  - u: "a_theoretical_study_on_bridging_internal_probability_and_sel/"
+    t: "A Theoretical Study on Bridging Internal Probability and Self-Consistency for LLM Reasoning"
   - u: "abbie_autoregressive_block-based_iterative_encoder_for_efficient_sequence_modeli/"
     t: "AbbIE: Autoregressive Block-Based Iterative Encoder for Efficient Sequence Modeling"
   - u: "adaptive_dual_reasoner_large_reasoning_models_can_think_efficiently_by_hybrid_re/"
@@ -25,12 +28,18 @@ item_list:
     t: "ARM: Adaptive Reasoning Model"
   - u: "atom_of_thoughts_for_markov_llm_testtime_scaling/"
     t: "Atom of Thoughts for Markov LLM Test-Time Scaling"
-  - u: "beyond_chemical_qa_evaluating_llms_chemical_reasoning_with_modular_chemical_oper/"
-    t: "Beyond Chemical QA: Evaluating LLM's Chemical Reasoning with Modular Chemical Operations"
+  - u: "beyond_accuracy_dissecting_mathematical_reasoning_for_llms_u/"
+    t: "Beyond Accuracy: Dissecting Mathematical Reasoning for LLMs Under Reinforcement Learning"
+  - u: "chartmuseum_testing_visual_reasoning_capabilities_of_large_v/"
+    t: "ChartMuseum: Testing Chart Visual Reasoning in Large Vision-Language Models"
   - u: "clip-and-verify_linear_constraint-driven_domain_clipping_for_accelerating_neural/"
     t: "Clip-and-Verify: Linear Constraint-Driven Domain Clipping for Accelerated Neural Network Verification"
+  - u: "cognitive_mirrors_exploring_the_diverse_functional_roles_of_attention_heads_in_l/"
+    t: "Cognitive Mirrors: Exploring the Diverse Functional Roles of Attention Heads in LLM Reasoning"
   - u: "controlling_thinking_speed_in_reasoning_models/"
     t: "Controlling Thinking Speed in Reasoning Models"
+  - u: "core_benchmarking_llms_code_reasoning_capabilities_through_static_analysis_tasks/"
+    t: "CoRe: Benchmarking LLMs' Code Reasoning Capabilities through Static Analysis Tasks"
   - u: "cot_redhanded_stress_testing_chainofthought_monitoring/"
     t: "CoT Red-Handed: Stress Testing Chain-of-Thought Monitoring"
   - u: "curriculum_abductive_learning/"
@@ -45,6 +54,10 @@ item_list:
     t: "Exact Expressive Power of Transformers with Padding"
   - u: "expo_unlocking_hard_reasoning_with_self-explanation-guided_reinforcement_learnin/"
     t: "ExPO: Unlocking Hard Reasoning with Self-Explanation-Guided Reinforcement Learning"
+  - u: "first_sft_second_rl_third_upt_continual_improving_multi-modal_llm_reasoning_via_/"
+    t: "First SFT, Second RL, Third UPT: Continual Improving Multi-Modal LLM Reasoning via Unsupervised Post-Training"
+  - u: "fractalbench_diagnosing_visual-mathematical_reasoning_through_recursive_program_/"
+    t: "FractalBench: Diagnosing Visual-Mathematical Reasoning Through Recursive Program Synthesis"
   - u: "gpo_learning_from_critical_steps_to_improve_llm_reasoning/"
     t: "GPO: Learning from Critical Steps to Improve LLM Reasoning"
   - u: "i-raven-x_benchmarking_generalization_and_robustness_of_analogical_and_mathemati/"
@@ -55,37 +68,31 @@ item_list:
     t: "Note 1: Is CoT a Hallucination? A Data Distribution Perspective"
   - u: "know_what_you_dont_know_uncertainty_calibration_of_process_reward_models/"
     t: "Know What You Don't Know: Uncertainty Calibration of Process Reward Models"
+  - u: "ktae_a_model-free_algorithm_to_key-tokens_advantage_estimation_in_mathematical_r/"
+    t: "KTAE: A Model-Free Algorithm to Key-Tokens Advantage Estimation in Mathematical Reasoning"
   - u: "large_language_models_can_learn_and_generalize_steganographic_chain-of-thought_u/"
     t: "Large Language Models Can Learn and Generalize Steganographic Chain-of-Thought under Process Supervision"
   - u: "latent_chain-of-thought_for_visual_reasoning/"
     t: "Latent Chain-of-Thought for Visual Reasoning"
-  - u: "let_lrms_break_free_from_overthinking_via_self-braking_tuning/"
-    t: "Let LRMs Break Free from Overthinking via Self-Braking Tuning"
-  - u: "let_me_think_a_long_chainofthought_can_be_worth_exponentiall/"
-    t: "Let Me Think! A Long Chain-of-Thought Can Be Worth Exponentially Many Short Ones"
-  - u: "limopro_reasoning_refinement_for_efficient_and_effective_test-time_scaling/"
-    t: "LIMOPro: Reasoning Refinement for Efficient and Effective Test-time Scaling"
-  - u: "lost_in_transmission_when_and_why_llms_fail_to_reason_globally/"
-    t: "Lost in Transmission: When and Why LLMs Fail to Reason Globally"
-  - u: "many_llms_are_more_utilitarian_than_one/"
-    t: "Many LLMs Are More Utilitarian Than One"
-  - u: "mapping_faithful_reasoning_in_language_models/"
-    t: "Mapping Faithful Reasoning in Language Models"
-  - u: "mind_the_gap_bridging_thought_leap_for_improved_chain-of-thought_tuning/"
-    t: "Mind the Gap: Bridging Thought Leap for Improved Chain-of-Thought Tuning"
-  - u: "muslr_multimodal_symbolic_logical_reasoning/"
-    t: "MuSLR: Multimodal Symbolic Logical Reasoning"
-item_total: 66
+item_total: 81
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->
 # 💡 LLM Reasoning
 
-**🧠 NeurIPS2025** · **66** paper notes
+**🧠 NeurIPS2025** · **81** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (74)](../../ICML2026/llm_reasoning/index.md) · [💬 ACL2026 (81)](../../ACL2026/llm_reasoning/index.md) · [📷 CVPR2026 (10)](../../CVPR2026/llm_reasoning/index.md) · [🔬 ICLR2026 (63)](../../ICLR2026/llm_reasoning/index.md) · [🤖 AAAI2026 (28)](../../AAAI2026/llm_reasoning/index.md) · [📹 ICCV2025 (3)](../../ICCV2025/llm_reasoning/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (63)](../../ICML2026/llm_reasoning/index.md) · [💬 ACL2026 (80)](../../ACL2026/llm_reasoning/index.md) · [📷 CVPR2026 (8)](../../CVPR2026/llm_reasoning/index.md) · [🔬 ICLR2026 (82)](../../ICLR2026/llm_reasoning/index.md) · [🤖 AAAI2026 (37)](../../AAAI2026/llm_reasoning/index.md) · [📹 ICCV2025 (3)](../../ICCV2025/llm_reasoning/index.md)
 
-🔥 **Top topics:** Reasoning ×43 · LLM ×12 · Multimodal/VLM ×5 · Reinforcement Learning ×3 · Model Compression ×2
+🔥 **Top topics:** Reasoning ×56 · LLM ×18 · Reinforcement Learning ×6 · Multimodal/VLM ×6 · Model Compression ×2
+
+**[A Little Depth Goes a Long Way: The Expressive Power of Log-Depth Transformers](a_little_depth_goes_a_long_way_the_expressive_power_of_logde.md)**
+
+:   This paper proves that increasing Transformer depth from a constant to $\Theta(\log n)$ unlocks the ability to recognize regular languages and solve graph connectivity — two problems provably beyond the reach of fixed-depth Transformers — and that depth scaling is strictly more efficient than width scaling (which requires super-polynomial growth) or Chain-of-Thought (CoT) steps (which requires super-logarithmic growth).
+
+**[A Theoretical Study on Bridging Internal Probability and Self-Consistency for LLM Reasoning](a_theoretical_study_on_bridging_internal_probability_and_sel.md)**
+
+:   This paper proposes the first theoretical framework for sampling-based test-time scaling methods, decomposing reasoning error into estimation error and model error. It reveals the limitations of Self-Consistency (slow convergence) and Perplexity (large model error), and introduces the RPC method that combines the strengths of both, achieving comparable reasoning performance on 7 benchmarks with only 50% of the sampling cost.
 
 **[AbbIE: Autoregressive Block-Based Iterative Encoder for Efficient Sequence Modeling](abbie_autoregressive_block-based_iterative_encoder_for_efficient_sequence_modeli.md)**
 
@@ -107,17 +114,29 @@ item_total: 66
 
 :   This paper proposes Atom of Thoughts (AoT), which models LLM reasoning as a Markov chain where each state is a self-contained subproblem that is answer-equivalent to the original question but of strictly lower complexity. A two-phase transition mechanism based on DAG decomposition and contraction eliminates historical dependencies. AoT integrates seamlessly with existing methods such as ToT and reflection, achieving state-of-the-art performance across six benchmarks spanning mathematics, code, and multi-hop QA.
 
-**[Beyond Chemical QA: Evaluating LLM's Chemical Reasoning with Modular Chemical Operations](beyond_chemical_qa_evaluating_llms_chemical_reasoning_with_modular_chemical_oper.md)**
+**[Beyond Accuracy: Dissecting Mathematical Reasoning for LLMs Under Reinforcement Learning](beyond_accuracy_dissecting_mathematical_reasoning_for_llms_u.md)**
 
-:   This paper introduces ChemCoTBench, the first CoT-based benchmark for evaluating chemical reasoning in LLMs. It decomposes complex chemical problems into modular chemical operations (adding/deleting/substituting functional groups), and is accompanied by ChemCoTDataset — a large-scale dataset of 22,000 expert-annotated CoT samples — enabling systematic evaluation of both reasoning and non-reasoning LLMs across molecular understanding, editing, optimization, and reaction prediction.
+:   This paper proposes SPARKLE, a three-axis analytical framework (plan following, knowledge integration, subproblem decomposition) for fine-grained dissection of how RL shapes LLM reasoning behavior. The analysis reveals that RL primarily enhances knowledge integration and planning flexibility rather than plan execution. The paper further introduces SparkleRL-PSS, a multi-stage RL training pipeline that effectively exploits hard problem data via partial step scaffolding.
+
+**[ChartMuseum: Testing Chart Visual Reasoning in Large Vision-Language Models](chartmuseum_testing_visual_reasoning_capabilities_of_large_v.md)**
+
+:   This paper introduces ChartMuseum, a chart question-answering benchmark comprising 1,162 expert-annotated questions and real-world charts from 184 distinct sources. It is the first benchmark to systematically distinguish visual reasoning from textual reasoning, revealing that the current strongest model, Gemini-2.5-Pro, achieves only 63.0% accuracy compared to 93% for humans, with visual reasoning performance lagging behind textual reasoning by 35%–55%.
 
 **[Clip-and-Verify: Linear Constraint-Driven Domain Clipping for Accelerated Neural Network Verification](clip-and-verify_linear_constraint-driven_domain_clipping_for_accelerating_neural.md)**
 
 :   This paper proposes the Clip-and-Verify verification pipeline, which leverages linear constraints generated "for free" during linear bound propagation. Two GPU-efficient algorithms—complete clipping (coordinate ascent dual solving) and relaxed clipping (closed-form input domain shrinkage)—are used to tighten intermediate-layer bounds across the entire network. The approach reduces the number of BaB subproblems by up to 96% on multiple benchmarks, and serves as a core component of the VNN-COMP 2025 winning verifier.
 
+**[Cognitive Mirrors: Exploring the Diverse Functional Roles of Attention Heads in LLM Reasoning](cognitive_mirrors_exploring_the_diverse_functional_roles_of_attention_heads_in_l.md)**
+
+:   This paper proposes the CogQA benchmark dataset and a multi-class probing framework to systematically analyze cognitive functional specialization of attention heads in LLMs. The study reveals that cognitive heads exhibit sparsity, universality, and hierarchical functional organization; ablating cognitive heads significantly degrades reasoning performance, while amplifying them improves accuracy.
+
 **[Controlling Thinking Speed in Reasoning Models](controlling_thinking_speed_in_reasoning_models.md)**
 
 :   By applying Representation Engineering (RepE) to extract steering vectors that control fast/slow thinking transitions from the hidden space of Large Reasoning Models (LRMs), and combining these with a real-time reasoning difficulty estimator based on inter-layer logit divergence, the method achieves training-free adaptive reasoning speed control — yielding an average of +1.3% accuracy improvement and −8.6% token reduction across 4 LRMs.
+
+**[CoRe: Benchmarking LLMs' Code Reasoning Capabilities through Static Analysis Tasks](core_benchmarking_llms_code_reasoning_capabilities_through_static_analysis_tasks.md)**
+
+:   This paper introduces CoRe, a high-quality benchmark comprising 12,553 manually validated task instances. Through three categories of fundamental static analysis tasks—data dependency, control dependency, and information flow—CoRe directly evaluates the code semantic reasoning capabilities of LLMs, revealing that current models remain severely deficient on tasks requiring multi-step reasoning, such as trace generation and source enumeration.
 
 **[CoT Red-Handed: Stress Testing Chain-of-Thought Monitoring](cot_redhanded_stress_testing_chainofthought_monitoring.md)**
 
@@ -147,6 +166,14 @@ item_total: 66
 
 :   This paper proposes Self-Explanation Policy Optimization (ExPO), a modular framework that addresses the fundamental challenge of distribution sharpening in RL post-training methods such as GRPO. When the model's initial success rate on hard reasoning tasks is near zero, effective positive samples are unavailable for learning. ExPO resolves this by prompting the model to generate reasoning chains (self-explanations) conditioned on the ground-truth answer. The resulting self-explanation samples are both in-distribution with respect to the current policy and provide positive learning signals. ExPO integrates seamlessly into both DPO and GRPO frameworks.
 
+**[First SFT, Second RL, Third UPT: Continual Improving Multi-Modal LLM Reasoning via Unsupervised Post-Training](first_sft_second_rl_third_upt_continual_improving_multi-modal_llm_reasoning_via_.md)**
+
+:   This paper proposes MM-UPT, a framework that introduces a third-stage "unsupervised post-training" phase following SFT and RL. By combining majority voting as a pseudo-reward signal with GRPO, MM-UPT enables self-improvement of MLLMs, boosting Qwen2.5-VL-7B from 66.3% to 72.9% on MathVista.
+
+**[FractalBench: Diagnosing Visual-Mathematical Reasoning Through Recursive Program Synthesis](fractalbench_diagnosing_visual-mathematical_reasoning_through_recursive_program_.md)**
+
+:   This paper introduces FractalBench, a benchmark for diagnosing visual-mathematical reasoning in MLLMs via fractal image program synthesis. Comprising 12 classical fractals, 610 test images, and evaluations across 4 MLLMs, it reveals that while 76% of generated code is executable, only 4% is visually correct, exposing fundamental deficiencies in recursive abstraction capabilities.
+
 **[GPO: Learning from Critical Steps to Improve LLM Reasoning](gpo_learning_from_critical_steps_to_improve_llm_reasoning.md)**
 
 :   GPO estimates the advantage function for each step in a reasoning trajectory via Monte Carlo simulation to identify "critical steps" (the turning points where the model makes errors), then resets from those critical steps and resamples new trajectories for training. This plug-and-play approach consistently improves multiple optimization algorithms—including PPO, DPO, KTO, SimPO, and ORPO—on reasoning tasks.
@@ -166,6 +193,10 @@ item_total: 66
 **[Know What You Don't Know: Uncertainty Calibration of Process Reward Models](know_what_you_dont_know_uncertainty_calibration_of_process_reward_models.md)**
 
 :   This paper proposes a quantile regression-based calibration method for PRMs, enabling their output scores to more accurately reflect the actual success probability of LLM reasoning. Building on the calibrated PRM, the paper further introduces an Instance-Adaptive Scaling (IAS) strategy for inference-time computation, achieving significant cost reduction while maintaining accuracy.
+
+**[KTAE: A Model-Free Algorithm to Key-Tokens Advantage Estimation in Mathematical Reasoning](ktae_a_model-free_algorithm_to_key-tokens_advantage_estimation_in_mathematical_r.md)**
+
+:   KTAE proposes a model-free token-level advantage estimation algorithm that quantifies the statistical association between each token and correct reasoning outcomes via Fisher's exact test and information gain. The resulting fine-grained token importance is superimposed on the rollout-level advantage of GRPO/DAPO, achieving superior performance on five mathematical reasoning benchmarks while significantly reducing generation length.
 
 **[Large Language Models Can Learn and Generalize Steganographic Chain-of-Thought under Process Supervision](large_language_models_can_learn_and_generalize_steganographic_chain-of-thought_u.md)**
 
@@ -199,6 +230,10 @@ item_total: 66
 
 :   This paper proposes the Concept Walk framework, which tracks the evolution of internal concept representations across reasoning steps by projecting residual stream activations at each step onto concept directions learned from contrastive data, thereby distinguishing whether a CoT chain genuinely participates in computation or merely serves as post-hoc decorative output.
 
+**[Martingale Score: An Unsupervised Metric for Bayesian Rationality in LLM Reasoning](martingale_score_an_unsupervised_metric_for_bayesian_rationality_in_llm_reasonin.md)**
+
+:   This paper proposes the Martingale Score as an unsupervised metric that quantifies belief entrenchment in LLM reasoning processes based on the martingale property from Bayesian statistics. The study finds that belief entrenchment is pervasive across models and domains, and is significantly correlated with degraded accuracy.
+
 **[Mind the Gap: Bridging Thought Leap for Improved Chain-of-Thought Tuning](mind_the_gap_bridging_thought_leap_for_improved_chain-of-thought_tuning.md)**
 
 :   This paper provides the first systematic formalization of the "Thought Leap" phenomenon in CoT reasoning chains, and proposes CoT-Bridge, a model that automatically detects and fills omitted intermediate steps. It achieves up to +5.87% improvement on NuminaMath and can serve as a plug-and-play module to enhance distillation and RL pipelines.
@@ -210,6 +245,10 @@ item_total: 66
 **[On Learning Verifiers and Implications to Chain-of-Thought Reasoning](on_learning_verifiers_and_implications_to_chain-of-thought_reasoning.md)**
 
 :   This paper proposes a formal PAC learning framework for Chain-of-Thought verifiers, defining three progressively stronger verification objectives (Simple → Trustable → γ-Trustable). It proves that when each problem admits only a bounded number of correct proofs, the sample complexity is $O(\log|H|)$; however, when the number of correct proofs is unbounded, the sample complexity inevitably grows to $\Theta(|H|)$, unless the verifier class satisfies additional structural assumptions such as intersection-closure. The paper also exploits the USAT problem to demonstrate a computational complexity gap between verification and generation.
+
+**[Note 7: Value-Guided Search - Efficient Chain-of-Thought Reasoning](polymath_evaluating_mathematical_reasoning_in_multilingual_contexts.md)**
+
+:   This paper proposes Value-Guided Search (VGS), which employs a token-level value model to guide block-level beam search without requiring predefined "steps." VGS achieves a +14.5% relative accuracy improvement over majority voting on competition mathematics while reducing inference computation by 30%, outperforming existing PRM-based approaches.
 
 **[ProofSketch: Efficient Verified Reasoning for Large Language Models](proofsketch_efficient_verified_reasoning_for_large_language_models.md)**
 
@@ -231,10 +270,6 @@ item_total: 66
 
 :   ReasonFlux-PRM identifies that existing PRMs fail to effectively evaluate the intermediate thinking trajectories of reasoning models, and proposes a trajectory-aware PRM that fuses step-level alignment, quality, and coherence scores with a trajectory-level template-guided reward. The approach consistently outperforms strong baselines including Qwen2.5-Math-PRM-72B across three settings: offline data selection (SFT +12.1%), online RL reward (+4.5%), and test-time Best-of-N scaling (+6.3%).
 
-**[Reasoning by Superposition: A Theoretical Perspective on Chain of Continuous Thought](reasoning_by_superposition_a_theoretical_perspective_on_chain_of_continuous_thou.md)**
-
-:   This paper theoretically demonstrates the expressive advantage of continuous chain-of-thought (Coconut) on directed graph reachability: a two-layer Transformer using $D$ continuous thought steps suffices to solve graph reachability with diameter $D$, whereas discrete CoT requires $O(n^2)$ steps. The core mechanism is that continuous thought vectors encode multiple search frontiers simultaneously in a "superposition state," enabling implicit parallel BFS.
-
 **[Reasoning Models Better Express Their Confidence](reasoning_models_better_express_their_confidence.md)**
 
 :   This paper systematically demonstrates that reasoning models (with extended CoT) exhibit significantly better confidence calibration than non-reasoning models, and identifies "slow-thinking" behaviors—exploring alternatives, backtracking, and verification—as the fundamental source of this calibration improvement.
@@ -250,6 +285,10 @@ item_total: 66
 **[Sampling-Efficient Test-Time Scaling: Self-Estimating the Best-of-N Sampling in Early Decoding](sampling-efficient_test-time_scaling_self-estimating_the_best-of-n_sampling_in_e.md)**
 
 :   This paper proposes Self-Truncation Best-of-N (ST-BoN), a decoding method that leverages a theoretical guarantee showing early hidden-state consistency predicts final consistency, enabling identification and truncation of suboptimal samples at early decoding steps. ST-BoN reduces memory usage by over 80% and latency by ~50% while preserving standard BoN performance.
+
+**[SAND-Math: Using LLMs to Generate Novel, Difficult and Useful Mathematics Questions and Answers](sand-math_using_llms_to_generate_novel_difficult_and_useful_mathematics_question.md)**
+
+:   This paper proposes SAND-Math, a fully automated synthetic mathematics question generation pipeline that requires no seed dataset. By employing Difficulty Hiking to systematically increase problem difficulty, augmenting the LIMO baseline with as few as 500 problems yields a 4.39pp improvement on AIME25.
 
 **[Scalable Best-of-N Selection for Large Language Models via Self-Certainty](scalable_best-of-n_selection_for_large_language_models_via_self-certainty.md)**
 
@@ -283,9 +322,17 @@ item_total: 66
 
 :   This work presents the first systematic application of GRPO-based reinforcement learning to NL2SQL tasks. Through a four-level progressive reward function and a training strategy combining 200K cold-start data with 5K complex-sample RL fine-tuning, the 7B model achieves 88.7% on Spider and 66.6% on BIRD, surpassing GPT-4-based methods at comparable scale.
 
+**[SRPO: Enhancing Multimodal LLM Reasoning via Reflection-Aware Reinforcement Learning](srpo_enhancing_multimodal_llm_reasoning_via_reflection-aware_reinforcement_learn.md)**
+
+:   This paper proposes SRPO (Self-Reflection enhanced reasoning with Group Relative Policy Optimization), a two-stage reflection-aware RL framework. Stage 1 constructs reflection data via large model distillation for SFT cold-start; Stage 2 designs a reflection-aware reward function within GRPO to reinforce concise and effective self-reflection. SRPO achieves state-of-the-art results at the 7B/32B scale on multimodal reasoning benchmarks including MathVista, MathVision, and MMMU-Pro.
+
 **[Stop Summation: Min-Form Credit Assignment Is All Process Reward Model Needs for Reasoning](stop_summation_minform_credit_assignment_is_all_process_rewa.md)**
 
 :   PURE identifies the root cause of reward hacking induced by PRMs as the standard sum-form credit assignment in RL ($V(s) = \sum \gamma^t r_t$), and proposes a min-form alternative ($V(s) = \min_{t' \geq t} r_{t'}$). By constraining the value function to the minimum of future rewards rather than their cumulative sum, PURE significantly mitigates reward hacking—achieving reasoning performance comparable to rule-based reward methods using only 30% of the training steps.
+
+**[SWE-RL: Advancing LLM Reasoning via Reinforcement Learning on Open Software Evolution](swe-rl_advancing_llm_reasoning_via_reinforcement_learning_on_open_software_evolu.md)**
+
+:   This work is the first to apply reinforcement learning (RL) to real-world software engineering tasks (GitHub PR/Issue resolution), training Llama-3.3-70B exclusively with a rule-based sequence-similarity reward. It achieves a 41.0% resolve rate on SWE-bench Verified (SOTA among medium-scale models). Notably, although RL training is conducted solely on issue-solving data, it elicits emergent generalization in out-of-domain tasks including code reasoning, mathematics, and general language understanding.
 
 **[The Hawthorne Effect in Reasoning Models: Evaluating and Steering Test Awareness](the_hawthorne_effect_in_reasoning_models_evaluating_and_steering_test_awareness.md)**
 
@@ -299,13 +346,17 @@ item_total: 66
 
 :   This paper presents a systematic empirical study showing that quantization-aware fine-tuning (QAFT/STE) during RL training of large reasoning models (LRMs) degrades reasoning capability, whereas post-training quantization (PTQ) and QLoRA preserve reasoning performance well even at 4-bit precision. The authors recommend a practical pipeline of full-precision RL training followed by PTQ quantization.
 
+**[The Ouroboros of Benchmarking: Reasoning Evaluation in an Era of Saturation](the_ouroboros_of_benchmarking_reasoning_evaluation_in_an_era_of_saturation.md)**
+
+:   Through a systematic analysis of 52 reasoning benchmarks across three major model families—OpenAI, Anthropic, and Google—this paper identifies an "ouroboros" cycle: old benchmarks are rapidly saturated → new benchmarks are created to restore discriminability → new benchmarks are rapidly saturated in turn. This cycle calls into question whether improvements in benchmark scores genuinely reflect generalized reasoning ability or merely overfit to specific evaluation sets.
+
+**[The Surprising Effectiveness of Negative Reinforcement in LLM Reasoning](the_surprising_effectiveness_of_negative_reinforcement_in_llm_reasoning.md)**
+
+:   This paper decomposes reinforcement learning with verifiable rewards (RLVR) into positive sample reinforcement (PSR, which increases the probability of correct responses) and negative sample reinforcement (NSR, which penalizes incorrect responses). It finds that NSR alone consistently improves reasoning performance across the full Pass@k spectrum and typically matches or surpasses PPO/GRPO. Based on this finding, the paper proposes Weighted-REINFORCE (reducing the PSR weight to 0.1), achieving state-of-the-art results across MATH, AIME 2025, and AMC23.
+
 **[The Virtues of Brevity: Avoid Overthinking in Parallel Test-Time Reasoning](the_virtues_of_brevity_avoid_overthinking_in_parallel_test-time_reasoning.md)**
 
 :   This paper demonstrates that selecting the shortest solution in Best-of-N sampling for reasoning models is a simple yet counterintuitive and effective heuristic, achieving performance comparable to self-consistency at significantly lower token cost. The underlying mechanism exploits a systematic bias in reasoning models between a "conventional mode" and an "overthinking mode."
-
-**[ThinkSound: Chain-of-Thought Reasoning in Multimodal Large Language Models for Audio Generation and Editing](thinksound_chain-of-thought_reasoning_in_multimodal_large_language_models_for_au.md)**
-
-:   ThinkSound is a three-stage interactive video-to-audio framework that leverages an MLLM to generate structured CoT reasoning as guidance for a unified audio foundation model. It achieves state-of-the-art performance on VGGSound and MovieGen Audio benchmarks while supporting object-level refinement and natural language instruction-based editing.
 
 **[TimE: A Multi-level Benchmark for Temporal Reasoning of LLMs in Real-World Scenarios](time_a_multilevel_benchmark_for_temporal_reasoning_of_llms_i.md)**
 
@@ -318,6 +369,10 @@ item_total: 66
 **[Towards Thinking-Optimal Scaling of Test-Time Compute for LLM Reasoning](towards_thinking-optimal_scaling_of_test-time_compute_for_llm_reasoning.md)**
 
 :   This paper demonstrates that excessively extending CoT length degrades LLM reasoning performance, and proposes Thinking-Optimal Scaling (TOPS), a strategy that trains models to select the shortest correct response for each problem via self-improvement, outperforming existing distillation methods in both accuracy and efficiency.
+
+**[Trajectory Bellman Residual Minimization: A Simple Value-Based Method for LLM Reasoning](trajectory_bellman_residual_minimization_a_simple_value-based_method_for_llm_rea.md)**
+
+:   TBRM minimizes trajectory-level Bellman residuals by treating LLM output logits as implicit Q-values, requiring only a single forward rollout per prompt during training. This yields substantially lower complexity than PPO/GRPO while achieving comparable or superior performance on mathematical reasoning benchmarks.
 
 **[Transformers Provably Learn Chain-of-Thought Reasoning with Length Generalization](transformers_provably_learn_chain-of-thought_reasoning_with_length_generalizatio.md)**
 
@@ -342,6 +397,10 @@ item_total: 66
 **[Note 6: Self-Evaluating LLMs - Step-Level Confidence Estimation for Multi-Step Tasks](value-guided_search_for_efficient_chain-of-thought_reasoning.md)**
 
 :   This paper extends confidence estimation to multi-step tasks, demonstrating that step-level evaluation detects reasoning failures more effectively than response-level evaluation, achieving a 15% relative AUC-ROC improvement over holistic evaluation on CoQA, and providing a practical framework for trustworthy deployment of multi-step reasoning systems.
+
+**[VideoRFT: Incentivizing Video Reasoning Capability in MLLMs via Reinforced Fine-Tuning](videorft_incentivizing_video_reasoning_capability_in_mllms_via_reinforced_fine-t.md)**
+
+:   This paper proposes VideoRFT, which extends the reinforced fine-tuning (RFT) paradigm to video reasoning via a cognition-inspired multi-expert CoT data construction pipeline and a novel semantic consistency reward. Two datasets are constructed: VideoRFT-CoT-102K (for SFT) and VideoRFT-RL-310K (for RL), achieving state-of-the-art performance on 6 video reasoning benchmarks.
 
 **[Visual Thoughts: A Unified Perspective of Understanding Multimodal Chain-of-Thought](visual_thoughts_a_unified_perspective_of_understanding_multi.md)**
 

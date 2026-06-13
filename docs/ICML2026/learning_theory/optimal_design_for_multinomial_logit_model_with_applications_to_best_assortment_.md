@@ -2,9 +2,10 @@
 title: >-
   [Paper Note] Optimal Design for Multinomial Logit Model with Applications to Best Assortment Identification
 description: >-
-  [ICML2026][MNL bandits] This paper provides the first **computationally feasible** G-optimal experimental design for the combinatorial action space of Multinomial Logit (MNL) bandits. By formulating the Frank–Wolfe Linea…
+  [ICML2026][others (Multinomial Logit Bandits / Experimental Design / Pure Exploration)][MNL bandits] This paper provides the first **computationally feasible** G-optimal experimental design for the combinatorial action s…
 tags:
   - "ICML2026"
+  - "others (Multinomial Logit Bandits / Experimental Design / Pure Exploration)"
   - "MNL bandits"
   - "G-optimal design"
   - "Frank-Wolfe"
@@ -125,11 +126,11 @@ The algorithm uses Maximum Likelihood Estimation (MLE) by maximizing the negativ
 
 ## Related Papers
 
-- [\[ICML 2026\] Optimal Regularization for Performative Learning](optimal_regularization_for_performative_learning.md)
+- [\[ICML 2026\] Towards Optimal Robustness in Learning-Augmented Paging](towards_optimal_robustness_in_learning-augmented_paging.md)
 - [\[ICML 2026\] Conditional KRR: Injecting Unpenalized Features into Kernel Methods with Applications to Kernel Thresholding](conditional_krr_injecting_unpenalized_features_into_kernel_methods_with_applicat.md)
-- [\[CVPR 2026\] ELogitNorm: Enhancing OOD Detection with Extended Logit Normalization](../../CVPR2026/others/enhancing_outofdistribution_detection_with_extende.md)
-- [\[ICCV 2025\] Toward Material-Agnostic System Identification from Videos](../../ICCV2025/others/toward_material-agnostic_system_identification_from_videos.md)
 - [\[ICML 2026\] Simple Algorithms for Bad Triangle Transversals with Applications to Correlation Clustering](simple_algorithms_for_bad_triangle_transversals_with_applications_to_correlation.md)
+- [\[NeurIPS 2025\] Reliably Detecting Model Failures in Deployment Without Labels](../../NeurIPS2025/learning_theory/reliably_detecting_model_failures_in_deployment_without_labels.md)
+- [\[ICLR 2026\] An Efficient, Provably Optimal Algorithm for the 0-1 Loss Linear Classification Problem](../../ICLR2026/learning_theory/an_efficient_provably_optimal_algorithm_for_the_0-1_loss_linear_classification_p.md)
 
 </div>
 

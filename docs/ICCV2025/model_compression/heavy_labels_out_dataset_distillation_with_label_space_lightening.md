@@ -160,8 +160,8 @@ Incremental component ablation (IN-1K, IPC=10):
 
 ## Related Papers
 
-- [\[ICCV 2025\] Dataset Distillation via the Wasserstein Metric](dataset_distillation_via_the_wasserstein_metric.md)
 - [\[NeurIPS 2025\] Rectifying Soft-Label Entangled Bias in Long-Tailed Dataset Distillation](../../NeurIPS2025/model_compression/rectifying_soft-label_entangled_bias_in_long-tailed_dataset_distillation.md)
+- [\[ICCV 2025\] Dataset Distillation via the Wasserstein Metric](dataset_distillation_via_the_wasserstein_metric.md)
 - [\[NeurIPS 2025\] Hyperbolic Dataset Distillation](../../NeurIPS2025/model_compression/hyperbolic_dataset_distillation.md)
 - [\[ICML 2026\] Hard Labels In! Rethinking the Role of Hard Labels in Mitigating Local Semantic Drift](../../ICML2026/model_compression/hard_labels_in_rethinking_the_role_of_hard_labels_in_mitigating_local_semantic_d.md)
 - [\[ICCV 2025\] Gradient Short-Circuit: Efficient Out-of-Distribution Detection via Feature Intervention](gradient_short-circuit_efficient_out-of-distribution_detection_via_feature_inter.md)

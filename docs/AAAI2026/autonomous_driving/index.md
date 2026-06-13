@@ -24,6 +24,8 @@ item_list:
     t: "Beta Distribution Learning for Reliable Roadway Crash Risk Assessment"
   - u: "catformer_causal_temporal_transformer_with_dynamic_contextual_fusion_for_driving/"
     t: "CaTFormer: Causal Temporal Transformer with Dynamic Contextual Fusion for Driving Intention Prediction"
+  - u: "comptrack_information_bottleneckguided_lowrank_dynamic_token_compres/"
+    t: "CompTrack: Information Bottleneck-Guided Low-Rank Dynamic Token Compression for Point Cloud Tracking"
   - u: "debiased_dual-invariant_defense_for_adversarially_robust_person_re-identificatio/"
     t: "Debiased Dual-Invariant Defense for Adversarially Robust Person Re-Identification"
   - u: "decoupling_scene_perception_and_ego_status_a_multi-context_fusion_approach_for_e/"
@@ -53,7 +55,7 @@ item_list:
   - u: "fq-petr_fully_quantized_position_embedding_transformation_fo/"
     t: "FQ-PETR: Fully Quantized Position Embedding Transformation for Multi-View 3D Object Detection"
   - u: "generalising_traffic_forecasting_to_regions_without_traffic_observations/"
-    t: "Generalising Traffic Forecasting to Regions without Traffic Observations"
+    t: "GenCast: Generalizing Traffic Forecasting to Regions without Observations"
   - u: "global-lens_transformers_adaptive_token_mixing_for_dynamic_link_prediction/"
     t: "Global-Lens Transformers: Adaptive Token Mixing for Dynamic Link Prediction"
   - u: "hd2-ssc_high-dimension_high-density_semantic_scene_completion_for_autonomous_dri/"
@@ -68,8 +70,6 @@ item_list:
     t: "LiDARCrafter: Dynamic 4D World Modeling from LiDAR Sequences"
   - u: "linext_revisiting_lidar_completion_with_efficient_non-diffusion_architectures/"
     t: "LiNeXt: Revisiting LiDAR Completion with Efficient Non-Diffusion Architectures"
-  - u: "lucid_learning-enabled_uncertainty-aware_certification_of_stochastic_dynamical_s/"
-    t: "LUCID: Learning-Enabled Uncertainty-Aware Certification of Stochastic Dynamical Systems"
   - u: "mambaseg_harnessing_mamba_for_accurate_and_efficient_image-e/"
     t: "MambaSeg: Harnessing Mamba for Accurate and Efficient Image-Event Semantic Segmentation"
   - u: "meta_dynamic_graph_for_traffic_flow_prediction/"
@@ -82,7 +82,7 @@ item_total: 56
 
 **🤖 AAAI2026** · **56** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (6)](../../ICML2026/autonomous_driving/index.md) · [📷 CVPR2026 (89)](../../CVPR2026/autonomous_driving/index.md) · [🔬 ICLR2026 (18)](../../ICLR2026/autonomous_driving/index.md) · [🧠 NeurIPS2025 (49)](../../NeurIPS2025/autonomous_driving/index.md) · [📹 ICCV2025 (91)](../../ICCV2025/autonomous_driving/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (6)](../../ICML2026/autonomous_driving/index.md) · [📷 CVPR2026 (90)](../../CVPR2026/autonomous_driving/index.md) · [🔬 ICLR2026 (16)](../../ICLR2026/autonomous_driving/index.md) · [🧠 NeurIPS2025 (47)](../../NeurIPS2025/autonomous_driving/index.md) · [📹 ICCV2025 (91)](../../ICCV2025/autonomous_driving/index.md)
 
 🔥 **Top topics:** Autonomous Driving ×8 · 3D Object Detection ×5 · Diffusion Models ×5 · Agents ×5 · Adversarial Robustness ×4
 
@@ -105,6 +105,10 @@ item_total: 56
 **[CaTFormer: Causal Temporal Transformer with Dynamic Contextual Fusion for Driving Intention Prediction](catformer_causal_temporal_transformer_with_dynamic_contextual_fusion_for_driving.md)**
 
 :   CaTFormer is proposed to explicitly model causal interactions between driver behavior and environmental context via a causal temporal Transformer, achieving state-of-the-art performance of 98.6% F1 on the Brain4Cars dataset.
+
+**[CompTrack: Information Bottleneck-Guided Low-Rank Dynamic Token Compression for Point Cloud Tracking](comptrack_information_bottleneckguided_lowrank_dynamic_token_compres.md)**
+
+:   CompTrack is proposed as the first framework to simultaneously address dual redundancy in LiDAR point clouds: SFP filters background noise via information entropy analysis to resolve spatial redundancy; IB-DTC estimates effective rank via online SVD and adaptively determines compression ratio to compress foreground into low-rank proxy tokens, resolving information redundancy. Achieves state-of-the-art on nuScenes (61.04% Success) at 90 FPS.
 
 **[Debiased Dual-Invariant Defense for Adversarially Robust Person Re-Identification](debiased_dual-invariant_defense_for_adversarially_robust_person_re-identificatio.md)**
 
@@ -162,7 +166,7 @@ item_total: 56
 
 :   This work presents the first fully INT8-quantized deployment of PETR-series 3D detectors. It introduces three key components: a quantization-friendly LiDAR-ray position encoding (QFPE) to resolve multi-modal feature magnitude mismatch, a dual-lookup table (DULUT) for efficient approximation of nonlinear operators, and quantization after numerical stabilization (QANS) to prevent softmax attention distortion. Across PETR/StreamPETR/PETRv2/MV2D, W8A8 quantization incurs less than 1% mAP loss while reducing latency by 75% (3.9× speedup).
 
-**[Generalising Traffic Forecasting to Regions without Traffic Observations](generalising_traffic_forecasting_to_regions_without_traffic_observations.md)**
+**[GenCast: Generalizing Traffic Forecasting to Regions without Observations](generalising_traffic_forecasting_to_regions_without_traffic_observations.md)**
 
 :   This paper proposes GenCast, which achieves generalization of traffic forecasting from sensor-covered regions to unobserved continuous regions via three key innovations: a physics-informed neural network (incorporating the LWR traffic equation as a soft constraint), dynamic external weather signal fusion, and a spatial grouping module. GenCast consistently outperforms existing state-of-the-art methods across five real-world datasets.
 
@@ -193,10 +197,6 @@ item_total: 56
 **[LiNeXt: Revisiting LiDAR Completion with Efficient Non-Diffusion Architectures](linext_revisiting_lidar_completion_with_efficient_non-diffusion_architectures.md)**
 
 :   This paper proposes LiNeXt, a lightweight non-diffusion network for LiDAR 3D scene completion. Through a **Distance-aware Selective Repetition (DSR) strategy**, a **Noise-to-Coarse (N2C) module**, and a **Refine module**, LiNeXt directly reconstructs complete point clouds. On SemanticKITTI, it achieves **199.8×** faster inference than LiDiff, reduces Chamfer Distance by **50.7%**, and uses only **6.1%** of LiDiff's parameters.
-
-**[LUCID: Learning-Enabled Uncertainty-Aware Certification of Stochastic Dynamical Systems](lucid_learning-enabled_uncertainty-aware_certification_of_stochastic_dynamical_s.md)**
-
-:   This paper proposes LUCID, the first verification engine capable of providing quantified safety guarantees for black-box stochastic dynamical systems. By combining data-driven control barrier certificates, conditional mean embeddings, and finite Fourier kernel expansions, LUCID reformulates a semi-infinite non-convex optimization problem into a tractable linear program.
 
 **[MambaSeg: Harnessing Mamba for Accurate and Efficient Image-Event Semantic Segmentation](mambaseg_harnessing_mamba_for_accurate_and_efficient_image-e.md)**
 

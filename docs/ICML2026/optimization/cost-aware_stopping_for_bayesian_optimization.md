@@ -2,9 +2,10 @@
 title: >-
   [Paper Note] Cost-Aware Stopping for Bayesian Optimization
 description: >-
-  [ICML2026][Bayesian optimization] The authors expand Weitzman's Pandora's Box stopping principle to correlated Bayesian Optimization (BO) scenarios. They demonstrate that under a shared stopping rule where "the acquisiti…
+  [ICML2026][Optimization][Bayesian optimization] The authors expand Weitzman's Pandora's Box stopping principle to correlated Bayesian Optimization (BO) scenarios. They demonstrate that under a shared stopping rule where…
 tags:
   - "ICML2026"
+  - "Optimization"
   - "Bayesian optimization"
   - "cost-aware stopping"
   - "Pandora's Box"
@@ -118,11 +119,11 @@ The authors evaluate the PBGI/LogEIPC stopping rules against seven baselines acr
 
 ## Related Papers
 
-- [\[ICML 2026\] Singular Bayesian Neural Networks](singular_bayesian_neural_networks.md)
-- [\[ICML 2026\] Estimating Correlation Clustering Cost in Node-Arrival Stream](estimating_correlation_clustering_cost_in_node-arrival_stream.md)
-- [\[NeurIPS 2025\] 3DID: Direct 3D Inverse Design for Aerodynamics with Physics-Aware Optimization](../../NeurIPS2025/others/3did_direct_3d_inverse_design_for_aerodynamics_with_physics-aware_optimization.md)
-- [\[ICLR 2026\] Federated ADMM from Bayesian Duality](../../ICLR2026/others/federated_admm_from_bayesian_duality.md)
-- [\[AAAI 2026\] Cost-Free Neutrality for the River Method](../../AAAI2026/others/cost-free_neutrality_for_the_river_method.md)
+- [\[NeurIPS 2025\] Cost-Sensitive Freeze-thaw Bayesian Optimization for Efficient Hyperparameter Tuning](../../NeurIPS2025/optimization/cost-sensitive_freeze-thaw_bayesian_optimization_for_efficient_hyperparameter_tu.md)
+- [\[ICML 2026\] Multi-Objective Bayesian Optimization via Adaptive $\varepsilon$-Constraints Decomposition](multi-objective_bayesian_optimization_via_adaptive_varepsilon-constraints_decomp.md)
+- [\[ICML 2026\] Stability Analysis of Sharpness-Aware Minimization](stability_analysis_of_sharpness-aware_minimization.md)
+- [\[ICML 2026\] Bayesian Gated Non-Negative Contrastive Learning](bayesian_gated_non-negative_contrastive_learning.md)
+- [\[ICML 2026\] Asymmetric Perturbation in Solving Bilinear Saddle-Point Optimization](asymmetric_perturbation_in_solving_bilinear_saddle-point_optimization.md)
 
 </div>
 

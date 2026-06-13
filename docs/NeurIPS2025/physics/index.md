@@ -1,20 +1,30 @@
 ---
 title: >-
-  NeurIPS2025 Physics & Scientific Computing Papers · 41 Notes
+  NeurIPS2025 Physics & Scientific Computing Papers · 55 Notes
 description: >-
-  41 NeurIPS2025 papers in the Physics & Scientific Computing area, covering Domain Adaptation, Self-Supervised Learning and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  55 NeurIPS2025 papers in the Physics & Scientific Computing area, covering Domain Adaptation, Diffusion Models, Self-Supervised Learning, LLM, Biomolecules, Medical Imaging and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "NeurIPS2025"
   - "Physics & Scientific Computing"
   - "AI paper notes"
   - "paper summaries"
   - "Domain Adaptation"
+  - "Diffusion Models"
   - "Self-Supervised Learning"
+  - "LLM"
+  - "Biomolecules"
+  - "Medical Imaging"
 item_list:
   - u: "a_regularized_newton_method_for_nonconvex_optimization_with/"
     t: "A Regularized Newton Method for Nonconvex Optimization with Global and Local Complexity Guarantees"
+  - u: "a_variational_manifold_embedding_framework_for_nonlinear_dimensionality_reductio/"
+    t: "A Variational Manifold Embedding Framework for Nonlinear Dimensionality Reduction"
+  - u: "adaptive_stochastic_coefficients_for_accelerating_diffusion_sampling/"
+    t: "Adaptive Stochastic Coefficients for Accelerating Diffusion Sampling"
   - u: "astroco_self-supervised_conformer-style_transformers_for_light-curve_embeddings/"
     t: "AstroCo: Self-Supervised Conformer-Style Transformers for Light-Curve Embeddings"
+  - u: "balanced_conic_rectified_flow/"
+    t: "Balanced Conic Rectified Flow"
   - u: "bayesian_surrogates_for_risk-aware_pre-assessment_of_aging_bridge_portfolios/"
     t: "Bayesian Surrogates for Risk-Aware Pre-Assessment of Aging Bridge Portfolios"
   - u: "collapsing_taylor_mode_automatic_differentiation/"
@@ -23,6 +33,8 @@ item_list:
     t: "DeltaPhi: Physical States Residual Learning for Neural Operators in Data-Limited PDE Solving"
   - u: "eddyformer_accelerated_neural_simulations_of_three-dimensional_turbulence_at_sca/"
     t: "EddyFormer: Accelerated Neural Simulations of Three-Dimensional Turbulence at Scale"
+  - u: "encoding_and_understanding_astrophysical_information_in_large_language_model-gen/"
+    t: "Encoding and Understanding Astrophysical Information in Large Language Model-Generated Summaries"
   - u: "enforcing_governing_equation_constraints_in_neural_pde_solvers_via_training-free/"
     t: "Enforcing Governing Equation Constraints in Neural PDE Solvers via Training-free Projections"
   - u: "exoplanet_formation_inference_using_conditional_invertible_neural_networks/"
@@ -33,16 +45,22 @@ item_list:
     t: "FAIR Universe HiggsML Uncertainty Dataset and Competition"
   - u: "feat_free_energy_estimators_with_adaptive_transport/"
     t: "FEAT: Free Energy Estimators with Adaptive Transport"
+  - u: "flashmd_long-stride_universal_prediction_of_molecular_dynamics/"
+    t: "FlashMD: Long-Stride, Universal Prediction of Molecular Dynamics"
   - u: "from_black_hole_to_galaxy_neural_operator_framework_for_accretion_and_feedback_d/"
     t: "From Black Hole to Galaxy: Neural Operator Framework for Accretion and Feedback Dynamics"
   - u: "from_images_to_physics_probabilistic_inference_of_galaxy_parameters_and_emission/"
     t: "From Images to Physics: Probabilistic Inference of Galaxy Parameters and Emission Lines via VAE & Normalizing Flows"
   - u: "from_simulations_to_surveys_domain_adaptation_for_galaxy_observations/"
     t: "From Simulations to Surveys: Domain Adaptation for Galaxy Observations"
+  - u: "guided_diffusion_sampling_on_function_spaces_with_applications_to_pdes/"
+    t: "Guided Diffusion Sampling on Function Spaces with Applications to PDEs"
   - u: "gyroswin_5d_surrogates_for_gyrokinetic_plasma_turbulence_simulations/"
     t: "GyroSwin: 5D Surrogates for Gyrokinetic Plasma Turbulence Simulations"
   - u: "hamiltonian_neural_pde_solvers_through_functional_approximation/"
     t: "Hamiltonian Neural PDE Solvers through Functional Approximation"
+  - u: "high-order_equivariant_flow_matching_for_density_functional_theory_hamiltonian_p/"
+    t: "High-order Equivariant Flow Matching for Density Functional Theory Hamiltonian Prediction"
   - u: "inc_an_indirect_neural_corrector_for_auto-regressive_hybrid_pde_solvers/"
     t: "INC: An Indirect Neural Corrector for Auto-Regressive Hybrid PDE Solvers"
   - u: "integration_matters_for_learning_pdes_with_backward_sdes/"
@@ -51,45 +69,43 @@ item_list:
     t: "Knowledge is Overrated: A Zero-Knowledge ML and Cryptographic Hashing-Based Framework for Verifiable, Low Latency Inference at the LHC"
   - u: "latent_representation_learning_in_heavy-ion_collisions_with_maskpoint_transforme/"
     t: "Latent Representation Learning in Heavy-Ion Collisions with MaskPoint Transformer"
+  - u: "multi-modal_masked_autoencoders_for_learning_image-spectrum_associations_for_gal/"
+    t: "Multi-Modal Masked Autoencoders for Learning Image-Spectrum Associations for Galaxy Evolution and Cosmology"
   - u: "multi-trajectory_physics-informed_neural_networks_for_hjb_equations_with_hard-ze/"
     t: "Multi-Trajectory Physics-Informed Neural Networks for HJB Equations with Hard-Zero Terminal Inventory: Optimal Execution on Synthetic & SPY Data"
   - u: "neural_deprojection_of_galaxy_stellar_mass_profiles/"
     t: "Neural Deprojection of Galaxy Stellar Mass Profiles"
-  - u: "neural_emulator_superiority_when_machine_learning_for_pdes_surpasses_its_trainin/"
-    t: "Neural Emulator Superiority: When Machine Learning for PDEs Surpasses its Training Data"
-  - u: "neuro-spectral_architectures_for_causal_physics-informed_networks/"
-    t: "Neuro-Spectral Architectures for Causal Physics-Informed Networks"
-  - u: "oneshot_transfer_learning_nonlinear_pdes_perturbative_pinns/"
-    t: "One-Shot Transfer Learning for Nonlinear PDEs with Perturbative PINNs"
-  - u: "physics-guided_machine_learning_for_uncertainty_quantification_in_turbulence_mod/"
-    t: "Physics-Guided Machine Learning for Uncertainty Quantification in Turbulence Models"
-  - u: "physics-informed_neural_networks_with_fourier_features_and_attention-driven_deco/"
-    t: "Physics-Informed Neural Networks with Fourier Features and Attention-Driven Decoding"
-  - u: "polaris_a_high-contrast_polarimetric_imaging_benchmark_dataset_for_exoplanetary_/"
-    t: "POLARIS: A High-contrast Polarimetric Imaging Benchmark Dataset for Exoplanetary Disk Representation Learning"
-  - u: "quantum_doubly_stochastic_transformers/"
-    t: "Quantum Doubly Stochastic Transformers"
-  - u: "simulation-based_inference_for_neutrino_interaction_model_parameter_tuning/"
-    t: "Simulation-Based Inference for Neutrino Interaction Model Parameter Tuning"
-item_total: 41
+item_total: 55
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->
 # ⚛️ Physics & Scientific Computing
 
-**🧠 NeurIPS2025** · **41** paper notes
+**🧠 NeurIPS2025** · **55** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (25)](../../ICML2026/physics/index.md) · [📷 CVPR2026 (5)](../../CVPR2026/physics/index.md) · [🔬 ICLR2026 (12)](../../ICLR2026/physics/index.md) · [🤖 AAAI2026 (10)](../../AAAI2026/physics/index.md) · [📹 ICCV2025 (2)](../../ICCV2025/physics/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (26)](../../ICML2026/physics/index.md) · [📷 CVPR2026 (5)](../../CVPR2026/physics/index.md) · [🔬 ICLR2026 (16)](../../ICLR2026/physics/index.md) · [🤖 AAAI2026 (14)](../../AAAI2026/physics/index.md) · [📹 ICCV2025 (2)](../../ICCV2025/physics/index.md)
 
-🔥 **Top topics:** Domain Adaptation ×3
+🔥 **Top topics:** Domain Adaptation ×3 · Diffusion Models ×2
 
 **[A Regularized Newton Method for Nonconvex Optimization with Global and Local Complexity Guarantees](a_regularized_newton_method_for_nonconvex_optimization_with.md)**
 
 :   This paper proposes a novel class of regularizers constructed from current and historical gradients, combined with a conjugate gradient method equipped with negative-curvature detection to solve the regularized Newton equation. Within an adaptive framework that requires no prior knowledge of the Hessian Lipschitz constant, the method simultaneously achieves, for the first time, the optimal global iteration complexity of $O(\epsilon^{-3/2})$ and a quadratic local convergence rate.
 
+**[A Variational Manifold Embedding Framework for Nonlinear Dimensionality Reduction](a_variational_manifold_embedding_framework_for_nonlinear_dimensionality_reductio.md)**
+
+:   This paper proposes a variational manifold embedding framework that formalizes dimensionality reduction as an optimization problem over smooth embedding maps (minimizing the KL divergence between a prior distribution and the pullback of the data distribution), theoretically unifying PCA and nonlinear dimensionality reduction methods, and leverages the calculus of variations (Euler-Lagrange equations) and Noether's theorem to derive interpretable constraints on optimal embeddings.
+
+**[Adaptive Stochastic Coefficients for Accelerating Diffusion Sampling](adaptive_stochastic_coefficients_for_accelerating_diffusion_sampling.md)**
+
+:   By theoretically analyzing the complementary weaknesses of ODE and SDE solvers (ODE solvers accumulate irreducible gradient errors; SDE solvers amplify discretization errors at large step sizes), this paper proposes AdaSDE—a method that introduces a learnable stochastic coefficient $\gamma_i$ at each denoising step to control noise injection intensity. Optimized via lightweight distillation, AdaSDE achieves state-of-the-art FID of 4.18 on CIFAR-10 and 8.05 on FFHQ at 5 NFE.
+
 **[AstroCo: Self-Supervised Conformer-Style Transformers for Light-Curve Embeddings](astroco_self-supervised_conformer-style_transformers_for_light-curve_embeddings.md)**
 
 :   This paper proposes AstroCo, a self-supervised encoder that introduces the Conformer architecture (attention + depthwise separable convolution + gating) for irregular astronomical light curves. On the MACHO dataset, AstroCo reduces reconstruction error by 61–70% compared to Astromer v1/v2 and improves few-shot classification macro-F1 by approximately 7%.
+
+**[Balanced Conic Rectified Flow](balanced_conic_rectified_flow.md)**
+
+:   To address the distribution drift induced by the reflow step in k-rectified flow, this paper proposes conic reflow: constructing conic supervisory trajectories from the inverted noise of real images and their Slerp-perturbed neighbors, substantially reducing the number of required fake pairs while achieving superior generation quality and straighter ODE trajectories.
 
 **[Bayesian Surrogates for Risk-Aware Pre-Assessment of Aging Bridge Portfolios](bayesian_surrogates_for_risk-aware_pre-assessment_of_aging_bridge_portfolios.md)**
 
@@ -106,6 +122,10 @@ item_total: 41
 **[EddyFormer: Accelerated Neural Simulations of Three-Dimensional Turbulence at Scale](eddyformer_accelerated_neural_simulations_of_three-dimensional_turbulence_at_sca.md)**
 
 :   EddyFormer is a Transformer architecture based on the Spectral Element Method (SEM) that decomposes the flow field into two parallel streams — LES (large-scale) and SGS (small-scale) — achieving DNS-level accuracy on 3D turbulence at $256^3$ resolution with a 30× speedup, while generalizing well to unseen domains 4× larger.
+
+**[Encoding and Understanding Astrophysical Information in Large Language Model-Generated Summaries](encoding_and_understanding_astrophysical_information_in_large_language_model-gen.md)**
+
+:   This work investigates whether LLM embeddings encode physically meaningful quantities derived from X-ray astronomical observations—specifically hardness ratios, power-law indices, and variability indices. Results show that structured prompt design improves clustering purity of physical attributes by 5.9%–57.5%, and sparse autoencoders reveal that LLMs infer physical parameters not explicitly stated by recognizing object types.
 
 **[Enforcing Governing Equation Constraints in Neural PDE Solvers via Training-free Projections](enforcing_governing_equation_constraints_in_neural_pde_solvers_via_training-free.md)**
 
@@ -127,6 +147,10 @@ item_total: 41
 
 :   This paper proposes the FEAT framework, which employs stochastic interpolants to learn transport maps between two thermodynamic systems. Building on the escorted Jarzynski equality and the controlled Crooks theorem, FEAT provides consistent, minimum-variance free energy difference estimators along with variational upper and lower bounds, thereby unifying equilibrium and non-equilibrium approaches.
 
+**[FlashMD: Long-Stride, Universal Prediction of Molecular Dynamics](flashmd_long-stride_universal_prediction_of_molecular_dynamics.md)**
+
+:   FlashMD is proposed as a GNN-based framework that directly predicts the positional and momentum evolution of molecular dynamics trajectories with long strides, achieving time steps 1–2 orders of magnitude larger than those of conventional MD integrators. The architecture incorporates Hamiltonian dynamics constraints and generalizes to arbitrary thermodynamic ensembles and universal chemical systems.
+
 **[From Black Hole to Galaxy: Neural Operator Framework for Accretion and Feedback Dynamics](from_black_hole_to_galaxy_neural_operator_framework_for_accretion_and_feedback_d.md)**
 
 :   A Neural Operator-based "sub-grid black hole" model is proposed to learn the small-scale (GR)MHD time-evolution operator $u_t \to u_{t+\Delta T}$, replacing hand-crafted closure rules embedded in a multi-level direct numerical simulation framework. This work achieves, for the first time, the capture of intrinsic variability in accretion-driven feedback, with a speedup of $\sim 10^5\times$.
@@ -139,6 +163,10 @@ item_total: 41
 
 :   This work constructs a domain adaptation pipeline from simulated galaxies (TNG50) to real survey observations (SDSS) via feature-level alignment using Euclidean distance, optimal transport, and a top-$k$ soft-matching loss with trainable weight scheduling, improving target-domain morphology classification accuracy from 46.8% (no adaptation) to 87.3%, and Macro F1 from 0.298 to 0.626.
 
+**[Guided Diffusion Sampling on Function Spaces with Applications to PDEs](guided_diffusion_sampling_on_function_spaces_with_applications_to_pdes.md)**
+
+:   This paper proposes **FunDPS (Function-space Diffusion Posterior Sampling)**, which trains an unconditional diffusion model in function space and performs plug-and-play posterior sampling for PDE inverse problems via gradient guidance at inference time. Theoretically, it extends the Tweedie formula to infinite-dimensional Banach spaces. Empirically, across 5 PDE tasks with only 3% observations, FunDPS achieves 32% higher accuracy on average than DiffusionPDE while reducing the number of sampling steps by 4×.
+
 **[GyroSwin: 5D Surrogates for Gyrokinetic Plasma Turbulence Simulations](gyroswin_5d_surrogates_for_gyrokinetic_plasma_turbulence_simulations.md)**
 
 :   This work presents GyroSwin, the first scalable 5D neural surrogate model for gyrokinetic plasma turbulence. It extends the Swin Transformer to the 5D gyrokinetic phase space, employs cross-attention for 3D↔5D interaction, and adopts channelwise mode separation to capture zonal flows. GyroSwin achieves higher accuracy than conventional quasilinear methods while being three orders of magnitude faster than the numerical solver GKW.
@@ -146,6 +174,10 @@ item_total: 41
 **[Hamiltonian Neural PDE Solvers through Functional Approximation](hamiltonian_neural_pde_solvers_through_functional_approximation.md)**
 
 :   Grounded in the Riesz representation theorem, this work approximates infinite-dimensional Hamiltonian functionals via learnable integral kernel functionals (IKF). Functional derivatives are obtained through automatic differentiation, yielding an energy-conserving neural PDE solver (HNS) that demonstrates superior stability and generalization on 1D/2D PDEs.
+
+**[High-order Equivariant Flow Matching for Density Functional Theory Hamiltonian Prediction](high-order_equivariant_flow_matching_for_density_functional_theory_hamiltonian_p.md)**
+
+:   This paper proposes QHFlow, the first method to apply conditional flow matching to density functional theory (DFT) Hamiltonian matrix prediction. By designing high-order SE(3)-equivariant vector fields and symmetry-aware prior distributions, QHFlow reduces Hamiltonian prediction error by 73% on MD17 and accelerates DFT computation by 54% when used as an SCF initializer.
 
 **[INC: An Indirect Neural Corrector for Auto-Regressive Hybrid PDE Solvers](inc_an_indirect_neural_corrector_for_auto-regressive_hybrid_pde_solvers.md)**
 
@@ -163,6 +195,10 @@ item_total: 41
 
 :   This work introduces a masked point cloud Transformer autoencoder to heavy-ion collision analysis. Through a two-stage paradigm of self-supervised pre-training followed by supervised fine-tuning, the model learns nonlinear latent representations substantially stronger than those of PointNet—reducing PC1 distribution overlap from 2.42% to 0.27%—providing a general feature learning framework for studying QGP properties.
 
+**[Multi-Modal Masked Autoencoders for Learning Image-Spectrum Associations for Galaxy Evolution and Cosmology](multi-modal_masked_autoencoders_for_learning_image-spectrum_associations_for_gal.md)**
+
+:   This paper applies a Multimodal Masked Autoencoder (MMAE) to jointly model galaxy images (HSC-PDR2, five bands) and spectra (DESI-DR1), constructing a cross-modal dataset GalaxiesML-Spectra of 134,533 galaxies. Under a 75% masking ratio, the model reconstructs major spectral emission lines and image morphology. When spectra are entirely absent at inference, the model achieves $\sigma_{\text{NMAD}}=0.016$ for redshift prediction using images alone, outperforming AstroCLIP while extending the redshift range to $z \sim 4$ for the first time.
+
 **[Multi-Trajectory Physics-Informed Neural Networks for HJB Equations with Hard-Zero Terminal Inventory: Optimal Execution on Synthetic & SPY Data](multi-trajectory_physics-informed_neural_networks_for_hjb_equations_with_hard-ze.md)**
 
 :   To address the hard-zero terminal inventory constraint ($X_T=0$) in HJB equations arising from optimal trade execution, this paper proposes Multi-Trajectory PINN (MT-PINN). Through a rollout-based terminal loss and a $\lambda$-curriculum training strategy, MT-PINN significantly outperforms vanilla PINN on both synthetic benchmarks and live SPY backtesting, achieving a substantial reduction in terminal inventory violation rates.
@@ -175,6 +211,10 @@ item_total: 41
 
 :   This work challenges the prevailing assumption that the accuracy of neural PDE emulators is bounded by that of their training data (i.e., the numerical solver). It discovers and rigorously defines the phenomenon of **emulator superiority**—neural networks trained solely on low-accuracy solver data can, when evaluated against high-accuracy reference solutions, outperform the very solver that generated their training data.
 
+**[Neural Green's Functions](neural_greens_functions.md)**
+
+:   This paper proposes Neural Green's Functions, a learnable linear PDE solution operator based on eigendecomposition: pointwise geometric features are extracted from the domain geometry to predict the eigendecomposition of the Green's function, enabling one-time training to solve for arbitrary source functions and boundary conditions via numerical integration. On mechanical part thermal analysis, the method reduces error by 13.9% over the state-of-the-art neural operator while running 350× faster than numerical solvers.
+
 **[Neuro-Spectral Architectures for Causal Physics-Informed Networks](neuro-spectral_architectures_for_causal_physics-informed_networks.md)**
 
 :   NeuSA integrates classical spectral methods with Neural ODEs: the PDE is projected onto a spectral basis (Fourier) to obtain an ODE system, which is then solved by a NODE that learns the dynamical evolution. This architecture-level design eliminates the spectral bias and causality violations inherent in conventional PINNs, achieving errors 1–2 orders of magnitude lower than baselines on wave, Burgers, and sine-Gordon equations while training faster.
@@ -182,6 +222,10 @@ item_total: 41
 **[One-Shot Transfer Learning for Nonlinear PDEs with Perturbative PINNs](oneshot_transfer_learning_nonlinear_pdes_perturbative_pinns.md)**
 
 :   By combining perturbation theory with PINNs, this work decomposes nonlinear PDEs into a sequence of linear subproblems. After learning the latent space of the linear operator via a Multi-Head PINN, transfer to new PDE instances is achieved through a closed-form solution within 0.2 seconds, attaining errors on the order of $10^{-3}$.
+
+**[Physics-Constrained Flow Matching: Sampling Generative Models with Hard Constraints](physics-constrained_flow_matching_sampling_generative_models_with_hard_constrain.md)**
+
+:   This paper proposes Physics-Constrained Flow Matching (PCFM), a zero-shot inference framework that enforces arbitrary nonlinear equality constraints to machine precision during sampling from pretrained flow matching models. The framework alternates among forward shooting with projection, OT-interpolation backward updates, and relaxed penalty correction at each sub-step, achieving up to 99.5% improvement over baselines on PDE problems involving shocks and discontinuities.
 
 **[Physics-Guided Machine Learning for Uncertainty Quantification in Turbulence Models](physics-guided_machine_learning_for_uncertainty_quantification_in_turbulence_mod.md)**
 
@@ -198,6 +242,14 @@ item_total: 41
 **[Quantum Doubly Stochastic Transformers](quantum_doubly_stochastic_transformers.md)**
 
 :   This paper proposes QDSFormer (Quantum Doubly Stochastic Transformer), replacing softmax with a variational quantum circuit QontOT to generate doubly stochastic attention matrices. Both theoretical analysis and experiments demonstrate that quantum-circuit-generated DSMs are more diverse and better at preserving information, consistently outperforming standard ViT and Sinkformer on multiple small-scale visual recognition tasks.
+
+**[Scaling Laws and Pathologies of Single-Layer PINNs: Network Width and PDE Nonlinearity](scaling_laws_and_pathologies_of_single-layer_pinns_network_width_and_pde_nonline.md)**
+
+:   This work establishes empirical scaling laws for single-layer PINNs on representative nonlinear PDEs, identifying a dual optimization failure: a width-scaling pathology (error does not decrease with width) and a compound pathology (nonlinearity exacerbates this failure), demonstrating that optimization rather than approximation capacity is the primary bottleneck.
+
+**[Score-informed Neural Operator for Enhancing Ordering-based Causal Discovery](score-informed_neural_operator_for_enhancing_ordering-based_causal_discovery.md)**
+
+:   This paper proposes SciNO (Score-informed Neural Operator), a probabilistic generative model designed in a smooth function space that stably approximates the log-density Hessian diagonal to improve ordering-based causal discovery, achieving a 42.7% reduction in order divergence on synthetic graphs and 31.5% on real-world data.
 
 **[Simulation-Based Inference for Neutrino Interaction Model Parameter Tuning](simulation-based_inference_for_neutrino_interaction_model_parameter_tuning.md)**
 
@@ -239,6 +291,10 @@ item_total: 41
 
 :   This work investigates whether neural networks pre-trained on the standard cosmological model (ΛCDM) can transfer to beyond-standard-model scenarios (massive neutrinos, modified gravity, primordial non-Gaussianity). The study finds that a dummy node architecture can reduce simulation requirements by an order of magnitude, but negative transfer emerges when parameters exhibit strong physical degeneracies (e.g., $\sigma_8$–$M_\nu$).
 
+**[Tropical Attention: Neural Algorithmic Reasoning for Combinatorial Algorithms](tropical_attention_neural_algorithmic_reasoning_for_combinatorial_algorithms.md)**
+
+:   Tropical Attention replaces softmax dot-product attention with tropical algebraic geometry, performing piecewise-linear reasoning in tropical projective space to align with the polyhedral decision structures of combinatorial algorithms. It is the first approach to extend neural algorithmic reasoning to NP-hard problems, comprehensively outperforming softmax baselines across three OOD generalization axes: length, magnitude, and noise.
+
 **[Unsupervised Discovery of High-Redshift Galaxy Populations with Variational Autoencoders](unsupervised_discovery_of_high-redshift_galaxy_populations_with_variational_auto.md)**
 
 :   A variational autoencoder (VAE) is applied to unsupervised clustering of 2,743 JWST high-redshift ($z>4$) galaxy spectra, uncovering 12 distinct astrophysical categories and more than doubling the known sample sizes of rare populations including post-starburst galaxies, Lyman-α emitters, extreme emission line galaxies, and Little Red Dots.
@@ -246,3 +302,7 @@ item_total: 41
 **[Vision Transformers for Cosmological Fields: Application to Weak Lensing Mass Maps](vision_transformers_for_cosmological_fields_application_to_weak_lensing_mass_map.md)**
 
 :   This work presents the first systematic application of Vision Transformers (ViT and Swin Transformer) to constraining cosmological parameters ($\Omega_m$ and $S_8$) from weak lensing convergence maps, comparing attention-based architectures against CNNs within a simulation-based inference framework.
+
+**[Why Is Attention Sparse in Particle Transformer?](why_is_attention_sparse_in_particle_transformer.md)**
+
+:   This paper systematically analyzes the near-binary sparse attention phenomenon observed in Particle Transformer (ParT) after training on jet tagging tasks. Through cross-dataset comparisons and ablation studies, it demonstrates that the sparsity primarily originates from the attention mechanism itself rather than the physics-inspired interaction matrix. Nevertheless, the interaction matrix remains indispensable to final performance by influencing the argmax particle selection for the vast majority of tokens.

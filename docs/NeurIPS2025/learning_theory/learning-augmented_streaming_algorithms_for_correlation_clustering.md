@@ -2,9 +2,10 @@
 title: >-
   [Paper Note] Learning-Augmented Streaming Algorithms for Correlation Clustering
 description: >-
-  [NeurIPS 2025][Correlation Clustering] This paper proposes the first learning-augmented streaming algorithms for Correlation Clustering. By leveraging pairwise distance predictions…
+  [NeurIPS 2025][Streaming Algorithms / Clustering][Correlation Clustering] This paper proposes the first learning-augmented streaming algorithms for Correlation Clustering. By leveraging pairwise distance predictions…
 tags:
   - "NeurIPS 2025"
+  - "Streaming Algorithms / Clustering"
   - "Correlation Clustering"
   - "Streaming Algorithms"
   - "Learning-Augmented"
@@ -195,10 +196,10 @@ Key observation: **The improvement in space efficiency is unconditional**—the 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Improved Approximation Algorithms for Chromatic and Pseudometric-Weighted Correlation Clustering](improved_approximation_algorithms_for_chromatic_and_pseudometric-weighted_correl.md)
-- [\[ICML 2026\] Simple Algorithms for Bad Triangle Transversals with Applications to Correlation Clustering](../../ICML2026/others/simple_algorithms_for_bad_triangle_transversals_with_applications_to_correlation.md)
+- [\[ICML 2026\] Simple Algorithms for Bad Triangle Transversals with Applications to Correlation Clustering](../../ICML2026/learning_theory/simple_algorithms_for_bad_triangle_transversals_with_applications_to_correlation.md)
 - [\[NeurIPS 2025\] Learning-Augmented Online Bipartite Fractional Matching](learning-augmented_online_bipartite_fractional_matching.md)
-- [\[NeurIPS 2025\] MutualVPR: A Mutual Learning Framework for Resolving Supervision Inconsistencies via Adaptive Clustering](mutualvpr_a_mutual_learning_framework_for_resolving_supervision_inconsistencies_.md)
-- [\[ICML 2026\] Estimating Correlation Clustering Cost in Node-Arrival Stream](../../ICML2026/others/estimating_correlation_clustering_cost_in_node-arrival_stream.md)
+- [\[ICML 2026\] Estimating Correlation Clustering Cost in Node-Arrival Stream](../../ICML2026/learning_theory/estimating_correlation_clustering_cost_in_node-arrival_stream.md)
+- [\[NeurIPS 2025\] Computable Universal Online Learning](computable_universal_online_learning.md)
 
 </div>
 

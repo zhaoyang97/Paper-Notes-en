@@ -1,23 +1,21 @@
 ---
 title: >-
-  AAAI2026 Medical Imaging Papers · 88 Notes
+  AAAI2026 Medical Imaging Papers · 73 Notes
 description: >-
-  88 AAAI2026 papers in the Medical Imaging area, covering Medical Imaging, Segmentation, Alignment/RLHF, LLM, Adversarial Robustness, Multimodal/VLM and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  73 AAAI2026 papers in the Medical Imaging area, covering Medical Imaging, Segmentation, Multimodal/VLM, Alignment/RLHF, Adversarial Robustness, LLM and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "AAAI2026"
   - "Medical Imaging"
   - "AI paper notes"
   - "paper summaries"
   - "Segmentation"
-  - "Alignment/RLHF"
-  - "LLM"
-  - "Adversarial Robustness"
   - "Multimodal/VLM"
+  - "Alignment/RLHF"
+  - "Adversarial Robustness"
+  - "LLM"
 item_list:
   - u: "a_disease-aware_dual-stage_framework_for_chest_x-ray_report_/"
     t: "A Disease-Aware Dual-Stage Framework for Chest X-ray Report Generation"
-  - u: "a_principle-driven_adaptive_policy_for_group_cognitive_stimu/"
-    t: "A Principle-Driven Adaptive Policy for Group Cognitive Stimulation Dialogue for Elderly with Cognitive Impairment"
   - u: "advancing_safe_mechanical_ventilation_using_offline_rl_with_/"
     t: "Advancing Safe Mechanical Ventilation Using Offline RL With Hybrid Actions and Clinically Aligned Rewards"
   - u: "ambiguity-aware_truncated_flow_matching_for_ambiguous_medica/"
@@ -30,8 +28,6 @@ item_list:
     t: "Bridging Vision and Language for Robust Context-Aware Surgical Point Tracking: The VL-SurgPT Dataset and Benchmark"
   - u: "cd-dpe_dual-prompt_expert_network_based_on_convolutional_dictionary_feature_deco/"
     t: "CD-DPE: Dual-Prompt Expert Network Based on Convolutional Dictionary Feature Decoupling for Multi-Contrast MRI Super-Resolution"
-  - u: "clicare_grounding_large_language_models_in_clinical_guidelines_for_decision_supp/"
-    t: "CliCARE: Grounding Large Language Models in Clinical Guidelines for Decision Support over Longitudinal Cancer Electronic Health Records"
   - u: "coarse-to-fine_open-set_graph_node_classification_with_large_language_models/"
     t: "Coarse-to-Fine Open-Set Graph Node Classification with Large Language Models"
   - u: "cocolit_controlnet-conditioned_latent_image_translation_for_mri_to_amyloid_pet_s/"
@@ -56,16 +52,10 @@ item_list:
     t: "DW-DGAT: Dynamically Weighted Dual Graph Attention Network for Neurodegenerative Disease Diagnosis"
   - u: "egoems_a_high-fidelity_multimodal_egocentric_dataset_for_cognitive_assistance_in/"
     t: "EgoEMS: A High-Fidelity Multimodal Egocentric Dataset for Cognitive Assistance in Emergency Medical Services"
-  - u: "error_correction_in_radiology_reports_a_knowledge_distillation-based_multi-stage/"
-    t: "Error Correction in Radiology Reports: A Knowledge Distillation-Based Multi-Stage Framework"
   - u: "experience_with_single_domain_generalization_in_real_world_medical_imaging_deplo/"
     t: "Experience with Single Domain Generalization in Real World Medical Imaging Deployments"
-  - u: "expert-guided_prompting_and_retrieval-augmented_generation_for_emergency_medical/"
-    t: "Expert-Guided Prompting and Retrieval-Augmented Generation for Emergency Medical Service Question Answering"
   - u: "fane_towards_fine-grained_cross-modal_contrast_with_false-negative_reduction_and/"
     t: "FaNe: Towards Fine-Grained Cross-Modal Contrast with False-Negative Reduction and Text-Conditioned Sparse Attention"
-  - u: "fdp_a_frequency-decomposition_preprocessing_pipeline_for_unsupervised_anomaly_de/"
-    t: "FDP: A Frequency-Decomposition Preprocessing Pipeline for Unsupervised Anomaly Detection in Brain MRI"
   - u: "fia-edit_frequency-interactive_attention_for_efficient_and_high-fidelity_inversi/"
     t: "FIA-Edit: Frequency-Interactive Attention for Efficient and High-Fidelity Inversion-Free Text-Guided Image Editing"
   - u: "fine-tuned_llms_know_they_dont_know_a_parameter-efficient_approach_to_recovering/"
@@ -74,25 +64,31 @@ item_list:
     t: "From Policy to Logic for Efficient and Interpretable Coverage Assessment"
   - u: "funkan_functional_kolmogorov-arnold_network_for_medical_image_enhancement_and_se/"
     t: "FunKAN: Functional Kolmogorov-Arnold Network for Medical Image Enhancement and Segmentation"
-item_total: 88
+  - u: "g2lfrom_giga-scale_to_cancer-specific_large-scale_pathology_foundation_models_vi/"
+    t: "G2L: From Giga-Scale to Cancer-Specific Large-Scale Pathology Foundation Models via Efficient Fine-Tuning"
+  - u: "giim_graph-based_learning_of_inter-_and_intra-view_dependencies_for_multi-view_m/"
+    t: "GIIM: Graph-based Learning of Inter- and Intra-view Dependencies for Multi-view Medical Image Diagnosis"
+  - u: "graph-theoretic_consistency_for_robust_and_topology-aware_semi-supervised_histop/"
+    t: "Graph-Theoretic Consistency for Robust and Topology-Aware Semi-Supervised Histopathology Segmentation"
+  - u: "grover_graph-guided_representation_of_omics_and_vision_with_expert_regulation_fo/"
+    t: "GROVER: Graph-guided Representation of Omics and Vision with Expert Regulation for Cancer Survival Prediction"
+  - u: "guidegen_a_text-guided_framework_for_paired_full-torso_anatomy_and_ct_volume_gen/"
+    t: "GuideGen: A Text-Guided Framework for Paired Full-Torso Anatomy and CT Volume Generation"
+item_total: 73
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->
 # 🏥 Medical Imaging
 
-**🤖 AAAI2026** · **88** paper notes
+**🤖 AAAI2026** · **73** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (34)](../../ICML2026/medical_imaging/index.md) · [💬 ACL2026 (35)](../../ACL2026/medical_imaging/index.md) · [📷 CVPR2026 (102)](../../CVPR2026/medical_imaging/index.md) · [🔬 ICLR2026 (48)](../../ICLR2026/medical_imaging/index.md) · [🧠 NeurIPS2025 (89)](../../NeurIPS2025/medical_imaging/index.md) · [📹 ICCV2025 (31)](../../ICCV2025/medical_imaging/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (24)](../../ICML2026/medical_imaging/index.md) · [📷 CVPR2026 (99)](../../CVPR2026/medical_imaging/index.md) · [🔬 ICLR2026 (21)](../../ICLR2026/medical_imaging/index.md) · [🧠 NeurIPS2025 (73)](../../NeurIPS2025/medical_imaging/index.md) · [📹 ICCV2025 (31)](../../ICCV2025/medical_imaging/index.md)
 
-🔥 **Top topics:** Medical Imaging ×39 · Segmentation ×11 · Alignment/RLHF ×8 · LLM ×7 · Adversarial Robustness ×6
+🔥 **Top topics:** Medical Imaging ×35 · Segmentation ×11 · Multimodal/VLM ×6 · Alignment/RLHF ×6 · Adversarial Robustness ×4
 
 **[A Disease-Aware Dual-Stage Framework for Chest X-ray Report Generation](a_disease-aware_dual-stage_framework_for_chest_x-ray_report_.md)**
 
 :   This paper proposes a two-stage disease-aware framework that learns 14 Disease-Aware Semantic Tokens (DASTs) corresponding to pathology categories for explicit disease representation. It further employs a Disease-Visual Attention Fusion (DVAF) module and a Dual-Modal Similarity Retrieval (DMSR) mechanism to assist an LLM in generating clinically accurate chest X-ray reports, achieving state-of-the-art performance on three datasets: CheXpert Plus, IU X-Ray, and MIMIC-CXR.
-
-**[A Principle-Driven Adaptive Policy for Group Cognitive Stimulation Dialogue for Elderly with Cognitive Impairment](a_principle-driven_adaptive_policy_for_group_cognitive_stimu.md)**
-
-:   This paper proposes the GCSD system for group Cognitive Stimulation Therapy (CST) targeting elderly individuals with cognitive impairment. The system integrates four modules — multi-speaker context control, dynamic participant state modeling (soft prompt), a cognitive stimulation attention loss, and a multi-dimensional reward policy optimization — built on a fine-tuned Qwen-2.5-3B backbone. Training is conducted on 500+ hours of real Cantonese CST dialogues and 10,000+ simulated conversations. The system achieves a BLEU-4 of 27.93, surpassing GPT-4o and other large models, with an A/B test win rate of 50% versus GPT-4o's 39%.
 
 **[Advancing Safe Mechanical Ventilation Using Offline RL With Hybrid Actions and Clinically Aligned Rewards](advancing_safe_mechanical_ventilation_using_offline_rl_with_.md)**
 
@@ -117,10 +113,6 @@ item_total: 88
 **[CD-DPE: Dual-Prompt Expert Network Based on Convolutional Dictionary Feature Decoupling for Multi-Contrast MRI Super-Resolution](cd-dpe_dual-prompt_expert_network_based_on_convolutional_dictionary_feature_deco.md)**
 
 :   This paper proposes CD-DPE, a network that employs an iterative Convolutional Dictionary Feature Decoupling Module (CD-FDM) to disentangle multi-contrast MRI features into cross-contrast shared and modality-specific components, followed by a Dual-Prompt Feature Fusion Expert Module (DP-FFEM) for adaptive fusion and reconstruction. CD-DPE surpasses existing state-of-the-art methods on multiple public benchmarks.
-
-**[CliCARE: Grounding Large Language Models in Clinical Guidelines for Decision Support over Longitudinal Cancer Electronic Health Records](clicare_grounding_large_language_models_in_clinical_guidelines_for_decision_supp.md)**
-
-:   This paper proposes CliCARE, a framework that transforms unstructured longitudinal cancer EHRs into temporal knowledge graphs (TKGs), aligns them with clinical practice guideline (CPG) knowledge graphs, and provides evidence-grounded clinical decision support for LLMs. An LLM-as-a-Judge evaluation protocol highly correlated with expert assessments is also introduced.
 
 **[Coarse-to-Fine Open-Set Graph Node Classification with Large Language Models](coarse-to-fine_open-set_graph_node_classification_with_large_language_models.md)**
 
@@ -170,25 +162,13 @@ item_total: 88
 
 :   This paper presents the first high-fidelity multi-person multimodal egocentric EMS dataset, comprising 233 trials with 20 hours of video, annotations covering 9 interventions and 67 critical steps, and three benchmark tasks (step classification / online segmentation / CPR quality estimation) to advance the development of cognitive assistance systems for EMS.
 
-**[Error Correction in Radiology Reports: A Knowledge Distillation-Based Multi-Stage Framework](error_correction_in_radiology_reports_a_knowledge_distillation-based_multi-stage.md)**
-
-:   This paper proposes a **staged inference + dual-knowledge infusion** framework that decomposes radiology report error correction into three phases—detection → localization → correction—and integrates **Medical Knowledge Graph Distillation (MKGD)** with **External Knowledge Retrieval (EXKR)** to achieve up to **31.56% improvement in error detection accuracy** and **37.4% reduction in processing time** across 6 LLM architectures.
-
 **[Experience with Single Domain Generalization in Real World Medical Imaging Deployments](experience_with_single_domain_generalization_in_real_world_medical_imaging_deplo.md)**
 
 :   This paper proposes the DL+EKE framework, which integrates domain-invariant expert knowledge with deep learning to address rare class single domain generalization (SDG) in medical imaging. The approach significantly outperforms state-of-the-art SDG methods across three real-world deployment scenarios: diabetic retinopathy (DR) grading, resting-state fMRI seizure onset zone (SOZ) localization, and stress ECG-based coronary artery disease (CAD) detection.
 
-**[Expert-Guided Prompting and Retrieval-Augmented Generation for Emergency Medical Service Question Answering](expert-guided_prompting_and_retrieval-augmented_generation_for_emergency_medical.md)**
-
-:   This paper constructs EMSQA, the first multiple-choice QA dataset for the emergency medical services domain (24.3K questions, 10 clinical topics, 4 certification levels), and proposes the Expert-CoT and ExpertRAG frameworks to inject domain expertise into LLM reasoning and retrieval, achieving up to 4.59% accuracy improvement over standard RAG.
-
 **[FaNe: Towards Fine-Grained Cross-Modal Contrast with False-Negative Reduction and Text-Conditioned Sparse Attention](fane_towards_fine-grained_cross-modal_contrast_with_false-negative_reduction_and.md)**
 
 :   FaNe proposes a semantics-enhanced medical vision-language pre-training framework that addresses the false-negative problem and insufficient coarse-grained alignment in medical VLP through semantics-aware positive mining, text-conditioned sparse attention pooling, and hard-negative-aware contrastive loss.
-
-**[FDP: A Frequency-Decomposition Preprocessing Pipeline for Unsupervised Anomaly Detection in Brain MRI](fdp_a_frequency-decomposition_preprocessing_pipeline_for_unsupervised_anomaly_de.md)**
-
-:   This work presents the first systematic frequency-domain analysis of brain MRI anomalies, demonstrating that lesions are predominantly concentrated in low-frequency components. Based on this finding, the authors propose the **Frequency Decomposition Preprocessing (FDP)** framework, which reconstructs low-frequency signals via a learnable prior context bank to suppress lesions while preserving anatomical structures. As a plug-and-play module, FDP consistently improves detection performance across multiple UAD baselines (achieving a 17.63% DICE gain on LDM).
 
 **[FIA-Edit: Frequency-Interactive Attention for Efficient and High-Fidelity Inversion-Free Text-Guided Image Editing](fia-edit_frequency-interactive_attention_for_efficient_and_high-fidelity_inversi.md)**
 
@@ -210,10 +190,6 @@ item_total: 88
 
 :   This paper proposes G2L (Giga-to-Large), a distillation framework that transfers knowledge from a 1.9B-parameter giga-scale pathology foundation model (H-optimus-0) to a 300M-parameter large-scale model (Hibou-L) using only 1K whole slide images, achieving performance on par with or superior to the teacher model and larger models across multiple cancer-specific downstream tasks.
 
-**[GEM: Generative Entropy-Guided Preference Modeling for Few-shot Alignment of LLMs](gem_generative_entropy-guided_preference_modeling_for_few-shot_alignment_of_llms.md)**
-
-:   GEM proposes a generative entropy-guided preference modeling approach that achieves efficient LLM alignment in low-resource settings (only 3,000 preference pairs) through cognitive filtering (entropy-based CoT scoring) and the SEGA algorithm (Self-Evaluated Group Advantage policy optimization).
-
 **[GIIM: Graph-based Learning of Inter- and Intra-view Dependencies for Multi-view Medical Image Diagnosis](giim_graph-based_learning_of_inter-_and_intra-view_dependencies_for_multi-view_m.md)**
 
 :   This paper proposes GIIM, a Multi-Heterogeneous Graph (MHG)-based framework that simultaneously models intra-view dependencies among lesions and inter-view dynamic variations via graph structures. Four missing-view representation strategies are introduced. GIIM achieves consistent and significant improvements over existing multi-view methods across three imaging modalities: liver CT, breast X-ray, and breast MRI.
@@ -230,10 +206,6 @@ item_total: 88
 
 :   GuideGen proposes a controllable framework that requires only text input. It synthesizes full-torso anatomical masks via a categorical diffusion model, and combines an anatomy-aware high-dynamic-range autoencoder with a latent feature generator to produce paired full-torso CT volumes, providing high-quality synthetic training data for downstream segmentation tasks.
 
-**[Hierarchical Schedule Optimization for Fast and Robust Diffusion Model Sampling](hierarchical_schedule_optimization_for_fast_and_robust_diffusion_model_sampling.md)**
-
-:   HSO proposes a hierarchical schedule optimizer via a bilevel optimization framework — an upper-level global search for optimal initialization strategies combined with a lower-level local refinement of schedules — achieving training-free SOTA sampling quality under extremely low NFE at a one-time optimization cost of only ~8 seconds.
-
 **[Human-in-the-Loop Interactive Report Generation for Chronic Disease Adherence](human-in-the-loop_interactive_report_generation_for_chronic_disease_adherence.md)**
 
 :   This paper presents a "physician-in-the-loop" interactive interface that restricts AI to the roles of data organization and draft generation. Through a single-page editor, chart–text pairing, and automated urgency stratification, it enables efficient and accountable chronic disease adherence report generation. A pilot study reveals an "accountability paradox": even when AI-generated quality matches the physician manual-authoring baseline, review time cannot be significantly reduced, because clinical responsibility demands complete verification.
@@ -246,17 +218,9 @@ item_total: 88
 
 :   This paper proposes the Learning with Preserving (LwP) framework, which maintains the geometric structure of the shared representation space via a Dynamically Weighted Distance Preserving (DWDP) loss. Without requiring a replay buffer, LwP addresses catastrophic forgetting in Continual Multitask Learning (CMTL) and significantly outperforms existing continual learning methods on benchmarks including BDD100k, CelebA, and PhysiQ. It is the only method to surpass the single-task learning baseline.
 
-**[LungNoduleAgent: A Collaborative Multi-Agent System for Precision Diagnosis of Lung Nodules](lungnoduleagent_a_collaborative_multi-agent_system_for_precision_diagnosis_of_lu.md)**
-
-:   This paper proposes LungNoduleAgent, the first collaborative multi-agent system for lung nodule analysis. It simulates the clinical workflow through a three-stage pipeline—Nodule Spotter, Simulated Radiologist, and Doctor Agent System—and substantially outperforms mainstream VLMs (GPT-4o, Claude 3.7 Sonnet) and medical agents (MedAgent-Pro) on CT report generation and malignancy grading tasks.
-
 **[MAISI-v2: Accelerated 3D High-Resolution Medical Image Synthesis with Rectified Flow and Region-specific Contrastive Loss](maisi-v2_accelerated_3d_high-resolution_medical_image_synthesis_with_rectified_f.md)**
 
 :   This paper presents MAISI-v2, the first framework to introduce Rectified Flow into 3D medical image synthesis. By replacing DDPM with Rectified Flow, it achieves a 33× speedup, and a novel region-specific contrastive loss is designed to improve conditioning fidelity for small regions such as tumors. The utility of synthesized data is validated on downstream tumor segmentation tasks.
-
-**[MAMA-Memeia! Multi-Aspect Multi-Agent Collaboration for Depressive Symptoms Identification in Memes](mama-memeia_multi-aspect_multi-agent_collaboration_for_depressive_symptoms_ident.md)**
-
-:   This paper proposes MAMAMemeia, a multi-agent multi-aspect collaborative discussion framework grounded in the Cognitive Analytic Therapy (CAT) competency framework, designed to identify depressive symptoms from social media memes. It additionally introduces the RESTOREx resource (containing both LLM-generated and human-annotated rationales), achieving a 7.55% improvement in macro-F1 over 30+ competing methods.
 
 **[MAPI-GNN: Multi-Activation Plane Interaction Graph Neural Network for Multimodal Medical Diagnosis](mapi-gnn_multi-activation_plane_interaction_graph_neural_network_for_multimodal_.md)**
 
@@ -266,10 +230,6 @@ item_total: 88
 
 :   This paper proposes the MCTSr-Zero framework, which combines MCTS with domain-principle-based self-evaluation and a meta-prompt adaptive exploration mechanism to generate high-quality multi-turn psychological counseling dialogue data. The resulting PsyLLM, fine-tuned on this data, achieves state-of-the-art performance on the authors' PsyEval benchmark.
 
-**[Measuring Stability Beyond Accuracy in Small Open-Source Medical Large Language Models for Pediatric Endocrinology](measuring_stability_beyond_accuracy_in_small_open-source_medical_large_language_.md)**
-
-:   This paper systematically evaluates six small open-source medical LLMs (<10B parameters) in pediatric endocrinology, demonstrating that accuracy alone is insufficient to characterize model reliability: semantically neutral prompt variations lead to significant output shifts (Stuart-Maxwell $p < 10^{-4}$), high consistency does not imply correctness, and even differences in CUDA versions can induce statistically significant output distribution changes.
-
 **[MedEyes: Learning Dynamic Visual Focus for Medical Progressive Diagnosis](medeyes_learning_dynamic_visual_focus_for_medical_progressive_diagnosis.md)**
 
 :   MedEyes is a hybrid-policy reinforcement learning framework that introduces a Gaze-guided Reasoning Navigator (GRN) to simulate the "scan-and-drill" visual search pattern of clinical physicians. Combined with a Confidence Value Sampler (CVS) and dual-stream GRPO optimization, the framework enables dynamic visual focus for progressive medical diagnostic reasoning, achieving an average improvement of 8.5 pp across five medical VQA benchmarks.
@@ -277,10 +237,6 @@ item_total: 88
 **[MindCross: Fast New Subject Adaptation with Limited Data for Cross-subject Video Reconstruction from Brain Signals](mindcross_fast_new_subject_adaptation_with_limited_data_for_cross-subject_video_.md)**
 
 :   This paper proposes MindCross, a cross-subject brain decoding framework that learns subject-independent information via a shared encoder and subject-specific information via $N$ individual encoders. Combined with a fast calibration stage and a Top-K collaborative decoding module, a single unified model achieves performance comparable to per-subject models on fMRI/EEG-to-video benchmarks, with new subject adaptation requiring only minimal data and time (~1s vs. 5–17s for baselines).
-
-**[MIRAGE: Scaling Test-Time Inference with Parallel Graph-Retrieval-Augmented Reasoning Chains](mirage_scaling_test-time_inference_with_parallel_graph-retrieval-augmented_reaso.md)**
-
-:   This paper proposes MIRAGE, a framework that extends conventional linear reasoning chains into a parallel multi-chain reasoning paradigm. It combines adaptive retrieval from structured medical knowledge graphs (via neighborhood expansion and multi-hop traversal) with cross-chain verification to resolve contradictions, consistently outperforming GPT-4o, ToT, and Search-o1 on three medical QA benchmarks.
 
 **[MIRNet: Integrating Constrained Graph-Based Reasoning with Pre-training for Diagnostic Medical Imaging](mirnet_integrating_constrained_graph-based_reasoning_with_pre-training_for_diagn.md)**
 
@@ -310,14 +266,6 @@ item_total: 88
 
 :   This paper proposes NutriScreener, a framework combining a CLIP visual encoder, a multi-pose graph attention network (GAT), and a FAISS-based retrieval-augmented classification/regression module. Through cross-pose attention and category-enhanced retrieval, the system achieves robust childhood malnutrition detection and anthropometric prediction, attaining 0.79 recall and 0.82 AUC on cross-continental datasets including AnthroVision, with clinician ratings of 4.3/5 for accuracy and 4.6/5 for efficiency.
 
-**[CountVid: Open-World Object Counting in Videos](open-world_object_counting_in_videos.md)**
-
-:   This paper proposes CountVid, a model, and the VideoCount benchmark, presenting the first systematic study of open-world video object counting—given a text or image description specifying target objects, the system enumerates all unique instances in a video. By combining an image counting model with a promptable video segmentation and tracking model, CountVid addresses challenges such as occlusion and re-appearance, achieving substantial improvements over strong baselines across diverse scenarios including TAO, MOT20, penguin colonies, and X-ray metal crystallization.
-
-**[Pairing-free Group-level Knowledge Distillation for Robust Gastrointestinal Lesion Classification in White-Light Endoscopy](pairing-free_group-level_knowledge_distillation_for_robust_gastrointestinal_lesi.md)**
-
-:   This paper proposes PaGKD, a pairing-free group-level knowledge distillation framework that eliminates the dependency on paired data in conventional NBI→WLI cross-modal distillation. It introduces group-level prototype distillation (GKD-Pro, which extracts modality-invariant semantic prototypes via a shared lesion query Transformer) and group-level dense distillation (GKD-Den, which achieves dense spatial alignment through activation map-guided semantic relation cross-attention). PaGKD improves AUC by 3.3%/1.1%/2.8%/3.2% across four clinical datasets.
-
 **[PanFoMa: A Lightweight Foundation Model and Benchmark for Pan-Cancer Pathology Image Analysis](panfoma_a_lightweight_foundation_model_and_benchmark_for_pan-cancer.md)**
 
 :   This paper proposes PanFoMa, a lightweight hybrid neural network that integrates Transformer-based local modeling with Mamba-based global integration for pan-cancer single-cell transcriptomic representation learning. It also introduces PanFoMaBench, a large-scale benchmark dataset covering 33 cancer subtypes and over 3.5 million cells.
@@ -345,6 +293,10 @@ item_total: 88
 **[Provably Minimum-Length Conformal Prediction Sets for Ordinal Classification](provably_minimum-length_conformal_prediction_sets_for_ordinal_classification.md)**
 
 :   This paper proposes min-CPS and its regularized variant min-RCPS, a model-agnostic conformal prediction method for ordinal classification. By solving the minimum-length prediction interval for each sample via a linear-time sliding window algorithm, the method reduces average prediction set size by 15% while maintaining coverage guarantees, with theoretical optimality guarantees at the instance level.
+
+**[PulseMind: A Multi-Modal Medical Model for Real-World Clinical Diagnosis](pulsemind_a_multi-modal_medical_model_for_real-world_clinical_diagnosis.md)**
+
+:   This paper proposes PulseMind, a multimodal medical diagnostic model comprising three core contributions: MediScope, a large-scale multi-turn diagnostic dialogue dataset; PulseMind Benchmark, a multi-dimensional clinical dialogue evaluation benchmark; and CRPO, a comparison-based reinforcement policy optimization method. The system achieves superior performance in real-world clinical diagnostic dialogue scenarios.
 
 **[Q-FSRU: Quantum-Augmented Frequency-Spectral Fusion for Medical Visual Question Answering](q-fsru_quantum-augmented_frequency-spectral_fusion_for_medical_visual_question_a.md)**
 
@@ -406,10 +358,6 @@ item_total: 88
 
 :   This work reformulates LLM policy violation detection as an out-of-distribution (OOD) detection problem in activation space. A training-free whitening approach is proposed: a whitening transform is fitted on compliant activations, and the Euclidean norm serves as the compliance score. Deployment requires only policy text and a small number of examples. The method achieves 86.0% F1 on DynaBench, outperforming fine-tuned baselines by 9.1 points and LLM-as-Judge by 16 points.
 
-**[Unleashing the Potential of Large Language Models for Text-to-Image Generation through Autoregressive Representation Alignment](unleashing_the_potential_of_large_language_models_for_text-to-image_generation_t.md)**
-
-:   This paper proposes ARRA (Autoregressive Representation Alignment), a training framework that distills global visual representations from an external vision foundation model into the hidden states of an autoregressive LLM via a hybrid token \<HYBNEXT\>, significantly improving text-to-image generation quality without any architectural modification.
-
 **[Unsupervised Motion-Compensated Decomposition for Cardiac MRI Reconstruction via Neural Representation](unsupervised_motion-compensated_decomposition_for_cardiac_mri_reconstruction_via.md)**
 
 :   This paper proposes MoCo-INR, which for the first time integrates implicit neural representation (INR) into a motion compensation (MoCo) framework. Through an unsupervised approach, it achieves high-quality dynamic reconstruction of cardiac MRI, significantly outperforming existing unsupervised methods at ultra-high acceleration factors (20× Cartesian / 69× Non-Cartesian).
@@ -422,17 +370,9 @@ item_total: 88
 
 :   This paper proposes VasoMIM, a domain-specific self-supervised pre-training framework for X-ray angiograms. It introduces an anatomy-guided masking strategy that prioritizes vessel regions, an anatomical consistency loss to preserve vascular topology in reconstructed images, and a newly constructed XA-170K pre-training dataset — the largest of its kind. VasoMIM comprehensively outperforms both general-purpose and medical SSL methods (including DINOv3 pre-trained on 1.69 billion images) across 4 downstream tasks and 6 datasets.
 
-**[Virtual Multiplex Staining for Histological Images Using a Marker-wise Conditioned Diffusion Model](virtual_multiplex_staining_for_histological_images_using_a_marker-wise_condition.md)**
-
-:   This paper proposes a virtual multiplex staining framework based on a marker-wise conditioned diffusion model. Through a two-stage training procedure (marker-wise conditional diffusion learning followed by pixel-level fine-tuning), it is the first method to generate multiplex immunofluorescence images of up to 18 distinct markers from a single H&E image, achieving state-of-the-art performance on two public datasets, HEMIT and Orion-CRC.
-
 **[VitalDiagnosis: AI-Driven Ecosystem for 24/7 Vital Monitoring and Chronic Disease Management](vitaldiagnosis_ai-driven_ecosystem_for_247_vital_monitoring_and_chronic_disease_.md)**
 
 :   This paper proposes VitalDiagnosis, an LLM-driven chronic disease management ecosystem that integrates continuous wearable data with multi-scale LLM reasoning, establishing a dual-track framework comprising interactive anomaly triage and routine adherence monitoring, thereby enabling a paradigm shift from passive surveillance to active engagement within a collaborative patient–clinician workflow.
-
-**[Voices, Faces, and Feelings: Multi-modal Emotion-Cognition Captioning for Mental Health Understanding](voices_faces_and_feelings_multi-modal_emotion-cognition_captioning_for_mental_he.md)**
-
-:   This paper proposes the Emotion-Cognition cooperative Multi-modal Captioning (ECMC) task and framework. A dual-stream BridgeNet extracts emotion and cognition features from video, audio, and text, and a LLaMA decoder generates natural language descriptions. The system provides interpretable emotion-cognition profiles for mental health assessment, substantially improving both diagnostic accuracy and explainability.
 
 **[WDT-MD: Wavelet Diffusion Transformers for Microaneurysm Detection in Fundus Images](wdt-md_wavelet_diffusion_transformers_for_microaneurysm_detection_in_fundus_imag.md)**
 

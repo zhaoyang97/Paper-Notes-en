@@ -125,10 +125,10 @@ The final loss is given in Eq.(29): $\mathcal{L} = \mathbb{E}_{t,v}[-\log\sigma(
 ## Related Papers
 
 - [\[ICML 2026\] Implicit Safety Alignment from Crowd Preferences](implicit_safety_alignment_from_crowd_preferences.md)
-- [\[ICML 2026\] Reward Modeling from Natural Language Human Feedback](reward_modeling_from_natural_language_human_feedback.md)
-- [\[ICML 2026\] Alignment-Aware Decoding](alignment-aware_decoding.md)
-- [\[ICML 2026\] Curriculum Learning for Safety Alignment](curriculum_learning_for_safety_alignment.md)
 - [\[ICML 2026\] Efficient Preference Poisoning Attack on Offline RLHF](efficient_preference_poisoning_attack_on_offline_rlhf.md)
+- [\[ICML 2026\] Alignment-Aware Decoding](alignment-aware_decoding.md)
+- [\[ICLR 2026\] Robust Preference Alignment via Directional Neighborhood Consensus](../../ICLR2026/llm_alignment/robust_preference_alignment_via_directional_neighborhood_consensus.md)
+- [\[ICML 2026\] Curriculum Learning for Safety Alignment](curriculum_learning_for_safety_alignment.md)
 
 </div>
 

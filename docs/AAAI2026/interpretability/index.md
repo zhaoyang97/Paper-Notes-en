@@ -2,22 +2,22 @@
 title: >-
   AAAI2026 Interpretability Papers · 37 Notes
 description: >-
-  37 AAAI2026 papers in the Interpretability area, covering LLM, Layout & Composition, Agents and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  37 AAAI2026 papers in the Interpretability area, covering LLM, Reasoning, Layout & Composition and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "AAAI2026"
   - "Interpretability"
   - "AI paper notes"
   - "paper summaries"
   - "LLM"
+  - "Reasoning"
   - "Layout & Composition"
-  - "Agents"
 item_list:
-  - u: "a_closer_look_at_knowledge_distillation_in_spiking_neural_ne/"
-    t: "A Closer Look at Knowledge Distillation in Spiking Neural Network Training"
   - u: "a_coherence-based_measure_of_agi/"
     t: "A Coherence-Based Measure of AGI"
   - u: "adaptive_evidential_learning_for_temporal-semantic_robustnes/"
     t: "Adaptive Evidential Learning for Temporal-Semantic Robustness in Moment Retrieval"
+  - u: "attention_as_binding_a_vector-symbolic_perspective_on_transformer_reasoning/"
+    t: "Attention as Binding: A Vector-Symbolic Perspective on Transformer Reasoning"
   - u: "attention_gathers_mlps_compose_a_causal_analysis_of_an_action-outcome_circuit_in/"
     t: "Attention Gathers, MLPs Compose: A Causal Analysis of an Action-Outcome Circuit in VideoViT"
   - u: "can_llms_truly_embody_human_personality_analyzing_ai_and_human_behavior_alignmen/"
@@ -40,10 +40,6 @@ item_list:
     t: "Explainable Melanoma Diagnosis with Contrastive Learning and LLM-based Report Generation"
   - u: "finding_the_translation_switch_discovering_and_exploiting_the_task-initiation_fe/"
     t: "Finding the Translation Switch: Discovering and Exploiting the Task-Initiation Features in LLMs"
-  - u: "finevau_a_novel_human-aligned_benchmark_for_fine-grained_video_anomaly_understan/"
-    t: "FineVAU: A Novel Human-Aligned Benchmark for Fine-Grained Video Anomaly Understanding"
-  - u: "flashkat_understanding_and_addressing_performance_bottlenecks_in_the_kolmogorov-/"
-    t: "FlashKAT: Understanding and Addressing Performance Bottlenecks in the Kolmogorov-Arnold Transformer"
   - u: "flexible_concept_bottleneck_model/"
     t: "Flexible Concept Bottleneck Model"
   - u: "fourierpet_deep_fourier-based_unrolled_network_for_low-count_pet_reconstruction/"
@@ -56,22 +52,26 @@ item_list:
     t: "HSKBenchmark: Modeling and Benchmarking Chinese Second Language Acquisition in Large Language Models through Curriculum Tuning"
   - u: "hypothesis_generation_via_llm-automated_language_bias_for_ilp/"
     t: "Hypothesis Generation via LLM-Automated Language Bias for ILP"
-  - u: "imad_intelligent_multi-agent_debate_for_efficient_and_accura/"
-    t: "iMAD: Intelligent Multi-Agent Debate for Efficient and Accurate LLM Inference"
   - u: "induce_align_predict_zero-shot_stance_detection_via_cognitive_inductive_reasonin/"
     t: "Induce, Align, Predict: Zero-Shot Stance Detection via Cognitive Inductive Reasoning"
   - u: "llm_circuit_analyses_consistent_across_training_and_scale/"
     t: "LLM Circuit Analyses Are Consistent Across Training and Scale"
+  - u: "modelling_the_effects_of_hearing_loss_on_neural_coding_in_the_auditory_midbrain_/"
+    t: "Modelling the Effects of Hearing Loss on Neural Coding in the Auditory Midbrain with Variational Conditioning"
   - u: "partially_shared_concept_bottleneck_models/"
     t: "Partially Shared Concept Bottleneck Models"
+  - u: "pragworld_a_benchmark_evaluating_llms_local_world_model_under_minimal_linguistic/"
+    t: "PragWorld: A Benchmark Evaluating LLMs' Local World Model under Minimal Linguistic Alterations and Conversational Dynamics"
   - u: "probing_preference_representations_a_multi-dimensional_evaluation_and_analysis_m/"
     t: "Probing Preference Representations: A Multi-Dimensional Evaluation and Analysis Method for Reward Models"
-  - u: "qgshap_quantum_acceleration_for_faithful_gnn_explanations/"
-    t: "QGShap: Quantum Acceleration for Faithful GNN Explanations"
   - u: "quiet_feature_learning_in_algorithmic_tasks/"
     t: "Quiet Feature Learning in Algorithmic Tasks"
   - u: "scope_intrinsic_semantic_space_control_for_mitigating_copyright_infringement_in_/"
     t: "SCoPe: Intrinsic Semantic Space Control for Mitigating Copyright Infringement in LLMs"
+  - u: "shapbpt_image_feature_attributions_using_data-aware_binary_partition_trees/"
+    t: "ShapBPT: Image Feature Attributions Using Data-Aware Binary Partition Trees"
+  - u: "share_your_attention_transformer_weight_sharing_via_matrix-based_dictionary_lear/"
+    t: "Share Your Attention: Transformer Weight Sharing via Matrix-Based Dictionary Learning"
 item_total: 37
 ---
 
@@ -80,13 +80,9 @@ item_total: 37
 
 **🤖 AAAI2026** · **37** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (80)](../../ICML2026/interpretability/index.md) · [💬 ACL2026 (60)](../../ACL2026/interpretability/index.md) · [📷 CVPR2026 (28)](../../CVPR2026/interpretability/index.md) · [🔬 ICLR2026 (55)](../../ICLR2026/interpretability/index.md) · [🧠 NeurIPS2025 (78)](../../NeurIPS2025/interpretability/index.md) · [📹 ICCV2025 (10)](../../ICCV2025/interpretability/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (71)](../../ICML2026/interpretability/index.md) · [💬 ACL2026 (60)](../../ACL2026/interpretability/index.md) · [📷 CVPR2026 (25)](../../CVPR2026/interpretability/index.md) · [🔬 ICLR2026 (60)](../../ICLR2026/interpretability/index.md) · [🧠 NeurIPS2025 (76)](../../NeurIPS2025/interpretability/index.md) · [📹 ICCV2025 (10)](../../ICCV2025/interpretability/index.md)
 
-🔥 **Top topics:** LLM ×5 · Layout & Composition ×2 · Agents ×2
-
-**[A Closer Look at Knowledge Distillation in Spiking Neural Network Training](a_closer_look_at_knowledge_distillation_in_spiking_neural_ne.md)**
-
-:   To address the overlooked distribution mismatch between teacher ANN continuous features/logits and student SNN discrete sparse spike features/logits in ANN→SNN knowledge distillation, this paper proposes the CKDSNN framework based on Saliency-scaled Activation Map Distillation (SAMD) and Noise-smoothed Logits Distillation (NLD), achieving new state-of-the-art SNN training performance on CIFAR-10/100, ImageNet-1K, and CIFAR10-DVS.
+🔥 **Top topics:** LLM ×4 · Reasoning ×2 · Layout & Composition ×2
 
 **[A Coherence-Based Measure of AGI](a_coherence-based_measure_of_agi.md)**
 
@@ -95,6 +91,10 @@ item_total: 37
 **[Adaptive Evidential Learning for Temporal-Semantic Robustness in Moment Retrieval](adaptive_evidential_learning_for_temporal-semantic_robustnes.md)**
 
 :   This paper proposes DEMR, a framework that introduces Deep Evidential Regression (DER) into video moment retrieval. It mitigates modal imbalance via a Reflective Flipped Fusion (RFF) module and corrects the counter-intuitive uncertainty estimation bias in vanilla DER via a Geom-regularizer, achieving significant improvements on both standard and debiased benchmarks.
+
+**[Attention as Binding: A Vector-Symbolic Perspective on Transformer Reasoning](attention_as_binding_a_vector-symbolic_perspective_on_transformer_reasoning.md)**
+
+:   This paper proposes reinterpreting the Transformer self-attention mechanism as a soft binding/unbinding operator in Vector Symbolic Architectures (VSA) — where Query/Key define a role space, Value encodes fillers, attention weights implement differentiable unbinding, and residual connections implement superposition — thereby providing an algebraic perspective that unifies explanations of LLM capability and fragility in symbolic reasoning. The paper further proposes VSA-inspired architectural improvements such as explicit binding heads and hyperdimensional memory layers.
 
 **[Attention Gathers, MLPs Compose: A Causal Analysis of an Action-Outcome Circuit in VideoViT](attention_gathers_mlps_compose_a_causal_analysis_of_an_action-outcome_circuit_in.md)**
 
@@ -140,14 +140,6 @@ item_total: 37
 
 :   This work leverages sparse autoencoders (SAEs) to discover "translation-initiation features" within LLMs that govern the activation of translation tasks. Causal interventions validate their functional roles—amplifying these features improves translation quality and reduces hallucinations, while suppressing them induces hallucinations. The mechanistic insight is further operationalized into a practical data selection strategy that prioritizes "mechanistically difficult" samples for fine-tuning, substantially improving data efficiency and hallucination suppression.
 
-**[FineVAU: A Novel Human-Aligned Benchmark for Fine-Grained Video Anomaly Understanding](finevau_a_novel_human-aligned_benchmark_for_fine-grained_video_anomaly_understan.md)**
-
-:   This paper proposes the FineVAU benchmark, which decomposes Video Anomaly Understanding (VAU) into three dimensions — Event (What), Entity (Who), and Location (Where) — introduces the FV-Score metric with high alignment to human perception, and constructs the FineW³ dataset via a fully automated LVLM-assisted pipeline. Experiments reveal critical shortcomings of current LVLMs in fine-grained anomalous event perception.
-
-**[FlashKAT: Understanding and Addressing Performance Bottlenecks in the Kolmogorov-Arnold Transformer](flashkat_understanding_and_addressing_performance_bottlenecks_in_the_kolmogorov-.md)**
-
-:   This paper provides an in-depth analysis of the root cause behind KAT (Kolmogorov-Arnold Transformer) training being 123× slower than ViT. The bottleneck is identified not as FLOPs but as **memory stalls caused by gradient accumulation during backpropagation** (global memory contention from atomic add operations). The proposed FlashKAT restructures GPU kernels to achieve an **86.5× training speedup** and reduces gradient rounding errors by nearly an order of magnitude.
-
 **[Flexible Concept Bottleneck Model](flexible_concept_bottleneck_model.md)**
 
 :   This paper proposes the Flexible Concept Bottleneck Model (FCBM), which introduces a hypernetwork to dynamically generate concept weights and a sparsemax module with a learnable temperature parameter, enabling dynamic adaptation of the concept pool—including complete replacement. FCBM achieves accuracy comparable to state-of-the-art baselines with a similar number of effective concepts across five public datasets, and requires only a single epoch of fine-tuning to adapt to an entirely new concept set.
@@ -172,10 +164,6 @@ item_total: 37
 
 :   This paper proposes the first end-to-end framework in which a multi-agent LLM system (Actor/Critic) automatically constructs ILP language bias (predicate system, type declarations, and mode constraints) from raw text. A Translator agent converts text into Prolog facts, and the MAXSYNTH solver then induces a globally optimal rule set based on the MDL principle. The framework achieves 88.3% and 81.3% accuracy on the SHOES and ZENDO tasks, respectively, with variance below 5% across four LLMs.
 
-**[iMAD: Intelligent Multi-Agent Debate for Efficient and Accurate LLM Inference](imad_intelligent_multi-agent_debate_for_efficient_and_accura.md)**
-
-:   iMAD proposes a framework for selectively triggering multi-agent debate (MAD): a single agent first generates a structured response with self-critique, from which 41 interpretable linguistic/semantic features are extracted; a lightweight MLP classifier trained with the FocusCal loss then determines whether to trigger MAD. Across 6 QA/VQA benchmarks, iMAD reduces token overhead by up to 92% while improving accuracy by up to 13.5%.
-
 **[Induce, Align, Predict: Zero-Shot Stance Detection via Cognitive Inductive Reasoning](induce_align_predict_zero-shot_stance_detection_via_cognitive_inductive_reasonin.md)**
 
 :   This paper proposes the CIRF framework, which abstracts transferable reasoning patterns from LLM-generated first-order logic via unsupervised schema induction (USI), and performs explainable zero-shot stance reasoning through structural alignment using a schema-enhanced graph kernel model (SEGKM). The method achieves state-of-the-art performance on three benchmarks while requiring only 30% of labeled data.
@@ -184,17 +172,21 @@ item_total: 37
 
 :   This paper presents the first systematic tracking of internal circuits in decoder-only LLMs across 300 billion tokens of training and model scales ranging from 70M to 2.8B parameters. It finds that while specific attention heads may be replaced over the course of training, the underlying algorithms remain stable and consistent across scales, suggesting that circuit analyses conducted on smaller models generalize to larger models and longer training runs.
 
+**[Modelling the Effects of Hearing Loss on Neural Coding in the Auditory Midbrain with Variational Conditioning](modelling_the_effects_of_hearing_loss_on_neural_coding_in_the_auditory_midbrain_.md)**
+
+:   This paper proposes ψ-ICNet, a variationally conditioned deep neural network that encodes the effects of hearing loss via only 6 learnable conditioning parameters ψ. The model directly learns a low-dimensional representation space of hearing loss from real neural recordings, achieving accuracy comparable to animal-specific models in predicting auditory midbrain responses in both normal-hearing and hearing-impaired animals, and can be rapidly fitted to unseen animals via Bayesian optimization.
+
 **[Partially Shared Concept Bottleneck Models](partially_shared_concept_bottleneck_models.md)**
 
 :   This paper proposes PS-CBM, a framework that integrates multimodal concept generation (combining LLM semantics with visual cues from exemplar images), a partially shared concept strategy (merging concepts based on activation patterns), and a Concept-Efficient Accuracy (CEA) evaluation metric. PS-CBM achieves higher classification accuracy and interpretability with fewer concepts across 11 datasets.
 
+**[PragWorld: A Benchmark Evaluating LLMs' Local World Model under Minimal Linguistic Alterations and Conversational Dynamics](pragworld_a_benchmark_evaluating_llms_local_world_model_under_minimal_linguistic.md)**
+
+:   This paper proposes the PragWorld benchmark, which evaluates the plasticity and robustness of LLMs' implicit world models by applying 7 types of minimal linguistic perturbations to dialogues. A dual-perspective interpretability framework is designed to localize harmful/helpful layers, and a layer regularization fine-tuning strategy is proposed to improve robustness.
+
 **[Probing Preference Representations: A Multi-Dimensional Evaluation and Analysis Method for Reward Models](probing_preference_representations_a_multi-dimensional_evaluation_and_analysis_m.md)**
 
 :   This paper proposes MRMBench, a benchmark that evaluates whether reward models (RMs) effectively capture multi-dimensional preferences via probing tasks across 6 dimensions (harmlessness, helpfulness, correctness, coherence, complexity, and verbosity). Probe performance is shown to strongly correlate with PPO alignment quality (Pearson $r > 0.8$), and an inference-time probing method is proposed that improves AlpacaEval win rate from 57.3% to 62.5%.
-
-**[QGShap: Quantum Acceleration for Faithful GNN Explanations](qgshap_quantum_acceleration_for_faithful_gnn_explanations.md)**
-
-:   This paper proposes QGShap, a GNN explainability framework that leverages quantum amplitude amplification to accelerate exact Shapley value computation, achieving a quadratic speedup over classical Monte Carlo methods while maintaining exact (non-approximate) computation.
 
 **[Quiet Feature Learning in Algorithmic Tasks](quiet_feature_learning_in_algorithmic_tasks.md)**
 
@@ -208,6 +200,10 @@ item_total: 37
 
 :   This paper proposes ShapBPT, which combines **data-aware Binary Partition Trees (BPT)** as hierarchical coalition structures with Owen-approximated Shapley values to achieve feature attributions aligned with image morphology. ShapBPT converges faster and yields more accurate shape recognition than existing Shapley-based methods, with a 20-participant user study confirming that its explanations are preferred by human evaluators.
 
+**[Share Your Attention: Transformer Weight Sharing via Matrix-Based Dictionary Learning](share_your_attention_transformer_weight_sharing_via_matrix-based_dictionary_lear.md)**
+
+:   Inspired by dictionary learning, this paper proposes the MASA framework, which decomposes the attention projection matrices (Q/K/V/O) across Transformer layers into linear combinations of shared matrix atoms, achieving performance on par with or superior to the original Transformer at a 66.7% attention parameter compression ratio.
+
 **[SOM Directions are Better than One: Multi-Directional Refusal Suppression in Language Models](som_directions_are_better_than_one_multi-directional_refusal_suppression_in_lang.md)**
 
 :   This paper demonstrates that refusal behavior in LLMs is not encoded by a single direction but rather forms a low-dimensional manifold. It employs self-organizing maps (SOM) to extract multiple refusal directions and applies Bayesian optimization to search for the optimal ablation combination, surpassing single-direction baselines and dedicated jailbreak algorithms across multiple models.
@@ -215,6 +211,10 @@ item_total: 37
 **[SparK: Query-Aware Unstructured Sparsity with Recoverable KV Cache Channel Pruning](spark_query-aware_unstructured_sparsity_with_recoverable_kv_cache_channel_prunin.md)**
 
 :   This paper proposes SparK — a training-free, token-wise unstructured channel pruning method for KV cache. It selects salient channels via query-aware saliency scoring and recovers the contribution of pruned channels through a recovery mechanism. At an 80% pruning ratio, performance degradation remains below 5%. The method is orthogonal to token eviction approaches and can reduce KV cache storage by an additional 30%+.
+
+**[SparseRM: A Lightweight Preference Modeling with Sparse Autoencoder](sparserm_a_lightweight_preference_modeling_with_sparse_autoencoder.md)**
+
+:   SparseRM leverages sparse autoencoders (SAE) to extract preference-relevant directions from LLM intermediate representations, constructing a lightweight reward model via projection vectors. With fewer than 1% trainable parameters, it surpasses most mainstream reward models and demonstrates stronger generalization in online iterative alignment frameworks.
 
 **[ToC: Tree-of-Claims Search with Multi-Agent Language Models](toc_tree-of-claims_search_with_multi-agent_language_models.md)**
 

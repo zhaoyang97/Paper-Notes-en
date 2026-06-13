@@ -1,32 +1,29 @@
 ---
 title: >-
-  NeurIPS2025 Others Papers · 118 Notes
+  NeurIPS2025 Others Papers · 126 Notes
 description: >-
-  118 NeurIPS2025 papers in the Others area, covering Adversarial Robustness, Anomaly Detection, Alignment/RLHF, Face & Gaze, Agents, Reasoning and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  126 NeurIPS2025 papers in the Others area, covering Adversarial Robustness, Alignment/RLHF, Layout & Composition, Diffusion Models, Reasoning and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "NeurIPS2025"
   - "Others"
   - "AI paper notes"
   - "paper summaries"
   - "Adversarial Robustness"
-  - "Anomaly Detection"
   - "Alignment/RLHF"
-  - "Face & Gaze"
-  - "Agents"
+  - "Layout & Composition"
+  - "Diffusion Models"
   - "Reasoning"
 item_list:
   - u: "3did_direct_3d_inverse_design_for_aerodynamics_with_physics-aware_optimization/"
     t: "3DID: Direct 3D Inverse Design for Aerodynamics with Physics-Aware Optimization"
   - u: "a_differentiable_model_of_supply-chain_shocks/"
     t: "A Differentiable Model of Supply-Chain Shocks"
-  - u: "a_generalized_label_shift_perspective_for_crossdomain_gaze_e/"
-    t: "A Generalized Label Shift Perspective for Cross-Domain Gaze Estimation"
   - u: "a_sustainable_ai_economy_needs_data_deals_that_work_for_gene/"
     t: "A Sustainable AI Economy Needs Data Deals That Work for Generators"
   - u: "a_theoretical_framework_for_grokking_interpolation_followed_by_riemannian_norm_m/"
     t: "A Theoretical Framework for Grokking: Interpolation followed by Riemannian Norm Minimisation"
-  - u: "a_unified_framework_for_variable_selection_in_modelbased_clu/"
-    t: "A Unified Framework for Variable Selection in Model-Based Clustering with Missing Not at Random"
+  - u: "a_unified_framework_for_provably_efficient_algorithms_to_estimate_shapley_values/"
+    t: "A Unified Framework for Provably Efficient Algorithms to Estimate Shapley Values"
   - u: "active_measurement_efficient_estimation_at_scale/"
     t: "Active Measurement: Efficient Estimation at Scale"
   - u: "addressing_mark_imbalance_in_integrationfree_neural_marked_t/"
@@ -35,18 +32,16 @@ item_list:
     t: "Adjoint Schrödinger Bridge Sampler"
   - u: "adjusted_count_quantification_learning_on_graphs/"
     t: "Adjusted Count Quantification Learning on Graphs"
-  - u: "adpretrain_advancing_industrial_anomaly_detection_via_anomaly_representation_pre/"
-    t: "ADPretrain: Advancing Industrial Anomaly Detection via Anomaly Representation Pretraining"
+  - u: "aggregation_hides_out-of-distribution_generalization_failures_from_spurious_corr/"
+    t: "Aggregation Hides OOD Generalization Failures from Spurious Correlations"
   - u: "alias-free_vit_fractional_shift_invariance_via_linear_attention/"
     t: "Alias-Free ViT: Fractional Shift Invariance via Linear Attention"
-  - u: "an_empirical_investigation_of_neural_odes_and_symbolic_regression_for_dynamical_/"
-    t: "An Empirical Investigation of Neural ODEs and Symbolic Regression for Dynamical Systems"
-  - u: "an_evidence-based_post-hoc_adjustment_framework_for_anomaly_detection_under_data/"
-    t: "EPHAD: An Evidence-Based Post-Hoc Adjustment Framework for Anomaly Detection Under Data Contamination"
   - u: "are_pixel-wise_metrics_reliable_for_sparse-view_computed_tomography_reconstructi/"
     t: "Are Pixel-Wise Metrics Reliable for Sparse-View Computed Tomography Reconstruction?"
-  - u: "autoscidact_automated_scientific_discovery_through_contrastive_embedding_and_hyp/"
-    t: "AutoSciDACT: Automated Scientific Discovery through Contrastive Embedding and Hypothesis Testing"
+  - u: "asymmetric_duos_sidekicks_improve_uncertainty/"
+    t: "Asymmetric Duos: Sidekicks Improve Uncertainty"
+  - u: "bispectral_ot_dataset_comparison_using_symmetry-aware_optimal_transport/"
+    t: "Bispectral OT: Dataset Comparison using Symmetry-Aware Optimal Transport"
   - u: "brain-like_processing_pathways_form_in_models_with_heterogeneous_experts/"
     t: "Brain-Like Processing Pathways Form in Models With Heterogeneous Experts"
   - u: "contextual_dynamic_pricing_with_heterogeneous_buyers/"
@@ -73,19 +68,23 @@ item_list:
     t: "Directional Non-Commutative Monoidal Structures for Compositional Embeddings in Machine Learning"
   - u: "distributionally_robust_feature_selection/"
     t: "Distributionally Robust Feature Selection"
-  - u: "double_descent_meets_out-of-distribution_detection_theoretical_insights_and_empi/"
-    t: "Double Descent Meets Out-of-Distribution Detection: Theoretical Insights and Empirical Analysis"
-item_total: 118
+  - u: "dpa_a_one-stop_metric_to_measure_bias_amplification_in_classification_datasets/"
+    t: "DPA: A One-Stop Metric to Measure Bias Amplification in Classification Datasets"
+  - u: "egoemotion_egocentric_vision_and_physiological_signals_for_emotion_and_personali/"
+    t: "egoEMOTION: Egocentric Vision and Physiological Signals for Emotion and Personality Recognition in Real-World Tasks"
+  - u: "emergency_response_measures_for_catastrophic_ai_risk/"
+    t: "Emergency Response Measures for Catastrophic AI Risk"
+item_total: 126
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->
 # 📂 Others
 
-**🧠 NeurIPS2025** · **118** paper notes
+**🧠 NeurIPS2025** · **126** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (69)](../../ICML2026/others/index.md) · [💬 ACL2026 (1)](../../ACL2026/others/index.md) · [📷 CVPR2026 (39)](../../CVPR2026/others/index.md) · [🔬 ICLR2026 (62)](../../ICLR2026/others/index.md) · [🤖 AAAI2026 (116)](../../AAAI2026/others/index.md) · [📹 ICCV2025 (39)](../../ICCV2025/others/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (63)](../../ICML2026/others/index.md) · [💬 ACL2026 (1)](../../ACL2026/others/index.md) · [📷 CVPR2026 (32)](../../CVPR2026/others/index.md) · [🔬 ICLR2026 (73)](../../ICLR2026/others/index.md) · [🤖 AAAI2026 (124)](../../AAAI2026/others/index.md) · [📹 ICCV2025 (39)](../../ICCV2025/others/index.md)
 
-🔥 **Top topics:** Adversarial Robustness ×7 · Anomaly Detection ×3 · Alignment/RLHF ×3 · Face & Gaze ×2 · Agents ×2
+🔥 **Top topics:** Adversarial Robustness ×5 · Alignment/RLHF ×3 · Layout & Composition ×2 · Diffusion Models ×2 · Reasoning ×2
 
 **[3DID: Direct 3D Inverse Design for Aerodynamics with Physics-Aware Optimization](3did_direct_3d_inverse_design_for_aerodynamics_with_physics-aware_optimization.md)**
 
@@ -95,10 +94,6 @@ item_total: 118
 
 :   A JAX-based differentiable Agent-Based Model (ABM) of supply chains (~1,000 firms) that combines GPU parallelization and automatic differentiation to achieve Bayesian parameter calibration three orders of magnitude faster than conventional ABC, paving the way for shock-propagation modeling in global supply-chain networks.
 
-**[A Generalized Label Shift Perspective for Cross-Domain Gaze Estimation](a_generalized_label_shift_perspective_for_crossdomain_gaze_e.md)**
-
-:   This paper formulates cross-domain gaze estimation (CDGE) as a generalized label shift (GLS) problem, demonstrating that existing domain-invariant representation learning methods are theoretically insufficient under label shift. It proposes continuous importance reweighting based on truncated Gaussian distributions and a Probability-aware Conditional Operator Discrepancy (PCOD) to jointly correct label shift and conditional shift, achieving an average error reduction of 12%–27% across multiple backbones.
-
 **[A Sustainable AI Economy Needs Data Deals That Work for Generators](a_sustainable_ai_economy_needs_data_deals_that_work_for_gene.md)**
 
 :   This paper introduces the concept of the "Economic Data Processing Inequality" — in the ML value chain, data progresses from raw form to model weights to synthetic outputs, with each step refining technical signals while systematically stripping economic rights from data generators. The authors empirically validate this phenomenon through analysis of 73 publicly available data transactions, diagnose three structural deficiencies (missing provenance, asymmetric bargaining power, non-dynamic pricing), and propose the EDVEX framework as a solution blueprint.
@@ -107,9 +102,9 @@ item_total: 118
 
 :   This paper rigorously proves the mechanism behind grokking from a purely optimization-theoretic perspective. Gradient flow with small weight decay exhibits two-phase dynamics in the $\lambda\to 0$ limit: rapid convergence to the critical manifold $\mathcal{M}$ of the training loss, followed by a Riemannian gradient flow along the manifold minimizing the $\ell_2$ norm at timescale $t\approx 1/\lambda$, thereby inducing delayed generalization.
 
-**[A Unified Framework for Variable Selection in Model-Based Clustering with Missing Not at Random](a_unified_framework_for_variable_selection_in_modelbased_clu.md)**
+**[A Unified Framework for Provably Efficient Algorithms to Estimate Shapley Values](a_unified_framework_for_provably_efficient_algorithms_to_estimate_shapley_values.md)**
 
-:   Within a Gaussian mixture model clustering framework, this paper jointly addresses variable selection (distinguishing signal, redundant, and noise variables) and MNAR missing data modeling. A two-stage strategy—LASSO-penalized ranking followed by BIC-based role assignment—combined with spectral-distance adaptive penalty weights enables efficient inference in high-dimensional settings. Identifiability and asymptotic selection consistency are established theoretically.
+:   This paper proposes a unified framework that subsumes KernelSHAP, LeverageSHAP, and related Shapley value estimators under a randomized sketching perspective, provides the first non-asymptotic theoretical guarantees for KernelSHAP, and extends these methods to high-dimensional datasets such as CIFAR-10 via algorithmic improvements including Poisson approximation.
 
 **[Active Measurement: Efficient Estimation at Scale](active_measurement_efficient_estimation_at_scale.md)**
 
@@ -127,29 +122,25 @@ item_total: 118
 
 :   This paper extends the classical Adjusted Classify & Count (ACC) quantification method to graph-structured data, proposing two techniques — Structural Importance Sampling (SIS) and Neighborhood-aware ACC (N-ACC) — to address structural covariate shift and non-homophilous edges in graph quantification, respectively.
 
-**[ADPretrain: Advancing Industrial Anomaly Detection via Anomaly Representation Pretraining](adpretrain_advancing_industrial_anomaly_detection_via_anomaly_representation_pre.md)**
+**[Aggregation Hides OOD Generalization Failures from Spurious Correlations](aggregation_hides_out-of-distribution_generalization_failures_from_spurious_corr.md)**
 
-:   This work presents ADPretrain, the first dedicated representation pretraining framework for industrial anomaly detection. By learning residual feature representations via angle-oriented and norm-oriented contrastive losses on the large-scale RealIAD dataset, the pretrained features consistently improve five mainstream embedding-based AD methods across five datasets and five backbone networks when substituted for the original features.
+:   This paper reveals the "aggregation masking" phenomenon in OOD generalization benchmarks: while aggregate evaluation exhibits accuracy-on-the-line (AoTL)—a positive correlation between ID and OOD accuracy—the proposed OODSelect method can identify large, semantically coherent subsets (up to 75%) from the same OOD data on which higher ID accuracy corresponds to lower OOD accuracy (Pearson R as low as −0.92), demonstrating that the harm of spurious correlations is systematically concealed by aggregate evaluation.
 
 **[Alias-Free ViT: Fractional Shift Invariance via Linear Attention](alias-free_vit_fractional_shift_invariance_via_linear_attention.md)**
 
 :   This paper proposes the Alias-Free Vision Transformer (AFT), which combines anti-aliasing signal processing techniques with shift-equivariant linear cross-covariance attention, achieving near-perfect consistency (~99%) under fractional (sub-pixel) shifts for the first time, with negligible degradation in ImageNet classification accuracy.
 
-**[An Empirical Investigation of Neural ODEs and Symbolic Regression for Dynamical Systems](an_empirical_investigation_of_neural_odes_and_symbolic_regression_for_dynamical_.md)**
-
-:   This paper systematically investigates the extrapolation capability of Neural ODEs (NODEs) on noisy synthetic data, and explores a pipeline that employs NODEs as a data augmentation tool combined with symbolic regression (SR) to recover governing equations from limited data. Results demonstrate that this combined approach can recover two of three governing equations—and a strong approximation of the third—using only 10% of the simulation data.
-
-**[EPHAD: An Evidence-Based Post-Hoc Adjustment Framework for Anomaly Detection Under Data Contamination](an_evidence-based_post-hoc_adjustment_framework_for_anomaly_detection_under_data.md)**
-
-:   EPHAD proposes a test-time post-processing framework that corrects the output of anomaly detection models trained on contaminated data via Bayesian-style fusion with external evidence (e.g., CLIP, LOF) through exponential tilting. The framework requires no access to the training pipeline and consistently improves detection performance of contaminated models across 8 visual and 26 tabular AD datasets.
-
 **[Are Pixel-Wise Metrics Reliable for Sparse-View Computed Tomography Reconstruction?](are_pixel-wise_metrics_reliable_for_sparse-view_computed_tomography_reconstructi.md)**
 
 :   This paper reveals that pixel-level metrics such as PSNR and SSIM fail to capture anatomical structural completeness in sparse-view CT reconstruction (correlation only 0.16–0.30), and proposes anatomy-aware metrics (NSD/clDice) based on automated segmentation alongside the CARE framework—which incorporates segmentation-guided loss into diffusion model training—achieving 32% improvement in structural completeness for large organs and 36% for vessels.
 
-**[AutoSciDACT: Automated Scientific Discovery through Contrastive Embedding and Hypothesis Testing](autoscidact_automated_scientific_discovery_through_contrastive_embedding_and_hyp.md)**
+**[Asymmetric Duos: Sidekicks Improve Uncertainty](asymmetric_duos_sidekicks_improve_uncertainty.md)**
 
-:   This work proposes the AutoSciDACT pipeline, which first employs supervised contrastive learning to compress high-dimensional scientific data into a 4-dimensional embedding space, then applies NPLM (New Physics Learning Machine) likelihood-ratio testing to statistically quantify distributional deviations in the embedding space. The pipeline achieves $\geq 3\sigma$ discovery at signal injection ratios of $\leq 1\%$ across astronomical, particle physics, pathology, image, and synthetic datasets.
+:   Asymmetric Duos (AD) pairs a large model with a small "sidekick"—combining their predictions via temperature-weighted logit averaging—achieving near-5× deep ensemble uncertainty estimation quality at only 10–20% additional FLOPs. RN50 AD (5% FLOPs overhead) approaches an $m=5$ deep ensemble (400% FLOPs overhead) on AUROC/AURC/SAC@98.
+
+**[Bispectral OT: Dataset Comparison using Symmetry-Aware Optimal Transport](bispectral_ot_dataset_comparison_using_symmetry-aware_optimal_transport.md)**
+
+:   This paper proposes Bispectral Optimal Transport (BOT), which replaces the cost matrix in discrete optimal transport from raw pixel distances to bispectrum (group Fourier invariant) distances, enabling transport plans to eliminate group-action-induced variation (e.g., rotation) while preserving signal structure. On rotation-augmented MNIST and related datasets, the class-preservation accuracy improves from 33% to 84%.
 
 **[Brain-Like Processing Pathways Form in Models With Heterogeneous Experts](brain-like_processing_pathways_form_in_models_with_heterogeneous_experts.md)**
 
@@ -203,17 +194,21 @@ item_total: 118
 
 :   This paper proposes a model-agnostic distributionally robust feature selection method that achieves a continuous relaxation of discrete selection by injecting controlled Gaussian noise into covariates, and optimizes the conditional variance of the Bayes-optimal predictor, so that the selected feature subset enables high-quality downstream models to be trained simultaneously across multiple subpopulations.
 
-**[Double Descent Meets Out-of-Distribution Detection: Theoretical Insights and Empirical Analysis](double_descent_meets_out-of-distribution_detection_theoretical_insights_and_empi.md)**
-
-:   This paper is the first to reveal a double descent phenomenon in post-hoc OOD detection—OOD detection performance exhibits a valley near the interpolation threshold as model width increases, then recovers—provides a theoretical explanation via random matrix theory, and proposes an NC1 criterion based on Neural Collapse to identify the optimal model complexity regime.
-
 **[DPA: A One-Stop Metric to Measure Bias Amplification in Classification Datasets](dpa_a_one-stop_metric_to_measure_bias_amplification_in_classification_datasets.md)**
 
 :   This paper proposes Directional Predictability Amplification (DPA), a predictability-based metric for measuring bias amplification. It is the only one-stop metric that simultaneously satisfies directionality, applicability to both balanced and imbalanced datasets, and correct identification of positive and negative bias amplification, by measuring the relative change between model bias and dataset bias.
 
+**[egoEMOTION: Egocentric Vision and Physiological Signals for Emotion and Personality Recognition in Real-World Tasks](egoemotion_egocentric_vision_and_physiological_signals_for_emotion_and_personali.md)**
+
+:   This paper introduces egoEMOTION — the first dataset combining egocentric vision (Meta Project Aria glasses) with physiological signals for emotion and personality recognition. It encompasses 43 participants, 50+ hours of recordings, and 16 tasks, and demonstrates that egocentric vision signals (particularly eye-tracking features) outperform conventional physiological signals for emotion prediction in real-world scenarios.
+
 **[Emergency Response Measures for Catastrophic AI Risk](emergency_response_measures_for_catastrophic_ai_risk.md)**
 
 :   This paper systematically analyzes how Frontier Safety Policies (FSPs) can be integrated into the first two stages of China's four-phase emergency response framework (prevention–early warning–response–recovery), employing dangerous capability evaluations, tiered thresholds, and pre-established safety measures to address catastrophic AI risks. The analysis is further contextualized through comparisons with international practices such as the EU AI Act and California SB 53.
+
+**[Estimation of Stochastic Optimal Transport Maps](estimation_of_stochastic_optimal_transport_maps.md)**
+
+:   This paper introduces a transport error metric $\mathcal{E}_p$ for stochastic OT maps, decomposed into an optimality gap and a feasibility gap. Under minimal assumptions that require neither the existence nor uniqueness of a Brenier map, a computationally efficient rounding estimator is constructed that achieves a near-optimal convergence rate of $\tilde{O}(n^{-1/(d+2p)})$. The framework is further extended to Hölder-continuous kernels and adversarially corrupted data, establishing the first general theory for OT map estimation.
 
 **[Evolutionary Learning in Spatial Agent-Based Models for Physical Climate Risk Assessment](evolutionary_learning_in_spatial_agent-based_models_for_physical_climate_risk_as.md)**
 
@@ -227,6 +222,10 @@ item_total: 118
 
 :   This paper proposes the Differentiable Finite-State Transducer (DFST), a Turing-complete and end-to-end differentiable model family that operates on a 2D symbol grid. Trained via Policy-Trajectory Observations (PTOs) derived from expert arithmetic computations, DFST achieves perfect generalization to 3,850-digit binary addition and 2,450-digit decimal addition using only 20 training samples of up to 3-digit addition, with zero observed errors.
 
+**[Exploiting Task Relationships in Continual Learning via Transferability-Aware Task Embeddings](exploiting_task_relationships_in_continual_learning_via_transferability-aware_ta.md)**
+
+:   This paper proposes H-embedding, a transferability-aware task embedding based on H-score, and integrates it into a hypernetwork framework. By explicitly modeling inter-task relationships in the embedding space to guide parameter generation, the method achieves state-of-the-art final accuracy in a rehearsal-free setting.
+
 **[FACE: Faithful Automatic Concept Extraction](face_faithful_automatic_concept_extraction.md)**
 
 :   This paper proposes FACE, a framework that incorporates a KL divergence regularization term into non-negative matrix factorization (NMF) to constrain reconstructed activations to remain consistent with the original model's predictions, thereby extracting concept explanations that are truly faithful to the model's decision process. FACE comprehensively outperforms CRAFT and ICE on ImageNet, COCO, and CelebA.
@@ -235,9 +234,9 @@ item_total: 118
 
 :   This paper proposes the Faithful Group Shapley Value (FGSV), the unique group-level data valuation method satisfying five axioms including "faithfulness," which effectively defends against the "shell company attack" (artificially inflating valuation by splitting subgroups), and introduces an efficient approximation algorithm with $O(n \cdot \text{Poly}(\log n))$ complexity.
 
-**[FlashMD: Long-Stride, Universal Prediction of Molecular Dynamics](flashmd_long-stride_universal_prediction_of_molecular_dynamics.md)**
+**[Fixed-Point RNNs: Interpolating from Diagonal to Dense](fixed-point_rnns_interpolating_from_diagonal_to_dense.md)**
 
-:   FlashMD is proposed as a GNN-based framework that directly predicts the positional and momentum evolution of molecular dynamics trajectories with long strides, achieving time steps 1–2 orders of magnitude larger than those of conventional MD integrators. The architecture incorporates Hamiltonian dynamics constraints and generalizes to arbitrary thermodynamic ensembles and universal chemical systems.
+:   This paper proposes the Fixed-Point RNN framework, which parameterizes dense linear RNNs as fixed points of diagonal linear RNNs. By varying the number of iterations, the model dynamically interpolates between diagonal (efficient) and dense (expressive) regimes, achieving state-of-the-art results simultaneously on state-tracking ($A_5$/$S_5$) and copying tasks for the first time.
 
 **[Fostering the Ecosystem of AI for Social Impact Requires Expanding and Strengthening Evaluation Standards](fostering_the_ecosystem_of_ai_for_social_impact_requires_expanding_and_strengthe.md)**
 
@@ -261,15 +260,15 @@ item_total: 118
 
 **[Graph Alignment via Birkhoff Relaxation](graph_alignment_via_birkhoff_relaxation.md)**
 
-:   This paper provides the first theoretical guarantees for the Birkhoff relaxation of the graph alignment problem (relaxing the permutation matrix constraint to doubly stochastic matrices), proving a phase transition in the Gaussian Wigner model: when $\sigma = o(n^{-1})$, the relaxed solution approximates the true permutation; when $\sigma = \Omega(n^{-0.5})$, the relaxed solution is far from the true permutation.
-
-**[Harnessing Feature Resonance under Arbitrary Target Alignment for Out-of-Distribution Node Detection](harnessing_feature_resonance_under_arbitrary_target_alignment_for_out-of-distrib.md)**
-
-:   This paper discovers the *Feature Resonance* phenomenon—when optimizing the representations of known in-distribution (ID) nodes, unknown ID nodes undergo significantly larger representational changes than OOD nodes, and this phenomenon is label-agnostic. Based on this observation, the authors propose RSL, a graph OOD node detection framework that requires no multi-class labels, achieving state-of-the-art performance across 13 datasets.
+:   This paper provides the first theoretical guarantees for the Birkhoff relaxation (the tightest convex relaxation of QAP) under the Gaussian Wigner model: when $\sigma = o(n^{-1})$, the relaxed solution approximates the true permutation; when $\sigma = \Omega(n^{-0.5})$, the relaxed solution is far from the true permutation, revealing a phase transition phenomenon.
 
 **[Hessian-guided Perturbed Wasserstein Gradient Flows for Escaping Saddle Points](hessian-guided_perturbed_wasserstein_gradient_flows_for_escaping_saddle_points.md)**
 
 :   This paper proposes the Perturbed Wasserstein Gradient Flow (PWGF) algorithm, which injects noise perturbations via Hessian-guided Gaussian processes to enable efficient saddle point escape and second-order optimality in probability measure optimization.
+
+**[HouseLayout3D: A Benchmark and Training-Free Baseline for 3D Layout Estimation in the Wild](houselayout3d_a_benchmark_and_training-free_baseline_for_3d_layout_estimation_in.md)**
+
+:   This paper introduces HouseLayout3D—the first real-world 3D layout estimation benchmark targeting large-scale multi-floor buildings—and MultiFloor3D, a training-free baseline that combines modern 3D reconstruction and segmentation models to surpass existing deep learning methods on multi-floor building layout estimation.
 
 **[Hybrid-Balance GFlowNet for Solving Vehicle Routing Problems](hybrid-balance_gflownet_for_solving_vehicle_routing_problems.md)**
 
@@ -287,9 +286,13 @@ item_total: 118
 
 :   This paper proposes the Latent Similarity Gaussian Process (LSGP), which embeds patients into a continuous latent space to capture heterogeneity, enabling data-scarce patients to "borrow" predictive trends from similar patients, thereby improving suicide attempt prediction based on EMA data.
 
-**[Inferring Stochastic Dynamics with Growth from Cross-Sectional Data](inferring_stochastic_dynamics_with_growth_from_cross-sectional_data.md)**
+**[Incomplete Multi-view Clustering via Hierarchical Semantic Alignment and Cooperative Completion](incomplete_multi-view_clustering_via_hierarchical_semantic_alignment_and_coopera.md)**
 
-:   This paper proposes Unbalanced Probabilistic Flow Inference (UPFI), which jointly infers the drift, diffusion, and growth rate of stochastic dynamical systems from cross-sectional data via a Lagrangian formulation of the Fokker-Planck equation, constituting the first method to accurately handle scenarios involving cell proliferation and death.
+:   This paper proposes the HSACC framework, which employs a two-level semantic space design (low-level mutual information consistency + high-level adaptive weighted fusion) combined with cooperatively optimized implicit missing-view recovery, achieving significant improvements over existing incomplete multi-view clustering methods on five benchmark datasets.
+
+**[InFlux: A Benchmark for Self-Calibration of Dynamic Intrinsics of Video Cameras](influx_a_benchmark_for_self-calibration_of_dynamic_intrinsics_of_video_cameras.md)**
+
+:   This paper introduces InFlux, the first real-world video benchmark with per-frame ground-truth dynamic camera intrinsics (386 videos, 143K+ annotated frames). Accurate annotations are achieved via a lookup table (LUT) mapping lens metadata to intrinsic parameters. The benchmark reveals that existing intrinsic prediction methods perform poorly under dynamic intrinsic settings.
 
 **[Information-Computation Tradeoffs for Noiseless Linear Regression with Oblivious Contamination](information-computation_tradeoffs_for_noiseless_linear_regression_with_oblivious.md)**
 
@@ -327,9 +330,9 @@ item_total: 118
 
 :   This paper formalizes level-$k$ look-ahead reasoning in user–algorithm interactions on learning platforms. It proves that individually selfish higher-order reasoning only accelerates convergence without altering the equilibrium (i.e., no long-term gain), while the benefit of collective coordination is determined by the alignment between the learner's and users' utility functions. A theoretical framework is provided to characterize upper bounds on coordination gains.
 
-**[MAS-ZERO: Designing Multi-Agent Systems with Zero Supervision](maszero_designing_multiagent_systems_with_zero_supervision.md)**
+**[Manipulating Feature Visualizations with Gradient Slingshots](manipulating_feature_visualizations_with_gradient_slingshots.md)**
 
-:   MAS-ZERO is the first inference-time automatic MAS design framework. Through a meta-agent that iteratively designs, critiques, and refines MAS configurations (including task decomposition and sub-MAS assignment), it requires no validation set or training, and outperforms both manual and automatic MAS baselines on reasoning (+16.69%), programming (+16.66%), and search agent (+5.45%) tasks while maintaining a Pareto-optimal accuracy–cost trade-off.
+:   This paper proposes Gradient Slingshots (GS), a method that "carves" a quadratic activation landscape in the out-of-distribution (OOD) input region of a model, directing the gradient-based optimization of Feature Visualization (FV) toward an arbitrary target image. The approach causes FV to converge to a predefined spurious image while leaving the model's architecture, classification accuracy, and internal feature representations largely intact, thereby exposing a serious vulnerability of FV as a model auditing tool.
 
 **[MaxSup: Overcoming Representation Collapse in Label Smoothing](maxsup_overcoming_representation_collapse_in_label_smoothing.md)**
 
@@ -338,6 +341,10 @@ item_total: 118
 **[MEGState: Phoneme Decoding from Magnetoencephalography Signals](megstate_phoneme_decoding_from_magnetoencephalography_signals.md)**
 
 :   This paper proposes MEGState, an architecture combining multi-resolution convolution and sensor-wise state space models (SSMs) for decoding phonemes from magnetoencephalography (MEG) signals, achieving substantial improvements over baseline methods on the LibriBrain dataset.
+
+**[Merlin L48 Spectrogram Dataset](merlin_l48_spectrogram_dataset.md)**
+
+:   This paper introduces the L48 dataset — a fine-grained spectrogram multi-label classification benchmark derived from real-world bird recordings that naturally exhibits the Single Positive Multi-Label (SPML) setting. The dataset exposes critical shortcomings of existing SPML methods under realistic conditions, and proposes an intra-recording consistency regularization scheme to improve performance.
 
 **[Meta-learning three-factor plasticity rules for structured credit assignment with sparse feedback](meta-learning_three-factor_plasticity_rules_for_structured_credit_assignment_wit.md)**
 
@@ -354,6 +361,10 @@ item_total: 118
 **[Military AI Needs Technically-Informed Regulation to Safeguard AI Research and its Applications](military_ai_needs_technically-informed_regulation_to_safeguard_ai_research_and_i.md)**
 
 :   This paper proposes a behavior-oriented definition and regulatory framework for AI-powered Lethal Autonomous Weapons Systems (AI-LAWS). It identifies systems requiring enhanced regulation through two technical criteria, puts forward five concrete policy recommendations, and calls on AI researchers to participate actively throughout the full lifecycle of military AI governance.
+
+**[Model Context Protocol for Vision Systems: Audit, Security, and Protocol Extensions](model_context_protocol_for_vision_systems_audit_security_and_protocol_extensions.md)**
+
+:   The first protocol-level audit of MCP deployment in vision systems, analyzing 91 public MCP servers and finding that 78% exhibit schema inconsistencies and 89% lack runtime validation; the paper further proposes protocol extensions including semantic schemas, visual memory, and runtime validators.
 
 **[Modeling Cell Dynamics and Interactions with Unbalanced Mean Field Schrödinger Bridge](modeling_cell_dynamics_and_interactions_with_unbalanced_mean_field_schrödinger_b.md)**
 
@@ -399,10 +410,6 @@ item_total: 118
 
 :   This paper proves that the separation power of equivariant neural networks (i.e., their ability to distinguish symmetry-inequivalent inputs) is insufficient to fully characterize their approximation capacity—models with identical separation power may possess strictly different approximation abilities. The paper provides a complete characterization of universality classes for shallow invariant networks and establishes sufficient conditions for universality failure.
 
-**[One Sample is Enough to Make Conformal Prediction Robust](one_sample_is_enough_to_make_conformal_prediction_robust.md)**
-
-:   This paper proposes RCP1 (Robust Conformal Prediction with One sample), which certifies the conformal procedure itself rather than individual conformity scores. Requiring only a single randomly perturbed forward pass at inference, RCP1 yields smaller robust prediction sets than state-of-the-art methods that require 100 forward passes.
-
 **[Optimized Learned Count-Min Sketch](optimized_learned_count-min_sketch.md)**
 
 :   This paper proposes OptLCMS, which partitions the score space and analytically solves CMS parameters via KKT conditions while optimizing thresholds through dynamic programming, substantially accelerating the construction process and providing theoretical guarantees on the probability of intolerable error.
@@ -427,17 +434,21 @@ item_total: 118
 
 :   This paper provides the first convergence guarantee for the Private Evolution (PE) synthetic data generation algorithm that does not rely on unrealistic assumptions, proving that under appropriate hyperparameter settings, the $(ε,δ)$-DP synthetic dataset output by PE achieves a 1-Wasserstein distance of $\tilde{O}(d(nε)^{-1/d})$.
 
+**[Put CASH on Bandits: A Max K-Armed Problem for Automated Machine Learning](put_cash_on_bandits_a_max_k-armed_problem_for_automated_machine_learning.md)**
+
+:   This paper addresses the Combined Algorithm Selection and Hyperparameter Optimization (CASH) problem in AutoML. Through data-driven analysis, it reveals that HPO reward distributions are bounded and left-skewed, and proposes MaxUCB—a bandit algorithm specifically tailored to this distributional property—achieving both theoretical and empirical improvements over existing methods.
+
 **[Radar: Benchmarking Language Models on Imperfect Tabular Data](radar_benchmarking_language_models_on_imperfect_tabular_data.md)**
 
 :   This paper introduces the Radar benchmark, which systematically evaluates language models' data-aware reasoning on imperfect tabular data by injecting five categories of data artifacts (missing values, bad values, outliers, formatting inconsistencies, and logical inconsistencies) into real-world tables. The benchmark reveals that even frontier models suffer substantial performance degradation upon the introduction of data artifacts.
 
+**[RDB2G-Bench: A Comprehensive Benchmark for Automatic Graph Modeling of Relational Databases](rdb2g-bench_a_comprehensive_benchmark_for_automatic_graph_modeling_of_relational.md)**
+
+:   This paper proposes RDB2G-Bench — the first benchmark framework for evaluating relational-database-to-graph modeling methods, comprising 5 real-world RDBs, 12 prediction tasks, approximately 50,000 precomputed graph model–performance pairs, and a systematic comparison of 10 automatic graph modeling approaches.
+
 **[Recurrent Self-Attention Dynamics: An Energy-Agnostic Perspective from Jacobians](recurrent_self-attention_dynamics_an_energy-agnostic_perspective_from_jacobians.md)**
 
 :   This paper adopts a dynamical systems perspective grounded in Jacobian analysis to move beyond the symmetry constraints imposed by traditional energy-function frameworks. It reveals the critical role of normalization layers in suppressing the spectral norm and oscillatory components of self-attention, identifies that high-performing recurrent self-attention models exhibit Lyapunov exponents approaching zero (a criticality regime), and proposes a spectral regularization method that substantially improves inference performance.
-
-**[Redundancy-Aware Test-Time Graph Out-of-Distribution Detection](redundancy-aware_test-time_graph_out-of-distribution_detection.md)**
-
-:   This paper proposes RedOUT, a framework that constructs coding trees via structural entropy minimization to eliminate redundant information in graph structures. Combined with the Redundancy-aware Graph Information Bottleneck (ReGIB) principle, RedOUT effectively distinguishes in-distribution (ID) from out-of-distribution (OOD) graph samples at test time without modifying pretrained model parameters, achieving an average AUC of 87.46% across 10 dataset pairs.
 
 **[Regression Trees Know Calculus](regression_trees_know_calculus.md)**
 
@@ -451,9 +462,21 @@ item_total: 118
 
 :   This paper proves that residual networks and feedforward networks occupy distinct function spaces (i.e., ResNets are not a simple reparameterization of feedforward networks), and demonstrates through post-training partial linearization experiments that variable-depth architectures (ResNet-like) consistently outperform fixed-depth architectures even after controlling for trainability differences, suggesting that residual connections provide inductive biases beyond optimization.
 
+**[Rethinking Evaluation of Infrared Small Target Detection](rethinking_evaluation_of_infrared_small_target_detection.md)**
+
+:   This paper systematically identifies three critical limitations in existing evaluation protocols for infrared small target detection (IRSTD), and proposes a hierarchical analysis framework comprising the hybrid-level metric hIoU, a systematic error analysis methodology, and a cross-dataset evaluation setting.
+
+**[Rethinking Losses for Diffusion Bridge Samplers](rethinking_losses_for_diffusion_bridge_samplers.md)**
+
+:   This paper identifies theoretical flaws in the widely used Log Variance (LV) loss for diffusion bridge samplers—namely, that it violates the data processing inequality and its gradients are not equivalent to those of the reverse KL (rKL)—and proposes computing rKL gradients via the log-derivative trick (rKL-LD). The proposed approach consistently outperforms LV loss across multiple benchmarks while exhibiting more stable training and reduced sensitivity to hyperparameters.
+
 **[Rethinking PCA Through Duality](rethinking_pca_through_duality.md)**
 
 :   This paper revisits PCA through the Difference-of-Convex (DC) framework, establishing kernelization and out-of-sample extension capabilities, revealing that simultaneous iteration is a special case of DCA, and proposing a kernelizable dual formulation for robust $\ell_1$-PCA.
+
+**[Revisiting Bi-Linear State Transitions in Recurrent Neural Networks](revisiting_bi-linear_state_transitions_in_recurrent_neural_networks.md)**
+
+:   This paper systematically revisits bilinear state transitions in RNNs—i.e., multiplicative interactions between the hidden state and the input—and theoretically proves that bilinear RNNs can simulate arbitrary finite-state machines. By removing additive terms, these models form a natural expressivity hierarchy ranging from diagonal to full-rank structures, revealing that popular linear RNNs such as Mamba occupy the lowest tier of this hierarchy.
 
 **[RNNs Perform Task Computations by Dynamically Warping Neural Representations](rnns_perform_task_computations_by_dynamically_warping_neural_representations.md)**
 
@@ -479,9 +502,9 @@ item_total: 118
 
 :   For nonconvex min-max optimization problems with infinitely many nonconvex constraints, this paper proposes the iDB-PD (Inexact Dynamic Barrier Primal-Dual) algorithm. Under the Łojasiewicz regularity condition, it establishes the first global non-asymptotic convergence guarantees: stationarity $\mathcal{O}(\epsilon^{-3})$, feasibility $\mathcal{O}(\epsilon^{-6\theta})$, and complementary slackness $\mathcal{O}(\epsilon^{-3\theta/(1-\theta)})$.
 
-**[Semi-supervised Graph Anomaly Detection via Robust Homophily Learning](semi-supervised_graph_anomaly_detection_via_robust_homophily_learning.md)**
+**[Semi-Supervised Regression with Heteroscedastic Pseudo-Labels](semi-supervised_regression_with_heteroscedastic_pseudo-labels.md)**
 
-:   This paper proposes RHO (Robust Homophily Learning), which addresses the homophily diversity of normal nodes in semi-supervised graph anomaly detection via an adaptive frequency response filter (AdaFreq) and a Graph Normality Alignment (GNA) module, outperforming existing methods on 8 real-world datasets.
+:   This paper proposes an uncertainty-aware pseudo-label framework based on heteroscedastic modeling, which dynamically calibrates per-sample pseudo-label uncertainty via bilevel optimization to mitigate the negative impact of noisy pseudo-labels on regression models, achieving state-of-the-art performance on multiple SSR benchmarks.
 
 **[Sharpness-Aware Minimization with Z-Score Gradient Filtering](sharpness-aware_minimization_with_z-score_gradient_filtering.md)**
 
@@ -515,6 +538,10 @@ item_total: 118
 
 :   This paper proves that on graphs with sufficiently strong clustering structure (structure ratio $\Upsilon(k)$ large enough), **uniform edge sampling** suffices to preserve the spectral subspace structure required for spectral clustering, without expensive effective resistance precomputation — providing the first provable guarantee that uniform sampling preserves such structure.
 
+**[Test-Time Adaptation by Causal Trimming](test-time_adaptation_by_causal_trimming.md)**
+
+:   This paper proposes TACT, a method that identifies non-causal directions in the representation space via data augmentation and PCA, then removes the projections of both test representations and class prototypes along these directions at test time. This reduces model reliance on non-causal features and significantly improves prediction performance under distribution shift.
+
 **[The Computational Complexity of Counting Linear Regions in ReLU Neural Networks](the_computational_complexity_of_counting_linear_regions_in_relu_neural_networks.md)**
 
 :   This paper systematically identifies six mutually non-equivalent definitions of "linear regions" in ReLU networks, proves that counting linear regions is #P-hard under all six definitions (even for single-hidden-layer networks), and establishes strong inapproximability results together with polynomial-space upper bounds for deeper networks.
@@ -523,6 +550,10 @@ item_total: 118
 
 :   This paper studies the parameter complexity of robust memorization in ReLU networks — i.e., the number of parameters required to interpolate an arbitrary dataset while maintaining consistent predictions within a $\mu$-neighborhood of each training sample — and establishes tighter upper and lower bounds across the full range $(0,1)$ of the robustness ratio $\rho = \mu/\epsilon$.
 
+**[The Geometry of Cortical Computation: Manifold Disentanglement and Predictive Dynamics in VCNet](the_geometry_of_cortical_computation_manifold_disentanglement_and_predictive_dyn.md)**
+
+:   This paper proposes VCNet—a neural network architecture that simulates the macroscopic organization of the primate visual cortex—reinterpreting dual-stream separation (manifold disentanglement) and predictive coding (geodesic refinement) through the language of geometry and dynamical systems. At an extremely compact size of 0.04 MB, VCNet achieves 92.1% accuracy on Spots-10 (10% above a distilled DenseNet), and attains 74.4% on light field classification at 3.52 MB (surpassing MobileNetV2 by 2.3%).
+
 **[The Persistence of Neural Collapse Despite Low-Rank Bias](the_persistence_of_neural_collapse_despite_low-rank_bias.md)**
 
 :   This paper theoretically demonstrates that Deep Neural Collapse (DNC) is globally suboptimal in deep unconstrained feature models due to the low-rank bias induced by L2 regularization, while providing the first theoretical explanation for the persistent empirical occurrence of DNC — its solution-space dimensionality grows faster with network width than that of low-rank solutions.
@@ -530,6 +561,14 @@ item_total: 118
 **[Tight Bounds On the Distortion of Randomized and Deterministic Distributed Voting](tight_bounds_on_the_distortion_of_randomized_and_deterministic_distributed_votin.md)**
 
 :   This paper studies metric distortion in the distributed voting model. For four cost objectives ($\text{avg-avg}$, $\text{avg-max}$, $\text{max-avg}$, $\text{max-max}$), it establishes improved tight or near-tight bounds under both deterministic and randomized mechanisms, providing an almost complete characterization of distortion in this model.
+
+**[Tight Lower Bounds and Improved Convergence in Performative Prediction](tight_lower_bounds_and_improved_convergence_in_performative_prediction.md)**
+
+:   Under the performative prediction framework, this paper provides the first tight convergence rate analysis for Repeated Risk Minimization (RRM) and proposes the Affine Risk Minimizers (ARM) algorithm class, which achieves convergence over a broader problem class by leveraging data from historical training snapshots.
+
+**[TrackingWorld: World-centric Monocular 3D Tracking of Almost All Pixels](trackingworld_world-centric_monocular_3d_tracking_of_almost_all_pixels.md)**
+
+:   This paper presents TrackingWorld, a pipeline for dense 3D tracking of almost all pixels from monocular video. It lifts sparse 2D trajectories to dense ones via a tracking upsampler, iteratively tracks newly appearing objects across all frames, and employs an optimization-based framework to lift 2D trajectories into world-coordinate 3D space with explicit decoupling of camera motion and object motion.
 
 **[Training the Untrainable: Introducing Inductive Bias via Representational Alignment](training_the_untrainable_introducing_inductive_bias_via_representational_alignme.md)**
 
@@ -543,18 +582,10 @@ item_total: 118
 
 :   This paper proposes $\mathcal{F}$-EDL, which generalizes the Dirichlet distribution in EDL to a Flexible Dirichlet (FD) distribution for modeling class probability distributions. This approach significantly enhances the generalization of uncertainty estimation under complex scenarios such as noise, long-tail distributions, and distribution shift, while preserving the efficiency of a single forward pass.
 
-**[Uncertainty Quantification for Reduced-Order Surrogate Models Applied to Cloud Microphysics](uncertainty_quantification_for_reduced-order_surrogate_models_applied_to_cloud_m.md)**
-
-:   This paper proposes the first post-hoc, model-agnostic uncertainty quantification framework for latent-space reduced-order models. By applying conformal prediction to the reconstruction, latent dynamics, and end-to-end prediction components independently, it constructs distribution-free prediction intervals and reveals component-level uncertainty propagation in cloud microphysics ROMs — showing that structural errors in the autoencoder, rather than dynamics errors, dominate end-to-end prediction uncertainty.
-
 **[UniFormer: Unified and Efficient Transformer for Reasoning Across General and Custom Computing](uniformer_unified_and_efficient_transformer_for_reasoning_across_general_and_cus.md)**
 
 :   This paper proposes UniFormer, a unified and efficient Transformer architecture for cross-platform deployment on both GPUs and FPGAs. Through a dual-branch attention mechanism consisting of global linear attention and local block attention, UniFormer achieves high parallelism and compute-memory fusion.
 
-**[Variational Regularized Unbalanced Optimal Transport: Single Network, Least Action](variational_regularized_unbalanced_optimal_transport_single_network_least_action.md)**
+**[What Does It Take to Build a Performant Selective Classifier?](what_does_it_take_to_build_a_performant_selective_classifier.md)**
 
-:   This paper proposes Var-RUOT, which incorporates the necessary optimality conditions of the Regularized Unbalanced Optimal Transport (RUOT) problem into the parameterization and loss design, enabling the solution of RUOT by learning a single scalar field. The approach yields solutions with lower action and improves training stability, while also analyzing the effect of growth penalty functions on biological priors.
-
-**[Weight Weaving: Parameter Pooling for Data-Free Model Merging](weight_weaving_parameter_pooling_for_data-free_model_merging.md)**
-
-:   This paper proposes Weight Weaving, a plug-and-play data-free model merging enhancement method that eliminates the dependency on evaluation data by pooling model parameters (e.g., via averaging or random selection) over the scaling factor search space. Across three scenarios — multi-task learning, continual learning, and domain generalization — the method achieves an average accuracy improvement of up to 15.9 percentage points.
+:   This paper presents the first finite-sample decomposition of the selective classification gap, attributing it to five sources—Bayes noise, approximation error, ranking error, statistical noise, and implementation bias—and demonstrates that monotone calibration methods have limited effect on closing this gap.

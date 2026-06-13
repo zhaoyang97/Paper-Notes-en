@@ -18,12 +18,12 @@ item_list:
     t: "Graph-to-Frame RAG: Visual-Space Knowledge Fusion for Training-Free and Auditable Video Reasoning"
   - u: "graph2eval_automatic_multimodal_task_generation_for_agents_via_knowledge_graphs/"
     t: "Graph2Eval: Automatic Multimodal Task Generation for Agents via Knowledge Graphs"
-  - u: "hyperbolic_busemann_neural_networks/"
-    t: "Hyperbolic Busemann Neural Networks"
   - u: "m3kg_rag_multi_hop_multimodal_knowledge_graph_enhanced_retrieval_augmented_genera/"
     t: "M3KG-RAG: Multi-hop Multimodal Knowledge Graph-enhanced Retrieval-Augmented Generation"
   - u: "mario_multimodal_graph_reasoning_with_large_language_models/"
     t: "Mario: Multimodal Graph Reasoning with Large Language Models"
+  - u: "r2g_multi_view_circuit_graph_benchmark_suite_from_rtl_to_gdsii/"
+    t: "R2G: A Multi-View Circuit Graph Benchmark Suite from RTL to GDSII"
   - u: "viterbiplannet_injecting_procedural_knowledge_via_differentiable_viterbi_for_pla/"
     t: "ViterbiPlanNet: Injecting Procedural Knowledge via Differentiable Viterbi for Planning"
   - u: "wsgg_spatiotemporal_world_scene_graph/"
@@ -36,7 +36,7 @@ item_total: 8
 
 **📷 CVPR2026** · **8** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (34)](../../ICML2026/graph_learning/index.md) · [💬 ACL2026 (23)](../../ACL2026/graph_learning/index.md) · [🔬 ICLR2026 (21)](../../ICLR2026/graph_learning/index.md) · [🤖 AAAI2026 (38)](../../AAAI2026/graph_learning/index.md) · [🧠 NeurIPS2025 (52)](../../NeurIPS2025/graph_learning/index.md) · [📹 ICCV2025 (1)](../../ICCV2025/graph_learning/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (31)](../../ICML2026/graph_learning/index.md) · [💬 ACL2026 (23)](../../ACL2026/graph_learning/index.md) · [🔬 ICLR2026 (20)](../../ICLR2026/graph_learning/index.md) · [🤖 AAAI2026 (37)](../../AAAI2026/graph_learning/index.md) · [🧠 NeurIPS2025 (54)](../../NeurIPS2025/graph_learning/index.md) · [📹 ICCV2025 (1)](../../ICCV2025/graph_learning/index.md)
 
 🔥 **Top topics:** Multimodal/VLM ×3 · RAG ×2 · Reasoning ×2
 
@@ -52,10 +52,6 @@ item_total: 8
 
 :   This paper proposes Graph2Eval, a knowledge graph-driven framework for the automatic generation of agent evaluation tasks. By constructing structured knowledge graphs from documents and webpages, performing subgraph sampling, applying LLM-conditioned generation, and employing multi-stage filtering, the framework automatically produces multimodal agent tasks with improved semantic consistency (+20%) and solvability (+17%). The resulting benchmark, Graph2Eval-Bench, comprises 1,319 tasks.
 
-**[Hyperbolic Busemann Neural Networks](hyperbolic_busemann_neural_networks.md)**
-
-:   This paper intrinsically lifts multinomial logistic regression (MLR) and fully connected (FC) layers to hyperbolic space via Busemann functions, proposing two unified components—BMLR and BFC—applicable to both the Poincaré ball and the Lorentz model. The proposed components outperform existing hyperbolic layers across four task categories: image classification, genomic sequence classification, node classification, and link prediction.
-
 **[M3KG-RAG: Multi-hop Multimodal Knowledge Graph-enhanced Retrieval-Augmented Generation](m3kg_rag_multi_hop_multimodal_knowledge_graph_enhanced_retrieval_augmented_genera.md)**
 
 :   This paper proposes M3KG-RAG, which constructs a multi-hop multimodal knowledge graph (M3KG) via a lightweight multi-agent pipeline and introduces the GRASP mechanism for entity grounding and selective pruning. By retaining only query-relevant and answer-useful knowledge, the approach substantially improves audio-visual reasoning capabilities of MLLMs.
@@ -63,6 +59,10 @@ item_total: 8
 **[Mario: Multimodal Graph Reasoning with Large Language Models](mario_multimodal_graph_reasoning_with_large_language_models.md)**
 
 :   Mario is proposed for LLM reasoning on multimodal graphs (MMGs). It achieves topology-aware cross-modal alignment via a Graph-conditioned Vision-Language Model (GVLM), and employs a Modality-Adaptive Prompt Router (MAPR) to select the optimal modality configuration for each node, attaining state-of-the-art performance on node classification and link prediction.
+
+**[R2G: A Multi-View Circuit Graph Benchmark Suite from RTL to GDSII](r2g_multi_view_circuit_graph_benchmark_suite_from_rtl_to_gdsii.md)**
+
+:   This paper introduces R2G, the first standardized multi-view circuit graph benchmark suite, providing five stage-aware graph representations with information equivalence across 30 IP cores. A systematic study reveals that graph representation choice has a greater impact on performance than GNN model choice.
 
 **[ViterbiPlanNet: Injecting Procedural Knowledge via Differentiable Viterbi for Planning](viterbiplannet_injecting_procedural_knowledge_via_differentiable_viterbi_for_pla.md)**
 

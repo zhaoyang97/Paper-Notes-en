@@ -145,7 +145,7 @@ Prompt rewriting is the most critical analytical experiment: after rewriting imp
 - [\[ICML 2026\] AtelierEval: Agentic Evaluation of Humans & LLMs as Text-to-Image Prompters](ateliereval_agentic_evaluation_of_humans_llms_as_text-to-image_prompters.md)
 - [\[CVPR 2026\] SHOE: Semantic HOI Open-Vocabulary Evaluation Metric](../../CVPR2026/image_generation/shoe_semantic_hoi_open-vocabulary_evaluation_metric.md)
 - [\[ICML 2026\] Semantic Granularity Navigation in Image Editing](semantic_granularity_navigation_in_image_editing.md)
-- [\[ICML 2026\] GenExam: A Multidisciplinary Text-to-Image Exam](genexam_a_multidisciplinary_text-to-image_exam.md)
+- [\[AAAI 2026\] Improved Masked Image Generation with Knowledge-Augmented Token Representations](../../AAAI2026/image_generation/improved_masked_image_generation_with_knowledge-augmented_token_representations.md)
 
 </div>
 

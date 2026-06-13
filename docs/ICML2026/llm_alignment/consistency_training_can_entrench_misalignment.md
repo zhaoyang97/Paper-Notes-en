@@ -2,9 +2,10 @@
 title: >-
   [Paper Note] Consistency Training Can Entrench Misalignment
 description: >-
-  [ICML2026][Consistency Training] This paper proposes the "consistency non-neutrality hypothesis." By evaluating 7 consistency training methods on 108 "model organisms…
+  [ICML2026][LLM Alignment][Consistency Training] This paper proposes the "consistency non-neutrality hypothesis." By evaluating 7 consistency training methods on 108 "model organisms…
 tags:
   - "ICML2026"
+  - "LLM Alignment"
   - "Consistency Training"
   - "Alignment Security"
   - "Model Bias Amplification"
@@ -105,11 +106,11 @@ This paper formalizes the safety of consistency training as a testable hypothesi
 
 ## Related Papers
 
-- [\[ICML 2026\] Realizable Bayes-Consistency for General Metric Losses](realizable_bayes-consistency_for_general_metric_losses.md)
-- [\[ICML 2026\] Expectation Consistency Loss: Rethink Confidence Calibration under Covariate Shift](expectation_consistency_loss_rethink_confidence_calibration_under_covariate_shif.md)
-- [\[ICML 2026\] Coupled Training with Privileged Information and Unlabeled Data](coupled_training_with_privileged_information_and_unlabeled_data.md)
-- [\[ICLR 2026\] The Hot Mess of AI: How Does Misalignment Scale With Model Intelligence and Task Complexity?](../../ICLR2026/others/the_hot_mess_of_ai_how_does_misalignment_scale_with_model_intelligence_and_task_.md)
-- [\[ICML 2026\] Rethinking Evaluation Paradigms in IBP-based Certified Training](rethinking_evaluation_paradigms_in_ibp-based_certified_training.md)
+- [\[ACL 2026\] ConsistRM: Improving Generative Reward Models via Consistency-Aware Self-Training](../../ACL2026/llm_alignment/consistrm_improving_generative_reward_models_via_consistency-aware_self-training.md)
+- [\[ICML 2026\] Steering Beyond the Support: Adversarial Training on Unsupervised Jailbroken Activation Simulation](steering_beyond_the_support_adversarial_training_on_unsupervised_jailbroken_acti.md)
+- [\[ICLR 2026\] Align Once, Benefit Multilingually: Enforcing Multilingual Consistency for LLM Safety Alignment](../../ICLR2026/llm_alignment/align_once_benefit_multilingually_enforcing_multilingual_consistency_for_llm_saf.md)
+- [\[NeurIPS 2025\] Preference Learning with Lie Detectors can Induce Honesty or Evasion](../../NeurIPS2025/llm_alignment/preference_learning_with_lie_detectors_can_induce_honesty_or_evasion.md)
+- [\[ICLR 2026\] Spectrum Tuning: Post-Training for Distributional Coverage and In-Context Steerability](../../ICLR2026/llm_alignment/spectrum_tuning_post-training_for_distributional_coverage_and_in-context_steerab.md)
 
 </div>
 

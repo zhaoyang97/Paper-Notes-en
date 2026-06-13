@@ -2,9 +2,10 @@
 title: >-
   [Paper Note] LILAD: Learning In-context Lyapunov-stable Adaptive Dynamics Models
 description: >-
-  [AAAI 2026][Lyapunov stability] This paper proposes LILAD, a framework that leverages the in-context learning (ICL) capability of GPT-2 to jointly learn a dynamics model and a Lyapunov function…
+  [AAAI 2026][LLM/NLP][Lyapunov stability] This paper proposes LILAD, a framework that leverages the in-context learning (ICL) capability of GPT-2 to jointly learn a dynamics model and a Lyapunov function…
 tags:
   - "AAAI 2026"
+  - "LLM/NLP"
   - "Lyapunov stability"
   - "in-context learning"
   - "adaptive system identification"
@@ -130,11 +131,11 @@ Adversarial alternating training:
 
 ## Related Papers
 
-- [\[ICLR 2026\] In-Context Algebra](../../ICLR2026/others/in-context_algebra.md)
-- [\[AAAI 2026\] Beyond World Models: Rethinking Understanding in AI Models](beyond_world_models_rethinking_understanding_in_ai_models.md)
-- [\[AAAI 2026\] Verification-Guided Context Optimization for Tool Calling via Hierarchical LLMs-as-editors](verification-guided_context_optimization_for_tool_calling_via_hierarchical_llms-.md)
-- [\[ICML 2026\] Learning Permutation-Invariant Macroscopic Dynamics](../../ICML2026/others/learning_permutation-invariant_macroscopic_dynamics.md)
-- [\[ICLR 2026\] LPWM: Latent Particle World Models for Object-Centric Stochastic Dynamics](../../ICLR2026/others/latent_particle_world_models_self-supervised_object-centric_stochastic_dynamics_.md)
+- [\[ACL 2026\] DeCoVec: Building Decoding Space based Task Vector for Large Language Models via In-Context Learning](../../ACL2026/llm_nlp/decovec_building_decoding_space_based_task_vector_for_large_language_models_via_.md)
+- [\[ACL 2026\] UCS: Estimating Unseen Coverage for Improved In-Context Learning](../../ACL2026/llm_nlp/ucs_estimating_unseen_coverage_for_improved_in-context_learning.md)
+- [\[ACL 2026\] OOD Proxy Demonstration Retrieval Scheme for Robust In-Context Learning](../../ACL2026/llm_nlp/toward_robust_in-context_learning_leveraging_out-of-distribution_proxies_for_tar.md)
+- [\[ICML 2026\] T$^2$PO: Uncertainty-Guided Exploration Control for Stable Multi-Turn Agentic Reinforcement Learning](../../ICML2026/llm_nlp/t2po_uncertainty-guided_exploration_control_for_stable_multi-turn_agentic_reinfo.md)
+- [\[ACL 2026\] Leveraging Pretrained Language Models as Energy Functions for Glauber Dynamics Text Diffusion](../../ACL2026/llm_nlp/leveraging_pretrained_language_models_as_energy_functions_for_glauber_dynamics_t.md)
 
 </div>
 

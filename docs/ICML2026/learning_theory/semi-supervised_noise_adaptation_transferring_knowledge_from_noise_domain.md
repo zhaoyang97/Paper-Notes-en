@@ -2,9 +2,10 @@
 title: >-
   [Paper Note] Semi-Supervised Noise Adaptation: Transferring Knowledge from Noise Domain
 description: >-
-  [ICML 2026][Semi-supervised noise adaptation] The authors treat a "synthetic domain generated from Gaussian noise" as an alternative source domain in semi-supervised transfer learning. They first prove that such noise…
+  [ICML 2026][Transfer Learning / Semi-Supervised Learning][Semi-supervised noise adaptation] The authors treat a "synthetic domain generated from Gaussian noise" as an alternative source domain in semi-supervised transfer…
 tags:
   - "ICML 2026"
+  - "Transfer Learning / Semi-Supervised Learning"
   - "Semi-supervised noise adaptation"
   - "alternative source domain"
   - "generalization bound"
@@ -131,11 +132,11 @@ Total objective: $\mathcal L = \mathcal L_t + \alpha \mathcal L_n + \beta \mathc
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Coresets for Clustering Under Stochastic Noise](../../NeurIPS2025/others/coresets_for_clustering_under_stochastic_noise.md)
-- [\[AAAI 2026\] Enhancing Noise Resilience in Face Clustering via Sparse Differential Transformer](../../AAAI2026/others/enhancing_noise_resilience_in_face_clustering_via_sparse_differential_transforme.md)
-- [\[CVPR 2026\] Deconstructing the Failure of Ideal Noise Correction: A Three-Pillar Diagnosis](../../CVPR2026/others/deconstructing_the_failure_of_ideal_noise_correction_a_three-pillar_diagnosis.md)
-- [\[AAAI 2026\] Predict and Resist: Long-Term Accident Anticipation under Sensor Noise](../../AAAI2026/others/predict_and_resist_long-term_accident_anticipation_under_sensor_noise.md)
-- [\[ICLR 2026\] Learning Structure-Semantic Evolution Trajectories for Graph Domain Adaptation](../../ICLR2026/others/learning_structure-semantic_evolution_trajectories_for_graph_domain_adaptation.md)
+- [\[NeurIPS 2025\] Prediction-Powered Semi-Supervised Learning with Online Power Tuning](../../NeurIPS2025/learning_theory/prediction-powered_semi-supervised_learning_with_online_power_tuning.md)
+- [\[ICML 2026\] On the Learnability of Test-Time Adaptation: A Recovery Complexity Perspective](on_the_learnability_of_test-time_adaptation_a_recovery_complexity_perspective.md)
+- [\[ICML 2026\] MMD-Balls as Credal Sets: A PAC-Bayesian Framework for Epistemic Uncertainty in Test-Time Adaptation](mmd-balls_as_credal_sets_a_pac-bayesian_framework_for_epistemic_uncertainty_in_t.md)
+- [\[NeurIPS 2025\] Keep It on a Leash: Controllable Pseudo-label Generation Towards Realistic Long-Tailed Semi-Supervised Learning](../../NeurIPS2025/learning_theory/keep_it_on_a_leash_controllable_pseudo-label_generation_towards_realistic_long-t.md)
+- [\[NeurIPS 2025\] How Many Domains Suffice for Domain Generalization? A Tight Characterization via the Domain Shattering Dimension](../../NeurIPS2025/learning_theory/how_many_domains_suffice_for_domain_generalization_a_tight_characterization_via_.md)
 
 </div>
 

@@ -2,9 +2,10 @@
 title: >-
   [Paper Note] Expectation Consistency Loss: Rethink Confidence Calibration under Covariate Shift
 description: >-
-  [ICML2026][Confidence Calibration] ECL proves that full alignment of input distributions $P_s(X) = P_t(X)$ is not a necessary condition for calibration under covariate shift. Instead…
+  [ICML2026][AI Safety / Confidence Calibration / Covariate Shift][Confidence Calibration] ECL proves that full alignment of input distributions $P_s(X) = P_t(X)$ is not a necessary condition for calibration under covariat…
 tags:
   - "ICML2026"
+  - "AI Safety / Confidence Calibration / Covariate Shift"
   - "Confidence Calibration"
   - "Covariate Shift"
   - "Expectation Consistency"
@@ -123,11 +124,11 @@ ECE comparisons for top-label calibration across three real covariate shift data
 
 ## Related Papers
 
-- [\[ICML 2026\] Target-Agnostic Calibration under Distribution Shift with Frequency-Aware Gradient Rectification](target-agnostic_calibration_under_distribution_shift_with_frequency-aware_gradie.md)
-- [\[ICML 2026\] Consistency Training Can Entrench Misalignment](consistency_training_can_entrench_misalignment.md)
-- [\[ICML 2026\] Decoupled Conformal Optimisation: Efficient Prediction Sets via Independent Tuning and Calibration](decoupled_conformal_optimisation_efficient_prediction_sets_via_independent_tunin.md)
 - [\[ICML 2026\] Realizable Bayes-Consistency for General Metric Losses](realizable_bayes-consistency_for_general_metric_losses.md)
-- [\[ICML 2026\] Adaptive Preconditioners Trigger Loss Spikes in Adam](adaptive_preconditioners_trigger_loss_spikes_in_adam.md)
+- [\[ICML 2026\] Matroid Algorithms Under Size-Sensitive Independence Oracles](matroid_algorithms_under_size-sensitive_independence_oracles.md)
+- [\[ICML 2026\] Provably Data-driven Multiple Hyper-parameter Tuning with Structured Loss Function](provably_data-driven_multiple_hyper-parameter_tuning_with_structured_loss_functi.md)
+- [\[ICLR 2026\] An Efficient, Provably Optimal Algorithm for the 0-1 Loss Linear Classification Problem](../../ICLR2026/learning_theory/an_efficient_provably_optimal_algorithm_for_the_0-1_loss_linear_classification_p.md)
+- [\[ICML 2026\] Conditional KRR: Injecting Unpenalized Features into Kernel Methods with Applications to Kernel Thresholding](conditional_krr_injecting_unpenalized_features_into_kernel_methods_with_applicat.md)
 
 </div>
 

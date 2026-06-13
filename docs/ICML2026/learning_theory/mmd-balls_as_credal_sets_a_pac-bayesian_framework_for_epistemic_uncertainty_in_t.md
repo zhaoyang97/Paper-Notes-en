@@ -2,9 +2,10 @@
 title: >-
   [Paper Note] MMD-Balls as Credal Sets: A PAC-Bayesian Framework for Epistemic Uncertainty in Test-Time Adaptation
 description: >-
-  [ICML 2026][PAC-Bayes Bound] The paper provides the first PAC-Bayes upper bound for test-time adaptation formulated as "Target Risk $\le$ Source Empirical Risk + KL Complexity + MMD Distribution Shift Term." It interpret…
+  [ICML 2026][Test-Time Adaptation / PAC-Bayes Theory / Uncertainty Quantization][PAC-Bayes Bound] The paper provides the first PAC-Bayes upper bound for test-time adaptation formulated as "Target Risk $\le$ Source Empiric…
 tags:
   - "ICML 2026"
+  - "Test-Time Adaptation / PAC-Bayes Theory / Uncertainty Quantization"
   - "PAC-Bayes Bound"
   - "MMD"
   - "credal set"
@@ -128,11 +129,11 @@ The paper is a theoretical work and **does not include a complete experimental t
 
 ## Related Papers
 
-- [\[ICML 2026\] Private and Stable Test-Time Adaptation with Differential Privacy](private_and_stable_test-time_adaptation_with_differential_privacy.md)
-- [\[ICML 2026\] On the Epistemic Uncertainty of Overparametrized Neural Networks](on_the_epistemic_uncertainty_of_overparametrized_neural_networks.md)
-- [\[ICML 2026\] TEMPORA: Characterising the Time-Contingent Utility of Online Test-Time Adaptation](tempora_characterising_the_time-contingent_utility_of_online_test-time_adaptatio.md)
 - [\[ICML 2026\] On the Learnability of Test-Time Adaptation: A Recovery Complexity Perspective](on_the_learnability_of_test-time_adaptation_a_recovery_complexity_perspective.md)
-- [\[CVPR 2026\] Neural Collapse in Test-Time Adaptation](../../CVPR2026/others/neural_collapse_in_test-time_adaptation.md)
+- [\[ICML 2026\] Semi-Supervised Noise Adaptation: Transferring Knowledge from Noise Domain](semi-supervised_noise_adaptation_transferring_knowledge_from_noise_domain.md)
+- [\[AAAI 2026\] A Switching Framework for Online Interval Scheduling with Predictions](../../AAAI2026/learning_theory/a_switching_framework_for_online_interval_scheduling_with_pr.md)
+- [\[ICML 2026\] Realizable Bayes-Consistency for General Metric Losses](realizable_bayes-consistency_for_general_metric_losses.md)
+- [\[ICML 2026\] Provably Data-driven Multiple Hyper-parameter Tuning with Structured Loss Function](provably_data-driven_multiple_hyper-parameter_tuning_with_structured_loss_functi.md)
 
 </div>
 

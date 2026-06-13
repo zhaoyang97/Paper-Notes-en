@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Foundation Models for Scientific Discovery: From Paradigm Enhancement to Paradigm Transition
 description: >-
-  [NeurIPS 2025][Self-Supervised Learning][foundation models] This paper proposes a three-stage framework for FM-driven scientific discovery — meta-scientific integration, hybrid human-AI co-creation…
+  [NeurIPS 2025][Self-Supervised Learning][foundation models] This paper proposes a three-stage framework (meta-scientific integration → hybrid human-AI co-creation → autonomous scientific discovery) to characterize how fo…
 tags:
   - "NeurIPS 2025"
   - "Self-Supervised Learning"
   - "foundation models"
-  - "scientific discovery"
-  - "paradigm shift"
-  - "autonomous discovery"
-  - "human-AI co-creation"
+  - "scientific paradigms"
+  - "autonomous scientific discovery"
+  - "human-AI collaboration"
+  - "AI for Science"
 date: 2026-05-08
 content_hash: 632217b4b17277ef
 ---
@@ -146,149 +146,6 @@ Three major future directions are identified: embodied scientific agents, closed
 
 ---
 
-# Foundation Models for Scientific Discovery: From Paradigm Enhancement to Paradigm Transition
-
-**Conference**: NeurIPS 2025
-**arXiv**: [2510.15280](https://arxiv.org/abs/2510.15280)  
-**Authors**: Fan Liu, Jindong Han, Tengfei Lyu, Weijia Zhang, Zhe-Rui Yang, Lu Dai, Cancheng Liu, Hao Liu (HKUST(GZ) & HKUST)
-**Code**: [GitHub](https://github.com/usail-hkust/Awesome-Foundation-Models-for-Scientific-Discovery)  
-**Area**: Self-Supervised Learning / Foundation Models / AI for Science
-**Keywords**: foundation models, scientific discovery, paradigm shift, autonomous discovery, human-AI co-creation
-
-## TL;DR
-
-This paper proposes a three-stage framework for FM-driven scientific discovery — meta-scientific integration, hybrid human-AI co-creation, and autonomous scientific discovery — and systematically surveys FM applications across the four classical paradigms (experimental, theoretical, computational, and data-driven), arguing that FMs are catalyzing a fifth scientific paradigm.
-
-## Background & Motivation
-
-Scientific discovery has undergone four paradigm shifts: experiment-driven (16th–17th century, Galileo, Boyle) → theory-driven (18th–19th century, Newton, Maxwell, Einstein) → computation-driven (mid-20th century, numerical simulation) → data-driven (21st century, statistical and deep learning). Each paradigm transition not only introduced new tools but also redefined the epistemological foundations of science.
-
-Contemporary science, however, faces increasingly complex challenges:
-- **Emergence and irreducibility**: Problems such as consciousness, protein folding pathways, and social polarization resist reductionist modeling.
-- **Combinatorial explosion**: Candidate spaces in drug discovery and materials design render exhaustive search infeasible.
-- **Theory–data gap**: The exponential growth of experimental and observational data far outpaces humanity's capacity to synthesize unified theories.
-- **Assumption limitations**: Existing computational models rely on simplifying assumptions of linearity, stationarity, and equilibrium, which are inconsistent with the dynamic, nonlinear nature of real-world systems.
-
-Foundation models (FMs) — such as GPT-4, AlphaFold, and DeepSeek — offer a response to these challenges. Trained on large-scale and diverse data, they exhibit general-purpose capabilities that transfer across tasks. AlphaFold resolved the long-standing protein folding problem; FunSearch autonomously proposed and validated new mathematical conjectures. These developments raise a central question: **Are FMs merely enhancing existing scientific methods, or are they catalyzing an entirely new scientific paradigm?**
-
-This paper takes a clear stance: FMs are not only improving individual components of the scientific process but are reshaping the underlying paradigm of scientific discovery itself.
-
-## Core Framework: Three-Stage Evolution
-
-The authors propose a three-stage framework for FM-driven scientific discovery, characterizing a progressive transition from tool to collaborator to autonomous agent:
-
-### Stage 1: Meta-Scientific Integration
-
-| Dimension | Characteristics |
-|-----------|----------------|
-| FM Role | Back-end tool |
-| Task Scope | Task enhancer |
-| Autonomy | Low |
-| Scientific Impact | Efficiency gains |
-
-FMs operate as intelligent infrastructure, augmenting but not transforming scientific practice. Their core value lies in workflow automation (data preprocessing, literature retrieval, method matching), cross-component integration (connecting sensor data with simulation models, experimental planning with prior knowledge), and improvements in reproducibility and efficiency. At this stage, FMs are **instrumental rather than epistemological** — executing tasks within established paradigms without altering their logical structure. Humans remain the primary agents of reasoning and knowledge production.
-
-### Stage 2: Hybrid Human-AI Co-Creation
-
-| Dimension | Characteristics |
-|-----------|----------------|
-| FM Role | Co-creator |
-| Task Scope | Full-cycle tasks |
-| Autonomy | Moderate |
-| Scientific Impact | Shift in labor distribution |
-
-FMs transition from passive infrastructure to active collaborators in scientific workflows. They participate in research question generation, hypothesis structuring, and experimental planning, and in some cases execute end-to-end tasks. FMs exhibit moderate autonomy — generating ideas, selecting methods, and adapting workflows based on feedback within bounded research environments — while still relying on humans for problem framing and ethical guidance. This stage redistributes cognitive labor in science: FMs handle literature synthesis, multi-step reasoning, and combinatorial experimental planning, while humans focus on judgment, creativity, and strategic framing.
-
-### Stage 3: Autonomous Scientific Discovery
-
-| Dimension | Characteristics |
-|-----------|----------------|
-| FM Role | Autonomous agent |
-| Task Scope | End-to-end, self-directed |
-| Autonomy | High |
-| Scientific Impact | Refoundation of science |
-
-FMs move beyond collaboration to evolve into autonomous agents capable of scientific discovery with minimal human intervention. They autonomously formulate research questions, generate hypotheses, select methods, execute experiments or simulations, interpret results, and update their internal models based on feedback. Rather than reactive tools triggered by human input, FMs act as epistemic agents — contributing original insights, challenging existing theories, and shaping the direction of scientific discourse. If fully realized, this would mark a **fifth scientific paradigm** in which discovery is no longer exclusively human-driven but can emerge from the autonomous reasoning of machine intelligence.
-
-## FM Integration across the Four Classical Paradigms
-
-### Experiment-Driven Paradigm
-
-**Experimental Design**: Classical Bayesian optimization and active learning are limited by sparse priors and poor generalizability. FMs encode domain knowledge and guide searches over optimal configurations — for example, acting as priors or feature extractors within BO pipelines for molecular and materials discovery to accelerate convergence, or bypassing surrogate modeling by directly maximizing mutual information to improve data efficiency.
-
-**Physical Experiment Execution**: Laboratory experiments require coordinated planning, perception, and control. FMs increasingly serve as unified interfaces and planners — generating Python control scripts that translate user objectives into executable experimental protocols, orchestrating modular agents for structured reaction planning, embedding into robotic control for language-guided physical manipulation, and integrating multimodal inputs (vision and speech) for real-time interaction and error correction.
-
-### Theory-Driven Paradigm
-
-**Hypothesis Generation**: FMs facilitate systematic hypothesis generation by synthesizing large-scale corpora and structured priors. Knowledge-graph-guided approaches direct hypothesis construction through ontological concept paths to enhance novelty and verifiability; physics-guided FMs embed physical laws directly into the generation process to ensure consistency with known dynamics.
-
-**Theory Verification and Formal Reasoning**: FMs coupled with symbolic logic systems support deductive reasoning, consistency checking, and falsifiability analysis. Logic-LM couples LLMs with symbolic solvers in a feedback loop to improve formal rigor; LeanCopilot and DeepSeekProver demonstrate the ability of pretrained models to assist proof construction and verification at scale.
-
-### Computation-Driven Paradigm
-
-**Building Executable Scientific Models**: FMs support three modeling modalities: symbolic, implicit, and differentiable. For symbolic discovery, LLM-SR converts diverse inputs into equation skeletons for subsequent refinement, while FunSearch frames program synthesis as a language-guided search task to discover new algorithms. When explicit equations are unavailable, PROSE-PDE jointly predicts system dynamics and infers underlying governing laws; DiffusionPDE trains generative priors over coefficient-solution pairs to sample posteriors from sparse data.
-
-**Solving and Inverting Scientific Equations**: Neural operators learn continuous mappings — from forcing terms to PDE solutions — that generalize across grid resolutions. GraphCast surpasses traditional numerical weather prediction models at reduced computational cost. PDE-Refiner iteratively corrects coarse solver outputs, reducing errors without re-running full simulations.
-
-### Data-Driven Paradigm
-
-**Scientific Knowledge Discovery**: FMs compress large corpora into structured representations supporting cross-modal reasoning. DNABERT identifies functional DNA elements from sequences; MoLFormer learns SMILES embeddings enabling zero-shot molecular candidate retrieval; ClimaX fuses diverse climate inputs to learn unified spatiotemporal representations; Galactica transforms millions of papers into a queryable knowledge base.
-
-**Predictive Scientific Reasoning**: FMs reframe prediction tasks as generative modeling. GraphCast and Pangu-Weather learn the latent dynamics of reanalysis data for global weather forecasting; DiffusionSat generates high-resolution satellite imagery to bridge observational gaps; AlphaFold 2 and ESMFold predict protein structures at near-experimental accuracy; RFdiffusion and MatterGen design novel protein folds and inorganic crystals, respectively.
-
-### Cross-Paradigm Integration
-
-FMs serve as integration engines bridging the experimental, theoretical, computational, and data-driven paradigms. PROSE-FD jointly trains symbolic equation templates and spatial field data within a multimodal Transformer, enabling generalization across operating conditions in fluid dynamics. Latent neural operators (LNOs) encode physical operators into geometry-agnostic, resolution-invariant latent spaces. Coscientist translates high-level research objectives into machine-executable protocols, controls robotic synthesis, and adapts subsequent actions based on results — realizing end-to-end scientific workflow orchestration.
-
-## Risks and Challenges
-
-### Bias and Epistemic Equity
-
-FMs inherit biases from training data — overrepresenting mainstream paradigms, Western institutions, and high-citation authors. As FMs transition from tools to co-creators to autonomous agents, these biases shift from passively reflecting existing inequities to actively shaping the scientific agenda. For example, in global health modeling, FMs trained predominantly on English-language literature may systematically prioritize diseases prevalent in Western contexts while neglecting pressing health challenges in developing regions.
-
-### Hallucination and Scientific Misinformation
-
-FMs are fundamentally data-driven pattern recognizers rather than faithful reasoners. As their role shifts from task enhancement to autonomous hypothesis generation, the risk of producing plausible-sounding but unverified claims grows substantially. In biomedicine, FMs may propose novel mechanisms lacking experimental grounding; in physics, they may generate mathematically elegant but physically invalid formulas.
-
-### Reproducibility and Transparency
-
-When FMs take end-to-end control of experimental design, simulation execution, and result interpretation, their decision processes are often opaque. Without access to intermediate reasoning steps, model assumptions, or versioning information, it becomes difficult to replicate or verify findings. Addressing this requires transparent logging of reasoning steps, versioned model checkpoints, and open science practices that preserve the traceability of FM-driven workflows.
-
-### Authorship, Accountability, and Scientific Ethics
-
-When FMs generate core hypotheses or experimental designs, should they be listed as co-authors? Who bears responsibility when their outputs lead to harm or scientific error? Governance frameworks are needed to distinguish mechanical from creative contributions, alongside mandatory transparency disclosure mechanisms and systems for tracking the downstream impact of AI-generated outputs.
-
-## Future Directions
-
-### Embodied Scientific Agents
-
-Anchoring FMs in the physical world — deployed in laboratory robots, automated instruments, and digital twin environments. By coupling language-based reasoning with real-world perception and control, these agents will plan experiments, interact with physical systems, and iteratively optimize processes. Key challenges include integrating high-level task planning with low-level control, robustness under real-world uncertainty, and safety and interpretability in dynamic experimental environments.
-
-### Closed-Loop Scientific Autonomy
-
-Moving from open-loop systems (where FMs assist with discrete steps while humans decide next actions) to closed-loop systems (where FMs continuously formulate hypotheses, design and execute experiments, analyze results, and update internal models based on feedback). Progress has been made through reinforcement-learning-based planning (CycleResearcher), planning-as-reasoning, and neurosymbolic agents. Key challenges include ensuring robustness to noisy observations, adaptability to shifting objectives, and alignment with scientific validity rather than mere reward maximization.
-
-### Continual Learning and Generalization
-
-FMs must evolve from static systems to continual learners capable of accumulating and refining knowledge over time. Core challenges include catastrophic forgetting and domain drift. Promising directions include parameter-efficient online adaptation, memory-augmented architectures, and modular lifelong learning frameworks. Advancing these mechanisms will enable FMs to incrementally build cross-domain representations and facilitate analogical reasoning across scientific contexts.
-
-## Assessment
-
-### Strengths
-
-1. **Clear and compelling framework**: The three-stage evolutionary framework (meta-scientific integration → human-AI co-creation → autonomous discovery) provides a systematic perspective for understanding the relationship between FMs and scientific discovery, combining descriptive and predictive power.
-2. **Comprehensive coverage**: The paper systematically surveys FM integration across the four classical scientific paradigms (experimental, theoretical, computational, and data-driven) and discusses cross-paradigm integration.
-3. **Mature risk awareness**: Rather than uncritically celebrating FM capabilities, the paper seriously addresses four categories of risk — bias, hallucination, reproducibility, and scientific ethics — reflecting a responsible stance.
-4. **Clear positioning**: The paper explicitly argues that FMs are catalyzing a fifth scientific paradigm rather than serving merely as efficiency tools, providing the community with a concrete thesis open to debate.
-
-### Weaknesses
-
-1. **Lack of quantitative evidence**: As a position paper, the three-stage delineation rests primarily on qualitative argumentation, without operationalizable metrics or empirical case studies to measure the degree of paradigm shift.
-2. **Blurry stage boundaries**: The boundaries between meta-scientific integration and human-AI co-creation, and between human-AI co-creation and autonomous discovery, are insufficiently defined; real-world systems may span multiple stages simultaneously.
-3. **Insufficient critical engagement**: The case for a "fifth paradigm" lacks deep, direct engagement with opposing views (e.g., critiques by Wolfram).
-4. **Limited technical depth**: Discussion of specific FM methods is largely survey-level, lacking in-depth technical analysis or a unified comparative framework.
-5. **Insufficient justification for the feasibility of autonomous scientific discovery**: Current systems (e.g., AI Scientist) remain significantly short of genuine autonomous discovery, and the paper does not adequately examine this gap.
-
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
@@ -299,7 +156,7 @@ FMs must evolve from static systems to continual learners capable of accumulatin
 - [\[NeurIPS 2025\] Mitra: Mixed Synthetic Priors for Enhancing Tabular Foundation Models](mitra_mixed_synthetic_priors_for_enhancing_tabular_foundation_models.md)
 - [\[NeurIPS 2025\] SEAL: Semantic-Aware Hierarchical Learning for Generalized Category Discovery](seal_semantic-aware_hierarchical_learning_for_generalized_category_discovery.md)
 - [\[AAAI 2026\] Robust Tabular Foundation Models](../../AAAI2026/self_supervised/robust_tabular_foundation_models.md)
-- [\[NeurIPS 2025\] Uncertainty-Guided Model Selection for Tabular Foundation Models in Biomolecule Efficacy Prediction](uncertainty-guided_model_selection_for_tabular_foundation_models_in_biomolecule_.md)
+- [\[ICCV 2025\] LoftUp: Learning a Coordinate-Based Feature Upsampler for Vision Foundation Models](../../ICCV2025/self_supervised/loftup_learning_a_coordinatebased_feature_upsampler_for_visi.md)
 
 </div>
 

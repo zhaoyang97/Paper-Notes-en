@@ -2,15 +2,18 @@
 title: >-
   ICLR2026 Optimization & Theory Papers · 47 Notes
 description: >-
-  47 ICLR2026 papers in the Optimization & Theory area, covering Reasoning, LLM, Federated Learning and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  47 ICLR2026 papers in the Optimization & Theory area, covering Federated Learning, Model Compression, Reasoning, LLM, Alignment/RLHF, Continual Learning and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "ICLR2026"
   - "Optimization & Theory"
   - "AI paper notes"
   - "paper summaries"
+  - "Federated Learning"
+  - "Model Compression"
   - "Reasoning"
   - "LLM"
-  - "Federated Learning"
+  - "Alignment/RLHF"
+  - "Continual Learning"
 item_list:
   - u: "a_convergence_analysis_of_adaptive_optimizers_under_floating-point_quantization/"
     t: "A Convergence Analysis of Adaptive Optimizers under Floating-Point Quantization"
@@ -22,6 +25,8 @@ item_list:
     t: "CogFlow: Bridging Perception and Reasoning through Knowledge Internalization for Visual Mathematical Problem Solving"
   - u: "cold-steer_steering_large_language_models_via_in-context_one-step_learning_dynam/"
     t: "COLD-Steer: Steering Large Language Models via In-Context One-step Learning Dynamics"
+  - u: "conformal_prediction_adaptive_to_unknown_subpopulation_shifts/"
+    t: "Conformal Prediction Adaptive to Unknown Subpopulation Shifts"
   - u: "constraint_matters_multi-modal_representation_for_reducing_mixed-integer_linear_/"
     t: "Constraint Matters: Multi-Modal Representation for Reducing Mixed-Integer Linear Programming"
   - u: "convergence_of_muon_with_newton-schulz/"
@@ -48,8 +53,14 @@ item_list:
     t: "FrontierCO: Real-World and Large-Scale Evaluation of Machine Learning Solvers for Combinatorial Optimization"
   - u: "generalization_below_the_edge_of_stability_the_role_of_data_geometry/"
     t: "Generalization Below the Edge of Stability: The Role of Data Geometry"
+  - u: "gradient-sign_masking_for_task_vector_transport_across_pre-trained_models/"
+    t: "Gradient-Sign Masking for Task Vector Transport Across Pre-Trained Models"
   - u: "implicit_bias_of_per-sample_adam_on_separable_data_departure_from_the_full-batch/"
     t: "Implicit Bias of Per-sample Adam on Separable Data: Departure from the Full-batch Regime"
+  - u: "incentives_in_federated_learning_with_heterogeneous_agents/"
+    t: "Incentives in Federated Learning with Heterogeneous Agents"
+  - u: "lca_local_classifier_alignment_for_continual_learning/"
+    t: "LCA: Local Classifier Alignment for Continual Learning"
   - u: "learning_to_recall_with_transformers_beyond_orthogonal_embeddings/"
     t: "Learning to Recall with Transformers Beyond Orthogonal Embeddings"
   - u: "learning_to_solve_orienteering_problem_with_time_windows_and_variable_profits/"
@@ -60,18 +71,10 @@ item_list:
     t: "Minor First, Major Last: A Depth-Induced Implicit Bias of Sharpness-Aware Minimization"
   - u: "mt-dao_multi-timescale_distributed_adaptive_optimizers_with_local_updates/"
     t: "MT-DAO: Multi-Timescale Distributed Adaptive Optimizers with Local Updates"
-  - u: "nabla-reasoner_llm_reasoning_via_test-time_gradient_descent_in_latent_space/"
-    t: "∇-Reasoner: LLM Reasoning via Test-Time Gradient Descent in Latent Space"
   - u: "neural_networks_learn_generic_multi-index_models_near_information-theoretic_limi/"
     t: "Neural Networks Learn Generic Multi-Index Models Near Information-Theoretic Limit"
   - u: "non-asymptotic_analysis_of_efficiency_in_conformalized_regression/"
     t: "Non-Asymptotic Analysis of Efficiency in Conformalized Regression"
-  - u: "nonparametric_teaching_of_attention_learners/"
-    t: "Nonparametric Teaching of Attention Learners"
-  - u: "nrgpt_an_energy-based_alternative_for_gpt/"
-    t: "NRGPT: An Energy-based Alternative for GPT"
-  - u: "optimizer_choice_matters_for_the_emergence_of_neural_collapse/"
-    t: "Optimizer Choice Matters for the Emergence of Neural Collapse"
 item_total: 47
 ---
 
@@ -80,9 +83,9 @@ item_total: 47
 
 **🔬 ICLR2026** · **47** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (71)](../../ICML2026/optimization/index.md) · [📷 CVPR2026 (8)](../../CVPR2026/optimization/index.md) · [🤖 AAAI2026 (22)](../../AAAI2026/optimization/index.md) · [🧠 NeurIPS2025 (110)](../../NeurIPS2025/optimization/index.md) · [📹 ICCV2025 (7)](../../ICCV2025/optimization/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (64)](../../ICML2026/optimization/index.md) · [📷 CVPR2026 (16)](../../CVPR2026/optimization/index.md) · [🤖 AAAI2026 (21)](../../AAAI2026/optimization/index.md) · [🧠 NeurIPS2025 (121)](../../NeurIPS2025/optimization/index.md) · [📹 ICCV2025 (7)](../../ICCV2025/optimization/index.md)
 
-🔥 **Top topics:** Reasoning ×3 · LLM ×3 · Federated Learning ×2
+🔥 **Top topics:** Federated Learning ×3
 
 **[A Convergence Analysis of Adaptive Optimizers under Floating-Point Quantization](a_convergence_analysis_of_adaptive_optimizers_under_floating-point_quantization.md)**
 
@@ -103,6 +106,10 @@ item_total: 47
 **[COLD-Steer: Steering Large Language Models via In-Context One-step Learning Dynamics](cold-steer_steering_large_language_models_via_in-context_one-step_learning_dynam.md)**
 
 :   COLD-Steer is proposed as a training-free LLM activation steering method that approximates the representational change induced by one step of gradient descent on in-context examples, achieving 95% steering effectiveness with only 1/50 of the samples required by prior methods.
+
+**[Conformal Prediction Adaptive to Unknown Subpopulation Shifts](conformal_prediction_adaptive_to_unknown_subpopulation_shifts.md)**
+
+:   To address the failure of standard conformal prediction under subpopulation shift, this paper proposes three adaptive algorithms: weighting calibration data via a learned domain classifier (Algorithms 1/2) or via embedding similarity (Algorithm 3). Coverage guarantees are maintained even with imperfect or absent domain labels, with applications to visual classification and LLM hallucination detection.
 
 **[Constraint Matters: Multi-Modal Representation for Reducing Mixed-Integer Linear Programming](constraint_matters_multi-modal_representation_for_reducing_mixed-integer_linear_.md)**
 
@@ -156,9 +163,21 @@ item_total: 47
 
 :   This paper introduces the principle of *data shatterability* to provide a unified explanation of how data geometry governs the strength of implicit regularization induced by gradient descent near the Edge of Stability (EoS). For the Beta(α) radial distribution family, the authors derive a spectrum of generalization upper and lower bounds that depend on α. For mixture distributions supported on low-dimensional subspaces, they prove that the generalization rate adapts to the intrinsic dimension $m$ rather than the ambient dimension $d$.
 
+**[Gradient-Sign Masking for Task Vector Transport Across Pre-Trained Models](gradient-sign_masking_for_task_vector_transport_across_pre-trained_models.md)**
+
+:   This paper proposes GradFix, a method that constructs a binary mask from gradient signs computed on a minimal number of samples from the target pre-trained model, and uses it to filter the source model's task vector coordinate-wise, retaining only components aligned with the descent direction of the target loss landscape. Without any fine-tuning, GradFix enables task knowledge transfer across pre-trained models, provides a rigorous first-order descent guarantee in theory, and substantially outperforms both naive transfer and few-shot fine-tuning on vision and language benchmarks.
+
 **[Implicit Bias of Per-sample Adam on Separable Data: Departure from the Full-batch Regime](implicit_bias_of_per-sample_adam_on_separable_data_departure_from_the_full-batch.md)**
 
 :   This paper provides the first proof that mini-batch Adam exhibits a different implicit bias from its full-batch counterpart: a constructed dataset causes per-sample Adam to converge to an $\ell_2$ maximum-margin classifier (whereas full-batch Adam converges to $\ell_\infty$), and a proxy algorithm, AdamProxy, is introduced to characterize data-adaptive Mahalanobis-norm margin maximization on general datasets.
+
+**[Incentives in Federated Learning with Heterogeneous Agents](incentives_in_federated_learning_with_heterogeneous_agents.md)**
+
+:   This paper analyzes incentive problems in heterogeneous federated learning from a game-theoretic perspective, proves the existence of pure-strategy Nash equilibria under heterogeneous data distributions and PAC accuracy objectives, and proposes a linear programming-based approximation algorithm to determine optimal contribution levels.
+
+**[LCA: Local Classifier Alignment for Continual Learning](lca_local_classifier_alignment_for_continual_learning.md)**
+
+:   This paper proposes Local Classifier Alignment (LCA), a loss function that simultaneously minimizes classification loss and loss sensitivity within local regions of class prototype Gaussian distributions. LCA addresses the classifier mismatch problem arising from incremental backbone merging in continual learning. Combined with an Incremental Merging (IM) strategy for PEFT modules, the method achieves an overall average accuracy of 85.6% across 7 benchmark datasets, substantially outperforming prior state-of-the-art methods.
 
 **[Learning to Recall with Transformers Beyond Orthogonal Embeddings](learning_to_recall_with_transformers_beyond_orthogonal_embeddings.md)**
 
@@ -180,10 +199,6 @@ item_total: 47
 
 :   This paper proposes MT-DAO, a multi-timescale distributed adaptive optimizer that introduces a slow momentum (high $\beta$) to address the timescale mismatch caused by excessively rapid decay of standard momentum under infrequent communication. MT-DAO provides the first convergence guarantee in this setting, eliminates the performance gap with fully synchronized DDP in language model pre-training, and reduces end-to-end training time by 6–27%.
 
-**[∇-Reasoner: LLM Reasoning via Test-Time Gradient Descent in Latent Space](nabla-reasoner_llm_reasoning_via_test-time_gradient_descent_in_latent_space.md)**
-
-:   This paper proposes ∇-Reasoner, which upgrades inference-time search from zeroth-order (sampling + evaluation) to first-order (gradient descent). By applying Differentiable Textual Optimization (DTO) in the token logits space—jointly leveraging reward gradients and LLM likelihood—the framework iteratively refines the decoding strategy, achieving 10–40% accuracy gains on mathematical reasoning tasks while reducing model calls by 10–40%.
-
 **[Neural Networks Learn Generic Multi-Index Models Near Information-Theoretic Limit](neural_networks_learn_generic_multi-index_models_near_information-theoretic_limi.md)**
 
 :   This paper proves that, under generic non-degeneracy assumptions, standard two-layer neural networks trained via hierarchical gradient descent can learn generic Gaussian Multi-Index models $f(\bm{x})=g(\bm{U}\bm{x})$ with $\tilde{O}(d)$ samples and $\tilde{O}(d^2)$ time, achieving information-theoretically optimal sample and time complexity. This constitutes the first proof that neural networks can efficiently learn hierarchical functions.
@@ -191,10 +206,6 @@ item_total: 47
 **[Non-Asymptotic Analysis of Efficiency in Conformalized Regression](non-asymptotic_analysis_of_efficiency_in_conformalized_regression.md)**
 
 :   This work establishes the first non-asymptotic efficiency bounds for Conformalized Quantile Regression (CQR) and Conformalized Median Regression (CMR) trained with SGD, explicitly characterizing the joint dependence of prediction set length bias on training sample size $n$, calibration sample size $m$, and miscoverage level $\alpha$.
-
-**[Nonparametric Teaching of Attention Learners](nonparametric_teaching_of_attention_learners.md)**
-
-:   This paper proposes AtteNT — a reinterpretation of attention learner (Transformer/ViT) training through the lens of nonparametric teaching theory: it analyzes the importance-adaptive role of attention in parametric gradients → proves that the dynamic ANTK converges to an importance-adaptive canonical kernel in functional gradient descent → bridges parameter space and function space → applies a greedy teaching algorithm that selects samples with the largest prediction deviation to accelerate training → achieving 13.01% time savings for LLM fine-tuning and 20.58% for ViT training from scratch, with no degradation in accuracy.
 
 **[NRGPT: An Energy-based Alternative for GPT](nrgpt_an_energy-based_alternative_for_gpt.md)**
 
@@ -228,10 +239,6 @@ item_total: 47
 
 :   This paper proposes the Rolling Ball Optimizer (RBO), which breaks the spatial locality of conventional optimizers by simulating the rolling motion of a finite-radius rigid sphere over the loss landscape. This induces an ironing property on the loss function and demonstrates superior convergence speed and generalization performance on MNIST and CIFAR-10/100.
 
-**[RRNCO: Towards Real-World Routing with Neural Combinatorial Optimization](rrnco_towards_real-world_routing_with_neural_combinatorial_optimization.md)**
-
-:   This paper proposes the RRNCO architecture, which introduces two key innovations — Adaptive Node Embedding (ANE) and Neural Adaptive Bias (NAB) — to jointly model asymmetric distances, travel durations, and bearing angles within a deep routing framework for the first time. It also constructs a VRP benchmark dataset based on 100 real-world cities, significantly narrowing the sim-to-real gap for NCO methods.
-
 **[RS-ORT: A Reduced-Space Branch-and-Bound Algorithm for Optimal Regression Trees](rs-ort_a_reduced-space_branch-and-bound_algorithm_for_optimal_regression_trees.md)**
 
 :   This paper proposes RS-ORT, an algorithm that reformulates regression tree training as a two-stage optimization problem and applies branch-and-bound over a reduced space (branching only on tree structure variables). Combined with closed-form leaf predictions, threshold discretization, and exact last-layer subtree resolution, RS-ORT is the first exact method to achieve globally optimal regression tree learning on datasets with up to 2 million samples containing continuous features.
@@ -239,10 +246,6 @@ item_total: 47
 **[Saddle-to-Saddle Dynamics Explains A Simplicity Bias Across Neural Network Architectures](saddle-to-saddle_dynamics_explains_a_simplicity_bias_across_neural_network_archi.md)**
 
 :   This paper proposes a unified theoretical framework that explains the pervasive simplicity bias observed across multiple neural network architectures (fully connected, convolutional, and attention-based) through saddle-to-saddle learning dynamics — the phenomenon whereby gradient descent tends to learn simple solutions first before progressively learning more complex ones.
-
-**[Scaf-GRPO: Scaffolded Group Relative Policy Optimization for Enhancing LLM Reasoning](scaf-grpo_scaffolded_group_relative_policy_optimization_for_enhancing_llm_reason.md)**
-
-:   This paper proposes the Scaf-GRPO framework, which injects hierarchical in-prompt hints (Knowledge → Planning → Solution) to overcome the "learning cliff" (zero-reward) problem in GRPO training. On Qwen2.5-Math-7B, it achieves a 44.3% relative improvement in pass@1 on AIME24 while preserving on-policy training consistency.
 
 **[Scaling Laws of SignSGD in Linear Regression: When Does It Outperform SGD?](scaling_laws_of_signsgd_in_linear_regression_when_does_it_outperform_sgd.md)**
 

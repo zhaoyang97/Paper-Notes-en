@@ -130,8 +130,8 @@ SLICE is entirely training-free. Image generation uses Stable Diffusion V2; sema
 - [\[ICML 2026\] Watch Your Step: Information Injection in Diffusion Models via Shadow Timestep Embedding](../../ICML2026/image_generation/watch_your_step_information_injection_in_diffusion_models_via_shadow_timestep_em.md)
 - [\[CVPR 2026\] The Universal Normal Embedding](the_universal_normal_embedding.md)
 - [\[CVPR 2026\] Gaussian Shannon: High-Precision Diffusion Model Watermarking Based on Communication](gaussian_shannon_high-precision_diffusion_model_watermarking_based_on_communicat.md)
-- [\[CVPR 2026\] Editing Away the Evidence: Diffusion-Based Image Manipulation and the Failure Modes of Robust Watermarking](editing_away_the_evidence_diffusion-based_image_manipulation_and_the_failure_mod.md)
 - [\[ICCV 2025\] Semantic Watermarking Reinvented: Enhancing Robustness and Generation Quality with Fourier Integrity](../../ICCV2025/image_generation/semantic_watermarking_reinvented_enhancing_robustness_and_generation_quality_wit.md)
+- [\[CVPR 2026\] Editing Away the Evidence: Diffusion-Based Image Manipulation and the Failure Modes of Robust Watermarking](editing_away_the_evidence_diffusion-based_image_manipulation_and_the_failure_mod.md)
 
 </div>
 

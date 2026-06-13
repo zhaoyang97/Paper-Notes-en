@@ -2,9 +2,10 @@
 title: >-
   [Paper Note] Realizable Bayes-Consistency for General Metric Losses
 description: >-
-  [ICML 2026][Learnability] This paper provides a sharp characterization for the open problem of when a hypothesis class $\mathcal{H}$ admits a distribution-free strong universal Bayes-consistent learning algorithm under g…
+  [ICML 2026][Learning Theory / Metric Losses / Bayes Consistency][Learnability] This paper provides a sharp characterization for the open problem of when a hypothesis class $\mathcal{H}$ admits a distribution-free strong…
 tags:
   - "ICML 2026"
+  - "Learning Theory / Metric Losses / Bayes Consistency"
   - "Learnability"
   - "metric losses"
   - "Littlestone tree"
@@ -127,10 +128,10 @@ Theoretical paper, no experiments. The core quantitative results are two theorem
 ## Related Papers
 
 - [\[ICML 2026\] Parsimonious Learning-Augmented Online Metric Matching](parsimonious_learning-augmented_online_metric_matching.md)
-- [\[ICML 2026\] Amortized Simulation-Based Inference in Generalized Bayes via Neural Posterior Estimation](amortized_simulation-based_inference_in_generalized_bayes_via_neural_posterior_e.md)
-- [\[ICML 2026\] Consistency Training Can Entrench Misalignment](consistency_training_can_entrench_misalignment.md)
 - [\[ICML 2026\] Expectation Consistency Loss: Rethink Confidence Calibration under Covariate Shift](expectation_consistency_loss_rethink_confidence_calibration_under_covariate_shif.md)
-- [\[AAAI 2026\] Parameterized Approximation Algorithms for TSP on Non-Metric Graphs](../../AAAI2026/others/parameterized_approximation_algorithms_for_tsp_on_non-metric_graphs.md)
+- [\[ICML 2026\] Estimating Correlation Clustering Cost in Node-Arrival Stream](estimating_correlation_clustering_cost_in_node-arrival_stream.md)
+- [\[ICML 2026\] Matroid Algorithms Under Size-Sensitive Independence Oracles](matroid_algorithms_under_size-sensitive_independence_oracles.md)
+- [\[ICML 2026\] Simple Algorithms for Bad Triangle Transversals with Applications to Correlation Clustering](simple_algorithms_for_bad_triangle_transversals_with_applications_to_correlation.md)
 
 </div>
 

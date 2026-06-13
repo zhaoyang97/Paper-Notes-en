@@ -153,7 +153,7 @@ S2P2 demonstrates a particularly pronounced advantage on EHRSHOT (a large-scale 
 - [\[NeurIPS 2025\] Continuous Thought Machines](continuous_thought_machines.md)
 - [\[NeurIPS 2025\] Addressing Mark Imbalance in Integration-free Neural Marked Temporal Point Processes](addressing_mark_imbalance_in_integrationfree_neural_marked_t.md)
 - [\[NeurIPS 2025\] SPACE: SPike-Aware Consistency Enhancement for Test-Time Adaptation in Spiking Neural Networks](space_spike-aware_consistency_enhancement_for_test-time_adaptation_in_spiking_ne.md)
-- [\[NeurIPS 2025\] Deep Legendre Transform](deep_legendre_transform.md)
+- [\[NeurIPS 2025\] Revisiting Bi-Linear State Transitions in Recurrent Neural Networks](revisiting_bi-linear_state_transitions_in_recurrent_neural_networks.md)
 
 </div>
 

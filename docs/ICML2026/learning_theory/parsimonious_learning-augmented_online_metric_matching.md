@@ -2,9 +2,10 @@
 title: >-
   [Paper Note] Parsimonious Learning-Augmented Online Metric Matching
 description: >-
-  [ICML 2026][Online Metric Matching] This paper resolves an open question posed by Im et al. (2022) by extending "action-based prediction" for Online Metric Matching (OMM) into a "parsimonious prediction" framework—where…
+  [ICML 2026][Online Optimization / Learning-Augmented Algorithms / Online Metric Matching][Online Metric Matching] This paper resolves an open question posed by Im et al. (2022) by extending "action-based prediction" for…
 tags:
   - "ICML 2026"
+  - "Online Optimization / Learning-Augmented Algorithms / Online Metric Matching"
   - "Online Metric Matching"
   - "Learning-augmented algorithms"
   - "parsimonious prediction"
@@ -123,11 +124,11 @@ To handle adversarial or erroneous predictions, the authors utilize the combinat
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Learning-Augmented Online Bipartite Fractional Matching](../../NeurIPS2025/others/learning-augmented_online_bipartite_fractional_matching.md)
+- [\[NeurIPS 2025\] Learning-Augmented Online Bipartite Fractional Matching](../../NeurIPS2025/learning_theory/learning-augmented_online_bipartite_fractional_matching.md)
 - [\[ICML 2026\] Towards Optimal Robustness in Learning-Augmented Paging](towards_optimal_robustness_in_learning-augmented_paging.md)
 - [\[ICML 2026\] Realizable Bayes-Consistency for General Metric Losses](realizable_bayes-consistency_for_general_metric_losses.md)
-- [\[AAAI 2026\] A Switching Framework for Online Interval Scheduling with Predictions](../../AAAI2026/others/a_switching_framework_for_online_interval_scheduling_with_pr.md)
-- [\[ICML 2026\] Cascaded Flow Matching for Heterogeneous Tabular Data with Mixed-Type Features](cascaded_flow_matching_for_heterogeneous_tabular_data_with_mixed-type_features.md)
+- [\[AAAI 2026\] A Switching Framework for Online Interval Scheduling with Predictions](../../AAAI2026/learning_theory/a_switching_framework_for_online_interval_scheduling_with_pr.md)
+- [\[ICML 2026\] Correcting Split Selection in Online Decision Trees via Anytime-Valid Inference](correcting_split_selection_in_online_decision_trees_via_anytime-valid_inference.md)
 
 </div>
 

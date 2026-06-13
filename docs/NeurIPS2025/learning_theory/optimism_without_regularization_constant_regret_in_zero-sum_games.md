@@ -2,9 +2,10 @@
 title: >-
   [Paper Note] Optimism Without Regularization: Constant Regret in Zero-Sum Games
 description: >-
-  [NeurIPS 2025][Fictitious Play] This paper provides the first proof that Optimistic Fictitious Play without regularization achieves $O(1)$ constant regret in $2\times2$ zero-sum games…
+  [NeurIPS 2025][Other][Fictitious Play] This paper provides the first proof that Optimistic Fictitious Play without regularization achieves $O(1)$ constant regret in $2\times2$ zero-sum games…
 tags:
   - "NeurIPS 2025"
+  - "Other"
   - "Fictitious Play"
   - "Optimistic Learning"
   - "Zero-Sum Games"
@@ -151,10 +152,10 @@ The core argument is that in dual space, the trajectory of $y^t$ is confined to 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Efficient Kernelized Learning in Polyhedral Games Beyond Full-Information: From Colonel Blotto to Congestion Games](efficient_kernelized_learning_in_polyhedral_games_beyond_full-information_from_c.md)
-- [\[NeurIPS 2025\] Evolutionary Prediction Games](evolutionary_prediction_games.md)
-- [\[NeurIPS 2025\] MAS-ZERO: Designing Multi-Agent Systems with Zero Supervision](maszero_designing_multiagent_systems_with_zero_supervision.md)
-- [\[NeurIPS 2025\] Gaussian Process Upper Confidence Bound Achieves Nearly-Optimal Regret in Noise-Free Gaussian Process Bandits](gaussian_process_upper_confidence_bound_achieves_nearly-optimal_regret_in_noise-.md)
-- [\[ICML 2026\] Optimal Regularization for Performative Learning](../../ICML2026/others/optimal_regularization_for_performative_learning.md)
+- [\[NeurIPS 2025\] Reliably Detecting Model Failures in Deployment Without Labels](reliably_detecting_model_failures_in_deployment_without_labels.md)
+- [\[ICLR 2026\] Function Spaces Without Kernels: Learning Compact Hilbert Space Representations](../../ICLR2026/learning_theory/function_spaces_without_kernels_learning_compact_hilbert_space_representations.md)
+- [\[ICML 2026\] Multi-task Linear Regression without Eigenvalue Lower Bounds: Adaptivity, Robustness and Safety](../../ICML2026/learning_theory/multi-task_linear_regression_without_eigenvalue_lower_bounds_adaptivity_robustne.md)
+- [\[NeurIPS 2025\] Finite-Time Analysis of Stochastic Nonconvex Nonsmooth Optimization on the Riemannian Manifolds](finite-time_analysis_of_stochastic_nonconvex_nonsmooth_optimization_on_the_riema.md)
 
 </div>
 

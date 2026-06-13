@@ -1,25 +1,30 @@
 ---
 title: >-
-  NeurIPS2025 LLM / NLP Papers · 48 Notes
+  NeurIPS2025 LLM / NLP Papers · 53 Notes
 description: >-
-  48 NeurIPS2025 papers in the LLM / NLP area, covering LLM, Agents, Few-/Zero-Shot Learning and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  53 NeurIPS2025 papers in the LLM / NLP area, covering LLM, Adversarial Robustness, Agents, Few-/Zero-Shot Learning and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "NeurIPS2025"
   - "LLM / NLP"
   - "AI paper notes"
   - "paper summaries"
   - "LLM"
+  - "Adversarial Robustness"
   - "Agents"
   - "Few-/Zero-Shot Learning"
 item_list:
   - u: "acesearcher_bootstrapping_reasoning_and_search_for_llms_via_reinforced_self-play/"
     t: "AceSearcher: Bootstrapping Reasoning and Search for LLMs via Reinforced Self-Play"
+  - u: "adaptdel_adaptable_deletion_rate_randomized_smoothing_for_ce/"
+    t: "AdaptDel: Adaptable Deletion Rate Randomized Smoothing for Certified Robustness"
   - u: "adaptive_kernel_design_for_bayesian_optimization_is_a_piece_of_cake_with_llms/"
     t: "Adaptive Kernel Design for Bayesian Optimization Is a Piece of CAKE with LLMs"
   - u: "are_language_models_efficient_reasoners_a_perspective_from_logic_programming/"
     t: "Are Language Models Efficient Reasoners? A Perspective from Logic Programming"
   - u: "autodiscovery_open-ended_scientific_discovery_via_bayesian_surprise/"
     t: "AutoDiscovery: Open-ended Scientific Discovery via Bayesian Surprise"
+  - u: "breaking_ars_sampling_bottleneck_provable_acceleration_via_d/"
+    t: "Breaking AR's Sampling Bottleneck: Provable Acceleration via Diffusion Language Models"
   - u: "c2prompt_class-aware_client_knowledge_interaction_for_federated_continual_learni/"
     t: "C²Prompt: Class-aware Client Knowledge Interaction for Federated Continual Learning"
   - u: "cat_circular-convolutional_attention_for_sub-quadratic_transformers/"
@@ -30,6 +35,8 @@ item_list:
     t: "Composing Linear Layers from Irreducibles"
   - u: "cultural_alien_sampler_open-ended_art_generation_balancing_originality_and_coher/"
     t: "Cultural Alien Sampler: Open-ended Art Generation Balancing Originality and Coherence"
+  - u: "decoupled_entropy_minimization/"
+    t: "Decoupled Entropy Minimization"
   - u: "detecting_high-stakes_interactions_with_activation_probes/"
     t: "Detecting High-Stakes Interactions with Activation Probes"
   - u: "dont_be_lazy_completep_enables_compute-efficient_deep_transformers/"
@@ -42,10 +49,10 @@ item_list:
     t: "Hyperparameter Transfer Enables Consistent Gains of Matrix-Preconditioned Optimizers Across Scales"
   - u: "in-context_learning_of_linear_dynamical_systems_with_transformers_approximation_/"
     t: "In-Context Learning of Linear Dynamical Systems with Transformers: Approximation Bounds and Depth-Separation"
-  - u: "large_language_models_miss_the_multi-agent_mark/"
-    t: "Large Language Models Miss the Multi-Agent Mark"
   - u: "linear_transformers_implicitly_discover_unified_numerical_algorithms/"
     t: "Linear Transformers Implicitly Discover Unified Numerical Algorithms"
+  - u: "mind_the_gap_removing_the_discretization_gap_in_differentiable_logic_gate_networ/"
+    t: "Mind the Gap: Removing the Discretization Gap in Differentiable Logic Gate Networks"
   - u: "monarchattention_zero-shot_conversion_to_fast_hardware-aware_structured_attentio/"
     t: "MonarchAttention: Zero-Shot Conversion to Fast, Hardware-Aware Structured Attention"
   - u: "moose-chem2_exploring_llm_limits_in_fine-grained_scientific_hypothesis_discovery/"
@@ -62,31 +69,29 @@ item_list:
     t: "PluralisticBehaviorSuite: Stress-Testing Multi-Turn Adherence to Custom Behavioral Policies"
   - u: "polar_sparsity_high_throughput_batched_llm_inferencing_with_scalable_contextual_/"
     t: "Polar Sparsity: High Throughput Batched LLM Inferencing with Scalable Contextual Sparsity"
-  - u: "post_hoc_regression_refinement_via_pairwise_rankings/"
-    t: "Post Hoc Regression Refinement via Pairwise Rankings"
+  - u: "preference-based_reinforcement_learning_beyond_pairwise_comparisons_benefits_of_/"
+    t: "Preference-based Reinforcement Learning beyond Pairwise Comparisons: Benefits of Multiple Options"
   - u: "presto_preimage-informed_instruction_optimization_for_prompting_black-box_llms/"
     t: "PRESTO: Preimage-Informed Instruction Optimization for Prompting Black-Box LLMs"
-  - u: "qsharp_provably_optimal_distributional_rl_for_llm_post-training/"
-    t: "Q♯: Provably Optimal Distributional RL for LLM Post-Training"
-  - u: "reparameterized_llm_training_via_orthogonal_equivalence_transformation/"
-    t: "Reparameterized LLM Training via Orthogonal Equivalence Transformation"
-  - u: "scaling_up_active_testing_to_large_language_models/"
-    t: "Scaling Up Active Testing to Large Language Models"
-item_total: 48
+item_total: 53
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->
 # 💬 LLM / NLP
 
-**🧠 NeurIPS2025** · **48** paper notes
+**🧠 NeurIPS2025** · **53** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (39)](../../ICML2026/llm_nlp/index.md) · [💬 ACL2026 (59)](../../ACL2026/llm_nlp/index.md) · [📷 CVPR2026 (9)](../../CVPR2026/llm_nlp/index.md) · [🔬 ICLR2026 (37)](../../ICLR2026/llm_nlp/index.md) · [🤖 AAAI2026 (34)](../../AAAI2026/llm_nlp/index.md) · [📹 ICCV2025 (6)](../../ICCV2025/llm_nlp/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (37)](../../ICML2026/llm_nlp/index.md) · [💬 ACL2026 (58)](../../ACL2026/llm_nlp/index.md) · [📷 CVPR2026 (2)](../../CVPR2026/llm_nlp/index.md) · [🔬 ICLR2026 (36)](../../ICLR2026/llm_nlp/index.md) · [🤖 AAAI2026 (30)](../../AAAI2026/llm_nlp/index.md) · [📹 ICCV2025 (6)](../../ICCV2025/llm_nlp/index.md)
 
-🔥 **Top topics:** LLM ×15 · Agents ×3 · Few-/Zero-Shot Learning ×2
+🔥 **Top topics:** LLM ×14 · Adversarial Robustness ×2 · Agents ×2 · Few-/Zero-Shot Learning ×2
 
 **[AceSearcher: Bootstrapping Reasoning and Search for LLMs via Reinforced Self-Play](acesearcher_bootstrapping_reasoning_and_search_for_llms_via_reinforced_self-play.md)**
 
 :   This paper proposes AceSearcher—a collaborative self-play framework in which a single LLM simultaneously plays two roles: a **decomposer** (breaking complex queries into sub-questions to guide retrieval) and a **solver** (integrating retrieved context to generate answers). Through a two-stage training pipeline of SFT followed by iterative DPO, using only final-answer rewards, AceSearcher achieves an average EM improvement of 7.6% across 10 datasets, and the 32B model matches DeepSeek-V3 with fewer than 5% of its parameters.
+
+**[AdaptDel: Adaptable Deletion Rate Randomized Smoothing for Certified Robustness](adaptdel_adaptable_deletion_rate_randomized_smoothing_for_ce.md)**
+
+:   AdaptDel extends the fixed deletion rate used in randomized smoothing for discrete sequences to an adaptable deletion rate that varies according to input properties such as sequence length. The paper provides a theoretical soundness proof for certification under variable rates, and experiments on NLP sequence classification tasks demonstrate improvements in certified region cardinality of up to 30 orders of magnitude.
 
 **[Adaptive Kernel Design for Bayesian Optimization Is a Piece of CAKE with LLMs](adaptive_kernel_design_for_bayesian_optimization_is_a_piece_of_cake_with_llms.md)**
 
@@ -99,6 +104,10 @@ item_total: 48
 **[AutoDiscovery: Open-ended Scientific Discovery via Bayesian Surprise](autodiscovery_open-ended_scientific_discovery_via_bayesian_surprise.md)**
 
 :   AutoDiscovery proposes Bayesian Surprise as an objective reward signal for open-ended scientific discovery — estimating the KL divergence between prior and posterior belief distributions via LLM sampling, combined with MCTS and progressive widening to explore the hypothesis space. On 21 real-world datasets, the method produces 5–29% more surprising discoveries than greedy/beam search baselines. Human evaluation confirms that Bayesian Surprise aligns with expert "surprise" ratings (0.67), substantially outperforming LLM self-evaluated "novelty" and "usefulness."
+
+**[Breaking AR's Sampling Bottleneck: Provable Acceleration via Diffusion Language Models](breaking_ars_sampling_bottleneck_provable_acceleration_via_d.md)**
+
+:   This paper establishes a complete convergence theory for masked diffusion language models from an information-theoretic perspective: it proves that the sampling error in KL divergence decays at an $O(1/T)$ rate and scales linearly with inter-token mutual information, provides a matching lower bound to establish tightness, and theoretically demonstrates that diffusion models can generate high-quality samples in $T < L$ steps (where $L$ is the sequence length).
 
 **[C²Prompt: Class-aware Client Knowledge Interaction for Federated Continual Learning](c2prompt_class-aware_client_knowledge_interaction_for_federated_continual_learni.md)**
 
@@ -119,6 +128,10 @@ item_total: 48
 **[Cultural Alien Sampler: Open-ended Art Generation Balancing Originality and Coherence](cultural_alien_sampler_open-ended_art_generation_balancing_originality_and_coher.md)**
 
 :   This paper proposes the Cultural Alien Sampler (CAS), which employs two GPT-2 models to separately model "concept coherence" and "cultural typicality," selecting concept combinations with high coherence but low cultural typicality to generate original yet harmonious artistic ideas. In human evaluations, CAS approaches the level of art students and substantially outperforms GPT-4o.
+
+**[Decoupled Entropy Minimization](decoupled_entropy_minimization.md)**
+
+:   This paper decouples classical entropy minimization (EM) into two opposing components — the Cluster Aggregation Driving Factor (CADF, which rewards dominant classes) and the Gradient Mitigation Calibrator (GMC, which penalizes high-confidence classes) — revealing two inherent flaws of classical EM (reward collapse and easy-class bias). The proposed AdaDEM addresses these issues via normalized rewards and marginal entropy calibration, achieving significant improvements across semi-supervised learning, domain adaptation, reinforcement learning, and other tasks.
 
 **[Detecting High-Stakes Interactions with Activation Probes](detecting_high-stakes_interactions_with_activation_probes.md)**
 
@@ -144,13 +157,13 @@ item_total: 48
 
 :   This paper analyzes the ICL approximation capability of linear Transformers on noisy linear dynamical systems: $O(\log T)$ depth suffices to achieve $O(\log T / T)$ test error (approaching the least-squares estimator), while single-layer linear Transformers admit an irreducible lower bound — revealing a depth-separation phenomenon under non-IID data.
 
-**[Large Language Models Miss the Multi-Agent Mark](large_language_models_miss_the_multi-agent_mark.md)**
-
-:   This position paper systematically surveys 1,400+ papers to argue that current LLM-based multi-agent systems (MAS LLMs) deviate from foundational MAS theory along four dimensions: LLMs lack native social behavior, environment design is LLM-centric, asynchronous coordination and standard communication protocols are absent, and emergent behaviors lack quantification. The paper warns that the field risks reinventing the wheel while ignoring 40 years of MAS research.
-
 **[Linear Transformers Implicitly Discover Unified Numerical Algorithms](linear_transformers_implicitly_discover_unified_numerical_algorithms.md)**
 
 :   After training linear Transformers on a masked block matrix completion task, algebraic analysis of the learned weights reveals that the models implicitly converge to the same two-line iterative update rule—EAGLE—under three fundamentally different computational constraints (centralized, distributed, and compute-limited). This rule achieves second-order convergence with only logarithmic dependence on the condition number.
+
+**[Mind the Gap: Removing the Discretization Gap in Differentiable Logic Gate Networks](mind_the_gap_removing_the_discretization_gap_in_differentiable_logic_gate_networ.md)**
+
+:   This paper proposes Gumbel Logic Gate Networks (Gumbel LGNs), which inject Gumbel noise into logic gate selection and employ a straight-through (ST) estimator to reduce the discretization gap of differentiable logic gate networks by 98%, achieve a 4.5× speedup in training, and reduce the proportion of unused neurons to 0%.
 
 **[MonarchAttention: Zero-Shot Conversion to Fast, Hardware-Aware Structured Attention](monarchattention_zero-shot_conversion_to_fast_hardware-aware_structured_attentio.md)**
 
@@ -184,9 +197,9 @@ item_total: 48
 
 :   This paper reveals a "polarity shift" phenomenon in LLM inference sparsity — MLP layer sparsity vanishes as batch size increases, while attention head sparsity remains stable and batch-invariant. Based on this insight, the authors design Selective Head Attention and corresponding GPU kernels, achieving up to 2.2× end-to-end speedup in large-batch inference.
 
-**[Post Hoc Regression Refinement via Pairwise Rankings](post_hoc_regression_refinement_via_pairwise_rankings.md)**
+**[Preference-based Reinforcement Learning beyond Pairwise Comparisons: Benefits of Multiple Options](preference-based_reinforcement_learning_beyond_pairwise_comparisons_benefits_of_.md)**
 
-:   This paper proposes RankRefine, a model-agnostic post-processing regression refinement method that fuses predictions from a base regressor with estimates derived from pairwise rankings via inverse-variance weighting. Without any retraining, the method achieves up to 10% relative MAE reduction in molecular property prediction using only 20 pairwise comparisons and a general-purpose LLM.
+:   This paper proposes the M-AUPO algorithm for preference-based reinforcement learning, leveraging the Plackett-Luce ranking model to handle multi-option comparison feedback, and provides the first theoretical proof that larger subset sizes directly improve sample efficiency.
 
 **[PRESTO: Preimage-Informed Instruction Optimization for Prompting Black-Box LLMs](presto_preimage-informed_instruction_optimization_for_prompting_black-box_llms.md)**
 
@@ -248,9 +261,17 @@ item_total: 48
 
 :   This paper proposes a four-quadrant technical taxonomy for LLM persona design, organized along two axes—"virtual vs. embodied" and "emotional companionship vs. functional augmentation"—to systematically analyze the technology stacks, core challenges, and ethical risks across diverse scenarios ranging from virtual companions and game NPCs to caregiving robots.
 
+**[The Last Vote: A Multi-Stakeholder Framework for Language Model Governance](the_last_vote_a_multi-stakeholder_framework_for_language_model_governance.md)**
+
+:   This paper proposes a comprehensive framework for language model governance comprising a seven-category democratic risk taxonomy, a stakeholder-adaptive Incident Severity Score (ISS), and a phased six-year implementation roadmap, with the goal of embedding democratic values into the institutional design of AI regulation.
+
 **[The Rise of Parameter Specialization for Knowledge Storage in Large Language Models](the_rise_of_parameter_specialization_for_knowledge_storage_in_large_language_mod.md)**
 
 :   This paper systematically analyzes 20 open-source LLMs and finds that stronger models exhibit higher degrees of parameter specialization in MLP value vectors — i.e., semantically similar knowledge tends to be concentrated in a small subset of parameter vectors. Causal experiments further confirm a causal relationship between this specialization degree and model performance on knowledge tasks.
+
+**[Towards Implicit Aggregation: Robust Image Representation for Place Recognition in the Transformer Era](towards_implicit_aggregation_robust_image_representation_for_place_recognition_i.md)**
+
+:   This paper proposes ImAge (Implicit Aggregation), which inserts learnable aggregation tokens at a specific layer of a Transformer backbone and leverages the intrinsic self-attention mechanism to implicitly aggregate patch features into a global descriptor, completely eliminating the need for an external aggregator. With the smallest descriptor dimensionality (6144) and fastest inference speed, ImAge surpasses SOTA methods such as SALAD and BoQ across multiple VPR benchmarks, and ranks 1st on the MSLS Challenge leaderboard.
 
 **[Triplets Better Than Pairs: Towards Stable and Effective Self-Play Fine-Tuning for LLMs](triplets_better_than_pairs_towards_stable_and_effective_self-play_fine-tuning_fo.md)**
 

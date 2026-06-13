@@ -2,9 +2,10 @@
 title: >-
   [Paper Note] Correcting Split Selection in Online Decision Trees via Anytime-Valid Inference
 description: >-
-  [ICML 2026][Online decision trees] The authors point out that the "fixed sample size" concentration inequality used by the classic Hoeffding Tree (HT) for splitting on data streams is invalidated by its own "data-depende…
+  [ICML 2026][Data stream learning / Decision trees / Sequential inference][Online decision trees] The authors point out that the "fixed sample size" concentration inequality used by the classic Hoeffding Tree (HT) for spl…
 tags:
   - "ICML 2026"
+  - "Data stream learning / Decision trees / Sequential inference"
   - "Online decision trees"
   - "anytime-valid inference"
   - "testing-by-betting"
@@ -120,11 +121,11 @@ The cost-benefit trade-off between AVT_B / AVT_CS / AVF_B and HT/ARF is shown vi
 
 ## Related Papers
 
-- [\[ICLR 2026\] Active Learning for Decision Trees with Provable Guarantees](../../ICLR2026/others/active_learning_for_decision_trees_with_provable_guarantees.md)
-- [\[ICML 2026\] Inference of Online Newton Methods with Nesterov's Accelerated Sketching](inference_of_online_newton_methods_with_nesterovs_accelerated_sketching.md)
-- [\[AAAI 2026\] From Decision Trees to Boolean Logic: A Fast and Unified SHAP Algorithm](../../AAAI2026/others/from_decision_trees_to_boolean_logic_a_fast_and_unified_shap_algorithm.md)
-- [\[ICML 2026\] Decision Tree Learning on Product Spaces](decision_tree_learning_on_product_spaces.md)
-- [\[NeurIPS 2025\] Improving Decision Trees through the Lens of Parameterized Local Search](../../NeurIPS2025/others/improving_decision_trees_through_the_lens_of_parameterized_local_search.md)
+- [\[AAAI 2026\] Generalizing Analogical Inference from Boolean to Continuous Domains](../../AAAI2026/learning_theory/generalizing_analogical_inference_from_boolean_to_continuous_domains.md)
+- [\[ICML 2026\] Parsimonious Learning-Augmented Online Metric Matching](parsimonious_learning-augmented_online_metric_matching.md)
+- [\[AAAI 2026\] A Switching Framework for Online Interval Scheduling with Predictions](../../AAAI2026/learning_theory/a_switching_framework_for_online_interval_scheduling_with_pr.md)
+- [\[NeurIPS 2025\] Computable Universal Online Learning](../../NeurIPS2025/learning_theory/computable_universal_online_learning.md)
+- [\[AAAI 2026\] Streaming Generated Gaussian Process Experts for Online Learning and Control: Extended Version](../../AAAI2026/learning_theory/streaming_generated_gaussian_process_experts_for_online_learning_and_control_ext.md)
 
 </div>
 

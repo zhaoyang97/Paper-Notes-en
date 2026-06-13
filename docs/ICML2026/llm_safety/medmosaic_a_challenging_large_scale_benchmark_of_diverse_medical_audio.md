@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] MedMosaic: A Challenging Large Scale Benchmark of Diverse Medical Audio
 description: >-
-  [ICML 2026][LLM Safety][Medical Audio QA] MedMosaic constructs a medical audio QA benchmark (46,701 QA pairs, 10 question types) covering physiological sounds and real/synthetic clinical dialogues using a synthetic pipel…
+  [ICML 2026][LLM Safety][Medical Audio QA] MedMosaic constructs a medical audio QA benchmark (46,701 QA pairs, 10 question types) covering physiological sounds and real/synthetic clinical dialogues via a synthetic pipelin…
 tags:
   - "ICML 2026"
   - "LLM Safety"
   - "Medical Audio QA"
   - "Synthetic Clinical Speech"
   - "Multi-turn Reasoning"
-  - "Open-ended QA"
+  - "Open-ended Answering"
   - "Embedded Voice QA"
 date: 2026-05-08
-content_hash: 87db67a3bd26997e
+content_hash: 4bc941fbe4a2d38c
 ---
 
 # MedMosaic: A Challenging Large Scale Benchmark of Diverse Medical Audio
@@ -21,53 +21,56 @@ content_hash: 87db67a3bd26997e
 **arXiv**: [2605.00969](https://arxiv.org/abs/2605.00969)  
 **Code**: Sample data https://shorturl.at/Lyp33  
 **Area**: Medical Audio / Multimodal Evaluation  
-**Keywords**: Medical Audio QA, Synthetic Clinical Speech, Multi-turn Reasoning, Open-ended QA, Embedded Voice QA
+**Keywords**: Medical Audio QA, Synthetic Clinical Speech, Multi-turn Reasoning, Open-ended Answering, Embedded Voice QA
 
 ## TL;DR
-MedMosaic constructs a medical audio QA benchmark (46,701 QA pairs, 10 question types) covering physiological sounds and real/synthetic clinical dialogues using a synthetic pipeline. Systematic evaluation of 13 audio/multimodal models reveals that even Gemini-2.5-Pro achieves only approximately 68.1% weighted accuracy, highlighting fundamental deficiencies in contemporary LALMs regarding medical audio reasoning.
+MedMosaic constructs a medical audio QA benchmark (46,701 QA pairs, 10 question types) covering physiological sounds and real/synthetic clinical dialogues via a synthetic pipeline. It systematically evaluates 13 audio/multimodal models, revealing that even Gemini-2.5-Pro achieves only about 68.1% weighted accuracy, exposing fundamental limitations of contemporary LALMs in medical audio reasoning.
 
 ## Background & Motivation
 
-**Background**: With the rise of LLMs/MLLMs/LALMs, evaluation focus has shifted from "single-modality recognition" to "cross-modal multi-step reasoning." General audio QA benchmarks such as ClothoAQA, MMAU, MMAU-Pro, MDAR, MMAR, AudioBench, and AudioPedia are mature, and model-side progress is rapid with Qwen-Audio, Audio Flamingo, SALMONN, LTU-AS, and AudioPaLM.
+**Background**: With the rise of LLMs/MLLMs/LALMs, evaluation focus has shifted from "unimodal recognition" to "cross-modal multi-step reasoning." General audio QA already has mature benchmarks such as ClothoAQA, MMAU, MMAU-Pro, MDAR, MMAR, AudioBench, and AudioPedia; on the model side, Qwen-Audio, Audio Flamingo, SALMONN, LTU-AS, AudioPaLM, etc., are rapidly advancing.
 
-**Limitations of Prior Work**: (1) Existing audio QA focuses almost exclusively on general ambient sounds, music, and short speech segments; medical audio is extremely scarce, with CaReAQA being a rare but small-scale attempt limited to short independent fragments. (2) Text-based medical QA (MedQA, MeDiaQA) removes all acoustic information, failing to evaluate clinical clues conveyed only by sound, such as "cough nature, respiratory rhythm, vocal stress, and dialogue hesitation." (3) Evaluation protocols rely excessively on closed-ended multiple-choice questions, failing to examine generative reasoning; there is a lack of scenarios involving long-form dialogues, multi-turn interactions, and embedded voice QA typical of real clinical interactions.
+**Limitations of Prior Work**: (1) Existing audio QA is almost entirely focused on general environmental sounds, music, or short speech segments; medical audio is extremely scarce, with CaReAQA being one of the few attempts, but it is small-scale and only tests short, isolated clips. (2) Text-based medical QA (MedQA, MeDiaQA) removes all acoustic information, making it impossible to assess clinical cues such as "cough characteristics, breathing rhythm, vocal stress, hesitation in dialogue" that only audio can convey. (3) Evaluation protocols overly rely on closed multiple-choice, failing to assess generative reasoning; there is a lack of scenarios involving long dialogues, multi-turn interactions, and embedded QA, which are common in real clinical settings.
 
-**Key Challenge**: Medical decision-making relies heavily on the ability to "align semantics with acoustic markers," yet existing benchmarks lack such long-duration, multi-source audio data and tasks involving multi-hop clinical reasoning. Meanwhile, medical data is difficult to collect at scale due to privacy and annotation costs.
+**Key Challenge**: Medical decision-making heavily depends on the ability to "align semantics with acoustic markers," yet existing benchmarks lack both long-duration, multi-source audio data and multi-hop clinical reasoning tasks; meanwhile, medical data is difficult to scale due to privacy and annotation costs.
 
-**Goal**: (i) Construct a large-scale medical audio QA benchmark across multiple audio types (physiological sounds + short/long clinical dialogues) and reasoning modes (multiple-choice, multi-turn, open-ended, embedded voice); (ii) Propose a controllable synthetic audio generation pipeline for benchmark scalability; (iii) Systematically evaluate mainstream LALMs to quantify the current performance ceiling.
+**Goal**: (i) Build a large-scale medical audio QA benchmark spanning multiple audio types (physiological sounds + short/long clinical dialogues) and covering various reasoning modes (multiple-choice, multi-turn, open-ended, embedded voice QA); (ii) Propose a controllable synthetic audio generation pipeline to enable on-demand benchmark expansion; (iii) Systematically evaluate mainstream LALMs to quantify current performance ceilings.
 
-**Key Insight**: The authors found that "synthesis + expert prompting" can precisely control the complexity of clinical scenarios (cough embedding, emotional markers, timeline information distribution) without accessing real patient data. Using Gemini-3-flash as a QA generator with carefully designed prompts (10 highly similar distractors per question + anti-hallucination constraints) produced a large-scale and difficult dataset.
+**Key Insight**: The authors find that "synthesis + expert prompting" enables precise control over clinical scenario complexity (e.g., cough embedding, emotional markers, timeline information distribution) without touching real patient data. Using Gemini-3-flash as a QA generator, combined with carefully designed prompts (10 highly similar contrastive options per question + anti-hallucination constraints), allows for the creation of large-scale, challenging questions.
 
-**Core Idea**: Create a large and challenging medical audio QA benchmark using a "synthetic pipeline + rigorous anti-hallucination prompting + 10 question types," incorporating open-ended and embedded voice QA to expose the medical reasoning capabilities of LALMs under multi-dimensional testing.
+**Core Idea**: By leveraging a "synthetic pipeline + strict anti-hallucination prompts + 10 question types," a large and difficult medical audio QA benchmark is constructed, incorporating open-ended and embedded voice QA to expose LALM medical reasoning abilities to multidimensional testing.
 
 ## Method
 
 ### Overall Architecture
-MedMosaic consists of two parts: (A) A QA generation pipeline—utilizing specialized Gemini-3-flash prompts based on audio types (sound-only physiological sounds, speech-only clinical dialogues, and speech+sound mixtures), generating 10 distractors per question (excluding open-ended) across three difficulty levels (easy/medium/hard). Distractors are forced to be "lexically similar but interpretively distinct." (B) 10 Question types: MCQ_Sound_(Cough/Heart/Lung), MCQ_Speech, MCQ_Speech_Sound, MCQ_Long_Form, Multi_Turn, OE_Speech, OE_Speech_Sound, and Voice_QA, covering single/multi-source, long-duration, multi-turn, open-ended, and embedded formats. A total of 46,701 QA pairs were generated, with performance measured via weighted average accuracy across types.
+MedMosaic consists of two parts: (A) QA generation pipeline—using specialized Gemini-3-flash prompts for each audio type (sound-only physiological sounds, speech-only clinical dialogues, speech+sound mixtures), generating 10 contrastive options per question (except open-ended), and three difficulty levels (easy/medium/hard). Each question enforces "lexically similar but interpretively distinct" options to prevent keyword guessing; (B) Question types—10 in total: MCQ_Sound_(Cough/Heart/Lung), MCQ_Speech, MCQ_Speech_Sound, MCQ_Long_Form, Multi_Turn, OE_Speech, OE_Speech_Sound, Voice_QA, covering single/multi-source, long-duration, multi-turn, open-ended, and embedded scenarios. Ultimately, 46,701 QA pairs are generated, with weighted average accuracy calculated by type.
 
 ### Key Designs
 
-1.  **Fine-grained Temporal Construction of Physiological Sound QA**:
-    *   **Function**: Ensure sound-only QA requires "temporal reasoning" rather than simple "sound classification."
-    *   **Mechanism**: Subdivide physiological sounds into clinically relevant subcategories—lung sounds (wheeze: continuous narrowband / crackle: short explosive broadband / stridor: high-pitched continuous monophonic), cough (wet: aqueous / dry: short and dry / pertussis: clusters + high-energy inspiratory whoop / barky: deep resonance), and heart sounds (murmurs at different stages: $S_1 \rightarrow \text{systole} \rightarrow S_2 \rightarrow \text{diastole}$). Questions go beyond "what is this" to ask about "respiratory phase of cough," "heartbeat rhythm changes," "estimated breath count in 30s," or "sound/silence duration ratios."
-    *   **Design Motivation**: Surface sound classification can be guessed via signature features, but "temporal coupling + estimation" forces models to parse the internal temporal structure, preventing reliance on pre-trained general knowledge.
+1. **Fine-grained Temporal Construction for Physiological Sound QA**:
 
-2.  **Prompt Engineering with Strong Contrastive MCQ + Anti-hallucination Constraints**:
-    *   **Function**: Ensure difficulty depends on "accurately hearing audio details" rather than "easily distinguishing options."
-    *   **Mechanism**: (i) 10 options per question, where distractors are lexically similar to the correct answer yet semantically distinct; (ii) Distractor patterns include temporal misalignment (correct event, wrong phase), similar acoustic features with different clinical interpretations, and over-reliance on training data priors; (iii) Anti-hallucination constraints—all answers must be derivable from the audio itself, prohibiting reliance on external medical knowledge; (iv) Three difficulty levels systematically increase demands on perceptual precision.
-    *   **Design Motivation**: Existing medical QA is often solved by LLM memorization of medical facts; strong constraints make the task impossible without the audio, truly testing audio reasoning.
+    - **Function**: Ensures sound-only QA requires "temporal reasoning" rather than mere "sound classification."
+    - **Mechanism**: Physiological sounds are subdivided into clinically relevant subtypes—lung sounds (wheeze: sustained narrowband / crackle: brief broadband / stridor: high-pitched continuous single frequency), coughs (wet: moist / dry: brief and dry / pertussis: paroxysmal + high-energy inspiratory whoop / barky: low-pitched resonant), heart sounds (murmur: different at S1 → systole → S2 → diastole). Questions go beyond "what is this sound" to ask "at which respiratory phase did the cough occur," "heartbeat rhythm changes," "estimate breaths in 30 seconds," "sound/silence time ratio"—all requiring models to anchor acoustic events to physiological cycles.
+    - **Design Motivation**: Surface-level sound classification can be guessed from a few features, but "temporal coupling + counting estimation" forces models to truly parse the internal time structure of audio, preventing shortcutting via pretrained general knowledge.
 
-3.  **Embedded Voice QA (Voice_QA) + Multi-turn + Open-ended Question Types**:
-    *   **Function**: Incorporate three scenarios from real clinical interactions: "questions interleaved with dialogue," "multi-step follow-ups," and "generation over selection."
-    *   **Mechanism**: Voice_QA embeds questions and answers directly into the audio waveform—models must switch context to answer an embedded voice question after hearing clinical dialogue, testing context switching and attention drift. Multi_Turn involves follow-up questions on long dialogues, requiring state maintenance across turns. Open-Ended (OE_Speech / OE_Speech_Sound) requires unconstrained generation on long audio; answers must be concise but accurate, representing a rigorous test of generative reasoning.
-    *   **Design Motivation**: MCQs test "differentiation," but real clinical scenarios mostly involve "doctor speaking after listening" generation. Embedded QA further simulates real-world clinical interaction where devices or colleagues insert questions during patient dialogues.
+2. **Strong Contrastive MCQ + Anti-hallucination Prompt Engineering**:
+
+    - **Function**: Makes multiple-choice difficulty depend on "understanding audio details" rather than "easily distinguishable options."
+    - **Mechanism**: (i) Each question has 10 options, with distractors designed to be lexically similar yet semantically distinct from the correct answer, deliberately reusing keywords to increase surface similarity and invalidate keyword matching; (ii) Common distractor patterns—temporal misalignment (correct event, wrong phase), similar acoustic features but different clinical interpretations, over-reliance on common associations in training data; (iii) Anti-hallucination constraint—all correct answers must be derivable from the audio itself, prohibiting reliance on external medical knowledge bases; each option must lead to an independent clinical interpretation, preventing elimination by common sense; (iv) Three difficulty levels (Easy/Medium/Hard) systematically increase perceptual precision requirements.
+    - **Design Motivation**: Existing medical QA can be answered by LLMs memorizing medical knowledge, ignoring audio; strong constraints ensure questions "cannot be answered without listening," truly testing audio reasoning.
+
+3. **Embedded Voice QA (Voice_QA) + Multi-turn + Open-ended: Three Novel Question Types**:
+
+    - **Function**: Incorporates three real clinical interaction scenarios—"interleaved questions and dialogue," "multi-step follow-up," and "generation rather than selection"—into evaluation.
+    - **Mechanism**: Voice_QA embeds questions and answers directly into the audio waveform—models must switch context after listening to clinical dialogue to answer the embedded voice question, testing context switching and resistance to attention drift; Multi_Turn involves multi-turn follow-up on long dialogues, requiring models to maintain state across turns; Open-Ended (OE_Speech / OE_Speech_Sound) requires unconstrained generation on long audio, with concise but correct answers, representing the strictest generative reasoning test.
+    - **Design Motivation**: MCQ tests "discrimination," but real clinical scenarios are almost always "doctor speaks after listening" generation; embedded QA further simulates real clinical interactions where devices/colleagues insert questions during patient dialogue.
 
 ### Loss & Training
-This is not a training-focused paper; no loss function is used. All QA pairs were generated by Gemini-3-flash, and 13 candidate models (including Audio Flamingo 3, Audio Reasoner, Baichuan-Omni, Desta25-Audio, Gama, Gemini-2.5-flash/pro, and Qwen-2.5-Omni) were evaluated for inference.
+This is not a training paper, so no loss is involved. All QA pairs are generated by Gemini-3-flash, and 13 candidate models (Audio Flamingo 3, Audio Reasoner, Baichuan-Omni, Desta25-Audio, Gama, Gemini-2.5-flash/pro, Qwen-2.5-Omni, etc.) are evaluated for inference.
 
 ## Key Experimental Results
 
-### Main Results (Table 1 Excerpt, Accuracy %)
+### Main Results (Table 1 excerpt, accuracy %)
 
 | Model | Weighted Avg | MCQ_Speech | MCQ_Sound_Heart | OE_Speech | Voice_QA |
 |---|---|---|---|---|---|
@@ -77,47 +80,47 @@ This is not a training-focused paper; no loss function is used. All QA pairs wer
 | Desta25-audio | 41.0 | 49.4 | 37.1 | 56.0 | 9.1 |
 | Gama | 23.2 | 12.7 | 36.6 | 38.1 | 8.9 |
 | Gemini-2.5-flash | 60.5 | 73.6 | 52.8 | ... | ... |
-| **Gemini-2.5-Pro** | **~68.1** | (Best per column) | | | |
+| **Gemini-2.5-Pro** | **~68.1** | (Best per column in paper) | | | |
 | Qwen-2.5-Omni-7B | 42.8 | ... | ... | ... | ... |
 
-The strongest commercial model, Gemini-2.5-Pro, reached only 68.1% weighted average, validating the benchmark's difficulty.
+Even the strongest commercial model, Gemini-2.5-Pro, achieves only 68.1% weighted average, demonstrating the benchmark's difficulty.
 
-### Ablation Study
+### Ablation Study / Question Type Comparison
 
-| Phenomenon | Description |
+| Phenomenon | Explanation |
 |---|---|
-| Voice_QA < 32% for most, < 1% for some | Embedded voice QA is the primary weakness—extremely poor context-switching capability. |
-| OE_Speech generally > MCQ_Speech | Open-ended scores are higher due to loose evaluation (awarding points if facts are included), not necessarily superior understanding. |
-| MCQ_Sound_Heart > Cough / Lung | Heart sound temporal structures ($S_1/S_2$) are relatively regular and easier to recognize than the stochasticity of coughs/lung sounds. |
-| MCQ_Long_Form generally low | Long-form dialogue reasoning is a universal weakness, consistent with literature stating LALMs struggle with long contexts. |
+| Most models score <32% on Voice_QA, some even <1% | Embedded voice QA is the biggest weakness—context switching ability is very poor |
+| OE_Speech generally outperforms MCQ_Speech | Higher open-ended scores are due to lenient grading (credit given for correct facts), not true understanding |
+| MCQ_Sound_Heart > MCQ_Sound_Cough / Lung generally | Heart sounds have more regular temporal structure (S1/S2), making them easier to recognize than the randomness of cough/lung sounds |
+| MCQ_Long_Form generally low | Long dialogue reasoning is a common weakness, consistent with literature noting LALMs' poor long-context handling |
 
 ### Key Findings
-- Even the strongest general-purpose models fall significantly below human clinical levels (>90%), proving medical audio reasoning is not covered by existing LALMs; specialized pre-training data and adaptation are necessary.
-- Audio-flamingo-3 scored nearly zero (0.1%) on Voice_QA, indicating a total lack of "context switching" ability—a new evaluation dimension revealed by embedded QA.
-- The synthetic QA pipeline finds an effective point between "minimized human supervision" and "remaining a difficult benchmark," validating synthetic data as a scalable evaluation paradigm for privacy-sensitive medical fields.
+- Even the strongest general models are far below human clinical performance (>90%), proving that medical audio reasoning is far from being covered by current LALMs; specialized pretraining/adaptation is necessary.
+- Audio-flamingo-3 scores almost zero (0.1%) on Voice_QA, indicating a complete lack of context switching ability—an entirely new evaluation dimension revealed by embedded QA.
+- The synthetic QA pipeline finds a working point between "minimal human supervision" and "benchmark remains difficult," validating "synthetic evaluation data" as a scalable paradigm for sensitive domains like medicine/privacy.
 
 ## Highlights & Insights
-- Decomposing medical audio into an orthogonal question matrix (sound-only / speech-only / speech+sound / voice-embedded) allows for precise diagnosis of model weaknesses—a reproducible methodology for clinical scenario evaluation.
-- The anti-hallucination constraint "correct answers must be derivable from audio, distractors need independent clinical interpretations" is a rigorous prompt engineering paradigm transferable to other specialized domain QA construction to prevent LLM judges from using general knowledge.
-- The "Voice_QA" design (embedding questions in waveforms) is truly innovative—clinicians must answer questions while listening to patients; this "continuous monitoring + interrupt response" capability was completely missing from existing benchmarks.
+- Decomposing medical audio into a matrix of "sound-only / speech-only / speech+sound / voice-embedded" orthogonal question types enables precise diagnosis of model weaknesses by dimension—a replicable methodology for medical/clinical evaluation.
+- The anti-hallucination constraint—"correct answers must be derivable from audio, distractors must have independent clinical interpretations"—is a robust prompt engineering paradigm, transferable to other professional QA datasets to prevent LLMs from shortcutting via memorized knowledge.
+- The design of Voice_QA, embedding questions into waveforms, is truly innovative—clinically, doctors must answer colleagues' questions while listening to patients, and this "continuous monitoring + interruption response" ability is entirely missing from existing benchmarks.
 
 ## Limitations & Future Work
-- Data is synthetic rather than real clinical recordings, leaving a domain gap; the authors mitigate this by preserving clinical nuance and embedding physical artifacts, but it is not eliminated.
-- Ground truth is generated by Gemini-3-flash, carrying the risk of generator bias; human verification scale was limited.
-- Evaluated models are primarily generic LALMs; there is a lack of comparison with models specifically fine-tuned for medical audio (e.g., a future MedAudio-LLM).
-- The scoring protocol for open-ended questions is simplified in the paper, with room for improvement in reproducibility.
+- Data is synthetic rather than real clinical recordings, so there remains a domain gap with actual patient/doctor dialogues; the authors attempt to mitigate this by "retaining clinical artistry + embedding physical artifacts," but cannot fully eliminate it.
+- Annotation relies on Gemini-3-flash generation, risking the introduction of generator biases into the benchmark; sample validation is limited in scale.
+- The 13 evaluated models are still mainly general-purpose LALMs, lacking comparison with models specifically fine-tuned for medical audio (e.g., future MedAudio-LLM).
+- The open-ended scoring protocol is described only briefly in the paper, leaving room for improved reproducibility.
 
 ## Related Work & Insights
-- **vs CaReAQA**: CaReAQA targets medical audio but is small and limited to short fragments; MedMosaic scales up by two orders of magnitude and adds long-form/multi-turn/embedded QA.
-- **vs MMAU / MMAU-Pro / MMAR**: These cover general audio broadly but lack specialization; MedMosaic provides depth in the medical sub-domain, complementing MMAU-Pro.
-- **vs CORAAL-QA**: While CORAAL-QA focuses on long-form multi-turn interactions, MedMosaic introduces domain specificity and physiological sound characteristics.
-- **vs MedQA (Text)**: MedQA is purely clinical knowledge text; this work systematically completes the "clinical reasoning evaluation in the audio dimension."
+- **vs CaReAQA**: CaReAQA also targets medical audio but is small-scale and only tests short clips; MedMosaic uses a synthetic pipeline to scale up by two orders of magnitude and adds long dialogue/multi-turn/embedded QA.
+- **vs MMAU / MMAU-Pro / MMAR**: General audio QA, broad coverage but not specialized; MedMosaic provides depth in the medical subdomain, complementing MMAU-Pro.
+- **vs CORAAL-QA**: CORAAL-QA focuses on long-form multi-turn interaction; MedMosaic introduces domain expertise and physiological sound specificity.
+- **vs MedQA (text)**: MedQA is entirely text-based clinical knowledge; this work is the first to systematically supplement "audio-dimension clinical reasoning evaluation."
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Embedded Voice_QA, multi-turn dialogue, and physiological temporal reasoning are firsts for medical audio benchmarks.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Evaluated 13 models across 10 question types; lacks human benchmarks and med-specific fine-tuned model comparisons.
-- Writing Quality: ⭐⭐⭐ Clear flowcharts and prompt templates; however, some experimental details (e.g., OE metrics) are brief.
-- Value: ⭐⭐⭐⭐ Provides the first large-scale scalable evaluation for medical audio LALMs; the synthetic data paradigm is applicable to other privacy-sensitive domains.
+- Novelty: ⭐⭐⭐⭐ Embedded Voice_QA, multi-turn dialogue, and temporal reasoning for physiological sounds all appear for the first time in a medical audio benchmark.
+- Experimental Thoroughness: ⭐⭐⭐⭐ 13 models × 10 question types evaluated, with per-model, per-type scores; missing: human baseline, medical expert fine-tuned models.
+- Writing Quality: ⭐⭐⭐ Clear flowcharts and detailed prompt templates; some experimental details (e.g., open-ended scoring metrics) are only briefly mentioned.
+- Value: ⭐⭐⭐⭐ Provides the first large-scale, extensible evaluation for medical audio LALMs, highly practical for future multimodal medical model development; the synthetic data paradigm is also instructive for other privacy-sensitive domains.
 
 <!-- RELATED:START -->
 
@@ -125,11 +128,11 @@ The strongest commercial model, Gemini-2.5-Pro, reached only 68.1% weighted aver
 
 ## Related Papers
 
-- [\[ICML 2026\] MultiBreak: A Scalable and Diverse Multi-turn Jailbreak Benchmark for Evaluating LLM Safety](multibreak_a_scalable_and_diverse_multi-turn_jailbreak_benchmark_for_evaluating_.md)
 - [\[AAAI 2026\] StyleBreak: Revealing Alignment Vulnerabilities in Large Audio-Language Models via Style-Aware Audio Jailbreak](../../AAAI2026/llm_safety/stylebreak_revealing_alignment_vulnerabilities_in_large_audio-language_models_vi.md)
-- [\[ICML 2026\] Less Diverse, Less Safe: The Indirect But Pervasive Risk of Test-Time Scaling in Large Language Models](less_diverse_less_safe_the_indirect_but_pervasive_risk_of_test-time_scaling_in_l.md)
+- [\[ICML 2026\] Stable-GFlowNet: Toward Diverse and Robust LLM Red-Teaming via Contrastive Trajectory Balance](stable-gflownet_toward_diverse_and_robust_llm_red-teaming_via_contrastive_trajec.md)
 - [\[ICLR 2026\] AudioTrust: Benchmarking the Multifaceted Trustworthiness of Audio Large Language Models](../../ICLR2026/llm_safety/audiotrust_benchmarking_the_multifaceted_trustworthiness_of_audio_large_language.md)
 - [\[ICML 2026\] FoeGlass: Simple In-Context Learning Is Enough for Red Teaming Audio Deepfake Detectors](foeglass_simple_in-context_learning_is_enough_for_red_teaming_audio_deepfake_det.md)
+- [\[ACL 2026\] De-Anonymization at Scale via Tournament-Style Attribution](../../ACL2026/llm_safety/de-anonymization_at_scale_via_tournament-style_attribution.md)
 
 </div>
 

@@ -2,9 +2,10 @@
 title: >-
   [Paper Note] On Agnostic PAC Learning in the Small Error Regime
 description: >-
-  [NeurIPS 2025][PAC learning] In the small error regime of agnostic PAC learning ($\tau \approx d/m$), this paper constructs a computationally efficient learner based on ERM aggregation that achieves an error upper bound…
+  [NeurIPS 2025][Learning Theory / Computational Learning Theory][PAC learning] In the small error regime of agnostic PAC learning ($\tau \approx d/m$)…
 tags:
   - "NeurIPS 2025"
+  - "Learning Theory / Computational Learning Theory"
   - "PAC learning"
   - "agnostic learning"
   - "ERM"
@@ -156,10 +157,10 @@ This paper demonstrates that even in the most foundational problems of learning 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Revisiting Agnostic Boosting](revisiting_agnostic_boosting.md)
-- [\[NeurIPS 2025\] Recurrent Self-Attention Dynamics: An Energy-Agnostic Perspective from Jacobians](recurrent_self-attention_dynamics_an_energy-agnostic_perspective_from_jacobians.md)
-- [\[ICML 2026\] FOAM: Frequency and Operator Error-Based Adaptive Damping Method for Reducing Staleness-Oriented Error for Shampoo](../../ICML2026/others/foam_frequency_and_operator_error-based_adaptive_damping_method_for_reducing_sta.md)
-- [\[ICCV 2025\] From Easy to Hard: Progressive Active Learning Framework for Infrared Small Target Detection with Single Point Supervision](../../ICCV2025/others/from_easy_to_hard_progressive_active_learning_framework_for_infrared_small_targe.md)
-- [\[ICCV 2025\] Toward Material-Agnostic System Identification from Videos](../../ICCV2025/others/toward_material-agnostic_system_identification_from_videos.md)
+- [\[NeurIPS 2025\] Computable Universal Online Learning](computable_universal_online_learning.md)
+- [\[NeurIPS 2025\] Product Distribution Learning with Imperfect Advice](product_distribution_learning_with_imperfect_advice.md)
+- [\[NeurIPS 2025\] How Many Domains Suffice for Domain Generalization? A Tight Characterization via the Domain Shattering Dimension](how_many_domains_suffice_for_domain_generalization_a_tight_characterization_via_.md)
+- [\[NeurIPS 2025\] Learning-Augmented Streaming Algorithms for Correlation Clustering](learning-augmented_streaming_algorithms_for_correlation_clustering.md)
 
 </div>
 

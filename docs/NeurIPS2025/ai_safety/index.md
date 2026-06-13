@@ -1,8 +1,8 @@
 ---
 title: >-
-  NeurIPS2025 AI Safety Papers · 70 Notes
+  NeurIPS2025 AI Safety Papers · 73 Notes
 description: >-
-  70 NeurIPS2025 papers in the AI Safety area, covering Adversarial Robustness, Federated Learning, Alignment/RLHF, GNNs, Speech & Audio and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  73 NeurIPS2025 papers in the AI Safety area, covering Adversarial Robustness, Federated Learning, Alignment/RLHF, Domain Adaptation, GNNs and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "NeurIPS2025"
   - "AI Safety"
@@ -11,17 +11,17 @@ tags:
   - "Adversarial Robustness"
   - "Federated Learning"
   - "Alignment/RLHF"
+  - "Domain Adaptation"
   - "GNNs"
-  - "Speech & Audio"
 item_list:
   - u: "a_set_of_generalized_components_to_achieve_effective_poison-only_clean-label_bac/"
     t: "A Set of Generalized Components to Achieve Effective Poison-only Clean-label Backdoor Attacks with Collaborative Sample Selection and Triggers"
-  - u: "ai_should_sense_better_not_just_scale_bigger_adaptive_sensin/"
-    t: "AI Should Sense Better, Not Just Scale Bigger: Adaptive Sensing as a Paradigm Shift"
   - u: "beyond_last-click_an_optimal_mechanism_for_ad_attribution/"
     t: "Beyond Last-Click: An Optimal Mechanism for Ad Attribution"
   - u: "boosting_adversarial_transferability_with_spatial_adversarial_alignment/"
     t: "Boosting Adversarial Transferability with Spatial Adversarial Alignment"
+  - u: "brain-like_variational_inference/"
+    t: "Brain-like Variational Inference"
   - u: "bridging_symmetry_and_robustness_on_the_role_of_equivariance_in_enhancing_advers/"
     t: "Bridging Symmetry and Robustness: On the Role of Equivariance in Enhancing Adversarial Robustness"
   - u: "causally_reliable_concept_bottleneck_models/"
@@ -44,14 +44,14 @@ item_list:
     t: "Differentially Private High-dimensional Variable Selection via Integer Programming"
   - u: "distributional_adversarial_attacks_and_training_in_deep_hedging/"
     t: "Distributional Adversarial Attacks and Training in Deep Hedging"
+  - u: "double_descent_meets_out-of-distribution_detection_theoretical_insights_and_empi/"
+    t: "Double Descent Meets Out-of-Distribution Detection: Theoretical Insights and Empirical Analysis"
   - u: "dual-flow_transferable_multi-target_instance-agnostic_attacks_via_in-the-wild_ca/"
     t: "Dual-Flow: Transferable Multi-Target, Instance-Agnostic Attacks via In-the-wild Cascading Flow Optimization"
   - u: "efficient_fairness-performance_pareto_front_computation/"
     t: "Efficient Fairness-Performance Pareto Front Computation"
   - u: "efficient_verified_machine_unlearning_for_distillation/"
     t: "Efficient Verified Machine Unlearning for Distillation"
-  - u: "enabling_differentially_private_federated_learning_for_speech_recognition_benchm/"
-    t: "Enabling Differentially Private Federated Learning for Speech Recognition: Benchmarks, Adaptive Optimizers and Gradient Clipping"
   - u: "enhancing_graph_classification_robustness_with_singular_pooling/"
     t: "Enhancing Graph Classification Robustness with Singular Pooling"
   - u: "environment_inference_for_learning_generalizable_dynamical_system/"
@@ -62,37 +62,33 @@ item_list:
     t: "Factor Decorrelation Enhanced Data Removal from Deep Predictive Models"
   - u: "fair_minimum_labeling_efficient_temporal_network_activations_for_reachability_an/"
     t: "Fair Minimum Labeling: Efficient Temporal Network Activations for Reachability and Equity"
-  - u: "fair_representation_learning_with_controllable_high_confidence_guarantees_via_ad/"
-    t: "Fair Representation Learning with Controllable High Confidence Guarantees via Adversarial Inference"
   - u: "faircontrast_enhancing_fairness_through_contrastive_learning_and_customized_augm/"
     t: "FairContrast: Enhancing Fairness through Contrastive Learning and Customized Augmentation"
   - u: "fairness-regularized_online_optimization_with_switching_costs/"
     t: "Fairness-Regularized Online Optimization with Switching Costs"
   - u: "fairness_under_competition/"
     t: "Fairness under Competition"
-  - u: "fedfact_a_provable_framework_for_controllable_group-fairness_calibration_in_fede/"
-    t: "FedFACT: A Provable Framework for Controllable Group-Fairness Calibration in Federated Learning"
-  - u: "flux_efficient_descriptor-driven_clustered_federated_learning_under_arbitrary_di/"
-    t: "FLUX: Efficient Descriptor-Driven Clustered Federated Learning under Arbitrary Distribution Shifts"
-item_total: 70
+  - u: "forensichub_a_unified_benchmark_codebase_for_all-domain_fake_image_detection_and/"
+    t: "ForensicHub: A Unified Benchmark & Codebase for All-Domain Fake Image Detection and Localization"
+  - u: "generating_multi-table_time_series_ehr_from_latent_space_with_minimal_preprocess/"
+    t: "Generating Multi-Table Time Series EHR from Latent Space with Minimal Preprocessing"
+  - u: "harnessing_feature_resonance_under_arbitrary_target_alignment_for_out-of-distrib/"
+    t: "Harnessing Feature Resonance under Arbitrary Target Alignment for Out-of-Distribution Node Detection"
+item_total: 73
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->
 # 🛡️ AI Safety
 
-**🧠 NeurIPS2025** · **70** paper notes
+**🧠 NeurIPS2025** · **73** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (47)](../../ICML2026/ai_safety/index.md) · [💬 ACL2026 (4)](../../ACL2026/ai_safety/index.md) · [📷 CVPR2026 (23)](../../CVPR2026/ai_safety/index.md) · [🔬 ICLR2026 (27)](../../ICLR2026/ai_safety/index.md) · [🤖 AAAI2026 (44)](../../AAAI2026/ai_safety/index.md) · [📹 ICCV2025 (24)](../../ICCV2025/ai_safety/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (41)](../../ICML2026/ai_safety/index.md) · [💬 ACL2026 (4)](../../ACL2026/ai_safety/index.md) · [📷 CVPR2026 (26)](../../CVPR2026/ai_safety/index.md) · [🔬 ICLR2026 (27)](../../ICLR2026/ai_safety/index.md) · [🤖 AAAI2026 (45)](../../AAAI2026/ai_safety/index.md) · [📹 ICCV2025 (24)](../../ICCV2025/ai_safety/index.md)
 
-🔥 **Top topics:** Adversarial Robustness ×16 · Federated Learning ×7 · Alignment/RLHF ×2 · GNNs ×2 · Speech & Audio ×2
+🔥 **Top topics:** Adversarial Robustness ×14 · Federated Learning ×4 · Alignment/RLHF ×3 · Domain Adaptation ×3 · GNNs ×2
 
 **[A Set of Generalized Components to Achieve Effective Poison-only Clean-label Backdoor Attacks with Collaborative Sample Selection and Triggers](a_set_of_generalized_components_to_achieve_effective_poison-only_clean-label_bac.md)**
 
 :   This paper proposes a set of generalized components (Component A/B/C) that establish a bidirectional collaborative relationship between sample selection and trigger design, simultaneously improving the attack success rate (ASR) and stealthiness of Poison-only Clean-label Backdoor Attacks (PCBA), with strong generalizability across multiple attack types.
-
-**[AI Should Sense Better, Not Just Scale Bigger: Adaptive Sensing as a Paradigm Shift](ai_should_sense_better_not_just_scale_bigger_adaptive_sensin.md)**
-
-:   Inspired by biological sensory systems, this position paper argues that AI research must shift from simply scaling models to optimizing inputs—by dynamically adjusting sensor-level parameters (exposure, gain, multimodal configuration, etc.) to produce inputs most favorable to the model. Under ideal sensor adaptation, a small model (EfficientNet-B0, 5M parameters) can outperform a large model (OpenCLIP-H, 632M parameters), and the paper proposes a progressive formalization framework ranging from single-shot perception to closed-loop perception–action coupling.
 
 **[Beyond Last-Click: An Optimal Mechanism for Ad Attribution](beyond_last-click_an_optimal_mechanism_for_ad_attribution.md)**
 
@@ -101,6 +97,10 @@ item_total: 70
 **[Boosting Adversarial Transferability with Spatial Adversarial Alignment](boosting_adversarial_transferability_with_spatial_adversarial_alignment.md)**
 
 :   This paper proposes Spatial Adversarial Alignment (SAA), which fine-tunes a surrogate model via two modules—spatial-aware alignment and adversarial-aware alignment—to align its features with those of a witness model, achieving significant improvements in cross-architecture adversarial transferability (CNN→ViT transfer rate improved by 25–39%).
+
+**[Brain-like Variational Inference](brain-like_variational_inference.md)**
+
+:   This paper proposes the FOND framework (Free energy Online Natural-gradient Dynamics), which derives spiking neural network inference dynamics from first principles via free energy minimization, and implements iPVAE (iterative Poisson VAE). iPVAE outperforms standard VAEs and predictive coding models in reconstruction–sparsity trade-off, biological plausibility, and OOD generalization.
 
 **[Bridging Symmetry and Robustness: On the Role of Equivariance in Enhancing Adversarial Robustness](bridging_symmetry_and_robustness_on_the_role_of_equivariance_in_enhancing_advers.md)**
 
@@ -146,6 +146,10 @@ item_total: 70
 
 :   This paper is the first to introduce distributional adversarial attacks into the deep hedging framework. It proposes computationally tractable adversarial training methods based on Wasserstein balls (WPGD and WBPGD), achieving substantial improvements in robustness and out-of-sample performance under distribution shift and real market data.
 
+**[Double Descent Meets Out-of-Distribution Detection: Theoretical Insights and Empirical Analysis](double_descent_meets_out-of-distribution_detection_theoretical_insights_and_empi.md)**
+
+:   This paper is the first to reveal a double descent phenomenon in post-hoc OOD detection—OOD detection performance exhibits a valley near the interpolation threshold as model width increases, then recovers—provides a theoretical explanation via random matrix theory, and proposes an NC1 criterion based on Neural Collapse to identify the optimal model complexity regime.
+
 **[Dual-Flow: Transferable Multi-Target, Instance-Agnostic Attacks via In-the-wild Cascading Flow Optimization](dual-flow_transferable_multi-target_instance-agnostic_attacks_via_in-the-wild_ca.md)**
 
 :   This paper proposes the Dual-Flow framework, which leverages the forward ODE flow of a pretrained diffusion model and the reverse flow of a fine-tuned LoRA velocity function to perform multi-target, instance-agnostic adversarial attacks. Through a cascading distribution shift training strategy, the method significantly improves transfer attack success rates (e.g., +34.58% from Inc-v3 to Res-152) and demonstrates strong robustness against defended models.
@@ -157,10 +161,6 @@ item_total: 70
 **[Efficient Verified Machine Unlearning for Distillation](efficient_verified_machine_unlearning_for_distillation.md)**
 
 :   This paper proposes PURGE, a framework that extends verified unlearning under SISA to the knowledge distillation (KD) setting via teacher–student constituent mapping and an incremental multi-teacher distillation strategy. When a teacher-side unlearning request is issued, only a subset of student constituents requires retraining, achieving at least $N\times$ speedup.
-
-**[Enabling Differentially Private Federated Learning for Speech Recognition: Benchmarks, Adaptive Optimizers and Gradient Clipping](enabling_differentially_private_federated_learning_for_speech_recognition_benchm.md)**
-
-:   This work establishes the first practical benchmark for FL+DP in end-to-end ASR, achieving only 1.3%–4.6% absolute WER degradation under strong privacy guarantees by combining **per-layer clipping** with the layer-wise gradient normalization of the **LAMB optimizer**.
 
 **[Enhancing Graph Classification Robustness with Singular Pooling](enhancing_graph_classification_robustness_with_singular_pooling.md)**
 
@@ -182,10 +182,6 @@ item_total: 70
 
 :   This paper introduces the Fair Minimum Labeling (FML) problem, which aims to design minimum-cost temporal edge activation schemes ensuring sufficient temporal-path reachability for each node group in a network to satisfy fair coverage requirements. The paper proves FML is NP-hard and inapproximable beyond a certain factor, and provides an approximation algorithm based on probabilistic tree embeddings that matches the hardness lower bound.
 
-**[Fair Representation Learning with Controllable High Confidence Guarantees via Adversarial Inference](fair_representation_learning_with_controllable_high_confidence_guarantees_via_ad.md)**
-
-:   This paper proposes FRG (Fair Representation learning with high-confidence Guarantees), the first fair representation learning framework that allows users to specify a fairness threshold $\varepsilon$ and confidence level $1-\delta$. By combining VAE-based candidate selection, adversarial inference that maximizes covariance, and a Student's t-test to construct a high-confidence upper bound, FRG guarantees that $\Delta_{DP} \leq \varepsilon$ holds with probability at least $1-\delta$ for **any** downstream model and task.
-
 **[FairContrast: Enhancing Fairness through Contrastive Learning and Customized Augmentation](faircontrast_enhancing_fairness_through_contrastive_learning_and_customized_augm.md)**
 
 :   FairContrast proposes a fair contrastive learning framework for tabular data. By strategically selecting positive pairs—pairing advantaged-group samples with favorable outcomes against their disadvantaged-group counterparts—and training end-to-end with supervised or self-supervised contrastive loss combined with cross-entropy loss, the framework achieves significant bias reduction with minimal accuracy loss, without introducing any additional fairness constraint losses.
@@ -198,17 +194,17 @@ item_total: 70
 
 :   This paper is the first to study the joint fairness of multiple fair classifiers operating in a competitive environment. It theoretically demonstrates that even when each individual classifier satisfies Equal Opportunity (EO), the ecosystem as a whole may remain unfair, and that applying fairness adjustments to a biased classifier can paradoxically reduce ecosystem-level fairness.
 
-**[FedFACT: A Provable Framework for Controllable Group-Fairness Calibration in Federated Learning](fedfact_a_provable_framework_for_controllable_group-fairness_calibration_in_fede.md)**
-
-:   This paper proposes FedFACT, a framework that characterizes the structure of the **Bayes-optimal fair classifier** under federated learning, and reduces fair federated learning to **personalized cost-sensitive learning** (in-processing) and **bi-level optimization** (post-processing), respectively. It is the first to achieve controllable coordination between global and local fairness in multi-class settings, with convergence and generalization guarantees.
-
-**[FLUX: Efficient Descriptor-Driven Clustered Federated Learning under Arbitrary Distribution Shifts](flux_efficient_descriptor-driven_clustered_federated_learning_under_arbitrary_di.md)**
-
-:   Flux extracts compact distribution descriptors on the client side (marginal $P(X)$ mean/covariance + class-conditional $P(Y|X)$ mean/covariance), performs unsupervised clustering on the server via adaptive DBSCAN to automatically determine the number of clusters and group assignments, trains cluster-specific models, and at test time matches unlabeled new clients to the optimal model using only feature descriptors — the first method to simultaneously handle four types of distribution shifts with communication overhead comparable to FedAvg.
-
 **[ForensicHub: A Unified Benchmark & Codebase for All-Domain Fake Image Detection and Localization](forensichub_a_unified_benchmark_codebase_for_all-domain_fake_image_detection_and.md)**
 
 :   ForensicHub introduces the first unified benchmark platform spanning all domains (Deepfake/IMDL/AIGC/Document Tampering) for fake image detection and localization, encompassing 4 tasks, 23 datasets, 42 models, 6 backbone networks, and 11 GPU-accelerated evaluation metrics. Through a modular architecture and adapter design, it bridges domain silos and conducts 16 cross-domain evaluations to derive 8 key insights.
+
+**[Generating Multi-Table Time Series EHR from Latent Space with Minimal Preprocessing](generating_multi-table_time_series_ehr_from_latent_space_with_minimal_preprocess.md)**
+
+:   This paper proposes RawMed — the first framework to synthesize multi-table time series EHR data from raw records with minimal lossy preprocessing: events are textualized → compressed into a discrete latent space via Residual Quantization → temporal dynamics are modeled with an autoregressive Transformer. RawMed comprehensively outperforms existing baselines in fidelity, clinical utility, and privacy protection.
+
+**[Harnessing Feature Resonance under Arbitrary Target Alignment for Out-of-Distribution Node Detection](harnessing_feature_resonance_under_arbitrary_target_alignment_for_out-of-distrib.md)**
+
+:   This paper discovers the *Feature Resonance* phenomenon—when optimizing the representations of known in-distribution (ID) nodes, unknown ID nodes undergo significantly larger representational changes than OOD nodes, and this phenomenon is label-agnostic. Based on this observation, the authors propose RSL, a graph OOD node detection framework that requires no multi-class labels, achieving state-of-the-art performance across 13 datasets.
 
 **[Impact of Dataset Properties on Membership Inference Vulnerability of Deep Transfer Learning](impact_of_dataset_properties_on_membership_inference_vulnerability_of_deep_trans.md)**
 
@@ -286,6 +282,10 @@ item_total: 70
 
 :   This paper systematically analyzes the root causes of failure in kernel-based conditional independence (CI) testing in practice: estimation error in conditional mean embeddings is identified as the central driver of Type-I error inflation, while the inherent tension between the choice of conditioning kernel $k_C$—which is critical for test power—and its tendency to exacerbate false positives is formally characterized.
 
+**[Open-Insect: Benchmarking Open-Set Recognition of Novel Species in Biodiversity Monitoring](open-insect_benchmarking_open-set_recognition_of_novel_species_in_biodiversity_m.md)**
+
+:   This paper introduces Open-Insect — the first large-scale fine-grained open-set recognition benchmark for insect species discovery, spanning three geographic regions and three types of open-set splits. It systematically evaluates 38 OSR algorithms, finding that simple posterior methods (e.g., MSP) remain strong baselines in fine-grained settings, and demonstrates the critical role of domain-relevant auxiliary data in improving OSR performance.
+
 **[Optimal Adjustment Sets for Nonparametric Estimation of Weighted Controlled Direct Effect](optimal_adjustment_sets_for_nonparametric_estimation_of_weighted_controlled_dire.md)**
 
 :   This paper establishes three foundational theoretical results for the weighted controlled direct effect (WCDE): necessary and sufficient conditions for unique identifiability, derivation of the influence function for nonparametric estimation, and characterization of the optimal covariate adjustment set that minimizes asymptotic variance.
@@ -302,10 +302,6 @@ item_total: 70
 
 :   This paper proposes a novel matrix factorization method based on logarithmic perturbation, achieving for the first time a differentially private continual counting algorithm that simultaneously satisfies the three properties of "unbounded streams," "smooth error," and "near-optimal asymptotic error," with variance $O(\log^{2+2\alpha}(t))$ at time step $t$ for any $\alpha > 0$.
 
-**[Private Zeroth-Order Optimization with Public Data](private_zeroth-order_optimization_with_public_data.md)**
-
-:   This paper proposes the PAZO framework, which leverages public data to guide gradient approximation in private zeroth-order optimization. PAZO achieves a superior privacy-utility tradeoff compared to DP-SGD on both vision and text tasks, while delivering up to a 16× speedup.
-
 **[Provable Watermarking for Data Poisoning Attacks](provable_watermarking_for_data_poisoning_attacks.md)**
 
 :   This paper proposes two provable watermarking schemes—post-poisoning watermarking and poisoning-concurrent watermarking—that provide transparency declaration mechanisms for data poisoning attacks. The theoretical analysis demonstrates that, under specific watermark length conditions, both watermark detectability and poisoning effectiveness can be simultaneously guaranteed.
@@ -317,6 +313,14 @@ item_total: 70
 **[Reconstruction and Secrecy under Approximate Distance Queries](reconstruction_and_secrecy_under_approximate_distance_queries.md)**
 
 :   Under the approximate distance query model, this paper studies the reconstruction game from a learning-theoretic perspective, proves a geometric characterization of the optimal reconstruction error as the Chebyshev radius, and provides a complete classification of pseudo-finiteness for Euclidean convex spaces.
+
+**[Redundancy-Aware Test-Time Graph Out-of-Distribution Detection](redundancy-aware_test-time_graph_out-of-distribution_detection.md)**
+
+:   This paper proposes RedOUT, a framework that constructs coding trees via structural entropy minimization to eliminate redundant information in graph structures. Combined with the Redundancy-aware Graph Information Bottleneck (ReGIB) principle, RedOUT effectively distinguishes in-distribution (ID) from out-of-distribution (OOD) graph samples at test time without modifying pretrained model parameters, achieving an average AUC of 87.46% across 10 dataset pairs.
+
+**[Revisiting Logit Distributions for Reliable Out-of-Distribution Detection](revisiting_logit_distributions_for_reliable_out-of-distribution_detection.md)**
+
+:   This paper proposes LogitGap, a novel post-hoc OOD detection scoring function that explicitly exploits the "gap" between the maximum logit and the remaining logits to distinguish in-distribution (ID) from out-of-distribution (OOD) samples. A top-N selection strategy is introduced to filter noisy logits. Theoretical analysis and experiments demonstrate that LogitGap outperforms MCM and MaxLogit across multiple scenarios.
 
 **[Rewind-to-Delete: Certified Machine Unlearning for Nonconvex Functions](rewind-to-delete_certified_machine_unlearning_for_nonconvex_functions.md)**
 
@@ -334,9 +338,9 @@ item_total: 70
 
 :   This paper establishes novel high-probability perturbation bounds for low-rank approximation of symmetric matrices under the spectral norm, improving upon the classical Eckart–Young–Mirsky theorem, and resolves an open problem in differentially private PCA.
 
-**[Stealthy Yet Effective: Distribution-Preserving Backdoor Attacks on Graph Classification](stealthy_yet_effective_distribution-preserving_backdoor_attacks_on_graph_classif.md)**
+**[SPROD: Spurious-Aware Prototype Refinement for Reliable Out-of-Distribution Detection](spurious-aware_prototype_refinement_for_reliable_out-of-distribution_detection.md)**
 
-:   This paper proposes DPSBA, a clean-label backdoor attack framework for graph classification that generates in-distribution trigger subgraphs via adversarial training while suppressing both structural and semantic anomalies, achieving high attack success rates with significantly improved stealthiness.
+:   SPROD is a post-hoc OOD detection method designed to handle spurious correlations in training data. It subdivides each class prototype into "correctly classified" and "misclassified" subgroups (the latter sharing spurious features), combined with K-means-style refinement and distance-based (generative) scoring. Across 5 spurious-correlation OOD benchmarks, it achieves an average AUROC of 85.1% (+4.8% vs. runner-up KNN) and FPR@95 of 49.0% (−9.3% vs. runner-up).
 
 **[Stochastic Regret Guarantees for Online Zeroth- and First-Order Bilevel Optimization](stochastic_regret_guarantees_for_online_zeroth-_and_first-order_bilevel_optimiza.md)**
 
@@ -349,6 +353,10 @@ item_total: 70
 **[The Unseen Threat: Residual Knowledge in Machine Unlearning under Perturbed Samples](the_unseen_threat_residual_knowledge_in_machine_unlearning_under_perturbed_sampl.md)**
 
 :   This paper identifies a critical security vulnerability in machine unlearning: even when an unlearned model is statistically indistinguishable from a retrained model, applying small adversarial perturbations to forgotten samples causes the unlearned model to correctly classify them while the retrained model fails — revealing a novel privacy risk termed "residual knowledge." The authors propose RURK, a fine-tuning strategy that penalizes correct predictions on perturbed forgotten samples, effectively suppressing residual knowledge across 11 unlearning methods on CIFAR-10 and ImageNet-100.
+
+**[Towards Unsupervised Open-Set Graph Domain Adaptation via Dual Reprogramming](towards_unsupervised_open-set_graph_domain_adaptation_via_dual_reprogramming.md)**
+
+:   This paper proposes GraphRTA, a framework that addresses the challenges of known-class classification and unknown-class detection in unsupervised open-set graph domain adaptation through two complementary mechanisms: model reprogramming (gradient-guided weight pruning) and graph reprogramming (target graph structure and feature optimization), without requiring manually specified thresholds.
 
 **[Understanding and Improving Adversarial Robustness of Neural Probabilistic Circuits](understanding_and_improving_adversarial_robustness_of_neural_probabilistic_circu.md)**
 
@@ -365,3 +373,7 @@ item_total: 70
 **[Unifying Re-Identification, Attribute Inference, and Data Reconstruction Risks in Differential Privacy](unifying_re-identification_attribute_inference_and_data_reconstruction_risks_in_.md)**
 
 :   Under the f-DP framework grounded in hypothesis testing, this paper provides a unified characterization of three classes of privacy risks in differential privacy — re-identification, attribute inference, and data reconstruction — yielding tighter and consistent risk upper bounds that enable a 20% reduction in noise without compromising security guarantees.
+
+**[Unlocking Transfer Learning for Open-World Few-Shot Recognition](unlocking_transfer_learning_for_open-world_few-shot_recognition.md)**
+
+:   A two-stage framework is proposed that combines open-set-aware meta-learning with open-set-free transfer learning, achieving the first successful application of the transfer learning paradigm to few-shot open-set recognition (FSOSR) and reaching SOTA on miniImageNet and tieredImageNet.

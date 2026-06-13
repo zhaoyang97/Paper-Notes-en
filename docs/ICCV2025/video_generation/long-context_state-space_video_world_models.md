@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] Long-Context State-Space Video World Models
 description: >-
-  [ICCV 2025][Image Generation][World Models] This paper proposes integrating State Space Models (SSM/Mamba) into video world models. Through a block-wise SSM scan scheme that balances spatial consistency and temporal memo…
+  [ICCV 2025][Video Generation][World Models] This paper proposes integrating State Space Models (SSM/Mamba) into video world models. Through a block-wise SSM scan scheme that balances spatial consistency and temporal memo…
 tags:
   - "ICCV 2025"
-  - "Image Generation"
+  - "Video Generation"
   - "World Models"
   - "SSM"
   - "Mamba"
@@ -137,11 +137,11 @@ Autoregressive per-frame generation requires only: ① a fixed-length KV-cache o
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] RLVR-World: Training World Models with Reinforcement Learning](../../NeurIPS2025/image_generation/rlvr-world_training_world_models_with_reinforcement_learning.md)
-- [\[ICML 2026\] Efficient Learning of Deep State Space Models via Importance Smoothing](../../ICML2026/image_generation/efficient_learning_of_deep_state_space_models_via_importance_smoothing.md)
-- [\[ICCV 2025\] AnimeGamer: Infinite Anime Life Simulation with Next Game State Prediction](animegamer_infinite_anime_life_simulation_with_next_game_state_prediction.md)
-- [\[AAAI 2026\] LongLLaDA: Unlocking Long Context Capabilities in Diffusion LLMs](../../AAAI2026/image_generation/longllada_unlocking_long_context_capabilities_in_diffusion_llms.md)
-- [\[ICCV 2025\] CURE: Cultural Gaps in the Long Tail of Text-to-Image Systems](cure_cultural_gaps_in_the_long_tail_of_text-to-image_systems.md)
+- [\[ICCV 2025\] Long Context Tuning for Video Generation](long_context_tuning_for_video_generation.md)
+- [\[ICCV 2025\] Disentangled World Models: Learning to Transfer Semantic Knowledge from Distracting Videos for Reinforcement Learning](disentangled_world_models_learning_to_transfer_semantic_knowledge_from_distracti.md)
+- [\[CVPR 2026\] Out of Sight, Out of Mind? Evaluating State Evolution in Video World Models](../../CVPR2026/video_generation/out_of_sight_out_of_mind_evaluating_state_evolutio.md)
+- [\[ICCV 2025\] WorldScore: A Unified Evaluation Benchmark for World Generation](worldscore_a_unified_evaluation_benchmark_for_world_generation.md)
+- [\[ICCV 2025\] MagicDrive-V2: High-Resolution Long Video Generation for Autonomous Driving with Adaptive Control](magicdrive-v2_high-resolution_long_video_generation_for_autonomous_driving_with_.md)
 
 </div>
 

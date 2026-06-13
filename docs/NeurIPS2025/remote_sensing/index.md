@@ -15,6 +15,8 @@ item_list:
     t: "C3PO: Cross-View Cross-Modality Correspondence by Pointmap Prediction"
   - u: "chamaevit_unifying_channelaware_masked_autoencoders_and_mult/"
     t: "ChA-MAEViT: Unifying Channel-Aware Masked Autoencoders and Multi-Channel Vision Transformers for Improved Cross-Channel Learning"
+  - u: "cloud4d_estimating_cloud_properties_at_a_high_spatial_and_temporal_resolution/"
+    t: "Cloud4D: Estimating Cloud Properties at a High Spatial and Temporal Resolution"
   - u: "connecting_the_dots_a_machine_learning_ready_dataset_for_ionospheric_forecasting/"
     t: "Connecting the Dots: A Machine Learning Dataset for Ionospheric Prediction"
   - u: "ecocast_a_spatio-temporal_model_for_continual_biodiversity_and_climate_risk_fore/"
@@ -23,8 +25,6 @@ item_list:
     t: "GeoLink: Empowering Remote Sensing Foundation Model with OpenStreetMap Data"
   - u: "greenhyperspectra_a_multi-source_hyperspectral_dataset_for_global_vegetation_tra/"
     t: "GreenHyperSpectra: A Multi-Source Hyperspectral Dataset for Global Vegetation Trait Prediction"
-  - u: "instructsam_a_training-free_framework_for_instruction-oriented_remote_sensing_ob/"
-    t: "InstructSAM: A Training-Free Framework for Instruction-Oriented Remote Sensing Object Recognition"
   - u: "mass_conservation_on_rails_--_rethinking_physics-informed_learning_of_ice_flow_v/"
     t: "Mass Conservation on Rails – Rethinking Physics-Informed Learning of Ice Flow Vector Fields"
   - u: "orbitzoo_real_orbital_systems_challenges_for_reinforcement_learning/"
@@ -43,9 +43,9 @@ item_total: 12
 
 **🧠 NeurIPS2025** · **12** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (3)](../../ICML2026/remote_sensing/index.md) · [📷 CVPR2026 (15)](../../CVPR2026/remote_sensing/index.md) · [🔬 ICLR2026 (6)](../../ICLR2026/remote_sensing/index.md) · [🤖 AAAI2026 (8)](../../AAAI2026/remote_sensing/index.md) · [📹 ICCV2025 (11)](../../ICCV2025/remote_sensing/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (3)](../../ICML2026/remote_sensing/index.md) · [📷 CVPR2026 (16)](../../CVPR2026/remote_sensing/index.md) · [🔬 ICLR2026 (5)](../../ICLR2026/remote_sensing/index.md) · [🤖 AAAI2026 (7)](../../AAAI2026/remote_sensing/index.md) · [📹 ICCV2025 (11)](../../ICCV2025/remote_sensing/index.md)
 
-🔥 **Top topics:** Remote Sensing ×3
+🔥 **Top topics:** Remote Sensing ×2
 
 **[C3PO: Cross-View Cross-Modality Correspondence by Pointmap Prediction](c3po_cross-view_cross-modality_correspondence_by_pointmap_prediction.md)**
 
@@ -54,6 +54,10 @@ item_total: 12
 **[ChA-MAEViT: Unifying Channel-Aware Masked Autoencoders and Multi-Channel Vision Transformers for Improved Cross-Channel Learning](chamaevit_unifying_channelaware_masked_autoencoders_and_mult.md)**
 
 :   This paper proposes ChA-MAEViT, which enhances cross-channel feature learning for multi-channel images (MCI) through four key components: dynamic channel-patch joint masking, memory tokens, hybrid token fusion, and a channel-aware decoder. The method outperforms the state of the art by an average of 3.0–21.5% across three satellite and microscopy datasets.
+
+**[Cloud4D: Estimating Cloud Properties at a High Spatial and Temporal Resolution](cloud4d_estimating_cloud_properties_at_a_high_spatial_and_temporal_resolution.md)**
+
+:   The first learning framework based on ground-level multi-view cameras that reconstructs four-dimensional (3D spatial + temporal) cloud liquid water content distributions via a homography-guided 2D-to-3D Transformer. The method achieves less than 10% error relative to radar at 25 m spatial and 5 s temporal resolution, improving spatiotemporal resolution by an order of magnitude over satellite observations.
 
 **[Connecting the Dots: A Machine Learning Dataset for Ionospheric Prediction](connecting_the_dots_a_machine_learning_ready_dataset_for_ionospheric_forecasting.md)**
 
@@ -70,10 +74,6 @@ item_total: 12
 **[GreenHyperSpectra: A Multi-Source Hyperspectral Dataset for Global Vegetation Trait Prediction](greenhyperspectra_a_multi-source_hyperspectral_dataset_for_global_vegetation_tra.md)**
 
 :   GreenHyperSpectra constructs a pretraining dataset of 140,000+ multi-source hyperspectral vegetation samples spanning proximal, airborne, and satellite platforms. Label-efficient regression models trained via semi-supervised and self-supervised methods (MAE, GAN, RTM-AE) comprehensively outperform fully supervised baselines on 7 plant trait prediction tasks, with particularly pronounced advantages under label-scarce and out-of-distribution scenarios.
-
-**[InstructSAM: A Training-Free Framework for Instruction-Oriented Remote Sensing Object Recognition](instructsam_a_training-free_framework_for_instruction-oriented_remote_sensing_ob.md)**
-
-:   This paper introduces a new task — Instruction-oriented Counting, Detection, and Segmentation (InstructCDS) — along with the EarthInstruct remote sensing benchmark covering three settings (open-vocabulary, open-ended, and open-subcategory). It proposes InstructSAM, a training-free framework that uses an LVLM to parse instructions and predict counts, SAM2 to generate mask proposals, and CLIP to compute similarities. A Binary Integer Programming (BIP) formulation then performs optimal mask-label assignment under counting constraints, achieving near-constant inference time while outperforming task-specific baselines.
 
 **[Mass Conservation on Rails – Rethinking Physics-Informed Learning of Ice Flow Vector Fields](mass_conservation_on_rails_--_rethinking_physics-informed_learning_of_ice_flow_v.md)**
 

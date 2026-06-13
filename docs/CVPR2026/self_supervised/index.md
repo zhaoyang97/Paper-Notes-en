@@ -1,29 +1,26 @@
 ---
 title: >-
-  CVPR2026 Self-Supervised Learning Papers · 30 Notes
+  CVPR2026 Self-Supervised Learning Papers · 34 Notes
 description: >-
-  30 CVPR2026 papers in the Self-Supervised Learning area, covering Self-Supervised Learning, Continual Learning, Diffusion Models, Anomaly Detection, Few-/Zero-Shot Learning, Adversarial Robustness and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  34 CVPR2026 papers in the Self-Supervised Learning area, covering Self-Supervised Learning, Continual Learning, Layout & Composition and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "CVPR2026"
   - "Self-Supervised Learning"
   - "AI paper notes"
   - "paper summaries"
   - "Continual Learning"
-  - "Diffusion Models"
-  - "Anomaly Detection"
-  - "Few-/Zero-Shot Learning"
-  - "Adversarial Robustness"
+  - "Layout & Composition"
 item_list:
   - u: "a_stitch_in_time_learning_procedural_workflow_via_self_supervised_plackett_luce_r/"
     t: "A Stitch in Time: Learning Procedural Workflow via Self-Supervised Plackett-Luce Ranking"
   - u: "an_optimal_transport_driven_approach_for_cultivating_latent_space_in_online_incr/"
     t: "An Optimal Transport-driven Approach for Cultivating Latent Space in Online Incremental Learning"
-  - u: "bd-merging_bias-aware_dynamic_model_merging_with_evidence-guided_contrastive_lea/"
-    t: "BD-Merging: Bias-Aware Dynamic Model Merging with Evidence-Guided Contrastive Learning"
   - u: "boss_a_best-of-strategies_selector_as_an_oracle_for_deep_active_learning/"
     t: "BoSS: A Best-of-Strategies Selector as an Oracle for Deep Active Learning"
-  - u: "breaking_the_tuning_barrier_zero-hyperparameters_yield_multi-corner_analysis_via/"
+  - u: "breaking_the_tuning_barrier_zerohyperparameters_yi/"
     t: "Breaking the Tuning Barrier: Zero-Hyperparameters Yield Multi-Corner Analysis Via Learned Priors"
+  - u: "cheem_continual_learning_by_reuse_new_adapt_and_skip_--_a_hierarchical_explorati/"
+    t: "CHEEM: Continual Learning by Reuse, New, Adapt and Skip -- A Hierarchical Exploration-Exploitation Approach"
   - u: "com_pt_chain_of_models_pretraining/"
     t: "Chain-of-Models Pre-Training: Rethinking Training Acceleration of Vision Foundation Models"
   - u: "craterbench-r_instance-level_crater_retrieval_for_planetary_scale/"
@@ -32,14 +29,18 @@ item_list:
     t: "D2Dewarp: Dual Dimensions Geometric Representation Learning Based Document Image Dewarping"
   - u: "diversedit_towards_diverse_representation_learning_in_diffusion_transformers/"
     t: "DiverseDiT: Towards Diverse Representation Learning in Diffusion Transformers"
+  - u: "free-grained_hierarchical_visual_recognition/"
+    t: "Free-Grained Hierarchical Visual Recognition"
   - u: "geobridge_semantic-anchored_multi-view_foundation_model_for_geo-localization/"
     t: "GeoBridge: A Semantic-Anchored Multi-View Foundation Model for Geo-Localization"
-  - u: "geochemad_benchmarking_unsupervised_geochemical_anomaly_detection_for_mineral_ex/"
-    t: "GeoChemAD: Benchmarking Unsupervised Geochemical Anomaly Detection for Mineral Exploration"
   - u: "group_dinomics_incorporating_people_dynamics_into_dino_for_self_supervised_group_activity_feature_learning/"
     t: "Group-DINOmics: Incorporating People Dynamics into DINO for Self-supervised Group Activity Feature Learning"
-  - u: "las-comp_zero-shot_3d_completion_with_latent-spatial_consistency/"
-    t: "LaS-Comp: Zero-shot 3D Completion with Latent-Spatial Consistency"
+  - u: "hier-cos_making_deep_features_hierarchy-aware_via_composition_of_orthogonal_subs/"
+    t: "Hier-COS: Making Deep Features Hierarchy-aware via Composition of Orthogonal Subspaces"
+  - u: "hycal_training_free_prototype_calibration_for_cross_discipline_fscil/"
+    t: "HyCal: A Training-Free Prototype Calibration Method for Cross-Discipline Few-Shot Class-Incremental Learning"
+  - u: "learning_like_humans_analogical_concept_learning_for_generalized_category_discov/"
+    t: "Learning Like Humans: Analogical Concept Learning for Generalized Category Discovery"
   - u: "mine-jepa_in-domain_self-supervised_learning_for_mine-like_object_classification/"
     t: "MINE-JEPA: In-Domain Self-Supervised Learning for Mineral Exploration"
   - u: "momo_mars_orbital_model_foundation_model_for_mars_orbital_applications/"
@@ -48,6 +49,8 @@ item_list:
     t: "OmniGCD: Abstracting Generalized Category Discovery for Modality Agnosticism"
   - u: "redepth_anything_test-time_depth_refinement_via_self-supervised_re-lighting/"
     t: "Re-Depth Anything: Test-Time Depth Refinement via Self-Supervised Re-lighting"
+  - u: "reframing_long-tailed_learning_via_loss_landscape_geometry/"
+    t: "Reframing Long-Tailed Learning via Loss Landscape Geometry"
   - u: "representation_learning_for_spatiotemporal_physica/"
     t: "Representation Learning for Spatiotemporal Physical Systems"
   - u: "robustness_of_vision_foundation_models_to_common_perturbations/"
@@ -62,29 +65,23 @@ item_list:
     t: "TALO: Pushing 3D Vision Foundation Models Towards Globally Consistent Online Reconstruction"
   - u: "teflow_enabling_multi-frame_supervision_for_self-supervised_feed-forward_scene_f/"
     t: "TeFlow: Enabling Multi-frame Supervision for Self-Supervised Feed-forward Scene Flow Estimation"
+  - u: "temporal_imbalance_of_positive_and_negative_supervision_in_class-incremental_lea/"
+    t: "Temporal Imbalance of Positive and Negative Supervision in Class-Incremental Learning"
   - u: "text-phase_synergy_network_with_dual_priors_for_unsupervised_cross-domain_image_/"
     t: "Text-Phase Synergy Network with Dual Priors for Unsupervised Cross-Domain Image Retrieval"
   - u: "trackmae_video_representation_learning_via_track_mask_and_predict/"
     t: "TrackMAE: Video Representation Learning via Track, Mask, and Predict"
-  - u: "unigeoclip_geospatial_contrastive/"
-    t: "UniGeoCLIP: Unified Geospatial Contrastive Learning"
-  - u: "vision_transformers_need_more_than_registers/"
-    t: "Vision Transformers Need More Than Registers"
-  - u: "vt-intrinsic_physics-based_decomposition_of_reflectance_and_shading_using_a_sing/"
-    t: "VT-Intrinsic: Physics-Based Decomposition of Reflectance and Shading using a Single Visible-Thermal Image Pair"
-  - u: "zero_ablation_overstates_register_content_dependence_in_dino_vision_transformers/"
-    t: "Zero-Ablation Overstates Register Content Dependence in DINO Vision Transformers"
-item_total: 30
+item_total: 34
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->
 # 🔄 Self-Supervised Learning
 
-**📷 CVPR2026** · **30** paper notes
+**📷 CVPR2026** · **34** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (26)](../../ICML2026/self_supervised/index.md) · [💬 ACL2026 (1)](../../ACL2026/self_supervised/index.md) · [🔬 ICLR2026 (14)](../../ICLR2026/self_supervised/index.md) · [🤖 AAAI2026 (13)](../../AAAI2026/self_supervised/index.md) · [🧠 NeurIPS2025 (33)](../../NeurIPS2025/self_supervised/index.md) · [📹 ICCV2025 (13)](../../ICCV2025/self_supervised/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (24)](../../ICML2026/self_supervised/index.md) · [💬 ACL2026 (1)](../../ACL2026/self_supervised/index.md) · [🔬 ICLR2026 (16)](../../ICLR2026/self_supervised/index.md) · [🤖 AAAI2026 (16)](../../AAAI2026/self_supervised/index.md) · [🧠 NeurIPS2025 (33)](../../NeurIPS2025/self_supervised/index.md) · [📹 ICCV2025 (13)](../../ICCV2025/self_supervised/index.md)
 
-🔥 **Top topics:** Self-Supervised Learning ×7
+🔥 **Top topics:** Self-Supervised Learning ×6 · Continual Learning ×4 · Layout & Composition ×2
 
 **[A Stitch in Time: Learning Procedural Workflow via Self-Supervised Plackett-Luce Ranking](a_stitch_in_time_learning_procedural_workflow_via_self_supervised_plackett_luce_r.md)**
 
@@ -94,17 +91,17 @@ item_total: 30
 
 :   This paper proposes MMOT, an online mixture model learning framework driven by optimal transport theory. By maintaining multiple adaptive centroids per class, MMOT more accurately captures the multimodal structure of online data streams. Combined with a dynamic preservation strategy that enhances class discriminability, MMOT effectively alleviates catastrophic forgetting in online class-incremental learning (OCIL).
 
-**[BD-Merging: Bias-Aware Dynamic Model Merging with Evidence-Guided Contrastive Learning](bd-merging_bias-aware_dynamic_model_merging_with_evidence-guided_contrastive_lea.md)**
-
-:   This paper proposes the BD-Merging framework, which trains a debiased router via Dirichlet evidential modeling, Adjacency Discrepancy Score (ADS), and discrepancy-aware contrastive learning to adaptively assign model merging weights, significantly improving the robustness and generalization of merged models under test-time distribution shifts and on unseen tasks.
-
 **[BoSS: A Best-of-Strategies Selector as an Oracle for Deep Active Learning](boss_a_best-of-strategies_selector_as_an_oracle_for_deep_active_learning.md)**
 
 :   This paper proposes BoSS, a scalable oracle strategy selection framework. In each active learning round, multiple query strategies are run in parallel on random sub-pools to generate candidate batches; each candidate batch is evaluated rapidly by freezing the backbone and retraining only the final linear head; the batch yielding the greatest performance gain is selected. This framework enables quantification of the gap between existing AL strategies and the theoretical optimum.
 
-**[Breaking the Tuning Barrier: Zero-Hyperparameters Yield Multi-Corner Analysis Via Learned Priors](breaking_the_tuning_barrier_zero-hyperparameters_yield_multi-corner_analysis_via.md)**
+**[Breaking the Tuning Barrier: Zero-Hyperparameters Yield Multi-Corner Analysis Via Learned Priors](breaking_the_tuning_barrier_zerohyperparameters_yi.md)**
 
 :   This paper proposes a zero-hyperparameter yield multi-corner analysis framework based on Learned Priors (TabPFN foundation model). By replacing traditional GP/normalizing flow hyperparameter tuning with in-context Bayesian inference, and combining automatic feature selection, Cross-Corner knowledge transfer, and uncertainty-driven active learning, the framework achieves an MRE as low as 0.11% with no manual tuning, reducing verification cost by over 10×.
+
+**[CHEEM: Continual Learning by Reuse, New, Adapt and Skip -- A Hierarchical Exploration-Exploitation Approach](cheem_continual_learning_by_reuse_new_adapt_and_skip_--_a_hierarchical_explorati.md)**
+
+:   Proposes the CHEEM framework that leverages hierarchical exploration-exploitation (HEE) NAS to automatically learn task-aware dynamic ViT backbones—selecting Reuse/New/Adapt/Skip operations at each layer—significantly outperforming prompt-based methods on MTIL and VDD continual learning benchmarks, approaching the full fine-tuning upper bound.
 
 **[Chain-of-Models Pre-Training: Rethinking Training Acceleration of Vision Foundation Models](com_pt_chain_of_models_pretraining.md)**
 
@@ -122,21 +119,29 @@ item_total: 30
 
 :   Through systematic analysis, this work identifies inter-block representation diversity as a key factor for effective learning in DiTs, and proposes DiverseDiT: long residual connections to diversify inputs combined with a representation diversity loss to explicitly promote feature differentiation across blocks—accelerating convergence and improving generation quality without any external guidance model.
 
+**[Free-Grained Hierarchical Visual Recognition](free-grained_hierarchical_visual_recognition.md)**
+
+:   This paper proposes *free-grained hierarchical recognition*, a setting in which training labels may appear at any level of a taxonomy. Two complementary methods are introduced to compensate for missing supervision — text-guided pseudo-attributes (Text-Attr) and taxonomy-guided semi-supervised learning (Taxon-SSL) — while at inference time the model adaptively selects its prediction depth.
+
 **[GeoBridge: A Semantic-Anchored Multi-View Foundation Model for Geo-Localization](geobridge_semantic-anchored_multi-view_foundation_model_for_geo-localization.md)**
 
 :   GeoBridge proposes a semantic-anchored multi-view foundation model for geo-localization that bridges UAV, street-view, and satellite imagery through textual descriptions as cross-modal semantic anchors, enabling bidirectional cross-view matching and language-to-image localization. The authors also introduce the GeoLoc dataset (50K+ location tuples across 36 countries).
-
-**[GeoChemAD: Benchmarking Unsupervised Geochemical Anomaly Detection for Mineral Exploration](geochemad_benchmarking_unsupervised_geochemical_anomaly_detection_for_mineral_ex.md)**
-
-:   This paper introduces GeoChemAD, an open-source benchmark dataset, and GeoChemFormer, a two-stage framework that performs unsupervised geochemical anomaly detection via spatial context learning and elemental dependency modeling, achieving an average AUC of 0.7712 across 8 subsets.
 
 **[Group-DINOmics: Incorporating People Dynamics into DINO for Self-supervised Group Activity Feature Learning](group_dinomics_incorporating_people_dynamics_into_dino_for_self_supervised_group_activity_feature_learning.md)**
 
 :   This paper proposes leveraging DINOv3 with two self-supervised pretraining tasks — individual optical flow estimation and group-relevant object localization — to learn group activity features (GAF), achieving substantial improvements over existing methods without any group activity annotations.
 
-**[LaS-Comp: Zero-shot 3D Completion with Latent-Spatial Consistency](las-comp_zero-shot_3d_completion_with_latent-spatial_consistency.md)**
+**[Hier-COS: Making Deep Features Hierarchy-aware via Composition of Orthogonal Subspaces](hier-cos_making_deep_features_hierarchy-aware_via_composition_of_orthogonal_subs.md)**
 
-:   This paper proposes LaS-Comp, a zero-shot, category-agnostic 3D shape completion framework. It injects known geometry in the spatial domain via an Explicit Replacement Stage (ERS) and optimizes boundary consistency in the latent space via gradient-based updates in an Implicit Alignment Stage (IAS). The framework bridges the gap between the latent space and spatial domain of pretrained 3D foundation models, achieving state-of-the-art performance across diverse partial observation patterns.
+:   This paper proposes Hier-COS, a framework that assigns orthogonal basis vectors to each node in a label hierarchy tree to construct a theoretically guaranteed Hierarchy-Aware Vector Space (HAVS). It is the first to unify "hierarchy-aware fine-grained classification" and "hierarchical multi-level classification" within a single framework, while introducing a new evaluation metric HOPS, achieving comprehensive state-of-the-art performance across four datasets.
+
+**[HyCal: A Training-Free Prototype Calibration Method for Cross-Discipline Few-Shot Class-Incremental Learning](hycal_training_free_prototype_calibration_for_cross_discipline_fscil.md)**
+
+:   This paper identifies a "Domain Gravity" bias in heterogeneous-domain continual learning—whereby data-rich or low-entropy domains exert disproportionate influence in a shared embedding space—and proposes HyCal, a training-free method that calibrates prototypes by fusing cosine similarity and Mahalanobis distance, achieving robust classification in cross-discipline imbalanced few-shot class-incremental learning.
+
+**[Learning Like Humans: Analogical Concept Learning for Generalized Category Discovery](learning_like_humans_analogical_concept_learning_for_generalized_category_discov.md)**
+
+:   This paper proposes AL-GCD, a framework that simulates human analogical reasoning by designing an Analogical Text Concept Generator (ATCG)—which analogically generates textual concepts for unlabeled samples by drawing on a visual-textual knowledge base built from labeled categories—thereby casting category discovery as a joint visual-textual reasoning task. AL-GCD achieves an average improvement of 5.0% across six benchmarks, with 7.1% gains on fine-grained datasets.
 
 **[MINE-JEPA: In-Domain Self-Supervised Learning for Mineral Exploration](mine-jepa_in-domain_self-supervised_learning_for_mine-like_object_classification.md)**
 
@@ -153,6 +158,10 @@ item_total: 30
 **[Re-Depth Anything: Test-Time Depth Refinement via Self-Supervised Re-lighting](redepth_anything_test-time_depth_refinement_via_self-supervised_re-lighting.md)**
 
 :   This paper proposes Re-Depth Anything, which refines depth predictions from Depth Anything V2/3 at inference time through self-supervised optimization: the predicted depth map is augmented via re-lighting, and a 2D diffusion model's SDS loss is used to guide the optimization without any labeled data.
+
+**[Reframing Long-Tailed Learning via Loss Landscape Geometry](reframing_long-tailed_learning_via_loss_landscape_geometry.md)**
+
+:   This paper reframes the head-tail seesaw dilemma in long-tailed learning through the lens of loss landscape geometry. It identifies that tail class degradation stems from optimization converging to sharp minima that are far from tail-class optima. A dual-module framework comprising GKP (Grouped Knowledge Preservation) and GSA (Grouped Sharpness Aware) is proposed based on continual learning principles, achieving state-of-the-art results on four benchmarks (CIFAR-LT / ImageNet-LT / iNat2018) without requiring additional data.
 
 **[Representation Learning for Spatiotemporal Physical Systems](representation_learning_for_spatiotemporal_physica.md)**
 
@@ -181,6 +190,10 @@ item_total: 30
 **[TeFlow: Enabling Multi-frame Supervision for Self-Supervised Feed-forward Scene Flow Estimation](teflow_enabling_multi-frame_supervision_for_self-supervised_feed-forward_scene_f.md)**
 
 :   This paper proposes TeFlow — the first method to introduce multi-frame supervision into self-supervised feed-forward scene flow estimation. By constructing a motion candidate pool via temporal aggregation and aggregating temporally consistent supervision signals through consensus voting, TeFlow achieves a Three-way EPE of 3.57 cm on Argoverse 2 (on par with the optimization-based method Floxels) while maintaining real-time inference (8 s vs. 24 min), representing a 22.3% improvement over SeFlow++.
+
+**[Temporal Imbalance of Positive and Negative Supervision in Class-Incremental Learning](temporal_imbalance_of_positive_and_negative_supervision_in_class-incremental_lea.md)**
+
+:   This paper identifies temporal imbalance as a previously overlooked source of bias in class-incremental learning (CIL) and proposes the Temporal-Adjusted Loss (TAL), which dynamically downweights negative supervision for old classes via a temporally decaying memory kernel. TAL integrates in a plug-and-play manner and significantly alleviates catastrophic forgetting.
 
 **[Text-Phase Synergy Network with Dual Priors for Unsupervised Cross-Domain Image Retrieval](text-phase_synergy_network_with_dual_priors_for_unsupervised_cross-domain_image_.md)**
 

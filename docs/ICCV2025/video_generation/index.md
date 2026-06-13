@@ -82,7 +82,7 @@ item_total: 49
 
 **📹 ICCV2025** · **49** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (29)](../../ICML2026/video_generation/index.md) · [💬 ACL2026 (4)](../../ACL2026/video_generation/index.md) · [📷 CVPR2026 (56)](../../CVPR2026/video_generation/index.md) · [🔬 ICLR2026 (18)](../../ICLR2026/video_generation/index.md) · [🤖 AAAI2026 (11)](../../AAAI2026/video_generation/index.md) · [🧠 NeurIPS2025 (22)](../../NeurIPS2025/video_generation/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (28)](../../ICML2026/video_generation/index.md) · [💬 ACL2026 (4)](../../ACL2026/video_generation/index.md) · [📷 CVPR2026 (66)](../../CVPR2026/video_generation/index.md) · [🔬 ICLR2026 (19)](../../ICLR2026/video_generation/index.md) · [🤖 AAAI2026 (11)](../../AAAI2026/video_generation/index.md) · [🧠 NeurIPS2025 (23)](../../NeurIPS2025/video_generation/index.md)
 
 🔥 **Top topics:** Video Generation ×20 · Diffusion Models ×12 · Adversarial Robustness ×5 · Personalized Generation ×3 · Face & Gaze ×2
 
@@ -132,7 +132,7 @@ item_total: 49
 
 **[DOLLAR: Few-Step Video Generation via Distillation and Latent Reward Optimization](dollar_fewstep_video_generation_via_distillation_and_latent.md)**
 
-:   DOLLAR combines variational score distillation (VSD) and consistency distillation to achieve few-step video generation, and introduces a latent-space reward model fine-tuning method to further optimize specific quality dimensions. The 4-step student model achieves a VBench score of 82.57, surpassing the teacher model and commercial baselines such as Gen-3 and Kling, while 1-step distillation yields a 278.6× sampling speedup.
+:   DOLLAR combines variational score distillation (VSD) and consistency distillation to achieve few-step video generation, and introduces a latent-space reward model fine-tuning method to further optimize generation quality. The 4-step model generates 10-second videos (128 frames @ 12 FPS) achieving a VBench score of 82.57, surpassing both the teacher model and commercial baselines such as Gen-3 and Kling; 1-step distillation achieves a 278.6× speedup.
 
 **[DreamRelation: Relation-Centric Video Customization](dreamrelation_relation-centric_video_customization.md)**
 
@@ -272,7 +272,7 @@ item_total: 49
 
 **[VSRM: A Robust Mamba-Based Framework for Video Super-Resolution](vsrm_a_robust_mamba-based_framework_for_video_super-resolution.md)**
 
-:   This work is the first to introduce Mamba into video super-resolution (VSR), proposing the VSRM framework. It achieves efficient spatiotemporal modeling via the Dual Aggregation Mamba Block, combined with Deformable Cross-Mamba Alignment and a frequency-domain loss, achieving state-of-the-art performance on multiple benchmarks.
+:   This work is the first to introduce Mamba into video super-resolution, proposing the Dual Aggregation Mamba Block (DAMB) for long-range spatiotemporal dependency modeling, the Deformable Cross-Mamba Alignment module (DCA) for more flexible inter-frame alignment, and the Frequency Charbonnier-like Loss (FCL) for improved high-frequency detail recovery, achieving state-of-the-art results on REDS4, Vid4, and Vimeo-90K.
 
 **[WorldScore: A Unified Evaluation Benchmark for World Generation](worldscore_a_unified_evaluation_benchmark_for_world_generation.md)**
 

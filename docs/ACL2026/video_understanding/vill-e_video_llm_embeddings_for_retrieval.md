@@ -124,11 +124,11 @@ Four tasks correspond to four losses: (1) Retrieval tasks use a CLIP-style in-ba
 
 ## Related Papers
 
-- [\[ICLR 2026\] Log Probability Tracking of LLM APIs](../../ICLR2026/video_understanding/log_probability_tracking_of_llm_apis.md)
-- [\[ICML 2026\] Revisiting Uncertainty: On Evidential Learning for Partially Relevant Video Retrieval](../../ICML2026/video_understanding/revisiting_uncertainty_on_evidential_learning_for_partially_relevant_video_retri.md)
 - [\[ICCV 2025\] TimeExpert: An Expert-Guided Video LLM for Video Temporal Grounding](../../ICCV2025/video_understanding/timeexpert_an_expert-guided_video_llm_for_video_temporal_grounding.md)
-- [\[ICLR 2026\] NerVE: Nonlinear Eigenspectrum Dynamics in LLM Feed-Forward Networks](../../ICLR2026/video_understanding/nerve_nonlinear_eigenspectrum_dynamics_in_llm_feed-forward_networks.md)
+- [\[ICML 2026\] Revisiting Uncertainty: On Evidential Learning for Partially Relevant Video Retrieval](../../ICML2026/video_understanding/revisiting_uncertainty_on_evidential_learning_for_partially_relevant_video_retri.md)
 - [\[AAAI 2026\] APVR: Hour-Level Long Video Understanding with Adaptive Pivot Visual Information Retrieval](../../AAAI2026/video_understanding/apvr_hour-level_long_video_understanding_with_adaptive_pivot.md)
+- [\[NeurIPS 2025\] MUVR: A Multi-Modal Untrimmed Video Retrieval Benchmark with Multi-Level Visual Correspondence](../../NeurIPS2025/video_understanding/muvr_a_multi-modal_untrimmed_video_retrieval_benchmark_with_multi-level_visual_c.md)
+- [\[CVPR 2026\] RAGTrack: Language-aware RGBT Tracking with Retrieval-Augmented Generation](../../CVPR2026/video_understanding/ragtrack_language-aware_rgbt_tracking_with_retrieval-augmented_generation.md)
 
 </div>
 

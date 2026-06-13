@@ -132,7 +132,7 @@ With a fixed large model budget of $p=0.3$, RouteLMT is the strongest practical 
 - [\[ACL 2026\] Unlocking the Edge: Multi-LoRA On-Device Deployment and Acceleration](unlocking_the_edge_deployment_and_ondevice_acceleration_of_multi-lora_enabled_on.md)
 - [\[ACL 2026\] Why Low-Resource NLP Needs More Than Cross-Lingual Transfer: Lessons Learned from Luxembourgish](why_low-resource_nlp_needs_more_than_cross-lingual_transfer_lessons_learned_from.md)
 - [\[ICLR 2026\] Multilingual Routing in Mixture-of-Experts](../../ICLR2026/multilingual_mt/multilingual_routing_in_mixture-of-experts.md)
-- [\[ACL 2026\] LLM-XTM: Enhancing Cross-Lingual Topic Models with Large Language Models](llm-xtm_enhancing_cross-lingual_topic_models_with_large_language_models.md)
+- [\[ICLR 2026\] From Utterance to Vividity: Training Expressive Subtitle Translation LLM via Adaptive Local Preference Optimization](../../ICLR2026/multilingual_mt/from_utterance_to_vividity_training_expressive_subtitle_translation_llm_via_adap.md)
 
 </div>
 

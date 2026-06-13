@@ -2,9 +2,10 @@
 title: >-
   [Paper Note] The Structural Complexity of Matrix-Vector Multiplication
 description: >-
-  [NeurIPS 2025][matrix-vector multiplication] This paper proves that for Boolean matrices $\mathbf{M} \in \{0,1\}^{m \times n}$ with corrupted VC-dimension $d$…
+  [NeurIPS 2025][Theoretical Computer Science / Algorithm Complexity][matrix-vector multiplication] This paper proves that for Boolean matrices $\mathbf{M} \in \{0,1\}^{m \times n}$ with corrupted VC-dimension $d$…
 tags:
   - "NeurIPS 2025"
+  - "Theoretical Computer Science / Algorithm Complexity"
   - "matrix-vector multiplication"
   - "VC dimension"
   - "structured matrices"
@@ -128,10 +129,10 @@ This is a purely theoretical paper with no experimental section. The core theore
 ## Related Papers
 
 - [\[NeurIPS 2025\] The Parameterized Complexity of Computing the VC-Dimension](the_parameterized_complexity_of_computing_the_vc-dimension.md)
-- [\[NeurIPS 2025\] The Computational Complexity of Counting Linear Regions in ReLU Neural Networks](the_computational_complexity_of_counting_linear_regions_in_relu_neural_networks.md)
-- [\[NeurIPS 2025\] The Cost of Robustness: Tighter Bounds on Parameter Complexity for Robust Memorization in ReLU Nets](the_cost_of_robustness_tighter_bounds_on_parameter_complexity_for_robust_memoriz.md)
-- [\[AAAI 2026\] Structural Approach to Guiding a Present-Biased Agent](../../AAAI2026/others/structural_approach_to_guiding_a_present-biased_agent.md)
-- [\[ICCV 2025\] On the Complexity-Faithfulness Trade-off of Gradient-Based Explanations](../../ICCV2025/others/on_the_complexity-faithfulness_trade-off_of_gradient-based_explanations.md)
+- [\[ICML 2026\] On the Learnability of Test-Time Adaptation: A Recovery Complexity Perspective](../../ICML2026/learning_theory/on_the_learnability_of_test-time_adaptation_a_recovery_complexity_perspective.md)
+- [\[NeurIPS 2025\] How Many Domains Suffice for Domain Generalization? A Tight Characterization via the Domain Shattering Dimension](how_many_domains_suffice_for_domain_generalization_a_tight_characterization_via_.md)
+- [\[NeurIPS 2025\] On Agnostic PAC Learning in the Small Error Regime](on_agnostic_pac_learning_in_the_small_error_regime.md)
+- [\[NeurIPS 2025\] A High-Dimensional Statistical Method for Optimizing Transfer Quantities in Multi-Source Transfer Learning](a_highdimensional_statistical_method_for_optimizing_transfer.md)
 
 </div>
 

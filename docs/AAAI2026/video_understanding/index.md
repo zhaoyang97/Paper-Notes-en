@@ -1,68 +1,54 @@
 ---
 title: >-
-  AAAI2026 Video Understanding Papers · 33 Notes
+  AAAI2026 Video Understanding Papers · 27 Notes
 description: >-
-  33 AAAI2026 papers in the Video Understanding area, covering Dialogue, Multimodal/VLM, Human Pose, Object Tracking, LLM, Domain Adaptation and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  27 AAAI2026 papers in the Video Understanding area, covering Human Pose, Anomaly Detection, Multimodal/VLM, Few-/Zero-Shot Learning and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "AAAI2026"
   - "Video Understanding"
   - "AI paper notes"
   - "paper summaries"
-  - "Dialogue"
-  - "Multimodal/VLM"
   - "Human Pose"
-  - "Object Tracking"
-  - "LLM"
-  - "Domain Adaptation"
+  - "Anomaly Detection"
+  - "Multimodal/VLM"
+  - "Few-/Zero-Shot Learning"
 item_list:
   - u: "apvr_hour-level_long_video_understanding_with_adaptive_pivot/"
     t: "APVR: Hour-Level Long Video Understanding with Adaptive Pivot Visual Information Retrieval"
-  - u: "balancing_multimodal_domain_generalization_via_gradient_modulation_and_projectio/"
-    t: "Balancing Multimodal Domain Generalization via Gradient Modulation and Projection"
   - u: "bat_learning_event-based_optical_flow_with_bidirectional_adaptive_temporal_corre/"
     t: "BAT: Learning Event-based Optical Flow with Bidirectional Adaptive Temporal Correlation"
-  - u: "beyond_fact_retrieval_episodic_memory_for_rag_with_generative_semantic_workspace/"
-    t: "Beyond Fact Retrieval: Episodic Memory for RAG with Generative Semantic Workspaces"
   - u: "causality_matters_how_temporal_information_emerges_in_video_language_models/"
     t: "Causality Matters: How Temporal Information Emerges in Video Language Models"
-  - u: "coordinated_humanoid_robot_locomotion_with_symmetry_equivariant_reinforcement_le/"
-    t: "Coordinated Humanoid Robot Locomotion with Symmetry Equivariant Reinforcement Learning Policy"
-  - u: "distillation_dynamics_towards_understanding_feature-based_di/"
-    t: "Distillation Dynamics: Towards Understanding Feature-Based Distillation in Vision Transformers"
   - u: "emovid_a_multimodal_emotion_video_dataset_for_emotion-centric_video_understandin/"
     t: "EmoVid: A Multimodal Emotion Video Dataset for Emotion-Centric Video Understanding and Generation"
   - u: "explicit_temporal-semantic_modeling_for_dense_video_captioning_via_context-aware/"
     t: "Explicit Temporal-Semantic Modeling for Dense Video Captioning via Context-Aware Cross-Modal Interaction"
   - u: "finetec_fine-grained_action_recognition_under_temporal_corruption_via_skeleton_d/"
     t: "FineTec: Fine-Grained Action Recognition Under Temporal Corruption via Skeleton Decomposition and Sequence Completion"
-  - u: "group_orthogonal_low-rank_adaptation_for_rgb-t_tracking/"
-    t: "Group Orthogonal Low-Rank Adaptation for RGB-T Tracking"
-  - u: "kinest_a_kinematics-guided_spatiotemporal_state_space_model_for_human_motion_tra/"
-    t: "KineST: A Kinematics-guided Spatiotemporal State Space Model for Human Motion Tracking from Sparse Signals"
+  - u: "finevau_a_novel_human-aligned_benchmark_for_fine-grained_video_anomaly_understan/"
+    t: "FineVAU: A Novel Human-Aligned Benchmark for Fine-Grained Video Anomaly Understanding"
+  - u: "headhunt-vad_hunting_robust_anomaly-sensitive_heads_in_mllm_/"
+    t: "HeadHunt-VAD: Hunting Robust Anomaly-Sensitive Heads in MLLM for Tuning-Free Video Anomaly Detection"
+  - u: "learning_time_in_static_classifiers/"
+    t: "Learning Time in Static Classifiers"
+  - u: "learning_to_tell_apart_weakly_supervised_video_anomaly_detection_via_disentangle/"
+    t: "Learning to Tell Apart: Weakly Supervised Video Anomaly Detection via Disentangled Semantic Alignment"
   - u: "learning_topology-driven_multi-subspace_fusion_for_grassmannian_deep_network/"
     t: "Learning Topology-Driven Multi-Subspace Fusion for Grassmannian Deep Networks"
   - u: "lifelong_domain_adaptive_3d_human_pose_estimation/"
     t: "Lifelong Domain Adaptive 3D Human Pose Estimation"
-  - u: "listening_between_the_frames_bridging_temporal_gaps_in_large_audio-language_mode/"
-    t: "Listening Between the Frames: Bridging Temporal Gaps in Large Audio-Language Models"
   - u: "livibench_an_omnimodal_benchmark_for_interactive_livestream_video_understanding/"
     t: "LiViBench: An Omnimodal Benchmark for Interactive Livestream Video Understanding"
-  - u: "loom_personalized_learning_informed_by_daily_llm_conversations_toward_long-term_/"
-    t: "LOOM: Personalized Learning Informed by Daily LLM Conversations Toward Long-Term Mastery via a Dynamic Learner Memory Graph"
   - u: "plugtrack_multi-perceptive_motion_analysis_for_adaptive_fusion_in_multi-object_t/"
     t: "PlugTrack: Multi-Perceptive Motion Analysis for Adaptive Fusion in Multi-Object Tracking"
-  - u: "pragworld_a_benchmark_evaluating_llms_local_world_model_under_minimal_linguistic/"
-    t: "PragWorld: A Benchmark Evaluating LLMs' Local World Model under Minimal Linguistic Alterations and Conversational Dynamics"
   - u: "predicting_video_slot_attention_queries_from_random_slot-feature_pairs/"
     t: "Predicting Video Slot Attention Queries from Random Slot-Feature Pairs"
-  - u: "quantifying_conversational_reliability_of_large_language_models_under_multi-turn/"
-    t: "Quantifying Conversational Reliability of Large Language Models under Multi-Turn Interaction"
   - u: "r-avst_empowering_video-llms_with_fine-grained_spatio-temporal_reasoning_in_comp/"
     t: "R-AVST: Empowering Video-LLMs with Fine-Grained Spatio-Temporal Reasoning in Complex Audio-Visual Scenarios"
   - u: "reason_reinforced_causal_search_with_information_bottleneck_for_video_understand/"
     t: "ReaSon: Reinforced Causal Search with Information Bottleneck for Video Understanding"
-  - u: "rectom_a_benchmark_for_evaluating_machine_theory_of_mind_in_llm-based_conversati/"
-    t: "RecToM: A Benchmark for Evaluating Machine Theory of Mind in LLM-based Conversational Recommender Systems"
+  - u: "refinevad_semantic-guided_feature_recalibration_for_weakly_supervised_video_anom/"
+    t: "RefineVAD: Semantic-Guided Feature Recalibration for Weakly Supervised Video Anomaly Detection"
   - u: "rethinking_progression_of_memory_state_in_robotic_manipulation_an_object-centric/"
     t: "Rethinking Progression of Memory State in Robotic Manipulation: An Object-Centric Perspective"
   - u: "state-space_hierarchical_compression_with_gated_attention_an/"
@@ -75,45 +61,35 @@ item_list:
     t: "Task-Specific Distance Correlation Matching for Few-Shot Action Recognition"
   - u: "tspo_temporal_sampling_policy_optimization_for_long-form_video_language_understa/"
     t: "TSPO: Temporal Sampling Policy Optimization for Long-form Video Language Understanding"
-item_total: 33
+  - u: "uncovering_zero-shot_generalization_gaps_in_time-series_foundation_models_using_/"
+    t: "Uncovering Zero-Shot Generalization Gaps in Time-Series Foundation Models Using Real-World Videos"
+  - u: "uvlm_benchmarking_video_language_model_for_underwater_world_understanding/"
+    t: "UVLM: Benchmarking Video Language Model for Underwater World Understanding"
+  - u: "vtinker_guided_flow_upsampling_and_texture_mapping_for_high-resolution_video_fra/"
+    t: "VTinker: Guided Flow Upsampling and Texture Mapping for High-Resolution Video Frame Interpolation"
+item_total: 27
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->
 # 📹 Video Understanding
 
-**🤖 AAAI2026** · **33** paper notes
+**🤖 AAAI2026** · **27** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (18)](../../ICML2026/video_understanding/index.md) · [💬 ACL2026 (16)](../../ACL2026/video_understanding/index.md) · [📷 CVPR2026 (78)](../../CVPR2026/video_understanding/index.md) · [🔬 ICLR2026 (21)](../../ICLR2026/video_understanding/index.md) · [🧠 NeurIPS2025 (58)](../../NeurIPS2025/video_understanding/index.md) · [📹 ICCV2025 (57)](../../ICCV2025/video_understanding/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (17)](../../ICML2026/video_understanding/index.md) · [💬 ACL2026 (16)](../../ACL2026/video_understanding/index.md) · [📷 CVPR2026 (83)](../../CVPR2026/video_understanding/index.md) · [🔬 ICLR2026 (10)](../../ICLR2026/video_understanding/index.md) · [🧠 NeurIPS2025 (39)](../../NeurIPS2025/video_understanding/index.md) · [📹 ICCV2025 (56)](../../ICCV2025/video_understanding/index.md)
 
-🔥 **Top topics:** Dialogue ×4 · Multimodal/VLM ×3 · Human Pose ×3 · Object Tracking ×3 · LLM ×3
+🔥 **Top topics:** Human Pose ×3 · Anomaly Detection ×3 · Multimodal/VLM ×2 · Few-/Zero-Shot Learning ×2
 
 **[APVR: Hour-Level Long Video Understanding with Adaptive Pivot Visual Information Retrieval](apvr_hour-level_long_video_understanding_with_adaptive_pivot.md)**
 
 :   This paper proposes APVR, a training-free dual-granularity visual information retrieval framework. At the frame level, it iteratively retrieves keyframes (up to 1024) via query expansion and spatiotemporal semantic confidence scoring; at the token level, it compresses visual tokens through query-aware attention-driven selection. APVR overcomes memory limitations to process hour-long videos, achieving improvements of up to 9.5%, 4.6%, and 9.7% on LongVideoBench, VideoMME, and MLVU, respectively.
 
-**[Balancing Multimodal Domain Generalization via Gradient Modulation and Projection](balancing_multimodal_domain_generalization_via_gradient_modulation_and_projectio.md)**
-
-:   This paper proposes a Gradient Modulation Projection (GMP) strategy that addresses inter-modality optimization imbalance and inter-task gradient conflicts in multimodal domain generalization (MMDG) through two components: Inter-modality Gradient Decoupled Modulation (IGDM) and Conflict-Adaptive Gradient Projection (CAGP), achieving state-of-the-art performance on multiple benchmarks.
-
 **[BAT: Learning Event-based Optical Flow with Bidirectional Adaptive Temporal Correlation](bat_learning_event-based_optical_flow_with_bidirectional_adaptive_temporal_corre.md)**
 
 :   This paper proposes the Bidirectional Adaptive Temporal Correlation (BAT) framework, which converts temporally dense motion cues from event cameras into spatially dense cues, achieving high-accuracy event-based optical flow estimation and ranking first on the DSEC-Flow benchmark.
 
-**[Beyond Fact Retrieval: Episodic Memory for RAG with Generative Semantic Workspaces](beyond_fact_retrieval_episodic_memory_for_rag_with_generative_semantic_workspace.md)**
-
-:   This paper proposes the Generative Semantic Workspace (GSW), a neuroscience-inspired generative memory framework that constructs structured episodic memory representations for LLMs, achieving an F1 of 0.85 on EpBench while reducing query-time context tokens by 51%.
-
 **[Causality Matters: How Temporal Information Emerges in Video Language Models](causality_matters_how_temporal_information_emerges_in_video_language_models.md)**
 
 :   Through systematic ablation experiments, this work demonstrates that the temporal understanding capability of VideoLMs does not originate from positional encoding (PE), but rather emerges from the sequence sensitivity of causal attention masks. Temporal information is constructed layer by layer along a causal pathway of "inter-frame interaction → last-frame aggregation → query integration," based on which two lossless inference acceleration strategies are proposed.
-
-**[Coordinated Humanoid Robot Locomotion with Symmetry Equivariant Reinforcement Learning Policy](coordinated_humanoid_robot_locomotion_with_symmetry_equivariant_reinforcement_le.md)**
-
-:   This paper proposes SE-Policy, which directly embeds strict symmetry equivariance (actor) and symmetry invariance (critic) into the neural network architecture without additional hyperparameters, enabling humanoid robots to produce spatiotemporally coordinated natural locomotion. The velocity tracking error is reduced by 40% compared to DreamWaQ, and the policy is successfully deployed on a physical Unitree G1 robot.
-
-**[Distillation Dynamics: Towards Understanding Feature-Based Distillation in Vision Transformers](distillation_dynamics_towards_understanding_feature-based_di.md)**
-
-:   This paper proposes a "Distillation Dynamics" analytical framework (channel-wise FFT spectral analysis + Shannon entropy + activation magnitude tracking) to reveal that ViTs exhibit a distinctive U-shaped information processing pattern (compression followed by expansion). The work demonstrates that the fundamental cause of feature-based distillation failure in ViTs is a representational paradigm mismatch between the teacher's distributed high-dimensional encoding in later layers and the student's limited channel capacity—rather than a simple capacity gap.
 
 **[EmoVid: A Multimodal Emotion Video Dataset for Emotion-Centric Video Understanding and Generation](emovid_a_multimodal_emotion_video_dataset_for_emotion-centric_video_understandin.md)**
 
@@ -127,13 +103,21 @@ item_total: 33
 
 :   This paper proposes FineTec, a framework that achieves robust fine-grained skeleton-based action recognition under temporal corruption via three modules: context-aware sequence completion, bio-prior-guided skeleton spatial decomposition, and physics-driven acceleration modeling.
 
-**[Group Orthogonal Low-Rank Adaptation for RGB-T Tracking](group_orthogonal_low-rank_adaptation_for_rgb-t_tracking.md)**
+**[FineVAU: A Novel Human-Aligned Benchmark for Fine-Grained Video Anomaly Understanding](finevau_a_novel_human-aligned_benchmark_for_fine-grained_video_anomaly_understan.md)**
 
-:   This paper proposes the GOLA framework, which quantifies LoRA rank importance via SVD decomposition, freezes critical ranks to preserve pre-trained priors, clusters redundant ranks into groups, and imposes inter-group orthogonal constraints to enable more efficient RGB-T tracking adaptation.
+:   This paper proposes the FineVAU benchmark, which decomposes Video Anomaly Understanding (VAU) into three dimensions — Event (What), Entity (Who), and Location (Where) — introduces the FV-Score metric with high alignment to human perception, and constructs the FineW³ dataset via a fully automated LVLM-assisted pipeline. Experiments reveal critical shortcomings of current LVLMs in fine-grained anomalous event perception.
 
-**[KineST: A Kinematics-guided Spatiotemporal State Space Model for Human Motion Tracking from Sparse Signals](kinest_a_kinematics-guided_spatiotemporal_state_space_model_for_human_motion_tra.md)**
+**[HeadHunt-VAD: Hunting Robust Anomaly-Sensitive Heads in MLLM for Tuning-Free Video Anomaly Detection](headhunt-vad_hunting_robust_anomaly-sensitive_heads_in_mllm_.md)**
 
-:   This paper proposes KineST, a kinematics-guided state space model that reconstructs whole-body motion from sparse HMD signals via a kinematic tree bidirectional scanning strategy and hybrid spatiotemporal representation learning, surpassing state-of-the-art methods in both accuracy and temporal consistency.
+:   This paper proposes HeadHunt-VAD, which systematically identifies a sparse set of anomaly-sensitive and stable attention heads within a frozen MLLM, bypassing the information loss inherent in text-based outputs. Using a lightweight classifier, it achieves efficient tuning-free video anomaly detection, establishing state-of-the-art performance among tuning-free methods on UCF-Crime and XD-Violence.
+
+**[Learning Time in Static Classifiers](learning_time_in_static_classifiers.md)**
+
+:   This paper proposes the Support-Exemplar-Query (SEQ) learning framework, which injects temporal reasoning capabilities into standard feed-forward classifiers through loss function design rather than architectural modification. By aligning predicted sequences with class-level temporal prototypes via soft DTW, the method achieves consistent improvements on both fine-grained image classification and video anomaly detection.
+
+**[Learning to Tell Apart: Weakly Supervised Video Anomaly Detection via Disentangled Semantic Alignment](learning_to_tell_apart_weakly_supervised_video_anomaly_detection_via_disentangle.md)**
+
+:   This paper proposes DSANet, which enhances the discriminability between normal and anomalous features in weakly supervised video anomaly detection (WS-VAD) at two levels: coarse-grained self-guided normal pattern modeling (SG-NM) and fine-grained disentangled contrastive semantic alignment (DCSA). DSANet achieves state-of-the-art performance with 86.95% AP (+1.14%) on XD-Violence and 13.01% fine-grained mAP (+3.39%) on UCF-Crime.
 
 **[Learning Topology-Driven Multi-Subspace Fusion for Grassmannian Deep Networks](learning_topology-driven_multi-subspace_fusion_for_grassmannian_deep_network.md)**
 
@@ -143,33 +127,17 @@ item_total: 33
 
 :   This paper introduces a new task of lifelong domain adaptive 3D HPE, and proposes a GAN framework incorporating pose-aware, temporal-aware, and domain-aware encodings. A diffusion sampler is employed to generate domain-aware priors to mitigate catastrophic forgetting, achieving significant improvements over existing methods across multiple cross-scene/cross-dataset adaptation tasks.
 
-**[Listening Between the Frames: Bridging Temporal Gaps in Large Audio-Language Models](listening_between_the_frames_bridging_temporal_gaps_in_large_audio-language_mode.md)**
-
-:   This paper proposes TimeAudio, which equips large audio-language models (LALMs) with precise temporal grounding and end-to-end long audio understanding capabilities through three key modules: Temporal Markers, Absolute Time-aware Encoding (ATE), and Segment-level Token Merging (SEM). The paper also introduces the FTAR dataset for instruction fine-tuning on fine-grained temporal reasoning.
-
 **[LiViBench: An Omnimodal Benchmark for Interactive Livestream Video Understanding](livibench_an_omnimodal_benchmark_for_interactive_livestream_video_understanding.md)**
 
 :   This paper presents LiViBench, the first omnimodal benchmark for interactive livestream video understanding (3,168 videos, 3,175 MCQs, 24 tasks), introduces a multi-agent seed-guided semi-automatic annotation pipeline, and develops LiVi-LLM-7B — a specialized model featuring a Video-to-Comment Retrieval (VCR) module and two-stage instruction tuning — which surpasses 72B open-source models at the 7B scale.
-
-**[LOOM: Personalized Learning Informed by Daily LLM Conversations Toward Long-Term Mastery via a Dynamic Learner Memory Graph](loom_personalized_learning_informed_by_daily_llm_conversations_toward_long-term_.md)**
-
-:   This paper proposes LOOM, an agentic pipeline system that observes users' daily LLM conversations, infers learning needs, maintains a Dynamic Learner Memory Graph, and automatically generates personalized mini-courses. LOOM unifies **continuity** (long-term progress tracking) and **initiative** (immediate responsiveness to emerging interests) in a single framework.
 
 **[PlugTrack: Multi-Perceptive Motion Analysis for Adaptive Fusion in Multi-Object Tracking](plugtrack_multi-perceptive_motion_analysis_for_adaptive_fusion_in_multi-object_t.md)**
 
 :   This paper proposes PlugTrack, a framework that achieves, for the first time, adaptive fusion of Kalman filters and data-driven motion predictors via a Context Motion Encoder (CME) and an Adaptive Blending factor Generator (ABG), yielding significant improvements under both linear and nonlinear motion scenarios.
 
-**[PragWorld: A Benchmark Evaluating LLMs' Local World Model under Minimal Linguistic Alterations and Conversational Dynamics](pragworld_a_benchmark_evaluating_llms_local_world_model_under_minimal_linguistic.md)**
-
-:   This paper proposes the PragWorld benchmark, which evaluates the plasticity and robustness of LLMs' implicit world models by applying 7 types of minimal linguistic perturbations to dialogues. A dual-perspective interpretability framework is designed to localize harmful/helpful layers, and a layer regularization fine-tuning strategy is proposed to improve robustness.
-
 **[Predicting Video Slot Attention Queries from Random Slot-Feature Pairs](predicting_video_slot_attention_queries_from_random_slot-feature_pairs.md)**
 
 :   This paper proposes RandSF.Q, which significantly improves query prediction quality in video object-centric learning (OCL) by leveraging next-frame features for informative query prediction and learning transition dynamics from randomly sampled slot-feature pairs. The method surpasses state-of-the-art approaches by up to 10 points on object discovery benchmarks.
-
-**[Quantifying Conversational Reliability of Large Language Models under Multi-Turn Interaction](quantifying_conversational_reliability_of_large_language_models_under_multi-turn.md)**
-
-:   This paper systematically quantifies the reliability degradation of LLMs in multi-turn conversations through three deterministically evaluable representative tasks—instruction following, tool selection, and entity extraction—revealing failure modes such as instruction drift, intent confusion, and context overwriting in extended dialogues.
 
 **[R-AVST: Empowering Video-LLMs with Fine-Grained Spatio-Temporal Reasoning in Complex Audio-Visual Scenarios](r-avst_empowering_video-llms_with_fine-grained_spatio-temporal_reasoning_in_comp.md)**
 
@@ -179,9 +147,9 @@ item_total: 33
 
 :   This paper proposes a Causal Information Bottleneck (CIB) theoretical framework that formalizes keyframe selection as an information-theoretic problem jointly optimizing *predictive sufficiency* and *causal necessity*. Built upon CIB, the ReaSon reinforcement learning framework trains a selection policy using three CIB-aligned rewards (answer reward, cycle-consistency reward, and counterfactual reward), significantly outperforming existing methods under constrained frame budgets.
 
-**[RecToM: A Benchmark for Evaluating Machine Theory of Mind in LLM-based Conversational Recommender Systems](rectom_a_benchmark_for_evaluating_machine_theory_of_mind_in_llm-based_conversati.md)**
+**[RefineVAD: Semantic-Guided Feature Recalibration for Weakly Supervised Video Anomaly Detection](refinevad_semantic-guided_feature_recalibration_for_weakly_supervised_video_anom.md)**
 
-:   This paper introduces RecToM, the first human-annotated benchmark for evaluating Theory of Mind (ToM) reasoning capabilities of LLMs in conversational recommender systems (CRS). It covers two dimensions—cognitive inference (desire/intention/belief) and behavioral prediction (strategy prediction/strategy judgment)—comprising 10 question types and 20,524 QA pairs, and exposes systematic deficiencies of current LLMs in fine-grained intention inference and strategy judgment.
+:   This paper proposes RefineVAD, a framework comprising two modules — Motion-aware Temporal Attention Recalibration (MoTAR) and Category-Oriented REfinement (CORE) — that jointly models temporal motion dynamics and anomaly category semantics, achieving precise localization and interpretable detection of anomalous events in weakly supervised video anomaly detection.
 
 **[Rethinking Progression of Memory State in Robotic Manipulation: An Object-Centric Perspective](rethinking_progression_of_memory_state_in_robotic_manipulation_an_object-centric.md)**
 

@@ -2,9 +2,10 @@
 title: >-
   [Paper Note] SldprtNet: A Large-Scale Multimodal Dataset for CAD Generation in Language-Driven 3D Design
 description: >-
-  [CVPR2026][CAD dataset] This paper presents SldprtNet, a large-scale multimodal CAD dataset comprising 242,000+ industrial parts, where each sample contains four fully aligned modalities: .sldprt/.step 3D models…
+  [CVPR2026][Multimodal VLM][CAD dataset] This paper presents SldprtNet, a large-scale multimodal CAD dataset comprising 242,000+ industrial parts…
 tags:
   - "CVPR2026"
+  - "Multimodal VLM"
   - "CAD dataset"
   - "language-driven 3D design"
   - "multimodal alignment"
@@ -155,11 +156,11 @@ Qwen2.5-7B (text-only) and Qwen2.5-7B-VL (image + text) are fine-tuned on a 50K-
 
 ## Related Papers
 
-- [\[ICCV 2025\] Kaputt: A Large-Scale Dataset for Visual Defect Detection](../../ICCV2025/others/kaputt_a_large-scale_dataset_for_visual_defect_detection.md)
+- [\[CVPR 2026\] EmoVerse: A MLLMs-Driven Emotion Representation Dataset for Interpretable Visual Emotion Analysis](emoverse_a_mllms-driven_emotion_representation_dataset_for_interpretable_visual_.md)
+- [\[NeurIPS 2025\] Situat3DChange: Situated 3D Change Understanding Dataset for Multimodal Large Language Models](../../NeurIPS2025/multimodal_vlm/situat3dchange_situated_3d_change_understanding_dataset_for_multimodal_large_lan.md)
+- [\[AAAI 2026\] ReCAD: Reinforcement Learning Enhanced Parametric CAD Model Generation with Vision-Language Models](../../AAAI2026/multimodal_vlm/recad_reinforcement_learning_enhanced_parametric_cad_model_generation_with_visio.md)
+- [\[CVPR 2026\] HOG-Layout: Hierarchical 3D Scene Generation, Optimization and Editing via Vision-Language Models](hog_layout_hierarchical_3d_scene_generation_optimization_and_editing.md)
 - [\[CVPR 2026\] NaiLIA: Multimodal Nail Design Retrieval Based on Dense Intent Descriptions and Palette Queries](nailia_multimodal_nail_design_retrieval_based_on_dense_intent_descriptions_and_p.md)
-- [\[CVPR 2026\] BenDFM: A Taxonomy and Synthetic CAD Dataset for Manufacturability Assessment in Sheet Metal Bending](bendfm_a_taxonomy_and_synthetic_cad_dataset_for_ma.md)
-- [\[CVPR 2026\] Next-Scale Autoregressive Models for Text-to-Motion Generation](next-scale_autoregressive_models_for_text-to-motion_generation.md)
-- [\[CVPR 2026\] Order Matters: 3D Shape Generation from Sequential VR Sketches](order_matters_3d_shape_generation_from_sequential_vr_sketches.md)
 
 </div>
 

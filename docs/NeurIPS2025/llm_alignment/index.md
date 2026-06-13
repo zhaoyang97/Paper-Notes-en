@@ -1,24 +1,24 @@
 ---
 title: >-
-  NeurIPS2025 Alignment & RLHF Papers · 50 Notes
+  NeurIPS2025 Alignment & RLHF Papers · 36 Notes
 description: >-
-  50 NeurIPS2025 papers in the Alignment & RLHF area, covering Alignment/RLHF, LLM, Adversarial Robustness, Diffusion Models, Reasoning, Reinforcement Learning and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  36 NeurIPS2025 papers in the Alignment & RLHF area, covering LLM, Alignment/RLHF, Adversarial Robustness, Reinforcement Learning and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "NeurIPS2025"
   - "Alignment & RLHF"
   - "AI paper notes"
   - "paper summaries"
-  - "Alignment/RLHF"
   - "LLM"
+  - "Alignment/RLHF"
   - "Adversarial Robustness"
-  - "Diffusion Models"
-  - "Reasoning"
   - "Reinforcement Learning"
 item_list:
   - u: "adjacent_words_divergent_intents_jailbreaking_large_language_models_via_task_con/"
     t: "Adjacent Words, Divergent Intents: Jailbreaking Large Language Models via Task Concurrency"
   - u: "alignment_of_large_language_models_with_constrained_learning/"
     t: "Alignment of Large Language Models with Constrained Learning"
+  - u: "artificial_hivemind_the_open-ended_homogeneity_of_language_models_and_beyond/"
+    t: "Artificial Hivemind: The Open-Ended Homogeneity of Language Models (and Beyond)"
   - u: "ask_a_strong_llm_judge_when_your_reward_model_is_uncertain/"
     t: "Ask a Strong LLM Judge when Your Reward Model is Uncertain"
   - u: "attack_via_overfitting_10-shot_benign_fine-tuning_to_jailbreak_llms/"
@@ -29,18 +29,10 @@ item_list:
     t: "Capturing Individual Human Preferences with Reward Features"
   - u: "deepvideor1_video_reinforcement_finetuning_via_difficultyawa/"
     t: "DeepVideo-R1: Video Reinforcement Fine-Tuning via Difficulty-aware Regressive GRPO"
-  - u: "densedpo_finegrained_temporal_preference_optimization_for_vi/"
-    t: "DenseDPO: Fine-Grained Temporal Preference Optimization for Video Diffusion Models"
-  - u: "diffusion_model_as_a_noiseaware_latent_reward_model_for_step/"
-    t: "Diffusion Model as a Noise-Aware Latent Reward Model for Step-Level Preference Optimization"
-  - u: "dp2o-sr_direct_perceptual_preference_optimization_for_real-world_image_super-res/"
-    t: "DP²O-SR: Direct Perceptual Preference Optimization for Real-World Image Super-Resolution"
   - u: "evorefuse_evolutionary_prompt_optimization_for_evaluation_and_mitigation_of_llm_/"
     t: "EvoRefuse: Evaluating and Mitigating LLM Over-Refusal via Evolutionary Prompt Optimization"
   - u: "from_judgment_to_interference_early_stopping_llm_harmful_outputs_via_streaming_c/"
     t: "From Judgment to Interference: Early Stopping LLM Harmful Outputs via Streaming Content Monitoring"
-  - u: "g-dpo_scalable_preference_optimization_for_protein_language_models/"
-    t: "g-DPO: Scalable Preference Optimization for Protein Language Models"
   - u: "gasp_efficient_black-box_generation_of_adversarial_suffixes_for_jailbreaking_llm/"
     t: "GASP: Efficient Black-Box Generation of Adversarial Suffixes for Jailbreaking LLMs"
   - u: "generalizing_while_preserving_monotonicity_in_comparison-based_preference_learni/"
@@ -49,43 +41,49 @@ item_list:
     t: "Greedy Sampling Is Provably Efficient for RLHF"
   - u: "gvpo_group_variance_policy_optimization_for_large_language_model_post-training/"
     t: "GVPO: Group Variance Policy Optimization for Large Language Model Post-Training"
-  - u: "human-assisted_robotic_policy_refinement_via_action_preference_optimization/"
-    t: "Human-assisted Robotic Policy Refinement via Action Preference Optimization"
   - u: "improving_data_efficiency_for_llm_reinforcement_fine-tuning_through_difficulty-t/"
     t: "Improving Data Efficiency for LLM Reinforcement Fine-tuning Through Difficulty-targeted Online Data Selection and Rollout Replay"
   - u: "inference-time_alignment_in_continuous_space/"
     t: "Inference-time Alignment in Continuous Space"
   - u: "jailbreak-zero_a_path_to_pareto_optimal_red_teaming_for_large_language_models/"
     t: "Jailbreak-Zero: A Path to Pareto Optimal Red Teaming for Large Language Models"
-  - u: "kl_penalty_control_via_perturbation_for_direct_preference_optimization/"
-    t: "KL Penalty Control via Perturbation for Direct Preference Optimization"
   - u: "laser_learning_to_adaptively_select_reward_models_with_multi-armed_bandits/"
     t: "LASeR: Learning to Adaptively Select Reward Models with Multi-Armed Bandits"
   - u: "limited_preference_data_learning_better_reward_model_with_latent_space_synthesis/"
     t: "Limited Preference Data? Learning Better Reward Model with Latent Space Synthesis"
   - u: "llm_safety_alignment_is_divergence_estimation_in_disguise/"
     t: "LLM Safety Alignment is Divergence Estimation in Disguise"
-  - u: "longvpo_from_anchored_cues_to_selfreasoning_for_longform_vid/"
-    t: "LongVPO: From Anchored Cues to Self-Reasoning for Long-Form Video Preference Optimization"
   - u: "mechanism_design_for_llm_fine-tuning_with_multiple_reward_models/"
     t: "Mechanism Design for LLM Fine-tuning with Multiple Reward Models"
   - u: "metadefense_defending_finetuning-based_jailbreak_attack_before_and_during_genera/"
     t: "MetaDefense: Defending Finetuning-based Jailbreak Attack Before and During Generation"
   - u: "multi-environment_pomdps_discrete_model_uncertainty_under_partial_observability/"
     t: "Multi-Environment POMDPs: Discrete Model Uncertainty Under Partial Observability"
-  - u: "on_extending_direct_preference_optimization_to_accommodate_ties/"
-    t: "On Extending Direct Preference Optimization to Accommodate Ties"
-item_total: 50
+  - u: "polyjuice_makes_it_real_black-box_universal_red_teaming_for_synthetic_image_dete/"
+    t: "PolyJuice Makes It Real: Black-Box, Universal Red Teaming for Synthetic Image Detectors"
+  - u: "preference_learning_with_lie_detectors_can_induce_honesty_or_evasion/"
+    t: "Preference Learning with Lie Detectors can Induce Honesty or Evasion"
+  - u: "preference_optimization_by_estimating_the_ratio_of_the_data_distribution/"
+    t: "Preference Optimization by Estimating the Ratio of the Data Distribution"
+  - u: "provably_efficient_online_rlhf_with_one-pass_reward_modeling/"
+    t: "Provably Efficient Online RLHF with One-Pass Reward Modeling"
+  - u: "reinforcement_learning_finetunes_small_subnetworks_in_large_language_models/"
+    t: "Reinforcement Learning Finetunes Small Subnetworks in Large Language Models"
+  - u: "responserank_data-efficient_reward_modeling_through_preference_strength_learning/"
+    t: "ResponseRank: Data-Efficient Reward Modeling through Preference Strength Learning"
+  - u: "safeptr_token-level_jailbreak_defense_in_multimodal_llms_via_prune-then-restore_/"
+    t: "SafePTR: Token-Level Jailbreak Defense in Multimodal LLMs via Prune-then-Restore Mechanism"
+item_total: 36
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->
 # ⚖️ Alignment & RLHF
 
-**🧠 NeurIPS2025** · **50** paper notes
+**🧠 NeurIPS2025** · **36** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (30)](../../ICML2026/llm_alignment/index.md) · [💬 ACL2026 (30)](../../ACL2026/llm_alignment/index.md) · [📷 CVPR2026 (9)](../../CVPR2026/llm_alignment/index.md) · [🔬 ICLR2026 (42)](../../ICLR2026/llm_alignment/index.md) · [🤖 AAAI2026 (20)](../../AAAI2026/llm_alignment/index.md) · [📹 ICCV2025 (2)](../../ICCV2025/llm_alignment/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (26)](../../ICML2026/llm_alignment/index.md) · [💬 ACL2026 (31)](../../ACL2026/llm_alignment/index.md) · [📷 CVPR2026 (2)](../../CVPR2026/llm_alignment/index.md) · [🔬 ICLR2026 (40)](../../ICLR2026/llm_alignment/index.md) · [🤖 AAAI2026 (17)](../../AAAI2026/llm_alignment/index.md) · [📹 ICCV2025 (2)](../../ICCV2025/llm_alignment/index.md)
 
-🔥 **Top topics:** Alignment/RLHF ×20 · LLM ×15 · Adversarial Robustness ×7 · Diffusion Models ×3 · Reasoning ×2
+🔥 **Top topics:** LLM ×12 · Alignment/RLHF ×7 · Adversarial Robustness ×5 · Reinforcement Learning ×2
 
 **[Adjacent Words, Divergent Intents: Jailbreaking Large Language Models via Task Concurrency](adjacent_words_divergent_intents_jailbreaking_large_language_models_via_task_con.md)**
 
@@ -94,6 +92,10 @@ item_total: 50
 **[Alignment of Large Language Models with Constrained Learning](alignment_of_large_language_models_with_constrained_learning.md)**
 
 :   This paper proposes CAID (Constrained Alignment via Iterative Dualization), an iterative dualization method that alternately updates the LLM policy and dual variables. It theoretically establishes that the dual approach can identify the optimal constrained LLM policy (up to a parametrization gap), and empirically demonstrates significant improvements in constraint satisfaction and the helpfulness–safety trade-off on the PKU-SafeRLHF dataset.
+
+**[Artificial Hivemind: The Open-Ended Homogeneity of Language Models (and Beyond)](artificial_hivemind_the_open-ended_homogeneity_of_language_models_and_beyond.md)**
+
+:   This work introduces the Infinity-Chat dataset (26K open-ended real-world user queries with 31,250 human annotations) to expose the "Artificial Hivemind" phenomenon in language models — severe intra-model repetition and inter-model homogeneity in open-ended generation — and demonstrates that Reward Models and LM Judges fail to calibrate on samples with high inter-annotator preference divergence.
 
 **[Ask a Strong LLM Judge when Your Reward Model is Uncertain](ask_a_strong_llm_judge_when_your_reward_model_is_uncertain.md)**
 
@@ -115,18 +117,6 @@ item_total: 50
 
 :   This paper proposes DeepVideo-R1, which reformulates GRPO as Reg-GRPO that directly regresses advantage values (eliminating clipping/min safeguards), and mitigates the vanishing advantage problem via difficulty-aware data augmentation, achieving up to 10.1 percentage points improvement over standard GRPO on video reasoning tasks.
 
-**[DenseDPO: Fine-Grained Temporal Preference Optimization for Video Diffusion Models](densedpo_finegrained_temporal_preference_optimization_for_vi.md)**
-
-:   This paper identifies and addresses the motion bias problem in video DPO — by constructing structurally aligned video pairs via noising and denoising GT videos to fix the motion dimension, annotating dense preferences at the temporal segment level for more precise learning signals, and leveraging off-the-shelf VLMs for automatic annotation to reduce cost. Using only 1/3 of the annotation data, the method substantially improves motion generation quality while matching visual quality and text alignment.
-
-**[Diffusion Model as a Noise-Aware Latent Reward Model for Step-Level Preference Optimization](diffusion_model_as_a_noiseaware_latent_reward_model_for_step.md)**
-
-:   This paper proposes the Latent Reward Model (LRM) and Latent Preference Optimization (LPO), which repurpose the pretrained diffusion model itself as a noise-aware latent-space reward model to perform step-level preference optimization directly in the noisy latent space. Compared to Diffusion-DPO, LPO achieves a 10–28× training speedup; compared to SPO, it achieves a 2.5–3.5× speedup.
-
-**[DP²O-SR: Direct Perceptual Preference Optimization for Real-World Image Super-Resolution](dp2o-sr_direct_perceptual_preference_optimization_for_real-world_image_super-res.md)**
-
-:   This paper proposes DP²O-SR, a framework that exploits the inherent stochasticity of diffusion models to generate diverse super-resolution outputs, constructs preference pairs via a hybrid perceptual reward, and introduces a Hierarchical Preference Optimization (HPO) strategy to adaptively weight training pairs — significantly improving perceptual quality in real-world image super-resolution without any human annotations.
-
 **[EvoRefuse: Evaluating and Mitigating LLM Over-Refusal via Evolutionary Prompt Optimization](evorefuse_evolutionary_prompt_optimization_for_evaluation_and_mitigation_of_llm_.md)**
 
 :   This paper proposes EvoRefuse, a framework that employs evolutionary search to maximize the ELBO for automatically generating diverse pseudo-malicious instructions, yielding a more challenging over-refusal evaluation benchmark (EvoRefuse-Test) and an effective alignment mitigation dataset (EvoRefuse-Align).
@@ -134,10 +124,6 @@ item_total: 50
 **[From Judgment to Interference: Early Stopping LLM Harmful Outputs via Streaming Content Monitoring](from_judgment_to_interference_early_stopping_llm_harmful_outputs_via_streaming_c.md)**
 
 :   This paper proposes the Streaming Content Monitor (SCM)—the first harmful content monitor natively designed for partial detection. Built upon the FineHarm dataset (29K samples with token-level annotations) and hierarchical consistency-aware learning, SCM achieves a macro F1 of 0.95+ after observing on average only 18% of response tokens, enabling real-time early stopping of harmful LLM outputs.
-
-**[g-DPO: Scalable Preference Optimization for Protein Language Models](g-dpo_scalable_preference_optimization_for_protein_language_models.md)**
-
-:   To address the quadratic growth of preference pairs with respect to sample size when applying DPO to protein language models (PLMs)—which renders training intractable—this paper proposes g-DPO: (1) redundant preference pairs are pruned via union-mask-based clustering in sequence space, retaining more informative comparisons within local neighborhoods; (2) grouped likelihood amortization via shared union masks enables computation of log-likelihoods for all sequences within a group in a single forward pass. Across three protein engineering tasks, g-DPO achieves statistically indistinguishable in silico and in vitro performance compared to standard DPO, while delivering 1.7–5.4× training speedups.
 
 **[GASP: Efficient Black-Box Generation of Adversarial Suffixes for Jailbreaking LLMs](gasp_efficient_black-box_generation_of_adversarial_suffixes_for_jailbreaking_llm.md)**
 
@@ -155,10 +141,6 @@ item_total: 50
 
 :   GVPO is a more stable LLM post-training method than GRPO, derived by embedding the analytical solution of KL-constrained reward maximization into gradient weights (zero-sum weights eliminate the partition function). It achieves 20.72% on AIME (vs. GRPO's 14.79%) and is proven to possess a unique global optimum.
 
-**[Human-assisted Robotic Policy Refinement via Action Preference Optimization](human-assisted_robotic_policy_refinement_via_action_preference_optimization.md)**
-
-:   This paper proposes Action Preference Optimization (APO), a human-robot collaboration framework that collects interactive trajectories and applies preference alignment to VLA models using binary desirability signals grounded in prospect theory and an adaptive reweighting scheme, enabling the model to learn from failures and improve iteratively.
-
 **[Improving Data Efficiency for LLM Reinforcement Fine-tuning Through Difficulty-targeted Online Data Selection and Rollout Replay](improving_data_efficiency_for_llm_reinforcement_fine-tuning_through_difficulty-t.md)**
 
 :   Two complementary techniques are proposed to improve the data efficiency of LLM reinforcement fine-tuning (GRPO): (1) DOTS — an attention-based mechanism for predicting adaptive difficulty that prioritizes moderate-difficulty questions to maximize gradient signal; and (2) Rollout Replay — reusing recent rollouts to reduce per-step computational overhead. Together, these techniques reduce training time by an average of 40.7% across 6 model–dataset combinations.
@@ -170,10 +152,6 @@ item_total: 50
 **[Jailbreak-Zero: A Path to Pareto Optimal Red Teaming for Large Language Models](jailbreak-zero_a_path_to_pareto_optimal_red_teaming_for_large_language_models.md)**
 
 :   This paper proposes a policy-based (rather than example-based) evaluation framework for LLM red teaming, along with the Jailbreak-Zero method. By employing a simple large-scale parallel sampling strategy—requiring no manually crafted jailbreak tactics—the method achieves attack success rates of 99.5% on GPT-4o and 96.0% on Claude 3.5 on HarmBench, while attaining Pareto optimality across three objectives—coverage, diversity, and fidelity—through fine-tuning.
-
-**[KL Penalty Control via Perturbation for Direct Preference Optimization](kl_penalty_control_via_perturbation_for_direct_preference_optimization.md)**
-
-:   This paper proposes ε-DPO, which achieves instance-level adaptive KL penalty control by monitoring the monotonicity of logits—used as preference model outputs—under small perturbations of $\beta$ during training. The method incurs no additional computational overhead and significantly outperforms DPO and most direct alignment algorithms, achieving a 46.4% LC win rate on AlpacaEval 2 (vs. 40.3% for DPO).
 
 **[LASeR: Learning to Adaptively Select Reward Models with Multi-Armed Bandits](laser_learning_to_adaptively_select_reward_models_with_multi-armed_bandits.md)**
 
@@ -187,10 +165,6 @@ item_total: 50
 
 :   This paper establishes a unified theoretical framework demonstrating that alignment methods such as RLHF, DPO, KTO, and BCO are essentially estimating the divergence between a safe distribution $\mathcal{D}^+$ and an unsafe distribution $\mathcal{D}^-$. This perspective explains the latent-space separation phenomenon observed after alignment. Building on this insight, the paper proposes KLDO, a KL divergence-based alignment method that achieves state-of-the-art robustness across 5 models.
 
-**[LongVPO: From Anchored Cues to Self-Reasoning for Long-Form Video Preference Optimization](longvpo_from_anchored_cues_to_selfreasoning_for_longform_vid.md)**
-
-:   LongVPO proposes a two-stage DPO framework. Stage 1 constructs pseudo-long-video preference data by anchoring short clips and introduces an anchor-only reference model approximation to address context-length mismatch. Stage 2 performs self-training on real long videos via recursive captioning and multi-clip reasoning tasks. Using only 16K synthetic samples, the method surpasses long-video models trained with large-scale supervised data.
-
 **[Mechanism Design for LLM Fine-tuning with Multiple Reward Models](mechanism_design_for_llm_fine-tuning_with_multiple_reward_models.md)**
 
 :   This paper formulates multi-party preference aggregation in RLHF fine-tuning as a mechanism design problem. It proves that under social-welfare-maximizing training rules, participants have incentives to misreport their preferences, and achieves dominant-strategy incentive compatibility (DSIC) via an extended VCG payment mechanism that ensures truthful reporting.
@@ -202,14 +176,6 @@ item_total: 50
 **[Multi-Environment POMDPs: Discrete Model Uncertainty Under Partial Observability](multi-environment_pomdps_discrete_model_uncertainty_under_partial_observability.md)**
 
 :   This paper systematically studies Multi-Environment POMDPs (ME-POMDPs)—a class of POMDP ensembles sharing state, action, and observation spaces but with arbitrarily different transition, observation, and reward functions—with the goal of finding a robust policy that maximizes reward under the worst-case environment. By introducing the Adversarial Belief POMDP (AB-POMDP) as a unified model and establishing its equivalence to one-sided partially observable stochastic games (POSGs), the paper proposes both exact (value iteration + LP) and approximate (AB-HSVI) algorithms.
-
-**[On Extending Direct Preference Optimization to Accommodate Ties](on_extending_direct_preference_optimization_to_accommodate_ties.md)**
-
-:   This paper replaces the Bradley-Terry preference model in DPO with the Rao-Kupper and Davidson extensions, enabling preference optimization to explicitly model "tie" data. This avoids discarding ambiguous preference pairs and yields improved regularization and performance on translation and mathematical reasoning tasks.
-
-**[ORPO-Distill: Mixed-Policy Preference Optimization for Cross-Architecture LLM Distillation](orpo-distill_mixed-policy_preference_optimization_for_cross-architecture_llm_dis.md)**
-
-:   This paper proposes ORPO-Distill, which reformulates cross-architecture LLM knowledge distillation as a preference optimization problem. The teacher model generates positive reasoning chains while the student model generates negative ones; an ORPO contrastive loss is used for training, augmented by a mixed-policy update strategy for student negative samples. The method consistently outperforms black-box KD baselines across 5 QA benchmarks.
 
 **[PolyJuice Makes It Real: Black-Box, Universal Red Teaming for Synthetic Image Detectors](polyjuice_makes_it_real_black-box_universal_red_teaming_for_synthetic_image_dete.md)**
 
@@ -235,29 +201,9 @@ item_total: 50
 
 :   This paper proposes ResponseRank, a method that robustly learns utility differences by exploiting local relative differences in proxy signals of preference strength (e.g., response time and annotator agreement), significantly improving the sample efficiency of reward models.
 
-**[Rethinking Direct Preference Optimization in Diffusion Models](rethinking_direct_preference_optimization_in_diffusion_models.md)**
-
-:   To address two core issues in DPO for diffusion models — limited exploration and reward scale imbalance — this paper proposes a stable reference model update strategy and a timestep-aware training strategy, both of which can be integrated into various preference optimization algorithms.
-
-**[Robust LLM Alignment via Distributionally Robust Direct Preference Optimization](robust_llm_alignment_via_distributionally_robust_direct_preference_optimization.md)**
-
-:   This paper proposes two robust DPO variants—WDPO (Wasserstein) and KLDPO (KL divergence)—under a distributionally robust optimization (DRO) framework to address alignment failures caused by shifts in user preference distributions. The approach provides $O(n^{-1/4})$ convergence guarantees and achieves significant improvements over standard DPO on multi-dimensional alignment tasks and the OpenLLM leaderboard.
-
 **[SafePTR: Token-Level Jailbreak Defense in Multimodal LLMs via Prune-then-Restore Mechanism](safeptr_token-level_jailbreak_defense_in_multimodal_llms_via_prune-then-restore_.md)**
 
 :   By analyzing the propagation mechanism of harmful tokens in multimodal LLMs, this work finds that fewer than 1% of tokens trigger jailbreak behavior in early-to-middle layers. Based on this finding, the training-free SafePTR framework is proposed, which prunes harmful tokens at vulnerable layers and restores benign features in subsequent layers, significantly improving safety without sacrificing task performance.
-
-**[SafeVLA: Towards Safety Alignment of Vision-Language-Action Model via Constrained Learning](safevla_towards_safety_alignment_of_vision-language-action_model_via_constrained.md)**
-
-:   This work is the first to systematically apply the Constrained Markov Decision Process (CMDP) framework from Safe Reinforcement Learning (SafeRL) to safety alignment of Vision-Language-Action (VLA) models. Through a four-stage Integrated Safety Approach (ISA)—Model, Elicit, Constrain, and Assure—the method achieves an 83.58% reduction in safety violation costs on mobile manipulation tasks while maintaining task performance (+3.85%).
-
-**[Self-alignment of Large Video Language Models with Refined Regularized Preference Optimization](self-alignment_of_large_video_language_models_with_refined_regularized_preferenc.md)**
-
-:   This paper proposes RRPO (Refined Regularized Preference Optimization), which replaces DPO's response-level rewards with subsequence-level fine-grained rewards and token-wise KL regularization. Combined with a self-alignment data generation framework, RRPO reduces hallucinations and improves temporal reasoning on video understanding tasks.
-
-**[Self Iterative Label Refinement via Robust Unlabeled Learning](self_iterative_label_refinement_via_robust_unlabeled_learning.md)**
-
-:   This paper proposes an iterative pipeline that leverages a robust unlabeled-unlabeled (UU) learning framework to refine LLM-generated pseudo-labels, surpassing the self-refinement approaches of GPT-4o and DeepSeek-R1 on both classification and generative safety alignment tasks with minimal human annotation.
 
 **[Short-length Adversarial Training Helps LLMs Defend Long-length Jailbreak Attacks](short-length_adversarial_training_helps_llms_defend_long-length_jailbreak_attack.md)**
 
@@ -278,10 +224,6 @@ item_total: 50
 **[Trajectory Balance with Asynchrony: Decoupling Exploration and Learning for Fast, Scalable LLM Post-Training](trajectory_balance_with_asynchrony_decoupling_exploration_and_learning_for_fast_.md)**
 
 :   This paper proposes TBA (Trajectory Balance with Asynchrony), which combines the GFlowNet Trajectory Balance (TB) objective with an asynchronous distributed RL architecture to decouple exploration and learning in LLM post-training, achieving 4–50× speedups without performance degradation across mathematical reasoning, preference fine-tuning, and automated red-teaming tasks.
-
-**[Trajectory Bellman Residual Minimization: A Simple Value-Based Method for LLM Reasoning](trajectory_bellman_residual_minimization_a_simple_value-based_method_for_llm_rea.md)**
-
-:   TBRM minimizes trajectory-level Bellman residuals by treating LLM output logits as implicit Q-values, requiring only a single forward rollout per prompt during training. This yields substantially lower complexity than PPO/GRPO while achieving comparable or superior performance on mathematical reasoning benchmarks.
 
 **[What Makes a Reward Model a Good Teacher? An Optimization Perspective](what_makes_a_reward_model_a_good_teacher_an_optimization_perspective.md)**
 

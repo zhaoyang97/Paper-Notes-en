@@ -33,7 +33,7 @@ item_total: 5
 
 **💬 ACL2026** · **5** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (35)](../../ICML2026/computational_biology/index.md) · [📷 CVPR2026 (5)](../../CVPR2026/computational_biology/index.md) · [🔬 ICLR2026 (24)](../../ICLR2026/computational_biology/index.md) · [🤖 AAAI2026 (15)](../../AAAI2026/computational_biology/index.md) · [🧠 NeurIPS2025 (44)](../../NeurIPS2025/computational_biology/index.md) · [📹 ICCV2025 (3)](../../ICCV2025/computational_biology/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (36)](../../ICML2026/computational_biology/index.md) · [📷 CVPR2026 (11)](../../CVPR2026/computational_biology/index.md) · [🔬 ICLR2026 (38)](../../ICLR2026/computational_biology/index.md) · [🤖 AAAI2026 (20)](../../AAAI2026/computational_biology/index.md) · [🧠 NeurIPS2025 (74)](../../NeurIPS2025/computational_biology/index.md) · [📹 ICCV2025 (4)](../../ICCV2025/computational_biology/index.md)
 
 🔥 **Top topics:** Reasoning ×2
 
@@ -47,7 +47,7 @@ item_total: 5
 
 **[ChemAmp: Amplified Chemistry Tools via Composable Agents](chemamp_amplified_chemistry_tools_via_composable_agents.md)**
 
-:   Proposes the "Tool Amplification" paradigm (distinct from traditional tool orchestration), using the ChemAmp framework to treat chemistry-specific tools (UniMol2, Chemformer, etc.) as composable building blocks to dynamically construct task-specific super-agents. It outperforms specialized models and general LLMs across four core chemistry tasks while reducing inference token costs by 94%.
+:   This paper proposes a novel "tool amplification" paradigm (distinct from conventional tool orchestration) and introduces the ChemAmp framework, which treats chemistry-specific tools (UniMol2, Chemformer, etc.) as composable building blocks to dynamically construct task-specialized super-agents. ChemAmp surpasses both domain-specific models and general-purpose LLMs on four core chemistry tasks—including molecular design and reaction prediction—while reducing inference token costs by 94%.
 
 **[ProtoCycle: Reflective Tool-Augmented Planning for Text-Guided Protein Design](protocycle_reflective_tool-augmented_planning_for_text-guided_protein_design.md)**
 

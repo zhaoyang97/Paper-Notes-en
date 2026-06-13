@@ -2,9 +2,10 @@
 title: >-
   [Paper Note] Non-Clairvoyant Scheduling with Progress Bars
 description: >-
-  [NeurIPS 2025][Non-clairvoyant scheduling] This paper introduces a "progress bar" information model as an interpolation framework between clairvoyant and non-clairvoyant scheduling. It designs scheduling algorithms with…
+  [NeurIPS 2025][Online Scheduling Algorithms / Learning-Augmented Algorithms / Competitive Analysis][Non-clairvoyant scheduling] This paper introduces a "progress bar" information model as an interpolation framework betwe…
 tags:
   - "NeurIPS 2025"
+  - "Online Scheduling Algorithms / Learning-Augmented Algorithms / Competitive Analysis"
   - "Non-clairvoyant scheduling"
   - "progress bars"
   - "competitive ratio"
@@ -121,11 +122,11 @@ By converting prediction $\pi_j$ into a signal $\beta_j = \alpha\pi_j/p_j$, Algo
 
 ## Related Papers
 
-- [\[AAAI 2026\] A Switching Framework for Online Interval Scheduling with Predictions](../../AAAI2026/others/a_switching_framework_for_online_interval_scheduling_with_pr.md)
-- [\[NeurIPS 2025\] Directional Non-Commutative Monoidal Structures for Compositional Embeddings in Machine Learning](directional_non-commutative_monoidal_structures_for_compositional_embeddings_in_.md)
-- [\[NeurIPS 2025\] Learning non-equilibrium diffusions with Schrödinger bridges: from exactly solvable to simulation-free](learning_non-equilibrium_diffusions_with_schrödinger_bridges_from_exactly_solvab.md)
+- [\[AAAI 2026\] A Switching Framework for Online Interval Scheduling with Predictions](../../AAAI2026/learning_theory/a_switching_framework_for_online_interval_scheduling_with_pr.md)
+- [\[ICLR 2026\] Scalable Random Wavelet Features: Efficient Non-Stationary Kernel Approximation with Convergence Guarantees](../../ICLR2026/learning_theory/scalable_random_wavelet_features_efficient_non-stationary_kernel_approximation_w.md)
 - [\[NeurIPS 2025\] Learning-Augmented Online Bipartite Fractional Matching](learning-augmented_online_bipartite_fractional_matching.md)
-- [\[AAAI 2026\] Boosting Adversarial Transferability via Ensemble Non-Attention](../../AAAI2026/others/boosting_adversarial_transferability_via_ensemble_non-attention.md)
+- [\[NeurIPS 2025\] Optimism Without Regularization: Constant Regret in Zero-Sum Games](optimism_without_regularization_constant_regret_in_zero-sum_games.md)
+- [\[NeurIPS 2025\] Prediction-Powered Semi-Supervised Learning with Online Power Tuning](prediction-powered_semi-supervised_learning_with_online_power_tuning.md)
 
 </div>
 

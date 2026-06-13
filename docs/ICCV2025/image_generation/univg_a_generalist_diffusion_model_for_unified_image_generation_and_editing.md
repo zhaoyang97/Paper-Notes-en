@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] UniVG: A Generalist Diffusion Model for Unified Image Generation and Editing
 description: >-
-  [ICCV 2025][3D Vision][Unified generative model] This paper proposes UniVG, a unified image generation model built on MM-DiT that supports T2I generation, editing, identity-preserving generation, layout-guided synthesis…
+  [ICCV 2025][Image Generation][Unified generative model] This paper proposes UniVG, a unified image generation model built on MM-DiT that supports T2I generation, editing, identity-preserving generation…
 tags:
   - "ICCV 2025"
-  - "3D Vision"
+  - "Image Generation"
   - "Unified generative model"
   - "MM-DiT"
   - "multi-task training"
@@ -137,11 +137,11 @@ Separate guidance scales control image conditioning and text conditioning respec
 
 ## Related Papers
 
-- [\[ICCV 2025\] UniEgoMotion: A Unified Model for Egocentric Motion Reconstruction, Forecasting, and Generation](uniegomotion_a_unified_model_for_egocentric_motion_reconstruction_forecasting_an.md)
-- [\[ICCV 2025\] Unleashing Vecset Diffusion Model for Fast Shape Generation (FlashVDM)](unleashing_vecset_diffusion_model_for_fast_shape_generation.md)
-- [\[ICCV 2025\] Sat2City: 3D City Generation from A Single Satellite Image with Cascaded Latent Diffusion](sat2city_3d_city_generation_from_a_single_satellite_image_with_cascaded_latent_d.md)
-- [\[ICCV 2025\] From Image to Video: An Empirical Study of Diffusion Representations](from_image_to_video_an_empirical_study_of_diffusion_representations.md)
-- [\[ICCV 2025\] Zero-Shot Inexact CAD Model Alignment from a Single Image](zero-shot_inexact_cad_model_alignment_from_a_single_image.md)
+- [\[ICCV 2025\] Exploring Multimodal Diffusion Transformers for Enhanced Prompt-based Image Editing](exploring_multimodal_diffusion_transformers_for_enhanced_prompt-based_image_edit.md)
+- [\[ICCV 2025\] Addressing Text Embedding Leakage in Diffusion-Based Image Editing](addressing_text_embedding_leakage_in_diffusion-based_image_editing.md)
+- [\[ICCV 2025\] SuperEdit: Rectifying and Facilitating Supervision for Instruction-Based Image Editing](superedit_rectifying_and_facilitating_supervision_for_instruction-based_image_ed.md)
+- [\[ICCV 2025\] ALE: Attribute-Leakage-free Editing for Text-based Image Editing](ale_attribute_leakage_free_editing.md)
+- [\[ICCV 2025\] A Unified Framework for Motion Reasoning and Generation in Human Interaction](a_unified_framework_for_motion_reasoning_and_generation_in_human_interaction.md)
 
 </div>
 

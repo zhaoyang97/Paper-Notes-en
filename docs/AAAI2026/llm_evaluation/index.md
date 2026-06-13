@@ -1,8 +1,8 @@
 ---
 title: >-
-  AAAI2026 LLM Evaluation Papers · 39 Notes
+  AAAI2026 LLM Evaluation Papers · 16 Notes
 description: >-
-  39 AAAI2026 papers in the LLM Evaluation area, covering LLM, Reasoning, Alignment/RLHF, Agents, Compression and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  16 AAAI2026 papers in the LLM Evaluation area, covering LLM, Reasoning, Agents, Translation, Robotics, Sentiment Analysis and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "AAAI2026"
   - "LLM Evaluation"
@@ -10,85 +10,54 @@ tags:
   - "paper summaries"
   - "LLM"
   - "Reasoning"
-  - "Alignment/RLHF"
   - "Agents"
-  - "Compression"
+  - "Translation"
+  - "Robotics"
+  - "Sentiment Analysis"
 item_list:
-  - u: "axis-aligned_document_dewarping/"
-    t: "Axis-Aligned Document Dewarping"
   - u: "bcwildfire_a_long-term_multi-factor_dataset_and_deep_learning_benchmark_for_bore/"
     t: "BCWildfire: A Long-term Multi-factor Dataset and Deep Learning Benchmark for Boreal Wildfire Risk Prediction"
   - u: "benchmarking_llms_for_political_science_a_united_nations_perspective/"
     t: "Benchmarking LLMs for Political Science: A United Nations Perspective"
   - u: "beyond_accuracy_a_cognitive_load_framework_for_mapping_the_c/"
     t: "Beyond Accuracy: A Cognitive Load Framework for Mapping the Capability Boundaries of Tool-use Agents"
-  - u: "beyond_cosine_similarity_magnitude-aware_clip_for_no-reference_image_quality_ass/"
-    t: "Beyond Cosine Similarity: Magnitude-Aware CLIP for No-Reference Image Quality Assessment"
-  - u: "break_the_tie_learning_cluster-customized_category_relationships_for_categorical/"
-    t: "Break the Tie: Learning Cluster-Customized Category Relationships for Categorical Data Clustering"
   - u: "coninstruct_evaluating_large_language_models_on_conflict_detection_and_resolutio/"
     t: "ConInstruct: Evaluating Large Language Models on Conflict Detection and Resolution in Instructions"
-  - u: "dcmatch_unsupervised_multi-shape_matching_with_dual-level_consistency/"
-    t: "DcMatch: Unsupervised Multi-Shape Matching with Dual-Level Consistency"
-  - u: "deep_incomplete_multi-view_clustering_via_hierarchical_imputation_and_alignment/"
-    t: "Deep Incomplete Multi-View Clustering via Hierarchical Imputation and Alignment"
   - u: "dicap_distribution-calibrated_pseudo-labeling_for_semi-supervised_multi-label_le/"
     t: "DiCaP: Distribution-Calibrated Pseudo-labeling for Semi-Supervised Multi-Label Learning"
-  - u: "gazeinterpreter_parsing_eye_gaze_to_generate_eye-body-coordinated_narrations/"
-    t: "GazeInterpreter: Parsing Eye Gaze to Generate Eye-Body-Coordinated Narrations"
-  - u: "gdba_revisited_unleashing_the_power_of_guided_local_search_for_distributed_const/"
-    t: "GDBA Revisited: Unleashing the Power of Guided Local Search for Distributed Constraint Optimization"
-  - u: "goal_geometrically_optimal_alignment_for_continual_generalized_category_discover/"
-    t: "GOAL: Geometrically Optimal Alignment for Continual Generalized Category Discovery"
-  - u: "granalign_granularity-aware_alignment_framework_for_zero-shot_video_moment_retri/"
-    t: "GranAlign: Granularity-Aware Alignment Framework for Zero-Shot Video Moment Retrieval"
-  - u: "graph_out-of-distribution_detection_via_test-time_calibration_with_dual_dynamic_/"
-    t: "Graph Out-of-Distribution Detection via Test-Time Calibration with Dual Dynamic Dictionaries"
-  - u: "hybridla_hybrid_generation_for_document_layout_analysis/"
-    t: "HybriDLA: Hybrid Generation for Document Layout Analysis"
-  - u: "improved_runtime_guarantees_for_the_spea2_multi-objective_optimizer/"
-    t: "Improved Runtime Guarantees for the SPEA2 Multi-Objective Optimizer"
+  - u: "do_llms_really_struggle_at_nl-fol_translation_revealing_their_strengths_via_a_no/"
+    t: "Do LLMs Really Struggle at NL-FOL Translation? Revealing Their Strengths via a Novel Benchmarking Strategy"
+  - u: "gaming_the_answer_matcher_examining_the_impact_of_text_manipulation_on_automated/"
+    t: "Gaming the Answer Matcher: Examining the Impact of Text Manipulation on Automated Judgment"
   - u: "llm-as-a-judge_for_scalable_test_coverage_evaluation_accuracy_operational_reliab/"
     t: "LLM-as-a-Judge for Scalable Test Coverage Evaluation"
   - u: "lost_in_benchmarks_rethinking_large_language_model_benchmarking_with_item_respon/"
     t: "Lost in Benchmarks? Rethinking Large Language Model Benchmarking with Item Response Theory"
   - u: "low-rank_curvature_for_zeroth-order_optimization_in_llm_fine-tuning/"
     t: "Low-Rank Curvature for Zeroth-Order Optimization in LLM Fine-Tuning"
-  - u: "maps_multi-agent_personality_shaping_for_collaborative_reaso/"
-    t: "MAPS: Multi-Agent Personality Shaping for Collaborative Reasoning"
   - u: "mcts-sql_light-weight_llms_can_master_the_text-to-sql_through_monte_carlo_tree_s/"
     t: "MCTS-SQL: Light-Weight LLMs can Master the Text-to-SQL through Monte Carlo Tree Search"
-  - u: "microevoeval_a_systematic_evaluation_framework_for_image-based_microstructure_ev/"
-    t: "MicroEvoEval: A Systematic Evaluation Framework for Image-Based Microstructure Evolution Prediction"
   - u: "mindvote_when_ai_meets_the_wild_west_of_social_media_opinion/"
     t: "MindVote: When AI Meets the Wild West of Social Media Opinion"
-  - u: "nestr_a_neuro-symbolic_abductive_framework_for_temporal_reasoning_in_large_langu/"
-    t: "NeSTR: A Neuro-Symbolic Abductive Framework for Temporal Reasoning in Large Language Models"
   - u: "optscale_probabilistic_optimality_for_inference-time_scaling/"
     t: "OptScale: Probabilistic Optimality for Inference-time Scaling"
-  - u: "perspective_from_a_broader_context_can_room_style_knowledge_help_visual_floorpla/"
-    t: "Perspective from a Broader Context: Can Room Style Knowledge Help Visual Floorplan Localization?"
-  - u: "refinevad_semantic-guided_feature_recalibration_for_weakly_supervised_video_anom/"
-    t: "RefineVAD: Semantic-Guided Feature Recalibration for Weakly Supervised Video Anomaly Detection"
-  - u: "regular_games_--_an_automata-based_general_game_playing_language/"
-    t: "Regular Games – an Automata-Based General Game Playing Language"
-  - u: "sampling_control_for_imbalanced_calibration_in_semi-supervised_learning/"
-    t: "Sampling Control for Imbalanced Calibration in Semi-Supervised Learning"
-item_total: 39
+  - u: "test-time_diverse_reasoning_by_riemannian_activation_steering/"
+    t: "Test-time Diverse Reasoning by Riemannian Activation Steering"
+  - u: "towards_a_common_framework_for_autoformalization/"
+    t: "Towards a Common Framework for Autoformalization"
+  - u: "where_norms_and_references_collide_evaluating_llms_on_normative_reasoning/"
+    t: "Where Norms and References Collide: Evaluating LLMs on Normative Reasoning"
+item_total: 16
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->
 # 📊 LLM Evaluation
 
-**🤖 AAAI2026** · **39** paper notes
+**🤖 AAAI2026** · **16** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (29)](../../ICML2026/llm_evaluation/index.md) · [💬 ACL2026 (92)](../../ACL2026/llm_evaluation/index.md) · [📷 CVPR2026 (25)](../../CVPR2026/llm_evaluation/index.md) · [🔬 ICLR2026 (53)](../../ICLR2026/llm_evaluation/index.md) · [🧠 NeurIPS2025 (75)](../../NeurIPS2025/llm_evaluation/index.md) · [📹 ICCV2025 (27)](../../ICCV2025/llm_evaluation/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (24)](../../ICML2026/llm_evaluation/index.md) · [💬 ACL2026 (91)](../../ACL2026/llm_evaluation/index.md) · [🔬 ICLR2026 (29)](../../ICLR2026/llm_evaluation/index.md) · [🧠 NeurIPS2025 (37)](../../NeurIPS2025/llm_evaluation/index.md) · [📹 ICCV2025 (27)](../../ICCV2025/llm_evaluation/index.md)
 
-🔥 **Top topics:** LLM ×5 · Reasoning ×4 · Alignment/RLHF ×3 · Agents ×2 · Compression ×2
-
-**[Axis-Aligned Document Dewarping](axis-aligned_document_dewarping.md)**
-
-:   This paper proposes to exploit the inherent axis-aligned geometric property of planar documents, systematically incorporating axis-alignment constraints across training, inference, and evaluation stages, achieving state-of-the-art document rectification performance and introducing a new evaluation metric, AAD.
+🔥 **Top topics:** LLM ×4 · Reasoning ×2
 
 **[BCWildfire: A Long-term Multi-factor Dataset and Deep Learning Benchmark for Boreal Wildfire Risk Prediction](bcwildfire_a_long-term_multi-factor_dataset_and_deep_learning_benchmark_for_bore.md)**
 
@@ -102,57 +71,21 @@ item_total: 39
 
 :   Drawing on Cognitive Load Theory (CLT) from psychology, this work decomposes the complexity of tool-use tasks into intrinsic load (structural complexity of the solution path) and extraneous load (ambiguity of problem formulation). It constructs ToolLoad-Bench, a benchmark with parametrically adjustable cognitive load, and employs an exponential decay model $\text{Acc} \approx e^{-(k \cdot CL + b)}$ to precisely characterize the capability boundaries of different agents.
 
-**[Beyond Cosine Similarity: Magnitude-Aware CLIP for No-Reference Image Quality Assessment](beyond_cosine_similarity_magnitude-aware_clip_for_no-reference_image_quality_ass.md)**
-
-:   This paper proposes MA-CLIP, which discovers and exploits the **magnitude information** of CLIP image features as a complementary perceptual quality cue. Combined with cosine similarity, it achieves training-free adaptive dual-cue fusion for image quality assessment.
-
-**[Break the Tie: Learning Cluster-Customized Category Relationships for Categorical Data Clustering](break_the_tie_learning_cluster-customized_category_relationships_for_categorical.md)**
-
-:   This paper proposes DISC, a method that learns cluster-customized category relationships (rather than a globally uniform distance) for each cluster. Through joint optimization of relationship trees and cluster assignments, DISC achieves an average rank of 1.25 across 12 datasets, substantially outperforming the previous best method (average rank 5.21).
-
 **[ConInstruct: Evaluating Large Language Models on Conflict Detection and Resolution in Instructions](coninstruct_evaluating_large_language_models_on_conflict_detection_and_resolutio.md)**
 
 :   This paper proposes ConInstruct, a benchmark for evaluating LLMs' ability to detect and resolve conflicting constraints in instructions. Results show that most proprietary models can detect conflicts reasonably well but rarely notify users explicitly, with DeepSeek-R1 and Claude-4.5-Sonnet achieving the best conflict detection performance (F1 of 91.5% and 87.3%, respectively).
-
-**[DcMatch: Unsupervised Multi-Shape Matching with Dual-Level Consistency](dcmatch_unsupervised_multi-shape_matching_with_dual-level_consistency.md)**
-
-:   This paper proposes DcMatch, an unsupervised multi-shape matching framework that employs a shape graph attention network to capture the underlying manifold structure of a shape collection for constructing a more expressive shared universe space, while enforcing dual-level cycle consistency constraints in both the spatial and spectral domains, achieving comprehensive state-of-the-art performance across multiple benchmark datasets.
-
-**[Deep Incomplete Multi-View Clustering via Hierarchical Imputation and Alignment](deep_incomplete_multi-view_clustering_via_hierarchical_imputation_and_alignment.md)**
-
-:   This paper proposes DIMVC-HIA, a deep incomplete multi-view clustering framework that integrates hierarchical imputation with dual alignment. The method first imputes missing cluster assignments and then imputes missing features in a coarse-to-fine manner, maintaining robust performance under high missing rates (up to 70%).
 
 **[DiCaP: Distribution-Calibrated Pseudo-labeling for Semi-Supervised Multi-Label Learning](dicap_distribution-calibrated_pseudo-labeling_for_semi-supervised_multi-label_le.md)**
 
 :   This paper proposes DiCaP (Distribution-Calibrated Pseudo-labeling), which estimates the posterior correctness rate of pseudo-labels to calibrate their weights, introduces a dual-threshold mechanism to separate confident and ambiguous regions with differentiated strategies, and surpasses the state of the art by up to 4.27% in semi-supervised multi-label learning.
 
-**[GazeInterpreter: Parsing Eye Gaze to Generate Eye-Body-Coordinated Narrations](gazeinterpreter_parsing_eye_gaze_to_generate_eye-body-coordinated_narrations.md)**
+**[Do LLMs Really Struggle at NL-FOL Translation? Revealing Their Strengths via a Novel Benchmarking Strategy](do_llms_really_struggle_at_nl-fol_translation_revealing_their_strengths_via_a_no.md)**
 
-:   This paper proposes GazeInterpreter, an LLM-based hierarchical framework that converts raw gaze signals into textual narrations via a symbolic gaze parser, integrates them with body motion narrations to produce eye-body-coordinated descriptions, and iteratively refines outputs through a self-correction loop, yielding significant improvements on downstream tasks including text-driven motion generation, action prediction, and behavior summarization.
+:   This paper critically examines existing evaluation methodologies for natural language to first-order logic (FOL) translation — specifically FOLIO and MALLS — exposing fundamental flaws in their datasets and evaluation protocols. The authors propose a novel benchmarking strategy that decomposes the translation task into ontology extraction (OE) and logical translation (LT), augmented with "most similar selection" and "ranking" subtasks. Experiments demonstrate that conversational LLMs (o3-mini, GPT-4o-mini, Qwen3 series) exhibit strong NL-FOL translation capabilities and genuine logical semantic understanding, while embedding-based models perform significantly worse.
 
-**[GDBA Revisited: Unleashing the Power of Guided Local Search for Distributed Constraint Optimization](gdba_revisited_unleashing_the_power_of_guided_local_search_for_distributed_const.md)**
+**[Gaming the Answer Matcher: Examining the Impact of Text Manipulation on Automated Judgment](gaming_the_answer_matcher_examining_the_impact_of_text_manipulation_on_automated.md)**
 
-:   To address the poor performance of GDBA on general-domain DCOPs, this paper systematically diagnoses three root causes—an overly aggressive violation condition, unbounded penalty accumulation, and uncoordinated penalty updates—and proposes the DGLS framework. Through an adaptive violation condition, an evaporation mechanism, and a synchronization scheme, DGLS fully unleashes the potential of guided local search, substantially outperforming state-of-the-art methods across multiple standard benchmarks.
-
-**[GOAL: Geometrically Optimal Alignment for Continual Generalized Category Discovery](goal_geometrically_optimal_alignment_for_continual_generalized_category_discover.md)**
-
-:   Grounded in Neural Collapse theory, this paper replaces dynamic classifiers with a fixed Equiangular Tight Frame (ETF) classifier and achieves continual generalized category discovery via supervised alignment and confidence-guided unsupervised alignment, reducing forgetting by 16.1% and improving novel category discovery by 3.2% across four benchmarks.
-
-**[GranAlign: Granularity-Aware Alignment Framework for Zero-Shot Video Moment Retrieval](granalign_granularity-aware_alignment_framework_for_zero-shot_video_moment_retri.md)**
-
-:   This paper proposes GranAlign, a training-free granularity-aware alignment framework that addresses the core challenge of semantic granularity mismatch in zero-shot video moment retrieval (ZVMR). By rewriting queries into simplified and detailed variants and matching them against query-agnostic and query-aware video descriptions respectively, GranAlign achieves a 3.23% improvement in mAP@avg on QVHighlights.
-
-**[Graph Out-of-Distribution Detection via Test-Time Calibration with Dual Dynamic Dictionaries](graph_out-of-distribution_detection_via_test-time_calibration_with_dual_dynamic_.md)**
-
-:   This paper proposes the BaCa framework, which generates boundary-aware synthetic graph topologies at test time via graphon estimation and mixup strategies, and adaptively calibrates OOD scores using dual priority-queue-based dynamic dictionaries with an attention mechanism. Without fine-tuning the pretrained model or requiring auxiliary OOD data, BaCa outperforms GOODAT on all 10 datasets with an average AUC improvement of 8.37%.
-
-**[HybriDLA: Hybrid Generation for Document Layout Analysis](hybridla_hybrid_generation_for_document_layout_analysis.md)**
-
-:   HybriDLA is the first approach to unify diffusion-based bounding box refinement and autoregressive query expansion within a single decoding layer, simulating a human coarse-to-fine reading strategy for document layout analysis. It achieves 83.5% mAP on DocLayNet with a vision-only model, approaching multimodal systems.
-
-**[Improved Runtime Guarantees for the SPEA2 Multi-Objective Optimizer](improved_runtime_guarantees_for_the_spea2_multi-objective_optimizer.md)**
-
-:   By rigorously analyzing the more complex selection mechanism of SPEA2, this paper demonstrates that its population dynamics are fundamentally different from those of NSGA-II — the σ-criterion induces a uniform distribution of objective values across the population — yielding runtime upper bounds with a substantially weaker dependence on population size, indicating that SPEA2 is more robust to parameter choices.
+:   This paper systematically evaluates three text manipulation strategies—verbosity, strategic multi-answer embedding, and correct-answer-first with contradictory suffix—against LLM-based answer-matching judges. The results show that these manipulations **do not improve scores and often reduce them**. Binary scoring proves more robust than continuous scoring, demonstrating that answer matching is resistant to low-cost text manipulation as an evaluation method.
 
 **[LLM-as-a-Judge for Scalable Test Coverage Evaluation](llm-as-a-judge_for_scalable_test_coverage_evaluation_accuracy_operational_reliab.md)**
 
@@ -166,77 +99,25 @@ item_total: 39
 
 :   This paper proposes LOREN, a curvature-aware zeroth-order optimization method that captures the anisotropic curvature of the loss landscape via a low-rank block-diagonal preconditioner, combined with REINFORCE Leave-One-Out (RLOO) variance reduction. LOREN achieves higher accuracy and faster convergence in LLM fine-tuning while reducing peak memory by up to 27.3% compared to MeZO-Adam.
 
-**[MAPS: Multi-Agent Personality Shaping for Collaborative Reasoning](maps_multi-agent_personality_shaping_for_collaborative_reaso.md)**
-
-:   This paper proposes MAPS, a five-agent collaborative reasoning framework that assigns distinct "personalities" to four functional agents based on the Big Five personality theory — Interpreter (Openness), Aligner (Agreeableness), Scholar (Conscientiousness), and Solver (Extraversion) — to achieve heterogeneous collaboration, complemented by a Critic Agent (Neuroticism → Socratic reflection) for iterative refinement. MAPS surpasses the GPT-4o baseline by 15.84% on MathVista/OlympiadBench/EMMA and, for the first time, exceeds human expert performance by 3.58%.
-
 **[MCTS-SQL: Light-Weight LLMs can Master the Text-to-SQL through Monte Carlo Tree Search](mcts-sql_light-weight_llms_can_master_the_text-to-sql_through_monte_carlo_tree_s.md)**
 
 :   This paper proposes MCTS-SQL, enabling lightweight LLMs (e.g., Qwen-1.5B) to achieve strong Text-to-SQL performance via Monte Carlo Tree Search — a three-component architecture (Selector for schema pruning + Direct Generator for initial SQL generation + MCTS-Refiner for iterative refinement), combined with a prefix caching mechanism that reduces inference time by 53%. Qwen-1.5B achieves 40.69% execution accuracy on BIRD, surpassing ChatGPT-3.5.
-
-**[MicroEvoEval: A Systematic Evaluation Framework for Image-Based Microstructure Evolution Prediction](microevoeval_a_systematic_evaluation_framework_for_image-based_microstructure_ev.md)**
-
-:   This paper introduces MicroEvoEval, the first standardized benchmark for image-level microstructure evolution prediction, encompassing 4 representative physical tasks (planar wave propagation, grain growth, spinodal decomposition, dendritic solidification), 14 models (5 domain-specific + 9 general spatiotemporal architectures), and a multi-dimensional evaluation framework (numerical accuracy + physical fidelity + computational efficiency). The study finds that modern general-purpose architectures (e.g., VMamba) outperform domain-specific models in long-term stability and physical fidelity while achieving an order-of-magnitude improvement in computational efficiency.
 
 **[MindVote: When AI Meets the Wild West of Social Media Opinion](mindvote_when_ai_meets_the_wild_west_of_social_media_opinion.md)**
 
 :   This paper introduces MindVote — the first LLM opinion prediction benchmark grounded in real social media poll data, comprising 3,918 naturally occurring polls (across 23 topics) collected from Reddit and Weibo, enriched with platform- and topic-level context. Evaluation of 15 LLMs reveals: the best model (o3-medium) achieves a 1-Wasserstein score of only 0.892 versus an upper bound of 0.972; survey-specialized fine-tuned models underperform general-purpose models (the "survey specialization trap"); and models exhibit strong cultural alignment — Western models excel on Reddit while Chinese models excel on Weibo.
 
-**[NeSTR: A Neuro-Symbolic Abductive Framework for Temporal Reasoning in Large Language Models](nestr_a_neuro-symbolic_abductive_framework_for_temporal_reasoning_in_large_langu.md)**
-
-:   This paper proposes NeSTR, a neuro-symbolic prompting strategy that converts natural language temporal facts into structured symbolic predicates, combined with consistency verification and abductive reflection for error correction. Under a zero-shot setting, NeSTR enables LLMs to achieve high-quality temporal reasoning, attaining an average F1 of 89.7 on GPT-4o-mini, compared to 64.9 for vanilla prompting and 85.8 for TISER.
-
 **[OptScale: Probabilistic Optimality for Inference-time Scaling](optscale_probabilistic_optimality_for_inference-time_scaling.md)**
 
 :   This paper proposes OptScale, a probabilistic optimality framework that models the probability distribution of verifier scores to derive a theoretical lower bound on the optimal number of samples, dynamically determining the minimum number of samples required per problem and substantially reducing computational overhead while preserving inference accuracy.
-
-**[Perspective from a Broader Context: Can Room Style Knowledge Help Visual Floorplan Localization?](perspective_from_a_broader_context_can_room_style_knowledge_help_visual_floorpla.md)**
-
-:   This paper proposes leveraging room style knowledge — obtained via unsupervised clustering pretraining in the form of a room discriminator — to resolve ambiguities caused by repetitive structures in visual floorplan localization (FLoc), achieving state-of-the-art performance on two standard benchmarks: Gibson and Structured3D.
-
-**[RefineVAD: Semantic-Guided Feature Recalibration for Weakly Supervised Video Anomaly Detection](refinevad_semantic-guided_feature_recalibration_for_weakly_supervised_video_anom.md)**
-
-:   This paper proposes RefineVAD, a framework comprising two modules — Motion-aware Temporal Attention Recalibration (MoTAR) and Category-Oriented REfinement (CORE) — that jointly models temporal motion dynamics and anomaly category semantics, achieving precise localization and interpretable detection of anomalous events in weakly supervised video anomaly detection.
-
-**[Regular Games – an Automata-Based General Game Playing Language](regular_games_--_an_automata-based_general_game_playing_language.md)**
-
-:   This paper introduces Regular Games (RG), a general game playing system centered on nondeterministic finite automata (NFA) for encoding game rules. RG employs a multi-level language architecture (low-level RG, high-level HRG, and domain-specific frameworks) that covers all finite turn-based games — including those with imperfect information and stochasticity — while generating forward models that consistently outperform the previously fastest GGP system, RBG, and typically run 10–20× faster than Ludii.
-
-**[Sampling Control for Imbalanced Calibration in Semi-Supervised Learning](sampling_control_for_imbalanced_calibration_in_semi-supervised_learning.md)**
-
-:   This paper proposes SC-SSL, a framework that introduces an **expansion classifier** for decoupled sampling control to mitigate feature-level imbalance, and leverages the **bias term** of a linear layer as an optimized bias vector to directly calibrate logits at inference time, achieving state-of-the-art performance across multiple data distribution settings.
-
-**[SpikCommander: A High-Performance Spiking Transformer with Multi-View Learning for Efficient Speech Command Recognition](spikcommander_a_high-performance_spiking_transformer_with_multi-view_learning_fo.md)**
-
-:   This paper proposes SpikCommander, a fully spike-driven Transformer architecture that jointly enhances temporal and channel feature modeling via **Multi-view Spike Temporal-Aware Self-Attention (MSTASA)** and **Spike Context Refinement MLP (SCR-MLP)**, surpassing state-of-the-art SNN methods on SHD/SSC/GSC benchmarks with fewer parameters.
-
-**[Streaming Generated Gaussian Process Experts for Online Learning and Control: Extended Version](streaming_generated_gaussian_process_experts_for_online_learning_and_control_ext.md)**
-
-:   This paper proposes SkyGP (Streaming Kernel-induced Progressively Generated Expert GP), which handles streaming data via **kernel-distance-driven progressive expert generation** and **time-aware configurable aggregation**, inheriting the learning guarantees of exact GP while maintaining bounded computational complexity. SkyGP comprehensively outperforms state-of-the-art methods on both benchmark regression tasks and real-time control experiments.
-
-**[Structured Language Generation Model: Loss Calibration and Formatted Decoding for Efficient Text](structured_language_generation_model_loss_calibration_and_formatted_decoding_for.md)**
-
-:   This paper proposes the SLGM framework, which reformulates structured prediction tasks for generative language models as classification problems via three components: **structured input format**, **format loss**, and **format-aware decoding**. Without introducing additional model parameters, SLGM significantly improves structural prediction performance of sub-1B models across 13 datasets spanning 5 task categories, including NER, RE, and SRL.
 
 **[Test-time Diverse Reasoning by Riemannian Activation Steering](test-time_diverse_reasoning_by_riemannian_activation_steering.md)**
 
 :   This paper proposes SPREAD, an unsupervised test-time activation steering framework that maximizes the total volume spanned by hidden activations across multiple reasoning paths by solving a Riemannian optimization problem on a product of spherical manifolds. SPREAD improves reasoning diversity and accuracy in Best-of-N sampling, outperforming temperature sampling baselines on mathematical reasoning benchmarks.
 
-**[Think How Your Teammates Think: Active Inference Can Benefit Decentralized Execution](think_how_your_teammates_think_active_inference_can_benefit_decentralized_execut.md)**
-
-:   This paper proposes AIM (Active Inference Modeling), a framework for decentralized multi-agent reinforcement learning that models teammates' active inference processes — as perception–belief–action triple portraits — based solely on local observations without any communication. A dual filtering mechanism based on accuracy and relevance selectively integrates teammate belief portraits to assist decision-making. AIM achieves state-of-the-art or near-state-of-the-art performance across four benchmarks: SMAC, SMACv2, MPE, and GRF.
-
 **[Towards a Common Framework for Autoformalization](towards_a_common_framework_for_autoformalization.md)**
 
 :   This paper systematically surveys existing work on autoformalization across mathematics, logical reasoning, planning, and knowledge representation, and proposes a unified cross-disciplinary definitional framework. Autoformalization is defined as the semantically equivalent transformation from informal language to formal reasoning languages, with the goal of facilitating methodology sharing across research communities and accelerating the development of next-generation AI reasoning systems.
-
-**[Towards a Rigorous Understanding of the Population Dynamics of the NSGA-III: Tight Runtime Bounds](towards_a_rigorous_understanding_of_the_population_dynamics_of_the_nsga-iii_tigh.md)**
-
-:   This paper establishes the first tight runtime bound $\Theta(n^2 \ln n / \mu)$ for NSGA-III on the classical bi-objective OneMinMax benchmark, reveals the population dynamics of NSGA-III, and proves that it outperforms NSGA-II under appropriate population sizes.
-
-**[TRACE: A Generalizable Drift Detector for Streaming Data-Driven Optimization](trace_a_generalizable_drift_detector_for_streaming_data-driven_optimization.md)**
-
-:   This paper proposes TRACE, a transferable concept drift detector based on attention-based sequence learning. By tokenizing statistical features and employing a dual-attention encoder, TRACE learns drift patterns that generalize across tasks, enabling deployment on unseen datasets and integration as a plug-and-play module into streaming data-driven optimization algorithms.
 
 **[Where Norms and References Collide: Evaluating LLMs on Normative Reasoning](where_norms_and_references_collide_evaluating_llms_on_normative_reasoning.md)**
 

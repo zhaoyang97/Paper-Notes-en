@@ -2,9 +2,10 @@
 title: >-
   [Paper Note] Whispering Agents: An Event-Driven Covert Communication Protocol for the Internet of Agents
 description: >-
-  [AAAI 2026][Covert Communication] This paper presents the first formal definition of a "Covert Event Channel" in the Internet of Agents (IoA) and proposes the ΠCCAP protocol, which embeds secret data across the storage…
+  [AAAI 2026][LLM/NLP][Covert Communication] This paper presents the first formal definition of a "Covert Event Channel" in the Internet of Agents (IoA) and proposes the ΠCCAP protocol…
 tags:
   - "AAAI 2026"
+  - "LLM/NLP"
   - "Covert Communication"
   - "Steganography"
   - "Internet of Agents"
@@ -146,11 +147,11 @@ The protocol does not involve model training. Key algorithmic configurations inc
 
 ## Related Papers
 
-- [\[AAAI 2026\] Symbolic Planning and Multi-Agent Path Finding in Extremely Dense Environments with Unassigned Agents](symbolic_planning_and_multi-agent_path_finding_in_extremely_dense_environments_w.md)
-- [\[ICLR 2026\] Speculative Actions: A Lossless Framework for Faster AI Agents](../../ICLR2026/others/speculative_actions_faster_ai_agents.md)
-- [\[NeurIPS 2025\] Exact Learning of Arithmetic with Differentiable Agents](../../NeurIPS2025/others/exact_learning_of_arithmetic_with_differentiable_agents.md)
-- [\[CVPR 2026\] GardenDesigner: Encoding Aesthetic Principles into Jiangnan Garden Construction via a Chain of Agents](../../CVPR2026/others/gardendesigner_encoding_aesthetic_principles_into_jiangnan_garden_construction_v.md)
-- [\[AAAI 2026\] Provably Data-Driven Projection Method for Quadratic Programming](provably_data-driven_projection_method_for_quadratic_programming.md)
+- [\[AAAI 2026\] Blue Teaming Function-Calling Agents](blue_teaming_function-calling_agents.md)
+- [\[AAAI 2026\] Scaling Equitable Reflection Assessment in Education via Large Language Models and Role-Based Feedback Agents](scaling_equitable_reflection_assessment_in_education_via_large_language_models_a.md)
+- [\[ICLR 2026\] Meta-RL Induces Exploration in Language Agents](../../ICLR2026/llm_nlp/meta-rl_induces_exploration_in_language_agents.md)
+- [\[ICLR 2026\] Speculative Actions: A Lossless Framework for Faster AI Agents](../../ICLR2026/llm_nlp/speculative_actions_faster_ai_agents.md)
+- [\[ICLR 2026\] ELLMob: Event-Driven Human Mobility Generation with Self-Aligned LLM Framework](../../ICLR2026/llm_nlp/ellmob_event-driven_human_mobility_generation_with_self-aligned_language_models.md)
 
 </div>
 

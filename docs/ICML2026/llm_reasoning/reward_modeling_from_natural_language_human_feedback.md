@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Reward Modeling from Natural Language Human Feedback
 description: >-
-  [ICML 2026][LLM Reasoning][Generative Reward Model (GRM)] This paper demonstrates that generative reward models (GRMs) trained on binary preference rewards suffer significantly from "outcome-process inconsistency" (corre…
+  [ICML 2026][LLM Reasoning][Generative Reward Model (GRM)] This paper identifies a severe "outcome-process inconsistency" (20–30%, up to 44%) in generative reward models (GRM) trained on binary preference rewards…
 tags:
   - "ICML 2026"
   - "LLM Reasoning"
@@ -12,7 +12,7 @@ tags:
   - "MetaRM"
   - "GRPO"
 date: 2026-05-08
-content_hash: 035e0e4379fed6da
+content_hash: 7ea0db742e8aa84c
 ---
 
 # Reward Modeling from Natural Language Human Feedback
@@ -24,98 +24,116 @@ content_hash: 035e0e4379fed6da
 **Keywords**: Generative Reward Model (GRM), Process Reward, Natural Language Feedback, MetaRM, GRPO
 
 ## TL;DR
-This paper demonstrates that generative reward models (GRMs) trained on binary preference rewards suffer significantly from "outcome-process inconsistency" (correct preference but incorrect critique), ranging from 20-30% up to 44%. The authors propose RM-NLHF, which utilizes the similarity between model critiques and human critique core arguments as an additional process reward. By using MetaRM to automatically predict these process rewards and updating it online alongside the policy, the method consistently outperforms SOTA GRMs trained via outcome-only GRPO across multiple benchmarks.
+This paper identifies a severe "outcome-process inconsistency" (20–30%, up to 44%) in generative reward models (GRM) trained on binary preference rewards, where the model guesses the correct preference but provides an incorrect critique. The authors propose RM-NLHF: using the similarity between model and human critiques on core arguments as an additional process reward, and employing MetaRM to automatically predict process rewards and update them online with policy changes. This approach consistently outperforms outcome-only GRPO-trained SOTA GRMs across multiple benchmarks.
 
 ## Background & Motivation
 
-**Background**: Generative Reward Models (GRMs) are mainstream in LLM alignment and RLHF because they output reasoning critiques alongside preference labels, offering better robustness and interpretability than traditional scalar RMs. Training typically relies on RLVR + GRPO, where the model generates reasoning and critiques for a pair of responses to produce an A/B label. The binary reward $R_{\text{outcome}}\in\{0,1\}$ is derived from whether the label matches the ground truth.
+**Background**: Generative Reward Models (GRM), capable of outputting both critique and preference labels, are more robust and interpretable than traditional scalar RMs, making them mainstream for LLM alignment and RLHF. Training typically uses RLVR + GRPO: the model generates reasoning and critique for a pair of answers, then outputs an A/B label. The binary reward $R_{\text{outcome}}\in\{0,1\}$ is based on label-ground truth match.
 
-**Limitations of Prior Work**: Comparative experiments were conducted on MATH-500 (math, large solution space) and HelpSteer3 (pairwise rewards, binary solution space). In math tasks, a correct outcome almost always implies a correct process. However, in pairwise rewarding, RM-R1-DeepSeek-Distilled-Qwen-7B exhibits a 44.24% rate of "correct outcome / incorrect critique," while Gemini-2.5-Pro and Claude-3.7-Sonnet show 26.1% and 33.6% respectively. This phenomenon of "guessing the label without a correct critique" injects significant pseudo-rewards, causing the RL policy to converge toward generating flawed critiques.
+**Limitations of Prior Work**: The authors conduct comparative experiments on MATH-500 (math, large solution space) and HelpSteer3 (pairwise reward, binary solution space). For math tasks, correct outcomes almost always imply correct processes, with negligible inconsistency. However, for pairwise rewarding, RM-R1-DeepSeek-Distilled-Qwen-7B exhibits a 44.24% "correct outcome / incorrect critique" rate, gemini-2.5-pro 26.1%, and claude-3.7-sonnet 33.6%. This phenomenon injects a large amount of spurious reward, causing RL to converge to policies generating incorrect critiques.
 
-**Key Challenge**: The size of the solution space determines the reliability of outcome supervision. In math, the answer space is vast (obtaining "42" almost necessitates correct reasoning), whereas binary preference tasks have a solution space of only {A, B}. Random guessing yields a 50% hit rate, making the outcome signal highly noisy. Furthermore, binary judgments cannot be easily converted into fill-in-the-blank formats to expand the solution space like math problems.
+**Key Challenge**: The reliability of outcome supervision depends on solution space size. Math problems have a vast answer space (an answer like "42" almost always requires correct reasoning), while binary preference tasks have only {A, B}, so random guessing yields a 50% hit rate, making the outcome signal very noisy. However, binary tasks cannot be reformulated to expand the solution space as in math.
 
-**Goal**: To provide a reliable process reward for GRMs without modifying the pairwise task structure, integrating critique quality directly into the training loop while overcoming the scalability bottleneck of scarce human critique data.
+**Goal**: Without altering the pairwise task structure, provide GRM with a reliable process reward so that critique quality directly enters the training loop, while also addressing the scalability bottleneck of scarce human critique data.
 
-**Key Insight**: Natural language feedback (critiques) provided by humans naturally serves as process supervision. The overlap in core arguments between model critiques and human critiques serves as a direct proxy for critique validity. Additionally, a MetaRM can be trained to synthesize pseudo-critique data from limited human annotations.
+**Key Insight**: Human-provided natural language feedback (critique) for answer pairs is inherently process supervision—the overlap of core arguments between model and human critiques is a direct proxy for critique quality. Additionally, a MetaRM can be trained to generate pseudo-critique data from limited human critiques.
 
-**Core Idea**: The similarity between "GRM critiques and human core arguments" is used as a process reward, combined with the outcome reward for GRPO. MetaRM extrapolates this signal from small-scale human data to unlabeled data and is updated online during RL training to mitigate policy drift.
+**Core Idea**: Use the "core argument similarity between GRM and human critiques" as a process reward, combined with outcome reward in GRPO. MetaRM extrapolates this reward signal from limited human data to unlabeled data and is updated online during RL training to track policy drift.
 
 ## Method
 
 ### Overall Architecture
-The framework extends GRPO: given a query $q$ and candidates $y_A, y_B$ with preference label $l\in\{A,B\}$, the GRM $\pi_\theta$ generates a CoT, critique, and predicted label $\hat l$. For each prompt, $N$ rollouts yield an outcome reward $R_{\text{outcome}}^i$, used to calculate the advantage $\hat A_i$ via group normalization. RM-NLHF adds a process reward path: (1) when human critique $h$ is available, the similarity between core arguments of the GRM critique $\hat c$ and $h$ is computed; (2) when $h$ is absent, MetaRM predicts the reward; (3) MetaRM is updated online throughout training to match the current policy distribution. Finally, the advantage is determined by both outcome and process rewards.
+The baseline follows GRPO: query $q$ + candidates $y_A, y_B$ + preference label $l\in\{A,B\}$ → GRM $\pi_\theta$ generates CoT + critique + predicts $\hat l$; for each prompt, rollout $N$ times to obtain outcome rewards $R_{\text{outcome}}^i$, then normalize within the group to get advantage $\hat A_i$. RM-NLHF adds a process reward: (1) when human critique $h$ is available, directly compute the core argument similarity between GRM critique $\hat c$ and $h$; (2) when $h$ is absent, use MetaRM to predict; (3) MetaRM is updated online throughout training to match the current policy output distribution. The final advantage is determined by both outcome and process rewards.
 
 ### Key Designs
 
-1. **Similarity w/ Core HC as Process Reward**:
-    - **Function**: To compress the validity of a GRM critique into a machine-computable numerical reward while avoiding interference from nitpicky critiques.
-    - **Mechanism**: An external strong LLM (Gemini-2.5-Pro) extracts core arguments from both human critique $h$ and GRM critique $\hat c$. F1, Recall, and Precision variants of similarity are then calculated. Tests on a 49-sample human-annotated subset showed that LLM-as-a-Meta-Judge was unstable, and All HC similarity was easily degraded by nitpicky points. Core HC similarity most closely aligned with human labels. The final process reward is $R_{\text{process}}=\text{sim}(\text{core}(h), \text{core}(\hat c))$.
-    - **Design Motivation**: Direct LLM evaluation is prone to judge bias and stylistic preferences. Core argument overlap maintains semantic judgment while filtering out noise, proving quantitatively superior. This reward is compatible with the RLVR verifier framework.
+1. **Core Argument Similarity (Similarity w/ Core HC) as Process Reward**:
 
-2. **MetaRM: Predicting Process Rewards from Human Critiques**:
-    - **Function**: To address the scalability bottleneck of scarce human critique data. Most preference datasets (e.g., UltraFeedback, HelpSteer) contain only outcome labels.
-    - **Mechanism**: An auxiliary model, MetaRM, is trained on a subset with human critiques to map $(q, y_A, y_B, \hat c)$ to a process reward estimate (fitting the core similarity between $\hat c$ and $h$). At inference, it predicts rewards for data lacking human critiques.
-    - **Design Motivation**: Human critique annotation is extremely costly. MetaRM distills the "critique evaluation capability" into a lightweight model, allowing it to generalize to large-scale datasets with only outcome labels.
+    - **Function**: Compresses "whether the GRM critique is reasonable" into a computable scalar reward, avoiding interference from nitpicky critiques.
+    - **Mechanism**: An external strong LLM (gemini-2.5-pro) extracts core arguments from both human critique $h$ and GRM critique $\hat c$ (removing trivial nitpicks), then computes F1/Recall/Precision similarity variants. On a 49-sample human-annotated subset, direct LLM-as-Meta-Judge evaluation of $\hat c$ is unstable; All HC similarity is sensitive to nitpicky critiques; Core HC similarity aligns best with human labels. The final process reward $R_{\text{process}}=\text{sim}(\text{core}(h), \text{core}(\hat c))$ is weighted with $R_{\text{outcome}}$ in GRPO's advantage normalization.
+    - **Design Motivation**: Direct LLM judgment of critique correctness is affected by judge bias and style; "core argument overlap" retains semantic-level assessment while filtering nitpicky noise, and is quantitatively optimal among proxies. This reward is compatible with RLVR's verifier framework (a scalar reward), requiring no GRPO loss modification.
 
-3. **Online MetaRM: Synchronized Evolution with GRM**:
-    - **Function**: To alleviate distribution mismatch caused by policy drift during RL training.
-    - **Mechanism**: Training alternates between updating the GRM and MetaRM. After a GRM update step via GRPO, the current policy generates a batch of $\hat c$ on new prompts. These are paired with ground-truth $h$ (from the critique-labeled subset) to update MetaRM, which then provides rewards for the next GRM step.
-    - **Design Motivation**: Static reward models often fail as the rollout distribution shifts (Reward Hacking). Online updates allow MetaRM to follow the policy, mitigating Goodhart’s Law issues.
+2. **MetaRM: Predicting Process Reward from Human Critique Data**:
+
+    - **Function**: Addresses the scalability bottleneck of scarce human critique data—most preference datasets (UltraFeedback, HelpSteer series) have only outcome labels, not critiques.
+    - **Mechanism**: Trains an auxiliary model MetaRM, inputting $(q, y_A, y_B, \hat c)$ and outputting an estimated process reward for the critique. MetaRM is trained on the subset with human critiques, targeting the "core similarity between $\hat c$ and human $h$"; at inference, it predicts rewards for data without human critiques. Thus, limited human annotation enables process supervision on the full dataset.
+    - **Design Motivation**: Human critique annotation is costly (even HelpSteer3 only partially annotated); training only on 50k critique-labeled samples cannot compete with outcome-only RL in scale. MetaRM distills "critique evaluation ability" into a lightweight model, generalizing to large-scale outcome-only data.
+
+3. **Online MetaRM: Reward Model Co-evolving with GRM**:
+
+    - **Function**: Mitigates distribution mismatch in MetaRM evaluation due to policy drift during RL training.
+    - **Mechanism**: Alternately updates GRM and MetaRM in the training loop. GRM updates via GRPO → current policy rollouts new prompts to generate $\hat c$ → these $\hat c$ paired with ground-truth $h$ (on critique-labeled subset) supervise MetaRM update → return to GRM. Thus, MetaRM always accurately judges current policy outputs, avoiding reward hacking from static reward models.
+    - **Design Motivation**: Classic RLHF suffers from reward model failure after rollout distribution drift; online updates allow MetaRM to track the policy, avoiding Goodhart's Law. The authors find that online MetaRM training approaches the effect of "full human critique supervision" while greatly reducing annotation needs.
 
 ### Loss & Training
-The base is GRPO (Eq. 1-3) where the normalized advantage is $\hat A_i=(R_i-\bar R)/\sigma$. The policy is updated via clipped policy gradient with KL regularization. RM-NLHF replaces the reward with $R = R_{\text{outcome}} + \lambda \cdot R_{\text{process}}$, where the process reward originates from Core HC similarity or MetaRM. Online MetaRM is supervised via MSE or ranking loss and updated every $k$ GRPO steps. MetaRM and GRM can share a backbone with independent heads.
+
+The foundation is GRPO (Equations 1–3): group-normalized advantage $\hat A_i=(R_i-\bar R)/\sigma$, policy updated with clipped policy gradient + KL regularization. RM-NLHF replaces the reward with $R = R_{\text{outcome}} + \lambda \cdot R_{\text{process}}$, where process reward comes from Core HC similarity or MetaRM prediction. Online MetaRM is supervised with MSE or ranking loss, updated every $k$ GRPO steps. MetaRM and GRM share the backbone but have independent heads (the paper compares with fully independent models, which are feasible but more expensive).
 
 ## Key Experimental Results
 
 ### Main Results
-Comparisons were conducted on HelpSteer3, RewardBench, and PandaLM using base GRMs such as the RM-R1 series, Qwen, and closed-source models.
 
-| Training Paradigm | Critique Quality (Core Argument F1) | Outcome Accuracy | Remarks |
-| :--- | :--- | :--- | :--- |
-| Outcome-only GRPO (SOTA baseline) | Low | High but 20–44% inconsistency | Standard approach |
+Benchmarks include HelpSteer3, RewardBench, PandaLM, etc., comparing base GRMs such as the RM-R1 series, Qwen's in-house GRM, and closed-source gemini/claude.
+
+| Training Paradigm | Critique Quality (Core Argument F1) | Outcome Accuracy | Notes |
+|-------------------|-------------------------------------|------------------|-------|
+| Outcome-only GRPO (SOTA baseline) | Low | High but 20–44% outcome-process inconsistency | Mainstream approach |
 | RM-NLHF + Full Human Critique | Highest | Significant improvement | Upper bound |
-| RM-NLHF + Offline MetaRM | Near Full Human Critique | Significantly > Outcome-only | Annotation saving |
-| **RM-NLHF + Online MetaRM** | Closest to Upper Bound | Significantly > Outcome-only | Practical optimal |
+| RM-NLHF + Offline MetaRM | Close to full human critique | Significantly higher than outcome-only | Annotation efficient |
+| **RM-NLHF + Online MetaRM** | Closest to full human critique upper bound | Significantly higher than outcome-only | Practically optimal |
 
-### Ablation Study (Process Reward Proxy, 49-sample subset)
+### Ablation Study (Process Reward Selection, 49-sample Human-Annotated Subset)
 
-| Process Reward Scheme | Alignment with Human Labels |
-| :--- | :--- |
-| LLM-as-a-Meta-Judge (Direct) | Low |
+| Process Reward Scheme | Accuracy vs Human Label |
+|----------------------|------------------------|
+| LLM-as-a-Meta-Judge (Direct Judgment) | Low |
 | Similarity w/ All HC (F1) | Medium |
-| Similarity w/ All HC (Recall) | Medium-Low |
+| Similarity w/ All HC (Recall) | Medium-low |
 | Similarity w/ All HC (Precision) | Medium |
 | **Similarity w/ Core HC** | Highest |
 
 ### Key Findings
-- Math tasks show nearly 100% outcome-process correspondence, whereas pairwise tasks exhibit 20–44% inconsistency even in SOTA GRMs, proving outcome-only supervision is fundamentally unreliable for binary tasks.
-- "Core HC similarity" consistently outperforms both "All HC" and "Direct LLM judgment," highlighting that removing nitpicky critiques is crucial for process reward design.
-- Online MetaRM achieves results close to full human supervision while significantly reducing annotation requirements; offline MetaRM performs worse due to distribution shift.
-- Even when outcome accuracy gains are modest, the significant boost in critique quality ensures the GRM provides better signals for downstream RLHF.
+- For math tasks, outcome ⇒ process is nearly 100% consistent; for pairwise tasks, even SOTA GRMs show 20–44% outcome-process inconsistency, indicating outcome-only supervision is fundamentally unreliable for binary tasks.
+- "Core HC similarity" consistently outperforms "All HC" and "LLM direct judgment"—removing nitpicky critiques is key in process reward design.
+- Online MetaRM achieves results close to full human critique supervision with much less annotation; offline MetaRM performs slightly worse due to distribution drift.
+- Even if outcome accuracy improves little, critique quality improves significantly → GRM as a reward provider in downstream RLHF benefits more, since downstream policies receive critique signals, not just labels.
 
 ## Highlights & Insights
-- **Clear Diagnosis of Inconsistency**: Explaining "why GRMs guess" through the theoretical lens of solution space size—large spaces provide implicit verification, while small spaces require explicit supervision.
-- **"Core Argument Similarity" as Process Reward**: A key insight to avoid sensitivity to nitpicky details, applicable to LLM-as-a-judge and QA evaluation tasks.
-- **Online MetaRM for Reward Drift**: Addresses the classic Goodhart problem via an actionable engineering protocol (alternating policy and MetaRM updates).
-- **Extreme Data Efficiency**: Using a tiny 49-sample subset to validate proxies and limited subsets for MetaRM training makes this a model for cost-efficient alignment.
+- **Clear diagnosis of outcome-process inconsistency**: Explains why GRMs can "guess" using the solution space size framework—large solution spaces naturally verify process via outcome, while small spaces require explicit process supervision.
+- **"Core argument similarity" as process reward**: Avoids over-sensitivity to nitpicky critiques, a key insight for critique-based reward design, directly applicable to LLM judge and QA evaluation.
+- **Online MetaRM addresses reward model drift**: Provides a concrete engineering protocol (alternating policy and MetaRM updates) to tackle the classic Goodhart problem in RLHF.
+- **Minimal human critique required**: Validates proxy selection with 49 samples + trains MetaRM on a subset, exemplifying cost-efficient alignment.
 
 ## Limitations & Future Work
-- The assumption that "likelihood equals correctness" is not strictly true; models stylistically similar to human critiques may receive inflated rewards.
-- Core HC extraction depends on a strong external LLM (Gemini-2.5-Pro), introducing cost and potential bias that MetaRM might amplify.
-- Online MetaRM increases training complexity and wall-clock time; detailed efficiency analysis is missing.
-- Verification is limited to pairwise tasks; the effect on listwise or scalar reward tasks remains unexamined.
-- Lack of human evaluation for critique quality specifically compared against verifier-based RL (e.g., updated RM-R1 versions).
+- The assumption "likelihood = correctness" for process rewards does not strictly hold: models highly correlated with human critique style may receive inflated rewards.
+- Core HC extraction relies on an external strong LLM (gemini-2.5-pro), introducing extra cost and potential bias; self-distillation into MetaRM may amplify bias.
+- Online MetaRM increases training complexity (dual model alternation) and wall-clock cost; no detailed training efficiency analysis is provided.
+- Only validated on pairwise rewarding tasks; not tested for solution space bias in listwise or scalar reward tasks.
+- Lacks rigorous human evaluation of critique quality compared to verifier-based RL (e.g., updated RM-R1 family).
 
 ## Related Work & Insights
-- **vs. Outcome-only GRPO GRMs (RM-R1, Wang 2025c)**: Directly uses these as baselines, quantifies their critique failure rates, and provides a dual-reward solution.
-- **vs. PRM (Process Reward Model)**: While PRMs provide stepwise rewards for reasoning, this work provides critique-level rewards; both share the philosophy that process supervision is superior to outcome supervision.
-- **vs. RLAIF / Constitutional AI**: While those use AI feedback, this method anchors on human critiques as ground truth before distilling to MetaRM, offering better interpretability.
+- **vs outcome-only GRPO GRM (RM-R1, Wang 2025c)**: The authors use these SOTA models as baselines, quantitatively revealing their critique failure rates and proposing a dual-reward fix.
+- **vs PRM (Process Reward Model) in mathematical reasoning**: PRM provides stepwise rewards, this work provides critique-level rewards; both share the central idea that process supervision outperforms pure outcome supervision.
+- **vs RLAIF / Constitutional AI**: Uses AI self-evaluation instead of human feedback, but this work first uses human critique as ground truth, then distills into MetaRM, offering stronger interpretability and controllability.
+- **Cross-task insights**: Online MetaRM updates can be extended to any scenario where "reward models fail during RL training" (agent reward shaping, code RM, video generation RM).
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ Originality in the "solution space" framework, Core HC similarity, and Online MetaRM, though components have separate precedents.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Multiple benchmarks and proxy comparisons; however, the 49-sample subset is small and human evaluation is missing.
-- **Writing Quality**: ⭐⭐⭐⭐ Intuitive motivation and clear contributions, though terminology is dense.
-- **Value**: ⭐⭐⭐⭐ Adds essential process supervision to GRM training, easily transferable to existing RLHF/RLAIF pipelines.
+- Novelty: ⭐⭐⭐⭐ The "solution space size determines outcome supervision quality" framework, Core HC similarity, and Online MetaRM are all original, though each component has precedents (PRM, AI feedback, online reward model).
+- Experimental Thoroughness: ⭐⭐⭐⭐ Multiple benchmarks, proxy comparisons, and critique quality analysis; lacks human evaluation, and the 49-sample subset is small.
+- Writing Quality: ⭐⭐⭐⭐ Problem motivation (Figures 1/2) is intuitive, formulas and contributions are clear; terminology is dense.
+- Value: ⭐⭐⭐⭐ Provides the missing process supervision for GRM training; the method can be directly transferred to existing RLHF/RLAIF pipelines, with significant impact on the reward modeling community.
+
+## Related Papers
+
+- [\[ICML 2026\] NAACA: Training-Free NeuroAuditory Attentive Cognitive Architecture with Oscillatory Working Memory for Salience-Driven Attention Gating](naaca_training-free_neuroauditory_attentive_cognitive_architecture_with_oscillat.md)
+- [\[ICML 2026\] Polyphonia: Zero-Shot Timbre Transfer in Polyphonic Music with Acoustic-Informed Attention Calibration](polyphonia_zero-shot_timbre_transfer_in_polyphonic_music_with_acoustic-informed_.md)
+- [\[ICML 2026\] Probing Cross-modal Information Hubs in Audio-Visual LLMs](probing_cross-modal_information_hubs_in_audio-visual_llms.md)
+- [\[ICML 2026\] MECAT: A Multi-Experts Constructed Benchmark for Fine-Grained Audio Understanding Tasks](mecat_a_multi-experts_constructed_benchmark_for_fine-grained_audio_understanding.md)
+- [\[ICML 2026\] Multimodal Fact-Level Attribution for Verifiable Reasoning](multimodal_fact-level_attribution_for_verifiable_reasoning.md)
+
+</div>
+
+<!-- RELATED:END -->
 
 <!-- RELATED:START -->
 
@@ -127,7 +145,7 @@ Comparisons were conducted on HelpSteer3, RewardBench, and PandaLM using base GR
 - [\[ACL 2026\] C2: Scalable Rubric-Augmented Reward Modeling from Binary Preferences](../../ACL2026/llm_reasoning/c2_scalable_rubric-augmented_reward_modeling_from_binary_preferences.md)
 - [\[ACL 2026\] Efficient Process Reward Modeling via Contrastive Mutual Information](../../ACL2026/llm_reasoning/efficient_process_reward_modeling_via_contrastive_mutual_information.md)
 - [\[ICLR 2026\] Fixing the Broken Compass: Diagnosing and Improving Inference-Time Reward Modeling](../../ICLR2026/llm_reasoning/fixing_the_broken_compass_diagnosing_and_improving_inference-time_reward_modelin.md)
-- [\[ICML 2026\] Prioritize the Process, Not Just the Outcome: Rewarding Latent Thought Trajectories Improves Reasoning in Looped Language Models](prioritize_the_process_not_just_the_outcome_rewarding_latent_thought_trajectorie.md)
+- [\[AAAI 2026\] Understanding Syllogistic Reasoning in LLMs from Formal and Natural Language Perspectives](../../AAAI2026/llm_reasoning/understanding_syllogistic_reasoning_in_llms_from_formal_and_natural_language_per.md)
 
 </div>
 

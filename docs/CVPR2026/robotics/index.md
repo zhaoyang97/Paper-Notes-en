@@ -1,8 +1,8 @@
 ---
 title: >-
-  CVPR2026 Robotics & Embodied AI Papers · 34 Notes
+  CVPR2026 Robotics & Embodied AI Papers · 42 Notes
 description: >-
-  34 CVPR2026 papers in the Robotics & Embodied AI area, covering Robotics, Multimodal/VLM, Reasoning, Navigation, Agents and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  42 CVPR2026 papers in the Robotics & Embodied AI area, covering Robotics, Multimodal/VLM, Reasoning, Navigation, Agents, Diffusion Models and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "CVPR2026"
   - "Robotics & Embodied AI"
@@ -13,13 +13,14 @@ tags:
   - "Reasoning"
   - "Navigation"
   - "Agents"
+  - "Diffusion Models"
 item_list:
-  - u: "actiongeometry_prediction_with_3d_geometric_prior/"
-    t: "Action–Geometry Prediction with 3D Geometric Prior for Bimanual Manipulation"
   - u: "adaptive_action_chunking_at_inference-time_for_vision-language-action_models/"
     t: "Adaptive Action Chunking at Inference-time for Vision-Language-Action Models"
   - u: "atomicvla_unlocking_the_potential_of_atomic_skill_learning_in_robots/"
     t: "AtomicVLA: Unlocking the Potential of Atomic Skill Learning in Robots"
+  - u: "ava_vla_improving_vision_language_action_models_with_active_visual_attention/"
+    t: "AVA-VLA: Improving Vision-Language-Action models with Active Visual Attention"
   - u: "bipremanip_learning_affordance-based_bimanual_preparatory_manipulation_through_a/"
     t: "BiPreManip: Learning Affordance-Based Bimanual Preparatory Manipulation through Anticipatory Collaboration"
   - u: "boosting_vision-language-action_finetuning_with_feasible_action_neighborhood_pri/"
@@ -48,6 +49,10 @@ item_list:
     t: "ForceVLA2: Unleashing Hybrid Force-Position Control with Force Awareness for Contact-Rich Manipulation"
   - u: "gecosrt_geometryaware_continual_adaptation_for_rob/"
     t: "GeCo-SRT: Geometry-aware Continual Adaptation for Robotic Cross-Task Sim-to-Real Transfer"
+  - u: "graspldp_towards_generalizable_grasping_policy_via_latent_diffusion/"
+    t: "GraspLDP: Towards Generalizable Grasping Policy via Latent Diffusion"
+  - u: "hif-vla_hindsight_insight_and_foresight_through_motion_representation_for_vision/"
+    t: "HiF-VLA: Hindsight, Insight and Foresight through Motion Representation for Vision-Language-Action Models"
   - u: "igen_scalable_data_generation_for_robot_learning_from_open-world_images/"
     t: "IGen: Scalable Data Generation for Robot Learning from Open-World Images"
   - u: "influence_malleability_in_linearized_attention_dual_implications_of_non-converge/"
@@ -56,39 +61,31 @@ item_list:
     t: "Language-Grounded Decoupled Action Representation for Robotic Manipulation (LaDA)"
   - u: "learning_to_see_and_act_task-aware_virtual_view_exploration_for_robotic_manipula/"
     t: "Learning to See and Act: Task-Aware Virtual View Exploration for Robotic Manipulation"
+  - u: "lifelong_imitation_learning_multimodal_latent_rep/"
+    t: "Lifelong Imitation Learning with Multimodal Latent Replay and Incremental Adjustment"
   - u: "maniparena_comprehensive_real-world_evaluation_of_reasoning-oriented_generalist_/"
     t: "ManipArena: Comprehensive Real-world Evaluation of Reasoning-Oriented Generalist Robot Manipulation"
   - u: "mergevla_cross-skill_model_merging_toward_a_generalist_vision-language-action_ag/"
     t: "MergeVLA: Cross-Skill Model Merging Toward a Generalist Vision-Language-Action Agent"
   - u: "palm_progress-aware_policy_learning_via_affordance_reasoning_for_long-horizon_ro/"
     t: "PALM: Progress-Aware Policy Learning via Affordance Reasoning for Long-Horizon Robotic Manipulation"
-  - u: "panoaffordancenet_towards_holistic_affordance_grou/"
+  - u: "panoaffordancenet_towards_holistic_affordance_grounding_in_360_indoor_environmen/"
     t: "PanoAffordanceNet: Towards Holistic Affordance Grounding in 360° Indoor Environments"
   - u: "pixel-level_scene_understanding_in_one_token_visual_states_need_what-is-where_co/"
     t: "Pixel-level Scene Understanding in One Token: Visual States Need What-is-Where Composition"
   - u: "profocus_proactive_perception_and_focused_reasoning_in_vision-and-language_navig/"
     t: "ProFocus: Proactive Perception and Focused Reasoning in Vision-and-Language Navigation"
-  - u: "pulse_privileged_knowledge_transfer_from_rich_to_deployable_sensors_for_embodied/"
-    t: "PULSE: Privileged Knowledge Transfer from Rich to Deployable Sensors for Embodied Multi-Sensory Learning"
-  - u: "rc-nf_robot-conditioned_normalizing_flow_for_real-time_anomaly_detection_in_robo/"
-    t: "RC-NF: Robot-Conditioned Normalizing Flow for Real-Time Anomaly Detection in Robotic Manipulation"
-  - u: "sapave_active_perception_manipulation_vla_roboti/"
-    t: "SaPaVe: Towards Active Perception and Manipulation in Vision-Language-Action Models for Robotics"
-item_total: 34
+item_total: 42
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->
 # 🤖 Robotics & Embodied AI
 
-**📷 CVPR2026** · **34** paper notes
+**📷 CVPR2026** · **42** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (45)](../../ICML2026/robotics/index.md) · [💬 ACL2026 (10)](../../ACL2026/robotics/index.md) · [🔬 ICLR2026 (47)](../../ICLR2026/robotics/index.md) · [🤖 AAAI2026 (36)](../../AAAI2026/robotics/index.md) · [🧠 NeurIPS2025 (54)](../../NeurIPS2025/robotics/index.md) · [📹 ICCV2025 (26)](../../ICCV2025/robotics/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (42)](../../ICML2026/robotics/index.md) · [💬 ACL2026 (10)](../../ACL2026/robotics/index.md) · [🔬 ICLR2026 (46)](../../ICLR2026/robotics/index.md) · [🤖 AAAI2026 (30)](../../AAAI2026/robotics/index.md) · [🧠 NeurIPS2025 (73)](../../NeurIPS2025/robotics/index.md) · [📹 ICCV2025 (26)](../../ICCV2025/robotics/index.md)
 
-🔥 **Top topics:** Robotics ×16 · Multimodal/VLM ×7 · Reasoning ×7 · Navigation ×5 · Agents ×2
-
-**[Action–Geometry Prediction with 3D Geometric Prior for Bimanual Manipulation](actiongeometry_prediction_with_3d_geometric_prior.md)**
-
-:   This work leverages the pretrained 3D geometric foundation model π3 as a perception backbone, fuses 3D geometric, 2D semantic, and proprioceptive features, and jointly predicts future action chunks and future 3D Pointmaps via a diffusion model. Using only RGB inputs, the proposed method comprehensively surpasses point-cloud-based approaches on the RoboTwin bimanual benchmark.
+🔥 **Top topics:** Robotics ×17 · Multimodal/VLM ×12 · Reasoning ×8 · Navigation ×6 · Agents ×4
 
 **[Adaptive Action Chunking at Inference-time for Vision-Language-Action Models](adaptive_action_chunking_at_inference-time_for_vision-language-action_models.md)**
 
@@ -97,6 +94,10 @@ item_total: 34
 **[AtomicVLA: Unlocking the Potential of Atomic Skill Learning in Robots](atomicvla_unlocking_the_potential_of_atomic_skill_learning_in_robots.md)**
 
 :   This paper proposes AtomicVLA, a unified planning-execution framework built upon π₀ that adaptively switches between Think and Act modes to generate atomic skill abstractions, and employs a Skill-Guided MoE (SG-MoE) to route actions to specialized experts. The approach improves LIBERO-LONG success rate from 85.2% to 95.2% (+10%), achieves +18.3% on real-world Franka long-horizon tasks, and +21% on continual learning benchmarks.
+
+**[AVA-VLA: Improving Vision-Language-Action models with Active Visual Attention](ava_vla_improving_vision_language_action_models_with_active_visual_attention.md)**
+
+:   This work revisits visual processing in VLA models from a POMDP perspective and proposes the AVA-VLA framework, which dynamically modulates the importance of visual tokens in the current frame based on historical context via a recurrent state and an active visual attention module, achieving state-of-the-art performance on benchmarks including LIBERO and CALVIN.
 
 **[BiPreManip: Learning Affordance-Based Bimanual Preparatory Manipulation through Anticipatory Collaboration](bipremanip_learning_affordance-based_bimanual_preparatory_manipulation_through_a.md)**
 
@@ -152,7 +153,15 @@ item_total: 34
 
 **[GeCo-SRT: Geometry-aware Continual Adaptation for Robotic Cross-Task Sim-to-Real Transfer](gecosrt_geometryaware_continual_adaptation_for_rob.md)**
 
-:   GeCo-SRT proposes the first continual cross-task Sim-to-Real transfer paradigm, exploiting the domain-invariance and task-invariance of local geometric features. Through a Geo-MoE module for reusable geometric knowledge extraction and Geo-PER for expert-level forgetting prevention, the method achieves an average success rate of 63.3% across four real-robot tasks (a 52% improvement over baselines) while requiring only 1/6 of the data to match baseline performance.
+:   GeCo-SRT proposes a continual cross-task Sim-to-Real transfer paradigm that exploits the domain-invariance and task-invariance of local geometric features. Through a geometry-aware MoE module for reusable geometric knowledge extraction and expert-guided prioritized experience replay for forgetting prevention, the method achieves a 52% improvement in average success rate over baselines across four manipulation tasks while requiring only 1/6 of the data.
+
+**[GraspLDP: Towards Generalizable Grasping Policy via Latent Diffusion](graspldp_towards_generalizable_grasping_policy_via_latent_diffusion.md)**
+
+:   This paper proposes GraspLDP, which injects grasp pose priors from a pretrained grasp detector and graspness map visual cues into a latent diffusion policy framework. By leveraging VAE-encoded action latent spaces for guidance and a self-supervised reconstruction objective, GraspLDP substantially improves grasping accuracy and generalization.
+
+**[HiF-VLA: Hindsight, Insight and Foresight through Motion Representation for Vision-Language-Action Models](hif-vla_hindsight_insight_and_foresight_through_motion_representation_for_vision.md)**
+
+:   This paper proposes HiF-VLA, a framework that uses Motion Vectors (MV) as compact temporal primitives to unify three temporal reasoning capabilities—Hindsight, Insight, and Foresight—enabling bidirectional temporal extension of VLA models. HiF-VLA substantially outperforms baselines on long-horizon manipulation tasks with minimal computational overhead.
 
 **[IGen: Scalable Data Generation for Robot Learning from Open-World Images](igen_scalable_data_generation_for_robot_learning_from_open-world_images.md)**
 
@@ -170,6 +179,10 @@ item_total: 34
 
 :   This paper proposes the TVVE framework, which employs a reinforcement learning-driven Multi-View Exploration Policy (MVEP) to select optimal virtual camera viewpoints and re-render observations online. A task-aware MoE visual encoder (TaskMoE) is designed to mitigate cross-task feature interference. The framework achieves an average success rate of 86.6% across 18 tasks on RLBench.
 
+**[Lifelong Imitation Learning with Multimodal Latent Replay and Incremental Adjustment](lifelong_imitation_learning_multimodal_latent_rep.md)**
+
+:   This paper proposes a lifelong imitation learning framework that stores and replays compact representations in the feature space of frozen encoders via Multimodal Latent Replay (MLR), and introduces an Incremental Feature Adjustment (IFA) mechanism that employs angular distance constraints to maintain inter-task separability. The method achieves AUC improvements of 10–17 points and reduces forgetting by up to 65% on the LIBERO benchmark.
+
 **[ManipArena: Comprehensive Real-world Evaluation of Reasoning-Oriented Generalist Robot Manipulation](maniparena_comprehensive_real-world_evaluation_of_reasoning-oriented_generalist_.md)**
 
 :   ManipArena proposes a standardized real-world robot manipulation evaluation framework comprising 20 reasoning-oriented tasks and 10,812 expert trajectories. Through a green-screen controlled environment, systematic diversity design, and hierarchical OOD evaluation, it provides a fair and reproducible benchmark for VLA models and world models.
@@ -182,7 +195,7 @@ item_total: 34
 
 :   This paper proposes PALM, a unified VLA framework that employs structured fine-grained affordance prediction across four categories (global, local, spatial, and dynamic) as implicit reasoning anchors, and incorporates continuous sub-task progress estimation to enable seamless task transitions. PALM achieves an average completion length of 4.48 on CALVIN ABCD (surpassing the previous SOTA by 12.5%), a success rate of 91.8% on LIBERO-LONG, and more than twice the baseline performance in real-world long-horizon generalization evaluations.
 
-**[PanoAffordanceNet: Towards Holistic Affordance Grounding in 360° Indoor Environments](panoaffordancenet_towards_holistic_affordance_grou.md)**
+**[PanoAffordanceNet: Towards Holistic Affordance Grounding in 360° Indoor Environments](panoaffordancenet_towards_holistic_affordance_grounding_in_360_indoor_environmen.md)**
 
 :   PanoAffordanceNet introduces a novel task of holistic affordance grounding in 360° indoor environments. It employs a Distortion-Aware Spectrum Modulator (DASM) to correct ERP geometric distortions, an Omnidirectional Sphere Densification Head (OSDH) to recover continuous affordance regions from sparse activations, and multi-level training objectives. The method achieves substantial gains over existing approaches on 360-AGD, the first panoramic affordance dataset constructed by the authors.
 
@@ -198,13 +211,33 @@ item_total: 34
 
 :   This paper proposes PULSE, a framework that performs knowledge distillation from a frozen privileged-sensor (e.g., EDA) teacher to a student model relying solely on cheap, deployable sensors (e.g., ECG, BVP, accelerometer). PULSE introduces shared-private embedding decomposition and a reconstruction-based collapse-prevention mechanism, achieving 0.994 AUROC for stress detection without EDA at inference time—surpassing even models that use all sensors.
 
-**[RC-NF: Robot-Conditioned Normalizing Flow for Real-Time Anomaly Detection in Robotic Manipulation](rc-nf_robot-conditioned_normalizing_flow_for_real-time_anomaly_detection_in_robo.md)**
+**[QuantVLA: Scale-Calibrated Post-Training Quantization for Vision-Language-Action Models](quantvla_scale-calibrated_post-training_quantization_for_vision-language-action_.md)**
 
-:   This paper proposes Robot-Conditioned Normalizing Flow (RC-NF), which models the joint distribution of robot states and object motion trajectories via a conditional normalizing flow, enabling real-time anomaly detection at <100ms latency. RC-NF serves as a plug-and-play monitoring module for VLA models (e.g., π₀), supporting task-level replanning and state-level trajectory rollback (homing).
+:   This paper proposes QuantVLA, the first training-free post-training quantization (PTQ) framework for Vision-Language-Action (VLA) models. Through a selective quantization layout and two lightweight calibration mechanisms—Attention Temperature Matching (ATM) and Output Head Balancing (OHB)—QuantVLA achieves approximately 70% memory reduction under W4A8 precision while surpassing the task success rate of the full-precision baseline.
+
+**[RADAR: Closed-Loop Robotic Data Generation via Semantic Planning and Autonomous Causal Environment Reset](radar_closedloop_robotic_data_generation_via_seman.md)**
+
+:   This paper presents RADAR — a fully autonomous closed-loop robotic manipulation data generation engine comprising four modules: VLM-based semantic planning, GNN policy execution, VQA-based success evaluation, and FSM-orchestrated LIFO causal reverse environment reset. Requiring only 2–5 human demonstrations, the system continuously generates high-fidelity manipulation data, achieving 90% success rate on complex long-horizon tasks in simulation.
+
+**[Recurrent Reasoning with Vision-Language Models for Estimating Long-Horizon Embodied Task Progress](recurrent_reasoning_with_vision-language_models_for_estimating_long-horizon_embo.md)**
+
+:   This paper proposes R²VLM, a recurrent reasoning framework that processes local video segments sequentially, maintains a dynamically updated CoT record tracking task decomposition and completion status, and leverages a multi-dimensional RL reward scheme to achieve state-of-the-art performance in long-horizon embodied task progress estimation. The framework additionally supports downstream applications including policy learning, reward modeling, and proactive assistance.
+
+**[Rethinking Camera Choice: An Empirical Study on Fisheye Camera Properties in Robotic Manipulation](rethinking_camera_choice_an_empirical_study_on_fisheye_camera_properties_in_robo.md)**
+
+:   This paper presents the first systematic empirical study on the properties of wrist-mounted fisheye cameras in imitation learning for robotic manipulation. Centered on three core research questions—spatial localization, scene generalization, and hardware generalization—it reveals both the advantages and limitations of wide field-of-view (FoV) imaging, and proposes Random Scale Augmentation (RSA) to address scale overfitting in cross-camera transfer.
+
+**[RoboAgent: Chaining Basic Capabilities for Embodied Task Planning](roboagent_chaining_basic_capabilities_for_embodied_task_planning.md)**
+
+:   This paper proposes RoboAgent, a capability-driven embodied task planning framework that employs a single VLM to simultaneously serve as a scheduler and five basic capabilities (exploration guidance, object grounding, scene description, action decoding, experience summarization). Through three-stage training (SFT + DAgger + expert-guided RL), RoboAgent achieves state-of-the-art performance on EB-ALFRED and ALFWorld.
 
 **[SaPaVe: Towards Active Perception and Manipulation in Vision-Language-Action Models for Robotics](sapave_active_perception_manipulation_vla_roboti.md)**
 
 :   SaPaVe proposes an end-to-end active manipulation framework that decouples camera actions from manipulation actions via a bottom-up training strategy: it first learns active perception priors from 200K semantic camera-control pairs, then jointly optimizes for active manipulation, surpassing π₀ and GR00T N1 by up to 31.25% in real-world success rate.
+
+**[Semantic Audio-Visual Navigation in Continuous Environments](semantic_audio-visual_navigation_in_continuous_environments.md)**
+
+:   This paper introduces the SAVN-CE task, extending semantic audio-visual navigation to continuous 3D environments, and proposes MAGNet (Memory-Augmented Goal description Network). By fusing historical context and ego-motion cues, MAGNet achieves robust goal inference after target sounds cease, yielding absolute success rate improvements of up to 12.1%.
 
 **[STRNet: Visual Navigation with Spatio-Temporal Representation through Dynamic Graph Aggregation](strnet_visual_navigation_with_spatio-temporal_representation_through_dynamic_gra.md)**
 

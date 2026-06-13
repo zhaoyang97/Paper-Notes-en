@@ -2,9 +2,10 @@
 title: >-
   [Paper Note] Nonlinearly Preconditioned Gradient Methods: Momentum and Stochastic Analysis
 description: >-
-  [NeurIPS 2025][nonlinear preconditioning] Under the anisotropic descent inequality framework, this paper introduces heavy ball momentum into nonlinearly preconditioned gradient methods and analyzes the convergence proper…
+  [NeurIPS 2025][Optimization][nonlinear preconditioning] Under the anisotropic descent inequality framework, this paper introduces heavy ball momentum into nonlinearly preconditioned gradient methods and analyzes the conv…
 tags:
   - "NeurIPS 2025"
+  - "Optimization"
   - "nonlinear preconditioning"
   - "gradient clipping"
   - "anisotropic smoothness"
@@ -147,11 +148,11 @@ Two core algorithms are proposed:
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Finite-Time Analysis of Stochastic Nonconvex Nonsmooth Optimization on the Riemannian Manifolds](finite-time_analysis_of_stochastic_nonconvex_nonsmooth_optimization_on_the_riema.md)
-- [\[NeurIPS 2025\] Statistical Inference for Gradient Boosting Regression](statistical_inference_for_gradient_boosting_regression.md)
-- [\[NeurIPS 2025\] Coresets for Clustering Under Stochastic Noise](coresets_for_clustering_under_stochastic_noise.md)
-- [\[NeurIPS 2025\] Adaptive Data Analysis for Growing Data](adaptive_data_analysis_for_growing_data.md)
-- [\[NeurIPS 2025\] Inferring Stochastic Dynamics with Growth from Cross-Sectional Data](inferring_stochastic_dynamics_with_growth_from_cross-sectional_data.md)
+- [\[NeurIPS 2025\] Stochastic Momentum Methods for Non-smooth Non-Convex Finite-Sum Coupled Compositional Optimization](stochastic_momentum_methods_for_non-smooth_non-convex_finite-sum_coupled_composi.md)
+- [\[ICLR 2026\] Faster Gradient Methods for Highly-Smooth Stochastic Bilevel Optimization](../../ICLR2026/optimization/faster_gradient_methods_for_highly-smooth_stochastic_bilevel_optimization.md)
+- [\[NeurIPS 2025\] Unveiling m-Sharpness Through the Structure of Stochastic Gradient Noise](unveiling_m-sharpness_through_the_structure_of_stochastic_gradient_noise.md)
+- [\[ICCV 2025\] Memory-Efficient 4-bit Preconditioned Stochastic Optimization](../../ICCV2025/optimization/memory-efficient_4-bit_preconditioned_stochastic_optimization.md)
+- [\[NeurIPS 2025\] Understanding the Generalization of Stochastic Gradient Adam in Learning Neural Networks](understanding_the_generalization_of_stochastic_gradient_adam_in_learning_neural_.md)
 
 </div>
 

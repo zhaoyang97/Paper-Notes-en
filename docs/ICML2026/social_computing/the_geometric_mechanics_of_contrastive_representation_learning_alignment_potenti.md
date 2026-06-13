@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] The Geometric Mechanics of Contrastive Representation Learning: Alignment Potentials, Entropic Dispersion, and Cross-modal Divergence
 description: >-
-  [ICML 2026][Social Computing][InfoNCE] This paper employs a measure-theoretic framework to elevate the InfoNCE loss to a deterministic "population energy" over representation distributions. It proves that the unimodal ca…
+  [ICML 2026][Social Computing][InfoNCE] This paper elevates the InfoNCE loss to a deterministic "population energy" over representation distributions using a measure-theoretic framework…
 tags:
   - "ICML 2026"
   - "Social Computing"
@@ -12,7 +12,7 @@ tags:
   - "population energy"
   - "Gibbs equilibrium"
 date: 2026-05-08
-content_hash: 3344fbdceff51d35
+content_hash: a27f36a99d3d4d31
 ---
 
 # The Geometric Mechanics of Contrastive Representation Learning: Alignment Potentials, Entropic Dispersion, and Cross-modal Divergence
@@ -24,92 +24,95 @@ content_hash: 3344fbdceff51d35
 **Keywords**: InfoNCE, CLIP, Modality Gap, population energy, Gibbs equilibrium
 
 ## TL;DR
-This paper employs a measure-theoretic framework to elevate the InfoNCE loss to a deterministic "population energy" over representation distributions. It proves that the unimodal case is convex and converges to a unique Gibbs equilibrium, while the symmetric multimodal case exhibits persistent negative symmetric KL coupling, which geometrically necessitates a modality gap.
+This paper elevates the InfoNCE loss to a deterministic "population energy" over representation distributions using a measure-theoretic framework, proving that the unimodal case is convex and converges to a unique Gibbs equilibrium, while the symmetric multimodal case exhibits persistent negative symmetric KL coupling, which geometrically and inevitably induces a modality gap.
 
 ## Background & Motivation
 
-**Background**: InfoNCE serves as the unified objective for current self-supervised and multimodal contrastive learning, underpining systems from SimCLR/MoCo to CLIP/SigLIP. The most classic theoretical analyses include the alignment-uniformity decomposition by Wang & Isola (2020) and the density-ratio perspective describing the optimal critic as pointwise mutual information.
+**Background**: InfoNCE is the unified objective for current self-supervised and multimodal contrastive learning, forming the basis of systems from SimCLR/MoCo to CLIP/SigLIP. The most classic theoretical analysis is the alignment-uniformity decomposition by Wang & Isola (2020), and the density-ratio perspective that describes the optimal critic as pointwise mutual information.
 
-**Limitations of Prior Work**: (i) The alignment-uniformity explanation only addresses asymptotic trade-offs without specifying which "population distribution" InfoNCE favors; (ii) Multimodal InfoNCE in systems like CLIP achieves strong pairwise alignment, yet the marginal distributions of the two modalities remain separated (modality gap), a phenomenon for which existing theories lack a mechanistic explanation; (iii) Existing identifiability results focus on "what can be learned" under generative assumptions rather than characterizing the geometric preferences of the training objective itself.
+**Limitations of Prior Work**: (i) The alignment-uniformity explanation only addresses the asymptotic trade-off, but does not clarify what "population distribution" InfoNCE itself prefers; (ii) In multimodal InfoNCE, as in CLIP, strong pairwise alignment is achieved, yet the marginal distributions of the two modalities remain separated (modality gap), for which existing theory lacks a mechanistic explanation; (iii) Existing identifiability results focus only on "what can be learned" under generative assumptions, without characterizing the geometric preference of the training objective itself.
 
-**Key Challenge**: Treating InfoNCE solely as a "pair-wise discrimination" task loses critical information—the softmax denominator is essentially a kernel average of the current representation distribution, meaning the optimization direction depends fundamentally on the distribution rather than just individual pairs. In the multimodal setting, this "force exerted by the distribution on itself" couples with the "force exerted on the other modality," such that strong pairwise alignment cannot necessarily control the marginals.
+**Key Challenge**: Viewing InfoNCE solely as "pairwise discrimination" loses crucial information—the softmax denominator is actually a kernel average over the current representation distribution, so the optimization direction fundamentally depends on the distribution, not just the pairs. In the multimodal case, the "force exerted by the distribution on itself" couples with the "force exerted on the other modality," so even strong pairwise alignment cannot control the marginals.
 
-**Goal**: (i) Formulate stochastic InfoNCE strictly as a deterministic functional of representation distributions; (ii) Explain the geometry of the unimodal case (convexity, Gibbs equilibrium, low-temperature concentration); (iii) Derive the "cross-coupling" structure of symmetric multimodal InfoNCE that differs from the unimodal case to provide a first-principles explanation for the modality gap.
+**Goal**: (i) Formulate stochastic InfoNCE strictly as a deterministic functional over representation distributions; (ii) Explain the geometry of the unimodal case (convexity, Gibbs equilibrium, low-temperature concentration); (iii) Derive the "cross-coupling" structure of symmetric multimodal InfoNCE, distinct from the unimodal case, and provide a first-principles explanation for the modality gap.
 
-**Key Insight**: The representation space $\mathcal{Z}$ is viewed as a compact manifold with a volume measure $\mu$. The encoder pushes forward the data distribution onto $\mathcal{Z}$. In the large-batch limit, the softmax denominator converges to a "population partition field" $\Gamma_{\theta,\tau}(\mathbf{z})$, which is a distribution-dependent energy field.
+**Key Insight**: Treat the representation space $\mathcal{Z}$ as a compact manifold with volume measure $\mu$, with the encoder push-forwarding the data distribution onto $\mathcal{Z}$. The softmax denominator converges in the large-batch limit to the "population partition field" $\Gamma_{\theta,\tau}(\mathbf{z})$, a distribution-dependent energy field.
 
-**Core Idea**: In the large-batch limit, InfoNCE is equivalent to a population energy functional of the representation distribution. In the unimodal case, this functional is strictly convex with a unique Gibbs solution (where entropy acts as a "dispersion selector" within the alignment basin). In the multimodal case, the functional contains a negative symmetric KL coupling term, causing the two modalities to act as "walls" to each other while sharpening their respective potentials, thus stably maintaining the modality gap.
+**Core Idea**: In the large batch limit, InfoNCE is equivalent to a population energy functional over the representation distribution; for the unimodal case, this functional is strictly convex and has a unique Gibbs solution (i.e., entropy acts as a "dispersion selector" within the alignment basin), while in the multimodal case, the functional contains a negative symmetric KL coupling term, causing the two modalities to act as "walls" for each other when sharpening their respective potentials, thus stably maintaining the modality gap.
 
 ## Method
 
 ### Overall Architecture
-The analysis pipeline consists of: (i) Defining representation laws $q_\theta=(f_\theta)_\# p_x$ and positive-pair laws $\pi_{\theta\theta}$ on a compact $\mathcal{Z}$; (ii) Introducing the partition field $\Gamma_{\theta,\tau}(\mathbf{z})=\int_\mathcal{Z}\kappa_\tau(\mathbf{z},\mathbf{w})\mathrm{d}q_\theta(\mathbf{w})$ and the kernel-smoothed density $\tilde\rho_{\theta,\tau}=\Gamma_{\theta,\tau}/V_\kappa(\tau)$; (iii) Proving that stochastic InfoNCE is value- and gradient-consistent with a parametric energy $\mathcal{J}_\tau(\theta)$ as $N\to\infty$; (iv) Elevating $\mathcal{J}_\tau$ to an "intrinsic free energy" $\mathcal{F}_{\tau,U}$ and analyzing its convexity, minimizers, and low-temperature concentration; (v) Repeating the process for symmetric multimodal InfoNCE to obtain $\mathcal{F}_{\tau,\mathbf{U}_{1,2}}^{\text{Sym}}$ containing the negative symmetric KL coupling and analyzing its geometric differences from the unimodal case.
+Analysis workflow: (i) Define representation laws $q_\theta=(f_\theta)_\# p_x$ and positive-pair laws $\pi_{\theta\theta}$ on compact $\mathcal{Z}$; (ii) Introduce the partition field $\Gamma_{\theta,\tau}(\mathbf{z})=\int_\mathcal{Z}\kappa_\tau(\mathbf{z},\mathbf{w})\mathrm{d}q_\theta(\mathbf{w})$ and kernel-smoothed density $\tilde\rho_{\theta,\tau}=\Gamma_{\theta,\tau}/V_\kappa(\tau)$; (iii) Prove that stochastic InfoNCE, as $N\to\infty$, is value- and gradient-consistent with a parametric energy $\mathcal{J}_\tau(\theta)$; (iv) Elevate $\mathcal{J}_\tau$ to an "intrinsic free energy" $\mathcal{F}_{\tau,U}$, analyzing its convexity, minimizer, and low-temperature concentration; (v) Repeat the same process for symmetric multimodal InfoNCE, obtaining $\mathcal{F}_{\tau,\mathbf{U}_{1,2}}^{\text{Sym}}$ with negative symmetric KL coupling, and analyze its geometric differences from the unimodal case.
 
 ### Key Designs
 
-1.  **Large-batch consistency from stochastic loss to deterministic energy**:
-    -   **Function**: Establishes a strict equivalence between InfoNCE and population energy—at both the value and gradient levels—providing a mathematical foundation for geometric analysis rather than relying on intuition.
-    -   **Mechanism**: For the unimodal case, define $\mathcal{J}_\tau(\theta)=\frac{1}{\tau}\int_\mathcal{Z}U_\theta(\mathbf{z})\mathrm{d}q_\theta(\mathbf{z})-H_\times(q_\theta,\tilde\rho_{\theta,\tau})$, where the alignment potential field $U_\theta(\mathbf{z})=-\int_\mathcal{Z}s(\mathbf{z},\mathbf{w})\mathrm{d}\nu_{\theta,\mathbf{z}}(\mathbf{w})$ arises from the disintegration of positive pairs. Theorem 3.1 proves that under consistent regularization of encoder and critic, constant kernel volume, and controlled finite batch size, $|\mathcal{L}_{\text{NCE}}(\theta)-\mathcal{J}_\tau(\theta)-\log(NV_\kappa(\tau))|\to0$ and $\|\nabla_\theta\mathcal{L}_{\text{NCE}}-\nabla_\theta\mathcal{J}_\tau\|\to0$.
-    -   **Design Motivation**: Previous decompositions of InfoNCE into alignment-uniformity were manual approximations. This work insists on "consistency in both value and gradient," ensuring that stochastic gradient descent in the large-batch limit is strictly equivalent to the descent of population energy.
+1. **Large-batch Consistency from Stochastic Loss to Deterministic Energy**:
 
-2.  **Intrinsic free energy + Gibbs equilibrium**:
-    -   **Function**: Elevates the parametric energy to the distribution space, stripping away the implicit relationship of parameterization to obtain a strictly convex free energy with a unique minimizer and proving its consistency with parametric energy at low temperatures.
-    -   **Mechanism**: Define $\mathcal{F}_{\tau,U}(\rho)=\frac{1}{\tau}\int_\mathcal{Z}U(\mathbf{z})\rho(\mathbf{z})\mathrm{d}\mu(\mathbf{z})-H(\rho)$, and prove that it is strictly convex on $\mathcal{P}_\mu(\mathcal{Z})$ with a unique minimizer in Gibbs form $\rho^*(\mathbf{z})=\exp(-U(\mathbf{z})/\tau)/Z_\tau$. Using a sharp diagonal peak assumption, it is shown that $|\mathcal{J}_\tau(\theta)-\mathcal{F}_{\tau,U_\theta}(\rho_\theta)|\leq 2\varepsilon_{\text{kde}}^{(\theta)}(\tau)/\underline\rho_\theta$. A low-temperature concentration proposition proves that as $\tau\to0^+$, the Gibbs equilibrium concentrates in the near-minimal regions of $U$.
-    -   **Design Motivation**: Reinterprets "uniformity" as entropy-driven dispersion within alignment basins, rather than a global force opposing alignment. This step represents a conceptual upgrade to the Wang & Isola perspective: alignment determines "which basin" to converge into, while uniformity determines the dispersion "within the basin."
+    - **Function**: Establishes a strict equivalence between InfoNCE and population energy—both at the value and gradient levels—providing mathematical justification for all geometric analyses, rather than relying on intuition.
+    - **Mechanism**: For the unimodal case, defines $\mathcal{J}_\tau(\theta)=\frac{1}{\tau}\int_\mathcal{Z}U_\theta(\mathbf{z})\mathrm{d}q_\theta(\mathbf{z})-H_\times(q_\theta,\tilde\rho_{\theta,\tau})$, where the alignment potential field $U_\theta(\mathbf{z})=-\int_\mathcal{Z}s(\mathbf{z},\mathbf{w})\mathrm{d}\nu_{\theta,\mathbf{z}}(\mathbf{w})$ comes from the disintegration of positive pairs. Theorem 3.1 proves, under consistent regularization of encoder and critic, kernel volume constant, and finite batch control, that $|\mathcal{L}_{\text{NCE}}(\theta)-\mathcal{J}_\tau(\theta)-\log(NV_\kappa(\tau))|\to0$ and $\|\nabla_\theta\mathcal{L}_{\text{NCE}}-\nabla_\theta\mathcal{J}_\tau\|\to0$.
+    - **Design Motivation**: Previous alignment-uniformity decompositions were manual approximations; this work insists on "value + gradient consistency," ensuring that stochastic gradient descent with large batches is strictly equivalent to population energy descent, so all subsequent convexity and equilibrium analyses directly correspond to the actual training process.
 
-3.  **Negative symmetric KL coupling in multimodal and the necessity of modality gap**:
-    -   **Function**: Elevates symmetric InfoNCE to a free energy with cross-coupling, proving that the coupling term is a negative symmetric KL, which implies that the density fields of the two modalities act as "potential barriers" to each other, resulting in persistent marginal separation.
-    -   **Mechanism**: Define $\mathcal{J}_\tau^{\text{Sym}}(\theta,\phi)=\frac{1}{2}(\mathcal{J}_\tau^{x\to y}+\mathcal{J}_\tau^{y\to x})$, where each directional energy evaluates its cross-entropy against the smoothed density of the other modality. Elevating this to distribution space yields $\mathcal{F}_{\tau,\mathbf{U}_{1,2}}^{\text{Sym}}(\rho_1,\rho_2)=\frac{1}{2}(\mathcal{F}_{\tau,U_{1\to2}}(\rho_1)+\mathcal{F}_{\tau,U_{2\to1}}(\rho_2))-D_{\text{KL}}^{\text{Sym}}(\rho_1,\rho_2)$, where the negative sign is critical. Thus, while optimizing, each modality aims to sharpen alignment with its own potential while pulling away from the other modality's marginal KL (acting as the other's barrier). At steady state, a "knife-edge" compatibility condition between marginals must be met; otherwise, a modality gap is inevitable.
-    -   **Design Motivation**: The modality gap is not an optimization failure but a geometric necessity of InfoNCE under heterogeneous conditionals. Once established, this suggests an inherent limit to efforts to eliminate the gap using better hard negatives or larger batches.
+2. **Intrinsic Free Energy + Gibbs Equilibrium**:
+
+    - **Function**: Elevates the parametric energy to the distribution space, stripping away implicit parameterization to obtain a strictly convex free energy with a unique minimizer, and proves under the sharp kernel assumption that it matches the parametric energy at low temperature.
+    - **Mechanism**: Defines $\mathcal{F}_{\tau,U}(\rho)=\frac{1}{\tau}\int_\mathcal{Z}U(\mathbf{z})\rho(\mathbf{z})\mathrm{d}\mu(\mathbf{z})-H(\rho)$, proves strict convexity on $\mathcal{P}_\mu(\mathcal{Z})$, and that the unique minimizer is the Gibbs form $\rho^*(\mathbf{z})=\exp(-U(\mathbf{z})/\tau)/Z_\tau$. Under the sharp diagonal peak assumption, shows $|\mathcal{J}_\tau(\theta)-\mathcal{F}_{\tau,U_\theta}(\rho_\theta)|\leq 2\varepsilon_{\text{kde}}^{(\theta)}(\tau)/\underline\rho_\theta$, and finally, via a low-temperature concentration proposition, proves that as $\tau\to0^+$, the Gibbs equilibrium concentrates on the near-minimum region of $U$.
+    - **Design Motivation**: Reinterprets "uniformity" as entropy-driven dispersion within the alignment basin, rather than a global force opposing alignment. This is a conceptual upgrade over the Wang & Isola perspective: alignment determines "which basin" convergence occurs in, while uniformity determines the degree of dispersion "within the basin."
+
+3. **Multimodal Negative Symmetric KL Coupling and the Inevitability of the Modality Gap**:
+
+    - **Function**: Elevates symmetric InfoNCE to a free energy with cross-coupling, proving that the coupling term is a negative symmetric KL, meaning each modality treats the other's density field as a "barrier," leading to persistent marginal separation.
+    - **Mechanism**: Defines $\mathcal{J}_\tau^{\text{Sym}}(\theta,\phi)=\frac{1}{2}(\mathcal{J}_\tau^{x\to y}+\mathcal{J}_\tau^{y\to x})$, where each directional energy evaluates its own cross-entropy on the other modality's smoothed density. Lifting to the distribution space yields $\mathcal{F}_{\tau,\mathbf{U}_{1,2}}^{\text{Sym}}(\rho_1,\rho_2)=\frac{1}{2}(\mathcal{F}_{\tau,U_{1\to2}}(\rho_1)+\mathcal{F}_{\tau,U_{2\to1}}(\rho_2))-D_{\text{KL}}^{\text{Sym}}(\rho_1,\rho_2)$, with the crucial negative sign. Thus, each modality, when optimizing itself, seeks both to sharpen alignment to its own potential and to increase the KL divergence from the other modality's marginal (i.e., "mutually acting as barriers"), so at equilibrium, a knife-edge compatibility condition is required for marginal matching; otherwise, the modality gap is inevitable.
+    - **Design Motivation**: The modality gap is not an optimization failure, but a geometric inevitability of InfoNCE under heterogeneous conditionals—once this conclusion is established, all community efforts to eliminate the gap via better hard negatives or larger batches face a fundamental limit.
 
 ### Loss & Training
-As this is a theoretical paper, no new models were trained. The experimental section uses controlled experiments with synthetic two-modality Gaussian mixtures to visualize the modality gap and consistency results. It also evaluates pre-trained OpenCLIP (CNN and ViT backbones) to measure distances between marginals and test the prediction that "disrupting cross-modal compatibility systematically increases the gap."
+This is a theoretical paper; no new models are trained. The experimental section uses synthetic bimodal Gaussian mixtures for controlled experiments to visualize the modality gap and consistency conclusions, and measures marginal distances on pretrained OpenCLIP (CNN + ViT backbone) to test the prediction that "disrupting cross-modal compatibility systematically increases the gap."
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Experiment | Setting | Key Observation |
-| :--- | :--- | :--- |
-| Unimodal Low-temp Concentration | Synthetic data + various $\tau$ | As $\tau\to0^+$, Gibbs measure mass tends to 1 in low-potential regions, matching theory. |
-| Multimodal Marginal Separation | Synthetic heterogeneous modalities | Even with perfect pairwise alignment, marginals remain separated; gap increases with compatibility mismatch. |
-| OpenCLIP Marginal Gap | CNN / ViT backbones | Strong retrieval performance coexists with significant modality gaps; weakening cross-modal compatibility increases gaps. |
+|------------|---------|-----------------|
+| Unimodal Low-Temperature Concentration | Synthetic data + various $\tau$ | As $\tau\to0^+$, the Gibbs measure concentrates mass in low-potential regions, matching theory |
+| Multimodal Marginal Separation | Synthetic heterogeneous modalities | Even with perfect pairwise alignment, the two modality marginals remain separated; the gap increases monotonically with compatibility mismatch |
+| OpenCLIP marginal gap | CNN / ViT backbone | Strong retrieval performance coexists with a significant modality gap; weakening cross-modal compatibility systematically enlarges the gap |
 
 ### Ablation Study
 
-| Configuration | Phenomenon | Explanation |
-| :--- | :--- | :--- |
-| Sharp kernel + Low-temp | $\mathcal{J}_\tau\approx\mathcal{F}_{\tau,U_\theta}$ | Validates that KDE bias is controllable in the sharp regime. |
-| Unidirectional vs Sym. InfoNCE | Symmetric adds negative KL coupling | The unidirectional case has no necessity for a modality gap, unlike the symmetric version. |
-| Compatibility Perturbation | Gap increases with perturbation | Validates the prediction that "compatibility determines the gap." |
+| Configuration | Phenomenon | Note |
+|---------------|------------|------|
+| Sharp kernel + low temperature | $\mathcal{J}_\tau\approx\mathcal{F}_{\tau,U_\theta}$ | Verifies that KDE bias is controllable in the sharp regime |
+| Unidirectional vs. Symmetric InfoNCE | Symmetric adds negative KL coupling | No inevitable modality gap in the unidirectional case; only the symmetric version exhibits this |
+| Compatibility perturbation | Gap increases with perturbation | Verifies the prediction that "compatibility determines the gap" |
 
 ### Key Findings
-- "Uniformity" should be understood as entropy-driven dispersion within alignment basins rather than a force globally antagonistic to alignment—this directly refines a long-standing interpretation.
-- The essence of the multimodal modality gap is negative symmetric KL coupling: both modalities are forced to push away each other's marginals while minimizing their own potentials; stronger pairwise alignment can paradoxically solidify the gap.
-- Exact marginal matching requires a "knife-edge" compatibility condition (identical conditional laws), which is rarely satisfied by real-world data, making the gap a generic phenomenon rather than an accidental failure.
+- "Uniformity" should be understood as entropy-driven dispersion within the alignment basin, not as a global force opposing alignment—this directly corrects a long-standing explanation.
+- The essence of the multimodal modality gap is negative symmetric KL coupling: as both modalities minimize their own potentials, they are forced to push their marginals apart; stronger pairwise alignment actually entrenches the gap.
+- Exact marginal matching requires a knife-edge compatibility condition (the two modality conditional laws must be identical), which is rarely met in real data, so the gap is a generic phenomenon, not an accidental failure.
 
 ## Highlights & Insights
-- Shifting contrastive learning analysis from "pointwise discrimination" to "population geometry" is a substantial perspective upgrade; all conclusions (Gibbs equilibrium, negative KL coupling) are measure-theoretically provable rather than intuitive.
-- The use of a negative sign (negative symmetric KL) provides a definitive explanation for the modality gap, reframing "why we cannot eliminate the gap" as "it is an inherent property of the InfoNCE loss." For practitioners, this suggests that adding constraints to the marginals may be more effective than designing sophisticated hard negatives.
-- The two-layer analysis (intrinsic vs parametric) plus KDE error control provides a clean paradigm: prove geometry in the distribution space first, then use sharp kernels to translate conclusions back to the parameter space.
+- Upgrading contrastive learning analysis from "pointwise discrimination" to "population geometry" is a true perspective shift; all conclusions (Gibbs equilibrium, negative KL coupling) are now measure-theoretically provable, not just intuitive.
+- The negative symmetric KL term definitively explains the modality gap—it reframes "why the gap persists" as "this is how InfoNCE loss is structured." For practitioners, rather than designing more sophisticated hard negatives, it is more effective to directly constrain the marginals.
+- The two-layer analysis (intrinsic vs. parametric) plus KDE error control is a clean paradigm: first prove geometry in distribution space, then use sharp kernels to transfer conclusions back to parameter space; this can be generalized to any contrastive objective with a softmax denominator.
 
 ## Limitations & Future Work
-- All proofs rely on assumptions such as compact manifolds, isotropic kernels, and sharp diagonal peaks, which strictly hold only when the temperature is minimal and kernels are extremely sharp; real-world CLIP temperatures are not necessarily minimal.
-- Experiments are validated only on synthetic data and off-the-shelf OpenCLIP; no from-scratch training of a model with a modified loss to systematically reduce the gap was demonstrated.
-- Multimodal analysis is limited to the symmetric two-modality case; the paper does not address whether the coupling structure of three or more modalities is still dominated by pairwise negative KL terms.
-- The geometry is not directly linked to downstream metrics such as zero-shot performance or retrieval rank.
+- All proofs rely on assumptions such as compact manifolds, isotropic kernels, and sharp diagonal peaks, and are strictly valid only at very low temperatures and extremely sharp kernels; the temperatures used in practical CLIP training are not that low.
+- Experiments are limited to synthetic data and existing OpenCLIP models; no new models were trained from scratch using this theory to demonstrate that the modality gap can be systematically reduced.
+- The multimodal analysis is limited to symmetric bimodal cases; whether the coupling structure for three or more modalities is still dominated by "pairwise KL negatives" is not addressed.
+- The geometric framework is not directly linked to downstream metrics such as zero-shot performance or retrieval rank, so there remains a gap between theory and practical outcomes.
 
 ## Related Work & Insights
-- **vs Wang & Isola 2020 (alignment-uniformity)**: This work proves uniformity is entropy-driven dispersion within basins rather than a global force, refining rather than overturning the original view.
-- **vs Liang et al. 2022 (modality gap)**: They first empirically observed the gap and attributed it to the cone effect and initialization; this paper provides a first-principles geometric explanation.
-- **vs Identifiability works (Zimmermann 2021)**: Those works address "what can be learned," while this paper addresses "what geometry the objective prefers," offering complementary perspectives.
-- **vs Brumley / Park 2024 (LRH)**: CRH and this work both advance along the representation geometry line; while CRH focuses on steering, this paper focuses on the population energy of the training objective.
+- **vs Wang & Isola 2020 (alignment-uniformity)**: This work shows that uniformity is not a global force but an entropy selector within the basin, refining rather than overturning the original perspective.
+- **vs Liang et al. 2022 (modality gap)**: They first empirically demonstrated the modality gap and attributed it to the cone effect and initialization; this work provides a first-principles geometric explanation.
+- **vs Identifiability works (Zimmermann 2021)**: Those works answer "what can be learned," while this work answers "what geometry the objective prefers," offering complementary perspectives.
+- **vs Brumley / Park 2024 (LRH)**: Both CRH and this work advance the study of representation geometry; CRH focuses on steering, while this work focuses on the population energy of the training objective, sharing a common conceptual lineage.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐⭐ The conclusions regarding "InfoNCE = population energy" and "modality gap = negative symmetric KL" are novel in theoretical literature and represent a structural upgrade to the community's perspective.
-- **Experimental Thoroughness**: ⭐⭐⭐ Experiments serve the theory well but do not systematically validate whether the theory can guide large-scale model design.
-- **Writing Quality**: ⭐⭐⭐⭐ Measure-theoretic notation is rigorous, and the unimodal-multimodal dual presentation is well-structured, though the technical barrier is high.
-- **Value**: ⭐⭐⭐⭐⭐ Highly significant for future research in contrastive learning and multimodal alignment, explicitly informing the community that the gap cannot be eliminated solely through pairwise tuning.
+- Novelty: ⭐⭐⭐⭐⭐ The conclusions "InfoNCE = population energy" and "modality gap = negative symmetric KL" are both theoretical firsts and represent a structural upgrade for the community's perspective.
+- Experimental Thoroughness: ⭐⭐⭐ Experiments serve the theory and are concise, without systematic validation on large-scale training.
+- Writing Quality: ⭐⭐⭐⭐ Measure-theoretic notation is rigorous, and the authors thoughtfully present the unimodal-multimodal duality, though the entry barrier is high.
+- Value: ⭐⭐⭐⭐⭐ Provides directional significance for future research in contrastive learning and multimodal alignment, clearly stating that "pairwise tuning alone cannot eliminate the gap."
 
 <!-- RELATED:START -->
 

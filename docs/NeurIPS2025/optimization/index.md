@@ -1,8 +1,8 @@
 ---
 title: >-
-  NeurIPS2025 Optimization & Theory Papers · 110 Notes
+  NeurIPS2025 Optimization & Theory Papers · 121 Notes
 description: >-
-  110 NeurIPS2025 papers in the Optimization & Theory area, covering Federated Learning, LLM, Adversarial Robustness, Reasoning, Alignment/RLHF, Layout & Composition and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  121 NeurIPS2025 papers in the Optimization & Theory area, covering Federated Learning, LLM, Adversarial Robustness, Alignment/RLHF, Reasoning, Layout & Composition and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "NeurIPS2025"
   - "Optimization & Theory"
@@ -11,24 +11,22 @@ tags:
   - "Federated Learning"
   - "LLM"
   - "Adversarial Robustness"
-  - "Reasoning"
   - "Alignment/RLHF"
+  - "Reasoning"
   - "Layout & Composition"
 item_list:
   - u: "a_single-loop_first-order_algorithm_for_linearly_constrained_bilevel_optimizatio/"
     t: "A Single-Loop First-Order Algorithm for Linearly Constrained Bilevel Optimization"
-  - u: "a_theoretical_study_on_bridging_internal_probability_and_sel/"
-    t: "A Theoretical Study on Bridging Internal Probability and Self-Consistency for LLM Reasoning"
   - u: "a_unified_approach_to_submodular_maximization_under_noise/"
     t: "A Unified Approach to Submodular Maximization Under Noise"
   - u: "a_unified_stability_analysis_of_sam_vs_sgd_role_of_data_cohe/"
     t: "A Unified Stability Analysis of SAM vs SGD: Role of Data Coherence and Emergence of Simplicity Bias"
+  - u: "abstain_mask_retain_core_time_series_prediction_by_adaptive/"
+    t: "Abstain Mask Retain Core: Time Series Prediction by Adaptive Masking Loss with Representation Consistency"
   - u: "adaptive_algorithms_with_sharp_convergence_rates_for_stochas/"
     t: "Adaptive Algorithms with Sharp Convergence Rates for Stochastic Hierarchical Optimization"
   - u: "an_adaptive_algorithm_for_bilevel_optimization_on_riemannian_manifolds/"
     t: "An Adaptive Algorithm for Bilevel Optimization on Riemannian Manifolds"
-  - u: "asymptotically_stable_quaternion-valued_hopfield-structured_neural_network_with_/"
-    t: "Asymptotically Stable Quaternionic Hopfield Structured Neural Network with Supervised Projection-based Manifold Learning"
   - u: "auto-compressing_networks/"
     t: "Auto-Compressing Networks"
   - u: "automated_algorithm_design_via_nevanlinna-pick_interpolation/"
@@ -39,22 +37,28 @@ item_list:
     t: "Better NTK Conditioning: A Free Lunch from ReLU Nonlinear Activation in Wide Neural Networks"
   - u: "beyond_tildeosqrtt_constraint_violation_for_online_convex_optimization_with_adve/"
     t: "Beyond Õ(√T) Constraint Violation for Online Convex Optimization with Adversarial Constraints"
-  - u: "brain-like_variational_inference/"
-    t: "Brain-like Variational Inference"
+  - u: "chiqpm_calibrated_hierarchical_interpretable_image_classification/"
+    t: "CHiQPM: Calibrated Hierarchical Interpretable Image Classification"
   - u: "clean_first_align_later_benchmarking_preference_data_cleaning_for_reliable_llm_a/"
     t: "Clean First, Align Later: Benchmarking Preference Data Cleaning for Reliable LLM Alignment"
   - u: "composing_global_solutions_to_reasoning_tasks_via_algebraic_objects_in_neural_ne/"
     t: "Composing Global Solutions to Reasoning Tasks via Algebraic Objects in Neural Nets"
+  - u: "conformal_prediction_for_causal_effects_of_continuous_treatments/"
+    t: "Conformal Prediction for Causal Effects of Continuous Treatments"
   - u: "constrained_network_slice_assignment_via_llms/"
     t: "Constrained Network Slice Assignment via Large Language Models"
   - u: "contribution_of_task-irrelevant_stimuli_to_drift_of_neural_representations/"
     t: "Contribution of Task-Irrelevant Stimuli to Drift of Neural Representations"
+  - u: "cost-sensitive_freeze-thaw_bayesian_optimization_for_efficient_hyperparameter_tu/"
+    t: "Cost-Sensitive Freeze-thaw Bayesian Optimization for Efficient Hyperparameter Tuning"
   - u: "covariances_for_free_exploiting_mean_distributions_for_training-free_federated_l/"
     t: "Covariances for Free: Exploiting Mean Distributions for Training-free Federated Learning"
   - u: "dartquant_efficient_rotational_distribution_calibration_for_llm_quantization/"
     t: "DartQuant: Efficient Rotational Distribution Calibration for LLM Quantization"
   - u: "deep_taxonomic_networks_for_unsupervised_hierarchical_prototype_discovery/"
     t: "Deep Taxonomic Networks for Unsupervised Hierarchical Prototype Discovery"
+  - u: "deltaproduct_improving_state-tracking_in_linear_rnns_via_householder_products/"
+    t: "DeltaProduct: Improving State-Tracking in Linear RNNs via Householder Products"
   - u: "do_neural_networks_need_gradient_descent_to_generalize_a_theoretical_study/"
     t: "Do Neural Networks Need Gradient Descent to Generalize? A Theoretical Study"
   - u: "doubly_robust_alignment_for_large_language_models/"
@@ -71,29 +75,21 @@ item_list:
     t: "Efficient Federated Learning against Byzantine Attacks and Data Heterogeneity via Aggregating Normalized Gradients"
   - u: "emergence_and_scaling_laws_in_sgd_learning_of_shallow_neural_networks/"
     t: "Emergence and Scaling Laws in SGD Learning of Shallow Neural Networks"
-  - u: "escaping_saddle_points_without_lipschitz_smoothness_the_power_of_nonlinear_preco/"
-    t: "Escaping Saddle Points without Lipschitz Smoothness: The Power of Nonlinear Preconditioning"
-  - u: "evaluating_llms_for_combinatorial_optimization_one-phase_and_two-phase_heuristic/"
-    t: "Evaluating LLMs for Combinatorial Optimization: One-Phase and Two-Phase Heuristics for 2D Bin-Packing"
-item_total: 110
+item_total: 121
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->
 # 📐 Optimization & Theory
 
-**🧠 NeurIPS2025** · **110** paper notes
+**🧠 NeurIPS2025** · **121** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (71)](../../ICML2026/optimization/index.md) · [📷 CVPR2026 (8)](../../CVPR2026/optimization/index.md) · [🔬 ICLR2026 (47)](../../ICLR2026/optimization/index.md) · [🤖 AAAI2026 (22)](../../AAAI2026/optimization/index.md) · [📹 ICCV2025 (7)](../../ICCV2025/optimization/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (64)](../../ICML2026/optimization/index.md) · [📷 CVPR2026 (16)](../../CVPR2026/optimization/index.md) · [🔬 ICLR2026 (47)](../../ICLR2026/optimization/index.md) · [🤖 AAAI2026 (21)](../../AAAI2026/optimization/index.md) · [📹 ICCV2025 (7)](../../ICCV2025/optimization/index.md)
 
-🔥 **Top topics:** Federated Learning ×12 · LLM ×11 · Adversarial Robustness ×9 · Reasoning ×5 · Alignment/RLHF ×3
+🔥 **Top topics:** Federated Learning ×13 · LLM ×12 · Adversarial Robustness ×11 · Alignment/RLHF ×4 · Reasoning ×4
 
 **[A Single-Loop First-Order Algorithm for Linearly Constrained Bilevel Optimization](a_single-loop_first-order_algorithm_for_linearly_constrained_bilevel_optimizatio.md)**
 
 :   For bilevel optimization problems with coupled linear constraints in the lower-level problem, this paper proposes SFLCB, a single-loop first-order algorithm that eliminates Hessian dependence via a penalty-based reformulation combined with augmented Lagrangian, improving the iteration complexity from $O(\epsilon^{-3}\log(\epsilon^{-1}))$ to $O(\epsilon^{-3})$.
-
-**[A Theoretical Study on Bridging Internal Probability and Self-Consistency for LLM Reasoning](a_theoretical_study_on_bridging_internal_probability_and_sel.md)**
-
-:   This paper proposes the first theoretical framework for sampling-based test-time scaling methods, decomposing reasoning error into estimation error and model error. It reveals the limitations of Self-Consistency (slow convergence) and Perplexity (large model error), and introduces the RPC method that combines the strengths of both, achieving comparable reasoning performance on 7 benchmarks with only 50% of the sampling cost.
 
 **[A Unified Approach to Submodular Maximization Under Noise](a_unified_approach_to_submodular_maximization_under_noise.md)**
 
@@ -103,6 +99,10 @@ item_total: 110
 
 :   Through a linear stability analysis framework, this paper demonstrates that "flat minima ⇒ better generalization" and "SGD prefers simple functions" are two sides of the same coin — data coherence simultaneously governs both phenomena, and SAM amplifies the simplicity bias further by imposing stricter stability conditions.
 
+**[Abstain Mask Retain Core: Time Series Prediction by Adaptive Masking Loss with Representation Consistency](abstain_mask_retain_core_time_series_prediction_by_adaptive.md)**
+
+:   This paper reveals a counter-intuitive phenomenon in time series forecasting — that appropriately truncating historical inputs can improve prediction accuracy (termed the redundant feature learning problem) — and proposes AMRC based on information bottleneck theory. AMRC suppresses redundant feature learning via adaptive masking loss and representation consistency constraints, serving as a model-agnostic training framework that consistently improves performance across diverse architectures.
+
 **[Adaptive Algorithms with Sharp Convergence Rates for Stochastic Hierarchical Optimization](adaptive_algorithms_with_sharp_convergence_rates_for_stochas.md)**
 
 :   This paper proposes Ada-Minimax and Ada-BiO, two adaptive algorithms that combine momentum normalization with a novel online noise estimation strategy to achieve, for the first time, sharp convergence rates of $\tilde{O}(1/\sqrt{T} + \sqrt{\bar{\sigma}}/T^{1/4})$ for nonconvex-strongly-concave minimax and nonconvex-strongly-convex bilevel optimization without requiring prior knowledge of the gradient noise level.
@@ -110,10 +110,6 @@ item_total: 110
 **[An Adaptive Algorithm for Bilevel Optimization on Riemannian Manifolds](an_adaptive_algorithm_for_bilevel_optimization_on_riemannian_manifolds.md)**
 
 :   AdaRHD is the first adaptive algorithm for Riemannian bilevel optimization (RBO) that requires no prior knowledge of problem-specific parameters (strong convexity constants, Lipschitz bounds, manifold curvature). By adopting an inverse cumulative gradient norm strategy for adaptive step size selection and solving the lower-level problem, linear system, and upper-level update sequentially within a three-stage framework, AdaRHD achieves a convergence rate of $O(1/\epsilon)$ matching non-adaptive methods, while exhibiting substantially greater robustness to initial step size choices compared to RHGD.
-
-**[Asymptotically Stable Quaternionic Hopfield Structured Neural Network with Supervised Projection-based Manifold Learning](asymptotically_stable_quaternion-valued_hopfield-structured_neural_network_with_.md)**
-
-:   This paper proposes a Quaternion-valued Supervised Hopfield-structured Neural Network (QSHNN) that employs a periodic projection strategy to maintain the quaternionic structural consistency of the weight matrix. The existence and uniqueness of fixed points and their asymptotic stability are established via Lyapunov theory, while bounded trajectory curvature guarantees path smoothness for robotic path planning.
 
 **[Auto-Compressing Networks](auto-compressing_networks.md)**
 
@@ -135,9 +131,9 @@ item_total: 110
 
 :   This paper studies Constrained Online Convex Optimization (COCO) with adversarial constraints and introduces a tunable parameter $\beta$ to achieve a precise tradeoff between $\tilde{O}(T^\beta)$ regret and $\tilde{O}(T^{1-\beta})$ cumulative constraint violation (CCV), surpassing the previously known optimal bound of $\tilde{O}(\sqrt{T})$ constraint violation.
 
-**[Brain-like Variational Inference](brain-like_variational_inference.md)**
+**[CHiQPM: Calibrated Hierarchical Interpretable Image Classification](chiqpm_calibrated_hierarchical_interpretable_image_classification.md)**
 
-:   This paper proposes the FOND framework (Free energy Online Natural-gradient Dynamics), which derives spiking neural network inference dynamics from first principles via free energy minimization, and implements iPVAE (iterative Poisson VAE). iPVAE outperforms standard VAEs and predictive coding models in reconstruction–sparsity trade-off, biological plausibility, and OOD generalization.
+:   CHiQPM proposes a calibrated hierarchical interpretable image classification method that selects and assigns features to classes via quadratic programming, constructs hierarchical explanation paths, and incorporates interpretable Conformal Prediction set prediction, retaining 99% of black-box model accuracy while providing both global and local interpretability.
 
 **[Clean First, Align Later: Benchmarking Preference Data Cleaning for Reliable LLM Alignment](clean_first_align_later_benchmarking_preference_data_cleaning_for_reliable_llm_a.md)**
 
@@ -147,6 +143,10 @@ item_total: 110
 
 :   This paper proposes the CoGS framework, demonstrating that the weight space of two-layer quadratic-activation networks on Abelian group multiplication reasoning tasks admits a semiring algebraic structure. The Sum Potentials in the loss function are ring homomorphisms, enabling global optimal solutions to be algebraically composed from partial solutions—each satisfying only a subset of loss constraints—via ring addition and multiplication. Approximately 95% of gradient descent solutions match the theoretical constructions exactly.
 
+**[Conformal Prediction for Causal Effects of Continuous Treatments](conformal_prediction_for_causal_effects_of_continuous_treatments.md)**
+
+:   This work is the first to construct conformal prediction intervals for causal effects of continuous treatments (e.g., drug dosage) by parameterizing intervention-induced propensity shifts via a tilting function family and employing quantile regression, providing finite-sample $1-\alpha$ coverage guarantees under both known and unknown propensity score settings.
+
 **[Constrained Network Slice Assignment via Large Language Models](constrained_network_slice_assignment_via_llms.md)**
 
 :   This paper investigates the use of LLMs (Claude series) for solving constrained optimization problems in 5G network slice resource allocation. Two approaches are proposed: zero-shot LLM direct assignment and LLM-guided integer programming. Empirical findings show that LLMs alone can produce reasonable initial allocations but may violate hard constraints, whereas combining LLMs with an ILP solver achieves 100% completeness and balanced utilization.
@@ -154,6 +154,10 @@ item_total: 110
 **[Contribution of Task-Irrelevant Stimuli to Drift of Neural Representations](contribution_of_task-irrelevant_stimuli_to_drift_of_neural_representations.md)**
 
 :   This work theoretically demonstrates that the statistical properties (variance and dimensionality) of task-irrelevant stimuli are key drivers of representational drift in online learning. Across Oja's rule, Similarity Matching, autoencoders, and supervised two-layer networks, a drift rate of $D \propto \lambda_\perp^2 (n-m)$ is consistently observed. Furthermore, learning-noise-induced drift exhibits anisotropic geometric structure, qualitatively distinct from the isotropic drift induced by Gaussian synaptic noise.
+
+**[Cost-Sensitive Freeze-thaw Bayesian Optimization for Efficient Hyperparameter Tuning](cost-sensitive_freeze-thaw_bayesian_optimization_for_efficient_hyperparameter_tu.md)**
+
+:   CFBO incorporates user-defined utility functions (cost–performance trade-offs) into the freeze-thaw Bayesian optimization framework, and combines an adaptive stopping criterion with LC mixup-based transfer learning to achieve optimal cost–performance trade-offs on multi-fidelity HPO benchmarks.
 
 **[Covariances for Free: Exploiting Mean Distributions for Training-free Federated Learning](covariances_for_free_exploiting_mean_distributions_for_training-free_federated_l.md)**
 
@@ -166,6 +170,10 @@ item_total: 110
 **[Deep Taxonomic Networks for Unsupervised Hierarchical Prototype Discovery](deep_taxonomic_networks_for_unsupervised_hierarchical_prototype_discovery.md)**
 
 :   Deep Taxonomic Networks proposes a deep latent variable model with a complete binary tree Gaussian mixture prior. Through variational inference, the model automatically discovers hierarchical taxonomies and multi-level prototype clusters from unlabeled data without requiring a predefined number of classes, substantially outperforming baselines such as TreeVAE across multiple datasets.
+
+**[DeltaProduct: Improving State-Tracking in Linear RNNs via Householder Products](deltaproduct_improving_state-tracking_in_linear_rnns_via_householder_products.md)**
+
+:   This paper proposes DeltaProduct, which extends DeltaNet's single-step gradient descent to $n_h$-step gradient descent per token, yielding a state transition matrix expressed as a product of $n_h$ generalized Householder transformations. This achieves a tunable trade-off between expressivity and efficiency, significantly improving state-tracking capability and length extrapolation performance.
 
 **[Do Neural Networks Need Gradient Descent to Generalize? A Theoretical Study](do_neural_networks_need_gradient_descent_to_generalize_a_theoretical_study.md)**
 
@@ -219,6 +227,10 @@ item_total: 110
 
 :   Under the $\alpha$-symmetric $(L_0,L_1)$-Lipschitz condition (a relaxation of the classical $L$-Lipschitz assumption), this paper proposes an adaptive step size strategy $\gamma_k = 1/(c_0 + c_1\|F(x_k)\|^\alpha)$ for the extragradient (EG) method, establishing the first complete convergence guarantees for three classes of root-finding problems: strongly monotone (linear convergence), monotone (sublinear convergence), and weak Minty (local convergence).
 
+**[Fantastic Features and Where to Find Them: A Probing Method to Combine Features from Multiple Foundation Models](fantastic_features_and_where_to_find_them_a_probing_method_to_combine_features_f.md)**
+
+:   This paper proposes ComBo, a lightweight probing-based adapter that compresses multi-layer activations from multiple frozen foundation models via affine projection, then fuses them with a small transformer—without backpropagation through any backbone. ComBo efficiently integrates complementary representations across models, surpassing prior probing methods and matching distillation-based methods on VTAB-1k.
+
 **[Faster Algorithms for Structured John Ellipsoid Computation](faster_algorithm_for_structured_john_ellipsoid_computation.md)**
 
 :   For computing the John ellipsoid of a symmetric convex polytope $P = \{x \in \mathbb{R}^d : -\mathbf{1}_n \leq Ax \leq \mathbf{1}_n\}$, this paper proposes two fast algorithms: a near-input-sparsity algorithm based on sketching with per-iteration cost $\widetilde{O}(\text{nnz}(A) + d^\omega)$, and a treewidth-based algorithm with per-iteration cost $O(n\tau^2)$, both significantly improving upon the prior state-of-the-art cost of $O(nd^2)$.
@@ -230,6 +242,14 @@ item_total: 110
 **[FedRTS: Federated Robust Pruning via Combinatorial Thompson Sampling](fedrts_federated_robust_pruning_via_combinatorial_thompson_sampling.md)**
 
 :   This paper reformulates federated dynamic pruning as a Combinatorial Multi-Armed Bandit (CMAB) problem and proposes TSAdj, a Thompson Sampling-based topology adjustment mechanism. By replacing deterministic decisions with probabilistic ones, the method obtains more robust sparse model topologies while significantly reducing communication overhead.
+
+**[FLUX: Efficient Descriptor-Driven Clustered Federated Learning under Arbitrary Distribution Shifts](flux_efficient_descriptor-driven_clustered_federated_learning_under_arbitrary_di.md)**
+
+:   Flux extracts compact distribution descriptors on the client side (marginal $P(X)$ mean/covariance + class-conditional $P(Y|X)$ mean/covariance), performs unsupervised clustering on the server via adaptive DBSCAN to automatically determine the number of clusters and group assignments, trains cluster-specific models, and at test time matches unlabeled new clients to the optimal model using only feature descriptors — the first method to simultaneously handle four types of distribution shifts with communication overhead comparable to FedAvg.
+
+**[FlyLoRA: Boosting Task Decoupling and Parameter Efficiency via Implicit Rank-Wise Mixture-of-Experts](flylora_boosting_task_decoupling_and_parameter_efficiency_via_implicit_rank-wise.md)**
+
+:   Inspired by the fly olfactory circuit, FlyLoRA replaces the down-projection matrix $A$ in LoRA with a frozen sparse random projection and employs top-$k$ activation selection to realize implicit rank-wise MoE routing. This design eliminates routing parameters, reduces intra-task interference, and naturally supports multi-task model merging by exploiting the near-orthogonality of random projections.
 
 **[Gradient Descent as Loss Landscape Navigation: a Normative Framework for Deriving Learning Rules](gradient_descent_as_loss_landscape_navigation_a_normative_framework_for_deriving.md)**
 
@@ -279,10 +299,6 @@ item_total: 110
 
 :   This paper proves that orthogonal multi-index models $f_*(\mathbf{x}) = \sum_{k=1}^P \phi(\mathbf{v}_k^* \cdot \mathbf{x})$ can be learned via a two-phase online SGD with sample complexity $\tilde{O}(dP^{L-1})$ (where $L$ is the lowest higher-order Hermite degree of the link function), significantly improving upon $\tilde{O}(Pd^{L-1})$ obtained by using only the lowest-order information. The key insight is to first recover the subspace using second-order terms and then recover the directions using $L$-th order terms, jointly exploiting Hermite components of different orders.
 
-**[Learning Parameterized Skills from Demonstrations](learning_parameterized_skills_from_demonstrations.md)**
-
-:   This paper proposes DEPS, an end-to-end algorithm for discovering parameterized skills from expert demonstrations. Through a three-level hierarchical policy (discrete skill selection → continuous parameter selection → low-level actions) and an information bottleneck design, DEPS learns interpretable and generalizable skill abstractions, achieving significant improvements over baselines on LIBERO and MetaWorld.
-
 **[Learning Provably Improves the Convergence of Gradient Descent](learning_provably_improves_the_convergence_of_gradient_descent.md)**
 
 :   This paper presents the first rigorous proof of training convergence for an unrolling-based Learn to Optimize (L2O) framework (Math-L2O). By leveraging NTK theory, it establishes a linear convergence rate and proposes a deterministic initialization strategy that provably ensures L2O improves upon the convergence performance of gradient descent. Experiments demonstrate over 50% improvement in optimality compared to standard GD.
@@ -327,9 +343,9 @@ item_total: 110
 
 :   MeCeFO proposes a fault-tolerant optimization algorithm for LLM training that minimizes overhead during node failures through three techniques—skip-connections, selective activation recomputation, and low-rank gradient approximation—achieving only a 4.18% throughput drop under high-frequency failure conditions.
 
-**[Memory-Augmented Potential Field Theory: A Framework for Adaptive Control in Non-Convex Domains](memory-augmented_potential_field_theory_a_framework_for_adaptive_control_in_non-.md)**
+**[MergeBench: A Benchmark for Merging Domain-Specialized LLMs](mergebench_a_benchmark_for_merging_domain-specialized_llms.md)**
 
-:   This paper proposes Memory-Augmented Potential Field Theory (MAPFT), which maintains a dynamic memory module within stochastic optimal control to detect and encode topological features of the state space (local minima, low-gradient regions, etc.), and adaptively reshapes the value function landscape to enable control in non-convex environments. On tasks such as Humanoid-v4, the method achieves a 27% improvement in cumulative reward over the best RL baseline (SAC), and raises the local optima escape rate from ~30% to ~72%.
+:   MergeBench is the first comprehensive benchmark suite for evaluating large-scale domain-specialized LLM merging, covering Llama and Gemma families up to 9B parameters, five task domains, and eight merging methods, providing systematic evaluation and practical guidelines across three dimensions: multi-task performance, forgetting, and runtime efficiency.
 
 **[MESS+: Dynamically Learned Inference-Time LLM Routing in Model Zoos with Service Level Guarantees](mess_dynamically_learned_inference-time_llm_routing_in_model_zoos_with_service_l.md)**
 
@@ -379,6 +395,10 @@ item_total: 110
 
 :   This paper presents the first minimax parameter estimation analysis for contaminated Mixture of Experts (MoE) models with softmax gating. It introduces the concept of "distinguishability" to characterize the relationship between a pretrained model and a prompt, proving that MLE achieves the parametric rate $\tilde{O}(n^{-1/2})$ when distinguishability holds, while the rate degrades significantly otherwise.
 
+**[One Sample is Enough to Make Conformal Prediction Robust](one_sample_is_enough_to_make_conformal_prediction_robust.md)**
+
+:   This paper proposes RCP1 (Robust Conformal Prediction with One sample), which certifies the conformal procedure itself rather than individual conformity scores. Requiring only a single randomly perturbed forward pass at inference, RCP1 yields smaller robust prediction sets than state-of-the-art methods that require 100 forward passes.
+
 **[Online Two-Stage Submodular Maximization](online_two-stage_submodular_maximization.md)**
 
 :   This paper introduces the Online Two-Stage Submodular Maximization (O2SSM) problem for the first time, and proposes the RAOCO algorithm for Weighted Threshold Potential (WTP) functions. By combining fractional relaxation with randomized pipage rounding, RAOCO achieves sublinear $(1-1/e)^2$-regret in polynomial time, while also improving the approximation ratio for the offline problem.
@@ -411,6 +431,10 @@ item_total: 110
 
 :   This paper incorporates response time information from user decision-making into the preference learning framework, reducing the estimation error of reward model learning from exponential to polynomial order via a Neyman orthogonal loss function.
 
+**[Private Zeroth-Order Optimization with Public Data](private_zeroth-order_optimization_with_public_data.md)**
+
+:   This paper proposes the PAZO framework, which leverages public data to guide gradient approximation in private zeroth-order optimization. PAZO achieves a superior privacy-utility tradeoff compared to DP-SGD on both vision and text tasks, while delivering up to a 16× speedup.
+
 **[Probing Neural Combinatorial Optimization Models](probing_neural_combinatorial_optimization_models.md)**
 
 :   This work is the first to systematically introduce probing methodology into the study of neural combinatorial optimization (NCO) models. It proposes a CS-Probing framework to analyze the decision-relevant knowledge, inductive biases, and generalization mechanisms encoded in model representations, and identifies critical embedding dimensions that can be leveraged to improve model generalization.
@@ -418,10 +442,6 @@ item_total: 110
 **[Problem-Parameter-Free Decentralized Bilevel Optimization](problem-parameter-free_decentralized_bilevel_optimization.md)**
 
 :   This paper proposes AdaSDBO, a fully parameter-free decentralized bilevel optimization algorithm that requires no prior knowledge of problem parameters. By employing adaptive step sizes based on cumulative gradient norms, it achieves a convergence rate of $\tilde{O}(1/\sqrt{T})$.
-
-**[PROFIT: A Specialized Optimizer for Deep Fine Tuning](profit_a_specialized_optimizer_for_deep_fine_tuning.md)**
-
-:   PROFIT frames fine-tuning as a multi-task learning problem across the time dimension, and achieves forgetting-resistant fine-tuning without additional data or parameters by orthogonally projecting new-task gradients onto the direction of a "regression equilibrium point."
 
 **[Projecting Assumptions: The Duality Between Sparse Autoencoders and Concept Geometry](projecting_assumptions_the_duality_between_sparse_autoencoders_and_concept_geome.md)**
 
@@ -450,6 +470,10 @@ item_total: 110
 **[Robust Estimation Under Heterogeneous Corruption Rates](robust_estimation_under_heterogeneous_corruption_rates.md)**
 
 :   This paper studies robust estimation under heterogeneous corruption rates—where each sample is corrupted with a distinct known probability—and establishes tight minimax rates for mean estimation and linear regression under both bounded and Gaussian distributions. A key finding is that the optimal estimator can simply discard samples whose corruption rates exceed a certain threshold.
+
+**[Robust LLM Alignment via Distributionally Robust Direct Preference Optimization](robust_llm_alignment_via_distributionally_robust_direct_preference_optimization.md)**
+
+:   This paper proposes two robust DPO variants—WDPO (Wasserstein) and KLDPO (KL divergence)—under a distributionally robust optimization (DRO) framework to address alignment failures caused by shifts in user preference distributions. The approach provides $O(n^{-1/4})$ convergence guarantees and achieves significant improvements over standard DPO on multi-dimensional alignment tasks and the OpenLLM leaderboard.
 
 **[Second-Order Optimization Under Heavy-Tailed Noise: Hessian Clipping and Sample Complexity](second-order_optimization_under_heavy-tailed_noise_hessian_clipping_and_sample_c.md)**
 
@@ -487,6 +511,18 @@ item_total: 110
 
 :   This paper provides theoretical and empirical evidence that neural networks trained with SGD tend to learn simple linear features (simplicity bias), whereas Adam produces richer nonlinear features, yielding predictors closer to the Bayes-optimal classifier and better generalization under distribution shift.
 
+**[The Trilemma of Truth in Large Language Models](the_trilemma_of_truth_in_large_language_models.md)**
+
+:   This paper proposes sAwMIL (Sparse-Aware Multiple Instance Learning), a three-class probing framework that combines MIL and conformal prediction to classify LLM internal activations into true/false/neither, revealing that truth and falsity signals are not encoded as simple bidirectional opposites but as distributed representations spanning a multi-dimensional subspace.
+
+**[Towards Reliable and Holistic Visual In-Context Learning Prompt Selection](towards_reliable_and_holistic_visual_in-context_learning_prompt_selection.md)**
+
+:   This paper proposes RH-Partial2Global, which for the first time employs Spearman rank correlation tests to demonstrate that the "similarity-first hypothesis" in VICL is statistically significant yet exhibits extremely weak correlation strength ($\bar{\rho} \approx 0.03\text{-}0.05$). By constructing reliable candidate sets via Jackknife conformal prediction and achieving comprehensive uniform pairwise preference sampling through covering designs, the method consistently outperforms state-of-the-art approaches across three visual tasks: segmentation, detection, and colorization.
+
+**[Train with Perturbation, Infer after Merging: A Two-Stage Framework for Continual Learning](train_with_perturbation_infer_after_merging_a_two-stage_framework_for_continual_.md)**
+
+:   This paper proposes the Perturb-and-Merge (P&M) framework, which introduces model merging mechanisms into the continual learning paradigm. During training, random perturbations are added along the task vector direction to smooth the loss landscape; during inference, a closed-form optimal coefficient is used to compute a convex combination of the historical model and the current task model. Combined with LoRA, the framework achieves memory-efficient state-of-the-art continual learning performance.
+
 **[Training-Free Bayesianization for Low-Rank Adapters of Large Language Models](training-free_bayesianization_for_low-rank_adapters_of_large_language_models.md)**
 
 :   This paper proposes TFB (Training-Free Bayesianization), which converts a pre-trained LoRA adapter into its Bayesian counterpart without any retraining by searching for the maximum admissible variance within a family of low-rank isotropic Gaussian distributions. The procedure is theoretically shown to be equivalent to generalized variational inference.
@@ -494,6 +530,14 @@ item_total: 110
 **[Training Robust Graph Neural Networks by Modeling Noise Dependencies](training_robust_graph_neural_networks_by_modeling_noise_dependencies.md)**
 
 :   This paper proposes Dependency-Aware Graph Noise (DANG) and the DA-GNN framework, which model a causal dependency chain from node feature noise → graph structure noise → label noise, and employ variational inference to derive an ELBO objective for training GNNs robust to multi-source correlated noise.
+
+**[Turbocharging Gaussian Process Inference with Approximate Sketch-and-Project](turbocharging_gaussian_process_inference_with_approximate_sketch-and-project.md)**
+
+:   This paper proposes the ADASAP algorithm, which extends the sketch-and-project framework to large-scale GP inference via approximate subspace preconditioning, distributed computation, and Nesterov acceleration. It is the first method to scale exact GP inference beyond $>3\times10^8$ samples, while theoretically establishing condition number-free convergence guarantees for the SAP family.
+
+**[Uncertainty Quantification for Reduced-Order Surrogate Models Applied to Cloud Microphysics](uncertainty_quantification_for_reduced-order_surrogate_models_applied_to_cloud_m.md)**
+
+:   This paper proposes the first post-hoc, model-agnostic uncertainty quantification framework for latent-space reduced-order models. By applying conformal prediction to the reconstruction, latent dynamics, and end-to-end prediction components independently, it constructs distribution-free prediction intervals and reveals component-level uncertainty propagation in cloud microphysics ROMs — showing that structural errors in the autoencoder, rather than dynamics errors, dominate end-to-end prediction uncertainty.
 
 **[Understanding Adam Requires Better Rotation Dependent Assumptions](understanding_adam_requires_better_rotation_dependent_assumptions.md)**
 

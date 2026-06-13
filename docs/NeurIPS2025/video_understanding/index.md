@@ -1,131 +1,107 @@
 ---
 title: >-
-  NeurIPS2025 Video Understanding Papers · 58 Notes
+  NeurIPS2025 Video Understanding Papers · 39 Notes
 description: >-
-  58 NeurIPS2025 papers in the Video Understanding area, covering Object Tracking, Reasoning, Adversarial Robustness, Question Answering, LLM, Compression and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  39 NeurIPS2025 papers in the Video Understanding area, covering Reasoning, LLM, Anomaly Detection, Object Tracking, Question Answering, Adversarial Robustness and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "NeurIPS2025"
   - "Video Understanding"
   - "AI paper notes"
   - "paper summaries"
-  - "Object Tracking"
   - "Reasoning"
-  - "Adversarial Robustness"
-  - "Question Answering"
   - "LLM"
-  - "Compression"
+  - "Anomaly Detection"
+  - "Object Tracking"
+  - "Question Answering"
+  - "Adversarial Robustness"
 item_list:
-  - u: "a_little_depth_goes_a_long_way_the_expressive_power_of_logde/"
-    t: "A Little Depth Goes a Long Way: The Expressive Power of Log-Depth Transformers"
+  - u: "a_unified_reasoning_framework_for_holistic_zeroshot_video_an/"
+    t: "A Unified Reasoning Framework for Holistic Zero-Shot Video Anomaly Analysis"
   - u: "adavideorag_omnicontextual_adaptive_retrievalaugmented_effic/"
     t: "AdaVideoRAG: Omni-Contextual Adaptive Retrieval-Augmented Efficient Long Video Understanding"
-  - u: "adversarial_locomotion_and_motion_imitation_for_humanoid_policy_learning/"
-    t: "Adversarial Locomotion and Motion Imitation for Humanoid Policy Learning"
-  - u: "agentic_persona_control_and_task_state_tracking_for_realistic_user_simulation_in/"
-    t: "Agentic Persona Control and Task State Tracking for Realistic User Simulation"
-  - u: "cloud4d_estimating_cloud_properties_at_a_high_spatial_and_temporal_resolution/"
-    t: "Cloud4D: Estimating Cloud Properties at a High Spatial and Temporal Resolution"
   - u: "convis-bench_estimating_video_similarity_through_semantic_concepts/"
     t: "ConViS-Bench: Estimating Video Similarity Through Semantic Concepts"
-  - u: "deltaproduct_improving_state-tracking_in_linear_rnns_via_householder_products/"
-    t: "DeltaProduct: Improving State-Tracking in Linear RNNs via Householder Products"
-  - u: "dense_sae_latents_are_features_not_bugs/"
-    t: "Dense SAE Latents Are Features, Not Bugs"
   - u: "disentangled_concepts_speak_louder_than_words_explainable_video_action_recogniti/"
     t: "Disentangled Concepts Speak Louder Than Words: Explainable Video Action Recognition"
-  - u: "dsas_a_universal_plug-and-play_framework_for_attention_optimization_in_multi-doc/"
-    t: "DSAS: A Universal Plug-and-Play Framework for Attention Optimization in Multi-Document Question Answering"
   - u: "dualground_phrase_temporal/"
     t: "DualGround: Structured Phrase and Sentence-Level Temporal Grounding"
   - u: "eag3r_event-augmented_3d_geometry_estimation_for_dynamic_and_extreme-lighting_sc/"
     t: "EAG3R: Event-Augmented 3D Geometry Estimation for Dynamic and Extreme-Lighting Scenes"
-  - u: "egoemotion_egocentric_vision_and_physiological_signals_for_emotion_and_personali/"
-    t: "egoEMOTION: Egocentric Vision and Physiological Signals for Emotion and Personality Recognition in Real-World Tasks"
   - u: "egogazevqa_egocentric_gaze_guided_video_question_answering/"
     t: "EgoGazeVQA: Egocentric Gaze-Guided Video Question Answering Benchmark"
   - u: "enhancing_temporal_understanding_in_videollms_through_stacke/"
     t: "Enhancing Temporal Understanding in Video-LLMs through Stacked Temporal Attention in Vision Encoders"
   - u: "fastvid_dynamic_density_pruning_for_fast_video_large_languag/"
     t: "FastVID: Dynamic Density Pruning for Fast Video Large Language Models"
-  - u: "fixed-point_rnns_interpolating_from_diagonal_to_dense/"
-    t: "Fixed-Point RNNs: Interpolating from Diagonal to Dense"
   - u: "grounding_foundational_vision_models_with_3d_human_poses_for_robust_action_recog/"
     t: "Grounding Foundational Vision Models with 3D Human Poses for Robust Action Recognition"
   - u: "infinipot-v_memory-constrained_kv_cache_compression_for_streaming_video_understa/"
     t: "InfiniPot-V: Memory-Constrained KV Cache Compression for Streaming Video Understanding"
-  - u: "influx_a_benchmark_for_self-calibration_of_dynamic_intrinsics_of_video_cameras/"
-    t: "InFlux: A Benchmark for Self-Calibration of Dynamic Intrinsics of Video Cameras"
   - u: "inst-it_boosting_instance_understanding_via_explicit_visual_prompt_instruction_t/"
     t: "INST-IT: Boosting Instance Understanding via Explicit Visual Prompt Instruction Tuning"
-  - u: "kungfubot_physics-based_humanoid_whole-body_control_for_learning_highly-dynamic_/"
-    t: "KungfuBot: Physics-Based Humanoid Whole-Body Control for Learning Highly-Dynamic Skills"
   - u: "lattice_boltzmann_model_for_learning_real-world_pixel_dynamicity/"
     t: "Lattice Boltzmann Model for Learning Real-World Pixel Dynamicity"
-  - u: "less_is_more_local_intrinsic_dimensions_of_contextual_language_models/"
-    t: "Less is More: Local Intrinsic Dimensions of Contextual Language Models"
   - u: "livestar_live_streaming_assistant_for_real-world_online_video_understanding/"
     t: "LiveStar: Live Streaming Assistant for Real-World Online Video Understanding"
-  - u: "memtrack_evaluating_long-term_memory_and_state_tracking_in_multi-platform_dynami/"
-    t: "MEMTRACK: Evaluating Long-Term Memory and State Tracking in Multi-Platform Dynamic Agent Environments"
+  - u: "longvpo_from_anchored_cues_to_selfreasoning_for_longform_vid/"
+    t: "LongVPO: From Anchored Cues to Self-Reasoning for Long-Form Video Preference Optimization"
   - u: "mimeqa_towards_socially-intelligent_nonverbal_foundation_models/"
     t: "MimeQA: Towards Socially-Intelligent Nonverbal Foundation Models"
+  - u: "monitor_exploiting_large_language_models_with_instruction_for_online_video_anoma/"
+    t: "MoniTor: Exploiting Large Language Models with Instruction for Online Video Anomaly Detection"
   - u: "muvr_a_multi-modal_untrimmed_video_retrieval_benchmark_with_multi-level_visual_c/"
     t: "MUVR: A Multi-Modal Untrimmed Video Retrieval Benchmark with Multi-Level Visual Correspondence"
-  - u: "neural_stochastic_flows_solver-free_modelling_and_inference_for_sde_solutions/"
-    t: "Neural Stochastic Flows: Solver-Free Modelling and Inference for SDE Solutions"
-  - u: "neuropath_neurobiology-inspired_path_tracking_and_reflection_for_semantically_co/"
-    t: "NeuroPath: Neurobiology-Inspired Path Tracking and Reflection for Semantically Coherent Retrieval"
-item_total: 58
+  - u: "panda_towards_generalist_video_anomaly_detection_via_agentic_ai_engineer/"
+    t: "PANDA: Towards Generalist Video Anomaly Detection via Agentic AI Engineer"
+  - u: "pass_path-selective_state_space_model_for_event-based_recognition/"
+    t: "PASS: Path-Selective State Space Model for Event-Based Recognition"
+  - u: "pixfoundation_20_do_video_multi-modal_llms_use_motion_in_visual_grounding/"
+    t: "PixFoundation 2.0: Do Video Multi-Modal LLMs Use Motion in Visual Grounding?"
+  - u: "prefm_online_audio-visual_event_parsing_via_predictive_future_modeling/"
+    t: "PreFM: Online Audio-Visual Event Parsing via Predictive Future Modeling"
+  - u: "sama_towards_multi-turn_referential_grounded_video_chat_with_large_language_mode/"
+    t: "SAMA: Towards Multi-Turn Referential Grounded Video Chat with Large Language Models"
+  - u: "seeing_beyond_the_scene_analyzing_and_mitigating_background_bias_in_action_recog/"
+    t: "Seeing Beyond the Scene: Analyzing and Mitigating Background Bias in Action Recognition"
+  - u: "seeing_the_arrow_of_time_in_large_multimodal_models/"
+    t: "Seeing the Arrow of Time in Large Multimodal Models"
+  - u: "self-alignment_of_large_video_language_models_with_refined_regularized_preferenc/"
+    t: "Self-alignment of Large Video Language Models with Refined Regularized Preference Optimization"
+  - u: "tapvid-360_tracking_any_point_in_360_from_narrow_field_of_view_video/"
+    t: "TAPVid-360: Tracking Any Point in 360 from Narrow Field of View Video"
+  - u: "tempsampr1_effective_temporal_sampling_with_reinforcement_fi/"
+    t: "TempSamp-R1: Effective Temporal Sampling with Reinforcement Fine-Tuning for Video LLMs"
+  - u: "token_bottleneck_one_token_to_remember_dynamics/"
+    t: "Token Bottleneck: One Token to Remember Dynamics"
+  - u: "toolaugmented_spatiotemporal_reasoning_for_streamlining_vide/"
+    t: "Tool-Augmented Spatiotemporal Reasoning for Streamlining Video Question Answering Task"
+item_total: 39
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->
 # 📹 Video Understanding
 
-**🧠 NeurIPS2025** · **58** paper notes
+**🧠 NeurIPS2025** · **39** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (18)](../../ICML2026/video_understanding/index.md) · [💬 ACL2026 (16)](../../ACL2026/video_understanding/index.md) · [📷 CVPR2026 (78)](../../CVPR2026/video_understanding/index.md) · [🔬 ICLR2026 (21)](../../ICLR2026/video_understanding/index.md) · [🤖 AAAI2026 (33)](../../AAAI2026/video_understanding/index.md) · [📹 ICCV2025 (57)](../../ICCV2025/video_understanding/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (17)](../../ICML2026/video_understanding/index.md) · [💬 ACL2026 (16)](../../ACL2026/video_understanding/index.md) · [📷 CVPR2026 (83)](../../CVPR2026/video_understanding/index.md) · [🔬 ICLR2026 (10)](../../ICLR2026/video_understanding/index.md) · [🤖 AAAI2026 (27)](../../AAAI2026/video_understanding/index.md) · [📹 ICCV2025 (56)](../../ICCV2025/video_understanding/index.md)
 
-🔥 **Top topics:** Object Tracking ×11 · Reasoning ×5 · Adversarial Robustness ×3 · Question Answering ×3 · LLM ×3
+🔥 **Top topics:** Reasoning ×6 · LLM ×3 · Anomaly Detection ×3 · Object Tracking ×3 · Question Answering ×2
 
-**[A Little Depth Goes a Long Way: The Expressive Power of Log-Depth Transformers](a_little_depth_goes_a_long_way_the_expressive_power_of_logde.md)**
+**[A Unified Reasoning Framework for Holistic Zero-Shot Video Anomaly Analysis](a_unified_reasoning_framework_for_holistic_zeroshot_video_an.md)**
 
-:   This paper proves that increasing Transformer depth from a constant to $\Theta(\log n)$ unlocks the ability to recognize regular languages and solve graph connectivity — two problems provably beyond the reach of fixed-depth Transformers — and that depth scaling is strictly more efficient than width scaling (which requires super-polynomial growth) or Chain-of-Thought (CoT) steps (which requires super-logarithmic growth).
+:   A fully zero-shot, training-free video anomaly analysis framework that employs Intra-Task Reasoning (confidence-gated self-refinement) and Inter-Task Chaining (cascaded prompt passing from temporal detection to spatial localization to semantic understanding), achieving comprehensive improvements of 4–6% AUC over prior zero-shot methods across 4 benchmarks.
 
 **[AdaVideoRAG: Omni-Contextual Adaptive Retrieval-Augmented Efficient Long Video Understanding](adavideorag_omnicontextual_adaptive_retrievalaugmented_effic.md)**
 
 :   AdaVideoRAG is proposed to route queries to one of three retrieval pathways (no retrieval / naive retrieval / graph retrieval) via a lightweight intent classifier, combined with an omni-knowledge indexing module (caption + ASR + OCR + visual + knowledge graph) to achieve an optimal efficiency–accuracy trade-off in long video understanding, yielding a 39.8% improvement for Qwen2.5-VL-7B on MLVU.
 
-**[Adversarial Locomotion and Motion Imitation for Humanoid Policy Learning](adversarial_locomotion_and_motion_imitation_for_humanoid_policy_learning.md)**
-
-:   ALMI proposes an upper-lower body adversarial training framework: the lower-body policy learns robust locomotion under upper-body motion perturbations, while the upper-body policy learns precise motion imitation under lower-body locomotion perturbations. Through iterative adversarial training converging to a Nash equilibrium, the framework enables stable whole-body coordinated control on the Unitree H1-2 real robot.
-
-**[Agentic Persona Control and Task State Tracking for Realistic User Simulation](agentic_persona_control_and_task_state_tracking_for_realistic_user_simulation_in.md)**
-
-:   A three-agent collaborative framework for realistic user simulation is proposed, comprising a User Agent (coordination), a State Tracking Agent (structured task state), and a Message Attributes Generation Agent (behavior attribute control conditioned on persona and state). On a restaurant ordering scenario, the framework achieves a 102.6% improvement in composite realism score (CRRS), +19.9% in persona adherence, and +284.5% in behavioral variability. A core finding is that behavior control without state awareness yields BVS = 0 (completely rigid behavior).
-
-**[Cloud4D: Estimating Cloud Properties at a High Spatial and Temporal Resolution](cloud4d_estimating_cloud_properties_at_a_high_spatial_and_temporal_resolution.md)**
-
-:   The first learning framework based on ground-level multi-view cameras that reconstructs four-dimensional (3D spatial + temporal) cloud liquid water content distributions via a homography-guided 2D-to-3D Transformer. The method achieves less than 10% error relative to radar at 25 m spatial and 5 s temporal resolution, improving spatiotemporal resolution by an order of magnitude over satellite observations.
-
 **[ConViS-Bench: Estimating Video Similarity Through Semantic Concepts](convis-bench_estimating_video_similarity_through_semantic_concepts.md)**
 
 :   This paper introduces ConViS, a concept-based video similarity estimation task, along with its accompanying benchmark ConViS-Bench (610 video pairs, 16 domains, 5 concepts). It systematically evaluates 10+ mainstream models on concept-conditioned video comparison, revealing significant deficiencies in current models' understanding of temporal structure and spatial context.
 
-**[DeltaProduct: Improving State-Tracking in Linear RNNs via Householder Products](deltaproduct_improving_state-tracking_in_linear_rnns_via_householder_products.md)**
-
-:   This paper proposes DeltaProduct, which extends DeltaNet's single-step gradient descent to $n_h$-step gradient descent per token, yielding a state transition matrix expressed as a product of $n_h$ generalized Householder transformations. This achieves a tunable trade-off between expressivity and efficiency, significantly improving state-tracking capability and length extrapolation performance.
-
-**[Dense SAE Latents Are Features, Not Bugs](dense_sae_latents_are_features_not_bugs.md)**
-
-:   This paper systematically investigates frequently activating "dense latents" in sparse autoencoders (SAEs), demonstrating that they are not training artifacts but rather reflections of intrinsically dense subspaces in language model residual streams. The authors propose a six-category taxonomy of dense latents encompassing position tracking, context binding, null space, alphabetic, part-of-speech, and PCA latents.
-
 **[Disentangled Concepts Speak Louder Than Words: Explainable Video Action Recognition](disentangled_concepts_speak_louder_than_words_explainable_video_action_recogniti.md)**
 
 :   This paper proposes DANCE, a framework that achieves structured and motion-aware explainable video action recognition by disentangling action explanations into three concept types: motion dynamics, objects, and scenes.
-
-**[DSAS: A Universal Plug-and-Play Framework for Attention Optimization in Multi-Document Question Answering](dsas_a_universal_plug-and-play_framework_for_attention_optimization_in_multi-doc.md)**
-
-:   This paper proposes Dual-Stage Adaptive Sharpening (DSAS), a training-free plug-and-play attention optimization framework. It employs Contextual Gate Weighting (CGW) to enhance attention from key passages toward the question and target positions, and Reciprocal Attention Suppression (RAS) to suppress information exchange between key and irrelevant passages, achieving an average F1 improvement of 4.2% on multi-document QA benchmarks.
 
 **[DualGround: Structured Phrase and Sentence-Level Temporal Grounding](dualground_phrase_temporal.md)**
 
@@ -134,10 +110,6 @@ item_total: 58
 **[EAG3R: Event-Augmented 3D Geometry Estimation for Dynamic and Extreme-Lighting Scenes](eag3r_event-augmented_3d_geometry_estimation_for_dynamic_and_extreme-lighting_sc.md)**
 
 :   EAG3R integrates asynchronous event streams from event cameras into the MonST3R point map reconstruction framework. Through a Retinex enhancement module, an SNR-aware fusion mechanism, and an event photometric consistency loss, it achieves robust depth estimation, pose tracking, and 4D reconstruction in extreme low-light dynamic scenes, significantly outperforming RGB-only methods via zero-shot transfer to nighttime scenarios.
-
-**[egoEMOTION: Egocentric Vision and Physiological Signals for Emotion and Personality Recognition in Real-World Tasks](egoemotion_egocentric_vision_and_physiological_signals_for_emotion_and_personali.md)**
-
-:   This paper introduces egoEMOTION — the first dataset combining egocentric vision (Meta Project Aria glasses) with physiological signals for emotion and personality recognition. It encompasses 43 participants, 50+ hours of recordings, and 16 tasks, and demonstrates that egocentric vision signals (particularly eye-tracking features) outperform conventional physiological signals for emotion prediction in real-world scenarios.
 
 **[EgoGazeVQA: Egocentric Gaze-Guided Video Question Answering Benchmark](egogazevqa_egocentric_gaze_guided_video_question_answering.md)**
 
@@ -151,10 +123,6 @@ item_total: 58
 
 :   This paper proposes FastVID, which systematically eliminates video token redundancy along both temporal and visual dimensions via Dynamic Temporal Segmentation (DySeg) and Density Spatiotemporal Pruning (STPrune). On LLaVA-OneVision-7B, FastVID retains 98% accuracy after pruning 90.3% of video tokens, achieving a 7.1× speedup in the LLM prefill stage.
 
-**[Fixed-Point RNNs: Interpolating from Diagonal to Dense](fixed-point_rnns_interpolating_from_diagonal_to_dense.md)**
-
-:   This paper proposes the Fixed-Point RNN framework, which parameterizes dense linear RNNs as fixed points of diagonal linear RNNs. By varying the number of iterations, the model dynamically interpolates between diagonal (efficient) and dense (expressive) regimes, achieving state-of-the-art results simultaneously on state-tracking ($A_5$/$S_5$) and copying tasks for the first time.
-
 **[Grounding Foundational Vision Models with 3D Human Poses for Robust Action Recognition](grounding_foundational_vision_models_with_3d_human_poses_for_robust_action_recog.md)**
 
 :   A cross-attention multimodal architecture is proposed that integrates V-JEPA 2 visual context features with CoMotion 3D skeletal pose data, outperforming unimodal baselines on standard and high-occlusion action recognition benchmarks.
@@ -163,53 +131,37 @@ item_total: 58
 
 :   This paper proposes InfiniPot-V, the first training-free and query-agnostic streaming video understanding framework. It achieves online KV cache compression via two complementary metrics — Temporal-axis Redundancy (TaR) and Value-Norm (VaN) — enabling streaming video understanding of arbitrary length under a fixed memory budget.
 
-**[InFlux: A Benchmark for Self-Calibration of Dynamic Intrinsics of Video Cameras](influx_a_benchmark_for_self-calibration_of_dynamic_intrinsics_of_video_cameras.md)**
-
-:   This paper introduces InFlux, the first real-world video benchmark with per-frame ground-truth dynamic camera intrinsics (386 videos, 143K+ annotated frames). Accurate annotations are achieved via a lookup table (LUT) mapping lens metadata to intrinsic parameters. The benchmark reveals that existing intrinsic prediction methods perform poorly under dynamic intrinsic settings.
-
 **[INST-IT: Boosting Instance Understanding via Explicit Visual Prompt Instruction Tuning](inst-it_boosting_instance_understanding_via_explicit_visual_prompt_instruction_t.md)**
 
 :   This work presents the complete Inst-IT framework: a GPT-4o-assisted automatic annotation pipeline for generating instance-level fine-grained data, an Inst-IT Bench evaluation benchmark, a 335K QA-pair instruction tuning dataset, and a continual fine-tuning paradigm that effectively enhances instance-level understanding in LMMs while also improving general image and video comprehension.
-
-**[KungfuBot: Physics-Based Humanoid Whole-Body Control for Learning Highly-Dynamic Skills](kungfubot_physics-based_humanoid_whole-body_control_for_learning_highly-dynamic_.md)**
-
-:   This paper proposes the PBHC framework, which enables a humanoid robot (Unitree G1) to learn highly dynamic whole-body skills such as kung fu and dance through a physics-aware motion processing pipeline and a bi-level optimization scheme for adaptive tracking factors. The approach achieves substantially lower tracking errors than existing methods and is successfully deployed on real hardware.
 
 **[Lattice Boltzmann Model for Learning Real-World Pixel Dynamicity](lattice_boltzmann_model_for_learning_real-world_pixel_dynamicity.md)**
 
 :   Inspired by the Lattice Boltzmann Method from fluid dynamics, this work proposes LBM (Lattice Boltzmann Model) for online real-time pixel tracking. It models video pixels as fluid lattices and solves motion states via collision-streaming processes, achieving SOTA online tracking performance with 18M parameters while enabling real-time inference on edge devices.
 
-**[Less is More: Local Intrinsic Dimensions of Contextual Language Models](less_is_more_local_intrinsic_dimensions_of_contextual_language_models.md)**
-
-:   This paper proposes using the Local Intrinsic Dimension (LID) of contextual token embeddings as an unsupervised signal for monitoring LLM training dynamics — a decrease in LID indicates improved generalization, while an increase signals overfitting. The utility of this geometric signal is validated on tasks including dialogue state tracking, grokking, and sentiment recognition.
-
 **[LiveStar: Live Streaming Assistant for Real-World Online Video Understanding](livestar_live_streaming_assistant_for_real-world_online_video_understanding.md)**
 
 :   This paper proposes LiveStar, an always-on live streaming video understanding assistant that achieves adaptive response timing via a Streaming Causal Attention Masks (SCAM) training strategy and a Streaming Verification Decoding (SVeD) inference framework, improving semantic correctness by 19.5% and reducing temporal deviation by 18.1% on the OmniStar benchmark.
 
-**[MEMTRACK: Evaluating Long-Term Memory and State Tracking in Multi-Platform Dynamic Agent Environments](memtrack_evaluating_long-term_memory_and_state_tracking_in_multi-platform_dynami.md)**
+**[LongVPO: From Anchored Cues to Self-Reasoning for Long-Form Video Preference Optimization](longvpo_from_anchored_cues_to_selfreasoning_for_longform_vid.md)**
 
-:   This paper proposes the MEMTRACK benchmark to evaluate LLM agents' long-term memory and state tracking capabilities in multi-platform dynamic environments (Slack/Linear/Git), revealing that even the strongest model, GPT-5, achieves only 60% accuracy.
+:   LongVPO proposes a two-stage DPO framework. Stage 1 constructs pseudo-long-video preference data by anchoring short clips and introduces an anchor-only reference model approximation to address context-length mismatch. Stage 2 performs self-training on real long videos via recursive captioning and multi-clip reasoning tasks. Using only 16K synthetic samples, the method surpasses long-video models trained with large-scale supervised data.
 
 **[MimeQA: Towards Socially-Intelligent Nonverbal Foundation Models](mimeqa_towards_socially-intelligent_nonverbal_foundation_models.md)**
 
 :   This work introduces MimeQA, the first nonverbal social reasoning benchmark built on mime performance videos. It comprises 101 videos and 806 QA pairs organized across three hierarchical question levels (grounding the imagined → scene-level understanding → global reasoning), and reveals a severe gap between current VideoLLMs and humans on nonverbal social understanding (20–30% vs. 86%).
 
+**[MoniTor: Exploiting Large Language Models with Instruction for Online Video Anomaly Detection](monitor_exploiting_large_language_models_with_instruction_for_online_video_anoma.md)**
+
+:   This paper proposes MoniTor, a memory-based online scoring queue framework that leverages LLMs for training-free online video anomaly detection (VAD). It guides LLMs toward real-time anomaly recognition through a dual-layer memory mechanism, behavior prediction, and a standard scoring queue.
+
 **[MUVR: A Multi-Modal Untrimmed Video Retrieval Benchmark with Multi-Level Visual Correspondence](muvr_a_multi-modal_untrimmed_video_retrieval_benchmark_with_multi-level_visual_c.md)**
 
 :   This paper introduces MUVR, a benchmark for multi-modal untrimmed video retrieval targeting real-world long-video platforms. It proposes a video-centric multi-modal query format (video + text + tag + mask) and a six-level visual correspondence matching criterion, comprising 53K videos and 1,050 queries, and systematically evaluates the limitations of retrieval models and MLLMs.
 
-**[Neural Stochastic Flows: Solver-Free Modelling and Inference for SDE Solutions](neural_stochastic_flows_solver-free_modelling_and_inference_for_sde_solutions.md)**
+**[PANDA: Towards Generalist Video Anomaly Detection via Agentic AI Engineer](panda_towards_generalist_video_anomaly_detection_via_agentic_ai_engineer.md)**
 
-:   This paper proposes Neural Stochastic Flows (NSF), which directly learns the transition distribution $p(x_t \mid x_s)$ of an SDE via conditional normalising flows. The architecture is constrained to satisfy stochastic flow properties (identity, Markov, Chapman-Kolmogorov), enabling single-step sampling without numerical solvers and achieving up to two orders of magnitude speedup at distant time points.
-
-**[NeuroPath: Neurobiology-Inspired Path Tracking and Reflection for Semantically Coherent Retrieval](neuropath_neurobiology-inspired_path_tracking_and_reflection_for_semantically_co.md)**
-
-:   Inspired by the hippocampal place cell navigation and memory consolidation mechanisms in neurobiology, this paper proposes NeuroPath—a RAG framework based on semantic path tracking—that achieves average improvements of 16.3% in recall@2 and 13.5% in recall@5 on multi-hop QA tasks through LLM-driven goal-directed path construction and a post-retrieval completion strategy.
-
-**[Open-World Drone Active Tracking with Goal-Centered Rewards](open-world_drone_active_tracking_with_goal-centered_rewards.md)**
-
-:   This paper introduces DAT, the first open-world drone active tracking benchmark comprising 24 city-scale scenes with high-fidelity dynamics simulation, along with GC-VAT, a reinforcement learning tracking method based on goal-centered rewards and curriculum learning, achieving approximately 72% tracking success rate in simulation.
+:   This paper proposes PANDA, an agentic AI engineer framework built upon MLLMs, which achieves training-free and human-intervention-free generalist video anomaly detection through four core capabilities: adaptive scene-aware strategy planning, goal-driven heuristic reasoning, tool-augmented self-reflection, and chain-of-memory.
 
 **[PASS: Path-Selective State Space Model for Event-Based Recognition](pass_path-selective_state_space_model_for_event-based_recognition.md)**
 
@@ -223,14 +175,6 @@ item_total: 58
 
 :   This paper introduces the Online Audio-Visual Event Parsing (On-AVEP) paradigm for the first time, along with the PreFM framework, which leverages pseudo-future sequences to enhance current contextual understanding. Combined with modality-agnostic knowledge distillation and focal temporal prioritization, PreFM surpasses offline SOTA methods by +9.3 event-level average F1 score using only 2.7% of their parameter count.
 
-**[QiMeng-NeuComBack: Self-Evolving Translation from IR to Assembly Code](qimeng-neucomback_self-evolving_translation_from_ir_to_assembly_code.md)**
-
-:   This paper introduces the NeuComBack benchmark for evaluating neural compilation on IR-to-assembly translation tasks, and proposes a self-evolving prompt optimization method that iteratively improves compilation prompts by learning from LLM self-debugging trajectories. The approach raises correctness from 44% to 64%, with 87.5% of correctly generated programs outperforming clang-O3.
-
-**[Revisiting Bi-Linear State Transitions in Recurrent Neural Networks](revisiting_bi-linear_state_transitions_in_recurrent_neural_networks.md)**
-
-:   This paper systematically revisits bilinear state transitions in RNNs—i.e., multiplicative interactions between the hidden state and the input—and theoretically proves that bilinear RNNs can simulate arbitrary finite-state machines. By removing additive terms, these models form a natural expressivity hierarchy ranging from diagonal to full-rank structures, revealing that popular linear RNNs such as Mamba occupy the lowest tier of this hierarchy.
-
 **[SAMA: Towards Multi-Turn Referential Grounded Video Chat with Large Language Models](sama_towards_multi-turn_referential_grounded_video_chat_with_large_language_mode.md)**
 
 :   This paper proposes the SAMA framework, which jointly models fine-grained spatio-temporal understanding and grounding in multi-turn referential video dialogue for the first time, through the construction of a unified dataset (SAMA-239K), model (spatio-temporal context aggregator + SAM), and benchmark (SAMA-Bench).
@@ -243,17 +187,9 @@ item_total: 58
 
 :   This paper reveals that current large multimodal models (LMMs) are surprisingly insensitive to the temporal directionality of video (i.e., the Arrow of Time)—producing nearly identical answers for forward and reversed playback. The authors propose ArrowRL, a GRPO-based training strategy that introduces a reverse video reward to elicit temporal direction awareness, and construct AoTBench for evaluation. The approach achieves significant gains across multiple VQA benchmarks, including a 65.9% relative improvement on Vinoground.
 
-**[SmartWilds: Multimodal Wildlife Monitoring Dataset](smartwilds_multimodal_wildlife_monitoring_dataset.md)**
+**[Self-alignment of Large Video Language Models with Refined Regularized Preference Optimization](self-alignment_of_large_video_language_models_with_refined_regularized_preferenc.md)**
 
-:   This work introduces SmartWilds, the first synchronously collected multimodal wildlife monitoring dataset, integrating three complementary modalities — drone imagery, camera traps, and bioacoustics — comprising 101 GB of data. Cross-modal alignment is achieved via GPS coordinates and timestamps. The dataset establishes a reproducible standard protocol for conservation monitoring, filling the gap in comprehensive multi-sensor fusion benchmarks for ecosystem-scale ecological research.
-
-**[Steering When Necessary: Flexible Steering Large Language Models with Backtracking](steering_when_necessary_flexible_steering_large_language_models_with_backtrackin.md)**
-
-:   This paper proposes FASB (Flexible Activation Steering with Backtracking), a framework that dynamically determines the necessity and intensity of intervention by tracking the internal states of an LLM during generation, and introduces a backtracking mechanism to correct already-deviated tokens. FASB achieves a True\*Info score of 80.56% on TruthfulQA and an average accuracy of 78.8% across six multiple-choice tasks, significantly outperforming all baselines.
-
-**[Structured Sparse Transition Matrices to Enable State Tracking in State-Space Models](structured_sparse_transition_matrices_to_enable_state_tracking_in_state-space_mo.md)**
-
-:   This paper proposes PD-SSM, a structured sparse parameterization for the state transition matrix of state-space models (SSMs). The core idea is to factorize the transition matrix as a product of a column-wise one-hot matrix P and a complex diagonal matrix D (i.e., $A = PD$), achieving expressiveness equivalent to unstructured (dense) SSMs while retaining computational efficiency comparable to diagonal SSMs at $\Theta(LN)$. A single layer suffices to simulate any $N$-state finite-state automaton (FSA). The paper provides theoretical guarantees on BIBO stability and optimal state dimensionality, with strong empirical results on FSA simulation, multivariate time-series classification, long-sequence benchmarks, and natural-language state-tracking tasks.
+:   This paper proposes RRPO (Refined Regularized Preference Optimization), which replaces DPO's response-level rewards with subsequence-level fine-grained rewards and token-wise KL regularization. Combined with a self-alignment data generation framework, RRPO reduces hallucinations and improves temporal reasoning on video understanding tasks.
 
 **[TAPVid-360: Tracking Any Point in 360 from Narrow Field of View Video](tapvid-360_tracking_any_point_in_360_from_narrow_field_of_view_video.md)**
 
@@ -262,14 +198,6 @@ item_total: 58
 **[TempSamp-R1: Effective Temporal Sampling with Reinforcement Fine-Tuning for Video LLMs](tempsampr1_effective_temporal_sampling_with_reinforcement_fi.md)**
 
 :   TempSamp-R1 is a reinforcement fine-tuning framework that addresses the inefficiency of on-policy sampling in GRPO for video temporal grounding—caused by the vast search space—by introducing ground-truth annotations as off-policy supervision signals, non-linear soft advantage estimation, and a hybrid CoT training paradigm, achieving new state-of-the-art results on Charades-STA, ActivityNet, and QVHighlights.
-
-**[The Ouroboros of Benchmarking: Reasoning Evaluation in an Era of Saturation](the_ouroboros_of_benchmarking_reasoning_evaluation_in_an_era_of_saturation.md)**
-
-:   Through a systematic analysis of 52 reasoning benchmarks across three major model families—OpenAI, Anthropic, and Google—this paper identifies an "ouroboros" cycle: old benchmarks are rapidly saturated → new benchmarks are created to restore discriminability → new benchmarks are rapidly saturated in turn. This cycle calls into question whether improvements in benchmark scores genuinely reflect generalized reasoning ability or merely overfit to specific evaluation sets.
-
-**[TiRex: Zero-Shot Forecasting Across Long and Short Horizons with Enhanced In-Context Learning](tirex_zero-shot_forecasting_across_long_and_short_horizons_with_enhanced_in-cont.md)**
-
-:   This paper proposes TiRex, a pretrained time series forecasting model based on xLSTM. By introducing a Contiguous Patch Masking (CPM) strategy and data augmentation techniques, TiRex with only 35M parameters comprehensively outperforms larger models such as Chronos Bolt (200M) and TimesFM (500M) on the GiftEval and Chronos-ZS benchmarks, achieving state-of-the-art performance in both short- and long-horizon zero-shot forecasting.
 
 **[Token Bottleneck: One Token to Remember Dynamics](token_bottleneck_one_token_to_remember_dynamics.md)**
 
@@ -283,10 +211,6 @@ item_total: 58
 
 :   This paper introduces the Track Any State task and the TubeletGraph zero-shot framework, which tracks objects undergoing drastic appearance changes in video (e.g., an apple being cut, a butterfly emerging from a chrysalis) while simultaneously detecting and describing these transformations.
 
-**[TrackingWorld: World-centric Monocular 3D Tracking of Almost All Pixels](trackingworld_world-centric_monocular_3d_tracking_of_almost_all_pixels.md)**
-
-:   This paper presents TrackingWorld, a pipeline for dense 3D tracking of almost all pixels from monocular video. It lifts sparse 2D trajectories to dense ones via a tracking upsampler, iteratively tracks newly appearing objects across all frames, and employs an optimization-based framework to lift 2D trajectories into world-coordinate 3D space with explicit decoupling of camera motion and object motion.
-
 **[Two Causally Related Needles in a Video Haystack](two_causally_related_needles_in_a_video_haystack.md)**
 
 :   This paper proposes Causal2Needles, a benchmark of 4,100 QA pairs that binds the understanding of two causally related events via a "bridging entity," forcing VLMs to jointly retrieve and reason over two needles scattered across a long video. It reveals severe deficiencies in state-of-the-art models on the causal dual-needle task (ChatGPT-4o achieves only 13.4% Both accuracy on the dual-needle setting).
@@ -294,6 +218,10 @@ item_total: 58
 **[Unleashing Hour-Scale Video Training for Long Video-Language Understanding](unleashing_hour-scale_video_training_for_long_video-language_understanding.md)**
 
 :   This work constructs VideoMarathon, the first large-scale hour-level video instruction-following dataset (9,700 hours, 3.3M QA pairs, 22 task types), and proposes Hour-LLaVA, a model that leverages a memory repository, forgetting mechanism, and MemAug module to enable efficient training and inference on hour-scale videos at 1 FPS, achieving state-of-the-art results among open-source models of comparable scale across four long video benchmarks.
+
+**[VADTree: Explainable Training-Free Video Anomaly Detection via Hierarchical Granularity](vadtree_explainable_training-free_video_anomaly_detection_via_hierarchical_granu.md)**
+
+:   This paper proposes VADTree, a training-free video anomaly detection framework that leverages a pretrained Generic Event Boundary Detection (GEBD) model to construct a Hierarchical Granularity-aware Tree (HGTree), enabling adaptive sampling and multi-granularity reasoning for anomalous events of varying temporal spans. VADTree achieves state-of-the-art performance among training-free methods on three benchmarks—UCF-Crime, XD-Violence, and MSAD—and even surpasses certain weakly supervised approaches.
 
 **[VGEnt: Graph-Based Retrieval-Reasoning-Augmented Generation for Long Video Understanding](vgent_graph-based_retrieval-reasoning-augmented_generation_for_long_video_unders.md)**
 
@@ -306,10 +234,6 @@ item_total: 58
 **[VideoLucy: Deep Memory Backtracking for Long Video Understanding](videolucy_deep_memory_backtracking_for_long_video_understanding.md)**
 
 :   This paper proposes VideoLucy, a framework that simulates the human coarse-to-fine recall process via a hierarchical memory structure and an agent-based iterative backtracking mechanism. VideoLucy substantially outperforms existing methods on multiple long video understanding benchmarks, surpassing even commercial models such as GPT-4o.
-
-**[Web-Scale Collection of Video Data for 4D Animal Reconstruction](web-scale_collection_of_video_data_for_4d_animal_reconstruction.md)**
-
-:   This paper proposes a fully automated large-scale video data collection pipeline that mines and processes 30K animal videos (2M frames) from YouTube, establishes the first 4D quadruped animal reconstruction benchmark Animal-in-Motion (230 sequences / 11K frames), and introduces a baseline method 4D-Fauna that achieves model-free 4D reconstruction via sequence-level optimization.
 
 **[When One Moment Isn't Enough: Multi-Moment Retrieval with Cross-Moment Interactions](when_one_moment_isnt_enough_multi-moment_retrieval_with_cross-moment_interaction.md)**
 

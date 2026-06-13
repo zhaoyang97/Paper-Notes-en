@@ -2,9 +2,10 @@
 title: >-
   [Paper Note] 4DGT: Learning a 4D Gaussian Transformer Using Real-World Monocular Videos
 description: >-
-  [NeurIPS 2025 (Spotlight)][4D Gaussian Splatting] This paper proposes 4DGT — a 4D Gaussian-based Transformer model trained entirely on real-world monocular posed videos that reconstructs dynamic scenes in seconds via fee…
+  [NeurIPS 2025 (Spotlight)][3D Vision][4D Gaussian Splatting] This paper proposes 4DGT — a 4D Gaussian-based Transformer model trained entirely on real-world monocular posed videos that reconstructs dynamic scenes in seco…
 tags:
   - "NeurIPS 2025 (Spotlight)"
+  - "3D Vision"
   - "4D Gaussian Splatting"
   - "Transformer"
   - "Dynamic Scene Reconstruction"
@@ -140,11 +141,11 @@ Note: The HTML version of the paper is unavailable; specific quantitative metric
 
 ## Related Papers
 
-- [\[CVPR 2026\] SimRecon: SimReady Compositional Scene Reconstruction from Real Videos](../../CVPR2026/others/simrecon_simready_compositional_scene_reconstruction_from_real_videos.md)
-- [\[CVPR 2026\] Crowdsourcing of Real-world Image Annotation via Visual Properties](../../CVPR2026/others/crowdsourcing_of_real_world_image_annotation_via_visual_properties.md)
-- [\[NeurIPS 2025\] Gaussian Process Upper Confidence Bound Achieves Nearly-Optimal Regret in Noise-Free Gaussian Process Bandits](gaussian_process_upper_confidence_bound_achieves_nearly-optimal_regret_in_noise-.md)
-- [\[NeurIPS 2025\] Frequency-Aware Token Reduction for Efficient Vision Transformer](frequency-aware_token_reduction_for_efficient_vision_transformer.md)
-- [\[ICCV 2025\] C4D: 4D Made from 3D through Dual Correspondences](../../ICCV2025/others/c4d_4d_made_from_3d_through_dual_correspondences.md)
+- [\[CVPR 2026\] NeoVerse: Enhancing 4D World Model with in-the-wild Monocular Videos](../../CVPR2026/3d_vision/neoverse_enhancing_4d_world_model_with_in-the-wild_monocular_videos.md)
+- [\[NeurIPS 2025\] Dynamic Gaussian Splatting from Defocused and Motion-blurred Monocular Videos](dynamic_gaussian_splatting_from_defocused_and_motion-blurred_monocular_videos.md)
+- [\[ICLR 2026\] Mono4DGS-HDR: High Dynamic Range 4D Gaussian Splatting from Alternating-exposure Monocular Videos](../../ICLR2026/3d_vision/mono4dgs-hdr_high_dynamic_range_4d_gaussian_splatting_from_alternating-exposure_.md)
+- [\[NeurIPS 2025\] Orientation-anchored Hyper-Gaussian for 4D Reconstruction from Casual Videos](orientation-anchored_hyper-gaussian_for_4d_reconstruction_from_casual_videos.md)
+- [\[NeurIPS 2025\] Reconstruct, Inpaint, Test-Time Finetune: Dynamic Novel-View Synthesis from Monocular Videos](reconstruct_inpaint_test-time_finetune_dynamic_novel-view_synthesis_from_monocul.md)
 
 </div>
 

@@ -2,19 +2,21 @@
 title: >-
   AAAI2026 LLM Efficiency Papers · 9 Notes
 description: >-
-  9 AAAI2026 papers in the LLM Efficiency area, covering LLM, Reasoning and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  9 AAAI2026 papers in the LLM Efficiency area, covering Time-Series Forecasting, LLM and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "AAAI2026"
   - "LLM Efficiency"
   - "AI paper notes"
   - "paper summaries"
+  - "Time-Series Forecasting"
   - "LLM"
-  - "Reasoning"
 item_list:
   - u: "connectivity-guided_sparsification_of_2-fwl_gnns_preserving_full_expressivity_wi/"
     t: "Connectivity-Guided Sparsification of 2-FWL GNNs Preserving Full Expressivity"
   - u: "harnessing_the_unseen_the_hidden_influence_of_intrinsic_knowledge_in_long-contex/"
     t: "Harnessing the Unseen: The Hidden Influence of Intrinsic Knowledge in Long-Context Language Models"
+  - u: "hn-mvts_hypernetwork-based_multivariate_time_series_forecasting/"
+    t: "HN-MVTS: HyperNetwork-based Multivariate Time Series Forecasting"
   - u: "how_many_experts_are_enough_towards_optimal_semantic_specialization_for_mixture-/"
     t: "How Many Experts Are Enough? Towards Optimal Semantic Specialization for Mixture-of-Experts"
   - u: "intermoe_individual-specific_3d_human_interaction_generation_via_dynamic_tempora/"
@@ -27,8 +29,6 @@ item_list:
     t: "Resource Efficient Sleep Staging via Multi-Level Masking and Prompt Learning"
   - u: "scaling_and_transferability_of_annealing_strategies_in_large_language_model_trai/"
     t: "Scaling and Transferability of Annealing Strategies in Large Language Model Training"
-  - u: "the_curious_case_of_analogies_investigating_analogical_reasoning_in_large_langua/"
-    t: "The Curious Case of Analogies: Investigating Analogical Reasoning in Large Language Models"
 item_total: 9
 ---
 
@@ -37,9 +37,7 @@ item_total: 9
 
 **🤖 AAAI2026** · **9** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (37)](../../ICML2026/llm_efficiency/index.md) · [💬 ACL2026 (22)](../../ACL2026/llm_efficiency/index.md) · [📷 CVPR2026 (4)](../../CVPR2026/llm_efficiency/index.md) · [🔬 ICLR2026 (19)](../../ICLR2026/llm_efficiency/index.md) · [🧠 NeurIPS2025 (35)](../../NeurIPS2025/llm_efficiency/index.md) · [📹 ICCV2025 (1)](../../ICCV2025/llm_efficiency/index.md)
-
-🔥 **Top topics:** LLM ×2
+📌 **Same area in other venues:** [🧪 ICML2026 (30)](../../ICML2026/llm_efficiency/index.md) · [💬 ACL2026 (22)](../../ACL2026/llm_efficiency/index.md) · [🔬 ICLR2026 (20)](../../ICLR2026/llm_efficiency/index.md) · [🧠 NeurIPS2025 (34)](../../NeurIPS2025/llm_efficiency/index.md) · [📹 ICCV2025 (1)](../../ICCV2025/llm_efficiency/index.md)
 
 **[Connectivity-Guided Sparsification of 2-FWL GNNs Preserving Full Expressivity](connectivity-guided_sparsification_of_2-fwl_gnns_preserving_full_expressivity_wi.md)**
 
@@ -48,6 +46,10 @@ item_total: 9
 **[Harnessing the Unseen: The Hidden Influence of Intrinsic Knowledge in Long-Context Language Models](harnessing_the_unseen_the_hidden_influence_of_intrinsic_knowledge_in_long-contex.md)**
 
 :   This paper presents the first systematic study of how parametric knowledge influences generation in long-context language models (LCLMs), finding that such influence grows with context length and that methods designed to improve extrinsic retrieval suppress parametric recall. Based on these findings, the paper proposes the Hybrid Needle-in-a-Haystack (Hybrid NIAH) benchmark to jointly evaluate both capabilities.
+
+**[HN-MVTS: HyperNetwork-based Multivariate Time Series Forecasting](hn-mvts_hypernetwork-based_multivariate_time_series_forecasting.md)**
+
+:   This paper proposes HN-MVTS, which employs a HyperNetwork to generate channel-specific weights for the final prediction layer, striking a balance between channel-independent (CI) and channel-dependent (CD) modeling. As a plug-and-play module, it improves forecasting accuracy of various backbone models including DLinear, PatchTST, and TSMixer without incurring additional inference overhead.
 
 **[How Many Experts Are Enough? Towards Optimal Semantic Specialization for Mixture-of-Experts](how_many_experts_are_enough_towards_optimal_semantic_specialization_for_mixture-.md)**
 
@@ -72,7 +74,3 @@ item_total: 9
 **[Scaling and Transferability of Annealing Strategies in Large Language Model Training](scaling_and_transferability_of_annealing_strategies_in_large_language_model_trai.md)**
 
 :   This paper proposes a model-agnostic predictive framework that decomposes training loss into a forward-effect term (learning rate integral $S$), an annealing momentum term (Adam-style momentum integral $M$), and a model-size term $N$. It demonstrates that annealing strategies can be transferred from small models/small batches to large models/large batches, achieving a prediction MAPE below 2%.
-
-**[The Curious Case of Analogies: Investigating Analogical Reasoning in Large Language Models](the_curious_case_of_analogies_investigating_analogical_reasoning_in_large_langua.md)**
-
-:   Using mechanistic interpretability tools including Patchscopes, attention knockout, and linear probes, this paper systematically reveals the internal mechanisms of analogical reasoning in LLMs: models can effectively encode relational information in middle-to-upper layers, but **applying** relational information to new entities is a greater bottleneck than **extracting** it; successful analogical reasoning correlates with strong structural alignment across stories, while failures reflect weakened or misaligned alignment.

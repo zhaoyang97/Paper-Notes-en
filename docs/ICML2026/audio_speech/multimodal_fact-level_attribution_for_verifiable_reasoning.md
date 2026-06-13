@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Multimodal Fact-Level Attribution for Verifiable Reasoning
 description: >-
-  [ICML 2026][Audio & Speech][Multimodal Attribution] MURGAT is the first benchmark to evaluate MLLMs' ability to provide "fine-grained modality + timestamp citations" for multimodal reasoning outputs. It employs a three-s…
+  [ICML 2026][Audio & Speech][Multimodal Attribution] MURGAT is the first benchmark to evaluate MLLMs’ ability to provide "fact-level, modality+timestamp precise citations" in multimodal reasoning outputs. It introduces a…
 tags:
   - "ICML 2026"
   - "Audio & Speech"
@@ -12,7 +12,7 @@ tags:
   - "MURGAT-SCORE"
   - "Reasoning-Attribution Decoupling"
 date: 2026-05-08
-content_hash: 01f2c87dcdd8e4b1
+content_hash: 2f555bcbf6ea1e33
 ---
 
 # Multimodal Fact-Level Attribution for Verifiable Reasoning
@@ -24,97 +24,100 @@ content_hash: 01f2c87dcdd8e4b1
 **Keywords**: Multimodal Attribution, Citation Quality Evaluation, Atomic Fact Decomposition, MURGAT-SCORE, Reasoning-Attribution Decoupling
 
 ## TL;DR
-MURGAT is the first benchmark to evaluate MLLMs' ability to provide "fine-grained modality + timestamp citations" for multimodal reasoning outputs. It employs a three-step evaluation protocol (Verifiable Claim Identification → Atomic Fact Decomposition → Attribution Quality) and an automated evaluator, MURGAT-SCORE, which shows high human alignment (Pearson 0.84). The study reveals that strong models often produce hallucinated citations even when answers are correct, and robust reasoning often comes at the cost of verifiable attribution.
+MURGAT is the first benchmark to evaluate MLLMs’ ability to provide "fact-level, modality+timestamp precise citations" in multimodal reasoning outputs. It introduces a three-step evaluation protocol (verifiable claim identification → atomic fact decomposition → attribution quality) and a highly human-aligned automatic evaluator, MURGAT-SCORE (Pearson 0.84). The study reveals that even strong models often cite incorrectly despite correct answers, and that strong reasoning often comes at the expense of verifiable citation.
 
 ## Background & Motivation
 
-**Background**: MLLMs are increasingly used for multi-step reasoning and long-form responses in real-world tasks (video QA, medical reports, educational demos). Reliable deployment requires "traceable" outputs—meaning every factual claim must map back to a specific modality and timestamp in the input. While work exists in text attribution (Gao 2023b) and video temporal grounding (Hendricks 2017, Lei 2021), these focus on simple observational or retrieval scenarios.
+**Background**: MLLMs are increasingly used for real-world tasks involving multi-step reasoning and long-form answers (e.g., video QA, medical reports, educational demonstrations). Reliable deployment requires outputs to be "traceable"—each factual claim must map back to a specific modality and timestamp in the input. Existing work on textual attribution (Gao 2023b) and video temporal localization (Hendricks 2017, Lei 2021) mostly focuses on simple, observational or retrieval-based scenarios (directly locating "which frame" something appears in).
 
-**Limitations of Prior Work**: (1) Existing evaluations typically measure only one modality or whole-video granularity, failing to distinguish between "observable claims" and "reasoning claims," which allows models to score high despite incorrect timestamps. (2) Real-world tasks require joint attribution across heterogeneous modalities (video + audio + charts) and fine-grained evaluation at the "atomic fact" level. (3) Mainstream "generate-then-attribute" pipelines often sacrifice reasoning quality for citation accuracy.
+**Limitations of Prior Work**: (1) Existing evaluations either focus on a single modality (vision) or only assess at the whole-source (whole-video) level, failing to distinguish "observable" from "reasoning" sentences, which allows models to score highly even with incorrect timestamps; (2) Real tasks require joint attribution across heterogeneous modalities (video + audio + charts) and fine-grained evaluation at the "atomic fact" level; (3) Mainstream "generate-then-attribute" pipelines often sacrifice reasoning quality for citation quality.
 
-**Key Challenge**: There is a disconnect between internal latent reasoning processes and verifiable surface citations in MLLMs—longer chain-of-thought often makes final citations harder to track, while strict citation requirements can stifle complex reasoning capabilities.
+**Key Challenge**: The internal latent reasoning process and the verifiable surface citation are decoupled in MLLMs—longer reasoning chains make final citations harder to trace, while stricter citation requirements suppress complex reasoning.
 
-**Goal**: (1) Construct a fine-grained multimodal attribution benchmark that distinguishes "observation vs. reasoning." (2) Propose an automated evaluator with high human alignment to make large-scale benchmarking affordable. (3) Systematically characterize the relationships between reasoning effort, model scale, attribution strategies, and final attribution quality.
+**Goal**: (1) Construct a fine-grained multimodal attribution benchmark that distinguishes "observation" from "reasoning"; (2) Provide a highly human-aligned automatic evaluator to enable large-scale benchmarking; (3) Systematically characterize the relationship between reasoning effort, model scale, attribution strategy, and final attribution quality.
 
-**Key Insight**: Processes responses across three layers—requiring citations only for observable claims, decomposing sentences into atomic facts for precision/recall evaluation, and explicitly distinguishing modalities and timestamps. This decouples "reasoning quality" from "citation quality" during evaluation, exposing the trade-offs between them.
+**Key Insight**: The response is processed in three layers—only observable sentences require citation, sentences are decomposed into atomic facts for precision/recall evaluation, and modality and timestamp are explicitly distinguished. This fully decouples "reasoning quality" from "citation quality" in evaluation, exposing their trade-off.
 
-**Core Idea**: Reconstruct verifiable multimodal attribution evaluation as a three-stage pipeline (sentence screening → atomic fact decomposition + citation propagation → set-based precision/recall entailment verification), utilizing an MLLM-as-judge calibrated to human judgment.
+**Core Idea**: Reconstruct verifiable multimodal attribution evaluation as a three-stage pipeline: sentence-level filtering → atomic fact decomposition + citation propagation → set-based precision/recall entailment verification. Use MLLM-as-judge to select and calibrate the optimal automatic evaluator to human judgments.
 
 ## Method
 
 ### Overall Architecture
-Task: Given multimodal input $I$ (video/audio/charts) and a question $Q$, an MLLM generates a response $R=\{r_i\}$. For each verifiable sentence $r_i$, the model must provide a citation set $C_i = \{c_i^j\}$, where each $c_i^j$ specifies a modality and timestamp (e.g., `(audio, 0:42-0:46)`). Evaluation proceeds in three steps: (1) **Verifiable Claim Identification**—Use an LLM verifier to determine if $r_i$ is observable, filtering out reasoning sentences. (2) **Atomic Fact Decomposition**—Decompose verifiable sentences into atomic fact sets $A_i = \{a_i^1, \ldots, a_i^n\}$ and resolve pronouns via decontextualization; propagate sentence-level $C_i$ to each atomic fact. (3) **Attribution Quality**—Perform bidirectional entailment verification for each $(a_i^j, C_i)$ to calculate recall (whether the joint citations support the fact) and precision (whether each citation is strictly necessary).
+Task: Given multimodal input $I$ (video/audio/chart) and question $Q$, the MLLM generates a response $R=\{r_i\}$. For each verifiable sentence $r_i$, a citation set $C_i = \{c_i^j\}$ is also required, where each $c_i^j$ specifies modality + timestamp (e.g., `(audio, 0:42-0:46)`). Evaluation proceeds in three steps: (1) **Verifiable Claim Identification**—an LLM verifier determines whether $r_i$ is observable, filtering out reasoning sentences; (2) **Atomic Fact Decomposition**—each verifiable sentence is decomposed into a set of atomic facts $A_i = \{a_i^1, \ldots, a_i^n\}$, with decontextualization replacing pronouns with concrete entities; the sentence-level $C_i$ is propagated to each atomic fact; (3) **Attribution Quality**—for each $(a_i^j, C_i)$, bidirectional entailment is checked to compute recall (whether the joint citation fully supports the fact) and precision (whether each citation is strictly necessary).
 
 ### Key Designs
 
-1.  **Verifiable Claim Identification: Separating Observation from Reasoning**:
-    - **Function**: Avoids forcing citations on reasoning sentences and prevents models from gaining unfair scores by omitting citations where they are not applicable.
-    - **Mechanism**: An LLM verifier determines if each sentence $r_i$ can be directly observed from $I$, resulting in $R_v = \{r_i \in R \mid \text{Verifier}(r_i, I) = \text{True}\}$. For example, "The video explicitly defines thrust as forward (audio 0:42-0:46, vision 0:45)" is a verifiable claim, while "Therefore, this statement is incorrect" is a reasoning sentence to be discarded. Subsequent evaluation is performed only on the set of cited verifiable sentences $R_{vc} = \{r_i \in R_v \mid C_i \neq \emptyset\}$.
-    - **Design Motivation**: Traditional attribution evaluations treat all sentences equally, either forcing models to hallucinate citations for reasoning steps or penalizing them for "unattributed" reasoning. This filtering step ensures precision/recall are calculated only where citations are expected.
+1. **Verifiable Claim Identification: Separating "Observation" from "Reasoning"**:
 
-2.  **Atomic Fact Decomposition + Citation Propagation + Decontextualization**:
-    - **Function**: Eliminates ambiguity in complex sentences containing multiple facts, allowing for evaluation at the finest granularity.
-    - **Mechanism**: For each $r_i \in R_{vc}$, an LLM decomposer breaks it into atomic facts $\{a_i^1, \ldots, a_i^n\}$, where each is a "minimal, independently verifiable" claim. Decontextualization resolves pronouns to specific entities. Sentence-level citations $C_i$ are then mapped to all derived atomic facts, forming pairs $\{(a_i^j, C_i)\}$.
-    - **Design Motivation**: Sentence-level evaluation fails for compound sentences that are partially correct. Propagation retains the original citation context without requiring MLLMs to cite at an impractical atomic level during generation.
+    - **Function**: Prevents forcing citations for reasoning sentences and stops models from gaming scores by omitting citations in reasoning sentences.
+    - **Mechanism**: The LLM verifier determines whether each sentence $r_i$ is directly observable from $I$, yielding $R_v = \{r_i \in R \mid \text{Verifier}(r_i, I) = \text{True}\}$. For example, "The video explicitly defines thrust as positive (audio 0:42-0:46, visual 0:45)" is a verifiable sentence and should be retained; "Therefore, this statement is incorrect" is a reasoning sentence and should be discarded. Subsequent evaluation is performed only on the set of verifiable sentences with citations $R_{vc} = \{r_i \in R_v \mid C_i \neq \emptyset\}$.
+    - **Design Motivation**: Traditional attribution evaluation treats all sentences equally, either forcing models to insert citations into reasoning sentences (hurting reasoning quality) or penalizing reasoning sentences as "unattributable" (unfair). This filtering ensures precision/recall is computed only where citations are appropriate, which is the most critical engineering choice in this protocol.
 
-3.  **Set-based Bidirectional Entailment + MURGAT-SCORE Calibration**:
-    - **Function**: Covers both citation sufficiency (recall) and necessity (precision) while selecting the most human-aligned MLLM judge.
-    - **Mechanism**: For each $(a_i^j, C_i)$, an MLLM determines if $C_i$ jointly entails $a_i^j$ (recall). If it does, each $c_i^k$ is tested for necessity (precision, via leave-one-out testing). The MURGAT-S metric integrates coverage ($|R_{vc}|/|R_v|$) with precision, recall, and F1. The authors collected human annotations on WorldSense and Video-MMMU to calibrate various MLLM judges (e.g., Gemini, Qwen), selecting an optimal combination with Pearson $r=0.84$.
-    - **Design Motivation**: Bidirectional verification prevents "citation stuffing" to inflate recall. Modality+timestamp alignment is the core differentiator of multimodal attribution.
+2. **Atomic Fact Decomposition + Citation Propagation + Decontextualization**:
+
+    - **Function**: Eliminates confusion from sentences containing multiple facts, enabling precision/recall computation at the finest granularity.
+    - **Mechanism**: For each $r_i \in R_{vc}$, an LLM decomposer splits it into atomic facts $\{a_i^1, \ldots, a_i^n\}$, each being the smallest independently verifiable claim; decontextualization resolves pronouns to concrete entities; the sentence-level citation set $C_i$ is copied to all atomic facts, yielding pairs $\{(a_i^j, C_i)\}$.
+    - **Design Motivation**: Sentence-level evaluation can give inaccurate scores to compound sentences with mixed correctness; citation propagation preserves the original citation context without requiring MLLMs to cite at atomic granularity during generation (unrealistic); decontextualization, as validated in FActScore (Min 2023), is extended here to multimodal settings.
+
+3. **Set-Based Bidirectional Entailment + MURGAT-SCORE Calibration**:
+
+    - **Function**: Covers both "whether citations sufficiently support the fact" and "whether each citation is necessary," and selects the MLLM judge most aligned with human judgment.
+    - **Mechanism**: For each $(a_i^j, C_i)$, an MLLM determines whether $C_i$ jointly entails $a_i^j$ (recall); if entailed, each $c_i^k$ is tested for strict necessity (precision, akin to leave-one-out). The overall metric MURGAT-S aggregates coverage = $|R_{vc}|/|R_v|$ plus precision/recall/F1. The authors collected full human annotations for all three tasks on WorldSense and Video-MMMU, scanned multiple MLLMs as judges (Gemini-2.5-Flash, Gemini-3-Flash/Pro, Qwen3-Omni-Instruct/Thinking), and selected the optimal judge combination with Pearson r=0.84, significantly outperforming the next-best LLM-as-judge (r=0.59).
+    - **Design Motivation**: Bidirectional verification prevents gaming recall by adding redundant citations; aligning citations by "modality+timestamp" is the core difference in multimodal attribution; calibrating the judge to human annotations is essential to make MLLM-as-judge a trustworthy evaluation proxy.
 
 ### Loss & Training
-This work focuses on the evaluation protocol rather than training a specific model. MURGAT-SCORE serves as the metric. An inference-time method for decoupling reasoning and attribution (reasoning followed by independent citation extraction) was tested, showing a $+9.6$ MURGAT-S gain at the cost of answer accuracy.
+No model is trained in this work; only the evaluation protocol is constructed. MURGAT-SCORE is the evaluation metric. A possible research direction is programmatic inference-time decoupling of reasoning and citation (reason first, then extract citations), which the paper shows can improve MURGAT-S by +9.6 at the cost of reduced answer accuracy.
 
 ## Key Experimental Results
 
 ### Main Results
-Evaluated on WorldSense and Video-MMMU across multiple MLLMs.
+Evaluation of various strong MLLMs on WorldSense and Video-MMMU.
 
-| Model | QA Accuracy | MURGAT-S | Observations |
-|------|----------|----------|------|
-| Gemini-3-Pro | High | High | Large model + more thinking → more accurate citations |
-| Gemini-2.5-Flash | Medium | Medium | Correct answers but citations often wrong or missing |
-| Qwen3-Omni-Instruct | Medium | Lower | Average citation quality for instruction-only version |
-| Qwen3-Omni-Thinking | Slight Incr. | Lowered | Small model + more thinking → messier citations |
-| Decoupled "Reason → Attribute" | Slight Decr. | +9.6 | Systematic trade-off observed |
+| Model | QA Accuracy | MURGAT-S | Phenomenon |
+|-------|-------------|----------|------------|
+| Gemini-3-Pro | High | High | Larger model + more reasoning → more accurate citations |
+| Gemini-2.5-Flash | Medium | Medium | Correct answers but frequent citation errors or omissions |
+| Qwen3-Omni-Instruct | Medium | Low | Single-step instruction version has mediocre citation quality |
+| Qwen3-Omni-Thinking | Slightly higher | Actually lower | Small model with more reasoning → citations become messier |
+| Decoupled "reason first → then extract citation" pipeline | Slightly lower answers | +9.6 | Systematic trade-off |
 
 ### Ablation Study
 
-| Configuration | Key Observation | Explanation |
-|------|----------|----------|
-| W/O Verifiable Claim ID | Reasoning sentences penalized | Distorted precision/recall |
-| W/O Atomic Decomposition | Unfair for compound sentences | Partially correct sentences get inaccurate scores |
-| W/O Leave-one-out | Precision becomes useless | Models game scores via redundant citations |
-| Judge using GPT-4o-mini | $r=0.59$ | Significantly worse than the optimal combo |
-| Judge using Gemini-3-Pro + Calib. | $r=0.84$ | Final setting for MURGAT-S |
+| Configuration | Key Phenomenon | Description |
+|---------------|---------------|-------------|
+| No Verifiable Claim Identification | Reasoning sentences penalized | Distorted precision/recall |
+| No atomic decomposition | Sentence-level evaluation, unfair to compound sentences | Mixed correctness gets inflated scores |
+| No citation leave-one-out | Precision fails | Model inflates scores with redundant citations |
+| Judge uses GPT-4o-mini single model | r=0.59 | Significantly worse than optimal combination |
+| Judge uses Gemini-3-Pro + calibration | r=0.84 | Final MURGAT-S setting |
 
 ### Key Findings
-- **"Reasoning Tax"**: Requiring citations in simple tasks reduces QA accuracy, but in complex reasoning tasks, citations can act as a scaffold, forcing the model to decompose the reasoning chain.
-- **Scale and Effort Interaction**: Gemini-3-Pro sees MURGAT-S gains with higher thinking budgets, while smaller models like Qwen3-Omni-Thinking may deviate further, suggesting a disconnect between latent reasoning and surface citation.
-- **Hallucinated Grounding**: Even when QA is correct, citation error rates remain high, indicating that "knowing the answer" and "knowing where the evidence is" are distinct capabilities in MLLMs.
+- "Reasoning tax" phenomenon: Adding citation requirements to simple recognition tasks reduces QA accuracy (reasoning tax), but in complex reasoning tasks, it acts as a scaffold—structured citation forces the model to break down reasoning chains.
+- Interaction of model scale and effort: Gemini-3-Pro improves MURGAT-S with increased reasoning budget; smaller models (Qwen3-Omni-Thinking) perform worse with more reasoning, possibly due to decoupling of latent reasoning and surface citation.
+- Even strong models with correct QA have high citation error rates (hallucinated grounding), indicating that "knowing the answer" and "knowing where the answer was seen" are distinct abilities in MLLMs.
 
 ## Highlights & Insights
-- **Explicit Separation of "Verifiable vs. Reasoning"**: Redefining attribution evaluation to target only sentences that *should* be verified establishes a new paradigm for multimodal research.
-- **Atomic Facts + Modality/Timestamp Citations**: Extending the FActScore concept to multimodal data with leave-one-out verification ensures robustness against redundant citations.
-- **High Human Alignment of MURGAT-SCORE**: The $r=0.84$ correlation makes large-scale automated evaluation credible and provides a transferable method for multi-judge calibration.
+- **Explicit distinction between "verifiable" and "reasoning" sentences**: Redefining attribution evaluation from "demanding citations for all sentences" to "evaluating only verifiable sentences" is the key protocol design, establishing a paradigm for future multimodal attribution research.
+- **Atomic facts + modality+timestamp citation**: Strictly extends the FActScore approach from textual attribution to multimodal (must specify "in video at 1:16" or "in audio 0:42-0:46"), with leave-one-out verification to prevent redundant citations, making the evaluation much more robust than previous source-level attribution.
+- **MURGAT-SCORE highly consistent with human judgment**: LLM-as-judge with r=0.84 enables large-scale automated evaluation; the multi-judge calibration method is transferable to any setting requiring MLLM as evaluator.
 
 ## Limitations & Future Work
-- Dependency on LLM verifiers/decomposers/judges may introduce inherent biases; cross-domain generalization requires further validation.
-- The dataset focuses on WorldSense and Video-MMMU; scalability to other modality combinations (e.g., medical imaging + charts) remains to be tested.
-- No training-side solution was proposed for balancing reasoning and citation accuracy beyond inference-time decoupling.
-- Citation granularity (timestamp accuracy) depends on the precision of human segmentation, which may introduce noise for facts with fuzzy boundaries.
+- Evaluation relies on LLM verifier/decomposer/entailment judge, which may introduce bias; despite human calibration, cross-domain generalization remains a risk.
+- Datasets are mainly from WorldSense and Video-MMMU; scalability to other modality combinations (e.g., medical imaging + records + experimental charts) needs validation.
+- No training-side solution is proposed—how to train MLLMs to learn accurate citation without sacrificing reasoning remains open; the paper only demonstrates the "decoupled pipeline" trade-off without systematic training.
+- Citation granularity (timestamp) depends on manual segmentation accuracy; fuzzy fact boundaries may introduce noise into precision.
 
 ## Related Work & Insights
-- **vs. MCiteBench / MAVIS**: These focus on image-level VQA or document-level evidence; MURGAT enforces dual modality+timestamp labels and includes audio/charts.
-- **vs. MIRAGE**: MIRAGE uses VLM verification for multimodal RAG; MURGAT provides a finer protocol by distinguishing verifiable claims and using timestamp-level granularity.
-- **vs. Temporal Grounding**: Traditional grounding assumes target segments are specified in the prompt; MURGAT requires the model to select evidence autonomously during reasoning.
-- **vs. FActScore (Min 2023)**: Directly inspired by atomic decomposition but extended to multimodal bidirectional set verification.
+- **vs MCiteBench / MAVIS**: These focus on image-level VQA and document-level evidence, with single modality and coarse granularity; MURGAT enforces dual modality+timestamp labels and includes audio/charts.
+- **vs MIRAGE**: MIRAGE uses atomic decomposition and VLM verification for multimodal RAG, finding that strong models also often cite incorrectly; MURGAT’s protocol is finer-grained (distinguishing verifiable vs reasoning) and citation granularity extends to timestamps.
+- **vs Video Temporal Localization (Hendricks 2017, Lei 2021)**: Traditional video localization assumes the target segment is specified in the prompt; this work requires the model to select evidence itself, closer to real reasoning tasks.
+- **vs FActScore (Min 2023)**: The inspiration for atomic fact decomposition comes directly from FActScore, but is extended here to multimodal and set-based bidirectional verification.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐⭐ Explicit verifiable/reasoning separation + multimodal timestamp-level attribution creates a complete loop.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Covers multiple strong models and reasoning effort scans, though limited to two primary datasets.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ Figure 1 clearly presents the protocol; definitions and examples are lucid.
-- **Value**: ⭐⭐⭐⭐⭐ Provides critical infrastructure for verifiability research in trustworthy MLLM deployment.
+- Novelty: ⭐⭐⭐⭐⭐ Explicit separation of "verifiable vs reasoning" and multimodal timestamp-level citation is the first complete solution in this area.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covers multiple strong models, decoupled pipeline, and reasoning effort scan, but only two datasets.
+- Writing Quality: ⭐⭐⭐⭐⭐ Figure 1 intuitively presents the entire protocol; definitions and examples are very clear.
+- Value: ⭐⭐⭐⭐⭐ Provides infrastructure for verifiability research in trustworthy MLLM deployment and will be widely cited by future work.
 
 <!-- RELATED:START -->
 
@@ -125,7 +128,7 @@ Evaluated on WorldSense and Video-MMMU across multiple MLLMs.
 - [\[AAAI 2026\] PSA-MF: Personality-Sentiment Aligned Multi-Level Fusion for Multimodal Sentiment Analysis](../../AAAI2026/audio_speech/psa-mf_personality-sentiment_aligned_multi-level_fusion_for_multimodal_sentiment.md)
 - [\[ACL 2026\] When Misinformation Speaks and Converses: Rethinking Fact-Checking in Audio Platforms](../../ACL2026/audio_speech/when_misinformation_speaks_and_converses_rethinking_fact-checking_in_audio_platf.md)
 - [\[ICML 2026\] JAEGER: Joint 3D Audio-Visual Grounding and Reasoning in Simulated Physical Environments](jaeger_joint_3d_audio-visual_grounding_and_reasoning_in_simulated_physical_envir.md)
-- [\[ICML 2026\] The Silent Thought: Modeling Internal Cognition in Full-Duplex Spoken Dialogue Models via Latent Reasoning](the_silent_thought_modeling_internal_cognition_in_full-duplex_spoken_dialogue_mo.md)
+- [\[NeurIPS 2025\] ThinkSound: Chain-of-Thought Reasoning in Multimodal Large Language Models for Audio Generation and Editing](../../NeurIPS2025/audio_speech/thinksound_chain-of-thought_reasoning_in_multimodal_large_language_models_for_au.md)
 - [\[ICML 2026\] Multimodal Fusion via Self-Consistent Task-Gradient Fields](multimodal_fusion_via_self-consistent_task-gradient_fields.md)
 
 </div>

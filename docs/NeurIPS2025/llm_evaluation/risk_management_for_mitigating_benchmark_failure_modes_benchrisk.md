@@ -25,123 +25,6 @@ content_hash: f9f652f42def6024
 
 **Area**: LLM Evaluation / Benchmarking
 
-**Keywords**: Benchmark risk management, LLM evaluation, failure modes, meta-evaluation, risk mitigation
-
-## TL;DR
-
-Grounded in the NIST Risk Management Framework, this work systematically analyzes 57 failure modes across 26 LLM benchmarks, proposes 196 mitigation strategies, and introduces BenchRisk—a meta-evaluation framework that scores the reliability of benchmarks themselves.
-
-## Background & Motivation
-
-LLM benchmarks serve as the primary basis for model deployment decisions (e.g., "Is this LLM safe and suitable for my use case?"), yet benchmarks themselves may become unreliable due to a variety of failure modes. These failure modes affect a benchmark's bias, variance, coverage, and interpretability. Nevertheless, no systematic framework currently exists to assess and mitigate these risks.
-
-**Core Problems**:
-- Benchmarks may suffer from data contamination, sampling bias, and poorly designed metrics
-- Users may draw incorrect LLM evaluation conclusions due to benchmark deficiencies
-- No systematic methodology exists for assessing benchmark quality
-
-## Method
-
-### Overall Architecture
-
-BenchRisk adopts the National Institute of Standards and Technology (NIST) Risk Management Framework as its foundational methodology for systematic risk analysis and evaluation of LLM benchmarks. The overall pipeline comprises:
-
-1. **Failure Mode Identification**: Iterative analysis across 26 popular benchmarks
-2. **Mitigation Strategy Formulation**: Corresponding mitigation measures proposed for each failure mode
-3. **Risk Scoring**: Meta-evaluation of benchmarks along five dimensions
-
-### Key Designs
-
-**Five-Dimensional Scoring System**:
-- **Comprehensiveness**: Whether the benchmark covers critical aspects of the target task
-- **Intelligibility**: Whether benchmark results are easy to interpret correctly
-- **Consistency**: Whether the benchmark produces consistent results under different conditions
-- **Correctness**: Whether the benchmark accurately measures the capability it claims to assess
-- **Longevity**: Whether the benchmark remains valid over time
-
-**Failure Mode Taxonomy**:
-- Data level: data contamination, sampling bias, annotation quality
-- Evaluation level: inappropriate metric selection, ambiguous scoring criteria
-- Interpretation level: overgeneralization of conclusions, causal misattribution
-- Sustainability level: dataset saturation, concept drift
-
-### Risk Assessment Procedure
-
-For each benchmark, the framework assesses the likelihood and severity of exposure to each failure mode, yielding a composite BenchRisk score. Higher scores indicate that users are less likely to draw incorrect or unreliable conclusions.
-
-## Key Experimental Results
-
-### Main Results
-
-The study analyzes 26 popular LLM benchmarks, identifying 57 potential failure modes and 196 mitigation strategies.
-
-| Dimension | # Failure Modes | # Mitigation Strategies | % High-Risk Benchmarks |
-|:---:|:---:|:---:|:---:|
-| Comprehensiveness | 12 | 38 | 65% |
-| Intelligibility | 10 | 35 | 58% |
-| Consistency | 13 | 42 | 73% |
-| Correctness | 11 | 40 | 69% |
-| Longevity | 11 | 41 | 77% |
-| **Total** | **57** | **196** | — |
-
-### Benchmark Risk Score Comparison
-
-| Benchmark | Comprehensiveness | Intelligibility | Consistency | Correctness | Longevity | Overall Risk |
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| MMLU | Medium | Medium | Low | Medium | Low | Moderate |
-| HellaSwag | High | Medium | Medium | Medium | Low | Moderate |
-| TruthfulQA | Medium | Low | Medium | High | Medium | Elevated |
-| HumanEval | High | High | Medium | Medium | Medium | Low |
-| GSM8K | High | High | High | Medium | Low | Moderate |
-
-### Key Findings
-
-1. **All 26 benchmarks exhibit significant risk**: Every benchmark shows notable risk in at least one dimension.
-2. **Longevity is the most pervasive weakness**: 77% of benchmarks are high-risk on the longevity dimension.
-3. **Consistency issues are widespread**: 73% of benchmarks produce inconsistent results under different evaluation conditions.
-4. **Effectiveness of mitigation strategies**: Implementing the recommended strategies yields an average 23% improvement in risk scores.
-
-## Highlights & Insights
-
-- **Systematic methodology**: The first work to apply the NIST Risk Management Framework to LLM benchmark evaluation.
-- **Practical tooling**: BenchRisk is released as an open-source tool supporting community-driven identification and sharing of risks and mitigation strategies.
-- **Meta-evaluation perspective**: Provides an "evaluating the evaluator" framework that helps users select more reliable benchmarks.
-- **Failure mode catalog**: The 57 failure modes constitute a comprehensive checklist for benchmark designers and users.
-
-## Limitations & Future Work
-
-1. Risk scoring still relies on expert human judgment and is subject to subjectivity.
-2. Only 26 benchmarks are analyzed, leaving many domains uncovered.
-3. The effectiveness of mitigation strategies lacks quantitative empirical validation.
-4. Dynamic benchmarks (e.g., Chatbot Arena) require special treatment.
-5. Unified weighting across benchmarks from different domains (safety, efficiency, reasoning) remains difficult.
-
-## Related Work & Insights
-
-- The NIST AI Risk Management Framework provides the methodological foundation for this work.
-- The proposed approach is complementary to dynamic benchmarking platforms such as Dynabench.
-- BenchRisk can be used in conjunction with large-scale evaluation projects such as BIG-bench and HELM.
-- The framework offers systematic quality-improvement guidance for benchmark designers.
-
-## Rating
-
-- **Novelty**: ⭐⭐⭐⭐ — First systematic application of a risk management framework to benchmark evaluation
-- **Practicality**: ⭐⭐⭐⭐⭐ — Highly valuable to the LLM evaluation community
-- **Technical Depth**: ⭐⭐⭐ — Methodology-driven rather than algorithmically innovative
-- **Writing Quality**: ⭐⭐⭐⭐ — Well-structured with a clear taxonomy
-
----
-
-# Risk Management for Mitigating Benchmark Failure Modes: BenchRisk
-
-**Conference**: NeurIPS 2025
-
-**arXiv**: [2510.21460](https://arxiv.org/abs/2510.21460)
-
-**Code**: Available (open-source tool)
-
-**Area**: LLM Evaluation / Benchmarking
-
 **Keywords**: LLM benchmarks, risk management, meta-evaluation, failure modes, NIST
 
 ## TL;DR
@@ -267,10 +150,10 @@ Key finding: **All 26 benchmarks exhibit significant risk in at least one dimens
 ## Related Papers
 
 - [\[AAAI 2026\] BCWildfire: A Long-term Multi-factor Dataset and Deep Learning Benchmark for Boreal Wildfire Risk Prediction](../../AAAI2026/llm_evaluation/bcwildfire_a_long-term_multi-factor_dataset_and_deep_learning_benchmark_for_bore.md)
-- [\[ICLR 2026\] Mitigating Spurious Correlation via Distributionally Robust Learning with Hierarchical Ambiguity Sets](../../ICLR2026/llm_evaluation/mitigating_spurious_correlation_via_distributionally_robust_learning_with_hierar.md)
-- [\[NeurIPS 2025\] A Standardized Benchmark for Multilabel Antimicrobial Peptide Classification](a_standardized_benchmark_for_multilabel_antimicrobial_peptide_classification.md)
 - [\[NeurIPS 2025\] PARROT: A Benchmark for Evaluating LLMs in Cross-System SQL Translation](parrot_a_benchmark_for_evaluating_llms_in_cross-system_sql_translation.md)
-- [\[NeurIPS 2025\] CLIMB: Class-Imbalanced Learning Benchmark on Tabular Data](climb_class-imbalanced_learning_benchmark_on_tabular_data.md)
+- [\[NeurIPS 2025\] Beyond the Singular: Revealing the Value of Multiple Generations in Benchmark Evaluation](beyond_the_singular_revealing_the_value_of_multiple_generations_in_benchmark_eva.md)
+- [\[NeurIPS 2025\] PFΔ: A Benchmark Dataset for Power Flow under Load, Generation, and Topology Variations](pfδ_a_benchmark_dataset_for_power_flow_under_load_generation_and_topology_variat.md)
+- [\[NeurIPS 2025\] BLINK-Twice: You See But Do You Observe? A Reasoning Benchmark on Visual Perception](blink-twice_you_see_but_do_you_observe_a_reasoning_benchmark_on_visual_perceptio.md)
 
 </div>
 

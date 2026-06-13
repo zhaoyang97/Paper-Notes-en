@@ -44,7 +44,7 @@ WestWorld must use one model to do trajectory world-model prediction for many he
 The pipeline runs as follows: first, treat each state/action dimension of a trajectory as a scalar **channel**, do channel-wise min-max normalization, discretize into a categorical vector over $K$ bins, then project to a $d$-dim embedding and add time-step, channel-order, and modality (state/action) embeddings to get a tokenized representation (this step follows TrajWorld and is scaffolding); next, a **knowledge-encoded structural embedding** injects the robot's morphological connectivity into these tokens as an inductive bias; the result is fed into a stack of **system-aware MoE blocks (Sys-MoE)**, where each block first aggregates state-action information with attention, then uses a learnable system embedding to drive expert routing, dynamically composing experts per robotic system to model their respective dynamics; finally a linear decoder outputs a distribution over $K$ bins for each of the next $k$ states, trained with next-token cross-entropy, predicting $k$ steps in parallel in a single forward pass at inference. The two core contributions map exactly to the two key designs below—the structural embedding handles "zero-shot generalization" and Sys-MoE handles "scalability".
 
 ```mermaid
-%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
     A["Input: h-step history states+actions<br/>+ k-step future actions"] --> B["Trajectory tokenization (scaffolding)<br/>channel-wise norm → K-bin discretize → project<br/>+ time/channel-order/modality embeddings"]
     subgraph SE["Knowledge-encoded structural embedding (Design 1)"]
@@ -174,10 +174,10 @@ WestWorld is distilled into a lightweight two-layer student model, fine-tuned wi
 ## Related Papers
 
 - [\[CVPR 2026\] IGen: Scalable Data Generation for Robot Learning from Open-World Images](../../CVPR2026/robotics/igen_scalable_data_generation_for_robot_learning_from_open-world_images.md)
-- [\[ICLR 2026\] SynthWorlds: Controlled Parallel Worlds for Disentangling Reasoning and Knowledge in Language Models](../../ICLR2026/robotics/synthworlds_controlled_parallel_worlds_for_disentangling_reasoning_and_knowledge.md)
-- [\[ICML 2026\] Optimal and Scalable MAPF via Multi-Marginal Optimal Transport and Schrödinger Bridges](optimal_and_scalable_mapf_via_multi-marginal_optimal_transport_and_schrödinger_b.md)
-- [\[ICLR 2026\] Building Spatial World Models from Sparse Transitional Episodic Memories](../../ICLR2026/robotics/building_spatial_world_models_from_sparse_transitional_episodic_memories.md)
+- [\[ICLR 2026\] Experience-based Knowledge Correction for Robust Planning in Minecraft](../../ICLR2026/robotics/experience-based_knowledge_correction_for_robust_planning_in_minecraft.md)
 - [\[ICLR 2026\] Test-Time Mixture of World Models for Embodied Agents in Dynamic Environments](../../ICLR2026/robotics/test-time_mixture_of_world_models_for_embodied_agents_in_dynamic_environments.md)
+- [\[ICML 2026\] Optimal and Scalable MAPF via Multi-Marginal Optimal Transport and Schrödinger Bridges](optimal_and_scalable_mapf_via_multi-marginal_optimal_transport_and_schrödinger_b.md)
+- [\[ICCV 2025\] TesserAct: Learning 4D Embodied World Models](../../ICCV2025/robotics/learning_4d_embodied_world_models.md)
 
 </div>
 

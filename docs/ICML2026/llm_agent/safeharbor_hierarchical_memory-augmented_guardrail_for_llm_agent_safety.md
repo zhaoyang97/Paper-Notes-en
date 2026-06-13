@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SafeHarbor: Defining Precise Decision Boundaries via Hierarchical Memory-Augmented Guardrail for LLM Agent Safety
 description: >-
-  [ICML 2026][LLM Agent][Guardrail] SafeHarbor upgrades LLM Agent safety defense from a "static coarse-grained classifier" to a "dynamic hierarchical memory tree + dual-score gating." Through adversarial rule generation an…
+  [ICML 2026][LLM Agent][Guardrail] SafeHarbor upgrades LLM Agent safety from "static coarse-grained classifiers" to "dynamic hierarchical memory tree + dual-score gating." Through adversarial rule generation and entropy-d…
 tags:
   - "ICML 2026"
   - "LLM Agent"
@@ -12,7 +12,7 @@ tags:
   - "Contrastive Learning"
   - "Over-Refusal"
 date: 2026-05-08
-content_hash: 53797f426a936dbc
+content_hash: 770de1e4220623d9
 ---
 
 # SafeHarbor: Defining Precise Decision Boundaries via Hierarchical Memory-Augmented Guardrail for LLM Agent Safety
@@ -24,100 +24,103 @@ content_hash: 53797f426a936dbc
 **Keywords**: Guardrail, Agent Safety, Hierarchical Memory, Contrastive Learning, Over-Refusal
 
 ## TL;DR
-SafeHarbor upgrades LLM Agent safety defense from a "static coarse-grained classifier" to a "dynamic hierarchical memory tree + dual-score gating." Through adversarial rule generation and information entropy-driven self-evolution, it enables GPT-4o to maintain a 93%+ refusal rate while increasing the benign tool invocation success rate to 63.6%, significantly alleviating the over-refusal problem.
+SafeHarbor upgrades LLM Agent safety from "static coarse-grained classifiers" to "dynamic hierarchical memory tree + dual-score gating." Through adversarial rule generation and entropy-driven self-evolution, GPT-4o maintains a 93%+ refusal rate while raising benign tool invocation success to 63.6%, significantly alleviating the over-refusal problem.
 
 ## Background & Motivation
-**Background**: LLM Agents can invoke tools and perform real-world actions (writing files, sending emails, calling APIs), which expands the attack surface from "outputting harmful text" to "executing harmful actions." Current defenses either (i) use auxiliary LLMs to monitor runtime (GuardAgent, ShieldAgent), (ii) fine-tune safety models (AgentAlign, Llama-Guard-3), or (iii) rely on static rule matching.
+**Background**: LLM Agents can invoke tools and perform real-world actions (write files, send emails, call APIs), expanding the attack surface from "outputting harmful text" to "executing harmful actions." Mainstream defenses either (i) use auxiliary LLMs for runtime monitoring (GuardAgent, ShieldAgent), (ii) fine-tune safety models (AgentAlign, Llama-Guard-3), or (iii) rely on static rule matching.
 
-**Limitations of Prior Work**: Existing solutions treat safety boundaries as "globally fixed linear partitions." Attempting to strictly prevent malicious prompts often leads to the rejection of similar but legitimate complex benign workflows, resulting in severe over-refusal. Furthermore, auxiliary agents introduce prohibitive latency (e.g., ShieldAgent requires real-time code generation).
+**Limitations of Prior Work**: All these approaches treat the safety boundary as a "globally fixed linear split"—strictly blocking malicious prompts also blocks similar but legitimate benign workflows, causing severe over-refusal. Introducing auxiliary agents brings prohibitive latency (e.g., ShieldAgent requires real-time code generation).
 
-**Key Challenge**: There is an acute trade-off between safety strictness and utility on benign tasks. Stricter models are prone to over-refusal, while more permissive ones are easily bypassed. The root cause is that the boundary itself does not dynamically adjust to context.
+**Key Challenge**: There is a sharp trade-off between safety strictness and utility on benign tasks; stricter boundaries increase over-refusal, looser ones are easier to bypass—the root cause is that "boundaries do not dynamically adjust with context."
 
-**Goal**: To equip LLM Agents with a defense layer capable of "dynamically reconstructing safety boundaries for each query" without retraining the base model or adding heavy agent proxies, while maintaining acceptable latency.
+**Goal**: Without retraining the base model or adding heavyweight agent proxies, equip LLM Agents with a defense layer that can dynamically reconstruct safety boundaries per query, while keeping latency within acceptable limits.
 
-**Key Insight**: Safety rules are viewed as "locally semantic clustered boundaries" rather than global thresholds. By using retrieval-based dynamic rule injection and training a lightweight Safety Projector to geometrizing the semantic space, the boundary is determined by the query's position.
+**Key Insight**: Treat safety rules as "locally clustered semantic boundaries" rather than global thresholds; inject rules dynamically via retrieval and train a lightweight Safety Projector to geometrize the semantic space, letting the boundary be determined by the query's own position.
 
-**Core Idea**: A self-organized "Hierarchical Memory Tree" stores adversarially generated prohibition-exception pairs. A dual-center MLP Projector, trained with contrastive loss, provides both harmful and benign scores. Finally, a "fast path + fuzzy-zone LLM judge" gating mechanism determines whether to trigger full safety verification.
+**Core Idea**: Use a self-organizing "hierarchical memory tree" to store adversarially generated forbidden and exemption pairs, combined with a dual-center MLP Projector trained with contrastive loss to provide harmful/benign dual scores. A "fast path + fuzzy zone LLM judge" gating mechanism decides whether to trigger full safety verification.
 
 ## Method
 
 ### Overall Architecture
-SafeHarbor processes query $x$ in three stages: (I) **Adversarial Rule Generation** — Offline mutation of seed harmful trajectories into diverse variants, followed by an LLM rule generator producing contrastive rule pairs $\Pi_i=\{R_{\text{harm}},E_{\text{benign}}\}$; (II) **Dual Knowledge Storage** — Organizing rules into a two-layer memory tree $\mathcal{M}$ (upper layer for routing pivots, lower leaf layer for fine-grained rule pairs) while training a Safety Projector $f_\theta:\mathcal{X}\to\mathbb{R}^d$ with two learnable prototypes $\mathbf{w}_B,\mathbf{w}_H$; (III) **Online Retrieval and Scoring** — Utilizing dual-score gating, where most benign queries take the fast path for immediate release, while fuzzy or high-risk queries trigger rule retrieval and an LLM judge. The formalized trajectory goal is $\tau^*\in\mathcal{T}_{\text{refuse}}$ if $x\in\mathcal{T}_{\text{harm}}$, otherwise $\tau^*\in\mathcal{T}_{\text{exec}}$.
+SafeHarbor processes query $x$ in three stages: (I) **Adversarial Rule Generation**—offline, seed harmful trajectories are mutated to generate diverse adversarial variants, then an LLM rule generator produces contrastive rule pairs $\Pi_i=\{R_{\text{harm}},E_{\text{benign}}\}$; (II) **Dual Knowledge Storage**—rules are structurally organized into a two-level memory tree $\mathcal{M}$ (upper layer: routing pivots; lower leaf: fine-grained rule pairs), while training a Safety Projector $f_\theta:\mathcal{X}\to\mathbb{R}^d$ with two learnable prototypes $\mathbf{w}_B,\mathbf{w}_H$; (III) **Online Retrieval & Scoring**—dual-score gating allows most benign queries to take the fast path, while ambiguous/high-risk queries retrieve relevant rules and invoke the LLM judge. The formal trajectory objective is $\tau^*\in\mathcal{T}_{\text{refuse}}$ if $x\in\mathcal{T}_{\text{harm}}$, otherwise $\tau^*\in\mathcal{T}_{\text{exec}}$.
 
 ### Key Designs
 
-1. **Adversarial Rule Generation + Entropy-driven Memory Evolution**:
-    - **Function**: Automatically expands sparse harmful examples into a rule library covering three social engineering paradigms, determining whether to "create a new cluster," "add a leaf," or "merge and refine" based on information gain.
-    - **Mechanism**: For each seed trajectory $\tau_h$, the generator uses Goal Decomposition, Privilege Escalation, and Contextual Reframing mutations to generate variants. The cosine distance between $z_h=f_\theta(\tau_h)$ and existing cluster centers is calculated. The logic employs Shannon entropy: $p_i=\exp(\text{Sim}(z_i,c)/\gamma)/\sum_j\exp(\text{Sim}(z_j,c)/\gamma)$, $H(C)=-\sum p_i\log_2 p_i$. Information gain is defined as $\Delta I(z_h,C^*)=H(C^*\cup\{z_h\})-H(C^*)$. A new cluster is created if the similarity to the nearest cluster is $<\tau_{\text{sim}}$; a new leaf is created if $\Delta I>\tau_{\text{gain}}$; otherwise, the nearest leaf's rule pair is refined.
-    - **Design Motivation**: Traditional static rule libraries cannot keep pace with adversarial evolution, and relying on a single similarity threshold leads to structure explosion or redundant merging. Information entropy gain provides a statistical standard to determine if a sample brings a new distribution.
+1. **Adversarial Rule Generation + Entropy-Driven Memory Tree Evolution**:
 
-2. **Geometry-aware Dual-center Contrastive Safety Projector**:
-    - **Function**: Maps queries into a geometric space anchored by two learnable prototypes $\mathbf{w}_B$ and $\mathbf{w}_H$, where distance directly reflects the degree of harmfulness.
-    - **Mechanism**: The projector is a 2-layer MLP outputting $z'=\text{MLP}(z)$. Distances $d_B=\|z'-\mathbf{w}_B\|_2$ and $d_H=\|z'-\mathbf{w}_H\|_2$ are calculated, and the risk score is $s(x)=\exp(-d_H)/[\exp(-d_H)+\exp(-d_B)]$. Training optimizes a binary cross-entropy loss $\mathcal{L}_{cls}$ and a margin-based center-wise contrastive loss $\mathcal{L}_{con}=\frac{1}{|\mathcal{B}|}\sum_z \max(0,\Delta+\|z'-\mathbf{w}_y\|_2-\|z'-\mathbf{w}_{\neg y}\|_2)$, where $\mathcal{L}_{\text{total}}=\mathcal{L}_{cls}+\lambda\mathcal{L}_{con}$.
-    - **Design Motivation**: Pure cross-entropy leads to polarized scores (0 or 1), masking differences in ambiguous samples. Margin contrastive loss forces the latent space to be both separable and compact, allowing distance to measure the "semantic risk level."
+    - **Function**: Automatically expands scattered harmful samples into a rule base covering three social engineering paradigms, using information gain to decide "new cluster / new leaf / merge & refine."
+    - **Mechanism**: For each seed trajectory $\tau_h$, the generator rotates through Goal Decomposition (decomposing malicious intent), Privilege Escalation (masquerading as high-priority debug requests), and Contextual Reframing (wrapping in educational/hypothetical scenarios) to generate diverse variants. Then, $z_h=f_\theta(\tau_h)$ computes cosine distance to existing cluster centers. The decision logic uses Shannon entropy: $p_i=\exp(\text{Sim}(z_i,c)/\gamma)/\sum_j\exp(\text{Sim}(z_j,c)/\gamma)$, $H(C)=-\sum p_i\log_2 p_i$, information gain $\Delta I(z_h,C^*)=H(C^*\cup\{z_h\})-H(C^*)$. If similarity to the nearest cluster $<\tau_{\text{sim}}$, create a new cluster; if $\Delta I>\tau_{\text{gain}}$, create a new leaf under the original cluster; otherwise, merge and refine the nearest leaf's rule pair.
+    - **Design Motivation**: Traditional static rule bases cannot keep up with adversarial evolution, and relying on a single similarity threshold leads to tree explosion or redundant merging. Information entropy gain provides a statistical criterion for whether a sample introduces a new distribution, preventing rule bloat and missed detections.
 
-3. **Dual-score Gating: Fast Path + LLM Judge**:
-    - **Function**: Releases over 90% of common traffic from heavy LLM inference while maintaining precision.
-    - **Mechanism**: For each query, (i) the projector's harmful probability $S_{\text{harm}}$ and (ii) the similarity to the nearest sample in the global benign DB $S_{\text{benign}}=1-\|\mathbf{z}_q-\mathbf{b}_{ret}\|_2^2/2$ are calculated. If $S_{\text{harm}}<\tau_{\text{low}}$ and $S_{\text{benign}}>\tau_{\text{high}}$, it proceeds via the fast path. Otherwise, top-$k$ clusters are retrieved to find the most similar leaf, and its rule pairs $\{R_{\text{harm}}, E_{\text{benign}}\}$ are provided to the base LLM for in-context judgment.
-    - **Design Motivation**: Most agent requests are benign; performing rule retrieval and LLM judging for all queries is wasteful. The fast path only allows queries where dual evidence confirms they are benign.
+2. **Geometric Dual-Center Contrastive Safety Projector**:
+
+    - **Function**: Maps queries into a geometric space anchored by two learnable prototypes $\mathbf{w}_B,\mathbf{w}_H$, with distances directly reflecting harmfulness.
+    - **Mechanism**: The projector is a 2-layer MLP, outputting $z'=\text{MLP}(z)$, computing $d_B=\|z'-\mathbf{w}_B\|_2, d_H=\|z'-\mathbf{w}_H\|_2$, and final risk score $s(x)=\exp(-d_H)/[\exp(-d_H)+\exp(-d_B)]$. Training jointly optimizes binary CE $\mathcal{L}_{cls}$ and margin-based center-wise contrastive loss $\mathcal{L}_{con}=\frac{1}{|\mathcal{B}|}\sum_z \max(0,\Delta+\|z'-\mathbf{w}_y\|_2-\|z'-\mathbf{w}_{\neg y}\|_2)$, with total loss $\mathcal{L}_{\text{total}}=\mathcal{L}_{cls}+\lambda\mathcal{L}_{con}$.
+    - **Design Motivation**: Pure CE leads to extreme scores (either 0 or 1), masking differences among ambiguous samples. Introducing margin contrastive loss forces the latent space to be both separable and compact, making distances truly measure "semantic risk level," supporting subsequent dual-score gating.
+
+3. **Dual-Score Gating: Fast Path + LLM Judge**:
+
+    - **Function**: Releases over 90% of ordinary traffic from heavyweight LLM inference while maintaining accuracy.
+    - **Mechanism**: For each query, compute (i) harmful probability $S_{\text{harm}}$ from the projector, and (ii) similarity to the nearest neighbor $\mathbf{b}_{ret}$ in the global benign DB, $S_{\text{benign}}=1-\|\mathbf{z}_q-\mathbf{b}_{ret}\|_2^2/2$. If $S_{\text{harm}}<\tau_{\text{low}}$ and $S_{\text{benign}}>\tau_{\text{high}}$, take the fast path and allow directly; otherwise, enter "centralized rule retrieval"—select top-$k$ clusters, then find the most similar leaf within the cluster, and concatenate the leaf's forbidden $R_{\text{harm}}$ and exemption $E_{\text{benign}}$ as a prompt for in-context base LLM judgment.
+    - **Design Motivation**: In practice, the vast majority of agent requests are plainly benign; performing rule retrieval and LLM judgment for all queries is wasteful. The fast path only allows queries with "dual evidence of benignity," while ambiguous cases pay the cost of complex verification, focusing latency where it matters most.
 
 ### Loss & Training
-Only the projector is trained: $\mathcal{L}_{\text{total}}=\mathcal{L}_{cls}+\lambda\mathcal{L}_{con}$, while the base LLM remains fully frozen. The memory tree is constructed offline and evolves online without additional training. The system is plug-and-play for any frozen LLM agent.
+Only the projector is trained: $\mathcal{L}_{\text{total}}=\mathcal{L}_{cls}+\lambda\mathcal{L}_{con}$, with the base LLM fully frozen. The memory tree is constructed offline and evolves online without training. The entire system is plug-and-play and can be mounted in front of any frozen LLM agent.
 
 ## Key Experimental Results
 
 ### Main Results
-Evaluated on GPT-4o and multiple base LLMs using benign and harmful requests, measuring Score, Full Pass, Refusal, and Non-Refusal.
+Based on GPT-4o and multiple base LLMs, both benign and harmful requests are evaluated for "Score / Full pass / Refusal / Non-Refusal."
 
 | Model | Method | Harmful Refusal ↑ | Benign Score ↑ | Evaluation |
-|-------|--------|------------------|---------------|-----|
-| GPT-4o | No Defense | 58.0% | 44.2% | Over-permissive |
-| GPT-4o | Rule Traverse | 100.0% | 12.1% | Severe over-refusal |
-| GPT-4o | **SafeHarbor** | **93%+** | **63.6%** | Best trade-off |
+|-------|--------|------------------|---------------|------------|
+| GPT-4o | No Defense | 58.0% | 44.2% | over-permissive |
+| GPT-4o | Rule Traverse | 100.0% | 12.1% | severe over-refusal |
+| GPT-4o | **SafeHarbor** | **93%+** | **63.6%** | best trade-off |
 
-SafeHarbor is the only solution in the table that achieves both "harmful refusal > 93%" and "benign utility > 60%."
+SafeHarbor is the only method in the table achieving both "harmful refusal > 93%" and "benign utility > 60%."
 
 ### Ablation Study
 
 | Configuration | Phenomenon | Explanation |
-|------|------|------|
+|---------------|------------|-------------|
 | Full SafeHarbor | 93%+ refusal / 63.6% benign | Main result |
-| w/o $\mathcal{L}_{con}$ | Benign score decreases | Margin contrast is key for geometric separation |
-| w/o fast path | Latency increases significantly | Fast path is core to latency optimization |
-| Disable evolution | Attack success rate rises over time | Entropy-driven splitting is necessary |
-| Single score ($S_{\text{harm}}$ only) | Over-refusal returns | Benign similarity is key to reducing false positives |
-| Naive MoE/Linear Cls | Ambiguous query misclassification | Dual-center space provides stronger semantic structure |
+| Remove $\mathcal{L}_{con}$ contrastive loss | benign score drops | margin contrast is key for geometric separation |
+| Remove fast path | latency rises significantly | fast path is core to latency optimization |
+| Disable memory self-evolution (fixed rule base) | long-term attack pass rate increases | entropy-driven merge/split is necessary |
+| Use single score ($S_{\text{harm}}$ only) | over-refusal returns | benign similarity is key to reducing false positives |
+| Naive MoE/linear classifier | ambiguous samples misclassified | dual-center geometric space provides stronger semantic structure |
 
 ### Key Findings
-- Rotating through three social engineering paradigms for adversarial rule generation ensures the library covers structural (multi-step decomposition), authoritative (privilege escalation), and semantic (contextual framing) attacks.
-- The information entropy gate $\Delta I$ distinguishes "new threats" from "variants" more effectively than fixed thresholds, preventing rule explosion while capturing new attack surfaces.
-- The dual-prototype geometric space forces ambiguous query scores into the 0.3~0.7 range, providing informative continuous metrics for gating.
+- Adversarial rule generation rotates through three social engineering paradigms, ensuring the rule base covers structural (multi-step decomposition), authority (privilege escalation), and semantic (scenario wrapping) attacks—rules generated by a single paradigm are easily bypassed by similar adversarial prompts.
+- Entropy gate $\Delta I$ distinguishes "new threats" from "similar variants" better than fixed similarity thresholds—avoiding both rule explosion and missing genuinely new attack surfaces.
+- The dual-prototype geometric space places ambiguous queries' scores in the 0.3–0.7 range, providing informative continuous metrics for fast path / LLM judge gating.
 
 ## Highlights & Insights
-- Implementing "per-query reconstruction of safety boundaries" as a lightweight, deployable structure (projector + memory tree) creates a system that can be attached to closed-source LLMs like GPT-4o training-free.
-- Contrastive rule pairs $\{R_{\text{harm}},E_{\text{benign}}\}$ are a sophisticated design to mitigate over-refusal, forcing the LLM judge to recognize explicit exception boundaries.
-- The entropy-driven memory evolution mechanism is transferable to any retrieval-augmented system that needs to incorporate new patterns without index explosion (e.g., RAG, ToolBench).
-- The fast path concept (using inexpensive dual scores to block the majority of traffic from heavy verification) should be standard for all LLM-as-a-Judge guardrails.
+- "Per-query dynamic safety boundary reconstruction" is implemented as a lightweight, deployable structure (projector + memory tree), and the system is training-free, mountable on closed-source LLMs like GPT-4o.
+- Contrastive rule pairs $\{R_{\text{harm}},E_{\text{benign}}\}$ are a clever design to mitigate over-refusal—the same leaf specifies not only "what is forbidden" but also "what is the legitimate adjacent case," forcing the LLM judge to clarify exemption boundaries rather than blanket refusal.
+- The entropy-driven memory evolution mechanism is transferable to any retrieval-augmented system that "needs to continually incorporate new patterns without index explosion" (e.g., RAG knowledge bases, ToolBench).
+- The fast path concept (using cheap dual scores to keep most traffic out of heavyweight validation) should be standard for all LLM-as-a-Judge guardrails.
 
 ## Limitations & Future Work
-- The "harmful score" evaluation depends on an LLM-based judge $\mathcal{M}_{\text{eval}}$, which possesses its own biases and limits.
-- The three mutation paradigms are fixed; future work is needed to measure coverage against unknown attacks like multi-modal injections or long-horizon planning attacks.
-- Potential "drift" or "forgetting" in the memory tree over long-term evolution has not been fully discussed—could adversarial prompts eventually pollute the rules?
-- Thresholds $\tau_{\text{low}},\tau_{\text{high}}$ for the fast path are empirically set; adaptive strategies and recalibration costs for different domains are not yet quantified.
-- Dependency on a large, clean benign query database might be a barrier for niche domains.
+- The "harmful score" evaluation depends on the LLM-based judge $\mathcal{M}_{\text{eval}}$, which has its own biases and upper limits.
+- The three mutation paradigms (Goal Decomp/Privilege/Contextual Reframing) are fixed; coverage against unknown attack types (e.g., multimodal injection, long-horizon planning attacks) requires further assessment.
+- "Drift" and "forgetting" in the memory tree's long-term evolution are not fully discussed—will adversarial prompts pollute the rule base after months of operation?
+- The two fast path thresholds $\tau_{\text{low}},\tau_{\text{high}}$ are empirically set, with no adaptive strategy provided; the cost of recalibration across domains is unquantified.
+- The benign DB requires a large, clean, pre-prepared legitimate query set, which may not be available for niche scenarios.
 
 ## Related Work & Insights
-- **vs AgentAlign**: AgentAlign incorporates safety via SFT, which requires retraining; SafeHarbor is training-free and compatible with frozen LLMs.
-- **vs Llama-Guard-3**: The latter is a static classifier unaware of agent tool execution context; SafeHarbor defines safety at the trajectory level.
-- **vs GuardAgent / ShieldAgent**: These require online code generation and execution, leading to high latency; SafeHarbor circumvents this using a lightweight projector and retrieval.
-- **vs A-Mem**: While A-Mem focuses on temporal knowledge networks, this work proposes "constraint-driven" safety memory.
-- **Insight**: The "prototype anchored embedding" idea in dual-center geometry can be migrated to safety filtering in RAG retrieval and multi-modal content moderation.
+- **vs AgentAlign**: AgentAlign burns safety constraints into the model via SFT, requiring retraining and incurring retrain cost; SafeHarbor is training-free and compatible with any frozen LLM.
+- **vs Llama-Guard-3**: The latter is a static content classifier, unaware of agent tool execution context; SafeHarbor directly defines trajectory-level safety.
+- **vs GuardAgent / ShieldAgent**: The former generates and executes code online each time, resulting in high latency and fragile maintenance; SafeHarbor uses a lightweight projector + memory retrieval to bypass code-gen, with much lower end-to-end latency.
+- **vs A-Mem and other memory mechanisms**: A-Mem focuses on temporally-aware knowledge networks, while this work proposes "time-independent, constraint-driven" safety memory, relevant to misevolution issues (Shao et al. 2025).
+- **Insights**: The "prototype anchored embedding" concept of dual-center geometry + margin contrast can be transferred to RAG retrieval safety filtering, multimodal content moderation, etc.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ (Combining entropy evolution with adversarial rule pairs for agent guardrails)
-- Experimental Thoroughness: ⭐⭐⭐⭐ (Multiple LLMs and attack paradigms, though lacking long-horizon/multi-modal coverage)
-- Writing Quality: ⭐⭐⭐⭐ (Clear three-stage framework, standard Algorithm 1)
-- Value: ⭐⭐⭐⭐⭐ (Training-free, highly deployable for closed-source models)
+- Novelty: ⭐⭐⭐⭐ Introduces entropy-driven memory evolution + adversarial rule pairs to LLM agent guardrails
+- Experimental Thoroughness: ⭐⭐⭐⭐ Multiple LLMs + multiple attack paradigms, but lacks coverage of long-horizon and multimodal attacks
+- Writing Quality: ⭐⭐⭐⭐ Three-stage framework diagram is clear, Algorithm 1 is well-written
+- Value: ⭐⭐⭐⭐⭐ Training-free, can be directly mounted on closed LLMs like GPT-4o, highly practical for engineering deployment
 
 <!-- RELATED:START -->
 
@@ -128,8 +131,8 @@ SafeHarbor is the only solution in the table that achieves both "harmful refusal
 - [\[ICML 2026\] SE-GA: Memory-Augmented Self-Evolution for GUI Agents](se-ga_memory-augmented_self-evolution_for_gui_agents.md)
 - [\[ICLR 2026\] Exploratory Memory-Augmented LLM Agent via Hybrid On- and Off-Policy Optimization](../../ICLR2026/llm_agent/exploratory_memory-augmented_llm_agent_via_hybrid_on-_and_off-policy_optimizatio.md)
 - [\[ICML 2026\] Think Twice Before You Act: Enhancing Agent Behavioral Safety with Thought Correction](think_twice_before_you_act_enhancing_agent_behavioral_safety_with_thought_correc.md)
-- [\[ACL 2026\] Hierarchical Reinforcement Learning with Augmented Step-Level Transitions for LLM Agents](../../ACL2026/llm_agent/hierarchical_reinforcement_learning_with_augmented_step-level_transitions_for_ll.md)
 - [\[ACL 2026\] Shopping Companion: A Memory-Augmented LLM Agent for Real-World E-Commerce Tasks](../../ACL2026/llm_agent/shopping_companion_a_memory-augmented_llm_agent_for_real-world_e-commerce_tasks.md)
+- [\[ACL 2026\] Hierarchical Reinforcement Learning with Augmented Step-Level Transitions for LLM Agents](../../ACL2026/llm_agent/hierarchical_reinforcement_learning_with_augmented_step-level_transitions_for_ll.md)
 
 </div>
 

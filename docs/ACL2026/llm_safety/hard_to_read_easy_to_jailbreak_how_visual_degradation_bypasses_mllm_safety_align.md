@@ -139,8 +139,8 @@ The ACZ also holds for Chinese prompts: Doubao at 300 DPI (0.167) → ACZ (0.703
 
 - [\[ACL 2026\] How Should We Enhance the Safety of Large Reasoning Models: An Empirical Study](how_should_we_enhance_the_safety_of_large_reasoning_models_an_empirical_study.md)
 - [\[ACL 2026\] LLM-VA: Resolving the Jailbreak-Overrefusal Trade-off via Vector Alignment](llm-va_resolving_the_jailbreak-overrefusal_trade-off_via_vector_alignment.md)
-- [\[ICML 2026\] Old Habits Die Hard: How Conversational History Geometrically Traps LLMs](../../ICML2026/llm_safety/old_habits_die_hard_how_conversational_history_geometrically_traps_llms.md)
 - [\[ACL 2026\] Reasoning Structure Matters for Safety Alignment of Reasoning Models](reasoning_structure_matters_for_safety_alignment_of_reasoning_models.md)
+- [\[ICML 2026\] Old Habits Die Hard: How Conversational History Geometrically Traps LLMs](../../ICML2026/llm_safety/old_habits_die_hard_how_conversational_history_geometrically_traps_llms.md)
 - [\[ACL 2026\] SafeMERGE: Preserving Safety Alignment in Fine-Tuned Large Language Models via Selective Layer-Wise Model Merging](safemerge_preserving_safety_alignment_in_fine-tuned_large_language_models_via_se.md)
 
 </div>

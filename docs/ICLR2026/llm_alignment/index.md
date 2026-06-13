@@ -1,8 +1,8 @@
 ---
 title: >-
-  ICLR2026 Alignment & RLHF Papers · 42 Notes
+  ICLR2026 Alignment & RLHF Papers · 40 Notes
 description: >-
-  42 ICLR2026 papers in the Alignment & RLHF area, covering Alignment/RLHF, LLM, Adversarial Robustness, Reasoning, Multimodal/VLM and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  40 ICLR2026 papers in the Alignment & RLHF area, covering Alignment/RLHF, LLM, Adversarial Robustness, Multimodal/VLM and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "ICLR2026"
   - "Alignment & RLHF"
@@ -11,7 +11,6 @@ tags:
   - "Alignment/RLHF"
   - "LLM"
   - "Adversarial Robustness"
-  - "Reasoning"
   - "Multimodal/VLM"
 item_list:
   - u: "a2d_any-order_any-step_safety_alignment_for_diffusion_language_models/"
@@ -20,28 +19,20 @@ item_list:
     t: "Agnostics: Learning to Synthesize Code in Any Programming Language with a Universal RL Environment"
   - u: "align_once_benefit_multilingually_enforcing_multilingual_consistency_for_llm_saf/"
     t: "Align Once, Benefit Multilingually: Enforcing Multilingual Consistency for LLM Safety Alignment"
-  - u: "alignment_through_meta-weighted_online_sampling_bridging_the_gap_between_data_ge/"
-    t: "Alignment through Meta-Weighted Online Sampling: Bridging the Gap between Data Generation and Preference Optimization"
   - u: "alphasteer_learning_refusal_steering_with_principled_null-space_constraint/"
     t: "AlphaSteer: Learning Refusal Steering with Principled Null-Space Constraint"
-  - u: "antibody_strengthening_defense_against_harmful_fine-tuning_for_large_language_mo/"
-    t: "Antibody: Strengthening Defense Against Harmful Fine-Tuning for Large Language Models via Attenuating Harmful Gradient Influence"
-  - u: "avere_improving_audiovisual_emotion_reasoning_with_preference_optimization/"
-    t: "AVERE: Improving Audiovisual Emotion Reasoning with Preference Optimization"
   - u: "beyond_pairwise_empowering_llm_alignment_with_ranked_choice_modeling/"
     t: "Beyond Pairwise: Empowering LLM Alignment With Ranked Choice Modeling"
   - u: "beyond_rlhf_and_nlhf_population-proportional_alignment_under_an_axiomatic_framew/"
     t: "Beyond RLHF and NLHF: Population-Proportional Alignment under an Axiomatic Framework"
   - u: "cage_a_framework_for_culturally_adaptive_red-teaming_benchmark_generation/"
     t: "CAGE: A Framework for Culturally Adaptive Red-Teaming Benchmark Generation"
+  - u: "capability-based_scaling_trends_for_llm-based_red-teaming/"
+    t: "Capability-Based Scaling Trends for LLM-Based Red-Teaming"
   - u: "chasing_the_tail_effective_rubric-based_reward_modeling_for_large_language_model/"
     t: "Chasing the Tail: Effective Rubric-based Reward Modeling for Large Language Model Post-Training"
   - u: "displacement-resistant_extensions_of_dpo_with_nonconvex_f-divergences/"
     t: "Displacement-Resistant Extensions of DPO with Nonconvex $f$-Divergences"
-  - u: "dual-ipo_dual-iterative_preference_optimization_for_text-to-video_generation/"
-    t: "Dual-IPO: Dual-Iterative Preference Optimization for Text-to-Video Generation"
-  - u: "from_utterance_to_vividity_training_expressive_subtitle_translation_llm_via_adap/"
-    t: "From Utterance to Vividity: Training Expressive Subtitle Translation LLM via Adaptive Local Preference Optimization"
   - u: "general_exploratory_bonus_for_optimistic_exploration_in_rlhf/"
     t: "General Exploratory Bonus for Optimistic Exploration in RLHF"
   - u: "group-relative_reinforce_is_secretly_an_off-policy_algorithm_demystifying_some_m/"
@@ -50,16 +41,18 @@ item_list:
     t: "GuardAlign: Test-time Safety Alignment in Multimodal Large Language Models"
   - u: "hierarchy-of-groups_policy_optimization_for_long-horizon_agentic_tasks/"
     t: "Hierarchy-of-Groups Policy Optimization for Long-Horizon Agentic Tasks"
+  - u: "ignore_all_previous_instructions_jailbreaking_as_a_de-escalatory_peace_building_/"
+    t: "Ignore All Previous Instructions: Jailbreaking as a de-escalatory peace building practise to resist LLM social media bots"
   - u: "is_on-policy_data_always_the_best_choice_for_direct_preference_optimization-base/"
     t: "Is On-Policy Data always the Best Choice for Direct Preference Optimization-based LM Alignment?"
   - u: "jailnewsbench_multi-lingual_and_regional_benchmark_for_fake_news_generation_unde/"
     t: "JailNewsBench: Multi-Lingual and Regional Benchmark for Fake News Generation under Jailbreak Attacks"
+  - u: "juli_jailbreak_large_language_models_by_self-introspection/"
+    t: "JULI: Jailbreak Large Language Models by Self-Introspection"
   - u: "learning_more_with_less_a_dynamic_dual-level_down-sampling_framework_for_efficie/"
     t: "Learning More with Less: A Dynamic Dual-Level Down-Sampling Framework for Efficient Policy Optimization"
   - u: "learning_ordinal_probabilistic_reward_from_preferences/"
     t: "Learning Ordinal Probabilistic Reward from Preferences (OPRM)"
-  - u: "mitigating_mismatch_within_reference-based_preference_optimization/"
-    t: "Mitigating Mismatch within Reference-based Preference Optimization"
   - u: "mitigating_the_safety_alignment_tax_with_null-space_constrained_policy_optimizat/"
     t: "Mitigating the Safety Alignment Tax with Null-Space Constrained Policy Optimization"
   - u: "no_prompt_left_behind_exploiting_zero-variance_prompts_in_llm_reinforcement_lear/"
@@ -70,21 +63,27 @@ item_list:
     t: "Optimal Sparsity of Mixture-of-Experts Language Models for Reasoning Tasks"
   - u: "reasoned_safety_alignment_ensuring_jailbreak_defense_via_answer-then-check/"
     t: "Reasoned Safety Alignment: Ensuring Jailbreak Defense via Answer-Then-Check"
+  - u: "robust_preference_alignment_via_directional_neighborhood_consensus/"
+    t: "Robust Preference Alignment via Directional Neighborhood Consensus"
   - u: "safedpo_preference_optimization_safety/"
     t: "SafeDPO: A Simple Approach to Direct Preference Optimization with Enhanced Safety"
   - u: "safety_subspaces_are_not_linearly_distinct_a_fine-tuning_case_study/"
     t: "Safety Subspaces are Not Linearly Distinct: A Fine-Tuning Case Study"
-item_total: 42
+  - u: "sema_simple_yet_effective_learning_for_multi-turn_jailbreak_attacks/"
+    t: "SEMA: Simple yet Effective Learning for Multi-Turn Jailbreak Attacks"
+  - u: "semantic-aware_wasserstein_policy_regularization_for_large_language_model_alignm/"
+    t: "Semantic-aware Wasserstein Policy Regularization for Large Language Model Alignment"
+item_total: 40
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->
 # ⚖️ Alignment & RLHF
 
-**🔬 ICLR2026** · **42** paper notes
+**🔬 ICLR2026** · **40** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (30)](../../ICML2026/llm_alignment/index.md) · [💬 ACL2026 (30)](../../ACL2026/llm_alignment/index.md) · [📷 CVPR2026 (9)](../../CVPR2026/llm_alignment/index.md) · [🤖 AAAI2026 (20)](../../AAAI2026/llm_alignment/index.md) · [🧠 NeurIPS2025 (50)](../../NeurIPS2025/llm_alignment/index.md) · [📹 ICCV2025 (2)](../../ICCV2025/llm_alignment/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (26)](../../ICML2026/llm_alignment/index.md) · [💬 ACL2026 (31)](../../ACL2026/llm_alignment/index.md) · [📷 CVPR2026 (2)](../../CVPR2026/llm_alignment/index.md) · [🤖 AAAI2026 (17)](../../AAAI2026/llm_alignment/index.md) · [🧠 NeurIPS2025 (36)](../../NeurIPS2025/llm_alignment/index.md) · [📹 ICCV2025 (2)](../../ICCV2025/llm_alignment/index.md)
 
-🔥 **Top topics:** Alignment/RLHF ×22 · LLM ×10 · Adversarial Robustness ×5 · Reasoning ×3 · Multimodal/VLM ×2
+🔥 **Top topics:** Alignment/RLHF ×17 · LLM ×11 · Adversarial Robustness ×5 · Multimodal/VLM ×2
 
 **[A2D: Any-Order, Any-Step Safety Alignment for Diffusion Language Models](a2d_any-order_any-step_safety_alignment_for_diffusion_language_models.md)**
 
@@ -98,21 +97,9 @@ item_total: 42
 
 :   This paper proposes Multi-Lingual Consistency (MLC), an auxiliary loss that manipulates the singular values of a multilingual representation matrix via SVD to drive it toward rank-1 (i.e., collinear multilingual representations). Using only multilingual prompt translations—without requiring target-language responses—MLC consistently transfers safety alignment from one language to all others.
 
-**[Alignment through Meta-Weighted Online Sampling: Bridging the Gap between Data Generation and Preference Optimization](alignment_through_meta-weighted_online_sampling_bridging_the_gap_between_data_ge.md)**
-
-:   This paper proposes MetaAPO, a framework that employs a lightweight meta-learner (a two-layer MLP) to dynamically estimate the alignment gap between offline and online data. The meta-learner simultaneously guides *where* to perform online sampling (addressing distribution mismatch) and adaptively reweights offline/online data during training (improving learning efficiency). MetaAPO outperforms DPO, Online DPO, and other baselines on AlpacaEval 2, Arena-Hard, and MT-Bench, while reducing online annotation costs by 42%.
-
 **[AlphaSteer: Learning Refusal Steering with Principled Null-Space Constraint](alphasteer_learning_refusal_steering_with_principled_null-space_constraint.md)**
 
 :   This paper proposes AlphaSteer, which learns a null-space-constrained transformation matrix to dynamically construct steering vectors that produce near-zero vectors for benign inputs (preserving utility) while reconstructing the refusal direction vector for malicious inputs (enhancing safety), providing theoretical guarantees for the decoupling of safety and utility.
-
-**[Antibody: Strengthening Defense Against Harmful Fine-Tuning for Large Language Models via Attenuating Harmful Gradient Influence](antibody_strengthening_defense_against_harmful_fine-tuning_for_large_language_mo.md)**
-
-:   This paper proposes Antibody, a two-stage defense framework that (1) during alignment, applies flatness regularization to place the model in a flat region of the harmful loss landscape (small gradients → harder to attack), and (2) during fine-tuning, suppresses learning from harmful samples via a likelihood-ratio-based sample weighting scheme (contrasting the likelihood of task completion vs. refusal). The average Harmful Score is reduced from 15.29% to 7.04%.
-
-**[AVERE: Improving Audiovisual Emotion Reasoning with Preference Optimization](avere_improving_audiovisual_emotion_reasoning_with_preference_optimization.md)**
-
-:   To address spurious associations and hallucinations in multimodal large language models (MLLMs) for emotion reasoning, this work proposes the EmoReAlM evaluation benchmark and the AVEm-DPO preference optimization method. By constructing targeted preference pairs and incorporating text-prior regularization, the approach achieves 6–19% relative zero-shot performance gains on DFEW, RAVDESS, and EMER.
 
 **[Beyond Pairwise: Empowering LLM Alignment With Ranked Choice Modeling](beyond_pairwise_empowering_llm_alignment_with_ranked_choice_modeling.md)**
 
@@ -126,6 +113,10 @@ item_total: 42
 
 :   This paper proposes the CAGE framework, which decouples the adversarial structure of red-teaming prompts from their cultural content via a construct termed the Semantic Mold. CAGE systematically adapts English red-teaming benchmarks to diverse cultural contexts, yielding culturally grounded prompts that achieve substantially higher attack success rates (ASR) than direct translation.
 
+**[Capability-Based Scaling Trends for LLM-Based Red-Teaming](capability-based_scaling_trends_for_llm-based_red-teaming.md)**
+
+:   This paper systematically evaluates 4 jailbreak methods across 600+ attacker–target LLM pairs and finds that attack success rate (ASR) follows a sigmoid scaling law with respect to the capability gap between attacker and target ($R^2=0.83$), where the capability gap is quantified via a logit transformation of MMLU-Pro scores.
+
 **[Chasing the Tail: Effective Rubric-based Reward Modeling for Large Language Model Post-Training](chasing_the_tail_effective_rubric-based_reward_modeling_for_large_language_model.md)**
 
 :   This paper theoretically establishes that reward over-optimization stems primarily from misspecification in the high-reward tail region, and proposes a rubric-based reward modeling approach: leveraging off-policy data (high-quality responses from stronger models) to construct scoring rubrics, which are progressively refined by distinguishing "good vs. better" responses, effectively mitigating reward over-optimization.
@@ -133,14 +124,6 @@ item_total: 42
 **[Displacement-Resistant Extensions of DPO with Nonconvex $f$-Divergences](displacement-resistant_extensions_of_dpo_with_nonconvex_f-divergences.md)**
 
 :   This paper establishes that the solvability of f-DPO does not require convexity of $f$ — only $\lim_{t\to 0^+} f'(t) = -\infty$ is needed — and further proves that $\arg\min f(t) \geq 1$ is a necessary condition for displacement resistance. Based on these findings, the paper proposes SquaredPO ($f(t) = \frac{1}{2}(\log t)^2$, nonconvex), which significantly alleviates the winner probability degradation problem while maintaining competitive performance.
-
-**[Dual-IPO: Dual-Iterative Preference Optimization for Text-to-Video Generation](dual-ipo_dual-iterative_preference_optimization_for_text-to-video_generation.md)**
-
-:   This paper proposes the Dual-IPO framework, which performs multi-round bidirectional iterative optimization between a reward model and a video generation model. Without large-scale human annotation, the approach continuously improves text-to-video generation quality and human preference alignment, enabling a 2B model to surpass a 5B model.
-
-**[From Utterance to Vividity: Training Expressive Subtitle Translation LLM via Adaptive Local Preference Optimization](from_utterance_to_vividity_training_expressive_subtitle_translation_llm_via_adap.md)**
-
-:   This paper proposes ALPO (Adaptive Local Preference Optimization) for training expressive subtitle translation LLMs. Three empirical findings motivate the design: (1) subtitle translation exhibits the lowest back-translation consistency, indicating the highest degree of paraphrase; (2) reasoning-type LLMs (R1/GPT-5 Thinking) produce more expressive paraphrases than chat-type LLMs (GPT-4o/Qwen-Max); (3) a 14B model used as a translation evaluator achieves Spearman correlation $\geq 0.82$ with human judgments, qualifying it as a low-cost reward model. Building on these findings, the paper proposes a fine-grained, process-supervised preference alignment method operating at the sentence-segment level (with adaptive weighting, dynamic beta, and prefix mixing). A 14B model trained with ALPO surpasses GPT-4o and DeepSeek-R1 in vividness across multiple subtitle translation directions.
 
 **[General Exploratory Bonus for Optimistic Exploration in RLHF](general_exploratory_bonus_for_optimistic_exploration_in_rlhf.md)**
 
@@ -158,6 +141,10 @@ item_total: 42
 
 :   This paper identifies a "historical context inconsistency" problem in stepwise group-based RL methods (e.g., GRPO/GiGPO)—steps within the same group may have different historical contexts, leading to biased advantage estimation. HGPO is proposed to achieve low-bias, balanced-variance advantage estimation through hierarchical grouping and adaptive weighting, yielding significant improvements on ALFWorld and WebShop with negligible additional overhead (<0.001%).
 
+**[Ignore All Previous Instructions: Jailbreaking as a de-escalatory peace building practise to resist LLM social media bots](ignore_all_previous_instructions_jailbreaking_as_a_de-escalatory_peace_building_.md)**
+
+:   This paper proposes reframing the jailbreaking of LLM-driven social media propaganda bots as a user-initiated, nonviolent de-escalatory peace-building practice. By exposing the fabricated identities of automated accounts through prompt injection, ordinary users can resist state-sponsored disinformation campaigns without relying on platform moderation.
+
 **[Is On-Policy Data always the Best Choice for Direct Preference Optimization-based LM Alignment?](is_on-policy_data_always_the_best_choice_for_direct_preference_optimization-base.md)**
 
 :   This paper challenges the prevailing assumption that on-policy data is always superior, revealing that LLM alignment comprises two distinct stages — preference injection (requiring high-diversity off-policy data) and preference fine-tuning (requiring high-quality on-policy data) — with the optimal data type varying across models and stages. A boundary detection algorithm incurring only 3.2% additional computational overhead is proposed and validated across 5 models × 55 configurations.
@@ -166,6 +153,10 @@ item_total: 42
 
 :   This paper introduces JailNewsBench, the first multilingual and multi-regional benchmark for evaluating LLM robustness against fake news generation under jailbreak attacks. Covering 34 regions, 22 languages, and approximately 300,000 instances, the benchmark reveals attack success rates as high as 86.3% and exposes a systematic safety imbalance in which English- and U.S.-topic defenses are significantly weaker than those for other regions.
 
+**[JULI: Jailbreak Large Language Models by Self-Introspection](juli_jailbreak_large_language_models_by_self-introspection.md)**
+
+:   This paper reveals that top-k token log probabilities returned by aligned LLM APIs still contain harmful knowledge leakage, and proposes JULI—a BiasNet plugin with fewer than 1% of the target model's parameters—that manipulates logit bias to successfully jailbreak Gemini-2.5-Pro (Harmful Info Score 4.19/5) under API settings restricted to top-5 token probabilities, achieving approximately 140× speedup over LINT while doubling harmfulness scores.
+
 **[Learning More with Less: A Dynamic Dual-Level Down-Sampling Framework for Efficient Policy Optimization](learning_more_with_less_a_dynamic_dual-level_down-sampling_framework_for_efficie.md)**
 
 :   This paper proposes **D3S** (Dynamic Dual-Level Down-Sampling), a framework that maximizes advantage variance at the sample level and prioritizes high-entropy, high-advantage tokens at the token level, combined with a dynamic scheduling strategy. D3S achieves faster convergence and superior performance using fewer than 20% of tokens.
@@ -173,10 +164,6 @@ item_total: 42
 **[Learning Ordinal Probabilistic Reward from Preferences (OPRM)](learning_ordinal_probabilistic_reward_from_preferences.md)**
 
 :   This paper proposes the Ordinal Probabilistic Reward Model (OPRM), which discretizes response quality into ordinal grades from 1 to 9 and learns the full probability distribution over these grades. Combined with Region Flooding Tuning (RgFT), it enables data-efficient training. OPRM achieves 89.3% on RewardBench, outperforming existing reward models by 2.9%–7.4%, while also providing uncertainty estimation and annotation disagreement detection.
-
-**[Mitigating Mismatch within Reference-based Preference Optimization](mitigating_mismatch_within_reference-based_preference_optimization.md)**
-
-:   This paper identifies the *premature satisfaction* problem in DPO — when the reference policy assigns lower probability to chosen than to rejected responses (~45% of pairs), DPO's gradient is unnecessarily attenuated by the pessimistic reference signal, even when the policy is still incorrect (i.e., $\Delta_\theta < 0$). The paper proposes HyPO (a one-line code change: clipping the reference margin via $\max(0, \Delta_{ref})$), achieving a 41.2% relative improvement over DPO on AlpacaEval 2.0.
 
 **[Mitigating the Safety Alignment Tax with Null-Space Constrained Policy Optimization](mitigating_the_safety_alignment_tax_with_null-space_constrained_policy_optimizat.md)**
 
@@ -198,6 +185,10 @@ item_total: 42
 
 :   This paper proposes an Answer-Then-Check strategy: the model first generates an intended answer summary in its chain-of-thought, then conducts safety analysis against a safety policy, and finally decides whether to output or refuse. After training on the constructed 80K ReSA dataset, the method achieves a 99.3% defense rate against 7 jailbreak attacks (RL variant), with only 500 samples needed to match full-dataset performance.
 
+**[Robust Preference Alignment via Directional Neighborhood Consensus](robust_preference_alignment_via_directional_neighborhood_consensus.md)**
+
+:   This paper proposes Robust Preference Selection (RPS), a training-free inference-time method for improving preference alignment robustness. By sampling multiple candidate directions from the local neighborhood of a target preference and generating responses accordingly, then selecting the best response according to the original target preference, RPS achieves up to 69% win rate over baselines on OOD preferences.
+
 **[SafeDPO: A Simple Approach to Direct Preference Optimization with Enhanced Safety](safedpo_preference_optimization_safety.md)**
 
 :   This work revisits the safety-constrained RLHF objective, proves the existence of a closed-form optimal policy, and derives an equivalent tractable objective, SafeDPO. The method requires only a safety-aware data transformation and a safety margin term (one additional hyperparameter) on top of standard DPO, without reward or cost models. It achieves a 96.87% harmlessness rate on PKU-SafeRLHF-30K while maintaining competitive helpfulness, and trains 25× faster than SafeRLHF.
@@ -218,9 +209,9 @@ item_total: 42
 
 :   This paper proposes a two-stage preference data curation pipeline based on Human-AI synergy. Stage 1 accumulates approximately 1M preference pairs over 8 iterative rounds via human verification, error-driven adaptive retrieval, and preference-guided LLM annotation. Stage 2 scales the dataset to 26M pairs using dual-RM consistency filtering. The resulting Skywork-Reward-V2 8B model achieves 97.8% on RewardBench and an average of 88.6% across 7 mainstream benchmarks, comprehensively surpassing all open-source 70B reward models.
 
-**[Slow-Fast Policy Optimization: Reposition-Before-Update for LLM Reasoning](slow-fast_policy_optimization_reposition-before-update_for_llm_reasoning.md)**
+**[Spectrum Tuning: Post-Training for Distributional Coverage and In-Context Steerability](spectrum_tuning_post-training_for_distributional_coverage_and_in-context_steerab.md)**
 
-:   This paper proposes SFPO (Slow-Fast Policy Optimization), which decomposes each training step into a three-stage structure of "fast trajectory — reposition — slow correction." Without modifying the objective function or rollout procedure, SFPO serves as a plug-and-play enhancement to GRPO, achieving up to 2.80-point average improvement on mathematical reasoning benchmarks and up to 4.93× reduction in rollouts.
+:   This paper proposes Spectrum Tuning, a post-training method that trains language models on a distributional-fitting dataset spanning 90+ tasks, improving in-context steerability, output space coverage, and distributional alignment. It reveals that current instruction tuning systematically degrades in-context steerability.
 
 **[Superficial Safety Alignment Hypothesis](superficial_safety_alignment_hypothesis.md)**
 
@@ -229,6 +220,10 @@ item_total: 42
 **[Swap-guided Preference Learning for Personalized RLHF (SPL)](swap-guided_preference_learning_for_personalized_reinforcement_learning_from_hum.md)**
 
 :   This paper addresses posterior collapse in Variational Preference Learning (VPL) by proposing SPL, which introduces swap-guided base regularization (forcing latent variables to encode user preferences rather than being ignored), a Preferential-IAF decomposition of swap-reversible and swap-invariant signals, and adaptive latent variable modulation. On Llama-3.1-8B, SPL achieves 63.71% accuracy and 97.10% active units, whereas VPL collapses to 57.14% accuracy and 0% active units.
+
+**[Sysformer: Safeguarding Frozen Large Language Models with Adaptive System Prompts](sysformer_safeguarding_frozen_large_language_models_with_adaptive_system_prompts.md)**
+
+:   This paper proposes Sysformer, a lightweight Transformer module that can be plugged in front of any frozen LLM to adaptively transform system prompts in embedding space conditioned on user input, enabling the model to refuse harmful requests while complying with benign ones—without modifying LLM parameters or filtering user inputs.
 
 **[Token-Importance Guided Direct Preference Optimization (TI-DPO)](token-importance_guided_direct_preference_optimization.md)**
 
@@ -241,10 +236,6 @@ item_total: 42
 **[Towards Understanding Valuable Preference Data for Large Language Model Alignment](towards_understanding_valuable_preference_data_for_large_language_model_alignmen.md)**
 
 :   This work studies preference data quality from a model-dependent perspective. It proposes Truncated Influence Functions (TIF), revealing that data with medium IF values—rather than high IF values as conventionally assumed—is most valuable. Two lightweight proxy metrics, LossDiff and IRM, are designed to approximate TIF. The combined LossDiff-IRM selector achieves an average WinRate improvement of 13.58% using only 50–64% of the data, with consistent effectiveness across multiple LLM families and alignment benchmarks.
-
-**[Uni-DPO: A Unified Paradigm for Dynamic Preference Optimization of LLMs](uni-dpo_a_unified_paradigm_for_dynamic_preference_optimization_of_llms.md)**
-
-:   Uni-DPO is proposed to unify dynamic reweighting of preference pairs via three components — quality-aware weighting (prioritizing pairs with large score margins), performance-aware weighting (focal loss focusing on underfitted samples), and a calibrated NLL loss — consistently outperforming DPO/SimPO on text understanding and mathematical reasoning benchmarks, with Gemma-2-9B achieving 67.1% on Arena-Hard, surpassing Claude 3 Opus (60.4%).
 
 **[Unifying Stable Optimization and Reference Regularization in RLHF (DAR)](unifying_stable_optimization_and_reference_regularization_in_rlhf.md)**
 

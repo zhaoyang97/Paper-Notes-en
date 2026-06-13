@@ -126,10 +126,10 @@ With only 1% seed alignments, NeuSymEA-L achieves a Hit@1 of 0.632, substantiall
 ## Related Papers
 
 - [\[NeurIPS 2025\] Least Squares Variational Inference](least_squares_variational_inference.md)
-- [\[NeurIPS 2025\] Brain-like Variational Inference](brain-like_variational_inference.md)
 - [\[NeurIPS 2025\] VIKING: Deep Variational Inference with Stochastic Projections](viking_deep_variational_inference_with_stochastic_projections.md)
 - [\[NeurIPS 2025\] VERA: Variational Inference Framework for Jailbreaking Large Language Models](vera_variational_inference_framework_for_jailbreaking_large_language_models.md)
 - [\[NeurIPS 2025\] Natural Gradient Descent for Improving Variational Inference Based Classification of Radio Galaxies](natural_gradient_descent_for_improving_variational_inference_based_classificatio.md)
+- [\[NeurIPS 2025\] Doubly Robust Alignment for Large Language Models](doubly_robust_alignment_for_large_language_models.md)
 
 </div>
 

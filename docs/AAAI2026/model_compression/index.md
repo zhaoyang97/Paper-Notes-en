@@ -1,8 +1,8 @@
 ---
 title: >-
-  AAAI2026 Model Compression Papers · 53 Notes
+  AAAI2026 Model Compression Papers · 60 Notes
 description: >-
-  53 AAAI2026 papers in the Model Compression area, covering Model Compression, Compression, LLM, Agents, Reasoning, Layout & Composition and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  60 AAAI2026 papers in the Model Compression area, covering Model Compression, Compression, LLM, Knowledge Distillation, Reasoning, Layout & Composition and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "AAAI2026"
   - "Model Compression"
@@ -10,14 +10,16 @@ tags:
   - "paper summaries"
   - "Compression"
   - "LLM"
-  - "Agents"
+  - "Knowledge Distillation"
   - "Reasoning"
   - "Layout & Composition"
 item_list:
+  - u: "a_closer_look_at_knowledge_distillation_in_spiking_neural_ne/"
+    t: "A Closer Look at Knowledge Distillation in Spiking Neural Network Training"
   - u: "adafuse_accelerating_dynamic_adapter_inference_via_token-lev/"
     t: "AdaFuse: Accelerating Dynamic Adapter Inference via Token-Level Pre-Gating and Fused Kernel Optimization"
-  - u: "agentodrl_a_large_language_model-based_multi-agent_system_fo/"
-    t: "AgentODRL: A Large Language Model-based Multi-agent System for ODRL Generation"
+  - u: "asymmetric_cross-modal_knowledge_distillation_bridging_modalities_with_weak_sema/"
+    t: "Asymmetric Cross-Modal Knowledge Distillation: Bridging Modalities with Weak Semantic Consistency"
   - u: "bd-net_has_depth-wise_convolution_ever_been_applied_in_binary_neural_networks/"
     t: "BD-Net: Has Depth-Wise Convolution Ever Been Applied in Binary Neural Networks?"
   - u: "beyond_sharpness_a_flatness_decomposition_framework_for_efficient_continual_lear/"
@@ -26,20 +28,20 @@ item_list:
     t: "CAMERA: Multi-Matrix Joint Compression for MoE Models via Micro-Expert Redundancy Analysis"
   - u: "can_you_tell_the_difference_contrastive_explanations_for_abox_entailments/"
     t: "Can You Tell the Difference? Contrastive Explanations for ABox Entailments"
-  - u: "clippan_adapting_clip_as_a_supervisor_for_unsupervised_pansharpening/"
-    t: "CLIPPan: Adapting CLIP as A Supervisor for Unsupervised Pansharpening"
   - u: "compensating_distribution_drifts_in_class-incremental_learning_of_pre-trained_vi/"
     t: "Compensating Distribution Drifts in Class-incremental Learning of Pre-trained Vision Transformers"
   - u: "condensed_data_expansion_using_model_inversion_for_knowledge_distillation/"
     t: "Condensed Data Expansion Using Model Inversion for Knowledge Distillation"
-  - u: "correcting_false_alarms_from_unseen_adapting_graph_anomaly_detectors_at_test_tim/"
-    t: "Correcting False Alarms from Unseen: Adapting Graph Anomaly Detectors at Test Time"
-  - u: "credal_ensemble_distillation_for_uncertainty_quantification/"
-    t: "Credal Ensemble Distillation for Uncertainty Quantification"
+  - u: "consensus-aligned_neuron_efficient_fine-tuning_large_language_models_for_multi-d/"
+    t: "Consensus-Aligned Neuron Efficient Fine-Tuning Large Language Models for Multi-Domain Machine Translation"
   - u: "ctpd_cross_tokenizer_preference_distillation/"
     t: "CTPD: Cross Tokenizer Preference Distillation"
+  - u: "distillation_dynamics_towards_understanding_feature-based_di/"
+    t: "Distillation Dynamics: Towards Understanding Feature-Based Distillation in Vision Transformers"
   - u: "distilling_cross-modal_knowledge_via_feature_disentanglement/"
     t: "Distilling Cross-Modal Knowledge via Feature Disentanglement"
+  - u: "do_not_merge_my_model_safeguarding_open-source_llms_against_unauthorized_model_m/"
+    t: "Do Not Merge My Model! Safeguarding Open-Source LLMs Against Unauthorized Model Merging"
   - u: "dont_start_over_a_cost-effective_framework_for_migrating_personalized_prompts_be/"
     t: "Don't Start Over: A Cost-Effective Framework for Migrating Personalized Prompts Between LLMs"
   - u: "dos_distilling_observable_softmaps_of_zipfian_prototypes_for_self-supervised_poi/"
@@ -56,43 +58,45 @@ item_list:
     t: "Efficient Reasoning for Large Reasoning Language Models via Certainty-Guided Reflection Suppression"
   - u: "efficientfsl_enhancing_few-shot_classification_via_query-only_tuning_in_vision_t/"
     t: "EfficientFSL: Enhancing Few-Shot Classification via Query-Only Tuning in Vision Transformers"
+  - u: "error_correction_in_radiology_reports_a_knowledge_distillation-based_multi-stage/"
+    t: "Error Correction in Radiology Reports: A Knowledge Distillation-Based Multi-Stage Framework"
   - u: "explore_and_establish_synergistic_effects_between_weight_pruning_and_coreset_sel/"
     t: "Explore and Establish Synergistic Effects between Weight Pruning and Coreset Selection"
   - u: "failures_to_surface_harmful_contents_in_video_large_language_models/"
     t: "Failures to Surface Harmful Contents in Video Large Language Models"
   - u: "first-order_error_matters_accurate_compensation_for_quantized_large_language_mod/"
     t: "First-Order Error Matters: Accurate Compensation for Quantized Large Language Models"
+  - u: "from_parameter_to_representation_a_closed-form_approach_for_controllable_model_m/"
+    t: "From Parameter to Representation: A Closed-Form Approach for Controllable Model Merging"
+  - u: "from_passive_perception_to_active_memory_a_weakly_supervised_image_manipulation_/"
+    t: "From Passive Perception to Active Memory: A Weakly Supervised Image Manipulation Localization Framework Driven by Coarse-Grained Annotations"
+  - u: "group_orthogonal_low-rank_adaptation_for_rgb-t_tracking/"
+    t: "Group Orthogonal Low-Rank Adaptation for RGB-T Tracking"
   - u: "hcf_hierarchical_cascade_framework_for_distributed_multi-stage_image_compression/"
     t: "HCF: Hierarchical Cascade Framework for Distributed Multi-Stage Image Compression"
-  - u: "hierarchical_pedagogical_oversight_a_multi-agent_adversarial_framework_for_relia/"
-    t: "Hierarchical Pedagogical Oversight: A Multi-Agent Adversarial Framework for Reliable AI Tutoring"
-  - u: "infocom_kilobyte-scale_communication-efficient_collaborative_perception_with_inf/"
-    t: "InfoCom: Kilobyte-Scale Communication-Efficient Collaborative Perception with Information-Aware Feature Compression"
-  - u: "kvmix_gradient-based_layer_importance-aware_mixed-precision_/"
-    t: "KVmix: Gradient-Based Layer Importance-Aware Mixed-Precision Quantization for KV Cache"
-  - u: "lexchronos_an_agentic_framework_for_structured_event_timeline_extraction_in_indi/"
-    t: "LexChronos: An Agentic Framework for Structured Event Timeline Extraction in Indian Jurisprudence"
-  - u: "lightweight_optimal-transport_harmonization_on_edge_devices/"
-    t: "Lightweight Optimal-Transport Harmonization on Edge Devices"
-item_total: 53
+item_total: 60
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->
 # 📦 Model Compression
 
-**🤖 AAAI2026** · **53** paper notes
+**🤖 AAAI2026** · **60** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (107)](../../ICML2026/model_compression/index.md) · [💬 ACL2026 (59)](../../ACL2026/model_compression/index.md) · [📷 CVPR2026 (53)](../../CVPR2026/model_compression/index.md) · [🔬 ICLR2026 (90)](../../ICLR2026/model_compression/index.md) · [🧠 NeurIPS2025 (131)](../../NeurIPS2025/model_compression/index.md) · [📹 ICCV2025 (53)](../../ICCV2025/model_compression/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (100)](../../ICML2026/model_compression/index.md) · [💬 ACL2026 (59)](../../ACL2026/model_compression/index.md) · [📷 CVPR2026 (54)](../../CVPR2026/model_compression/index.md) · [🔬 ICLR2026 (100)](../../ICLR2026/model_compression/index.md) · [🧠 NeurIPS2025 (140)](../../NeurIPS2025/model_compression/index.md) · [📹 ICCV2025 (52)](../../ICCV2025/model_compression/index.md)
 
-🔥 **Top topics:** Model Compression ×9 · Compression ×7 · LLM ×6 · Agents ×4 · Reasoning ×3
+🔥 **Top topics:** Model Compression ×9 · Compression ×7 · LLM ×6 · Knowledge Distillation ×5 · Reasoning ×3
+
+**[A Closer Look at Knowledge Distillation in Spiking Neural Network Training](a_closer_look_at_knowledge_distillation_in_spiking_neural_ne.md)**
+
+:   To address the overlooked distribution mismatch between teacher ANN continuous features/logits and student SNN discrete sparse spike features/logits in ANN→SNN knowledge distillation, this paper proposes the CKDSNN framework based on Saliency-scaled Activation Map Distillation (SAMD) and Noise-smoothed Logits Distillation (NLD), achieving new state-of-the-art SNN training performance on CIFAR-10/100, ImageNet-1K, and CIFAR10-DVS.
 
 **[AdaFuse: Accelerating Dynamic Adapter Inference via Token-Level Pre-Gating and Fused Kernel Optimization](adafuse_accelerating_dynamic_adapter_inference_via_token-lev.md)**
 
 :   To address the severe inference latency overhead (250%–950%) of dynamic MoE-LoRA adapters, this paper proposes a token-level pre-gating architecture that performs a single global routing decision at the first layer. Combined with a custom SGMM fused CUDA kernel that merges all activated LoRA adapters into the backbone in one shot, the approach reduces decoding latency by 2.4× while preserving model accuracy.
 
-**[AgentODRL: A Large Language Model-based Multi-agent System for ODRL Generation](agentodrl_a_large_language_model-based_multi-agent_system_fo.md)**
+**[Asymmetric Cross-Modal Knowledge Distillation: Bridging Modalities with Weak Semantic Consistency](asymmetric_cross-modal_knowledge_distillation_bridging_modalities_with_weak_sema.md)**
 
-:   This paper proposes AgentODRL, an LLM-based multi-agent system built on an Orchestrator-Workers architecture that converts natural language data usage rules into high-quality ODRL policies through task decomposition, a syntax validation loop, and a LoRA-driven semantic reflection mechanism.
+:   This paper proposes a novel paradigm termed Asymmetric Cross-modal Knowledge Distillation (ACKD), realized through the SemBridge framework — comprising two plug-and-play modules, namely self-supervised semantic matching and optimal transport alignment — to enable cross-modal knowledge distillation under weak semantic consistency. This allows multispectral (MS) images collected from different geographic regions to effectively guide RGB-based remote sensing scene classification.
 
 **[BD-Net: Has Depth-Wise Convolution Ever Been Applied in Binary Neural Networks?](bd-net_has_depth-wise_convolution_ever_been_applied_in_binary_neural_networks.md)**
 
@@ -110,10 +114,6 @@ item_total: 53
 
 :   This paper proposes a formal framework for Contrastive ABox Explanations (CE) to answer questions of the form "Why is $a$ an instance of $C$ but $b$ is not?", simultaneously accounting for positive entailments and missing entailments within Description Logic knowledge bases, and analyzes the computational complexity under different description logics and optimization criteria.
 
-**[CLIPPan: Adapting CLIP as A Supervisor for Unsupervised Pansharpening](clippan_adapting_clip_as_a_supervisor_for_unsupervised_pansharpening.md)**
-
-:   This paper proposes CLIPPan, which fine-tunes CLIP in a parameter-efficient manner to understand multispectral/panchromatic/high-resolution multispectral image types and the pansharpening process, then leverages text prompts encoding Wald's protocol as semantic supervision signals to enable full-resolution unsupervised pansharpening without ground truth. CLIPPan operates as a plug-and-play module compatible with arbitrary pansharpening backbone networks.
-
 **[Compensating Distribution Drifts in Class-incremental Learning of Pre-trained Vision Transformers](compensating_distribution_drifts_in_class-incremental_learning_of_pre-trained_vi.md)**
 
 :   This paper proposes Sequential Learning with Drift Compensation (SLDC), which learns latent space transformation operators (linear / weakly nonlinear) to compensate for distribution drifts induced by sequential fine-tuning of pre-trained ViTs in class-incremental learning. Combined with knowledge distillation, the approach achieves performance close to the joint-training upper bound.
@@ -122,21 +122,25 @@ item_total: 53
 
 :   This paper proposes using condensed datasets as prototypes to guide the model inversion (MI) process. A feature-alignment discriminator enforces distributional consistency between synthesized data and condensed samples, thereby expanding the condensed dataset for knowledge distillation. The method achieves up to 11.4% improvement over standard MI-based distillation on CIFAR/ImageNet.
 
-**[Correcting False Alarms from Unseen: Adapting Graph Anomaly Detectors at Test Time](correcting_false_alarms_from_unseen_adapting_graph_anomaly_detectors_at_test_tim.md)**
+**[Consensus-Aligned Neuron Efficient Fine-Tuning Large Language Models for Multi-Domain Machine Translation](consensus-aligned_neuron_efficient_fine-tuning_large_language_models_for_multi-d.md)**
 
-:   This paper proposes TUNE, a plug-and-play test-time adaptation framework that addresses the "normality shift" problem in graph anomaly detection—caused by the emergence of new normal node categories—by transforming node features via a graph aligner. It leverages the degree of aggregation contamination as an unsupervised adaptation signal and significantly enhances the generalization of various pretrained GAD models across 10 real-world datasets.
-
-**[Credal Ensemble Distillation for Uncertainty Quantification](credal_ensemble_distillation_for_uncertainty_quantification.md)**
-
-:   This paper proposes the Credal Ensemble Distillation (CED) framework, which distills a deep ensemble (DE) teacher into a single-model student called CREDIT. Rather than predicting a single softmax distribution, CREDIT outputs class probability intervals that define a credal set, achieving superior or comparable uncertainty estimation on OOD detection tasks while substantially reducing inference overhead (from 5× to 1×).
+:   This paper proposes CANEFT, which uses mutual information (MI) to identify consensus-aligned neurons in LLMs that are consistently important across domains, and fine-tunes only these neurons to achieve efficient adaptation for multi-domain machine translation (MDMT). CANEFT outperforms PEFT baselines such as LoRA across 3 LLMs and 10 translation domains without introducing any additional parameters.
 
 **[CTPD: Cross Tokenizer Preference Distillation](ctpd_cross_tokenizer_preference_distillation.md)**
 
 :   This paper proposes Cross-Tokenizer Preference Distillation (CTPD), the first unified framework supporting preference distillation across heterogeneous tokenizers. Through three key innovations—Aligned Span Projection, cross-tokenizer importance weighting, and Teacher-Anchored Reference—CTPD achieves substantial improvements over existing methods on multiple benchmarks.
 
+**[Distillation Dynamics: Towards Understanding Feature-Based Distillation in Vision Transformers](distillation_dynamics_towards_understanding_feature-based_di.md)**
+
+:   This paper proposes a "Distillation Dynamics" analytical framework (channel-wise FFT spectral analysis + Shannon entropy + activation magnitude tracking) to reveal that ViTs exhibit a distinctive U-shaped information processing pattern (compression followed by expansion). The work demonstrates that the fundamental cause of feature-based distillation failure in ViTs is a representational paradigm mismatch between the teacher's distributed high-dimensional encoding in later layers and the student's limited channel capacity—rather than a simple capacity gap.
+
 **[Distilling Cross-Modal Knowledge via Feature Disentanglement](distilling_cross-modal_knowledge_via_feature_disentanglement.md)**
 
 :   This paper proposes Frequency-Decoupled Cross-Modal Knowledge Distillation (FD-CMKD), which decomposes teacher and student features into low-frequency (modality-shared semantics) and high-frequency (modality-specific details) components via Fourier transform, applies strong-consistency MSE and weak-consistency logMSE losses respectively, and introduces scale normalization along with shared classifier alignment to bridge the feature space. FD-CMKD consistently outperforms existing distillation methods across multiple cross-modal scenarios including audio–visual, image–text, and semantic segmentation.
+
+**[Do Not Merge My Model! Safeguarding Open-Source LLMs Against Unauthorized Model Merging](do_not_merge_my_model_safeguarding_open-source_llms_against_unauthorized_model_m.md)**
+
+:   This paper proposes MergeBarrier, a plug-and-play defense method that disrupts linear mode connectivity (LMC) between a protected model and its homologous counterparts by applying orthogonal projection transformations to attention layers and activation-function-unfolding reparameterization to FFN layers, thereby actively preventing unauthorized model merging without degrading model performance.
 
 **[Don't Start Over: A Cost-Effective Framework for Migrating Personalized Prompts Between LLMs](dont_start_over_a_cost-effective_framework_for_migrating_personalized_prompts_be.md)**
 
@@ -170,6 +174,10 @@ item_total: 53
 
 :   This paper proposes EfficientFSL, a query-only parameter-efficient fine-tuning framework for ViT-based few-shot classification. Through three components — the Forward Block (decoupled active/frozen sub-blocks), the Combine Block (adaptive multi-layer feature fusion), and the SQ Attention Block (support-query distribution alignment) — EfficientFSL achieves state-of-the-art performance on 4 in-domain and 6 cross-domain benchmarks using only 1.25M–2.48M trainable parameters.
 
+**[Error Correction in Radiology Reports: A Knowledge Distillation-Based Multi-Stage Framework](error_correction_in_radiology_reports_a_knowledge_distillation-based_multi-stage.md)**
+
+:   This paper proposes a **staged inference + dual-knowledge infusion** framework that decomposes radiology report error correction into three phases—detection → localization → correction—and integrates **Medical Knowledge Graph Distillation (MKGD)** with **External Knowledge Retrieval (EXKR)** to achieve up to **31.56% improvement in error detection accuracy** and **37.4% reduction in processing time** across 6 LLM architectures.
+
 **[Explore and Establish Synergistic Effects between Weight Pruning and Coreset Selection](explore_and_establish_synergistic_effects_between_weight_pruning_and_coreset_sel.md)**
 
 :   This paper presents the first systematic investigation of the interaction between weight pruning and coreset selection, proposing the SWaST mechanism to alternately perform both operations and establish synergistic effects, while introducing a state preservation mechanism to address the "dual loss" problem, achieving up to 17.83% accuracy improvement under 10%–90% FLOPs reduction.
@@ -182,13 +190,21 @@ item_total: 53
 
 :   This paper identifies a critical yet overlooked issue in LLM post-training quantization: the column-wise compensation process renders first-order gradient terms non-negligible. The proposed FOEM method incorporates first-order terms into the error compensation formula, reducing the perplexity of Llama3-8B under 3-bit quantization by 17.3% with virtually no additional computational overhead.
 
+**[From Parameter to Representation: A Closed-Form Approach for Controllable Model Merging](from_parameter_to_representation_a_closed-form_approach_for_controllable_model_m.md)**
+
+:   This paper proposes ReACT, which shifts controllable model merging from parameter-space optimization to representation-space correction. By deriving a closed-form solution, ReACT enables instant generation of Pareto-optimal models under arbitrary user preferences, achieving 36–208× speedup over existing methods while delivering superior performance.
+
+**[From Passive Perception to Active Memory: A Weakly Supervised Image Manipulation Localization Framework Driven by Coarse-Grained Annotations](from_passive_perception_to_active_memory_a_weakly_supervised_image_manipulation_.md)**
+
+:   This paper proposes BoxPromptIML, a weakly supervised image manipulation localization (IML) framework based on coarse-grained bounding box annotations. It leverages a frozen SAM teacher model to convert rough bounding boxes into high-quality pseudo-masks, and trains a lightweight student model via a memory-guided gated fusion module (MGFM), achieving performance comparable to or surpassing fully supervised methods with an annotation cost of only 7 seconds per image.
+
+**[Group Orthogonal Low-Rank Adaptation for RGB-T Tracking](group_orthogonal_low-rank_adaptation_for_rgb-t_tracking.md)**
+
+:   This paper proposes the GOLA framework, which quantifies LoRA rank importance via SVD decomposition, freezes critical ranks to preserve pre-trained priors, clusters redundant ranks into groups, and imposes inter-group orthogonal constraints to enable more efficient RGB-T tracking adaptation.
+
 **[HCF: Hierarchical Cascade Framework for Distributed Multi-Stage Image Compression](hcf_hierarchical_cascade_framework_for_distributed_multi-stage_image_compression.md)**
 
 :   This paper proposes the HCF framework, which performs cross-node transformation directly in the latent space (avoiding pixel-domain recompression) and introduces policy-driven quantization control to achieve up to 12.64% BD-Rate PSNR improvement in distributed multi-stage image compression, while reducing FLOPs by up to 97.8% and GPU memory by up to 96.5%.
-
-**[Hierarchical Pedagogical Oversight: A Multi-Agent Adversarial Framework for Reliable AI Tutoring](hierarchical_pedagogical_oversight_a_multi-agent_adversarial_framework_for_relia.md)**
-
-:   This paper proposes the HPO framework, which achieves reliable AI tutoring evaluation through a three-phase pipeline (Intelligence Distillation → Adversarial Debate → Synthesis and Judgment). Using only an 8B-parameter model, HPO achieves a Macro F1 of 0.845 on the MRBench middle-school mathematics dialogue dataset, surpassing GPT-4o (0.812) by 3.3%, demonstrating that interaction structure—rather than model scale—is the key to reliable AI tutoring.
 
 **[InfoCom: Kilobyte-Scale Communication-Efficient Collaborative Perception with Information-Aware Feature Compression](infocom_kilobyte-scale_communication-efficient_collaborative_perception_with_inf.md)**
 
@@ -206,6 +222,18 @@ item_total: 53
 
 :   This paper proposes MKL-Harmonizer, which leverages the Monge-Kantorovich Linear (MKL) mapping from classical optimal transport theory to train a compact encoder that predicts 12-dimensional color transformation parameters, enabling real-time image color harmonization on edge devices. The method achieves state-of-the-art performance on the combined perceptual quality–speed metric in AR scenarios.
 
+**[LOOM: Personalized Learning Informed by Daily LLM Conversations Toward Long-Term Mastery via a Dynamic Learner Memory Graph](loom_personalized_learning_informed_by_daily_llm_conversations_toward_long-term_.md)**
+
+:   This paper proposes LOOM, an agentic pipeline system that observes users' daily LLM conversations, infers learning needs, maintains a Dynamic Learner Memory Graph, and automatically generates personalized mini-courses. LOOM unifies **continuity** (long-term progress tracking) and **initiative** (immediate responsiveness to emerging interests) in a single framework.
+
+**[MetaGDPO: Alleviating Catastrophic Forgetting with Metacognitive Knowledge through Group Direct Preference Optimization](metagdpo_alleviating_catastrophic_forgetting_with_metacognitive_knowledge_throug.md)**
+
+:   This paper proposes MetaGDPO, which addresses catastrophic forgetting in reasoning distillation for small models (<8B) from two complementary perspectives: (1) the data side, constructing a 5K dataset (MetaKL) based on metacognitive knowledge annotation; and (2) the training side, introducing GDPO—a DPO variant that replaces GRPO's online sampling with offline response groups generated by a large model.
+
+**[Pairing-free Group-level Knowledge Distillation for Robust Gastrointestinal Lesion Classification in White-Light Endoscopy](pairing-free_group-level_knowledge_distillation_for_robust_gastrointestinal_lesi.md)**
+
+:   This paper proposes PaGKD, a pairing-free group-level knowledge distillation framework that eliminates the dependency on paired data in conventional NBI→WLI cross-modal distillation. It introduces group-level prototype distillation (GKD-Pro, which extracts modality-invariant semantic prototypes via a shared lesion query Transformer) and group-level dense distillation (GKD-Den, which achieves dense spatial alignment through activation map-guided semantic relation cross-attention). PaGKD improves AUC by 3.3%/1.1%/2.8%/3.2% across four clinical datasets.
+
 **[Parametric Pareto Set Learning for Expensive Multi-Objective Optimization](parametric_pareto_set_learning_for_expensive_multi-objective_optimization.md)**
 
 :   This paper proposes the PPSL-MOBO framework, which employs a hypernetwork + LoRA architecture to learn a unified mapping from preference vectors and extrinsic parameters to Pareto-optimal solutions. Combined with Gaussian process surrogate models and hypervolume improvement acquisition strategies, the framework efficiently addresses expensive parametric multi-objective optimization problems.
@@ -218,6 +246,10 @@ item_total: 53
 
 :   This work is the first to apply post-training quantization (PTQ) to dataset distillation, proposing a patch-based quantization framework (PAQ + grouping + refinement) that nearly doubles test accuracy of distilled datasets at the extreme 2-bit regime (e.g., DM IPC=1 improves from 26.0% to 54.1%). The framework is plug-and-play and can be applied to various distillation methods.
 
+**[Predicting the Future by Retrieving the Past](predicting_the_future_by_retrieving_the_past.md)**
+
+:   This paper proposes PFRP (Predicting the Future by Retrieving the Past), which constructs a Global Memory Bank (GMB) to store historical patterns, trains an encoder via Predictive Contrastive Learning (PCL) for efficient retrieval, and dynamically integrates retrieved global predictions with any local forecasting model. PFRP achieves an average improvement of 8.4% in forecasting performance across 7 datasets.
+
 **[Prototype-Based Semantic Consistency Alignment for Domain Adaptive Retrieval](prototype-based_semantic_consistency_alignment_for_domain_adaptive_retrieval.md)**
 
 :   This paper proposes PSCA, a two-stage framework that establishes class-level semantic connections via orthogonal prototypes, dynamically corrects pseudo-label reliability through geometric-semantic consistency alignment, and learns hash codes on reconstructed features, achieving substantial improvements over existing methods on multiple cross-domain retrieval benchmarks.
@@ -225,6 +257,10 @@ item_total: 53
 **[Put the Space of LoRA Initialization to the Extreme to Preserve Pre-trained Knowledge](put_the_space_of_lora_initialization_to_the_extreme_to_preserve_pre-trained_know.md)**
 
 :   This paper proposes LoRA-Null, which initializes LoRA within the null space of pre-trained input activations (rather than the null space of weights). From an information-theoretic perspective, the effective rank of activations is much lower than that of weights, meaning their null space encodes less pre-trained knowledge, thereby substantially mitigating catastrophic forgetting during fine-tuning.
+
+**[QuantVSR: Low-Bit Post-Training Quantization for Real-World Video Super-Resolution](quantvsr_low-bit_post-training_quantization_for_real-world_video_super-resolutio.md)**
+
+:   This paper proposes QuantVSR, the first low-bit (4/6-bit) post-training quantization framework for diffusion-based video super-resolution (VSR). It introduces a Spatiotemporal Complexity-Aware (STCA) mechanism for layer-adaptive rank allocation and a Learnable Bias Alignment (LBA) module to mitigate quantization bias. Under the 4-bit setting, QuantVSR achieves 84.39% parameter compression and 82.56% computation reduction while maintaining performance comparable to the full-precision model.
 
 **[QuEPT: Quantized Elastic Precision Transformers with One-Shot Calibration for Multi-Bit Switching](quept_quantized_elastic_precision_transformers_with_one-shot_calibration_for_mul.md)**
 
@@ -242,17 +278,9 @@ item_total: 53
 
 :   This paper proposes the first uni-level dataset distillation framework for long-tailed distributions. Through three core strategies — expert model debiasing, fair BN statistics calibration, and confidence-guided initialization — the method achieves +15.6% on CIFAR-100-LT and +11.8% on Tiny-ImageNet-LT, comprehensively outperforming DAMED.
 
-**[SafeSieve: From Heuristics to Experience in Progressive Pruning for LLM-based Multi-Agent Communication](safesieve_from_heuristics_to_experience_in_progressive_pruning_for_llm-based_mul.md)**
-
-:   SafeSieve is proposed as a progressive adaptive multi-agent communication pruning framework. Through a two-stage edge scoring mechanism combining semantic-heuristic initialization and history-feedback-driven refinement, together with 0-extension clustering, SafeSieve achieves 94.01% average accuracy across 6 benchmarks while reducing token consumption by 12.4%–27.8%, and demonstrates inherent robustness against prompt injection attacks.
-
 **[Satisficing and Optimal Generalised Planning via Goal Regression (Extended Version)](satisficing_and_optimal_generalised_planning_via_goal_regression_extended_versio.md)**
 
 :   This paper presents the Moose planner, which synthesises generalised planning programs from training problems via goal regression. It decomposes multi-goal problems into single-goal subproblems, solves each optimally, and applies regression followed by lifting to produce a set of first-order condition-action rules. These rules support either satisficing planning (direct rule execution) or optimal planning (encoded as axioms to prune the search space).
-
-**[Share Your Attention: Transformer Weight Sharing via Matrix-Based Dictionary Learning](share_your_attention_transformer_weight_sharing_via_matrix-based_dictionary_lear.md)**
-
-:   Inspired by dictionary learning, this paper proposes the MASA framework, which decomposes the attention projection matrices (Q/K/V/O) across Transformer layers into linear combinations of shared matrix atoms, achieving performance on par with or superior to the original Transformer at a 66.7% attention parameter compression ratio.
 
 **[Sharp Eyes and Memory for VideoLLMs: Information-Aware Visual Token Pruning for Efficient and Reliable VideoLLM Reasoning](sharp_eyes_and_memory_for_videollms_information-aware_visual_token_pruning_for_e.md)**
 
@@ -265,10 +293,6 @@ item_total: 53
 **[SkipCat: Rank-Maximized Low-Rank Compression of Large Language Models via Shared Projection and Block Skipping](skipcat_rank-maximized_low-rank_compression_of_large_language_models_via_shared_.md)**
 
 :   SkipCat proposes a rank-maximized low-rank compression framework that introduces two techniques—intra-layer shared projection (Cat) and block skipping (Skip)—to retain more effective rank under the same compression ratio. Without any fine-tuning, it achieves up to 7% accuracy improvement on zero-shot tasks over existing low-rank methods.
-
-**[SparseRM: A Lightweight Preference Modeling with Sparse Autoencoder](sparserm_a_lightweight_preference_modeling_with_sparse_autoencoder.md)**
-
-:   SparseRM leverages sparse autoencoders (SAE) to extract preference-relevant directions from LLM intermediate representations, constructing a lightweight reward model via projection vectors. With fewer than 1% trainable parameters, it surpasses most mainstream reward models and demonstrates stronger generalization in online iterative alignment frameworks.
 
 **[SpecQuant: Spectral Decomposition and Adaptive Truncation for Ultra-Low-Bit LLMs Quantization](specquant_spectral_decomposition_and_adaptive_truncation_for_ultra-low-bit_llms_.md)**
 
@@ -293,6 +317,10 @@ item_total: 53
 **[Towards Test-time Efficient Visual Place Recognition via Asymmetric Query Processing](towards_test-time_efficient_visual_place_recognition_via_asymmetric_query_proces.md)**
 
 :   This paper proposes AsymVPR, an efficient asymmetric framework for Visual Place Recognition (VPR), which replaces expensive k-NN precomputation with a **Geographical Memory Bank** and bridges the capacity gap between a lightweight query network and a high-capacity gallery network via **Implicit Embedding Augmentation**, achieving retrieval performance close to the full-size model using only ~8% of its FLOPs.
+
+**[XLinear: A Lightweight and Accurate MLP-Based Model for Long-Term Time Series Forecasting with Exogenous Inputs](xlinear_a_lightweight_and_accurate_mlp-based_model_for_long-term_time_series_for.md)**
+
+:   This paper proposes XLinear, a lightweight time series forecasting model based on MLP with sigmoid gating. Through a global token mechanism, it efficiently integrates endogenous and exogenous variable information, achieving an optimal accuracy–efficiency trade-off across 12 datasets.
 
 **[Your AI-Generated Image Detector Can Secretly Achieve SOTA Accuracy, If Calibrated](your_ai-generated_image_detector_can_secretly_achieve_sota_accuracy_if_calibrate.md)**
 

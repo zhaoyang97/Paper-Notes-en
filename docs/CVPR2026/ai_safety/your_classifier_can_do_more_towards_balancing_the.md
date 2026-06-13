@@ -2,9 +2,10 @@
 title: >-
   [Paper Note] Your Classifier Can Do More: Towards Balancing the Gaps in Classification, Robustness, and Generation
 description: >-
-  [CVPR 2026][adversarial training] This paper analyzes the energy landscape to reveal the complementarity between adversarial training (AT) and JEM—AT aligns the clean-adversarial energy distribution (→ robustness)…
+  [CVPR 2026][AI Safety][adversarial training] This paper analyzes the energy landscape to reveal the complementarity between adversarial training (AT) and JEM—AT aligns the clean-adversarial energy distribution (→ robustn…
 tags:
   - "CVPR 2026"
+  - "AI Safety"
   - "adversarial training"
   - "energy-based model"
   - "JEM"
@@ -153,11 +154,11 @@ WRN28-10 backbone; lr=0.01; 5-step adversarial sampling; $\ell_\infty$ constrain
 
 ## Related Papers
 
-- [\[CVPR 2026\] Do Vision Models Perceive Illusory Motion in Static Images Like Humans?](do_vision_models_perceive_illusory_motion_in_static_images_like_humans.md)
-- [\[ICML 2026\] Consistency Training Can Entrench Misalignment](../../ICML2026/others/consistency_training_can_entrench_misalignment.md)
-- [\[ICML 2026\] Towards Optimal Robustness in Learning-Augmented Paging](../../ICML2026/others/towards_optimal_robustness_in_learning-augmented_paging.md)
-- [\[CVPR 2026\] IrisFP: Adversarial-Example-based Model Fingerprinting with Enhanced Uniqueness and Robustness](irisfp_adversarial-example-based_model_fingerprinting_with_enhanced_uniqueness_a.md)
-- [\[CVPR 2026\] Next-Scale Autoregressive Models for Text-to-Motion Generation](next-scale_autoregressive_models_for_text-to-motion_generation.md)
+- [\[CVPR 2026\] One-to-More: High-Fidelity Training-Free Anomaly Generation with Attention Control](one-to-more_high-fidelity_training-free_anomaly_generation_with_attention_control.md)
+- [\[ICML 2026\] Demystifying the Optimal Fair Classifier in Multi-Class Classification](../../ICML2026/ai_safety/demystifying_the_optimal_fair_classifier_in_multi-class_classification.md)
+- [\[NeurIPS 2025\] Enhancing Graph Classification Robustness with Singular Pooling](../../NeurIPS2025/ai_safety/enhancing_graph_classification_robustness_with_singular_pooling.md)
+- [\[AAAI 2026\] Breaking the Adversarial Robustness-Performance Trade-off in Text Classification via Manifold Purification](../../AAAI2026/ai_safety/breaking_the_adversarial_robustness-performance_trade-off_in_text_classification.md)
+- [\[CVPR 2026\] All Vehicles Can Lie: Efficient Adversarial Defense in Fully Untrusted-Vehicle Collaborative Perception via Pseudo-Random Bayesian Inference](all_vehicles_can_lie_efficient_adversarial_defense_in_fully_untrusted-vehicle_co.md)
 
 </div>
 

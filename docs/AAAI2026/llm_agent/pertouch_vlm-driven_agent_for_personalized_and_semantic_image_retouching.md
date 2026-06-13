@@ -157,9 +157,9 @@ vs. **PhotoArtAgent/MonetGPT and similar Agent retouching systems**: these rely 
 
 - [\[ACL 2026\] ProPer Agents: Proactivity Driven Personalized Agents for Advancing Knowledge Gap Navigation](../../ACL2026/llm_agent/proper_agents_proactivity_driven_personalized_agents_for_advancing_knowledge_gap.md)
 - [\[ACL 2026\] AVA: Attentive VLM Agent for Mastering StarCraft II](../../ACL2026/llm_agent/ava_attentive_vlm_agent_for_mastering_starcraft_ii.md)
-- [\[AAAI 2026\] MedLA: A Logic-Driven Multi-Agent Framework for Complex Medical Reasoning with Large Language Models](medla_a_logic-driven_multi-agent_framework_for_complex_medic.md)
 - [\[AAAI 2026\] Reflection-Driven Control for Trustworthy Code Agents](reflection-driven_control_for_trustworthy_code_agents.md)
 - [\[ICML 2026\] HawkesLLM: Semantic Uncertainty Propagation in Agentic Text Simulation](../../ICML2026/llm_agent/hawkesllm_semantic_uncertainty_propagation_in_agentic_text_simulation.md)
+- [\[ICCV 2025\] GTR: Guided Thought Reinforcement Prevents Thought Collapse in RL-based VLM Agent Training](../../ICCV2025/llm_agent/gtr_guided_thought_reinforcement_prevents_thought_collapse_i.md)
 
 </div>
 

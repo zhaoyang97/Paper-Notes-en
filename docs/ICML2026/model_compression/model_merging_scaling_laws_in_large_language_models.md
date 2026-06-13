@@ -2,117 +2,132 @@
 title: >-
   [Paper Note] Model Merging Scaling Laws in Large Language Models
 description: >-
-  [ICML 2026][Model Compression][Model Merging] The authors empirically identify a dual-axis power law of the form $L=L_*+BN^{-\beta}+A_0 N^{-\gamma}/(k+b)$ using 10…
+  [ICML 2026][Model Compression][model merging] The authors empirically establish, using 10,866 merged models, a dual-axis power law of the form $L=L_*+BN^{-\beta}+A_0 N^{-\gamma}/(k+b)$: the base model size $N$ determines…
 tags:
   - "ICML 2026"
   - "Model Compression"
-  - "Model Merging"
-  - "Scaling Law"
-  - "Power Law"
-  - "Task Arithmetic"
+  - "model merging"
+  - "scaling law"
+  - "power law"
+  - "task arithmetic"
   - "TIES/DARE"
 date: 2026-05-08
-content_hash: 9947e33c530bd6ae
+content_hash: bbc9fef6268ee2d8
 ---
 
 # Model Merging Scaling Laws in Large Language Models
 
 **Conference**: ICML 2026  
 **arXiv**: [2509.24244](https://arxiv.org/abs/2509.24244)  
-**Code**: https://github.com/InfiXAI/Merging-Scaling-Law (Available)  
-**Area**: LLM Pre-training / Model Merging / Scaling Law  
-**Keywords**: Model Merging, Scaling Law, Power Law, Task Arithmetic, TIES/DARE
+**Code**: https://github.com/InfiXAI/Merging-Scaling-Law (available)  
+**Area**: LLM Pretraining / Model Merging / Scaling Law  
+**Keywords**: model merging, scaling law, power law, task arithmetic, TIES/DARE
 
 ## TL;DR
-The authors empirically identify a dual-axis power law of the form $L=L_*+BN^{-\beta}+A_0 N^{-\gamma}/(k+b)$ using 10,866 merged models. The base scale $N$ determines the performance floor, while the number of experts $k$ determines the tail. Four mainstream merging methods (Average, TA, TIES, DARE) share the same curve, transforming the decision of "how many experts to merge" and "when to stop" into a predictable and budget-aware engineering problem.
+The authors empirically establish, using 10,866 merged models, a dual-axis power law of the form $L=L_*+BN^{-\beta}+A_0 N^{-\gamma}/(k+b)$: the base model size $N$ determines the floor, the number of experts $k$ determines the tail, and four mainstream merging methods (Average, TA, TIES, DARE) all share the same curve. This transforms the questions of "how many experts to merge" and "when to stop merging" into predictable, budgetable engineering problems.
 
 ## Background & Motivation
-**Background**: Model merging has emerged as a low-cost "expert integration" paradigm following multi-task SFT. Linear weighting (Model Soups, Task Arithmetic) and versions with preprocessing (TIES, DARE) are widely used in scenarios involving LLMs and LoRA adapters.
+**Background**: Model merging has become a low-cost "expert integration" paradigm following multi-task SFT. Linear weighting (Model Soups, Task Arithmetic) and preprocessed variants (TIES, DARE) are widely used in LLMs, LoRA adapters, and related scenarios.
 
-**Limitations of Prior Work**: Merging remains largely heuristic-based—testing different subsets, orders, and normalization coefficients. This is computationally expensive and lacks guidance from scaling laws similar to those in pre-training. Given a target loss, it is currently impossible to pre-determine the required number of experts or whether scaling the base model versus adding another expert is more cost-effective.
+**Limitations of Prior Work**: Merging is still largely heuristic—trying different subsets, orders, and normalization coefficients, which is costly and lacks the guidance of a scaling law as in pretraining. Given a target loss, no one can answer in advance "how many experts are needed" or "is it more cost-effective to double the base or add another expert".
 
-**Key Challenge**: The gain curve of merging is clearly non-linear but exhibits a certain regularity (steep early gains followed by saturation). Without an analytical form to describe this curve, engineering practice relies on exhaustive search, wasting GPU resources.
+**Key Challenge**: The benefit curve of merging is clearly nonlinear, but exhibits regularity (steep early gains, later saturation). Without an analytic form to describe this curve, engineering practice relies on exhaustive search, wasting GPU resources.
 
-**Goal**: (1) Find a compact formula that characterizes the impact of both $N$ (base parameter count) and $k$ (number of merged experts); (2) Prove its validity across different merging algorithms, backbones, in-domain, and cross-domain evaluations; (3) Provide a practical method to extrapolate the entire curve by measuring only three points.
+**Goal**: (1) Find a compact formula that simultaneously characterizes the effects of $N$ (base parameter count) and $k$ (number of merged experts); (2) demonstrate its validity across different merging algorithms, backbones, and both in-domain and cross-domain settings; (3) provide a practical method to extrapolate the entire curve from just three measurements.
 
-**Key Insight**: Merging is viewed as "calculating the equal-weight average of multiple task vectors." Under a second-order Taylor expansion, the variance of equal-weight averaging shrinks at a rate of $1/k$. As variance enters the loss via the Hessian, it manifests as the $A(N)/k$ term. Consequently, the authors expect a "floor + 1/k tail" structure, which is validated through large-scale empirical tests.
+**Key Insight**: Treat merging as "equal-weight averaging of several task vectors". Under a second-order Taylor expansion, the variance of equal-weight averaging shrinks at a rate of $1/k$, and this variance enters the loss via the Hessian as the $A(N)/k$ term. The authors thus anticipate a "floor + 1/k tail" structure, which is validated at scale.
 
-**Core Idea**: A unified power law for floor $+ 1/(k+b)$ tail is used to describe the CE curves of all merging methods. This formula integrates base scale and expert count, making merging a budget-aware and predictable process.
+**Core Idea**: Use a unified "floor + 1/(k+b) tail" power law to describe the CE curves of all merging methods, integrating both base size and expert count into a single formula, making merging a budget-aware, predictable process.
 
 ## Method
 
 ### Overall Architecture
-The authors fine-tune nine domain experts (algebra, analysis, geometry, discrete, number_theory, code, chemistry, physics, biology) on the Qwen2.5 series (0.5B to 72B), covering both in-domain and cross-domain evaluations. For each $(N,k)$ combination, they traverse or uniformly sample all $\binom{9}{k}$ expert subsets. Four merging algorithms (Average, TA, TIES, DARE) are applied to synthesize models, and token-level CE is measured, resulting in a grid of data from 10,866 merged models. A weighted non-linear least squares fit is applied to the curve $\mathbb{E}[L\mid N,k]=L_\infty(N)+A(N)/(k+b)$, where $L_\infty(N)=L_*+BN^{-\beta}$ and $A(N)=A_0 N^{-\gamma}$. The model is validated using $R^2$ and residual analysis.
+The authors fine-tune nine domain experts (algebra, analysis, geometry, discrete, number theory, code, chemistry, physics, biology) from the same base across the Qwen2.5 series (0.5B/1.5B/3B/7B/14B/32B/72B), covering both in-domain and cross-domain evaluations. For each $(N,k)$ combination, all or a uniform sample of $\binom{9}{k}$ expert subsets are traversed, and four merging algorithms (Average, TA, TIES, DARE) are used to synthesize models and measure token-level CE, resulting in a grid of 10,866 merged models. A weighted nonlinear least squares fit is then performed to a curve of the form $\mathbb{E}[L\mid N,k]=L_\infty(N)+A(N)/(k+b)$, where $L_\infty(N)=L_*+BN^{-\beta}$ and $A(N)=A_0 N^{-\gamma}$, with $R^2$ and residual structure used for validation.
 
 ### Key Designs
 
-1.  **Unified floor+tail Scaling Law**:
-    - **Function**: Characterizes the concurrent impact of base scale and expert count on merging loss.
-    - **Mechanism**: $\mathbb{E}[L\mid N,k]=L_*+BN^{-\beta}+\frac{A_0 N^{-\gamma}}{k+b}$, where the floor term $L_*+BN^{-\beta}$ decreases monotonically with $N$, and the tail term $A_0 N^{-\gamma}/(k+b)$ decays as a reciprocal of $k$. Fitting uses weights $\propto k$ to stabilize early $k$ noise. All methods achieve $R^2 > 0.98$ across all slices.
-    - **Design Motivation**: Combines the observations that "larger bases merge better" and "diminishing returns with more experts" into a single expression, allowing direct ROI comparison between scaling the base and adding experts.
+1. **Unified floor+tail power law**:
 
-2.  **Theory Deriving 1/k Tail from Second-order Taylor Expansion**:
+    - **Function**: Uses a single formula to simultaneously capture the effects of base size and expert count on merging loss.
+    - **Mechanism**: $\mathbb{E}[L\mid N,k]=L_*+BN^{-\beta}+\frac{A_0 N^{-\gamma}}{k+b}$, where the floor term $L_*+BN^{-\beta}$ decreases monotonically with $N$, and the tail term $A_0 N^{-\gamma}/(k+b)$ decays reciprocally with $k$; fitting uses weights $\propto k$ to stabilize early $k$ noise, and all methods achieve $R^2>0.98$ across all slices.
+    - **Design Motivation**: Integrates the observations "larger bases merge better" and "diminishing returns with more experts" into a single expression, enabling direct comparison of the two terms for budget decisions ("add another expert vs. increase base size").
+
+2. **Derivation of 1/k tail from second-order Taylor expansion**:
+
     - **Function**: Explains why all merging algorithms exhibit a $1/k$ tail under equal-weight normalization.
-    - **Mechanism**: Each task vector is denoted as $v_i$. After equal-weight merging, the perturbation mean is $c\mu$ and the covariance is $\Sigma/k$. The second-order Taylor expansion gives $\mathbb{E}[L]=L(\theta_0)+cg^\top\mu+\frac{1}{2}c^2\mu^\top H\mu+\frac{c^2}{2k}\mathrm{Tr}(H\Sigma)+\mathcal{O}(k^{-3/2})$. The first three terms form $L_\infty(N)$, and the last term represents $A(N)/k$. A corollary shows that standard deviation between subsets shrinks by $1/\sqrt{k}$. Preprocessing algorithms like TIES/DARE are seen as modifications to $\Psi(v)$, which do not alter the leading-order form.
-    - **Design Motivation**: Provides a theoretical bridge rather than just empirical fitting, explaining why diverse implementations like TIES and DARE converge to the same curve.
+    - **Mechanism**: Each task vector is denoted $v_i$; after equal-weight merging, the perturbation mean is $c\mu$, covariance is $\Sigma/k$; a second-order Taylor expansion of the loss yields $\mathbb{E}[L]=L(\theta_0)+cg^\top\mu+\frac{1}{2}c^2\mu^\top H\mu+\frac{c^2}{2k}\mathrm{Tr}(H\Sigma)+\mathcal{O}(k^{-3/2})$, where the first three terms condense to $L_\infty(N)$ and the last term is $A(N)/k$; a corollary further shows that the std among subsets shrinks as $1/\sqrt{k}$. Preprocessing algorithms like TIES/DARE are absorbed as modifications to $\Psi(v)$, not altering the leading-order form.
+    - **Design Motivation**: Provides a theoretical explanation for the $1/k$ behavior, not just empirical fitting; also explains why diverse implementations like TIES and DARE ultimately fall on the same curve.
 
-3.  **Three-point Fitting + Budget Algorithm for $k^*$**:
-    - **Function**: Extrapolates the full $k$-curve using only three points $k \in \{1, 2, 4\}$ and recommends the "most cost-effective expert count" $k^*$.
-    - **Mechanism**: Since the formula has three degrees of freedom ($L_\infty, A, b$), three points are theoretically sufficient. Empirical results show three-point fitting can recover the full 9-point curve, consistently estimating $k^*$ at $5 \sim 6$, corresponding to the elbow position where $\Delta_k \approx A/[(k+b)(k+1+b)] \sim k^{-2}$.
-    - **Design Motivation**: Merging the full $k$-grid is expensive in real-world scenarios. The three-point method makes "measure a small batch, then decide budget" a feasible workflow.
+3. **Three-point fitting + recommended $k^*$ budget algorithm**:
+
+    - **Function**: Extrapolates the entire $k$-curve using only $k\in\{1,2,4\}$, and provides the "most cost-effective number of experts" $k^*$.
+    - **Mechanism**: The formula has only three degrees of freedom ($L_\infty$, $A$, $b$), so three points suffice in theory; empirical results show three-point fitting recovers the full 9-point curve and stably estimates $k^*$ at $5\sim 6$, corresponding to the elbow position $\Delta_k\approx A/[(k+b)(k+1+b)]\sim k^{-2}$.
+    - **Design Motivation**: In real scenarios, a full $k$-grid is costly; the three-point method enables a "measure a small batch, then decide budget" workflow, turning merging from trial-and-error into measurement plus extrapolation.
 
 ### Loss & Training
-Ours does not introduce new training losses. All data points are derived from frozen bases and independently fine-tuned experts. Evaluation uses token-level cross-entropy on 30M held-out tokens. Merging coefficients use equal-weight normalization $\alpha_{i,k}=c/k$. Fitting employs weighted non-linear least squares with weights $\propto k$ to suppress high variance at small $k$.
+No new training losses are introduced; all data points are from frozen bases plus independently fine-tuned nine domain experts, evaluated on 30M held-out tokens using token-level cross-entropy. Merging coefficients use equal-weight normalization $\alpha_{i,k}=c/k$. Fitting uses weighted nonlinear least squares with weights $\propto k$ to suppress high variance at small $k$.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Setting | Model Scale $N$ | Avg. Domain CE at $k=9$ | Reduction vs. 0.5B |
-| :--- | :--- | :--- | :--- |
+| Setting | Model Size $N$ | Domain Mean CE at $k=9$ | Reduction vs 0.5B |
+|---------|----------------|-------------------------|-------------------|
 | In-domain | 0.5B | 0.739 | — |
 | In-domain | 7B | ~0.52 | ~30% |
 | In-domain | 32B | 0.430 | 41.9% |
-| Cross-domain | 0.5B $\to$ 32B | Synchronous Shift | Floor and tail both shrink |
-| Fitting Quality | All points | $R^2 > 0.98$ | Uniform residuals for floor/tail |
+| Cross-domain | 0.5B→32B | Synchronously shifted down | Both floor and tail shrink |
+| Fit Quality | All points | $R^2>0.98$ | Uniform residuals for floor/tail |
 
 ### Ablation Study
 
-| Configuration | Key Observation | Description |
-| :--- | :--- | :--- |
-| Average / TA / TIES / DARE | $R^2 > 0.98$ for the same formula | Methodological differences are absorbed into $L_\infty, A, b$ constants. |
-| Candidate Pool $M=9 \to 8 \to 7$ | Floor remains stable, tail reduction slows | Diversity primarily lowers the tail rather than the floor. |
-| Three-point $k \in \{1, 2, 4\}$ fitting | Extrapolation error is minimal | Sufficient for budget decision support. |
-| Different donor orders (DARE) | Whisker length shrinks by ~83% at $k=8$ | Order sensitivity shrinks by $1/(k+b)$. |
-| Cross-backbone (LLaMA-3.2 3B / LLaMA-3 8B) | Same 1/k tail | Formula form is transferable. |
+| Configuration | Key Observation | Notes |
+|---------------|----------------|-------|
+| Average / TA / TIES / DARE | Same formula $R^2>0.98$ | Method differences absorbed into $L_\infty$, $A$, $b$ constants |
+| Candidate pool $M=9\to 8\to 7$ | Floor nearly unchanged, tail reduction lessens | Diversity mainly lowers tail, not floor |
+| Three-point $k\in\{1,2,4\}$ fit | 9-point curve inference error < several times full fit | Three-point method sufficient for budget decisions |
+| Different donor order (DARE) | Whisker length at $k=8$ shrinks by ~83% | Order sensitivity decays as $1/(k+b)$ |
+| Cross-backbone (LLaMA-3.2 3B / LLaMA-3 8B) | Same $1/k$ tail | Formula is transferable |
 
 ### Key Findings
-- "Larger bases merge better" is quantified: At $k=9$, the 32B model reduces CE by 41.9% compared to 0.5B, with both floor and tail shrinking simultaneously. This implies larger bases offer lower asymptotic performance and require fewer experts.
-- The elbow typically appears at $k \approx 5 \sim 6$: Achieving 85% of gains requires 5 experts; 90% requires 6. Beyond this, additional experts provide marginal utility.
-- Methodological differences diminish at scale: For $N=32B$ and $k \approx 8$, the gap in mean CE between Avg/TA/TIES/DARE is $\lesssim 2\%$. Merge-to-merge variance shrinks toward a common floor at a rate of $\sim 1/k$.
-- Order sensitivity also decays following $1/(k+b)$; optimizing the merge order is practically meaningless for $k \geq 6$.
+- "Larger bases merge better" is quantitatively established: 32B vs 0.5B at $k=9$ yields a 41.9% drop in CE, with both floor and tail shrinking—providing both lower asymptotic performance and reducing required expert count.
+- The elbow typically appears at $k\approx 5\sim 6$: 85% of the gain is achieved with just 5 experts, 90% with 6; beyond this, adding experts mostly just "adds data".
+- Method differences are flattened at large scales: At $N=32B$, $k\approx 8$, the mean CE gap among Avg/TA/TIES/DARE is $\lesssim 2\%$, and merge-to-merge variance shrinks as $\sim 1/k$ to a common floor.
+- Order sensitivity also decays as $1/(k+b)$; for $k\geq 6$, careful ordering is essentially meaningless.
 
 ## Highlights & Insights
-- Validates "folk wisdom" with rigorous curves ($R^2 > 0.98$) using 10,866 merged models. The scale and systematic nature of this study exceed previous merging papers, serving as the most authoritative empirical evidence in the field.
-- The decoupling of floor and tail is highly practical: The relative magnitude of $A/L$ allows one to instantly judge the ROI of "adding another expert" versus "upgrading the base model scale."
-- The three-point fitting method upgrades scaling laws from "post-hoc summaries" to "predictive tools," allowing the elbow to be identified without running all $k$. This "measurement-extrapolation" logic can be transferred to other compositionality studies (e.g., number of RAG retrieval sources, ensemble sizes).
+- By empirically validating "folk wisdom" with 10,866 real merged models and achieving $R^2>0.98$, this work far surpasses previous merging papers in scale and systematics, making it the most authoritative empirical evidence in the field.
+- The decoupled floor and tail perspective is highly practical: the relative magnitude $A/L$ instantly indicates whether "adding another expert" or "increasing base size" yields higher ROI, directly benefiting compute allocation in industry.
+- The three-point fitting method upgrades scaling law from a "post hoc summary" to a "predictive tool", allowing the elbow to be locked in without running all $k$; this "measurement-extrapolation" approach can transfer to other compositional studies (e.g., number of RAG retrieval sources, ensemble model count).
 
 ## Limitations & Future Work
-- The formula only covers equal-weighted merging. For non-equal or learned weights (e.g., routing-based or optimized merges), it only explains the leading order, with differences absorbed as finite-$k$ deviations.
-- Expert capacity is treated as a latent variable inside $A(N)$. Dimensions such as LoRA rank or fine-tuning token counts are not explicitly modeled, though the paper acknowledges this as a natural extension.
-- Evaluations are limited to cross-entropy; there is still a gap between CE and downstream task accuracy. Whether the elbow is consistent for long-tail tasks like "coding/math" requires further validation.
-- While the 9 domains are diverse, they are all within the Mixture-of-Thoughts/OpenScience datasets. Generality for truly heterogeneous scenarios (e.g., multilingual, multimodal, safety alignment) remains to be tested.
+- The formula only covers equal-weight normalization; for non-equal or learned weights (e.g., routing/optimization-based merges), it only explains the leading order, with differences absorbed as finite-$k$ bias.
+- Expert capacity is treated as a latent variable within $A(N)$, without explicit modeling of LoRA rank, fine-tuning token count, or other "expert strength" dimensions; the paper acknowledges this as a natural extension.
+- Evaluation uses only cross-entropy, which is still some distance from downstream task accuracy; whether the elbow for long-tail tasks like code/math is consistent remains to be verified.
+- Although the nine domains are diverse, they all come from the Mixture-of-Thoughts/OpenScience data series; extrapolation to truly heterogeneous scenarios (e.g., multilingual, multimodal, safety alignment) remains to be tested.
 
 ## Related Work & Insights
-- **vs Kaplan/Chinchilla Scaling Laws**: While those characterize the relationship between $(N, D, C)$ and loss, this work adds the compositional dimension "number of experts $k$" and shows $N$ and $k$ are decouplable axes.
-- **vs Yadav et al. (2024) Empirical Studies**: The latter noted empirically that differences between methods decrease as experts increase; this work explains that observation through a unified formula where common $L_\infty(N)$ dominates large $k$ and $A(N)/(k+b)$ dominates small $k$.
-- **vs TIES/DARE Specific Merging Algorithms**: Ours does not compete with them but rather places them in the same framework, demonstrating that these preprocessing steps merely adjust task vector means/covariances without changing the power-law skeletal structure.
+- **vs Kaplan/Chinchilla pretraining scaling laws**: Those characterize the relationship between $(N, D, C)$ and loss; this work adds the "number of experts $k$" as a compositional dimension, showing it and $N$ are decoupled axes.
+- **vs Yadav et al. (2024) empirical study**: The latter empirically noted "method differences shrink with more experts"; this work explains it with a unified formula: "common $L_\infty(N)$ dominates at large $k$, $A(N)/(k+b)$ tail dominates at small $k$".
+- **vs TIES/DARE and other merging algorithms**: This work does not compete with them but "places them in the same framework", showing that such preprocessing only slightly modifies the mean/covariance of task vectors, without changing the power law skeleton.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ First to provide $(N,k)$ dual-axis merging scaling laws with a theoretically provable first-order derivation. The formula is simple, but the approach is a natural extension of the scaling law lineage.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 10,866 merged models, 9 domains, 7 scales, 4 methods, and cross-backbone validation. This is likely the largest-scale study in existing merging literature.
-- Writing Quality: ⭐⭐⭐⭐ Formulas and figures are clear, explaining the physical significance of floor/tail effectively; however, the in-domain/cross-domain sections are slightly repetitive.
-- Value: ⭐⭐⭐⭐⭐ Provides a practical "three-point fitting $\to$ budget decision" workflow with immediate engineering significance for industry-scale merging, LoRA repository management, and expert routing.
+- Novelty: ⭐⭐⭐⭐ First to present a dual-axis $(N,k)$ merging scaling law with provable first-order theory; the formula itself is concise, but the approach is a natural extension in the scaling law lineage.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 10,866 merged models, 9 domains, 7 scales, 4 methods, cross-backbone validation—scale is nearly unmatched in merging literature.
+- Writing Quality: ⭐⭐⭐⭐ Clear integration of formulas and figures, with thorough explanation of the physical meaning of floor/tail; minor repetition between in-domain/cross-domain sections.
+- Value: ⭐⭐⭐⭐⭐ Directly provides a "three-point fit → budget decision" actionable workflow, with immediate engineering significance for industrial merging, LoRA repository management, and expert routing.
+
+## Related Papers
+
+- [\[ICML 2026\] InfoLaw: Information Scaling Laws for Large Language Models with Quality-Weighted Mixture Data and Repetition](infolaw_information_scaling_laws_for_large_language_models_with_quality-weighted.md)
+- [\[CVPR 2026\] Model Merging in the Essential Subspace](../../CVPR2026/llm_pretraining/model_merging_in_the_essential_subspace.md)
+- [\[ICML 2026\] Predicting Large Model Test Losses with a Noisy Quadratic System](predicting_large_model_test_losses_with_a_noisy_quadratic_system.md)
+- [\[NeurIPS 2025\] Gemstones: A Model Suite for Multi-Faceted Scaling Laws](../../NeurIPS2025/llm_pretraining/gemstones_a_model_suite_for_multi-faceted_scaling_laws.md)
+- [\[ICML 2026\] On Training Large Language Models for Long-Horizon Tasks: An Empirical Study of Horizon Length](on_training_large_language_models_for_long-horizon_tasks_an_empirical_study_of_h.md)
+
+</div>
+
+<!-- RELATED:END -->
 
 <!-- RELATED:START -->
 

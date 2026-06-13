@@ -26,7 +26,7 @@ item_total: 4
 
 **🧪 ICML2026** · **4** paper notes
 
-📌 **Same area in other venues:** [💬 ACL2026 (27)](../../ACL2026/dialogue/index.md) · [📷 CVPR2026 (1)](../../CVPR2026/dialogue/index.md) · [🔬 ICLR2026 (5)](../../ICLR2026/dialogue/index.md) · [🤖 AAAI2026 (5)](../../AAAI2026/dialogue/index.md) · [🧠 NeurIPS2025 (5)](../../NeurIPS2025/dialogue/index.md)
+📌 **Same area in other venues:** [💬 ACL2026 (26)](../../ACL2026/dialogue/index.md) · [📷 CVPR2026 (1)](../../CVPR2026/dialogue/index.md) · [🔬 ICLR2026 (5)](../../ICLR2026/dialogue/index.md) · [🤖 AAAI2026 (5)](../../AAAI2026/dialogue/index.md) · [🧠 NeurIPS2025 (8)](../../NeurIPS2025/dialogue/index.md)
 
 🔥 **Top topics:** LLM ×2
 
@@ -36,7 +36,7 @@ item_total: 4
 
 **[From Self-Evolving Synthetic Data to Verifiable-Reward RL: Post-Training Multi-turn Interactive Tool-Using Agents](from_self-evolving_synthetic_data_to_verifiable-reward_rl_post-training_multi-tu.md)**
 
-:   Addressing two major bottlenecks in post-training "multi-turn interactive tool-calling agents"—expensive high-quality data and RL signal corruption due to user simulation noise—the authors propose "Self-Evolving Multi-Agent Data Synthesis (AReaL-SEA)" coupled with executable verifiers as rewards. Combined with an RL recipe featuring "SFT-first user models + large batch + dynamic filtering GRPO," Qwen3-235B achieves pass^1 rates of 73.0 (Airline) and 98.3 (Telecom) on $\tau^2$-bench, matching or exceeding Claude/Gemini/GPT-5.
+:   To address two major bottlenecks in post-training "multi-turn interactive tool-using agents"—the high cost of quality data and RL signal corruption from user simulation noise—the authors propose "self-evolving multi-agent data synthesis (AReaL-SEA)" paired with executable verifiers as rewards. Combined with an RL recipe of "first SFT the user model, then large batch + dynamic filtering GRPO," this approach pushes Qwen3-235B to Airline 73.0 / Telecom 98.3 pass^1 on τ²-bench, matching or surpassing Claude/Gemini/GPT-5 across the board.
 
 **[Is Your LLM Overcharging You? Tokenization, Transparency, and Incentives](is_your_llm_overcharging_you_tokenization_transparency_and_incentives.md)**
 

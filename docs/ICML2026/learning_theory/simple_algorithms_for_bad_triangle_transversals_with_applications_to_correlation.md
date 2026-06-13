@@ -2,9 +2,10 @@
 title: >-
   [Paper Note] Simple Algorithms for Bad Triangle Transversals with Applications to Correlation Clustering
 description: >-
-  [ICML 2026][Bad Triangle Transversal] This paper presents two simple 2-approximation algorithms for the "Bad Triangle Transversal" (BTT) problem on signed graphs that require only a single LP solve. It proves a unified N…
+  [ICML 2026][Algorithmic Theory / Approximation Algorithms / Graph Clustering][Bad Triangle Transversal] This paper presents two simple 2-approximation algorithms for the "Bad Triangle Transversal" (BTT) problem on signed…
 tags:
   - "ICML 2026"
+  - "Algorithmic Theory / Approximation Algorithms / Graph Clustering"
   - "Bad Triangle Transversal"
   - "Correlation Clustering"
   - "Approximation Algorithms"
@@ -104,11 +105,11 @@ This is a theoretical paper. The following table summarizes the BTT algorithms' 
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Improved Approximation Algorithms for Chromatic and Pseudometric-Weighted Correlation Clustering](../../NeurIPS2025/others/improved_approximation_algorithms_for_chromatic_and_pseudometric-weighted_correl.md)
-- [\[NeurIPS 2025\] Learning-Augmented Streaming Algorithms for Correlation Clustering](../../NeurIPS2025/others/learning-augmented_streaming_algorithms_for_correlation_clustering.md)
+- [\[NeurIPS 2025\] Improved Approximation Algorithms for Chromatic and Pseudometric-Weighted Correlation Clustering](../../NeurIPS2025/learning_theory/improved_approximation_algorithms_for_chromatic_and_pseudometric-weighted_correl.md)
+- [\[NeurIPS 2025\] Learning-Augmented Streaming Algorithms for Correlation Clustering](../../NeurIPS2025/learning_theory/learning-augmented_streaming_algorithms_for_correlation_clustering.md)
 - [\[ICML 2026\] Estimating Correlation Clustering Cost in Node-Arrival Stream](estimating_correlation_clustering_cost_in_node-arrival_stream.md)
-- [\[ICLR 2026\] Distributed Algorithms for Euclidean Clustering](../../ICLR2026/others/distributed_algorithms_for_euclidean_clustering.md)
-- [\[ICML 2026\] Riemannian Networks over Full-Rank Correlation Matrices](riemannian_networks_over_full-rank_correlation_matrices.md)
+- [\[ICML 2026\] Matroid Algorithms Under Size-Sensitive Independence Oracles](matroid_algorithms_under_size-sensitive_independence_oracles.md)
+- [\[ICML 2026\] Optimal Design for Multinomial Logit Model with Applications to Best Assortment Identification](optimal_design_for_multinomial_logit_model_with_applications_to_best_assortment_.md)
 
 </div>
 

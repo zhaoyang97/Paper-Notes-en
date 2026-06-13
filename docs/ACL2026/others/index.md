@@ -19,7 +19,7 @@ item_total: 1
 
 **💬 ACL2026** · **1** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (69)](../../ICML2026/others/index.md) · [📷 CVPR2026 (39)](../../CVPR2026/others/index.md) · [🔬 ICLR2026 (62)](../../ICLR2026/others/index.md) · [🤖 AAAI2026 (116)](../../AAAI2026/others/index.md) · [🧠 NeurIPS2025 (118)](../../NeurIPS2025/others/index.md) · [📹 ICCV2025 (39)](../../ICCV2025/others/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (63)](../../ICML2026/others/index.md) · [📷 CVPR2026 (32)](../../CVPR2026/others/index.md) · [🔬 ICLR2026 (73)](../../ICLR2026/others/index.md) · [🤖 AAAI2026 (124)](../../AAAI2026/others/index.md) · [🧠 NeurIPS2025 (126)](../../NeurIPS2025/others/index.md) · [📹 ICCV2025 (39)](../../ICCV2025/others/index.md)
 
 **[Qayyem: A Real-time Platform for Scoring Proficiency of Arabic Essays](qayyem_a_real-time_platform_for_scoring_proficiency_of_arabic_essays.md)**
 

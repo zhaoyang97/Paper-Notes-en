@@ -2,9 +2,10 @@
 title: >-
   [Paper Note] Infrequent Exploration in Linear Bandits
 description: >-
-  [NeurIPS 2025][linear bandits] This paper proposes the INFEX framework, which executes a baseline algorithm (e.g., LinUCB/LinTS) at designated exploration steps according to a given schedule and selects arms greedily at…
+  [NeurIPS 2025][Other][linear bandits] This paper proposes the INFEX framework, which executes a baseline algorithm (e.g., LinUCB/LinTS) at designated exploration steps according to a given schedule and selects arms greed…
 tags:
   - "NeurIPS 2025"
+  - "Other"
   - "linear bandits"
   - "infrequent exploration"
   - "greedy policy"
@@ -133,11 +134,11 @@ where only the last term depends on $T$, and it is consistent with the instance-
 
 ## Related Papers
 
-- [\[ICML 2026\] A Perturbation Approach to Unconstrained Linear Bandits](../../ICML2026/others/a_perturbation_approach_to_unconstrained_linear_bandits.md)
-- [\[NeurIPS 2025\] Gaussian Process Upper Confidence Bound Achieves Nearly-Optimal Regret in Noise-Free Gaussian Process Bandits](gaussian_process_upper_confidence_bound_achieves_nearly-optimal_regret_in_noise-.md)
-- [\[NeurIPS 2025\] Generalized Linear Mode Connectivity for Transformers](generalized_linear_mode_connectivity_for_transformers.md)
-- [\[NeurIPS 2025\] Modeling Neural Activity with Conditionally Linear Dynamical Systems](modeling_neural_activity_with_conditionally_linear_dynamical_systems.md)
-- [\[NeurIPS 2025\] Alias-Free ViT: Fractional Shift Invariance via Linear Attention](alias-free_vit_fractional_shift_invariance_via_linear_attention.md)
+- [\[ICML 2026\] A Perturbation Approach to Unconstrained Linear Bandits](../../ICML2026/learning_theory/a_perturbation_approach_to_unconstrained_linear_bandits.md)
+- [\[NeurIPS 2025\] Transfer Learning for Benign Overfitting in High-Dimensional Linear Regression](transfer_learning_for_benign_overfitting_in_high-dimensional_linear_regression.md)
+- [\[NeurIPS 2025\] Conformal Online Learning of Deep Koopman Linear Embeddings](conformal_online_learning_of_deep_koopman_linear_embeddings.md)
+- [\[ICLR 2026\] Lipschitz Bandits with Stochastic Delayed Feedback](../../ICLR2026/learning_theory/lipschitz_bandits_with_stochastic_delayed_feedback.md)
+- [\[NeurIPS 2025\] Efficient Kernelized Learning in Polyhedral Games Beyond Full-Information: From Colonel Blotto to Congestion Games](efficient_kernelized_learning_in_polyhedral_games_beyond_full-information_from_c.md)
 
 </div>
 

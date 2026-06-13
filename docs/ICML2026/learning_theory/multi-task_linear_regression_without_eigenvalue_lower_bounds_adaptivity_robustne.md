@@ -2,9 +2,10 @@
 title: >-
   [Paper Note] Multi-task Linear Regression without Eigenvalue Lower Bounds: Adaptivity, Robustness and Safety
 description: >-
-  [ICML 2026][Multi-task linear regression] This paper proposes a robust multi-task linear regression estimator using $\|\theta_j-\beta\|_{\bm\Sigma_j}$ (matrix-weighted norm) as a regularization term. It replaces the rigi…
+  [ICML 2026][Statistical Learning Theory / Multi-task Learning / Robust Regression][Multi-task linear regression] This paper proposes a robust multi-task linear regression estimator using $\|\theta_j-\beta\|_{\bm\Sigma_j}…
 tags:
   - "ICML 2026"
+  - "Statistical Learning Theory / Multi-task Learning / Robust Regression"
   - "Multi-task linear regression"
   - "matrix-weighted regularization"
   - "minimum eigenvalue"
@@ -129,11 +130,11 @@ The paper uses four sets of univariate scans in place of traditional ablation, v
 
 ## Related Papers
 
-- [\[AAAI 2026\] Online Linear Regression with Paid Stochastic Features](../../AAAI2026/others/online_linear_regression_with_paid_stochastic_features.md)
 - [\[ICML 2026\] Towards Optimal Robustness in Learning-Augmented Paging](towards_optimal_robustness_in_learning-augmented_paging.md)
-- [\[ICML 2026\] New Bounds for Kernel Sums via Fast Spherical Embeddings](new_bounds_for_kernel_sums_via_fast_spherical_embeddings.md)
-- [\[ICML 2026\] Variable Clustering via Distributionally Robust Nodewise Regression](variable_clustering_via_distributionally_robust_nodewise_regression.md)
-- [\[ICML 2026\] Markov Chain Monte Carlo without Evaluating the Target: An Auxiliary Variable Approach](markov_chain_monte_carlo_without_evaluating_the_target_an_auxiliary_variable_app.md)
+- [\[NeurIPS 2025\] Transfer Learning for Benign Overfitting in High-Dimensional Linear Regression](../../NeurIPS2025/learning_theory/transfer_learning_for_benign_overfitting_in_high-dimensional_linear_regression.md)
+- [\[ICML 2026\] A Perturbation Approach to Unconstrained Linear Bandits](a_perturbation_approach_to_unconstrained_linear_bandits.md)
+- [\[ICLR 2026\] The Price of Robustness: Stable Classifiers Need Overparameterization](../../ICLR2026/learning_theory/the_price_of_robustness_stable_classifiers_need_overparameterization.md)
+- [\[NeurIPS 2025\] Sample-Adaptivity Tradeoff in On-Demand Sampling](../../NeurIPS2025/learning_theory/sample-adaptivity_tradeoff_in_on-demand_sampling.md)
 
 </div>
 

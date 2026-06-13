@@ -2,14 +2,17 @@
 title: >-
   AAAI2026 Causal Inference Papers · 7 Notes
 description: >-
-  7 AAAI2026 papers in the Causal Inference area, covering Model Compression and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  7 AAAI2026 papers in the Causal Inference area, covering Robotics, Model Compression and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "AAAI2026"
   - "Causal Inference"
   - "AI paper notes"
   - "paper summaries"
+  - "Robotics"
   - "Model Compression"
 item_list:
+  - u: "causal_inference_under_threshold_manipulation_bayesian_mixtu/"
+    t: "Causal Inference Under Threshold Manipulation: Bayesian Mixture Modeling and Heterogeneous Treatment Effects"
   - u: "causal_structure_learning_for_dynamical_systems_with_theoretical_score_analysis/"
     t: "CaDyT: Causal Structure Learning for Dynamical Systems with Theoretical Score Analysis"
   - u: "from_theory_of_mind_to_theory_of_environment_counterfactual_simulation_of_latent/"
@@ -20,8 +23,6 @@ item_list:
     t: "KTCF: Actionable Recourse in Knowledge Tracing via Counterfactual Explanations for Education"
   - u: "learning_subgroups_with_maximum_treatment_effects_without_causal_heuristics/"
     t: "Learning Subgroups with Maximum Treatment Effects without Causal Heuristics"
-  - u: "skill_path_unveiling_language_skills_from_circuit_graphs/"
-    t: "Skill Path: Unveiling Language Skills from Circuit Graphs"
   - u: "sparse_additive_model_pruning_for_order-based_causal_structure_learning/"
     t: "Sparse Additive Model Pruning for Order-Based Causal Structure Learning"
 item_total: 7
@@ -32,7 +33,11 @@ item_total: 7
 
 **🤖 AAAI2026** · **7** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (16)](../../ICML2026/causal_inference/index.md) · [💬 ACL2026 (7)](../../ACL2026/causal_inference/index.md) · [📷 CVPR2026 (2)](../../CVPR2026/causal_inference/index.md) · [🔬 ICLR2026 (16)](../../ICLR2026/causal_inference/index.md) · [🧠 NeurIPS2025 (21)](../../NeurIPS2025/causal_inference/index.md) · [📹 ICCV2025 (2)](../../ICCV2025/causal_inference/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (15)](../../ICML2026/causal_inference/index.md) · [💬 ACL2026 (7)](../../ACL2026/causal_inference/index.md) · [📷 CVPR2026 (2)](../../CVPR2026/causal_inference/index.md) · [🔬 ICLR2026 (17)](../../ICLR2026/causal_inference/index.md) · [🧠 NeurIPS2025 (19)](../../NeurIPS2025/causal_inference/index.md) · [📹 ICCV2025 (2)](../../ICCV2025/causal_inference/index.md)
+
+**[Causal Inference Under Threshold Manipulation: Bayesian Mixture Modeling and Heterogeneous Treatment Effects](causal_inference_under_threshold_manipulation_bayesian_mixtu.md)**
+
+:   This paper proposes the BMTM/HBMTM Bayesian mixture model framework. In scenarios where consumers strategically manipulate spending to reach reward thresholds, the framework decomposes the observed distribution into bunching and non-bunching sub-distributions to accurately estimate threshold causal effects and heterogeneous treatment effects across subgroups.
 
 **[CaDyT: Causal Structure Learning for Dynamical Systems with Theoretical Score Analysis](causal_structure_learning_for_dynamical_systems_with_theoretical_score_analysis.md)**
 
@@ -53,10 +58,6 @@ item_total: 7
 **[Learning Subgroups with Maximum Treatment Effects without Causal Heuristics](learning_subgroups_with_maximum_treatment_effects_without_causal_heuristics.md)**
 
 :   Under the SCM framework, the paper proves that the subgroup with maximum treatment effect must exhibit homogeneous pointwise effects (Theorem 1); under the partition model assumption, it proves that optimal subgroup discovery reduces to standard supervised learning (Theorem 2), achievable via CART with the Gini index. On 77 ACIC-2016 semi-synthetic datasets, the proposed method achieves a mean treatment effect of 10.54 (vs. 7.84 for the runner-up), ranking first on 51.9% of datasets.
-
-**[Skill Path: Unveiling Language Skills from Circuit Graphs](skill_path_unveiling_language_skills_from_circuit_graphs.md)**
-
-:   This paper proposes the concept of Skill Path and a three-step framework (Decomposition–Pruning–Causal Mediation) to extract linear paths corresponding to specific language skills from circuit graphs, and quantitatively validates two core conjectures: Stratification and Inclusiveness of skills.
 
 **[Sparse Additive Model Pruning for Order-Based Causal Structure Learning](sparse_additive_model_pruning_for_order-based_causal_structure_learning.md)**
 

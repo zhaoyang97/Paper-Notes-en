@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] VSC: Visual Search Compositional Text-to-Image Diffusion Model
 description: >-
-  [ICCV 2025][Segmentation][Compositional text-to-image generation] This paper proposes VSC, a visual search-based compositional text-to-image diffusion generation method that significantly improves the accuracy and scalab…
+  [ICCV 2025][Image Generation][Compositional text-to-image generation] This paper proposes VSC, a visual search-based compositional text-to-image diffusion generation method that significantly improves the accuracy and sc…
 tags:
   - "ICCV 2025"
-  - "Segmentation"
+  - "Image Generation"
   - "Compositional text-to-image generation"
   - "attribute-object binding"
   - "diffusion models"
@@ -156,11 +156,11 @@ VSC achieves efficient scaling through parallel reference image generation: infe
 
 ## Related Papers
 
-- [\[ICCV 2025\] UniGlyph: Unified Segmentation-Conditioned Diffusion for Precise Visual Text Synthesis](uniglyph_unified_segmentation-conditioned_diffusion_for_precise_visual_text_synt.md)
-- [\[NeurIPS 2025\] Seg4Diff: Unveiling Open-Vocabulary Segmentation in Text-to-Image Diffusion Transformers](../../NeurIPS2025/segmentation/seg4diff_unveiling_open-vocabulary_segmentation_in_text-to-image_diffusion_trans.md)
-- [\[ICCV 2025\] TAViS: Text-bridged Audio-Visual Segmentation with Foundation Models](tavis_text-bridged_audio-visual_segmentation_with_foundation_models.md)
-- [\[ICCV 2025\] Advancing Visual Large Language Model for Multi-granular Versatile Perception](advancing_visual_large_language_model_for_multi-granular_versatile_perception.md)
-- [\[ICLR 2026\] VIRTUE: Visual-Interactive Text-Image Universal Embedder](../../ICLR2026/segmentation/virtue_visual-interactive_text-image_universal_embedder.md)
+- [\[ICCV 2025\] Holistic Unlearning Benchmark: A Multi-Faceted Evaluation for Text-to-Image Diffusion Model Unlearning](holistic_unlearning_benchmark_a_multi-faceted_evaluation_for_text-to-image_diffu.md)
+- [\[ICCV 2025\] Addressing Text Embedding Leakage in Diffusion-Based Image Editing](addressing_text_embedding_leakage_in_diffusion-based_image_editing.md)
+- [\[NeurIPS 2025\] Evaluating the Evaluators: Metrics for Compositional Text-to-Image Generation](../../NeurIPS2025/image_generation/evaluating_the_evaluators_metrics_for_compositional_text-to-image_generation.md)
+- [\[ICCV 2025\] CoMPaSS: Enhancing Spatial Understanding in Text-to-Image Diffusion Models](compass_enhancing_spatial_understanding_in_text-to-image_diffusion_models.md)
+- [\[ICCV 2025\] CompSlider: Compositional Slider for Disentangled Multiple-Attribute Image Generation](compslider_compositional_slider_for_disentangled_multiple-attribute_image_genera.md)
 
 </div>
 

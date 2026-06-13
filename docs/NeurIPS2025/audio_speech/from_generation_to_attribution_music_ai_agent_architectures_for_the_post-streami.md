@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] From Generation to Attribution: Music AI Agent Architectures for the Post-Streaming Era
 description: >-
-  [NeurIPS 2025 (AI4Music Workshop)][Audio & Speech][Music AI agent] This paper proposes a content-based Music AI Agent architecture that embeds copyright attribution directly into the music creation workflow through Block…
+  [NeurIPS 2025 (AI4Music Workshop)][Audio & Speech][Music AI agent] This paper proposes a content-based Music AI Agent architecture that decomposes music into fine-grained Block components and constructs an Attribution La…
 tags:
   - "NeurIPS 2025 (AI4Music Workshop)"
   - "Audio & Speech"
   - "Music AI agent"
-  - "copyright attribution"
+  - "attribution tracking"
+  - "copyright management"
   - "streaming platforms"
-  - "fair compensation"
-  - "agent architecture"
+  - "fair distribution"
 date: 2026-05-08
 content_hash: e72dbe904015e7f1
 ---
@@ -132,96 +132,6 @@ No traditional ablation experiments are included. The paper provides qualitative
 
 ---
 
-# From Generation to Attribution: Music AI Agent Architectures for the Post-Streaming Era
-
-**Conference**: NeurIPS 2025 (AI4Music Workshop)
-**arXiv**: [2510.20276](https://arxiv.org/abs/2510.20276)  
-**Code**: None  
-**Area**: Music AI / Information Retrieval
-**Keywords**: Music AI agent, copyright attribution, streaming platforms, fair compensation, agent architecture
-
-## TL;DR
-
-This paper proposes a content-based Music AI Agent architecture that embeds copyright attribution directly into the music creation workflow through Block-level retrieval and agentic orchestration, constructing a fair AI media platform for the post-streaming era.
-
-## Background & Motivation
-
-Generative AI is profoundly reshaping how music is created, but its rapid development has also exposed several structural deficiencies in existing music ecosystems:
-
-1. **Missing Attribution**: When AI systems generate new content based on existing musical materials, the contributions of original creators are difficult to track and acknowledge, leading to ambiguous copyright ownership.
-2. **Copyright Management Challenges**: Unlike past media transitions from live performance to recording, downloading, and streaming, AI fundamentally transforms the entire music lifecycle—the boundaries between creation, distribution, and monetization are thoroughly dissolved.
-3. **Incompatible Economic Models**: The royalty distribution mechanisms of existing streaming systems are opaque and highly centralized, unable to cope with the complexity brought by AI-driven large-scale music production.
-4. **Unfair Compensation**: In AI-assisted creation scenarios, contributors of original materials often cannot receive reasonable economic returns.
-
-These issues have driven the need for a new architecture—one that not only supports AI music generation but also achieves transparent attribution and equitable benefit distribution throughout the generation process.
-
-## Method
-
-### Overall Architecture
-
-The paper proposes a content-based **Music AI Agent** architecture whose core design philosophy embeds attribution mechanisms directly into the creation workflow rather than applying them retrospectively. The architecture adopts a session-based iterative interaction mode and comprises the following core components:
-
-- **Block**: Music is organized into fine-grained component units called Blocks, each representing a reusable musical fragment (e.g., melodic fragment, rhythmic pattern, harmonic progression).
-- **BlockDB**: All Blocks are stored in a dedicated database supporting efficient content retrieval and management.
-- **Attribution Layer**: The attribution layer automatically triggers an attribution event each time a Block is used, recording source and usage information.
-- **Agentic Orchestration**: The orchestration module coordinates Block retrieval, composition, and attribution throughout the creation pipeline.
-
-### Key Designs
-
-1. **Block-level Retrieval Mechanism**: Large musical works are decomposed into semantically fine-grained Blocks, each carrying metadata (creator information, copyright status, usage history, etc.), enabling precise content matching and citation tracking during creation.
-
-2. **Real-time Attribution Triggering**: Each time the AI Agent references or reuses a Block during creation, the Attribution Layer automatically generates an attribution event record containing source information and usage context, achieving transparent provenance tracking and real-time settlement.
-
-3. **Session-based Iterative Interaction**: The system is designed as a session-based iterative model, enabling creators to progressively construct musical works through multi-turn interactions, with every material usage captured and recorded by the Attribution Layer.
-
-### Platform Vision
-
-The paper positions this architecture as the infrastructure of a **Fair AI Media Platform**, with core objectives including:
-
-- **Fine-grained Attribution**: Contribution tracking at Block-level granularity.
-- **Fair Compensation**: Transparent revenue distribution based on actual usage.
-- **Participatory Interaction**: Enabling creators to actively participate in the AI creation ecosystem.
-
-## Key Experimental Results
-
-### Main Results
-
-This is an architecture design paper (workshop paper) whose primary contribution lies in proposing the conceptual framework and system design; it does not include quantitative experimental evaluation in the traditional sense.
-
-### Key Findings
-
-- The royalty distribution models of existing streaming systems face fundamental challenges in the AI era.
-- Redefining AI from a "generation tool" to "attribution infrastructure" is the key to resolving fairness issues.
-- Block-level fine-grained decomposition makes music attribution technically feasible.
-
-## Highlights & Insights
-
-1. **Perspective Shift**: Redefining AI from a pure generation tool to infrastructure supporting a fair ecosystem is a notably forward-looking insight.
-2. **Full Lifecycle Consideration**: The paper covers the complete chain of creation, distribution, and monetization rather than focusing solely on the generation stage.
-3. **Real-time Attribution**: Attribution events are triggered in real time during the creation process rather than through post-hoc analysis, a design critical for large-scale deployment.
-4. **Block-level Design**: The fine-grained music decomposition approach provides a semantic foundation for precise attribution.
-
-## Limitations & Future Work
-
-1. **Lack of Experimental Validation**: As a workshop paper, the work presents only an architectural vision without system implementation or quantitative evaluation.
-2. **Unclear Block Definitions**: Technical details such as how to define appropriate Block granularity and how to handle semantic overlap between Blocks are not thoroughly discussed.
-3. **Scalability Concerns**: Whether the retrieval efficiency of a large-scale BlockDB and the real-time performance of the Attribution Layer remain viable under massive creation scenarios is unclear.
-4. **Legal Compliance**: The legal applicability of copyright attribution across different jurisdictions requires further exploration.
-5. **Attribution Boundary for Generated Content**: How to determine the appropriate attribution weight when AI has deeply transformed original materials remains an open problem.
-
-## Related Work & Insights
-
-- **Music Information Retrieval (MIR)**: Traditional music retrieval techniques provide a foundation for Block-level retrieval.
-- **Copyright Issues in AI-generated Content**: Copyright disputes over AI-generated text, images, and music have grown increasingly prominent; this work offers a systematic approach.
-- **Agent Frameworks**: LLM-based Agent architectures provide a reference for automated orchestration of complex tasks.
-- **Blockchain and Digital Rights**: The concepts of distributed provenance and real-time settlement bear similarities to blockchain applications in digital rights management.
-
-## Rating
-
-⭐⭐⭐ (3/5)
-
-**Rationale**: The paper presents a forward-looking architectural vision, elevating the fairness and attribution problems in AI music generation to the level of system design. However, as a workshop paper, its technical depth is limited, lacking system implementation and experimental validation. The specific design details of core concepts (Block, Attribution Layer, Agentic Orchestration) are insufficiently elaborated, and the feasibility argument is relatively weak. This work is primarily a valuable problem formulation and directional exploration.
-
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
@@ -231,8 +141,8 @@ This is an architecture design paper (workshop paper) whose primary contribution
 - [\[NeurIPS 2025\] Sensorium Arc: AI Agent System for Oceanic Data Exploration and Interactive Eco-Art](sensorium_arc_ai_agent_system_for_oceanic_data_exploration_and_interactive_eco-a.md)
 - [\[NeurIPS 2025\] Echoes of Humanity: Exploring the Perceived Humanness of AI Music](echoes_of_humanity_exploring_the_perceived_humanness_of_ai_music.md)
 - [\[NeurIPS 2025\] Ethics Statements in AI Music Papers: The Effective and the Ineffective](ethics_statements_in_ai_music_papers_the_effective_and_the_ineffective.md)
+- [\[ICML 2026\] Towards Streaming Synchronized Spatial Audio Generation via Autoregressive Diffusion Transformer](../../ICML2026/audio_speech/towards_streaming_synchronized_spatial_audio_generation_via_autoregressive_diffu.md)
 - [\[NeurIPS 2025\] Segment-Factorized Full-Song Generation on Symbolic Piano Music](segment-factorized_full-song_generation_on_symbolic_piano_music.md)
-- [\[ICML 2026\] MusicDET: Zero-Shot AI-Generated Music Detection](../../ICML2026/audio_speech/musicdet_zero-shot_ai-generated_music_detection.md)
 
 </div>
 

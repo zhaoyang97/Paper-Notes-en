@@ -2,12 +2,12 @@
 title: >-
   [Paper Note] DLWM: Dual Latent World Models enable Holistic Gaussian-centric Pre-training in Autonomous Driving
 description: >-
-  [CVPR 2026][Autonomous Driving][World Models] This paper proposes DLWM, a holistic Gaussian-centric pre-training paradigm based on dual latent world models for autonomous driving. Stage 1 learns 3D Gaussian scene represe…
+  [CVPR 2026][Autonomous Driving][World Models] This paper proposes DLWM, a two-stage Gaussian-centric self-supervised pre-training paradigm. Stage 1 learns 3D Gaussian representations by reconstructing depth and semantic…
 tags:
   - "CVPR 2026"
   - "Autonomous Driving"
   - "World Models"
-  - "3D Gaussians"
+  - "3D Gaussian Splatting"
   - "Self-supervised Pre-training"
   - "Occupancy Prediction"
   - "Motion Planning"
@@ -145,97 +145,6 @@ This paper proposes DLWM, a two-stage Gaussian-centric self-supervised pre-train
 
 ---
 
-# DLWM: Dual Latent World Models enable Holistic Gaussian-centric Pre-training in Autonomous Driving
-
-**Conference**: CVPR 2026
-**arXiv**: [2604.00969](https://arxiv.org/abs/2604.00969)  
-**Code**: Available  
-**Area**: Autonomous Driving / 3D Scene Understanding
-**Keywords**: World Models, 3D Gaussians, Self-supervised Pre-training, Occupancy Prediction, Motion Planning
-
-## TL;DR
-This paper proposes DLWM, a holistic Gaussian-centric pre-training paradigm based on dual latent world models for autonomous driving. Stage 1 learns 3D Gaussian scene representations via self-supervised rendering of multi-view semantic and depth maps. Stage 2 trains two latent world models: a Gaussian-flow-guided model for downstream occupancy perception/prediction (+1.02/+2.68 mIoU), and an ego-trajectory-guided model for motion planning (−16% L2 error). The framework resolves the permutation equivariance challenge that prevents direct cross-frame supervision of Gaussian queries.
-
-## Background & Motivation
-
-1. **Background**: In vision-based autonomous driving, 3D Gaussian representations achieve a better expressiveness-efficiency trade-off than BEV or sparse query methods across perception/prediction/planning multi-task settings. However, reliance on large-scale annotations limits scalable deployment.
-2. **Limitations of Prior Work**: (1) MAE-style pre-training does not explicitly learn 3D geometry; (2) rendering-based pre-training (UniPAD/ViDAR) requires LiDAR depth; (3) latent world models have proven effective for planning but **remain unexplored for perception/prediction**; (4) the permutation equivariance of Gaussian queries — independently initialized across frames with no one-to-one correspondence — makes direct feature supervision infeasible.
-3. **Key Breakthrough**: Transforming Gaussian queries into dense grid representations via BEV rasterization → height information is preserved and inter-frame spatial correspondence is well-defined → this serves as a viable latent space for temporal supervision in the world model.
-4. **Core Idea**: Two stages — Stage 1 learns Gaussian spatial representations (via rendering reconstruction) → Stage 2 trains dual world models: (a) Gaussian-flow-guided → perception/prediction; (b) ego-trajectory-guided → planning.
-
-## Method
-
-### Overall Architecture
-Multi-view images → 2D backbone → 3D Gaussian query prediction → **Stage 1**: differentiable rendering of multi-view semantic and depth maps → self-supervised reconstruction loss. Pre-trained weights initialize → **Stage 2a**: Gaussian-flow-guided world model — predicts 3D Gaussian flow (displacements) → propagates current Gaussians to future frames → BEV rasterization into latent representation → supervised against frozen future-frame perception features. **Stage 2b**: ego-trajectory-guided world model — predicts ego trajectory → conditions current Gaussian latent → predicts future Gaussian BEV features → aligned against the same frozen features.
-
-### Key Designs
-
-1. **Stage 1: Gaussian Spatial Representation Learning**:
-    - Predicts 3D Gaussians (position/scale/rotation/color/semantic attributes) → differentiable rendering of multi-view semantic and depth maps → self-supervised reconstruction.
-    - No LiDAR depth required — depth is also obtained via rendering.
-    - Learned Gaussian queries carry rich contextual features → provide strong initialization for Stage 2.
-
-2. **Stage 2a: Gaussian-Flow-Guided World Model (Perception/Prediction)**:
-    - Predicts 3D flow (displacement vectors) for each Gaussian → propagates current-frame Gaussians to their future positions.
-    - BEV rasterization: propagated Gaussians are splatted onto a BEV grid → dense latent representation is obtained.
-    - The frozen Stage 1 perception module processes future-frame multi-view images → produces "target" features → serves as the supervision signal for the latent representation.
-    - **Resolving permutation equivariance**: Gaussian queries are permutation-equivariant → but BEV rasterization produces a fixed grid → inter-frame spatial correspondence is well-defined → temporal supervision becomes feasible.
-
-3. **Stage 2b: Ego-Trajectory-Guided World Model (Planning)**:
-    - Predicts ego trajectory → encodes it as a motion condition.
-    - Combines motion condition with current Gaussian latent → predicts future scene Gaussian BEV features.
-    - Aligned with the same frozen perception features.
-    - **Design Motivation**: Planning and perception require different temporal prediction signals — planning needs trajectory conditioning (ego motion affects observations), while perception requires scene-level flow.
-
-4. **Why Dual World Models Instead of a Single Model**:
-    - Perception/prediction focus on scene-level motion (other vehicles/pedestrians) → Gaussian flow is the natural supervision.
-    - Planning focuses on the consequences of ego decisions → trajectory conditioning is the natural supervision.
-    - The two tasks have different optimization objectives → separate training avoids mutual interference.
-
-## Key Experimental Results
-
-### Main Results (SurroundOcc + nuScenes)
-
-| Downstream Task | No Pre-training | +DLWM | Gain |
-|----------------|:-:|:-:|:-:|
-| 3D Occupancy Perception (mIoU) | Baseline | +1.02 | Significant |
-| 4D Occupancy Prediction (mIoU) | Baseline | +2.68 | More Significant |
-| Motion Planning (L2 error) | Baseline | −16% | Substantial |
-
-### Ablation Study
-
-| Configuration | Perception | Prediction | Planning |
-|--------------|:-:|:-:|:-:|
-| w/o Stage 1 | Degraded | Degraded | Degraded |
-| w/o Stage 2a (Gaussian Flow WM) | Degraded | Largely Degraded | Unchanged |
-| w/o Stage 2b (Trajectory WM) | Unchanged | Unchanged | Degraded |
-| **Full DLWM** | **Best** | **Best** | **Best** |
-
-→ Confirms that the two world models each serve distinct downstream tasks.
-
-### Key Findings
-- 4D occupancy prediction benefits most (+2.68 mIoU) → temporal prediction tasks gain the most from world model pre-training.
-- The Gaussian-flow-guided WM also improves perception (+1.02) → the model learns better scene dynamics representations.
-- The trajectory-guided WM exclusively benefits planning → validates the rationale for separate training.
-- BEV rasterization successfully resolves Gaussian permutation equivariance → temporal supervision in latent space is viable.
-
-## Highlights & Insights
-- **Permutation Equivariance → Elegant Resolution via BEV Rasterization**: Gaussian queries have no cross-frame correspondence → but after splatting to BEV they form a fixed grid → this transformation is the key enabler of the entire framework.
-- **Clear Task Division Between Dual World Models**: Perception/prediction → driven by scene flow; planning → driven by trajectory conditioning. Different tasks require different temporal prediction signals → division of labor outperforms a unified model.
-- **Full-Lifecycle Pre-training**: From spatial (Stage 1 rendering reconstruction) to temporal (Stage 2 world models) → covers the complete chain of perception/prediction/planning → a single pre-training benefits multiple tasks.
-
-## Limitations & Future Work
-- The two world models in Stage 2 are trained separately → joint training may enable discovery of shared temporal features.
-- BEV rasterization discards fine-grained height-dimension information → 3D voxel rasterization may be superior but at greater computational cost.
-- The two-stage training pipeline is relatively complex → whether it can be simplified into a single end-to-end stage remains open.
-- Current world models predict only one future step → multi-step prediction would be more beneficial for long-horizon planning.
-
-## Rating
-- Novelty: ⭐⭐⭐⭐ Dual world models + Gaussian-flow-guided temporal pre-training.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Three-task validation on SurroundOcc + nuScenes with per-component ablations.
-- Writing Quality: ⭐⭐⭐⭐ Pipeline diagram is clear; the permutation equivariance problem and its solution are well explained.
-- Value: ⭐⭐⭐⭐⭐ Provides an important advancement in pre-training for Gaussian-centric autonomous driving methods.
-
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
@@ -245,8 +154,8 @@ Multi-view images → 2D backbone → 3D Gaussian query prediction → **Stage 1
 - [\[CVPR 2026\] Learning Vision-Language-Action World Models for Autonomous Driving](vla_world_learning_vision_language_action_world_models_for_autonomous_driving.md)
 - [\[CVPR 2026\] An Instance-Centric Panoptic Occupancy Prediction Benchmark for Autonomous Driving](an_instance-centric_panoptic_occupancy_prediction_benchmark_for_autonomous_drivi.md)
 - [\[CVPR 2026\] MetaDAT: Generalizable Trajectory Prediction via Meta Pre-training and Data-Adaptive Test-Time Updating](metadat_generalizable_trajectory_prediction_via_meta_pre-training_and_data-adapt.md)
+- [\[CVPR 2026\] F3DGS: Federated 3D Gaussian Splatting for Decentralized Multi-Agent World Modeling](f3dgs_federated_3d_gaussian_splatting_for_decentralized_multi-agent_world_modeli.md)
 - [\[CVPR 2026\] ColaVLA: Leveraging Cognitive Latent Reasoning for Hierarchical Parallel Trajectory Planning in Autonomous Driving](colavla_leveraging_cognitive_latent_reasoning_for_hierarchical_parallel_trajecto.md)
-- [\[AAAI 2026\] WorldRFT: Latent World Model Planning with Reinforcement Fine-Tuning for Autonomous Driving](../../AAAI2026/autonomous_driving/worldrft_latent_world_model_planning_with_reinforcement_fine-tuning_for_autonomo.md)
 
 </div>
 

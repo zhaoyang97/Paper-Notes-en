@@ -2,9 +2,10 @@
 title: >-
   [Paper Note] Directional Sheaf Hypergraph Networks: Unifying Learning on Directed and Undirected Hypergraphs
 description: >-
-  [ICLR 2026][sheaf neural networks] This paper proposes Directional Sheaf Hypergraph Networks (DSHN), which combines Cellular Sheaf theory with the directional information of directed hypergraphs to construct a complex-va…
+  [ICLR 2026][Optimization][sheaf neural networks] This paper proposes Directional Sheaf Hypergraph Networks (DSHN), which combines Cellular Sheaf theory with the directional information of directed hypergraphs to construc…
 tags:
   - "ICLR 2026"
+  - "Optimization"
   - "sheaf neural networks"
   - "directed hypergraphs"
   - "Laplacian"
@@ -147,11 +148,11 @@ Node classification accuracy compared against 13 baselines on 7 datasets:
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Sheaf Cohomology of Linear Predictive Coding Networks](../../NeurIPS2025/others/sheaf_cohomology_of_linear_predictive_coding_networks.md)
-- [\[ICLR 2026\] Learning on a Razor's Edge: Identifiability and Singularity of Polynomial Neural Networks](learning_on_a_razors_edge_identifiability_and_singularity_of_polynomial_neural_n.md)
+- [\[ICLR 2026\] Unifying Formal Explanations: A Complexity-Theoretic Perspective](unifying_formal_explanations_a_complexity-theoretic_perspective.md)
+- [\[ICLR 2026\] Directional Convergence, Benign Overfitting of Gradient Descent in leaky ReLU two-layer Neural Networks](directional_convergence_benign_overfitting_of_gradient_descent_in_leaky_relu_two.md)
+- [\[CVPR 2026\] DC-Merge: Improving Model Merging with Directional Consistency](../../CVPR2026/optimization/dc-merge_improving_model_merging_with_directional_consistency.md)
 - [\[ICLR 2026\] Entropic Confinement and Mode Connectivity in Overparameterized Neural Networks](entropic_confinement_and_mode_connectivity_in_overparameterized_neural_networks.md)
-- [\[ICLR 2026\] On the Lipschitz Continuity of Set Aggregation Functions and Neural Networks for Sets](on_the_lipschitz_continuity_of_set_aggregation_functions_and_neural_networks_for.md)
-- [\[AAAI 2026\] Learning Fair Representations with Kolmogorov-Arnold Networks](../../AAAI2026/others/learning_fair_representations_with_kolmogorov-arnold_networks.md)
+- [\[ICLR 2026\] Rapid Training of Hamiltonian Graph Networks using Random Features](rapid_training_of_hamiltonian_graph_networks_using_random_features.md)
 
 </div>
 

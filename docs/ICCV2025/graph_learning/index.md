@@ -19,8 +19,8 @@ item_total: 1
 
 **📹 ICCV2025** · **1** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (34)](../../ICML2026/graph_learning/index.md) · [💬 ACL2026 (23)](../../ACL2026/graph_learning/index.md) · [📷 CVPR2026 (8)](../../CVPR2026/graph_learning/index.md) · [🔬 ICLR2026 (21)](../../ICLR2026/graph_learning/index.md) · [🤖 AAAI2026 (38)](../../AAAI2026/graph_learning/index.md) · [🧠 NeurIPS2025 (52)](../../NeurIPS2025/graph_learning/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (31)](../../ICML2026/graph_learning/index.md) · [💬 ACL2026 (23)](../../ACL2026/graph_learning/index.md) · [📷 CVPR2026 (8)](../../CVPR2026/graph_learning/index.md) · [🔬 ICLR2026 (20)](../../ICLR2026/graph_learning/index.md) · [🤖 AAAI2026 (37)](../../AAAI2026/graph_learning/index.md) · [🧠 NeurIPS2025 (54)](../../NeurIPS2025/graph_learning/index.md)
 
 **[PASTA: Part-Aware Sketch-to-3D Shape Generation with Text-Aligned Prior](pasta_part-aware_sketch-to-3d_shape_generation_with_text-aligned_prior.md)**
 
-:   This paper proposes the PASTA framework, which leverages VLM-derived text priors to compensate for semantic deficiencies in sketches, and designs ISG-Net (IndivGCN + PartGCN) to model inter-part structural relationships, achieving state-of-the-art performance in sketch-to-3D shape generation with support for part-level editing.
+:   This paper proposes the PASTA framework, which integrates VLM-derived text priors to compensate for semantic deficiencies in sketches, and introduces ISG-Net (a dual graph convolutional network comprising IndivGCN and PartGCN) to model inter-part structural relationships, achieving state-of-the-art sketch-to-3D shape generation and part-level editing.

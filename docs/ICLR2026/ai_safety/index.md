@@ -18,6 +18,8 @@ item_list:
     t: "Action-Free Offline-to-Online RL via Discretised State Policies"
   - u: "adaptive_methods_are_preferable_in_high_privacy_settings_an_sde_perspective/"
     t: "Adaptive Methods Are Preferable in High Privacy Settings: An SDE Perspective"
+  - u: "ap-ood_attention_pooling_for_out-of-distribution_detection/"
+    t: "AP-OOD: Attention Pooling for Out-of-Distribution Detection"
   - u: "atex-cf_attack-informed_counterfactual_explanations_for_graph_neural_networks/"
     t: "ATEX-CF: Attack-Informed Counterfactual Explanations for Graph Neural Networks"
   - u: "back_to_square_roots_an_optimal_bound_on_the_matrix_factorization_error_for_mult/"
@@ -32,18 +34,16 @@ item_list:
     t: "Co-LoRA: Collaborative Model Personalization on Heterogeneous Multi-Modal Clients"
   - u: "dataless_weight_disentanglement_in_task_arithmetic_via_kronecker-factored_approx/"
     t: "Dataless Weight Disentanglement in Task Arithmetic via Kronecker-Factored Approximate Curvature"
-  - u: "efficient_resource-constrained_training_of_transformers_via_subspace_optimizatio/"
-    t: "Efficient Resource-Constrained Training of Transformers via Subspace Optimization"
-  - u: "extending_sequence_length_is_not_all_you_need_effective_integration_of_multimoda/"
-    t: "Extending Sequence Length is Not All You Need: Effective Integration of Multimodal Signals for Gene Expression Prediction"
   - u: "hide_and_find_a_distributed_adversarial_attack_on_federated_graph_learning/"
     t: "Hide and Find: A Distributed Adversarial Attack on Federated Graph Learning"
   - u: "learnability_and_privacy_vulnerability_are_entangled_in_a_few_critical_weights/"
     t: "Learnability and Privacy Vulnerability are Entangled in a Few Critical Weights"
   - u: "less_is_more_towards_simple_graph_contrastive_learning/"
     t: "Less is More: Towards Simple Graph Contrastive Learning"
-  - u: "policy_myopia_as_a_mechanism_of_gradual_disempowerment_in_post-agi_governance_ci/"
-    t: "Policy Myopia as a Mechanism of Gradual Disempowerment in Post-AGI Governance"
+  - u: "optimal_transport-induced_samples_against_out-of-distribution_overconfidence/"
+    t: "Optimal Transport-Induced Samples against Out-of-Distribution Overconfidence"
+  - u: "prior-based_noisy_text_data_filtering_fast_and_strong_alternative_to_perplexity/"
+    t: "Prior-based Noisy Text Data Filtering: Fast and Strong Alternative for Perplexity"
   - u: "risk-sensitive_agent_compositions/"
     t: "Risk-Sensitive Agent Compositions"
   - u: "robust_spiking_neural_networks_against_adversarial_attacks/"
@@ -76,7 +76,7 @@ item_total: 27
 
 **🔬 ICLR2026** · **27** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (47)](../../ICML2026/ai_safety/index.md) · [💬 ACL2026 (4)](../../ACL2026/ai_safety/index.md) · [📷 CVPR2026 (23)](../../CVPR2026/ai_safety/index.md) · [🤖 AAAI2026 (44)](../../AAAI2026/ai_safety/index.md) · [🧠 NeurIPS2025 (70)](../../NeurIPS2025/ai_safety/index.md) · [📹 ICCV2025 (24)](../../ICCV2025/ai_safety/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (41)](../../ICML2026/ai_safety/index.md) · [💬 ACL2026 (4)](../../ACL2026/ai_safety/index.md) · [📷 CVPR2026 (26)](../../CVPR2026/ai_safety/index.md) · [🤖 AAAI2026 (45)](../../AAAI2026/ai_safety/index.md) · [🧠 NeurIPS2025 (73)](../../NeurIPS2025/ai_safety/index.md) · [📹 ICCV2025 (24)](../../ICCV2025/ai_safety/index.md)
 
 🔥 **Top topics:** Adversarial Robustness ×7 · Federated Learning ×3 · Reinforcement Learning ×2 · Agents ×2 · Watermarking ×2
 
@@ -87,6 +87,10 @@ item_total: 27
 **[Adaptive Methods Are Preferable in High Privacy Settings: An SDE Perspective](adaptive_methods_are_preferable_in_high_privacy_settings_an_sde_perspective.md)**
 
 :   This work is the first to analyze differentially private optimizers through a stochastic differential equation (SDE) framework, revealing fundamental behavioral differences between DP-SGD and DP-SignSGD under privacy noise: adaptive methods achieve a superior privacy-utility tradeoff of $\mathcal{O}(1/\varepsilon)$ vs. $\mathcal{O}(1/\varepsilon^2)$ in high-privacy regimes, and their hyperparameters transfer across privacy budgets.
+
+**[AP-OOD: Attention Pooling for Out-of-Distribution Detection](ap-ood_attention_pooling_for_out-of-distribution_detection.md)**
+
+:   This paper proposes AP-OOD, which replaces the mean pooling in Mahalanobis distance-based OOD detection with learnable attention pooling, addressing the information loss caused by mean aggregation of token-level anomaly signals. On text OOD detection, AP-OOD reduces FPR95 on XSUM summarization from 27.84% to 4.67%, while supporting a smooth transition from unsupervised to semi-supervised settings.
 
 **[ATEX-CF: Attack-Informed Counterfactual Explanations for Graph Neural Networks](atex-cf_attack-informed_counterfactual_explanations_for_graph_neural_networks.md)**
 
@@ -116,14 +120,6 @@ item_total: 27
 
 :   This work elegantly bridges classical curvature approximation theory (KFAC) with the practical demands of task arithmetic, proposing a data-free weight disentanglement regularization method. The theoretical derivation is clear, with a coherent logical chain from representation drift regularization → Jacobian Gramian → GGN → KFAC. Experiments span multiple model scales across both vision and language domains, and the robustness analysis with respect to the $\alpha$ hyperparameter is practically valuable. Limitations include the $O(d^2)$ storage overhead of KFAC for large models and a remaining gap relative to data-dependent methods in the text domain.
 
-**[Efficient Resource-Constrained Training of Transformers via Subspace Optimization](efficient_resource-constrained_training_of_transformers_via_subspace_optimizatio.md)**
-
-:   This paper proposes WASI (Weight-Activation Subspace Iteration), which leverages the observation that parameter subspaces remain stable during fine-tuning to simultaneously compress both the weights (via SVD + Gram-Schmidt subspace iteration) and activations (via Tucker decomposition) of Transformers. Both training and inference are performed entirely within low-rank representations, achieving 62× training memory compression and 1.4× speedup on Raspberry Pi 5 with negligible accuracy loss.
-
-**[Extending Sequence Length is Not All You Need: Effective Integration of Multimodal Signals for Gene Expression Prediction](extending_sequence_length_is_not_all_you_need_effective_integration_of_multimoda.md)**
-
-:   This paper challenges the prevailing "longer is better" paradigm in gene expression prediction, demonstrating that current SSM models fundamentally rely only on proximal information. It further identifies background chromatin signals (DNase-seq/Hi-C) as confounding variables that introduce spurious correlations, and proposes the Prism framework, which applies backdoor adjustment for deconfounding—achieving state-of-the-art performance with only 2k-length sequences, surpassing methods that use 200k-length sequences.
-
 **[Hide and Find: A Distributed Adversarial Attack on Federated Graph Learning](hide_and_find_a_distributed_adversarial_attack_on_federated_graph_learning.md)**
 
 :   This paper proposes FedShift, a two-stage "hide-and-find" distributed adversarial attack framework. In the first stage, covert shifters are injected into training graphs via gentle distributional shifts. In the second stage, the trained shifter generator serves as a warm initialization for efficiently searching adversarial perturbations, which are then aggregated across multiple malicious clients to form the final adversarial examples. FedShift achieves state-of-the-art attack success rates on six large-scale datasets, evades three mainstream defense algorithms, and improves convergence speed by over 90%.
@@ -136,9 +132,13 @@ item_total: 27
 
 :   This paper revisits the foundational principles of graph contrastive learning (GCL) and identifies that node feature noise can be mitigated through structural feature aggregation derived from graph topology. Based on this insight, the authors propose a minimalist GCL model that contrasts a GCN encoder (capturing structural features) against an MLP encoder (isolating node feature noise), requiring neither data augmentation nor negative sampling. The method achieves state-of-the-art performance on heterophilic graph benchmarks while offering advantages in complexity, scalability, and robustness on homophilic graphs.
 
-**[Policy Myopia as a Mechanism of Gradual Disempowerment in Post-AGI Governance](policy_myopia_as_a_mechanism_of_gradual_disempowerment_in_post-agi_governance_ci.md)**
+**[Optimal Transport-Induced Samples against Out-of-Distribution Overconfidence](optimal_transport-induced_samples_against_out-of-distribution_overconfidence.md)**
 
-:   This paper argues that policy myopia is not an attention-allocation problem but an institutional mechanism that systematically and irreversibly strips humans of governance participation capacity in the post-AGI era — through three coupled positive feedback loops: salience capture, capability cascades, and value lock-in. Standard mitigation measures can only delay but not prevent this process.
+:   This paper leverages the geometric singularity boundaries of semi-discrete optimal transport (OT) to locate semantically ambiguous regions in latent space, generates proxy OOD samples (OTIS) near these boundaries, and applies a confidence suppression loss during training to enforce uniform predictions in structurally uncertain regions, thereby systematically mitigating OOD overconfidence in DNNs.
+
+**[Prior-based Noisy Text Data Filtering: Fast and Strong Alternative for Perplexity](prior-based_noisy_text_data_filtering_fast_and_strong_alternative_to_perplexity.md)**
+
+:   This paper proposes a text data filtering method based on token priors (token frequency statistics), using the mean and standard deviation of in-document token priors as a proxy for perplexity (PPL). The method achieves the highest average performance across 20 downstream benchmarks while being over 1000× faster than PPL-based filtering.
 
 **[Risk-Sensitive Agent Compositions](risk-sensitive_agent_compositions.md)**
 

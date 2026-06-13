@@ -2,9 +2,10 @@
 title: >-
   [Paper Note] Sample-Adaptivity Tradeoff in On-Demand Sampling
 description: >-
-  [NeurIPS 2025][Multi-distribution learning] This paper systematically studies the tradeoff between sample complexity and adaptive rounds in on-demand sampling. In the realizable setting…
+  [NeurIPS 2025][Other][Multi-distribution learning] This paper systematically studies the tradeoff between sample complexity and adaptive rounds in on-demand sampling. In the realizable setting…
 tags:
   - "NeurIPS 2025"
+  - "Other"
   - "Multi-distribution learning"
   - "sample complexity"
   - "round complexity"
@@ -177,11 +178,11 @@ This paper is the first to achieve near-optimal sample complexity with round com
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Robust Sampling for Active Statistical Inference](robust_sampling_for_active_statistical_inference.md)
-- [\[NeurIPS 2025\] One Sample is Enough to Make Conformal Prediction Robust](one_sample_is_enough_to_make_conformal_prediction_robust.md)
-- [\[NeurIPS 2025\] Structure-Aware Spectral Sparsification via Uniform Edge Sampling](structure-aware_spectral_sparsification_via_uniform_edge_sampling.md)
-- [\[ICLR 2026\] FIRE: Frobenius-Isometry Reinitialization for Balancing the Stability-Plasticity Tradeoff](../../ICLR2026/others/fire_frobenius_isometry_reinitialization.md)
-- [\[ICML 2026\] Multi-task Linear Regression without Eigenvalue Lower Bounds: Adaptivity, Robustness and Safety](../../ICML2026/others/multi-task_linear_regression_without_eigenvalue_lower_bounds_adaptivity_robustne.md)
+- [\[ICML 2026\] Multi-task Linear Regression without Eigenvalue Lower Bounds: Adaptivity, Robustness and Safety](../../ICML2026/learning_theory/multi-task_linear_regression_without_eigenvalue_lower_bounds_adaptivity_robustne.md)
+- [\[NeurIPS 2025\] Revisiting Agnostic Boosting](revisiting_agnostic_boosting.md)
+- [\[NeurIPS 2025\] Efficient Kernelized Learning in Polyhedral Games Beyond Full-Information: From Colonel Blotto to Congestion Games](efficient_kernelized_learning_in_polyhedral_games_beyond_full-information_from_c.md)
+- [\[NeurIPS 2025\] On Agnostic PAC Learning in the Small Error Regime](on_agnostic_pac_learning_in_the_small_error_regime.md)
+- [\[NeurIPS 2025\] Optimism Without Regularization: Constant Regret in Zero-Sum Games](optimism_without_regularization_constant_regret_in_zero-sum_games.md)
 
 </div>
 

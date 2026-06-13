@@ -15,7 +15,7 @@ date: 2026-05-08
 content_hash: c197ba4db5080772
 ---
 
-# Generalising Traffic Forecasting to Regions without Traffic Observations
+# GenCast: Generalizing Traffic Forecasting to Regions without Observations
 
 **Conference**: AAAI 2026
 **arXiv**: [2508.08947](https://arxiv.org/abs/2508.08947)  
@@ -23,7 +23,6 @@ content_hash: c197ba4db5080772
 **Area**: Autonomous Driving
 **Keywords**: traffic forecasting, spatial-temporal, physics-informed, graph neural networks, generalization
 
-# GenCast: Generalizing Traffic Forecasting to Regions without Observations
 
 ## TL;DR
 
@@ -160,10 +159,10 @@ GenCast variants also outperform all baselines on the solar energy NREL dataset,
 ## Related Papers
 
 - [\[AAAI 2026\] Meta Dynamic Graph for Traffic Flow Prediction](meta_dynamic_graph_for_traffic_flow_prediction.md)
+- [\[CVPR 2026\] Generalizing Visual Geometry Priors to Sparse Gaussian Occupancy Prediction](../../CVPR2026/autonomous_driving/generalizing_visual_geometry_priors_to_sparse_gaussian_occupancy_prediction.md)
 - [\[AAAI 2026\] AI-based Traffic Modeling for Network Security and Privacy: Challenges Ahead](ai-based_traffic_modeling_for_network_security_and_privacy_challenges_ahead.md)
 - [\[AAAI 2026\] RAST: A Retrieval Augmented Spatio-Temporal Framework for Traffic Prediction](rast_a_retrieval_augmented_spatio-temporal_framework_for_traffic_prediction.md)
-- [\[AAAI 2026\] TSBOW: Traffic Surveillance Benchmark for Occluded Vehicles Under Various Weather Conditions](tsbow_traffic_surveillance_benchmark_for_occluded_vehicles_under_various_weather.md)
-- [\[CVPR 2026\] C2T: LLM-Aligned Common-Sense Reward Learning for Traffic-Vehicle Coordination](../../CVPR2026/autonomous_driving/c2t_llm_traffic_coordination.md)
+- [\[ICCV 2025\] Future-Aware Interaction Network For Motion Forecasting](../../ICCV2025/autonomous_driving/future-aware_interaction_network_for_motion_forecasting.md)
 
 </div>
 

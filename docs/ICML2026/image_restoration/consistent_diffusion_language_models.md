@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Consistent Diffusion Language Models
 description: >-
-  [ICML 2026][Image Restoration][Masked Diffusion] This paper points out that discrete diffusion lack a counterpart to the probability-flow ODE in the continuous domain…
+  [ICML 2026][Image Restoration][Masked Diffusion] This paper points out that discrete diffusion lacks a continuous-domain probability-flow ODE counterpart…
 tags:
   - "ICML 2026"
   - "Image Restoration"
@@ -12,119 +12,139 @@ tags:
   - "teacher-free distillation"
   - "CDLM"
 date: 2026-05-08
-content_hash: 2d42bf4e6823fc11
+content_hash: c61f64cbc04153e5
 ---
 
 # Consistent Diffusion Language Models
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.00161](https://arxiv.org/abs/2605.00161)  
-**Code**: None (No repository disclosed in the paper)  
-**Area**: Diffusion language models / discrete generation; few-step text generation; consistency training  
+**Code**: None (repository not released in the paper)  
+**Area**: Diffusion Language Models / Discrete Generation; few-step text generation; consistency training  
 **Keywords**: Masked Diffusion, Multi-Path Discrete Consistency, posterior bridge, teacher-free distillation, CDLM
 
 ## TL;DR
-This paper points out that discrete diffusion lack a counterpart to the probability-flow ODE in the continuous domain, making consistency models difficult to implement directly. The authors propose using a **closed-form posterior bridge** as a "stochastic PF-ODE alternative" for the discrete domain. They construct a Multi-Path Discrete Consistency (MPDC) training objective, requiring the denoiser's predictions across multiple stochastic bridge paths to be consistent in expectation. This enables single-stage, teacher-free training of Consistent Diffusion Language Models (CDLM) that can generate high-quality text in 2-3 steps, achieving SOTA in unconditional/conditional text generation and up to a $32\times$ speedup over AR models.
+This paper points out that discrete diffusion lacks a continuous-domain probability-flow ODE counterpart, making direct consistency modeling infeasible. The authors propose using an **exact closed-form posterior bridge** as a "stochastic PF-ODE surrogate" in the discrete domain, constructing a Multi-Path Discrete Consistency (MPDC) training objective. This requires the denoiser's predictions to be consistent in expectation across multiple stochastic bridge paths, enabling single-stage, teacher-free training of Consistent Diffusion Language Models (CDLM) that can generate high-quality text in 2-3 steps. CDLM achieves SOTA in unconditional/conditional text generation and up to $32\times$ speedup over AR models.
 
 ## Background & Motivation
 
-**Background**: Diffusion language models (DLM, especially masked diffusion MDLM) promise sub-linear time generation via parallel token generation, bypassing the sequential bottleneck of autoregression. MDLMs have achieved parity with AR baselines on benchmarks such as LM1B and OpenWebText (Sahoo 2024, Nie 2025).
+**Background**: Diffusion Language Models (DLMs, especially masked diffusion MDLMs) promise sublinear-time generation via parallel token generation, avoiding the serial bottleneck of autoregressive (AR) models. MDLMs have matched AR baselines on benchmarks like LM1B and OpenWebText (Sahoo 2024, Nie 2025).
 
-**Limitations of Prior Work**: (i) **High-quality generation in DLMs requires hundreds of denoising steps**, which invalidates the promise of "parallel speedup"—if the number of sampling steps is of the same order as the number of AR tokens, the parallel advantage disappears; (ii) The acceleration tool in the continuous domain, **consistency models (Song 2023)**, relies on PF-ODEs to provide unique deterministic trajectories from $x_t$ to $x_0$, where the consistency loss enforces consistent model predictions along these trajectories; however, the discrete domain **lacks a sample-space PF-ODE**—no unique deterministic path exists to connect different noise levels in a categorical state space.
+**Limitations of Prior Work**: (i) **High-quality DLM generation requires hundreds of denoising steps**, undermining the promised parallel speedup—if the number of sampling steps matches AR token count, parallelism is lost; (ii) The continuous-domain acceleration tool **consistency model (Song 2023)** relies on PF-ODEs to provide a unique deterministic trajectory from $x_t$ to $x_0$, with consistency loss enforcing prediction agreement along this path. However, **no sample-space PF-ODE exists in the discrete domain**—there is no unique deterministic path connecting different noise levels in categorical state spaces.
 
-**Key Challenge**: Continuous consistency searches for paths in sample space; discrete space offers no such paths. Simply discretizing continuous consistency models is ill-defined. Consequently, existing discrete acceleration methods settle for **two-stage distillation** (training a base then distilling, e.g., SDTT, DUO+DCD) or **continuous relaxation surrogates**, deviating from the elegance of "native discrete" methods.
+**Key Challenge**: Continuous consistency seeks paths in sample space; discrete space has no such paths. Naively discretizing continuous consistency models is ill-defined, so existing discrete acceleration methods resort to **two-stage distillation** (train base then distill, e.g., SDTT, DUO+DCD) or **continuous relaxation surrogates**, both deviating from the elegance of "native discrete" approaches.
 
-**Goal**: (i) Identify an object naturally existing in discrete space that functionally corresponds to the PF-ODE; (ii) Design a single-stage, teacher-free consistency training objective based on this object; (iii) Outperform strong base models and multi-stage distillation on standard text generation benchmarks.
+**Goal**: (i) Identify a naturally existing discrete-space object functionally analogous to PF-ODE; (ii) Design a single-stage, teacher-free consistency training objective based on this object; (iii) Surpass strong base and multi-stage distillation models on standard text generation benchmarks.
 
-**Key Insight**: While discrete space lacks a "unique deterministic path," the authors observe that the **discrete diffusion framework (Austin 2021) naturally provides a family of analytical stochastic paths**. Specifically, for any $s < t$, the posterior $q(x_s \mid x_t, x_0)$ is available in closed-form for broad corruption families (e.g., masked/uniform). These bridges define a rich set of valid stochastic paths, each capable of correctly reconstructing the data in expectation.
+**Key Insight**: While discrete space lacks "unique deterministic paths," the key observation is that **the discrete diffusion framework (Austin 2021) naturally provides a family of analytic stochastic paths**—for any $s<t$, the posterior $q(x_s\mid x_t, x_0)$ is closed-form (holds for masked/uniform corruption families). These bridges define a rich family of valid stochastic paths, each reconstructing data correctly in expectation.
 
-**Core Idea**: Shift the concept of consistency from "consistency along a non-existent deterministic ODE" to "consistency in expectation across all valid stochastic bridges," i.e., **Multi-Path Discrete Consistency (MPDC)**. Few-step generation is then a direct consequence of path-equivalence rather than an approximation.
+**Core Idea**: Shift consistency from "agreement along a nonexistent deterministic ODE" to "agreement in expectation across all valid stochastic bridges," i.e., **Multi-Path Discrete Consistency (MPDC)**—few-step generation is not an approximation but a direct consequence of path-equivalence.
 
 ## Method
 
 ### Overall Architecture
-Foundational setup: Discrete diffusion utilizes a forward Markov chain $q(x_t \mid x_0) = \prod_i \mathrm{Cat}(x_t^i; x_0^i Q_{1:t})$, where $Q_t$ is a row-stochastic transition matrix. The stationary distribution for masked diffusion is concentrated on the `[MASK]` token.
+Basic setup: Discrete diffusion uses a forward Markov chain $q(x_t\mid x_0) = \prod_i \mathrm{Cat}(x_t^i; x_0^i Q_{1:t})$, where $Q_t$ is a row-stochastic transition matrix; the stationary distribution of masked diffusion concentrates on the `[MASK]` token.
 
-**Key Lemma (3.1)**: For any $0 \le s < t$, the analytical posterior bridge for a single token position is $q(x_s \mid x_t, x_0)$, provided in closed-form (applicable to both masked and uniform corruption).
+**Key Lemma (3.1)**: For any $0\le s<t$, the analytic posterior bridge for a single token position is $q(x_s\mid x_t, x_0)$, given in closed-form (applies to both masked and uniform corruption).
 
-CDLM trains a time-conditioned denoiser $f_\theta(x_t, t)$, enforcing that its prediction at $(x_t, t)$ is consistent with its prediction at $(x_s, s)$, where $x_s \sim q(x_s \mid x_t, x_0)$ is an intermediate state sampled via the closed-form bridge. This is equivalent to saying: predicting $x_0$ directly from $x_t$ $\equiv$ jumping to $x_s$ via the bridge and then predicting $x_0$ from $x_s$. By training on long and short paths simultaneously, the model learns reliable long-range transitions.
+CDLM trains a time-conditioned denoiser $f_\theta(x_t, t)$, enforcing that its prediction at $(x_t, t)$ matches that at $(x_s, s)$, where $x_s\sim q(x_s\mid x_t, x_0)$ is an "intermediate jump" state sampled via the closed-form bridge. This is equivalent to: predicting $x_0$ directly from $x_t$ ≡ jumping to $x_s$ via the bridge, then predicting $x_0$ from $x_s$—training on both long and short paths enables the model to learn reliable long-range transitions.
 
 ### Key Designs
 
-1.  **Multi-Path Discrete Consistency (MPDC, Core Principle)**:
-    *   **Function**: Replaces the failed assumption of "consistency along PF-ODE" used in continuous consistency, defining an executable consistency objective for the discrete domain.
-    *   **Mechanism**: Starting from a triplet $(x_0, t, s)$ where $x_0 \sim p_{\text{data}}$, $x_t \sim q(x_t \mid x_0)$, and $x_s \sim q(x_s \mid x_t, x_0)$, the MPDC loss requires $f_\theta(x_t, t)$ and $f_\theta(x_s, s)$ to be consistent in expectation (matching in distribution rather than point-to-point). This distributional consistency corresponds to "path equivalence from a Bayesian perspective"—any valid bridge is a legitimate sufficient statistic for the target, so the denoiser's prediction distributions at the bridge's start and end must be equal.
-    *   **Design Motivation**: In a world without unique paths, "point-to-point consistency along a path" is ill-defined. Switching to "distributional consistency across all paths" is a mathematically sound relaxation that fully utilizes the analytical bridge families inherent in discrete diffusion. **Few-step generation emerges naturally** because both long paths (multi-step) and short paths (one-step jumps) are covered during training, eliminating the need for multi-stage distillation to learn short paths.
+1. **Multi-Path Discrete Consistency (MPDC, Core Principle)**:
 
-2.  **Teacher-free Single-stage Training + Closed-form Bridge Sampling**:
-    *   **Function**: Achieves few-step generation capabilities by training from scratch without a teacher model.
-    *   **Mechanism**: For each batch, $x_0 \sim p_{\text{data}}$ is sampled, and $0 \le s < t \le 1$ are drawn randomly. States $x_s$ and $x_t$ are sampled directly using the closed-form bridge $q(x_s \mid x_t, x_0)$, and $f_\theta$ is updated with the MPDC loss. Since the bridge is analytical, **the sampling cost is merely a few categorical draws**, requiring no extra neural network forward passes. This differs from two-stage methods like SDTT or DUO+DCD, which must train a base model first to use as a teacher.
-    *   **Design Motivation**: Continuous consistency models often use EMA self-teachers for stability. While these tricks can be added, CDLM proves that **even simple self-prediction loss can converge stably** under the MPDC framework because the closed-form bridge provides an unbiased target direction without needing external Monte Carlo estimation.
+    - **Function**: Replaces the failed assumption of "agreement along PF-ODE" in continuous consistency, defining an executable consistency objective in the discrete domain.
+    - **Mechanism**: For a triplet $(x_0, t, s)$—$x_0\sim p_{\text{data}}$, $x_t\sim q(x_t\mid x_0)$, $x_s\sim q(x_s\mid x_t, x_0)$. The MPDC loss requires $f_\theta(x_t, t)$ and $f_\theta(x_s, s)$ to be consistent in expectation (distributional matching, not pointwise). This distributional consistency corresponds to "Bayesian path equivalence"—any valid bridge is a sufficient statistic for the target, so the denoiser's predictive distributions at the bridge's start and end must be equal.
+    - **Design Motivation**: In a world without unique paths, "pointwise agreement along a path" is ill-defined; "distributional agreement across all paths" is a mathematically correct relaxation that fully leverages the analytic bridge family inherent to discrete diffusion. **Few-step generation emerges naturally**—since both long (multi-step) and short (single-jump) paths are covered in training, the model does not require multi-stage distillation to learn short paths.
 
-3.  **Unified Perspective + Universal Corruption Support**:
-    *   **Function**: The CDLM framework reduces to various existing methods under different corruption and hyperparameter limits, acting as a "mother model."
-    *   **Mechanism**: The authors formally argue that the following are special cases or approximations: (i) standard masked diffusion is the $t = s + \Delta t$ limit; (ii) continuous consistency is the PF-ODE limit; (iii) progressive distillation/shortcut models are specific bridge couplings; (iv) two-stage discrete distillation uses a learned teacher to replace the closed-form bridge. CDLM is not limited to masked diffusion—any corruption family with a closed-form posterior bridge is applicable.
-    *   **Design Motivation**: Providing a unifying lens relates disparate baselines, serving as both a theoretical contribution and practical guidance—showing the community that specialized distillation pipelines for masks are unnecessary as all methods are different projections of the same principle.
+2. **Teacher-free Single-stage Training + Closed-form Bridge Sampling**:
+
+    - **Function**: No teacher model required; few-step generation is learned from scratch.
+    - **Mechanism**: For each batch, sample $x_0\sim p_{\text{data}}$, randomly select $0\le s<t\le 1$, sample $x_s, x_t$ via the closed-form bridge $q(x_s\mid x_t, x_0)$, then update $f_\theta$ using the MPDC loss. Since the bridge is analytic, **sampling only requires a few categorical draws**, with no extra neural forward passes. This contrasts with SDTT / DUO+DCD two-stage methods, which require a trained base as teacher for distillation; CDLM skips teacher training entirely.
+    - **Design Motivation**: Consistency models in the continuous domain often use EMA self-teachers or independent teachers for stability; such tricks can be added in the discrete domain, but CDLM shows that **even a simple self-prediction loss converges stably under MPDC**, as the closed-form bridge provides an unbiased target direction, obviating external Monte Carlo estimation.
+
+3. **Unified Perspective on Existing Methods + General Corruption Support**:
+
+    - **Function**: The CDLM framework reduces to various existing methods under different corruption and hyperparameter limits, establishing it as a "parent model."
+    - **Mechanism**: The authors formally show that the following are special cases or approximations of CDLM—(i) standard masked diffusion is the $t=s+\Delta t$ limit; (ii) continuous consistency is the PF-ODE limit (continuous relaxation); (iii) progressive distillation/shortcut models are rough couplings of the bridge; (iv) two-stage discrete distillation (SDTT, DUO+DCD) replaces the closed-form bridge with a learned teacher. CDLM is not limited to masked diffusion—any corruption family (uniform, edit-based, etc.) with a closed-form posterior bridge is supported.
+    - **Design Motivation**: Using a unifying lens to connect scattered baselines is both a theoretical and practical contribution—informing the community that "there is no need to design specialized distillation for masks; all methods are projections of the same principle."
 
 ### Loss & Training
-*   **Main Loss**: MPDC consistency loss, requiring $f_\theta(x_t, t) \approx f_\theta(x_s, s)$ in expectation, implemented via cross-entropy or KL divergence.
-*   **Training Data**: Standard text corpora (OpenWebText, LM1B).
-*   **Key**: **Single-stage, teacher-free**, without EMA, teacher checkpoints, or multi-stage curricula.
-*   Supports both Masked CDLM (MCDLM) and Uniform CDLM (UCDLM); the MCDLM-PPLOptimized variant further optimizes perplexity.
+
+- **Main Loss**: MPDC consistency loss, requiring $f_\theta(x_t, t) \approx f_\theta(x_s, s)$ in expectation; implemented as cross-entropy or KL (standard consistency forms, not detailed in the method section).
+- **Training Data**: Standard text corpora (OpenWebText, LM1B scale).
+- **Key**: **Single-stage, teacher-free**; no EMA, no teacher checkpoint, no multi-stage curriculum.
+- Supports both Masked CDLM (MCDLM) and Uniform CDLM (UCDLM); the MCDLM-PPLOptimized variant further optimizes perplexity.
 
 ## Key Experimental Results
 
-### Main Results (Based on Unconditional Generation Perplexity vs. Steps)
+### Main Results (Based on Fig. 2: unconditional generation perplexity vs steps)
 
-| Model Category | Representative Model | Key Observations |
-| :--- | :--- | :--- |
+| Model Type | Representative Model | Key Phenomenon |
+|------------|---------------------|---------------|
 | Base MDLM | MDLM (Sahoo 2024) | Requires hundreds of steps for reasonable perplexity |
-| Base DUO | DUO (Sahoo 2025) | Comparable to MDLM |
-| Distilled MDLM | SDTT (Deschenaux 2025) | Multi-stage, performs well at low step counts |
-| Distilled DUO | DUO+DCD (Sahoo 2025) | Multi-stage, low entropy (3.9) under greedy sampler suggests poor diversity |
-| **Base CDLM (Ours)** | **MCDLM-PPLOptimized** | **SOTA base model across all steps; beats distilled models at most step counts** while maintaining entropy |
-| **Distilled CDLM** | **Distilled MCDLM** | SOTA among distilled models |
+| Base DUO | DUO (Sahoo 2025) | Similar to MDLM |
+| Distilled MDLM | SDTT (Deschenaux 2025) | Multi-stage, performs well at few steps |
+| Distilled DUO | DUO+DCD (Sahoo 2025) | Multi-stage, low entropy (3.9) under greedy sampler indicates poor diversity |
+| **Base CDLM (Ours)** | **MCDLM-PPLOptimized** | **Base model is SOTA at all steps, beats distilled models at most steps** while maintaining similar entropy |
+| **Distilled CDLM** | **distilled MCDLM** | SOTA among distilled models |
 
 ### Ablation Study
 
-| Configuration | Key Effect | Description |
-| :--- | :--- | :--- |
-| 2D moons toy | MDLM: 10+ steps; CDLM: 2-3 steps | Visualizes few-step advantage |
-| MCDLM vs UCDLM | Both effective; MCDLM stronger with PPLOptimized | Validates framework universality across corruptions |
-| MCDLM-PPLOptimized vs SDTT / DUO+DCD | Outperforms distilled in most steps | Proves single-stage can beat multi-stage |
-| Distilled CDLM | Stronger than distilled baselines + higher diversity | Distillation is stackable but not mandatory |
-| Relative AR speedup | Up to $32\times$ speedup | Realizes the parallel promise of DLMs |
+| Configuration | Key Effect | Notes |
+|---------------|------------|-------|
+| 2D moons toy (Fig. 1) | MDLM needs 10+ steps, CDLM only 2-3 | Intuitive demonstration of few-step advantage |
+| MCDLM vs UCDLM | Both effective, MCDLM stronger under PPLOptimized | Validates framework's generality across corruption types |
+| MCDLM-PPLOptimized vs SDTT / DUO+DCD | Beats distilled at most steps | Proves single-stage can outperform multi-stage |
+| Distilled CDLM | Stronger than distilled baselines + higher diversity | Distillation is additive but not essential |
+| Relative AR speedup | Up to $32\times$ | Delivers on DLM's parallel promise |
 
 ### Key Findings
-*   **CDLM base can beat distilled baselines**: MCDLM-PPLOptimized, a single-stage teacher-free base model, outperforms multi-stage distillation models like SDTT and DUO+DCD in most sampling steps, showing that distillation is not a prerequisite for few-step generation; the correct training objective is key.
-*   **DUO+DCD entropy anomaly**: Entropy under the greedy sampler is only 3.9, significantly lower than other models, implying severe diversity collapse; CDLM maintains similar entropy with lower perplexity, proving acceleration does not sacrifice diversity.
-*   **Few-step generation is an emergent property**: Because MPDC sees both long and short paths during training, the model naturally learns long-range transitions, unlike distillation which is "forced compression after training."
-*   **Unified perspective offers design freedom**: The framework is universal across corruption families, allowing future researchers to apply MPDC to new corruptions like edit-based or Markov chain corruptions.
-*   **Up to $32\times$ over AR baseline**: The distilled version of CDLM achieves a 32x generation speedup over AR models while maintaining quality—marking the first time DLMs have matched or exceeded AR in both efficiency and quality.
+- **CDLM base can beat distilled baselines**: The single-stage, teacher-free MCDLM-PPLOptimized base model outperforms multi-stage distilled models like SDTT and DUO+DCD at most sampling steps—showing distillation is not necessary for few-step generation; the correct training objective is key.
+- **DUO+DCD entropy anomaly**: Entropy under greedy sampling is only 3.9, much lower than other models, indicating severe diversity collapse; CDLM maintains similar entropy with lower perplexity, proving acceleration does not sacrifice diversity.
+- **Few-step generation is an emergent property**: MPDC exposes the model to both long and short paths during training, enabling natural learning of long-range transitions; unlike distillation, which "compresses" after training.
+- **Unified perspective increases design freedom**: MCDLM/UCDLM demonstrate framework generality across corruption families; future work can directly apply MPDC to new corruptions (e.g., edit-based, Markov chain corruption).
+- **Up to $32\times$ over AR baseline**: With maintained quality, distilled CDLM achieves 32x generation speedup over AR models—the first time DLMs match or surpass AR in both efficiency and quality.
 
 ## Highlights & Insights
-*   **"If you can't find a deterministic path, use an analytical stochastic path family" is profound methodology**: Many ML problems (e.g., discrete normalizing flows) face the dilemma of "解析 (analytical) in continuous, failure in discrete." CDLM's strategy—finding a **naturally occurring analytical object in the discrete domain** as a replacement—has cross-domain inspiration.
-*   **Posterior bridge is an overlooked gold mine**: Austin 2021 provided the closed-form bridge long ago, but the community only used it for ELBO derivations. This paper is the first to use it as a core sampling tool for training objectives.
-*   **Distributional consistency vs. pointwise consistency**: While continuous domains favor pointwise (along one ODE path), this paper generalizes it to distributional (in expectation over a path family), a concept that might inspire improvements in continuous consistency models.
-*   **Engineering value of single-stage, teacher-free training**: Significantly simplifies the training pipeline—no need to train a base then distill, maintain teacher checkpoints, or tune EMA decay.
+- **"If no deterministic path exists, use an analytic stochastic path family" is a profound methodological guide**: Many ML problems (e.g., discrete normalizing flows, graph diffusion) face the awkwardness of "continuous version is tractable, discrete version fails"; CDLM's strategy—finding a **naturally analytic object in the discrete domain** as a surrogate for the continuous version—is broadly inspiring.
+- **Posterior bridge is an overlooked goldmine**: Austin 2021 provided the closed-form bridge, but the community only used it for ELBO derivations; this paper is the first to use it as the "core sampling tool for training objectives." This "re-examination of known formulas for new purposes" is an elegant research paradigm.
+- **Distributional vs pointwise consistency**: While the continuous domain is accustomed to pointwise (along a single ODE path), this work generalizes to distributional (expectation over path families), which may inspire improvements in continuous-domain consistency.
+- **Single-stage, teacher-free engineering value**: The training pipeline is greatly simplified—no need to train base then distill, no teacher checkpoint, no EMA tuning—beneficial for open-source reproducibility and industrial deployment.
+- **Unified perspective as theoretical contribution**: Framing MDLM / continuous consistency / progressive distillation / SDTT / DUO+DCD as MPDC special cases is both theoretical clarification and a roadmap—guiding the community to "stop inventing scattered acceleration tricks."
 
 ## Limitations & Future Work
-*   **Lack of detailed ablation figures**: The paper mainly presents the framework; detailed perplexity numbers (e.g., quality vs. steps vs. MAUVE) on LM1B/OpenWebText should be detailed in the main experiments, but aren't fully covered in the cache.
-*   **Dependency on closed-form bridges**: While masked/uniform are supported, closed-form solutions for more complex corruptions (e.g., edit distance or structured corruption) may not exist, limiting the framework's scope.
-*   **Diversity-quality trade-off**: Although CDLM's entropy is balanced, the impact of sampling strategies (greedy vs. nucleus) on CDLM itself requires further discussion.
-*   **Semantic quality comparison with AR**: While $32\times$ speedup is attractive, the quality in downstream tasks (e.g., reasoning) compared to AR is not fully covered in the summary.
+- **No detailed ablation numbers provided**: The abstract and method sections mainly present the framework; specific perplexity numbers (e.g., quality vs steps vs MAUVE tables) for LM1B/OpenWebText are likely in the main experiments section, but the cache does not cover these, making "all-steps SOTA" hard to independently verify.
+- **Depends on corruption's closed-form bridge**: While masked/uniform are supported, more general corruptions (e.g., edit distance-based, structured corruption) may lack closed-form bridges, limiting framework applicability.
+- **DUO+DCD's low entropy under greedy hints at unresolved diversity-quality trade-off**: Although CDLM's entropy is more balanced, the paper does not fully discuss the impact of sampling strategies (greedy vs nucleus) on CDLM itself.
+- **No semantic quality comparison with AR baseline**: The 32× speedup is attractive, but downstream task quality (e.g., QA, reasoning) compared to AR is not mentioned in the abstract/intro; possibly covered later in the main text, but not in the cache.
+- **Training compute cost unreported**: While single-stage simplifies the pipeline, MPDC loss requires exposure to both short and long paths—whether this increases wall-clock training time is unclear.
 
 ## Related Work & Insights
-*   **vs MDLM (Sahoo 2024)**: CDLM's base model dominates MDLM, proving the MPDC loss is superior to the standard MDLM ELBO in sampling efficiency.
-*   **vs Continuous Consistency Models (Song 2023)**: Directly corresponds in thought but solves the "no PF-ODE" problem in discrete domains.
-*   **vs SDTT / DUO+DCD**: CDLM is a single-stage counterpart, proving distillation is an approximation of MPDC; CDLM can still be distilled further.
-*   **vs AR Language Models**: Distilled CDLM achieves 32x speedup, representing one of the first DLM works with a real wall-clock advantage.
+- **vs MDLM (Sahoo 2024)**: CDLM's base model dominates MDLM after training, proving MPDC loss is superior to standard MDLM ELBO for sampling efficiency.
+- **vs Continuous Consistency Models (Song 2023)**: The idea is directly analogous, but solves the fundamental "no PF-ODE in discrete domain" problem; this work essentially replicates Song 2023's success in the discrete domain.
+- **vs SDTT / DUO+DCD (two-stage distillation)**: CDLM is the single-stage counterpart, showing distillation is an approximation of MPDC; CDLM can also be distilled further to reduce steps.
+- **vs Progressive Distillation / Shortcut Models**: These are continuous-domain acceleration tricks; CDLM reinterprets them as special cases of bridge consistency.
+- **vs AR Language Models**: Distilled CDLM achieves 32× speedup, making DLMs competitive in wall-clock time for the first time.
+- **Insights**: The MPDC approach can transfer to graph diffusion, structured prediction, sequence labeling, or any discrete generation scenario with a closed-form posterior but no deterministic path.
 
 ## Rating
-*   Novelty: ⭐⭐⭐⭐⭐ Using a stochastic bridge family to replace the non-existent PF-ODE for consistency is a genuine conceptual innovation.
-*   Experimental Thoroughness: ⭐⭐⭐ Validated SOTA on unconditional/conditional generation; however, detailed numerical tables in the cache are limited.
-*   Writing Quality: ⭐⭐⭐⭐⭐ Clearly explains why discrete consistency is difficult and unifies disparate methods effectively.
-*   Value: ⭐⭐⭐⭐⭐ For the first time, a teacher-free single-stage DLM suppresses AR and multi-stage distillation in sampling efficiency; the universal framework will likely serve as a long-term baseline.
+- Novelty: ⭐⭐⭐⭐⭐ "Replacing the nonexistent PF-ODE with a stochastic bridge family for consistency" is a true conceptual innovation—elegant in theory, clear in method, practical in engineering.
+- Experimental Thoroughness: ⭐⭐⭐ SOTA demonstrated in unconditional/conditional text generation, ablations across base/distilled, covers both MCDLM/UCDLM priors; but few detailed tables in the visible cache, and extended evaluations (e.g., zero-shot perplexity across domains) are not covered.
+- Writing Quality: ⭐⭐⭐⭐⭐ The introduction thoroughly explains "why discrete consistency is hard," and the unified perspective section brings together scattered community methods—extremely readable.
+- Value: ⭐⭐⭐⭐⭐ First to enable single-stage, teacher-free DLMs to surpass both AR and multi-stage distillation in sampling efficiency—a key step toward practical DLMs; the framework is general and likely to become a long-term baseline.
+
+## Related Papers
+
+- [\[ICML 2026\] Coevolutionary Continuous Discrete Diffusion: Make Your Diffusion Language Model a Latent Reasoner](coevolutionary_continuous_discrete_diffusion_make_your_diffusion_language_model_.md)
+- [\[ICML 2026\] CoCoEdit: Content-Consistent Image Editing via Region Regularized Reinforcement Learning](cocoedit_content-consistent_image_editing_via_region_regularized_reinforcement_l.md)
+- [\[NeurIPS 2025\] Encoder-Decoder Diffusion Language Models for Efficient Training and Inference](../../NeurIPS2025/image_generation/encoder-decoder_diffusion_language_models_for_efficient_training_and_inference.md)
+- [\[CVPR 2025\] Consistent and Controllable Image Animation with Motion Diffusion Models](../../CVPR2025/image_generation/consistent_and_controllable_image_animation_with_motion_diffusion_models.md)
+- [\[AAAI 2026\] DiffA: Large Language Diffusion Models Can Listen and Understand](../../AAAI2026/image_generation/diffa_large_language_diffusion_models_can_listen_and_understand.md)
+
+</div>
+
+<!-- RELATED:END -->
 
 <!-- RELATED:START -->
 
@@ -136,7 +156,7 @@ CDLM trains a time-conditioned denoiser $f_\theta(x_t, t)$, enforcing that its p
 - [\[ICLR 2026\] Activation Steering for Masked Diffusion Language Models](../../ICLR2026/image_restoration/activation_steering_for_masked_diffusion_language_models.md)
 - [\[ICML 2026\] Early Decisions Matter: Proximity Bias and Initial Trajectory Shaping in Non-Autoregressive Diffusion Language Models](early_decisions_matter_proximity_bias_and_initial_trajectory_shaping_in_non-auto.md)
 - [\[ICML 2026\] Coevolutionary Continuous Discrete Diffusion: Make Your Diffusion Language Model a Latent Reasoner](coevolutionary_continuous_discrete_diffusion_make_your_diffusion_language_model_.md)
-- [\[ICML 2026\] Image Restoration via Diffusion Models with Dynamic Resolution](image_restoration_via_diffusion_models_with_dynamic_resolution.md)
+- [\[NeurIPS 2025\] Encoder-Decoder Diffusion Language Models for Efficient Training and Inference](../../NeurIPS2025/image_restoration/encoder-decoder_diffusion_language_models_for_efficient_training_and_inference.md)
 
 </div>
 

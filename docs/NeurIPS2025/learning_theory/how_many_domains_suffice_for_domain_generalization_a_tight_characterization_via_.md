@@ -2,9 +2,10 @@
 title: >-
   [Paper Note] How Many Domains Suffice for Domain Generalization? A Tight Characterization via the Domain Shattering Dimension
 description: >-
-  [NeurIPS 2025][Domain Generalization] This paper introduces the *Domain Shattering Dimension* (Gdim), a novel combinatorial measure that tightly characterizes the number of domains required for domain generalization (i.e…
+  [NeurIPS 2025][Learning Theory / Domain Generalization][Domain Generalization] This paper introduces the *Domain Shattering Dimension* (Gdim), a novel combinatorial measure that tightly characterizes the number of domain…
 tags:
   - "NeurIPS 2025"
+  - "Learning Theory / Domain Generalization"
   - "Domain Generalization"
   - "Domain Shattering Dimension"
   - "Sample Complexity"
@@ -135,11 +136,11 @@ This is a purely theoretical work. The core theoretical results are summarized a
 
 ## Related Papers
 
-- [\[ICCV 2025\] Adversarial Data Augmentation for Single Domain Generalization via Lyapunov Exponents](../../ICCV2025/others/adversarial_data_augmentation_for_single_domain_generalization_via_lyapunov_expo.md)
 - [\[NeurIPS 2025\] The Parameterized Complexity of Computing the VC-Dimension](the_parameterized_complexity_of_computing_the_vc-dimension.md)
-- [\[NeurIPS 2025\] A Generalized Label Shift Perspective for Cross-Domain Gaze Estimation](a_generalized_label_shift_perspective_for_crossdomain_gaze_e.md)
-- [\[NeurIPS 2025\] Tight Bounds On the Distortion of Randomized and Deterministic Distributed Voting](tight_bounds_on_the_distortion_of_randomized_and_deterministic_distributed_votin.md)
-- [\[NeurIPS 2025\] Impact of Layer Norm on Memorization and Generalization in Transformers](impact_of_layer_norm_on_memorization_and_generalization_in_transformers.md)
+- [\[ICML 2026\] Semi-Supervised Noise Adaptation: Transferring Knowledge from Noise Domain](../../ICML2026/learning_theory/semi-supervised_noise_adaptation_transferring_knowledge_from_noise_domain.md)
+- [\[NeurIPS 2025\] On Agnostic PAC Learning in the Small Error Regime](on_agnostic_pac_learning_in_the_small_error_regime.md)
+- [\[AAAI 2026\] Generalizing Analogical Inference from Boolean to Continuous Domains](../../AAAI2026/learning_theory/generalizing_analogical_inference_from_boolean_to_continuous_domains.md)
+- [\[NeurIPS 2025\] Product Distribution Learning with Imperfect Advice](product_distribution_learning_with_imperfect_advice.md)
 
 </div>
 

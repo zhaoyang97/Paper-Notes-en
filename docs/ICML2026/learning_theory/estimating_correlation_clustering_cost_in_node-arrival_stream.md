@@ -2,9 +2,10 @@
 title: >-
   [Paper Note] Estimating Correlation Clustering Cost in Node-Arrival Stream
 description: >-
-  [ICML 2026][Correlation Clustering] This paper investigates the approximate estimation of correlation clustering costs under the "node-arrival" streaming model. The authors propose the C4Approx algorithm…
+  [ICML 2026][Algorithmic Theory / Data Stream Algorithms / Graph Clustering][Correlation Clustering] This paper investigates the approximate estimation of correlation clustering costs under the "node-arrival" streaming mo…
 tags:
   - "ICML 2026"
+  - "Algorithmic Theory / Data Stream Algorithms / Graph Clustering"
   - "Correlation Clustering"
   - "Node-Arrival Stream"
   - "Sublinear Space"
@@ -123,10 +124,10 @@ The authors compare C4Approx with Pivot, PrunedPivot, and the algorithm by Assad
 ## Related Papers
 
 - [\[ICML 2026\] Simple Algorithms for Bad Triangle Transversals with Applications to Correlation Clustering](simple_algorithms_for_bad_triangle_transversals_with_applications_to_correlation.md)
-- [\[NeurIPS 2025\] Learning-Augmented Streaming Algorithms for Correlation Clustering](../../NeurIPS2025/others/learning-augmented_streaming_algorithms_for_correlation_clustering.md)
-- [\[NeurIPS 2025\] Improved Approximation Algorithms for Chromatic and Pseudometric-Weighted Correlation Clustering](../../NeurIPS2025/others/improved_approximation_algorithms_for_chromatic_and_pseudometric-weighted_correl.md)
-- [\[ICML 2026\] Riemannian Networks over Full-Rank Correlation Matrices](riemannian_networks_over_full-rank_correlation_matrices.md)
-- [\[ICML 2026\] Variable Clustering via Distributionally Robust Nodewise Regression](variable_clustering_via_distributionally_robust_nodewise_regression.md)
+- [\[NeurIPS 2025\] Learning-Augmented Streaming Algorithms for Correlation Clustering](../../NeurIPS2025/learning_theory/learning-augmented_streaming_algorithms_for_correlation_clustering.md)
+- [\[NeurIPS 2025\] Improved Approximation Algorithms for Chromatic and Pseudometric-Weighted Correlation Clustering](../../NeurIPS2025/learning_theory/improved_approximation_algorithms_for_chromatic_and_pseudometric-weighted_correl.md)
+- [\[ICML 2026\] Correcting Split Selection in Online Decision Trees via Anytime-Valid Inference](correcting_split_selection_in_online_decision_trees_via_anytime-valid_inference.md)
+- [\[ICML 2026\] MMD-Balls as Credal Sets: A PAC-Bayesian Framework for Epistemic Uncertainty in Test-Time Adaptation](mmd-balls_as_credal_sets_a_pac-bayesian_framework_for_epistemic_uncertainty_in_t.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] BarcodeMamba+: Advancing State-Space Models for Fungal Biodiversity Research
 description: >-
-  [NeurIPS 2025][Computational Biology][DNA barcoding] BarcodeMamba+ is a foundation model for fungal DNA barcode classification—built on a state-space model architecture…
+  [NeurIPS 2025][Computational Biology][DNA barcoding] BarcodeMamba+ is an SSM-based foundation model for fungal ITS DNA barcode classification. By adopting a pretrain-then-finetune paradigm to leverage large-scale unlabel…
 tags:
   - "NeurIPS 2025"
   - "Computational Biology"
@@ -145,58 +145,6 @@ Pretraining yields more pronounced gains under k-mer tokenization (77.0% → 81.
 - Value: ⭐⭐⭐⭐ Offers practical utility for biodiversity research with open-source code.
 
 ---
-
-# BarcodeMamba+: Advancing State-Space Models for Fungal Biodiversity Research
-
-**Conference**: NeurIPS 2025
-**arXiv**: [2512.15931](https://arxiv.org/abs/2512.15931)  
-**Code**: [GitHub](https://github.com/bioscan-ml/BarcodeMamba)  
-**Area**: Bioinformatics / Genomics
-**Keywords**: DNA barcoding, fungal taxonomy, state-space models, foundation models, hierarchical classification
-
-## TL;DR
-
-BarcodeMamba+ is a foundation model for fungal DNA barcode classification—built on a state-space model architecture, adopting a pretrain-then-finetune paradigm to leverage partially labeled data, and incorporating hierarchical label smoothing, weighted loss, and multi-head outputs to address fungal classification challenges (93% of specimens lack species-level labels). It surpasses existing methods across all taxonomic ranks.
-
-## Background & Motivation
-
-**Background**: DNA barcoding is foundational to automated biodiversity monitoring, but fungal classification is highly challenging (93% of specimens lack species-level annotations; severe long-tail distribution).
-
-**Limitations of Prior Work**: Traditional methods such as BLAST are slow and generalize poorly; supervised learning struggles with extremely sparse annotations.
-
-**Key Insight**: Pretraining a Mamba-based (efficient SSM) foundation model to exploit unlabeled data.
-
-**Core Idea**: SSM pretraining + hierarchical classification enhancements = a powerful tool for fungal classification under data-sparse conditions.
-
-## Method
-
-### Key Designs
-
-1. **Mamba Architecture Pretraining**: Self-supervised pretraining on large-scale unlabeled/partially labeled DNA sequences.
-2. **Hierarchical Label Smoothing**: Exploits the structural information of the taxonomic hierarchy (phylum / class / order / family / genus / species).
-3. **Weighted Loss**: Addresses long-tail class distribution.
-4. **Multi-Head Outputs**: One classification head per taxonomic rank.
-
-## Key Experimental Results
-
-Outperforms BLAST, RDP, and conventional supervised methods across all taxonomic ranks on the fungal classification benchmark.
-
-## Highlights & Insights
-
-- The **pretrain-then-finetune paradigm** is particularly effective in data-sparse genomics settings.
-- The approach is extensible to DNA barcode classification of other taxonomic groups.
-
-## Limitations & Future Work
-
-- Validated only on the fungal ITS region.
-- No comparison against protein language models (e.g., ESM).
-
-## Rating
-
-- Novelty: ⭐⭐⭐ Applying Mamba to DNA classification is well-motivated but not a breakthrough.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive cross-rank taxonomic comparisons.
-- Writing Quality: ⭐⭐⭐⭐ Clear.
-- Value: ⭐⭐⭐⭐ Offers practical utility for biodiversity research.
 
 <!-- RELATED:START -->
 

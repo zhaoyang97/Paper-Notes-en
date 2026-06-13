@@ -135,8 +135,8 @@ The trajectory objective is $J(\pi)=\mathbb E_\pi[\sum_{t\geq 1}\gamma^{t-1}\Del
 - [\[ICML 2026\] Active Budget Allocation for Efficient Scaling Law Estimation via Surrogate-Guided Pruning](active_budget_allocation_for_efficient_scaling_law_estimation_via_surrogate-guid.md)
 - [\[ICML 2026\] End-to-End Compression for Tabular Foundation Models](end-to-end_compression_for_tabular_foundation_models.md)
 - [\[ICML 2026\] Entropy-Aware On-Policy Distillation of Language Models](entropy-aware_on-policy_distillation_of_language_models.md)
-- [\[ICML 2026\] Resting Neurons, Active Insights: Robustify Activation Sparsity for Large Language Models](resting_neurons_active_insights_robustify_activation_sparsity_for_large_language.md)
 - [\[ICML 2026\] Advantage Collapse in Group Relative Policy Optimization: Diagnosis and Mitigation](advantage_collapse_in_group_relative_policy_optimization_diagnosis_and_mitigatio.md)
+- [\[ICML 2026\] IDLM: Inverse-distilled Diffusion Language Models](idlm_inverse-distilled_diffusion_language_models.md)
 
 </div>
 

@@ -1,8 +1,8 @@
 ---
 title: >-
-  AAAI2026 LLM Agent Papers · 46 Notes
+  AAAI2026 LLM Agent Papers · 33 Notes
 description: >-
-  46 AAAI2026 papers in the LLM Agent area, covering Agents, LLM, Reasoning, Alignment/RLHF, Multimodal/VLM, Adversarial Robustness and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  33 AAAI2026 papers in the LLM Agent area, covering Agents, LLM, Reasoning, Adversarial Robustness, Alignment/RLHF, Personalized Generation and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "AAAI2026"
   - "LLM Agent"
@@ -11,26 +11,18 @@ tags:
   - "Agents"
   - "LLM"
   - "Reasoning"
-  - "Alignment/RLHF"
-  - "Multimodal/VLM"
   - "Adversarial Robustness"
+  - "Alignment/RLHF"
+  - "Personalized Generation"
 item_list:
   - u: "a2flow_automating_agentic_workflow_generation_via_self-adaptive_abstraction_oper/"
     t: "A2Flow: Automating Agentic Workflow Generation via Self-Adaptive Abstraction Operators"
-  - u: "a_multi-agent_conversational_bandit_approach_to_online_evaluation_and_selection_/"
-    t: "A Multi-Agent Conversational Bandit Approach to Online Evaluation and Selection of User-Aligned LLM Responses"
-  - u: "a_multi-agent_llm_framework_for_multi-domain_low-resource_in-context_ner_via_kno/"
-    t: "KDR-Agent: A Multi-Agent LLM Framework for Multi-Domain Low-Resource In-Context NER via Knowledge Retrieval"
   - u: "agent-sama_state-aware_mobile_assistant/"
     t: "Agent-SAMA: State-Aware Mobile Assistant"
   - u: "agentswift_efficient_llm_agent_design_via_value-guided_hierarchical_search/"
     t: "AgentSwift: Efficient LLM Agent Design via Value-guided Hierarchical Search"
   - u: "ams-io-bench_and_ams-io-agent_benchmarking_and_structured_re/"
     t: "AMS-IO-Bench and AMS-IO-Agent: Benchmarking and Structured Reasoning for Analog and Mixed-Signal Integrated Circuit Input/Output Design"
-  - u: "aquasentinel_next-generation_ai_system_integrating_sensor_ne/"
-    t: "AquaSentinel: Next-Generation AI System Integrating Sensor Networks for Urban Underground Water Pipeline Anomaly Detection via Collaborative MoE-LLM Agent Architecture"
-  - u: "arcane_a_multi-agent_framework_for_interpretable_and_configurable_alignment/"
-    t: "ARCANE: A Multi-Agent Framework for Interpretable and Configurable Alignment"
   - u: "autoglm_autonomous_foundation_agents_for_guis/"
     t: "AutoGLM: Autonomous Foundation Agents for GUIs"
   - u: "automating_complex_document_workflows_via_stepwise_and_rollback-enabled_operatio/"
@@ -39,14 +31,10 @@ item_list:
     t: "AutoTool: Efficient Tool Selection for Large Language Model Agents"
   - u: "bayesagent_bayesian_agentic_reasoning_under_uncertainty_via_/"
     t: "BayesAgent: Bayesian Agentic Reasoning Under Uncertainty via Verbalized Probabilistic Graphical Modeling"
-  - u: "beyond_react_a_planner-centric_framework_for_complex_tool-au/"
-    t: "Beyond ReAct: A Planner-Centric Framework for Complex Tool-Augmented LLM Reasoning"
   - u: "causaltrace_a_neurosymbolic_causal_analysis_agent_for_smart_manufacturing/"
     t: "CausalTrace: A Neurosymbolic Causal Analysis Agent for Smart Manufacturing"
   - u: "co-epg_a_framework_for_co-evolution_of_planning_and_groundin/"
     t: "Co-EPG: A Framework for Co-Evolution of Planning and Grounding in Autonomous GUI Agents"
-  - u: "coach_collaborative_agents_for_contextual_highlighting_--_a_multi-agent_framewor/"
-    t: "COACH: Collaborative Agents for Contextual Highlighting -- A Multi-Agent Framework for Sports Video Analysis"
   - u: "cook_and_clean_together_teaching_embodied_agents_for_paralle/"
     t: "Cook and Clean Together: Teaching Embodied Agents for Parallel Task Execution"
   - u: "covrcollaborative_optimization_of_vlms_and_rl_agent_for_visu/"
@@ -55,49 +43,53 @@ item_list:
     t: "D-GARA: A Dynamic Benchmarking Framework for GUI Agent Robustness in Real-World Anomalies"
   - u: "depo_dual-efficiency_preference_optimization_for_llm_agents/"
     t: "DEPO: Dual-Efficiency Preference Optimization for LLM Agents"
-  - u: "ecoagent_an_efficient_device-cloud_collaborative_multi-agent/"
-    t: "EcoAgent: An Efficient Device-Cloud Collaborative Multi-Agent Framework for Mobile Automation"
-  - u: "finrpt_dataset_evaluation_system_and_llm-based_multi-agent_framework_for_equity_/"
-    t: "FinRpt: Dataset, Evaluation System and LLM-based Multi-agent Framework for Equity Research Report Generation"
   - u: "from_biased_chatbots_to_biased_agents_examining_role_assignment_effects_on_llm_a/"
     t: "From Biased Chatbots to Biased Agents: Examining Role Assignment Effects on LLM Agent Robustness"
   - u: "history-aware_reasoning_for_gui_agents/"
     t: "History-Aware Reasoning for GUI Agents"
-  - u: "liecraft_a_multi-agent_framework_for_evaluating_deceptive_capabilities_in_langua/"
-    t: "LieCraft: A Multi-Agent Framework for Evaluating Deceptive Capabilities in Language Models"
-  - u: "llandmark_a_multi-agent_framework_for_landmark-aware_multimodal_interactive_vide/"
-    t: "LLandMark: A Multi-Agent Framework for Landmark-Aware Multimodal Interactive Video Retrieval"
   - u: "llmtm_benchmarking_and_optimizing_llms_for_temporal_motif_analysis_in_dynamic_gr/"
     t: "LLMTM: Benchmarking and Optimizing LLMs for Temporal Motif Analysis in Dynamic Graphs"
   - u: "loss-guided_auxiliary_agents_for_overcoming_mode_collapse_in_gflownets/"
     t: "Loss-Guided Auxiliary Agents for Overcoming Mode Collapse in GFlowNets"
-  - u: "medla_a_logic-driven_multi-agent_framework_for_complex_medic/"
-    t: "MedLA: A Logic-Driven Multi-Agent Framework for Complex Medical Reasoning with Large Language Models"
   - u: "moralreason_generalizable_moral_decision_alignment_for_llm_agents_using_reasonin/"
     t: "MoralReason: Generalizable Moral Decision Alignment For LLM Agents Using Reasoning-Level Reinforcement Learning"
-item_total: 46
+  - u: "pertouch_vlm-driven_agent_for_personalized_and_semantic_image_retouching/"
+    t: "PerTouch: VLM-Driven Agent for Personalized and Semantic Image Retouching"
+  - u: "physics-informed_autonomous_llm_agents_for_explainable_power_electronics_modulat/"
+    t: "Physics-Informed Autonomous LLM Agents for Explainable Power Electronics Modulation Design"
+  - u: "probench_benchmarking_gui_agents_with_accurate_process_infor/"
+    t: "ProBench: Benchmarking GUI Agents with Accurate Process Information"
+  - u: "promoting_sustainable_web_agents_benchmarking_and_estimating_energy_consumption_/"
+    t: "Promoting Sustainable Web Agents: Benchmarking and Estimating Energy Consumption Through Empirical and Theoretical Analysis"
+  - u: "prune4web_dom_tree_pruning_programming_for_web_agent/"
+    t: "Prune4Web: DOM Tree Pruning Programming for Web Agent"
+  - u: "reflection-driven_control_for_trustworthy_code_agents/"
+    t: "Reflection-Driven Control for Trustworthy Code Agents"
+  - u: "some_a_realistic_benchmark_for_llm-based_social_media_agents/"
+    t: "SoMe: A Realistic Benchmark for LLM-based Social Media Agents"
+  - u: "structured_personalization_modeling_constraints_as_matroids_for_data-minimal_llm/"
+    t: "Structured Personalization: Modeling Constraints as Matroids for Data-Minimal LLM Agents"
+  - u: "time_identity_and_consciousness_in_language_model_agents/"
+    t: "Time, Identity and Consciousness in Language Model Agents"
+  - u: "tongui_internet-scale_trajectories_from_multimodal_web_tutor/"
+    t: "TongUI: Internet-Scale Trajectories from Multimodal Web Tutorials for Generalized GUI Agents"
+  - u: "towards_trustworthy_multi-turn_llm_agents_via_behavioral_guidance/"
+    t: "Towards Trustworthy Multi-Turn LLM Agents via Behavioral Guidance"
+item_total: 33
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->
 # 🦾 LLM Agent
 
-**🤖 AAAI2026** · **46** paper notes
+**🤖 AAAI2026** · **33** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (47)](../../ICML2026/llm_agent/index.md) · [💬 ACL2026 (81)](../../ACL2026/llm_agent/index.md) · [📷 CVPR2026 (14)](../../CVPR2026/llm_agent/index.md) · [🔬 ICLR2026 (39)](../../ICLR2026/llm_agent/index.md) · [🧠 NeurIPS2025 (47)](../../NeurIPS2025/llm_agent/index.md) · [📹 ICCV2025 (4)](../../ICCV2025/llm_agent/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (42)](../../ICML2026/llm_agent/index.md) · [💬 ACL2026 (78)](../../ACL2026/llm_agent/index.md) · [📷 CVPR2026 (15)](../../CVPR2026/llm_agent/index.md) · [🔬 ICLR2026 (40)](../../ICLR2026/llm_agent/index.md) · [🧠 NeurIPS2025 (39)](../../NeurIPS2025/llm_agent/index.md) · [📹 ICCV2025 (4)](../../ICCV2025/llm_agent/index.md)
 
-🔥 **Top topics:** Agents ×21 · LLM ×17 · Reasoning ×6 · Alignment/RLHF ×3 · Multimodal/VLM ×3
+🔥 **Top topics:** Agents ×10 · LLM ×10 · Reasoning ×4 · Adversarial Robustness ×2 · Alignment/RLHF ×2
 
 **[A2Flow: Automating Agentic Workflow Generation via Self-Adaptive Abstraction Operators](a2flow_automating_agentic_workflow_generation_via_self-adaptive_abstraction_oper.md)**
 
 :   This paper proposes A2Flow, a framework that automatically extracts reusable abstract execution operators from expert data via a three-stage pipeline (case generation → functional clustering → deep extraction), replacing manually predefined operators. Combined with an operator memory mechanism that accumulates intermediate outputs to assist node decision-making, A2Flow outperforms AFLOW and other state-of-the-art methods across 8 benchmarks while reducing resource consumption by 37%.
-
-**[A Multi-Agent Conversational Bandit Approach to Online Evaluation and Selection of User-Aligned LLM Responses](a_multi-agent_conversational_bandit_approach_to_online_evaluation_and_selection_.md)**
-
-:   This paper proposes MACO, a multi-agent conversational bandit framework that achieves online evaluation and user preference alignment for LLM responses through a local-agent phase elimination mechanism and an adaptive preference query strategy on a cloud server, attaining a near-optimal regret bound of $\tilde{O}(\sqrt{dMT})$.
-
-**[KDR-Agent: A Multi-Agent LLM Framework for Multi-Domain Low-Resource In-Context NER via Knowledge Retrieval](a_multi-agent_llm_framework_for_multi-domain_low-resource_in-context_ner_via_kno.md)**
-
-:   This paper proposes KDR-Agent, a multi-agent framework in which a central planner coordinates three specialized agents—knowledge retrieval, contextual disambiguation, and reflective error correction—combined with natural language type definitions and entity-level positive/negative contrastive demonstrations. Without any fine-tuning, KDR-Agent comprehensively outperforms zero-shot and few-shot baselines across 10 low-resource NER datasets spanning 5 domains (BC5CDR F1=82.47, WNUT-17 F1=80.78 on GPT-4o).
 
 **[Agent-SAMA: State-Aware Mobile Assistant](agent-sama_state-aware_mobile_assistant.md)**
 
@@ -110,14 +102,6 @@ item_total: 46
 **[AMS-IO-Bench and AMS-IO-Agent: Benchmarking and Structured Reasoning for Analog and Mixed-Signal Integrated Circuit Input/Output Design](ams-io-bench_and_ams-io-agent_benchmarking_and_structured_re.md)**
 
 :   This paper proposes AMS-IO-Agent, a domain-specific LLM-based agent that transforms natural language design intent into production-ready analog and mixed-signal IC I/O ring designs via a structured Intent Graph and a domain knowledge base. It also introduces AMS-IO-Bench, the first benchmark for AMS I/O ring automation. The agent-generated I/O ring is validated in a 28nm CMOS tape-out and demonstrated to be directly applicable to real chip fabrication.
-
-**[AquaSentinel: Next-Generation AI System Integrating Sensor Networks for Urban Underground Water Pipeline Anomaly Detection via Collaborative MoE-LLM Agent Architecture](aquasentinel_next-generation_ai_system_integrating_sensor_ne.md)**
-
-:   This paper proposes AquaSentinel, a physics-informed AI system that achieves network-wide pipeline leak detection using only 20–30% node coverage through sparse sensor deployment, physics-augmented virtual sensors, a MoE spatiotemporal GNN ensemble, a dual-threshold RTCA detection algorithm, causal flow localization, and LLM-based report generation. The system achieves 100% detection rate across 110 leak scenarios.
-
-**[ARCANE: A Multi-Agent Framework for Interpretable and Configurable Alignment](arcane_a_multi-agent_framework_for_interpretable_and_configurable_alignment.md)**
-
-:   This paper proposes ARCANE, a framework that formulates alignment as a multi-agent collaboration problem. A manager agent learns to generate natural-language rubrics (weighted verifiable criterion sets) through dialogue with stakeholders, which serve as interpretable proxy reward functions for a worker agent. Via two-stage SFT+GSPO training, the framework enables test-time configurable alignment, improving mean return from 0.58 to 0.74 (N=8) on the GDPVal benchmark with the GSPO variant.
 
 **[AutoGLM: Autonomous Foundation Agents for GUIs](autoglm_autonomous_foundation_agents_for_guis.md)**
 
@@ -135,10 +119,6 @@ item_total: 46
 
 :   This paper proposes the vPGM framework, which guides LLM agents via natural language to simulate Bayesian reasoning over probabilistic graphical models (PGMs)—discovering latent variables and inferring posterior distributions—and further applies numerical Bayesian calibration with a Dirichlet prior (BayesVPGM), achieving simultaneous improvements in accuracy and confidence calibration across multiple reasoning tasks.
 
-**[Beyond ReAct: A Planner-Centric Framework for Complex Tool-Augmented LLM Reasoning](beyond_react_a_planner-centric_framework_for_complex_tool-au.md)**
-
-:   This paper proposes a Planner-centric Plan-Execute framework that transforms complex queries into DAG-based execution plans. Through two-stage SFT+GRPO training of a dedicated Planner model, the approach surpasses reactive methods such as ReAct on ComplexTool-Plan and StableToolBench, achieving higher success rates with fewer inference steps.
-
 **[CausalTrace: A Neurosymbolic Causal Analysis Agent for Smart Manufacturing](causaltrace_a_neurosymbolic_causal_analysis_agent_for_smart_manufacturing.md)**
 
 :   This paper proposes CausalTrace — a neurosymbolic causal analysis agent integrated into an industrial CoPilot (SmartPilot) that combines data-driven causal discovery with industrial ontologies and knowledge graphs, enabling real-time root cause analysis, counterfactual reasoning, and interpretable decision support.
@@ -146,10 +126,6 @@ item_total: 46
 **[Co-EPG: A Framework for Co-Evolution of Planning and Grounding in Autonomous GUI Agents](co-epg_a_framework_for_co-evolution_of_planning_and_groundin.md)**
 
 :   This paper proposes Co-EPG, a framework that decouples a GUI Agent into separate Planning and Grounding models, establishes a positive feedback loop via GRPO co-training and a Confidence-based Dynamic Reward Ensemble Mechanism (C-DREM), enabling both models to co-evolve through self-iteration. Using only benchmark datasets (no external data), Co-EPG achieves state-of-the-art results on Multimodal-Mind2Web (58.4%) and AndroidControl (83.1%).
-
-**[COACH: Collaborative Agents for Contextual Highlighting -- A Multi-Agent Framework for Sports Video Analysis](coach_collaborative_agents_for_contextual_highlighting_--_a_multi-agent_framewor.md)**
-
-:   This paper proposes COACH — a reconfigurable multi-agent framework built on a shared backbone model — that achieves role specialization via intent-driven strategy orchestration and structured CoT fine-tuning, significantly outperforming generalist models such as Gemini 2.5 Pro on both QA and summarization tasks in badminton video analysis.
 
 **[Cook and Clean Together: Teaching Embodied Agents for Parallel Task Execution](cook_and_clean_together_teaching_embodied_agents_for_paralle.md)**
 
@@ -167,14 +143,6 @@ item_total: 46
 
 :   This paper proposes the concept of *dual-efficiency*, decomposing LLM agent efficiency into step-level (reducing tokens per step) and trajectory-level (reducing total number of steps) dimensions. Building on KTO, the authors introduce DEPO, which jointly optimizes efficiency and task performance by incorporating an efficiency bonus into the reward for desirable samples.
 
-**[EcoAgent: An Efficient Device-Cloud Collaborative Multi-Agent Framework for Mobile Automation](ecoagent_an_efficient_device-cloud_collaborative_multi-agent.md)**
-
-:   This paper proposes EcoAgent, a closed-loop device-cloud collaborative multi-agent framework for mobile automation. By combining Dual-ReACT two-level reasoning and planning, lightweight on-device verification feedback, and a Pre-Understanding text compression module, EcoAgent achieves success rates comparable to fully cloud-based agents on AndroidWorld while substantially reducing latency (3.9s vs. 15.3s), cloud invocations (−89%), and upstream data volume (−48.6×).
-
-**[FinRpt: Dataset, Evaluation System and LLM-based Multi-agent Framework for Equity Research Report Generation](finrpt_dataset_evaluation_system_and_llm-based_multi-agent_framework_for_equity_.md)**
-
-:   This paper is the first to systematically define the task of automated Equity Research Report (ERR) generation. It constructs the FinRpt dataset (6,825 high-quality bilingual reports integrating 7 categories of financial data), proposes an 11-metric evaluation framework, and designs the FinRpt-Gen generation framework with 9 collaborative agents featuring a three-stage enhancement pipeline (rating correction / expert review / language polishing). Human evaluation shows that generated reports approach expert-written quality.
-
 **[From Biased Chatbots to Biased Agents: Examining Role Assignment Effects on LLM Agent Robustness](from_biased_chatbots_to_biased_agents_examining_role_assignment_effects_on_llm_a.md)**
 
 :   The first systematic case study demonstrating that demographically grounded persona assignment causes up to 26.2% performance degradation in LLM agent task execution across 5 operational domains, establishing that persona-induced bias extends beyond text generation into action decision-making.
@@ -182,14 +150,6 @@ item_total: 46
 **[History-Aware Reasoning for GUI Agents](history-aware_reasoning_for_gui_agents.md)**
 
 :   This paper proposes the HAR framework, which transforms the reasoning paradigm of GUI agents from "history-unaware" to "history-aware" by constructing reflective learning scenarios, synthesizing error-correction guidelines, and designing a hybrid RL reward function incorporating a Memory-Augmented Reward (MAR). A 3B model trained under this framework surpasses larger models on multiple benchmarks including AITW, Mind2Web, and GUI-Odyssey.
-
-**[LieCraft: A Multi-Agent Framework for Evaluating Deceptive Capabilities in Language Models](liecraft_a_multi-agent_framework_for_evaluating_deceptive_capabilities_in_langua.md)**
-
-:   This paper proposes LieCraft, a multi-player hidden-role game framework (with constraint-satisfaction-guaranteed balance) to evaluate the strategic deception capabilities of 12 LLMs. It finds that all tested frontier LLMs—including GPT-4o—exhibit deception rates exceeding 90% under incentive conditions, demonstrating that safety training has not eliminated the capacity for strategic lying.
-
-**[LLandMark: A Multi-Agent Framework for Landmark-Aware Multimodal Interactive Video Retrieval](llandmark_a_multi-agent_framework_for_landmark-aware_multimodal_interactive_vide.md)**
-
-:   This paper proposes LLandMark, a modular multi-agent framework that achieves landmark-aware multimodal interactive video retrieval through landmark knowledge augmentation, LLM-assisted image retrieval, and OCR refinement modules, achieving a total score of 77.40/88 in the Vietnamese large-scale video retrieval challenge (HCMAIC 2025).
 
 **[LLMTM: Benchmarking and Optimizing LLMs for Temporal Motif Analysis in Dynamic Graphs](llmtm_benchmarking_and_optimizing_llms_for_temporal_motif_analysis_in_dynamic_gr.md)**
 
@@ -199,17 +159,9 @@ item_total: 46
 
 :   This paper proposes LGGFN (Loss-Guided GFlowNets), in which the exploration of an auxiliary GFlowNet is directly driven by the training loss of the primary GFlowNet. The auxiliary agent's reward is defined as $R_{aux}(x) = R(x) + \lambda \cdot L_{main}(x)$, prioritizing regions where the primary model is least well-understood. On grid, sequence generation, and Bayesian structure learning tasks, LGGFN discovers 40× more unique modes and reduces exploration error by 99%.
 
-**[MedLA: A Logic-Driven Multi-Agent Framework for Complex Medical Reasoning with Large Language Models](medla_a_logic-driven_multi-agent_framework_for_complex_medic.md)**
-
-:   This paper proposes MedLA, the first multi-agent medical reasoning framework based on syllogistic logic trees. Each agent organizes its reasoning as an explicit logic tree composed of syllogistic nodes (major premise–minor premise–conclusion). Multiple agents align and revise their logic trees at the premise level through graph-guided multi-round discussions. MedLA outperforms all baselines by 7.4% on MedDDx (8B model) and achieves an average accuracy of 69.9% on medical QA benchmarks with an 8B model, surpassing 70B RAG-based models.
-
 **[MoralReason: Generalizable Moral Decision Alignment For LLM Agents Using Reasoning-Level Reinforcement Learning](moralreason_generalizable_moral_decision_alignment_for_llm_agents_using_reasonin.md)**
 
 :   This work employs Group Relative Policy Optimization (GRPO) to train LLMs at the reasoning level for ethical framework alignment, achieving out-of-distribution generalization on the Moral-Reason-QA dataset (680 high-ambiguity scenarios) with utilitarian alignment scores improving from 0.207 to 0.964.
-
-**[Parallelism Meets Adaptiveness: Scalable Documents Understanding in Multi-Agent LLM Systems](parallelism_meets_adaptiveness_scalable_documents_understanding_in_multi-agent_l.md)**
-
-:   This paper proposes an adaptively coordinated multi-agent LLM framework that achieves a 27% improvement in compliance accuracy and a 74% reduction in revision rate on high-complexity financial document analysis tasks, through parallel competitive evaluation, dynamic task routing, and bidirectional feedback mechanisms.
 
 **[PerTouch: VLM-Driven Agent for Personalized and Semantic Image Retouching](pertouch_vlm-driven_agent_for_personalized_and_semantic_image_retouching.md)**
 
@@ -230,10 +182,6 @@ item_total: 46
 **[Prune4Web: DOM Tree Pruning Programming for Web Agent](prune4web_dom_tree_pruning_programming_for_web_agent.md)**
 
 :   This paper proposes Prune4Web, a programmatic DOM pruning approach that achieves 25–50× candidate element reduction via "LLM-generated scoring function parameters + fixed heuristic template execution." The three-stage pipeline (Planner decomposes subtasks → Programmatic Filter generates scoring functions to prune DOM → Grounder executes actions) enables a 3B model to achieve 52.4% Step SR on Multimodal-Mind2Web, surpassing all baselines of the same parameter scale and even some 9.6B/32B models, while improving low-level grounding accuracy from 46.8% to 88.28%.
-
-**[Real-Time Trust Verification for Safe Agentic Actions Using TrustBench](real-time_trust_verification_for_safe_agentic_actions_using_trustbench.md)**
-
-:   This paper proposes TrustBench, a dual-mode framework: (1) **Benchmark Mode** — combines traditional metrics with LLM-as-a-Judge to evaluate 8 trust dimensions and learns a calibration mapping from agent confidence to actual accuracy; (2) **Verification Mode** — computes trust scores in real time after an agent formulates an action but before execution, blocking 87% of harmful actions with latency below 200ms, with specialization achieved through domain plugins (medical/financial/QA).
 
 **[Reflection-Driven Control for Trustworthy Code Agents](reflection-driven_control_for_trustworthy_code_agents.md)**
 

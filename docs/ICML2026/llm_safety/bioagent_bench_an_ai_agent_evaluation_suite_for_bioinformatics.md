@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] BioAgent Bench: An AI Agent Evaluation Suite for Bioinformatics
 description: >-
-  [ICML 2026][LLM Safety][agent evaluation] BioAgent Bench introduces an end-to-end evaluation suite for executing bioinformatics pipelines with LLM agents. Featuring 10 real-world tasks…
+  [ICML 2026][LLM Safety][agent evaluation] BioAgent Bench provides an end-to-end evaluation suite for "running bioinformatics pipelines with LLM agents"—10 real bioinformatics tasks × 10 frontier/open-weight models × 3 ag…
 tags:
   - "ICML 2026"
   - "LLM Safety"
@@ -11,7 +11,7 @@ tags:
   - "LLM judge"
   - "robustness perturbation testing"
 date: 2026-05-08
-content_hash: e8f70181602bfc3f
+content_hash: 41160e589540ab80
 ---
 
 # BioAgent Bench: An AI Agent Evaluation Suite for Bioinformatics
@@ -23,82 +23,85 @@ content_hash: e8f70181602bfc3f
 **Keywords**: agent evaluation, bioinformatics pipeline, LLM judge, robustness perturbation testing
 
 ## TL;DR
-BioAgent Bench introduces an end-to-end evaluation suite for executing bioinformatics pipelines with LLM agents. Featuring 10 real-world tasks, it evaluates 10 frontier/open-weight models across 3 agent harnesses. Using an LLM judge for scoring alongside three classes of perturbation tests (corrupted, decoy, and prompt-bloat), the study finds that while frontier models can complete over 90% of pipelines, their robustness remains a significant concern.
+BioAgent Bench provides an end-to-end evaluation suite for "running bioinformatics pipelines with LLM agents"—10 real bioinformatics tasks × 10 frontier/open-weight models × 3 agent harnesses, combined with LLM judge scoring and three types of perturbation tests (corrupted/decoy/prompt-bloat). The study finds that frontier models can complete over 90% of pipelines, but robustness remains a concern.
 
 ## Background & Motivation
-**Background**: LLM agents have established benchmarks in software engineering (SWE-bench) and general tool-use (AgentBench, ToolBench). In the biomedical domain, benchmarks like BioML-bench, LAB-Bench, and BixBench exist. However, these often reduce tasks to simplified QA or code generation rather than long-running, integrated pipeline execution.
+**Background**: LLM agents already have mature benchmarks in software engineering (SWE-bench) and general tool-use (AgentBench, ToolBench). In biomedicine, there are also BioML-bench, LAB-Bench, and BixBench. However, these benchmarks either reduce tasks to QA/code generation or focus on "data analysis" rather than "full pipeline execution."
 
-**Limitations of Prior Work**: Real bioinformatics workflows are highly complex, requiring the chaining of command-line tools, management of heterogeneous file formats, and interpretation of intermediate outputs. Evaluation is difficult due to the existence of multiple valid pipelines for the same data, the high impact of parameter selection on results, and steps that cannot be strictly assessed via binary pass/fail criteria. Hard-match evaluation methods like those in SWE-bench are insufficient.
+**Limitations of Prior Work**: Real bioinformatics workflows are highly complex—requiring chaining of command-line tools, management of heterogeneous file formats, and interpretation of intermediate outputs. Evaluation is challenging because the same data can be processed by multiple valid pipelines, parameter choices greatly affect results, and many steps cannot be strictly judged as pass/fail. Directly copying SWE-bench's hard-matching evaluation is infeasible.
 
-**Key Challenge**: (1) Real bioinformatics tasks are long-running (hours) and resource-intensive (tens of GBs), whereas benchmarks need to be reproducible and scalable. (2) The existence of multiple valid solutions creates a conflict between automatic scoring and strict ground truth. (3) Clinical and IP-sensitive data cannot be sent to closed-source APIs, necessitating the evaluation of open-weight models, which typically lag behind frontier models.
+**Key Challenge**: (1) Real bioinformatics tasks are long (hours) and resource-intensive (tens of GB memory), while benchmarks need to be reproducible and scalable; (2) The existence of multiple solutions makes "automatic scoring" and "strict ground truth" incompatible; (3) Clinical/IP-sensitive data cannot be sent to closed-source APIs, necessitating evaluation of open-weight models, which are much weaker than frontier models.
 
-**Goal**: (i) Create a set of end-to-end bioinformatics pipeline tasks that can run within reasonable resource constraints (<4h, <48GB RAM); (ii) Design a scoring protocol using LLM judges that accommodates multiple solutions; (iii) Introduce perturbation tests to verify agent robustness against corrupted data, decoys, and prompt-bloat; (iv) Systematically compare 5 closed-source and 5 open-weight models across 3 harnesses.
+**Goal**: (i) Build an end-to-end, pipeline-style bioinformatics task set that can run within reasonable compute budgets (<4h, <48GB); (ii) Design a scoring protocol tolerant of multiple solutions, using LLMs as judges; (iii) Add perturbation tests beyond vanilla settings to separately assess agent robustness to corrupted data, decoy files, and prompt bloat; (iv) Systematically compare 5 closed-source and 5 open-source models across 3 harnesses.
 
-**Key Insight**: By restricting the task scale to "small organisms" (bacteria, viruses, yeast), reference data can be bundled directly as input files. This bypasses infrastructure hurdles like agents needing to download tens of GBs of genomic data, allowing the evaluation to focus strictly on pipeline orchestration capabilities.
+**Key Insight**: Deliberately restrict task scale to "small organisms (bacteria, viruses, fungi)" so that reference data can be bundled as input files, avoiding infrastructure issues like "agents needing to download tens of GBs of genomes," and focusing evaluation on pipeline orchestration capabilities.
 
-**Core Idea**: Use "task prompt + input data + reference data + expected output format" as a unified task specification. An LLM judge compares the execution trace and outcome to provide step-level completion scores, supplemented by three types of perturbation tests to determine if high-level pipeline construction and low-level step reasoning are both sound.
+**Core Idea**: Use "task prompt + input data + reference data + expected CSV/TSV output format" as a unified task specification. The LLM judge compares trace + outcome to provide step-level completion scores, supplemented by three types of perturbation tests to probe whether "high-level pipeline construction" and "low-level step reasoning" are both achieved.
 
 ## Method
 
 ### Overall Architecture
-The benchmark consists of three components: (1) **Task Set**: 10 end-to-end tasks covering subfields like RNA-seq, variant calling, metagenomics, and experimental evolution. Each includes NL prompts, input/reference data, and ground-truth CSV/TSVs. (2) **Evaluation Harness**: Agents operate in a hashed sandbox using one of three harnesses (Claude Code, Codex CLI, or OpenCode), calling Python packages or specialized bioinformatics tools. (3) **LLM Grader**: GPT-5.1 analyzes input/reference paths, expected outcomes, agent outcomes, traces (file paths only), and grading rubrics. It outputs `steps_completed`, `steps_to_completion`, `final_result_reached`, `results_match`, and `f1_score`. The **Primary metric** is the completion rate, defined as the ratio of necessary steps passed to total steps.
+The benchmark consists of three components: (1) **Task Set**—10 end-to-end tasks covering RNA-seq, variant calling, metagenomics, transcript quantification, experimental evolution, etc. Each task includes an NL prompt, input data, reference data, and ground-truth CSV/TSV; (2) **Evaluation Harness**—agents run in a hashed sandbox directory, operating in one of Claude Code, Codex CLI, or OpenCode harnesses, able to call general Python packages or specialized bioinformatics tools, ultimately submitting each step's output and final result files to the grader; (3) **LLM Grader**—GPT-5.1 reads input/reference paths, expected outcome, agent outcome, trace (file paths only), and grading rubric, outputting `steps_completed`, `steps_to_completion`, `final_result_reached`, `results_match`, and `f1_score`. The **primary metric** is completion rate = (number of required steps passed)/(total steps).
 
-Evaluation includes four settings: multi-trial stability, prompt-bloat (irrelevant task description expansion), corrupted-input (detecting intentionally damaged files), and decoy-input (resisting distracting files).
+There are four evaluation settings: multi-trial stability (repeat runs for consistency), prompt-bloat (add irrelevant content to task description), corrupted-input (manually damage input data to test agent detection), and decoy-input (add distracting files to test agent's file selection).
 
 ### Key Designs
 
-1.  **Task Curation and Scale Constraints**:
-    *   Function: Constructs end-to-end pipeline tasks runnable within <4h and <48GB RAM, covering main bioinformatics modalities.
-    *   Mechanism: 10 tasks spanning bulk/single-cell RNA-seq, comparative genomics, variant calling (bacterial evolution, GIAB NA12878, cystic fibrosis), viral metagenomics, etc. Languages used include Python, R, and Bash. Four tasks are binary "verifiable." Reference data is included by selecting small organisms (e.g., E. coli, mouse Alzheimer's models).
-    *   Design Motivation: Positioning the benchmark as a "software engineering" style rather than a "data analysis" style enables future RL/distillation uses. Scale constraints allow for large-scale reproducible evaluation, though at the cost of excluding human-scale workflows.
+1. **Task Curation and Scale Constraints**:
 
-2.  **Grader (LLM Judge + Multi-dimensional Scoring)**:
-    *   Function: Automates scoring in scenarios with multiple solutions, multiple steps, and massive intermediate products.
-    *   Mechanism: GPT-5.1 acts as the grader, using input paths, expected/agent CSVs, trace trees, and rubrics. The rubric prioritizes "pipeline completion" over exact numerical precision. It outputs five fields, including `steps_completed` and `results_match`.
-    *   Design Motivation: Bioinformatics tasks allow multiple valid pipelines (e.g., GATK4 vs. DeepVariant), making hardcoded ground truth impractical. Reviewing traces rather than just final output allows partial credit for correct logic despite formatting errors.
+    - **Function**: Construct end-to-end pipeline tasks that run within <4h and <48GB, covering mainstream bioinformatics modalities.
+    - **Mechanism**: 10 tasks span bulk/single-cell RNA-seq, comparative genomics, variant calling (bacterial evolution, GIAB NA12878, cystic fibrosis), (viral) metagenomics, transcript quantification, etc.; languages include Python/R/bash; 4 tasks (cystic-fibrosis, giab, transcript-quant, viral-metagenomics) are "verifiable" with binary pass/fail judgment. Each task specifies "end-to-end" and "structured CSV output," and deliberately selects small organisms (mouse Alzheimer model, E. coli evolution, dolphin viral metagenome, etc.) so reference data fits as input.
+    - **Design Motivation**: Positioning the benchmark as "software engineering-like" rather than "bio data analysis" is to support future RL/distillation uses; scale constraints enable large-scale, reproducible evaluation (at the cost of not covering human-genome-scale workflows).
 
-3.  **Perturbation Suite**:
-    *   Function: Decouples "pipeline completion" from "true step-level biological reasoning."
-    *   Mechanism: (i) **Multi-trial Consistency**: Runs tasks 4 times, calculating Jaccard for categorical results and Pearson for numerical values. (ii) **Prompt Bloat**: Measures the change in completion rate ($\Delta$) when adding irrelevant content. (iii) **Corrupted Input**: Checks if agents identify damaged FASTQ/BAM files. (iv) **Decoy Input**: Checks if agents are misled by extraneous files.
-    *   Design Motivation: The authors hypothesize that high-level pipeline construction $\neq$ reliable step-level reasoning. Completion rates alone overestimate agent capability; perturbations serve as essential probes for understanding vs. pattern matching.
+2. **LLM Judge + Multi-dimensional Scoring Protocol (Grader)**:
+
+    - **Function**: Automated scoring in scenarios with multiple solutions, multiple steps, and abundant intermediate outputs.
+    - **Mechanism**: The grader uses GPT-5.1, with input (input/reference paths, expected CSV, agent CSV, trace file path tree, grading rubric); the rubric prioritizes "pipeline completion" over numerical accuracy. Outputs five fields: `steps_completed` (steps completed), `steps_to_completion` (estimated total steps), `final_result_reached` (whether final artifact produced), `results_match` (correctness flag per rubric), `f1_score` (for giab only).
+    - **Design Motivation**: Bioinformatics tasks allow multiple valid pipelines (e.g., variant calling via GATK4 HaplotypeCaller or DeepVariant), so hardcoded ground truth is infeasible; having the grader review the trace rather than just output allows partial credit for "high-level correct but output format wrong," closer to human expert judgment.
+
+3. **Three Types of Robustness Perturbation Tests (Perturbation Suite)**:
+
+    - **Function**: Separate "pipeline completion" from "true step-level biological reasoning."
+    - **Mechanism**: (i) **Multi-trial Consistency**—run the same task 4 times, compute Jaccard for classification results (KEGG pathways, Gene IDs), Pearson for numerical results (p-value, abundance); (ii) **Prompt bloat**—add large irrelevant sections to the original prompt, observe change in completion rate $\Delta$; (iii) **Corrupted input**—manually damage FASTQ/BAM input files, ideal agent should detect and report error (✓ = detected); (iv) **Decoy input**—add extra files that should not be used, ideal agent should ignore (✗ = not misled).
+    - **Design Motivation**: The core argument is that high-level pipeline construction ≠ reliable step-level reasoning. Vanilla completion rate alone overestimates agents' biological reasoning; perturbation tests are key probes for "understanding vs pattern matching."
 
 ### Loss & Training
-As a benchmark, no training is involved. Stability and robustness assessments use GPT-5.2 in the Codex CLI harness, with "high" reasoning effort enabled.
+As a benchmark, there is no training; for evaluation, GPT-5.2 in Codex CLI harness is used as the main robustness assessment model, with "high" reasoning effort enabled by default.
 
 ## Key Experimental Results
 
 ### Main Results
-Average completion rates for 10 tasks in the vanilla setting (Codex CLI harness):
+Average completion rate for 10 tasks in the vanilla setting (Codex CLI harness):
 
-| Model Type | Model | Avg Completion% |
-| :--- | :--- | :--- |
-| Closed Frontier | Claude Opus 4.5 | **100** |
-| Closed Frontier | Gemini 3 Pro / GPT-5.2 / Sonnet 4.5 | >90 |
-| Best Open-weight | GLM-4.7 | 82.5 |
-| Other Open-weight| Various | As low as ~65 |
+| Model Type | Model | Avg. Completion % |
+|------------|-------|------------------|
+| Closed-source frontier | Claude Opus 4.5 | **100** |
+| Closed-source frontier | Gemini 3 Pro / GPT-5.2 / Sonnet 4.5 | >90 |
+| Open-weight Best | GLM-4.7 | 82.5 |
+| Other Open-weight | Various | as low as ~65 |
 
-**Planning vs. Execution**: Scores for "high-level pipeline plans" (rated 1-5 by GPT-5.1) correlate with end-to-end completion rates with a Pearson $r=0.61$. This indicates planning is necessary but not sufficient; for instance, Gemini-Pro-3 shows higher execution strength relative to its planning score, suggesting the bottleneck for open-weight models is often agentic capability over multiple rounds rather than domain knowledge.
+**Planning vs Execution**: Scoring only "high-level pipeline planning" (GPT-5.1, 1-5 scale) yields Pearson $r=0.61$ with end-to-end completion rate—correlated but not decisive. For example, Gemini-Pro-3 scores low on planning but high on execution, indicating open-weight models' bottleneck is more in "multi-turn agentic ability" than "domain knowledge."
 
 ### Ablation Study
-Multi-trial stability (GPT-5.2 in Codex CLI, 4 trials per task):
+Multi-trial stability (GPT-5.2, Codex CLI, 4 runs per task, Jaccard/Pearson):
 
-| Task | Jaccard | Pearson | Note |
-| :--- | :--- | :--- | :--- |
+| Task | Jaccard | Pearson | Notes |
+|------|---------|---------|-------|
 | transcript-quant | 1.000 | 1.000 | Fully deterministic |
-| cystic-fibrosis | 1.000 | NA | High consistency |
-| deseq | 0.978 | 0.995 | Highly stable |
-| viral-metagenomics | 0.667 | 1.000 | Numerical stability, categorical jitter |
+| cystic-fibrosis | 1.000 | NA | Highly consistent |
+| deseq | 0.978 | 0.995 | Nearly stable |
+| viral-metagenomics | 0.667 | 1.000 | Stable numerically, variable classification |
 | metagenomics | 0.395 | 0.746 | Moderate |
 | alzheimer | 0.160 | 0.219 | Unstable |
-| comparative-genomics | 0.004 | NA | Highly inconsistent |
+| comparative-genomics | 0.004 | NA | Almost completely inconsistent |
 | evolution | 0.000 | NA | Completely inconsistent |
 
-The average Jaccard is 0.43 and Pearson is 0.73, meaning categorical results overlap by less than half across 4 trials of the same task.
+Average Jaccard 0.43, Pearson 0.73—across 4 runs of the same agent on the same task, classification overlap is less than half.
 
-Perturbation tests (GPT-5.2 single trial; $\Delta\%$ represents completion change after prompt-bloat):
+Perturbation tests (GPT-5.2, single trial, Δ% is completion change after prompt-bloat):
 
-| Task | Corrupted Detected? | Decoy Resisted? | $\Delta$ Completion (%) |
-| :--- | :--- | :--- | :--- |
+| Task | Detected corrupted? | Resisted decoy? | Δ completion (%) |
+|------|---------------------|-----------------|------------------|
 | alzheimer-mouse | ✗ | ✗ | -12.5 |
 | comparative-genomics | ✗ | ✓ | -20.0 |
 | deseq | ✓ | ✗ | **-100.0** |
@@ -106,37 +109,37 @@ Perturbation tests (GPT-5.2 single trial; $\Delta\%$ represents completion chang
 | giab | ✓ | ✗ | — |
 
 ### Key Findings
-*   **Frontier models do not require complex scaffolding**: Claude Opus 4.5 achieved 100% completion using a basic Codex CLI, challenging the assumption that specialized agentic frameworks are always necessary.
-*   **Pipeline construction $\neq$ step-level reasoning**: Significant result variance across trials (e.g., comparative-genomics) indicates that even if an agent "completes" a run, its intermediate decisions (normalization, statistical assumptions) are unstable.
-*   **Low detection of corrupted data**: Agents often process corrupted inputs blindly. While `deseq` detection led to a 100% completion drop, this is arguably more desirable than producing silent errors.
-*   **Weak decoy robustness**: Most agents are easily misled by decoy files, lacking the judgment to select correct inputs based on prior domain knowledge.
-*   **Value of open-weight models in privacy scenarios**: While frontier models are stronger, open-weight models are essential for sensitive patient data. This study provides the first systematic baseline for them in bioinformatics.
+- **Frontier models do not require complex scaffolding**—Claude Opus 4.5 achieves 100% pipeline completion using bare Codex CLI, challenging the assumption that "agentic frameworks are necessary."
+- **Pipeline construction ≠ step-level reasoning**—Results vary greatly across trials (comparative-genomics, evolution are almost completely inconsistent), indicating that even if agents "complete" the pipeline, their intermediate decisions (parameters, normalization, statistical assumptions) are unstable.
+- **Low corrupted data detection rate**—Most agents do not detect manually corrupted input, blindly proceeding and producing erroneous results; the only exception is deseq (which errors out and drops completion by 100%), which is actually less favorable than "blindly running."
+- **Poor decoy robustness**—Most agents are misled by decoy files, lacking the prior knowledge to select the correct file.
+- **Open-weight models are valuable for privacy scenarios**—Although frontier closed-source models are stronger, sensitive patient data cannot be sent externally, making open-weight models necessary; this work provides the first systematic baseline for open-weight models in bioinformatics.
 
 ## Highlights & Insights
-*   **Pragmatic tradeoff between scale and feasibility**: Selecting small organisms to bundle reference data allows the benchmark to scale by avoiding massive infrastructure overhead (e.g., downloading 30GB human references).
-*   **Trace-based grading**: Evaluating the file path tree rather than full file content protects sensitive data and reduces token consumption.
-*   **Tri-perturbation design**: Separating corruption (cognition), decoy (attention), and bloat (robustness) provides a more granular failure mode analysis than a single "stress test."
-*   **Comparison of 10 agents**: Provides the first reproducible leaderboard for both closed and open-weight agents in the bioinformatics domain.
+- **Delicate trade-off between task scale and evaluation feasibility**—Deliberately selecting small organisms allows reference data to be included as input files, avoiding the infrastructure cost of "agents downloading 30GB human reference," which is key for benchmark scalability.
+- **LLM grader reviews trace file path trees, not file contents**—This both protects sensitive data and reduces grader token consumption, representing a pragmatic protocol design.
+- **Three-way perturbation design**—Separately testing corrupted (cognitive), decoy (attention), and bloat (robustness) failures provides more diagnostic power than a single "stress test."
+- **First systematic comparison of 5 closed-source and 5 open-source agents in bioinformatics**, providing the community with a directly reusable leaderboard foundation.
 
 ## Limitations & Future Work
-*   **Limited task scale**: The exclusion of human-scale workflows (e.g., 30× WGS variant calling) means infrastructure tasks like "finding, downloading, and staging" references are bypassed, potentially limiting generalization to production environments.
-*   **LLM grading bias**: The grader (GPT-5.1/5.2) may favor specific trace patterns and belongs to the same generation as the evaluated agents, creating a circular dependency.
-*   **Single-trial perturbation tests**: Conclusions are drawn from single runs, which may contain statistical noise. Future work should report 2D tables of perturbations across multiple seeds.
-*   **Lack of open-weight robustness data**: Robustness tests were primarily performed on frontier models, leaving a gap in data for open-weight models.
-*   **Minimal failure mode quantification**: The analysis mentions issues like error-correction loops or premature termination but lacks quantitative metrics such as trace length or loop counts.
+- **Task scale is small**—Human-scale real workflows (e.g., full 30× WGS variant calling) are deliberately excluded; infrastructure steps like "finding references, downloading, staging" are skipped, limiting generalization to production scenarios.
+- **LLM scoring is itself biased**—The grader is also an LLM (GPT-5.1/5.2), possibly favoring certain trace patterns; and since grader and agent are of the same generation, there is a "LLM judging LLM" circularity.
+- **Perturbation tests are single trial**—Only one run per test, so statistical noise is high; for some tasks (comparative, evolution), trial-to-trial variation exceeds perturbation effect, so a 2D table of perturbation × seeds should be reported.
+- **Open-weight only evaluated pass@1**; robustness was not tested on open-weight models, which is a clear shortcoming.
+- **Lack of quantitative analysis of agent loop failure modes**—It is mentioned that some frontier models fall into error-correction loops or terminate prematurely, but no quantitative metrics (trace length/loop count) are provided.
 
 ## Related Work & Insights
-*   **vs. SWE-bench (Jimenez et al., 2024)**: SWE-bench uses strict unit test pass/fail; BioAgent Bench uses soft LLM judging + step-level partial credit, better suited for scientific workflows with multiple valid solutions.
-*   **vs. BioML-bench (Miller et al., 2025)**: BioML-bench focuses on ML processes (protein engineering, imaging); BioAgent Bench focuses on bioinformatics toolchain orchestration.
-*   **vs. LAB-Bench (Laurent et al., 2024)**: LAB-Bench targets research skills via multiple-choice questions; BioAgent Bench emphasizes actual execution.
-*   **vs. BixBench (Mitchener et al., 2025)**: BixBench targets data analysis reasoning; BioAgent Bench emphasizes end-to-end pipeline execution and robustness.
-*   **Insight**: In any field with massive intermediate products and multiple valid steps (e.g., quantum chemistry, geosciences), the protocols used here—LLM judging, scale constraints, and tri-type perturbations—provide a blueprint for creating scalable agent benchmarks.
+- **vs SWE-bench (Jimenez et al., 2024)**: SWE-bench uses strict unit test pass/fail, while BioAgent Bench uses LLM judge soft scoring + step-level partial credit, better suited for multi-solution scientific workflows.
+- **vs BioML-bench (Miller et al., 2025)**: BioML focuses on ML pipelines (protein engineering, single-cell, imaging, drug discovery), while BioAgent Bench focuses on bioinformatics toolchain orchestration; they are complementary.
+- **vs LAB-Bench (Laurent et al., 2024)**: LAB-Bench is mainly multiple-choice "research skills" assessment, while BioAgent Bench emphasizes actual execution ability.
+- **vs BixBench (Mitchener et al., 2025)**: BixBench focuses on data analysis reasoning, while BioAgent Bench emphasizes end-to-end pipeline execution + robustness perturbations.
+- **Insights**: In any domain with "multiple solutions + multiple steps + abundant intermediate outputs" (quantum chemistry, earth science pipelines, robotics skill chains), the protocol of "LLM judge + task scale constraint + three-way perturbation" can be adapted to build scalable agent benchmarks.
 
 ## Rating
-*   Novelty: ⭐⭐⭐ (Pragmatic protocol, but LLM-judge paradigm is established)
-*   Experimental Thoroughness: ⭐⭐⭐ (Broad model/harness coverage, but robustness trials are limited)
-*   Writing Quality: ⭐⭐⭐⭐ (Clear distinctions between task/trial/grader/harness)
-*   Value: ⭐⭐⭐⭐ (Provides the first systematic feasibility answer for bioinformatics agents)
+- Novelty: ⭐⭐⭐ Pragmatic protocol design, but task format and LLM-judge paradigm are not groundbreaking
+- Experimental Thoroughness: ⭐⭐⭐ 10 tasks × 10 models × 3 harnesses is broad, but single-trial perturbation and lack of open-weight robustness are major flaws
+- Writing Quality: ⭐⭐⭐⭐ Clear concepts (strict distinction between task/trial/grader/harness/suite), straightforward results section
+- Value: ⭐⭐⭐⭐ Provides the first systematic answer to the feasibility of "using agents for bioinformatics," with practical deployment reference value
 
 <!-- RELATED:START -->
 
@@ -146,9 +149,9 @@ Perturbation tests (GPT-5.2 single trial; $\Delta\%$ represents completion chang
 
 - [\[ACL 2026\] ACIArena: Toward Unified Evaluation for Agent Cascading Injection](../../ACL2026/llm_safety/aciarena_toward_unified_evaluation_for_agent_cascading_injection.md)
 - [\[ICML 2026\] Watermarking LLM Agent Trajectories (ACTHOOK)](watermarking_llm_agent_trajectories.md)
-- [\[ICML 2026\] SafeHarbor: Defining Precise Decision Boundaries via Hierarchical Memory-Augmented Guardrail for LLM Agent Safety](safeharbor_hierarchical_memory-augmented_guardrail_for_llm_agent_safety.md)
 - [\[ICML 2026\] Position: Retire the "Positive Backdoor" Label -- Secret Alignment Requires Strict and Systematic Evaluation](position_retire_the_positive_backdoor_label_--_secret_alignment_requires_strict_.md)
 - [\[ICLR 2026\] Unlearning Evaluation through Subset Statistical Independence](../../ICLR2026/llm_safety/unlearning_evaluation_through_subset_statistical_independence.md)
+- [\[ACL 2026\] Responsible Federated LLMs via Safety Filtering and Constitutional AI](../../ACL2026/llm_safety/responsible_federated_llms_via_safety_filtering_and_constitutional_ai.md)
 
 </div>
 

@@ -136,9 +136,9 @@ The rotor-gadget uses two orders of magnitude fewer parameters than LoRA.
 
 - [\[NeurIPS 2025\] Linear Transformers Implicitly Discover Unified Numerical Algorithms](linear_transformers_implicitly_discover_unified_numerical_algorithms.md)
 - [\[NeurIPS 2025\] In-Context Learning of Linear Dynamical Systems with Transformers: Approximation Bounds and Depth-Separation](in-context_learning_of_linear_dynamical_systems_with_transformers_approximation_.md)
-- [\[CVPR 2026\] Composing Concepts from Images and Videos via Concept-prompt Binding](../../CVPR2026/llm_nlp/composing_concepts_from_images_and_videos_via_concept-prompt_binding.md)
 - [\[ICML 2026\] Why Are Linear RNNs More Parallelizable?](../../ICML2026/llm_nlp/why_are_linear_rnns_more_parallelizable.md)
 - [\[ICML 2026\] Structured Generalized Linear Token Mixing: Shifting Gears Between Complexity and Expressivity with SND + Kronecker](../../ICML2026/llm_nlp/trading_complexity_for_expressivity_through_structured_generalized_linear_token_.md)
+- [\[NeurIPS 2025\] Nemotron-Flash: Towards Latency-Optimal Hybrid Small Language Models](nemotron-flash_towards_latency-optimal_hybrid_small_language_models.md)
 
 </div>
 

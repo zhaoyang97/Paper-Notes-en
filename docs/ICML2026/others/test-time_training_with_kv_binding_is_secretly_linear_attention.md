@@ -2,129 +2,132 @@
 title: >-
   [Paper Note] Test-Time Training with KV Binding Is Secretly Linear Attention
 description: >-
-  [ICML 2026][Test-Time Training] This paper uses four "memory paradox" counterexamples and a set of rigorous expansion theorems to prove that TTT with KV-binding inner loops (such as LaCT, ViTTT)…
+  [ICML 2026][Test-time training] This paper uses four "memory paradox" counterexamples and a set of rigorous unrolling theorems to prove that TTT with KV-binding inner loops (e.g., LaCT, ViTTT)…
 tags:
   - "ICML 2026"
-  - "Test-Time Training"
+  - "Test-time training"
   - "TTT-KVB"
-  - "Linear Attention"
-  - "Parallelization"
-  - "Architecture Simplification"
+  - "linear attention"
+  - "parallelization"
+  - "architecture simplification"
 date: 2026-05-08
-content_hash: 40bb17db901aef79
+content_hash: dea5633884dda3d8
 ---
 
 # Test-Time Training with KV Binding Is Secretly Linear Attention
 
 **Conference**: ICML 2026  
 **arXiv**: [2602.21204](https://arxiv.org/abs/2602.21204)  
-**Code**: https://research.nvidia.com/labs/sil/projects/tttla/ (Available)  
+**Code**: https://research.nvidia.com/labs/sil/projects/tttla/ (available)  
 **Area**: Sequence Modeling / Transformer Alternatives / Linear Attention  
-**Keywords**: Test-Time Training, TTT-KVB, Linear Attention, Parallelization, Architecture Simplification
+**Keywords**: Test-time training, TTT-KVB, linear attention, parallelization, architecture simplification
 
 ## TL;DR
-This paper uses four "memory paradox" counterexamples and a set of rigorous expansion theorems to prove that TTT with KV-binding inner loops (such as LaCT, ViTTT), even with multi-layer MLPs and momentum, is merely a "learned linear attention operator." Based on this, it simplifies and parallelizes the mechanism into standard linear attention, achieving a 4× throughput increase with negligible performance loss.
+This paper uses four "memory paradox" counterexamples and a set of rigorous unrolling theorems to prove that TTT with KV-binding inner loops (e.g., LaCT, ViTTT), even with multi-layer MLPs and momentum, is essentially "learned linear attention operators." Based on this, the authors simplify and parallelize it into standard linear attention, achieving a 4× throughput boost with almost no performance drop.
 
 ## Background & Motivation
-**Background**: TTT-KVB (Test-Time Training with KV-binding inner loops) is considered an alternative sequence modeling layer to softmax attention. The mainstream interpretation is "online meta-learning / test-time memorization"—storing key-value relationships into an MLP's fast weights $f_\theta$ and retrieving them using a query. Recent works like LaCT, Titans, and ViTTT have introduced complex designs based on this interpretation, such as multi-layer MLPs, Muon-style gradient orthogonalization, momentum, weight normalization, and per-token learnable learning rates, all aimed at improving "memory fidelity."
+**Background**: TTT-KVB (test-time training with KV-binding inner loops) has been treated as a softmax attention alternative for sequence modeling. The mainstream interpretation is "online meta-learning / test-time memory"—storing key-value relations in an MLP fast-weight $f_\theta$, then retrieving with queries. Recent works like LaCT, Titans, and ViTTT have introduced multi-layer MLPs, Muon-style gradient orthogonalization, momentum, weight normalization, and per-token learnable learning rates, all aiming to improve "memory fidelity."
 
-**Limitations of Prior Work**: The authors found that the "test-time memorization" interpretation systematically contradicts empirical phenomena:
-- **Optimization-Performance Inverse**: Increasing inner-loop GD steps reduces inner loss (better memorization), but downstream task performance worsens (Figure 1);
-- **Gradient Ascent Still Works**: Retraining by changing the inner loop to gradient ascent (intentionally destroying memory) results in almost no performance drop or even a slight increase (Table 1);
-- **Q-K Distribution Asymmetry**: t-SNE shows significant separation of Q and K in the representation space, directly conflicting with the assumption of "using Q to retrieve $f_\theta$ trained by K";
-- **Q→K Replacement Harm-free**: Replacing the query directly with the key to calculate TTT output results in almost unchanged PPL / PSNR / accuracy.
+**Limitations of Prior Work**: The authors find that the "test-time memory" interpretation systematically contradicts empirical phenomena:
+- **Optimization-performance inversion**: Increasing inner-loop GD steps reduces inner loss (better memory), but downstream task performance worsens (Fig. 1).
+- **Gradient ascent still works**: Changing the inner loop to gradient ascent (which should harm memory) and retraining barely affects or even slightly improves performance (Table 1).
+- **Q-K distribution asymmetry**: t-SNE shows Q and K are significantly separated in representation space, directly contradicting the assumption that Q retrieves from $f_\theta$ trained on K.
+- **Q→K replacement is harmless**: Replacing the query with the key to compute TTT output yields almost unchanged PPL / PSNR / accuracy.
 
-Any one of these four phenomena is sufficient to doubt the memory interpretation; together, they constitute a fundamental refutation.
+Any one of these phenomena casts doubt on the memory interpretation; together, they essentially refute it.
 
-**Key Challenge**: The existing theoretical framework (test-time memorization) fails to align with empirical phenomena (gradient direction irrelevance, Q-K role swap harm-free, memory quality inverse to performance). Continuing to add complex modules based on the memory concept is merely "ineffective refinement."
+**Key Challenge**: The current theoretical framework (test-time memorization) fundamentally mismatches empirical findings (gradient direction irrelevant, Q-K role swap harmless, memory quality inversely related to performance); adding more complex modules under the memory paradigm is just "ineffective refinement."
 
-**Goal**: (i) Find a unified theoretical framework for TTT-KVB that explains all counterexamples; (ii) Determine which complex designs are redundant; (iii) Unlock the sequence structure from recurrent to parallel for engineering acceleration.
+**Goal**: (i) Provide a unified theoretical framework for TTT-KVB that explains all counterexamples; (ii) Identify which complex designs are redundant; (iii) Unlock the sequence structure from recurrent to parallel for engineering acceleration.
 
-**Key Insight**: Explicitly expand the GD steps of the inner loop. While Sun 2025 proved that "single layer + zero initialization + linear inner loop" makes TTT equivalent to linear attention, the authors generalize this to "multi-layer MLP + momentum + non-zero initialization."
+**Key Insight**: Explicitly unroll the inner-loop GD steps. Sun 2025 has shown that for "single-layer + zero initialization + linear inner loop," TTT = linear attention. The authors generalize this to the case of "multi-layer MLP + momentum + nonzero initialization."
 
-**Core Idea**: The inner loop of TTT-KVB is not meta-learning for a lookup table, but rather maps the original $(q,k,v)$ through $\phi$ into a "learned structured $(q,k,v)$." The entire mechanism is equivalent to a linear attention operator.
+**Core Idea**: The inner loop of TTT-KVB is not a meta-learning memory table, but rather maps the original $(q,k,v)$ via $\phi$ into a "learned structured $(q,k,v)$," making the entire mechanism equivalent to a linear attention operator.
 
 ## Method
 
 ### Overall Architecture
-The paper proceeds in three steps: (1) Empirically presents four counterexamples conflicting with the memory interpretation (Section 4); (2) Uses three theorems to rigorously formulate TTT-KVB as linear attention (Section 5); (3) Proposes an ablation path to strip LaCT/ViTTT down to standard linear attention (Variants 1-6) and replaces the recurrent implementation with parallel prefix-scan (Section 6).
+The paper proceeds in three steps: (1) Empirically presents four counterexamples that contradict the memory interpretation (Section 4); (2) Uses three theorems to rigorously reduce TTT-KVB to the form of linear attention (Section 5); (3) Proposes an ablation path (Variants 1-6) that stepwise strips LaCT/ViTTT down to standard linear attention, ultimately replacing the recurrent implementation with parallel prefix-scan (Section 6).
 
 ### Key Designs
 
-1.  **Inner Loop Expansion Theorem (Core Theoretical Contribution)**:
-    -   **Function**: Strictly writes the output of general TTT-KVB (multi-layer MLP + momentum) in the form of linear attention.
-    -   **Mechanism**: Assume the last layer of the inner loop $f(x)=\phi(x;\Theta)W$ is linear without bias. Theorem 5.1: After a single GD step, $o=\phi_{t+1}(q)(W_t+\phi_t(k)^\top g_t(k))$, where $g_t(k)=-\eta\,\partial\mathcal{L}/\partial f_t(k)$. This matches the linear attention form $o=\hat q(S_0+\hat k^\top\hat v)$, with $\hat q=\phi_{t+1}(q), \hat k=\phi_t(k), \hat v=g_t(k), S_0=W_t$. Theorem 5.2 expands this for sequences: $o_t=\phi_{t+1}(q_t)(W_0+\sum_{i=0}^t\phi_i(k_i)^\top g_i(k_i))$. Theorem 5.3 further handles GD with momentum by writing it as momentum-weighted effective values $v^\text{eff}_i=g_i(k_i)\cdot\sum_{j=i}^t\beta_i^j$, maintaining the linear attention structure.
-    -   **Design Motivation**: To explain the four counterexamples, a formal representation independent of the "memory" hypothesis is required; the linear attention perspective explains everything mechanistically (gradient direction is absorbed into effective values, Q/K don't need semantic symmetry, inner loop steps act as different effective operators rather than "better memorization").
+1. **Inner-loop Unrolling Theorem (Core Theoretical Contribution)**:
 
-2.  **Ablation Path Stripping Complex TTT to Linear Attention**:
-    -   **Function**: Reduces LaCT and ViTTT to standard linear attention through 6 steps, quantifying the real contribution of each common design.
-    -   **Mechanism**: Step 1: Update only the last layer (making $\phi$ static); Step 2: Remove weight norm (making state updates parallelizable); Step 3: Multi-layer MLP → Single linear layer; Step 4: Remove per-token learnable lr (absorbed by effective values); Step 5: Remove momentum; Step 6: Remove gradient orthogonalization $\mathcal{M}(\cdot)$, arriving at $o=q(W+\sum_i k_i^\top v_i)$. Each step is supported by theorems or derivations for "why it can be removed."
-    -   **Design Motivation**: Abstractly claiming "TTT equals linear attention" is insufficient; the ablation path links each removed module to performance/speed metrics, making theoretical conclusions actionable for engineering.
+    - **Function**: Expresses the output of general TTT-KVB (multi-layer MLP + momentum) strictly in the form of linear attention.
+    - **Mechanism**: Suppose the inner loop $f(x)=\phi(x;\Theta)W$ has a final layer that is linear without bias. Theorem 5.1: After one GD update, $o=\phi_{t+1}(q)(W_t+\phi_t(k)^\top g_t(k))$, where $g_t(k)=-\eta\,\partial\mathcal{L}/\partial f_t(k)$. This matches the linear attention form $o=\hat q(S_0+\hat k^\top\hat v)$, where $\hat q=\phi_{t+1}(q),\hat k=\phi_t(k),\hat v=g_t(k),S_0=W_t$. Theorem 5.2 unrolls the sequence: $o_t=\phi_{t+1}(q_t)(W_0+\sum_{i=0}^t\phi_i(k_i)^\top g_i(k_i))$. Theorem 5.3 further expresses GD with momentum as an effective value $v^\text{eff}_i=g_i(k_i)\cdot\sum_{j=i}^t\beta_i^j$, still retaining the linear attention structure.
+    - **Design Motivation**: To explain the four counterexamples, a formal representation not relying on the "memory" assumption is needed; the linear attention perspective mechanistically explains all counterexamples (gradient direction absorbed into effective value, Q/K need not be semantically symmetric, inner-loop steps = different effective operators, not "stronger memory").
 
-3.  **Parallel Prefix-Scan Form**:
-    -   **Function**: Replaces traditional recurrent implementation with a parallel one, increasing throughput by 4×.
-    -   **Mechanism**: When weight normalization is removed and only the last layer is updated, state updates become associative (the kernel $\phi_t\equiv\phi(\cdot;\Theta)$ is independent of history). This allows using parallel prefix scan instead of token-by-token accumulation. The paper provides full equivalence proofs (Appendix H) and shows that adding weight norm or dynamic kernels breaks associativity (Appendix I).
-    -   **Design Motivation**: All previous TTT implementations defaulted to sequential, a byproduct of treating the inner loop as truly "updating parameters over time." Once recognized as linear attention, parallelization is obvious.
+2. **Ablation Path to Reduce Complex TTT to Linear Attention**:
+
+    - **Function**: Through six ablation steps, reduces LaCT and ViTTT to standard linear attention, quantifying the real contribution of each common design.
+    - **Mechanism**: Step 1 updates only the last layer (making $\phi$ static); Step 2 removes weight norm (enabling parallel state updates); Step 3 multi-layer MLP → single-layer linear; Step 4 removes per-token learnable lr (absorbed into effective value); Step 5 removes momentum; Step 6 removes gradient orthogonalization $\mathcal{M}(\cdot)$, finally yielding $o=q(W+\sum_i k_i^\top v_i)$. Each step is supported by a theorem or derivation explaining "why it can be removed."
+    - **Design Motivation**: Simply claiming "TTT is equivalent to linear attention" is abstract; the ablation path ties each removed module to performance/speed numbers, making the theoretical conclusion actionable for engineering.
+
+3. **Parallel Prefix-Scan Form**:
+
+    - **Function**: Replaces traditional recurrent implementation with a parallel one, achieving 4× throughput.
+    - **Mechanism**: When weight normalization is removed and only the last layer is updated, state updates become associative (the kernel function $\phi_t\equiv\phi(\cdot;\Theta)$ is history-independent), allowing parallel prefix scan instead of token-wise accumulation. The paper provides a full equivalence proof (Appendix H) and shows that adding weight norm or dynamic kernels breaks associativity (Appendix I).
+    - **Design Motivation**: All prior TTT implementations assumed sequential updates, a byproduct of treating the inner loop as "updating parameters over time"; once recognized as linear attention, parallelization is straightforward.
 
 ### Loss & Training
-The paper does not change the loss, only the structural understanding. Ablations are evaluated on LaCT-LLM, LaCT-NVS, and ViTTT. The parallel implementation achieves a 1.19× end-to-end training speedup on LaCT-LLM.
+The paper does not change the loss, only the architectural interpretation. Ablations are evaluated on LaCT-LLM, LaCT-NVS, and ViTTT tasks; the parallel implementation achieves 1.19× end-to-end training speedup on LaCT-LLM.
 
 ## Key Experimental Results
 
 ### Main Results: 6-step Ablation Path
 
-| Configuration | LaCT-LLM PPL ↓ | LaCT-NVS PSNR ↑ | ViTTT Top-1 ↑ | Throughput (Recurrent) | Throughput (Parallel) |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| Baseline (Full TTT) | 16.43 | 25.94 | 79.34% | 4.30M tok/s | — |
-| V1: Only Update Last Layer | **15.93** | **25.97** | 79.63% | 10.60M | — |
-| V2: Remove Weight Norm | 16.31 | 25.93 | 79.63% | 11.02M | 30.18M |
-| V3: Multi-layer MLP → Single | 16.23 | 25.71 | 79.39% | 12.95M | 49.69M |
-| V4: Remove Per-token LR | 16.12 | 25.70 | 79.39% | 13.31M | 53.99M |
-| V5: Remove Momentum | 15.97 | 25.70 | 79.39% | 14.40M | 57.28M |
-| V6: No Ortho (= Std Linear Attn) | 16.80 | 25.73 | **79.54%** | **89.67M** | **124.6M** |
+| Configuration | LaCT-LLM PPL ↓ | LaCT-NVS PSNR ↑ | ViTTT Top-1 ↑ | Throughput (recurrent) | Throughput (parallel) |
+|--------------|---------------|-----------------|---------------|------------------------|-----------------------|
+| Baseline (full TTT) | 16.43 | 25.94 | 79.34% | 4.30M tok/s | — |
+| V1 Only update last layer | **15.93** | **25.97** | 79.63% | 10.60M | — |
+| V2 Remove weight norm | 16.31 | 25.93 | 79.63% | 11.02M | 30.18M |
+| V3 Multi-layer MLP→single-layer | 16.23 | 25.71 | 79.39% | 12.95M | 49.69M |
+| V4 Remove per-token lr | 16.12 | 25.70 | 79.39% | 13.31M | 53.99M |
+| V5 Remove momentum | 15.97 | 25.70 | 79.39% | 14.40M | 57.28M |
+| V6 Remove gradient orthogonalization (= standard linear attention) | 16.80 | 25.73 | **79.54%** | **89.67M** | **124.6M** |
 
-Variant 1 (updating only the last layer) is actually the best. Variant 6 (pure linear attention) only increases PPL by +0.37 / -0.21 dB compared to the baseline but yields 21× recurrent and 29× parallel throughput.
+Variant 1 (only updating the last layer) is actually optimal; Variant 6 (pure linear attention) increases PPL by only +0.37 / -0.21 dB compared to baseline, but achieves 21× recurrent and 29× parallel throughput.
 
-### Paradox Ablation (Table 1)
+### Counterexample Ablation (Table 1)
 
 | Setting | LaCT-LLM PPL ↓ | LaCT-NVS PSNR ↑ | ViTTT Top-1 ↑ |
-| :--- | :--- | :--- | :--- |
+|---------|---------------|-----------------|---------------|
 | Baseline | 16.43 | 25.94 | 79.34% |
-| Inner loop GD → Gradient Ascent (retrain) | **16.19** | 25.85 | **79.61%** |
+| Inner-loop GD → gradient ascent (retrain) | **16.19** | 25.85 | **79.61%** |
 | Replace Q with K for TTT output | **16.18** | 25.95 | 79.18% |
 
-Performance remains largely unchanged, making the memory interpretation untenable.
+Performance is essentially unchanged, thoroughly undermining the memory interpretation.
 
 ### Key Findings
-- **"Updating only the last layer" is optimal**: Consistent with the LoRA intuition of "freezing the backbone and tuning the head." Changing internal $\phi$ parameters makes the effective kernel a dynamic, history-dependent function, which is harder to train.
-- **Weight norm / per-token lr / momentum / multi-layer MLP are largely useless**: Theoretically, they are absorbed into effective $q,k,v$; in engineering, they mostly add overhead.
-- **Gradient orthogonalization is useful for LLMs but not for NVS/images**: It is the only "TTT-specific design" that remains significant, albeit marginally.
-- **Parallel implementation accelerates end-to-end training by 1.19×** with almost no change in PPL, proving that the recurrence of TTT was a misunderstanding.
+- **"Only updating the last layer" is actually best**: Consistent with LoRA's intuition of "freeze backbone, tune head"; changing $\phi$'s internal parameters makes the effective kernel a dynamic, history-dependent function, which is harder to train.
+- **Weight norm / per-token lr / momentum / multi-layer MLP are almost useless**: Theoretically, they are absorbed into effective $q,k,v$; in practice, they mainly add overhead.
+- **Gradient orthogonalization is useful for LLMs, not for NVS/images**: The only "TTT-unique" design with residual value, but only marginally so.
+- **Parallel implementation achieves 1.19× end-to-end training speedup** with almost unchanged PPL, indicating that TTT's recurrent nature is a misconception.
 
 ## Highlights & Insights
-- **Strong "Paradox-driven Disenchantment" Narrative**: The four counterexamples are simple and clearly conflict with existing theories, allowing readers to immediately accept the authors' reconstruction. This is a classic "deconstruct then rebuild" paradigm.
-- **Mathematizing Intuition with Expansion Theorems**: Simply stating "TTT is linear attention" would be met with skepticism, but Theorems 5.1-5.3 provide mechanically verifiable expansions, making the conclusions generalizable to methods like Titans.
-- **Clean Causal Chain**: Theory → ablation → engineering acceleration → end-to-end speed. This is a standard template for "theory-guided engineering."
-- **Q-K Asymmetry + Q→K Swap Harm-free**: This surprising phenomenon suggests that in TTT, $q$ and $k$ are no longer semantically symmetric key/query roles but merely input materials for the effective query/key.
+- **"Paradox-driven demystification" is a strong narrative**: The four counterexamples are simple and clearly contradict existing theory, making the authors' reconstruction immediately convincing—a classic "break then rebuild" paradigm.
+- **Unrolling theorems formalize intuition**: Simply stating "TTT is linear attention" is unconvincing, but Theorems 5.1–5.3 provide mechanically verifiable expansions, generalizable to methods like Titans not directly experimented on.
+- **Theory → ablation → engineering acceleration → end-to-end speed** forms a clean causal chain, a standard template for "theory guiding engineering."
+- **Q-K distribution asymmetry + Q→K swap being harmless** is a surprising phenomenon, indicating that $q,k$ in TTT are no longer semantically symmetric key/query roles, but merely input material for effective query/key.
 
 ## Limitations & Future Work
-- The theory assumes the last layer of the inner loop is linear without bias, which may not directly apply to non-linear output layers (e.g., with softmax/normalization).
-- Empirical work focuses on LaCT / ViTTT; methods like Titans / Atlas meet the theoretical assumptions but were not experimentally verified.
-- The deeper mechanism of "why gradient orthogonalization helps in LLMs" is not discussed; it may involve implicit regularization of gradient noise/rank, which is future work.
-- The finding that "updating only the last layer" is optimal directly challenges recent trends toward "increasingly complex inner loops" and requires community replication.
+- The theory assumes the inner loop's last layer is linear without bias, not directly applicable to nonlinear output layers (e.g., with softmax/normalization).
+- Empirical validation is mainly on LaCT / ViTTT open-source implementations; Titans / Atlas, which meet the theoretical assumptions, are not experimentally verified.
+- The deeper mechanism of "why gradient orthogonalization helps LLMs" is not discussed; it may involve implicit regularization of gradient noise/rank, a topic for future work.
+- The finding that "only updating the last layer" is optimal directly challenges the recent trend of increasingly complex inner loops, requiring community-wide replication and validation.
 
 ## Related Work & Insights
-- **vs Sun 2025**: Previously proved single-layer linear inner loop = linear attention; Ours strictly generalizes this to multi-layer MLPs + momentum and induces extensive empirical consequences.
-- **vs Linear Attention / DeltaNet / Mamba**: Integrates TTT-KVB methods into the linear attention family, showing their "learning capacity" is not significantly greater than standard LA; complex inner loops are redundant packaging.
-- **vs LaCT / ViTTT / Titans**: Provides a unified deconstruction tool to evaluate whether new TTT variants are "truly new" or just "rebranded linear attention."
-- **vs Linear Transformers Are Secretly Fast Weight Programmers**: A disenchantment-style paper similar to this work's role in the TTT direction.
-- **Insight**: For "test-time optimization" or "meta-learning" works, expansion and equivalence analysis should be performed before increasing complexity; otherwise, one risks falling into the trap of "improving optimization metrics without moving downstream performance."
+- **vs Sun 2025**: Already proved single-layer linear inner loop = linear attention; this paper rigorously generalizes to multi-layer MLP + momentum, inducing many empirical consequences.
+- **vs Linear Attention / DeltaNet / Mamba**: Incorporates TTT-KVB methods into the linear attention family, showing their "learning capacity" is not much greater than standard LA, and complex inner loops are redundant wrappers.
+- **vs LaCT / ViTTT / Titans**: Provides a unified peeling tool to evaluate whether any new TTT variant is "truly novel" or just "rebranded linear attention."
+- **vs Linear Transformers Are Secretly Fast Weight Programmers**: Similar "thought it was A, actually B" demystification paper; this work extends that line to TTT.
+- **Insights**: For "test-time optimization" and "meta-learning" work, one should first perform unrolling and equivalence analysis before adding complexity; otherwise, it's easy to fall into the trap of "improved optimization metrics but unchanged downstream performance."
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Disenchants the entire TTT-KVB research line; theory+empirical+engineering in one go.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Three tasks covering LLM/NVS/Classification; counterexamples and ablations are thorough.
-- Writing Quality: ⭐⭐⭐⭐⭐ Narrative of "Paradox→Theorem→Simplification→Acceleration" is strong; every claim is backed by data.
-- Value: ⭐⭐⭐⭐⭐ Directly affects methodology choices for an entire research line and provides actionable parallel implementations.
+- Novelty: ⭐⭐⭐⭐⭐ Demystifies the entire TTT-KVB research line, integrating theory, empirical results, and engineering
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covers LLM/NVS/classification tasks, with thorough counterexamples and ablations
+- Writing Quality: ⭐⭐⭐⭐⭐ Strong narrative from paradox → theorem → simplification → acceleration, every claim backed by data
+- Value: ⭐⭐⭐⭐⭐ Directly impacts methodological choices for an entire research line, providing actionable parallel implementation
 
 <!-- RELATED:START -->
 
@@ -134,9 +137,9 @@ Performance remains largely unchanged, making the memory interpretation untenabl
 
 - [\[CVPR 2026\] ViT3: Unlocking Test-Time Training in Vision](../../CVPR2026/others/vit3_unlocking_test_time_training_in_vision.md)
 - [\[ICML 2026\] TEMPORA: Characterising the Time-Contingent Utility of Online Test-Time Adaptation](tempora_characterising_the_time-contingent_utility_of_online_test-time_adaptatio.md)
-- [\[ICML 2026\] On the Learnability of Test-Time Adaptation: A Recovery Complexity Perspective](on_the_learnability_of_test-time_adaptation_a_recovery_complexity_perspective.md)
 - [\[ICML 2026\] Private and Stable Test-Time Adaptation with Differential Privacy](private_and_stable_test-time_adaptation_with_differential_privacy.md)
-- [\[ICML 2026\] Mitigating Label Shift in Tabular In-Context Learning via Test-Time Posterior Adjustment](mitigating_label_shift_in_tabular_in-context_learning_via_test-time_posterior_ad.md)
+- [\[CVPR 2026\] Neural Collapse in Test-Time Adaptation](../../CVPR2026/others/neural_collapse_in_test-time_adaptation.md)
+- [\[NeurIPS 2025\] Alias-Free ViT: Fractional Shift Invariance via Linear Attention](../../NeurIPS2025/others/alias-free_vit_fractional_shift_invariance_via_linear_attention.md)
 
 </div>
 

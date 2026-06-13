@@ -179,8 +179,8 @@ Training is conducted on the NExT-QA training set; 8-frame experiments use a sin
 - [\[AAAI 2026\] APVR: Hour-Level Long Video Understanding with Adaptive Pivot Visual Information Retrieval](apvr_hour-level_long_video_understanding_with_adaptive_pivot.md)
 - [\[ICML 2026\] Video-MTR: Reinforced Multi-Turn Reasoning for Long Video Understanding](../../ICML2026/video_understanding/video-mtr_reinforced_multi-turn_reasoning_for_long_video_understanding.md)
 - [\[AAAI 2026\] Causality Matters: How Temporal Information Emerges in Video Language Models](causality_matters_how_temporal_information_emerges_in_video_language_models.md)
-- [\[ICML 2026\] Find, Fix, Reason: Context Repair for Video Reasoning](../../ICML2026/video_understanding/find_fix_reason_context_repair_for_video_reasoning.md)
 - [\[AAAI 2026\] TSPO: Temporal Sampling Policy Optimization for Long-form Video Language Understanding](tspo_temporal_sampling_policy_optimization_for_long-form_video_language_understa.md)
+- [\[ICLR 2026\] Map the Flow: Revealing Hidden Pathways of Information in VideoLLMs](../../ICLR2026/video_understanding/map_the_flow_revealing_hidden_pathways_of_information_in_videollms.md)
 
 </div>
 

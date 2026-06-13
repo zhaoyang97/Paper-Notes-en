@@ -28,7 +28,7 @@ item_list:
     t: "Brewing Stronger Features: Dual-Teacher Distillation for Multispectral Earth Observation"
   - u: "ca-lora_concept-aware_lora_for_domain-aligned_segmentation_dataset_generation/"
     t: "CA-LoRA: Concept-Aware LoRA for Domain-Aligned Segmentation Dataset Generation"
-  - u: "clip_is_shortsighted_paying_attention_beyond_the_first_sentence/"
+  - u: "clip_shortsighted_beyond_first_sentence/"
     t: "CLIP Is Shortsighted: Paying Attention Beyond the First Sentence"
   - u: "concept-guided_fine-tuning_steering_vits_away_from_spurious_correlations_to_impr/"
     t: "Concept-Guided Fine-Tuning: Steering ViTs away from Spurious Correlations to Improve Robustness"
@@ -82,7 +82,7 @@ item_total: 83
 
 **📷 CVPR2026** · **83** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (14)](../../ICML2026/segmentation/index.md) · [💬 ACL2026 (1)](../../ACL2026/segmentation/index.md) · [🔬 ICLR2026 (11)](../../ICLR2026/segmentation/index.md) · [🤖 AAAI2026 (31)](../../AAAI2026/segmentation/index.md) · [🧠 NeurIPS2025 (47)](../../NeurIPS2025/segmentation/index.md) · [📹 ICCV2025 (73)](../../ICCV2025/segmentation/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (13)](../../ICML2026/segmentation/index.md) · [💬 ACL2026 (1)](../../ACL2026/segmentation/index.md) · [🔬 ICLR2026 (11)](../../ICLR2026/segmentation/index.md) · [🤖 AAAI2026 (29)](../../AAAI2026/segmentation/index.md) · [🧠 NeurIPS2025 (45)](../../NeurIPS2025/segmentation/index.md) · [📹 ICCV2025 (73)](../../ICCV2025/segmentation/index.md)
 
 🔥 **Top topics:** Segmentation ×43 · Diffusion Models ×5 · Reasoning ×5 · Domain Adaptation ×4 · Object Detection ×4
 
@@ -114,7 +114,7 @@ item_total: 83
 
 :   This paper proposes Concept-Aware LoRA (CA-LoRA), which automatically identifies weight layers in a T2I model that are sensitive to specific concepts (e.g., viewpoint, style) and applies LoRA fine-tuning exclusively to those layers. This selective adaptation achieves domain alignment while preserving the diverse generation capability of the pretrained model, enabling the synthesis of high-quality urban-scene segmentation datasets.
 
-**[CLIP Is Shortsighted: Paying Attention Beyond the First Sentence](clip_is_shortsighted_paying_attention_beyond_the_first_sentence.md)**
+**[CLIP Is Shortsighted: Paying Attention Beyond the First Sentence](clip_shortsighted_beyond_first_sentence.md)**
 
 :   This paper reveals a systematic bias in CLIP-family models toward the summary sentence and early tokens in long-form text, and proposes DeBias-CLIP, which eliminates this bias via three text augmentation strategies — summary removal, sentence sub-sampling, and token padding — achieving state-of-the-art performance on both long- and short-text retrieval benchmarks without introducing any additional parameters.
 
@@ -306,7 +306,7 @@ item_total: 83
 
 :   This paper systematically evaluates 18 segmentation and geospatial foundation models (GFMs), and proposes PRUE—a field boundary segmentation recipe combining a U-Net backbone, composite loss function, and targeted data augmentation. PRUE achieves 76% IoU and 47% object-F1 on the FTW benchmark, surpassing the baseline by 6% and 9% respectively, while introducing a novel set of metrics for evaluating deployment robustness.
 
-**[RDNet: Region Proportion-Aware Dynamic Adaptive Salient Object Detection Network in Optical Remote Sensing Images](rdnet_region_proportionaware_dynamic_adaptive_sali.md)**
+**[RDNet: Region Proportion-Aware Dynamic Adaptive Salient Object Detection Network in Optical Remote Sensing Images](rdnet_region_proportion-aware_dynamic_adaptive_salient_object_detection_network_.md)**
 
 :   This paper proposes RDNet, which employs a region proportion-aware Proportion Guidance block to estimate the area ratio of salient objects and dynamically selects combinations of 3/4/5 convolutional kernels of varying sizes for detail extraction. Combined with wavelet-domain frequency-matched context enhancement (reducing computation to 1/4) and a cross-attention localization module, RDNet comprehensively outperforms 21 state-of-the-art methods on three optical remote sensing SOD benchmarks: EORSSD, ORSSD, and ORSI-4199.
 

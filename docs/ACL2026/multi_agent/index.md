@@ -82,7 +82,7 @@ item_total: 39
 
 **💬 ACL2026** · **39** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (14)](../../ICML2026/multi_agent/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (15)](../../ICML2026/multi_agent/index.md) · [🔬 ICLR2026 (15)](../../ICLR2026/multi_agent/index.md) · [🤖 AAAI2026 (26)](../../AAAI2026/multi_agent/index.md) · [🧠 NeurIPS2025 (17)](../../NeurIPS2025/multi_agent/index.md)
 
 🔥 **Top topics:** Agents ×34 · LLM ×13 · Reasoning ×5 · Question Answering ×3 · Adversarial Robustness ×2
 
@@ -96,11 +96,11 @@ item_total: 39
 
 **[ATLAS: Adaptive Trading with LLM AgentS Through Dynamic Prompt Optimization and Multi-Agent Coordination](atlas_adaptive_trading_with_llm_agents_through_dynamic_prompt_optimization_and_m.md)**
 
-:   Ours proposes the ATLAS multi-agent financial trading framework and the Adaptive-OPRO prompt optimization method. It prepares heterogeneous market information through specialized analyst agents and dynamically optimizes the central trading agent's instruction prompts based on delayed noisy feedback, significantly surpassing baselines across various market volatility environments.
+:   This paper proposes ATLAS, a multi-agent financial trading framework, and Adaptive-OPRO, a prompt optimization method. ATLAS employs specialized analyst agents to prepare heterogeneous market information and dynamically optimizes the instruction prompt of a central trading agent based on delayed and noisy feedback, achieving significant improvements over baselines across diverse market volatility conditions.
 
 **[AutoReproduce: Automatic AI Experiment Reproduction with Paper Lineage](autoreproduce_automatic_ai_experiment_reproduction_with_paper_lineage.md)**
 
-:   AutoReproduce proposes a multi-agent framework that mines implicit domain knowledge from references via a "paper lineage" algorithm to achieve end-to-end automatic reproduction of paper experiments, achieving a 94.87% code execution rate and only a 19.72% performance gap on the self-constructed ReproduceBench.
+:   AutoReproduce proposes a multi-agent framework that mines implicit domain knowledge from cited references via a "Paper Lineage" algorithm, enabling end-to-end automatic reproduction of paper experiments. On the self-constructed benchmark ReproduceBench, it achieves a code execution rate of 94.87% with a performance gap of only 19.72%.
 
 **[BookAgent: Orchestrating Safety-Aware Visual Narratives via Multi-Agent Cognitive Calibration](bookagent_orchestrating_safety-aware_visual_narratives_via_multi-agent_cognitive.md)**
 
@@ -116,7 +116,7 @@ item_total: 39
 
 **[Conjunctive Prompt Attacks in Multi-Agent LLM Systems](conjunctive_prompt_attacks_in_multi-agent_llm_systems.md)**
 
-:   This paper investigates conjunctive prompt attacks in multi-agent LLM systems: trigger keys embedded in user queries and hidden templates in compromised remote agents appear harmless individually, but activate harmful behavior when routing brings them to the same agent. Existing defenses (PromptGuard, Llama-Guard, etc.) cannot reliably prevent these attacks.
+:   This paper investigates conjunctive prompt attacks in multi-agent LLM systems: a trigger key embedded in a user query and a hidden template injected into a compromised remote agent each appear benign in isolation, yet activate harmful behavior when routing brings them together at the same agent. Existing defenses (PromptGuard, Llama-Guard, etc.) fail to reliably prevent such attacks.
 
 **[ConSensus: Multi-Agent Collaboration for Multimodal Sensing](consensus_multi-agent_collaboration_for_multimodal_sensing.md)**
 
@@ -140,7 +140,7 @@ item_total: 39
 
 **[EvoSpark: Endogenous Interactive Agent Societies for Unified Long-Horizon Narrative Evolution](evospark_endogenous_interactive_agent_societies_for_unified_long-horizon_narrati.md)**
 
-:   EvoSpark proposes a multi-agent framework to support long-horizon narrative evolution. It resolves social memory stacking and narrative-spatial misalignment through a triple design: Recursive Social Basis (RSB for social cognitive metabolism), Generative Mise-en-scène (GMS for character-location-plot alignment), and Emergent Character Grounding Protocol (ECGP to transform LLM hallucinations into persistent characters).
+:   EvoSpark proposes a multi-agent framework for long-horizon narrative evolution, addressing social memory stacking and narrative–spatial misalignment through three core designs: hierarchical recursive memory (RSB as social cognitive metabolism), generative scene scheduling (GMS for character–location–plot alignment), and an emergent character grounding protocol (ECGP that converts LLM hallucinations into persistent entities).
 
 **[Explicit Trait Inference for Multi-Agent Coordination](explicit_trait_inference_for_multi-agent_coordination.md)**
 
@@ -184,7 +184,7 @@ item_total: 39
 
 **[ODUTQA-MDC: A Task for Open-Domain Underspecified Tabular QA with Multi-turn Dialogue-based Clarification](odutqa-mdc_a_task_for_open-domain_underspecified_tabular_qa_with_multi-turn_dial.md)**
 
-:   This paper proposes the ODUTQA-MDC task and benchmark, which systematically investigates the detection and multi-turn dialogue clarification of user query ambiguity in open-domain scenarios for the first time. It constructs a large-scale dataset containing 25,105 QA pairs and designs the MAIC-TQA multi-agent framework to achieve end-to-end "detection-clarification-reasoning" for tabular QA.
+:   This paper introduces the ODUTQA-MDC task and benchmark, the first systematic study of underspecified query detection and multi-turn dialogue-based clarification in open-domain tabular QA. The authors construct a large-scale dataset of 25,105 QA pairs and propose the MAIC-TQA multi-agent framework to perform end-to-end "detect–clarify–reason" tabular question answering.
 
 **[OxyGent: Making Multi-Agent Systems Modular, Observable, and Evolvable via Oxy Abstraction](oxygent_making_multi-agent_systems_modular_observable_and_evolvable_via_oxy_abst.md)**
 
@@ -208,7 +208,7 @@ item_total: 39
 
 **[Scaling External Knowledge Input Beyond Context Windows of LLMs via Multi-Agent Collaboration](scaling_external_knowledge_input_beyond_context_windows_of_llms_via_multi-agent_.md)**
 
-:   The ExtAgents multi-agent framework is proposed to address the performance bottleneck where existing multi-agent methods degrade when scaling external knowledge beyond the context window. It achieves significant improvements in multi-hop QA and long survey generation through two mechanisms: Global Knowledge Synchronization (information exchange among all Seeking Agents) and Accumulative Reasoning (gradually injecting filtered knowledge into the Reasoning Agent).
+:   This paper proposes ExtAgents, a multi-agent framework that addresses the performance degradation observed in existing multi-agent methods when scaling external knowledge input beyond the context window. It introduces two mechanisms—global knowledge synchronization (information exchange across all Seeking Agents) and knowledge-accumulative reasoning (progressively injecting filtered knowledge into the Reasoning Agent)—achieving significant improvements on multi-hop QA and long survey generation tasks.
 
 **[Seeing the Whole Elephant: A Benchmark for Failure Attribution in LLM-based Multi-Agent Systems](seeing_the_whole_elephant_a_benchmark_for_failure_attribution_in_llm-based_multi.md)**
 

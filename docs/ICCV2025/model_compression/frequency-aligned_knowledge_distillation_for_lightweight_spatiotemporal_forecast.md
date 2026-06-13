@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] SDKD: Frequency-Aligned Knowledge Distillation for Lightweight Spatiotemporal Forecasting
 description: >-
-  [ICCV 2025][Autonomous Driving][Spatiotemporal Forecasting] This paper proposes SDKD (Spectral Decoupled Knowledge Distillation), a framework that leverages a frequency-aware teacher model and a frequency-aligned distill…
+  [ICCV 2025][Model Compression][Spatiotemporal Forecasting] This paper proposes SDKD (Spectral Decoupled Knowledge Distillation), a framework that leverages a frequency-aware teacher model and a frequency-aligned distilla…
 tags:
   - "ICCV 2025"
-  - "Autonomous Driving"
+  - "Model Compression"
   - "Spatiotemporal Forecasting"
   - "Knowledge Distillation"
   - "Frequency Decoupling"
@@ -141,11 +141,11 @@ On the RBC dataset, CAMKD achieves the best results with MSE=0.0261, MAE=0.112, 
 
 ## Related Papers
 
-- [\[ICCV 2025\] ACAM-KD: Adaptive and Cooperative Attention Masking for Knowledge Distillation](acam_kd_adaptive_cooperative_attention_masking_knowledge_distillation.md)
-- [\[ICCV 2025\] Occupancy Learning with Spatiotemporal Memory](occupancy_learning_with_spatiotemporal_memory.md)
-- [\[ICCV 2025\] Passing the Driving Knowledge Test](passing_the_driving_knowledge_test.md)
-- [\[ICCV 2025\] Future-Aware Interaction Network For Motion Forecasting](future-aware_interaction_network_for_motion_forecasting.md)
-- [\[ICCV 2025\] DiST-4D: Disentangled Spatiotemporal Diffusion with Metric Depth for 4D Driving Scene Generation](dist-4d_disentangled_spatiotemporal_diffusion_with_metric_depth_for_4d_driving_s.md)
+- [\[ICCV 2025\] Knowledge Distillation with Refined Logits](knowledge_distillation_with_refined_logits.md)
+- [\[ICCV 2025\] A Good Teacher Adapts Their Knowledge for Distillation](a_good_teacher_adapts_their_knowledge_for_distillation.md)
+- [\[ICCV 2025\] EA-KD: Entropy-based Adaptive Knowledge Distillation](ea-kd_entropy-based_adaptive_knowledge_distillation.md)
+- [\[ICCV 2025\] Local Dense Logit Relations for Enhanced Knowledge Distillation](local_dense_logit_relations_for_enhanced_knowledge_distillation.md)
+- [\[ICCV 2025\] Perspective-Aware Teaching: Adapting Knowledge for Heterogeneous Distillation](perspective-aware_teaching_adapting_knowledge_for_heterogeneous_distillation.md)
 
 </div>
 

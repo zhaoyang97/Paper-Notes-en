@@ -2,17 +2,17 @@
 title: >-
   NeurIPS2025 Self-Supervised Learning Papers · 33 Notes
 description: >-
-  33 NeurIPS2025 papers in the Self-Supervised Learning area, covering Self-Supervised Learning, Adversarial Robustness, Continual Learning, Reasoning, Few-/Zero-Shot Learning, Image Restoration and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  33 NeurIPS2025 papers in the Self-Supervised Learning area, covering Self-Supervised Learning, Reasoning, Adversarial Robustness, Continual Learning, Few-/Zero-Shot Learning, LLM and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "NeurIPS2025"
   - "Self-Supervised Learning"
   - "AI paper notes"
   - "paper summaries"
+  - "Reasoning"
   - "Adversarial Robustness"
   - "Continual Learning"
-  - "Reasoning"
   - "Few-/Zero-Shot Learning"
-  - "Image Restoration"
+  - "LLM"
 item_list:
   - u: "a_joint_learning_approach_to_hardware_caching_and_prefetching/"
     t: "A Joint Learning Approach to Hardware Caching and Prefetching"
@@ -34,8 +34,6 @@ item_list:
     t: "DataRater: Meta-Learned Dataset Curation"
   - u: "disentangling_hyperedges_through_the_lens_of_category_theory/"
     t: "Disentangling Hyperedges through the Lens of Category Theory"
-  - u: "ditch_the_denoiser_emergence_of_noise_robustness_in_self-supervised_learning_fro/"
-    t: "Ditch the Denoiser: Emergence of Noise Robustness in Self-Supervised Learning from Data Curriculum"
   - u: "foundation_models_for_scientific_discovery_from_paradigm_enhancement_to_paradigm/"
     t: "Foundation Models for Scientific Discovery: From Paradigm Enhancement to Paradigm Transition"
   - u: "hybrid_autoencoders_for_tabular_data_leveraging_model-based_augmentation_in_low-/"
@@ -54,12 +52,20 @@ item_list:
     t: "Minimal Semantic Sufficiency Meets Unsupervised Domain Generalization"
   - u: "mitra_mixed_synthetic_priors_for_enhancing_tabular_foundation_models/"
     t: "Mitra: Mixed Synthetic Priors for Enhancing Tabular Foundation Models"
+  - u: "mmtu_a_massive_multi-task_table_understanding_and_reasoning_benchmark/"
+    t: "MMTU: A Massive Multi-Task Table Understanding and Reasoning Benchmark"
   - u: "one_filters_all_a_generalist_filter_for_state_estimation/"
     t: "One Filters All: A Generalist Filter for State Estimation"
   - u: "seal_semantic-aware_hierarchical_learning_for_generalized_category_discovery/"
     t: "SEAL: Semantic-Aware Hierarchical Learning for Generalized Category Discovery"
+  - u: "segmast3r_geometry_grounded_segment_matching/"
+    t: "SegMASt3R: Geometry Grounded Segment Matching"
+  - u: "self-supervised_contrastive_learning_is_approximately_supervised_contrastive_lea/"
+    t: "Self-Supervised Contrastive Learning is Approximately Supervised Contrastive Learning"
   - u: "soft_task-aware_routing_of_experts_for_equivariant_representation_learning/"
     t: "Soft Task-Aware Routing of Experts for Equivariant Representation Learning"
+  - u: "spend_wisely_maximizing_post-training_gains_in_iterative_synthetic_data_bootstra/"
+    t: "Spend Wisely: Maximizing Post-Training Gains in Iterative Synthetic Data Bootstrapping"
   - u: "starformer_semi-supervised_task-informed_representation_learning_via_dynamic_att/"
     t: "STaRFormer: Semi-Supervised Task-Informed Representation Learning via Dynamic Attention-Based Regional Masking"
   - u: "t-regs_minimum_spanning_tree_regularization_for_self-supervised_learning/"
@@ -68,12 +74,6 @@ item_list:
     t: "TabArena: A Living Benchmark for Machine Learning on Tabular Data"
   - u: "tabstar_a_tabular_foundation_model_for_tabular_data_with_text_fields/"
     t: "TabSTAR: A Tabular Foundation Model for Tabular Data with Text Fields"
-  - u: "the_complexity_of_finding_local_optima_in_contrastive_learning/"
-    t: "The Complexity of Finding Local Optima in Contrastive Learning"
-  - u: "towards_reliable_and_holistic_visual_in-context_learning_prompt_selection/"
-    t: "Towards Reliable and Holistic Visual In-Context Learning Prompt Selection"
-  - u: "trident_tri-modal_molecular_representation_learning_with_taxonomic_annotations_a/"
-    t: "TRIDENT: Tri-Modal Molecular Representation Learning with Taxonomic Annotations and Structural Relationships"
 item_total: 33
 ---
 
@@ -82,9 +82,9 @@ item_total: 33
 
 **🧠 NeurIPS2025** · **33** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (26)](../../ICML2026/self_supervised/index.md) · [💬 ACL2026 (1)](../../ACL2026/self_supervised/index.md) · [📷 CVPR2026 (30)](../../CVPR2026/self_supervised/index.md) · [🔬 ICLR2026 (14)](../../ICLR2026/self_supervised/index.md) · [🤖 AAAI2026 (13)](../../AAAI2026/self_supervised/index.md) · [📹 ICCV2025 (13)](../../ICCV2025/self_supervised/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (24)](../../ICML2026/self_supervised/index.md) · [💬 ACL2026 (1)](../../ACL2026/self_supervised/index.md) · [📷 CVPR2026 (34)](../../CVPR2026/self_supervised/index.md) · [🔬 ICLR2026 (16)](../../ICLR2026/self_supervised/index.md) · [🤖 AAAI2026 (16)](../../AAAI2026/self_supervised/index.md) · [📹 ICCV2025 (13)](../../ICCV2025/self_supervised/index.md)
 
-🔥 **Top topics:** Self-Supervised Learning ×6 · Adversarial Robustness ×2
+🔥 **Top topics:** Self-Supervised Learning ×6 · Reasoning ×2
 
 **[A Joint Learning Approach to Hardware Caching and Prefetching](a_joint_learning_approach_to_hardware_caching_and_prefetching.md)**
 
@@ -126,10 +126,6 @@ item_total: 33
 
 :   This work is the first to analyze hyperedge disentanglement through the lens of category theory. By deriving a naturality condition, it establishes a "factor representation consistency" criterion (aggregation-then-disentanglement vs. disentanglement-then-aggregation should yield consistent results), and proposes Natural-HNN, which comprehensively outperforms 14 baselines across 6 cancer subtype classification datasets (BRCA F1: 75.7% → 80.4%) while achieving 100% accuracy in capturing the functional context of genetic pathways.
 
-**[Ditch the Denoiser: Emergence of Noise Robustness in Self-Supervised Learning from Data Curriculum](ditch_the_denoiser_emergence_of_noise_robustness_in_self-supervised_learning_fro.md)**
-
-:   A fully self-supervised noise-robust representation learning framework is proposed, leveraging a "denoised→noisy" data curriculum strategy combined with denoised-teacher regularization. This enables SSL models such as DINOv2 to directly process noisy inputs at inference time without any denoiser, achieving a 4.8% improvement in linear probing accuracy under extreme Gaussian noise on ImageNet-1k.
-
 **[Foundation Models for Scientific Discovery: From Paradigm Enhancement to Paradigm Transition](foundation_models_for_scientific_discovery_from_paradigm_enhancement_to_paradigm.md)**
 
 :   This paper proposes a three-stage framework (meta-scientific integration → hybrid human-AI co-creation → autonomous scientific discovery) to characterize how foundation models are driving a transition in scientific paradigms from tool-based enhancement toward paradigm-level transformation. It also provides a systematic survey of FM integration across the four classical scientific paradigms: experimental, theoretical, computational, and data-driven.
@@ -166,6 +162,10 @@ item_total: 33
 
 :   This paper presents the first systematic study of design principles for synthetic priors, identifying diversity, distinctiveness, and real-data alignment as critical attributes. Based on these findings, the authors propose Mitra — a tabular foundation model trained on a carefully selected mixture of synthetic priors — which consistently outperforms TabPFNv2 and TabICL on both classification and regression benchmarks.
 
+**[MMTU: A Massive Multi-Task Table Understanding and Reasoning Benchmark](mmtu_a_massive_multi-task_table_understanding_and_reasoning_benchmark.md)**
+
+:   This paper introduces MMTU, a large-scale benchmark comprising 28,136 questions spanning 25 real-world table tasks, designed to systematically evaluate LLMs on professional-level table understanding, reasoning, and manipulation. Even frontier reasoning models such as GPT-5 achieve only approximately 69.6% on this benchmark.
+
 **[One Filters All: A Generalist Filter for State Estimation](one_filters_all_a_generalist_filter_for_state_estimation.md)**
 
 :   This paper proposes LLM-Filter, which reprograms a large language model (LLM) as a generalist state estimator. Through a System-as-Prompt (SaP) mechanism, the frozen LLM achieves zero-shot generalization to unseen dynamical systems, surpassing state-of-the-art learning-based filters.
@@ -174,9 +174,21 @@ item_total: 33
 
 :   This paper proposes SEAL, a framework that leverages naturally occurring semantic hierarchies (rather than manually constructed abstract hierarchies) to guide generalized category discovery. Through hierarchically semantic-guided soft contrastive learning and a cross-granularity consistency module, SEAL achieves state-of-the-art performance on fine-grained benchmarks.
 
+**[SegMASt3R: Geometry Grounded Segment Matching](segmast3r_geometry_grounded_segment_matching.md)**
+
+:   SegMASt3R augments the pretrained MASt3R 3D foundation model with a lightweight segmentation feature head and a differentiable Sinkhorn matching layer. By leveraging 3D geometric priors, it achieves robust semantic segment matching under extreme viewpoint changes (up to 180°), attaining an AUPRC of 83.6% on the 135–180° baseline (vs. 17% for SAM2).
+
+**[Self-Supervised Contrastive Learning is Approximately Supervised Contrastive Learning](self-supervised_contrastive_learning_is_approximately_supervised_contrastive_lea.md)**
+
+:   This paper theoretically proves that self-supervised contrastive learning (DCL) is approximately equivalent to a supervised contrastive loss (NSCL), with the gap vanishing at rate $O(1/C)$ as the number of classes increases. It further proves that the global optimum of NSCL satisfies Neural Collapse (augmentation collapse + within-class collapse + Simplex ETF), and proposes a tighter few-shot error bound based on directional CDNV.
+
 **[Soft Task-Aware Routing of Experts for Equivariant Representation Learning](soft_task-aware_routing_of_experts_for_equivariant_representation_learning.md)**
 
 :   This paper proposes STAR (Soft Task-Aware Routing), which employs a MoE routing mechanism to coordinate shared and task-specific information between invariant and equivariant representation learning objectives, reducing redundant feature learning and improving downstream transfer performance.
+
+**[Spend Wisely: Maximizing Post-Training Gains in Iterative Synthetic Data Bootstrapping](spend_wisely_maximizing_post-training_gains_in_iterative_synthetic_data_bootstra.md)**
+
+:   This paper provides the first theoretical analysis of the budget allocation problem in iterative synthetic data bootstrapping, proving that constant strategies fail to converge with high probability, that exponential growth strategies outperform polynomial strategies in the worst case, and validating these findings empirically on image denoising (DPM) and mathematical reasoning (LLM) tasks.
 
 **[STaRFormer: Semi-Supervised Task-Informed Representation Learning via Dynamic Attention-Based Regional Masking](starformer_semi-supervised_task-informed_representation_learning_via_dynamic_att.md)**
 
@@ -198,22 +210,10 @@ item_total: 33
 
 :   This paper proves that finding local optima in contrastive learning is computationally hard: the discrete triplet maximization problem is PLS-hard (even when $d=1$), and continuous triplet loss minimization is CLS-hard, implying that (under standard assumptions) no polynomial-time algorithm exists for finding local optima.
 
-**[Towards Reliable and Holistic Visual In-Context Learning Prompt Selection](towards_reliable_and_holistic_visual_in-context_learning_prompt_selection.md)**
-
-:   This paper proposes RH-Partial2Global, which for the first time employs Spearman rank correlation tests to demonstrate that the "similarity-first hypothesis" in VICL is statistically significant yet exhibits extremely weak correlation strength ($\bar{\rho} \approx 0.03\text{-}0.05$). By constructing reliable candidate sets via Jackknife conformal prediction and achieving comprehensive uniform pairwise preference sampling through covering designs, the method consistently outperforms state-of-the-art approaches across three visual tasks: segmentation, detection, and colorization.
-
 **[TRIDENT: Tri-Modal Molecular Representation Learning with Taxonomic Annotations and Structural Relationships](trident_tri-modal_molecular_representation_learning_with_taxonomic_annotations_a.md)**
 
 :   TRIDENT is a tri-modal molecular representation learning framework that introduces Hierarchical Taxonomic Annotations (HTA) as a third modality. It combines a volumetric contrastive loss for global tri-modal alignment with a functional group–text local alignment module, dynamically balancing the two objectives via a momentum mechanism. The framework achieves state-of-the-art performance across 18 molecular property prediction tasks.
 
-**[Uncertainty-Guided Model Selection for Tabular Foundation Models in Biomolecule Efficacy Prediction](uncertainty-guided_model_selection_for_tabular_foundation_models_in_biomolecule_.md)**
-
-:   This paper proposes OligoICP, a method that leverages the interquartile range (IQR) of TabPFN's predicted distributions as an unlabeled model selection heuristic, achieving superior performance over both specialized SOTA models and naive ensembles on siRNA knockdown efficiency prediction.
-
 **[Understanding Ice Crystal Habit Diversity with Self-Supervised Learning](understanding_ice_crystal_habit_diversity_with_self-supervised_learning.md)**
 
 :   This paper presents the first application of self-supervised learning (SSL) to latent representation learning for ice crystal images. By pre-training a ViT on a large-scale cloud particle image dataset, the method learns continuous latent representations of ice crystal habits and quantifies habit diversity using the vMF concentration parameter, achieving a state-of-the-art classification accuracy of 84.39% with a 30× reduction in computational cost.
-
-**[You Can Trust Your Clustering Model: A Parameter-free Self-Boosting Plug-in for Deep Clustering](you_can_trust_your_clustering_model_a_parameter-free_self-boosting_plug-in_for_d.md)**
-
-:   This paper proposes DCBoost, a plug-and-play module requiring no additional hyperparameters, which selects high-confidence samples via adaptive k-NN and leverages reliable local structural information to guide global feature space optimization, substantially improving the performance of existing deep clustering models.

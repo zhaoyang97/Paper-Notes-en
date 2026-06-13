@@ -148,8 +148,8 @@ Overall Average: CrysLDNet vs PDDFormer = **-4.26% (JARVIS) / -4.90% (MP)**; Cry
 - [\[ICML 2026\] MIRO: Multi-Reward Conditioned Pretraining Simultaneously Enhances T2I Quality and Efficiency](miro_multi-reward_conditioned_pretraining_improves_t2i_quality_and_efficiency.md)
 - [\[NeurIPS 2025\] LLM Meets Diffusion: A Hybrid Framework for Crystal Material Generation](../../NeurIPS2025/image_generation/llm_meets_diffusion_a_hybrid_framework_for_crystal_material_generation.md)
 - [\[ICML 2026\] Discrete Diffusion Samplers and Bridges: Off-Policy Algorithms and Applications in Latent Spaces](discrete_diffusion_samplers_and_bridges_off-policy_algorithms_and_applications_i.md)
-- [\[ICML 2026\] Transferable Multi-Bit Watermarking Across Frozen Diffusion Models via Latent Consistency Bridges](transferable_multi-bit_watermarking_across_frozen_diffusion_models_via_latent_co.md)
 - [\[CVPR 2026\] Diffusion Probe: Generated Image Result Prediction Using CNN Probes](../../CVPR2026/image_generation/diffusion_probe_generated_image_result_prediction_using_cnn_probes.md)
+- [\[ICML 2026\] Transferable Multi-Bit Watermarking Across Frozen Diffusion Models via Latent Consistency Bridges](transferable_multi-bit_watermarking_across_frozen_diffusion_models_via_latent_co.md)
 
 </div>
 

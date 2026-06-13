@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] ACAM-KD: Adaptive and Cooperative Attention Masking for Knowledge Distillation
 description: >-
-  [ICCV 2025][Autonomous Driving][Knowledge distillation] This paper proposes ACAM-KD, an adaptive student-teacher cooperative attention masking framework for knowledge distillation. By employing Student-Teacher Cross-Atte…
+  [ICCV 2025][Model Compression][Knowledge distillation] This paper proposes ACAM-KD, an adaptive student-teacher cooperative attention masking framework for knowledge distillation. By employing Student-Teacher Cross-Atten…
 tags:
   - "ICCV 2025"
-  - "Autonomous Driving"
+  - "Model Compression"
   - "Knowledge distillation"
   - "attention masking"
   - "cross-attention fusion"
@@ -210,11 +210,11 @@ Compared with MasKD (ICLR'23, which employs learnable receptive tokens but with 
 
 ## Related Papers
 
-- [\[ICCV 2025\] SDKD: Frequency-Aligned Knowledge Distillation for Lightweight Spatiotemporal Forecasting](frequency-aligned_knowledge_distillation_for_lightweight_spatiotemporal_forecast.md)
-- [\[ICCV 2025\] PBCAT: Patch-Based Composite Adversarial Training against Physically Realizable Attacks on Object Detection](pbcat_patch-based_composite_adversarial_training_against_physically_realizable_a.md)
-- [\[ICCV 2025\] Where, What, Why: Towards Explainable Driver Attention Prediction](where_what_why_towards_explainable_driver_attention_prediction.md)
-- [\[ICCV 2025\] SRefiner: Soft-Braid Attention for Multi-Agent Trajectory Refinement](srefiner_soft-braid_attention_for_multi-agent_trajectory_refinement.md)
-- [\[ICCV 2025\] CoopTrack: Exploring End-to-End Learning for Efficient Cooperative Sequential Perception](cooptrack_exploring_end-to-end_learning_for_efficient_cooperative_sequential_per.md)
+- [\[ICCV 2025\] EA-KD: Entropy-based Adaptive Knowledge Distillation](ea-kd_entropy-based_adaptive_knowledge_distillation.md)
+- [\[ICCV 2025\] Knowledge Distillation with Refined Logits](knowledge_distillation_with_refined_logits.md)
+- [\[ICCV 2025\] A Good Teacher Adapts Their Knowledge for Distillation](a_good_teacher_adapts_their_knowledge_for_distillation.md)
+- [\[ICCV 2025\] Local Dense Logit Relations for Enhanced Knowledge Distillation](local_dense_logit_relations_for_enhanced_knowledge_distillation.md)
+- [\[ICCV 2025\] Perspective-Aware Teaching: Adapting Knowledge for Heterogeneous Distillation](perspective-aware_teaching_adapting_knowledge_for_heterogeneous_distillation.md)
 
 </div>
 

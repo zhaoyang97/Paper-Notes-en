@@ -2,26 +2,28 @@
 title: >-
   NeurIPS2025 Image Restoration Papers · 26 Notes
 description: >-
-  26 NeurIPS2025 papers in the Image Restoration area, covering Image Restoration, Super-Resolution, Adversarial Robustness, Diffusion Models, Model Compression, Layout & Composition and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  26 NeurIPS2025 papers in the Image Restoration area, covering Image Restoration, Super-Resolution, Diffusion Models, Layout & Composition and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "NeurIPS2025"
   - "Image Restoration"
   - "AI paper notes"
   - "paper summaries"
   - "Super-Resolution"
-  - "Adversarial Robustness"
   - "Diffusion Models"
-  - "Model Compression"
   - "Layout & Composition"
 item_list:
   - u: "adaptive_discretization_for_consistency_models/"
     t: "Adaptive Discretization for Consistency Models"
   - u: "audio_super-resolution_with_latent_bridge_models/"
     t: "Audio Super-Resolution with Latent Bridge Models"
-  - u: "denoiserotator_enhance_pruning_robustness_for_llms_via_importance_concentration/"
-    t: "DenoiseRotator: Enhance Pruning Robustness for LLMs via Importance Concentration"
+  - u: "dp2o-sr_direct_perceptual_preference_optimization_for_real-world_image_super-res/"
+    t: "DP²O-SR: Direct Perceptual Preference Optimization for Real-World Image Super-Resolution"
   - u: "dynaguide_steering_diffusion_polices_with_active_dynamic_guidance/"
     t: "DynaGuide: Steering Diffusion Policies with Active Dynamic Guidance"
+  - u: "elucidated_rolling_diffusion_models_for_probabilistic_forecasting_of_complex_dyn/"
+    t: "Elucidated Rolling Diffusion Models for Probabilistic Forecasting of Complex Dynamics"
+  - u: "encoder-decoder_diffusion_language_models_for_efficient_training_and_inference/"
+    t: "Encoder-Decoder Diffusion Language Models for Efficient Training and Inference"
   - u: "enhancing_infrared_vision_progressive_prompt_fusion_network_and_benchmark/"
     t: "Enhancing Infrared Vision: Progressive Prompt Fusion Network and Benchmark"
   - u: "fiper_factorized_features_for_robust_image_super-resolution_and_compression/"
@@ -46,8 +48,6 @@ item_list:
     t: "MoDEM: A Morton-Order Degradation Estimation Mechanism for Adverse Weather Image Restoration"
   - u: "moe-gyro_self-supervised_over-range_reconstruction_and_denoising_for_mems_gyrosc/"
     t: "MoE-Gyro: Self-Supervised Over-Range Reconstruction and Denoising for MEMS Gyroscopes"
-  - u: "mro_enhancing_reasoning_in_diffusion_language_models_via_multi-reward_optimizati/"
-    t: "MRO: Enhancing Reasoning in Diffusion Language Models via Multi-Reward Optimization"
   - u: "ms-bart_unified_modeling_of_mass_spectra_and_molecules_for_structure_elucidation/"
     t: "MS-BART: Unified Modeling of Mass Spectra and Molecules for Structure Elucidation"
   - u: "real-world_adverse_weather_image_restoration_via_dual-level_reinforcement_learni/"
@@ -56,12 +56,10 @@ item_list:
     t: "Rethinking Circuit Completeness in Language Models: AND, OR, and ADDER Gates"
   - u: "rethinking_nighttime_image_deraining_via_learnable_color_space_transformation/"
     t: "Rethinking Nighttime Image Deraining via Learnable Color Space Transformation"
-  - u: "scan_self-denoising_monte_carlo_annotation_for_robust_process_reward_learning/"
-    t: "SCAN: Self-Denoising Monte Carlo Annotation for Robust Process Reward Learning"
+  - u: "rgb-to-polarization_estimation_a_new_task_and_benchmark_study/"
+    t: "RGB-to-Polarization Estimation: A New Task and Benchmark Study"
   - u: "scsplit_bringing_severity_cognizance_to_image_decomposition_in_fluorescence_micr/"
     t: "scSplit: Bringing Severity Cognizance to Image Decomposition in Fluorescence Microscopy"
-  - u: "spend_wisely_maximizing_post-training_gains_in_iterative_synthetic_data_bootstra/"
-    t: "Spend Wisely: Maximizing Post-Training Gains in Iterative Synthetic Data Bootstrapping"
   - u: "spiking_meets_attention_efficient_remote_sensing_image_super-resolution_with_att/"
     t: "Spiking Meets Attention: Efficient Remote Sensing Image Super-Resolution with Attention Spiking Neural Networks"
   - u: "the_effect_of_optimal_self-distillation_in_noisy_gaussian_mixture_model/"
@@ -74,9 +72,9 @@ item_total: 26
 
 **🧠 NeurIPS2025** · **26** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (18)](../../ICML2026/image_restoration/index.md) · [📷 CVPR2026 (39)](../../CVPR2026/image_restoration/index.md) · [🔬 ICLR2026 (14)](../../ICLR2026/image_restoration/index.md) · [🤖 AAAI2026 (13)](../../AAAI2026/image_restoration/index.md) · [📹 ICCV2025 (30)](../../ICCV2025/image_restoration/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (16)](../../ICML2026/image_restoration/index.md) · [📷 CVPR2026 (41)](../../CVPR2026/image_restoration/index.md) · [🔬 ICLR2026 (15)](../../ICLR2026/image_restoration/index.md) · [🤖 AAAI2026 (10)](../../AAAI2026/image_restoration/index.md) · [📹 ICCV2025 (30)](../../ICCV2025/image_restoration/index.md)
 
-🔥 **Top topics:** Image Restoration ×10 · Super-Resolution ×4 · Adversarial Robustness ×3 · Diffusion Models ×3 · Model Compression ×2
+🔥 **Top topics:** Image Restoration ×8 · Super-Resolution ×5 · Diffusion Models ×4 · Layout & Composition ×2
 
 **[Adaptive Discretization for Consistency Models](adaptive_discretization_for_consistency_models.md)**
 
@@ -86,13 +84,21 @@ item_total: 26
 
 :   This paper proposes AudioLBM, which compresses audio waveforms into a continuous latent space and employs a bridge model to realize a latent-to-latent generation process from low-resolution to high-resolution. Combined with frequency-aware training for broader data utilization and a cascaded design to surpass the 48kHz ceiling, AudioLBM comprehensively outperforms methods such as AudioSR across speech, sound effects, and music, while achieving any-to-192kHz audio super-resolution for the first time.
 
-**[DenoiseRotator: Enhance Pruning Robustness for LLMs via Importance Concentration](denoiserotator_enhance_pruning_robustness_for_llms_via_importance_concentration.md)**
+**[DP²O-SR: Direct Perceptual Preference Optimization for Real-World Image Super-Resolution](dp2o-sr_direct_perceptual_preference_optimization_for_real-world_image_super-res.md)**
 
-:   This paper proposes DenoiseRotator, a pre-pruning method that applies learnable orthogonal transformations to minimize the information entropy of parameter importance scores, concentrating importance into a small subset of parameters. On LLaMA3-70B under 2:4 semi-structured sparsity, perplexity degradation is reduced by 58% (8.1→3.4). The method is plug-and-play and compatible with Magnitude, Wanda, and SparseGPT.
+:   This paper proposes DP²O-SR, a framework that exploits the inherent stochasticity of diffusion models to generate diverse super-resolution outputs, constructs preference pairs via a hybrid perceptual reward, and introduces a Hierarchical Preference Optimization (HPO) strategy to adaptively weight training pairs — significantly improving perceptual quality in real-world image super-resolution without any human annotations.
 
 **[DynaGuide: Steering Diffusion Policies with Active Dynamic Guidance](dynaguide_steering_diffusion_polices_with_active_dynamic_guidance.md)**
 
 :   This paper proposes DynaGuide, which applies classifier guidance to a frozen pretrained diffusion policy at inference time via an external latent dynamics model, steering the robot toward arbitrary positive/negative goals without modifying policy weights. It achieves an average success rate of 70% on CALVIN simulation and 80% on a real robot.
+
+**[Elucidated Rolling Diffusion Models for Probabilistic Forecasting of Complex Dynamics](elucidated_rolling_diffusion_models_for_probabilistic_forecasting_of_complex_dyn.md)**
+
+:   This paper proposes ERDM, the first framework to successfully unify the Rolling Diffusion paradigm with the principled design choices of EDM (noise schedule, preconditioning, Heun sampler). By employing a progressive noise schedule that explicitly models growing uncertainty, ERDM significantly outperforms autoregressive EDM baselines on Navier-Stokes and ERA5 weather forecasting benchmarks.
+
+**[Encoder-Decoder Diffusion Language Models for Efficient Training and Inference](encoder-decoder_diffusion_language_models_for_efficient_training_and_inference.md)**
+
+:   This paper proposes E2D2, an encoder-decoder architecture for discrete diffusion language models that performs iterative denoising via a lightweight decoder while periodically updating representations through a large encoder, achieving faster inference (~3× vs. MDLM) and more efficient block diffusion training (halving FLOPs).
 
 **[Enhancing Infrared Vision: Progressive Prompt Fusion Network and Benchmark](enhancing_infrared_vision_progressive_prompt_fusion_network_and_benchmark.md)**
 
@@ -142,10 +148,6 @@ item_total: 26
 
 :   This paper proposes MoE-Gyro, a self-supervised Mixture-of-Experts framework that simultaneously addresses the fundamental range–noise trade-off in MEMS gyroscopes via an Over-Range Reconstruction Expert (ORE, incorporating Gaussian-Decay Attention and physics-informed constraints) and a Denoising Expert (DE, incorporating dual-branch complementary masking and FFT-guided augmentation). The measurable range is extended from ±450°/s to ±1500°/s, and bias instability is reduced by 98.4%.
 
-**[MRO: Enhancing Reasoning in Diffusion Language Models via Multi-Reward Optimization](mro_enhancing_reasoning_in_diffusion_language_models_via_multi-reward_optimizati.md)**
-
-:   This work presents the first systematic analysis of the root cause behind the reasoning gap in diffusion language models (DLMs)—namely, the independent generation of tokens during denoising, which disrupts both intra- and inter-sequence correlations. A multi-reward optimization framework, MRO, is proposed and consistently improves reasoning performance of LLaDA-8B across test-time scaling, reject sampling, and RL paradigms, raising MATH500 accuracy from 34.4% to 37.4%.
-
 **[MS-BART: Unified Modeling of Mass Spectra and Molecules for Structure Elucidation](ms-bart_unified_modeling_of_mass_spectra_and_molecules_for_structure_elucidation.md)**
 
 :   This paper proposes MS-BART, which maps molecular fingerprints and molecular structures (SELFIES) into a shared token space via a unified vocabulary, performs multi-task pretraining on 4 million fingerprint–molecule pairs, and subsequently applies experimental spectra fine-tuning and chemical feedback alignment to enable efficient generation of molecular structures from mass spectra.
@@ -162,17 +164,13 @@ item_total: 26
 
 :   Motivated by the statistical finding that nighttime rain exhibits far greater contrast in the Y channel (luminance) of YCbCr than in RGB, this work proposes a learnable Color Space Converter (CSC) that performs deraining in the Y channel, an Implicit Illumination Guidance (IIG) module that encodes non-uniform nighttime illumination, and a photorealistic dataset HQ-NightRain constructed via illumination-aware synthesis. The three components jointly yield substantial improvements in nighttime deraining performance.
 
-**[SCAN: Self-Denoising Monte Carlo Annotation for Robust Process Reward Learning](scan_self-denoising_monte_carlo_annotation_for_robust_process_reward_learning.md)**
+**[RGB-to-Polarization Estimation: A New Task and Benchmark Study](rgb-to-polarization_estimation_a_new_task_and_benchmark_study.md)**
 
-:   This paper proposes the SCAN framework, which analyzes the noise distribution in Monte Carlo annotations to design a self-denoising sampling strategy and a robust learning loss. A PRM trained on only 101K samples generated by a 1.5B model surpasses the effect of the human-annotated dataset PRM800K.
+:   This paper formally defines the novel task of estimating polarization components (S₁/S₂/S₃) from standard RGB images, establishes the first systematic benchmark encompassing both restoration-based and generative methods, and finds that pretrained MAE achieves the best overall pixel-level accuracy (PSNR 24.74). Restoration-based methods consistently outperform diffusion-based generative methods, with pretrained weight transfer identified as a critical advantage.
 
 **[scSplit: Bringing Severity Cognizance to Image Decomposition in Fluorescence Microscopy](scsplit_bringing_severity_cognizance_to_image_decomposition_in_fluorescence_micr.md)**
 
 :   This paper proposes scSplit, which introduces a severity-cognizant input normalization module (SCIN) and a regression network (Reg) to endow an InDI-based iterative image decomposition framework with awareness of the mixing severity of two overlapping structures in fluorescence microscopy images. The method unifies image splitting and bleedthrough removal across five public datasets under a single framework.
-
-**[Spend Wisely: Maximizing Post-Training Gains in Iterative Synthetic Data Bootstrapping](spend_wisely_maximizing_post-training_gains_in_iterative_synthetic_data_bootstra.md)**
-
-:   This paper provides the first theoretical analysis of the budget allocation problem in iterative synthetic data bootstrapping, proving that constant strategies fail to converge with high probability, that exponential growth strategies outperform polynomial strategies in the worst case, and validating these findings empirically on image denoising (DPM) and mathematical reasoning (LLM) tasks.
 
 **[Spiking Meets Attention: Efficient Remote Sensing Image Super-Resolution with Attention Spiking Neural Networks](spiking_meets_attention_efficient_remote_sensing_image_super-resolution_with_att.md)**
 

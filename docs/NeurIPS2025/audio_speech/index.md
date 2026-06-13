@@ -1,38 +1,36 @@
 ---
 title: >-
-  NeurIPS2025 Audio & Speech Papers · 49 Notes
+  NeurIPS2025 Audio & Speech Papers · 47 Notes
 description: >-
-  49 NeurIPS2025 papers in the Audio & Speech area, covering Speech & Audio, Adversarial Robustness, Multimodal/VLM, Alignment/RLHF, Recommendation, Agents and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  47 NeurIPS2025 papers in the Audio & Speech area, covering Speech & Audio, Alignment/RLHF, Multimodal/VLM, Reasoning, Recommendation, LLM and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "NeurIPS2025"
   - "Audio & Speech"
   - "AI paper notes"
   - "paper summaries"
   - "Speech & Audio"
-  - "Adversarial Robustness"
-  - "Multimodal/VLM"
   - "Alignment/RLHF"
+  - "Multimodal/VLM"
+  - "Reasoning"
   - "Recommendation"
-  - "Agents"
+  - "LLM"
 item_list:
-  - u: "a_controllable_examination_for_longcontext_language_models/"
-    t: "A Controllable Examination for Long-Context Language Models"
   - u: "a_multitask_benchmark_for_abusive_language_detection_in_lowr/"
     t: "A Multi-Task Benchmark for Abusive Language Detection in Low-Resource Settings"
   - u: "a_triangle_enables_multimodal_alignment_beyond_cosine_simila/"
     t: "A TRIANGLE Enables Multimodal Alignment Beyond Cosine Similarity"
   - u: "accelerate_creation_of_product_claims_using_generative_ai/"
     t: "Accelerate Creation of Product Claims Using Generative AI"
-  - u: "adaptdel_adaptable_deletion_rate_randomized_smoothing_for_ce/"
-    t: "AdaptDel: Adaptable Deletion Rate Randomized Smoothing for Certified Robustness"
+  - u: "adapting_speech_language_model_to_singing_voice_synthesis/"
+    t: "Adapting Speech Language Model to Singing Voice Synthesis"
   - u: "associative_syntax_and_maximal_repetitions_reveal_context-dependent_complexity_i/"
     t: "Associative Syntax and Maximal Repetitions Reveal Context-Dependent Complexity in Fruit Bat Communication"
   - u: "audsemthinker_enhancing_audio-language_models_through_reasoning_over_semantics_o/"
     t: "AudSemThinker: Enhancing Audio-Language Models through Reasoning over Semantics of Sound"
-  - u: "benchmarking_egocentric_multimodal_goal_inference_for_assist/"
-    t: "Benchmarking Egocentric Multimodal Goal Inference for Assistive Wearable Agents"
   - u: "bnmusic_blending_environmental_noises_into_personalized_music/"
     t: "BNMusic: Blending Environmental Noises into Personalized Music"
+  - u: "brain-tuning_improves_generalizability_and_efficiency_of_brain_alignment_in_spee/"
+    t: "Brain-tuning Improves Generalizability and Efficiency of Brain Alignment in Speech Models"
   - u: "can_llms_outshine_conventional_recommenders_a_comparative_evaluation/"
     t: "Can LLMs Outshine Conventional Recommenders? A Comparative Evaluation"
   - u: "data-juicer_20_cloud-scale_adaptive_data_processing_for_and_with_foundation_mode/"
@@ -47,14 +45,16 @@ item_list:
     t: "Echoes of Humanity: Exploring the Perceived Humanness of AI Music"
   - u: "efficient_speech_language_modeling_via_energy_distance_in_continuous_latent_spac/"
     t: "Efficient Speech Language Modeling via Energy Distance in Continuous Latent Space"
+  - u: "enabling_differentially_private_federated_learning_for_speech_recognition_benchm/"
+    t: "Enabling Differentially Private Federated Learning for Speech Recognition: Benchmarks, Adaptive Optimizers and Gradient Clipping"
   - u: "ethics_statements_in_ai_music_papers_the_effective_and_the_ineffective/"
     t: "Ethics Statements in AI Music Papers: The Effective and the Ineffective"
   - u: "eurospeech_a_multilingual_speech_corpus/"
     t: "EuroSpeech: A Multilingual Speech Corpus"
+  - u: "from_black_box_to_biomarker_sparse_autoencoders_for_interpreting_speech_models_o/"
+    t: "From Black Box to Biomarker: Sparse Autoencoders for Interpreting Speech Models of Parkinson's Disease"
   - u: "from_generation_to_attribution_music_ai_agent_architectures_for_the_post-streami/"
     t: "From Generation to Attribution: Music AI Agent Architectures for the Post-Streaming Era"
-  - u: "generating_physically_sound_designs_from_text_and_a_set_of_physical_constraints/"
-    t: "Generating Physically Sound Designs from Text and a Set of Physical Constraints"
   - u: "inductive_transfer_learning_for_graph-based_recommenders/"
     t: "Inductive Transfer Learning for Graph-Based Recommenders"
   - u: "instance-specific_test-time_training_for_speech_editing_in_the_wild/"
@@ -65,31 +65,27 @@ item_list:
     t: "LeVo: High-Quality Song Generation with Multi-Preference Alignment"
   - u: "levo_high-quality_song_generation_with_multi-processing_refined_supervision/"
     t: "LeVo: High-Quality Song Generation with Multi-Preference Alignment"
-  - u: "lumia_a_handheld_vision-to-music_system_for_real-time_embodied_composition/"
-    t: "LUMIA: A Handheld Vision-to-Music System for Real-Time, Embodied Composition"
   - u: "megadance_mixture-of-experts_architecture_for_genre-aware_3d_dance_generation/"
     t: "MEGADance: Mixture-of-Experts Architecture for Genre-Aware 3D Dance Generation"
-  - u: "merlin_l48_spectrogram_dataset/"
-    t: "Merlin L48 Spectrogram Dataset"
-  - u: "mixed_monotonicity_reachability_analysis_of_neural_ode_a_trade-off_between_tight/"
-    t: "Mixed Monotonicity Reachability Analysis of Neural ODE: A Trade-Off Between Tightness and Efficiency"
+  - u: "mge-ldm_joint_latent_diffusion_for_simultaneous_music_generation_and_source_extr/"
+    t: "MGE-LDM: Joint Latent Diffusion for Simultaneous Music Generation and Source Extraction"
+  - u: "model-guided_dual-role_alignment_for_high-fidelity_open-domain_video-to-audio_ge/"
+    t: "MGAudio: Model-Guided Dual-Role Alignment for High-Fidelity Open-Domain Video-to-Audio Generation"
   - u: "mome_mixture_of_matryoshka_experts_for_audio-visual_speech_recognition/"
     t: "MoME: Mixture of Matryoshka Experts for Audio-Visual Speech Recognition"
-item_total: 49
+  - u: "multi-head_temporal_latent_attention/"
+    t: "Multi-head Temporal Latent Attention"
+item_total: 47
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->
 # 🎵 Audio & Speech
 
-**🧠 NeurIPS2025** · **49** paper notes
+**🧠 NeurIPS2025** · **47** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (29)](../../ICML2026/audio_speech/index.md) · [💬 ACL2026 (67)](../../ACL2026/audio_speech/index.md) · [📷 CVPR2026 (15)](../../CVPR2026/audio_speech/index.md) · [🔬 ICLR2026 (32)](../../ICLR2026/audio_speech/index.md) · [🤖 AAAI2026 (30)](../../AAAI2026/audio_speech/index.md) · [📹 ICCV2025 (11)](../../ICCV2025/audio_speech/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (30)](../../ICML2026/audio_speech/index.md) · [💬 ACL2026 (68)](../../ACL2026/audio_speech/index.md) · [📷 CVPR2026 (14)](../../CVPR2026/audio_speech/index.md) · [🔬 ICLR2026 (34)](../../ICLR2026/audio_speech/index.md) · [🤖 AAAI2026 (29)](../../AAAI2026/audio_speech/index.md) · [📹 ICCV2025 (11)](../../ICCV2025/audio_speech/index.md)
 
-🔥 **Top topics:** Speech & Audio ×12 · Adversarial Robustness ×4 · Multimodal/VLM ×3 · Alignment/RLHF ×3 · Recommendation ×2
-
-**[A Controllable Examination for Long-Context Language Models](a_controllable_examination_for_longcontext_language_models.md)**
-
-:   This paper proposes LongBioBench, which uses synthetically generated fictional biographies as both needles and haystacks to construct a long-context LLM evaluation framework satisfying three core principles: seamless context, controllable settings, and reliable evaluation. Evaluating 18 models, the benchmark reveals that current LCLMs exhibit substantial deficiencies in reasoning and trustworthiness despite adequate retrieval performance.
+🔥 **Top topics:** Speech & Audio ×19 · Alignment/RLHF ×5 · Multimodal/VLM ×3 · Reasoning ×2 · Recommendation ×2
 
 **[A Multi-Task Benchmark for Abusive Language Detection in Low-Resource Settings](a_multitask_benchmark_for_abusive_language_detection_in_lowr.md)**
 
@@ -103,9 +99,9 @@ item_total: 49
 
 :   This paper develops the Claim Advisor platform, leveraging LLM in-context learning and LoRA fine-tuning to accelerate the search, generation, refinement, and ranking of product claims for consumer goods. By emulating the MaxDiff research methodology, a fine-tuned Phi-3 14B model outperforms GPT-4o on claim ranking using only 1 in-context example versus GPT-4o's 100, and after three iterative rounds, 100% of generated claims achieve a "highly appealing" rating.
 
-**[AdaptDel: Adaptable Deletion Rate Randomized Smoothing for Certified Robustness](adaptdel_adaptable_deletion_rate_randomized_smoothing_for_ce.md)**
+**[Adapting Speech Language Model to Singing Voice Synthesis](adapting_speech_language_model_to_singing_voice_synthesis.md)**
 
-:   AdaptDel extends the fixed deletion rate used in randomized smoothing for discrete sequences to an adaptable deletion rate that varies according to input properties such as sequence length. The paper provides a theoretical soundness proof for certification under variable rates, and experiments on NLP sequence classification tasks demonstrate improvements in certified region cardinality of up to 30 orders of magnitude.
+:   This paper adapts a 1.7B-parameter TTS-pretrained Speech Language Model to the Singing Voice Synthesis (SVS) task via score tokenization, multi-stream LM prediction, conditional flow matching refinement, and a vocoder. Using only 135 hours of synthesized singing data, the system achieves performance comparable to dedicated SVS systems.
 
 **[Associative Syntax and Maximal Repetitions Reveal Context-Dependent Complexity in Fruit Bat Communication](associative_syntax_and_maximal_repetitions_reveal_context-dependent_complexity_i.md)**
 
@@ -115,13 +111,13 @@ item_total: 49
 
 :   AudSemThinker introduces a structured semantic reasoning framework for audio-language models by defining 9 categories of sound semantic descriptors (who/what/how/when/where, etc.). Built on Qwen2.5-Omni-7B and trained via SFT + GRPO (with verifiable rewards and length constraints), the model produces three-stage outputs in the format \<think\>\<semantic_elements\>\<answer\>, achieving 66.70% on the MMAU benchmark—surpassing Audio-Reasoner (61.71%) and Qwen2.5-Omni (65.60%).
 
-**[Benchmarking Egocentric Multimodal Goal Inference for Assistive Wearable Agents](benchmarking_egocentric_multimodal_goal_inference_for_assist.md)**
-
-:   Meta proposes WAGIBench, a multimodal goal inference benchmark for assistive wearable agents, comprising 3,477 egocentric recordings (29 hours) from 348 participants across four modalities — visual, audio, digital, and longitudinal. Human accuracy reaches 93% versus the best VLM at 84% (MCQ); under generative evaluation, models produce relevant goals only 55% of the time, exposing a substantial gap between current VLMs and real-world wearable deployment.
-
 **[BNMusic: Blending Environmental Noises into Personalized Music](bnmusic_blending_environmental_noises_into_personalized_music.md)**
 
 :   This paper proposes BNMusic, a two-stage framework that blends environmental noises into personalized generated music. Stage 1 generates rhythm-aligned music via mel-spectrogram outpainting and inpainting; Stage 2 adaptively amplifies the music signal based on auditory masking theory to reduce noise perception. The approach requires no additional training and significantly outperforms baselines on EPIC-SOUNDS and ESC-50.
+
+**[Brain-tuning Improves Generalizability and Efficiency of Brain Alignment in Speech Models](brain-tuning_improves_generalizability_and_efficiency_of_brain_alignment_in_spee.md)**
+
+:   This paper proposes Multi-brain-tuning, a method that jointly fine-tunes pretrained speech models on fMRI data from multiple participants, reducing the data required for brain alignment by 5×, improving alignment by up to 50%, and generalizing to unseen participants and datasets.
 
 **[Can LLMs Outshine Conventional Recommenders? A Comparative Evaluation](can_llms_outshine_conventional_recommenders_a_comparative_evaluation.md)**
 
@@ -151,6 +147,10 @@ item_total: 49
 
 :   This paper proposes SLED, which encodes speech waveforms into sequences of continuous latent representations and performs autoregressive modeling in the continuous space via an energy distance objective. This avoids the information loss from discretization and the complex hierarchical architectures required by RVQ, while enabling efficient zero-shot and streaming speech synthesis.
 
+**[Enabling Differentially Private Federated Learning for Speech Recognition: Benchmarks, Adaptive Optimizers and Gradient Clipping](enabling_differentially_private_federated_learning_for_speech_recognition_benchm.md)**
+
+:   This work establishes the first practical benchmark for FL+DP in end-to-end ASR, achieving only 1.3%–4.6% absolute WER degradation under strong privacy guarantees by combining **per-layer clipping** with the layer-wise gradient normalization of the **LAMB optimizer**.
+
 **[Ethics Statements in AI Music Papers: The Effective and the Ineffective](ethics_statements_in_ai_music_papers_the_effective_and_the_ineffective.md)**
 
 :   A systematic review of the current state of ethics statement usage in AI music research papers, finding that the vast majority of ethics statements are not effectively utilized, with actionable recommendations proposed for both conferences and researchers.
@@ -159,13 +159,13 @@ item_total: 49
 
 :   This paper presents a scalable, open-source pipeline for automatically constructing the EuroSpeech dataset from recordings of 22 European parliaments — yielding 61K hours of high-quality speech-text aligned data across 22 languages, with 19 languages exceeding 1K hours. Fine-tuning Whisper on this data reduces average WER by 41.8%.
 
+**[From Black Box to Biomarker: Sparse Autoencoders for Interpreting Speech Models of Parkinson's Disease](from_black_box_to_biomarker_sparse_autoencoders_for_interpreting_speech_models_o.md)**
+
+:   This work adapts sparse autoencoder (SAE) techniques from large language model interpretability research to speech-based Parkinson's disease (PD) detection, proposes a Mask-based SAE to address small-dataset limitations, discovers that model predictions rely primarily on spectral flux and spectral flatness in low-energy regions, and further reveals that these features correlate significantly with MRI putamen volume—establishing a bridge from internal model representations to clinical biomarkers.
+
 **[From Generation to Attribution: Music AI Agent Architectures for the Post-Streaming Era](from_generation_to_attribution_music_ai_agent_architectures_for_the_post-streami.md)**
 
 :   This paper proposes a content-based Music AI Agent architecture that decomposes music into fine-grained Block components and constructs an Attribution Layer, embedding copyright attribution directly into the AI music creation pipeline to establish a fair AI media platform for the post-streaming era.
-
-**[Generating Physically Sound Designs from Text and a Set of Physical Constraints](generating_physically_sound_designs_from_text_and_a_set_of_physical_constraints.md)**
-
-:   This paper proposes TIDES, a framework that combines the visual guidance of pretrained text-image models (CLIP) with a differentiable finite-element physics simulator. By jointly optimizing a visual similarity loss and a structural compliance loss, TIDES generates load-bearing structural designs that satisfy both engineering performance requirements and text-specified visual characteristics, starting from text descriptions and physical constraints. The method is validated through 3D-printed three-point bending experiments.
 
 **[Inductive Transfer Learning for Graph-Based Recommenders](inductive_transfer_learning_for_graph-based_recommenders.md)**
 
@@ -187,21 +187,17 @@ item_total: 49
 
 :   LeVo proposes a language-model-based song generation framework that simultaneously optimizes vocal–accompaniment harmony and audio quality by predicting mixed tokens and dual-track tokens in parallel, and introduces a DPO-based multi-preference alignment method to enhance musicality and instruction-following ability. LeVo comprehensively outperforms all academic baselines and approaches the performance of industrial systems.
 
-**[LUMIA: A Handheld Vision-to-Music System for Real-Time, Embodied Composition](lumia_a_handheld_vision-to-music_system_for_real-time_embodied_composition.md)**
-
-:   This paper presents Lumia — a handheld camera-shaped device that analyzes captured frames via GPT-4 Vision to generate structured prompts, which are then fed to Stable Audio to synthesize loopable music segments, enabling a real-time, embodied improvisation workflow from visual input to music.
-
 **[MEGADance: Mixture-of-Experts Architecture for Genre-Aware 3D Dance Generation](megadance_mixture-of-experts_architecture_for_genre-aware_3d_dance_generation.md)**
 
 :   This paper proposes MEGADance, the first music-driven 3D dance generation method based on a Mixture-of-Experts (MoE) architecture. It decouples choreographic consistency into "dance universality" (Universal Expert) and "style specificity" (Specialized Expert), combined with FSQ quantization and a Mamba-Transformer hybrid backbone, achieving state-of-the-art dance quality and strong style controllability.
 
-**[Merlin L48 Spectrogram Dataset](merlin_l48_spectrogram_dataset.md)**
+**[MGE-LDM: Joint Latent Diffusion for Simultaneous Music Generation and Source Extraction](mge-ldm_joint_latent_diffusion_for_simultaneous_music_generation_and_source_extr.md)**
 
-:   This paper introduces the L48 dataset — a fine-grained spectrogram multi-label classification benchmark derived from real-world bird recordings that naturally exhibits the Single Positive Multi-Label (SPML) setting. The dataset exposes critical shortcomings of existing SPML methods under realistic conditions, and proposes an intra-recording consistency regularization scheme to improve performance.
+:   This paper proposes MGE-LDM, the first model to simultaneously achieve music mixture generation, partial generation (source completion), and text-driven arbitrary source extraction within a unified latent diffusion framework. It jointly models mixture–submixture–source triplets and leverages diffusion inpainting to handle each task.
 
-**[Mixed Monotonicity Reachability Analysis of Neural ODE: A Trade-Off Between Tightness and Efficiency](mixed_monotonicity_reachability_analysis_of_neural_ode_a_trade-off_between_tight.md)**
+**[MGAudio: Model-Guided Dual-Role Alignment for High-Fidelity Open-Domain Video-to-Audio Generation](model-guided_dual-role_alignment_for_high-fidelity_open-domain_video-to-audio_ge.md)**
 
-:   This paper applies continuous-time mixed monotonicity techniques to the reachability analysis of Neural ODEs. By embedding Neural ODE dynamics into a mixed monotone system, it exploits the geometric simplicity of interval boxes to achieve efficient over-approximation, providing a controllable trade-off between tightness and computational efficiency.
+:   This paper proposes MGAudio, the first video-to-audio generation framework that replaces classifier-free guidance (CFG) with model-guided (MG) training, combined with a dual-role audio-video encoder (DRAVE) for simultaneous condition injection and feature alignment. With only 131M parameters, MGAudio achieves state-of-the-art performance on VGGSound (FAD=0.40) and surpasses most competing methods using only 10% of the training data.
 
 **[MoME: Mixture of Matryoshka Experts for Audio-Visual Speech Recognition](mome_mixture_of_matryoshka_experts_for_audio-visual_speech_recognition.md)**
 
@@ -227,13 +223,9 @@ item_total: 49
 
 :   Leveraging the reciprocity principle of acoustic wave propagation, this paper proposes Versa (ELE data augmentation + SSL self-supervised learning), which generates physically valid virtual training samples by swapping emitter and receiver roles, substantially improving acoustic field estimation performance under sparse emitter configurations.
 
-**[SAND-Math: Using LLMs to Generate Novel, Difficult and Useful Mathematics Questions and Answers](sand-math_using_llms_to_generate_novel_difficult_and_useful_mathematics_question.md)**
-
-:   This paper proposes SAND-Math, a fully automated synthetic mathematics question generation pipeline that requires no seed dataset. By employing Difficulty Hiking to systematically increase problem difficulty, augmenting the LIMO baseline with as few as 500 problems yields a 4.39pp improvement on AIME25.
-
 **[Seeing Sound, Hearing Sight: Uncovering Modality Bias and Conflict of AI Models in Sound Localization](seeing_sound_hearing_sight_uncovering_modality_bias_and_conflict_of_ai_models_in.md)**
 
-:   Through six controlled audio-visual conditions and human psychophysical experiments, this work systematically reveals that existing AI sound source localization (SSL) models suffer from severe visual bias—degrading to near-random performance under audio-visual conflict—and proposes EchoPin, a neuroscience-inspired model combining HRTF filtering, ERB cochleagram representation, and stereo audio. EchoPin substantially outperforms prior methods on the newly constructed AudioCOCO dataset and, without any human behavioral supervision, exhibits a human-like horizontal-over-vertical localization accuracy asymmetry.
+:   This work systematically reveals that AI SSL models suffer from severe visual bias—degrading to near-random performance under audio-visual conflict—and proposes EchoPin, a neuroscience-inspired model (HRTF filtering + cochleagram + stereo audio) that substantially outperforms prior methods on AudioCOCO and exhibits a human-like horizontal-over-vertical localization accuracy asymmetry.
 
 **[Segment-Factorized Full-Song Generation on Symbolic Piano Music](segment-factorized_full-song_generation_on_symbolic_piano_music.md)**
 
@@ -242,6 +234,10 @@ item_total: 49
 **[Sensorium Arc: AI Agent System for Oceanic Data Exploration and Interactive Eco-Art](sensorium_arc_ai_agent_system_for_oceanic_data_exploration_and_interactive_eco-a.md)**
 
 :   This paper presents Sensorium Arc, a multimodal interactive AI agent system that personifies the ocean as a poetic "narrator" figure. Leveraging a multi-agent RAG architecture, the system integrates NASA ocean science data with eco-aesthetic texts, enabling users to explore complex marine environmental data through natural conversation while dynamically generating scientific visualizations and artistic audiovisual feedback—realizing a paradigm shift from "passive data observation" to "active ecological dialogue."
+
+**[Shallow Flow Matching for Coarse-to-Fine Text-to-Speech Synthesis](shallow_flow_matching_for_coarse-to-fine_text-to-speech_synthesis.md)**
+
+:   This paper proposes Shallow Flow Matching (SFM), which leverages weak generator outputs to construct intermediate states within a flow matching framework for coarse-to-fine TTS. Inference begins from these intermediate states rather than pure noise, simultaneously improving synthesis quality and accelerating inference.
 
 **[SHAP Meets Tensor Networks: Provably Tractable Explanations with Parallelism](shap_meets_tensor_networks_provably_tractable_explanations_with_parallelism.md)**
 
@@ -255,10 +251,6 @@ item_total: 49
 
 :   This paper applies the Slimmable Networks paradigm to the Neural Amp Modeler (NAM) by randomly pruning WaveNet layer widths during training, enabling dynamic adjustment of network size at inference time without additional training cost, allowing musicians to balance audio fidelity and computational expense in real time.
 
-**[Sound Logical Explanations for Mean Aggregation Graph Neural Networks](sound_logical_explanations_for_mean_aggregation_graph_neural_networks.md)**
-
-:   For GNNs using mean aggregation (MAGNN, i.e., mean-GNNs with non-negative weights), this work precisely characterizes the class of monotone logical rules that can serve as sound explanations, constructs a restricted fragment of first-order logic to explain arbitrary MAGNN predictions, and empirically demonstrates that restricting to non-negative weights does not significantly hurt performance while enabling effective extraction of sound rules.
-
 **[Target Speaker Extraction Through Comparing Noisy Positive and Negative Audio Enrollments](target_speaker_extraction_through_comparing_noisy_positive_and_negative_audio_en.md)**
 
 :   This paper proposes a novel enrollment strategy that encodes target speaker characteristics by contrasting noisy positive enrollments (segments where the target speaker is active) against negative enrollments (segments where the target speaker is silent), achieving state-of-the-art performance on monaural noisy-enrollment target speaker extraction with SI-SNRi exceeding the previous best method by over 2.1 dB.
@@ -267,9 +259,9 @@ item_total: 49
 
 :   This paper proposes AVRobustBench, the first benchmark that systematically evaluates the test-time robustness of audio-visual models under **co-occurring correlated dual-modality corruptions**, comprising 4 datasets × 75 corruption types, and introduces AV2C, a TTA method based on low-entropy sample selection.
 
-**[The Impact of Scaling Training Data on Adversarial Robustness](the_impact_of_scaling_training_data_on_adversarial_robustness.md)**
+**[ThinkSound: Chain-of-Thought Reasoning in Multimodal Large Language Models for Audio Generation and Editing](thinksound_chain-of-thought_reasoning_in_multimodal_large_language_models_for_au.md)**
 
-:   A systematic evaluation of 36 state-of-the-art vision models under 6 categories of black-box attacks reveals that attack success rate (ASR) decreases logarithmically with training data volume and model scale; however, **data quality and model scale are more critical than data volume alone**.
+:   ThinkSound is a three-stage interactive video-to-audio framework that leverages an MLLM to generate structured CoT reasoning as guidance for a unified audio foundation model. It achieves state-of-the-art performance on VGGSound and MovieGen Audio benchmarks while supporting object-level refinement and natural language instruction-based editing.
 
 **[Unifying Symbolic Music Arrangement: Track-Aware Reconstruction and Structured Tokenization](unifying_symbolic_music_arrangement_track-aware_reconstruction_and_structured_to.md)**
 

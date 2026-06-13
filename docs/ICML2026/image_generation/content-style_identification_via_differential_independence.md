@@ -127,9 +127,9 @@ Removing $\mathcal{L}_{\rm orth}$ leads to a 27% drop in LPIPS on CelebA-HQ (0.3
 ## Related Papers
 
 - [\[ICCV 2025\] SCFlow: Implicitly Learning Style and Content Disentanglement with Flow Models](../../ICCV2025/image_generation/scflow_implicitly_learning_style_and_content_disentanglement_with_flow_models.md)
-- [\[ICML 2026\] RAIGen: Rare Attribute Identification in Text-to-Image Generative Models](raigen_rare_attribute_identification_in_text-to-image_generative_models.md)
 - [\[ICCV 2025\] AIComposer: Any Style and Content Image Composition via Feature Integration](../../ICCV2025/image_generation/aicomposer_any_style_and_content_image_composition_via_feature_integration.md)
 - [\[ICCV 2025\] CSD-VAR: Content-Style Decomposition in Visual Autoregressive Models](../../ICCV2025/image_generation/csd-var_content-style_decomposition_in_visual_autoregressive_models.md)
+- [\[ICML 2026\] RAIGen: Rare Attribute Identification in Text-to-Image Generative Models](raigen_rare_attribute_identification_in_text-to-image_generative_models.md)
 - [\[ICCV 2025\] StyleMotif: Multi-Modal Motion Stylization using Style-Content Cross Fusion](../../ICCV2025/image_generation/stylemotif_multi-modal_motion_stylization_using_style-content_cross_fusion.md)
 
 </div>

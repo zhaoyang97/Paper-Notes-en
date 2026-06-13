@@ -2,9 +2,10 @@
 title: >-
   [Paper Note] Towards Optimal Robustness in Learning-Augmented Paging
 description: >-
-  [ICML 2026][learning-augmented paging] This paper proposes a unified "Relative Prediction Budget" (RPB) perspective for randomized online paging with predictions. Based on OnlineMin, the RPB-OnOPT framework is designed…
+  [ICML 2026][Online Algorithms / Learning-Augmented Algorithms / Cache Paging][learning-augmented paging] This paper proposes a unified "Relative Prediction Budget" (RPB) perspective for randomized online paging with pred…
 tags:
   - "ICML 2026"
+  - "Online Algorithms / Learning-Augmented Algorithms / Cache Paging"
   - "learning-augmented paging"
   - "competitive ratio"
   - "OnlineMin"
@@ -128,10 +129,10 @@ The authors compared major learning-augmented paging algorithms on LIRS and SPC1
 ## Related Papers
 
 - [\[ICML 2026\] Parsimonious Learning-Augmented Online Metric Matching](parsimonious_learning-augmented_online_metric_matching.md)
-- [\[ICML 2026\] Optimal Regularization for Performative Learning](optimal_regularization_for_performative_learning.md)
-- [\[NeurIPS 2025\] Learning-Augmented Online Bipartite Fractional Matching](../../NeurIPS2025/others/learning-augmented_online_bipartite_fractional_matching.md)
-- [\[ICML 2026\] Guaranteed Optimal Compositional Explanations for Neurons](guaranteed_optimal_compositional_explanations_for_neurons.md)
-- [\[NeurIPS 2025\] Learning-Augmented Streaming Algorithms for Correlation Clustering](../../NeurIPS2025/others/learning-augmented_streaming_algorithms_for_correlation_clustering.md)
+- [\[NeurIPS 2025\] Learning-Augmented Online Bipartite Fractional Matching](../../NeurIPS2025/learning_theory/learning-augmented_online_bipartite_fractional_matching.md)
+- [\[ICLR 2026\] The Price of Robustness: Stable Classifiers Need Overparameterization](../../ICLR2026/learning_theory/the_price_of_robustness_stable_classifiers_need_overparameterization.md)
+- [\[NeurIPS 2025\] Learning-Augmented Streaming Algorithms for Correlation Clustering](../../NeurIPS2025/learning_theory/learning-augmented_streaming_algorithms_for_correlation_clustering.md)
+- [\[ICML 2026\] Multi-task Linear Regression without Eigenvalue Lower Bounds: Adaptivity, Robustness and Safety](multi-task_linear_regression_without_eigenvalue_lower_bounds_adaptivity_robustne.md)
 
 </div>
 

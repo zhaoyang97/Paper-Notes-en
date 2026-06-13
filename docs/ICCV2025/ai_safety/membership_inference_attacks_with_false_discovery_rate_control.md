@@ -2,9 +2,10 @@
 title: >-
   [Paper Note] Membership Inference Attacks with False Discovery Rate Control
 description: >-
-  [ICCV 2025][membership inference attack] This paper proposes MIAFdR, the first membership inference attack (MIA) method with theoretical false discovery rate (FDR) guarantees. By designing a novel non-member conformity s…
+  [ICCV 2025][AI Safety][membership inference attack] This paper proposes MIAFdR, the first membership inference attack (MIA) method with theoretical false discovery rate (FDR) guarantees. By designing a novel non-member c…
 tags:
   - "ICCV 2025"
+  - "AI Safety"
   - "membership inference attack"
   - "false discovery rate control"
   - "conformal inference"
@@ -148,11 +149,11 @@ FDR is effectively controlled across different significance levels and different
 
 ## Related Papers
 
-- [\[ICML 2026\] How Does Bayesian Sampling Help Membership Inference Attacks?](../../ICML2026/others/how_does_bayesian_sampling_help_membership_inference_attacks.md)
-- [\[ICCV 2025\] A Hidden Stumbling Block in Generalized Category Discovery: Distracted Attention](a_hidden_stumbling_block_in_generalized_category_discovery_d.md)
-- [\[ICCV 2025\] Intra-view and Inter-view Correlation Guided Multi-view Novel Class Discovery](intra-view_and_inter-view_correlation_guided_multi-view_novel_class_discovery.md)
-- [\[ICCV 2025\] Generate, Refine, and Encode: Leveraging Synthesized Novel Samples for On-the-Fly Fine-Grained Category Discovery](generate_refine_and_encode_leveraging_synthesized_novel_samples_for_on-the-fly_f.md)
-- [\[NeurIPS 2025\] Statistical Inference Under Performativity](../../NeurIPS2025/others/statistical_inference_under_performativity.md)
+- [\[ICCV 2025\] Find a Scapegoat: Poisoning Membership Inference Attack and Defense to Federated Learning](find_a_scapegoat_poisoning_membership_inference_attack_and_defense_to_federated_.md)
+- [\[ICML 2026\] How Does Bayesian Sampling Help Membership Inference Attacks?](../../ICML2026/ai_safety/how_does_bayesian_sampling_help_membership_inference_attacks.md)
+- [\[ICCV 2025\] Active Membership Inference Test (aMINT): Enhancing Model Auditability with Multi-Task Learning](active_membership_inference_test_amint_enhancing_model_auditability_with_multi-t.md)
+- [\[NeurIPS 2025\] Impact of Dataset Properties on Membership Inference Vulnerability of Deep Transfer Learning](../../NeurIPS2025/ai_safety/impact_of_dataset_properties_on_membership_inference_vulnerability_of_deep_trans.md)
+- [\[AAAI 2026\] Reference Recommendation based Membership Inference Attack against Hybrid-based Recommender Systems](../../AAAI2026/ai_safety/reference_recommendation_based_membership_inference_attack_against_hybrid-based_.md)
 
 </div>
 

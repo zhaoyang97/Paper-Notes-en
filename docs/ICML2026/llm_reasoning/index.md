@@ -1,8 +1,8 @@
 ---
 title: >-
-  ICML2026 LLM Reasoning Papers · 74 Notes
+  ICML2026 LLM Reasoning Papers · 63 Notes
 description: >-
-  74 ICML2026 papers in the LLM Reasoning area, covering Reasoning, LLM, Multimodal/VLM, Diffusion Models, Adversarial Robustness, Reinforcement Learning and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  63 ICML2026 papers in the LLM Reasoning area, covering Reasoning, LLM, Multimodal/VLM, Agents, Adversarial Robustness, Diffusion Models and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "ICML2026"
   - "LLM Reasoning"
@@ -11,22 +11,18 @@ tags:
   - "Reasoning"
   - "LLM"
   - "Multimodal/VLM"
-  - "Diffusion Models"
+  - "Agents"
   - "Adversarial Robustness"
-  - "Reinforcement Learning"
+  - "Diffusion Models"
 item_list:
   - u: "a_formal_comparison_between_chain_of_thought_and_latent_thought/"
     t: "A Formal Comparison Between Chain of Thought and Latent Thought"
   - u: "an_information-theoretic_criterion_for_efficient_data_synthesis/"
     t: "An Information-Theoretic Criterion for Efficient Data Synthesis"
-  - u: "anchor_abductive_network_construction_with_hierarchical_orchestration_for_reliab/"
-    t: "ANCHOR: Abductive Network Construction with Hierarchical Orchestration for Reliable Probability Inference in Large Language Models"
   - u: "are_large_reasoning_models_interruptible/"
     t: "Are Large Reasoning Models Interruptible?"
   - u: "are_tools_always_beneficial_learning_to_invoke_tools_adaptively_for_dual-mode_mu/"
     t: "Are Tools Always Beneficial? Learning to Invoke Tools Adaptively for Dual-Mode Multimodal LLM Reasoning"
-  - u: "automated_formal_proofs_of_combinatorial_identities_via_wilf-zeilberger_guidance/"
-    t: "Automated Formal Proofs of Combinatorial Identities via Wilf–Zeilberger Guidance and LLMs"
   - u: "beyond_test-time_memory_state-space_optimal_control_for_llm_reasoning/"
     t: "Beyond Test-Time Memory: State-Space Optimal Control for LLM Reasoning"
   - u: "beyond_two-stage_training_cooperative_sft_and_rl_for_llm_reasoning/"
@@ -35,8 +31,6 @@ item_list:
     t: "Biases in the Blind Spot: Detecting What LLMs Fail to Mention"
   - u: "blending_supervised_and_reinforcement_fine-tuning_with_prefix_sampling/"
     t: "Blending Supervised and Reinforcement Fine-Tuning with Prefix Sampling"
-  - u: "break_the_block_dynamic-size_reasoning_blocks_for_diffusion_large_language_model/"
-    t: "Break the Block: Dynamic-size Reasoning Blocks for Diffusion Large Language Models via Monotonic Entropy Descent with Reinforcement Learning"
   - u: "chain-of-thought_reasoning_in_the_wild_is_not_always_faithful/"
     t: "Chain-of-Thought Reasoning in the Wild Is Not Always Faithful"
   - u: "clustering_as_reasoning_a_k-means_interpretation_of_chain-of-thought_graph_learn/"
@@ -59,33 +53,39 @@ item_list:
     t: "Diversity Over Frequency: Rethinking Tool Use in Visual Chain-of-Thought Agents"
   - u: "dynamics_within_latent_chain-of-thought_an_empirical_study_of_causal_structure/"
     t: "Dynamics Within Latent Chain-of-Thought: An Empirical Study of Causal Structure"
-  - u: "efficient_reasoning_with_hidden_thinking/"
-    t: "Efficient Reasoning with Hidden Thinking"
-  - u: "entropy-informed_decoding_adaptive_information-driven_branching/"
-    t: "Entropy-informed Decoding: Adaptive Information-Driven Branching"
   - u: "ets_energy-guided_test-time_scaling_for_training-free_rl_alignment/"
     t: "ETS: Energy-Guided Test-Time Scaling for Training-Free RL Alignment"
   - u: "evaluating_relational_reasoning_in_llms_with_rel/"
     t: "Evaluating Relational Reasoning in LLMs with REL"
-  - u: "express_your_doubts_--_probabilistic_world_modeling_should_not_be_based_on_token/"
-    t: "Express Your Doubts: Probabilistic World Modeling Should Not Be Based on Token logprobs"
   - u: "floorplanqa_a_benchmark_for_spatial_reasoning_in_llms_using_structured_represent/"
     t: "FloorplanQA: A Benchmark for Spatial Reasoning in LLMs Using Structured Representations"
   - u: "foresightkv_optimizing_kv_cache_eviction_for_reasoning_models_by_learning_long-t/"
     t: "ForesightKV: Optimizing KV Cache Eviction for Reasoning Models by Learning Long-Term Contribution"
   - u: "from_llm-generated_conjectures_to_lean_formalizations_automated_polynomial_inequ/"
     t: "From LLM-Generated Conjectures to Lean Formalizations: Automated Polynomial Inequality Proving via Sum-of-Squares Certificates"
-item_total: 74
+  - u: "grpo_is_secretly_a_process_reward_model/"
+    t: "GRPO is Secretly a Process Reward Model"
+  - u: "hidden_error_awareness_in_chain-of-thought_reasoning_the_signal_is_diagnostic_no/"
+    t: "Hidden Error Awareness in Chain-of-Thought Reasoning: The Signal Is Diagnostic, Not Causal"
+  - u: "how_far_ahead_do_llms_plan_uncovering_the_latent_horizon_in_chain-of-thought_rea/"
+    t: "How Far Ahead Do LLMs Plan? Uncovering the Latent Horizon in Chain-of-Thought Reasoning"
+  - u: "inducing_overthink_hierarchical_genetic_algorithm-based_dos_attack_on_black-box_/"
+    t: "Inducing Overthink: Hierarchical Genetic Algorithm-based DoS Attack on Black-Box Large Language Reasoning Models"
+  - u: "inference_time_optimization_with_confidence_dynamics/"
+    t: "Inference Time Optimization with Confidence Dynamics"
+  - u: "internalizing_safety_understanding_in_large_reasoning_models_via_verification/"
+    t: "Internalizing Safety Understanding in Large Reasoning Models via Verification"
+item_total: 63
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->
 # 💡 LLM Reasoning
 
-**🧪 ICML2026** · **74** paper notes
+**🧪 ICML2026** · **63** paper notes
 
-📌 **Same area in other venues:** [💬 ACL2026 (81)](../../ACL2026/llm_reasoning/index.md) · [📷 CVPR2026 (10)](../../CVPR2026/llm_reasoning/index.md) · [🔬 ICLR2026 (63)](../../ICLR2026/llm_reasoning/index.md) · [🤖 AAAI2026 (28)](../../AAAI2026/llm_reasoning/index.md) · [🧠 NeurIPS2025 (66)](../../NeurIPS2025/llm_reasoning/index.md) · [📹 ICCV2025 (3)](../../ICCV2025/llm_reasoning/index.md)
+📌 **Same area in other venues:** [💬 ACL2026 (80)](../../ACL2026/llm_reasoning/index.md) · [📷 CVPR2026 (8)](../../CVPR2026/llm_reasoning/index.md) · [🔬 ICLR2026 (82)](../../ICLR2026/llm_reasoning/index.md) · [🤖 AAAI2026 (37)](../../AAAI2026/llm_reasoning/index.md) · [🧠 NeurIPS2025 (81)](../../NeurIPS2025/llm_reasoning/index.md) · [📹 ICCV2025 (3)](../../ICCV2025/llm_reasoning/index.md)
 
-🔥 **Top topics:** Reasoning ×48 · LLM ×17 · Multimodal/VLM ×3 · Diffusion Models ×3 · Adversarial Robustness ×3
+🔥 **Top topics:** Reasoning ×43 · LLM ×14 · Multimodal/VLM ×2 · Agents ×2 · Adversarial Robustness ×2
 
 **[A Formal Comparison Between Chain of Thought and Latent Thought](a_formal_comparison_between_chain_of_thought_and_latent_thought.md)**
 
@@ -95,10 +95,6 @@ item_total: 74
 
 :   This paper uses the Data Processing Inequality (DPI) to explain why synthetic data is sometimes effective and sometimes leads to model collapse: synthetic data training is information-open only when the closed-loop training continuously introduces stable external signals; high meta-level verification signals are more efficient and easier to generalize than instance-level imitation.
 
-**[ANCHOR: Abductive Network Construction with Hierarchical Orchestration for Reliable Probability Inference in Large Language Models](anchor_abductive_network_construction_with_hierarchical_orchestration_for_reliab.md)**
-
-:   ANCHOR employs "bottom-up abduction + hierarchical clustering" to construct a dense factor space, retrieves a sparse set of relevant factors for downstream conditions via coarse-to-fine search, and aggregates posteriors using both Naïve Bayes and a latent-variable causal Bayesian network constructed on-the-fly by an LLM. This approach significantly reduces "unknown" predictions and improves probability calibration in high-risk LLM decision scenarios.
-
 **[Are Large Reasoning Models Interruptible?](are_large_reasoning_models_interruptible.md)**
 
 :   This paper shifts the evaluation of large reasoning models from static problems to dynamic environments where models are interrupted by users or receive mid-way updates. It constructs math and programming evaluation protocols and identifies three stable failure modes: reasoning leakage, panicked answering, and self-doubt.
@@ -106,10 +102,6 @@ item_total: 74
 **[Are Tools Always Beneficial? Learning to Invoke Tools Adaptively for Dual-Mode Multimodal LLM Reasoning](are_tools_always_beneficial_learning_to_invoke_tools_adaptively_for_dual-mode_mu.md)**
 
 :   AutoTool utilizes reinforcement learning to enable Multimodal Large Language Models (MLLMs) to first judge whether an inquiry truly requires a "zoom-in" tool, then adaptively switch between tool-assisted reasoning and text-only reasoning, thereby simultaneously improving accuracy and efficiency across high-resolution perception, localization, hallucination detection, and reasoning tasks.
-
-**[Automated Formal Proofs of Combinatorial Identities via Wilf–Zeilberger Guidance and LLMs](automated_formal_proofs_of_combinatorial_identities_via_wilf-zeilberger_guidance.md)**
-
-:   WZ-LLM compiles the classical Wilf–Zeilberger symbolic proof process into executable proof skeletons in Lean 4 (recurrence + boundary conditions + side conditions), which are then discharged item by item by a WZ-Prover trained via SFT + expert-iteration + DAPO. On 100 classical combinatorial identities, pass@32 improves from Goedel-Prover-V2's 9% to 34%.
 
 **[Beyond Test-Time Memory: State-Space Optimal Control for LLM Reasoning](beyond_test-time_memory_state-space_optimal_control_for_llm_reasoning.md)**
 
@@ -127,10 +119,6 @@ item_total: 74
 
 :   This paper proposes Prefix-RFT, which constructs hybrid trajectories by sampling prefixes from expert demonstrations and concatenating model-generated continuations. This approach injects knowledge guidance from SFT while maintaining the goal-oriented optimization of RFT, significantly outperforming independent SFT, RFT, and existing hybrid methods on mathematical reasoning tasks.
 
-**[Break the Block: Dynamic-size Reasoning Blocks for Diffusion Large Language Models via Monotonic Entropy Descent with Reinforcement Learning](break_the_block_dynamic-size_reasoning_blocks_for_diffusion_large_language_model.md)**
-
-:   To address the issue where "fixed block size" in diffusion language models (dLLM) during semi-autoregressive generation disrupts the logical chain of reasoning, this paper proposes b1: using RL to learn a block-ending indicator token for generating dynamic-length blocks, and introducing a "block-level monotonic entropy descent (MED) reward" to drive coherent reasoning. This reward can be plugged into existing dLLM RL frameworks (Diffu-GRPO/GDPO/d1/wd1) as a plug-and-play component, boosting wd1 on Countdown from 39.45 to 58.98.
-
 **[Chain-of-Thought Reasoning in the Wild Is Not Always Faithful](chain-of-thought_reasoning_in_the_wild_is_not_always_faithful.md)**
 
 :   This paper reveals two types of unfaithful behavior in frontier LLMs under **non-adversarial, naturally phrased** prompts (without human-injected bias): **Implicit Post-hoc Rationalization (IPHR)** (giving contradictory identical answers to logically opposite comparison questions and fabricating justifications for each) and **Unfaithful Illogical Shortcuts (UIS)** (skipping critical reasoning steps in difficult math problems yet arriving at the correct answer). Unfaithfulness rates in production models reach up to 13%, and even "thinking models" (DeepSeek R1: 0.37%, Claude 3.7 Sonnet thinking: 0.04%) are not entirely faithful.
@@ -141,7 +129,7 @@ item_total: 74
 
 **[CoCoReviewBench: A Completeness- and Correctness-Oriented Benchmark for AI Reviewers](cocoreviewbench_a_completeness-_and_correctness-oriented_benchmark_for_ai_review.md)**
 
-:   This paper proposes CoCoReviewBench, which transforms human reviews of 3,900 ICLR/NeurIPS papers into a more credible evaluation reference for AI reviewers through a two-step process: constructing category-based sub-benchmarks and filtering erroneous opinions using meta-reviews to adjudicate reviewer/author conflicts. It finds that existing AI reviewers still lag behind humans in correctness and thoroughness, while reasoning models show greater potential.
+:   This paper introduces CoCoReviewBench, which transforms human reviews of 3,900 ICLR/NeurIPS papers into a more reliable AI review evaluation reference through a two-step process: (1) constructing sub-benchmarks by category, and (2) filtering erroneous opinions by arbitrating reviewer/author conflicts using meta-reviews. The study finds that current AI reviewers still lag behind humans in correctness and thoroughness, while reasoning models show greater potential.
 
 **[Conformal Thinking: Risk Control for Reasoning on a Compute Budget](conformal_thinking_risk_control_for_reasoning_on_a_compute_budget.md)**
 
@@ -175,14 +163,6 @@ item_total: 74
 
 :   The authors treat latent CoT as an intervenable Structural Causal Model (SCM), performing step-wise `do`-intervention + early-stop decoding + teacher-forced readout for each continuous "thought step." They systematically quantify the step-level necessity, propagation structure, and trajectory superposition of Coconut/CODI in mathematical and commonsense reasoning. The study discovers that latent steps are not homogenized "deepening" but represent a structured interface characterized by high heterogeneity, non-local routing, and output-layer commitment preceding representation-layer commitment.
 
-**[Efficient Reasoning with Hidden Thinking](efficient_reasoning_with_hidden_thinking.md)**
-
-:   Heima distills each stage (summary / caption / reasoning) of a multimodal LLM’s lengthy CoT into a **special thinking token**, enabling the model to "think" in latent space. The number of tokens drops from 100-200 to 13-16, while zero-shot accuracy is more stable than LLaVA-CoT. An auxiliary LLM "interpreter" is trained to reconstruct the textual reasoning chain from the thinking token’s hidden state, empirically verifying the information-theoretic upper bound of compression loss.
-
-**[Entropy-informed Decoding: Adaptive Information-Driven Branching](entropy-informed_decoding_adaptive_information-driven_branching.md)**
-
-:   EDEN (Entropy-informed DEcodiNg) sets the beam width $B_t$ at each step to be monotonically proportional to the normalized entropy $\bar H_t$—high entropy forks more branches, low entropy steps approach greedy decoding—thus approximating a wider beam search with fewer total expansions. Theoretically, it is proven that entropy-monotonic branching factors are strictly superior to any fixed beam width in terms of expected cumulative regret, with an explicit regret rate $\mathbb{E}[R_T] \leq G P_\max \sum_t \exp(-c m_t \Delta_\min^2)$.
-
 **[ETS: Energy-Guided Test-Time Scaling for Training-Free RL Alignment](ets_energy-guided_test-time_scaling_for_training-free_rl_alignment.md)**
 
 :   ETS directly samples from the **closed-form optimal solution** of the KL-regularized RLHF objective, formulating it as "reference policy $\times$ conditional expectation of exponential rewards (energy term)." By approximating this energy term at test-time using Monte Carlo and Self-Normalized Importance Sampling, ETS achieves or surpasses the performance of post-trained RL models **without training**, while maintaining practical latency through lightweight proposals and Fast-dLLM.
@@ -190,10 +170,6 @@ item_total: 74
 **[Evaluating Relational Reasoning in LLMs with REL](evaluating_relational_reasoning_in_llms_with_rel.md)**
 
 :   The authors adopt "Relational Complexity" (RC) from cognitive science—defined as the number of independent variables that must be simultaneously bound in a single reasoning step—as a unified axis for measuring task difficulty. They construct REL, a generative benchmark spanning algebra, biology, and chemistry, finding that the accuracy of frontier LLMs (Claude Opus 4.5 / Gemini 3 Pro / GPT-5.2) monotonically decreases as RC increases, a failure mode that persists despite test-time compute, ICL, or external tools.
-
-**[Express Your Doubts: Probabilistic World Modeling Should Not Be Based on Token logprobs](express_your_doubts_--_probabilistic_world_modeling_should_not_be_based_on_token.md)**
-
-:   This position paper argues that **using the token softmax probabilities (logprob) of LLMs as "world event probabilities" is theoretically incorrect**—because distribution estimation, response prediction, and target distribution estimation are three distinct tasks, each with a different ideal output distribution. The correct approach to obtaining world probabilities is **second-order prediction**—having the LLM **explicitly write out** its probability estimate for an event (numerically or with linguistic hedges) in its output, rather than computing "the probability it says X".
 
 **[FloorplanQA: A Benchmark for Spatial Reasoning in LLMs Using Structured Representations](floorplanqa_a_benchmark_for_spatial_reasoning_in_llms_using_structured_represent.md)**
 
@@ -206,10 +182,6 @@ item_total: 74
 **[From LLM-Generated Conjectures to Lean Formalizations: Automated Polynomial Inequality Proving via Sum-of-Squares Certificates](from_llm-generated_conjectures_to_lean_formalizations_automated_polynomial_inequ.md)**
 
 :   NSPI allows LLMs to propose approximate Sum-of-Squares (SOS) structure conjectures, which are then refined into rigorous SOS decompositions with rational coefficients via Gauss–Newton iteration and rational recovery. Finally, automated machine verification is performed using Lean's `linear_combination` + `positivity` tactics, extending inequality proving scalability up to 10 variables.
-
-**[Game of Thought: Robust Information Seeking with Large Language Models Using Game Theory](game_of_thought_robust_information_seeking_with_large_language_models_using_game.md)**
-
-:   This paper models LLM active questioning scenarios (20 Questions / medical diagnosis / troubleshooting) as a two-player zero-sum extensive-form game (EFG), and proposes Game of Thought (GoT): using depth-limited subgame construction + CFR to compute Nash equilibria, thereby generating "randomized questioning strategies" that significantly reduce worst-case interaction rounds across all datasets, with a 15–40% improvement over UoT under the weighted variant.
 
 **[GRPO is Secretly a Process Reward Model](grpo_is_secretly_a_process_reward_model.md)**
 
@@ -233,7 +205,7 @@ item_total: 74
 
 **[Internalizing Safety Understanding in Large Reasoning Models via Verification](internalizing_safety_understanding_in_large_reasoning_models_via_verification.md)**
 
-:   This paper demonstrates that "being able to generate safe answers" $\neq$ "understanding safety." It proposes the SInternal framework: training large reasoning models (LRMs) exclusively to verify the safety of their own generated answers. The resulting internal safety understanding significantly suppresses jailbreak attacks (reducing StrongREJECT ASR from 41% to 0.6%) and serves as a superior starting point for subsequent Reinforcement Learning (RL).
+:   This paper argues that "being able to generate safe answers" ≠ "understanding safety," and proposes the SInternal framework: training large reasoning models solely to verify the safety of their own generated answers. The resulting emergent internal safety understanding significantly suppresses jailbreak attacks (StrongREJECT ASR drops from 41% to 0.6%) and provides a better starting point for subsequent RL.
 
 **[LatentChem: From Textual CoT to Latent Thinking in Chemical Reasoning](latentchem_from_textual_cot_to_latent_thinking_in_chemical_reasoning.md)**
 
@@ -246,10 +218,6 @@ item_total: 74
 **[Less Diverse, Less Safe: The Indirect But Pervasive Risk of Test-Time Scaling in Large Language Models](less_diverse_less_safe_the_indirect_but_pervasive_risk_of_test-time_scaling_in_l.md)**
 
 :   The paper reveals an overlooked failure mode of Test-Time Scaling (TTS): by suppressing the diversity of candidate responses, TTS becomes more likely to output unsafe content than directly feeding highly adversarial prompts. It proposes RefDiv, a genetic algorithm driven by dual signals of Shannon entropy and reference guidance, which achieves efficient jailbreaking across models, closed-source APIs, and guardrails in MCTS and Best-of-N frameworks.
-
-**[Lifting Traces to Logic: Programmatic Skill Induction with Neuro-Symbolic Learning for Long-Horizon Agentic Tasks](lifting_traces_to_logic_programmatic_skill_induction_with_neuro-symbolic_learnin.md)**
-
-:   NSI "lifts" LLM agent interaction traces into neuro-symbolic workflow graphs with explicit conditional branches and dynamic variable binding, evolving skills from stateless scripts into state-aware logical programs. Achieves 98.0 / 76.5 / 95.2 success rates on ALFWorld / WebShop / TextCraft, comprehensively outperforming programmatic skill baselines like ASI and AWM.
 
 **[Lookahead Sample Reward Guidance for Test-Time Scaling of Diffusion Models](lookahead_sample_reward_guidance_for_test-time_scaling_of_diffusion_models.md)**
 
@@ -270,10 +238,6 @@ item_total: 74
 **[Modeling Hierarchical Thinking in Large Reasoning Models](modeling_hierarchical_thinking_in_large_reasoning_models.md)**
 
 :   The authors abstract the long Chain-of-Thought (CoT) of Large Reasoning Models (LRMs) into a 6-state Finite State Machine (FSM). By constructing a Transition Advantage Matrix based on the difference in state transition probabilities between success and failure cases and iteratively calculating long-horizon planning strategies via Q-Values, they implement sparse orthogonal activation steering only at sentence boundaries. This approach improves accuracy on challenging problems like AIME25 by up to +13% with approximately 25× fewer intervention counts.
-
-**[Multimodal Fact-Level Attribution for Verifiable Reasoning](multimodal_fact-level_attribution_for_verifiable_reasoning.md)**
-
-:   MURGAT is the first benchmark to evaluate MLLMs’ ability to provide "fact-level, modality+timestamp precise citations" in multimodal reasoning outputs. It introduces a three-step evaluation protocol (verifiable claim identification → atomic fact decomposition → attribution quality) and a highly human-aligned automatic evaluator, MURGAT-SCORE (Pearson 0.84). The study reveals that even strong models often cite incorrectly despite correct answers, and that strong reasoning often comes at the expense of verifiable citation.
 
 **[On Robustness and Chain-of-Thought Consistency of RL-Finetuned VLMs](on_robustness_and_chain-of-thought_consistency_of_rl-finetuned_vlms.md)**
 
@@ -299,10 +263,6 @@ item_total: 74
 
 :   This paper attributes the root cause of "prompt injection" to a role confusion phenomenon where LLMs identify "who is speaking" in latent space **using style rather than tags**. It proposes "Role Probes" to quantify this confusion and designs a "CoT Forgery" (Chain-of-Thought Forgery) attack. This attack increases the success rate from near 0% to over 60% across six frontier models, while proving that the "role confusion degree" measured by probes can predict attack success before the model generates the first token.
 
-**[Provable Benefit of Curriculum in Transformer Tree-Reasoning Post-Training](provable_benefit_of_curriculum_in_transformer_tree-reasoning_post-training.md)**
-
-:   This work provides the first rigorous sample complexity proof for "easy-to-hard" curriculum RL post-training: on the state-conditional autoregressive reasoning tree of a transformer, if the curriculum ensures that the difficulty ratio between adjacent stages is at most the $L/p$-th root of the target difficulty, then the total sample count can be reduced from the exponential $(C^\star)^L$ of direct training to the polynomial $L\cdot (C^\star)^{p_\max}$ of curriculum-based training.
-
 **[R2-Router: A New Paradigm for LLM Routing with Reasoning](r2-router_a_new_paradigm_for_llm_routing_with_reasoning.md)**
 
 :   This paper proposes R2-Router, which transforms "output token budget" from a passive estimate into a controllable variable. By allowing the router to search in a joint (LLM, budget) space, it extends each LLM from a static point into a quality-cost curve using a lightweight multi-head quality predictor. This achieves comparable quality to existing routers at 4–5× lower costs.
@@ -321,7 +281,7 @@ item_total: 74
 
 **[Reward Modeling from Natural Language Human Feedback](reward_modeling_from_natural_language_human_feedback.md)**
 
-:   This paper demonstrates that generative reward models (GRMs) trained on binary preference rewards suffer significantly from "outcome-process inconsistency" (correct preference but incorrect critique), ranging from 20-30% up to 44%. The authors propose RM-NLHF, which utilizes the similarity between model critiques and human critique core arguments as an additional process reward. By using MetaRM to automatically predict these process rewards and updating it online alongside the policy, the method consistently outperforms SOTA GRMs trained via outcome-only GRPO across multiple benchmarks.
+:   This paper identifies a severe "outcome-process inconsistency" (20–30%, up to 44%) in generative reward models (GRM) trained on binary preference rewards, where the model guesses the correct preference but provides an incorrect critique. The authors propose RM-NLHF: using the similarity between model and human critiques on core arguments as an additional process reward, and employing MetaRM to automatically predict process rewards and update them online with policy changes. This approach consistently outperforms outcome-only GRPO-trained SOTA GRMs across multiple benchmarks.
 
 **[Scaling-Aware Adapter for Structure-Grounded LLM Reasoning](scaling-aware_adapter_for_structure-grounded_llm_reasoning.md)**
 
@@ -366,10 +326,6 @@ item_total: 74
 **[UniScale: Adaptive Unified Inference Scaling via Online Joint Optimization of Model Routing and Test-time Scaling](uniscale_adaptive_unified_inference_scaling_via_online_joint_optimization_of_mod.md)**
 
 :   The UniScale framework unifies model routing and test-time scaling (TTS) into a single decision space, using a LinUCB contextual multi-armed bandit to perform online adaptive inference policy learning, addressing the fine-grained quality-cost trade-off in LLM deployment.
-
-**[Unlocking Zero-Shot Geospatial Reasoning via Indirect Rewards](unlocking_zero-shot_geospatial_reasoning_via_indirect_rewards.md)**
-
-:   The authors use "whether a ground street view and a satellite image can be localized to the same coordinate" as a verifiable indirect reward, and apply two-stage post-training (CoT scaffolding + RL self-exploring) with GRPO to Qwen2.5-VL-7B. This enables the model to learn general reasoning abilities that can zero-shot transfer to 25+ geospatial tasks using only GPS metadata.
 
 **[Verifying Meta-Awareness via Predictive Rewards in Reasoning Models](verifying_meta-awareness_via_predictive_rewards_in_reasoning_models.md)**
 

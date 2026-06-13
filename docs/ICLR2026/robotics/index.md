@@ -1,40 +1,40 @@
 ---
 title: >-
-  ICLR2026 Robotics & Embodied AI Papers · 47 Notes
+  ICLR2026 Robotics & Embodied AI Papers · 46 Notes
 description: >-
-  47 ICLR2026 papers in the Robotics & Embodied AI area, covering Robotics, LLM, Agents, Multimodal/VLM, Reasoning, Navigation and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  46 ICLR2026 papers in the Robotics & Embodied AI area, covering Robotics, Agents, Multimodal/VLM, Reinforcement Learning, Navigation, Adversarial Robustness and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "ICLR2026"
   - "Robotics & Embodied AI"
   - "AI paper notes"
   - "paper summaries"
   - "Robotics"
-  - "LLM"
   - "Agents"
   - "Multimodal/VLM"
-  - "Reasoning"
+  - "Reinforcement Learning"
   - "Navigation"
+  - "Adversarial Robustness"
 item_list:
   - u: "all-day_multi-scenes_lifelong_vision-and-language_navigation_with_tucker_adaptat/"
     t: "All-day Multi-scenes Lifelong Vision-and-Language Navigation with Tucker Adaptation"
   - u: "anytouch_2_general_optical_tactile_representation_learning_for_dynamic_tactile_p/"
     t: "AnyTouch 2: General Optical Tactile Representation Learning For Dynamic Tactile Perception"
-  - u: "attribution-guided_decoding/"
-    t: "Attribution-Guided Decoding"
-  - u: "building_spatial_world_models_from_sparse_transitional_episodic_memories/"
-    t: "Building Spatial World Models from Sparse Transitional Episodic Memories"
-  - u: "capability-based_scaling_trends_for_llm-based_red-teaming/"
-    t: "Capability-Based Scaling Trends for LLM-Based Red-Teaming"
-  - u: "clip_behaves_like_a_bag-of-words_model_cross-modally_but_not_uni-modally/"
-    t: "CLIP Behaves like a Bag-of-Words Model Cross-modally but not Uni-modally"
+  - u: "apple_toward_general_active_perception_via_reinforcement_learning/"
+    t: "APPLE: Toward General Active Perception via Reinforcement Learning"
+  - u: "autofly_vision-language-action_model_for_uav_autonomous_navigation_in_the_wild/"
+    t: "AutoFly: Vision-Language-Action Model for UAV Autonomous Navigation in the Wild"
+  - u: "cross-embodiment_offline_reinforcement_learning_for_heterogeneous_robot_datasets/"
+    t: "Cross-Embodiment Offline Reinforcement Learning for Heterogeneous Robot Datasets"
+  - u: "d-rex_differentiable_real-to-sim-to-real_engine_for_learning_dexterous_grasping/"
+    t: "D-REX: Differentiable Real-to-Sim-to-Real Engine for Learning Dexterous Grasping"
   - u: "d2e_scaling_vision-action_pretraining_on_desktop_data_for_transfer_to_embodied_a/"
     t: "D2E: Scaling Vision-Action Pretraining on Desktop Data for Transfer to Embodied AI"
-  - u: "domain_expansion_a_latent_space_construction_framework_for_multi-task_learning/"
-    t: "Domain Expansion: A Latent Space Construction Framework for Multi-Task Learning"
-  - u: "doubly-robust_llm-as-a-judge_externally_valid_estimation_with_imperfect_personas/"
-    t: "Doubly-Robust LLM-as-a-Judge: Externally Valid Estimation with Imperfect Personas"
-  - u: "enhancing_instruction_following_of_llms_via_activation_steering_with_dynamic_rej/"
-    t: "Enhancing Instruction Following of LLMs via Activation Steering with Dynamic Rejection"
+  - u: "distributionally_robust_cooperative_multi-agent_reinforcement_learning_via_robus/"
+    t: "Distributionally Robust Cooperative Multi-Agent Reinforcement Learning via Robust Value Factorization"
+  - u: "embodied_agents_meet_personalization_investigating_challenges_and_solutions_thro/"
+    t: "Embodied Agents Meet Personalization: Investigating Challenges and Solutions Through the Lens of Memory Utilization"
+  - u: "emergence_of_spatial_representation_in_an_actor-critic_agent_with_hippocampus-in/"
+    t: "Emergence of Spatial Representation in an Actor-Critic Agent with Hippocampus-Inspired Sequence Generator"
   - u: "exopredicator_learning_abstract_models_of_dynamic_worlds_for_robot_planning/"
     t: "ExoPredicator: Learning Abstract Models of Dynamic Worlds for Robot Planning"
   - u: "experience-based_knowledge_correction_for_robust_planning_in_minecraft/"
@@ -43,49 +43,49 @@ item_list:
     t: "From Spatial to Actions: Grounding Vision-Language-Action Model in Spatial Foundation Priors"
   - u: "grounding_generative_planners_in_verifiable_logic_a_hybrid_architecture_for_trus/"
     t: "Grounding Generative Planners in Verifiable Logic: A Hybrid Architecture for Trustworthy Embodied AI"
-  - u: "ignore_all_previous_instructions_jailbreaking_as_a_de-escalatory_peace_building_/"
-    t: "Ignore All Previous Instructions: Jailbreaking as a de-escalatory peace building practise to resist LLM social media bots"
   - u: "janusvln_decoupling_semantics_and_spatiality_with_dual_implicit_memory_for_visio/"
     t: "JanusVLN: Decoupling Semantics and Spatiality with Dual Implicit Memory for Vision-Language Navigation"
-  - u: "juli_jailbreak_large_language_models_by_self-introspection/"
-    t: "JULI: Jailbreak Large Language Models by Self-Introspection"
   - u: "memoryvla_perceptual-cognitive_memory_in_vision-language-action_models_for_robot/"
     t: "MemoryVLA: Perceptual-Cognitive Memory in Vision-Language-Action Models for Robotic Manipulation"
-  - u: "odesteer_a_unified_ode-based_steering_framework_for_llm_alignment/"
-    t: "ODESteer: A Unified ODE-Based Steering Framework for LLM Alignment"
+  - u: "mollangbench_a_comprehensive_benchmark_for_language-prompted_molecular_structure/"
+    t: "MolLangBench: A Comprehensive Benchmark for Language-Prompted Molecular Structure Recognition, Editing, and Generation"
+  - u: "momagen_generating_demonstrations_under_soft_and_hard_constraints_for_multi-step/"
+    t: "MoMaGen: Generating Demonstrations under Soft and Hard Constraints for Multi-Step Bimanual Mobile Manipulation"
+  - u: "mvr_multi-view_video_reward_shaping_for_reinforcement_learning/"
+    t: "MVR: Multi-view Video Reward Shaping for Reinforcement Learning"
+  - u: "nonparametric_teaching_of_attention_learners/"
+    t: "Nonparametric Teaching of Attention Learners"
   - u: "omnieva_embodied_versatile_planner_via_task-adaptive_3d-grounded_and_embodiment-/"
     t: "OmniEVA: Embodied Versatile Planner via Task-Adaptive 3D-Grounded and Embodiment-aware Reasoning"
   - u: "on_entropy_control_in_llm-rl_algorithms/"
     t: "On Entropy Control in LLM-RL Algorithms"
   - u: "one_demo_is_all_it_takes_planning_domain_derivation_with_llms_from_a_single_demo/"
     t: "One Demo Is All It Takes: Planning Domain Derivation with LLMs from A Single Demonstration"
-  - u: "persona_dynamic_and_compositional_inference-time_personality_control_via_activat/"
-    t: "PERSONA: Dynamic and Compositional Inference-Time Personality Control via Activation Vector Algebra"
+  - u: "partially_equivariant_reinforcement_learning_in_symmetry-breaking_environments/"
+    t: "Partially Equivariant Reinforcement Learning in Symmetry-Breaking Environments"
   - u: "real-time_robot_execution_with_masked_action_chunking/"
     t: "Real-Time Robot Execution with Masked Action Chunking"
   - u: "rei-bench_can_embodied_agents_understand_vague_human_instructions_in_task_planni/"
     t: "REI-Bench: Can Embodied Agents Understand Vague Human Instructions in Task Planning?"
+  - u: "rethinking_policy_diversity_in_ensemble_policy_gradient_in_large-scale_reinforce/"
+    t: "Rethinking Policy Diversity in Ensemble Policy Gradient in Large-Scale Reinforcement Learning"
   - u: "rf-matid_dataset_and_benchmark_for_radio_frequency_material_identification/"
     t: "RF-MatID: Dataset and Benchmark for Radio Frequency Material Identification"
   - u: "robocasa365_a_large-scale_simulation_framework_for_training_and_benchmarking_gen/"
     t: "RoboCasa365: A Large-Scale Simulation Framework for Training and Benchmarking Generalist Robots"
   - u: "robointer_a_holistic_intermediate_representation_suite_towards_robotic_manipulat/"
     t: "RoboInter: A Holistic Intermediate Representation Suite Towards Robotic Manipulation"
-  - u: "robopara_dual-arm_robot_planning_with_parallel_allocation_and_recomposition_acro/"
-    t: "RoboPARA: Dual-Arm Robot Planning with Parallel Allocation and Recomposition Across Tasks"
-  - u: "socialharmbench_revealing_llm_vulnerabilities_to_socially_harmful_requests/"
-    t: "SocialHarmBench: Revealing LLM Vulnerabilities to Socially Harmful Requests"
-item_total: 47
+item_total: 46
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->
 # 🤖 Robotics & Embodied AI
 
-**🔬 ICLR2026** · **47** paper notes
+**🔬 ICLR2026** · **46** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (45)](../../ICML2026/robotics/index.md) · [💬 ACL2026 (10)](../../ACL2026/robotics/index.md) · [📷 CVPR2026 (34)](../../CVPR2026/robotics/index.md) · [🤖 AAAI2026 (36)](../../AAAI2026/robotics/index.md) · [🧠 NeurIPS2025 (54)](../../NeurIPS2025/robotics/index.md) · [📹 ICCV2025 (26)](../../ICCV2025/robotics/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (42)](../../ICML2026/robotics/index.md) · [💬 ACL2026 (10)](../../ACL2026/robotics/index.md) · [📷 CVPR2026 (42)](../../CVPR2026/robotics/index.md) · [🤖 AAAI2026 (30)](../../AAAI2026/robotics/index.md) · [🧠 NeurIPS2025 (73)](../../NeurIPS2025/robotics/index.md) · [📹 ICCV2025 (26)](../../ICCV2025/robotics/index.md)
 
-🔥 **Top topics:** Robotics ×9 · LLM ×8 · Agents ×8 · Multimodal/VLM ×5 · Reasoning ×3
+🔥 **Top topics:** Robotics ×12 · Agents ×9 · Multimodal/VLM ×8 · Reinforcement Learning ×6 · Navigation ×3
 
 **[All-day Multi-scenes Lifelong Vision-and-Language Navigation with Tucker Adaptation](all-day_multi-scenes_lifelong_vision-and-language_navigation_with_tucker_adaptat.md)**
 
@@ -95,37 +95,37 @@ item_total: 47
 
 :   AnyTouch 2 proposes a Tactile Dynamic Pyramid framework, constructs the ToucHD hierarchical dataset comprising 2,426,174 contact samples (covering atomic actions, real-world manipulation, and tactile-force paired data), and designs a unified tactile representation learning framework that operates across three levels of dynamic perception—pixel-level, semantic-level, and physical-level. The approach comprehensively outperforms existing methods on four tasks: static attribute recognition, dynamic physical prediction, and real-world manipulation.
 
-**[Attribution-Guided Decoding](attribution-guided_decoding.md)**
+**[APPLE: Toward General Active Perception via Reinforcement Learning](apple_toward_general_active_perception_via_reinforcement_learning.md)**
 
-:   This paper proposes AGD, a decoding strategy that, at each generation step, selects from high-probability candidate tokens the one with the highest attribution score toward a user-specified region of interest (ROI). This reframes attribution methods from passive analysis tools into active generation guidance mechanisms, achieving significant improvements on both instruction-following and factuality tasks.
+:   This paper proposes APPLE, a general active perception framework that combines reinforcement learning with supervised learning. Active perception is formulated as a POMDP, with the reward defined as the RL reward minus the prediction loss. The gradient naturally decomposes into a policy gradient term and a prediction loss gradient term. Built upon off-policy algorithms (SAC/CrossQ) and a shared ViViT backbone, the framework is validated across 5 diverse task benchmarks. The CrossQ variant requires no per-task hyperparameter tuning and achieves a 53% improvement in training efficiency.
 
-**[Building Spatial World Models from Sparse Transitional Episodic Memories](building_spatial_world_models_from_sparse_transitional_episodic_memories.md)**
+**[AutoFly: Vision-Language-Action Model for UAV Autonomous Navigation in the Wild](autofly_vision-language-action_model_for_uav_autonomous_navigation_in_the_wild.md)**
 
-:   This paper proposes the Episodic Spatial World Model (ESWM), which constructs spatial world models from sparse, disconnected episodic memories (one-step transitions). The model's latent space spontaneously gives rise to cognitive maps aligned with environmental topology, supporting zero-shot exploration and navigation.
+:   This paper proposes AutoFly, an end-to-end VLA model for UAV autonomous navigation in the wild. It infers spatial information from RGB inputs via a pseudo-depth encoder, and is trained on a newly constructed autonomous navigation dataset (13K+ trajectories including 1K real flights). AutoFly achieves 3.9% higher success rate and 2.6% lower collision rate than OpenVLA in both simulated and real environments.
 
-**[Capability-Based Scaling Trends for LLM-Based Red-Teaming](capability-based_scaling_trends_for_llm-based_red-teaming.md)**
+**[Cross-Embodiment Offline Reinforcement Learning for Heterogeneous Robot Datasets](cross-embodiment_offline_reinforcement_learning_for_heterogeneous_robot_datasets.md)**
 
-:   This paper systematically evaluates 4 jailbreak methods across 600+ attacker–target LLM pairs and finds that attack success rate (ASR) follows a sigmoid scaling law with respect to the capability gap between attacker and target ($R^2=0.83$), where the capability gap is quantified via a logit transformation of MMLU-Pro scores.
+:   This paper systematically investigates cross-embodiment offline RL pretraining, identifies gradient conflicts leading to negative transfer under increasing suboptimal data ratios and robot diversity, and proposes Embodiment Grouping (EG)—a strategy that clusters robots by morphological graph distance and updates the actor group-wise. On a locomotion benchmark spanning 16 robot platforms, EG substantially mitigates negative transfer (IQL+EG improves over IQL by 34% on the 70% suboptimal dataset).
 
-**[CLIP Behaves like a Bag-of-Words Model Cross-modally but not Uni-modally](clip_behaves_like_a_bag-of-words_model_cross-modally_but_not_uni-modally.md)**
+**[D-REX: Differentiable Real-to-Sim-to-Real Engine for Learning Dexterous Grasping](d-rex_differentiable_real-to-sim-to-real_engine_for_learning_dexterous_grasping.md)**
 
-:   Through linear probing experiments, this paper demonstrates that CLIP's bag-of-words (BoW) behavior does not stem from a lack of binding information in the encoders, but rather from a failure of cross-modal alignment. The paper proposes LABCLIP, which trains a single lightweight linear transformation to substantially recover attribute-object binding capability.
+:   D-REX is proposed as a Gaussian-based differentiable real-to-sim-to-real engine that performs end-to-end object mass identification from visual observations and robot control signals, and leverages the identified mass for force-aware dexterous grasping policy learning, effectively bridging the sim-to-real gap.
 
 **[D2E: Scaling Vision-Action Pretraining on Desktop Data for Transfer to Embodied AI](d2e_scaling_vision-action_pretraining_on_desktop_data_for_transfer_to_embodied_a.md)**
 
 :   This work proposes the D2E framework, demonstrating that desktop gaming interaction data can serve as an effective pretraining substrate for embodied AI. Through the OWA toolkit, 335 hours of human demonstrations are collected; a Generalist-IDM pseudo-annotates 1,000+ hours of YouTube gameplay videos; and VAPT transfer training yields a 1B-parameter model that achieves 96.6% on LIBERO manipulation and 83.3% on CANVAS navigation, matching or surpassing models 7× larger.
 
-**[Domain Expansion: A Latent Space Construction Framework for Multi-Task Learning](domain_expansion_a_latent_space_construction_framework_for_multi-task_learning.md)**
+**[Distributionally Robust Cooperative Multi-Agent Reinforcement Learning via Robust Value Factorization](distributionally_robust_cooperative_multi-agent_reinforcement_learning_via_robus.md)**
 
-:   This paper proposes the Domain Expansion framework, which restructures the latent space into mutually orthogonal subspaces via Orthogonal Pooling, structurally preventing gradient conflicts and representation collapse in multi-objective training, and enabling interpretable, composable concept algebra.
+:   This paper proposes the Distributionally Robust IGM (DrIGM) principle, integrating distributionally robust optimization into the value factorization framework of cooperative multi-agent RL, enabling classical methods such as VDN, QMIX, and QTRAN to maintain robust decentralized execution performance under distribution shift between training and deployment environments.
 
-**[Doubly-Robust LLM-as-a-Judge: Externally Valid Estimation with Imperfect Personas](doubly-robust_llm-as-a-judge_externally_valid_estimation_with_imperfect_personas.md)**
+**[Embodied Agents Meet Personalization: Investigating Challenges and Solutions Through the Lens of Memory Utilization](embodied_agents_meet_personalization_investigating_challenges_and_solutions_thro.md)**
 
-:   This paper proposes a doubly-robust estimation framework that combines imperfect LLM persona ratings with human annotations subject to sampling bias, yielding statistically valid estimates of GenAI system quality in the simultaneous presence of covariate shift and selection bias.
+:   This paper systematically evaluates the memory utilization capabilities of LLM-driven embodied agents through the Memento framework. It finds that existing agents can recall simple object semantics but fail to process sequential information in user behavior patterns. A hierarchical knowledge graph-based user profile memory module is proposed to effectively improve performance on personalized assistance tasks.
 
-**[Enhancing Instruction Following of LLMs via Activation Steering with Dynamic Rejection](enhancing_instruction_following_of_llms_via_activation_steering_with_dynamic_rej.md)**
+**[Emergence of Spatial Representation in an Actor-Critic Agent with Hippocampus-Inspired Sequence Generator](emergence_of_spatial_representation_in_an_actor-critic_agent_with_hippocampus-in.md)**
 
-:   This paper proposes Directer (Dynamic Rejection Steering), which dynamically adjusts KV cache steering intensity at each decoding step and incorporates a plausibility constraint, substantially improving LLM instruction following while preventing text quality degradation caused by oversteering.
+:   Inspired by the intrinsic recurrent circuitry of hippocampal region CA3, this paper proposes a minimal sequence generator (shift register) integrated with an actor-critic framework to achieve maze navigation under sparse visual input, while giving rise to neurobiologically observed phenomena including place fields, DG orthogonalization, distance-dependent spatial kernels, and task-dependent remapping.
 
 **[ExoPredicator: Learning Abstract Models of Dynamic Worlds for Robot Planning](exopredicator_learning_abstract_models_of_dynamic_worlds_for_robot_planning.md)**
 
@@ -143,25 +143,29 @@ item_total: 47
 
 :   This paper proposes VIRF (Verifiable Iterative Refinement Framework), a neuro-symbolic hybrid architecture that couples a deterministic Logic Tutor with an LLM planner, using a verifiable formal ontology as a safety anchor. VIRF achieves 0% Hazardous Action Rate (HAR) and 77.3% Goal Completion Rate (GCR) on SafeAgentBench, demonstrating that strict safety guarantees need not compromise agent utility.
 
-**[Ignore All Previous Instructions: Jailbreaking as a de-escalatory peace building practise to resist LLM social media bots](ignore_all_previous_instructions_jailbreaking_as_a_de-escalatory_peace_building_.md)**
-
-:   This paper proposes reframing the jailbreaking of LLM-driven social media propaganda bots as a user-initiated, nonviolent de-escalatory peace-building practice. By exposing the fabricated identities of automated accounts through prompt injection, ordinary users can resist state-sponsored disinformation campaigns without relying on platform moderation.
-
 **[JanusVLN: Decoupling Semantics and Spatiality with Dual Implicit Memory for Vision-Language Navigation](janusvln_decoupling_semantics_and_spatiality_with_dual_implicit_memory_for_visio.md)**
 
 :   Inspired by the left-brain/right-brain division of semantic understanding and spatial cognition in humans, this paper proposes JanusVLN—the first dual implicit neural memory framework designed for VLN—which models spatial-geometric memory and visual-semantic memory respectively as fixed-size KV Caches, enabling efficient spatial reasoning from RGB video alone and achieving state-of-the-art performance on the VLN-CE benchmark.
-
-**[JULI: Jailbreak Large Language Models by Self-Introspection](juli_jailbreak_large_language_models_by_self-introspection.md)**
-
-:   This paper reveals that top-k token log probabilities returned by aligned LLM APIs still contain harmful knowledge leakage, and proposes JULI—a BiasNet plugin with fewer than 1% of the target model's parameters—that manipulates logit bias to successfully jailbreak Gemini-2.5-Pro (Harmful Info Score 4.19/5) under API settings restricted to top-5 token probabilities, achieving approximately 140× speedup over LINT while doubling harmfulness scores.
 
 **[MemoryVLA: Perceptual-Cognitive Memory in Vision-Language-Action Models for Robotic Manipulation](memoryvla_perceptual-cognitive_memory_in_vision-language-action_models_for_robot.md)**
 
 :   Inspired by the dual-memory system in cognitive science, this paper proposes MemoryVLA, a framework that introduces a Perceptual-Cognitive Memory Bank (PCMB) into VLA models. By incorporating memory retrieval, gated fusion, and consolidation mechanisms to capture long-horizon temporal dependencies, MemoryVLA comprehensively outperforms CogACT and π₀ across 150+ tasks on SimplerEnv, LIBERO, and real-world benchmarks.
 
-**[ODESteer: A Unified ODE-Based Steering Framework for LLM Alignment](odesteer_a_unified_ode-based_steering_framework_for_llm_alignment.md)**
+**[MolLangBench: A Comprehensive Benchmark for Language-Prompted Molecular Structure Recognition, Editing, and Generation](mollangbench_a_comprehensive_benchmark_for_language-prompted_molecular_structure.md)**
 
-:   This paper proposes a unified theoretical framework for activation steering based on ordinary differential equations (ODEs), interpreting conventional activation addition as the Euler discretization of an ODE and showing that steering direction identification is equivalent to defining a barrier function. Building on this insight, the authors design ODESteer, which achieves fine-grained steering by numerically solving the ODE with multi-step adaptive integration, yielding gains of 5.7% on TruthfulQA, 2.5% on UltraFeedback, and 2.4% on RealToxicityPrompts.
+:   This paper introduces MolLangBench, a benchmark constructed via automated tools and expert annotation to provide high-quality, unambiguous evaluation datasets for the molecule-language interface. It covers three task types (recognition / editing / generation) and three modalities (SMILES / image / graph), evaluates 16+ commercial LLMs and 5 chemistry-specific models, and reveals that even GPT-5 falls significantly short on basic molecular operations (generation accuracy only 43%).
+
+**[MoMaGen: Generating Demonstrations under Soft and Hard Constraints for Multi-Step Bimanual Mobile Manipulation](momagen_generating_demonstrations_under_soft_and_hard_constraints_for_multi-step.md)**
+
+:   MoMaGen formulates demonstration data generation for bimanual mobile manipulation as a constrained optimization problem. By combining hard constraints (reachability, collision-free motion, visibility) with soft constraints (object visibility during navigation, retraction to compact poses), the framework automatically generates large-scale, diverse datasets from a single human teleoperation demonstration. The resulting visuomotor policy can be deployed on a physical robot with only 40 real demonstrations for fine-tuning.
+
+**[MVR: Multi-view Video Reward Shaping for Reinforcement Learning](mvr_multi-view_video_reward_shaping_for_reinforcement_learning.md)**
+
+:   This paper proposes the MVR framework, which learns a state relevance function from multi-view video via video-text similarity matching. Combined with state-dependent reward shaping that automatically attenuates VLM guidance, MVR outperforms existing VLM-based reward methods across 19 tasks on HumanoidBench and MetaWorld.
+
+**[Nonparametric Teaching of Attention Learners](nonparametric_teaching_of_attention_learners.md)**
+
+:   This paper proposes AtteNT — a reinterpretation of attention learner (Transformer/ViT) training through the lens of nonparametric teaching theory: it analyzes the importance-adaptive role of attention in parametric gradients → proves that the dynamic ANTK converges to an importance-adaptive canonical kernel in functional gradient descent → bridges parameter space and function space → applies a greedy teaching algorithm that selects samples with the largest prediction deviation to accelerate training → achieving 13.01% time savings for LLM fine-tuning and 20.58% for ViT training from scratch, with no degradation in accuracy.
 
 **[OmniEVA: Embodied Versatile Planner via Task-Adaptive 3D-Grounded and Embodiment-aware Reasoning](omnieva_embodied_versatile_planner_via_task-adaptive_3d-grounded_and_embodiment-.md)**
 
@@ -175,9 +179,9 @@ item_total: 47
 
 :   This paper proposes the PDDLLM framework, which derives a complete PDDL planning domain (predicates + actions) automatically from **a single demonstration trajectory**. It generates interpretable symbolic representations through cross-validation between LLM reasoning and physical simulation, and employs a Logical Constraint Adapter (LoCA) to automatically interface with motion planners. The method achieves at least 20% higher success rates than 6 LLM baselines across 1,200+ tasks in 9 environments, and is successfully deployed on 3 physical robot platforms.
 
-**[PERSONA: Dynamic and Compositional Inference-Time Personality Control via Activation Vector Algebra](persona_dynamic_and_compositional_inference-time_personality_control_via_activat.md)**
+**[Partially Equivariant Reinforcement Learning in Symmetry-Breaking Environments](partially_equivariant_reinforcement_learning_in_symmetry-breaking_environments.md)**
 
-:   This paper proposes the PERSONA framework, which extracts approximately orthogonal personality vectors from activation space and applies vector algebra operations (scaling, addition, subtraction) to achieve training-free dynamic and compositional personality control. PERSONA attains a score of 9.60 on PersonalityBench, nearly matching the SFT upper bound of 9.61.
+:   This paper proposes the Partially Invariant MDP (PI-MDP) framework, which employs a learnable gating function $\lambda(s,a)$ to pointwise switch between equivariant and standard Bellman updates across the state-action space. The paper theoretically proves that local symmetry breaking propagates through discounted backup and amplifies global value function error by a factor of $1/(1-\gamma)$, while PI-MDP provably confines the error strictly within the breaking region. The framework is instantiated as PE-DQN and PE-SAC, achieving comprehensive improvements over strictly equivariant and approximately equivariant baselines on Grid-World, MuJoCo locomotion, and robotic manipulation tasks.
 
 **[Real-Time Robot Execution with Masked Action Chunking](real-time_robot_execution_with_masked_action_chunking.md)**
 
@@ -186,6 +190,10 @@ item_total: 47
 **[REI-Bench: Can Embodied Agents Understand Vague Human Instructions in Task Planning?](rei-bench_can_embodied_agents_understand_vague_human_instructions_in_task_planni.md)**
 
 :   This work presents the first systematic study on how referring expressions (REs) in vague human instructions affect LLM-based robot task planning. REI-Bench is introduced to model 9 levels of coreference ambiguity (3 RE difficulty levels × 3 context types). Implicit REs are found to reduce the success rate of existing planners by up to 36.9%. The proposed Task-Oriented Context Cognition (TOCC) method decouples task understanding from planning decision-making, achieving an average improvement of 6.5% in success rate.
+
+**[Rethinking Policy Diversity in Ensemble Policy Gradient in Large-Scale Reinforcement Learning](rethinking_policy_diversity_in_ensemble_policy_gradient_in_large-scale_reinforce.md)**
+
+:   This paper theoretically analyzes how inter-policy diversity affects learning efficiency in ensemble policy gradient methods, and proposes Coupled Policy Optimization (CPO), which regulates diversity via KL divergence constraints to achieve efficient and stable exploration in large-scale parallel environments.
 
 **[RF-MatID: Dataset and Benchmark for Radio Frequency Material Identification](rf-matid_dataset_and_benchmark_for_radio_frequency_material_identification.md)**
 
@@ -203,25 +211,25 @@ item_total: 47
 
 :   This paper proposes RoboPARA, a two-stage framework that optimizes task parallelism for dual-arm robots via dependency graph construction and graph re-traversal scheduling, achieving 30–50% reduction in execution time and a 34% improvement in success rate over existing methods across multi-scenario benchmarks.
 
-**[SocialHarmBench: Revealing LLM Vulnerabilities to Socially Harmful Requests](socialharmbench_revealing_llm_vulnerabilities_to_socially_harmful_requests.md)**
+**[RRNCO: Towards Real-World Routing with Neural Combinatorial Optimization](rrnco_towards_real-world_routing_with_neural_combinatorial_optimization.md)**
 
-:   This paper introduces SocialHarmBench, the first LLM safety evaluation benchmark specifically targeting sociopolitical harms. It comprises 585 prompts spanning 7 categories and 34 countries, revealing systemic safety vulnerabilities in current LLMs across politically sensitive scenarios such as historical revisionism and propaganda manipulation.
+:   This paper proposes the RRNCO architecture, which introduces two key innovations — Adaptive Node Embedding (ANE) and Neural Adaptive Bias (NAB) — to jointly model asymmetric distances, travel durations, and bearing angles within a deep routing framework for the first time. It also constructs a VRP benchmark dataset based on 100 real-world cities, significantly narrowing the sim-to-real gap for NCO methods.
+
+**[Scalable Exploration for High-Dimensional Continuous Control via Value-Guided Flow](scalable_exploration_for_high-dimensional_continuous_control_via_value-guided_fl.md)**
+
+:   This paper proposes Qflex (Q-guided Flow Exploration), a scalable RL method for exploration in high-dimensional continuous action spaces. It transports actions from a learnable source distribution along a probability flow induced by the Q-function, aligning exploration with task-relevant gradients rather than isotropic noise. Qflex outperforms Gaussian and diffusion-based RL baselines across various high-dimensional benchmarks, and successfully controls a full-body musculoskeletal model with 700 actuators to perform agile and complex motions.
 
 **[Sparse Imagination for Efficient Visual World Model Planning](sparse_imagination_for_efficient_visual_world_model_planning.md)**
 
 :   This paper proposes Sparse Imagination, which achieves substantial inference speedup in ViT patch token-based world model planning by randomly dropping tokens and training with randomly grouped attention (50% drop rate reduces planning time by ~50%), while maintaining or even surpassing full-token planning performance on certain tasks. A key finding is that simple random dropout outperforms sophisticated token selection methods, as static importance ranking suffers from a "blind spot problem" in dynamic planning scenarios.
 
-**[String Seed of Thought: Prompting LLMs for Distribution-Faithful and Diverse Generation](string_seed_of_thought_prompting_llms_for_distribution-faithful_and_diverse_gene.md)**
+**[ST4VLA: Spatially Guided Training for Vision-Language-Action Models](st4vla_spatially_guided_training_for_vision-language-action_models.md)**
 
-:   This paper proposes String Seed of Thought (SSoT), a concise prompting method that instructs LLMs to first generate a random string and then extract randomness from it to select an answer. SSoT significantly improves distribution faithfulness in probabilistic instruction following (PIF) and response diversity in open-ended generation (DAG). The paper theoretically proves that TV distance decays exponentially with string length, and experiments show that reasoning-capable LLMs approach the performance of pseudo-random number generators.
+:   This paper proposes ST4VLA, a two-stage spatially guided training framework (spatial grounding pre-training + spatially guided action post-training) that explicitly injects VLM spatial priors into VLA policy learning. On SimplerEnv, it improves the Google Robot success rate from 66.1% to 84.6% and WidowX from 54.7% to 73.2%, achieving state-of-the-art performance.
 
-**[SynthWorlds: Controlled Parallel Worlds for Disentangling Reasoning and Knowledge in Language Models](synthworlds_controlled_parallel_worlds_for_disentangling_reasoning_and_knowledge.md)**
+**[Statistical Guarantees for Offline Domain Randomization](statistical_guarantees_for_offline_domain_randomization.md)**
 
-:   This paper constructs structurally identical parallel corpora in which entities are mapped to either real or synthetic names, and quantifies the Knowledge Advantage Gap (KA) — the contribution of parametric knowledge — by comparing model performance across the two "parallel worlds." The results show that this gap persists even when models are augmented with RAG and CoT.
-
-**[Sysformer: Safeguarding Frozen Large Language Models with Adaptive System Prompts](sysformer_safeguarding_frozen_large_language_models_with_adaptive_system_prompts.md)**
-
-:   This paper proposes Sysformer, a lightweight Transformer module that can be plugged in front of any frozen LLM to adaptively transform system prompts in embedding space conditioned on user input, enabling the model to refuse harmful requests while complying with benign ones—without modifying LLM parameters or filtering user inputs.
+:   This paper formalizes offline domain randomization (ODR) as a maximum likelihood estimation problem over a parameterized family of simulators. Under mild regularity and identifiability assumptions, it establishes weak consistency (convergence in probability); with an additional uniform Lipschitz continuity assumption, strong consistency (almost sure convergence) is further proved. These results provide the first theoretical foundation for the empirical success of ODR in sim-to-real transfer.
 
 **[Test-Time Mixture of World Models for Embodied Agents in Dynamic Environments](test-time_mixture_of_world_models_for_embodied_agents_in_dynamic_environments.md)**
 
@@ -229,17 +237,17 @@ item_total: 47
 
 :   This paper proposes the Theory of Space framework, which systematically evaluates the ability of foundation models to construct and revise spatial beliefs through active exploration, cognitive map probing, and a False Belief paradigm across both text-based and visual environments. The study reveals critical failure modes in current state-of-the-art models, including active-passive performance gaps, inefficient exploration strategies, and deficient belief revision.
 
-**[THOR: Tool-Integrated Hierarchical Optimization via RL for Mathematical Reasoning](thor_tool-integrated_hierarchical_optimization_via_rl_for_mathematical_reasoning.md)**
-
-:   This paper proposes THOR, a framework that systematically addresses three core challenges in tool-integrated mathematical reasoning for LLMs—data construction, fine-grained optimization, and inference enhancement—through three complementary components: the TIRGen data construction pipeline, hierarchical reinforcement learning (joint episode-level and step-level optimization), and a self-correction inference mechanism. THOR achieves state-of-the-art performance among models of comparable scale on benchmarks including MATH500 and AIME.
-
 **[Token Taxes: Mitigating AGI's Economic Risks](token_taxes_mitigating_agis_economic_risks.md)**
 
 :   This paper proposes the Token Tax — a surcharge levied on model inference token usage — as a first-line governance instrument for mitigating economic risks in the post-AGI era. It leverages cloud computing providers as intermediaries through a three-stage audit pipeline (black-box token verification → norm-based tax rates → white-box audit). Compared to conventional robot taxes, it offers two distinctive advantages: enforceability through existing compute governance infrastructure, and collection at the point of AI token consumption rather than model hosting location, thereby alleviating global inequality.
 
-**[Tracing and Reversing Edits in LLMs](tracing_and_reversing_edits_in_llms.md)**
+**[Towards Bridging the Gap between Large-Scale Pretraining and Efficient Finetuning for Humanoid Control](towards_bridging_the_gap_between_large-scale_pretraining_and_efficient_finetunin.md)**
 
-:   Addressing the dual-use risks of Knowledge Editing (KE), this paper proposes EditScope, a method that infers edited target entities from post-edit weights with up to 99% accuracy, alongside a training-free edit reversal approach based on SVD bottom-rank approximation achieving up to 94% reversal rate—requiring only the post-edit weights, without access to the editing prompt or original weights.
+:   LIFT proposes a three-stage pretraining-finetuning framework: (i) large-scale parallel SAC pretraining for zero-shot deployment; (ii) offline pretraining of a physics-prior world model based on Lagrangian dynamics; (iii) efficient finetuning via deterministic action execution in the environment combined with stochastic exploration within the world model. The full sim-to-real pipeline is validated on Booster T1 and Unitree G1 humanoid robots.
+
+**[TPRU: Advancing Temporal and Procedural Understanding in Large Multimodal Models](tpru_advancing_temporal_and_procedural_understanding_in_large_multimodal_models.md)**
+
+:   TPRU constructs a large-scale multi-image temporal understanding dataset (24,750 QA pairs, 126,000 images) spanning 3 complementary task types (temporal ordering, next-frame prediction, previous-frame review) across 4 embodied scenarios including robotic manipulation and GUI navigation, and demonstrates that RL fine-tuning enables a 7B model to surpass GPT-4o on temporal understanding benchmarks.
 
 **[TwinVLA: Data-Efficient Bimanual Manipulation with Twin Single-Arm Vision-Language-Action Models](twinvla_data-efficient_bimanual_manipulation_with_twin_single-arm_vision-languag.md)**
 
@@ -256,18 +264,6 @@ item_total: 47
 **[VLBiMan: Vision-Language Anchored One-Shot Demonstration Enables Generalizable Bimanual Robotic Manipulation](vlbiman_vision-language_anchored_one-shot_demonstration_enables_generalizable_bi.md)**
 
 :   VLBiMan is proposed as a framework that decomposes a single demonstration into invariant and adaptable atomic skills via task-aware bimanual decomposition, employs vision-language anchoring with a VLM to adapt to new object positions and instances in novel scenes, and achieves bimanual coordination through kinematics-aware trajectory composition. The framework achieves an 85.3% success rate across 10 complex bimanual tasks with only one demonstration, substantially outperforming imitation learning baselines that require hundreds of demonstrations.
-
-**[WebOperator: Action-Aware Tree Search for Autonomous Agents in Web Environment](weboperator_action-aware_tree_search_for_autonomous_agents_in_web_environment.md)**
-
-:   This paper proposes WebOperator, an action-aware tree search framework that enables autonomous web agents to explore safely and efficiently in partially observable, irreversible real-world web environments through speculative backtracking, destructive action detection, action validation, and action merging. WebOperator achieves a 54.6% success rate on WebArena using gpt-4o, establishing a new state of the art.
-
-**[What's the Plan? Metrics for Implicit Planning in LLMs and Their Application to Rhyme Generation and Question Answering](whats_the_plan_metrics_for_implicit_planning_in_llms_and_their_application_to_rh.md)**
-
-:   This paper proposes a mean activation difference steering method along with accompanying quantitative metrics, and systematically demonstrates across 23 open-source models (1B–32B) on rhyme generation and question answering: representations of target tokens (rhymes/answers) form at early sequence positions (forward planning) and causally influence intermediate token generation (backward planning). Implicit planning emerges as early as 1B-scale models, indicating it is a universal mechanism rather than a capability exclusive to large models.
-
-**[When Agents Persuade: Propaganda Generation and Mitigation in LLMs](when_agents_persuade_propaganda_generation_and_mitigation_in_llms.md)**
-
-:   This paper systematically investigates propaganda generation behavior in LLMs, training dedicated detectors to quantify the use of six rhetorical techniques across three LLMs. Results show that all LLMs can generate propaganda and heavily rely on Loaded Language and Flag-Waving. Three fine-tuning approaches (SFT/DPO/ORPO) are employed for mitigation, with ORPO reducing the propaganda classification rate from 77% to 10% and decreasing rhetorical technique usage by 13.4×.
 
 **[When would Vision-Proprioception Policies Fail in Robotic Manipulation?](when_would_vision-proprioception_policies_fail_in_robotic_manipulation.md)**
 

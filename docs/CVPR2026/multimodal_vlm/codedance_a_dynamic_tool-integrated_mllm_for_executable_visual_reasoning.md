@@ -2,13 +2,13 @@
 title: >-
   [Paper Note] CodeDance: A Dynamic Tool-integrated MLLM for Executable Visual Reasoning
 description: >-
-  [CVPR 2026][Multimodal VLM][Executable visual reasoning] This paper proposes CodeDance, which uses executable code as a general-purpose solver for visual reasoning. The MLLM generates code to define, compose…
+  [CVPR 2026][Multimodal VLM][Executable code reasoning] This paper proposes CodeDance, which uses executable code as a unified medium for visual reasoning. Atomic capabilities are instilled via SFT…
 tags:
   - "CVPR 2026"
   - "Multimodal VLM"
-  - "Executable visual reasoning"
-  - "tool integration"
-  - "code generation"
+  - "Executable code reasoning"
+  - "tool calling"
+  - "multimodal reasoning"
   - "reinforcement learning"
   - "emergent behavior"
 date: 2026-05-08
@@ -141,82 +141,17 @@ Scalability ablation: SFT data scaling from 5K to 34K yields consistent improvem
 
 ---
 
-# CodeDance: A Dynamic Tool-integrated MLLM for Executable Visual Reasoning
-
-**Conference**: CVPR 2026
-**arXiv**: [2512.17312](https://arxiv.org/abs/2512.17312)  
-**Code**: [https://CodeDance-VL.github.io](https://CodeDance-VL.github.io)  
-**Area**: Multimodal VLM / Tool Use
-**Keywords**: Executable visual reasoning, tool integration, code generation, reinforcement learning, emergent behavior
-
-## TL;DR
-This paper proposes CodeDance, which uses executable code as a general-purpose solver for visual reasoning. The MLLM generates code to define, compose, and execute diverse tools, rendering intermediate visual results (bboxes, lines, charts) to support an auditable reasoning chain. RL training is guided by a tool-calling reward that balances exploration and efficiency. During RL, the model exhibits emergent unseen tool-calling combinations and cross-task transfer, with the 7B model surpassing GPT-4o on counting, visual search, and chart QA.
-
-## Background & Motivation
-
-1. **Background**: o3 demonstrates the ability to "think with tools"—alternating between reasoning and tool use. However, existing open-source methods either rely solely on textual CoT, use fixed schemas (predicting only bbox coordinates), or operate as single-step pipelines.
-2. **Key Gap**: (1) Pure textual CoT cannot dynamically interact with visual inputs or verify intermediate results; (2) Fixed schemas limit flexibility and composability; (3) o3 is a closed black-box system.
-3. **Core Idea**: Code is the most universal "tool-calling language"—CodeDance enables the MLLM to generate and execute Python code to orchestrate diverse tools, compute intermediate results, and render visual artifacts. RL training reveals **emergent behaviors** (novel tool-calling patterns, compositions, and cross-task transfer not seen during training).
-
-## Method
-
-### Key Designs
-1. **Executable Code Reasoning**: The model generates Python code → executes it → obtains tool outputs (crops/detections/OCR results) → continues reasoning or generates new code → produces the final answer. Interleaved "thinking (text)" and "executing (code)" are supported.
-2. **Tool-Calling Reward (RL)**: A reward is designed to balance exploration and efficiency—encouraging moderate tool use (too little → insufficient information; too much → overuse/low efficiency).
-3. **Emergent Behaviors**: Observed during RL training—the model invents tool-calling patterns not present in training data, combines tools from different tasks to address new ones, and exhibits cross-task transfer.
-
-### Loss & Training
-Atomic supervision (single-tool examples) → SFT initialization → RL (tool-calling reward + task correctness reward)
-
-## Key Experimental Results
-
-### Main Results
-
-| Model | CountBench | PixmoCount | V*Bench | ChartQA |
-|------|:---:|:---:|:---:|:---:|
-| GPT-4o | 87.9 | - | 67.5 | 86.7 |
-| Qwen2.5-VL-7B | 76.5 | 50.4 | 76.4 | 86.3 |
-| Deepeyes-7B | 80.4 | 57.2 | 90.4 | 78.2 |
-| **CodeDance-7B** | **91.2** | **77.1** | 84.8 | **87.5** |
-
-CountBench +19.2%, PixmoCount +53.0% vs. Qwen2.5-VL-7B baseline.
-
-### Emergent Behavior Case Studies
-- Unseen tool compositions (e.g., chained zoom+count+compare calls)
-- Cross-task transfer (applying region detection from chart analysis to counting tasks)
-- Spontaneous generation of verification code (rendering detection results for visual inspection)
-
-### Key Findings
-- Code is far more expressive than fixed schemas—yielding significant performance gains at the same model size.
-- Emergent behaviors are a key product of RL—they do not appear during the SFT stage.
-- More tool calls are not always better—a balanced reward outperforms an "always use tools" reward.
-
-## Highlights & Insights
-- **Code as a universal reasoning medium**: More executable than textual CoT, more flexible than fixed schemas—code natively supports variables, loops, conditionals, and function definitions.
-- **Emergent properties of RL training**: Novel tool-use compositions and cross-task transfer—from atomic capabilities to creative combinations, analogous to emergent capabilities in language models.
-- **Auditable reasoning**: Code + rendered visual intermediate results → fully traceable and verifiable reasoning chains.
-
-## Limitations & Future Work
-- Code execution requires a sandbox environment → higher deployment complexity than pure-text models.
-- The tool set is predefined—how to dynamically discover and integrate new tools remains an open question.
-
-## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Executable code reasoning + RL emergent behaviors
-- Experimental Thoroughness: ⭐⭐⭐⭐ Multiple benchmarks across counting/search/chart + emergent analysis
-- Writing Quality: ⭐⭐⭐⭐ Intuitive case-study presentation of emergent behaviors
-- Value: ⭐⭐⭐⭐⭐ Significant contribution to tool use and reasoning paradigms for VLMs
-
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] From Intuition to Investigation: A Tool-Augmented Reasoning MLLM Framework for Generalizable Face Anti-Spoofing](from_intuition_to_investigation_a_tool-augmented_reasoning_mllm_framework_for_ge.md)
 - [\[CVPR 2026\] Proof-of-Perception: Certified Tool-Using Multimodal Reasoning with Compositional Conformal Guarantees](pop_proof_of_perception_conformal_reasoning.md)
 - [\[ICML 2026\] VisionPulse: Dynamic Visual Sparsification in Multimodal Reasoning](../../ICML2026/multimodal_vlm/visionpulse_dynamic_visual_sparsity_for_efficient_multimodal_reasoning.md)
 - [\[CVPR 2026\] DocSeeker: Structured Visual Reasoning with Evidence Grounding for Long Document Understanding](docseeker_long_document_understanding.md)
 - [\[CVPR 2026\] Unbiased Dynamic Multimodal Fusion](unbiased_dynamic_multimodal_fusion.md)
+- [\[CVPR 2026\] Fine-Grained Post-Training Quantization for Large Vision Language Models with Quantization-Aware Integrated Gradients](fine-grained_post-training_quantization_for_large_vision_language_models_with_qu.md)
 
 </div>
 

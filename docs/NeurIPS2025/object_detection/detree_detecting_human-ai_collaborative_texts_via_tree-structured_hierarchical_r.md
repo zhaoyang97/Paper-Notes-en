@@ -156,10 +156,10 @@ The hierarchical modeling paradigm is generalizable to other tasks requiring fin
 ## Related Papers
 
 - [\[CVPR 2026\] Show, Don't Tell: Detecting Novel Objects by Watching Human Videos](../../CVPR2026/object_detection/show_dont_tell_detecting_novel_objects_by_watching.md)
-- [\[ICCV 2025\] UPRE: Zero-Shot Domain Adaptation for Object Detection via Unified Prompt and Representation Enhancement](../../ICCV2025/object_detection/upre_zero-shot_domain_adaptation_for_object_detection_via_unified_prompt_and_rep.md)
-- [\[ICML 2026\] OmniVerifier-M1: Multimodal Meta-Verifier with Explicit Structured Recalibration](../../ICML2026/object_detection/omniverifier-m1_multimodal_meta-verifier_with_explicit_structured_recalibration.md)
-- [\[CVPR 2026\] PHAC: Promptable Human Amodal Completion](../../CVPR2026/object_detection/phac_promptable_human_amodal_completion.md)
-- [\[CVPR 2026\] Detecting Unknown Objects via Energy-Based Separation for Open World Object Detection](../../CVPR2026/object_detection/detecting_unknown_objects_via_energy-based_separation.md)
+- [\[NeurIPS 2025\] ADPretrain: Advancing Industrial Anomaly Detection via Anomaly Representation Pretraining](adpretrain_advancing_industrial_anomaly_detection_via_anomaly_representation_pre.md)
+- [\[ICLR 2026\] PAANO: Patch-Based Representation Learning for Time-Series Anomaly Detection](../../ICLR2026/object_detection/paano_patch-based_representation_learning_for_time-series_anomaly_detection.md)
+- [\[NeurIPS 2025\] Structured Temporal Causality for Interpretable Multivariate Time Series Anomaly Detection](structured_temporal_causality_for_interpretable_multivariate_time_series_anomaly.md)
+- [\[AAAI 2026\] AquaSentinel: Next-Generation AI System Integrating Sensor Networks for Urban Underground Water Pipeline Anomaly Detection via Collaborative MoE-LLM Agent Architecture](../../AAAI2026/object_detection/aquasentinel_next-generation_ai_system_integrating_sensor_ne.md)
 
 </div>
 

@@ -127,10 +127,10 @@ On the RobotCar dataset, HOPS outperforms the best single-reference baseline in 
 ## Related Papers
 
 - [\[CVPR 2026\] HypeVPR: Exploring Hyperbolic Space for Perspective to Equirectangular Visual Place Recognition](../../CVPR2026/others/hypevpr_exploring_hyperbolic_space_for_perspective_to_equirectangular_visual_pla.md)
-- [\[ICCV 2025\] Kaputt: A Large-Scale Dataset for Visual Defect Detection](kaputt_a_large-scale_dataset_for_visual_defect_detection.md)
 - [\[ICCV 2025\] Learning Visual Hierarchies in Hyperbolic Space for Image Retrieval](learning_visual_hierarchies_in_hyperbolic_space_for_image_retrieval.md)
 - [\[NeurIPS 2025\] On Topological Descriptors for Graph Products](../../NeurIPS2025/others/on_topological_descriptors_for_graph_products.md)
 - [\[ICCV 2025\] Processing and Acquisition Traces in Visual Encoders: What Does CLIP Know About Your Camera?](processing_and_acquisition_traces_in_visual_encoders_what_does_clip_know_about_y.md)
+- [\[NeurIPS 2025\] Ultrametric Cluster Hierarchies: I Want 'em All!](../../NeurIPS2025/others/ultrametric_cluster_hierarchies_i_want_em_all.md)
 
 </div>
 

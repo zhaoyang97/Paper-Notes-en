@@ -1,8 +1,8 @@
 ---
 title: >-
-  NeurIPS2025 Time Series Papers · 56 Notes
+  NeurIPS2025 Time Series Papers · 54 Notes
 description: >-
-  56 NeurIPS2025 papers in the Time Series area, covering Time-Series Forecasting, Diffusion Models, Reasoning, GNNs, Adversarial Robustness, Multimodal/VLM and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  54 NeurIPS2025 papers in the Time Series area, covering Time-Series Forecasting, Diffusion Models, GNNs, Adversarial Robustness, Self-Supervised Learning and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "NeurIPS2025"
   - "Time Series"
@@ -10,21 +10,16 @@ tags:
   - "paper summaries"
   - "Time-Series Forecasting"
   - "Diffusion Models"
-  - "Reasoning"
   - "GNNs"
   - "Adversarial Robustness"
-  - "Multimodal/VLM"
+  - "Self-Supervised Learning"
 item_list:
   - u: "a_graph_neural_network_approach_for_localized_and_high-resolution_temperature_fo/"
     t: "A Graph Neural Network Approach for Localized and High-Resolution Temperature Forecasting"
-  - u: "abstain_mask_retain_core_time_series_prediction_by_adaptive/"
-    t: "Abstain Mask Retain Core: Time Series Prediction by Adaptive Masking Loss with Representation Consistency"
   - u: "aero_a_redirection-based_optimization_framework_inspired_by_judo_for_robust_prob/"
     t: "AERO: A Redirection-Based Optimization Framework Inspired by Judo for Robust Probabilistic Forecasting"
   - u: "attentionpredictor_temporal_patterns_matter_for_kv_cache_com/"
     t: "AttentionPredictor: Temporal Patterns Matter for KV Cache Compression"
-  - u: "benchmarking_probabilistic_time_series_forecasting_models_on_neural_activity/"
-    t: "Benchmarking Probabilistic Time Series Forecasting Models on Neural Activity"
   - u: "bubbleformer_forecasting_boiling_with_transformers/"
     t: "BubbleFormer: Forecasting Boiling with Transformers"
   - u: "causal_masking_on_spatial_data_an_information-theoretic_case_for_learning_spatia/"
@@ -39,14 +34,14 @@ item_list:
     t: "DemandCast: Global hourly electricity demand forecasting"
   - u: "diffusion_transformers_as_open-world_spatiotemporal_foundation_models/"
     t: "Diffusion Transformers as Open-World Spatiotemporal Foundation Models"
-  - u: "diffusion_transformers_for_imputation_statistical_efficiency_and_uncertainty_qua/"
-    t: "Diffusion Transformers for Imputation: Statistical Efficiency and Uncertainty Quantification"
   - u: "exploring_neural_granger_causality_with_xlstms_unveiling_temporal_dependencies_i/"
     t: "Exploring Neural Granger Causality with xLSTMs: Unveiling Temporal Dependencies in Complex Data"
   - u: "frequency_matters_when_time_series_foundation_models_fail_under_spectral_shift/"
     t: "Frequency Matters: When Time Series Foundation Models Fail Under Spectral Shift"
   - u: "friren_beyond_trajectories_--_a_spectral_lens_on_time/"
     t: "Fern: Chaining Spectral Pearls — Ellipsoidal Forecasting Beyond Trajectories for Time Series"
+  - u: "graph-based_neural_space_weather_forecasting/"
+    t: "Graph-based Neural Space Weather Forecasting"
   - u: "how_foundational_are_foundation_models_for_time_series_forecasting/"
     t: "How Foundational are Foundation Models for Time Series Forecasting?"
   - u: "how_patterns_dictate_learnability_in_sequential_data/"
@@ -67,33 +62,33 @@ item_list:
     t: "Less is More: Unlocking Specialization of Time Series Foundation Models via Structured Pruning"
   - u: "maestro_adaptive_sparse_attention_and_robust_learning_for_multimodal_dynamic_tim/"
     t: "MAESTRO: Adaptive Sparse Attention and Robust Learning for Multimodal Dynamic Time Series"
-  - u: "martingale_score_an_unsupervised_metric_for_bayesian_rationality_in_llm_reasonin/"
-    t: "Martingale Score: An Unsupervised Metric for Bayesian Rationality in LLM Reasoning"
-  - u: "masfin_a_multi-agent_system_for_decomposed_financial_reasoning_and_forecasting/"
-    t: "MASFIN: A Multi-Agent System for Decomposed Financial Reasoning and Forecasting"
+  - u: "mira_medical_time_series_foundation_model_for_real-world_health_data/"
+    t: "MIRA: Medical Time Series Foundation Model for Real-World Health Data"
   - u: "multi-scale_finetuning_for_encoder-based_time_series_foundation_models/"
     t: "Multi-Scale Finetuning for Encoder-based Time Series Foundation Models"
   - u: "neural_mjd_neural_non-stationary_merton_jump_diffusion_for_time_series_predictio/"
     t: "Neural MJD: Neural Non-Stationary Merton Jump Diffusion for Time Series Prediction"
-item_total: 56
+  - u: "neural_stochastic_flows_solver-free_modelling_and_inference_for_sde_solutions/"
+    t: "Neural Stochastic Flows: Solver-Free Modelling and Inference for SDE Solutions"
+  - u: "nsw-epnews_a_news-augmented_benchmark_for_electricity_price_forecasting_with_llm/"
+    t: "NSW-EPNews: A News-Augmented Benchmark for Electricity Price Forecasting with LLMs"
+  - u: "omnicast_a_masked_latent_diffusion_model_for_weather_forecasting_across_time_sca/"
+    t: "OmniCast: A Masked Latent Diffusion Model for Weather Forecasting Across Time Scales"
+item_total: 54
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->
 # 📈 Time Series
 
-**🧠 NeurIPS2025** · **56** paper notes
+**🧠 NeurIPS2025** · **54** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (33)](../../ICML2026/time_series/index.md) · [💬 ACL2026 (7)](../../ACL2026/time_series/index.md) · [📷 CVPR2026 (6)](../../CVPR2026/time_series/index.md) · [🔬 ICLR2026 (36)](../../ICLR2026/time_series/index.md) · [🤖 AAAI2026 (36)](../../AAAI2026/time_series/index.md) · [📹 ICCV2025 (4)](../../ICCV2025/time_series/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (32)](../../ICML2026/time_series/index.md) · [💬 ACL2026 (7)](../../ACL2026/time_series/index.md) · [📷 CVPR2026 (6)](../../CVPR2026/time_series/index.md) · [🔬 ICLR2026 (37)](../../ICLR2026/time_series/index.md) · [🤖 AAAI2026 (31)](../../AAAI2026/time_series/index.md) · [📹 ICCV2025 (4)](../../ICCV2025/time_series/index.md)
 
-🔥 **Top topics:** Time-Series Forecasting ×31 · Diffusion Models ×3 · Reasoning ×3 · GNNs ×2 · Adversarial Robustness ×2
+🔥 **Top topics:** Time-Series Forecasting ×30 · Diffusion Models ×3 · GNNs ×2 · Adversarial Robustness ×2 · Self-Supervised Learning ×2
 
 **[A Graph Neural Network Approach for Localized and High-Resolution Temperature Forecasting](a_graph_neural_network_approach_for_localized_and_high-resolution_temperature_fo.md)**
 
 :   This paper proposes a GCN-GRU hybrid framework for community-scale (2.5 km) high-resolution temperature forecasting (1–48 hours), validated across three regions in southwestern Ontario, Canada. The largest region achieves an average MAE of 1.93°C and a 48-hour MAE of 2.93°C. The work explores ClimateBERT language model embeddings as a standardized input scheme, and provides a transferable lightweight forecasting framework targeting data-scarce regions in the Global South.
-
-**[Abstain Mask Retain Core: Time Series Prediction by Adaptive Masking Loss with Representation Consistency](abstain_mask_retain_core_time_series_prediction_by_adaptive.md)**
-
-:   This paper reveals a counter-intuitive phenomenon in time series forecasting — that appropriately truncating historical inputs can improve prediction accuracy (termed the redundant feature learning problem) — and proposes AMRC based on information bottleneck theory. AMRC suppresses redundant feature learning via adaptive masking loss and representation consistency constraints, serving as a model-agnostic training framework that consistently improves performance across diverse architectures.
 
 **[AERO: A Redirection-Based Optimization Framework Inspired by Judo for Robust Probabilistic Forecasting](aero_a_redirection-based_optimization_framework_inspired_by_judo_for_robust_prob.md)**
 
@@ -102,10 +97,6 @@ item_total: 56
 **[AttentionPredictor: Temporal Patterns Matter for KV Cache Compression](attentionpredictor_temporal_patterns_matter_for_kv_cache_com.md)**
 
 :   AttentionPredictor is the first learning-based method that directly predicts attention patterns for KV cache compression and critical token identification. By leveraging a lightweight CNN to capture spatiotemporal patterns in attention scores, it achieves 13× KV cache compression and 5.6× inference speedup, with a unified prediction model of only 21 KB shared across all Transformer layers.
-
-**[Benchmarking Probabilistic Time Series Forecasting Models on Neural Activity](benchmarking_probabilistic_time_series_forecasting_models_on_neural_activity.md)**
-
-:   The first systematic evaluation of 12 probabilistic time series forecasting models on mouse cortical calcium imaging data. PatchTST consistently achieves top performance (informative prediction horizon up to 1.5 s), zero-shot foundation models (Chronos) fail entirely but become competitive after fine-tuning, and the intrinsic predictability ceiling of neural activity is found to be approximately 1.5 seconds.
 
 **[BubbleFormer: Forecasting Boiling with Transformers](bubbleformer_forecasting_boiling_with_transformers.md)**
 
@@ -135,10 +126,6 @@ item_total: 56
 
 :   This paper proposes UrbanDiT, the first open-world urban spatiotemporal foundation model based on Diffusion Transformers. It integrates heterogeneous data types (grid/graph) and diverse tasks (prediction, interpolation, extrapolation, imputation) through a unified prompt learning framework, achieving state-of-the-art performance across multiple cities and scenarios while demonstrating strong zero-shot generalization.
 
-**[Diffusion Transformers for Imputation: Statistical Efficiency and Uncertainty Quantification](diffusion_transformers_for_imputation_statistical_efficiency_and_uncertainty_qua.md)**
-
-:   This paper analyzes the sample complexity and uncertainty quantification performance of conditional diffusion Transformers (DiT) for time series imputation from a statistical learning perspective, and proposes a mixed-masking training strategy to improve imputation quality.
-
 **[Exploring Neural Granger Causality with xLSTMs: Unveiling Temporal Dependencies in Complex Data](exploring_neural_granger_causality_with_xlstms_unveiling_temporal_dependencies_i.md)**
 
 :   This paper proposes GC-xLSTM, which leverages the xLSTM architecture combined with a novel dynamic sparsity optimization strategy to uncover Granger causal relationships in multivariate time series, achieving state-of-the-art performance on multiple datasets.
@@ -150,6 +137,10 @@ item_total: 56
 **[Fern: Chaining Spectral Pearls — Ellipsoidal Forecasting Beyond Trajectories for Time Series](friren_beyond_trajectories_--_a_spectral_lens_on_time.md)**
 
 :   This paper proposes Fern (Forecasting with Ellipsoidal RepresentatioN), which replaces conventional trajectory prediction with patch-wise ellipsoidal transport (rotation–scaling–translation). Fern substantially outperforms baselines on chaotic systems while remaining competitive on standard LTSF benchmarks.
+
+**[Graph-based Neural Space Weather Forecasting](graph-based_neural_space_weather_forecasting.md)**
+
+:   This paper proposes a graph neural network-based neural emulator for space weather, trained on Vlasiator hybrid-Vlasov simulation data, enabling both deterministic and probabilistic autoregressive forecasting of near-Earth space conditions. The emulator achieves over 100× speedup relative to the original simulator and quantifies forecast uncertainty through latent-variable ensemble generation.
 
 **[How Foundational are Foundation Models for Time Series Forecasting?](how_foundational_are_foundation_models_for_time_series_forecasting.md)**
 
@@ -191,13 +182,9 @@ item_total: 56
 
 :   This paper proposes MAESTRO, a framework that addresses modality heterogeneity and arbitrary missingness in multimodal time series via symbolic tokenization, adaptive attention budgeting, sparse cross-modal attention, and dynamic MoE routing, substantially outperforming baselines under both complete and missing modality scenarios.
 
-**[Martingale Score: An Unsupervised Metric for Bayesian Rationality in LLM Reasoning](martingale_score_an_unsupervised_metric_for_bayesian_rationality_in_llm_reasonin.md)**
+**[MIRA: Medical Time Series Foundation Model for Real-World Health Data](mira_medical_time_series_foundation_model_for_real-world_health_data.md)**
 
-:   This paper proposes the Martingale Score as an unsupervised metric that quantifies belief entrenchment in LLM reasoning processes based on the martingale property from Bayesian statistics. The study finds that belief entrenchment is pervasive across models and domains, and is significantly correlated with degraded accuracy.
-
-**[MASFIN: A Multi-Agent System for Decomposed Financial Reasoning and Forecasting](masfin_a_multi-agent_system_for_decomposed_financial_reasoning_and_forecasting.md)**
-
-:   This paper proposes MASFIN, a multi-agent system that decomposes financial forecasting into multiple sub-tasks (macroeconomic analysis, industry analysis, technical analysis, sentiment analysis, etc.), with specialized LLM agents collaborating to produce more accurate and interpretable financial predictions than single-model approaches.
+:   This paper presents MIRA, a foundation model specifically designed for irregular medical time series. Through continuous-time rotary position encoding (CT-RoPE), frequency-specific Mixture-of-Experts (MoE), and a Neural ODE-based extrapolation module, MIRA is pretrained on 454 billion observation points and achieves zero-shot forecasting performance that reduces average error by 8% and 6% in OOD and in-distribution (ID) settings, respectively.
 
 **[Multi-Scale Finetuning for Encoder-based Time Series Foundation Models](multi-scale_finetuning_for_encoder-based_time_series_foundation_models.md)**
 
@@ -207,9 +194,17 @@ item_total: 56
 
 :   This paper proposes Neural MJD, which parameterizes a non-stationary Merton Jump Diffusion model via neural networks, casting prediction as an SDE simulation problem. The framework combines a time-varying Itô diffusion (capturing continuous drift) with a time-varying compound Poisson process (modeling abrupt jumps), and employs likelihood truncation together with an Euler-Maruyama with Restart solver to enable scalable learning and inference.
 
+**[Neural Stochastic Flows: Solver-Free Modelling and Inference for SDE Solutions](neural_stochastic_flows_solver-free_modelling_and_inference_for_sde_solutions.md)**
+
+:   This paper proposes Neural Stochastic Flows (NSF), which directly learns the transition distribution $p(x_t \mid x_s)$ of an SDE via conditional normalising flows. The architecture is constrained to satisfy stochastic flow properties (identity, Markov, Chapman-Kolmogorov), enabling single-step sampling without numerical solvers and achieving up to two orders of magnitude speedup at distant time points.
+
 **[NSW-EPNews: A News-Augmented Benchmark for Electricity Price Forecasting with LLMs](nsw-epnews_a_news-augmented_benchmark_for_electricity_price_forecasting_with_llm.md)**
 
 :   This paper introduces NSW-EPNews, the first electricity price forecasting benchmark augmented with news text, systematically evaluating both traditional models and LLMs on multimodal electricity price prediction. Key findings show that news features provide marginal gains for traditional models, while LLMs suffer from severe hallucination issues.
+
+**[OmniCast: A Masked Latent Diffusion Model for Weather Forecasting Across Time Scales](omnicast_a_masked_latent_diffusion_model_for_weather_forecasting_across_time_sca.md)**
+
+:   OmniCast is proposed as a weather forecasting method that combines a masked generative framework with a latent diffusion model. By jointly generating future weather sequences rather than iterating autoregressively, it mitigates error accumulation, achieves state-of-the-art performance at the subseasonal-to-seasonal (S2S) scale, remains competitive for medium-range forecasting, and offers inference speeds 10–20× faster.
 
 **[Parallelization of Non-linear State-Space Models: Scaling Up Liquid-Resistance Liquid-Capacitance Networks for Efficient Sequence Modeling](parallelization_of_non-linear_state-space_models_scaling_up_liquid-resistance_li.md)**
 
@@ -222,10 +217,6 @@ item_total: 56
 **[PlanU: Large Language Model Reasoning through Planning under Uncertainty](planu_large_language_model_reasoning_through_planning_under_uncertainty.md)**
 
 :   This paper proposes PlanU—an LLM decision-making method that models node returns via quantile distributions within MCTS and balances exploration and exploitation through an Upper Confidence Bounds with Curiosity (UCC) score. PlanU is the first approach to systematically and simultaneously address both LLM uncertainty and environmental uncertainty, achieving substantial improvements over existing methods across multiple stochastic environment benchmarks.
-
-**[Power Ensemble Aggregation for Improved Extreme Event AI Prediction](power_ensemble_aggregation_for_improved_extreme_event_ai_prediction.md)**
-
-:   This paper proposes an adaptive ensemble aggregation method based on the power mean. By applying nonlinear aggregation (power exponent $p>1$) to the score of ensemble members from generative weather prediction models, the method significantly improves classification performance for extreme high-temperature events, with greater gains at higher quantile thresholds.
 
 **[Probability Calibration for Precipitation Nowcasting](probability_calibration_for_precipitation_nowcasting.md)**
 
@@ -242,10 +233,6 @@ item_total: 56
 **[Scalable Signature Kernel Computations for Long Time Series via Local Neumann Series Expansions](scalable_signature_kernel_computations_for_long_time_series_via_local_neumann_se.md)**
 
 :   This paper proposes PowerSig, which efficiently computes signature kernels via locally adaptive truncated Neumann series expansions, reducing memory from $O(\ell^2)$ to $O(\ell P)$ and enabling signature kernel computation on time series of length exceeding one million on a single GPU.
-
-**[ScatterAD: Temporal-Topological Scattering Mechanism for Time Series Anomaly Detection](scatterad_temporal-topological_scattering_mechanism_for_time_series_anomaly_dete.md)**
-
-:   This paper proposes *scattering* as a novel inductive bias for anomaly detection — anomalous samples are more dispersed than normal samples in the high-dimensional representation space. A dual-encoder architecture (temporal + topological) combined with hyperspherical scattering center constraints and contrastive fusion is used to learn joint temporal-topological representations, achieving best performance in 15/24 settings across 6 industrial IoT datasets.
 
 **[Selective Learning for Deep Time Series Forecasting](selective_learning_for_deep_time_series_forecasting.md)**
 
@@ -267,9 +254,9 @@ item_total: 56
 
 :   This paper proposes StRap, a framework that constructs a multi-dimensional pattern memory bank comprising spatial, temporal, and spatio-temporal key-value pairs. At inference time, StRap retrieves historical patterns most similar to the current input and adaptively fuses them into the model representation, effectively addressing the Spatio-Temporal Out-Of-Distribution (STOOD) problem in streaming spatio-temporal data.
 
-**[Structured Temporal Causality for Interpretable Multivariate Time Series Anomaly Detection](structured_temporal_causality_for_interpretable_multivariate_time_series_anomaly.md)**
+**[Structured Sparse Transition Matrices to Enable State Tracking in State-Space Models](structured_sparse_transition_matrices_to_enable_state_tracking_in_state-space_mo.md)**
 
-:   This paper proposes OracleAD, a framework that learns causal embeddings for each variable (via LSTM encoding and attention pooling) and constructs a Stable Latent Structure (SLS) to model inter-variable relationships under normal conditions. A dual scoring mechanism combining prediction error and SLS deviation enables interpretable multivariate time series anomaly detection and root cause localization.
+:   This paper proposes PD-SSM, a structured sparse parameterization for the state transition matrix of state-space models (SSMs). The core idea is to factorize the transition matrix as a product of a column-wise one-hot matrix P and a complex diagonal matrix D (i.e., $A = PD$), achieving expressiveness equivalent to unstructured (dense) SSMs while retaining computational efficiency comparable to diagonal SSMs at $\Theta(LN)$. A single layer suffices to simulate any $N$-state finite-state automaton (FSA). The paper provides theoretical guarantees on BIBO stability and optimal state dimensionality, with strong empirical results on FSA simulation, multivariate time-series classification, long-sequence benchmarks, and natural-language state-tracking tasks.
 
 **[Synthetic Series-Symbol Data Generation for Time Series Foundation Models](synthetic_series-symbol_data_generation_for_time_series_foundation_models.md)**
 
@@ -279,10 +266,6 @@ item_total: 56
 
 :   This paper proposes SynTSBench, a synthetic data-driven evaluation paradigm that systematically assesses the actual modeling capabilities of time series forecasting models across dimensions such as trend, periodicity, dependency, and noise robustness, through programmable feature configurations and theoretically optimal benchmarks.
 
-**[Time-IMM: A Dataset and Benchmark for Irregular Multimodal Multivariate Time Series](time-imm_a_dataset_and_benchmark_for_irregular_multimodal_multivariate_time_seri.md)**
-
-:   This work constructs Time-IMM — the first multimodal multivariate time series benchmark that categorizes irregularity according to causal mechanisms (9 irregularity types organized into three classes: Trigger, Constraint, and Artifact, spanning 9 datasets). An accompanying forecasting library, IMM-TSF, supports asynchronous multimodal fusion. Experiments demonstrate that explicitly modeling multimodal information reduces MSE by 6.71% on average across irregular time series settings, with a maximum improvement of 38.38%.
-
 **[Time-O1: Time-Series Forecasting Needs Transformed Label Alignment](time-o1_time-series_forecasting_needs_transformed_label_alignment.md)**
 
 :   This paper proposes Time-O1, which addresses the autocorrelation bias and task overload of the TMSE loss in time series forecasting by transforming label sequences into decorrelated, importance-ranked principal components. The method achieves state-of-the-art performance while remaining compatible with a wide range of forecasting models.
@@ -290,6 +273,14 @@ item_total: 56
 **[TimePerceiver: An Encoder-Decoder Framework for Generalized Time-Series Forecasting](timeperceiver_an_encoder-decoder_framework_for_generalized_time-series_forecasti.md)**
 
 :   TimePerceiver proposes a unified encoder-decoder framework that generalizes the forecasting task (encompassing extrapolation, interpolation, and imputation) and employs a latent bottleneck encoder with a query-based decoder, achieving comprehensive state-of-the-art performance across 8 standard benchmarks.
+
+**[TiRex: Zero-Shot Forecasting Across Long and Short Horizons with Enhanced In-Context Learning](tirex_zero-shot_forecasting_across_long_and_short_horizons_with_enhanced_in-cont.md)**
+
+:   This paper proposes TiRex, a pretrained time series forecasting model based on xLSTM. By introducing a Contiguous Patch Masking (CPM) strategy and data augmentation techniques, TiRex with only 35M parameters comprehensively outperforms larger models such as Chronos Bolt (200M) and TimesFM (500M) on the GiftEval and Chronos-ZS benchmarks, achieving state-of-the-art performance in both short- and long-horizon zero-shot forecasting.
+
+**[Towards Self-Supervised Foundation Models for Critical Care Time Series](towards_self-supervised_foundation_models_for_critical_care_time_series.md)**
+
+:   A self-supervised foundation model for critical care time series is constructed by pre-training a Biaxial Transformer (BAT) architecture on multiple ICU datasets, substantially outperforming supervised baselines in low-data regimes.
 
 **[Transformer Embeddings for Fast Microlensing Inference](transformer_embeddings_for_fast_microlensing_inference.md)**
 

@@ -126,10 +126,10 @@ The massive +13.7% cIoU jump on ReasonSeg confirms that complex reasoning tasks 
 ## Related Papers
 
 - [\[CVPR 2026\] GeoGuide: Hierarchical Geometric Guidance for Open-Vocabulary 3D Semantic Segmentation](../../CVPR2026/segmentation/geoguide_hierarchical_geometric_guidance_for_open-vocabulary_3d_semantic_segment.md)
-- [\[ICML 2026\] SEMIR: Semantic Minor-Induced Representation Learning on Graphs for Visual Segmentation](semir_semantic_minor-induced_representation_learning_on_graphs_for_visual_segmen.md)
 - [\[ICCV 2025\] Enhancing Transformers Through Conditioned Embedded Tokens](../../ICCV2025/segmentation/enhancing_transformers_through_conditioned_embedded_tokens.md)
-- [\[CVPR 2026\] Universal 3D Shape Matching via Coarse-to-Fine Language Guidance](../../CVPR2026/segmentation/universal_3d_shape_matching_via_coarse-to-fine_language_guidance.md)
 - [\[ICCV 2025\] Dynamic Dictionary Learning for Remote Sensing Image Segmentation](../../ICCV2025/segmentation/dynamic_dictionary_learning_for_remote_sensing_image_segmentation.md)
+- [\[CVPR 2026\] Universal 3D Shape Matching via Coarse-to-Fine Language Guidance](../../CVPR2026/segmentation/universal_3d_shape_matching_via_coarse-to-fine_language_guidance.md)
+- [\[ICCV 2025\] UniGlyph: Unified Segmentation-Conditioned Diffusion for Precise Visual Text Synthesis](../../ICCV2025/segmentation/uniglyph_unified_segmentation-conditioned_diffusion_for_precise_visual_text_synt.md)
 
 </div>
 

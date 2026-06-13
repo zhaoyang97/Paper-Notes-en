@@ -20,7 +20,7 @@ item_total: 1
 
 **🧪 ICML2026** · **1** paper notes
 
-📌 **Same area in other venues:** [🤖 AAAI2026 (1)](../../AAAI2026/earth_science/index.md) · [🧠 NeurIPS2025 (5)](../../NeurIPS2025/earth_science/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (1)](../../CVPR2026/earth_science/index.md) · [🤖 AAAI2026 (2)](../../AAAI2026/earth_science/index.md) · [🧠 NeurIPS2025 (6)](../../NeurIPS2025/earth_science/index.md)
 
 **[(Sparse) Attention to the Details: Preserving Spectral Fidelity in ML-based Weather Forecasting Models](sparse_attention_to_the_details_preserving_spectral_fidelity_in_ml-based_weather.md)**
 

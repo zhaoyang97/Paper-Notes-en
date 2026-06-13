@@ -2,75 +2,78 @@
 title: >-
   [Paper Note] TSRBench: A Comprehensive Multi-task Multi-modal Time Series Reasoning Benchmark for Generalist Models
 description: >-
-  [ICML 2026][Autonomous Driving][Time series reasoning] TSRBench constructs a time series reasoning benchmark covering 14 domains, 4 major dimensions (Perception, Reasoning, Prediction, and Decision-making), 15 tasks…
+  [ICML 2026][Autonomous Driving][Time Series Reasoning] TSRBench constructs a time series reasoning benchmark covering 14 domains, 4 major dimensions (perception/reasoning/prediction/decision-making), 15 tasks…
 tags:
   - "ICML 2026"
   - "Autonomous Driving"
-  - "Time series reasoning"
-  - "multi-modal evaluation"
+  - "Time Series Reasoning"
+  - "Multimodal Benchmarking"
   - "LLM/VLM/TSLLM"
-  - "4 dimensions & 15 tasks"
-  - "scaling law"
+  - "4 Dimensions 15 Tasks"
+  - "Scaling Law"
 date: 2026-05-08
-content_hash: fde37bcce26b72a3
+content_hash: bf6e258fdcd3f990
 ---
 
 # TSRBench: A Comprehensive Multi-task Multi-modal Time Series Reasoning Benchmark for Generalist Models
 
 **Conference**: ICML 2026  
 **arXiv**: [2601.18744](https://arxiv.org/abs/2601.18744)  
-**Code**: https://tsrbench.github.io/ (Available)  
-**Area**: Benchmark / Time Series Reasoning / Multi-modal VLM / Generalist Models  
-**Keywords**: Time series reasoning, multi-modal evaluation, LLM/VLM/TSLLM, 4 dimensions & 15 tasks, scaling law
+**Code**: https://tsrbench.github.io/ (available)  
+**Area**: Benchmarking / Time Series Reasoning / Multimodal VLM / Generalist Models  
+**Keywords**: Time Series Reasoning, Multimodal Benchmarking, LLM/VLM/TSLLM, 4 Dimensions 15 Tasks, Scaling Law
 
 ## TL;DR
-TSRBench constructs a time series reasoning benchmark covering 14 domains, 4 major dimensions (Perception, Reasoning, Prediction, and Decision-making), 15 tasks, and 4125 questions. It supports four input modalities—text, visualization, interleaved textnd image, and embedding. Systematic evaluation of 30+ mainstream LLMs, VLMs, and TSLLMs reveals that "scaling still holds for perception and reasoning but fails for prediction," and while "textual and visual modalities are highly complementary, current models struggle to fuse them effectively."
+TSRBench constructs a time series reasoning benchmark covering 14 domains, 4 major dimensions (perception/reasoning/prediction/decision-making), 15 tasks, 4125 questions, and supports four input modalities: text, visualization, text+image, and embedding. It systematically evaluates 30+ mainstream LLMs, VLMs, and TSLLMs, revealing key findings such as "scaling holds for perception/reasoning but fails for prediction" and "text and visualization modalities are highly complementary, but current models can hardly fuse them."
 
 ## Background & Motivation
 
-**Background**: Time series data are ubiquitous in high-risk sectors such as finance, healthcare, industry, and transportation. Reasoning about time series is considered a core capability for generalist models to solve real-world problems. Existing evaluations largely follow traditional time series analysis paradigms (forecasting, classification, anomaly detection, imputation), treating sequences as isolated numerical strings. Recent benchmarks like TimeMMD, CiK, TimeSeriesExam, MTBench, and TSR-SUITE have begun introducing context and LLMs/VLMs, but they often focus on a single dimension like prediction or cover only one or two categories of tasks in vertical domains.
+**Background**: Time series are ubiquitous in high-risk domains such as finance, healthcare, industry, and transportation. Reasoning over time series is considered a core capability for generalist models to solve real-world problems. Existing benchmarks largely follow traditional time series analysis paradigms (forecasting, classification, anomaly detection, imputation), treating sequences as isolated strings of numbers. Recent works like TimeMMD / CiK / TimeSeriesExam / MTBench / TSR-SUITE have begun introducing context and LLM/VLMs, but either focus on a single dimension (prediction) or only test one or two task types in a few vertical domains.
 
-**Limitations of Prior Work**: (1) Task dimensions are highly imbalanced, with most benchmarks covering only 1–2 capability dimensions (e.g., TimeMMD only tests prediction, TimeSeriesExam only tests perception); (2) Domain diversity is limited, allowing models to rely on domain-specific priors; (3) Modalities are singular, with almost no benchmark simultaneously supporting numerical strings, line charts, interleaved text-image, and time series embeddings; (4) There is a lack of quantitative answers to horizontal questions, such as whether semantic understanding and numerical prediction are decoupled, or if textual and visual modalities are complementary.
+**Limitations of Prior Work**: (1) Task dimensions are highly imbalanced; most benchmarks cover only 1-2 capability dimensions (e.g., TimeMMD only tests prediction, TimeSeriesExam only tests perception); (2) Limited domain diversity, allowing models to exploit domain-specific priors; (3) Single modality—almost no benchmark supports all four input forms: "textual number string / line chart / mixed text-image / time series embedding"; (4) Lack of quantitative answers to generalist-level questions such as whether "semantic understanding vs. numerical prediction" are decoupled, or whether "text vs. vision" are complementary.
 
-**Key Challenge**: While the capability evaluation of generalist LLMs/VLMs is rapidly expanding into mathematics, science, and embodied AI, time series—the modality most closely coupled with the physical world—has long been excluded from "general reasoning" evaluation frameworks. Existing time series benchmarks focus on task metrics rather than "dimensions of reasoning capability."
+**Key Challenge**: Capability evaluation of generalist LLMs/VLMs is rapidly expanding into mathematics, science, and embodied scenarios, yet time series—the modality most tightly coupled to the real physical world—has long been excluded from "general reasoning" evaluation frameworks. Existing time series benchmarks focus only on task metrics, not on "reasoning capability dimensions."
 
-**Goal**: To construct a multi-domain, multi-modal time series reasoning benchmark that can stress-test four capability dimensions—Perception, Reasoning, Prediction, and Decision-making—with reliable ground truth (GT). The goal is to systematically compare LLM, VLM, and TSLLM families across different modalities and answer key questions regarding scaling, modality complementarity, and capability decoupling.
+**Goal**: To construct a time series reasoning benchmark that can stress-test the four major capability dimensions (perception/reasoning/prediction/decision-making), across multiple domains and modalities, with reliable ground truth. The benchmark systematically compares the performance of LLM, VLM, and TSLLM model families under different input modalities, addressing key questions on scaling, modality complementarity, and capability decoupling.
 
-**Key Insight**: Explicitly decompose "time series reasoning" into 4 capability dimensions $\times$ 15 specific tasks. Questions are collected based on four principles: high text-time series alignment, domain diversity, verifiable GT, and the use of synthetic data where necessary to ensure precise numerical answers. Inputs are uniformly rendered as 100 PPI line charts for VLMs, and specialized models are evaluated across T, V, and T+V modalities to measure fusion capability.
+**Key Insight**: Explicitly decompose "time series reasoning" into 4 capability dimensions × 15 specific tasks, collecting questions based on four principles: high text-sequence alignment, domain diversity, verifiable ground truth, and use of synthetic data for precise numerical answers when necessary. On the input side, all sequences are rendered as 100 PPI line charts for VLMs, and proprietary models are evaluated with T, V, and T+V modalities to directly measure modality fusion capability.
 
-**Core Idea**: By using a unified benchmark with comprehensive dimensions, modalities, and verifiable GT, the ambiguous question of "what capabilities generalist models lack in time series" is transformed into a quantifiable proposition that can be analyzed via radar charts, scaling curves, and modality ablations.
+**Core Idea**: Use a unified benchmark with complete capability and modality coverage and verifiable ground truth to break down the vague question of "what capabilities are generalist models lacking on time series" into quantifiable propositions that can be visualized as radar charts, scaling curves, and modality ablations.
 
 ## Method
 
 ### Overall Architecture
-TSRBench consists of three components: (1) Question Bank Construction: Collecting time series data from 14 real-world domains and synthetic scenarios (e.g., chaotic physical systems, algorithmic trading) to generate 4125 multiple-choice or open-ended questions across 4 dimensions and 15 task templates, totaling 15,250 channels. (2) Input Renderer: Converting the same time series into "pure numerical text" for LLMs, "100 PPI line charts (vertically stacked subplots for multivariate data, shared x-axis, shown grids, and sequence names)" for VLMs, and "projector embeddings" for TSLLMs. Proprietary models are also tested with combined T+V inputs. (3) Evaluation Protocol: All models use reasoning (CoT) and are evaluated using accuracy as the unified metric across 30+ models (6 proprietary, 13 LLM, 13 VLM, 4 TSLLM).
+TSRBench consists of three components: (1) Question bank construction, collecting time series data from 14 real domains plus synthetic, verifiable scenarios (chaotic physical systems, algorithmic trading), then generating multiple-choice or open-ended questions based on 4 dimensions and 15 task templates, totaling 4125 questions and 15,250 channels; (2) Input renderer, converting each time series into "pure text number string" for LLMs, "100 PPI line chart (multivariate data vertically stacked, shared time axis, grid and series names shown)" for VLMs, and "projector embedding" for TSLLMs, with proprietary models additionally provided T+V joint input; (3) Evaluation protocol, where all models are set to reasoning mode, accuracy is used as the unified metric, and 6 proprietary + 13 LLM + 13 VLM + 4 TSLLM models (30+ in total) are evaluated.
 
 ### Key Designs
 
-1. **Capability Decomposition into Four Dimensions and Fifteen Tasks**:
-    - **Function**: Decomposes "time series reasoning" into a 4$\times$15 grid: Perception (PR/NU/AD/CA), Reasoning (ER/CD/AR/TR/NR/DR/IR), Prediction (TSF/EP), and Decision-making (QualDM/QuantDM).
-    - **Mechanism**: The perception layer identifies statistical properties (trend, seasonality, noise). The reasoning layer is subdivided into seven categories, including Explanation (ER), Causal Discovery (CD), Abduction (AR), etc., where Inductive Reasoning (IR) emphasizes abstracting rules before predicting events. The prediction layer converts numerical forecasting into multiple-choice to ease direct numerical output for generalists. The decision-making layer distinguishes between qualitative decisions and quantitative simulation comparisons.
-    - **Design Motivation**: Previous benchmarks treated "reasoning" as a monolith, making it impossible to locate specific weaknesses. Subdividing it into 7 tasks allows for fine-grained conclusions, such as "GPT-5 is strong in AR/TR but weak in CD," providing clear directions for future model design.
+1. **Capability Decomposition: Four Dimensions, Fifteen Tasks**:
 
-2. **Unified Multi-modal Input and Modality Fusion Testing**:
-    - **Function**: Ensures a "fair" evaluation across LLM, VLM, and TSLLM families and measures the complementarity of text and vision.
-    - **Mechanism**: For each sequence, the system generates (a) numerical text, (b) rendered line charts (single variables in one plot, multivariate data in stacked subplots sharing x-axes, with grids and labels), and (c) embeddings. Resolution is fixed at 100 PPI after ablation. Proprietary models are tested on T, V, and T+V to directly measure the gain from adding visual information.
-    - **Design Motivation**: Current claims that "VLMs solve everything via vision" or "LLMs only need numbers" lack controlled comparisons. TSRBench answers these questions by embedding three modalities into the same problem.
+    - **Function**: Decomposes "time series reasoning" into a 4×15 grid: Perception (PR/NU/AD/CA, 4 tasks), Reasoning (ER/CD/AR/TR/NR/DR/IR, 7 tasks), Prediction (TSF/EP, 2 tasks), Decision-Making (QualDM/QuantDM, 2 tasks), with each task corresponding to an independent capability subspace.
+    - **Mechanism**: The perception layer assesses recognition of underlying statistical properties such as trend, periodicity, stationarity, mean, noise, and anomalies. The reasoning layer is further divided into seven types: etiology (ER), causal discovery (CD), abduction (AR), temporal relation (TR), numerical reasoning (NR), deduction (DR), and induction (IR), with IR emphasizing "abstracting rules first, then predicting specific future events" rather than curve-fitting. The prediction layer reformulates numerical prediction as multiple-choice to lower the difficulty for generalist models to output numbers directly. The decision-making layer separates qualitative decisions from quantitative decisions that require "simulating and comparing multiple candidate rules."
+    - **Design Motivation**: Previous benchmarks scored "reasoning" as a whole, making it impossible to pinpoint specific model weaknesses. By subdividing reasoning into seven sub-tasks, one can directly observe fine-grained conclusions such as "GPT-5 is strong in AR/TR/NR but still weak in CD," providing guidance for future model design.
 
-3. **Verifiable GT and Synthetic Data Support**:
-    - **Function**: Guarantees that every one of the 4125 questions has a machine-scorable, unambiguous ground truth, especially for precise numerical reasoning.
-    - **Mechanism**: Adheres to four principles: high text-TS alignment (context must be essential), domain diversity (14 domains to prevent over-fitting), verifiable GT (via high-fidelity Python simulations or direct extraction), and synthetic data for numerical reasoning (using chaotic systems to provide "noise-free exact answers").
-    - **Design Motivation**: Real-world data often lacks precise GT for numerical reasoning tasks. Explicitly introducing synthetic data maintains complexity while providing a subset for reliable precision testing, reducing the risk of "incorrect answers due to ambiguous questions."
+2. **Unified Multimodal Input and Modality Fusion Testing**:
+
+    - **Function**: Enables "fair" evaluation of the same time series data across LLM/VLM/TSLLM models and quantitatively measures whether "text + vision" are complementary.
+    - **Mechanism**: For each sequence, simultaneously generates (a) textual number sequence, (b) code-rendered line chart (one chart per univariate, multivariate vertically stacked sharing x-axis, always with grid and series names), and (c) embedding. Resolution is fixed at 100 PPI (after ablation) to balance token cost and feature visibility. For proprietary models supporting multimodal input, T, V, and T+V experiments are conducted to directly compare "does adding the chart actually help."
+    - **Design Motivation**: Existing claims that "VLMs can solve all time series problems by looking at charts" or "LLMs only need number strings" lack controlled comparisons under the same prompt and question. TSRBench embeds all three modalities into the same question, quantitatively answering the modality complementarity and fusion failure issues.
+
+3. **Verifiable Ground Truth + Synthetic Data for Numerical Reasoning**:
+
+    - **Function**: Ensures that each of the 4125 questions has "machine-gradable, unambiguous" ground truth, especially for precise numerical reasoning.
+    - **Mechanism**: Four collection principles—high text-sequence alignment (context must be essential for reasoning, not decorative), domain diversity (14 domains to prevent overfitting), verifiable unambiguous GT (either generated directly via high-fidelity Python simulation or extracted from sequence/context), and synthetic data to supplement numerical reasoning (using chaotic physical systems and algorithmic trading backtests as controllable simulations, providing "noise-free precise answers" as stress tests for numerical reasoning and deductive logic).
+    - **Design Motivation**: Real-world data, while complex, often lacks precise GT, making reliable evaluation of tasks requiring 0/1 grading (like numerical reasoning) difficult. Explicitly introducing synthetic data retains real data complexity while providing a subset for direct evaluation of numerical accuracy, reducing the risk that "model errors are due to ambiguous questions."
 
 ### Loss & Training
-This work is a benchmark, not a training method; thus, no training loss is defined. Evaluation Protocol: All models use reasoning. Proprietary models are tested with T, V, and T+V inputs. Models like o4-mini and GPT-5 are tested at both low and high reasoning efforts. Accuracy is the unified metric for all 15 tasks, with ablations performed on model scale, chart resolution, tool use, and reasoning effort.
+This work is a benchmark, not a training method, so there is no training loss. Evaluation protocol: all models are set to reasoning mode; proprietary models are evaluated with T / V / T+V inputs; o4-mini / GPT-5 / GPT-5-mini are evaluated under both low and high reasoning settings; accuracy is used as the unified metric for all 15 tasks, with ablations on model size, visualization resolution, tool usage, and reasoning effort.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Model | Input | Perception (PR) | Reasoning (TR) | Prediction (EP) | Decision (QualDM) | Overall |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+|------|------|------|------|------|------|------|
 | GPT-5 | T | 75.7 | 68.8 | 79.7 | 31.9 | 55.5 |
 | o4-mini | T | 73.1 | 34.4 | 73.3 | 30.4 | 47.7 |
 | GPT-5-mini | T | 72.2 | 39.4 | 67.8 | 35.5 | 46.6 |
@@ -79,45 +82,45 @@ This work is a benchmark, not a training method; thus, no training loss is defin
 | GPT-OSS-120B | T | 66.8 | 31.3 | 59.7 | 33.7 | – |
 | Qwen2.5-3B | T | 46.4 | 21.2 | 58.3 | 22.7 | 33.2 |
 
-GPT-5 (T) leads with 55.5% overall, but still performs significantly worse on NR/DR/IR tasks requiring strict rule application compared to perception tasks. The smallest model, Qwen2.5-3B, scores only 33.2%, indicating significant room for scaling.
+GPT-5 (T) leads with 55.5% overall, but still lags behind perception tasks in sub-tasks requiring strict rule application (NR / DR / IR). The smallest Qwen2.5-3B achieves only 33.2 overall, leaving significant scaling headroom.
 
 ### Ablation Study
 
-| Dimension | Key Findings | Description |
-| :--- | :--- | :--- |
-| Model Scale | Scaling holds for Perception/Reasoning | Both LLMs and VLMs show a stable positive correlation between scale and accuracy in these dimensions. |
-| Model Scale | Scaling fails for Prediction | TSF tasks show almost no significant improvement across scales, creating a breakpoint compared to other dimensions. |
-| Task Correlation | TSF correlation is weak | Strong reasoning does not equate to strong context-aware forecasting; semantic understanding and numerical prediction are decoupled. |
-| Modality Fusion (T+V) | Complementarity vs. Fusion Failure | T and V solve different subsets of problems, but T+V rarely outperforms the stronger of the two in proprietary models. |
-| Resolution | 100 PPI is the sweet spot | Higher resolutions sharply increase token cost, while lower resolutions lead to significant loss of detail. |
+| Dimension | Key Observation | Description |
+|------|---------|------|
+| Model Size | Scaling holds for Perception / Reasoning | Both LLMs and VLMs show stable positive correlation between model size and accuracy in perception and reasoning |
+| Model Size | Scaling fails for Prediction | TSF task shows almost no improvement with model size, forming a breakpoint with the other three dimensions |
+| Task Correlation | TSF weakly correlated with other tasks | Strong reasoning does not imply strong context-aware forecasting; semantic understanding and numerical prediction are decoupled |
+| Modality Fusion (T+V) | Text and vision are complementary but fusion fails | For the same question, T and V solve different subsets; T+V usually does not outperform the stronger of the two in proprietary models |
+| Visualization Resolution | 100 PPI is optimal | Higher resolution sharply increases token cost, lower resolution loses significant detail |
 
 ### Key Findings
-- **Scaling holds for perception/reasoning but fails for prediction**: While accuracy improves with scale in reasoning, TSF performance remains flat, suggesting current pre-training does not truly improve numerical prediction.
-- **TSF lacks correlation with other tasks**: A model's strength in reasoning does not predict its TSF performance, implying time series prediction should be treated as an independent capability for training and evaluation.
-- **High complementarity but fusion failure in text and vision**: The sets of problems solved by T and V differ greatly, but T+V inputs do not create a "$1+1>2$" effect, exposing a lack of alignment mechanisms in multi-modal attention for dual-view signals.
-- **Decision-making is a universal bottleneck**: All models score significantly lower in QualDM/QuantDM than in perception or reasoning, highlighting the gap between "understanding/reasoning" and "acting on time series."
+- **Scaling holds for perception/reasoning but breaks for prediction**: Perception and reasoning accuracy increases smoothly with model size, but TSF task forms a "plateau curve," indicating that current LLM/VLM pretraining objectives and data do not truly improve numerical prediction ability.
+- **TSF is weakly correlated with other tasks**: A model strong on all reasoning tasks does not predict its TSF performance, suggesting that time series forecasting should be trained and evaluated as an independent capability, not as a byproduct of general reasoning.
+- **Text and vision are highly complementary but fusion fails**: T and V solve very different sets of questions; T+V input rarely yields a 1+1>2 effect in mainstream multimodal models, exposing a lack of alignment mechanisms for "two views of the same signal" in current multimodal attention.
+- **Decision-Making is a universal weakness**: All models score significantly lower on QualDM / QuantDM than on perception and reasoning, reflecting a large gap between "understanding + reasoning" and "making decisions based on time series."
 
 ## Highlights & Insights
-- **Capability Grid Partitioning**: Decomposing "time series reasoning" into a 4$\times$15 grid is a major methodological upgrade over MTBench or TimeSeriesExam. It allows for natural radar charts, scaling curves, and modality ablations.
-- **Multi-modal Control Design**: Using the same question with three input types (T/V/T+V) provides a clean setup to measure the utility of modality fusion. It provides quantitative evidence for the industry's suspicion that even proprietary VLMs have not mastered dual-view fusion.
-- **Synthetic Data for Numerical Reasoning**: Filling the gap of missing GT in real-world data with controlled simulations (chaotic systems, etc.) enables stress testing for tasks like NR and DR. This approach is transferable to any benchmark emphasizing "numerical precision."
+- **Grid-based capability decomposition**: Explicitly decomposing "time series reasoning" into a 4×15 capability grid is the biggest methodological upgrade over MTBench / TimeSeriesExam, enabling natural radar/scaling curves and modality ablations. Future work can directly target specific weak sub-tasks.
+- **Multimodal contrastive design**: Unified rendering pipeline for three input types (T/V/T+V) per question provides the cleanest setup for measuring "is modality fusion actually useful," directly supporting the long-suspected but previously unquantified conclusion that "even proprietary VLMs have not learned to fuse dual views."
+- **Synthetic data for numerical reasoning**: Using chaotic systems and algorithmic trading backtests as controllable simulations fills the gap where real data lacks precise GT, enabling NR / DR tasks to truly stress-test numerical reasoning. This approach is transferable to any benchmark emphasizing "numerical precision."
 
 ## Limitations & Future Work
-- Using accuracy as the sole metric for TSF tasks (converted to MCQ) loses signals regarding "close but incorrect" answers. Future versions could introduce tiered scoring.
-- Only line charts were tested for visualization; other representations like heatmaps, spectrograms, or polar plots are not yet covered.
-- The decision dimension only evaluates "selecting the best" among discrete options, missing long-horizon sequential decisions or RL-style scenarios.
-- Time series reasoning in multi-lingual contexts (e.g., non-English financial/medical reports) remains an unexplored dimension for context-TS alignment.
+- Evaluation uses accuracy as the sole metric; for TSF tasks that typically use MSE / MAPE, converting to multiple-choice loses the "almost correct" signal. Future work could introduce tiered scoring or correlation analysis with continuous metrics.
+- Current VLM input only tests line charts; other visualizations such as heatmaps, spectrograms, and polar plots are not yet covered.
+- The decision-making dimension only evaluates "choose the best among discrete options," not sequence decision-making or RL-style long-horizon decisions; the difficulty ceiling for QuantDM can be further raised.
+- Time series reasoning in multilingual scenarios (e.g., non-English financial/medical reports + time series) is not included; cross-lingual context-sequence alignment is a promising future direction.
 
 ## Related Work & Insights
-- **vs. TimeMMD / CiK**: These focus on context-aware forecasting (Prediction dimension), whereas this work extends analysis to 4 dimensions and 15 tasks.
-- **vs. TimeSeriesExam**: While they use synthetic data for perception, this work extends the scope to reasoning, prediction, and decision-making.
-- **vs. MTBench / SciTS / TSR-SUITE**: These cover only slices of the time series reasoning space (single modality, narrow domain, etc.). TSRBench provides the first complete evaluation matrix for generalist models via its 4$\times$15 grid and quad-modality inputs.
+- **vs TimeMMD / CiK**: These focus on context-aware time series prediction, covering only the Prediction dimension; this work expands to 4 dimensions and 15 tasks.
+- **vs TimeSeriesExam**: They use synthetic data but only test perception; this work also uses synthetic data for numerical reasoning but expands to reasoning, prediction, and decision-making.
+- **vs MTBench / EngineMT-QA / SciTS / TimeMQA / TSR-SUITE**: These benchmarks each cover only a slice of the time series reasoning space (narrow domain, single modality, lacking decision-making). TSRBench, with its 4×15 capability grid, four modalities, and 30+ models, provides the first complete time series reasoning evaluation matrix for generalist models.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The explicit decomposition of capability dimensions and multi-modal input design is a systematic contribution, though individual techniques are engineering integrations.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers 30+ models, 4 modalities, 15 tasks, and multiple reasoning effort levels, with detailed ablations.
-- Writing Quality: ⭐⭐⭐⭐ Clear dimension breakdown and task definitions, though the density of sub-tasks can be overwhelming.
-- Value: ⭐⭐⭐⭐⭐ Provides the first standardized matrix for positioning generalist models in time series reasoning. The findings on scaling failure and fusion bottlenecks offer direct guidance for future architecture design.
+- Novelty: ⭐⭐⭐⭐ Explicit decomposition of capability dimensions and unified four-modality input design are rare systematic contributions in time series benchmarking, though individual techniques are mostly engineering integrations.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers 30+ models, 4 modalities, 15 tasks, multiple reasoning effort levels, and ablations on visualization resolution and tool augmentation.
+- Writing Quality: ⭐⭐⭐⭐ Clear dimension breakdown, concrete task definitions, and quantitatively supported findings; however, the high density of sub-task definitions may be overwhelming on first read.
+- Value: ⭐⭐⭐⭐⭐ Provides the first standardized matrix for positioning generalist models' capabilities in time series reasoning; the conclusions "scaling breaks for prediction" and "modality fusion fails" directly inform future foundation model and multimodal architecture design.
 
 <!-- RELATED:START -->
 
@@ -125,10 +128,10 @@ GPT-5 (T) leads with 55.5% overall, but still performs significantly worse on NR
 
 ## Related Papers
 
-- [\[ICLR 2026\] DrivingGen: A Comprehensive Benchmark for Generative Video World Models in Autonomous Driving](../../ICLR2026/autonomous_driving/drivinggen_a_comprehensive_benchmark_for_generative_video_world_models_in_autono.md)
 - [\[AAAI 2026\] Task Prototype-Based Knowledge Retrieval for Multi-Task Learning from Partially Annotated Data](../../AAAI2026/autonomous_driving/task_prototype-based_knowledge_retrieval_for_multi-task_lear.md)
 - [\[ICCV 2025\] UAVScenes: A Multi-Modal Dataset for UAVs](../../ICCV2025/autonomous_driving/uavscenes_a_multi-modal_dataset_for_uavs.md)
 - [\[CVPR 2026\] Towards Balanced Multi-Modal Learning in 3D Human Pose Estimation](../../CVPR2026/autonomous_driving/towards_balanced_multi-modal_learning_in_3d_human_pose_estimation.md)
+- [\[ICCV 2025\] MAESTRO: Task-Relevant Optimization via Adaptive Feature Enhancement and Suppression for Multi-task 3D Perception](../../ICCV2025/autonomous_driving/maestro_task-relevant_optimization_via_adaptive_feature_enhancement_and_suppress.md)
 - [\[ICML 2026\] Constrained Multi-Objective Reinforcement Learning with Max-Min Criterion](constrained_multi-objective_reinforcement_learning_with_max-min_criterion.md)
 
 </div>

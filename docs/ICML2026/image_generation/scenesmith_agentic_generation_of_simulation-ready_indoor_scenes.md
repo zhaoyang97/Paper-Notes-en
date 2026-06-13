@@ -127,7 +127,7 @@ Six ablations compared SceneSmith against its variants via user studies and auto
 
 ## Related Papers
 
-- [\[CVPR 2026\] Agentic Retoucher for Text-To-Image Generation](../../CVPR2026/image_generation/agentic_retoucher_for_texttoimage_generation.md)
+- [\[CVPR 2026\] \[Paper Insight\] Agentic Retoucher for Text-To-Image Generation](../../CVPR2026/image_generation/agentic_retoucher_for_texttoimage_generation.md)
 - [\[ICCV 2025\] NuiScene: Exploring Efficient Generation of Unbounded Outdoor Scenes](../../ICCV2025/image_generation/nuiscene_exploring_efficient_generation_of_unbounded_outdoor_scenes.md)
 - [\[ICML 2026\] AtelierEval: Agentic Evaluation of Humans & LLMs as Text-to-Image Prompters](ateliereval_agentic_evaluation_of_humans_llms_as_text-to-image_prompters.md)
 - [\[CVPR 2026\] Vinedresser3D: Agentic Text-guided 3D Editing](../../CVPR2026/image_generation/vinedresser3d_agentic_text-guided_3d_editing.md)

@@ -126,9 +126,9 @@ gWorld-8B outperforms Llama 4 402B (50.25× larger) and GLM-4.6V 106B (13.25× l
 
 - [\[ICML 2026\] Threshold-Guided Optimization for Visual Generative Models](threshold-guided_optimization_for_visual_generative_models.md)
 - [\[ICLR 2026\] Verification of the Implicit World Model in a Generative Model via Adversarial Sequences](../../ICLR2026/image_generation/verification_of_the_implicit_world_model_in_a_generative_model_via_adversarial_s.md)
-- [\[ICML 2026\] Compression as Adaptation: Implicit Visual Representation with Diffusion Foundation Models](compression_as_adaptation_implicit_visual_representation_with_diffusion_foundati.md)
 - [\[NeurIPS 2025\] RLVR-World: Training World Models with Reinforcement Learning](../../NeurIPS2025/image_generation/rlvr-world_training_world_models_with_reinforcement_learning.md)
-- [\[CVPR 2026\] Leveraging Multispectral Sensors for Color Correction in Mobile Cameras](../../CVPR2026/image_generation/leveraging_multispectral_sensors_for_color_correction_in_mobile_cameras.md)
+- [\[ICML 2026\] Compression as Adaptation: Implicit Visual Representation with Diffusion Foundation Models](compression_as_adaptation_implicit_visual_representation_with_diffusion_foundati.md)
+- [\[ICML 2026\] Conf-Gen: Conformal Uncertainty Quantification for Generative Models](conf-gen_conformal_uncertainty_quantification_for_generative_models.md)
 
 </div>
 

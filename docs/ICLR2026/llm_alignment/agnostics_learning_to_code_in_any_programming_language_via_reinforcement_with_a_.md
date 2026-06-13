@@ -2,9 +2,10 @@
 title: >-
   [Paper Note] Agnostics: Learning to Synthesize Code in Any Programming Language with a Universal RL Environment
 description: >-
-  [ICLR 2026][low-resource programming languages] This paper proposes Agnostics, a language-agnostic post-training pipeline that reformulates programming tasks as I/O behavioral specifications and trains LLMs with a univer…
+  [ICLR 2026][LLM Alignment][low-resource programming languages] This paper proposes Agnostics, a language-agnostic post-training pipeline that reformulates programming tasks as I/O behavioral specifications and trains LLM…
 tags:
   - "ICLR 2026"
+  - "LLM Alignment"
   - "low-resource programming languages"
   - "RLVR"
   - "language-agnostic verifier"
@@ -130,11 +131,11 @@ Significant improvements are also observed on the easier MultiPL-E benchmark, ac
 
 ## Related Papers
 
-- [\[ICLR 2026\] A Single Architecture for Representing Invariance Under Any Space Group](a_single_architecture_for_representing_invariance_under_any_space_group.md)
-- [\[NeurIPS 2025\] Computable Universal Online Learning](../../NeurIPS2025/others/computable_universal_online_learning.md)
-- [\[ICLR 2026\] AnyUp: Universal Feature Upsampling](anyup_universal_feature_upsampling.md)
-- [\[ICLR 2026\] DA-AC: Distributions as Actions — A Unified RL Framework for Diverse Action Spaces](distributions_as_actions_a_unified_framework_for_diverse_action_spaces.md)
-- [\[ICLR 2026\] Jackpot: Optimal Budgeted Rejection Sampling for Extreme Actor-Policy Mismatch RL](jackpot_optimal_budgeted_rejection_sampling_for_extreme_actor-policy_mismatch_re.md)
+- [\[ICLR 2026\] A2D: Any-Order, Any-Step Safety Alignment for Diffusion Language Models](a2d_any-order_any-step_safety_alignment_for_diffusion_language_models.md)
+- [\[ICLR 2026\] Toward Universal and Transferable Jailbreak Attacks on Vision-Language Models (UltraBreak)](toward_universal_and_transferable_jailbreak_attacks_on_vision-language_models.md)
+- [\[ACL 2026\] AgentV-RL: Scaling Reward Modeling with Agentic Verifier](../../ACL2026/llm_alignment/agentv-rl_scaling_reward_modeling_with_agentic_verifier.md)
+- [\[ICLR 2026\] No Prompt Left Behind: Exploiting Zero-Variance Prompts in LLM Reinforcement Learning via Entropy-Guided Advantage Shaping](no_prompt_left_behind_exploiting_zero-variance_prompts_in_llm_reinforcement_lear.md)
+- [\[ICLR 2026\] Learning More with Less: A Dynamic Dual-Level Down-Sampling Framework for Efficient Policy Optimization](learning_more_with_less_a_dynamic_dual-level_down-sampling_framework_for_efficie.md)
 
 </div>
 

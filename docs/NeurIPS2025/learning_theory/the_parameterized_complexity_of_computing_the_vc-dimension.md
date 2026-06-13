@@ -2,14 +2,16 @@
 title: >-
   [Paper Note] The Parameterized Complexity of Computing the VC-Dimension
 description: >-
-  [NeurIPS 2025][VC dimension] This paper systematically studies the parameterized complexity of computing the VC dimension, proving that the naive exhaustive algorithm is asymptotically optimal under ETH…
+  [NeurIPS 2025][Computational Complexity Theory, Machine Learning Theory][VC dimension] This paper systematically investigates the parameterized complexity of computing the VC dimension…
 tags:
   - "NeurIPS 2025"
+  - "Computational Complexity Theory, Machine Learning Theory"
   - "VC dimension"
   - "parameterized complexity"
   - "treewidth"
   - "fixed-parameter tractability"
   - "ETH lower bounds"
+  - "hypergraphs"
 date: 2026-05-08
 content_hash: c9a801b07c2e67bf
 ---
@@ -153,128 +155,17 @@ tags:
   - ETH Lower Bounds
 ---
 
-# The Parameterized Complexity of Computing the VC-Dimension
-
-**Conference**: NeurIPS 2025
-**arXiv**: [2510.17451](https://arxiv.org/abs/2510.17451)  
-**Code**: None  
-**Area**: Computational Complexity Theory, Machine Learning Theory
-**Keywords**: VC dimension, parameterized complexity, treewidth, fixed-parameter tractability, ETH lower bounds
-
-## TL;DR
-
-This paper systematically studies the parameterized complexity of computing the VC dimension, proving that the naive exhaustive algorithm is asymptotically optimal under ETH, proposing an FPT 1-additive approximation parameterized by maximum degree, and an exact $2^{O(\text{tw}\cdot\log \text{tw})}\cdot|V|$-time algorithm parameterized by treewidth.
-
-## Background & Motivation
-
-- The VC dimension is a fundamental complexity measure for set systems (hypergraphs), playing a central role in machine learning ($\epsilon$-nets, sample compression schemes, PAC learning, machine teaching), and related fields.
-- The decision problem of computing the VC dimension is LogNP-complete (lying between $\mathsf{P}$ and $\mathsf{NP}$); the naive algorithm runs in $2^{O(|V|)}$ time.
-- Prior results: parameterization by solution size $k$ is $\mathsf{W}[1]$-complete; parameterization by degeneracy is $\mathsf{W}[1]$-hard.
-- **Core Problem**: Do algorithms exploiting structural parameters of the input exist?
-
-## Method
-
-### Overall Architecture
-
-Three main directions of contribution:
-1. **Algorithmic lower bounds**: Proving tightness of the naive algorithm.
-2. **FPT approximation parameterized by maximum degree**.
-3. **FPT exact algorithm parameterized by treewidth**.
-
-### Key Designs
-
-**Contribution 1 — ETH-tight lower bound (Theorem 9)**
-
-Via a reduction from 3-Coloring to Graph-VC-Dimension, proving:
-- Graph-VC-Dimension admits no $2^{\epsilon(\text{vcn}+k)}\cdot|V|^{O(1)}$-time algorithm (where vcn is the vertex cover number).
-- VC-Dimension admits no $2^{\epsilon|V|}\cdot|\mathcal{H}|^{O(1)}$-time algorithm.
-
-Reduction core: Partition the vertices of $G'$ into $k$ parts, enumerate all 3-colorings of each part to form the vertex set $X$ (a bipartite graph) of a new graph $G$, and use consistency connections to define $Y$, so that $G$ has a shattered set of size $k$ if and only if $G'$ has a valid 3-coloring.
-
-**Contribution 2 — FPT 1-additive approximation (Theorem 12)**
-
-- Observation: If $S$ is a shattered set of size $k$, then for any $v \in S$, a subset of $\text{inc}(v)$ shatters $S \setminus \{v\}$.
-- Algorithm: Enumerate all subsets $W \subseteq \text{inc}(v)$ of size $2^{k-1}$ for each vertex $v$, and check whether $W$ witnesses a shattered set of size $k-1$.
-- Running time: $2^{O(\Delta \log \Delta)}\cdot|\mathcal{H}|^{O(1)}$.
-
-**Contribution 3 — FPT algorithm parameterized by treewidth (Theorem 19)**
-
-Introduces the unified problem Gen-VC-Dimension (encompassing both VC-Dimension and Graph-VC-Dimension).
-
-The algorithm proceeds in two phases:
-- **Phase 1**: Assuming the largest shattered set is contained in some bag of the tree decomposition; detectable in $2^{O(\text{tw})}\cdot|V|$ time using existing techniques.
-- **Phase 2**: If $k \leq \log \text{tw} + 2$ (guaranteed by Lemma 15), find an embedding of a pattern graph $\mathcal{P}$ in the tree decomposition via **dynamic programming**; DP states are $\Gamma(t, f)$, where $f$ maps pattern graph vertices to $\text{bag}\cup\{\uparrow,\downarrow\}$.
-- Total running time: $2^{O(\text{tw}\cdot\log \text{tw})}\cdot|V|$.
-
-### Loss & Training
-
-Not applicable (purely theoretical work).
-
-## Key Experimental Results
-
-### Main Results
-
-| Result | Parameter | Time Complexity | Type |
-|--------|-----------|----------------|------|
-| Theorem 9(i) | vcn + k | $2^{\epsilon(\text{vcn}+k)}\cdot|V|^{O(1)}$ lower bound | ETH lower bound |
-| Theorem 9(ii) | $|V|$ | $2^{\epsilon|V|}\cdot|\mathcal{H}|^{O(1)}$ lower bound | ETH lower bound |
-| Theorem 12 | Max degree $\Delta$ | $2^{O(\Delta\log\Delta)}\cdot|\mathcal{H}|^{O(1)}$ | FPT 1-additive approx. |
-| Natural observation | Dimension $D$ | $2^D\cdot|\mathcal{H}|^{O(1)}$ | FPT exact |
-| Proposition 13 | Hypertreewidth / transversal number | LogNP-hard (transversal number = 1) | Hardness |
-| Theorem 19 | Treewidth tw | $2^{O(\text{tw}\cdot\log \text{tw})}\cdot|V|$ | FPT exact |
-
-### Parameterized Landscape Summary
-
-| Parameter | Tractability |
-|-----------|-------------|
-| Solution size $k$ | $\mathsf{W}[1]$-complete + no $o(k)$-approx. FPT |
-| Max degree $\Delta$ | FPT (1-additive approx.) |
-| Dimension $D$ | FPT (exact) |
-| Degeneracy | $\mathsf{W}[1]$-hard |
-| Hypertreewidth | LogNP-hard |
-| Transversal number | LogNP-hard |
-| Treewidth tw | FPT (exact, $2^{O(\text{tw}\cdot\log \text{tw})}$) |
-| Vertex cover number vcn | $2^{o(\text{vcn})}$ lower bound |
-
-### Key Findings
-
-- The treewidth parameterization achieves a **single-exponential** dependence $2^{O(\text{tw}\cdot\log \text{tw})}$, contrasting with the double-exponential dependence required for closely related problems.
-- Maximum degree and dimension are the only two core hypergraph structural parameters that can be exploited.
-- The introduction of Gen-VC-Dimension unifies the algorithmic study of graph VC dimension and set-system VC dimension.
-
-## Highlights & Insights
-
-- The paper provides a complete parameterized complexity landscape for VC dimension computation from a theoretical perspective.
-- Lemmas 14/15 are elegant: if a shattered set crosses both sides of a separator, its size is bounded by $O(\log|Z| + 2)$.
-- The DP over pattern graph matching is carefully designed — encoding the combinatorial relationship between shattered sets and witnesses as a graph embedding problem.
-
-## Limitations & Future Work
-
-- A **gap** remains between the treewidth algorithm $2^{O(\text{tw}\cdot\log \text{tw})}$ and the lower bound $2^{o(\text{vcn}+k)}$; closing this gap is the main open problem.
-- Whether the 1-additive FPT approximation (parameterized by $\Delta$) can be improved to an exact FPT algorithm remains open.
-- The setting where set systems are defined by circuits (potentially allowing more succinct input representations) is not considered.
-
-## Related Work & Insights
-
-- A natural continuation of the LogNP-completeness result of Papadimitriou–Yannakakis.
-- A structural-parameter complement to Manurangsi's approximation hardness result (no $o(\log|\mathcal{H}|)$ approximation under Gap-ETH).
-- Provides direct theoretical support for applications of VC dimension to graph-structured data in machine learning.
-
-## Rating
-
-⭐⭐⭐⭐ — Solid theoretical contributions, a complete parameterized complexity landscape, elegant proof techniques; a high-quality work at the intersection of computational learning theory and parameterized complexity.
-
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Improving Decision Trees through the Lens of Parameterized Local Search](improving_decision_trees_through_the_lens_of_parameterized_local_search.md)
 - [\[NeurIPS 2025\] The Structural Complexity of Matrix-Vector Multiplication](the_structural_complexity_of_matrix-vector_multiplication.md)
 - [\[NeurIPS 2025\] How Many Domains Suffice for Domain Generalization? A Tight Characterization via the Domain Shattering Dimension](how_many_domains_suffice_for_domain_generalization_a_tight_characterization_via_.md)
-- [\[NeurIPS 2025\] UniFormer: Unified and Efficient Transformer for Reasoning Across General and Custom Computing](uniformer_unified_and_efficient_transformer_for_reasoning_across_general_and_cus.md)
-- [\[AAAI 2026\] Finding Diverse Solutions Parameterized by Cliquewidth](../../AAAI2026/others/finding_diverse_solutions_parameterized_by_cliquewidth.md)
+- [\[ICML 2026\] On the Learnability of Test-Time Adaptation: A Recovery Complexity Perspective](../../ICML2026/learning_theory/on_the_learnability_of_test-time_adaptation_a_recovery_complexity_perspective.md)
+- [\[NeurIPS 2025\] On Agnostic PAC Learning in the Small Error Regime](on_agnostic_pac_learning_in_the_small_error_regime.md)
+- [\[NeurIPS 2025\] Kernel Conditional Tests from Learning-Theoretic Bounds](kernel_conditional_tests_from_learning-theoretic_bounds.md)
 
 </div>
 

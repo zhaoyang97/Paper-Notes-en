@@ -2,9 +2,10 @@
 title: >-
   [Paper Note] Efficient Kernelized Learning in Polyhedral Games Beyond Full-Information: From Colonel Blotto to Congestion Games
 description: >-
-  [NeurIPS 2025][polyhedral games] This paper proposes a kernelization-based framework for designing computationally efficient no-regret learning algorithms for polyhedral games (Colonel Blotto…
+  [NeurIPS 2025][Other][polyhedral games] This paper proposes a kernelization-based framework for designing computationally efficient no-regret learning algorithms for polyhedral games (Colonel Blotto…
 tags:
   - "NeurIPS 2025"
+  - "Other"
   - "polyhedral games"
   - "kernelization"
   - "coarse correlated equilibrium"
@@ -186,11 +187,11 @@ There are no ablation experiments in the conventional sense; instead, the contri
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Evolutionary Prediction Games](evolutionary_prediction_games.md)
 - [\[NeurIPS 2025\] Optimism Without Regularization: Constant Regret in Zero-Sum Games](optimism_without_regularization_constant_regret_in_zero-sum_games.md)
-- [\[AAAI 2026\] Deviation Dynamics in Cardinal Hedonic Games](../../AAAI2026/others/deviation_dynamics_in_cardinal_hedonic_games.md)
-- [\[NeurIPS 2025\] Johnson-Lindenstrauss Lemma Beyond Euclidean Geometry](johnson-lindenstrauss_lemma_beyond_euclidean_geometry.md)
-- [\[NeurIPS 2025\] Active Measurement: Efficient Estimation at Scale](active_measurement_efficient_estimation_at_scale.md)
+- [\[NeurIPS 2025\] Computable Universal Online Learning](computable_universal_online_learning.md)
+- [\[NeurIPS 2025\] Learning-Augmented Online Bipartite Fractional Matching](learning-augmented_online_bipartite_fractional_matching.md)
+- [\[NeurIPS 2025\] Product Distribution Learning with Imperfect Advice](product_distribution_learning_with_imperfect_advice.md)
+- [\[NeurIPS 2025\] Kernel Conditional Tests from Learning-Theoretic Bounds](kernel_conditional_tests_from_learning-theoretic_bounds.md)
 
 </div>
 

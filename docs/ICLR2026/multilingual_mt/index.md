@@ -2,21 +2,24 @@
 title: >-
   ICLR2026 Multilingual & Translation Papers · 5 Notes
 description: >-
-  5 ICLR2026 papers in the Multilingual & Translation area. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  5 ICLR2026 papers in the Multilingual & Translation area, covering LLM, Alignment/RLHF, Translation and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "ICLR2026"
   - "Multilingual & Translation"
   - "AI paper notes"
   - "paper summaries"
+  - "LLM"
+  - "Alignment/RLHF"
+  - "Translation"
 item_list:
   - u: "assess_a_semantic_and_structural_evaluation_framework_for_statement_similarity/"
     t: "ASSESS: A Semantic and Structural Evaluation Framework for Statement Similarity"
   - u: "atlas_adaptive_transfer_scaling_laws_for_multilingual_pretraining_finetuning_and/"
     t: "ATLAS: Adaptive Transfer Scaling Laws for Multilingual Pretraining, Finetuning, and Decoding the Curse of Multilinguality"
+  - u: "from_utterance_to_vividity_training_expressive_subtitle_translation_llm_via_adap/"
+    t: "From Utterance to Vividity: Training Expressive Subtitle Translation LLM via Adaptive Local Preference Optimization"
   - u: "multilingual_routing_in_mixture-of-experts/"
     t: "Multilingual Routing in Mixture-of-Experts"
-  - u: "prior-based_noisy_text_data_filtering_fast_and_strong_alternative_to_perplexity/"
-    t: "Prior-based Noisy Text Data Filtering: Fast and Strong Alternative for Perplexity"
   - u: "sasft_sparse_autoencoder-guided_supervised_finetuning_to_mitigate_unexpected_cod/"
     t: "SASFT: Sparse Autoencoder-guided Supervised Finetuning to Mitigate Unexpected Code-Switching in LLMs"
 item_total: 5
@@ -27,7 +30,7 @@ item_total: 5
 
 **🔬 ICLR2026** · **5** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (4)](../../ICML2026/multilingual_mt/index.md) · [💬 ACL2026 (62)](../../ACL2026/multilingual_mt/index.md) · [📷 CVPR2026 (2)](../../CVPR2026/multilingual_mt/index.md) · [🤖 AAAI2026 (11)](../../AAAI2026/multilingual_mt/index.md) · [🧠 NeurIPS2025 (14)](../../NeurIPS2025/multilingual_mt/index.md) · [📹 ICCV2025 (1)](../../ICCV2025/multilingual_mt/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (3)](../../ICML2026/multilingual_mt/index.md) · [💬 ACL2026 (62)](../../ACL2026/multilingual_mt/index.md) · [📷 CVPR2026 (2)](../../CVPR2026/multilingual_mt/index.md) · [🤖 AAAI2026 (9)](../../AAAI2026/multilingual_mt/index.md) · [🧠 NeurIPS2025 (11)](../../NeurIPS2025/multilingual_mt/index.md) · [📹 ICCV2025 (1)](../../ICCV2025/multilingual_mt/index.md)
 
 **[ASSESS: A Semantic and Structural Evaluation Framework for Statement Similarity](assess_a_semantic_and_structural_evaluation_framework_for_statement_similarity.md)**
 
@@ -37,13 +40,13 @@ item_total: 5
 
 :   This paper proposes the Adaptive Transfer Scaling Law (ATLAS), which decomposes effective data volume into three components—target language, transfer languages, and other languages—and introduces a data repetition saturation function. Evaluated across 774 multilingual training experiments (10M–8B parameters, 400+ languages), ATLAS substantially outperforms existing scaling laws, improving multilingual $R^2$ from 0.67 to 0.98, and systematically quantifies the cross-lingual transfer matrix, capacity constraints underlying the curse of multilinguality, and the computational crossover point between pretraining and finetuning.
 
+**[From Utterance to Vividity: Training Expressive Subtitle Translation LLM via Adaptive Local Preference Optimization](from_utterance_to_vividity_training_expressive_subtitle_translation_llm_via_adap.md)**
+
+:   This paper proposes ALPO (Adaptive Local Preference Optimization) for training expressive subtitle translation LLMs. Three empirical findings motivate the design: (1) subtitle translation exhibits the lowest back-translation consistency, indicating the highest degree of paraphrase; (2) reasoning-type LLMs (R1/GPT-5 Thinking) produce more expressive paraphrases than chat-type LLMs (GPT-4o/Qwen-Max); (3) a 14B model used as a translation evaluator achieves Spearman correlation $\geq 0.82$ with human judgments, qualifying it as a low-cost reward model. Building on these findings, the paper proposes a fine-grained, process-supervised preference alignment method operating at the sentence-segment level (with adaptive weighting, dynamic beta, and prefix mixing). A 14B model trained with ALPO surpasses GPT-4o and DeepSeek-R1 in vividness across multiple subtitle translation directions.
+
 **[Multilingual Routing in Mixture-of-Experts](multilingual_routing_in_mixture-of-experts.md)**
 
 :   This paper systematically analyzes multilingual routing patterns in MoE large language models, finding that middle layers contain cross-lingually shared experts and that language performance is strongly correlated with alignment to English routing. Based on these findings, the authors propose an inference-time routing intervention that activates English task experts in middle layers, consistently improving multilingual performance by 1–2% across 3 models × 2 tasks × 15+ languages.
-
-**[Prior-based Noisy Text Data Filtering: Fast and Strong Alternative for Perplexity](prior-based_noisy_text_data_filtering_fast_and_strong_alternative_to_perplexity.md)**
-
-:   This paper proposes a text data filtering method based on token priors (token frequency statistics), using the mean and standard deviation of in-document token priors as a proxy for perplexity (PPL). The method achieves the highest average performance across 20 downstream benchmarks while being over 1000× faster than PPL-based filtering.
 
 **[SASFT: Sparse Autoencoder-guided Supervised Finetuning to Mitigate Unexpected Code-Switching in LLMs](sasft_sparse_autoencoder-guided_supervised_finetuning_to_mitigate_unexpected_cod.md)**
 

@@ -21,11 +21,11 @@ item_total: 2
 
 **🧪 ICML2026** · **2** paper notes
 
-📌 **Same area in other venues:** [💬 ACL2026 (33)](../../ACL2026/nlp_understanding/index.md) · [🤖 AAAI2026 (2)](../../AAAI2026/nlp_understanding/index.md) · [🧠 NeurIPS2025 (2)](../../NeurIPS2025/nlp_understanding/index.md) · [📹 ICCV2025 (1)](../../ICCV2025/nlp_understanding/index.md)
+📌 **Same area in other venues:** [💬 ACL2026 (33)](../../ACL2026/nlp_understanding/index.md) · [🔬 ICLR2026 (1)](../../ICLR2026/nlp_understanding/index.md) · [🤖 AAAI2026 (1)](../../AAAI2026/nlp_understanding/index.md) · [🧠 NeurIPS2025 (3)](../../NeurIPS2025/nlp_understanding/index.md) · [📹 ICCV2025 (1)](../../ICCV2025/nlp_understanding/index.md)
 
 **[Causal Fine-Tuning under Latent Confounded Shift](causal_fine-tuning_under_latent_confounded_shift.md)**
 
-:   This paper proposes Causal Fine-Tuning (CFT): embedding an SCM-inspired decomposition of "high-level stable features $C$ + low-level confounder-sensitive features $\Phi$" into standard BERT fine-tuning. Predictions are made via a front-door style do-calculus adjustment formula, significantly outperforming single-domain generalization baselines like SFT, SWA, and WISE under spurious correlation injection attacks in text.
+:   This paper proposes Causal Fine-Tuning (CFT): embedding an SCM-inspired decomposition of "high-level stable feature $C$ + low-level confounder-sensitive feature $\Phi$" into standard BERT fine-tuning, and using a front-door style do-calculus adjustment formula for prediction. CFT significantly outperforms SFT/SWA/WISE and other single-domain generalization baselines under text pseudo-correlation injection attacks.
 
 **[Controlling the Risk of Corrupted Contexts for Language Models via Early-Exiting](controlling_the_risk_of_corrupted_contexts_for_language_models_via_early-exiting.md)**
 

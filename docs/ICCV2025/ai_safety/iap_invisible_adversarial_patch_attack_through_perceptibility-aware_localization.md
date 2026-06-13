@@ -2,9 +2,10 @@
 title: >-
   [Paper Note] IAP: Invisible Adversarial Patch Attack through Perceptibility-Aware Localization
 description: >-
-  [ICCV 2025][Adversarial patch] This paper proposes the IAP framework, which achieves — for the first time in targeted attack settings — truly invisible adversarial patches via **perceptibility-aware patch localization**…
+  [ICCV 2025][AI Safety][Adversarial patch] This paper proposes the IAP framework, which achieves — for the first time in targeted attack settings — truly invisible adversarial patches via **perceptibility-aware patch loca…
 tags:
   - "ICCV 2025"
+  - "AI Safety"
   - "Adversarial patch"
   - "imperceptible attack"
   - "perceptual sensitivity"
@@ -146,11 +147,11 @@ This design is grounded in the psychophysical observation that the human eye is 
 
 ## Related Papers
 
-- [\[ICCV 2025\] C4D: 4D Made from 3D through Dual Correspondences](c4d_4d_made_from_3d_through_dual_correspondences.md)
-- [\[ICCV 2025\] Adversarial Data Augmentation for Single Domain Generalization via Lyapunov Exponents](adversarial_data_augmentation_for_single_domain_generalization_via_lyapunov_expo.md)
-- [\[ICCV 2025\] LaCoOT: Layer Collapse through Optimal Transport](lacoot_layer_collapse_through_optimal_transport.md)
-- [\[NeurIPS 2025\] Rethinking PCA Through Duality](../../NeurIPS2025/others/rethinking_pca_through_duality.md)
-- [\[ICCV 2025\] NAPPure: Adversarial Purification for Robust Image Classification under Non-Additive Perturbations](nappure_adversarial_purification_for_robust_image_classification_under_non-addit.md)
+- [\[ICCV 2025\] SpecGuard: Spectral Projection-based Advanced Invisible Watermarking](specguard_spectral_projection-based_advanced_invisible_watermarking.md)
+- [\[AAAI 2026\] HealSplit: Towards Self-Healing through Adversarial Distillation in Split Federated Learning](../../AAAI2026/ai_safety/healsplit_towards_self-healing_through_adversarial_distillation_in_split_federat.md)
+- [\[CVPR 2026\] When Robots Obey the Patch: Universal Transferable Patch Attacks on Vision-Language-Action Models](../../CVPR2026/ai_safety/when_robots_obey_the_patch_universal_transferable_patch_attacks_on_vision-langua.md)
+- [\[ICLR 2026\] Hide and Find: A Distributed Adversarial Attack on Federated Graph Learning](../../ICLR2026/ai_safety/hide_and_find_a_distributed_adversarial_attack_on_federated_graph_learning.md)
+- [\[ICCV 2025\] Find a Scapegoat: Poisoning Membership Inference Attack and Defense to Federated Learning](find_a_scapegoat_poisoning_membership_inference_attack_and_defense_to_federated_.md)
 
 </div>
 

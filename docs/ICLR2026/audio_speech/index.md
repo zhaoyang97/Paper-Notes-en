@@ -1,8 +1,8 @@
 ---
 title: >-
-  ICLR2026 Audio & Speech Papers · 32 Notes
+  ICLR2026 Audio & Speech Papers · 34 Notes
 description: >-
-  32 ICLR2026 papers in the Audio & Speech area, covering Speech & Audio, Reasoning, LLM, Sentiment Analysis, Adversarial Robustness, Question Answering and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  34 ICLR2026 papers in the Audio & Speech area, covering Speech & Audio, Reasoning, Sentiment Analysis, Adversarial Robustness, Alignment/RLHF, LLM and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "ICLR2026"
   - "Audio & Speech"
@@ -10,15 +10,15 @@ tags:
   - "paper summaries"
   - "Speech & Audio"
   - "Reasoning"
-  - "LLM"
   - "Sentiment Analysis"
   - "Adversarial Robustness"
-  - "Question Answering"
+  - "Alignment/RLHF"
+  - "LLM"
 item_list:
   - u: "ac-foley_reference-audio-guided_video-to-audio_synthesis_with_acoustic_transfer/"
     t: "AC-Foley: Reference-Audio-Guided Video-to-Audio Synthesis with Acoustic Transfer"
-  - u: "autofigure_generating_and_refining_publication-ready_scientific_illustrations/"
-    t: "AutoFigure: Generating and Refining Publication-Ready Scientific Illustrations"
+  - u: "avere_improving_audiovisual_emotion_reasoning_with_preference_optimization/"
+    t: "AVERE: Improving Audiovisual Emotion Reasoning with Preference Optimization"
   - u: "discovering_and_steering_interpretable_concepts_in_large_generative_music_models/"
     t: "Discovering and Steering Interpretable Concepts in Large Generative Music Models"
   - u: "dynamic_parameter_memory_temporary_lora-enhanced_llm_for_long-sequence_emotion_r/"
@@ -31,6 +31,10 @@ item_list:
     t: "EmotionThinker: Prosody-Aware Reinforcement Learning for Explainable Speech Emotion Reasoning"
   - u: "flexicodec_a_dynamic_neural_audio_codec_for_low_frame_rates/"
     t: "FlexiCodec: A Dynamic Neural Audio Codec for Low Frame Rates"
+  - u: "flow2gan_hybrid_flow_matching_and_gan_with_multi-resolution_network_for_few-step/"
+    t: "Flow2GAN: Hybrid Flow Matching and GAN with Multi-Resolution Network for Few-step High-Fidelity Audio Generation"
+  - u: "human_behavior_atlas_benchmarking_unified_psychological_and_social_behavior_unde/"
+    t: "Human Behavior Atlas: Benchmarking Unified Psychological and Social Behavior Understanding"
   - u: "improving_black-box_generative_attacks_via_generator_semantic_consistency/"
     t: "Improving Black-Box Generative Attacks via Generator Semantic Consistency"
   - u: "incentive-aligned_multi-source_llm_summaries/"
@@ -39,16 +43,18 @@ item_list:
     t: "Knowing When to Quit: Probabilistic Early Exits for Speech Separation"
   - u: "latent_speech_text_transformer/"
     t: "Latent Speech-Text Transformer"
-  - u: "logicreward_incentivizing_llm_reasoning_via_step-wise_logical_supervision/"
-    t: "LogicReward: Incentivizing LLM Reasoning via Step-Wise Logical Supervision"
   - u: "mapss_manifold-based_assessment_of_perceptual_source_separation/"
     t: "MAPSS: Manifold-Based Assessment of Perceptual Source Separation"
   - u: "mmsu_a_massive_multi-task_spoken_language_understanding_and_reasoning_benchmark/"
     t: "MMSU: A Massive Multi-task Spoken Language Understanding and Reasoning Benchmark"
   - u: "pace_pretrained_audio_continual_learning/"
     t: "PACE: Pretrained Audio Continual Learning"
+  - u: "paras2s_benchmarking_and_aligning_spoken_language_models_for_paralinguistic-awar/"
+    t: "ParaS2S: Benchmarking and Aligning Spoken Language Models for Paralinguistic-Aware Speech-to-Speech Interaction"
   - u: "pay_attention_to_ctc_fast_and_robust_pseudo-labelling_for_unified_speech_recogni/"
     t: "Pay Attention to CTC: Fast and Robust Pseudo-Labelling for Unified Speech Recognition"
+  - u: "prismaudio_decomposed_chain-of-thoughts_and_multi-dimensional_rewards_for_video-/"
+    t: "PrismAudio: Decomposed Chain-of-Thoughts and Multi-dimensional Rewards for Video-to-Audio Generation"
   - u: "query-guided_spatial-temporal-frequency_interaction_for_music_audio-visual_quest/"
     t: "Query-Guided Spatial-Temporal-Frequency Interaction for Music Audio-Visual Question Answering"
   - u: "redteamcua_adversarial_testing_agents/"
@@ -59,41 +65,35 @@ item_list:
     t: "Scaling Speech Tokenizers with Diffusion Autoencoders"
   - u: "singer_a_clearer_voice_distills_vision_transformers_further/"
     t: "SiNGER: A Clearer Voice Distills Vision Transformers Further"
-  - u: "sparta_scalable_and_principled_benchmark_of_tree-structured_multi-hop_qa_over_te/"
-    t: "SPARTA: Scalable and Principled Benchmark of Tree-Structured Multi-hop QA over Text and Tables"
-  - u: "statistical_guarantees_for_offline_domain_randomization/"
-    t: "Statistical Guarantees for Offline Domain Randomization"
   - u: "stitch_simultaneous_thinking_and_talking_with_chunked_reasoning_for_spoken_langu/"
     t: "Stitch: Simultaneous Thinking and Talking with Chunked Reasoning for Spoken Language Models"
   - u: "synctrack_rhythmic_stability_and_synchronization_in_multi-track_music_generation/"
     t: "SyncTrack: Rhythmic Stability and Synchronization in Multi-Track Music Generation"
+  - u: "taste_text-aligned_speech_tokenization_and_embedding_for_spoken_language_modelin/"
+    t: "TASTE: Text-Aligned Speech Tokenization and Embedding for Spoken Language Modeling"
   - u: "the_devil_behind_the_mask_an_emergent_safety_vulnerability_of_diffusion_llms/"
     t: "The Devil behind the Mask: An Emergent Safety Vulnerability of Diffusion LLMs"
   - u: "toward_complex-valued_neural_networks_for_waveform_generation/"
     t: "Toward Complex-Valued Neural Networks for Waveform Generation"
-  - u: "triplesumm_adaptive_triple-modality_fusion_for_video_summarization/"
-    t: "TripleSumm: Adaptive Triple-Modality Fusion for Video Summarization"
-  - u: "vowelprompt_hearing_speech_emotions_from_text_via_vowel-level_prosodic_augmentat/"
-    t: "VowelPrompt: Hearing Speech Emotions from Text via Vowel-level Prosodic Augmentation"
-item_total: 32
+item_total: 34
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->
 # 🎵 Audio & Speech
 
-**🔬 ICLR2026** · **32** paper notes
+**🔬 ICLR2026** · **34** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (29)](../../ICML2026/audio_speech/index.md) · [💬 ACL2026 (67)](../../ACL2026/audio_speech/index.md) · [📷 CVPR2026 (15)](../../CVPR2026/audio_speech/index.md) · [🤖 AAAI2026 (30)](../../AAAI2026/audio_speech/index.md) · [🧠 NeurIPS2025 (49)](../../NeurIPS2025/audio_speech/index.md) · [📹 ICCV2025 (11)](../../ICCV2025/audio_speech/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (30)](../../ICML2026/audio_speech/index.md) · [💬 ACL2026 (68)](../../ACL2026/audio_speech/index.md) · [📷 CVPR2026 (14)](../../CVPR2026/audio_speech/index.md) · [🤖 AAAI2026 (29)](../../AAAI2026/audio_speech/index.md) · [🧠 NeurIPS2025 (47)](../../NeurIPS2025/audio_speech/index.md) · [📹 ICCV2025 (11)](../../ICCV2025/audio_speech/index.md)
 
-🔥 **Top topics:** Speech & Audio ×14 · Reasoning ×4 · LLM ×3 · Sentiment Analysis ×3 · Adversarial Robustness ×3
+🔥 **Top topics:** Speech & Audio ×19 · Reasoning ×5 · Sentiment Analysis ×4 · Adversarial Robustness ×3 · Alignment/RLHF ×2
 
 **[AC-Foley: Reference-Audio-Guided Video-to-Audio Synthesis with Acoustic Transfer](ac-foley_reference-audio-guided_video-to-audio_synthesis_with_acoustic_transfer.md)**
 
 :   This paper proposes AC-Foley, a reference-audio-guided video-to-audio synthesis framework that achieves fine-grained timbre control, timbre transfer, and zero-shot sound effect generation via two-stage training (acoustic feature learning + temporal adaptation) and multimodal conditional flow matching, significantly outperforming existing methods in audio quality and acoustic fidelity.
 
-**[AutoFigure: Generating and Refining Publication-Ready Scientific Illustrations](autofigure_generating_and_refining_publication-ready_scientific_illustrations.md)**
+**[AVERE: Improving Audiovisual Emotion Reasoning with Preference Optimization](avere_improving_audiovisual_emotion_reasoning_with_preference_optimization.md)**
 
-:   This paper proposes AutoFigure — the first agent framework based on a "Reasoned Rendering" paradigm — which automatically generates publication-ready scientific illustrations from long scientific texts by decoupling structural layout planning and aesthetic rendering into two stages. It is accompanied by FigureBench, the first large-scale benchmark (3,300 pairs) for systematic evaluation, with 66.7% of generated results deemed usable in camera-ready submissions by the original authors.
+:   To address spurious associations and hallucinations in multimodal large language models (MLLMs) for emotion reasoning, this work proposes the EmoReAlM evaluation benchmark and the AVEm-DPO preference optimization method. By constructing targeted preference pairs and incorporating text-prior regularization, the approach achieves 6–19% relative zero-shot performance gains on DFEW, RAVDESS, and EMER.
 
 **[Discovering and Steering Interpretable Concepts in Large Generative Music Models](discovering_and_steering_interpretable_concepts_in_large_generative_music_models.md)**
 
@@ -119,6 +119,14 @@ item_total: 32
 
 :   FlexiCodec is proposed as a dynamic frame rate merging strategy guided by ASR features, achieving high-quality speech codec at ultra-low frame rates of 3–12.5 Hz while maintaining superior semantic information retention.
 
+**[Flow2GAN: Hybrid Flow Matching and GAN with Multi-Resolution Network for Few-step High-Fidelity Audio Generation](flow2gan_hybrid_flow_matching_and_gan_with_multi-resolution_network_for_few-step.md)**
+
+:   This paper proposes Flow2GAN, a two-stage training framework that first employs an improved Flow Matching objective to learn generative capabilities, then fine-tunes with a GAN to achieve few-step (1/2/4 steps) high-fidelity audio generation, combined with a multi-resolution network architecture that processes Fourier coefficients at different time-frequency resolutions.
+
+**[Human Behavior Atlas: Benchmarking Unified Psychological and Social Behavior Understanding](human_behavior_atlas_benchmarking_unified_psychological_and_social_behavior_unde.md)**
+
+:   This work introduces Human Behavior Atlas—the first large-scale multimodal unified benchmark for behavior understanding spanning four dimensions (affective, cognitive, pathological, and social processes) with 101K+ samples—and trains three OmniSapiens-7B model variants to validate its effectiveness in multi-task training and transfer learning.
+
 **[Improving Black-Box Generative Attacks via Generator Semantic Consistency](improving_black-box_generative_attacks_via_generator_semantic_consistency.md)**
 
 :   By analyzing semantic degradation in intermediate-layer features of perturbation generators, this paper proposes a Mean Teacher-based semantic structure-aware framework that performs self-feature distillation at early generator layers to preserve semantic consistency, thereby enhancing the transferability of adversarial examples across models, domains, and tasks.
@@ -135,10 +143,6 @@ item_total: 32
 
 :   This paper proposes the Latent Speech-Text Transformer (LST), which aggregates discrete speech tokens into higher-level "latent speech patches" as autoregressive units (analogous to BLT's treatment of bytes), aligning the sequence modeling granularity of speech and text (reducing the length ratio from 20× to ~1:1). LST achieves +6.5% absolute improvement on Speech HellaSwag, with gains that continue to grow from 420M to 7B parameters, while reducing ASR/TTS inference computation.
 
-**[LogicReward: Incentivizing LLM Reasoning via Step-Wise Logical Supervision](logicreward_incentivizing_llm_reasoning_via_step-wise_logical_supervision.md)**
-
-:   This paper proposes LogicReward, a reward function that employs the Isabelle theorem prover for step-wise logical correctness verification. Combined with Autoformalization with Soft Unification to reduce natural language ambiguity, the trained 8B model surpasses GPT-4o by 11.6% and o4-mini by 2% on NLI and logical reasoning tasks.
-
 **[MAPSS: Manifold-Based Assessment of Perceptual Source Separation](mapss_manifold-based_assessment_of_perceptual_source_separation.md)**
 
 :   This paper proposes two complementary metrics—Perceptual Separation (PS) and Perceptual Match (PM)—that embed self-supervised encoded representations onto a low-dimensional manifold via diffusion maps, achieving for the first time a functional decoupling of leakage and self-distortion in source separation evaluation. Compared against 18 mainstream metrics, the proposed measures rank first or second in correlation with subjective listening scores in nearly all experimental conditions.
@@ -151,9 +155,17 @@ item_total: 32
 
 :   This paper presents the first systematic benchmark for audio continual learning (CL), identifies a fundamental upstream–downstream mismatch in pretrained audio models caused by the dominance of low-level spectral features, and proposes PACE—comprising improved first-session adaptation, adaptive subspace-orthogonal PEFT, and boundary-aware perturbation regularization—achieving substantial improvements over SOTA across 6 audio CL benchmarks.
 
+**[ParaS2S: Benchmarking and Aligning Spoken Language Models for Paralinguistic-Aware Speech-to-Speech Interaction](paras2s_benchmarking_and_aligning_spoken_language_models_for_paralinguistic-awar.md)**
+
+:   This paper proposes the ParaS2S framework, which comprises ParaS2SBench — a benchmark for evaluating paralinguistic-aware (emotion/sarcasm/age/gender) speech-to-speech interaction — and ParaS2SAlign, a GRPO-based RL alignment framework that enables S2S models to learn style-adaptive response generation with minimal labeled data.
+
 **[Pay Attention to CTC: Fast and Robust Pseudo-Labelling for Unified Speech Recognition](pay_attention_to_ctc_fast_and_robust_pseudo-labelling_for_unified_speech_recogni.md)**
 
 :   This paper proposes USR 2.0, which replaces autoregressive pseudo-label generation with CTC-driven teacher forcing, enabling attention pseudo-labels to be produced in a single forward pass. The approach achieves nearly 2× training speedup, enhances out-of-distribution robustness via joint CTC-attention prediction, and establishes state-of-the-art results on LRS3/LRS2/WildVSR across all three tasks (ASR/VSR/AVSR) within a single unified model.
+
+**[PrismAudio: Decomposed Chain-of-Thoughts and Multi-dimensional Rewards for Video-to-Audio Generation](prismaudio_decomposed_chain-of-thoughts_and_multi-dimensional_rewards_for_video-.md)**
+
+:   This work is the first to integrate decomposed Chain-of-Thought reasoning with multi-dimensional reinforcement learning (RL) for video-to-audio (V2A) generation. It addresses the objective entanglement problem via four specialized CoT modules (semantic/temporal/aesthetic/spatial) paired with corresponding reward functions, and proposes the Fast-GRPO algorithm to substantially reduce RL training cost.
 
 **[Query-Guided Spatial-Temporal-Frequency Interaction for Music Audio-Visual Question Answering](query-guided_spatial-temporal-frequency_interaction_for_music_audio-visual_quest.md)**
 
@@ -175,14 +187,6 @@ item_total: 32
 
 :   This paper proposes SiNGER (Singular Nullspace-Guided Energy Reallocation), a framework that suppresses high-norm artifacts in ViT features by applying perturbations along the left-nullspace directions of teacher features, thereby preserving informative signals. Combined with lightweight LoRA adapters, SiNGER achieves state-of-the-art performance across multiple downstream tasks while producing cleaner and more interpretable representations.
 
-**[SPARTA: Scalable and Principled Benchmark of Tree-Structured Multi-hop QA over Text and Tables](sparta_scalable_and_principled_benchmark_of_tree-structured_multi-hop_qa_over_te.md)**
-
-:   This paper presents SPARTA, an end-to-end framework for automatically constructing large-scale table-text multi-hop QA benchmarks. By leveraging a reference fact database, provenance-based refinement, and realistic structural constraints to generate high-quality nested SQL queries, SPARTA reduces the F1 of state-of-the-art models by over 30 points.
-
-**[Statistical Guarantees for Offline Domain Randomization](statistical_guarantees_for_offline_domain_randomization.md)**
-
-:   This paper formalizes offline domain randomization (ODR) as a maximum likelihood estimation problem over a parameterized family of simulators. Under mild regularity and identifiability assumptions, it establishes weak consistency (convergence in probability); with an additional uniform Lipschitz continuity assumption, strong consistency (almost sure convergence) is further proved. These results provide the first theoretical foundation for the empirical success of ODR in sim-to-real transfer.
-
 **[Stitch: Simultaneous Thinking and Talking with Chunked Reasoning for Spoken Language Models](stitch_simultaneous_thinking_and_talking_with_chunked_reasoning_for_spoken_langu.md)**
 
 :   Stitch enables "thinking while speaking" in spoken language models (SLMs) by interleaving silent reasoning tokens with speech tokens in chunks, exploiting idle compute during audio playback for reasoning. Stitch-S achieves first-chunk latency identical to the no-reasoning baseline while improving math reasoning accuracy by approximately 15 percentage points.
@@ -190,6 +194,10 @@ item_total: 32
 **[SyncTrack: Rhythmic Stability and Synchronization in Multi-Track Music Generation](synctrack_rhythmic_stability_and_synchronization_in_multi-track_music_generation.md)**
 
 :   SyncTrack is proposed with a unified architecture comprising track-shared modules (dual cross-track attention for rhythmic synchronization) and track-specific modules (learnable instrument priors for timbre preservation), along with three new rhythmic consistency evaluation metrics (IRS/CBS/CBD), achieving substantial improvements in multi-track music generation quality (FAD: 6.55→1.26, subjective MOS: 3.42 vs. 1.57).
+
+**[TASTE: Text-Aligned Speech Tokenization and Embedding for Spoken Language Modeling](taste_text-aligned_speech_tokenization_and_embedding_for_spoken_language_modelin.md)**
+
+:   This paper proposes TASTE (Text-Aligned Speech Tokenization and Embedding), which aligns speech tokens with text transcriptions via a cross-attention mechanism, enabling high-quality speech reconstruction at an extremely low bitrate (~150 bps). This design makes text-speech joint modeling straightforward and efficient; the resulting 1.3B-parameter TASLM outperforms 7B pretrained SLMs.
 
 **[The Devil behind the Mask: An Emergent Safety Vulnerability of Diffusion LLMs](the_devil_behind_the_mask_an_emergent_safety_vulnerability_of_diffusion_llms.md)**
 

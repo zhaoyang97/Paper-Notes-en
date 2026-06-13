@@ -54,7 +54,7 @@ item_total: 17
 
 **💬 ACL2026** · **17** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (2)](../../ICML2026/nlp_generation/index.md) · [🔬 ICLR2026 (3)](../../ICLR2026/nlp_generation/index.md) · [🤖 AAAI2026 (2)](../../AAAI2026/nlp_generation/index.md) · [📹 ICCV2025 (1)](../../ICCV2025/nlp_generation/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (2)](../../ICML2026/nlp_generation/index.md) · [🔬 ICLR2026 (2)](../../ICLR2026/nlp_generation/index.md) · [🤖 AAAI2026 (3)](../../AAAI2026/nlp_generation/index.md) · [📹 ICCV2025 (1)](../../ICCV2025/nlp_generation/index.md)
 
 🔥 **Top topics:** Summarization ×5 · LLM ×3 · Agents ×2
 

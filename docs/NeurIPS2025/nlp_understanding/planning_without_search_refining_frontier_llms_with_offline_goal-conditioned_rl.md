@@ -126,11 +126,11 @@ A goal-conditioned variant of IQL (Implicit Q-Learning) is used. The Q-function 
 
 ## Related Papers
 
+- [\[ICLR 2026\] What's the Plan? Metrics for Implicit Planning in LLMs and Their Application to Rhyme Generation and Question Answering](../../ICLR2026/nlp_understanding/whats_the_plan_metrics_for_implicit_planning_in_llms_and_their_application_to_rh.md)
 - [\[ACL 2026\] Refining and Reusing Annotation Guidelines for LLM Annotation](../../ACL2026/nlp_understanding/refining_and_reusing_annotation_guidelines_for_llm_annotation.md)
 - [\[ACL 2026\] Reasoning-Based Refinement of Unsupervised Text Clusters with LLMs](../../ACL2026/nlp_understanding/reasoning-based_refinement_of_unsupervised_text_clusters_with_llms.md)
 - [\[ACL 2026\] Creating ConLangs to Probe the Metalinguistic Grammatical Knowledge of LLMs](../../ACL2026/nlp_understanding/creating_conlangs_to_probe_the_metalinguistic_grammatical_knowledge_of_llms.md)
 - [\[ACL 2026\] Can LLMs Estimate Cognitive Complexity of Reading Comprehension Items?](../../ACL2026/nlp_understanding/can_llms_estimate_cognitive_complexity_of_reading_comprehension_items.md)
-- [\[AAAI 2026\] Understanding Syllogistic Reasoning in LLMs from Formal and Natural Language Perspectives](../../AAAI2026/nlp_understanding/understanding_syllogistic_reasoning_in_llms_from_formal_and_natural_language_per.md)
 
 </div>
 

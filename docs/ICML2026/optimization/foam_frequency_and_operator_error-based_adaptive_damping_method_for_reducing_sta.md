@@ -2,9 +2,10 @@
 title: >-
   [Paper Note] FOAM: Frequency and Operator Error-Based Adaptive Damping Method for Reducing Staleness-Oriented Error for Shampoo
 description: >-
-  [ICML2026][Shampoo] FOAM couples the damping coefficient $\epsilon$ and the Eigenvalue Decomposition (EVD) trigger frequency of Shampoo into a feedback control loop via a "relative operator error proxy $h_t$" that can be…
+  [ICML2026][Optimization][Shampoo] FOAM couples the damping coefficient $\epsilon$ and the Eigenvalue Decomposition (EVD) trigger frequency of Shampoo into a feedback control loop via a "relative operator error proxy $h_t…
 tags:
   - "ICML2026"
+  - "Optimization"
   - "Shampoo"
   - "adaptive damping"
   - "eigenvalue decomposition frequency"
@@ -119,11 +120,11 @@ FOAM was compared against stale Shampoo across three large-scale tasks: (1) ViT-
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] On Agnostic PAC Learning in the Small Error Regime](../../NeurIPS2025/others/on_agnostic_pac_learning_in_the_small_error_regime.md)
-- [\[ICML 2026\] Target-Agnostic Calibration under Distribution Shift with Frequency-Aware Gradient Rectification](target-agnostic_calibration_under_distribution_shift_with_frequency-aware_gradie.md)
-- [\[ICML 2026\] Adaptive Multi-Round Allocation with Stochastic Arrivals](adaptive_multi-round_allocation_with_stochastic_arrivals.md)
+- [\[ICML 2026\] Taming the Loss Landscape of PINNs with Noisy Feynman-Kac Supervision: Operator Preconditioning and Non-Asymptotic Error Bounds](taming_the_loss_landscape_of_pinns_with_noisy_feynman-kac_supervision_operator_p.md)
+- [\[NeurIPS 2025\] Revisiting Orbital Minimization Method for Neural Operator Decomposition](../../NeurIPS2025/optimization/revisiting_orbital_minimization_method_for_neural_operator_decomposition.md)
+- [\[NeurIPS 2025\] Purifying Shampoo: Investigating Shampoo's Heuristics by Decomposing its Preconditioner](../../NeurIPS2025/optimization/purifying_shampoo_investigating_shampoos_heuristics_by_decomposing_its_precondit.md)
 - [\[ICML 2026\] Adaptive Preconditioners Trigger Loss Spikes in Adam](adaptive_preconditioners_trigger_loss_spikes_in_adam.md)
-- [\[AAAI 2026\] Cost-Free Neutrality for the River Method](../../AAAI2026/others/cost-free_neutrality_for_the_river_method.md)
+- [\[ICLR 2026\] Constraint Matters: Multi-Modal Representation for Reducing Mixed-Integer Linear Programming](../../ICLR2026/optimization/constraint_matters_multi-modal_representation_for_reducing_mixed-integer_linear_.md)
 
 </div>
 

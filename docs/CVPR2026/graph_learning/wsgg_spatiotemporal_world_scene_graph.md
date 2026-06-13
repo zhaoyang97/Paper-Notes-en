@@ -1,16 +1,16 @@
 ---
 title: >-
-  [Paper Note] Towards Spatio-Temporal World Scene Graph Generation from Monocular Videos
+  [Paper Note] WSGG: Towards Spatio-Temporal World Scene Graph Generation from Monocular Videos
 description: >-
-  [CVPR 2026][Graph Learning][world scene graph] This paper proposes the World Scene Graph Generation (WSGG) task—generating spatio-temporal scene graphs anchored in a world coordinate system from monocular video…
+  [CVPR 2026][Graph Learning][World Scene Graph] This paper proposes the World Scene Graph Generation (WSGG) task, extending conventional frame-level scene graphs to track all objects—including occluded and invisible ones—…
 tags:
   - "CVPR 2026"
   - "Graph Learning"
-  - "world scene graph"
-  - "spatio-temporal"
+  - "World Scene Graph"
   - "object permanence"
-  - "4D reconstruction"
-  - "video understanding"
+  - "occlusion reasoning"
+  - "4D scene understanding"
+  - "ActionGenome4D"
 date: 2026-05-08
 content_hash: feabfe072e565098
 ---
@@ -134,86 +134,6 @@ tags:
   - video understanding
 ---
 
-# Towards Spatio-Temporal World Scene Graph Generation from Monocular Videos
-
-**Conference**: CVPR 2026
-**arXiv**: [2603.13185](https://arxiv.org/abs/2603.13185)  
-**Code**: [https://github.com/rohithpeddi/WorldSGG](https://github.com/rohithpeddi/WorldSGG)  
-**Area**: 3D Vision / Scene Understanding
-**Keywords**: world scene graph, spatio-temporal, object permanence, 4D reconstruction, video understanding
-
-## TL;DR
-This paper proposes the World Scene Graph Generation (WSGG) task—generating spatio-temporal scene graphs anchored in a world coordinate system from monocular video, including occluded and invisible objects. The work constructs the ActionGenome4D dataset, designs three complementary methods (PWG, MWAE, 4DST) to explore different inductive biases, and achieves a best R@10 of 66.40% with 4DST via a temporal Transformer.
-
-## Background & Motivation
-Existing video scene graph generation paradigms are frame-centric: only visible objects in the current frame are reasoned about, and objects that leave the field of view vanish from the graph, making it impossible to maintain persistence in a 3D world coordinate system. This is fundamentally at odds with the requirements of embodied intelligence—robots must understand that objects continue to exist even when temporarily invisible (object permanence). Achieving world-level scene understanding requires three capabilities: (1) 3D localization of all objects in a shared world coordinate system; (2) temporally consistent, cross-frame object tracking; and (3) dense semantic annotations including invisible objects. No existing dataset or benchmark simultaneously satisfies all three requirements.
-
-## Method
-
-### Overall Architecture
-The system comprises two parts: dataset construction and method design. The dataset upgrades Action Genome to a 4D scene representation via a pipeline of π³ 3D reconstruction + GDINO detection + SAM2 segmentation + VLM pseudo-annotation. On the method side, a shared Global Structural Encoder (Spatial GNN + temporal edge attention + camera pose encoding) underlies three distinct strategies for invisible-object reasoning.
-
-### Key Designs
-1. **ActionGenome4D Dataset**: Starting from Action Genome videos, (a) π³ performs per-frame 3D reconstruction to obtain point clouds and camera poses; (b) GDINO detection + dual-mode SAM2 segmentation + ground-aligned OBB fitting yields world-coordinate 3D oriented bounding boxes; (c) a RAG-based VLM pipeline + discriminative verification + human correction generates dense relational pseudo-annotations for invisible objects.
-2. **PWG (Persistent World Graph)**: A zeroth-order solution for object permanence—a memory buffer retains each object's visual features from its last observation, enabling relation prediction for objects that have left the field of view using buffered features. A simple but effective baseline.
-3. **4DST (4D Scene Transformer)**: Replaces the static buffer with differentiable per-object temporal attention, jointly attending over observed and unobserved object tokens across the full video, and incorporating 3D motion and camera pose features. Achieves the best performance among the three methods.
-
-### Loss & Training
-Standard cross-entropy loss is used for relation prediction; L1 loss and 3D IoU loss are used for 3D bounding box regression. Training is evaluated under two settings: PredCls (ground-truth labels and boxes given) and SGDet (full detection). Visual features are extracted using DINOv2-Large.
-
-## Key Experimental Results
-
-### Main Results
-
-Relation prediction on ActionGenome4D (PredCls, DINOv2-L):
-
-| Method | R@10 | R@20 | R@50 | Reasoning Strategy |
-|--------|------|------|------|--------------------|
-| PWG | 65.07% | 67.99% | 68.00% | Zeroth-order feature buffer |
-| MWAE | 65.33% | 68.30% | 68.31% | Masked completion + associative retrieval |
-| **4DST** | **66.40%** | **69.15%** | **69.16%** | Temporal Transformer |
-
-### Ablation Study
-
-| Ablation | R@10 | Δ |
-|---------|------|---|
-| 4DST (full) | 66.40% | — |
-| w/o 3D motion features | 64.82% | −1.58% |
-| w/o camera pose encoding | 65.11% | −1.29% |
-| w/o temporal attention (degrades to PWG) | 65.07% | −1.33% |
-| Visible objects only (no WSGG) | 58.23% | −8.17% |
-
-Including invisible objects (WSGG vs. conventional SGG) yields the largest performance gain (+8.17%), validating the value of the task definition.
-
-### Key Findings
-- The performance gap among the three methods is small (R@10: 65–66%), suggesting the current bottleneck may lie in feature representation rather than reasoning strategy.
-- The temporal Transformer (4DST) outperforms the static buffer (PWG) and masked completion (MWAE), confirming the effectiveness of differentiable temporal modeling.
-- Graph RAG evaluation of VLMs on location-free WSGG indicates that current VLMs struggle to reason about relations involving invisible objects.
-
-## Highlights & Insights
-- **Object permanence as a new paradigm for scene understanding**: Rather than frame-level detection, the system maintains persistent states for all objects in the world.
-- **Value of 3D geometric scaffolding**: Even when objects are temporarily invisible, 3D reconstruction in the world coordinate system allows the model to know where they are.
-- **Three methods provide complementary ablations**: buffer vs. completion vs. attention, offering a clear design space for future research.
-
-## Limitations & Future Work
-- Dataset construction depends on the quality of 3D reconstruction (π³); reconstruction failures can propagate to annotation errors.
-- Evaluation metrics follow 2D scene graph conventions (R@K), which may not fully capture the nature of 3D world scene graphs.
-- Only dynamic objects in static scenes are considered; changes in the scene itself (e.g., doors opening/closing) are not addressed.
-- VLM pseudo-labels may introduce systematic biases, and the scope of human correction is limited.
-- The small performance gap among the three methods suggests substantial room for improvement on the task itself.
-
-## Related Work & Insights
-- **vs. ActionGenome**: Frame-level scene graphs do not maintain world coordinates or object persistence; WSGG is its world-level extension.
-- **vs. 3D Scene Graphs (3DSSG, etc.)**: Static 3D scene graphs do not address the temporal dimension; WSGG adds temporal reasoning and invisible-object handling.
-- **vs. 4D SGG (SceneSayer, etc.)**: 4D SGG handles temporal relations only among visible objects; WSGG extends coverage to invisible objects.
-- Significant implications for embodied intelligence (navigation, manipulation, planning) as a structured representation for world models.
-
-## Rating
-- Novelty: ⭐⭐⭐⭐⭐ World scene graphs represent an entirely new task definition, filling an important gap in video understanding.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Comparison of three methods + ablations + VLM evaluation, though limited to a single dataset.
-- Writing Quality: ⭐⭐⭐⭐ Clear task definition and well-motivated comparison of the three method designs.
-- Value: ⭐⭐⭐⭐⭐ Significant implications for embodied intelligence; the dataset and task definition will advance subsequent research.
-
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
@@ -221,10 +141,10 @@ Including invisible objects (WSGG vs. conventional SGG) yields the largest perfo
 ## Related Papers
 
 - [\[NeurIPS 2025\] Spatio-Temporal Directed Graph Learning for Account Takeover Fraud Detection](../../NeurIPS2025/graph_learning/spatio-temporal_directed_graph_learning_for_account_takeover_fraud_detection.md)
-- [\[NeurIPS 2025\] ESCA: Contextualizing Embodied Agents via Scene-Graph Generation](../../NeurIPS2025/graph_learning/esca_contextualizing_embodied_agents_via_scene-graph_generation.md)
 - [\[NeurIPS 2025\] Interaction-Centric Knowledge Infusion and Transfer for Open-Vocabulary Scene Graph Generation](../../NeurIPS2025/graph_learning/interaction-centric_knowledge_infusion_and_transfer_for_open-vocabulary_scene_gr.md)
 - [\[CVPR 2026\] M3KG-RAG: Multi-hop Multimodal Knowledge Graph-enhanced Retrieval-Augmented Generation](m3kg_rag_multi_hop_multimodal_knowledge_graph_enhanced_retrieval_augmented_genera.md)
 - [\[CVPR 2026\] Graph2Eval: Automatic Multimodal Task Generation for Agents via Knowledge Graphs](graph2eval_automatic_multimodal_task_generation_for_agents_via_knowledge_graphs.md)
+- [\[NeurIPS 2025\] TAMI: Taming Heterogeneity in Temporal Interactions for Temporal Graph Link Prediction](../../NeurIPS2025/graph_learning/tami_taming_heterogeneity_in_temporal_interactions_for_temporal_graph_link_predi.md)
 
 </div>
 

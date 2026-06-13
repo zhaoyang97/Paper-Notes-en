@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] Lossless Vocabulary Reduction for Auto-Regressive Language Models
 description: >-
-  [ICLR 2026][LLM Pretraining][Vocabulary Reduction] This paper establishes a **lossless vocabulary reduction** theoretical framework that efficiently converts any auto-regressive language model into an equivalent model us…
+  [ICLR 2026][LLM Pretraining][Vocabulary Reduction] This paper proposes a theoretical framework for **Lossless Vocabulary Reduction (LVR)**…
 tags:
   - "ICLR 2026"
   - "LLM Pretraining"
   - "Vocabulary Reduction"
-  - "Auto-Regressive Language Models"
+  - "Auto-Regressive LM"
   - "Tokenization"
-  - "Model Ensembling"
-  - "Lossless Conversion"
+  - "Model Ensemble"
+  - "Maximal Common Vocabulary"
 date: 2026-05-08
 content_hash: 2c6105cbe804d4fc
 ---
@@ -161,109 +161,6 @@ tags:
   - Lossless Conversion
 ---
 
-# Lossless Vocabulary Reduction for Auto-Regressive Language Models
-
-**Conference**: ICLR 2026
-**arXiv**: [2510.08102](https://arxiv.org/abs/2510.08102)  
-**Code**: N/A  
-**Area**: NLP / Language Models
-**Keywords**: Vocabulary Reduction, Auto-Regressive Language Models, Tokenization, Model Ensembling, Lossless Conversion
-
-## TL;DR
-This paper establishes a **lossless vocabulary reduction** theoretical framework that efficiently converts any auto-regressive language model into an equivalent model using an arbitrary smaller vocabulary without accuracy loss, enabling effective collaboration (e.g., model ensembling) between language models with different tokenization schemes.
-
-## Background & Motivation
-Tokenization is one of the core components in language model development. Auto-regressive language models generate text token by token—predicting the probability distribution over the next token given the preceding token sequence—so the tokenization scheme directly affects generation efficiency and quality.
-
-**Key Challenge**: Each language model has its own vocabulary, and different models typically use different vocabularies (e.g., GPT uses BPE, LLaMA uses SentencePiece). This creates a fundamental problem: **language models with different vocabularies cannot directly collaborate at the level of next-token distributions**.
-
-**Concrete Scenario**: Model ensembling is a classical approach to improving language model performance, but traditional ensembling requires models to share the same output space. When two models use different tokenization schemes, their next-token distributions are defined over entirely different vocabularies and cannot be directly averaged or mixed. Existing solutions either restrict ensembling to same-vocabulary models or apply lossy approximate conversions with limited effectiveness.
-
-**Key Insight**: If any language model can be converted "losslessly" into an equivalent model using a smaller vocabulary, different models can first be converted to a shared minimal common vocabulary and then ensembled—this is the core idea of the paper.
-
-## Method
-
-### Overall Architecture
-- **Input**: An arbitrary auto-regressive language model $M$ (with vocabulary $V$) and a target vocabulary $V'$ ($V' \subset V$ or $V'$ is a subset of $V$)
-- **Output**: An equivalent model $M'$ using vocabulary $V'$, such that $P_M(x) = P_{M'}(x)$ for any text $x$
-- **Core constraint**: The conversion is lossless—the string-level probability distribution of the new model is identical to that of the original model
-
-### Key Designs
-1. **Theoretical Framework for Vocabulary Reduction**:
-
-    - **Mechanism**: Converting a model from a large vocabulary $V$ to a small vocabulary $V'$ hinges on handling tokens that exist in $V$ but not in $V'$.
-    - **Design Motivation**: Suppose a token "abc" in the large vocabulary is absent from $V'$, but "a", "b", and "c" are all present. In the new model $M'$, the probability previously assigned to generating "abc" in a single step must be "redistributed" across the multi-step sequence of first generating "a", then "b", then "c".
-    - **Key theorem**: The paper proves that this redistribution can be performed exactly and losslessly—provided the target vocabulary $V'$ satisfies a coverage condition, a unique equivalent next-token distribution exists.
-
-2. **Exact Decomposition of Conditional Probabilities**:
-
-    - Probabilities of split tokens must be exactly redistributed across multi-step generation paths.
-    - **Key challenge**: At each intermediate step, the model must not only redistribute the probability of the split token, but also correctly account for other tokens that originally began with the same sub-sequence.
-    - The paper derives an exact recursive decomposition formula that preserves all probabilistic properties (normalization, non-negativity).
-
-3. **Maximal Common Vocabulary (MCV)**:
-
-    - **Core concept**: Given vocabularies $V_1, V_2, \ldots, V_n$ of multiple models, the "maximal common vocabulary" is defined as the largest common subset across all vocabularies in a well-defined sense.
-    - **Application**: All models can be losslessly reduced to this common vocabulary and then ensembled within the same output space.
-    - **Design Motivation**: The maximal common vocabulary minimizes information loss by retaining the largest set of tokens that all models can directly represent.
-
-### Loss & Training
-- **No training required**: The key contribution of this paper is a theoretical framework and exact probability transformation formulas, with no additional training involved.
-- Vocabulary reduction is a **deterministic inference-time algorithm**, requiring no parameter learning.
-- The computational cost of the transformation is primarily determined by the probability redistribution for split tokens, with complexity proportional to the number of removed tokens and their maximum length.
-
-## Key Experimental Results
-
-### Main Results
-The framework's effectiveness is validated on model ensembling tasks using language models with different tokenization schemes.
-
-| Dataset | Metric | Ours | Direct Ensemble (same vocab required) | Single Model |
-|--------|------|---------|-------------------|--------|
-| Language Modeling Benchmarks | Perplexity | Equivalent to theoretical optimum | Same vocabulary only | Higher PPL |
-| Text Generation Quality | Multiple metrics | Effective improvement | Infeasible (cross-vocabulary) | Baseline |
-
-### Ablation Study
-
-| Configuration | Key Metric | Notes |
-|------|---------|------|
-| Original model | PPL_orig | Baseline perplexity |
-| Reduced model | PPL_reduced | Exactly matches original (losslessness verified) |
-| Reduced to minimal vocabulary | Generation speed decreases | More tokens needed, but probabilities are exact |
-| Cross-vocabulary ensemble | PPL decreases | Validates effective ensembling of models with different tokenization |
-
-### Key Findings
-- **Completely lossless**: The string-level probabilities of the reduced model are identical to those of the original, confirming the theoretical guarantee.
-- **Cross-vocabulary ensembling is feasible**: By reducing to a common vocabulary, successful ensembling of models with different tokenization schemes is demonstrated.
-- **Ensembling is highly effective**: Even with different tokenization schemes, ensembled performance substantially surpasses individual models.
-- **Computational overhead is manageable**: Although a smaller vocabulary requires more steps to generate the same text, the additional overhead for probability computation itself is small.
-
-## Highlights & Insights
-- **Significant theoretical contribution**: This is an elegant theoretical framework providing a complete mathematical solution to the vocabulary reduction problem—with existence, uniqueness, and constructive proofs.
-- **Breaking the vocabulary barrier**: Models with different tokenization schemes have long been considered "incomparable"; this paper lifts that restriction.
-- **No additional training required**: Vocabulary reduction is a purely probabilistic transformation with no need for additional training data or computation.
-- **Opens new research directions**: Model ensembling is only one application; the framework can also be applied to cross-model knowledge distillation, unified evaluation, and more.
-- **High mathematical rigor**: The theorems and proofs in the paper are complete, meeting the high standards expected of theoretical work.
-
-## Limitations & Future Work
-- **Reduced generation efficiency**: Reducing to a smaller vocabulary requires more token steps to generate the same length of text, increasing inference latency.
-- **Limited experimental scale**: Validation is primarily conducted on medium-sized models; effects and efficiency on larger-scale models (70B+) require further experiments.
-- **Restricted to auto-regressive models**: Whether the framework can be extended to non-auto-regressive models (e.g., BERT-class) or other generation paradigms (e.g., diffusion models) remains unexplored.
-- **Practical deployment challenges**: In production systems, multi-step inference after reduction may require specialized decoding algorithm support.
-- **Common vocabulary may be very small**: If two models' tokenization schemes differ substantially, the common vocabulary may degenerate to the character level, leading to very low efficiency.
-
-## Related Work & Insights
-- **Tokenization research**: BPE (Sennrich et al., 2016), SentencePiece, Unigram LM, and others each have their own trade-offs; this paper provides a unified solution for cross-tokenization collaboration.
-- **Model ensembling**: Traditional ensembling requires a shared output space; this work breaks that constraint.
-- **Knowledge distillation**: The framework can be used to "translate" knowledge from a large model to a smaller model with a different vocabulary.
-- **Probabilistic perspective**: The paper is fundamentally concerned with establishing exact mappings between different probability spaces, with connections to measure-theoretic transformations in probability theory.
-- **Inspiration**: Could a "universal vocabulary" be designed such that all models can be efficiently reduced to it? This may become a theoretical foundation for future tokenization standardization.
-
-## Rating
-- Novelty: ⭐⭐⭐⭐⭐
-- Experimental Thoroughness: ⭐⭐⭐⭐
-- Writing Quality: ⭐⭐⭐⭐
-- Value: ⭐⭐⭐⭐
-
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
@@ -271,10 +168,10 @@ The framework's effectiveness is validated on model ensembling tasks using langu
 ## Related Papers
 
 - [\[ICLR 2026\] Steering Language Models with Weight Arithmetic](steering_language_models_with_weight_arithmetic.md)
-- [\[ICML 2026\] Consistent Diffusion Language Models](../../ICML2026/llm_pretraining/consistent_diffusion_language_models.md)
 - [\[ACL 2026\] Compact Example-Based Explanations for Language Models](../../ACL2026/llm_pretraining/compact_example-based_explanations_for_language_models.md)
-- [\[ICML 2026\] Names Don't Matter: Symbol-Invariant Transformer for Open-Vocabulary Learning](../../ICML2026/llm_pretraining/names_dont_matter_symbol-invariant_transformer_for_open-vocabulary_learning.md)
-- [\[ICML 2026\] Edit-Based Refinement for Parallel Masked Diffusion Language Models](../../ICML2026/llm_pretraining/edit-based_refinement_for_parallel_masked_diffusion_language_models.md)
+- [\[NeurIPS 2025\] The Curse of Depth in Large Language Models](../../NeurIPS2025/llm_pretraining/the_curse_of_depth_in_large_language_models.md)
+- [\[NeurIPS 2025\] Scaling Embedding Layers in Language Models](../../NeurIPS2025/llm_pretraining/scaling_embedding_layers_in_language_models.md)
+- [\[NeurIPS 2025\] Scalable Fingerprinting of Large Language Models](../../NeurIPS2025/llm_pretraining/scalable_fingerprinting_of_large_language_models.md)
 
 </div>
 

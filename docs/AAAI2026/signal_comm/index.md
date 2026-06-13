@@ -2,20 +2,21 @@
 title: >-
   AAAI2026 Signal & Communications Papers · 3 Notes
 description: >-
-  3 AAAI2026 papers in the Signal & Communications area, covering Face & Gaze and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  3 AAAI2026 papers in the Signal & Communications area, covering Multimodal/VLM, Domain Adaptation and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "AAAI2026"
   - "Signal & Communications"
   - "AI paper notes"
   - "paper summaries"
-  - "Face & Gaze"
+  - "Multimodal/VLM"
+  - "Domain Adaptation"
 item_list:
+  - u: "balancing_multimodal_domain_generalization_via_gradient_modulation_and_projectio/"
+    t: "Balancing Multimodal Domain Generalization via Gradient Modulation and Projection"
   - u: "task_aware_modulation_using_representation_learning_for_upsaling_of_terrestrial_/"
     t: "Task Aware Modulation Using Representation Learning for Upscaling of Terrestrial Carbon Fluxes"
   - u: "text-guided_channel_perturbation_and_pretrained_knowledge_integration_for_unifie/"
     t: "Text-Guided Channel Perturbation and Pretrained Knowledge Integration for Unified Multi-Modality Image Fusion"
-  - u: "toward_gaze_target_detection_of_young_autistic_children/"
-    t: "Toward Gaze Target Detection in Young Autistic Children"
 item_total: 3
 ---
 
@@ -24,7 +25,11 @@ item_total: 3
 
 **🤖 AAAI2026** · **3** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (2)](../../ICML2026/signal_comm/index.md) · [📷 CVPR2026 (5)](../../CVPR2026/signal_comm/index.md) · [🔬 ICLR2026 (8)](../../ICLR2026/signal_comm/index.md) · [🧠 NeurIPS2025 (12)](../../NeurIPS2025/signal_comm/index.md) · [📹 ICCV2025 (3)](../../ICCV2025/signal_comm/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (2)](../../ICML2026/signal_comm/index.md) · [📷 CVPR2026 (5)](../../CVPR2026/signal_comm/index.md) · [🔬 ICLR2026 (2)](../../ICLR2026/signal_comm/index.md) · [🧠 NeurIPS2025 (5)](../../NeurIPS2025/signal_comm/index.md) · [📹 ICCV2025 (3)](../../ICCV2025/signal_comm/index.md)
+
+**[Balancing Multimodal Domain Generalization via Gradient Modulation and Projection](balancing_multimodal_domain_generalization_via_gradient_modulation_and_projectio.md)**
+
+:   This paper proposes a Gradient Modulation Projection (GMP) strategy that addresses inter-modality optimization imbalance and inter-task gradient conflicts in multimodal domain generalization (MMDG) through two components: Inter-modality Gradient Decoupled Modulation (IGDM) and Conflict-Adaptive Gradient Projection (CAGP), achieving state-of-the-art performance on multiple benchmarks.
 
 **[Task Aware Modulation Using Representation Learning for Upscaling of Terrestrial Carbon Fluxes](task_aware_modulation_using_representation_learning_for_upsaling_of_terrestrial_.md)**
 
@@ -33,7 +38,3 @@ item_total: 3
 **[Text-Guided Channel Perturbation and Pretrained Knowledge Integration for Unified Multi-Modality Image Fusion](text-guided_channel_perturbation_and_pretrained_knowledge_integration_for_unifie.md)**
 
 :   This paper proposes UP-Fusion, a unified multi-modality image fusion framework comprising three modules — Semantic-aware Channel Pruning Module (SCPM), Geometric Affine Modulation (GAM), and CLIP Text-guided Channel Perturbation Module (TCPM) — that employs a single set of weights (trained solely on infrared-visible data) to simultaneously handle both IVIF and medical image fusion tasks, achieving state-of-the-art performance on both.
-
-**[Toward Gaze Target Detection in Young Autistic Children](toward_gaze_target_detection_of_young_autistic_children.md)**
-
-:   To address the severe class imbalance in gaze target detection for autistic children—where face-directed gaze accounts for only 6.6% of samples—this paper proposes the Socially Aware Coarse-to-Fine (SACF) framework. A fine-tuned Qwen2.5-VL serves as a social-context-aware gate that routes inputs to either a socially aware or a socially agnostic expert model. Evaluated on the newly introduced AGT dataset, the framework substantially improves face gaze detection performance (Face L2 reduced by 13.9% on Sharingan; F1 improved from 0.753 to 0.761).

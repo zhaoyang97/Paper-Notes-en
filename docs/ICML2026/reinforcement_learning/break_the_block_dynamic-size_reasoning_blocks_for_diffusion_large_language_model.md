@@ -2,68 +2,71 @@
 title: >-
   [Paper Note] Break the Block: Dynamic-size Reasoning Blocks for Diffusion Large Language Models via Monotonic Entropy Descent with Reinforcement Learning
 description: >-
-  [ICML 2026][Reinforcement Learning][dLLM] Addressing the issue where "fixed block sizes" disrupt the logical reasoning chain in semi-autoregressive generation of Diffusion Large Language Models (dLLM)…
+  [ICML 2026][Reinforcement Learning][dLLM] To address the issue where "fixed block size" in diffusion language models (dLLM) during semi-autoregressive generation disrupts the logical chain of reasoning…
 tags:
   - "ICML 2026"
   - "Reinforcement Learning"
   - "dLLM"
   - "GRPO"
-  - "Dynamic Block Size"
-  - "Monotonic Entropy Descent"
-  - "Reasoning Consistency"
+  - "dynamic block size"
+  - "monotonic entropy descent"
+  - "reasoning consistency"
 date: 2026-05-08
-content_hash: 6aacecf099211702
+content_hash: be04d177fd5a50a9
 ---
 
 # Break the Block: Dynamic-size Reasoning Blocks for Diffusion Large Language Models via Monotonic Entropy Descent with Reinforcement Learning
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.02263](https://arxiv.org/abs/2605.02263)  
-**Code**: https://github.com/YanJiangJerry/Block-R1 (Available)  
+**Code**: https://github.com/YanJiangJerry/Block-R1 (available)  
 **Area**: LLM Reasoning / Diffusion Language Models / Reinforcement Learning  
-**Keywords**: dLLM, GRPO, Dynamic Block Size, Monotonic Entropy Descent, Reasoning Consistency
+**Keywords**: dLLM, GRPO, dynamic block size, monotonic entropy descent, reasoning consistency
 
 ## TL;DR
-Addressing the issue where "fixed block sizes" disrupt the logical reasoning chain in semi-autoregressive generation of Diffusion Large Language Models (dLLM), this paper proposes b1. By learning an end-of-step indicator token via RL to generate dynamic-length blocks and utilizing a "block-level Monotonic Entropy Descent (MED) reward" to drive coherent reasoning, b1 serves as a plug-and-play reward component for existing dLLM RL frameworks (Diffu-GRPO/GDPO/d1/wd1). It improves wd1 from 39.45 to 58.98 on the Countdown task.
+To address the issue where "fixed block size" in diffusion language models (dLLM) during semi-autoregressive generation disrupts the logical chain of reasoning, this paper proposes b1: using RL to learn a block-ending indicator token for generating dynamic-length blocks, and introducing a "block-level monotonic entropy descent (MED) reward" to drive coherent reasoning. This reward can be plugged into existing dLLM RL frameworks (Diffu-GRPO/GDPO/d1/wd1) as a plug-and-play component, boosting wd1 on Countdown from 39.45 to 58.98.
 
 ## Background & Motivation
 
-**Background**: Diffusion language models (dLLM) such as LLaDA, d1, and wd1 adopt a "semi-autoregressive + intra-block parallel denoising" generation paradigm. The sequence to be generated is partitioned into multiple blocks of fixed size $c$, where generation proceeds sequentially between blocks and in $T$ parallel denoising steps within a block. Based on this paradigm, recent RL post-training methods (Diffu-GRPO, GDPO, wd1) have begun pushing dLLMs toward mathematical reasoning by mimicking GRPO.
+**Background**: Diffusion language models (dLLM) such as LLaDA, d1, and wd1 adopt a "semi-autoregressive + intra-block parallel denoising" generation paradigm: the target sequence is split into multiple fixed-size blocks of $c$ tokens, with blocks generated sequentially from left to right, and $T$ denoising steps performed in parallel within each block. Building on this paradigm, recent RL post-training methods (Diffu-GRPO, GDPO, wd1) have begun to push dLLM towards mathematical reasoning by mimicking GRPO.
 
-**Limitations of Prior Work**: Fixed block sizes lead to two observed problems: (i) The optimal block size varies significantly across different datasets (Sudoku, Countdown, GSM8K, MATH500), making a "one-size-fits-all" approach suboptimal. (ii) Rigid boundaries often split a complete operation—an example provided shows "$71-66$" split between Block 3 and Block 4, resulting in high-entropy (uncertainty) anomalous tokens and subsequent calculation errors.
+**Limitations of Prior Work**: Fixed block size leads to two observed issues: (i) The optimal block size varies greatly across datasets (Sudoku/Countdown/GSM8K/MATH500), making a "one-size-fits-all" approach suboptimal; (ii) Even within the same problem, rigid boundaries often split a complete operation—an example given is splitting "$71-66$" between Block 3 and Block 4, resulting in anomalously high-entropy (uncertainty) tokens and calculation errors.
 
-**Key Challenge**: There is a conflict between the parallel block assumption of dLLMs (intra-block token conditional independence) and the nature of reasoning as a continuous semantic sequence of logical steps. Fixed boundaries almost inevitably sever the middle of a reasoning step.
+**Key Challenge**: There is a conflict between the dLLM's parallel block assumption (intra-block token conditional independence) and the fact that reasoning is a sequence of logically connected semantic steps—fixed boundaries almost inevitably cut through the middle of reasoning steps.
 
-**Goal**: To enable the dLLM to learn to partition blocks at "semantically complete reasoning steps" while ensuring that the overall uncertainty of the reasoning process decreases progressively.
+**Goal**: Enable dLLM to learn to segment blocks at "semantically complete reasoning steps," while ensuring that the overall uncertainty of the reasoning process decreases progressively.
 
-**Key Insight**: The authors empirically discovered a pattern in LLaDA, d1, and wd1: the "block-level average entropy" of correct reasoning traces descends monotonically along the generation direction, while incorrect reasoning shows fluctuations or increases. This suggests that "block entropy monotonic descent" is a proxy indicator for reasoning correctness.
+**Key Insight**: Empirically, it is observed that for correct reasoning traces in LLaDA/d1/wd1, the "block-level average entropy" decreases monotonically along the generation direction, while incorrect reasoning shows oscillation or increase. This suggests that "monotonic block entropy descent" is a proxy indicator for reasoning correctness.
 
-**Core Idea**: Transform "where to switch blocks" into a learnable decision. By introducing an end-of-step indicator token and using RL with a dense "adjacent block entropy descent" reward, the model is taught to initiate a new block at appropriate positions. This aligns block boundaries with reasoning steps and maintains monotonic entropy descent throughout the reasoning process.
+**Core Idea**: Make "where to switch blocks" learnable—introduce an end-of-step indicator token, and use RL with a "neighboring block entropy descent" dense reward to teach the model to start new blocks at appropriate positions, aligning block boundaries with reasoning steps and maintaining monotonic entropy descent throughout the reasoning process.
 
 ## Method
 
 ### Overall Architecture
-b1 is a reward/decoding plugin implemented on top of existing dLLM GRPO frameworks, consisting of three components: (1) Dynamic block construction—inserting a special token $\tau_{\text{end}}$ during reasoning; its appearance closes the current block and starts a new one. (2) MED training objective—using a proxy reward $R_{\text{ent}}$ for "adjacent block entropy descent" plus an indicator reward $R_{\text{ind}}$ to "encourage multi-step reasoning," weighted with the task reward $R_{\text{task}}$ for Diffu-GRPO. (3) Inference alignment—decoding follows the training procedure, dynamically adjusting the start of the next block upon encountering $\tau_{\text{end}}$.
+b1 is a reward/decoding plugin added to the existing dLLM GRPO framework, consisting of three components: (1) Dynamic block construction—insert a special token $\tau_{\text{end}}$ during reasoning generation; each occurrence closes the current block and starts a new one; (2) MED training objective—use a "neighboring block entropy descent" proxy reward $R_{\text{ent}}$ and an "encourage multi-step reasoning" indicator reward $R_{\text{ind}}$, combine them with the task reward $R_{\text{task}}$ (weighted sum), and feed into Diffu-GRPO; (3) Reasoning alignment—during decoding, strictly follow the training process, dynamically adjusting the next block's starting point upon encountering $\tau_{\text{end}}$.
 
 ### Key Designs
 
-1.  **Dynamic Block Boundaries + Indicator Token Reward $R_{\text{ind}}$**:
-    - **Function**: Allows the model to determine the length $d$ of the $k$-th block so that each block covers exactly one complete reasoning step instead of a fixed $c$ tokens.
-    - **Mechanism**: Adds a block-end token $\tau_{\text{end}}$ (defaulted as `\block`) to the vocabulary. During the denoising of the $k$-th block, if $\hat{\mathbf{x}}_{t}[S_{k-1}+j]=\tau_{\text{end}}$ appears, $j$ is taken as the dynamic size $d$ of the current block, and the next block resumes after $\tau_{\text{end}}$. To prevent the model from generating too few blocks, a dense log-form reward is used: $R_{\text{ind}}=1$ if the total blocks $K \geq K_{\text{target}}$, otherwise $R_{\text{ind}}=\log(K+1)/\log(K_{\text{target}}+1)$ (default $K_{\text{target}}=10$).
-    - **Design Motivation**: Promotes "block partition positions" to RL decision variables rather than manually set hyperparameters; the log reward avoids collapse into a few large blocks.
+1. **Dynamic Block Boundaries + Indicator Token Reward $R_{\text{ind}}$**:
 
-2.  **Block-level Entropy + MED Proxy Reward $R_{\text{ent}}$**:
-    - **Function**: Directly drives the monotonic descent of average entropy across adjacent blocks, indirectly compelling more confident and coherent reasoning traces.
-    - **Mechanism**: At the final diffusion step $t^{*}$ of a block, Shannon entropy is calculated for each token and averaged to obtain the block entropy $\mathcal{H}(\mathbf{b}_{k}^{d})$. While the ideal goal is to maximize the negative Spearman rank correlation coefficient $r_{\text{SCC}}$ of the entropy sequence, Spearman is a global rank with high variance. The authors relax this into an "adjacent pair descent ratio": $R_{\text{ent}}=\frac{1}{K-1}\sum_{k=2}^{K}\mathbb{I}(\mathcal{H}(\mathbf{b}_{k-1}^{d})>\mathcal{H}(\mathbf{b}_{k}^{d}))$. The appendix proves that maximizing this relaxation shares the same global optimum as the Spearman coefficient (strict monotonic descent).
-    - **Design Motivation**: Decomposes a sparse global ranking signal into $K-1$ independent pairwise comparisons, providing dense, low-variance gradients while retaining the optimal solution of strict monotonic descent.
+    - **Function**: Allow the model to decide the length $d$ of the $k$-th block, so each block covers exactly one complete reasoning step, rather than a fixed $c$ tokens.
+    - **Mechanism**: Add a block-ending token $\tau_{\text{end}}$ (default implementation: string `\block`) to the vocabulary. During denoising of the $k$-th block, once $\hat{\mathbf{x}}_{t}[S_{k-1}+j]=\tau_{\text{end}}$ appears, $j$ is taken as the dynamic block size $d$, and the next block continues after $\tau_{\text{end}}$. To prevent the model from lazily generating only 1–2 blocks, the "number of blocks" is made into a log-form dense reward: when total blocks $K\geq K_{\text{target}}$, $R_{\text{ind}}=1$; otherwise, $R_{\text{ind}}=\log(K+1)/\log(K_{\text{target}}+1)$ (default $K_{\text{target}}=10$).
+    - **Design Motivation**: Elevate "block segmentation position" to an RL decision variable, rather than a manually set hyperparameter; use log reward to avoid collapse into a few large blocks.
 
-3.  **Plug-and-play GRPO Total Reward**:
-    - **Function**: Decouples b1 from specific dLLM RL algorithms, allowing integration with Diffu-GRPO, GDPO, d1, or wd1.
-    - **Mechanism**: Total reward $R_{\text{total}}=\alpha R_{\text{ent}}+\beta R_{\text{ind}}+\gamma R_{\text{task}}$, with default $\alpha=\beta=\gamma=1$. This is integrated into the base algorithm's diffusion-GRPO objective (policy ratio approximated via $\exp(\phi^{\pi_{\theta}}-\phi^{\pi_{\text{old}}})$). Complexity is $\mathcal{O}(K\cdot T\cdot L+L)$, which is negligible compared to the $O(L^{2})$ of self-attention.
-    - **Design Motivation**: Ensures b1 contributes block-level signals without binding to a specific algorithm, facilitating stacking with state-of-the-art methods like wd1.
+2. **Block-level Entropy + MED Proxy Reward $R_{\text{ent}}$**:
+
+    - **Function**: Directly drive "monotonic decrease of average entropy between neighboring blocks," indirectly yielding more confident and coherent reasoning traces.
+    - **Mechanism**: At the diffusion step $t^{*}$ when a block ends, compute the Shannon entropy for each token and average within the block to obtain block entropy $\mathcal{H}(\mathbf{b}_{k}^{d})$. The ideal goal is to maximize the negative Spearman rank correlation coefficient $r_{\text{SCC}}$ of the block entropy sequence, but Spearman is a global ranking with high reward variance and unstable training. The authors relax this to the "proportion of decreasing adjacent pairs": $R_{\text{ent}}=\frac{1}{K-1}\sum_{k=2}^{K}\mathbb{I}(\mathcal{H}(\mathbf{b}_{k-1}^{d})>\mathcal{H}(\mathbf{b}_{k}^{d}))$, and prove in the appendix that maximizing this relaxed term has the same global optimum as maximizing the Spearman coefficient (i.e., strict monotonic descent).
+    - **Design Motivation**: Decompose the sparse global ranking signal into $K-1$ independent pairwise comparisons, providing dense, low-variance gradients while retaining the optimal solution of "strict monotonic descent."
+
+3. **Plug-and-Play GRPO Total Reward**:
+
+    - **Function**: Ensure b1 is not tied to a specific dLLM RL algorithm—Diffu-GRPO, GDPO, d1, wd1 can all directly incorporate it.
+    - **Mechanism**: Total reward $R_{\text{total}}=\alpha R_{\text{ent}}+\beta R_{\text{ind}}+\gamma R_{\text{task}}$, with default $\alpha=\beta=\gamma=1$ (no tuning needed), and plug into the base diffusion-GRPO objective (policy ratio still approximated by $\exp(\phi^{\pi_{\theta}}-\phi^{\pi_{\text{old}}})$). Complexity is $\mathcal{O}(K\cdot T\cdot L+L)$, negligible compared to self-attention's $O(L^{2})$.
+    - **Design Motivation**: Decouple b1 from the RL algorithm, contributing only "block-level" signals, making it easy to stack with existing SOTA methods (wd1).
 
 ### Loss & Training
-The training dataset is identical to d1/wd1: RL post-training of LLaDA-8B-Instruct on GSM8K, MATH, Sudoku, and Countdown. Sequence lengths are 256/512. Hardware: 4×AMD Mi300x with batch=12 per GPU. All weights $\alpha, \beta, \gamma$ are fixed at 1.
+The training dataset is identical to d1/wd1: LLaDA-8B-Instruct is RL post-trained on GSM8K/MATH/Sudoku/Countdown, sequence lengths 256/512, 4×AMD Mi300x, batch=12 per GPU. All weights $\alpha,\beta,\gamma$ are fixed at 1.
 
 ## Key Experimental Results
 
@@ -79,11 +82,11 @@ The training dataset is identical to d1/wd1: RL post-training of LLaDA-8B-Instru
 | + wd1 | 23.14 | 39.45 | 78.85 | 34.20 |
 | + wd1 + b1 | **27.29** (+4.15) | **58.98** (+19.53) | **80.82** (+1.97) | **37.40** (+3.20) |
 
-Maximum Gain: wd1 + b1 increases Countdown-256 performance by +19.53 points.
+Maximum single-point improvement: wd1 + b1 achieves +19.53 points on Countdown-256.
 
 ### Ablation Study
 
-| Configuration (Based on wd1) | Countdown | GSM8K | MATH500 |
+| Configuration (based on wd1) | Countdown | GSM8K | MATH500 |
 |---|---|---|---|
 | Fixed-size (wd1) | 39.45 | 78.85 | 34.20 |
 | b1 w/o MED ($R_{\text{ent}}$) | 44.14 | 79.23 | 35.00 |
@@ -91,31 +94,31 @@ Maximum Gain: wd1 + b1 increases Countdown-256 performance by +19.53 points.
 | b1 (Full) | **58.98** | **80.82** | **37.40** |
 
 ### Key Findings
-- Removing the MED reward causes Countdown performance to drop from 58.98 to 44.14, confirming that "monotonic entropy descent" is the core signal of b1. Removing the indicator reward also results in a drop, showing that dynamic blocks themselves contribute significantly.
-- Binning reasoning samples by $r_{\text{SCC}}$ shows that accuracy rises monotonically with $r_{\text{SCC}}$. wd1+b1 raises the $r_{\text{MED}}$ (proportion of positive $r_{\text{SCC}}$) on Countdown from 91.41% to 97.66%, corresponding to an accuracy increase from 39.45 to 58.98—the first quantitative link between entropy descent and reasoning correctness.
-- Training step time increases from 1.31s to 1.68s for wd1, with throughput slightly decreasing from 28.57 to 27.03 tok/s. This overhead is negligible given the average accuracy improvement from 43.91 to 51.12.
-- AdaBlock-dLLM (a training-free method that truncates at newlines during inference) shows no gain in 0-shot replication, proving that dynamic block capability must be learned and cannot rely solely on rules.
+- Removing the MED reward causes Countdown to drop from 58.98 to 44.14, confirming that "entropy monotonic descent" is the core signal of b1; removing the indicator reward also causes a moderate drop, indicating that dynamic blocks themselves contribute significantly.
+- When reasoning samples are bucketed by $r_{\text{SCC}}$, accuracy increases monotonically with $r_{\text{SCC}}$; wd1+b1 raises $r_{\text{MED}}$ (proportion of positive $r_{\text{SCC}}$) on Countdown from 91.41% to 97.66%, with accuracy rising from 39.45 to 58.98—providing the first quantitative correspondence between "entropy monotonic descent" and reasoning correctness.
+- Training step time increases from 1.31s/step (wd1) to 1.68s/step, throughput drops from 28.57→27.03 tok/s, both nearly negligible; average accuracy rises from 43.91→51.12, yielding excellent cost-effectiveness.
+- AdaBlock-dLLM (a rule-based method that segments at newlines during inference) does not improve scores under 0-shot reproduction, proving that "dynamic blocks" must be learned, not just rule-based.
 
 ## Highlights & Insights
-- Transforming "block size," previously treated as a hyperparameter, into a learnable policy paired with a theoretically grounded reward ($R_{\text{ent}}$) is a rare dual design in dLLM post-training that modifies both decoding and rewards.
-- "Block entropy monotonic descent" is a novel observable signal—it essentially migrates the intuition of "token entropy descent implies higher confidence" from AR models to block granularity and is task-agnostic as it does not require ground truth.
-- Designed as a pure plug-and-play reward plugin, it reuses the infrastructure of the base GRPO framework with almost zero code intrusion. This paradigm can be extended to coherence optimization in any segmented generation models (e.g., block-diffusion image models).
+- Transforms "block size," long treated as a hyperparameter, into a learnable policy, paired with a theoretically grounded reward (optimality of $R_{\text{ent}}$ matches global Spearman), representing a rare dual innovation in dLLM post-training that modifies both decoding and reward.
+- "Block entropy monotonic descent" is a novel, observable signal—essentially transferring the intuition of "token entropy descent → more confidence" from AR models to the block level, and it is task-agnostic, requiring no ground truth.
+- Designed as a pure plug-and-play reward plugin, reusing all base GRPO infrastructure with almost zero code intrusion; this "signal-only, algorithm-agnostic" paradigm can be directly transferred to coherence optimization in any segmented generation model (e.g., block-diffusion image models).
 
 ## Limitations & Future Work
-- Evaluation is currently focused on mathematical/logic problems; more complex open-ended generation (code, long document summarization) has not yet been verified for the "entropy monotonic descent" hypothesis.
-- The default $K_{\text{target}}=10$ is empirical; long reasoning tasks might require an adaptive target for the number of blocks.
-- Block entropy relies on a mean-field assumption (intra-block token independence). Since tokens within a reasoning step have strong dependencies, future work could introduce structured entropy estimation (e.g., conditional/joint entropy) to improve signal quality.
+- Current evaluation focuses on math/logic tasks; it remains untested whether the "entropy monotonic descent" assumption holds for more complex open-ended generation (code, long document summarization).
+- The default $K_{\text{target}}=10$ is empirically set; longer reasoning tasks may require adaptive target block numbers.
+- Block entropy uses a mean-field assumption (intra-block token independence), but in reality, tokens within a reasoning step are strongly dependent; future work could introduce structured entropy estimation (e.g., conditional/joint entropy) to further improve signal quality.
 
 ## Related Work & Insights
-- **vs. d1 / wd1**: Uses the same base RL framework, but d1/wd1 still use fixed blocks. b1 stacks MED and indicator rewards on top of them, pushing wd1 from 39.45 to 58.98 on Countdown, proving dynamic blocks are an orthogonal dimension of improvement to better GRPO objectives.
-- **vs. AdaBlock-dLLM**: AdaBlock truncates at high-confidence newlines during inference without training. b1 learns block-partitioning within the weights via direct RL optimization, significantly outperforming AdaBlock in 0-shot settings.
-- **vs. StableMoE / Dynamic Computation Routing**: The idea of using RL to learn generation boundaries in b1 could be cross-applied to MoE problems like dynamic top-k, where decision hyperparameters can be made learnable.
+- **vs d1 / wd1**: The underlying RL framework is the same, but d1/wd1 still use fixed blocks; b1 adds MED+indicator rewards on top, boosting wd1 from 39.45 to 58.98 (Countdown), proving that "dynamic blocks" are an orthogonal improvement to "better GRPO objectives."
+- **vs AdaBlock-dLLM**: AdaBlock segments at high-confidence newlines during inference, requiring no training; b1 learns segmentation ability into the weights and directly optimizes via RL, significantly outperforming AdaBlock in 0-shot settings.
+- **vs StableMoE / Dynamic Computation Routing**: The RL-learned boundary generation approach of b1 can inspire similar "learnable decision hyperparameters" in MoE dynamic top-k and related problems.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ First to make "block size" an RL-learnable variable in dLLMs and provide the "monotonic entropy descent" signal.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Systematically verified across 4 datasets and 4 base RL algorithms with ablation, correlation analysis, and efficiency comparisons, though lacking open-ended generation tasks.
-- Writing Quality: ⭐⭐⭐⭐ Clear narrative (Observation → Hypothesis → Method → Theory → Verification); the token entropy visualization in Figures 2/3 is highly persuasive.
-- Value: ⭐⭐⭐⭐⭐ Plug-and-play, nearly zero-cost addition to the strongest current dLLM RL algorithms, yielding +19.5 points on Countdown; directly advances dLLM reasoning research.
+- Novelty: ⭐⭐⭐⭐⭐ First to make "block size" an RL-learnable variable on dLLM, and proposes the novel and provable "block entropy monotonic descent" optimization signal.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Systematic validation on 4 datasets and 4 RL base algorithms, with ablation, $r_{\text{SCC}}$ correlation analysis, and efficiency comparison, but lacks open-ended generation tasks.
+- Writing Quality: ⭐⭐⭐⭐ Clear storyline (observation → hypothesis → method → theory → validation), with highly convincing token entropy visualizations in Figures 2/3.
+- Value: ⭐⭐⭐⭐⭐ Plug-and-play, almost zero-cost stacking on top of existing SOTA dLLM RL algorithms, +19.5 points on Countdown, directly advancing dLLM reasoning research.
 
 <!-- RELATED:START -->
 

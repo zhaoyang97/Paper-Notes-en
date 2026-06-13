@@ -2,9 +2,10 @@
 title: >-
   [Paper Note] How Does Bayesian Sampling Help Membership Inference Attacks?
 description: >-
-  [ICML 2026][Membership Inference Attack] This paper proposes BMIA, which expands a single reference model into a "virtual model family" using a Laplace posterior. By estimating the conditional score distribution of each…
+  [ICML 2026][AI Safety][Membership Inference Attack] This paper proposes BMIA, which expands a single reference model into a "virtual model family" using a Laplace posterior. By estimating the conditional score distributi…
 tags:
   - "ICML 2026"
+  - "AI Safety"
   - "Membership Inference Attack"
   - "Bayesian Sampling"
   - "Laplace Approximation"
@@ -135,11 +136,11 @@ Evaluations are conducted on CIFAR-10/100, ImageNet, Texas-100, Purchase-100, an
 
 ## Related Papers
 
-- [\[ICCV 2025\] Membership Inference Attacks with False Discovery Rate Control](../../ICCV2025/others/membership_inference_attacks_with_false_discovery_rate_control.md)
+- [\[ICCV 2025\] Membership Inference Attacks with False Discovery Rate Control](../../ICCV2025/ai_safety/membership_inference_attacks_with_false_discovery_rate_control.md)
 - [\[ICML 2026\] Singular Bayesian Neural Networks](singular_bayesian_neural_networks.md)
-- [\[ICML 2026\] SORA: Free Second-Order Attacks in Fast Adversarial Training](sora_free_second-order_attacks_in_fast_adversarial_training.md)
-- [\[ICML 2026\] Partitioning for Intrinsic Model Inversion Resistance in Collaborative Inference](partitioning_for_intrinsic_model_inversion_resistance_in_collaborative_inference.md)
-- [\[ICML 2026\] Amortized Simulation-Based Inference in Generalized Bayes via Neural Posterior Estimation](amortized_simulation-based_inference_in_generalized_bayes_via_neural_posterior_e.md)
+- [\[ICML 2026\] How Hard Can It Be? Hardness-Aware Multi-Objective Unlearning](how_hard_can_it_be_hardness-aware_multi-objective_unlearning.md)
+- [\[AAAI 2026\] Reference Recommendation based Membership Inference Attack against Hybrid-based Recommender Systems](../../AAAI2026/ai_safety/reference_recommendation_based_membership_inference_attack_against_hybrid-based_.md)
+- [\[AAAI 2026\] Privacy Auditing of Multi-Domain Graph Pre-Trained Model under Membership Inference Attack](../../AAAI2026/ai_safety/privacy_auditing_of_multi-domain_graph_pre-trained_model_under_membership_infere.md)
 
 </div>
 

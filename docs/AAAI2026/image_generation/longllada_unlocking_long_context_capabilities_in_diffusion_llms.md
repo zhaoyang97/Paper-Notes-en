@@ -185,11 +185,11 @@ This paper establishes a systematic comparative framework between diffusion LLMs
 
 ## Related Papers
 
-- [\[ICCV 2025\] Long-Context State-Space Video World Models](../../ICCV2025/image_generation/long-context_state-space_video_world_models.md)
 - [\[ICCV 2025\] Less-to-More Generalization: Unlocking More Controllability by In-Context Generation](../../ICCV2025/image_generation/less-to-more_generalization_unlocking_more_controllability_by_in-context_generat.md)
-- [\[AAAI 2026\] DiffA: Large Language Diffusion Models Can Listen and Understand](diffa_large_language_diffusion_models_can_listen_and_understand.md)
 - [\[AAAI 2026\] LongT2IBench: A Benchmark for Evaluating Long Text-to-Image Generation with Graph-structured Annotations](longt2ibench_a_benchmark_for_evaluating_long_text-to-image_generation_with_graph.md)
 - [\[ICCV 2025\] SliderSpace: Decomposing the Visual Capabilities of Diffusion Models](../../ICCV2025/image_generation/sliderspace_decomposing_the_visual_capabilities_of_diffusion_models.md)
+- [\[ICML 2026\] Esoteric Language Models: A Family of Any-Order Diffusion LLMs](../../ICML2026/image_generation/esoteric_language_models_a_family_of_any-order_diffusion_llms.md)
+- [\[ICML 2026\] A Systematic Investigation of RL-Jailbreaking in LLMs](../../ICML2026/image_generation/a_systematic_investigation_of_rl-jailbreaking_in_llms.md)
 
 </div>
 

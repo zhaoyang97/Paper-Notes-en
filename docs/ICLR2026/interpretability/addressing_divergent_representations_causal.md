@@ -2,9 +2,10 @@
 title: >-
   [Paper Note] Addressing Divergent Representations from Causal Interventions on Neural Networks
 description: >-
-  [ICLR 2026 Oral][causal intervention] This paper systematically demonstrates that causal interventions (activation patching, DAS, SAEs…
+  [ICLR 2026 Oral][Interpretability][causal intervention] This paper systematically demonstrates that causal interventions (activation patching, DAS, SAEs…
 tags:
   - "ICLR 2026 Oral"
+  - "Interpretability"
   - "causal intervention"
   - "mechanistic interpretability"
   - "representational divergence"
@@ -171,11 +172,11 @@ CL loss reduces EMD by approximately 4.5×, with a slight improvement in IIA. In
 
 ## Related Papers
 
-- [\[ICML 2026\] CORE-MTL: Rethinking Gradient Balancing via Causal Orthogonal Representations](../../ICML2026/others/core-mtl_rethinking_gradient_balancing_via_causal_orthogonal_representations.md)
-- [\[NeurIPS 2025\] SAD Neural Networks: Divergent Gradient Flows and Asymptotic Optimality via o-minimal Structures](../../NeurIPS2025/others/sad_neural_networks_divergent_gradient_flows_and_asymptotic_optimality_via_o-min.md)
-- [\[AAAI 2026\] Learning Fair Representations with Kolmogorov-Arnold Networks](../../AAAI2026/others/learning_fair_representations_with_kolmogorov-arnold_networks.md)
-- [\[ICLR 2026\] Exchangeability of GNN Representations with Applications to Graph Retrieval](exchangeability_gnn_representations.md)
-- [\[ICLR 2026\] Entropic Confinement and Mode Connectivity in Overparameterized Neural Networks](entropic_confinement_and_mode_connectivity_in_overparameterized_neural_networks.md)
+- [\[ICLR 2026\] Modal Logical Neural Networks for Financial AI](modal_logical_neural_networks_for_financial_ai.md)
+- [\[ICLR 2026\] SALVE: Sparse Autoencoder-Latent Vector Editing for Mechanistic Control of Neural Networks](salve_sparse_autoencoder-latent_vector_editing_for_mechanistic_control_of_neural.md)
+- [\[ICLR 2026\] Causal Interpretation of Neural Network Computations with Contribution Decomposition](causal_interpretation_of_neural_network_computations_with_contribution_decomposi.md)
+- [\[ICML 2026\] Verified SHAP: Provable Bounds for Exact Shapley Values in Neural Networks](../../ICML2026/interpretability/verified_shap_provable_bounds_for_exact_shapley_values_of_neural_networks.md)
+- [\[ICLR 2026\] Provably Explaining Neural Additive Models](provably_explaining_neural_additive_models.md)
 
 </div>
 

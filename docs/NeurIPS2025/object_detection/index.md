@@ -1,27 +1,33 @@
 ---
 title: >-
-  NeurIPS2025 Object Detection Papers · 17 Notes
+  NeurIPS2025 Object Detection Papers · 26 Notes
 description: >-
-  17 NeurIPS2025 papers in the Object Detection area, covering Object Detection, Layout & Composition, Agents, Dynamic Scenes, Image Restoration, Compression and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  26 NeurIPS2025 papers in the Object Detection area, covering Anomaly Detection, Object Detection, Adversarial Robustness, Time-Series Forecasting and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "NeurIPS2025"
   - "Object Detection"
   - "AI paper notes"
   - "paper summaries"
-  - "Layout & Composition"
-  - "Agents"
-  - "Dynamic Scenes"
-  - "Image Restoration"
-  - "Compression"
+  - "Anomaly Detection"
+  - "Adversarial Robustness"
+  - "Time-Series Forecasting"
 item_list:
+  - u: "adpretrain_advancing_industrial_anomaly_detection_via_anomaly_representation_pre/"
+    t: "ADPretrain: Advancing Industrial Anomaly Detection via Anomaly Representation Pretraining"
+  - u: "an_evidence-based_post-hoc_adjustment_framework_for_anomaly_detection_under_data/"
+    t: "EPHAD: An Evidence-Based Post-Hoc Adjustment Framework for Anomaly Detection Under Data Contamination"
   - u: "ascent_fails_to_forget/"
     t: "Ascent Fails to Forget"
   - u: "automated_detection_of_visual_attribute_reliance_with_a_self-reflective_agent/"
     t: "Automated Detection of Visual Attribute Reliance with a Self-Reflective Agent"
+  - u: "autoscidact_automated_scientific_discovery_through_contrastive_embedding_and_hyp/"
+    t: "AutoSciDACT: Automated Scientific Discovery through Contrastive Embedding and Hypothesis Testing"
   - u: "burstdeflicker_a_benchmark_dataset_for_flicker_removal_in_dynamic_scenes/"
     t: "BurstDeflicker: A Benchmark Dataset for Flicker Removal in Dynamic Scenes"
   - u: "cq-dino_mitigating_gradient_dilution_via_category_queries_for_vast_vocabulary_ob/"
     t: "CQ-DINO: Mitigating Gradient Dilution via Category Queries for Vast Vocabulary Object Detection"
+  - u: "dcad-2000_a_multilingual_dataset_across_2000_languages_with_data_cleaning_as_ano/"
+    t: "DCAD-2000: A Multilingual Dataset across 2000+ Languages with Data Cleaning as Anomaly Detection"
   - u: "detectiumfire_a_comprehensive_multi-modal_dataset_bridging_vision_and_language_f/"
     t: "DetectiumFire: A Comprehensive Multi-modal Dataset Bridging Vision and Language for Fire Understanding"
   - u: "detree_detecting_human-ai_collaborative_texts_via_tree-structured_hierarchical_r/"
@@ -30,35 +36,53 @@ item_list:
     t: "DitHub: A Modular Framework for Incremental Open-Vocabulary Object Detection"
   - u: "flexevent_towards_flexible_event-frame_object_detection_at_varying_operational_f/"
     t: "FlexEvent: Towards Flexible Event-Frame Object Detection at Varying Operational Frequencies"
-  - u: "generalizable_insights_for_graph_transformers_in_theory_and_practice/"
-    t: "Generalizable Insights for Graph Transformers in Theory and Practice"
-  - u: "instanceassemble_layoutaware_image_generation_via_instance_a/"
-    t: "InstanceAssemble: Layout-Aware Image Generation via Instance Assembling Attention"
   - u: "lr_yolo_lipschitz_continuity_image_restoration_object_detection/"
     t: "Delving into Cascaded Instability: A Lipschitz Continuity View on Image Restoration and Object Detection Synergy"
   - u: "mstar_box-free_multi-query_scene_text_retrieval_with_attention_recycling/"
     t: "MSTAR: Box-Free Multi-Query Scene Text Retrieval with Attention Recycling"
-  - u: "overlaybench_a_benchmark_for_layout-to-image_generation_with_dense_overlaps/"
-    t: "OverLayBench: A Benchmark for Layout-to-Image Generation with Dense Overlaps"
+  - u: "multimodal_generative_flows_for_lhc_jets/"
+    t: "Multimodal Generative Flows for LHC Jets"
+  - u: "normal-abnormal_guided_generalist_anomaly_detection/"
+    t: "Normal-Abnormal Guided Generalist Anomaly Detection"
   - u: "recon-gs_continuum-preserved_gaussian_streaming_for_fast_and_compact_reconstruct/"
     t: "ReCon-GS: Continuum-Preserved Gaussian Streaming for Fast and Compact Reconstruction"
   - u: "recon_region-controllable_data_augmentation_with_rectification_and_alignment_for/"
     t: "ReCon: Region-Controllable Data Augmentation with Rectification and Alignment for Object Detection"
+  - u: "scalable_explainable_and_provably_robust_anomaly_detection_with_one-step_flow_ma/"
+    t: "Scalable, Explainable and Provably Robust Anomaly Detection with One-Step Flow Matching"
+  - u: "scatterad_temporal-topological_scattering_mechanism_for_time_series_anomaly_dete/"
+    t: "ScatterAD: Temporal-Topological Scattering Mechanism for Time Series Anomaly Detection"
+  - u: "semi-supervised_graph_anomaly_detection_via_robust_homophily_learning/"
+    t: "Semi-supervised Graph Anomaly Detection via Robust Homophily Learning"
+  - u: "spatio-temporal_graphs_beyond_grids_benchmark_for_maritime_anomaly_detection/"
+    t: "Spatio-Temporal Graphs Beyond Grids: Benchmark for Maritime Anomaly Detection"
+  - u: "stealthy_yet_effective_distribution-preserving_backdoor_attacks_on_graph_classif/"
+    t: "Stealthy Yet Effective: Distribution-Preserving Backdoor Attacks on Graph Classification"
+  - u: "structured_temporal_causality_for_interpretable_multivariate_time_series_anomaly/"
+    t: "Structured Temporal Causality for Interpretable Multivariate Time Series Anomaly Detection"
   - u: "test-time_adaptive_object_detection_with_foundation_model/"
     t: "Test-Time Adaptive Object Detection with Foundation Model"
   - u: "video-rag_visually-aligned_retrieval-augmented_long_video_comprehension/"
     t: "Video-RAG: Visually-aligned Retrieval-Augmented Long Video Comprehension"
-item_total: 17
+item_total: 26
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->
 # 🎯 Object Detection
 
-**🧠 NeurIPS2025** · **17** paper notes
+**🧠 NeurIPS2025** · **26** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (7)](../../ICML2026/object_detection/index.md) · [📷 CVPR2026 (40)](../../CVPR2026/object_detection/index.md) · [🔬 ICLR2026 (9)](../../ICLR2026/object_detection/index.md) · [🤖 AAAI2026 (15)](../../AAAI2026/object_detection/index.md) · [📹 ICCV2025 (27)](../../ICCV2025/object_detection/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (6)](../../ICML2026/object_detection/index.md) · [📷 CVPR2026 (55)](../../CVPR2026/object_detection/index.md) · [🔬 ICLR2026 (14)](../../ICLR2026/object_detection/index.md) · [🤖 AAAI2026 (29)](../../AAAI2026/object_detection/index.md) · [📹 ICCV2025 (27)](../../ICCV2025/object_detection/index.md)
 
-🔥 **Top topics:** Object Detection ×6 · Layout & Composition ×2
+🔥 **Top topics:** Anomaly Detection ×9 · Object Detection ×6 · Adversarial Robustness ×3 · Time-Series Forecasting ×2
+
+**[ADPretrain: Advancing Industrial Anomaly Detection via Anomaly Representation Pretraining](adpretrain_advancing_industrial_anomaly_detection_via_anomaly_representation_pre.md)**
+
+:   This work presents ADPretrain, the first dedicated representation pretraining framework for industrial anomaly detection. By learning residual feature representations via angle-oriented and norm-oriented contrastive losses on the large-scale RealIAD dataset, the pretrained features consistently improve five mainstream embedding-based AD methods across five datasets and five backbone networks when substituted for the original features.
+
+**[EPHAD: An Evidence-Based Post-Hoc Adjustment Framework for Anomaly Detection Under Data Contamination](an_evidence-based_post-hoc_adjustment_framework_for_anomaly_detection_under_data.md)**
+
+:   EPHAD proposes a test-time post-processing framework that corrects the output of anomaly detection models trained on contaminated data via Bayesian-style fusion with external evidence (e.g., CLIP, LOF) through exponential tilting. The framework requires no access to the training pipeline and consistently improves detection performance of contaminated models across 8 visual and 26 tabular AD datasets.
 
 **[Ascent Fails to Forget](ascent_fails_to_forget.md)**
 
@@ -68,6 +92,10 @@ item_total: 17
 
 :   This paper proposes a self-reflective agent framework that automatically detects attribute reliance in visual models through an iterative hypothesis generation–testing–verification–reflection loop (e.g., CLIP recognizing "teacher" via classroom backgrounds, YOLOv8 detecting pedestrians via crosswalks). Evaluated on a benchmark of 130 models with injected known attribute dependencies, self-reflection is shown to significantly improve detection accuracy.
 
+**[AutoSciDACT: Automated Scientific Discovery through Contrastive Embedding and Hypothesis Testing](autoscidact_automated_scientific_discovery_through_contrastive_embedding_and_hyp.md)**
+
+:   This work proposes the AutoSciDACT pipeline, which first employs supervised contrastive learning to compress high-dimensional scientific data into a 4-dimensional embedding space, then applies NPLM (New Physics Learning Machine) likelihood-ratio testing to statistically quantify distributional deviations in the embedding space. The pipeline achieves $\geq 3\sigma$ discovery at signal injection ratios of $\leq 1\%$ across astronomical, particle physics, pathology, image, and synthetic datasets.
+
 **[BurstDeflicker: A Benchmark Dataset for Flicker Removal in Dynamic Scenes](burstdeflicker_a_benchmark_dataset_for_flicker_removal_in_dynamic_scenes.md)**
 
 :   This paper introduces BurstDeflicker, the first large-scale benchmark dataset for multi-frame flicker removal (MFFR), comprising three complementary subsets — Retinex-based synthetic data, real-world static data, and green-screen dynamic data — systematically addressing the core bottleneck of obtaining aligned flickering–clean image pairs in dynamic scenes.
@@ -75,6 +103,10 @@ item_total: 17
 **[CQ-DINO: Mitigating Gradient Dilution via Category Queries for Vast Vocabulary Object Detection](cq-dino_mitigating_gradient_dilution_via_category_queries_for_vast_vocabulary_ob.md)**
 
 :   To address positive gradient dilution and hard-negative gradient dilution in large-vocabulary (>10K category) object detection, this paper proposes CQ-DINO: replacing the classification head with learnable category queries and using image-guided Top-K category selection to reduce the negative space by 100×. CQ-DINO surpasses the previous SOTA by 2.1% AP on V3Det (13,204 categories) while remaining competitive on COCO.
+
+**[DCAD-2000: A Multilingual Dataset across 2000+ Languages with Data Cleaning as Anomaly Detection](dcad-2000_a_multilingual_dataset_across_2000_languages_with_data_cleaning_as_ano.md)**
+
+:   This work constructs DCAD-2000, a multilingual dataset covering 2,282 languages and 46.72 TB of text, and proposes a language-agnostic data cleaning framework that reformulates cleaning as anomaly detection. The framework extracts 8-dimensional statistical features per document and applies Isolation Forest for dynamic noise filtering. Effectiveness is validated on multiple multilingual benchmarks, with particularly notable gains on low-resource languages.
 
 **[DetectiumFire: A Comprehensive Multi-modal Dataset Bridging Vision and Language for Fire Understanding](detectiumfire_a_comprehensive_multi-modal_dataset_bridging_vision_and_language_f.md)**
 
@@ -92,14 +124,6 @@ item_total: 17
 
 :   This paper proposes FlexEvent, a framework that achieves flexible object detection with event cameras across varying operational frequencies through an adaptive event-frame fusion module (FlexFuse) and a frequency-adaptive fine-tuning mechanism (FlexTune). The framework maintains robust performance in the range of 20Hz to 180Hz, significantly outperforming existing methods.
 
-**[Generalizable Insights for Graph Transformers in Theory and Practice](generalizable_insights_for_graph_transformers_in_theory_and_practice.md)**
-
-:   This paper proposes the Generalized-Distance Transformer (GDT), a graph Transformer architecture based on standard attention (requiring no modifications to the attention mechanism). It theoretically proves that GDT's expressiveness is equivalent to the GD-WL algorithm, and through large-scale experiments covering 8 million graphs and 270 million tokens, establishes for the first time a fine-grained empirical hierarchy of positional encoding (PE) expressiveness. Under a few-shot transfer setting, GDT surpasses state-of-the-art methods without any fine-tuning.
-
-**[InstanceAssemble: Layout-Aware Image Generation via Instance Assembling Attention](instanceassemble_layoutaware_image_generation_via_instance_a.md)**
-
-:   This paper proposes InstanceAssemble, which injects an "instance assembling attention" mechanism into the Transformer blocks of DiT-based T2I models (SD3 and Flux). By performing independent cross-attention between image tokens within each bounding box region and their corresponding layout hidden states, the method achieves precise instance-level spatial control. A lightweight LoRA adaptation strategy maintains compatibility with existing style LoRAs. The paper also introduces the DenseLayout benchmark (5K images / 90K instances) and a multi-dimensional Layout Grounding Score (LGS) evaluation metric.
-
 **[Delving into Cascaded Instability: A Lipschitz Continuity View on Image Restoration and Object Detection Synergy](lr_yolo_lipschitz_continuity_image_restoration_object_detection.md)**
 
 :   This paper analyzes the root cause of instability in cascaded image restoration and object detection frameworks from a Lipschitz continuity perspective. It identifies an order-of-magnitude smoothness gap between the two networks and proposes LR-YOLO, which integrates the restoration task into the detection backbone's feature learning to regularize the detector's Lipschitz constant, consistently improving detection stability on dehazing and low-light enhancement benchmarks.
@@ -108,9 +132,13 @@ item_total: 17
 
 :   This paper presents MSTAR, the first multi-query scene text retrieval method that requires no bounding box annotations. Through Progressive Vision Embedding (PVE), MSTAR progressively shifts attention from salient to non-salient regions. Combined with style-aware instructions and a Multi-Instance Matching (MIM) module, it achieves unified retrieval across four query types—word, phrase, combined, and semantic—and introduces MQTR, the first multi-query text retrieval benchmark.
 
-**[OverLayBench: A Benchmark for Layout-to-Image Generation with Dense Overlaps](overlaybench_a_benchmark_for_layout-to-image_generation_with_dense_overlaps.md)**
+**[Multimodal Generative Flows for LHC Jets](multimodal_generative_flows_for_lhc_jets.md)**
 
-:   OverLayBench introduces the first Layout-to-Image benchmark focused on dense overlap scenarios (4,052 samples + OverLayScore difficulty metric), revealing that SOTA methods suffer severe degradation in mIoU from 71% to 54% under complex overlaps, and proposes Amodal Mask supervision that achieves a 15.9% improvement in overlap IoU.
+:   This paper proposes a Transformer-based multimodal flow matching framework (MMF) that jointly models continuous flow matching and continuous-time Markov jump bridges, enabling unified generation of particle kinematics (continuous) and flavor quantum numbers (discrete) in LHC jets.
+
+**[Normal-Abnormal Guided Generalist Anomaly Detection](normal-abnormal_guided_generalist_anomaly_detection.md)**
+
+:   NAGL is the first framework to incorporate mixed normal-and-abnormal reference samples into Generalist Anomaly Detection (GAD). Through two attention modules—Residual Mining (RM) and Anomaly Feature Learning (AFL)—it learns transferable anomaly patterns in residual space, substantially outperforming normal-reference-only methods in cross-domain scenarios with as few as 1 anomaly reference sample.
 
 **[ReCon-GS: Continuum-Preserved Gaussian Streaming for Fast and Compact Reconstruction](recon-gs_continuum-preserved_gaussian_streaming_for_fast_and_compact_reconstruct.md)**
 
@@ -119,6 +147,30 @@ item_total: 17
 **[ReCon: Region-Controllable Data Augmentation with Rectification and Alignment for Object Detection](recon_region-controllable_data_augmentation_with_rectification_and_alignment_for.md)**
 
 :   ReCon proposes a training-free, region-controllable data augmentation framework that enhances the detection data quality of existing structure-controllable generative models through Region-Guided Rectification (RGR) and Region-Aligned Cross-Attention (RACA), achieving 35.5 mAP on COCO—surpassing GeoDiffusion, which requires fine-tuning.
+
+**[Scalable, Explainable and Provably Robust Anomaly Detection with One-Step Flow Matching](scalable_explainable_and_provably_robust_anomaly_detection_with_one-step_flow_ma.md)**
+
+:   This paper proposes TCCM (Time-Conditioned Contraction Matching), a flow matching-inspired semi-supervised anomaly detection method for tabular data. By learning a time-conditioned velocity field that contracts normal data toward the origin, TCCM computes anomaly scores in a single forward pass, achieving top AUROC and AUPRC rankings across 47 ADBench datasets while running 1573× faster than DTE.
+
+**[ScatterAD: Temporal-Topological Scattering Mechanism for Time Series Anomaly Detection](scatterad_temporal-topological_scattering_mechanism_for_time_series_anomaly_dete.md)**
+
+:   This paper proposes *scattering* as a novel inductive bias for anomaly detection — anomalous samples are more dispersed than normal samples in the high-dimensional representation space. A dual-encoder architecture (temporal + topological) combined with hyperspherical scattering center constraints and contrastive fusion is used to learn joint temporal-topological representations, achieving best performance in 15/24 settings across 6 industrial IoT datasets.
+
+**[Semi-supervised Graph Anomaly Detection via Robust Homophily Learning](semi-supervised_graph_anomaly_detection_via_robust_homophily_learning.md)**
+
+:   This paper proposes RHO (Robust Homophily Learning), which addresses the homophily diversity of normal nodes in semi-supervised graph anomaly detection via an adaptive frequency response filter (AdaFreq) and a Graph Normality Alignment (GNA) module, outperforming existing methods on 8 real-world datasets.
+
+**[Spatio-Temporal Graphs Beyond Grids: Benchmark for Maritime Anomaly Detection](spatio-temporal_graphs_beyond_grids_benchmark_for_maritime_anomaly_detection.md)**
+
+:   This paper proposes the first graph anomaly detection benchmark for non-grid spatio-temporal systems in the maritime domain. It extends the OMTAD dataset to support node/edge/graph-level anomaly detection, and plans to employ LLM agents for trajectory synthesis and anomaly injection.
+
+**[Stealthy Yet Effective: Distribution-Preserving Backdoor Attacks on Graph Classification](stealthy_yet_effective_distribution-preserving_backdoor_attacks_on_graph_classif.md)**
+
+:   This paper proposes DPSBA, a clean-label backdoor attack framework for graph classification that generates in-distribution trigger subgraphs via adversarial training while suppressing both structural and semantic anomalies, achieving high attack success rates with significantly improved stealthiness.
+
+**[Structured Temporal Causality for Interpretable Multivariate Time Series Anomaly Detection](structured_temporal_causality_for_interpretable_multivariate_time_series_anomaly.md)**
+
+:   This paper proposes OracleAD, a framework that learns causal embeddings for each variable (via LSTM encoding and attention pooling) and constructs a Stable Latent Structure (SLS) to model inter-variable relationships under normal conditions. A dual scoring mechanism combining prediction error and SLS deviation enables interpretable multivariate time series anomaly detection and root cause localization.
 
 **[Test-Time Adaptive Object Detection with Foundation Model](test-time_adaptive_object_detection_with_foundation_model.md)**
 

@@ -2,9 +2,10 @@
 title: >-
   [Paper Note] CORE-MTL: Rethinking Gradient Balancing via Causal Orthogonal Representations
 description: >-
-  [ICML 2026][Multi-task learning] The authors reattribute the root cause of "negative transfer" in multi-task learning from "gradient conflict" to the "entanglement of semantics and noise within shared representations." T…
+  [ICML 2026][Optimization / Multi-Task Learning / Causal Representation Learning][Multi-task learning] The authors reattribute the root cause of "negative transfer" in multi-task learning from "gradient conflict" to the "…
 tags:
   - "ICML 2026"
+  - "Optimization / Multi-Task Learning / Causal Representation Learning"
   - "Multi-task learning"
   - "Gradient conflict"
   - "Causal disentanglement"
@@ -132,11 +133,11 @@ Scalability on CelebA (Tasks K=10→40): CORE-MTL training time was near-constan
 
 ## Related Papers
 
-- [\[ICLR 2026\] Addressing Divergent Representations from Causal Interventions on Neural Networks](../../ICLR2026/others/addressing_divergent_representations_causal.md)
-- [\[ICML 2026\] Continual Learning of Domain-Invariant Representations](continual_learning_of_domain-invariant_representations.md)
-- [\[ICML 2026\] Rethinking FID Through the Geometry of the Reference Dataset](rethinking_fid_through_the_geometry_of_the_reference_dataset.md)
-- [\[ICML 2026\] Rethinking Evaluation Paradigms in IBP-based Certified Training](rethinking_evaluation_paradigms_in_ibp-based_certified_training.md)
-- [\[CVPR 2026\] Rethinking SNN Online Training and Deployment: Gradient-Coherent Learning via Hybrid-Driven LIF Model](../../CVPR2026/others/rethinking_snn_online_training_and_deployment_grad.md)
+- [\[ICLR 2026\] Function Spaces Without Kernels: Learning Compact Hilbert Space Representations](../../ICLR2026/learning_theory/function_spaces_without_kernels_learning_compact_hilbert_space_representations.md)
+- [\[ICML 2026\] Correcting Split Selection in Online Decision Trees via Anytime-Valid Inference](correcting_split_selection_in_online_decision_trees_via_anytime-valid_inference.md)
+- [\[ICML 2026\] MMD-Balls as Credal Sets: A PAC-Bayesian Framework for Epistemic Uncertainty in Test-Time Adaptation](mmd-balls_as_credal_sets_a_pac-bayesian_framework_for_epistemic_uncertainty_in_t.md)
+- [\[ICML 2026\] Semi-Supervised Noise Adaptation: Transferring Knowledge from Noise Domain](semi-supervised_noise_adaptation_transferring_knowledge_from_noise_domain.md)
+- [\[ICML 2026\] Simple Algorithms for Bad Triangle Transversals with Applications to Correlation Clustering](simple_algorithms_for_bad_triangle_transversals_with_applications_to_correlation.md)
 
 </div>
 

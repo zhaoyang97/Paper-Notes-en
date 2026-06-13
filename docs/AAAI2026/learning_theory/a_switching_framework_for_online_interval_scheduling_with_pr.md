@@ -2,9 +2,10 @@
 title: >-
   [Paper Note] A Switching Framework for Online Interval Scheduling with Predictions
 description: >-
-  [AAAI 2026][Online interval scheduling] For the irrevocable online interval scheduling problem, this paper proposes the SemiTrust-and-Switch framework and the SmoothMerge randomized algorithm. By switching between or ble…
+  [AAAI 2026][Online Algorithms / Learning-Augmented Algorithms / Scheduling Optimization][Online interval scheduling] For the irrevocable online interval scheduling problem…
 tags:
   - "AAAI 2026"
+  - "Online Algorithms / Learning-Augmented Algorithms / Scheduling Optimization"
   - "Online interval scheduling"
   - "learning-augmented algorithms"
   - "competitive ratio"
@@ -124,11 +125,11 @@ The trust-and-switch paradigm is transferable to other online maximization probl
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Non-Clairvoyant Scheduling with Progress Bars](../../NeurIPS2025/others/non-clairvoyant_scheduling_with_progress_bars.md)
-- [\[AAAI 2026\] Enhancing Control Policy Smoothness by Aligning Actions with Predictions from Preceding States](enhancing_control_policy_smoothness_by_aligning_actions_with_predictions_from_pr.md)
-- [\[ICML 2026\] Parsimonious Learning-Augmented Online Metric Matching](../../ICML2026/others/parsimonious_learning-augmented_online_metric_matching.md)
-- [\[AAAI 2026\] DeToNATION: Decoupled Torch Network-Aware Training on Interlinked Online Nodes](detonation_decoupled_torch_network-aware_training_on_interlinked_online_nodes.md)
-- [\[NeurIPS 2025\] Learning-Augmented Online Bipartite Fractional Matching](../../NeurIPS2025/others/learning-augmented_online_bipartite_fractional_matching.md)
+- [\[NeurIPS 2025\] Non-Clairvoyant Scheduling with Progress Bars](../../NeurIPS2025/learning_theory/non-clairvoyant_scheduling_with_progress_bars.md)
+- [\[ICML 2026\] Parsimonious Learning-Augmented Online Metric Matching](../../ICML2026/learning_theory/parsimonious_learning-augmented_online_metric_matching.md)
+- [\[AAAI 2026\] Streaming Generated Gaussian Process Experts for Online Learning and Control: Extended Version](streaming_generated_gaussian_process_experts_for_online_learning_and_control_ext.md)
+- [\[NeurIPS 2025\] Learning-Augmented Online Bipartite Fractional Matching](../../NeurIPS2025/learning_theory/learning-augmented_online_bipartite_fractional_matching.md)
+- [\[ICML 2026\] MMD-Balls as Credal Sets: A PAC-Bayesian Framework for Epistemic Uncertainty in Test-Time Adaptation](../../ICML2026/learning_theory/mmd-balls_as_credal_sets_a_pac-bayesian_framework_for_epistemic_uncertainty_in_t.md)
 
 </div>
 

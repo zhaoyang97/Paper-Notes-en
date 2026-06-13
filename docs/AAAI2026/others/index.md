@@ -1,8 +1,8 @@
 ---
 title: >-
-  AAAI2026 Others Papers · 116 Notes
+  AAAI2026 Others Papers · 124 Notes
 description: >-
-  116 AAAI2026 papers in the Others area, covering Agents, Adversarial Robustness, Diffusion Models, Anomaly Detection, Layout & Composition, Alignment/RLHF and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  124 AAAI2026 papers in the Others area, covering Agents, Adversarial Robustness, Diffusion Models, Layout & Composition, Alignment/RLHF, Face & Gaze and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "AAAI2026"
   - "Others"
@@ -11,14 +11,12 @@ tags:
   - "Agents"
   - "Adversarial Robustness"
   - "Diffusion Models"
-  - "Anomaly Detection"
   - "Layout & Composition"
   - "Alignment/RLHF"
+  - "Face & Gaze"
 item_list:
   - u: "a_fast_heuristic_search_approach_for_energy-optimal_profile_/"
     t: "A Fast Heuristic Search Approach for Energy-Optimal Profile Routing for Electric Vehicles"
-  - u: "a_graph-theoretical_perspective_on_law_design_for_multiagent_systems/"
-    t: "A Graph-Theoretical Perspective on Law Design for Multiagent Systems"
   - u: "a_new_strategy_for_verifying_reach-avoid_specifications_in_neural_feedback_syste/"
     t: "A New Strategy for Verifying Reach-Avoid Specifications in Neural Feedback Systems"
   - u: "a_phase_transition_for_opinion_dynamics_with_competing_biase/"
@@ -37,6 +35,8 @@ item_list:
     t: "Automated Reproducibility Has a Problem Statement Problem"
   - u: "autonomous_concept_drift_threshold_determination/"
     t: "Autonomous Concept Drift Threshold Determination"
+  - u: "axis-aligned_document_dewarping/"
+    t: "Axis-Aligned Document Dewarping"
   - u: "bandit_learning_in_housing_markets/"
     t: "Bandit Learning in Housing Markets"
   - u: "bayesian_network_structural_consensus_via_greedy_min-cut_analysis/"
@@ -49,16 +49,14 @@ item_list:
     t: "Bipartite Mode Matching for Vision Training Set Search from a Hierarchical Data Server"
   - u: "boosting_adversarial_transferability_via_ensemble_non-attention/"
     t: "Boosting Adversarial Transferability via Ensemble Non-Attention"
+  - u: "break_the_tie_learning_cluster-customized_category_relationships_for_categorical/"
+    t: "Break the Tie: Learning Cluster-Customized Category Relationships for Categorical Data Clustering"
   - u: "bridging_the_skills_gap_a_course_model_for_modern_generative_ai_education/"
     t: "Bridging the Skills Gap: A Course Model for Modern Generative AI Education"
   - u: "cash_flow_underwriting_with_bank_transaction_data_advancing_msme_financial_inclu/"
     t: "Cash Flow Underwriting with Bank Transaction Data: Advancing MSME Financial Inclusion in Malaysia"
-  - u: "casl_curvature-augmented_self-supervised_learning_for_3d_anomaly_detection/"
-    t: "CASL: Curvature-Augmented Self-supervised Learning for 3D Anomaly Detection"
   - u: "cat-net_a_cross-attention_tone_network_for_cross-subject_eeg-emg_fusion_tone_dec/"
     t: "CAT-Net: A Cross-Attention Tone Network for Cross-Subject EEG-EMG Fusion Tone Decoding"
-  - u: "cellstream_dynamical_optimal_transport_informed_embeddings_for_reconstructing_ce/"
-    t: "CellStream: Dynamical Optimal Transport Informed Embeddings for Reconstructing Cellular Trajectories from Snapshots Data"
   - u: "center-outward_q-dominance_a_sample-computable_proxy_for_strong_stochastic_domin/"
     t: "Center-Outward q-Dominance: A Sample-Computable Proxy for Strong Stochastic Dominance in Multi-Objective Optimisation"
   - u: "certified_branch-and-bound_maxsat_solving_extended_version/"
@@ -67,33 +65,31 @@ item_list:
     t: "Certified but Fooled! Breaking Certified Defences with Ghost Certificates"
   - u: "clinician-in-the-loop_smart_home_system_to_detect_urinary_tract_infection_flare-/"
     t: "Clinician-in-the-Loop Smart Home System to Detect Urinary Tract Infection Flare-Ups via Uncertainty-Aware Decision Support"
-  - u: "comptrack_information_bottleneckguided_lowrank_dynamic_token_compres/"
-    t: "CompTrack: Information Bottleneck-Guided Low-Rank Dynamic Token Compression for Point Cloud Tracking"
   - u: "controllable_financial_market_generation_with_diffusion_guided_meta_agent/"
     t: "Controllable Financial Market Generation with Diffusion Guided Meta Agent"
   - u: "cost-free_neutrality_for_the_river_method/"
     t: "Cost-Free Neutrality for the River Method"
   - u: "data_complexity_of_querying_description_logic_knowledge_bases_under_cost-based_s/"
     t: "Data Complexity of Querying Description Logic Knowledge Bases under Cost-Based Semantics"
-item_total: 116
+  - u: "dcmatch_unsupervised_multi-shape_matching_with_dual-level_consistency/"
+    t: "DcMatch: Unsupervised Multi-Shape Matching with Dual-Level Consistency"
+  - u: "deadline-aware_energy-efficient_control_of_domestic_immersion_hot_water_heater/"
+    t: "Deadline-Aware, Energy-Efficient Control of Domestic Immersion Hot Water Heaters"
+item_total: 124
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->
 # 📂 Others
 
-**🤖 AAAI2026** · **116** paper notes
+**🤖 AAAI2026** · **124** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (69)](../../ICML2026/others/index.md) · [💬 ACL2026 (1)](../../ACL2026/others/index.md) · [📷 CVPR2026 (39)](../../CVPR2026/others/index.md) · [🔬 ICLR2026 (62)](../../ICLR2026/others/index.md) · [🧠 NeurIPS2025 (118)](../../NeurIPS2025/others/index.md) · [📹 ICCV2025 (39)](../../ICCV2025/others/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (63)](../../ICML2026/others/index.md) · [💬 ACL2026 (1)](../../ACL2026/others/index.md) · [📷 CVPR2026 (32)](../../CVPR2026/others/index.md) · [🔬 ICLR2026 (73)](../../ICLR2026/others/index.md) · [🧠 NeurIPS2025 (126)](../../NeurIPS2025/others/index.md) · [📹 ICCV2025 (39)](../../ICCV2025/others/index.md)
 
-🔥 **Top topics:** Agents ×8 · Adversarial Robustness ×5 · Diffusion Models ×4 · Anomaly Detection ×2 · Layout & Composition ×2
+🔥 **Top topics:** Agents ×9 · Adversarial Robustness ×5 · Diffusion Models ×4 · Layout & Composition ×3 · Alignment/RLHF ×3
 
 **[A Fast Heuristic Search Approach for Energy-Optimal Profile Routing for Electric Vehicles](a_fast_heuristic_search_approach_for_energy-optimal_profile_.md)**
 
 :   This paper proposes Pr-A*, a label-setting method based on multi-objective A* search for efficiently solving energy-optimal profile routing for electric vehicles (EVs) when the initial state of charge (SoC) is unknown. By using profile dominance pruning, the method avoids the complex profile merge operations required by traditional approaches, achieving performance close to standard A* with known initial SoC on large-scale road networks.
-
-**[A Graph-Theoretical Perspective on Law Design for Multiagent Systems](a_graph-theoretical_perspective_on_law_design_for_multiagent_systems.md)**
-
-:   This paper studies the law design problem in multiagent systems from a graph-theoretical perspective, reducing the minimization of useful laws and gap-free laws to the vertex cover problem on hypergraphs, proving NP-hardness, and providing approximation algorithms.
 
 **[A New Strategy for Verifying Reach-Avoid Specifications in Neural Feedback Systems](a_new_strategy_for_verifying_reach-avoid_specifications_in_neural_feedback_syste.md)**
 
@@ -131,6 +127,10 @@ item_total: 116
 
 :   This paper proves that no fixed threshold can be optimal across all scenarios and that dynamic thresholds strictly dominate static ones. It proposes the DTD algorithm, which initiates a three-model comparison phase upon drift detection signal trigger and adaptively adjusts the detection threshold based on candidate model performance.
 
+**[Axis-Aligned Document Dewarping](axis-aligned_document_dewarping.md)**
+
+:   This paper proposes to exploit the inherent axis-aligned geometric property of planar documents, systematically incorporating axis-alignment constraints across training, inference, and evaluation stages, achieving state-of-the-art document rectification performance and introducing a new evaluation metric, AAD.
+
 **[Bandit Learning in Housing Markets](bandit_learning_in_housing_markets.md)**
 
 :   This paper is the first to introduce the multi-armed bandit (MAB) framework into housing markets (one-sided matching markets). It defines regret based on the core solution concept, proposes a decentralized ETC algorithm and a centralized UCB algorithm, proves a decentralized regret upper bound of $\mathcal{O}(N\log T / \Delta_{\min}^2)$ along with a matching lower bound, and establishes order-optimality.
@@ -155,6 +155,10 @@ item_total: 116
 
 :   This paper proposes NAMEA (Non-Attention Meta Ensemble Attack), which for the first time exploits the non-attention areas of ensemble models to integrate transferable information from both CNNs and ViTs, and combines meta-learning gradient optimization to achieve an average improvement of 15.0% and 9.6% over the state-of-the-art methods AdaEA and SMER, respectively, on cross-architecture adversarial transferability.
 
+**[Break the Tie: Learning Cluster-Customized Category Relationships for Categorical Data Clustering](break_the_tie_learning_cluster-customized_category_relationships_for_categorical.md)**
+
+:   This paper proposes DISC, a method that learns cluster-customized category relationships (rather than a globally uniform distance) for each cluster. Through joint optimization of relationship trees and cluster assignments, DISC achieves an average rank of 1.25 across 12 datasets, substantially outperforming the previous best method (average rank 5.21).
+
 **[Bridging the Skills Gap: A Course Model for Modern Generative AI Education](bridging_the_skills_gap_a_course_model_for_modern_generative_ai_education.md)**
 
 :   This paper proposes a generative AI application course model for undergraduate and graduate computer science students. A mixed-methods survey demonstrates that the course is effective in bridging the generative AI skills gap between industry and academia, with students broadly rating it as valuable and impactful.
@@ -163,17 +167,9 @@ item_total: 116
 
 :   This paper proposes an end-to-end cash flow underwriting workflow based on bank transaction data and constructs the first Malaysian MSME bank statement dataset (611 loan records). It demonstrates that features derived from bank transactions improve a logistic regression model's AUROC from 0.672 to 0.850 compared to traditional application information alone, significantly enhancing credit assessment capability for MSMEs lacking credit histories.
 
-**[CASL: Curvature-Augmented Self-supervised Learning for 3D Anomaly Detection](casl_curvature-augmented_self-supervised_learning_for_3d_anomaly_detection.md)**
-
-:   This work identifies point cloud curvature as a powerful cue for anomaly detection and proposes CASL, a curvature-augmented self-supervised learning framework. By guiding coordinate reconstruction with multi-scale curvature prompts, CASL learns generalizable 3D representations without any anomaly-detection-specific mechanisms, achieving a 5.6% O-AUROC improvement over the previous state of the art on Real3D-AD.
-
 **[CAT-Net: A Cross-Attention Tone Network for Cross-Subject EEG-EMG Fusion Tone Decoding](cat-net_a_cross-attention_tone_network_for_cross-subject_eeg-emg_fusion_tone_dec.md)**
 
 :   This paper proposes CAT-Net (Cross-Attention Tone Network), which achieves Mandarin four-tone classification using only 20 EEG channels and 5 EMG channels via spatial-temporal feature extraction branches, a cross-attention fusion mechanism, and domain adversarial training. The model achieves 87.83%/88.08% accuracy under voiced/silent speech conditions and 83.27%/85.10% under cross-subject evaluation, outperforming all 8 baseline methods.
-
-**[CellStream: Dynamical Optimal Transport Informed Embeddings for Reconstructing Cellular Trajectories from Snapshots Data](cellstream_dynamical_optimal_transport_informed_embeddings_for_reconstructing_ce.md)**
-
-:   This paper proposes CellStream, a deep learning framework that jointly learns an autoencoder and unbalanced dynamical optimal transport (OT) to simultaneously obtain low-dimensional embeddings and continuous cellular dynamics from discrete-time single-cell snapshot data, achieving significant improvements over existing methods in temporal consistency and velocity consistency.
 
 **[Center-Outward q-Dominance: A Sample-Computable Proxy for Strong Stochastic Dominance in Multi-Objective Optimisation](center-outward_q-dominance_a_sample-computable_proxy_for_strong_stochastic_domin.md)**
 
@@ -191,10 +187,6 @@ item_total: 116
 
 :   This paper proposes a clinician-in-the-loop smart home system that extracts behavioral markers from ambient sensor data and introduces a novel Conformal Calibrated Interval (CCI) method to quantify predictive uncertainty, enabling reliable detection of urinary tract infection (UTI) flare-ups in older adults and supporting an "abstain when uncertain" decision paradigm.
 
-**[CompTrack: Information Bottleneck-Guided Low-Rank Dynamic Token Compression for Point Cloud Tracking](comptrack_information_bottleneckguided_lowrank_dynamic_token_compres.md)**
-
-:   CompTrack is proposed as the first framework to simultaneously address dual redundancy in LiDAR point clouds: SFP filters background noise via information entropy analysis to resolve spatial redundancy; IB-DTC estimates effective rank via online SVD and adaptively determines compression ratio to compress foreground into low-rank proxy tokens, resolving information redundancy. Achieves state-of-the-art on nuScenes (61.04% Success) at 90 FPS.
-
 **[Controllable Financial Market Generation with Diffusion Guided Meta Agent](controllable_financial_market_generation_with_diffusion_guided_meta_agent.md)**
 
 :   This paper proposes the Diffusion Guided Meta Agent (DigMA), which formalizes controllable financial market generation as a conditional generation task. A conditional diffusion model captures the dynamics of market states (time-varying distribution parameters of mid-price returns and order arrival rates), while a Meta Agent with financial economics priors generates order flow under the guidance of the controller. DigMA outperforms existing methods in both controllability and generation fidelity.
@@ -206,6 +198,10 @@ item_total: 116
 **[Data Complexity of Querying Description Logic Knowledge Bases under Cost-Based Semantics](data_complexity_of_querying_description_logic_knowledge_bases_under_cost-based_s.md)**
 
 :   This paper systematically investigates the data complexity of query answering over weighted description logic knowledge bases under cost-based semantics. It establishes that optimal-cost semantics is decidable within $\Delta_2^p$, and delivers a surprising positive result: for DL-Lite$_{\text{bool}}^{\mathcal{H}}$ ontologies with a fixed cost bound, both certain answers to instance queries and possible answers to conjunctive queries admit first-order rewritings, achieving the lowest possible data complexity (AC$^0$).
+
+**[DcMatch: Unsupervised Multi-Shape Matching with Dual-Level Consistency](dcmatch_unsupervised_multi-shape_matching_with_dual-level_consistency.md)**
+
+:   This paper proposes DcMatch, an unsupervised multi-shape matching framework that employs a shape graph attention network to capture the underlying manifold structure of a shape collection for constructing a more expressive shared universe space, while enforcing dual-level cycle consistency constraints in both the spatial and spectral domains, achieving comprehensive state-of-the-art performance across multiple benchmark datasets.
 
 **[Deadline-Aware, Energy-Efficient Control of Domestic Immersion Hot Water Heaters](deadline-aware_energy-efficient_control_of_domestic_immersion_hot_water_heater.md)**
 
@@ -219,13 +215,13 @@ item_total: 116
 
 :   This paper proposes DECOR, a framework that achieves orientation-robust clustering of wafer map defect patterns via a rotation-invariant equivariant convolutional autoencoder (RCAE), non-parametric clustering (DeepDPM), and an ensemble anomaly detection mechanism.
 
+**[Deep Incomplete Multi-View Clustering via Hierarchical Imputation and Alignment](deep_incomplete_multi-view_clustering_via_hierarchical_imputation_and_alignment.md)**
+
+:   This paper proposes DIMVC-HIA, a deep incomplete multi-view clustering framework that integrates hierarchical imputation with dual alignment. The method first imputes missing cluster assignments and then imputes missing features in a coarse-to-fine manner, maintaining robust performance under high missing rates (up to 70%).
+
 **[DeepRWCap: Neural-Guided Random-Walk Capacitance Solver for IC Design](deeprwcap_neural-guided_random-walk_capacitance_solver_for_ic_design.md)**
 
 :   This paper proposes DeepRWCap, a machine-learning-guided random-walk capacitance solver that accelerates multi-dielectric capacitance extraction in IC design via a two-stage neural network architecture for transition kernel prediction, achieving an average error of 1.24% and 23% speedup across 10 industrial test cases.
-
-**[Depth-Synergized Mamba Meets Memory Experts for All-Day Image Reflection Separation](depth-synergized_mamba_meets_memory_experts_for_all-day_image_reflection_separat.md)**
-
-:   This paper proposes DMDNet, which employs a depth-aware scanning strategy (DAScan) to guide Mamba toward salient structures, incorporates a depth-synergized state space model (DS-SSM) to suppress ambiguous feature propagation, and introduces a memory expert compensation module (MECM) to leverage cross-image historical knowledge, achieving all-day (daytime + nighttime) image reflection separation.
 
 **[Description Logics with Two Types of Definite Descriptions: Complexity, Expressiveness, and Automated Deduction](description_logics_with_two_types_of_definite_descriptions_complexity_expressive.md)**
 
@@ -263,9 +259,9 @@ item_total: 116
 
 :   This paper proposes a prediction-driven Top-K Jaccard similarity coefficient to improve neighbor purity, combined with a Sparse Differential Transformer (SDT) to eliminate noisy attention, achieving state-of-the-art performance on large-scale face clustering datasets such as MS-Celeb-1M.
 
-**[Expandable and Differentiable Dual Memories with Orthogonal Regularization for Exemplar-free Continual Learning](expandable_and_differentiable_dual_memories_with_orthogonal_regularization_for_e.md)**
+**[EvoEmpirBench: Dynamic Spatial Reasoning with Agent-ExpVer](evoempirbench_dynamic_spatial_reasoning_with_agent-expver.md)**
 
-:   This paper proposes **EDD (Expandable and Differentiable Dual Memory)**, an exemplar-free continual learning method that decomposes data into reusable sub-features via **differentiable shared and task-specific memories**, combined with **memory expansion-pruning** and **orthogonal regularization** mechanisms. EDD surpasses 14 state-of-the-art methods on CIFAR-10/100 and Tiny-ImageNet, achieving final accuracies of 55.13%, 37.24%, and 30.11%, respectively.
+:   This paper proposes EvoEmpirBench (EEB), comprising two dynamic interactive benchmarks (partially observable maze navigation + Match-2), and the Agent-ExpVer three-agent online learning framework (GeoLink for interaction + InsightForce for experience abstraction + TruthWeaver for knowledge management). Through a cognitive cycle of "experience → verification → truth induction," the framework achieves continuous strategy evolution without parameter updates, improving GPT-4.1 success rate by 5.6% and Qwen-32B by 29%.
 
 **[Expressive Temporal Specifications for Reward Monitoring](expressive_temporal_specifications_for_reward_monitoring.md)**
 
@@ -303,6 +299,14 @@ item_total: 116
 
 :   This paper proposes the first Recursive Decision-Focused Learning (R-DFL) framework, which introduces a bidirectional feedback loop between the prediction module and the optimization module, breaking the unidirectional information flow of conventional sequential DFL. Two gradient propagation methods—explicit unrolling and implicit differentiation—are designed, achieving significant improvements in final decision quality on the newsvendor problem and bipartite matching problem.
 
+**[GDBA Revisited: Unleashing the Power of Guided Local Search for Distributed Constraint Optimization](gdba_revisited_unleashing_the_power_of_guided_local_search_for_distributed_const.md)**
+
+:   To address the poor performance of GDBA on general-domain DCOPs, this paper systematically diagnoses three root causes—an overly aggressive violation condition, unbounded penalty accumulation, and uncoordinated penalty updates—and proposes the DGLS framework. Through an adaptive violation condition, an evaporation mechanism, and a synchronization scheme, DGLS fully unleashes the potential of guided local search, substantially outperforming state-of-the-art methods across multiple standard benchmarks.
+
+**[Sketch-HARP: Hierarchical Autoregressive Sketch Generation for Flexible Stroke-Level Drawing Manipulation](generating_sketches_in_a_hierarchical_auto-regressive_proces.md)**
+
+:   This paper proposes Sketch-HARP, a hierarchical autoregressive sketch generation framework that achieves, for the first time, flexible stroke-level manipulation during the drawing process through a three-stage hierarchical pipeline (predicting stroke embeddings → determining canvas positions → generating drawing action sequences). The method significantly outperforms SketchEdit on tasks including stroke replacement, erasure, and extension.
+
 **[Guided Perturbation Sensitivity (GPS): Detecting Adversarial Text via Embedding Stability and Word Importance](guided_perturbation_sensitivity_gps_detecting_adversarial_text_via_embedding_sta.md)**
 
 :   This paper proposes the Guided Perturbation Sensitivity (GPS) framework, which detects adversarial text samples by masking important words and measuring changes in embedding stability. GPS achieves 85%+ detection accuracy across 3 datasets, 3 attack types, and 2 models, and generalizes across datasets, attacks, and models without retraining.
@@ -331,6 +335,14 @@ item_total: 116
 
 :   From an information-theoretic perspective, this paper models spectral GNNs as communication channels and proposes the Channel Capacity Constrained Estimation (C3E) framework, which formalizes the selection of GNN hidden dimensions and depth as a nonlinear programming problem. The framework estimates optimal architectural parameters prior to training, effectively mitigating over-squashing and consistently improving representation learning across 9 datasets.
 
+**[Human Cognitive Biases in Explanation-based Interaction: The Case of Within and Between Session Order Effect](human_cognitive_biases_in_explanation-based_interaction_the_case_of_within_and_b.md)**
+
+:   This paper systematically evaluates the impact of **order effects** on Explanatory Interactive Learning (XIL) through two large-scale user studies (713 participants in total). The findings show that order effects have a **limited and inconsistent** influence on user feedback quality, with a statistically significant but weak effect observed only within sessions (not between sessions). The overall conclusion is that order effects do not constitute a major obstacle to the practical deployment of XIL.
+
+**[HybriDLA: Hybrid Generation for Document Layout Analysis](hybridla_hybrid_generation_for_document_layout_analysis.md)**
+
+:   HybriDLA is the first approach to unify diffusion-based bounding box refinement and autoregressive query expansion within a single decoding layer, simulating a human coarse-to-fine reading strategy for document layout analysis. It achieves 83.5% mAP on DocLayNet with a vision-only model, approaching multimodal systems.
+
 **[HyperSHAP: Shapley Values and Interactions for Explaining Hyperparameter Optimization](hypershap_shapley_values_and_interactions_for_explaining_hyperparameter_optimiza.md)**
 
 :   HyperSHAP proposes a game-theoretic framework based on Shapley values and Shapley interactions to explain hyperparameter optimization (HPO). By defining four categories of explanation games—ablation, sensitivity, tunability, and optimizer bias—it provides more actionable hyperparameter importance analysis than fANOVA.
@@ -342,6 +354,14 @@ item_total: 116
 **[Improved Differentially Private Algorithms for Rank Aggregation](improved_differentially_private_algorithms_for_rank_aggregation.md)**
 
 :   This paper presents improved approximation algorithms for rank aggregation under differential privacy. It introduces the first study of differentially private footrule rank aggregation with a near-optimal algorithm (which also yields a 2-approximation for the Kemeny problem), and improves the additive error of the Kemeny PTAS by combining two-way marginal queries with an unbiasedness technique (reducing the exponent of $m$ from 3 to 65/22).
+
+**[Improved Runtime Guarantees for the SPEA2 Multi-Objective Optimizer](improved_runtime_guarantees_for_the_spea2_multi-objective_optimizer.md)**
+
+:   By rigorously analyzing the more complex selection mechanism of SPEA2, this paper demonstrates that its population dynamics are fundamentally different from those of NSGA-II — the σ-criterion induces a uniform distribution of objective values across the population — yielding runtime upper bounds with a substantially weaker dependence on population size, indicating that SPEA2 is more robust to parameter choices.
+
+**[Incremental Maintenance of DatalogMTL Materialisations](incremental_maintenance_of_datalogmtl_materialisations.md)**
+
+:   This paper proposes the DRed$_{\text{MTL}}$ algorithm, extending the classical Delete/Rederive incremental maintenance technique to DatalogMTL (Datalog with Metric Temporal Logic). By designing novel seminaïve evaluation operators and a periodicity detection algorithm over periodic materialisation representations, the approach enables efficient incremental updates, achieving order-of-magnitude speedups over full rematerialisation.
 
 **[Intermediate N-Gramming: Deterministic and Fast N-Grams For Large N and Large Datasets](intermediate_n-gramming_deterministic_and_fast_n-grams_for_large_n_and_large_dat.md)**
 
@@ -358,10 +378,6 @@ item_total: 116
 **[Learning Compact Latent Space for Representing Neural Signed Distance Functions with High-fidelity Geometry Details](learning_compact_latent_space_for_representing_neural_signed_distance_functions_.md)**
 
 :   This paper proposes a dual-branch architecture (generalization branch + overfitting branch) to learn a compact latent space over multiple neural SDFs. By combining a shared spatial feature grid with a novel bandwidth-based sampling strategy, the method recovers high-fidelity geometric details while maintaining compact latent codes, achieving state-of-the-art performance on Stanford Models, ShapeNet, and D-FAUST.
-
-**[Learning Fair Representations with Kolmogorov-Arnold Networks](learning_fair_representations_with_kolmogorov-arnold_networks.md)**
-
-:   This paper proposes integrating Kolmogorov-Arnold Networks (KAN) into an adversarial debiasing framework, leveraging KAN's spline-based architecture to provide theoretical guarantees of Lipschitz continuity and smoothness. An adaptive $\lambda$ update mechanism is introduced to dynamically balance fairness and accuracy. The approach achieves significant improvements on fairness metrics on the UCI college admissions dataset.
 
 **[Learning Network Dismantling Without Handcrafted Inputs](learning_network_dismantling_without_handcrafted_inputs.md)**
 
@@ -387,6 +403,10 @@ item_total: 116
 
 :   This paper proposes MF-Speech, a framework that employs multi-objective optimization to disentangle speech signals into three high-purity, independent factor representations—content, timbre, and emotion—and subsequently leverages dynamic fusion and Hierarchical Style Adaptive Normalization (HSAN) to achieve fine-grained, compositional control in speech generation, significantly outperforming existing methods on multi-factor compositional speech generation tasks (WER=4.67%, SECS=0.5685).
 
+**[MicroEvoEval: A Systematic Evaluation Framework for Image-Based Microstructure Evolution Prediction](microevoeval_a_systematic_evaluation_framework_for_image-based_microstructure_ev.md)**
+
+:   This paper introduces MicroEvoEval, the first standardized benchmark for image-level microstructure evolution prediction, encompassing 4 representative physical tasks (planar wave propagation, grain growth, spinodal decomposition, dendritic solidification), 14 models (5 domain-specific + 9 general spatiotemporal architectures), and a multi-dimensional evaluation framework (numerical accuracy + physical fidelity + computational efficiency). The study finds that modern general-purpose architectures (e.g., VMamba) outperform domain-specific models in long-term stability and physical fidelity while achieving an order-of-magnitude improvement in computational efficiency.
+
 **[Model Change for Description Logic Concepts](model_change_for_description_logic_concepts.md)**
 
 :   This paper studies the problem of modifying description logic concepts in response to new model evidence represented as pointed interpretations. It defines three operations — eviction, reception, and revision — and establishes positive and negative compatibility results for the EL and ALC description logics.
@@ -395,13 +415,17 @@ item_total: 116
 
 :   This paper presents the first study of the model counting problem for Dependency Quantified Boolean Formulas (DQBF). It proves that #2-DQBF — restricted to only two existential variables — is already #EXP-complete, and implements a practical 2-DQBF model counter, sharp2DQR, based on BDD symbolic reachability. The proposed approach significantly outperforms unfolding-based baselines on instances with large dependency sets.
 
+**[More Than Irrational: Modeling Belief-Biased Agents](more_than_irrational_modeling_belief-biased_agents.md)**
+
+:   This paper proposes a computational rationality (CR) user model framework that interprets seemingly "irrational" human behavior as optimal decision-making under limited memory (belief bias). A nested particle filter (NPF) is used to online-infer the user's latent memory bound parameter $\theta$ and biased belief state $\tilde{b}$. The posterior mean (PM) error is reduced by 90% within 45 steps, and adaptive AI assistant policies are demonstrated within an assistive POMDP.
+
+**[Neural Graph Navigation for Intelligent Subgraph Matching](neural_graph_navigation_for_intelligent_subgraph_matching.md)**
+
+:   This paper proposes NeuGN (Neural Graph Navigation), the first framework to integrate generative neural navigation into the core enumeration phase of subgraph matching. By combining QSExtractor—which extracts structural signals from query graphs—with GGNavigator—which replaces brute-force enumeration with structure-aware candidate node prioritization—NeuGN reduces First Match Steps by up to 98.2% while guaranteeing completeness.
+
 **[On the Edge of Core (Non-)Emptiness: An Automated Reasoning Approach to Approval-Based Multi-Winner Voting](on_the_edge_of_core_non-emptiness_an_automated_reasoning_approach_to_approval-ba.md)**
 
 :   This paper proposes an automated reasoning framework based on Mixed Integer Linear Programming (MILP) to investigate the major open problem of whether core stability always exists in approval-based multi-winner voting. The framework establishes new existence results, uncovers previously unknown relationships between core stability and other axioms (e.g., Lindahl pricability), and refutes an existing conjecture.
-
-**[On the Information Processing of One-Dimensional Wasserstein Distances with Finite Samples](on_the_information_processing_of_one-dimensional_wasserstein_distances_with_fini.md)**
-
-:   This paper analytically characterizes, via a Poisson process framework, the ability of the one-dimensional Wasserstein distance under finite samples to simultaneously encode pointwise density differences (rate difference) and support differences between probability density functions, and validates its practical utility on neural spike data and amino acid contact frequency data.
 
 **[On the Variability of Concept Activation Vectors](on_the_variability_of_concept_activation_vectors.md)**
 
@@ -422,10 +446,6 @@ item_total: 116
 **[ParaMETA: Towards Learning Disentangled Paralinguistic Speaking Styles Representations](parameta_towards_learning_disentangled_paralinguistic_speaking_styles_representa.md)**
 
 :   This paper proposes ParaMETA, a unified paralinguistic speaking style representation learning framework that achieves disentangled representations of speaking styles—including emotion, age, gender, and language—through META space regularization and task-specific subspace projection, while simultaneously supporting downstream multi-task classification and style-controllable speech synthesis.
-
-**[Parameterized Approximation Algorithms for TSP on Non-Metric Graphs](parameterized_approximation_algorithms_for_tsp_on_non-metric_graphs.md)**
-
-:   This paper proposes improved FPT approximation algorithms for the Travelling Salesman Problem (TSP) on non-metric graphs, parameterized by $p$ (the number of vertices involved in triangle inequality violations) and $q$ (the size of a minimum violation set), improving the approximation ratio under parameter $p$ from 2.5 to 1.5 and under parameter $q$ from 11 to 3.
 
 **[ParaRevSNN: A Parallel Reversible Spiking Neural Network for Efficient Training and Inference](pararevsnn_a_parallel_reversible_spiking_neural_network_for_efficient_training_a.md)**
 
@@ -451,17 +471,17 @@ item_total: 116
 
 :   This paper proposes Radar-APLANC, the first unsupervised learning framework for radar-based heartbeat sensing. Through a noise contrastive triplet (NCT) loss and an augmented pseudo-label generator, it achieves two-stage unsupervised training without requiring expensive physiological signal annotations, attaining performance approaching supervised methods.
 
-**[RcAE: Recursive Reconstruction Framework for Unsupervised Industrial Anomaly Detection](rcae_recursive_reconstruction_framework_for_unsupervised_industrial_anomaly_dete.md)**
+**[Regular Games – an Automata-Based General Game Playing Language](regular_games_--_an_automata-based_general_game_playing_language.md)**
 
-:   This paper proposes a Recursive Convolutional Autoencoder (RcAE) that progressively suppresses anomalies while preserving normal details through multi-step iterative reconstruction with shared parameters. Combined with a Cross-Recursive Detection module (CRD) that exploits multi-step reconstruction dynamics for robust anomaly localization, the method achieves performance comparable to state-of-the-art approaches using only 10% of the parameters required by diffusion models.
-
-**[Reimagining Anomalies: What if Anomalies Were Normal?](reimagining_anomalies_what_if_anomalies_were_normal.md)**
-
-:   This paper proposes the first counterfactual explanation framework for unsupervised image anomaly detection. By training a generator to modify anomalous samples into multiple disentangled counterfactuals perceived as normal by the detector, the framework answers at the semantic level: "What would an anomaly look like if it were normal?" This provides a depth of interpretability far exceeding traditional heatmap-based approaches.
+:   This paper introduces Regular Games (RG), a general game playing system centered on nondeterministic finite automata (NFA) for encoding game rules. RG employs a multi-level language architecture (low-level RG, high-level HRG, and domain-specific frameworks) that covers all finite turn-based games — including those with imperfect information and stochasticity — while generating forward models that consistently outperform the previously fastest GGP system, RBG, and typically run 10–20× faster than Ludii.
 
 **[Reward Redistribution via Gaussian Process Likelihood Estimation](reward_redistribution_via_gaussian_process_likelihood_estimation.md)**
 
 :   This paper proposes GP-LRR, a reward redistribution framework based on Gaussian process likelihood estimation. It explicitly models correlations among state-action pairs via kernel functions, and learns a step-wise reward function by maximizing the marginal likelihood of trajectory returns using a leave-one-out strategy. Theoretical analysis demonstrates that conventional MSE-based methods are a degenerate special case of GP-LRR. Experiments on MuJoCo benchmarks combined with SAC show superior sample efficiency and policy performance.
+
+**[Sampling Control for Imbalanced Calibration in Semi-Supervised Learning](sampling_control_for_imbalanced_calibration_in_semi-supervised_learning.md)**
+
+:   This paper proposes SC-SSL, a framework that introduces an **expansion classifier** for decoupled sampling control to mitigate feature-level imbalance, and leverages the **bias term** of a linear layer as an optimized bias vector to directly calibrate logits at inference time, achieving state-of-the-art performance across multiple data distribution settings.
 
 **[Scalable Vision-Guided Crop Yield Estimation](scalable_vision-guided_crop_yield_estimation.md)**
 
@@ -471,13 +491,13 @@ item_total: 116
 
 :   This paper proposes a semi-supervised HDR reconstruction framework that evaluates pseudo HDR label quality via an **uncertainty estimation branch**, masking unreliable regions at both the patch and pixel levels. Using only 6.7% of HDR ground-truth annotations, the method achieves performance comparable to fully supervised state-of-the-art.
 
-**[ShortageSim: Simulating Drug Shortages under Information Asymmetry](shortagesim_simulating_drug_shortages_under_information_asymmetry.md)**
-
-:   This paper proposes ShortageSim, the first **LLM-based multi-agent** simulation framework for drug shortages. It models strategic decision-making among FDA regulators, manufacturers, and buyers under information asymmetry, achieving an 84% improvement in predicting resolution lag time on historical shortage data, and provides a controlled testbed for evaluating regulatory strategies.
-
 **[Shrinking the Teacher: An Adaptive Teaching Paradigm for Asymmetric EEG-Vision Alignment](shrinking_the_teacher_an_adaptive_teaching_paradigm_for_asymmetric_eeg-vision_al.md)**
 
 :   This paper proposes an Adaptive Teaching Paradigm (ATS) in which a residual-free bottleneck module, ShrinkAdapter, enables the visual "teacher" to actively shrink and restructure its knowledge to match the learning capacity of the EEG "student," achieving 60.2% Top-1 accuracy on zero-shot brain-image retrieval and surpassing the previous SOTA by 9.8 percentage points.
+
+**[SpikCommander: A High-Performance Spiking Transformer with Multi-View Learning for Efficient Speech Command Recognition](spikcommander_a_high-performance_spiking_transformer_with_multi-view_learning_fo.md)**
+
+:   This paper proposes SpikCommander, a fully spike-driven Transformer architecture that jointly enhances temporal and channel feature modeling via **Multi-view Spike Temporal-Aware Self-Attention (MSTASA)** and **Spike Context Refinement MLP (SCR-MLP)**, surpassing state-of-the-art SNN methods on SHD/SSC/GSC benchmarks with fewer parameters.
 
 **[Spike Imaging Velocimetry: Dense Motion Estimation of Fluids Using Spike Cameras](spike_imaging_velocimetry_dense_motion_estimation_of_fluids_using_spike_cameras.md)**
 
@@ -531,9 +551,21 @@ item_total: 116
 
 :   This work presents the first rigorous mathematical runtime analysis of Lehmer codes (inversion tables) for searching permutation spaces with evolutionary algorithms. It proves that Lehmer-code-based EAs achieve expected runtimes of $O(n^2 \log n)$ or $O(n^2)$ on most benchmark functions, matching or improving upon classical representations, and validates practical utility on LOP and QAP instances.
 
+**[Think How Your Teammates Think: Active Inference Can Benefit Decentralized Execution](think_how_your_teammates_think_active_inference_can_benefit_decentralized_execut.md)**
+
+:   This paper proposes AIM (Active Inference Modeling), a framework for decentralized multi-agent reinforcement learning that models teammates' active inference processes — as perception–belief–action triple portraits — based solely on local observations without any communication. A dual filtering mechanism based on accuracy and relevance selectively integrates teammate belief portraits to assist decision-making. AIM achieves state-of-the-art or near-state-of-the-art performance across four benchmarks: SMAC, SMACv2, MPE, and GRF.
+
+**[Toward Gaze Target Detection in Young Autistic Children](toward_gaze_target_detection_of_young_autistic_children.md)**
+
+:   To address the severe class imbalance in gaze target detection for autistic children—where face-directed gaze accounts for only 6.6% of samples—this paper proposes the Socially Aware Coarse-to-Fine (SACF) framework. A fine-tuned Qwen2.5-VL serves as a social-context-aware gate that routes inputs to either a socially aware or a socially agnostic expert model. Evaluated on the newly introduced AGT dataset, the framework substantially improves face gaze detection performance (Face L2 reduced by 13.9% on Sharingan; F1 improved from 0.753 to 0.761).
+
 **[ASAG: Toward the Frontiers of Reliable Diffusion Sampling via Adversarial Sinkhorn Attention Guidance](toward_the_frontiers_of_reliable_diffusion_sampling_via_adversarial_sinkhorn_att.md)**
 
 :   This paper proposes ASAG (Adversarial Sinkhorn Attention Guidance), which reinterprets self-attention scores in diffusion models from the perspective of optimal transport theory. By injecting adversarial transport costs into attention layers via the Sinkhorn algorithm to deliberately reduce query-key similarity, ASAG systematically disrupts misleading attention alignment and improves both conditional and unconditional sampling quality. The method is lightweight, plug-and-play, and requires no retraining.
+
+**[Towards a Rigorous Understanding of the Population Dynamics of the NSGA-III: Tight Runtime Bounds](towards_a_rigorous_understanding_of_the_population_dynamics_of_the_nsga-iii_tigh.md)**
+
+:   This paper establishes the first tight runtime bound $\Theta(n^2 \ln n / \mu)$ for NSGA-III on the classical bi-objective OneMinMax benchmark, reveals the population dynamics of NSGA-III, and proves that it outperforms NSGA-II under appropriate population sizes.
 
 **[Towards Temporal Fusion Beyond the Field of View for Camera-based Semantic Scene Completion](towards_temporal_fusion_beyond_the_field_of_view_for_camera-based_semantic_scene.md)**
 

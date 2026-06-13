@@ -160,7 +160,7 @@ Experiments use MNIST with noisy checkerboard backgrounds (digit 9 excluded to a
 - [\[ICLR 2026\] Out of the Shadows: Exploring a Latent Space for Neural Network Verification](out_of_the_shadows_exploring_a_latent_space_for_neural_network_verification.md)
 - [\[ICLR 2026\] The Invisibility Hypothesis: Promises of AGI and the Future of the Global South](the_invisibility_hypothesis_promises_of_agi_and_the_future_of_the_global_south.md)
 - [\[ICML 2026\] Identifiable Equivariant Networks are Layerwise Equivariant](../../ICML2026/others/identifiable_equivariant_networks_are_layerwise_equivariant.md)
-- [\[ICLR 2026\] Latent Fourier Transform](latent_fourier_transform.md)
+- [\[ICLR 2026\] MOSIV: Multi-Object System Identification from Videos](mosiv_multi-object_system_identification_from_videos.md)
 
 </div>
 

@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Any3D-VLA: Enhancing VLA Robustness via Diverse Point Clouds
 description: >-
-  [ICML 2026][Multimodal VLM][Point cloud fusion] Through a pilot study, the authors discovered that "explicitly lifting vision to point clouds and then fusing them with 2D patches" is the most effective way to inject 3D i…
+  [ICML 2026][Multimodal VLM][Point Cloud Fusion] Through a pilot study, the authors find that "explicitly lifting vision to point clouds and then fusing with 2D patches" is the most effective way to inject 3D information…
 tags:
   - "ICML 2026"
   - "Multimodal VLM"
-  - "Point cloud fusion"
-  - "sim-to-real"
-  - "domain generalization"
-  - "data augmentation"
-  - "grasping"
+  - "Point Cloud Fusion"
+  - "Sim-to-Real"
+  - "Domain Generalization"
+  - "Data Augmentation"
+  - "Grasping"
 date: 2026-05-08
-content_hash: a69f891a64262425
+content_hash: 50b93d43915d2b99
 ---
 
 # Any3D-VLA: Enhancing VLA Robustness via Diverse Point Clouds
@@ -21,72 +21,75 @@ content_hash: a69f891a64262425
 **arXiv**: [2602.00807](https://arxiv.org/abs/2602.00807)  
 **Code**: https://xianzhefan.github.io/Any3D-VLA.github.io  
 **Area**: Robotics / VLA / Multimodal 3D Representation  
-**Keywords**: Point cloud fusion, sim-to-real, domain generalization, data augmentation, grasping
+**Keywords**: Point Cloud Fusion, Sim-to-Real, Domain Generalization, Data Augmentation, Grasping
 
 ## TL;DR
-Through a pilot study, the authors discovered that "explicitly lifting vision to point clouds and then fusing them with 2D patches" is the most effective way to inject 3D information into Vision-Language-Action (VLA) models. To address 3D data scarcity and domain gaps across various point cloud sources (simulation, sensors, or monocular estimation), Any3D-VLA is proposed. It employs hybrid point cloud training to learn source-agnostic geometric representations, achieving a 29.2% zero-shot improvement over the strongest baseline (62.5% vs. 33.3%) in real-world grasping tasks.
+Through a pilot study, the authors find that "explicitly lifting vision to point clouds and then fusing with 2D patches" is the most effective way to inject 3D information into VLA. To address the scarcity of 3D data and domain gaps among different point cloud sources (simulation/sensor/monocular estimation), they propose Any3D-VLA: using hybrid point cloud training to learn source-agnostic geometric representations, achieving a 29.2% improvement (62.5% vs 33.3%) over the strongest baseline in real-world zero-shot grasping tasks.
 
 ## Background & Motivation
-**Background**: Current mainstream VLAs (e.g., π0.5, GraspVLA) use 2D images as visual inputs and leverage Vision-Language Model (VLM) backbones for unified language-vision-action modeling. The community has explored injecting 3D information through depth-pretrained encoders (DepthVLA), spatial foundation models (VGGT), depth-as-channel (3D-CAVLA), and point cloud branches (PointVLA / 3DS-VLA).
+**Background**: Current mainstream VLAs (e.g., π0.5, GraspVLA) use 2D images as visual input, leveraging VLM backbones for unified language-vision-action modeling. The community has explored 3D injection: depth-pretrained encoders (DepthVLA), spatial foundation models (VGGT), depth-as-channel (3D-CAVLA), and point cloud branches (PointVLA / 3DS-VLA).
 
-**Limitations of Prior Work**: (1) Pure 2D VLAs are fragile when dealing with small objects, viewpoint variations, and occluded scenes. (2) Existing 3D injection methods face several issues: implicit depth/3D approaches (like VGGT) rely on reconstruction loss for geometry learning, which lacks metric precision and is prone to "spatial hallucinations"; depth-as-channel methods treat depth as 2D images, destroying 3D topology; point cloud branches either use non-pretrained encoders or process point clouds independently without alignment to 2D features. (3) 3D data scarcity and domain gaps in noise, scale, and geometric bias across different environments (simulation vs. sensor vs. estimation) hinder effective sim-to-real transfer for 3D VLAs.
+**Limitations of Prior Work**: (1) Pure 2D VLAs are fragile with small objects, viewpoint changes, and occlusions. (2) Existing 3D injection methods have issues: implicit depth/3D (VGGT-like) rely on reconstruction loss for geometry, lacking metric precision and prone to "spatial hallucination"; depth-as-channel treats depth as a 2D image, destroying 3D topology; point cloud branches either use non-pretrained encoders or process point clouds independently without 2D alignment. (3) 3D data scarcity and cross-environment (simulation vs sensor vs estimation) noise/scale/geometric bias cause severe domain gaps, making 3D VLA sim-to-real difficult.
 
-**Key Challenge**: To obtain precise 3D geometric signals, models must rely either on expensive metric depth hardware (high dependency, large cross-environment variance) or model-estimated depth (noisy with scale drift). A truly "industrial-grade deployable VLA" must function effectively regardless of the depth source—this is a robustness issue rather than a simple precision problem.
+**Key Challenge**: To obtain precise 3D geometric signals, one must rely on expensive metric depth hardware (strong dependency, large cross-environment differences) or model-estimated depth (with scale drift noise). Truly "deployable industrial-grade VLA" must work under any depth source—this is a robustness issue, not just an accuracy issue.
 
-**Goal**: (1) Select the optimal 3D injection paradigm through a pilot study; (2) Design a plug-in module to integrate 3D information into existing VLA backbones; (3) Explicitly model depth source heterogeneity via "hybrid point cloud training" to make the model source-agnostic during deployment.
+**Goal**: (1) Use a pilot study to select the optimal 3D injection paradigm; (2) Design a plug-in module to integrate 3D information into existing VLA backbones; (3) Explicitly model depth source heterogeneity via "hybrid point cloud training," making the model source-agnostic at deployment.
 
-**Key Insight**: The authors first conducted a clean pilot experiment to fairly compare five paradigms: 2D-only, implicit-depth RGB, implicit-3D RGB, RGBD-image-plane, and point-cloud+2D-patch fusion (under the same simulation benchmark and ground-truth metric depth). They found that point-cloud+2D-patch significantly outperformed other configurations, forming the basis for Any3D-VLA.
+**Key Insight**: The authors first conduct a clean pilot experiment, fairly comparing five paradigms: 2D-only, implicit-depth RGB, implicit-3D RGB, RGBD-image-plane, and point-cloud+2D-patch fusion (on the same simulation benchmark and ground-truth metric depth). They find point-cloud+2D-patch fusion significantly outperforms others—forming the basis for Any3D-VLA.
 
-**Core Idea**: RGB+depth is lifted into a point cloud, which is then processed via 3D grid compression and a pretrained point cloud encoder. Features are aligned with ViT patches using scatter-mean and fused back into 2D representations via gated residuals. During training, the model is exposed to a mix of simulator, sensor, and model-estimated point cloud sources to learn source-agnostic geometric features.
+**Core Idea**: Lift RGB+depth to point clouds, encode with 3D grid compression and pretrained point cloud encoder, align with ViT patches via scatter-mean, then fuse back to 2D representation using gated residuals; during training, mix simulator/sensor/model-estimated point cloud sources so the 3D encoder learns source-agnostic geometric features.
 
 ## Method
-Any3D-VLA is a plug-in visual observation module that can be attached to any VLA backbone. The pipeline follows: RGB+optional depth → lift to point cloud → 3D compression → point cloud encoder → patch alignment → 2D-3D gated fusion → VLA backbone.
+Any3D-VLA is a plug-in visual observation module attachable to any VLA backbone. The pipeline: RGB+optional depth → lift to point cloud → 3D compression → point cloud encoder → patch alignment → 2D-3D gated fusion → VLA backbone.
 
 ### Overall Architecture
-- **Data Preparation**: An RGBD dataset was synthesized in Isaac Sim (Objaverse LVIS subset, 290 classes, 10,680 instances, single-view, with camera parameters matching a RealSense D435). For each timestep, both (1) ground-truth metric depth from the Isaac rendering pipeline and (2) metric depth estimated by monocular depth models were exported.
-- **VLA Backbone**: InternLM2-1.8B serves as the VLM backbone, combined with a conditional flow-matching action expert, connected via Progressive Action Generation (PAG). The visual observation module is the core contribution.
-- **Visual Module Steps**: (1) Point Cloud Construction: Each valid depth pixel is unprojected to the camera coordinate system using camera intrinsics; (2) 3D Compression: Point clouds are compressed from 30k-60k to 3k-8k points using Sonata-style grid sampling; (3) Vision Encoder: DINOv2+SigLIP for 2D and Concerto (a point cloud encoder pretrained on 2D+3D data) for 3D; (4) Patch-Wise Alignment + 2D-3D Fusion: 3D points are projected back to image patch grids, aggregated into patch-level 3D features via scatter-mean, and fused with 2D patch tokens using gated residuals.
-- **Output**: The fused token sequence, along with language and proprioception tokens, is fed into the VLA backbone to autoregressively generate bbox and grasp pose tokens. Finally, the flow-matching expert generates continuous end-effector action chunks.
+- **Data Preparation**: Synthesize RGBD datasets in Isaac Sim (Objaverse LVIS subset, 290 classes, 10,680 instances, single view, camera parameters matched to RealSense D435). For each timestep, export (1) ground-truth metric depth from Isaac rendering pipeline, (2) metric depth estimated by monocular depth models; both are used.
+- **VLA Backbone**: InternLM2-1.8B as VLM backbone + conditional flow-matching action expert, connected via PAG (Progressive Action Generation). The visual observation module is the core of this work.
+- **Visual Module Steps**: (1) Point Cloud Construction: unproject each valid depth pixel to camera coordinates using intrinsics; (2) 3D Compression: grid sampling (Sonata) compresses point cloud from 30k-60k to 3k-8k; (3) Vision Encoder: DINOv2+SigLIP for 2D, Concerto (pretrained on 2D+3D data) for 3D; (4) Patch-Wise Alignment + 2D-3D Fusion: project 3D points back to image patch grid, scatter-mean to aggregate patch-level 3D features, then gated residual fusion with 2D patch tokens.
+- **Output**: Fused token sequence → fed with language and proprioceptive tokens to VLA backbone → autoregressive generation of bbox token + grasp pose token; finally, flow-matching expert generates continuous end-effector action chunks.
 
 ### Key Designs
 
-1. **Point-cloud–2D patch fusion as the Optimal 3D Injection Paradigm**:
-    - **Function**: Explicitly injects metric-accurate 3D geometric signals while preserving the pretrained knowledge of the 2D backbone.
-    - **Mechanism**: Based on a pilot study (see Table 2) comparing five 3D injection methods, VLA performance improved stably (Single-Trial SR from 45.3 to 61.1) only when using point clouds with native 3D topology and explicit spatial alignment with 2D patches. Implicit methods like VGGT often suffer from spatial hallucinations in fine-grained manipulation, and depth-as-channel loses topology.
-    - **Design Motivation**: Injecting 3D is not just about "providing depth"; the "representation" determines success. Point clouds preserve native 3D topology while patch alignment maintains the semantic priors of the 2D backbone.
+1. **Point-cloud–2D patch fusion as the optimal 3D injection paradigm (based on pilot study)**:
+
+    - **Function**: Explicitly injects metric-accurate 3D geometric signals while retaining 2D backbone pretraining.
+    - **Mechanism**: The pilot study fairly compares five 3D injection methods (see Table 2), finding only point-cloud provides native 3D topology and explicit spatial alignment with 2D patches, enabling stable VLA improvement (Single-Trial SR from 45.3 → 61.1). VGGT-like implicit methods, though with reconstruction priors, often suffer spatial hallucination in fine-grained manipulation; depth-as-channel compresses 3D into 2D, losing topology. Any3D-VLA thus selects point cloud + 2D patch fusion as its foundation.
+    - **Design Motivation**: Injecting 3D is not just about "providing depth," but "how to represent" is crucial. Point clouds preserve native 3D topology and, via patch alignment, retain 2D backbone semantic priors—achieving both.
 
 2. **Patch-Wise Alignment + Gated Residual Fusion**:
-    - **Function**: Aligns unordered point cloud features to the regular patch grid of the ViT and injects them as "minor corrections" to the 2D representation.
-    - **Mechanism**: Each 3D point $\mathbf{x}_i$ is mapped back to the image plane via the projection function $(u_i, v_i) = \pi(\mathbf{x}_i)$ to find its patch index $a_i$. Points within the same patch are aggregated via scatter-mean to obtain $\mathbf{g}_j^\text{3D}$; if no points exist in a patch, a learnable empty token $\mathbf{e}^\text{3D}$ is used. After linear projection to token dimension $\mathbf{h}_j^\text{3D} = W_\text{3D}\mathbf{g}_j^\text{3D}$, it is concatenated with $\mathbf{h}_j^\text{2D}$ and passed through an MLP to obtain residual $\delta_j$. Fusion uses gated residuals: $\mathbf{h}_j^\text{fused} = \mathbf{h}_j^\text{2D} + \sigma(g) \cdot \text{LayerNorm}(\delta_j)$, where the gating $g$ is initialized to -2.1972 so that $\sigma(g)$ is very small initially, preventing the destruction of pretrained 2D representations.
-    - **Design Motivation**: Applying "minor corrections" rather than "replacing representations" preserves the strong semantic priors of DINOv2+SigLIP while allowing 3D signals to intervene when necessary.
 
-3. **Hybrid Point Cloud Training (Key Sim-to-Real Lever)**:
-    - **Function**: Lessons learned from diverse point cloud sources during training allow the 3D encoder to acquire source-agnostic geometric patterns, removing dependency on specific depth hardware.
-    - **Mechanism**: Three training settings were defined—Setting 1 (Simulator GT only), Setting 2 (Hybrid: simulator, sensor, or monocular-estimated metric PC selected with fixed probabilities), and Setting 3 (Sensor only). Setting 2 is critical: the model encounters various point cloud sources (with noise, scale bias, and geometric imperfections) throughout training, forcing the 3D encoder and fusion layers to learn source-agnostic features. The mixture ratio includes 30% RealSense and 20% each for various monocular estimation models (UniDepthV2, DA3, MapAnything).
-    - **Design Motivation**: This is the paper's most vital engineering insight—the primary obstacle for 3D VLA deployment is the massive discrepancy between depth sources across environments. Treating this heterogeneity as part of the optimization goal directly addresses robustness.
+    - **Function**: Align unordered point cloud features to ViT's regular patch grid, injecting as "minor corrections" to 2D representations.
+    - **Mechanism**: Each 3D point $\mathbf{x}_i$ is projected to the image plane via camera projection $(u_i, v_i) = \pi(\mathbf{x}_i)$, locating patch index $a_i$. Points within the same patch are scatter-mean aggregated to $\mathbf{g}_j^\text{3D}$; if no points, a learnable empty token $\mathbf{e}^\text{3D}$ is used. Linear projection to token dim $\mathbf{h}_j^\text{3D} = W_\text{3D}\mathbf{g}_j^\text{3D}$, concatenated with $\mathbf{h}_j^\text{2D}$, passed through MLP to get residual $\delta_j$. Fusion uses gated residual: $\mathbf{h}_j^\text{fused} = \mathbf{h}_j^\text{2D} + \sigma(g) \cdot \text{LayerNorm}(\delta_j)$, with gating $g$ initialized at -2.1972 so $\sigma(g)$ is small at training start, preserving pretrained 2D representations and gradually opening up during training.
+    - **Design Motivation**: "Making minor corrections to the 2D backbone" rather than "replacing 2D representations" preserves strong semantic priors from DINOv2+SigLIP, while allowing 3D signals to intervene as needed. Gated init addresses the common issue of "destroying original representations in early epochs" when injecting new modalities.
+
+3. **Hybrid Point Cloud Training (key sim-to-real enabler)**:
+
+    - **Function**: Mixes multiple point cloud sources during training, enabling the 3D encoder to learn source-agnostic geometric patterns, removing reliance on specific depth hardware at deployment.
+    - **Mechanism**: Three training settings—Setting 1: simulator GT point cloud only; Setting 2: hybrid (each trajectory randomly selects simulator/sensor or single-frame RGB-estimated metric point cloud); Setting 3: sensor only. Setting 2 is key: the model sees various point cloud sources (with noise, scale bias, geometric imperfections) throughout training, forcing the 3D encoder and fusion layer to learn source-invariant features. The mix: 30% RealSense + various monocular estimation models (UniDepthV2 / DA3 / MapAnything) each 20%.
+    - **Design Motivation**: This is the paper's most critical engineering insight—the main deployment barrier for 3D VLA is not accuracy per se, but the huge differences between depth sources in different environments. Directly injecting this heterogeneity into training data is equivalent to making "robustness" part of the optimization objective.
 
 ### Loss & Training
-The VLM head and flow-matching action expert are trained jointly. Grounding data from GRIT is used to supervise the VLM's autoregressive prediction of bbox tokens, while synthetic RGBD data supervises grasp pose tokens and end-effector actions (flow matching loss). **No depth or point cloud reconstruction loss is added**, intentionally verifying that performance gains stem from representation design rather than auxiliary supervision.
+Jointly train VLM head + flow-matching action expert: use grounding data from GRIT to supervise VLM autoregressive bbox token prediction; use synthetic RGBD data to additionally supervise grasp pose token + end-effector action (flow matching loss). **No depth/point cloud reconstruction loss is used**—the authors deliberately verify that performance gains come from representation design, not auxiliary supervision.
 
 ## Key Experimental Results
 
-### Main Results (Real-world zero-shot)
-Comparison against π0.5, GraspVLA (2D baseline), and SpatialVLA (3D baseline) across 4 challenge categories (Standard, Scale&Shape, Viewpoint, Appearance-Deprived), involving 47 real objects and 120 trials.
+### Main Results (Real-world Zero-shot)
+On four challenge categories (Standard / Scale&Shape / Viewpoint / Appearance-Deprived), compared with π0.5, GraspVLA (2D baselines), and SpatialVLA (3D baseline). 47 real objects, 120 trials, up to 3 grasps per trial.
 
-| Method | Training Setting | Inference PC | Overall SR (%) |
-| :--- | :--- | :--- | :--- |
+| Method | Training Setting | Inference Point Cloud | Overall SR (%) |
+|--------|------------------|----------------------|----------------|
 | π0.5 (2D) | – | – | ≈ 26 |
 | GraspVLA (2D) | – | – | ≈ 30 |
-| SpatialVLA (3D) | – | – | 33.3 (Prev. SOTA) |
-| Any3D-VLA | Setting 1 (sim only) | RealSense | Gain |
-| Any3D-VLA | Setting 2 (hybrid) | RealSense | Further Gain |
+| SpatialVLA (3D) | – | – | 33.3 (strongest baseline) |
+| Any3D-VLA | Setting 1 (sim only) | RealSense | Improved |
+| Any3D-VLA | Setting 2 (hybrid) | RealSense | Further improved |
 | **Any3D-VLA** | **Setting 2 (hybrid)** | **DA3 estimated** | **62.5 (+29.2)** |
 
-### Post-training (Fine-tuning with limited real demonstrations)
-Evaluated on two challenging tasks (Task 1: Placing a pink tulip in a vase; Task 2: Placing a transparent sauce cup into a slot) with 100 real demonstrations each.
+### Post-training (Few-shot Real Demonstration Fine-tune)
+Two challenge tasks: Task1—place pink tulip in vase / Task2—place transparent seasoning cup in fixed slot. 100 real demonstrations each.
 
-| Model | Training Setting | Inference PC | Task 1 SR (%) | Task 2 SR (%) |
-| :--- | :--- | :--- | :--- | :--- |
+| Model | Training Setting | Inference Point Cloud | Task1 SR (%) | Task2 SR (%) |
+|-------|------------------|----------------------|--------------|--------------|
 | π0.5 | – | – | 33.3 | 26.7 |
 | GraspVLA | – | – | 33.3 | 53.3 |
 | SpatialVLA | – | – | 13.3 | 6.7 |
@@ -96,34 +99,34 @@ Evaluated on two challenging tasks (Task 1: Placing a pink tulip in a vase; Task
 | **Any3D-VLA** | **Hybrid** | **DA3** | **93.3** | **86.7** |
 
 ### Key Findings
-- Hybrid training performance $\ge$ single-source training across any inference point cloud source, proving it learns source-agnostic geometry rather than simple multi-task overfitting.
-- Point clouds estimated by DA3 outperformed RealSense sensor data in most cases, indicating that modern monocular depth models can produce more accurate geometry than consumer-grade depth cameras, suggesting future 3D VLAs could bypass depth hardware entirely.
-- Pilot study results were counter-intuitive: under perfect simulation depth, depth-as-channel provided only an 11-point gain (45.3 to 56.8), whereas point-cloud fusion provided a 16-point gain (45.3 to 61.1), proving "how geometry is represented" is more important than "if geometry is present."
-- Inference latency is 1.7~2.0 FPS (DA3 route), which is practical for tabletop manipulation when amortized via action chunking (chunk size=4).
+- Hybrid training outperforms single-source training under any inference point cloud source, proving it learns truly source-agnostic geometry rather than simple multi-task overfitting.
+- DA3-estimated point clouds often perform as well as or better than RealSense sensor point clouds at inference, indicating modern monocular depth estimation models can produce more accurate point clouds than consumer-grade depth cameras—suggesting future 3D VLA deployment may eliminate depth hardware dependency.
+- Pilot study counterintuitively shows: under perfect simulated depth, using depth as channel input gives only 11-point improvement (45.3 → 56.8), while point-cloud fusion gives 16-point improvement (45.3 → 61.1). This shows "how geometry is represented" matters more than "whether geometry is present."
+- Inference latency is 1.7~2.0 FPS (DA3 route); with action chunking (chunk size=4), practical for desktop manipulation.
 
 ## Highlights & Insights
-- **Clean Pilot Study Design**: By strictly controlling variables (same backbone, training strategy, and simulation ground-truth depth), the authors used SR data to prove point-cloud+2D-patch as the optimal paradigm—a "pilot before commit" methodology that is highly commendable.
-- **Gated Residual Fusion Initialization**: Initializing gating to a very small value ensures the new modality begins with "zero influence," avoiding catastrophic forgetting of pretrained priors.
-- **Hybrid Training as a Sim-to-Real Panacea**: Rather than struggling to tune a single depth source's precision, exposing the model to all depth sources allows it to treat robustness as part of the objective. This philosophy (Diversity > Single-source Precision) mirrors successes in LLM mixing and autonomous driving sensor fusion.
+- **Clean pilot study setup**: Strict variable control across all methods (same backbone, training strategy, simulated ground-truth depth), using SR data to demonstrate point-cloud+2D-patch as the optimal paradigm—this "pilot before commit" experimental methodology is highly instructive.
+- **Gated residual fusion initialization trick**: Initializing gating to $\sigma^{-1}(\text{very small})$ so the new modality starts training with "almost no effect," avoiding catastrophic forgetting; this "cold-to-hot" injection strategy is applicable to any new modality.
+- **Hybrid training as a sim-to-real panacea**: Rather than tuning for one depth source's accuracy, expose the model to all depths—this "data diversity > single-source accuracy" philosophy has been validated in LLM data mixing and autonomous driving sensor fusion, and is precisely applied here for VLA 3D injection.
 
 ## Limitations & Future Work
-- Object categories are capped at 290 (Objaverse LVIS subset), leaving a gap toward open-vocabulary capabilities.
-- Relies on single-view input; multi-view fusion might improve occlusion scenarios but would increase latency.
+- Object categories capped at 290 (Objaverse LVIS subset), still far from open vocabulary.
+- Single-view input; multi-view fusion may further improve occlusion scenarios, but at the cost of increased latency.
 - Inference still depends on an estimated depth model (DA3), shifting the latency bottleneck from the 3D encoder to the depth model.
-- Primarily validated on tabletop manipulation; not yet tested on mobile platforms or long-horizon loco-manipulation tasks.
-- Transparent and reflective objects remain difficult.
+- Main validation is on desktop manipulation; not yet tested on mobile platforms or long-horizon tasks (loco-manipulation).
+- Transparent/reflective objects remain challenging (though the paper demonstrates a transparent seasoning cup, SR is not very high).
 
 ## Related Work & Insights
-- **vs. PointVLA (Li et al. 2025a)**: PointVLA injects point cloud features into the action expert, but 3D and 2D processing remain relatively independent; Any3D-VLA's patch-level alignment makes 3D signals and 2D tokens correspond more precisely.
-- **vs. SpatialVLA**: SpatialVLA is the strongest 3D baseline but remains anchored in the image plane; Any3D-VLA nearly doubles its SR using native 3D topology and hybrid training.
-- **vs. VGGT / Spatial Forcing**: While those use implicit 3D priors, this work demonstrates that explicit 3D geometry is more reliable for fine-grained manipulation.
-- **vs. DepthVLA / 3D-CAVLA**: Instead of treating depth as a channel, Any3D-VLA lifts it to point cloud space and re-projects, gaining both geometric precision and topology.
+- **vs PointVLA (Li et al. 2025a)**: PointVLA injects point cloud features into the action expert, but point cloud and 2D are relatively independent; this work's patch-level alignment enables one-to-one correspondence between 3D signals and 2D tokens, with finer granularity.
+- **vs SpatialVLA**: SpatialVLA is the strongest 3D baseline but still image-plane-centric; this work uses native 3D topology + hybrid training to nearly double SR.
+- **vs VGGT / Spatial Forcing**: Those use implicit 3D priors; this work empirically shows explicit 3D geometry is more reliable for fine-grained manipulation.
+- **vs DepthVLA / 3D-CAVLA**: Those use depth as an extra channel or depth expert; this work lifts depth to point cloud space and reprojects, achieving both geometric precision and topology.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ Solid combination of pilot study, gated patch fusion, and hybrid training.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Exemplary design including simulation, real-world, zero-shot, and post-training evaluations.
-- **Writing Quality**: ⭐⭐⭐⭐ High logical clarity; the chain of reasoning is very persuasive.
-- **Value**: ⭐⭐⭐⭐⭐ High impact for real-world deployment where multi-source sensor heterogeneity is a standard challenge.
+- Novelty: ⭐⭐⭐⭐ Pilot study + gated patch fusion + hybrid training is solid; individual techniques have prior work but the integration is new
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Simulation + real + zero-shot + post-training + multiple depth sources + multiple baselines, textbook-level experimental design
+- Writing Quality: ⭐⭐⭐⭐ Pilot study section is very clear, logical chain "why choose point cloud → how to fuse → how to sim2real" is coherent
+- Value: ⭐⭐⭐⭐⭐ Directly addresses practical needs, and the hybrid training paradigm is transferable to any "multi-source sensor heterogeneity" scenario
 
 <!-- RELATED:START -->
 

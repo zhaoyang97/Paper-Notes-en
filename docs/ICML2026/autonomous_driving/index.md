@@ -34,7 +34,7 @@ item_total: 6
 
 **🧪 ICML2026** · **6** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (89)](../../CVPR2026/autonomous_driving/index.md) · [🔬 ICLR2026 (18)](../../ICLR2026/autonomous_driving/index.md) · [🤖 AAAI2026 (56)](../../AAAI2026/autonomous_driving/index.md) · [🧠 NeurIPS2025 (49)](../../NeurIPS2025/autonomous_driving/index.md) · [📹 ICCV2025 (91)](../../ICCV2025/autonomous_driving/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (90)](../../CVPR2026/autonomous_driving/index.md) · [🔬 ICLR2026 (16)](../../ICLR2026/autonomous_driving/index.md) · [🤖 AAAI2026 (56)](../../AAAI2026/autonomous_driving/index.md) · [🧠 NeurIPS2025 (47)](../../NeurIPS2025/autonomous_driving/index.md) · [📹 ICCV2025 (91)](../../ICCV2025/autonomous_driving/index.md)
 
 🔥 **Top topics:** Navigation ×2
 
@@ -60,4 +60,4 @@ item_total: 6
 
 **[TSRBench: A Comprehensive Multi-task Multi-modal Time Series Reasoning Benchmark for Generalist Models](tsrbench_a_comprehensive_multi-task_multi-modal_time_series_reasoning_benchmark_.md)**
 
-:   TSRBench constructs a time series reasoning benchmark covering 14 domains, 4 major dimensions (Perception, Reasoning, Prediction, and Decision-making), 15 tasks, and 4125 questions. It supports four input modalities—text, visualization, interleaved textnd image, and embedding. Systematic evaluation of 30+ mainstream LLMs, VLMs, and TSLLMs reveals that "scaling still holds for perception and reasoning but fails for prediction," and while "textual and visual modalities are highly complementary, current models struggle to fuse them effectively."
+:   TSRBench constructs a time series reasoning benchmark covering 14 domains, 4 major dimensions (perception/reasoning/prediction/decision-making), 15 tasks, 4125 questions, and supports four input modalities: text, visualization, text+image, and embedding. It systematically evaluates 30+ mainstream LLMs, VLMs, and TSLLMs, revealing key findings such as "scaling holds for perception/reasoning but fails for prediction" and "text and visualization modalities are highly complementary, but current models can hardly fuse them."

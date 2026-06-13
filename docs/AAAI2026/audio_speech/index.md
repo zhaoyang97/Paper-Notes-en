@@ -1,8 +1,8 @@
 ---
 title: >-
-  AAAI2026 Audio & Speech Papers · 30 Notes
+  AAAI2026 Audio & Speech Papers · 29 Notes
 description: >-
-  30 AAAI2026 papers in the Audio & Speech area, covering Speech & Audio, Sentiment Analysis, Multimodal/VLM, Dialogue, LLM and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  29 AAAI2026 papers in the Audio & Speech area, covering Speech & Audio, Sentiment Analysis, Multimodal/VLM, Dialogue, Diffusion Models, LLM and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "AAAI2026"
   - "Audio & Speech"
@@ -12,6 +12,7 @@ tags:
   - "Sentiment Analysis"
   - "Multimodal/VLM"
   - "Dialogue"
+  - "Diffusion Models"
   - "LLM"
 item_list:
   - u: "a_mind_cannot_be_smeared_across_time/"
@@ -30,6 +31,10 @@ item_list:
     t: "Cross-Space Synergy: A Unified Framework for Multimodal Emotion Recognition in Conversation"
   - u: "deformtrace_a_deformable_state_space_model_with_relay_tokens_for_temporal_forger/"
     t: "DeformTrace: A Deformable State Space Model with Relay Tokens for Temporal Forgery Localization"
+  - u: "diff-v2m_a_hierarchical_conditional_diffusion_model_with_explicit_rhythmic_model/"
+    t: "Diff-V2M: A Hierarchical Conditional Diffusion Model with Explicit Rhythmic Modeling for Video-to-Music Generation"
+  - u: "diffa_large_language_diffusion_models_can_listen_and_understand/"
+    t: "DiffA: Large Language Diffusion Models Can Listen and Understand"
   - u: "do_llms_feel_teaching_emotion_recognition_with_prompts_retrieval_and_curriculum_/"
     t: "Do LLMs Feel? Teaching Emotion Recognition with Prompts, Retrieval, and Curriculum Learning"
   - u: "dualspeechlm_towards_unified_speech_understanding_and_generation_via_dual_speech/"
@@ -38,24 +43,20 @@ item_list:
     t: "End-to-end Contrastive Language-Speech Pretraining Model For Long-form Spoken Question Answering"
   - u: "factorut_controlling_untrusted_ai_by_monitoring_their_plans/"
     t: "Factor(U,T): Controlling Untrusted AI by Monitoring their Plans"
-  - u: "gene_incremental_learning_for_single-cell_transcriptomics/"
-    t: "Gene Incremental Learning for Single-Cell Transcriptomics"
-  - u: "generalizing_analogical_inference_from_boolean_to_continuous_domains/"
-    t: "Generalizing Analogical Inference from Boolean to Continuous Domains"
   - u: "gompsnr_reflourish_the_signal-to-noise_ratio_metric_for_audio_generation_tasks/"
     t: "GOMPSNR: Reflourish the Signal-to-Noise Ratio Metric for Audio Generation Tasks"
   - u: "hearing_more_with_less_multi-modal_retrieval-and-selection_augmented_conversatio/"
     t: "Hearing More with Less: Multi-Modal Retrieval-and-Selection Augmented Conversational LLM-Based ASR"
   - u: "hpsu_a_benchmark_for_human-level_perception_in_real-world_spoken_speech_understa/"
     t: "HPSU: A Benchmark for Human-Level Perception in Real-World Spoken Speech Understanding"
+  - u: "hq-svc_towards_high-quality_zero-shot_singing_voice_conversion_in_low-resource_s/"
+    t: "HQ-SVC: Towards High-Quality Zero-Shot Singing Voice Conversion in Low-Resource Scenarios"
   - u: "improving_multimodal_sentiment_analysis_via_modality_optimization_and_dynamic_pr/"
     t: "Improving Multimodal Sentiment Analysis via Modality Optimization and Dynamic Primary Modality Selection"
-  - u: "incremental_maintenance_of_datalogmtl_materialisations/"
-    t: "Incremental Maintenance of DatalogMTL Materialisations"
   - u: "let_the_model_learn_to_feel_mode-guided_tonality_injection_f/"
     t: "Let the Model Learn to Feel: Mode-Guided Tonality Injection for Symbolic Music Emotion Recognition"
-  - u: "modelling_the_effects_of_hearing_loss_on_neural_coding_in_the_auditory_midbrain_/"
-    t: "Modelling the Effects of Hearing Loss on Neural Coding in the Auditory Midbrain with Variational Conditioning"
+  - u: "listening_between_the_frames_bridging_temporal_gaps_in_large_audio-language_mode/"
+    t: "Listening Between the Frames: Bridging Temporal Gaps in Large Audio-Language Models"
   - u: "multi-granularity_interactive_attention_framework_for_residual_hierarchical_pron/"
     t: "Multi-granularity Interactive Attention Framework for Residual Hierarchical Pronunciation Assessment"
   - u: "pase_prototype-aligned_calibration_and_shapley-based_equilibrium_for_multimodal_/"
@@ -68,23 +69,21 @@ item_list:
     t: "Say More with Less: Variable-Frame-Rate Speech Tokenization via Adaptive Clustering and Implicit Duration Coding"
   - u: "text-routed_sparse_mixture-of-experts_model_with_explanation_and_temporal_alignm/"
     t: "TEXT: Text-Routed Sparse Mixture of Experts for Multimodal Sentiment Analysis with Explanation Enhancement and Temporal Alignment"
-  - u: "thucy_an_llm-based_multi-agent_system_for_claim_verification_across_relational_d/"
-    t: "Thucy: An LLM-based Multi-Agent System for Claim Verification across Relational Databases"
   - u: "towards_authentic_movie_dubbing_with_retrieve-augmented_director-actor_interacti/"
     t: "Towards Authentic Movie Dubbing with Retrieve-Augmented Director-Actor Interaction Learning"
   - u: "use_a_unified_model_for_universal_sound_separation_and_extraction/"
     t: "USE: A Unified Model for Universal Sound Separation and Extraction"
-item_total: 30
+item_total: 29
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->
 # 🎵 Audio & Speech
 
-**🤖 AAAI2026** · **30** paper notes
+**🤖 AAAI2026** · **29** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (29)](../../ICML2026/audio_speech/index.md) · [💬 ACL2026 (67)](../../ACL2026/audio_speech/index.md) · [📷 CVPR2026 (15)](../../CVPR2026/audio_speech/index.md) · [🔬 ICLR2026 (32)](../../ICLR2026/audio_speech/index.md) · [🧠 NeurIPS2025 (49)](../../NeurIPS2025/audio_speech/index.md) · [📹 ICCV2025 (11)](../../ICCV2025/audio_speech/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (30)](../../ICML2026/audio_speech/index.md) · [💬 ACL2026 (68)](../../ACL2026/audio_speech/index.md) · [📷 CVPR2026 (14)](../../CVPR2026/audio_speech/index.md) · [🔬 ICLR2026 (34)](../../ICLR2026/audio_speech/index.md) · [🧠 NeurIPS2025 (47)](../../NeurIPS2025/audio_speech/index.md) · [📹 ICCV2025 (11)](../../ICCV2025/audio_speech/index.md)
 
-🔥 **Top topics:** Speech & Audio ×9 · Sentiment Analysis ×7 · Multimodal/VLM ×5 · Dialogue ×2 · LLM ×2
+🔥 **Top topics:** Speech & Audio ×11 · Sentiment Analysis ×7 · Multimodal/VLM ×5 · Dialogue ×2 · Diffusion Models ×2
 
 **[A Mind Cannot Be Smeared Across Time](a_mind_cannot_be_smeared_across_time.md)**
 
@@ -118,6 +117,14 @@ item_total: 30
 
 :   This paper proposes DeformTrace, which introduces a deformable dynamic receptive field mechanism and relay token scheme into state space models, combining Transformer-level global modeling with SSM-level efficient inference to achieve state-of-the-art accuracy and substantial efficiency gains in temporal forgery localization.
 
+**[Diff-V2M: A Hierarchical Conditional Diffusion Model with Explicit Rhythmic Modeling for Video-to-Music Generation](diff-v2m_a_hierarchical_conditional_diffusion_model_with_explicit_rhythmic_model.md)**
+
+:   This paper proposes Diff-V2M, a hierarchical conditional diffusion Transformer framework for video-to-music generation that integrates affective, semantic, and rhythmic features via explicit rhythmic modeling (low-resolution ODF) and a hierarchical cross-attention mechanism, achieving state-of-the-art performance on both in-domain and out-of-domain datasets.
+
+**[DiffA: Large Language Diffusion Models Can Listen and Understand](diffa_large_language_diffusion_models_can_listen_and_understand.md)**
+
+:   This paper proposes DIFFA — the first large audio-language model built upon a diffusion language model — which combines a frozen LLaDA-8B backbone with a lightweight dual-adapter architecture and a two-stage training pipeline. Using only 960 hours of ASR data and 127 hours of synthetic instruction data, DIFFA achieves competitive performance against autoregressive baselines on MMSU, MMAU, and VoiceBench.
+
 **[Do LLMs Feel? Teaching Emotion Recognition with Prompts, Retrieval, and Curriculum Learning](do_llms_feel_teaching_emotion_recognition_with_prompts_retrieval_and_curriculum_.md)**
 
 :   This paper proposes PRC-Emo, a framework that integrates explicit/implicit emotion prompting, a dedicated retrieval database, and curriculum learning to enhance LLM performance on Emotion Recognition in Conversation (ERC), achieving state-of-the-art results on the IEMOCAP and MELD benchmarks.
@@ -134,14 +141,6 @@ item_total: 30
 
 :   This paper investigates the security of the Factor(U,T) protocol, in which an untrusted AI performs task decomposition and a trusted AI handles execution. The study finds that monitoring decomposed plans yields an AUROC of only 0.52 (near random), whereas monitoring concrete code implementations achieves 0.96—malicious intent is difficult to detect at the abstract planning level but becomes exposed in concrete implementations. The key conclusion is that "structural prevention (trusted decomposer) is superior to post-hoc monitoring."
 
-**[Gene Incremental Learning for Single-Cell Transcriptomics](gene_incremental_learning_for_single-cell_transcriptomics.md)**
-
-:   This paper proposes a Gene Incremental Learning (GIL) framework that leverages the permutation-invariant nature of single-cell transcriptomics data to extend the class incremental learning (CIL) paradigm to the token (gene) dimension. Two baseline methods—gene replay and gene distillation—are designed, and a comprehensive benchmark is established with two evaluation protocols: gene-level regression and gene-level classification.
-
-**[Generalizing Analogical Inference from Boolean to Continuous Domains](generalizing_analogical_inference_from_boolean_to_continuous_domains.md)**
-
-:   This paper revisits the theoretical foundations of analogical inference: it first constructs a counterexample demonstrating the failure of classical generalization bounds in the Boolean domain, then proposes a unified analogical inference framework based on parameterized generalized means, extending discrete classification to continuous regression domains.
-
 **[GOMPSNR: Reflourish the Signal-to-Noise Ratio Metric for Audio Generation Tasks](gompsnr_reflourish_the_signal-to-noise_ratio_metric_for_audio_generation_tasks.md)**
 
 :   This paper reconstructs the SNR metric by introducing omnidirectional phase derivatives to replace instantaneous phase, proposes GOMPSNR as a more reliable audio quality evaluation metric, and derives a family of novel loss functions that significantly improve neural vocoder performance.
@@ -154,21 +153,21 @@ item_total: 30
 
 :   This paper proposes the HPSU benchmark, comprising 20,000+ expert-annotated Chinese and English samples across 16 tasks, to systematically evaluate Speech LLMs' deep perception and reasoning capabilities in real-world spoken language scenarios. The best-performing model (Gemini 2.5 Pro, 62.6%) still falls far short of human performance (87.3%).
 
+**[HQ-SVC: Towards High-Quality Zero-Shot Singing Voice Conversion in Low-Resource Scenarios](hq-svc_towards_high-quality_zero-shot_singing_voice_conversion_in_low-resource_s.md)**
+
+:   This paper proposes HQ-SVC, a framework that leverages a disentangled audio codec (FACodec) to jointly extract content and speaker features, integrates an Enhanced Voice Adaptor (EVA) to fuse acoustic features such as pitch and energy, and employs a progressive synthesis pipeline combining DDSP and a diffusion model. Trained on a single RTX 3090 with fewer than 80 hours of singing data, HQ-SVC achieves zero-shot singing voice conversion quality surpassing large-scale training baselines, and additionally supports speech super-resolution.
+
 **[Improving Multimodal Sentiment Analysis via Modality Optimization and Dynamic Primary Modality Selection](improving_multimodal_sentiment_analysis_via_modality_optimization_and_dynamic_pr.md)**
 
 :   This paper proposes the MODS framework, which eliminates redundancy in non-linguistic modalities via Graph-based Dynamic Compression (GDC), and introduces a sample-level Dynamic Primary Modality Selector (MSelector) together with Primary-modality-Centric Cross-Attention (PCCA) to enable adaptive dominant modality selection on a per-sample basis for multimodal sentiment analysis (MSA).
-
-**[Incremental Maintenance of DatalogMTL Materialisations](incremental_maintenance_of_datalogmtl_materialisations.md)**
-
-:   This paper proposes the DRed$_{\text{MTL}}$ algorithm, extending the classical Delete/Rederive incremental maintenance technique to DatalogMTL (Datalog with Metric Temporal Logic). By designing novel seminaïve evaluation operators and a periodicity detection algorithm over periodic materialisation representations, the approach enables efficient incremental updates, achieving order-of-magnitude speedups over full rematerialisation.
 
 **[Let the Model Learn to Feel: Mode-Guided Tonality Injection for Symbolic Music Emotion Recognition](let_the_model_learn_to_feel_mode-guided_tonality_injection_f.md)**
 
 :   The MoGE diagnostic strategy systematically identifies that MIDIBERT fails to encode mode–emotion associations. The proposed MoFi injection framework leverages FiLM conditioning to inject major/minor priors into Layer 1 of MIDIBERT (identified as the weakest layer in terms of emotional information). This achieves 75.2% accuracy (+11.8%) on EMOPIA and 59.1% (+11.8%) on VGMIDI, with F1 improvements of 12.3% and 15.5%, respectively.
 
-**[Modelling the Effects of Hearing Loss on Neural Coding in the Auditory Midbrain with Variational Conditioning](modelling_the_effects_of_hearing_loss_on_neural_coding_in_the_auditory_midbrain_.md)**
+**[Listening Between the Frames: Bridging Temporal Gaps in Large Audio-Language Models](listening_between_the_frames_bridging_temporal_gaps_in_large_audio-language_mode.md)**
 
-:   This paper proposes ψ-ICNet, a variationally conditioned deep neural network that encodes the effects of hearing loss via only 6 learnable conditioning parameters ψ. The model directly learns a low-dimensional representation space of hearing loss from real neural recordings, achieving accuracy comparable to animal-specific models in predicting auditory midbrain responses in both normal-hearing and hearing-impaired animals, and can be rapidly fitted to unseen animals via Bayesian optimization.
+:   This paper proposes TimeAudio, which equips large audio-language models (LALMs) with precise temporal grounding and end-to-end long audio understanding capabilities through three key modules: Temporal Markers, Absolute Time-aware Encoding (ATE), and Segment-level Token Merging (SEM). The paper also introduces the FTAR dataset for instruction fine-tuning on fine-grained temporal reasoning.
 
 **[Multi-granularity Interactive Attention Framework for Residual Hierarchical Pronunciation Assessment](multi-granularity_interactive_attention_framework_for_residual_hierarchical_pron.md)**
 
@@ -193,10 +192,6 @@ item_total: 30
 **[TEXT: Text-Routed Sparse Mixture of Experts for Multimodal Sentiment Analysis with Explanation Enhancement and Temporal Alignment](text-routed_sparse_mixture-of-experts_model_with_explanation_and_temporal_alignm.md)**
 
 :   This paper proposes TEXT, a model that leverages MLLMs to generate natural language explanations for audio and video modalities to enhance modal representations, designs a lightweight temporal alignment module combining the strengths of Mamba and temporal cross-attention, and employs text-routed sparse mixture of experts for cross-modal fusion. TEXT comprehensively outperforms prior SOTA methods and large models such as GPT-4o across four MSA benchmarks.
-
-**[Thucy: An LLM-based Multi-Agent System for Claim Verification across Relational Databases](thucy_an_llm-based_multi-agent_system_for_claim_verification_across_relational_d.md)**
-
-:   This paper presents Thucy, the first multi-agent claim verification system supporting cross-database and cross-table reasoning. Led by a Verifier agent, it coordinates three specialized agents (Data/Schema/SQL Expert) with zero prior knowledge of the data sources, enabling autonomous discovery, reasoning, and SQL evidence generation. Thucy surpasses the previous SOTA by 5.6 percentage points on TabFact (94.3%).
 
 **[Towards Authentic Movie Dubbing with Retrieve-Augmented Director-Actor Interaction Learning](towards_authentic_movie_dubbing_with_retrieve-augmented_director-actor_interacti.md)**
 

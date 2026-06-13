@@ -145,9 +145,9 @@ Each sub-benchmark uses metrics designed for its task characteristics: literatur
 
 - [\[ACL 2026\] ResearchBench: Benchmarking LLMs in Scientific Discovery via Inspiration-Based Task Decomposition](../../ACL2026/llm_evaluation/researchbench_benchmarking_llms_in_scientific_discovery_via_inspiration-based_ta.md)
 - [\[ICLR 2026\] AnesSuite: A Comprehensive Benchmark and Dataset Suite for Anesthesiology Reasoning](anessuite_a_comprehensive_benchmark_and_dataset_suite_for_anesthesiology_reasoni.md)
-- [\[NeurIPS 2025\] Benchmarking is Broken — Don't Let AI be its Own Judge](../../NeurIPS2025/llm_evaluation/benchmarking_is_broken_--_dont_let_ai_be_its_own_judge.md)
 - [\[ICML 2026\] From Human-Level AI Tales to AI Leveling Human Scales](../../ICML2026/llm_evaluation/from_human-level_ai_tales_to_ai_leveling_human_scales.md)
-- [\[AAAI 2026\] Towards a Rigorous Understanding of the Population Dynamics of the NSGA-III: Tight Runtime Bounds](../../AAAI2026/llm_evaluation/towards_a_rigorous_understanding_of_the_population_dynamics_of_the_nsga-iii_tigh.md)
+- [\[NeurIPS 2025\] Benchmarking is Broken — Don't Let AI be its Own Judge](../../NeurIPS2025/llm_evaluation/benchmarking_is_broken_--_dont_let_ai_be_its_own_judge.md)
+- [\[ACL 2026\] Reward Modeling for Scientific Writing Evaluation](../../ACL2026/llm_evaluation/reward_modeling_for_scientific_writing_evaluation.md)
 
 </div>
 

@@ -2,74 +2,77 @@
 title: >-
   [Paper Note] iWorld-Bench: A Benchmark for Interactive World Models with a Unified Action Generation Framework
 description: >-
-  [ICML 2026][World Models] iWorld-Bench is the first unified evaluation benchmark specifically designed for "Interactive World Models." It proposes an Action Generation Framework that maps text, one-hot…
+  [ICML 2026][World Model] iWorld-Bench is the first unified evaluation benchmark specifically designed for "interactive world models." It proposes an Action Generation Framework that maps three types of action inputs—text…
 tags:
   - "ICML 2026"
-  - "World Models"
+  - "World Model"
   - "Action-Controllable Video Generation"
   - "Camera Control"
-  - "Memory Alignment"
-  - "Cross-modal Evaluation"
+  - "Memory Ability"
+  - "Cross-Modal Evaluation"
 date: 2026-05-08
-content_hash: 4a689679c528028f
+content_hash: b43c92f32e4d4fc1
 ---
 
 # iWorld-Bench: A Benchmark for Interactive World Models with a Unified Action Generation Framework
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.03941](https://arxiv.org/abs/2605.03941)  
-**Code**: iWorld-Bench.com (Project Page)  
+**Code**: iWorld-Bench.com (project homepage)  
 **Area**: Interactive World Models / Benchmark / Video Generation Evaluation  
-**Keywords**: World Models, Action-Controllable Video Generation, Camera Control, Memory Alignment, Cross-modal Evaluation
+**Keywords**: World Model, Action-Controllable Video Generation, Camera Control, Memory Ability, Cross-Modal Evaluation
 
 ## TL;DR
-iWorld-Bench is the first unified evaluation benchmark specifically designed for "Interactive World Models." It proposes an Action Generation Framework that maps text, one-hot, and camera extrinsic/intrinsic inputs into a shared instruction space. Based on 4.9K tasks selected from 330K videos and 9 metrics, the study provides a comprehensive comparison of 14 mainstream models.
+iWorld-Bench is the first unified evaluation benchmark specifically designed for "interactive world models." It proposes an Action Generation Framework that maps three types of action inputs—text, one-hot, and camera intrinsics/extrinsics—into a unified command space. Based on 330K videos, it carefully selects 4.9K tasks and 9 metrics to comprehensively compare 14 mainstream models.
 
 ## Background & Motivation
-**Background**: World models (e.g., Genie, HunyuanVideo, Wan, Matrix-Game, CameraCtrl) are evolving toward interactivity, where they must predict the future while responding to external action commands. Potential applications include game engines, autonomous driving, and embodied AI.
+**Background**: World models (e.g., Genie, HunyuanVideo, Wan, Matrix-Game, CameraCtrl) are evolving toward an interactive paradigm that can both predict the future and respond to external action commands. Potential applications span game engines, autonomous driving, and embodied intelligence.
 
-**Limitations of Prior Work**: (1) Existing benchmarks are mostly single-perspective and single-scene, often restricted to pedestrian street views. (2) "Action" modalities vary wildly across models—textual instructions, one-hot keys, or camera parameters—making direct comparison impossible (e.g., "move forward" corresponds to dozens of different low-level signals). (3) Most benchmarks are designed for general T2V or embodied manipulation, lacking evaluation of interaction response, camera following, and memory capabilities.
+**Limitations of Prior Work**: (1) Existing benchmarks are mostly single-view, single-scene, and often use pedestrian street scenes; (2) Different models use entirely different "action" modalities—text commands, one-hot keys, camera intrinsics/extrinsics—so the same "move forward" command corresponds to dozens of different low-level signals across models, making direct comparison impossible; (3) Most benchmarks are designed for general T2V or embodied manipulation, lacking evaluation of interaction response, camera following, and memory ability.
 
-**Key Challenge**: The lack of cross-modal action semantic alignment and a task system that fails to cover the core dimension of "interactivity" results in "apples-to-oranges" comparisons for world model evaluation.
+**Key Challenge**: The lack of cross-modal action semantic alignment and the absence of an evaluation system covering "interactivity" as a core dimension result in world model evaluation being a comparison of "apples to oranges."
 
-**Goal**: (1) Construct a multi-scene, multi-perspective, all-weather dataset for world models; (2) Provide a cross-modal unified action encoding framework; (3) Design task sets that distinguish "action-following ability" from "memory ability" with 9 corresponding metrics.
+**Goal**: (1) Build a multi-scene, multi-view, all-weather world model dataset; (2) Provide a cross-modal unified action encoding framework; (3) Design a task set that distinguishes "action following ability" and "memory ability," with 9 corresponding metrics.
 
-**Key Insight**: First-person camera movement can be decomposed into orthogonal translation and rotation subspaces. By discretizing each subspace into 27 actions, a total of 729 combinations are formed. Filtering for 81 core actions compatible with most models creates a unified "Action Dictionary," to which all input modalities are mapped.
+**Key Insight**: The authors observe that first-person camera motion can be decomposed into orthogonal translation and rotation subspaces, each discretized into 27 actions, yielding 729 combinations. Filtering for compatibility with most models results in 81 actions, forming a unified "action dictionary." All modalities are mapped to this dictionary.
 
-**Core Idea**: Use a "Unified Action Dictionary" to bring heterogeneous world models onto a level playing field. Overlay this with multi-scene/weather data and closed-loop tasks to evaluate action following, visual quality, and spatial memory.
+**Core Idea**: Use a "unified action dictionary" to bring heterogeneous world models onto the same evaluation plane, then layer on multi-scene, multi-weather data and closed-loop task designs to comprehensively assess action following, visual quality, and spatial memory.
 
 ## Method
 
 ### Overall Architecture
-iWorld-Bench consists of three components: (1) Data Pipeline — 330,000 videos collected from 12 public datasets (KITTI, NCLT, TartanAir, SpatialVid, etc.) and 4 simulators (AerialVLN, UAV_ON, Openfly, EmbodiedCity), with unified coordinate systems/camera formats and 2,100 evaluation videos selected via VLM labeling and manual audit; (2) Action Generation Framework — defines a 729-dimensional action space mapped to 81 cross-modal compatible actions, each represented as a triplet (text, one-hot, camera parameters); (3) 6 Task Categories — Difficulty 1-4 action following (4,000 tasks), Memory (200 tasks requiring closed-loop paths to return to the origin), and Camera Following (700 tasks specifically for camera-parameter models), totaling 4,900 tasks with 9 metrics.
+iWorld-Bench consists of three components: (1) Data pipeline—collects 330K videos from 12 public datasets (KITTI, NCLT, TartanAir, SpatialVid, etc.) and 4 simulators (AerialVLN, UAV_ON, Openfly, EmbodiedCity), unifies coordinate systems/camera parameter formats, and selects 2,100 evaluation videos after VLM auto-labeling and manual verification; (2) Action Generation Framework—defines a 729-dimensional action space, mapped to 81 cross-modal compatible actions, each with a triplet representation (text, one-hot, camera parameters); (3) Six types of evaluation tasks—Difficulty 1-4 action following (4,000 tasks), Memory (200 tasks, closed-loop paths requiring the model to return to the origin), and Camera Following (700 tasks, specifically for camera parameter models), totaling 4,900 tasks with 9 metrics.
 
 ### Key Designs
 
-1.  **Unified Action Dictionary (Action Generation Framework)**:
-    - **Function**: Unifies heterogeneous instructions like "move forward 1m," "press W," or "translation (0,0,1)" into a discrete code for cross-modal comparison.
-    - **Mechanism**: Decomposes first-person motion into translation $T$ and rotation $R$ subspaces, each with 27 atomic actions, yielding a $|T|\times|R|=729$ space. Given that many models do not support vertical translation or roll, it filters for $9\times9=81$ core actions. Each action is mapped to a (text, one-hot, camera intrinsics+extrinsics) triplet with difficulty $D\in\{1,...,6\}$ and validity $V\in\{0,1\}$ labels.
-    - **Design Motivation**: Comparing camera-parameter models using only text prompts would disadvantage low-degree-of-freedom models. The unified dictionary standardizes evaluation in a shared 81-dimensional subspace.
+1. **Unified Action Dictionary (Action Generation Framework)**:
 
-2.  **Closed-loop Memory Ability Task**:
-    - **Function**: Detects whether a world model possesses spatial memory during long-range reasoning (i.e., whether the starting scene and geometry can be reproduced when returning to the origin).
-    - **Mechanism**: Constructs closed camera trajectories (Start = End) and requires the model to reason the full sequence. Performance is measured by "Memory Symmetry" (pixel consistency of symmetric frames) and "Trajectory Alignment" (mirror similarity of instantaneous displacement vectors).
-    - **Design Motivation**: Traditional open-loop benchmarks allow "goldfish-memory" models to score high; closed-loop tests expose issues like KV-cache truncation and attention decay. Results show over half of the models have Symmetry < 0.5.
+    - **Function**: Unifies heterogeneous commands such as "move forward 1m," "press W," and "translate (0,0,1)" into the same discrete encoding, enabling cross-modal comparison.
+    - **Mechanism**: First-person camera motion is decomposed into translation $T$ and rotation $R$ subspaces, each with 27 atomic actions, yielding a combination space of $|T|\times|R|=729$. Considering most models do not support vertical translation or roll/pitch, 81 core actions ($9\times9$) are selected. Each action is mapped to a (text, one-hot, camera intrinsics+extrinsics) triplet, and labeled with difficulty $D\in\{1,...,6\}$ and validity $V\in\{0,1\}$.
+    - **Design Motivation**: Directly comparing text prompts with camera parameter models disadvantages low-DoF models. The unified dictionary projects all models into an 81-dimensional common subspace, ensuring fairness and extensibility (new modalities only require an additional mapping).
 
-3.  **9-Dimensional Metric System**:
-    - **Function**: Categorizes "usability" into Visual Quality (4), Action Following (3), and Memory (2).
-    - **Mechanism**: Visual quality uses MUSIQ, temporal consistency, HSV drift, and Tenengrad+BRISQUE for sharpness. Action following uses ViPE to extract trajectories from generated videos and compares them with GT to separate "intrinsic estimation error" from "execution error."
-    - **Design Motivation**: Single scores mask trade-offs. For example, CogVideoX ranks first in visual quality but achieves only 0.595 in camera following, highlighting a typical trade-off.
+2. **Closed-Loop Memory Ability Tasks**:
+
+    - **Function**: Tests whether world models possess spatial memory in long-range reasoning—can they reproduce the initial scene and geometry when returning to the starting point.
+    - **Mechanism**: Constructs closed camera trajectories (start = end), requiring the model to infer the entire sequence at once. Evaluated using "Memory Symmetry" (pixel consistency of symmetric frames along the trajectory) and "Trajectory Alignment" (mirror similarity of instantaneous displacement vectors).
+    - **Design Motivation**: Previous benchmarks only tested open-loop following, allowing even "goldfish memory" models to score high. Closed-loop testing exposes real issues such as KV-cache truncation and attention decay. Results show over half the models have Symmetry < 0.5.
+
+3. **9-Dimensional Evaluation Metric System**:
+
+    - **Function**: Decomposes "usability" into three non-redundant categories: visual quality (4), action following (3), and memory (2), totaling 9 sub-scores.
+    - **Mechanism**: Visual quality is measured by MUSIQ, brightness-temperature-time consistency, HSV color drift, and Tenengrad+BRISQUE for sharpness; action following uses ViPE to extract generated video camera trajectories and compares them to GT, separating "intrinsic estimation error" and "model execution error"; memory metrics as above. All metrics are validated against human preference alignment.
+    - **Design Motivation**: A single score can mask real trade-offs such as "good visual quality but poor controllability" or vice versa. Table 3 shows that the text-controlled model CogVideoX ranks first in visual quality but only 0.595 in camera following, exemplifying this trade-off.
 
 ### Loss & Training
-This is an evaluation benchmark; no training is conducted. Evaluation protocol: All 14 models run original inference settings (default sampling) on NVIDIA A800, driven by the same initial frame and action sequence per task. All 9 metrics were calibrated via human preference experiments.
+This work is an evaluation benchmark and does not involve training. Evaluation protocol: all 14 models are run under their original inference settings (default sampling, no ensemble) on NVIDIA A800; each task uses the same initial frames and action sequences. All 9 metrics are calibrated via human preference experiments (significant correlation with human judgment).
 
 ## Key Experimental Results
 
 ### Main Results
-Total score comparison for 14 models across 4 action-following and memory task types (abridged):
+Comparison of total scores for 14 models on 4 types of action following and memory tasks (excerpt):
 
-| Control Type | Model | Avg | Trajectory Acc | Memory Sym | Rank |
-| :--- | :--- | :--- | :--- | :--- | :--- |
+| Control Mode | Model | Avg | Trajectory Acc | Memory Sym | Rank |
+|--------------|-------|-----|----------------|------------|------|
 | One-hot | HY-World 1.5 | **0.787** | 0.747 | **0.848** | 1 |
 | Camera | videox-fun-Wan | 0.747 | 0.717 | **0.901** | 2 |
 | Text | HunyuanVideo-1.5 | 0.719 | 0.684 | 0.634 | 3 |
@@ -77,47 +80,47 @@ Total score comparison for 14 models across 4 action-following and memory task t
 | Text | CogVideoX-I2V | 0.696 | 0.595 | 0.601 | 5 |
 | Camera | MotionCtrl | 0.549 | 0.673 | 0.310 | 14 |
 
-For the 700 camera-parameter tasks, AC3D leads significantly with 0.909 Trajectory Tolerance and 0.992 Motion Smoothness, while the early method ASTRA only reaches 0.428.
+Camera Following ranking on 700 camera parameter tasks: AC3D leads with Trajectory Tolerance 0.909 and Motion Smoothness 0.992, while the early method ASTRA scores only 0.428.
 
 ### Ablation Study
-Cross-modal comparison (differences in execution across input modalities for the same action semantics):
+Cross-modal comparison table (execution differences for the same action semantics across input modalities):
 
-| Dimension | Text Control (Avg of 5) | One-hot (Avg of 2) | Camera (Avg of 7) | Insight |
-| :--- | :--- | :--- | :--- | :--- |
-| Image Quality | 0.64 (High) | 0.58 | 0.51 | Text models inherit strong T2V visual priors. |
-| Trajectory Acc | 0.62 | **0.72** | 0.62 | One-hot discrete signals provide strongest control. |
-| Memory Sym | 0.51 | 0.59 | 0.59 | Text models are most prone to "forgetting." |
+| Dimension | Text Control (mean of 5 models) | One-hot (mean of 2 models) | Camera (mean of 7 models) | Interpretation |
+|-----------|---------------------------------|----------------------------|---------------------------|---------------|
+| Image Quality | 0.64 (high) | 0.58 | 0.51 | Text models inherit T2V visual priors |
+| Trajectory Accuracy | 0.62 | **0.72** | 0.62 | One-hot discrete signals offer strongest controllability |
+| Memory Symmetry | 0.51 | 0.59 | 0.59 | Text models most prone to "forgetting the path" |
 
 ### Key Findings
-- **Universal Visual Quality ↔ Controllability Trade-off**: CogVideoX-I2V has the highest visual consistency (0.899) but low trajectory accuracy (0.595). Conversely, AC3D (fine-tuned from CogVideoX) shows sharp gains in control but degraded visual metrics, indicating a cost for camera-control fine-tuning.
-- **One-hot Discrete Actions are Overall Optimal**: Models using keyboard-style encoding (HY-World 1.5, Matrix-Game 2.0) outperform text models in action following, suggesting that discrete, strongly aligned action signals are better for learning physics.
-- **Memory Ability is a Global Weakness**: None of the 14 models achieved Memory Symmetry > 0.85; almost all models deviated from the initial scene when returning to the origin.
-- **Strong Encoders Enable Early Feature Formation**: Early methods (MotionCtrl, CameraCtrl) lag significantly in Trajectory Tolerance, reflecting the progress of newer camera-control injection mechanisms.
+- **There is a universal trade-off between visual quality and controllability**: CogVideoX-I2V achieves the highest visual consistency (0.899) but only 0.595 in trajectory accuracy; AC3D, fine-tuned from CogVideoX, shows the opposite—improved control at the cost of visual metrics, indicating that fine-tuning for camera control comes at a price.
+- **One-hot discrete actions offer overall optimal controllability**: Models using keyboard-style encoding (HY-World 1.5, Matrix-Game 2.0) outperform text models in action following, suggesting that "action signals must be discrete and strongly aligned" to learn physical dynamics well.
+- **Memory ability is a common weakness**: None of the 14 models achieves Memory Symmetry > 0.85; almost all deviate from the initial scene when returning to the origin in closed-loop tasks.
+- **Strong encoders yield clear features at early stages**: Early methods (MotionCtrl, CameraCtrl) lag significantly in Trajectory Tolerance, reflecting real progress brought by new camera control injection mechanisms.
 
 ## Highlights & Insights
-- The "729→81 Action Dictionary" is the most clever design: it forces uncomparable modalities into alignment and is extensible for future modalities.
-- Framing memory as a closed-loop path task is simple yet powerful, exposing the "goldfish memory" of existing world models.
-- Separating Trajectory Accuracy from Trajectory Tolerance (the latter comparing GT video trajectories via the same estimator) effectively cancels out simulator noise from the ViPE estimator.
-- Data diversity across UGV/UAV/human/robot perspectives and various weather/lighting conditions surpasses earlier benchmarks like WorldScore (3,000 cases).
+- The "729→81 action dictionary" is the most ingenious aspect: aligning dimensions to force comparability across modalities, with extensibility—new modalities only require an additional mapping table.
+- Framing memory ability as a closed-loop path task is a simple yet powerful design—directly exposing the "goldfish memory" problem in all current world models.
+- Separating Trajectory Accuracy and Trajectory Tolerance (the former compares camera commands, the latter compares GT video trajectories estimated by the same estimator) effectively offsets noise from the ViPE estimator, a valuable evaluation design trick.
+- The dataset covers UGV/UAV/human/robot perspectives, 9 outdoor weather types, and 5 indoor lighting conditions, making it more comprehensive than WorldScore (3,000 cases) and EWMBench (2,100 robotic arm cases).
 
 ## Limitations & Future Work
-- Evaluation primarily uses single inference results rather than averaged multi-run results; sampling-sensitive models might be undervalued.
-- The 81-action dictionary remains discrete, with limited coverage for truly continuous fine-grained operations (e.g., tiny steering angles).
-- Camera trajectory metrics depend on the ViPE extractor; errors in ViPE could affect multiple scores.
-- Real-time performance and long-term consistency (>10s) were not evaluated and are listed as future work.
-- High cost of data collection (330K videos + 4 simulators).
+- Evaluation is based mainly on single inference runs, without multiple averages or ensemble; some sampling-sensitive models may be underestimated.
+- The 81 actions remain a discrete dictionary, limiting coverage of truly continuous fine-grained operations (e.g., small steering angles).
+- Evaluation metrics for camera trajectories rely on the ViPE extractor; if ViPE itself has large errors in certain scenarios, multiple scores may be affected.
+- Real-time performance and long-range consistency (>10s videos) are not evaluated; the authors list these as future work.
+- The entire dataset (330K videos + 4 simulator renderings) is costly to collect, posing a high barrier to reproduction.
 
 ## Related Work & Insights
-- **vs WorldScore (Duan 2025)**: WorldScore focuses on general generation without interactive/memory tasks; iWorld-Bench treats interactivity as a first-class citizen.
-- **vs EWMBench / WorldEval**: Those focus on robotic arm manipulation; iWorld-Bench focuses on first-person mobile world models.
-- **vs VBench (Huang 2024)**: VBench evaluates general T2V quality; iWorld-Bench is complementary by focusing on action controllability.
-- **vs MovBench / WorldBench**: Previous benchmarks are single-modal; this work achieves cross-modal comparability via the Action Generation Framework.
+- **vs WorldScore (Duan 2025)**: WorldScore focuses on general world generation, without interactive/memory task design; iWorld-Bench explicitly treats "interaction" as a first-class citizen.
+- **vs EWMBench / WorldEval**: Both focus on robotic arm embodied policy evaluation, a different track; iWorld-Bench targets first-person motion world models.
+- **vs VBench (Huang 2024)**: VBench is a general video generation quality benchmark, not involving action controllability; iWorld-Bench is complementary.
+- **vs MovBench / WorldBench**: These benchmarks are single-modality; this work is the first to achieve cross-modal comparability via the Action Generation Framework.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ — The cross-modal dictionary and closed-loop memory tasks are genuine conceptual innovations.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — 14 models, 4,900 tasks, 9 metrics, and 3 input modalities offer rare depth.
-- **Writing Quality**: ⭐⭐⭐⭐ — Clear narrative and high information density, though sub-task hierarchies are slightly redundant.
-- **Value**: ⭐⭐⭐⭐ — Establishes the first standard metric for the emerging field of "Interactive World Models."
+- Novelty: ⭐⭐⭐⭐ — The cross-modal action dictionary and closed-loop memory tasks are genuine conceptual innovations, filling a key gap in world model evaluation.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — 14 models × 4,900 tasks × 9 metrics × three input modalities, with rare depth and breadth.
+- Writing Quality: ⭐⭐⭐⭐ — Clear narrative and information-dense tables, though the subtask design hierarchy is somewhat redundant and may confuse first-time readers.
+- Value: ⭐⭐⭐⭐ — Provides the first recognized benchmark for the emerging "interactive world model" direction, serving as an anchor for subsequent evaluation and model iteration.
 
 <!-- RELATED:START -->
 
@@ -127,9 +130,9 @@ Cross-modal comparison (differences in execution across input modalities for the
 
 - [\[ICLR 2026\] DA-AC: Distributions as Actions — A Unified RL Framework for Diverse Action Spaces](../../ICLR2026/others/distributions_as_actions_a_unified_framework_for_diverse_action_spaces.md)
 - [\[AAAI 2026\] Beyond World Models: Rethinking Understanding in AI Models](../../AAAI2026/others/beyond_world_models_rethinking_understanding_in_ai_models.md)
+- [\[ICLR 2026\] Building Spatial World Models from Sparse Transitional Episodic Memories](../../ICLR2026/others/building_spatial_world_models_from_sparse_transitional_episodic_memories.md)
 - [\[ICML 2026\] CyberGym-E2E: Scalable Real-World Benchmark for AI Agents' End-to-End Cybersecurity Capabilities](cybergym-e2e_scalable_real-world_benchmark_for_ai_agents_end-to-end_cybersecurit.md)
-- [\[ICLR 2026\] LPWM: Latent Particle World Models for Object-Centric Stochastic Dynamics](../../ICLR2026/others/latent_particle_world_models_self-supervised_object-centric_stochastic_dynamics_.md)
-- [\[CVPR 2026\] Next-Scale Autoregressive Models for Text-to-Motion Generation](../../CVPR2026/others/next-scale_autoregressive_models_for_text-to-motion_generation.md)
+- [\[NeurIPS 2025\] RDB2G-Bench: A Comprehensive Benchmark for Automatic Graph Modeling of Relational Databases](../../NeurIPS2025/others/rdb2g-bench_a_comprehensive_benchmark_for_automatic_graph_modeling_of_relational.md)
 
 </div>
 

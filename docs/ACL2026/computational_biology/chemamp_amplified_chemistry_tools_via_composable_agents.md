@@ -2,77 +2,77 @@
 title: >-
   [Paper Note] ChemAmp: Amplified Chemistry Tools via Composable Agents
 description: >-
-  [ACL 2026][Computational Biology][Tool Amplification] Proposes the "Tool Amplification" paradigm (distinct from traditional tool orchestration), using the ChemAmp framework to treat chemistry-specific tools (UniMol2…
+  [ACL 2026][Computational Biology][Tool amplification] This paper proposes a novel "tool amplification" paradigm (distinct from conventional tool orchestration) and introduces the ChemAmp framework…
 tags:
   - "ACL 2026"
   - "Computational Biology"
-  - "Tool Amplification"
-  - "Composable Agents"
-  - "Chemistry AI"
-  - "Multi-agent Systems"
-  - "Hierarchical Composition"
+  - "Tool amplification"
+  - "composable agents"
+  - "chemistry AI"
+  - "multi-agent systems"
+  - "hierarchical composition"
 date: 2026-05-08
-content_hash: ac7454365f19d0d0
+content_hash: 35feb38f49fde801
 ---
 
 # ChemAmp: Amplified Chemistry Tools via Composable Agents
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026
 **arXiv**: [2505.21569](https://arxiv.org/abs/2505.21569)  
 **Code**: [GitHub](https://github.com/Chang-pw/ChemAmp)  
-**Area**: AI for Science/Chemistry  
-**Keywords**: Tool Amplification, Composable Agents, Chemistry AI, Multi-agent Systems, Hierarchical Composition
+**Area**: Scientific AI / Chemistry
+**Keywords**: Tool amplification, composable agents, chemistry AI, multi-agent systems, hierarchical composition
 
 ## TL;DR
 
-Proposes the "Tool Amplification" paradigm (distinct from traditional tool orchestration), using the ChemAmp framework to treat chemistry-specific tools (UniMol2, Chemformer, etc.) as composable building blocks to dynamically construct task-specific super-agents. It outperforms specialized models and general LLMs across four core chemistry tasks while reducing inference token costs by 94%.
+This paper proposes a novel "tool amplification" paradigm (distinct from conventional tool orchestration) and introduces the ChemAmp framework, which treats chemistry-specific tools (UniMol2, Chemformer, etc.) as composable building blocks to dynamically construct task-specialized super-agents. ChemAmp surpasses both domain-specific models and general-purpose LLMs on four core chemistry tasks—including molecular design and reaction prediction—while reducing inference token costs by 94%.
 
 ## Background & Motivation
 
-**Background**: LLM-based agents can already orchestrate multi-step tool-use workflows in the chemistry domain (e.g., ChemCrow, Coscientist), sequentially calling tools like RDKit or molecular generators to complete cross-task workflows.
+**Background**: LLM-based agents have demonstrated the ability to orchestrate multi-step tool-use workflows in the chemistry domain (e.g., ChemCrow, Coscientist), sequentially invoking tools such as RDKit and molecular generators to complete cross-task workflows.
 
-**Limitations of Prior Work**: Existing methods focus on "tool orchestration" (scheduling tools across tasks), but performance within a single task is capped by the atomic capability limits of the underlying tools. Even superior chemistry-specific tools (UniMol2, ChemDFM) achieve only 35% exact match in molecular description when used alone, allowing errors to propagate through the reasoning chain.
+**Limitations of Prior Work**: Existing approaches focus on "tool orchestration" (scheduling tool sequences across tasks), yet within-task performance remains bounded by the atomic capabilities of individual tools. Even state-of-the-art chemistry-specific tools (UniMol2, ChemDFM) achieve only 35% exact match in molecular description when used in isolation, and errors propagate through the reasoning chain.
 
-**Key Challenge**: Tool orchestration optimizes cross-task scheduling, but the performance bottleneck within tasks is the fundamental factor limiting agent performance.
+**Key Challenge**: Tool orchestration optimizes inter-task tool scheduling, but the true bottleneck constraining agent performance is within-task tool capability limitations.
 
-**Goal**: Shift from "tool orchestration" to "tool amplification"—enabling tools to exceed their atomic capabilities within a single task through dynamic composition.
+**Goal**: Shift from "tool orchestration" to "tool amplification"—enabling tools to exceed their individual atomic capabilities within a single task through dynamic composition.
 
-**Key Insight**: Each tool is treated as a composable building block agent, with stronger composite tools built through hierarchical iterative encapsulation.
+**Key Insight**: Treat each tool as a composable building-block agent and construct higher-performing composite tools through hierarchical iterative encapsulation.
 
-**Core Idea**: A two-stage amplification—first encapsulating atomic tools into enhanced sub-agents (Stage 1), then combining sub-agents into a hierarchical network (Stage 2), with iterative optimization via adaptive scoring and automatic feedback.
+**Core Idea**: A two-stage amplification process—first encapsulating atomic tools into enhanced sub-agents (Stage 1), then composing sub-agents into a hierarchical network (Stage 2), with iterative refinement guided by adaptive scoring and automatic feedback.
 
 ## Method
 
 ### Overall Architecture
 
-ChemAmp builds an agent hierarchy through a two-stage bidirectional encapsulation engine: Stage 1 (Atomic → Composite Amplification)—each atomic tool is iteratively encapsulated into an Agent Composite Tool until performance no longer improves, and all variants are registered in a tool library; Stage 2 (Cross-Composite Coordination)—the best tool is selected from the library as a base to combine with other top-$k$ tools to form higher-level composite tools, iterating until global performance stabilizes.
+ChemAmp constructs an agent hierarchy through a two-stage bidirectional encapsulation engine. In **Stage 1** (atomic → composite amplification), each atomic tool is iteratively encapsulated into an Agent Composite Tool until performance ceases to improve, and all variants are registered in a tool library. In **Stage 2** (cross-composite collaboration), the best-performing tool from the library serves as a base and is combined with other top-$k$ tools to form higher-level composite tools, iterating until global performance stabilizes.
 
 ### Key Designs
 
-1. **Dual Role of Agent Composite Tool**:
+1. **Dual Role of the Agent Composite Tool**:
 
-    - **Function**: Serves both as a composable building block for higher-level agents and an autonomous executor for chemistry sub-tasks.
-    - **Mechanism**: Each $\mathcal{A}(t_1,...,t_n)$ encapsulates multiple tools and their coordination strategies, which can be called by upper-level agents or executed independently. This duality allows ChemAmp to identify optimal enhancement points where tool coordination creates synergistic effects.
-    - **Design Motivation**: Avoid simple stacking and achieve true capability emergence.
+    - **Function**: Serves simultaneously as a composable building block for higher-level agents and as an autonomous executor for chemistry sub-tasks.
+    - **Mechanism**: Each $\mathcal{A}(t_1,\ldots,t_n)$ encapsulates multiple tools along with their coordination strategies, enabling both invocation by upper-level agents and independent execution. This duality allows ChemAmp to identify optimal enhancement points where tool coordination yields synergistic effects.
+    - **Design Motivation**: Avoids naive stacking and enables genuine capability emergence.
 
 2. **Two-Stage Iterative Encapsulation**:
 
-    - **Function**: Automatically discovers the optimal tool combination.
-    - **Mechanism**: Stage 1 iteratively encapsulates $\mathcal{A}_i(t_k)$ for each atomic tool, scoring it with task metrics $s_i$ and continuing only if a threshold $\delta$ is exceeded. Stage 2 ranks the tool library, takes the top-1 as a base, and combines it with top-$k$ tools to form $\{\mathcal{A}(t_1,t_2),...,\mathcal{A}(t_1,t_k)\}$, iterating until global performance plateaus.
-    - **Design Motivation**: Manual combination is infeasible, and exhaustive search is too costly; iteration with threshold control balances efficiency and effectiveness.
+    - **Function**: Automatically discovers optimal tool combinations.
+    - **Mechanism**: Stage 1 iteratively encapsulates each atomic tool as $\mathcal{A}_i(t_k)$, scored by task metric $s_i$, continuing only when improvement exceeds threshold $\delta$. Stage 2 ranks the tool library, takes the top-1 tool as the base, and forms combinations $\{\mathcal{A}(t_1,t_2),\ldots,\mathcal{A}(t_1,t_k)\}$ with the top-$k$ tools, iterating until global performance no longer improves.
+    - **Design Motivation**: Manual combination is infeasible and exhaustive search is prohibitively costly; iterative encapsulation with threshold control balances efficiency and effectiveness.
 
-3. **Extremely Low Data Requirement ($\leq 10$ samples)**:
+3. **Minimal Data Requirement (≤10 samples)**:
 
-    - **Function**: Optimizes tool combinations with very few validation samples.
-    - **Mechanism**: Each task requires only $\leq 10$ samples for combination scoring and selection. By leveraging the domain knowledge inherent in chemistry tools, ChemAmp only needs minimal data to judge if a combination provides an improvement.
-    - **Design Motivation**: Labeled data in chemistry is scarce; the method must exhibit low data dependency.
+    - **Function**: Optimizes tool composition with extremely few validation samples.
+    - **Mechanism**: Each task requires only ≤10 samples for composition scoring and selection. By leveraging the domain knowledge embedded in chemistry tools themselves, ChemAmp needs only a small number of examples to determine whether a combination yields improvement.
+    - **Design Motivation**: Annotated data is scarce in the chemistry domain, necessitating a low-data-dependency approach.
 
 ## Key Experimental Results
 
-### Main Results (Molecular Design - ChemLLMBench)
+### Main Results (Molecular Design — ChemLLMBench)
 
 | Method | Exact Match | BLEU | FTS |
-|------|---------|------|-----|
+|--------|-------------|------|-----|
 | ChemDFM-13B | 0.32 | 0.85 | 0.74 |
 | Text+Chem T5 | 0.32 | 0.85 | 0.82 |
 | GPT-4o | 0.01 | 0.57 | 0.54 |
@@ -80,41 +80,41 @@ ChemAmp builds an agent hierarchy through a two-stage bidirectional encapsulatio
 
 ### Ablation Study
 
-| Configuration | Key Metric | Description |
-|------|---------|------|
-| Stage 1 Only | Improvement observed | Single tool enhancement is effective |
-| Stage 1 + Stage 2 | Best | Cross-composite coordination further improves performance |
-| Vanilla Multi-Agent | Poor | Simple stacking is inferior to structured composition |
-| Token Cost | 94% Reduction | vs. vanilla multi-agent systems |
+| Configuration | Key Metric | Note |
+|---------------|------------|------|
+| Stage 1 only | Improved | Single-tool enhancement is effective |
+| Stage 1 + Stage 2 | Best | Cross-composite collaboration yields further gains |
+| Vanilla multi-agent | Worse | Naive stacking underperforms structured composition |
+| Token cost | 94% reduction | vs. vanilla multi-agent system |
 
 ### Key Findings
-- ChemAmp comprehensively outperforms specialized chemistry models, general LLMs, and traditional agent orchestration systems across four core chemistry tasks.
-- Inference token cost is only 6% of vanilla multi-agent systems, demonstrating extreme efficiency.
-- Bottom-up composition strategies outperform top-down orchestration strategies.
-- Exact match in molecular design improved from the SOTA of 0.32 to 0.42 (+31%), proving the actual effectiveness of tool amplification.
+- ChemAmp comprehensively outperforms chemistry-specific models, general-purpose LLMs, and conventional agent orchestration systems across four core chemistry tasks.
+- Inference token cost is only 6% of that of vanilla multi-agent systems, demonstrating exceptional efficiency.
+- A bottom-up composition strategy outperforms top-down orchestration strategies.
+- Exact match on molecular design improves from the prior SOTA of 0.32 to 0.42 (+31%), validating the practical effectiveness of tool amplification.
 
 ## Highlights & Insights
-- **Paradigm Innovation**: The distinction between "tool amplification" and "tool orchestration" is clear and powerful, shifting from "cross-task scheduling" to "intra-task enhancement."
-- **Balance of Efficiency and Effectiveness**: Surpassing SOTA while reducing inference token costs by 94% shows that structured composition is more efficient than brute-force stacking.
-- **Universality**: While applied to chemistry, the tool amplification paradigm is transferable to other scientific domains.
-- **Low Data Dependency**: Practicality is high since combinations can be optimized with $\leq 10$ samples.
+- **Paradigm Innovation**: The distinction between "tool amplification" and "tool orchestration" is clear and compelling, representing a shift from cross-task scheduling to within-task enhancement.
+- **Efficiency and Effectiveness**: Surpassing SOTA while reducing inference token cost by 94% demonstrates that structured composition is far more efficient than brute-force stacking.
+- **Generality**: Although applied to chemistry, the tool amplification paradigm is transferable to other scientific domains.
+- **Low Data Requirement**: Composition optimization with ≤10 samples ensures strong practical utility.
 
 ## Limitations & Future Work
-- **Reliance on GPT-4o as the Core Agent**: The effectiveness of the composition strategy may be limited by the capabilities of the underlying LLM.
-- **Evaluation Scale**: Evaluated only on 100 instances of ChemLLMBench, which is a relatively small test scale.
-- **Domain Specificity**: Applicability to other scientific fields needs further verification.
-- Future Directions: Extending to more scientific domains, studying the interpretability of composition strategies, and reducing reliance on closed-source LLMs.
+- **Dependence on GPT-4o as the core agent**: The effectiveness of the composition strategy may be constrained by the capabilities of the underlying LLM.
+- **Evaluation limited to 100 instances on ChemLLMBench**: The test scale is relatively small.
+- **Chemistry-domain specificity**: Applicability to other scientific domains requires further validation.
+- Future directions include extending the framework to broader scientific domains, investigating the interpretability of composition strategies, and reducing reliance on closed-source LLMs.
 
 ## Related Work & Insights
-- **vs. ChemCrow/Coscientist**: Typical tool orchestration systems that are effective for cross-task scheduling but do not enhance single-task performance.
-- **vs. ChemToolAgent**: Supports large toolsets and dynamic selection but still falls within the orchestration paradigm.
-- **vs. AgentPrune/GPTSwarm**: Automated workflow optimization that does not involve atomic tool-level enhancement.
+- **vs. ChemCrow / Coscientist**: Representative tool orchestration systems effective at cross-task scheduling but incapable of enhancing within-task performance.
+- **vs. ChemToolAgent**: Supports large tool sets and dynamic selection but remains within the orchestration paradigm.
+- **vs. AgentPrune / GPTSwarm**: Automated workflow optimization without atomic tool-level enhancement.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ The "tool amplification" paradigm is novel and convincing; the two-stage encapsulation engine design is elegant.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive evaluation across four chemistry tasks with ablation and efficiency analysis, though the test scale is small.
-- Writing Quality: ⭐⭐⭐⭐ The diagram distinguishing orchestration vs. amplification is clear, and the algorithm description is complete.
-- Value: ⭐⭐⭐⭐ Provides a new approach for scientific AI tool enhancement; the dual improvement in efficiency and effectiveness has practical deployment value.
+- **Novelty**: ⭐⭐⭐⭐⭐ The "tool amplification" paradigm is novel and persuasive; the two-stage encapsulation engine is elegantly designed.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Comprehensive evaluation across four chemistry tasks with ablation and efficiency analysis, though test scale is limited.
+- **Writing Quality**: ⭐⭐⭐⭐ The orchestration-vs-amplification distinction figure is clear, and the algorithmic descriptions are complete.
+- **Value**: ⭐⭐⭐⭐ Provides a new perspective for tool enhancement in scientific AI; the dual gains in efficiency and effectiveness carry practical deployment value.
 
 <!-- RELATED:START -->
 

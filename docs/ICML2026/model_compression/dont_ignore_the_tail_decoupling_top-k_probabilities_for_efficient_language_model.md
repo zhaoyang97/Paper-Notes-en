@@ -137,7 +137,7 @@ Qwen1.5-1.8B → {1.2B, 0.5B} students, pre-training distillation, average acros
 - [\[ICLR 2026\] Pedagogically-Inspired Data Synthesis for Language Model Knowledge Distillation](../../ICLR2026/model_compression/pedagogically-inspired_data_synthesis_for_language_model_knowledge_distillation.md)
 - [\[ACL 2026\] Efficient Learned Data Compression via Dual-Stream Feature Decoupling](../../ACL2026/model_compression/efficient_learned_data_compression_via_dual-stream_feature_decoupling.md)
 - [\[ICML 2026\] Model Merging Scaling Laws in Large Language Models](model_merging_scaling_laws_in_large_language_models.md)
-- [\[ACL 2026\] SRA: Span Representation Alignment for Large Language Model Distillation](../../ACL2026/model_compression/sra_span_representation_alignment_for_large_language_model_distillation.md)
+- [\[ICML 2026\] GradPower: Powering Gradients for Faster Language Model Pre-Training](gradpower_powering_gradients_for_faster_language_model_pre-training.md)
 
 </div>
 

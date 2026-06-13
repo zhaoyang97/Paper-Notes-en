@@ -209,10 +209,10 @@ BLEU-4 improves by 3.37 on CSL-Daily, with SignRep entirely frozen, eliminating 
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Enhancing Multilingual LLM Pretraining with Model-Based Data Selection](../../NeurIPS2025/multilingual_mt/enhancing_multilingual_llm_pretraining_with_model-based_data_selection.md)
 - [\[ICLR 2026\] SASFT: Sparse Autoencoder-guided Supervised Finetuning to Mitigate Unexpected Code-Switching in LLMs](../../ICLR2026/multilingual_mt/sasft_sparse_autoencoder-guided_supervised_finetuning_to_mitigate_unexpected_cod.md)
 - [\[NeurIPS 2025\] Reflective Translation: Improving Low-Resource Machine Translation via Structured Self-Reflection](../../NeurIPS2025/multilingual_mt/reflective_translation_improving_low-resource_machine_translation_via_structured.md)
 - [\[ACL 2026\] Selective Contrastive Learning For Gloss Free Sign Language Translation](../../ACL2026/multilingual_mt/selective_contrastive_learning_for_gloss_free_sign_language_translation.md)
+- [\[ACL 2026\] Enhancing BiGRU with a KAN Block for Legal Document Classification and Summarization](../../ACL2026/multilingual_mt/enhancing_bigru_with_a_kan_block_for_legal_document_classification_and_summariza.md)
 - [\[ACL 2026\] Think in Latent Thoughts: A New Paradigm for Gloss-Free Sign Language Translation](../../ACL2026/multilingual_mt/think_in_latent_thoughts_a_new_paradigm_for_gloss-free_sign_language_translation.md)
 
 </div>

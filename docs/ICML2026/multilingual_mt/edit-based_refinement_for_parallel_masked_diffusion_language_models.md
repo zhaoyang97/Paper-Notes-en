@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Edit-Based Refinement for Parallel Masked Diffusion Language Models
 description: >-
-  [ICML 2026][Multilingual & Machine Translation][Masked Diffusion] ME-DLM adds a lightweight "decode-then-edit" refinement stage to masked diffusion language models (e.g., LLaDA). In the first stage…
+  [ICML 2026][Multilingual & Machine Translation][Masked Diffusion] ME-DLM introduces a lightweight "decode-then-edit" stage to masked diffusion language models (e.g.…
 tags:
   - "ICML 2026"
   - "Multilingual & Machine Translation"
@@ -11,7 +11,7 @@ tags:
   - "edit distance supervision"
   - "parallel decoding"
 date: 2026-05-08
-content_hash: 279b193db9125ee8
+content_hash: b84aa46ff18ac2a4
 ---
 
 # Edit-Based Refinement for Parallel Masked Diffusion Language Models
@@ -23,57 +23,61 @@ content_hash: 279b193db9125ee8
 **Keywords**: Masked Diffusion, edit-based refinement, edit distance supervision, parallel decoding
 
 ## TL;DR
-ME-DLM adds a lightweight "decode-then-edit" refinement stage to masked diffusion language models (e.g., LLaDA). In the first stage, a draft is generated via standard unmasking; in the second stage, token-level parallel corrections (replace/delete/insert) are performed. Supervised by the shortest edit distance scripts, it outperforms LLaDA-Instruct by +11.6 on HumanEval and +33.6 on GSM8K using only 1/8 of the diffusion steps.
+ME-DLM introduces a lightweight "decode-then-edit" stage to masked diffusion language models (e.g., LLaDA): the first stage performs standard unmasking to generate a draft, and the second stage applies parallel corrections using three types of token-level edits (replace/delete/insert). The supervision signal is derived from the shortest edit script (edit distance). With only 1/8 diffusion steps, it surpasses LLaDA-Instruct by +11.6 on HumanEval and +33.6 on GSM8K.
 
 ## Background & Motivation
 
-**Background**: Masked Diffusion Language Models (MDLM), such as LLaDA and Dream, have matched autoregressive LLMs at the billion-parameter scale. Their primary selling point is **parallel decoding**—filling multiple mask tokens in one step, which is more time-efficient than autoregressive generation.
+**Background**: Masked Diffusion Language Models (MDLM) such as LLaDA and Dream have achieved parity with autoregressive LLMs at the billion-parameter scale, with the main advantage being **parallel decoding**—filling multiple mask tokens in one step, saving time compared to autoregressive models.
 
-**Limitations of Prior Work**: When the number of tokens predicted in parallel per step increases from 1 to 4, 8, or 16, generation quality **drops precipitously**. A vivid example in the paper: with a training set containing "2+2=4", "2+3=5", and "3+2=5", a model sampling via independent marginal probabilities might generate "2+2=5". Each token is the most probable individually, but the combination violates arithmetic.
+**Limitations of Prior Work**: When the number of tokens predicted in parallel per step increases from 1 to 4, 8, or even 16, the generation quality **drops sharply**. The paper provides an intuitive example: with a training set containing only "2+2=4", "2+3=5", "3+2=5", the model, sampling tokens independently by marginal probability, can generate "2+2=5"—each token is locally most probable, but the combination violates arithmetic.
 
-**Key Challenge**: The MDLM training objective is token-level cross-entropy $\mathcal{L} \propto \mathbb{E}[-\log p_\theta(x_{0,i}|x_t)]$, which only models the **marginal distribution** of each position. During parallel decoding, the model takes the argmax across a set $\mathcal{S}$ simultaneously, implicitly assuming conditional independence $p_\theta(x_{0,\mathcal{S}}|x_t) \approx \prod_{i\in\mathcal{S}} p_\theta(x_{0,i}|x_t)$. **Optimal marginals $\neq$ optimal joint distribution**, which is the root cause of multi-token parallel failure.
+**Key Challenge**: The MDLM training objective is token-level cross-entropy $\mathcal{L} \propto \mathbb{E}[-\log p_\theta(x_{0,i}|x_t)]$, modeling only the **marginal distribution** at each position. However, during parallel decoding, the model simultaneously takes argmax over the set $\mathcal{S}$, implicitly assuming conditional independence across positions: $p_\theta(x_{0,\mathcal{S}}|x_t)\approx\prod_{i\in\mathcal{S}}p_\theta(x_{0,i}|x_t)$. **Marginal optimality ≠ joint optimality**, which is the root cause of multi-token parallel decoding failures.
 
-**Goal**: Address this "lack of joint consistency" without altering the LLaDA training paradigm or increasing the total number of diffusion steps.
+**Goal**: To address this "lack of joint consistency" without altering the LLaDA training paradigm or increasing the total number of diffusion steps.
 
-**Key Insight**: Parallel-decoded drafts are often close to the ground truth but contain sparse structural errors (extra, missing, or incorrect tokens). By retaining the parallel unmasking stage to obtain a draft followed by a **lightweight edit-based refinement stage** for local corrections, one can enjoy parallel speed while achieving joint consistency.
+**Key Insight**: The authors observe that the draft produced by parallel decoding is already close to correct, with only sporadic structural errors (extra/missing/wrong tokens). By retaining the parallel unmasking for the draft in the first stage and adding a **lightweight edit refinement stage** for local corrections, one can enjoy both the speed of parallelism and joint consistency.
 
-**Core Idea**: Decompose the diffusion process into "mask diffusion (drafting) + edit diffusion (local refinement)". The edit stage uses three token-level actions—replace, delete, and insert—supervised by the **shortest edit script (edit distance)** from the draft to the target.
+**Core Idea**: Decompose the diffusion process into two stages: "mask diffusion (draft generation) + edit diffusion (local refinement)". The edit stage uses three token-level edit actions (replace/delete/insert), supervised by the **shortest edit script (edit distance)** from draft to target.
 
 ## Method
 
 ### Overall Architecture
-A two-stage diffusion process sharing the same set of parameters (LLaDA-8B). Training proceeds through three progressive stages:
+A two-stage diffusion process, sharing the same set of parameters (LLaDA-8B) throughout, with three progressive training stages:
 
-- **Mask diffusion stage**: Starting from a fully masked sequence, tokens are unmasked following a schedule $\{t_K > \dots > t_0 = 0\}$, with multiple mask tokens filled in parallel per step to obtain a complete draft $x^{(0)}$. This part is identical to LLaDA.
-- **Edit diffusion stage**: Starting from $x^{(0)}$, the model predicts a pair of actions $(c_i, n_i)$ for each position. $c_i \in \mathcal{V} \cup \{\text{[DEL]}\}$ indicates replacement, deletion, or keeping, while $n_i \in \mathcal{V}$ indicates what to insert after the current position (no insertion if $n_i = c_{i+1}$). A deterministic operator $A$ applies these actions: $x^{(t+1)} = A(x^{(t)}, \{(c_i, n_i)\})$. Actions are **predicted in parallel** for all positions, but the sequence changes globally during application, coupling token dependencies at the operation layer.
-- **Termination**: The process stops when the model predicts "null edits" for all positions (where $c_i = x_i$ and no insertion occurs) or reaches the maximum number of steps.
+- **Mask diffusion stage**: Starting from a fully masked sequence, unmask tokens iteratively according to schedule $\{t_K>\dots>t_0=0\}$, filling multiple mask tokens in parallel at each step to obtain a complete draft $x^{(0)}$. This is identical to LLaDA.
+- **Edit diffusion stage**: Starting from $x^{(0)}$, at each step, the model predicts for each token position a pair of actions $(c_i,n_i)$—$c_i\in\mathcal{V}\cup\{\text{[DEL]}\}$ indicates replace/delete/keep at the current position, $n_i\in\mathcal{V}$ indicates what to insert after the current position (if $n_i=c_{i+1}$, no insertion). A deterministic operator $A$ applies these actions to the sequence: $x^{(t+1)}=A(x^{(t)},\{(c_i,n_i)\})$. All actions are **predicted in parallel**, but the application couples the entire sequence, introducing dependencies among tokens at the application layer.
+- **Termination**: The process stops when the model predicts "no edit" (i.e., $c_i=x_i$ and no insertion) for all positions or when the maximum number of steps is reached.
 
 ### Key Designs
 
-1. **Token-level (c, n) Edit Actions + Deterministic Application Operators**:
-    - **Function**: Uses a pair of token-level outputs $(c_i, n_i)$ to simultaneously represent replace, delete, and insert operations, allowing edit actions to be **predicted in parallel** but **applied sequentially**.
-    - **Mechanism**: The transition $p_\theta(x^{(t+1)}|x^{(t)}) \equiv \prod_{i=1}^{L_t} p_\theta(c_i, n_i|x^{(t)})$ is factorized at the prediction layer, but the application operator $A$ scans from left to right: if $c_i = \text{[DEL]}$, delete $x_i^{(t)}$; otherwise, $c_i$ replaces $x_i^{(t)}$; then, if $n_i \neq c_{i+1}$, insert $n_i$ after position $i$.
-    - **Design Motivation**: The parallel advantage of MDLM must be preserved, requiring a factorized prediction side. To solve the joint consistency problem, the "coupling" of positions is moved to the **deterministic application** step, bypassing the difficulty of explicit joint modeling.
+1. **Token-level (c, n) edit actions + deterministic application operator**:
 
-2. **Edit Distance Supervision + Canonical Mapping**:
-    - **Function**: Provides deterministic token-level edit supervision signals $(c_i^\star, n_i^\star)$ for training, steering the model toward "minimal correction" rather than rewriting.
-    - **Mechanism**: During training, the model first generates an intermediate state $x^{(m)}$. The shortest edit script (replace/delete/insert sequence) from $x^{(m)}$ to the ground-truth $x^\star$ is calculated using a standard edit distance algorithm. A canonical rule then maps this script into $(c_i^\star, n_i^\star)$ for each position. If multiple tokens need to be inserted at one spot, only the first is supervised in the current step.
-    - **Design Motivation**: Edit distance provides a **deterministic optimal solution** outside of differentiability. The canonical mapping removes ambiguity in the training signal. Favouring minimal modifications encourages conservative editing, naturally leading to convergence when the sequence stabilizes.
+    - **Function**: A pair of token-level outputs $(c_i,n_i)$ simultaneously expresses replace, delete, and insert operations, enabling **parallel prediction** but **sequential application** of edits.
+    - **Mechanism**: The transition $p_\theta(x^{(t+1)}|x^{(t)})\equiv\prod_{i=1}^{L_t}p_\theta(c_i,n_i|x^{(t)})$ is independent at the prediction layer, but the application operator $A$ sweeps left-to-right: if $c_i=\text{[DEL]}$, delete $x_i^{(t)}$; otherwise, replace $x_i^{(t)}$ with $c_i$; then, if $n_i\neq c_{i+1}$, insert $n_i$ after position $i$. For boundary cases, repeated insertions are represented canonically (e.g., "a a a b" as "insert a between a and b"), and prompt/generated boundaries are valid insertion points.
+    - **Design Motivation**: The parallelism advantage of MDLM must be preserved, so the prediction must be factorized; however, joint consistency requires coupling between positions. The authors place "coupling" in the **deterministic application** step, circumventing the challenge of explicit joint modeling. This is the most ingenious engineering insight of the paper.
 
-3. **Three-stage Curriculum Training + Inference Step Allocation**:
-    - **Function**: Transitions the model from "mask diffusion only" to "edit refinement capable," preventing early training errors from accumulating.
-    - **Mechanism**: (i) Stage 1: Learn to predict the current and next token on Nemotron-Pretraining-SFT to build the foundation for $(c_i, n_i)$ prediction; (ii) Stage 2: Standard masked diffusion fine-tuning on R1-Distilled data to establish a strong baseline; (iii) Stage 3: Interleaved mask and edit training with $m$ gradually increasing from 0.
-    - **Design Motivation**: Training on edits directly from a poor draft is too burdensome. A curriculum allows the model to master drafting before learning to refine. At inference, a 1/8 budget (64 steps) typically uses 48 mask steps and 16 edit steps.
+2. **Edit distance supervision + canonical mapping**:
+
+    - **Function**: Provides deterministic token-level edit supervision $(c_i^\star,n_i^\star)$ during training, guiding the model to learn "minimal correction" rather than "major rewriting".
+    - **Mechanism**: During training, the model first generates an intermediate state $x^{(m)}$ (mask diffusion for n steps + edit diffusion for m steps), then computes the shortest edit script (replace/delete/insert sequence) from $x^{(m)}$ to ground-truth $x^\star$ using the classic edit distance algorithm, and maps the script to $(c_i^\star,n_i^\star)$ for each position via a canonical rule. If multiple tokens need to be inserted at the same position, only the first is supervised in the current step, with the rest deferred to subsequent steps.
+    - **Design Motivation**: Edit distance is the **deterministic, optimal (though non-differentiable) solution**—given $(x^{(m)},x^\star)$, the shortest edit script (under the canonical mapping) is unique, providing unambiguous training signals. Learning only minimal edits encourages conservative corrections, so the model naturally outputs no edits and terminates once the sequence stabilizes, aligning with the convergence semantics of diffusion. This is much simpler than RL/RLHF for training edit policies.
+
+3. **Three-stage curriculum training + mask/edit step allocation at inference**:
+
+    - **Function**: Enables the model to gradually transition from "only mask diffusion" to "capable of edit refinement", avoiding error accumulation in early training.
+    - **Mechanism**: (i) Stage 1 trains on Nemotron-Pretraining-SFT to predict the current and next token, laying the foundation for $(c_i,n_i)$ next-token prediction; (ii) Stage 2 fine-tunes on R1-Distilled data with standard masked diffusion, yielding a strong baseline; (iii) Stage 3 interleaves mask and edit training on the same data, gradually increasing $m$ from 0. At inference, by default, 1/4 of the total budget is allocated to edit, with an edit step cap of 32; for example, with 1/8 budget (64 steps), 48 are mask and 16 are edit.
+    - **Design Motivation**: Directly training edit leads to poor initial drafts and excessive editing burden; curriculum allows the model to first master "drafting" before gradually learning "refinement", a common trick in diffusion training. Allocating more steps to mask at inference is justified because better drafts require fewer edits; Table 3 confirms that with a 1/1 budget, only 6-9 edit steps are needed for convergence.
 
 ### Loss & Training
-- Progressively fine-tunes the same LLaDA-8B parameters across three stages. Stage 1: lr=5e-5, batch=2048; Stage 2: lr=5e-5, batch=128; Stage 3: lr=1e-5, batch=128. Total training time is ~213 hours on 64× H800 GPUs.
-- Inference: Mask diffusion $\rightarrow$ edit diffusion, with an edit step limit of 32 and early stopping upon null edits.
+
+- Three-stage progressive fine-tuning of the same LLaDA-8B parameters; Stage 1: lr=5e-5, batch=2048; Stage 2: lr=5e-5, batch=128; Stage 3: lr=1e-5, batch=128; total training time: ~213 hours on 64×H800 GPUs.
+- Inference: mask diffusion → edit diffusion, edit step cap 32, early stop if all edits are empty.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Average gains across 6 math and code benchmarks under different budgets (Budget = total steps × tokens per step / sequence length):
+On six math and code benchmarks, average gains under different budgets (Budget = total steps × tokens per step / sequence length):
 
 | Budget | LLaDA-Instruct | ME-DLM Stage-2 | **ME-DLM Stage-3** | Stage-3 vs Stage-2 |
 |--------|----------------|----------------|--------------------|--------------------|
@@ -82,62 +86,71 @@ Average gains across 6 math and code benchmarks under different budgets (Budget 
 | 1/4 | 32.3 | 37.7 | **46.4** | +8.7 |
 | 1/8 | 20.9 | 19.3 | **32.6** | +13.3 |
 
-Specific results at 1/8 budget (8 tokens in parallel per step, 64 steps total):
+On specific datasets, at 1/8 budget (8 tokens per step, 64 steps total):
 
 | Dataset | LLaDA-Instruct | ME-DLM Stage-3 | Gain |
-|--------|----------------|----------------|------|
+|---------|----------------|----------------|------|
 | HumanEval | 12.2 | 25.0 | **+12.8** |
 | HumanEval+ | 9.8 | 22.6 | +12.8 |
 | MBPP | 17.5 | 26.7 | +9.2 |
-| GSM8K | 50.3 | 83.8 (84.8 @ 1/1) | **Significant** |
+| GSM8K | 50.3 | 83.8 (84.8 @ 1/1) | Highly significant |
 | MATH-500 | 20.2 | 34.4 | +14.2 |
+
+(The "+11.6 HumanEval / +33.6 GSM8K" in the abstract refers to ME-DLM Stage-3 vs LLaDA-Instruct, using representative numbers from different budgets.)
 
 ### Ablation Study
 
-Step allocation (1/8 budget = 64 total steps):
+Step allocation experiments (1/8 budget = 64 total steps):
 
-| m/e (mask/edit) | HumanEval | GSM8K | Remarks |
-|-----------------|-----------|-------|------|
-| 64/0 (only mask) | Significant drop | Significant drop | Validates failure of parallel decoding |
-| 32/32 | Medium | Medium | Balanced but insufficient mask steps |
-| 48/16 (Default) | **Optimal** | **Optimal** | Better drafting from more mask steps |
+| m/e (mask/edit) | HumanEval | GSM8K | Notes |
+|-----------------|-----------|-------|-------|
+| 64/0 (only mask) | Sharp drop | Sharp drop | Validates parallel decoding failure |
+| 32/32 | Moderate | Moderate | Balanced but insufficient mask steps |
+| 48/16 (default) | **Best** | **Best** | More mask steps yield better drafts, 16 edit steps suffice |
+| 0/64 (only edit) | Sometimes OK at low budget | - | Flexible but less stable |
 
-Actual edit convergence steps:
+Edit convergence steps:
 
-| Budget | Max Edit Limit | HumanEval Actual | MATH-500 Actual |
-|--------|-------------|----------------|---------------|
+| Budget | Edit step cap | HumanEval actual | MATH-500 actual |
+|--------|--------------|------------------|-----------------|
 | 1/1 | 32 | 6.2 | 7.4 |
 | 1/2 | 32 | 21.6 | 17.8 |
 | 1/4 | 32 | 27.6 | 24.1 |
 | 1/8 | 16 | 15.2 | 14.7 |
 
 ### Key Findings
-- **Smaller budgets lead to larger edit gains**: The gain at 1/1 budget is +4.3, rising to +13.3 at 1/8 budget. Edit refinement is specifically designed to rescue aggressive parallel decoding.
-- **Edit steps decrease as mask steps increase**: At 1/1 budget, convergence takes only 6-9 edit steps, confirming that better drafts require less refinement.
-- **Extreme gains on GSM8K (+33.6)**: Mathematical reasoning is highly sensitive to joint consistency; edit refinement is nearly essential for such tasks.
-- **Code improvement is smaller than math**: This may be because code has stronger syntactic constraints that are partially handled during drafting, whereas single-digit errors in math lead to total failure.
+- **Smaller budgets yield greater edit gains**: At 1/1 budget, Stage-3 vs Stage-2 is only +4.3, but at 1/8 it jumps to +13.3—indicating that edit refinement is designed to **remedy aggressive parallel decoding**.
+- **Increasing mask steps reduces required edit steps** (Table 3): At 1/1, only 6-9 edit steps are needed for convergence; at 1/4, 26-27 steps are needed—confirming the intuition that better drafts require fewer edits, and that edit diffusion is a true convergence process rather than open-ended rewriting.
+- **The +33.6 on GSM8K is the most striking result**: Jumping from 50.3 to 83.8 shows that mathematical reasoning is particularly sensitive to "joint consistency" (one wrong token ruins the whole problem), making edit refinement almost essential for such tasks.
+- **Improvements on code tasks are less pronounced than on math**: Possibly because code tokens are strongly constrained (syntax), so parallel decoding errors are less severe and code can still compile; in math, one wrong number invalidates the entire answer.
 
 ## Highlights & Insights
-- **Factorized prediction combined with deterministic application coupling** is a clever decoupling design. It retains parallel prediction while shifting joint consistency to the application layer.
-- **Edit distance is an undervalued supervision signal**: While RLHF/DPO are popular, edit distance provides a more stable, deterministic, and computable target when the goal is minimal modification.
-- **Self-correction training paradigm**: Stage 3 uses the model's own trajectories for edit supervision, ensuring that the training distribution matches the inference distribution.
+- **"Factorized prediction + deterministic application coupling" is a clever decoupling design**: It retains parallelism in prediction while enforcing joint consistency in deterministic application, circumventing the fundamental conflict between parallelism and joint modeling. This trick can be transferred to any token-level parallel generation framework (including non-mask diffusion, speculative decoding, etc.).
+- **Edit distance as a supervision signal is an underrated tool**: While RLHF/DPO are popular in the LLM era, when the goal is "minimal correction rather than arbitrary rewriting", edit distance offers determinism, minimality, and computability, making it more robust than RL-trained reward models.
+- **"Self-generated trajectory for self-correction" training paradigm**: Stage 3 uses the model's own draft as edit supervision, aligning the training and inference distributions and fundamentally avoiding exposure bias.
+- **Broad applicability**: Diffusion video generation, diffusion speech, and parallel non-autoregressive MT all face the "marginal optimality ≠ joint optimality" issue; the ME-DLM approach is transferable.
 
 ## Limitations & Future Work
-- **High training cost**: Requires complex three-stage progressive training; Stage 1 alone takes 150 hours.
-- **Self-rollout overhead**: Generating training data via self-inference is more expensive than standard SFT.
-- **Small gains at 1/1 budget**: Edit refinement is less cost-effective when decoding is not aggressive.
-- **Token-level limitation**: Current operations are restricted to single tokens and cannot perform span-level rewriting.
+- **Requires three-stage progressive training**, which is more complex than direct fine-tuning of LLaDA, and Stage 1 alone takes 150 hours.
+- **Edit stage requires self-rollout to generate training data**, making each training step much more expensive than standard SFT.
+- **Diminishing returns as budget approaches 1/1**: When parallelism is not aggressive, edit refinement offers little cost-effectiveness.
+- **Canonical mapping ambiguity**: The same edit distance can correspond to multiple shortest scripts; the authors fix one, but it may not be optimal.
+- **Only validated on code + math**: It remains untested whether "minimal editing" benefits open-ended generation or dialogue scenarios.
+- **Edit operations are token-level only**: Cannot perform span-level rewrites (e.g., reordering entire paragraphs).
+- **Future directions**: (i) Make edit steps dynamically adaptive rather than fixed; (ii) Learn a lightweight edit policy to replace edit distance supervision; (iii) Combine edit refinement with best-of-N sampling for test-time scaling.
 
 ## Related Work & Insights
-- **vs Soft Mask / EvoToken**: These modify the mask representation. ME-DLM is orthogonal, focusing on a post-decoding edit phase.
-- **vs Speculative Decoding**: While similar in the draft-then-verify concept, ME-DLM applies it to the diffusion framework as a draft-then-edit process.
-- **vs Levenshtein Transformer**: ME-DLM adapts non-autoregressive MT ideas to the large-scale diffusion LM context, specifically targeting parallel decoding consistency.
+- **vs Soft Mask / EvoToken**: Both soften the mask representation, while ME-DLM leaves the mask unchanged and adds an edit stage post-decoding—a complementary approach. On GSM8K at 1/4 budget, ME-DLM outperforms Soft Mask by +14.3 and EvoToken by +4.3.
+- **vs LRD / adaptive stopping**: LRD dynamically adjusts steps based on convergence, but budgets are not directly comparable; ME-DLM compares under fixed budgets for clearer conclusions.
+- **vs Speculative decoding / Medusa**: Those are draft-verify approaches for autoregressive models; ME-DLM is draft-edit for diffusion, conceptually similar but technically distinct.
+- **vs CDLM / remasking methods**: These attempt to correct erroneous tokens, but remasking can only replace, not insert/delete, and cannot handle "missing token" errors; ME-DLM supports all three operations.
+- **vs Levenshtein Transformer / EditNAR**: Edit-based non-autoregressive MT approaches; ME-DLM transfers these ideas to diffusion LMs and, combined with LLaDA as a modern backbone, achieves large-scale model results.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐
-- Experimental Thoroughness: ⭐⭐⭐⭐
-- Writing Quality: ⭐⭐⭐⭐⭐
-- Value: ⭐⭐⭐⭐⭐
+- Novelty: ⭐⭐⭐⭐ Uses edit refinement to address joint consistency in parallel diffusion; the technical combination is simple and effective
+- Experimental Thoroughness: ⭐⭐⭐⭐ Six math + code benchmarks, four budgets, step allocation and convergence ablations, but lacks open-ended generation evaluation
+- Writing Quality: ⭐⭐⭐⭐⭐ The "2+2=5" failure example is highly persuasive; formulas and algorithm tables are very clear
+- Value: ⭐⭐⭐⭐⭐ The +33.6 on GSM8K is a key contribution to the practical utility of diffusion LMs; code is open-sourced
 
 <!-- RELATED:START -->
 
@@ -149,7 +162,7 @@ Actual edit convergence steps:
 - [\[ACL 2026\] Language Models Entangle Language and Culture](../../ACL2026/multilingual_mt/language_models_entangle_language_and_culture.md)
 - [\[AAAI 2026\] Focusing on Language: Revealing and Exploiting Language Attention Heads in Multilingual Large Language Models](../../AAAI2026/multilingual_mt/focusing_on_language_revealing_and_exploiting_language_attention_heads_in_multil.md)
 - [\[ACL 2026\] LLM-XTM: Enhancing Cross-Lingual Topic Models with Large Language Models](../../ACL2026/multilingual_mt/llm-xtm_enhancing_cross-lingual_topic_models_with_large_language_models.md)
-- [\[AAAI 2026\] ViDia2Std: A Parallel Corpus and Methods for Low-Resource Vietnamese Dialect-to-Standard Translation](../../AAAI2026/multilingual_mt/vidia2std_a_parallel_corpus_and_methods_for_low-resource_vietnamese_dialect-to-s.md)
+- [\[ACL 2026\] Multilingual Language Models Encode Script Over Linguistic Structure](../../ACL2026/multilingual_mt/multilingual_language_models_encode_script_over_linguistic_structure.md)
 
 </div>
 

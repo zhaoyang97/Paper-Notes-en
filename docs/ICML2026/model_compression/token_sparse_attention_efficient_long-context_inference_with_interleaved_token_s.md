@@ -132,11 +132,11 @@ Comparison with token eviction methods at similar speedups (128K, LLaMA-3.1-8B):
 
 ## Related Papers
 
-- [\[ICML 2026\] Stochastic Sparse Attention for Memory-Bound Inference](stochastic_sparse_attention_for_memory-bound_inference.md)
-- [\[ICML 2026\] T3S: Training Trajectory-Aware Token Selection to Break "Imitation Shock" in Reasoning Distillation](training-trajectory-aware_token_selection.md)
 - [\[NeurIPS 2025\] Recurrent Attention-based Token Selection for Efficient Streaming Video-LLMs](../../NeurIPS2025/model_compression/recurrent_attention-based_token_selection_for_efficient_streaming_video-llms.md)
+- [\[ICML 2026\] T3S: Training Trajectory-Aware Token Selection to Break "Imitation Shock" in Reasoning Distillation](training-trajectory-aware_token_selection.md)
 - [\[ACL 2026\] Adaptive Layer Selection for Layer-Wise Token Pruning in LLM Inference](../../ACL2026/model_compression/adaptive_layer_selection_for_layer-wise_token_pruning_in_llm_inference.md)
 - [\[ACL 2026\] GlimpRouter: Efficient Collaborative Inference by Glimpsing One Token of Thoughts](../../ACL2026/model_compression/glimprouter_efficient_collaborative_inference_by_glimpsing_one_token_of_thoughts.md)
+- [\[ICLR 2026\] FASA: Frequency-Aware Sparse Attention](../../ICLR2026/model_compression/fasa_frequency-aware_sparse_attention.md)
 
 </div>
 

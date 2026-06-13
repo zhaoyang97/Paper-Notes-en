@@ -2,7 +2,7 @@
 title: >-
   AAAI2026 Multimodal VLM Papers · 84 Notes
 description: >-
-  84 AAAI2026 papers in the Multimodal VLM area, covering Multimodal/VLM, Reasoning, Adversarial Robustness, Alignment/RLHF, LLM, Compression and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  84 AAAI2026 papers in the Multimodal VLM area, covering Multimodal/VLM, Reasoning, LLM, Adversarial Robustness, Alignment/RLHF, Compression and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "AAAI2026"
   - "Multimodal VLM"
@@ -10,9 +10,9 @@ tags:
   - "paper summaries"
   - "Multimodal/VLM"
   - "Reasoning"
+  - "LLM"
   - "Adversarial Robustness"
   - "Alignment/RLHF"
-  - "LLM"
   - "Compression"
 item_list:
   - u: "abductivemllm_boosting_visual_abductive_reasoning_within_mll/"
@@ -35,6 +35,8 @@ item_list:
     t: "Bridging Modalities via Progressive Re-alignment for Multimodal Test-Time Adaptation (BriMPR)"
   - u: "bridging_the_copyright_gap_do_large_vision-language_models_r/"
     t: "Bridging the Copyright Gap: Do Large Vision-Language Models Recognize and Respect Copyrighted Content?"
+  - u: "clearair_a_human-visual-perception-inspired_all-in-one_image_restoration/"
+    t: "ClearAIR: A Human-Visual-Perception-Inspired All-in-One Image Restoration"
   - u: "concept-rulenet_grounded_multi-agent_neurosymbolic_reasoning/"
     t: "Concept-RuleNet: Grounded Multi-Agent Neurosymbolic Reasoning in Vision Language Models"
   - u: "conditional_information_bottleneck_for_multimodal_fusion_overcoming_shortcut_lea/"
@@ -73,8 +75,6 @@ item_list:
     t: "FT-NCFM: An Influence-Aware Data Distillation Framework for Efficient VLA Models"
   - u: "global_compression_commander_plug-and-play_inference_acceler/"
     t: "Global Compression Commander: Plug-and-Play Inference Acceleration for High-Resolution Large Vision-Language Models"
-  - u: "graph-of-mark_promote_spatial_reasoning_in_multimodal_langua/"
-    t: "Graph-of-Mark: Promote Spatial Reasoning in Multimodal Language Models with Graph-Based Visual Prompting"
 item_total: 84
 ---
 
@@ -83,9 +83,9 @@ item_total: 84
 
 **🤖 AAAI2026** · **84** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (104)](../../ICML2026/multimodal_vlm/index.md) · [💬 ACL2026 (94)](../../ACL2026/multimodal_vlm/index.md) · [📷 CVPR2026 (225)](../../CVPR2026/multimodal_vlm/index.md) · [🔬 ICLR2026 (86)](../../ICLR2026/multimodal_vlm/index.md) · [🧠 NeurIPS2025 (139)](../../NeurIPS2025/multimodal_vlm/index.md) · [📹 ICCV2025 (129)](../../ICCV2025/multimodal_vlm/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (99)](../../ICML2026/multimodal_vlm/index.md) · [💬 ACL2026 (94)](../../ACL2026/multimodal_vlm/index.md) · [📷 CVPR2026 (209)](../../CVPR2026/multimodal_vlm/index.md) · [🔬 ICLR2026 (85)](../../ICLR2026/multimodal_vlm/index.md) · [🧠 NeurIPS2025 (137)](../../NeurIPS2025/multimodal_vlm/index.md) · [📹 ICCV2025 (128)](../../ICCV2025/multimodal_vlm/index.md)
 
-🔥 **Top topics:** Multimodal/VLM ×44 · Reasoning ×10 · Adversarial Robustness ×7 · Alignment/RLHF ×5 · LLM ×5
+🔥 **Top topics:** Multimodal/VLM ×44 · Reasoning ×10 · LLM ×6 · Adversarial Robustness ×6 · Alignment/RLHF ×5
 
 **[AbductiveMLLM: Boosting Visual Abductive Reasoning Within MLLMs](abductivemllm_boosting_visual_abductive_reasoning_within_mll.md)**
 
@@ -126,6 +126,10 @@ item_total: 84
 **[Bridging the Copyright Gap: Do Large Vision-Language Models Recognize and Respect Copyrighted Content?](bridging_the_copyright_gap_do_large_vision-language_models_r.md)**
 
 :   This paper presents the first systematic evaluation of LVLMs' ability to recognize and respect copyrighted content in multimodal contexts. It constructs a large-scale benchmark of 50,000 multimodal query–content pairs, finds that 11 out of 12 SOTA LVLMs fail to refuse infringing requests even when explicit copyright notices are present, and proposes CopyGuard—a tool-augmented framework that raises the infringement rejection rate from ~3% to ~62%.
+
+**[ClearAIR: A Human-Visual-Perception-Inspired All-in-One Image Restoration](clearair_a_human-visual-perception-inspired_all-in-one_image_restoration.md)**
+
+:   Inspired by human visual perception (HVP), this paper proposes ClearAIR, a coarse-to-fine unified image restoration framework that progressively recovers image quality through four stages — MLLM-based quality assessment → semantic region perception → degradation type identification → internal clue reuse — achieving state-of-the-art performance across multiple degradation tasks.
 
 **[Concept-RuleNet: Grounded Multi-Agent Neurosymbolic Reasoning in Vision Language Models](concept-rulenet_grounded_multi-agent_neurosymbolic_reasoning.md)**
 
@@ -211,14 +215,6 @@ item_total: 84
 
 :   This paper proposes the SECA framework, which leverages the stable semantic priors of the CLIP text branch to guide semantically-aware historical knowledge transfer in the backbone (SG-AKT module), and refines visual prototypes using inter-class semantic relationships derived from text embeddings to build a hybrid classifier (SE-VPR module), achieving state-of-the-art performance on ImageNet-R/A and CIFAR-100.
 
-**[Harnessing Vision-Language Models for Time Series Anomaly Detection](harnessing_vision-language_models_for_time_series_anomaly_detection.md)**
-
-:   A two-stage zero-shot time series anomaly detection framework is proposed: ViT4TS employs a lightweight ViT to perform multi-scale cross-patch matching on line-chart renderings of time series for candidate anomaly interval localization, while VLM4TS leverages GPT-4o with global temporal context to validate and refine detection results. The framework achieves F1-max surpassing the best baseline by 24.6% across 11 benchmarks, with token consumption only 1/36 of existing LLM-based methods.
-
-**[HeadHunt-VAD: Hunting Robust Anomaly-Sensitive Heads in MLLM for Tuning-Free Video Anomaly Detection](headhunt-vad_hunting_robust_anomaly-sensitive_heads_in_mllm_.md)**
-
-:   This paper proposes HeadHunt-VAD, which systematically identifies a sparse set of anomaly-sensitive and stable attention heads within a frozen MLLM, bypassing the information loss inherent in text-based outputs. Using a lightweight classifier, it achieves efficient tuning-free video anomaly detection, establishing state-of-the-art performance among tuning-free methods on UCF-Crime and XD-Violence.
-
 **[Heterogeneous Uncertainty-Guided Composed Image Retrieval with Fine-Grained Probabilistic Learning](heterogeneous_uncertainty-guided_composed_image_retrieval_with_fine-grained_prob.md)**
 
 :   This paper proposes the HUG paradigm, which leverages fine-grained Gaussian probabilistic embeddings and heterogeneous uncertainty estimation—distinguishing query-side multimodal coordination uncertainty from target-side content quality uncertainty—combined with dynamic weighted fusion and uncertainty-guided contrastive learning, achieving state-of-the-art performance on the Fashion-IQ and CIRR benchmarks.
@@ -231,9 +227,9 @@ item_total: 84
 
 :   This paper introduces TestPrev, the first epidemic surveillance framework that employs mutual information as an optimization criterion. It selects an optimal subset of nodes in a network to maximize mutual information with the disease prevalence distribution, thereby providing distribution-level insights into outbreak size that traditional methods cannot offer. The paper proves the NP-hardness of this problem, designs a greedy algorithm GreedyMI, and demonstrates its superiority over baselines on both synthetic and real-world networks.
 
-**[Learning to Tell Apart: Weakly Supervised Video Anomaly Detection via Disentangled Semantic Alignment](learning_to_tell_apart_weakly_supervised_video_anomaly_detection_via_disentangle.md)**
+**[Large Language Models Meet Extreme Multi-label Classification: Scaling and Multi-modal Framework](large_language_models_meet_extreme_multi-label_classification_scaling_and_multi-.md)**
 
-:   This paper proposes DSANet, which enhances the discriminability between normal and anomalous features in weakly supervised video anomaly detection (WS-VAD) at two levels: coarse-grained self-guided normal pattern modeling (SG-NM) and fine-grained disentangled contrastive semantic alignment (DCSA). DSANet achieves state-of-the-art performance with 86.95% AP (+1.14%) on XD-Violence and 13.01% fine-grained mAP (+3.39%) on UCF-Crime.
+:   This paper investigates the effective utilization of decoder-based LLMs for Extreme Multi-label Classification (XMC), proposing a dual-decoder learning strategy and the ViXML multimodal framework. By employing structured prompt templates to adapt LLM embeddings and efficiently integrating visual metadata, the method substantially outperforms state-of-the-art approaches on four public benchmarks (up to +8.21% P@1 on the largest dataset), demonstrating that "one image outweighs billions of parameters."
 
 **[Leveraging Textual Compositional Reasoning for Robust Change Captioning](leveraging_textual_compositional_reasoning_for_robust_change_captioning.md)**
 
@@ -299,6 +295,10 @@ item_total: 84
 
 :   This paper proposes the ReCAD framework, which rewrites CAD scripts as parametric code for SFT, then applies GRPO-based reinforcement learning with a hierarchical primitive curriculum learning strategy, enabling VLMs to generate high-precision, editable parametric CAD models from text or image inputs. The approach substantially outperforms existing methods in both in-distribution and out-of-distribution settings.
 
+**[Recursive Visual Imagination and Adaptive Linguistic Grounding for Vision Language Navigation](recursive_visual_imagination_and_adaptive_linguistic_grounding_for_vision_langua.md)**
+
+:   This paper proposes a VLN policy based on Implicit Scene Representation (ISR), which compresses historical trajectories into a fixed-size compact neural grid via Recursive Visual Imagination (RVI) to learn high-level scene priors, and employs Adaptive Linguistic Grounding (ALG) to finely align different semantic components of navigation instructions with different grid cells. The approach achieves state-of-the-art performance on two continuous-environment navigation benchmarks: R2R-CE and ObjectNav.
+
 **[Remember Me: Bridging the Long-Range Gap in LVLMs with Three-Step Inference-Only Decay Resilience Strategies](remember_me_bridging_the_long-range_gap_in_lvlms_with_three-step_inference-only_.md)**
 
 :   This paper proposes T-DRS (Three-step Decay Resilience Strategies), a training-free inference-time framework that mitigates RoPE-induced long-range attention decay through three cooperative stages: semantics-driven enhancement, distance-aware control, and remote-distance re-reinforcement, achieving consistent performance gains across multiple LVLMs on VQA benchmarks.
@@ -359,6 +359,10 @@ item_total: 84
 
 :   TinyChemVL is a chemistry-domain VLM with only 4B parameters. It compresses visual tokens to 1/16 of the original count via an adaptive token merging and pruning strategy, introduces reaction-level tasks and the ChemRxn-V benchmark, and achieves state-of-the-art performance on both molecular- and reaction-level visual chemistry tasks while significantly improving inference and training speed.
 
+**[To Align or Not to Align: Strategic Multimodal Representation Alignment for Optimal Performance](to_align_or_not_to_align_strategic_multimodal_representation_alignment_for_optim.md)**
+
+:   By introducing a controllable contrastive learning module to systematically regulate alignment strength $\lambda$, and employing the Partial Information Decomposition (PID) framework to quantify the redundancy–uniqueness–synergy structure between modalities, this work reveals that the utility of explicit alignment is highly data-dependent: alignment is beneficial when redundancy dominates, harmful when uniqueness dominates, and an optimal $\lambda^*$ exists in mixed scenarios.
+
 **[Towards Human-AI Accessibility Mapping in India: VLM-Guided Annotations and POI-Centric Analysis in Chandigarh](towards_human-ai_accessibility_mapping_in_india_vlm-guided_annotations_and_poi-c.md)**
 
 :   This paper adapts the Project Sidewalk accessibility annotation platform to Chandigarh, India, through customized interface labels, VLM-driven task guidance (Gemini 2.5 Flash), and a POI-centric analysis framework. Approximately 40 km of sidewalks are audited across three regions of distinct land use, identifying 1,644 locations where accessibility improvements can be made.
@@ -378,10 +382,6 @@ item_total: 84
 **[Tri-Bench: Stress-Testing VLM Reliability on Spatial Reasoning under Camera Tilt and Object Interference](tri-bench_stress-testing_vlm_reliability_on_spatial_reasoning_under_camera_tilt_.md)**
 
 :   Tri-Bench is a compact benchmark comprising 400 real-world photographs of triangles. By systematically controlling two factors — camera pose (planar vs. tilted) and object interference — it evaluates the spatial geometric reasoning capabilities of four leading VLMs. The results reveal that models default to 2D image-plane cues rather than genuine 3D geometry, even when explicit reference-frame guardrails are provided in the prompt, with accuracy on minority-class shapes dropping to near 0%.
-
-**[TTF-VLA: Temporal Token Fusion via Pixel-Attention Integration for Vision-Language-Action Models](ttf-vla_temporal_token_fusion_via_pixel-attention_integratio.md)**
-
-:   TTF-VLA proposes a training-free temporal token fusion method that selectively reuses visual tokens from historical frames via a dual-dimension mechanism combining grayscale pixel difference and attention-based semantic detection, improving inference quality of VLA models on robotic manipulation tasks with an average gain of 4.0 percentage points on LIBERO.
 
 **[UniFit: Towards Universal Virtual Try-on with MLLM-Guided Semantic Alignment](unifit_towards_universal_virtual_try-on_with_mllm-guided_semantic_alignment.md)**
 

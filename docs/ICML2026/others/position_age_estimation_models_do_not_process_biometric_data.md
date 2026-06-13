@@ -129,8 +129,8 @@ With frozen features and an ArcFace head trained on Glint360k, comparing best la
 
 - [\[AAAI 2026\] Reward Redistribution via Gaussian Process Likelihood Estimation](../../AAAI2026/others/reward_redistribution_via_gaussian_process_likelihood_estimation.md)
 - [\[CVPR 2026\] Do Vision Models Perceive Illusory Motion in Static Images Like Humans?](../../CVPR2026/others/do_vision_models_perceive_illusory_motion_in_static_images_like_humans.md)
-- [\[ICML 2026\] Local Hessian Spectral Filtering for Robust Intrinsic Dimension Estimation](local_hessian_spectral_filtering_for_robust_intrinsic_dimension_estimation.md)
 - [\[ICML 2026\] Amortized Simulation-Based Inference in Generalized Bayes via Neural Posterior Estimation](amortized_simulation-based_inference_in_generalized_bayes_via_neural_posterior_e.md)
+- [\[ICML 2026\] Metadata Predictability Is Not Evidence Dependence: An Intervention-Based Audit for Weak-Label Benchmarks](metadata_predictability_is_not_evidence_dependence_an_intervention-based_audit_f.md)
 - [\[ICML 2026\] FOVI: Bio-inspired Foveated Interface for Deep Vision Models](fovi_a_biologically-inspired_foveated_interface_for_deep_vision_models.md)
 
 </div>

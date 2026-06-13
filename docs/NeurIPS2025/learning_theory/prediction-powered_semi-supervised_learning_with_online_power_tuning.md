@@ -2,9 +2,10 @@
 title: >-
   [Paper Note] Prediction-Powered Semi-Supervised Learning with Online Power Tuning
 description: >-
-  [NeurIPS 2025][Semi-supervised learning] This paper extends the Prediction-Powered Inference (PPI) framework to the training phase of semi-supervised learning. It proposes an unbiased gradient estimator and designs an on…
+  [NeurIPS 2025][Semi-Supervised Learning / Statistical Inference][Semi-supervised learning] This paper extends the Prediction-Powered Inference (PPI) framework to the training phase of semi-supervised learning. It propose…
 tags:
   - "NeurIPS 2025"
+  - "Semi-Supervised Learning / Statistical Inference"
   - "Semi-supervised learning"
   - "prediction-powered inference"
   - "online learning"
@@ -126,11 +127,11 @@ Model parameters $w$ are updated with an AdaGrad step: $w_{t+1} = w_t - \eta_t g
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Semi-supervised Graph Anomaly Detection via Robust Homophily Learning](semi-supervised_graph_anomaly_detection_via_robust_homophily_learning.md)
+- [\[NeurIPS 2025\] Keep It on a Leash: Controllable Pseudo-label Generation Towards Realistic Long-Tailed Semi-Supervised Learning](keep_it_on_a_leash_controllable_pseudo-label_generation_towards_realistic_long-t.md)
 - [\[NeurIPS 2025\] Computable Universal Online Learning](computable_universal_online_learning.md)
 - [\[NeurIPS 2025\] Learning-Augmented Online Bipartite Fractional Matching](learning-augmented_online_bipartite_fractional_matching.md)
-- [\[ICML 2026\] Industrializing Prediction-Powered Inference: The GLIDE Library for Reliable GenAI and Agentic Systems Evaluation](../../ICML2026/others/industrializing_prediction-powered_inference_the_glide_library_for_reliable_gena.md)
-- [\[NeurIPS 2025\] Semi-infinite Nonconvex Constrained Min-Max Optimization](semi-infinite_nonconvex_constrained_min-max_optimization.md)
+- [\[ICML 2026\] Semi-Supervised Noise Adaptation: Transferring Knowledge from Noise Domain](../../ICML2026/learning_theory/semi-supervised_noise_adaptation_transferring_knowledge_from_noise_domain.md)
+- [\[NeurIPS 2025\] Conformal Online Learning of Deep Koopman Linear Embeddings](conformal_online_learning_of_deep_koopman_linear_embeddings.md)
 
 </div>
 

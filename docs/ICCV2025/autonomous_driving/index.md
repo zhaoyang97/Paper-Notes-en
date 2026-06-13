@@ -34,7 +34,7 @@ item_list:
     t: "Adaptive Dual Uncertainty Optimization: Boosting Monocular 3D Object Detection under Test-Time Shifts"
   - u: "ago_adaptive_grounding_for_open_world_3d_occupancy_predictio/"
     t: "AGO: Adaptive Grounding for Open World 3D Occupancy Prediction"
-  - u: "alocc_adaptive_liftingbased_3d_semantic_occupancy_and_cost_v/"
+  - u: "alocc_adaptive_lifting-based_3d_semantic_occupancy_and_cost_volume-based_flow_pr/"
     t: "ALOcc: Adaptive Lifting-Based 3D Semantic Occupancy and Cost Volume-Based Flow Predictions"
   - u: "beyond_one_shot_beyond_one_perspective_cross-view_and_long-horizon_distillation_/"
     t: "Beyond One Shot, Beyond One Perspective: Cross-View and Long-Horizon Distillation for Better LiDAR Representations"
@@ -82,7 +82,7 @@ item_total: 91
 
 **📹 ICCV2025** · **91** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (6)](../../ICML2026/autonomous_driving/index.md) · [📷 CVPR2026 (89)](../../CVPR2026/autonomous_driving/index.md) · [🔬 ICLR2026 (18)](../../ICLR2026/autonomous_driving/index.md) · [🤖 AAAI2026 (56)](../../AAAI2026/autonomous_driving/index.md) · [🧠 NeurIPS2025 (49)](../../NeurIPS2025/autonomous_driving/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (6)](../../ICML2026/autonomous_driving/index.md) · [📷 CVPR2026 (90)](../../CVPR2026/autonomous_driving/index.md) · [🔬 ICLR2026 (16)](../../ICLR2026/autonomous_driving/index.md) · [🤖 AAAI2026 (56)](../../AAAI2026/autonomous_driving/index.md) · [🧠 NeurIPS2025 (47)](../../NeurIPS2025/autonomous_driving/index.md)
 
 🔥 **Top topics:** Autonomous Driving ×13 · 3D Gaussian Splatting ×12 · Diffusion Models ×8 · Point Cloud ×5 · 3D Object Detection ×5
 
@@ -126,7 +126,7 @@ item_total: 91
 
 :   This paper proposes the AGO framework, which handles known categories via noise-augmented grounding training and unknown categories via a modality adapter for adaptive alignment. An information entropy-based open-world recognizer dynamically selects the optimal features at inference time. AGO surpasses VEON by 4.09 mIoU on the Occ3D-nuScenes self-supervised benchmark while exhibiting open-world zero-shot/few-shot transfer capability.
 
-**[ALOcc: Adaptive Lifting-Based 3D Semantic Occupancy and Cost Volume-Based Flow Predictions](alocc_adaptive_liftingbased_3d_semantic_occupancy_and_cost_v.md)**
+**[ALOcc: Adaptive Lifting-Based 3D Semantic Occupancy and Cost Volume-Based Flow Predictions](alocc_adaptive_lifting-based_3d_semantic_occupancy_and_cost_volume-based_flow_pr.md)**
 
 :   This paper proposes the ALOcc framework, which achieves state-of-the-art performance on multiple occupancy prediction benchmarks while maintaining high inference speed through three improvements: an occlusion-aware adaptive lifting mechanism, semantic prototype alignment, and BEV cost volume-based flow prediction.
 

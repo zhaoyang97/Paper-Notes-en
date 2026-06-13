@@ -1,8 +1,8 @@
 ---
 title: >-
-  NeurIPS2025 Medical Imaging Papers · 89 Notes
+  NeurIPS2025 Medical Imaging Papers · 73 Notes
 description: >-
-  89 NeurIPS2025 papers in the Medical Imaging area, covering Medical Imaging, Multimodal/VLM, Segmentation, Time-Series Forecasting, Alignment/RLHF, Self-Supervised Learning and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  73 NeurIPS2025 papers in the Medical Imaging area, covering Medical Imaging, Multimodal/VLM, Segmentation, Self-Supervised Learning, Diffusion Models, Adversarial Robustness and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "NeurIPS2025"
   - "Medical Imaging"
@@ -10,9 +10,9 @@ tags:
   - "paper summaries"
   - "Multimodal/VLM"
   - "Segmentation"
-  - "Time-Series Forecasting"
-  - "Alignment/RLHF"
   - "Self-Supervised Learning"
+  - "Diffusion Models"
+  - "Adversarial Robustness"
 item_list:
   - u: "3drad_a_comprehensive_3d_radiology_medvqa_dataset_with_multi/"
     t: "3D-RAD: A Comprehensive 3D Radiology Med-VQA Dataset with Multi-Temporal Analysis and Diverse Diagnostic Tasks"
@@ -20,36 +20,28 @@ item_list:
     t: "A Novel Approach to Classification of ECG Arrhythmia Types with Latent ODEs"
   - u: "a_unified_solution_to_video_fusion_from_multi-frame_learning_to_benchmarking/"
     t: "A Unified Solution to Video Fusion: From Multi-Frame Learning to Benchmarking"
-  - u: "a_variational_manifold_embedding_framework_for_nonlinear_dimensionality_reductio/"
-    t: "A Variational Manifold Embedding Framework for Nonlinear Dimensionality Reduction"
   - u: "active_target_discovery_under_uninformative_prior_the_power_of_permanent_and_tra/"
     t: "Active Target Discovery under Uninformative Prior: The Power of Permanent and Transient Memory"
-  - u: "brain-tuning_improves_generalizability_and_efficiency_of_brain_alignment_in_spee/"
-    t: "Brain-tuning Improves Generalizability and Efficiency of Brain Alignment in Speech Models"
   - u: "brain_harmony_a_multimodal_foundation_model_unifying_morphology_and_function_int/"
     t: "Brain Harmony: A Multimodal Foundation Model Unifying Morphology and Function into 1D Tokens"
   - u: "brainomni_a_brain_foundation_model_for_unified_eeg_and_meg_signals/"
     t: "BrainOmni: A Brain Foundation Model for Unified EEG and MEG Signals"
-  - u: "bridging_graph_and_state-space_modeling_for_intensive_care_unit_length_of_stay_p/"
-    t: "Bridging Graph and State-Space Modeling for Intensive Care Unit Length of Stay Prediction"
   - u: "care-pd_a_multi-site_anonymized_clinical_dataset_for_parkinsons_disease_gait_ass/"
     t: "Care-PD: A Multi-Site Anonymized Clinical Dataset for Parkinson's Disease Gait Assessment"
   - u: "convolutional_monge_mapping_between_eeg_datasets_to_support_independent_componen/"
     t: "Convolutional Monge Mapping between EEG Datasets to Support Independent Component Labeling"
-  - u: "cureagent_a_training-free_executor-analyst_framework_for_clinical_reasoning/"
-    t: "CureAgent: A Training-Free Executor-Analyst Framework for Clinical Reasoning"
   - u: "cxreasonbench_a_benchmark_for_evaluating_structured_diagnostic_reasoning_in_ches/"
     t: "CXReasonBench: A Benchmark for Evaluating Structured Diagnostic Reasoning in Chest X-rays"
   - u: "dca_graph-guided_deep_embedding_clustering_for_brain_atlases/"
     t: "DCA: Graph-Guided Deep Embedding Clustering for Brain Atlases"
   - u: "demo_generative_ai_helps_radiotherapy_planning_with_user_preference/"
     t: "Demo: Generative AI helps Radiotherapy Planning with User Preference"
-  - u: "demo_guide-rag_evidence-driven_corpus_curation_for_retrieval-augmented_generatio/"
-    t: "Demo: Guide-RAG: Evidence-Driven Corpus Curation for Retrieval-Augmented Generation in Long COVID"
   - u: "dermacon-in_a_multi-concept_annotated_dermatological_image_dataset_of_indian_ski/"
     t: "DermaCon-IN: A Multi-concept Annotated Dermatological Image Dataset of Indian Skin Disorders"
   - u: "dison_decentralized_isolation_networks_for_out-of-distribution_detection_in_medi/"
     t: "DIsoN: Decentralized Isolation Networks for Out-of-Distribution Detection in Medical Imaging"
+  - u: "ditch_the_denoiser_emergence_of_noise_robustness_in_self-supervised_learning_fro/"
+    t: "Ditch the Denoiser: Emergence of Noise Robustness in Self-Supervised Learning from Data Curriculum"
   - u: "doctor_approved_generating_medically_accurate_skin_disease_images_through_ai-exp/"
     t: "Doctor Approved: Generating Medically Accurate Skin Disease Images through AI-Expert Feedback"
   - u: "domain-adaptive_transformer_for_data-efficient_glioma_segmentation_in_sub-sahara/"
@@ -74,17 +66,25 @@ item_list:
     t: "FireGNN: Neuro-Symbolic Graph Neural Networks with Trainable Fuzzy Rules for Interpretable Medical Image Classification"
   - u: "foxes_a_framework_for_operational_x-ray_emission_synthesis/"
     t: "FOXES: A Framework For Operational X-ray Emission Synthesis"
-item_total: 89
+  - u: "generalizable_real-time_neural_decoding_with_hybrid_state-space_models/"
+    t: "Generalizable, Real-Time Neural Decoding with Hybrid State-Space Models"
+  - u: "geodynamics_a_geometric_state-space_neural_network_for_understanding_brain_dynam/"
+    t: "GeoDynamics: A Geometric State-Space Neural Network for Understanding Brain Dynamics on Riemannian Manifolds"
+  - u: "gflownets_for_learning_better_drug-drug_interaction_representations/"
+    t: "GFlowNets for Learning Better Drug-Drug Interaction Representations"
+  - u: "imagenet-trained_cnns_are_not_biased_towards_texture_revisiting_feature_reliance/"
+    t: "ImageNet-trained CNNs are not biased towards texture: Revisiting feature reliance through controlled suppression"
+item_total: 73
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->
 # 🏥 Medical Imaging
 
-**🧠 NeurIPS2025** · **89** paper notes
+**🧠 NeurIPS2025** · **73** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (34)](../../ICML2026/medical_imaging/index.md) · [💬 ACL2026 (35)](../../ACL2026/medical_imaging/index.md) · [📷 CVPR2026 (102)](../../CVPR2026/medical_imaging/index.md) · [🔬 ICLR2026 (48)](../../ICLR2026/medical_imaging/index.md) · [🤖 AAAI2026 (88)](../../AAAI2026/medical_imaging/index.md) · [📹 ICCV2025 (31)](../../ICCV2025/medical_imaging/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (24)](../../ICML2026/medical_imaging/index.md) · [📷 CVPR2026 (99)](../../CVPR2026/medical_imaging/index.md) · [🔬 ICLR2026 (21)](../../ICLR2026/medical_imaging/index.md) · [🤖 AAAI2026 (73)](../../AAAI2026/medical_imaging/index.md) · [📹 ICCV2025 (31)](../../ICCV2025/medical_imaging/index.md)
 
-🔥 **Top topics:** Medical Imaging ×39 · Multimodal/VLM ×8 · Segmentation ×8 · Time-Series Forecasting ×5 · Alignment/RLHF ×4
+🔥 **Top topics:** Medical Imaging ×30 · Multimodal/VLM ×8 · Segmentation ×8 · Self-Supervised Learning ×4 · Diffusion Models ×4
 
 **[3D-RAD: A Comprehensive 3D Radiology Med-VQA Dataset with Multi-Temporal Analysis and Diverse Diagnostic Tasks](3drad_a_comprehensive_3d_radiology_medvqa_dataset_with_multi.md)**
 
@@ -98,17 +98,9 @@ item_total: 89
 
 :   This paper proposes UniVF, the first unified video fusion framework based on multi-frame learning, optical flow feature warping, and temporal consistency loss, along with VF-Bench, the first video fusion benchmark covering four major fusion tasks (multi-exposure, multi-focus, infrared-visible, and medical), achieving state-of-the-art performance across all sub-tasks.
 
-**[A Variational Manifold Embedding Framework for Nonlinear Dimensionality Reduction](a_variational_manifold_embedding_framework_for_nonlinear_dimensionality_reductio.md)**
-
-:   This paper proposes a variational manifold embedding framework that formalizes dimensionality reduction as an optimization problem over smooth embedding maps (minimizing the KL divergence between a prior distribution and the pullback of the data distribution), theoretically unifying PCA and nonlinear dimensionality reduction methods, and leverages the calculus of variations (Euler-Lagrange equations) and Noether's theorem to derive interpretable constraints on optimal embeddings.
-
 **[Active Target Discovery under Uninformative Prior: The Power of Permanent and Transient Memory](active_target_discovery_under_uninformative_prior_the_power_of_permanent_and_tra.md)**
 
 :   This paper proposes EM-PTDM, a framework inspired by the dual-memory system in neuroscience. It leverages a pretrained diffusion model as "permanent memory" and incorporates a lightweight "transient memory" module based on Doob's h-transform to achieve efficient active target discovery **without any domain-specific prior data**, with theoretical guarantees of monotonic prior improvement.
-
-**[Brain-tuning Improves Generalizability and Efficiency of Brain Alignment in Speech Models](brain-tuning_improves_generalizability_and_efficiency_of_brain_alignment_in_spee.md)**
-
-:   This paper proposes Multi-brain-tuning, a method that jointly fine-tunes pretrained speech models on fMRI data from multiple participants, reducing the data required for brain alignment by 5×, improving alignment by up to 50%, and generalizing to unseen participants and datasets.
 
 **[Brain Harmony: A Multimodal Foundation Model Unifying Morphology and Function into 1D Tokens](brain_harmony_a_multimodal_foundation_model_unifying_morphology_and_function_int.md)**
 
@@ -118,10 +110,6 @@ item_total: 89
 
 :   This paper proposes BrainOmni—the first brain signal foundation model that unifies EEG and MEG—by discretizing heterogeneous brain signals into a unified token space via BrainTokenizer (incorporating a physical Sensor Encoder), followed by self-supervised masked prediction pretraining with a Criss-Cross Transformer. The model achieves an 11.7 percentage-point improvement on Alzheimer's disease detection and demonstrates zero-shot reconstruction generalization to completely unseen devices.
 
-**[Bridging Graph and State-Space Modeling for Intensive Care Unit Length of Stay Prediction](bridging_graph_and_state-space_modeling_for_intensive_care_unit_length_of_stay_p.md)**
-
-:   This paper proposes S2G-Net, a dual-branch architecture that integrates Mamba state-space temporal encoding with a multi-view graph neural network (GraphGPS) for ICU length-of-stay (LOS) prediction, achieving comprehensive improvements over sequential, graph-based, and hybrid baselines on MIMIC-IV.
-
 **[Care-PD: A Multi-Site Anonymized Clinical Dataset for Parkinson's Disease Gait Assessment](care-pd_a_multi-site_anonymized_clinical_dataset_for_parkinsons_disease_gait_ass.md)**
 
 :   This work introduces Care-PD — the largest multi-site anonymized 3D mesh dataset for Parkinson's disease (PD) gait analysis to date, comprising 9 cohorts, 8 clinical centers, 362 subjects, and 8,477 walking bouts. It provides a systematic benchmark for UPDRS gait scoring and motion pre-training tasks, demonstrating that fine-tuning on Care-PD reduces MPJPE from 60.8 mm to 7.5 mm and improves F1 by 17 percentage points.
@@ -129,10 +117,6 @@ item_total: 89
 **[Convolutional Monge Mapping between EEG Datasets to Support Independent Component Labeling](convolutional_monge_mapping_between_eeg_datasets_to_support_independent_componen.md)**
 
 :   This paper extends CMMN (Convolutional Monge Mapping Normalization) by proposing two strategies — channel-averaged PSD with $\ell_1$-normalized barycenter and subject-to-subject matching — to generate a single time-domain filter for domain adaptation across EEG datasets with differing channel counts. On independent component (IC) brain/non-brain classification, the F1 score improves from 0.77 to 0.84, surpassing ICLabel (0.88→0.91).
-
-**[CureAgent: A Training-Free Executor-Analyst Framework for Clinical Reasoning](cureagent_a_training-free_executor-analyst_framework_for_clinical_reasoning.md)**
-
-:   CureAgent proposes an Executor-Analyst collaborative framework that decouples precise tool invocation (TxAgent/Llama-8B as Executor) from high-level clinical reasoning (Gemini 2.5 as Analyst). Combined with a Stratified Ensemble Late Fusion topology that preserves evidence diversity, the system achieves 83.8% accuracy on CURE-Bench without end-to-end fine-tuning, and reveals two critical scaling findings: the context–performance paradox and the curse of dimensionality in action space.
 
 **[CXReasonBench: A Benchmark for Evaluating Structured Diagnostic Reasoning in Chest X-rays](cxreasonbench_a_benchmark_for_evaluating_structured_diagnostic_reasoning_in_ches.md)**
 
@@ -146,10 +130,6 @@ item_total: 89
 
 :   This paper proposes the Flexible Dose Proposer (FDP), a two-stage training framework (VQ-VAE pretraining + multi-condition encoding) that enables slider-based interactive 3D dose distribution prediction incorporating user preferences. The system is integrated into the Eclipse clinical treatment planning system and outperforms Varian RapidPlan in head-and-neck cancer radiotherapy scenarios.
 
-**[Demo: Guide-RAG: Evidence-Driven Corpus Curation for Retrieval-Augmented Generation in Long COVID](demo_guide-rag_evidence-driven_corpus_curation_for_retrieval-augmented_generatio.md)**
-
-:   This paper systematically evaluates six RAG corpus configurations for Long COVID clinical QA. The GS-4 configuration—combining clinical guidelines with high-quality systematic reviews—consistently outperforms both single-guideline and large-scale literature retrieval baselines across faithfulness, relevance, and comprehensiveness. The authors further introduce the Guide-RAG framework and the LongCOVID-CQ evaluation dataset.
-
 **[DermaCon-IN: A Multi-concept Annotated Dermatological Image Dataset of Indian Skin Disorders](dermacon-in_a_multi-concept_annotated_dermatological_image_dataset_of_indian_ski.md)**
 
 :   This work introduces DermaCon-IN—the first densely annotated dermatological image dataset predominantly featuring Indian skin tones (5,450 images / 3,002 patients / 245 diagnoses)—providing three-level hierarchical diagnostic labels, 47 lesion descriptors, and 49 anatomical site annotations, with benchmark evaluations using CNN, ViT, and concept bottleneck model architectures.
@@ -157,6 +137,10 @@ item_total: 89
 **[DIsoN: Decentralized Isolation Networks for Out-of-Distribution Detection in Medical Imaging](dison_decentralized_isolation_networks_for_out-of-distribution_detection_in_medi.md)**
 
 :   This paper proposes Decentralized Isolation Networks (DIsoN), which detects OOD samples by training a binary classifier to "isolate" a test sample from training data, and leverages training data information without sharing it through decentralized parameter exchange. The method achieves state-of-the-art performance across 12 OOD detection tasks on 4 medical imaging datasets.
+
+**[Ditch the Denoiser: Emergence of Noise Robustness in Self-Supervised Learning from Data Curriculum](ditch_the_denoiser_emergence_of_noise_robustness_in_self-supervised_learning_fro.md)**
+
+:   A fully self-supervised noise-robust representation learning framework is proposed, leveraging a "denoised→noisy" data curriculum strategy combined with denoised-teacher regularization. This enables SSL models such as DINOv2 to directly process noisy inputs at inference time without any denoiser, achieving a 4.8% improvement in linear probing accuracy under extreme Gaussian noise on ImageNet-1k.
 
 **[Doctor Approved: Generating Medically Accurate Skin Disease Images through AI-Expert Feedback](doctor_approved_generating_medically_accurate_skin_disease_images_through_ai-exp.md)**
 
@@ -206,17 +190,9 @@ item_total: 89
 
 :   This paper proposes FOXES, a Vision Transformer-based framework that translates multi-channel solar EUV observation images into soft X-ray (SXR) flux, achieving an overall Pearson correlation of 0.982. The framework lays the groundwork for far-side solar flare detection and the construction of more complete flare catalogs.
 
-**[From Black Box to Biomarker: Sparse Autoencoders for Interpreting Speech Models of Parkinson's Disease](from_black_box_to_biomarker_sparse_autoencoders_for_interpreting_speech_models_o.md)**
-
-:   This work adapts sparse autoencoder (SAE) techniques from large language model interpretability research to speech-based Parkinson's disease (PD) detection, proposes a Mask-based SAE to address small-dataset limitations, discovers that model predictions rely primarily on spectral flux and spectral flatness in low-energy regions, and further reveals that these features correlate significantly with MRI putamen volume—establishing a bridge from internal model representations to clinical biomarkers.
-
 **[Generalizable, Real-Time Neural Decoding with Hybrid State-Space Models](generalizable_real-time_neural_decoding_with_hybrid_state-space_models.md)**
 
 :   POSSM proposes a hybrid SSM-attention architecture that combines spike-level tokenization with a recurrent state-space model backbone, achieving generalizable real-time neural decoding with inference speeds up to 9× faster than Transformers while maintaining comparable accuracy.
-
-**[Generating Multi-Table Time Series EHR from Latent Space with Minimal Preprocessing](generating_multi-table_time_series_ehr_from_latent_space_with_minimal_preprocess.md)**
-
-:   This paper proposes RawMed — the first framework to synthesize multi-table time series EHR data from raw records with minimal lossy preprocessing: events are textualized → compressed into a discrete latent space via Residual Quantization → temporal dynamics are modeled with an autoregressive Transformer. RawMed comprehensively outperforms existing baselines in fidelity, clinical utility, and privacy protection.
 
 **[GeoDynamics: A Geometric State-Space Neural Network for Understanding Brain Dynamics on Riemannian Manifolds](geodynamics_a_geometric_state-space_neural_network_for_understanding_brain_dynam.md)**
 
@@ -226,10 +202,6 @@ item_total: 89
 
 :   To address the severe class imbalance in drug-drug interaction (DDI) prediction, this paper proposes combining GFlowNet with a variational graph autoencoder (VGAE). By reward-guided generative sampling, the framework synthesizes training samples for rare interaction types, thereby enhancing predictive performance on infrequent yet clinically critical interaction categories.
 
-**[H-DDx: A Hierarchical Evaluation Framework for Differential Diagnosis](h-ddx_a_hierarchical_evaluation_framework_for_differential_diagnosis.md)**
-
-:   H-DDx proposes a differential diagnosis evaluation framework grounded in the ICD-10 classification hierarchy. By expanding both predicted and ground-truth diagnoses to their ancestor nodes and computing a Hierarchical Diagnostic F1 (HDF1), the framework rewards "clinically relevant approximate correctness" rather than exact match only. Evaluating 22 LLMs reveals that the domain-specialized model MediPhi rises from 20th to 2nd place under HDF1, an advantage completely obscured by Top-5 metrics.
-
 **[ImageNet-trained CNNs are not biased towards texture: Revisiting feature reliance through controlled suppression](imagenet-trained_cnns_are_not_biased_towards_texture_revisiting_feature_reliance.md)**
 
 :   By proposing a systematic feature suppression framework—rather than cue-conflict experiments—this work re-evaluates the feature reliance of CNNs, finding that CNNs are not inherently texture-biased but instead rely primarily on local shape features; moreover, feature reliance patterns differ substantially across domains (CV/MI/RS).
@@ -237,10 +209,6 @@ item_total: 89
 **[Interpretable Next-token Prediction via the Generalized Induction Head](interpretable_next-token_prediction_via_the_generalized_induction_head.md)**
 
 :   This paper proposes Induction-Gram (GIM), an interpretable language model that combines exact n-gram matching with fuzzy matching. By constructing a "generalized induction head" to retrieve similar sequences from the input context for next-token prediction, it achieves up to 25 percentage points improvement over interpretable baselines and a 20% improvement in fMRI brain response prediction.
-
-**[Large Language Models as Medical Codes Selectors: A Benchmark Using the International Classification of Primary Care](large_language_models_as_medical_codes_selectors_a_benchmark_using_the_internati.md)**
-
-:   This work constructs a medical coding benchmark based on an extract-retrieve-select framework, evaluating ICPC-2 code selection capability across 33 LLMs. Results show that 28 models achieve F1 > 0.8, demonstrating that LLMs can effectively automate primary care coding without fine-tuning.
 
 **[LoMix: Learnable Weighted Multi-Scale Logits Mixing for Medical Image Segmentation](lomix_learnable_weighted_multi-scale_logits_mixing_for_medical_image_segmentatio.md)**
 
@@ -258,10 +226,6 @@ item_total: 89
 
 :   This paper proposes the MATCH framework, which tightly couples topological reasoning with the perturbation-robustness principle of semi-supervised learning. By exploiting dual-level topological consistency across random perturbations and temporal training snapshots, MATCH adaptively identifies reliable topological structures without requiring manually defined thresholds, substantially reducing topological errors in histopathology image segmentation.
 
-**[MedAgentBoard: Benchmarking Multi-Agent Collaboration with Conventional Methods for Diverse Medical Tasks](medagentboard_benchmarking_multi-agent_collaboration_with_conventional_methods_f.md)**
-
-:   This paper proposes MedAgentBoard, a comprehensive benchmark that systematically evaluates multi-agent collaboration, single-LLM, and conventional methods across diverse medical tasks, revealing that multi-agent collaboration does not consistently outperform strong single models or specialized conventional approaches.
-
 **[Meta-Learning an In-Context Transformer Model of Human Higher Visual Cortex](meta-learning_an_in-context_transformer_model_of_human_higher_visual_cortex.md)**
 
 :   This paper proposes BraInCoRL (Brain In-Context Representation Learning), a Transformer-based meta-learning framework that predicts voxel-level neural responses for new subjects directly from a small number of stimulus–response samples via in-context learning (ICL), requiring no fine-tuning to generalize to new subjects or stimuli. With only 100 images as context, it approaches the performance of a reference model fully trained on 9,000 images.
@@ -269,10 +233,6 @@ item_total: 89
 **[Mind the (Data) Gap: Evaluating Vision Systems in Small Data Applications](mind_the_data_gap_evaluating_vision_systems_in_small_data_applications.md)**
 
 :   This paper systematically compares MLLMs (e.g., Gemini, Qwen2.5-VL) and vision encoder + SVM pipelines on the NeWT ecological classification benchmark across the "small data regime" (10–1000 labeled samples). MLLMs plateau after 10–30 samples, whereas vision-based methods exhibit near-logarithmic growth throughout, calling on the community to prioritize small-data evaluation.
-
-**[MIRA: Medical Time Series Foundation Model for Real-World Health Data](mira_medical_time_series_foundation_model_for_real-world_health_data.md)**
-
-:   This paper presents MIRA, a foundation model specifically designed for irregular medical time series. Through continuous-time rotary position encoding (CT-RoPE), frequency-specific Mixture-of-Experts (MoE), and a Neural ODE-based extrapolation module, MIRA is pretrained on 454 billion observation points and achieves zero-shot forecasting performance that reduces average error by 8% and 6% in OOD and in-distribution (ID) settings, respectively.
 
 **[Modeling X-ray Photon Pile-up with a Normalizing Flow](modeling_x-ray_photon_pile-up_with_a_normalizing_flow.md)**
 
@@ -282,13 +242,13 @@ item_total: 89
 
 :   This paper proposes MoRE-Brain, a neuroscience-inspired fMRI visual decoding framework that employs a hierarchical Mixture-of-Experts (MoE) architecture to simulate the specialized processing of the brain's visual pathway. Combined with a dynamic temporal-spatial dual-routing mechanism that guides image generation via a diffusion model, MoRE-Brain achieves high-fidelity reconstruction while enabling efficient cross-subject generalization and unprecedented mechanistic interpretability.
 
+**[MTBBench: A Multimodal Sequential Clinical Decision-Making Benchmark in Oncology](mtbbench_a_multimodal_sequential_clinical_decision-making_benchmark_in_oncology.md)**
+
+:   This paper introduces MTBBench—the first clinical benchmark simultaneously covering three dimensions: multimodality, longitudinal temporal sequencing, and interactive agent workflows. It simulates the decision-making process of Molecular Tumor Boards (MTBs) to evaluate and enhance the multimodal longitudinal reasoning capabilities of AI agents in precision oncology.
+
 **[Multimodal Bayesian Network for Robust Assessment of Casualties in Autonomous Triage](multimodal_bayesian_network_for_robust_assessment_of_casualties_in_autonomous_tr.md)**
 
 :   This paper proposes an expert-knowledge-driven Bayesian network decision-support framework that fuses outputs from multiple computer vision models to assess casualty conditions. Requiring no training data and supporting inference under incomplete information, the framework improved triage accuracy from 14% to 53% and diagnostic coverage from 31% to 95% in the DARPA Triage Challenge.
-
-**[Multimodal Disease Progression Modeling via Spatiotemporal Disentanglement and Multiscale Alignment](multimodal_disease_progression_modeling_via_spatiotemporal_disentanglement_and_m.md)**
-
-:   This paper proposes DiPro, a framework that addresses redundancy in longitudinal chest X-ray sequences and cross-modal temporal misalignment through region-aware spatiotemporal disentanglement (separating static anatomical from dynamic pathological features) and multiscale alignment (local–global fusion of CXR and EHR), achieving state-of-the-art performance on disease progression recognition and ICU prediction tasks.
 
 **[NeurIPT: Foundation Model for Neural Interfaces](neuript_foundation_model_for_neural_interfaces.md)**
 
@@ -318,17 +278,13 @@ item_total: 89
 
 :   This paper presents PolyPose, a deformable 2D/3D registration method based on polyrigid transformations. Leveraging the anatomical prior that bones are rigid bodies, PolyPose parameterizes complex 3D deformation fields as weighted combinations of multiple rigid transformations in the Lie algebra $\mathfrak{se}(3)$, enabling accurate 3D volumetric registration from as few as two X-ray images without any regularization or hyperparameter tuning.
 
-**[Position: Thematic Analysis of Unstructured Clinical Transcripts with Large Language Models](position_thematic_analysis_of_unstructured_clinical_transcripts_with_large_langu.md)**
+**[Posterior Sampling by Combining Diffusion Models with Annealed Langevin Dynamics](posterior_sampling_by_combining_diffusion_models_with_annealed_langevin_dynamics.md)**
 
-:   This position paper systematically reviews the current state of LLM-assisted thematic analysis (TA) on unstructured clinical transcripts, identifies highly fragmented evaluation practices across the literature, and proposes a standardized evaluation framework centered on three dimensions: Validity, Reliability, and Interpretability.
+:   This paper proposes an algorithm combining diffusion models with annealed Langevin dynamics that requires only $L^4$-accurate score estimates to achieve polynomial-time posterior sampling under (locally) log-concave distributions, providing the first theoretical guarantees for warm-started inverse problem solving.
 
 **[QoQ-Med: Building Multimodal Clinical Foundation Models with Domain-Aware GRPO Training](qoq-med_building_multimodal_clinical_foundation_models_with_domain-aware_grpo_tr.md)**
 
 :   QoQ-Med constructs a multimodal clinical foundation model spanning 9 clinical modalities (1D ECG + 6 types of 2D images + 2 types of 3D scans), and proposes Domain-aware Relative Policy Optimization (DRPO)—which employs hierarchical temperature scaling (inter-domain × intra-domain K-means clustering) to address modality/difficulty imbalance. Trained on 2.61 million instruction-tuning pairs, it achieves an average F1 of 0.295 (vs. GRPO 0.193, +52.8%), ranking best in 6 out of 8 modalities.
-
-**[RAD: Towards Trustworthy Retrieval-Augmented Multi-modal Clinical Diagnosis](rad_towards_trustworthy_retrieval-augmented_multi-modal_clinical_diagnosis.md)**
-
-:   This paper proposes RAD, a retrieval-augmented diagnostic framework that retrieves disease guidelines from multi-source medical corpora and injects them throughout the full pipeline of a multimodal model — from feature extraction to cross-modal fusion. A dual-axis explainability evaluation protocol is also introduced. RAD achieves state-of-the-art performance on four datasets spanning distinct anatomical regions.
 
 **[RadZero: Similarity-Based Cross-Attention for Explainable Vision-Language Alignment in Chest X-ray](radzero_similarity-based_cross-attention_for_explainable_vision-language_alignme.md)**
 
@@ -337,10 +293,6 @@ item_total: 89
 **[RAM-W600: A Multi-Task Wrist Dataset and Benchmark for Rheumatoid Arthritis](ram-w600_a_multi-task_wrist_dataset_and_benchmark_for_rheumatoid_arthritis.md)**
 
 :   RAM-W600 is the first publicly available multi-task wrist conventional radiograph dataset, comprising 1,048 images and supporting two clinically relevant tasks: carpal bone instance segmentation and SvdH bone erosion (BE) scoring, accompanied by comprehensive benchmarking.
-
-**[RAxSS: Retrieval-Augmented Sparse Sampling for Explainable Variable-Length Medical Time Series Classification](raxss_retrieval-augmented_sparse_sampling_for_explainable_variable-length_medica.md)**
-
-:   This paper proposes RAxSS, a framework that integrates retrieval augmentation into the random sparse sampling (SSS) pipeline. By replacing uniform averaging with intra-window similarity-weighted aggregation, RAxSS maintains competitive performance on variable-length medical time series classification while providing an interpretable evidence chain spanning from "where" to "why."
 
 **[Revisiting End-to-End Learning with Slide-level Supervision in Computational Pathology](revisiting_end-to-end_learning_with_slide-level_supervision_in_computational_pat.md)**
 
@@ -353,10 +305,6 @@ item_total: 89
 **[Scalable Diffusion Transformer for Conditional 4D fMRI Synthesis](scalable_diffusion_transformer_for_conditional_4d_fmri_synthesis.md)**
 
 :   This paper proposes the first diffusion Transformer for voxel-level whole-brain 4D fMRI conditional generation, combining 3D VQ-GAN latent space compression, a CNN-Transformer hybrid backbone, and strong conditioning via AdaLN-Zero and cross-attention. The model achieves a task activation map correlation of 0.83, RSA of 0.98, and perfect condition specificity across seven cognitive tasks from the HCP dataset.
-
-**[Scaling Laws and Pathologies of Single-Layer PINNs: Network Width and PDE Nonlinearity](scaling_laws_and_pathologies_of_single-layer_pinns_network_width_and_pde_nonline.md)**
-
-:   This work establishes empirical scaling laws for single-layer PINNs on representative nonlinear PDEs, identifying a dual optimization failure: a width-scaling pathology (error does not decrease with width) and a compound pathology (nonlinearity exacerbates this failure), demonstrating that optimization rather than approximation capacity is the primary bottleneck.
 
 **[Self-supervised Learning of Echocardiographic Video Representations via Online Cluster Distillation](self-supervised_learning_of_echocardiographic_video_representations_via_online_c.md)**
 
@@ -373,10 +321,6 @@ item_total: 89
 **[Sequential Attention-based Sampling for Histopathological Analysis](sequential_attention-based_sampling_for_histopathological_analysis.md)**
 
 :   This paper proposes SASHA, a framework integrating a Hierarchical Attention-based Feature Distillation (HAFED) module with deep reinforcement learning (RL). By sampling only 10–20% of high-resolution patches, SASHA achieves classification performance on par with full-resolution SOTA methods, while yielding a 4–8× inference speedup and a WSI compression ratio exceeding 16×.
-
-**[Shallow Robustness, Deep Vulnerabilities: Multi-Turn Evaluation of Medical LLMs](shallow_robustness_deep_vulnerabilities_multi-turn_evaluation_of_medical_llms.md)**
-
-:   This paper proposes the MedQA-Followup framework to systematically evaluate the multi-turn robustness of medical LLMs. It reveals that models exhibit acceptable performance under single-turn perturbations (shallow robustness), yet accuracy can catastrophically drop from 91.2% to 13.5% under multi-turn follow-up challenges (deep vulnerability). Notably, indirect contextual manipulation proves more destructive than direct incorrect suggestions.
 
 **[SMMILE: An Expert-Driven Benchmark for Multimodal Medical In-Context Learning](smmile_an_expert-driven_benchmark_for_multimodal_medical_in-context_learning.md)**
 
@@ -398,10 +342,6 @@ item_total: 89
 
 :   This paper proposes SynBrain, a framework that models fMRI responses as visual-semantic-conditioned probability distributions via BrainVAE, and employs an S2N Mapper for one-step semantic-to-neural-space mapping. SynBrain substantially outperforms MindSimulator on visual-to-fMRI synthesis (65% reduction in MSE, 96% improvement in Pearson correlation), and the synthesized fMRI signals effectively enhance few-shot cross-subject decoding performance.
 
-**[The Biased Oracle: Assessing LLMs' Understandability and Empathy in Medical Diagnoses](the_biased_oracle_assessing_llms_understandability_and_empathy_in_medical_diagno.md)**
-
-:   This work systematically evaluates GPT-4o and Claude-3.7 on readability and empathy in medical diagnostic communication. Both models produce reading levels well above recommended standards (grades 9–13 vs. the recommended grades 6–8). Affective empathy varies significantly with diagnosis type and patient education level, and LLM-as-Judge exhibits severe self-serving bias (GPT inflates its own empathy scores by ~0.3 points).
-
 **[The Boundaries of Fair AI in Medical Image Prognosis: A Causal Perspective](the_boundaries_of_fair_ai_in_medical_image_prognosis_a_causal_perspective.md)**
 
 :   FairTTE is the first comprehensive framework to systematically investigate fairness in time-to-event (TTE) prediction for medical imaging. It leverages causal analysis to quantify five sources of bias, and through training over 20,000 models, reveals the limitations of existing fairness methods — particularly the fundamental challenge of maintaining fairness under distribution shift.
@@ -417,10 +357,6 @@ item_total: 89
 **[Toward a Vision-Language Foundation Model for Medical Data: Multimodal Dataset and Benchmarks for Vietnamese PET/CT Report Generation](toward_a_vision-language_foundation_model_for_medical_data_multimodal_dataset_an.md)**
 
 :   This work introduces ViMed-PET, the first Vietnamese PET/CT image-report dataset comprising 2,757 whole-body PET/CT volumes paired with complete clinical reports. Through a data augmentation strategy and a three-stage fine-tuning pipeline, the approach substantially improves VLM performance on medical report generation and VQA tasks. Novel evaluation metrics based on clinically critical information are also proposed.
-
-**[Towards Self-Supervised Foundation Models for Critical Care Time Series](towards_self-supervised_foundation_models_for_critical_care_time_series.md)**
-
-:   A self-supervised foundation model for critical care time series is constructed by pre-training a Biaxial Transformer (BAT) architecture on multiple ICU datasets, substantially outperforming supervised baselines in low-data regimes.
 
 **[UniMRSeg: Unified Modality-Relax Segmentation via Hierarchical Self-Supervised Compensation](unimrseg_unified_modality-relax_segmentation_via_hierarchical_self-supervised_co.md)**
 

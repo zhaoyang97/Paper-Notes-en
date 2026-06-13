@@ -83,7 +83,7 @@ item_total: 264
 
 **📹 ICCV2025** · **264** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (27)](../../ICML2026/3d_vision/index.md) · [💬 ACL2026 (1)](../../ACL2026/3d_vision/index.md) · [📷 CVPR2026 (230)](../../CVPR2026/3d_vision/index.md) · [🔬 ICLR2026 (63)](../../ICLR2026/3d_vision/index.md) · [🤖 AAAI2026 (76)](../../AAAI2026/3d_vision/index.md) · [🧠 NeurIPS2025 (113)](../../NeurIPS2025/3d_vision/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (24)](../../ICML2026/3d_vision/index.md) · [💬 ACL2026 (1)](../../ACL2026/3d_vision/index.md) · [📷 CVPR2026 (236)](../../CVPR2026/3d_vision/index.md) · [🔬 ICLR2026 (61)](../../ICLR2026/3d_vision/index.md) · [🤖 AAAI2026 (78)](../../AAAI2026/3d_vision/index.md) · [🧠 NeurIPS2025 (114)](../../NeurIPS2025/3d_vision/index.md)
 
 🔥 **Top topics:** 3D Gaussian Splatting ×48 · Diffusion Models ×26 · Point Cloud ×16 · Dynamic Scenes ×15 · Adversarial Robustness ×12
 
@@ -259,7 +259,7 @@ item_total: 264
 
 :   SGCDet achieves state-of-the-art performance in multi-view indoor 3D object detection without ground-truth geometric supervision, through a geometry- and context-aware aggregation module (3D deformable attention + multi-view attention fusion) and an occupancy-probability-based sparse voxel construction strategy, while substantially reducing computational overhead.
 
-**[Bootstrap3D: Improving Multi-view Diffusion Model with Synthetic Data](bootstrap3d_improving_multiview_diffusion_model_with_synthet.md)**
+**[Bootstrap3D: Improving Multi-view Diffusion Model with Synthetic Data](bootstrap3d_improving_multi-view_diffusion_model_with_synthetic_data.md)**
 
 :   This paper proposes Bootstrap3D, a framework that leverages video diffusion models to generate synthetic multi-view data, employs a fine-tuned MV-LLaVA for quality filtering and dense caption rewriting, and introduces a Training Timestep Reschedule (TTR) strategy for training multi-view diffusion models — substantially improving image quality and text alignment without sacrificing view consistency.
 
@@ -267,7 +267,7 @@ item_total: 264
 
 :   This paper proposes BoxDreamer, which adopts 3D bounding box corners as an intermediate representation. A reference-view-based corner synthesizer predicts 2D corner projections in query images, and 6DoF poses are recovered via PnP using the resulting 2D–3D correspondences. The method significantly outperforms existing approaches under sparse-view and heavy-occlusion conditions.
 
-**[Bridging 3D Anomaly Localization and Repair via High-Quality Continuous Geometric Representation](bridging_3d_anomaly_localization_and_repair_via_high-quality_continuous_geometri.md)**
+**[Bridging 3D Anomaly Localization and Repair via High-Quality Continuous Geometric Representation](bridging_3d_anomaly_localization_and_repair_via_high-qualit.md)**
 
 :   This paper proposes the PASDF framework, which achieves continuous geometric representation via a pose-aware signed distance function (SDF), unifying 3D anomaly detection and repair tasks, and attains state-of-the-art performance on Real3D-AD and Anomaly-ShapeNet.
 

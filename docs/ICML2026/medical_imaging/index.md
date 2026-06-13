@@ -1,8 +1,8 @@
 ---
 title: >-
-  ICML2026 Medical Imaging Papers · 34 Notes
+  ICML2026 Medical Imaging Papers · 24 Notes
 description: >-
-  34 ICML2026 papers in the Medical Imaging area, covering Medical Imaging, Reasoning, Segmentation, Multimodal/VLM, Alignment/RLHF, Diffusion Models and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  24 ICML2026 papers in the Medical Imaging area, covering Medical Imaging, Reasoning, Segmentation, Multimodal/VLM, Alignment/RLHF, Adversarial Robustness and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "ICML2026"
   - "Medical Imaging"
@@ -12,20 +12,14 @@ tags:
   - "Segmentation"
   - "Multimodal/VLM"
   - "Alignment/RLHF"
-  - "Diffusion Models"
+  - "Adversarial Robustness"
 item_list:
-  - u: "a_hypertoroidal_covering_for_perfect_color_equivariance/"
-    t: "A Hypertoroidal Covering for Perfect Color Equivariance"
   - u: "are_we_overconfident_in_models_and_results_for_semi-supervised_3d_medical_image_/"
     t: "Are We Overconfident in Models and Results for Semi-Supervised 3D Medical Image Segmentation?"
   - u: "auditing_sybil_explaining_deep_lung_cancer_risk_prediction_through_generative_in/"
     t: "Auditing Sybil: Explaining Deep Lung Cancer Risk Prediction Through Generative Interventional Attributions"
-  - u: "beyond_generative_priors_minority_sampling_with_jepa-guided_diffusion/"
-    t: "Beyond Generative Priors: Minority Sampling with JEPA-Guided Diffusion"
   - u: "cascade_conformal_prediction_uncertainty-adaptive_prediction_intervals_for_two-s/"
     t: "CASCADE Conformal Prediction: Uncertainty-Adaptive Prediction Intervals for Two-Stage Clinical Decision Support"
-  - u: "controllable_generative_sandbox_for_causal_inference/"
-    t: "Controllable Generative Sandbox for Causal Inference"
   - u: "discontinuous_galerkin_neural_operator_for_pathology_defocus_deblurring/"
     t: "DGNO: Discontinuous Galerkin Neural Operator for Pathology Defocus Deblurring"
   - u: "dp-kfc_data-free_preconditioning_for_privacy-preserving_deep_learning/"
@@ -42,8 +36,6 @@ item_list:
     t: "Foundation VAEs for 3D CT Reconstruction, Augmentation, and Generation"
   - u: "geometrically_constrained_stenosis_editing_in_coronary_angiography_via_entropic_/"
     t: "OT-Bridge Editor: Geometrically Constrained Stenosis Editing in Coronary Angiography via Entropic Optimal Transport"
-  - u: "ilora_bayesian_low-rank_adaptation_with_latent_interaction_graphs_for_microbiome/"
-    t: "iLoRA: Bayesian Low-Rank Adaptation with Latent Interaction Graphs for Microbiome Diagnosis"
   - u: "learning_multi-scale_hypergraph_for_high-order_brain_connectivity_analysis/"
     t: "Learning Multi-Scale Hypergraph for High-Order Brain Connectivity Analysis"
   - u: "marrying_generative_model_of_healthcare_events_with_digital_twin_of_social_deter/"
@@ -52,20 +44,10 @@ item_list:
     t: "MedCRP-CL: Continual Medical Image Segmentation via Bayesian Nonparametric Semantic Modality Discovery"
   - u: "meg-xl_data-efficient_brain-to-text_via_long-context_pre-training/"
     t: "MEG-XL: Data-Efficient Brain-to-Text via Long-Context Pre-Training"
-  - u: "on_revisiting_entropy_for_identifying_mislabeled_images/"
-    t: "On Revisiting Entropy for Identifying Mislabeled Images"
   - u: "pacx-mae_physiology-augmented_chest_x-ray_masked_autoencoder/"
     t: "PaCX-MAE: Physiology-Augmented Chest X-Ray Masked Autoencoder"
   - u: "plug-and-play_diffusion_meets_admm_dual-variable_coupling_for_robust_medical_ima/"
     t: "Plug-and-Play Diffusion Meets ADMM: Dual-Variable Coupling for Robust Medical Image Reconstruction"
-  - u: "polaris_coupled_orbital_polar_embeddings_for_hierarchical_concept_learning/"
-    t: "Polaris: Coupled Orbital Polar Embeddings for Hierarchical Concept Learning"
-  - u: "position_beyond_sensitive_attributes_ml_fairness_should_quantify_structural_inju/"
-    t: "Position: Beyond Sensitive Attributes, ML Fairness Should Quantify Structural Injustice via Social Determinants"
-  - u: "rethink_the_role_of_neural_decoders_in_quantum_error_correction/"
-    t: "Rethink the Role of Neural Decoders in Quantum Error Correction"
-  - u: "safety_generalization_under_distribution_shift_in_safe_reinforcement_learning_a_/"
-    t: "Safety Generalization Under Distribution Shift in Safe Reinforcement Learning: A Diabetes Testbed"
   - u: "scaling_vision_transformers_for_functional_mri_with_flat_maps/"
     t: "Scaling Vision Transformers for Functional MRI with Flat Maps"
   - u: "seizure-semiology-suite_s3_a_clinically_multimodal_dataset_benchmark_and_models_/"
@@ -74,21 +56,23 @@ item_list:
     t: "SEMIR: Semantic Minor-Induced Representation Learning on Graphs for Visual Segmentation"
   - u: "synermedgen_synergizing_medical_multimodal_understanding_with_generation_via_tas/"
     t: "SynerMedGen: Synergizing Medical Multimodal Understanding with Generation via Task Alignment"
-item_total: 34
+  - u: "the_double_dilemma_in_multi-task_radiology_report_generation_a_gradient_dynamics/"
+    t: "CAME-Grad: The Double Dilemma in Multi-Task Radiology Report Generation — A Gradient Dynamics Analysis and Solution"
+  - u: "thinking_in_scales_accelerating_gigapixel_pathology_image_analysis_via_adaptive_/"
+    t: "PathCTM: Thinking in Scales — Accelerating Gigapixel Pathology Image Analysis via Adaptive Continuous Reasoning"
+  - u: "turning_drift_into_constraint_robust_reasoning_alignment_in_non-stationary_envir/"
+    t: "Turning Drift into Constraint: Robust Reasoning Alignment in Non-Stationary Multi-Stream Environments"
+item_total: 24
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->
 # 🏥 Medical Imaging
 
-**🧪 ICML2026** · **34** paper notes
+**🧪 ICML2026** · **24** paper notes
 
-📌 **Same area in other venues:** [💬 ACL2026 (35)](../../ACL2026/medical_imaging/index.md) · [📷 CVPR2026 (102)](../../CVPR2026/medical_imaging/index.md) · [🔬 ICLR2026 (48)](../../ICLR2026/medical_imaging/index.md) · [🤖 AAAI2026 (88)](../../AAAI2026/medical_imaging/index.md) · [🧠 NeurIPS2025 (89)](../../NeurIPS2025/medical_imaging/index.md) · [📹 ICCV2025 (31)](../../ICCV2025/medical_imaging/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (99)](../../CVPR2026/medical_imaging/index.md) · [🔬 ICLR2026 (21)](../../ICLR2026/medical_imaging/index.md) · [🤖 AAAI2026 (73)](../../AAAI2026/medical_imaging/index.md) · [🧠 NeurIPS2025 (73)](../../NeurIPS2025/medical_imaging/index.md) · [📹 ICCV2025 (31)](../../ICCV2025/medical_imaging/index.md)
 
-🔥 **Top topics:** Medical Imaging ×13 · Reasoning ×4 · Segmentation ×3 · Multimodal/VLM ×3 · Alignment/RLHF ×3
-
-**[A Hypertoroidal Covering for Perfect Color Equivariance](a_hypertoroidal_covering_for_perfect_color_equivariance.md)**
-
-:   This paper employs a double-cover to lift the interval-valued saturation and luminance in HSL to a circle group, constructing the $\mathbb{T}^3$CEN. This architecture achieves exact color equivariance across hue, saturation, and luminance shifts, enhancing robustness in tasks such as color-shifted classification and medical imaging.
+🔥 **Top topics:** Medical Imaging ×12 · Reasoning ×4 · Segmentation ×3 · Multimodal/VLM ×3 · Alignment/RLHF ×3
 
 **[Are We Overconfident in Models and Results for Semi-Supervised 3D Medical Image Segmentation?](are_we_overconfident_in_models_and_results_for_semi-supervised_3d_medical_image_.md)**
 
@@ -98,17 +82,9 @@ item_total: 34
 
 :   This paper proposes S(H)NAP—a generative interventional framework based on 3D diffusion bridges using "removal + insertion." It decomposes the decisions of Sybil, a state-of-the-art lung cancer risk prediction model, into an LMPI (Linear + Second-order Interaction Model) consisting of "nodule main effects + pairwise interactions + background." For the first time, it audits the model's reliance on in-hospital artifacts (e.g., ECG electrodes, metallic clothing buttons) and identifies a severe "radial insensitivity" failure mode regarding peripheral lung nodules through causal rather than correlative methods.
 
-**[Beyond Generative Priors: Minority Sampling with JEPA-Guided Diffusion](beyond_generative_priors_minority_sampling_with_jepa-guided_diffusion.md)**
-
-:   This paper proposes JEPA Guidance, which utilizes the implicit density signals from JEPA (e.g., DINOv2) encoders to guide the sampling of diffusion models. It shifts the definition of minority samples from "low density under the generative model prior" to "low density under a world prior," enabling the generation of semantically meaningful rare samples across unconditional, class-conditional, and text-to-image scenarios.
-
 **[CASCADE Conformal Prediction: Uncertainty-Adaptive Prediction Intervals for Two-Stage Clinical Decision Support](cascade_conformal_prediction_uncertainty-adaptive_prediction_intervals_for_two-s.md)**
 
 :   The CASCADE framework is proposed to propagate epistemic uncertainty from a first-stage classifier (quantified via Venn-Abers predictors) into second-stage regression prediction intervals. This narrows prediction intervals for high-confidence patients by 38.9% while automatically expanding safety buffers for uncertain cases, achieving adaptive coverage guarantees.
-
-**[Controllable Generative Sandbox for Causal Inference](controllable_generative_sandbox_for_causal_inference.md)**
-
-:   This paper proposes CausalMix: a variational generative framework that jointly optimizes a type-specific multi-head decoder and a Bayesian Gaussian Mixture latent prior with three categories of independently controllable causal "knobs" (overlap $\alpha(X)$, CATE function $\tau(X)$, and unobserved confounding $\kappa(X,T)$). While maintaining real-world data distribution fidelity, it allows users to freely design counterfactual benchmarks. Validation on real-world mCRPC (prostate cancer) cases shows that CausalMix high-faithfully reproduces mixed-type tables and stably injects overlap, confounding, and heterogeneous effects on demand, serving as a controllable stress test for CATE estimators.
 
 **[DGNO: Discontinuous Galerkin Neural Operator for Pathology Defocus Deblurring](discontinuous_galerkin_neural_operator_for_pathology_defocus_deblurring.md)**
 
@@ -128,7 +104,7 @@ item_total: 34
 
 **[Factored Classifier-Free Guidance](factored_classifier-free_guidance.md)**
 
-:   This paper identifies the "attribute amplification" failure mode of CFG in diffusion-based counterfactual generation—where a single global $\omega$ amplifies attributes that should remain unchanged. It proposes FCFG: grouping attributes according to a causal graph and assigning independent guidance weights to each group, significantly reducing off-target attribute drift and improving counterfactual reversibility on CelebA-HQ, EMBED, and MIMIC-CXR.
+:   This paper identifies an "attribute amplification" failure mode of CFG in counterfactual generation with diffusion models—using a single global $\omega$ amplifies not only the target attribute but also unintended ones. The authors propose FCFG: grouping attributes by causal graph and assigning independent guidance weights to each group, which significantly reduces non-target attribute drift and improves counterfactual reversibility on CelebA-HQ / EMBED / MIMIC-CXR.
 
 **[Federated Distillation for Whole Slide Image via Gaussian-Mixture Feature Alignment and Curriculum Integration](federated_distillation_for_whole_slide_image_via_gaussian-mixture_feature_alignm.md)**
 
@@ -141,10 +117,6 @@ item_total: 34
 **[OT-Bridge Editor: Geometrically Constrained Stenosis Editing in Coronary Angiography via Entropic Optimal Transport](geometrically_constrained_stenosis_editing_in_coronary_angiography_via_entropic_.md)**
 
 :   OT-Bridge Editor reformulates "editing a vessel stenosis in coronary angiography" as a constrained entropic OT problem in a vessel-structure composite domain. By integrating path-level geometric projection supervision into the Schrödinger Bridge, it achieves pixel-level shape/position controllable synthetic angiography, yielding a relative improvement of 27.8% in downstream stenosis detection mAP@0.5 on the ARCADE public dataset.
-
-**[iLoRA: Bayesian Low-Rank Adaptation with Latent Interaction Graphs for Microbiome Diagnosis](ilora_bayesian_low-rank_adaptation_with_latent_interaction_graphs_for_microbiome.md)**
-
-:   iLoRA employs a Bayesian approach to infer a sparse microbial interaction graph from each microbiome sample (Poisson edges → Laplace sparsification → GNN embedding). This graph then generates an input-conditioned LoRA matrix $A$, allowing the LLM to learn microbial "cross-talk" patterns simultaneously with IBD diagnosis.
 
 **[Learning Multi-Scale Hypergraph for High-Order Brain Connectivity Analysis](learning_multi-scale_hypergraph_for_high-order_brain_connectivity_analysis.md)**
 
@@ -162,10 +134,6 @@ item_total: 34
 
 :   MEG-XL utilizes 2.5 minutes (191k tokens) of MEG context for mask token pre-training (5–300$\times$ longer than previous methods). When fine-tuned on a 50-word brain-to-text task, it achieves the decoding accuracy of SOTA supervised methods using only 1 hour of data compared to the typical 50 hours, significantly outperforming all existing brain foundation models.
 
-**[On Revisiting Entropy for Identifying Mislabeled Images](on_revisiting_entropy_for_identifying_mislabeled_images.md)**
-
-:   The authors discover that the phenomenon where "mislabeled samples exhibit persistently high predictive entropy throughout training" is insufficient to distinguish them from hard clean samples. They introduce **signed entropy** by multiplying entropy with a sign bit indicating whether the prediction aligns with the given label, then accumulate this over training epochs into the **SEI** statistic. As a pure plug-and-play method, SEI achieves new SOTA results in mislabeled sample detection (with gains up to 11%+) across multiple medical datasets (ISIC, DeepDRiD, PANDA, CheXpert) and CIFAR-100N.
-
 **[PaCX-MAE: Physiology-Augmented Chest X-Ray Masked Autoencoder](pacx-mae_physiology-augmented_chest_x-ray_masked_autoencoder.md)**
 
 :   PaCX-MAE performs LoRA fine-tuning on a Chest X-Ray (CXR) ViT pretrained with MAE, utilizing frozen encoders for ECG and laboratory tests as teachers. Through a dual distillation objective of InfoNCE contrastive learning and cosine regression, "invisible physiological context" is injected into the pure image encoder. At inference time, using only the CXR, the model outperforms the same-architecture MAE baseline across 9 downstream benchmarks, with particularly significant gains in physiology-dependent tasks (MedMod +2.7 AUROC, VinDr +6.5 F1).
@@ -173,22 +141,6 @@ item_total: 34
 **[Plug-and-Play Diffusion Meets ADMM: Dual-Variable Coupling for Robust Medical Image Reconstruction](plug-and-play_diffusion_meets_admm_dual-variable_coupling_for_robust_medical_ima.md)**
 
 :   This paper reintroduces the dual variable of ADMM into the PnP diffusion prior loop, utilizing "duality" to provide integral feedback that eliminates steady-state bias. A frequency-domain Spectral Homogenization module is proposed to whiten structured dual residuals into pseudo-AWGN, preventing the triggering of OOD hallucinations in the diffusion denoiser. It achieves SOTA fidelity and approximately 3× inference acceleration on sparse-view/limited-angle CT and accelerated MRI.
-
-**[Polaris: Coupled Orbital Polar Embeddings for Hierarchical Concept Learning](polaris_coupled_orbital_polar_embeddings_for_hierarchical_concept_learning.md)**
-
-:   Polaris decouples concept representations into "direction (semantics) + orbital potential (hierarchy)" signals, both learned on the unit hypersphere. It utilizes tangent space projection and exponential mapping to ensure manifold closure, employs anisotropic spherical SVGD to prevent equatorial collapse, and implements vMF KL divergence for asymmetric "parent broader than child" constraints. It improves top-K recall by up to 19 points and reduces mean rank by 60% in taxonomy expansion tasks.
-
-**[Position: Beyond Sensitive Attributes, ML Fairness Should Quantify Structural Injustice via Social Determinants](position_beyond_sensitive_attributes_ml_fairness_should_quantify_structural_inju.md)**
-
-:   This is an ICML position paper: the authors argue that ML fairness research cannot focus solely on "sensitive attributes" such as race/sex. Instead, it must incorporate "social determinants" (contextual variables like neighborhood, ADI, school funding, and healthcare accessibility) into auditing. Using a theoretical college admission model, U.S. Census data, and semi-synthetic breast cancer screening experiments, they demonstrate that mitigation strategies centered only on sensitive attributes may inadvertently create new structural injustices.
-
-**[Rethink the Role of Neural Decoders in Quantum Error Correction](rethink_the_role_of_neural_decoders_in_quantum_error_correction.md)**
-
-:   This paper systematically re-evaluates five categories of neural decoders (MLP/3D-CNN/TCN/Transformer/GNN) on surface codes with $d \le 9$. By integrating "quantization + pruning + FPGA resource modeling" as first-class citizens into the training pipeline, it concludes that near-term decoding performance is dominated by data volume rather than architectural complexity, and INT4 + QAT is a prerequisite for microsecond-level real-time decoding.
-
-**[Safety Generalization Under Distribution Shift in Safe Reinforcement Learning: A Diabetes Testbed](safety_generalization_under_distribution_shift_in_safe_reinforcement_learning_a_.md)**
-
-:   The authors constructed a unified T1D/T2D diabetes simulator based on the UVA-Padova physical model. They found that while 8 mainstream Safe RL algorithms can satisfy safety constraints on training patients, their Time-in-Range generally drops by 8–13% when deployed to unseen patients. Consequently, they proposed using Basis-Adaptive Neural ODE to predict blood glucose trajectories and applying predictive shielding at test-time to filter dangerous actions, allowing baselines like PPO-Lag / CPO to recover 13–14% TIR on OOD patients.
 
 **[Scaling Vision Transformers for Functional MRI with Flat Maps](scaling_vision_transformers_for_functional_mri_with_flat_maps.md)**
 
@@ -200,7 +152,7 @@ item_total: 34
 
 **[SEMIR: Semantic Minor-Induced Representation Learning on Graphs for Visual Segmentation](semir_semantic_minor-induced_representation_learning_on_graphs_for_visual_segmen.md)**
 
-:   SEMIR treats the voxel grid as a parent graph $G$ and compresses it into a "boundary-aligned" graph minor $H$ through parameterized edge contraction, node deletion, and edge deletion (reducing node count from $\sim10^7$ to $\sim10^3$). It utilizes 5–20 few-shot labels and black-box optimization to maximize boundary Dice for $\Theta$. After performing supernode classification on the minor using a GNN, it maps labels back to the original grid via an exact lifting bijection—consistently outperforming nnU-Net on minority class Dice across BraTS, KiTS, and LiTS tumor segmentation tasks using only a 16GB T4 GPU.
+:   SEMIR treats the voxel grid as a parent graph $G$, compresses it into a "boundary-aligned" graph minor $H$ (reducing node count from $\sim10^7$ to $\sim10^3$) via parameterized edge contraction, node deletion, and edge deletion. Using only 5–20 few-shot samples, it black-box optimizes $\Theta$ to maximize boundary Dice, then applies a GNN for supernode classification on the minor, and finally performs exact lifting via a bijection between the minor and the voxel grid. On the BraTS / KiTS / LiTS tumor segmentation tasks, SEMIR consistently outperforms nnU-Net on minority class Dice, requiring only a 16GB T4 GPU.
 
 **[SynerMedGen: Synergizing Medical Multimodal Understanding with Generation via Task Alignment](synermedgen_synergizing_medical_multimodal_understanding_with_generation_via_tas.md)**
 
@@ -216,8 +168,4 @@ item_total: 34
 
 **[Turning Drift into Constraint: Robust Reasoning Alignment in Non-Stationary Multi-Stream Environments](turning_drift_into_constraint_robust_reasoning_alignment_in_non-stationary_envir.md)**
 
-:   This paper reinterprets the reasoning "drift" between multiple MLLMs as negative sample constraints in DPO. By using Plackett-Luce preference loss to simultaneously suppress divergent trajectories from $N$ source models, a 7B student model exceeds all source teachers in chest X-ray classification and report generation tasks using only 10% of MIMIC-CXR without ground-truth reports.
-
-**[Why Specialist Models Still Matter: A Heterogeneous Multi-Agent Paradigm for Medical Artificial Intelligence](why_specialist_models_still_matter_a_heterogeneous_multi-agent_paradigm_for_medi.md)**
-
-:   HetMedAgent organizes generalist LLMs, modality-specific specialist models, and clinicians into a heterogeneous multi-agent system. Through conflict-aware evidence fusion and uncertainty routing, it demonstrates that specialist models and human supervision remain irreplaceable components of medical AI in cardiovascular and chest X-ray clinical decision tasks.
+:   This work reinterprets the reasoning "drift" among multiple MLLMs as negative sample constraints in DPO, using Plackett-Luce preference loss to simultaneously suppress the divergent trajectories of N source models. As a result, a 7B student model, without ground-truth reports and using only 10% of MIMIC-CXR, surpasses all source teachers in chest X-ray classification and report generation tasks.

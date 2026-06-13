@@ -174,11 +174,11 @@ Training constraint: only the gallery dataset and precomputed features may be us
 
 ## Related Papers
 
-- [\[AAAI 2026\] Correcting False Alarms from Unseen: Adapting Graph Anomaly Detectors at Test Time](correcting_false_alarms_from_unseen_adapting_graph_anomaly_detectors_at_test_tim.md)
-- [\[ICML 2026\] Linearizing Vision Transformer with Test-Time Training](../../ICML2026/model_compression/linearizing_vision_transformer_with_test-time_training.md)
-- [\[NeurIPS 2025\] Smooth Regularization for Efficient Video Recognition](../../NeurIPS2025/model_compression/smooth_regularization_for_efficient_video_recognition.md)
-- [\[ICML 2026\] Test-Time Training with KV Binding Is Secretly Linear Attention](../../ICML2026/model_compression/test-time_training_with_kv_binding_is_secretly_linear_attention.md)
 - [\[CVPR 2026\] TALON: Test-time Adaptive Learning for On-the-Fly Category Discovery](../../CVPR2026/model_compression/talon_test-time_adaptive_learning_for_on-the-fly_category_discovery.md)
+- [\[ACL 2026\] Training-Free Test-Time Contrastive Learning for Large Language Models](../../ACL2026/model_compression/training-free_test-time_contrastive_learning_for_large_language_models.md)
+- [\[CVPR 2026\] FOZO: Forward-Only Zeroth-Order Prompt Optimization for Test-Time Adaptation](../../CVPR2026/model_compression/fozo_forward-only_zeroth-order_prompt_optimization_for_test-time_adaptation.md)
+- [\[NeurIPS 2025\] Smooth Regularization for Efficient Video Recognition](../../NeurIPS2025/model_compression/smooth_regularization_for_efficient_video_recognition.md)
+- [\[AAAI 2026\] Sharp Eyes and Memory for VideoLLMs: Information-Aware Visual Token Pruning for Efficient and Reliable VideoLLM Reasoning](sharp_eyes_and_memory_for_videollms_information-aware_visual_token_pruning_for_e.md)
 
 </div>
 

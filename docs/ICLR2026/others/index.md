@@ -1,8 +1,8 @@
 ---
 title: >-
-  ICLR2026 Others Papers · 62 Notes
+  ICLR2026 Others Papers · 73 Notes
 description: >-
-  62 ICLR2026 papers in the Others area, covering Adversarial Robustness, Domain Adaptation, Alignment/RLHF, Federated Learning, Agents, Diffusion Models and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  73 ICLR2026 papers in the Others area, covering Adversarial Robustness, Domain Adaptation, Alignment/RLHF, Diffusion Models, Federated Learning and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "ICLR2026"
   - "Others"
@@ -11,9 +11,8 @@ tags:
   - "Adversarial Robustness"
   - "Domain Adaptation"
   - "Alignment/RLHF"
-  - "Federated Learning"
-  - "Agents"
   - "Diffusion Models"
+  - "Federated Learning"
 item_list:
   - u: "a_federated_generalized_expectation-maximization_algorithm_for_mixture_models_wi/"
     t: "A Federated Generalized Expectation-Maximization Algorithm for Mixture Models with an Unknown Number of Components"
@@ -37,28 +36,36 @@ item_list:
     t: "Bayesian Influence Functions for Hessian-Free Data Attribution"
   - u: "beyond_linearity_in_attention_projections_the_case_for_nonlinear_queries/"
     t: "Beyond Linearity in Attention Projections: The Case for Nonlinear Queries"
+  - u: "building_spatial_world_models_from_sparse_transitional_episodic_memories/"
+    t: "Building Spatial World Models from Sparse Transitional Episodic Memories"
   - u: "cadrift_a_time-dependent_causal_generator_of_drifting_data_streams/"
     t: "CaDrift: A Time-dependent Causal Generator of Drifting Data Streams"
   - u: "characterizing_and_optimizing_the_spatial_kernel_of_multi_resolution_hash_encodi/"
     t: "Characterizing and Optimizing the Spatial Kernel of Multi Resolution Hash Encodings"
-  - u: "chart_deep_research_in_lvlms_via_parallel_relative_policy_optimization/"
-    t: "Chart Deep Research in LVLMs via Parallel Relative Policy Optimization"
   - u: "chlu_the_causal_hamiltonian_learning_unit_as_a_symplectic_primitive_for_deep_lea/"
     t: "CHLU: The Causal Hamiltonian Learning Unit as a Symplectic Primitive for Deep Learning"
-  - u: "completing_missing_annotation_multi-agent_debate_for_accurate_and_scalable_relev/"
-    t: "Completing Missing Annotation: Multi-Agent Debate for Accurate and Scalable Relevance Assessment"
   - u: "compositional_diffusion_long_horizon_planning/"
     t: "Compositional Diffusion with Guided Search for Long-Horizon Planning"
   - u: "condition_matters_in_full-head_3d_gans/"
     t: "Condition Matters in Full-head 3D GANs"
   - u: "consistent_low-rank_approximation/"
     t: "Consistent Low-Rank Approximation"
+  - u: "contractive_diffusion_policies_robust_action_diffusion_via_contractive_score-bas/"
+    t: "Contractive Diffusion Policies: Robust Action Diffusion via Contractive Score-Based Sampling with Differential Equations"
+  - u: "deterministic_bounds_and_random_estimates_of_metric_tensors_on_neuromanifolds/"
+    t: "Deterministic Bounds and Random Estimates of Metric Tensors on Neuromanifolds"
+  - u: "discount_model_search_for_quality_diversity_optimization_in_high-dimensional_mea/"
+    t: "Discount Model Search for Quality Diversity Optimization in High-Dimensional Measure Spaces"
+  - u: "disentangling_shared_and_private_neural_dynamics_with_spire_a_latent_modeling_fr/"
+    t: "Disentangling Shared and Private Neural Dynamics with SPIRE: A Latent Modeling Framework for Deep Brain Stimulation"
   - u: "distributed_algorithms_for_euclidean_clustering/"
     t: "Distributed Algorithms for Euclidean Clustering"
   - u: "distributionally_robust_classification_for_multi-source_unsupervised_domain_adap/"
     t: "Distributionally Robust Classification for Multi-Source Unsupervised Domain Adaptation"
   - u: "distributions_as_actions_a_unified_framework_for_diverse_action_spaces/"
     t: "DA-AC: Distributions as Actions — A Unified RL Framework for Diverse Action Spaces"
+  - u: "do_we_really_need_permutations_impact_of_model_width_on_linear_mode_connectivity/"
+    t: "Do We Really Need Permutations? Impact of Model Width on Linear Mode Connectivity"
   - u: "enhancing_generative_auto_bidding/"
     t: "Enhancing Generative Auto-bidding with Offline Reward Evaluation and Policy Search"
   - u: "evaluating_gflownet_from_partial_episodes_for_stable_and_flexible_policy-based_t/"
@@ -67,25 +74,17 @@ item_list:
     t: "Exchangeability of GNN Representations with Applications to Graph Retrieval"
   - u: "fast_and_stable_riemannian_metrics_on_spd_manifolds_via_cholesky_product_geometr/"
     t: "Fast and Stable Riemannian Metrics on SPD Manifolds via Cholesky Product Geometry"
-  - u: "fastlsq_solving_pdes_in_one_shot_via_fourier_features_with_exact_analytical_deri/"
-    t: "FastLSQ: Solving PDEs in One Shot via Fourier Features with Exact Analytical Derivatives"
-  - u: "federated_admm_from_bayesian_duality/"
-    t: "Federated ADMM from Bayesian Duality"
-  - u: "fire_frobenius_isometry_reinitialization/"
-    t: "FIRE: Frobenius-Isometry Reinitialization for Balancing the Stability-Plasticity Tradeoff"
-  - u: "from_movement_to_cognitive_maps/"
-    t: "From Movement to Cognitive Maps: RNNs Reveal How Locomotor Development Shapes Hippocampal Spatial Coding"
-item_total: 62
+item_total: 73
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->
 # 📂 Others
 
-**🔬 ICLR2026** · **62** paper notes
+**🔬 ICLR2026** · **73** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (69)](../../ICML2026/others/index.md) · [💬 ACL2026 (1)](../../ACL2026/others/index.md) · [📷 CVPR2026 (39)](../../CVPR2026/others/index.md) · [🤖 AAAI2026 (116)](../../AAAI2026/others/index.md) · [🧠 NeurIPS2025 (118)](../../NeurIPS2025/others/index.md) · [📹 ICCV2025 (39)](../../ICCV2025/others/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (63)](../../ICML2026/others/index.md) · [💬 ACL2026 (1)](../../ACL2026/others/index.md) · [📷 CVPR2026 (32)](../../CVPR2026/others/index.md) · [🤖 AAAI2026 (124)](../../AAAI2026/others/index.md) · [🧠 NeurIPS2025 (126)](../../NeurIPS2025/others/index.md) · [📹 ICCV2025 (39)](../../ICCV2025/others/index.md)
 
-🔥 **Top topics:** Adversarial Robustness ×4 · Domain Adaptation ×3 · Alignment/RLHF ×3 · Federated Learning ×2 · Agents ×2
+🔥 **Top topics:** Adversarial Robustness ×6 · Domain Adaptation ×4 · Alignment/RLHF ×4 · Diffusion Models ×3 · Federated Learning ×2
 
 **[A Federated Generalized Expectation-Maximization Algorithm for Mixture Models with an Unknown Number of Components](a_federated_generalized_expectation-maximization_algorithm_for_mixture_models_wi.md)**
 
@@ -131,6 +130,10 @@ item_total: 62
 
 :   Motivated by the theoretical finding of algebraic redundancy in $W_Q$, this work replaces the linear Query projection with a nonlinear residual form $Q(X)=(X+f_\theta(X))/2$, outperforming a baseline with +12.5% more parameters while keeping parameter count unchanged.
 
+**[Building Spatial World Models from Sparse Transitional Episodic Memories](building_spatial_world_models_from_sparse_transitional_episodic_memories.md)**
+
+:   This paper proposes the Episodic Spatial World Model (ESWM), which constructs spatial world models from sparse, disconnected episodic memories (one-step transitions). The model's latent space spontaneously gives rise to cognitive maps aligned with environmental topology, supporting zero-shot exploration and navigation.
+
 **[CaDrift: A Time-dependent Causal Generator of Drifting Data Streams](cadrift_a_time-dependent_causal_generator_of_drifting_data_streams.md)**
 
 :   This paper proposes CaDrift, a time-dependent synthetic data stream generation framework based on structural causal models (SCMs). It introduces temporal correlation via EWMA smoothing and autoregressive noise, and realizes controllable distributional drift, covariate drift, severe drift, and local drift by modifying causal mapping functions. CaDrift fills the gap left by existing data stream generators that lack both causal structure and temporal dependence.
@@ -139,17 +142,9 @@ item_total: 62
 
 :   This paper analyzes Instant-NGP's multi-resolution hash encoding (MHE) through the lens of physical systems, deriving a closed-form approximation of its point spread function (PSF). The analysis reveals that the effective resolution is governed by the geometric mean resolution $N_{\text{avg}}$ rather than the finest resolution $N_{\max}$, and that axis-aligned grids introduce spatial anisotropy. The paper further proposes Rotated MHE (R-MHE), a zero-overhead method that eliminates anisotropy by applying a distinct rotation to the input coordinates at each hash level.
 
-**[Chart Deep Research in LVLMs via Parallel Relative Policy Optimization](chart_deep_research_in_lvlms_via_parallel_relative_policy_optimization.md)**
-
-:   This paper proposes PRPO (Parallel Relative Policy Optimization), which addresses GRPO's training bottlenecks under multi-dimensional reward interference and heterogeneous data gradient conflicts through two-level parallel decoupled optimization — across reward dimensions and data types. It also introduces MCDR-Bench, which leverages an "error uniqueness principle" to transform subjective generation evaluation into objective error identification, enabling quantitative assessment of chart deep research capabilities.
-
 **[CHLU: The Causal Hamiltonian Learning Unit as a Symplectic Primitive for Deep Learning](chlu_the_causal_hamiltonian_learning_unit_as_a_symplectic_primitive_for_deep_lea.md)**
 
 :   CHLU is a computational learning primitive grounded in relativistic Hamiltonian mechanics and symplectic integration. By enforcing phase-space volume conservation and introducing a causal velocity upper bound, it addresses gradient explosion/vanishing in LSTMs and information dissipation in Neural ODEs, achieving infinite-horizon stability and thermodynamic generative capability.
-
-**[Completing Missing Annotation: Multi-Agent Debate for Accurate and Scalable Relevance Assessment](completing_missing_annotation_multi-agent_debate_for_accurate_and_scalable_relev.md)**
-
-:   This paper proposes DREAM — a multi-agent, multi-round debate framework with opposing-stance initialization for IR relevance annotation: cases with consensus are automatically labeled, while disagreements are escalated to human annotators (aided by debate history). DREAM achieves 95.2% balanced accuracy with only 3.5% human escalation. Based on this framework, the BRIDGE benchmark is constructed, uncovering 29,824 missing relevant annotations absent from existing benchmarks (428% of the original annotations), and correcting ranking bias in retrieval systems as well as retrieval-generation performance misalignment in RAG evaluation.
 
 **[Compositional Diffusion with Guided Search for Long-Horizon Planning](compositional_diffusion_long_horizon_planning.md)**
 
@@ -163,6 +158,22 @@ item_total: 62
 
 :   This paper formalizes and systematically studies the *consistent low-rank approximation* problem—maintaining a near-optimal rank-$k$ approximation of a matrix whose rows arrive in a stream while minimizing the total variation (recourse) of the solution. It proves that $O(k/\varepsilon \cdot \log(nd))$ recourse is achievable under additive error, $k^{3/2}/\varepsilon^2 \cdot \text{polylog}$ recourse is achievable under multiplicative $(1+\varepsilon)$ error, and establishes a lower bound of $\Omega(k/\varepsilon \cdot \log(n/k))$.
 
+**[Contractive Diffusion Policies: Robust Action Diffusion via Contractive Score-Based Sampling with Differential Equations](contractive_diffusion_policies_robust_action_diffusion_via_contractive_score-bas.md)**
+
+:   This paper proposes Contractive Diffusion Policies (CDPs), which introduce contraction regularization into the diffusion sampling ODE to suppress the accumulation of score matching errors and solver errors. With minimal modification and a single hyperparameter $\gamma$, CDPs improve the robustness of diffusion-based policies in offline learning settings.
+
+**[Deterministic Bounds and Random Estimates of Metric Tensors on Neuromanifolds](deterministic_bounds_and_random_estimates_of_metric_tensors_on_neuromanifolds.md)**
+
+:   By analyzing the spectral properties of the Fisher Information Matrix (FIM) in the low-dimensional kernel space of probability distributions, this paper establishes deterministic upper and lower bounds for the metric tensor on the neural network parameter space (neuromanifold), and introduces a family of unbiased stochastic estimators with bounded variance based on the Hutchinson trace estimator, computable efficiently with a single backward pass.
+
+**[Discount Model Search for Quality Diversity Optimization in High-Dimensional Measure Spaces](discount_model_search_for_quality_diversity_optimization_in_high-dimensional_mea.md)**
+
+:   This paper proposes Discount Model Search (DMS), which replaces the histogram-based discrete representation in CMA-MAE with a neural network that fits a continuous, smooth discount function. This addresses the issue of search stagnation caused by distortion in high-dimensional measure spaces, and enables, for the first time, the direct use of image datasets to define measure spaces (the QDDM paradigm).
+
+**[Disentangling Shared and Private Neural Dynamics with SPIRE: A Latent Modeling Framework for Deep Brain Stimulation](disentangling_shared_and_private_neural_dynamics_with_spire_a_latent_modeling_fr.md)**
+
+:   This paper proposes SPIRE (Shared–Private Inter-Regional Encoder), a nonlinear dual-latent-space autoencoder framework that decomposes intracranial recordings from multiple brain regions into shared and private subspaces via cross-region alignment and orthogonal disentanglement losses. Trained exclusively on baseline data, SPIRE detects frequency-dependent network reorganization induced by DBS stimulation.
+
 **[Distributed Algorithms for Euclidean Clustering](distributed_algorithms_for_euclidean_clustering.md)**
 
 :   This paper constructs $(1+\varepsilon)$-coresets for Euclidean $(k,z)$-clustering in the distributed setting, achieving communication complexity that matches known lower bounds (up to polylogarithmic factors) in both the coordinator model and the blackboard model.
@@ -174,6 +185,10 @@ item_total: 62
 **[DA-AC: Distributions as Actions — A Unified RL Framework for Diverse Action Spaces](distributions_as_actions_a_unified_framework_for_diverse_action_spaces.md)**
 
 :   DA-AC proposes treating the parameters of an action distribution (e.g., softmax probabilities or Gaussian mean/variance) as the agent's output "actions," relocating the action sampling process to the environment side. This enables a unified deterministic policy gradient framework for discrete, continuous, and hybrid action spaces. The approach is theoretically proven to achieve strictly lower variance than LR and RP estimators, and attains competitive or state-of-the-art performance across 40+ environments.
+
+**[Do We Really Need Permutations? Impact of Model Width on Linear Mode Connectivity](do_we_really_need_permutations_impact_of_model_width_on_linear_mode_connectivity.md)**
+
+:   This paper empirically demonstrates that linear mode connectivity (LMC) between independently trained models can be achieved by simply increasing model width, without any parameter permutation. It further proposes *Layer-wise Exponentially Weighted Connectivity* (LEWC) to explain the underlying mechanism.
 
 **[Enhancing Generative Auto-bidding with Offline Reward Evaluation and Policy Search](enhancing_generative_auto_bidding.md)**
 
@@ -219,6 +234,10 @@ item_total: 62
 
 :   By reordering 2D image tokens into a 1D sequence via Hilbert space-filling curves—which preserve spatial locality—this work substantially increases the empty-block ratio in local attention (from 87.5% to 96.9%), enabling 4× speedup for window attention and 18× for sliding-window attention via FlexAttention, with negligible accuracy loss.
 
+**[Improving Set Function Approximation with Quasi-Arithmetic Neural Networks](improving_set_function_approximation_with_quasi-arithmetic_neural_networks.md)**
+
+:   This paper proposes QUANN (Quasi-Arithmetic Neural Networks), which employs invertible neural networks to implement a learnable Kolmogorov mean as the pooling operation. It is the first to realize a machine-learning instantiation of generalized measures of central tendency. QUANN serves as a universal approximator for mean-decomposable set functions, and the learned embeddings exhibit stronger cross-task transferability.
+
 **[Jackpot: Optimal Budgeted Rejection Sampling for Extreme Actor-Policy Mismatch RL](jackpot_optimal_budgeted_rejection_sampling_for_extreme_actor-policy_mismatch_re.md)**
 
 :   This paper proposes the Jackpot framework, which applies Optimal Budget Rejection Sampling (OBRS) to accept or reject rollout tokens at the token level within a controllable acceptance budget, and reweights the remaining samples. The method is theoretically proven to strictly reduce the KL divergence between the actor and policy under any budget. Combined with joint training and distillation of the rollout model, Jackpot enables a small model (e.g., Qwen3-1.7B) to serve as the rollout model for training a large model (e.g., Qwen3-8B), achieving performance close to the on-policy baseline.
@@ -251,21 +270,37 @@ item_total: 62
 
 :   This paper proposes DiffGDA—the first method to introduce diffusion models into graph domain adaptation (GDA). It formulates the continuous-time joint structure-semantic evolution from source graphs to target graphs using stochastic differential equations (SDEs), and employs a density-ratio-based domain-aware guidance network to steer the diffusion trajectory toward the target domain. Theoretical convergence to the optimal adaptation path is proven, and DiffGDA comprehensively outperforms state-of-the-art methods across 14 transfer tasks on 8 real-world datasets.
 
-**[LipNeXt: Scaling up Lipschitz-based Certified Robustness to Billion-parameter Models](lipnext_scaling_up_lipschitz-based_certified_robustness_to_billion-parameter_mod.md)**
+**[Measuring Uncertainty Calibration](measuring_uncertainty_calibration.md)**
 
-:   This paper proposes LipNeXt—the first unconstrained, convolution-free 1-Lipschitz architecture—which learns orthogonal matrices via manifold optimization and achieves spatial mixing through a theoretically motivated Spatial Shift Module derived from Theorem 1. LipNeXt scales to billion-parameter models and establishes new state-of-the-art certified robust accuracy (CRA) on CIFAR-10/100, Tiny-ImageNet, and ImageNet, with a +8% CRA gain on ImageNet at $\varepsilon=1$.
+:   For the problem of estimating the $L_1$ calibration error of binary classifiers from finite samples, this paper proposes the first non-asymptotic, distribution-free certifiable upper bound methods under two structural assumptions—bounded variation and bounded derivatives—where the latter can be guaranteed by applying a small perturbation to classifier outputs. Experiments demonstrate that the calibration error upper bound can be controlled to approximately 0.02 with $10^7$ samples.
 
 **[Missing Mass for Differentially Private Domain Discovery](missing_mass_for_differentially_private_domain_discovery.md)**
 
 :   This paper revisits the differentially private domain discovery problem through the lens of missing mass, providing the first near-optimal $\ell_1$ missing mass upper bounds for the simple and scalable Weighted Gaussian Mechanism (WGM) on Zipfian data, as well as distribution-free $\ell_\infty$ missing mass guarantees. WGM is further applied as a domain discovery preprocessing step for private top-$k$ and $k$-hitting set problems over unknown domains, with theoretical results validated on six real-world datasets.
 
+**[Mitigating Spurious Correlation via Distributionally Robust Learning with Hierarchical Ambiguity Sets](mitigating_spurious_correlation_via_distributionally_robust_learning_with_hierar.md)**
+
+:   A hierarchical DRO framework is proposed to simultaneously capture inter-group (group proportion shifts) and intra-group (intra-group distributional shifts) uncertainty. By defining intra-group ambiguity sets in the semantic space via the $W_\infty$ distance, the method achieves state-of-the-art performance on standard benchmarks and maintains strong robustness under a newly designed minority group distributional shift setting where all competing methods fail.
+
+**[MOSIV: Multi-Object System Identification from Videos](mosiv_multi-object_system_identification_from_videos.md)**
+
+:   This paper proposes MOSIV—the first complete framework for multi-object system identification from multi-view videos—comprising three stages: (1) object-aware 4D dynamic Gaussian reconstruction of per-object geometry and motion; (2) Gaussian-to-continuum lifting to construct MPM simulation particles; and (3) differentiable MPM forward rollout with geometry-alignment objectives (3D Chamfer + 2D silhouette) to back-propagate and optimize per-object continuous material parameters ($E, \nu, \mu$). On a contact-rich synthetic benchmark spanning four material types (elastic, elastoplastic, fluid, and granular), MOSIV achieves PSNR 30.51 vs. OmniPhysGS 25.93 and reduces Chamfer distance by 9.4×, establishing a new baseline for multi-object long-horizon physical simulation.
+
 **[Neural Force Field: Few-shot Learning of Generalized Physical Reasoning](neural_force_field_few-shot_learning_of_generalized_physical_reasoning.md)**
 
 :   This paper proposes Neural Force Field (NFF), which models object interactions as continuous force fields. A neural operator learns the force field function, and an ODE integrator decodes trajectories from it. NFF achieves few-shot state-of-the-art on three benchmarks—I-PHYRE (100 trajectories), N-body (200 trajectories), and PHYRE (0.012M samples, 267× fewer than prior SOTA)—reducing cross-scenario RMSE by 32–64% and achieving near-human performance on planning tasks.
 
+**[Noise-Aware Generalization: Robustness to In-Domain Noise and Out-of-Domain Generalization](noise-aware_generalization_robustness_to_in-domain_noise_and_out-of-domain_gener.md)**
+
+:   This paper is the first to formally define the Noise-Aware Generalization (NAG) problem — simultaneously pursuing in-domain robustness and out-of-domain generalization under label noise — and proposes DL4ND, a method that detects noisy labels via cross-domain comparison, achieving up to 12.5% improvement across 7 datasets.
+
 **[Noisy-Pair Robust Representation Alignment for Positive-Unlabeled Learning](noisy-pair_robust_representation_alignment_for_positive-unlabeled_learning.md)**
 
 :   This paper proposes NcPU, a non-contrastive PU learning framework that applies a sqrt transformation to the standard non-contrastive loss (NoiSNCL) so that clean-pair gradients dominate training, and introduces PhantomGate to provide conservative negative supervision with a regret rollback mechanism. Both modules iterate in a mutually beneficial manner under an EM framework. Without relying on auxiliary negative samples or pre-estimated class priors, NcPU narrows the gap with supervised learning from 14.26% to <1.4% on CIFAR-100, and achieves SOTA on xBD disaster damage assessment as well.
+
+**[Non-Clashing Teaching in Graphs: Algorithms, Complexity, and Bounds](non-clashing_teaching_in_graphs_algorithms_complexity_and_bounds.md)**
+
+:   This paper studies non-clashing teaching of closed-neighborhood concept classes in graphs, providing tight algorithmic bounds (a matching $2^{\mathcal{O}(|E|)}$ bound for N-NCTD⁺), FPT algorithms parameterized by treedepth and vertex cover (including the first FPT result with negative labels), and combinatorial upper bounds for planar graphs and unit square graphs, substantially advancing both the computational and combinatorial understanding of non-clashing teaching.
 
 **[On the Impact of the Utility in Semivalue-based Data Valuation](on_the_impact_of_the_utility_in_semivalue-based_data_valuation.md)**
 
@@ -283,9 +318,9 @@ item_total: 62
 
 :   This paper systematically examines nine common beliefs in graph machine learning concerning oversmoothing, oversquashing, homophily/heterophily, and long-range dependencies. Through concise counterexamples, each belief is refuted. Notably, "oversquashing" is decomposed into two independent concepts—**computational bottleneck** and **topological bottleneck**—thereby clarifying widespread conceptual confusion in the field.
 
-**[OwlEye: Zero-Shot Learner for Cross-Domain Graph Data Anomaly Detection](owleye_zero-shot_learner_for_cross-domain_graph_data_anomaly_detection.md)**
+**[PlanetAlign: A Comprehensive Python Library for Benchmarking Network Alignment](planetalign_a_comprehensive_python_library_for_benchmarking_network_alignment.md)**
 
-:   This paper proposes OwlEye, a framework that aligns heterogeneous graph embeddings into a shared space via pairwise-distance-statistics-based cross-domain feature alignment, extracts attribute-level and structure-level normal patterns from multiple graphs into an extensible dictionary, and detects anomalous nodes in unseen graphs under fully zero-shot conditions through a truncated attention-based reconstruction mechanism. OwlEye achieves an average AUPRC of 36.17% across 8 datasets, surpassing the strongest baseline ARC by approximately 5.4 percentage points.
+:   This paper presents PlanetAlign, a PyTorch-based network alignment benchmark library integrating 18 datasets across 6 domains, 14 methods spanning three categories (consistency-based, embedding-based, and optimal transport-based), and a standardized evaluation pipeline. Through large-scale systematic experiments, PlanetAlign reveals that OT-based methods (PARROT/JOENA) achieve comprehensive superiority in effectiveness, while different method categories exhibit distinct trade-offs in scalability and robustness.
 
 **[Predicting Kernel Regression Learning Curves from Only Raw Data Statistics](predicting_kernel_regression_learning_curves_from_only_raw_data_statistics.md)**
 
@@ -303,9 +338,21 @@ item_total: 62
 
 :   This paper proposes a new intuitive interpretation of SAM's underlying mechanism — that the gradient at the perturbed point approximates the direction toward the local maximum — and reveals its imprecision as well as the multi-step degradation problem. It then introduces XSAM, which achieves more faithful and effective sharpness-aware minimization by explicitly estimating the direction of the maximum.
 
+**[Soft Quality-Diversity Optimization](soft_quality-diversity_optimization.md)**
+
+:   This paper proposes the Soft QD Score as a novel quality-diversity optimization objective that eliminates the need for behavior space discretization, and derives a differentiable algorithm, SQUAD, which scales more effectively to high-dimensional behavior spaces while achieving competitive performance on standard benchmarks.
+
+**[SONIC: Spectral Oriented Neural Invariant Convolutions](sonic_spectral_oriented_neural_invariant_convolutions.md)**
+
+:   SONIC transfers the core idea of state space models to the multi-dimensional frequency domain, defining a set of orientation-selective spectral transfer functions using 6 continuous parameters (amplitude, orientation, damping, oscillation, etc.), and mixing across channels via low-rank matrices $B$ and $C$. This yields a drop-in convolutional replacement operator that inherently possesses a global receptive field and resolution invariance. On 3D medical segmentation, it matches nnU-Net with nearly two orders of magnitude fewer parameters, and is also competitive on ImageNet.
+
 **[t-SNE Exaggerates Clusters, Provably](t-sne_exaggerates_clusters_provably.md)**
 
 :   This paper provides rigorous theoretical proofs of two fundamental failure modes of t-SNE: (1) the strength of input clusters cannot be inferred from the output, and (2) extreme outliers cannot be faithfully represented — even when the input has no cluster structure or contains extreme outliers, t-SNE may produce perfectly clustered visualizations.
+
+**[TabStruct: Measuring Structural Fidelity of Tabular Data](tabstruct_measuring_structural_fidelity_of_tabular_data.md)**
+
+:   This paper proposes the TabStruct evaluation framework and a global utility metric that measures the structural fidelity of tabular data generators with respect to causal structure, without requiring ground-truth causal graphs. A systematic comparison of 13 generators across 29 datasets reveals that diffusion models significantly outperform other methods in preserving global structure.
 
 **[The Counting Power of Transformers](the_counting_power_of_transformers.md)**
 
@@ -318,10 +365,6 @@ item_total: 62
 **[The Invisibility Hypothesis: Promises of AGI and the Future of the Global South](the_invisibility_hypothesis_promises_of_agi_and_the_future_of_the_global_south.md)**
 
 :   This paper introduces the **Invisibility Hypothesis**, arguing that as AI systems increasingly serve as the coordination layer for economic and political allocation, they will systematically favor "machine-readable" individuals. Informal workers in the Global South, lacking digital verifiability, face **managed exclusion**. The central risk shifts from job displacement to **relevance loss**, and this exclusion is self-reinforcing.
-
-**[ToProVAR: Efficient Visual Autoregressive Modeling via Tri-Dimensional Entropy-Aware Semantic Analysis and Sparsity Optimization](toprovar_efficient_visual_autoregressive_modeling_via_tri-dimensional_entropy-aw.md)**
-
-:   ToProVAR is a framework that employs attention entropy to uniformly analyze sparsity across three dimensions — token, layer, and scale — in VAR models, achieving up to 3.4× speedup with negligible image quality degradation, significantly outperforming FastVAR and SkipVAR.
 
 **[Towards Sustainable Investment Policies Informed by Opponent Shaping](towards_sustainable_investment_policies_informed_by_opponent_shaping.md)**
 

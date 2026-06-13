@@ -2,9 +2,10 @@
 title: >-
   [Paper Note] Kernel Conditional Tests from Learning-Theoretic Bounds
 description: >-
-  [NeurIPS 2025][conditional hypothesis testing] A unified framework is proposed for converting confidence bounds of learning algorithms into conditional hypothesis tests. Built upon kernel ridge regression…
+  [NeurIPS 2025][Statistical Testing / Kernel Methods / Learning Theory][conditional hypothesis testing] A unified framework is proposed for converting confidence bounds of learning algorithms into conditional hypothesis t…
 tags:
   - "NeurIPS 2025"
+  - "Statistical Testing / Kernel Methods / Learning Theory"
   - "conditional hypothesis testing"
   - "kernel ridge regression"
   - "confidence bounds"
@@ -123,11 +124,11 @@ The standard KRR objective is $f_{D,\lambda} = \arg\min_f \sum_n \|y_n - f(x_n)\
 
 ## Related Papers
 
-- [\[ICML 2026\] Conditional KRR: Injecting Unpenalized Features into Kernel Methods with Applications to Kernel Thresholding](../../ICML2026/others/conditional_krr_injecting_unpenalized_features_into_kernel_methods_with_applicat.md)
-- [\[ICML 2026\] New Bounds for Kernel Sums via Fast Spherical Embeddings](../../ICML2026/others/new_bounds_for_kernel_sums_via_fast_spherical_embeddings.md)
-- [\[NeurIPS 2025\] Depth-Bounds for Neural Networks via the Braid Arrangement](depth-bounds_for_neural_networks_via_the_braid_arrangement.md)
-- [\[NeurIPS 2025\] Tight Bounds On the Distortion of Randomized and Deterministic Distributed Voting](tight_bounds_on_the_distortion_of_randomized_and_deterministic_distributed_votin.md)
-- [\[NeurIPS 2025\] The Cost of Robustness: Tighter Bounds on Parameter Complexity for Robust Memorization in ReLU Nets](the_cost_of_robustness_tighter_bounds_on_parameter_complexity_for_robust_memoriz.md)
+- [\[ICML 2026\] Conditional KRR: Injecting Unpenalized Features into Kernel Methods with Applications to Kernel Thresholding](../../ICML2026/learning_theory/conditional_krr_injecting_unpenalized_features_into_kernel_methods_with_applicat.md)
+- [\[NeurIPS 2025\] Computable Universal Online Learning](computable_universal_online_learning.md)
+- [\[NeurIPS 2025\] Product Distribution Learning with Imperfect Advice](product_distribution_learning_with_imperfect_advice.md)
+- [\[NeurIPS 2025\] Learning-Augmented Online Bipartite Fractional Matching](learning-augmented_online_bipartite_fractional_matching.md)
+- [\[NeurIPS 2025\] Learning-Augmented Streaming Algorithms for Correlation Clustering](learning-augmented_streaming_algorithms_for_correlation_clustering.md)
 
 </div>
 

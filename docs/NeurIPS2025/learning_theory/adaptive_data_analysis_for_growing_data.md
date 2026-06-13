@@ -2,9 +2,10 @@
 title: >-
   [Paper Note] Adaptive Data Analysis for Growing Data
 description: >-
-  [NeurIPS 2025][Adaptive data analysis] This paper establishes the first generalization bounds for adaptive analysis over dynamically growing data…
+  [NeurIPS 2025][Machine Learning Theory][Adaptive data analysis] This paper establishes the first generalization bounds for adaptive analysis over dynamically growing data…
 tags:
   - "NeurIPS 2025"
+  - "Machine Learning Theory"
   - "Adaptive data analysis"
   - "differential privacy"
   - "generalization bounds"
@@ -118,11 +119,11 @@ This is a purely theoretical work. The generalization bounds are instantiated co
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Inferring Stochastic Dynamics with Growth from Cross-Sectional Data](inferring_stochastic_dynamics_with_growth_from_cross-sectional_data.md)
-- [\[NeurIPS 2025\] Radar: Benchmarking Language Models on Imperfect Tabular Data](radar_benchmarking_language_models_on_imperfect_tabular_data.md)
-- [\[NeurIPS 2025\] Learning Dense Hand Contact Estimation from Imbalanced Data](learning_dense_hand_contact_estimation_from_imbalanced_data.md)
-- [\[NeurIPS 2025\] Weight Weaving: Parameter Pooling for Data-Free Model Merging](weight_weaving_parameter_pooling_for_data-free_model_merging.md)
-- [\[NeurIPS 2025\] Improving Forecasts of Suicide Attempts for Patients with Little Data](improving_forecasts_of_suicide_attempts_for_patients_with_little_data.md)
+- [\[ICML 2026\] Provably Data-driven Multiple Hyper-parameter Tuning with Structured Loss Function](../../ICML2026/learning_theory/provably_data-driven_multiple_hyper-parameter_tuning_with_structured_loss_functi.md)
+- [\[NeurIPS 2025\] Finite-Time Analysis of Stochastic Nonconvex Nonsmooth Optimization on the Riemannian Manifolds](finite-time_analysis_of_stochastic_nonconvex_nonsmooth_optimization_on_the_riema.md)
+- [\[NeurIPS 2025\] Revisiting Agnostic Boosting](revisiting_agnostic_boosting.md)
+- [\[NeurIPS 2025\] Infrequent Exploration in Linear Bandits](infrequent_exploration_in_linear_bandits.md)
+- [\[NeurIPS 2025\] Reliably Detecting Model Failures in Deployment Without Labels](reliably_detecting_model_failures_in_deployment_without_labels.md)
 
 </div>
 

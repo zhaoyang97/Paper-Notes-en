@@ -5,7 +5,7 @@ that generated sitemap in-place and emits the two supplemental sitemaps used by
 Search Console:
 
 - sitemap.xml: all pages
-- sitemap-sections.xml: home + conference index pages
+- sitemap-sections.xml: home + conference/field index pages
 - sitemap-focus.xml: home + conference/field index pages + featured papers
 """
 
@@ -77,6 +77,31 @@ def _priority(level: str) -> str:
         "domain_index": "0.8",
         "paper": "0.6",
     }.get(level, "0.3")
+
+
+# Domain-index priority overrides that apply ONLY to sitemap-sections.xml.
+# sitemap.xml and sitemap-focus.xml keep the generic domain_index priority (0.8).
+# New conferences not listed here default to 0.8.
+_SECTION_DOMAIN_PRIORITY_OVERRIDES = {
+    "CVPR2026": "0.8",
+    "ICML2026": "0.8",
+    "ACL2026": "0.8",
+    "ICLR2026": "0.7",
+    "AAAI2026": "0.7",
+    "NeurIPS2025": "0.7",
+    "ECCV2024": "0.6",
+    "ICCV2025": "0.6",
+    "CVPR2025": "0.6",
+    "ICML2025": "0.6",
+    "ACL2025": "0.6",
+}
+_SECTION_DOMAIN_PRIORITY_DEFAULT = "0.8"  # for any new conference not listed above
+
+
+def _section_domain_priority(conference: str) -> str:
+    return _SECTION_DOMAIN_PRIORITY_OVERRIDES.get(
+        conference, _SECTION_DOMAIN_PRIORITY_DEFAULT
+    )
 
 
 def _changefreq(level: str) -> str:
@@ -170,12 +195,24 @@ def on_post_build(config, **kwargs):
             continue
         level = _level(loc_elem.text, site_url, conferences)
         counts[level] = counts.get(level, 0) + 1
+        # Extract conference name for domain-level section priority overrides
+        conf = (
+            _url_path(loc_elem.text, site_url).split("/")[0]
+            if level == "domain_index"
+            else ""
+        )
         _set_child(url_elem, "changefreq", _changefreq(level))
         _set_child(url_elem, "priority", _priority(level))
 
-        if level in {"home", "conf_index"}:
-            section_elems.append(url_elem)
         if level in {"home", "conf_index", "domain_index"}:
+            if level == "domain_index":
+                # sitemap-sections.xml gets a conference-specific domain priority;
+                # the shared url_elem (sitemap.xml / sitemap-focus.xml) keeps 0.8.
+                section_clone = _copy_url_elem(url_elem)
+                _set_child(section_clone, "priority", _section_domain_priority(conf))
+                section_elems.append(section_clone)
+            else:
+                section_elems.append(url_elem)
             focus_elems.append(url_elem)
         elif level == "paper" and _is_featured_paper(loc_elem.text, site_url, docs_dir):
             focus_elems.append(url_elem)

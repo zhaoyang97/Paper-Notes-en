@@ -2,9 +2,10 @@
 title: >-
   [Paper Note] An Efficient, Provably Optimal Algorithm for the 0-1 Loss Linear Classification Problem
 description: >-
-  [ICLR 2026][0-1 loss] This paper proposes the Incremental Cell Enumeration (ICE) algorithm — the first standalone algorithm with rigorous correctness proofs — capable of exactly solving the global optimum of the 0-1 loss…
+  [ICLR 2026][Other][0-1 loss] This paper proposes the Incremental Cell Enumeration (ICE) algorithm — the first standalone algorithm with rigorous correctness proofs — capable of exactly solving the global optimum of the 0…
 tags:
   - "ICLR 2026"
+  - "Other"
   - "0-1 loss"
   - "linear classification"
   - "exact algorithm"
@@ -109,11 +110,11 @@ An SVM is first used to obtain an initial solution as an upper bound. Data point
 
 ## Related Papers
 
-- [\[ICLR 2026\] t-SNE Exaggerates Clusters, Provably](t-sne_exaggerates_clusters_provably.md)
-- [\[ICML 2026\] Provably Data-driven Multiple Hyper-parameter Tuning with Structured Loss Function](../../ICML2026/others/provably_data-driven_multiple_hyper-parameter_tuning_with_structured_loss_functi.md)
-- [\[AAAI 2026\] Automated Reproducibility Has a Problem Statement Problem](../../AAAI2026/others/automated_reproducibility_has_a_problem_statement_problem.md)
-- [\[AAAI 2026\] The Publication Choice Problem](../../AAAI2026/others/the_publication_choice_problem.md)
-- [\[ICLR 2026\] A Federated Generalized Expectation-Maximization Algorithm for Mixture Models with an Unknown Number of Components](a_federated_generalized_expectation-maximization_algorithm_for_mixture_models_wi.md)
+- [\[ICML 2026\] Provably Data-driven Multiple Hyper-parameter Tuning with Structured Loss Function](../../ICML2026/learning_theory/provably_data-driven_multiple_hyper-parameter_tuning_with_structured_loss_functi.md)
+- [\[ICML 2026\] Towards Optimal Robustness in Learning-Augmented Paging](../../ICML2026/learning_theory/towards_optimal_robustness_in_learning-augmented_paging.md)
+- [\[ICLR 2026\] Scalable Random Wavelet Features: Efficient Non-Stationary Kernel Approximation with Convergence Guarantees](scalable_random_wavelet_features_efficient_non-stationary_kernel_approximation_w.md)
+- [\[NeurIPS 2025\] Infrequent Exploration in Linear Bandits](../../NeurIPS2025/learning_theory/infrequent_exploration_in_linear_bandits.md)
+- [\[ICML 2026\] Expectation Consistency Loss: Rethink Confidence Calibration under Covariate Shift](../../ICML2026/learning_theory/expectation_consistency_loss_rethink_confidence_calibration_under_covariate_shif.md)
 
 </div>
 

@@ -2,9 +2,10 @@
 title: >-
   [Paper Note] Thermal Polarimetric Multi-view Stereo
 description: >-
-  [ICCV2025][thermal imaging] This paper proposes a method for high-fidelity 3D shape reconstruction using thermal polarimetric (long-wave infrared polarimetric) cues. It theoretically demonstrates that LWIR polarimetric o…
+  [ICCV2025][3D Vision][thermal imaging] This paper proposes a method for high-fidelity 3D shape reconstruction using thermal polarimetric (long-wave infrared polarimetric) cues. It theoretically demonstrates that LWIR pol…
 tags:
   - "ICCV2025"
+  - "3D Vision"
   - "thermal imaging"
   - "polarimetric imaging"
   - "LWIR"
@@ -150,11 +151,11 @@ Key qualitative findings:
 
 ## Related Papers
 
-- [\[ICCV 2025\] Intra-view and Inter-view Correlation Guided Multi-view Novel Class Discovery](intra-view_and_inter-view_correlation_guided_multi-view_novel_class_discovery.md)
-- [\[ICCV 2025\] Auto-Regressively Generating Multi-View Consistent Images (MV-AR)](autoregressively_generating_multiview_consistent_images.md)
-- [\[ICCV 2025\] Switch-a-View: View Selection Learned from Unlabeled In-the-wild Videos](switch-a-view_view_selection_learned_from_unlabeled_in-the-wild_videos.md)
-- [\[ICCV 2025\] Recover Biological Structure from Sparse-View Diffraction Images with Neural Volumetric Prior](recover_biological_structure_from_sparse-view_diffraction_images_with_neural_vol.md)
-- [\[ICCV 2025\] Revisiting Image Fusion for Multi-Illuminant White-Balance Correction](revisiting_image_fusion_for_multi-illuminant_white-balance_correction.md)
+- [\[NeurIPS 2025\] MVSMamba: Multi-View Stereo with State Space Model](../../NeurIPS2025/3d_vision/mvsmamba_multi-view_stereo_with_state_space_model.md)
+- [\[ICCV 2025\] Stereo Any Video: Temporally Consistent Stereo Matching](stereo_any_video_temporally_consistent_stereo_matching.md)
+- [\[ICCV 2025\] SpinMeRound: Consistent Multi-View Identity Generation Using Diffusion Models](spinmeround_consistent_multi-view_identity_generation_using_diffusion_models.md)
+- [\[ICCV 2025\] Multi-View 3D Point Tracking](multi-view_3d_point_tracking.md)
+- [\[ICCV 2025\] PanSt3R: Multi-view Consistent Panoptic Segmentation](panst3r_multi-view_consistent_panoptic_segmentation.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Seeing to Generalize: How Visual Data Corrects Binding Shortcuts
 description: >-
-  [ICML 2026][Information Retrieval & RAG][Cross-modal training] This paper replicates the phenomenon where "VLM outperforms its base LLM on pure text tasks" using a controlled synthetic "color-shape-item" retrieval task.…
+  [ICML 2026][Information Retrieval & RAG][Cross-modal training] This paper reproduces the puzzling phenomenon that "VLMs outperform their base LLMs on pure text tasks" using a controlled synthetic "color-shape-item" retri…
 tags:
   - "ICML 2026"
   - "Information Retrieval & RAG"
@@ -12,75 +12,78 @@ tags:
   - "OOD generalization"
   - "long-context retrieval"
 date: 2026-05-08
-content_hash: 979c2db22526d245
+content_hash: 96e94bf057b5f45c
 ---
 
 # Seeing to Generalize: How Visual Data Corrects Binding Shortcuts
 
 **Conference**: ICML 2026  
 **arXiv**: [2602.15183](https://arxiv.org/abs/2602.15183)  
-**Code**: None (No public repository declared in the paper)  
-**Area**: Multimodal VLM / Mechanistic Interpretability / Long-context Retrieval  
+**Code**: None (no public repository declared)  
+**Area**: Multimodal VLM / Mechanistic Interpretability / Long-Context Information Retrieval  
 **Keywords**: Cross-modal training, binding mechanism, symbolic vs positional, OOD generalization, long-context retrieval
 
 ## TL;DR
-This paper replicates the phenomenon where "VLM outperforms its base LLM on pure text tasks" using a controlled synthetic "color-shape-item" retrieval task. Through mechanistic interpretability, it proves that image training shifts the model's variable binding strategy from "positional shortcuts" to "symbolic matching." This shift is preserved when reverting to text, increasing OOD retrieval accuracy from 37.2% to 69.5%. A consistent increase in the "symbolic/positional ratio" is also observed in the real Qwen2/2.5/3 families.
+This paper reproduces the puzzling phenomenon that "VLMs outperform their base LLMs on pure text tasks" using a controlled synthetic "color-shape-item" retrieval task, and mechanistically explains it: visual training shifts the model's variable binding strategy from "positional shortcuts" to "semantic-symbolic matching." This shift is retained when switching back to pure text, boosting OOD retrieval accuracy from 37.2% to 69.5%. Consistent increases in the "symbolic/positional ratio" are also observed in real Qwen2/2.5/3 model families.
 
 ## Background & Motivation
 
-**Background**: VLMs are typically viewed as "adding eyes to an LLM," primarily evaluated on visual tasks like VQA and image captioning. However, researchers have reported an anomaly: Qwen3-VL-8B achieves 76.0% on long-context text retrieval, while the base Qwen3-8B only reaches 62.6%. Why does a VLM outperform an LLM on text tasks unrelated to images?
+**Background**: VLMs are typically viewed as "LLMs with an added eye," mainly evaluated on visual tasks like VQA and image captioning. However, researchers have reported surprises: Qwen3-VL-8B achieves 76.0% on pure text long-context retrieval, while the base Qwen3-8B only gets 62.6%. Since text tasks are unrelated to images, why should VLMs outperform LLMs?
 
-**Limitations of Prior Work**: Previous work either attributed this to "more training data" or dismissed it as noise. There is a lack of research that replicates and mechanistically explains this phenomenon in a controlled environment. To understand why VLMs are stronger, confounding factors like scale, data volume, and training steps must be isolated.
+**Limitations of Prior Work**: Previous work either attributes this to "more training data" or dismisses it as noise, lacking a controlled environment to reproduce and mechanistically explain the phenomenon. To answer "why are VLMs stronger," confounding factors like scale, data volume, and training steps must be eliminated.
 
-**Key Challenge**: Pure text retrieval tasks can "theoretically" be learned via text-only training. However, empirically, text-only training often learns fragile "positional dependency shortcuts"—perfect within in-distribution lengths but failing beyond the training context. "Text-only training" and "positional-shortcut-based text-only training" are indistinguishable within the distribution.
+**Key Challenge**: In theory, pure text retrieval tasks can be learned with text-only training, but empirically, text-only models rely on brittle "positional shortcuts"—perfect within the training context length, but they fail beyond it. "Text-only training" and "positionally shortcut-based text-only training" are indistinguishable in-distribution.
 
-**Goal**: (1) Reproduce the VLM > LLM phenomenon in a controlled small Transformer; (2) identify which internal computations are altered using mechanistic interpretability; (3) verify that this change exists in real large-scale VLMs.
+**Goal**: (1) Reproduce the VLM > LLM phenomenon on a controlled small Transformer; (2) Use mechanistic interpretability to identify which internal computations are altered; (3) Verify that this change also exists in real large-scale VLMs.
 
-**Key Insight**: The spatial position of a "red triangle" in an image is arbitrary (translation invariance), making positional shortcuts naturally fail in the visual modality. This forces the model to shift toward symbolic matching (symbolic binding), which is more robust than "positional counting" when transferred back to text for long contexts.
+**Key Insight**: Instantiate "Indirect Retrieval" in both text and image modalities—e.g., "red triangle" as text and as a rendered image, with identical task structure. If the internal binding mechanisms differ by modality, causal attribution is possible.
 
-**Core Idea**: "Indirect Retrieval" is instantiated in both text and image modalities—e.g., the text "red triangle" vs. a rendered image of a red triangle, with identical task structures. If the internal binding mechanisms learned from different modalities differ, the cause can be causally attributed.
+**Core Idea**: In images, the spatial position of a "red triangle" is arbitrary (translation invariance), so positional shortcuts naturally fail in the image modality. This forces the model to adopt semantic (symbolic) binding, and this strategy, when transferred back to text, is more robust for long contexts than "position counting."
 
 ## Method
 
 ### Overall Architecture
-Task Setup: Given sets of attributes (color), entities (shape), and items (item_a / item_b ...), the model first processes a context (sequence of color-shape pairs or rendered images), then an association ("the triangle is item_a"), and finally answers "which item corresponds to red?". The model must locate the shape via color, then the item via shape. Training follows three stages: (1) A 12-layer decoder-only Transformer is trained on text until in-distribution (up to 8 objects) performance saturates ($\mathcal{M}_{\text{text-only}}$); (2) The model is switched to the image modality, replacing text contexts with patch tokens from a frozen vision encoder (ResNet-152 / ViT-B/16 / DINOv3) and continues training; (3) The model is switched back to text with a mixture of 20% image + 80% text ($\mathcal{M}_{\text{image-text}}$). OOD evaluation increases the number of objects beyond the training limit.
+Task setup: Given three sets—attribute (color), entity (shape), and item (item_a / item_b ...), the model first sees a context (a sequence of color-shape pairs or a set of rendered images), then an association ("the triangle is item_a"), and is finally asked "which item corresponds to red?" The model must first use color to locate the shape, then shape to locate the item. Training proceeds in three stages: (1) Train a 12-layer decoder-only Transformer on text-only modality up to in-distribution (max 8 objects), yielding $\mathcal{M}_{\text{text-only}}$; (2) Switch the same model to image modality, replacing text context with frozen visual encoder (ResNet-152 / ViT-B/16 / DINOv3) patch tokens, still up to 8 objects; (3) Switch back to text but train with a 20% image + 80% text mix, yielding $\mathcal{M}_{\text{image-text}}$. OOD evaluation increases the number of objects beyond the training limit.
 
 ### Key Designs
 
-1. **Cross-modal Indirect Retrieval Task with Identical Structure**:
-    - **Function**: Constructs a synthetic task where the structure of both modalities is a 1:1 mirror, making "modality" the only controllable variable.
-    - **Mechanism**: Unifies the prompt as $\mathbf{x}=[\mathbf{X}_{\text{context}}, \texttt{[CTX\_END]}, \mathbf{X}_{\text{associations}}, \texttt{[QUE]}, \mathbf{x}_{\text{query}}]$, where $\mathbf{X}_{\text{context}}^{\text{text}}=[a_1,e_1,\dots,a_N,e_N]$ or $\mathbf{X}_{\text{context}}^{\text{image}}=[\texttt{<IMG>}_1,\dots,\texttt{<IMG>}_N]$. Associations remain text. The training objective is identical; the only variable is the context modality.
-    - **Design Motivation**: To exclude confounding factors like "VLMs see more tokens," modalities must be a ceteris paribus variable.
+1. **Indirect Retrieval Task with Matched Cross-Modal Structure**:
 
-2. **Three-stage Curriculum + Noise Control Group**:
-    - **Function**: Uses a progressive curriculum to isolate whether the effect is from the modality itself or from exposure to longer contexts.
-    - **Mechanism**: Along with $\mathcal{M}_{\text{image-text}}$, the study trains $\mathcal{M}_{\text{noise-text}}$ and $\mathcal{M}_{\text{noise-image-text}}$, where unattendable noise tokens are inserted into text contexts. This allows the model to see longer positional indices without attending to the noise.
-    - **Design Motivation**: Since image patch sequences are long (e.g., 196 tokens), noise control is necessary to distinguish "image training gains" from "positional range expansion." Results show noise only improves OOD from 37.2% to 57.5%, far below the 69.5% achieved by image-text, proving an "independent gain" from vision.
+    - **Function**: Constructs a synthetic task with 1:1 mirrored structure across modalities, making "modality" the only controlled variable.
+    - **Mechanism**: Unifies the prompt as $\mathbf{x}=[\mathbf{X}_{\text{context}}, \texttt{[CTX\_END]}, \mathbf{X}_{\text{associations}}, \texttt{[QUE]}, \mathbf{x}_{\text{query}}]$, where $\mathbf{X}_{\text{context}}^{\text{text}}=[a_1,e_1,\dots,a_N,e_N]$ or $\mathbf{X}_{\text{context}}^{\text{image}}=[\texttt{<IMG>}_1,\dots,\texttt{<IMG>}_N]$; association is always text. Thus, the training objective is identical, with context as the only variable (text or image).
+    - **Design Motivation**: To rule out confounds like "VLMs are stronger because they see more tokens," modality must be the sole ceteris paribus variable.
 
-3. **Interchange Intervention for Causal Attribution + Linear Probe + Attention Knockout**:
-    - **Function**: Identifies whether the dominant binding mechanism in each layer is positional, symbolic, or reflexive.
-    - **Mechanism**: Original-counterfactual input pairs are constructed such that positional and symbolic strategies predict different answers. Counterfactual activations are patched into the original run to see which layer's patch flips the prediction. This is combined with attention knockout to identify key paths and linear probes to decode attribute strength on each token.
-    - **Design Motivation**: Behavioral differences (accuracy) show that "VLM is better," but mechanistic interpretability explains "why." The methods follow Gur-Arieh et al. (2025) to allow seamless transfer to real LLMs.
+2. **Three-Stage Curriculum + Noise Control Group**:
+
+    - **Function**: Uses a progressive curriculum to isolate whether gains are due to modality or simply exposure to longer contexts.
+    - **Mechanism**: In addition to $\mathcal{M}_{\text{image-text}}$, two groups are trained: $\mathcal{M}_{\text{noise-text}}$ and $\mathcal{M}_{\text{noise-image-text}}$, where unattendable noise tokens are inserted into the text context, allowing the model to see longer position indices in text-only, but without attending to noise.
+    - **Design Motivation**: Image patch sequences are typically long (196 tokens); without noise control, it's unclear whether gains are from image training or increased position range. Results show noise alone raises OOD from 37.2% to 57.5%, far below image-text's 69.5%, indicating a genuine "visual gain."
+
+3. **Interchange Intervention Causal Attribution + Linear Probe + Attention Knockout**:
+
+    - **Function**: Identifies whether each layer's dominant binding mechanism is positional, symbolic, or reflexive.
+    - **Mechanism**: Constructs original-counterfactual input pairs where "positional" and "semantic" strategies predict different answers, then patches counterfactual activations into the original run to see which layer flips the prediction, thus attributing causality. Attention knockout marks key pathways, and linear probes directly measure attribute decodability at each token.
+    - **Design Motivation**: Behavioral differences (accuracy) only show "VLMs are better," but mechanistic interpretability explains "why." The method follows Gur-Arieh et al. 2025, enabling seamless transfer to real large models.
 
 ### Loss & Training
-The controlled Transformer is trained using standard next-token CE. The three-stage sequence is: text-only → image-only (frozen vision encoder) → 20% image + 80% text mixture. OOD evaluation expands the attribute set to 216 colors × 216 shapes × 32 items and pushes the object count beyond the training limit.
+The controlled Transformer is trained with standard next-token cross-entropy. The three-stage sequence is: text-only → image-only (visual encoder frozen) → 20% image + 80% text mixed training. OOD evaluation expands the attribute set to 216 colors × 216 shapes × 32 items and increases the number of objects beyond the training limit.
 
 ## Key Experimental Results
 
 ### Main Results
-Average OOD accuracy of controlled Transformers on text-only Indirect Retrieval (context exceeding training limit of 8):
+Average OOD accuracy (context exceeds training limit of 8) for controlled Transformer on text modality Indirect Retrieval:
 
-| Model | Avg OOD Accuracy |
-|------|---------------|
+| Model | Avg. OOD Accuracy |
+|-------|------------------|
 | $\mathcal{M}_{\text{text-only}}$ | 37.2% |
 | $\mathcal{M}_{\text{noise-text}}$ | 57.5% |
 | $\mathcal{M}_{\text{image-text}}$ | **69.5%** |
 | $\mathcal{M}_{\text{noise-image-text}}$ | **83.6%** |
 
-Symbolic / positional ratio in binding-dominant layers of the real Qwen family (higher is more symbolic):
+Symbolic/positional ratio (higher = more symbolic) at the binding-dominant layer in real Qwen models:
 
 | Model | Peak Layer | Sym./Pos. Ratio | $\Delta$ vs LLM |
-|------|------------|-----------------|------------------|
+|-------|------------|-----------------|-----------------|
 | Qwen 2 | 22 | 1.383 | — |
 | Qwen 2-VL | 22 | 1.499 | +0.116 |
 | Qwen 2.5 | 22 | 1.218 | — |
@@ -91,39 +94,39 @@ Symbolic / positional ratio in binding-dominant layers of the real Qwen family (
 ### Ablation Study
 
 | Intervention | Effect | Conclusion |
-|------|------|------|
-| Noise only, no image | OOD 57.5% (vs 37.2%) | Noise is helpful but insufficient |
-| Image added, no noise | OOD 69.5% | Images provide a "qualitative shift" |
-| Noise and image added | OOD 83.6% | The two effects are complementary |
-| ResNet/ViT/DINOv3 encoders | Mechanism switch occurs in all | Phenomenon is decoupled from encoder type |
+|--------------|--------|------------|
+| Add noise only, no image | OOD 57.5% (vs 37.2%) | Noise helps, but not enough |
+| Add image only, no noise | OOD 69.5% | Image causes a "qualitative" shift |
+| Add both noise and image | OOD 83.6% | Effects are complementary |
+| Switch among ResNet/ViT/DINOv3 encoders | Mechanism shift always occurs | Phenomenon decoupled from encoder type |
 
 ### Key Findings
-- After visual training, the model's final layers shift from almost purely positional to predominantly symbolic. This shift persists after re-mixing with text, suggesting that once learned, binding strategies do not easily revert.
-- Noise can moderately promote symbolic binding (consistent with the hypothesis that natural language irregularities act as noise), but it only slightly increases the binding ratio. Vision provides a strong constraint where positional strategies are fundamentally unfeasible, making the difference qualitative rather than quantitative.
-- In real Qwen models, the Sym/Pos ratio is systematically higher in VL versions than in base versions. The +0.644 increase in Qwen 3-VL aligns perfectly with its behavioral advantage in long-context retrieval, making the mechanistic and behavioral narratives self-consistent.
-- All three vision encoders (ResNet-152, ViT-B/16, self-supervised DINOv3) trigger the switch, indicating that the common property of "translation invariance" is the cause.
+- After visual training, the model's final layer shifts from almost purely positional to dominantly symbolic, and this shift persists after mixing back in text—indicating that once the binding strategy is learned, it is not easily reversed.
+- Noise can mildly promote symbolic binding (consistent with the hypothesis that "natural language irregularity brings inherent noise"), but only slightly increases the binding ratio; vision imposes a strong constraint where "positional strategies are fundamentally unworkable," making the difference qualitative, not just quantitative.
+- In real Qwen large models, the symbolic/positional ratio is systematically higher in VL versions, and Qwen 3-VL's increase (+0.644) matches its behavioral advantage in long-context retrieval—mechanistic and behavioral evidence are self-consistent.
+- All three visual encoders (ResNet-152, ViT-B/16, self-supervised DINOv3) induce the shift, indicating that "translation invariance" is the causal factor, with architecture as a carrier.
 
 ## Highlights & Insights
-- This study provides a rare three-way alignment between mechanistic interpretability, controlled synthesis, and real-world large model verification.
-- The view that "translation invariance is a prior that reshapes LLM binding strategies" provides a concrete mechanical explanation for why multimodal training benefits text tasks, moving beyond vague "additional regularization."
-- It suggests a form of "behavioral rewriting" distinct from prompt engineering: by introducing different modal alignment objectives, the computational paths a model uses to answer questions can be changed without modifying the architecture.
+- This is a rare study aligning "mechanistic interpretability + controlled synthesis + real large-model validation," with three lines of evidence reinforcing each other for greater persuasiveness than any single source.
+- The view that "translation invariance is a prior that reshapes LLM binding strategies" provides a concrete mechanistic explanation for why multimodal training benefits pure text tasks, rather than a vague "extra regularization."
+- Suggests an alternative to prompt engineering for "behavior rewriting"—by introducing different modality alignment objectives, one can change the model's computational path for answering questions without altering the architecture.
 
 ## Limitations & Future Work
-- Controlled experiments were limited to Indirect Retrieval; whether conclusions extend to tasks like reasoning or coding remains to be verified.
-- Real-world Qwen verification did not control for training datasets or steps, so other effects besides binding shifts may be mixed in.
-- The authors only identified three binding types (positional/symbolic/reflexive); finer hybrid strategies (e.g., specific heads being positional) remain an open question.
-- The study does not demonstrate how to "artificially" induce a symbolic switch without using images; an equivalent text-only induction strategy would be more engineering-friendly.
+- The controlled experiment only used Indirect Retrieval tasks; whether conclusions extend to reasoning, code, or other "position-sensitive" tasks remains to be tested.
+- In Qwen family validation, training data and steps were not controlled, so effects beyond binding shift may contribute to "VLM > LLM."
+- Only positional/symbolic/reflexive binding types were identified; finer-grained mixed strategies (e.g., some heads positional, some symbolic) remain open.
+- No demonstration of how to "artificially" induce symbolic shift without images; if equivalent strategies exist on the text side, they would be more practical for engineering.
 
 ## Related Work & Insights
-- **vs Dai et al. 2024b / Ratzlaff et al. 2025**: While they report behavioral VLM gains in math and commonsense, this paper explains such gains through changes in binding mechanisms.
-- **vs Gur-Arieh et al. 2025**: The authors adopt their positional/symbolic/reflexive taxonomy and interchange intervention methods but are the first to link modality changes to mechanism shifts.
-- **vs Capitals task in Feng & Steinhardt 2024**: The task paradigm is similar, but this work introduces the visual modality as a "mechanistic tool."
+- **vs Dai et al. 2024b / Ratzlaff et al. 2025**: They report behavioral VLM gains on math and commonsense tasks; this paper explains such gains as binding mechanism changes.
+- **vs Gur-Arieh et al. 2025**: This work adopts their positional/symbolic/reflexive taxonomy and interchange intervention method, but is the first to link modality change to mechanism shift.
+- **vs Feng & Steinhardt 2024's Capitals task**: Task paradigm is similar, but this paper introduces image modality as a "mechanistic tool."
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐⭐ Provides the first mechanistically verifiable causal mechanism for why "VLM > LLM."
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Includes four-way verification (encoders, noise, large models), though task categories are limited.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ Clear progression of concepts; the narrative from problem to replication to explanation to generalization is complete.
-- **Value**: ⭐⭐⭐⭐ Insightful for both multimodal training design and mechanistic interpretability methodology.
+- Novelty: ⭐⭐⭐⭐⭐ First mechanistically verifiable causal explanation for "VLM > LLM"
+- Experimental Thoroughness: ⭐⭐⭐⭐ Three encoders + noise control + real large-model validation, but task diversity is limited
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear conceptual progression, complete narrative from problem to reproduction to explanation to generalization
+- Value: ⭐⭐⭐⭐ Inspires both multimodal training design and mechanistic interpretability methodology; moderate engineering utility
 
 <!-- RELATED:START -->
 

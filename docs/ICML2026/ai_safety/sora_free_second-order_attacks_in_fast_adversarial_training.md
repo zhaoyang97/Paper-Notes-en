@@ -2,9 +2,10 @@
 title: >-
   [Paper Note] SORA: Free Second-Order Attacks in Fast Adversarial Training
 description: >-
-  [ICML 2026][Fast Adversarial Training] This paper re-examines Catastrophic Overfitting (CO) in single-step adversarial training from a second-order perspective. It proposes PertAlign…
+  [ICML 2026][AI Safety][Fast Adversarial Training] This paper re-examines Catastrophic Overfitting (CO) in single-step adversarial training from a second-order perspective. It proposes PertAlign…
 tags:
   - "ICML 2026"
+  - "AI Safety"
   - "Fast Adversarial Training"
   - "Catastrophic Overfitting"
   - "Second-Order Optimization"
@@ -119,11 +120,11 @@ SORA is the only single-step method to successfully avoid CO and achieve the hig
 
 ## Related Papers
 
-- [\[ICML 2026\] How Does Bayesian Sampling Help Membership Inference Attacks?](how_does_bayesian_sampling_help_membership_inference_attacks.md)
-- [\[CVPR 2026\] ZO-SAM: Zero-Order Sharpness-Aware Minimization for Efficient Sparse Training](../../CVPR2026/others/zo-sam_zero-order_sharpness-aware_minimization_for_efficient_sparse_training.md)
-- [\[ICLR 2026\] Training Deep Normalization-Free Spiking Neural Networks with Lateral Inhibition](../../ICLR2026/others/training_deep_normalization-free_spiking_neural_networks_with_lateral_inhibition.md)
-- [\[ICML 2026\] New Bounds for Kernel Sums via Fast Spherical Embeddings](new_bounds_for_kernel_sums_via_fast_spherical_embeddings.md)
-- [\[AAAI 2026\] Higher-Order Responsibility](../../AAAI2026/others/higher-order_responsibility.md)
+- [\[ICML 2026\] Training-Free Coverless Multi-Image Steganography with Access Control](training-free_coverless_multi-image_steganography_with_access_control.md)
+- [\[NeurIPS 2025\] Distributional Adversarial Attacks and Training in Deep Hedging](../../NeurIPS2025/ai_safety/distributional_adversarial_attacks_and_training_in_deep_hedging.md)
+- [\[ICML 2026\] Rotation-Invariant Spherical Watermarking via Third-Order SO(3) Representation Coupling](rotation-invariant_spherical_watermarking_via_third-order_so3_representation_cou.md)
+- [\[ICML 2026\] Rethinking Evaluation Paradigms in IBP-based Certified Training](rethinking_evaluation_paradigms_in_ibp-based_certified_training.md)
+- [\[CVPR 2026\] One-to-More: High-Fidelity Training-Free Anomaly Generation with Attention Control](../../CVPR2026/ai_safety/one-to-more_high-fidelity_training-free_anomaly_generation_with_attention_control.md)
 
 </div>
 

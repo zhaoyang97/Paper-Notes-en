@@ -1,21 +1,22 @@
 ---
 title: >-
-  ICLR2026 LLM Evaluation Papers · 53 Notes
+  ICLR2026 LLM Evaluation Papers · 29 Notes
 description: >-
-  53 ICLR2026 papers in the LLM Evaluation area, covering LLM, Agents, Reasoning, Alignment/RLHF, Adversarial Robustness and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  29 ICLR2026 papers in the LLM Evaluation area, covering LLM, Diffusion Models, Reasoning, Multimodal/VLM, Adversarial Robustness, Object Tracking and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "ICLR2026"
   - "LLM Evaluation"
   - "AI paper notes"
   - "paper summaries"
   - "LLM"
-  - "Agents"
+  - "Diffusion Models"
   - "Reasoning"
-  - "Alignment/RLHF"
+  - "Multimodal/VLM"
   - "Adversarial Robustness"
+  - "Object Tracking"
 item_list:
-  - u: "accessible_realistic_and_fair_evaluation_of_positive-unlabeled_learning_algorith/"
-    t: "Accessible, Realistic, and Fair Evaluation of Positive-Unlabeled Learning Algorithms"
+  - u: "adablock-dllm_semantic-aware_diffusion_llm_inference_via_adaptive_block_size/"
+    t: "AdaBlock-dLLM: Semantic-Aware Diffusion LLM Inference via Adaptive Block Size"
   - u: "anessuite_a_comprehensive_benchmark_and_dataset_suite_for_anesthesiology_reasoni/"
     t: "AnesSuite: A Comprehensive Benchmark and Dataset Suite for Anesthesiology Reasoning"
   - u: "aside_architectural_separation_of_instructions_and_data_in_language_models/"
@@ -26,69 +27,67 @@ item_list:
     t: "Benchmarking Overton Pluralism in LLMs"
   - u: "biasscope_towards_automated_detection_of_bias_in_llm-as-a-judge_evaluation/"
     t: "BiasScope: Towards Automated Detection of Bias in LLM-as-a-Judge Evaluation"
-  - u: "breaking_the_correlation_plateau_on_the_optimization_and_capacity_limits_of_atte/"
-    t: "Breaking the Correlation Plateau: On the Optimization and Capacity Limits of Attention-Based Regressors"
   - u: "can_vision_language_models_assess_graphic_design_aesthetics_a_benchmark_evaluati/"
     t: "Can Vision–Language Models Assess Graphic Design Aesthetics? A Benchmark, Evaluation, and Dataset Perspective"
   - u: "can_you_hear_me_now_a_benchmark_for_long-range_graph_propagation_and_beyond/"
     t: "Can You Hear Me Now? A Benchmark for Long-Range Graph Propagation and Beyond"
-  - u: "conformal_prediction_adaptive_to_unknown_subpopulation_shifts/"
-    t: "Conformal Prediction Adaptive to Unknown Subpopulation Shifts"
   - u: "dare-bench_evaluating_modeling_and_instruction_fidelity_of_llms_in_data_science/"
     t: "DARE-bench: Evaluating Modeling and Instruction Fidelity of LLMs in Data Science"
-  - u: "deep_flexqp_accelerated_nonlinear_programming_via_deep_unfolding/"
-    t: "Deep FlexQP: Accelerated Nonlinear Programming via Deep Unfolding"
-  - u: "discount_model_search_for_quality_diversity_optimization_in_high-dimensional_mea/"
-    t: "Discount Model Search for Quality Diversity Optimization in High-Dimensional Measure Spaces"
-  - u: "disentangling_shared_and_private_neural_dynamics_with_spire_a_latent_modeling_fr/"
-    t: "Disentangling Shared and Private Neural Dynamics with SPIRE: A Latent Modeling Framework for Deep Brain Stimulation"
-  - u: "do_we_really_need_permutations_impact_of_model_width_on_linear_mode_connectivity/"
-    t: "Do We Really Need Permutations? Impact of Model Width on Linear Mode Connectivity"
+  - u: "doubly-robust_llm-as-a-judge_externally_valid_estimation_with_imperfect_personas/"
+    t: "Doubly-Robust LLM-as-a-Judge: Externally Valid Estimation with Imperfect Personas"
   - u: "enabling_fine-grained_operating_points_for_black-box_llms/"
     t: "Enabling Fine-Grained Operating Points for Black-Box LLMs"
-  - u: "function_spaces_without_kernels_learning_compact_hilbert_space_representations/"
-    t: "Function Spaces Without Kernels: Learning Compact Hilbert Space Representations"
   - u: "guidedsampling_steering_llms_towards_diverse_candidate_solutions_at_inference-ti/"
     t: "GuidedSampling: Steering LLMs Towards Diverse Candidate Solutions at Inference-Time"
   - u: "how_reliable_is_language_model_micro-benchmarking/"
     t: "How Reliable is Language Model Micro-Benchmarking?"
   - u: "human-llm_collaborative_feature_engineering_for_tabular_data/"
     t: "Human-LLM Collaborative Feature Engineering for Tabular Learning"
-  - u: "improving_set_function_approximation_with_quasi-arithmetic_neural_networks/"
-    t: "Improving Set Function Approximation with Quasi-Arithmetic Neural Networks"
   - u: "in-context_learning_for_pure_exploration/"
     t: "In-Context Learning for Pure Exploration"
   - u: "in-context_learning_of_temporal_point_processes_with_foundation_inference_models/"
     t: "In-Context Learning of Temporal Point Processes with Foundation Inference Models"
-  - u: "lca_local_classifier_alignment_for_continual_learning/"
-    t: "LCA: Local Classifier Alignment for Continual Learning"
-  - u: "measuring_uncertainty_calibration/"
-    t: "Measuring Uncertainty Calibration"
-  - u: "mitigating_spurious_correlation_via_distributionally_robust_learning_with_hierar/"
-    t: "Mitigating Spurious Correlation via Distributionally Robust Learning with Hierarchical Ambiguity Sets"
-  - u: "mosiv_multi-object_system_identification_from_videos/"
-    t: "MOSIV: Multi-Object System Identification from Videos"
+  - u: "log_probability_tracking_of_llm_apis/"
+    t: "Log Probability Tracking of LLM APIs"
   - u: "multi-llm_adaptive_conformal_inference_for_reliable_llm_responses/"
     t: "Multi-LLM Adaptive Conformal Inference for Reliable LLM Responses"
-  - u: "noise-aware_generalization_robustness_to_in-domain_noise_and_out-of-domain_gener/"
-    t: "Noise-Aware Generalization: Robustness to In-Domain Noise and Out-of-Domain Generalization"
-  - u: "non-clashing_teaching_in_graphs_algorithms_complexity_and_bounds/"
-    t: "Non-Clashing Teaching in Graphs: Algorithms, Complexity, and Bounds"
-item_total: 53
+  - u: "preference_leakage_a_contamination_problem_in_llm-as-a-judge/"
+    t: "Preference Leakage: A Contamination Problem in LLM-as-a-judge"
+  - u: "prompt_and_parameter_co-optimization_for_large_language_models/"
+    t: "Prompt and Parameter Co-Optimization for Large Language Models"
+  - u: "rankllm_weighted_ranking_of_llms_by_quantifying_question_difficulty/"
+    t: "RankLLM: Weighted Ranking of LLMs by Quantifying Question Difficulty"
+  - u: "same_content_different_representations_a_controlled_study_for_t/"
+    t: "Same Content, Different Representations: A Controlled Study for Table QA"
+  - u: "simuhome_a_temporal-_and_environment-aware_benchmark_for_smart_home_agents/"
+    t: "SimuHome: A Temporal- and Environment-Aware Benchmark for Smart Home Agents"
+  - u: "subliminal_signals_in_preference_labels/"
+    t: "Subliminal Signals in Preference Labels"
+  - u: "talk_evaluate_diagnose_user-aware_agent_evaluation_with_automated_error_analysis/"
+    t: "Talk, Evaluate, Diagnose: User-aware Agent Evaluation with Automated Error Analysis"
+  - u: "truthfulness_despite_weak_supervision_evaluating_and_training_llms_using_peer_pr/"
+    t: "Truthfulness Despite Weak Supervision: Evaluating and Training LLMs Using Peer Prediction"
+  - u: "unpacking_human_preference_for_llms_demographically_aware_evaluation_of_long-fo/"
+    t: "Unpacking Human Preference for LLMs: Demographically Aware Evaluation with the HUMAINE Framework"
+  - u: "vcache_verified_semantic_prompt_caching/"
+    t: "vCache: Verified Semantic Prompt Caching"
+  - u: "when_to_ensemble_identifying_token-level_points_for_stable_and_fast_llm_ensembli/"
+    t: "When to Ensemble: Identifying Token-Level Points for Stable and Fast LLM Ensembling"
+item_total: 29
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->
 # 📊 LLM Evaluation
 
-**🔬 ICLR2026** · **53** paper notes
+**🔬 ICLR2026** · **29** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (29)](../../ICML2026/llm_evaluation/index.md) · [💬 ACL2026 (92)](../../ACL2026/llm_evaluation/index.md) · [📷 CVPR2026 (25)](../../CVPR2026/llm_evaluation/index.md) · [🤖 AAAI2026 (39)](../../AAAI2026/llm_evaluation/index.md) · [🧠 NeurIPS2025 (75)](../../NeurIPS2025/llm_evaluation/index.md) · [📹 ICCV2025 (27)](../../ICCV2025/llm_evaluation/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (24)](../../ICML2026/llm_evaluation/index.md) · [💬 ACL2026 (91)](../../ACL2026/llm_evaluation/index.md) · [🤖 AAAI2026 (16)](../../AAAI2026/llm_evaluation/index.md) · [🧠 NeurIPS2025 (37)](../../NeurIPS2025/llm_evaluation/index.md) · [📹 ICCV2025 (27)](../../ICCV2025/llm_evaluation/index.md)
 
-🔥 **Top topics:** LLM ×8 · Agents ×3 · Reasoning ×2 · Alignment/RLHF ×2 · Adversarial Robustness ×2
+🔥 **Top topics:** LLM ×9
 
-**[Accessible, Realistic, and Fair Evaluation of Positive-Unlabeled Learning Algorithms](accessible_realistic_and_fair_evaluation_of_positive-unlabeled_learning_algorith.md)**
+**[AdaBlock-dLLM: Semantic-Aware Diffusion LLM Inference via Adaptive Block Size](adablock-dllm_semantic-aware_diffusion_llm_inference_via_adaptive_block_size.md)**
 
-:   This paper proposes the first unified benchmark for PU learning and systematically addresses two critical issues: (1) enabling model selection without negative samples via proxy accuracy and proxy AUC; (2) identifying and resolving intra-dataset label shift in the one-sample setting through a simple calibration strategy that merges positive samples into the unlabeled set, enabling fair comparison of two-sample algorithms under one-sample evaluation.
+:   Through statistical analysis of token confidence dynamics during the denoising process of diffusion language models (dLLMs), this work identifies a "Volatility Band" (VB) region that encodes local semantic structure in text. Building on this observation, it proposes AdaBlock-dLLM—a training-free, plug-and-play adaptive block size scheduler that aligns block boundaries in semi-autoregressive decoding with natural semantic steps, achieving up to 5.3% accuracy improvement at the same throughput.
 
 **[AnesSuite: A Comprehensive Benchmark and Dataset Suite for Anesthesiology Reasoning](anessuite_a_comprehensive_benchmark_and_dataset_suite_for_anesthesiology_reasoni.md)**
 
@@ -110,10 +109,6 @@ item_total: 53
 
 :   This paper proposes BiasScope, a fully LLM-driven iterative framework that automatically discovers previously unknown biases in LLM-as-a-Judge evaluation at scale. Based on the discovered biases, the authors construct JudgeBench-Pro, a more challenging benchmark on which even powerful LLM judges exceed 50% error rate.
 
-**[Breaking the Correlation Plateau: On the Optimization and Capacity Limits of Attention-Based Regressors](breaking_the_correlation_plateau_on_the_optimization_and_capacity_limits_of_atte.md)**
-
-:   This paper provides the first theoretical analysis of the "PCC plateau" phenomenon observed when training attention-based regression models with a joint MSE+PCC objective. The root causes are identified as the conflict between MSE optimization and PCC gradients, together with an expressivity upper bound imposed by the convex aggregation of softmax. The authors propose the ECA (Extrapolative Correlation Attention) framework, which breaks through this limitation via three components: scaled residual aggregation, dispersion-aware temperature softmax, and dispersion-normalized PCC loss.
-
 **[Can Vision–Language Models Assess Graphic Design Aesthetics? A Benchmark, Evaluation, and Dataset Perspective](can_vision_language_models_assess_graphic_design_aesthetics_a_benchmark_evaluati.md)**
 
 :   This paper proposes AesEval-Bench, the first benchmark for systematically evaluating VLMs on graphic design aesthetics (4 dimensions × 12 indicators × 3 tasks). It finds that existing VLMs—including reasoning-augmented models—perform poorly on design aesthetics, and constructs training data via human-guided VLM labeling combined with indicator-grounded reasoning. Fine-tuning a 7B model with this data surpasses GPT-5 on the precise localization task.
@@ -122,37 +117,17 @@ item_total: 53
 
 :   This paper proposes the ECHO benchmark, comprising 3 synthetic tasks and 2 real-world chemistry tasks grounded in density functional theory (DFT), requiring graph neural networks to propagate information effectively over 17–40 hops. The benchmark systematically evaluates the long-range propagation capabilities of 11 GNN architectures.
 
-**[Conformal Prediction Adaptive to Unknown Subpopulation Shifts](conformal_prediction_adaptive_to_unknown_subpopulation_shifts.md)**
-
-:   To address the failure of standard conformal prediction under subpopulation shift, this paper proposes three adaptive algorithms: weighting calibration data via a learned domain classifier (Algorithms 1/2) or via embedding similarity (Algorithm 3). Coverage guarantees are maintained even with imperfect or absent domain labels, with applications to visual classification and LLM hallucination detection.
-
 **[DARE-bench: Evaluating Modeling and Instruction Fidelity of LLMs in Data Science](dare-bench_evaluating_modeling_and_instruction_fidelity_of_llms_in_data_science.md)**
 
 :   DARE-bench is a large-scale verifiable benchmark for data science tasks, comprising 6,300 Kaggle-derived tasks that support evaluation across two dimensions—ML modeling and instruction following—along with training data for SFT and RL. SFT improves Qwen3-32B by 1.83×, while RL improves Qwen3-4B by more than 8×.
 
-**[Deep FlexQP: Accelerated Nonlinear Programming via Deep Unfolding](deep_flexqp_accelerated_nonlinear_programming_via_deep_unfolding.md)**
+**[Doubly-Robust LLM-as-a-Judge: Externally Valid Estimation with Imperfect Personas](doubly-robust_llm-as-a-judge_externally_valid_estimation_with_imperfect_personas.md)**
 
-:   This paper proposes FlexQP — an "always feasible" convex quadratic programming (QP) solver based on $\ell_1$ elastic relaxation — and combines it with deep unfolding to learn an LSTM feedback policy that accelerates convergence, yielding Deep FlexQP. When embedded as a submodule within an SQP framework, it solves nonlinear trajectory optimization problems 4–16× faster than OSQP, reduces safety violations in predictive safety filters by over 70%, and improves task completion rates by 43%.
-
-**[Discount Model Search for Quality Diversity Optimization in High-Dimensional Measure Spaces](discount_model_search_for_quality_diversity_optimization_in_high-dimensional_mea.md)**
-
-:   This paper proposes Discount Model Search (DMS), which replaces the histogram-based discrete representation in CMA-MAE with a neural network that fits a continuous, smooth discount function. This addresses the issue of search stagnation caused by distortion in high-dimensional measure spaces, and enables, for the first time, the direct use of image datasets to define measure spaces (the QDDM paradigm).
-
-**[Disentangling Shared and Private Neural Dynamics with SPIRE: A Latent Modeling Framework for Deep Brain Stimulation](disentangling_shared_and_private_neural_dynamics_with_spire_a_latent_modeling_fr.md)**
-
-:   This paper proposes SPIRE (Shared–Private Inter-Regional Encoder), a nonlinear dual-latent-space autoencoder framework that decomposes intracranial recordings from multiple brain regions into shared and private subspaces via cross-region alignment and orthogonal disentanglement losses. Trained exclusively on baseline data, SPIRE detects frequency-dependent network reorganization induced by DBS stimulation.
-
-**[Do We Really Need Permutations? Impact of Model Width on Linear Mode Connectivity](do_we_really_need_permutations_impact_of_model_width_on_linear_mode_connectivity.md)**
-
-:   This paper empirically demonstrates that linear mode connectivity (LMC) between independently trained models can be achieved by simply increasing model width, without any parameter permutation. It further proposes *Layer-wise Exponentially Weighted Connectivity* (LEWC) to explain the underlying mechanism.
+:   This paper proposes a doubly-robust estimation framework that combines imperfect LLM persona ratings with human annotations subject to sampling bias, yielding statistically valid estimates of GenAI system quality in the simultaneous presence of covariate shift and selection bias.
 
 **[Enabling Fine-Grained Operating Points for Black-Box LLMs](enabling_fine-grained_operating_points_for_black-box_llms.md)**
 
 :   This paper identifies that verbalized probabilities from black-box LLMs produce only 16–23 unique values (low-cardinality problem), resulting in coarse PR/ROC curves that prevent fine-grained threshold tuning. By injecting parameterized noise and an optional MLP correction, the number of unique values increases from 16 to 20,000+, matching the performance of 20-sample ensembles with only 1–2 API calls.
-
-**[Function Spaces Without Kernels: Learning Compact Hilbert Space Representations](function_spaces_without_kernels_learning_compact_hilbert_space_representations.md)**
-
-:   This paper proves that Function Encoders, which learn neural network basis functions, implicitly define a valid kernel, thereby bridging neural feature learning and RKHS theory. It further proposes PCA-guided compact basis selection algorithms and establishes finite-sample generalization bounds.
 
 **[GuidedSampling: Steering LLMs Towards Diverse Candidate Solutions at Inference-Time](guidedsampling_steering_llms_towards_diverse_candidate_solutions_at_inference-ti.md)**
 
@@ -166,10 +141,6 @@ item_total: 53
 
 :   This paper proposes a human-LLM collaborative feature engineering framework that decouples the proposal and selection of feature operations. A Bayesian neural network models operation utility and uncertainty to guide selection, with selective human preference feedback incorporated when appropriate. The framework achieves 8.96%–11.23% average error rate reduction across 18 tabular datasets.
 
-**[Improving Set Function Approximation with Quasi-Arithmetic Neural Networks](improving_set_function_approximation_with_quasi-arithmetic_neural_networks.md)**
-
-:   This paper proposes QUANN (Quasi-Arithmetic Neural Networks), which employs invertible neural networks to implement a learnable Kolmogorov mean as the pooling operation. It is the first to realize a machine-learning instantiation of generalized measures of central tendency. QUANN serves as a universal approximator for mean-decomposable set functions, and the learned embeddings exhibit stronger cross-task transferability.
-
 **[In-Context Learning for Pure Exploration](in-context_learning_for_pure_exploration.md)**
 
 :   This paper proposes ICPE (In-Context Pure Exploration), an in-context learning framework that combines supervised learning and reinforcement learning. Using a Transformer trained directly from experience, ICPE learns exploration policies for active sequential hypothesis testing and pure exploration problems, achieving near-optimal instance-adaptive algorithmic performance without explicit modeling of the information structure.
@@ -178,45 +149,13 @@ item_total: 53
 
 :   This paper proposes FIM-PP — the first foundation inference model for marked temporal point processes (MTPP). A Transformer is pretrained on 72K synthetic point processes (14.4M events) to perform in-context inference of conditional intensity functions. In zero-shot settings, FIM-PP matches the performance of specialized models trained for hours; after a few minutes of fine-tuning, it achieves state-of-the-art results on multi-event prediction across four real-world datasets.
 
-**[LCA: Local Classifier Alignment for Continual Learning](lca_local_classifier_alignment_for_continual_learning.md)**
+**[Log Probability Tracking of LLM APIs](log_probability_tracking_of_llm_apis.md)**
 
-:   This paper proposes Local Classifier Alignment (LCA), a loss function that simultaneously minimizes classification loss and loss sensitivity within local regions of class prototype Gaussian distributions. LCA addresses the classifier mismatch problem arising from incremental backbone merging in continual learning. Combined with an Incremental Merging (IM) strategy for PEFT modules, the method achieves an overall average accuracy of 85.6% across 7 benchmark datasets, substantially outperforming prior state-of-the-art methods.
-
-**[Measuring Uncertainty Calibration](measuring_uncertainty_calibration.md)**
-
-:   For the problem of estimating the $L_1$ calibration error of binary classifiers from finite samples, this paper proposes the first non-asymptotic, distribution-free certifiable upper bound methods under two structural assumptions—bounded variation and bounded derivatives—where the latter can be guaranteed by applying a small perturbation to classifier outputs. Experiments demonstrate that the calibration error upper bound can be controlled to approximately 0.02 with $10^7$ samples.
-
-**[Mitigating Spurious Correlation via Distributionally Robust Learning with Hierarchical Ambiguity Sets](mitigating_spurious_correlation_via_distributionally_robust_learning_with_hierar.md)**
-
-:   A hierarchical DRO framework is proposed to simultaneously capture inter-group (group proportion shifts) and intra-group (intra-group distributional shifts) uncertainty. By defining intra-group ambiguity sets in the semantic space via the $W_\infty$ distance, the method achieves state-of-the-art performance on standard benchmarks and maintains strong robustness under a newly designed minority group distributional shift setting where all competing methods fail.
-
-**[MOSIV: Multi-Object System Identification from Videos](mosiv_multi-object_system_identification_from_videos.md)**
-
-:   This paper proposes MOSIV—the first complete framework for multi-object system identification from multi-view videos—comprising three stages: (1) object-aware 4D dynamic Gaussian reconstruction of per-object geometry and motion; (2) Gaussian-to-continuum lifting to construct MPM simulation particles; and (3) differentiable MPM forward rollout with geometry-alignment objectives (3D Chamfer + 2D silhouette) to back-propagate and optimize per-object continuous material parameters ($E, \nu, \mu$). On a contact-rich synthetic benchmark spanning four material types (elastic, elastoplastic, fluid, and granular), MOSIV achieves PSNR 30.51 vs. OmniPhysGS 25.93 and reduces Chamfer distance by 9.4×, establishing a new baseline for multi-object long-horizon physical simulation.
+:   This paper proposes Logprob Tracking (LT), a method that detects subtle changes in LLM APIs (e.g., single-step fine-tuning) using only the log probabilities of a single-token input and single-token output. LT achieves sensitivity 2–3 orders of magnitude higher than existing methods at 1000× lower cost.
 
 **[Multi-LLM Adaptive Conformal Inference for Reliable LLM Responses](multi-llm_adaptive_conformal_inference_for_reliable_llm_responses.md)**
 
 :   This paper proposes MACI (Multi-LLM Adaptive Conformal Inference), which combines a **cumulative-product conformity score**, a multi-LLM ensemble for factuality scoring, and group-conditional calibration to significantly improve the retention rate of factual claims in LLM responses while strictly guaranteeing user-specified error rates.
-
-**[Noise-Aware Generalization: Robustness to In-Domain Noise and Out-of-Domain Generalization](noise-aware_generalization_robustness_to_in-domain_noise_and_out-of-domain_gener.md)**
-
-:   This paper is the first to formally define the Noise-Aware Generalization (NAG) problem — simultaneously pursuing in-domain robustness and out-of-domain generalization under label noise — and proposes DL4ND, a method that detects noisy labels via cross-domain comparison, achieving up to 12.5% improvement across 7 datasets.
-
-**[Non-Clashing Teaching in Graphs: Algorithms, Complexity, and Bounds](non-clashing_teaching_in_graphs_algorithms_complexity_and_bounds.md)**
-
-:   This paper studies non-clashing teaching of closed-neighborhood concept classes in graphs, providing tight algorithmic bounds (a matching $2^{\mathcal{O}(|E|)}$ bound for N-NCTD⁺), FPT algorithms parameterized by treedepth and vertex cover (including the first FPT result with negative labels), and combinatorial upper bounds for planar graphs and unit square graphs, substantially advancing both the computational and combinatorial understanding of non-clashing teaching.
-
-**[Optimal Transport-Induced Samples against Out-of-Distribution Overconfidence](optimal_transport-induced_samples_against_out-of-distribution_overconfidence.md)**
-
-:   This paper leverages the geometric singularity boundaries of semi-discrete optimal transport (OT) to locate semantically ambiguous regions in latent space, generates proxy OOD samples (OTIS) near these boundaries, and applies a confidence suppression loss during training to enforce uniform predictions in structurally uncertain regions, thereby systematically mitigating OOD overconfidence in DNNs.
-
-**[PlanetAlign: A Comprehensive Python Library for Benchmarking Network Alignment](planetalign_a_comprehensive_python_library_for_benchmarking_network_alignment.md)**
-
-:   This paper presents PlanetAlign, a PyTorch-based network alignment benchmark library integrating 18 datasets across 6 domains, 14 methods spanning three categories (consistency-based, embedding-based, and optimal transport-based), and a standardized evaluation pipeline. Through large-scale systematic experiments, PlanetAlign reveals that OT-based methods (PARROT/JOENA) achieve comprehensive superiority in effectiveness, while different method categories exhibit distinct trade-offs in scalability and robustness.
-
-**[Predicting LLM Reasoning Performance with Small Proxy Model](predicting_llm_reasoning_performance_with_small_proxy_model.md)**
-
-:   This paper proposes rBridge, which uses reasoning traces from frontier models as gold labels and applies token-level task-aligned weighted NLL, enabling small models (≤1B) to effectively predict the reasoning performance of 13B–32B models, achieving over 100× computational savings on dataset ranking tasks.
 
 **[Preference Leakage: A Contamination Problem in LLM-as-a-judge](preference_leakage_a_contamination_problem_in_llm-as-a-judge.md)**
 
@@ -230,53 +169,25 @@ item_total: 53
 
 :   This paper proposes RankLLM, a non-parametric framework based on bidirectional score propagation over a directed bipartite graph, which jointly estimates question difficulty and model competency to achieve difficulty-aware LLM ranking, reaching 90% agreement with human judgments.
 
-**[Rethinking Benign Relearning: Syntax as the Hidden Driver of Unlearning Failures](rethinking_benign_relearning_syntax_as_the_hidden_driver_of_unlearning_failures.md)**
-
-:   This paper reveals that the true driver of "benign relearning" in LLM machine unlearning is syntactic similarity rather than topical relevance, and proposes a syntactic diversification strategy (paraphrasing the forget set) that effectively suppresses relearning, accelerates forgetting, and alleviates the trade-off between unlearning efficacy and model utility.
-
 **[Same Content, Different Representations: A Controlled Study for Table QA](same_content_different_representations_a_controlled_study_for_t.md)**
 
 :   The first controlled study that systematically evaluates the robustness of NL2SQL, LLM, and hybrid approaches under varying table size, schema quality, and query complexity by changing only the representation format (structured vs. semi-structured) while holding table content constant, demonstrating that representation format is a first-order factor in Table QA performance.
-
-**[SimpleToM: Exposing the Gap between Explicit ToM Inference and Implicit ToM Application in LLMs](simpletom_exposing_the_gap_between_explicit_tom_inference_and_implicit_tom_appli.md)**
-
-:   SimpleToM exposes a critical gap in LLMs' Theory of Mind capabilities: frontier models can accurately infer others' mental states (explicit ToM), but performance drops sharply when this knowledge must be applied to behavior prediction and behavior judgment (applied ToM), revealing a substantial divide between "knowing what" and "knowing how to use what is known."
 
 **[SimuHome: A Temporal- and Environment-Aware Benchmark for Smart Home Agents](simuhome_a_temporal-_and_environment-aware_benchmark_for_smart_home_agents.md)**
 
 :   SimuHome is a high-fidelity smart home simulator built on the Matter protocol and a 600-episode evaluation benchmark supporting dynamic environmental variable updates and time-accelerated scheduling evaluation, revealing that workflow scheduling remains the most persistent challenge for current LLM agents.
 
-**[Soft Quality-Diversity Optimization](soft_quality-diversity_optimization.md)**
-
-:   This paper proposes the Soft QD Score as a novel quality-diversity optimization objective that eliminates the need for behavior space discretization, and derives a differentiable algorithm, SQUAD, which scales more effectively to high-dimensional behavior spaces while achieving competitive performance on standard benchmarks.
-
-**[Spectral Attention Steering for Prompt Highlighting](spectral_attention_steering_for_prompt_highlighting.md)**
-
-:   This paper proposes SEKA/AdaSEKA, which learns a "relevance subspace" via spectral decomposition of key embeddings and directly edits key vectors prior to attention computation to achieve prompt highlighting. The approach requires no storage of the full attention matrix, is fully compatible with FlashAttention, and incurs negligible overhead (+0.03s/sample).
-
 **[Subliminal Signals in Preference Labels](subliminal_signals_in_preference_labels.md)**
 
 :   This paper demonstrates that preference labels can serve as a covert communication channel: even when a student model generates semantically irrelevant numeric sequences, a biased judge model can transmit subliminal behavioral tendencies to the student model through binary preference labels alone, and this transmission is amplified under iterative alignment.
-
-**[TabStruct: Measuring Structural Fidelity of Tabular Data](tabstruct_measuring_structural_fidelity_of_tabular_data.md)**
-
-:   This paper proposes the TabStruct evaluation framework and a global utility metric that measures the structural fidelity of tabular data generators with respect to causal structure, without requiring ground-truth causal graphs. A systematic comparison of 13 generators across 29 datasets reveals that diffusion models significantly outperform other methods in preserving global structure.
 
 **[Talk, Evaluate, Diagnose: User-aware Agent Evaluation with Automated Error Analysis](talk_evaluate_diagnose_user-aware_agent_evaluation_with_automated_error_analysis.md)**
 
 :   This paper proposes TED (Talk, Evaluate, Diagnose), a framework that achieves user-aware dynamic agent evaluation via general, reusable expert/non-expert persona templates; enables fine-grained efficiency assessment through grading notes, LLM-as-judge scoring, and novel metrics such as MaxProgressRate@k; and provides actionable improvement feedback via automated error discovery and clustering. Experiments on τ²-bench and ToolSandbox reveal new insights into agent performance.
 
-**[Towards Anomaly-Aware Pre-Training and Fine-Tuning for Graph Anomaly Detection](towards_anomaly-aware_pre-training_and_fine-tuning_for_graph_anomaly_detection.md)**
-
-:   This paper proposes the APF framework, which addresses the dual challenges of label scarcity and homophily disparity in graph anomaly detection through Rayleigh quotient-guided anomaly-aware pre-training and granularity-adaptive fine-tuning.
-
 **[Truthfulness Despite Weak Supervision: Evaluating and Training LLMs Using Peer Prediction](truthfulness_despite_weak_supervision_evaluating_and_training_llms_using_peer_pr.md)**
 
 :   This paper proposes applying the Peer Prediction mechanism from game theory to LLM evaluation and training. By measuring the mutual predictability of participants' answers, the method distinguishes honest from deceptive responses without requiring ground-truth labels, thereby incentivizing truthfulness. It exhibits a striking *inverse scaling* property — weaker experts are actually more resistant to deception by stronger models.
-
-**[UIS-Digger: Towards Comprehensive Research Agent Systems for Real-world Unindexed Information Seeking](uis-digger_towards_comprehensive_research_agent_systems_for_real-world_unindexed.md)**
-
-:   This paper identifies and formalizes the problem of *Unindexed Information Seeking* (UIS)—dynamic web pages, embedded files, and interactive content that cannot be directly retrieved by search engines—and proposes the first UIS benchmark UIS-QA (110 questions) along with the multi-agent framework UIS-Digger. A ~30B parameter model trained with SFT+RFT achieves 27.27% accuracy, surpassing systems integrating O3/GPT-4.1.
 
 **[Unpacking Human Preference for LLMs: Demographically Aware Evaluation with the HUMAINE Framework](unpacking_human_preference_for_llms_demographically_aware_evaluation_of_long-fo.md)**
 
@@ -286,14 +197,6 @@ item_total: 53
 
 :   This paper proposes vCache — the first semantic caching system with **user-defined error-rate guarantees** — which employs online learning to independently estimate the optimal similarity threshold for each cached embedding. Without any pre-training, vCache achieves up to a 12.5× improvement in cache hit rate and a 26× reduction in error rate while satisfying correctness constraints.
 
-**[When Priors Backfire: On the Vulnerability of Unlearnable Examples to Pretraining](when_priors_backfire_on_the_vulnerability_of_unlearnable_examples_to_pretraining.md)**
-
-:   This paper exposes a fundamental vulnerability of Unlearnable Examples (UEs) against pretrained models — pretraining priors enable models to bypass perturbation shortcuts and learn true semantics — and proposes the BAIT framework, which counters pretraining priors by binding perturbations to incorrect target labels.
-
 **[When to Ensemble: Identifying Token-Level Points for Stable and Fast LLM Ensembling](when_to_ensemble_identifying_token-level_points_for_stable_and_fast_llm_ensembli.md)**
 
 :   This paper proposes SAFE (Stable And Fast LLM Ensembling), which selectively ensembles multiple heterogeneous-tokenizer LLMs at the token level via a Generate-Verify-Ensemble loop. SAFE addresses OOV-like contamination caused by tokenization mismatch in long-sequence generation, achieving performance gains by ensembling on fewer than 1% of tokens—improving UniTE from 59.6% to 77.4% on MATH500.
-
-**[Which LLM Multi-Agent Protocol to Choose?](which_llm_multi-agent_protocol_to_choose.md)**
-
-:   This paper introduces ProtocolBench and ProtocolRouter, presenting the first systematic comparison of multi-agent communication protocols (A2A, ACP, ANP, Agora, etc.) across four dimensions—task success rate, latency, message overhead, and robustness—and proposes a learnable protocol router for scenario-adaptive protocol selection, reducing fault recovery time by up to 18.1%.

@@ -2,9 +2,10 @@
 title: >-
   [Paper Note] The Implicit Bias of Adam and Muon on Smooth Homogeneous Neural Networks
 description: >-
-  [ICML 2026][Implicit Bias] This paper proves that under the setting of smooth $L$-homogeneous models + exponential tail loss + learning rate decay, Muon (including Muon-Signum and Muon-Adam)…
+  [ICML 2026][Optimization][Implicit Bias] This paper proves that under the setting of smooth $L$-homogeneous models + exponential tail loss + learning rate decay, Muon (including Muon-Signum and Muon-Adam)…
 tags:
   - "ICML 2026"
+  - "Optimization"
   - "Implicit Bias"
   - "Adam"
   - "Muon"
@@ -127,11 +128,11 @@ A 2-layer (1 hidden layer) homogeneous network with $m=2048$ was used for MNIST 
 
 ## Related Papers
 
-- [\[ICLR 2026\] Implicit Bias of Per-sample Adam on Separable Data: Departure from the Full-batch Regime](../../ICLR2026/others/implicit_bias_of_per-sample_adam_on_separable_data_departure_from_the_full-batch.md)
-- [\[ICML 2026\] How the Optimizer Shapes Learned Solutions in Equivariant Neural Networks](how_the_optimizer_shapes_learned_solutions_in_equivariant_neural_networks.md)
-- [\[ICML 2026\] Singular Bayesian Neural Networks](singular_bayesian_neural_networks.md)
-- [\[ICML 2026\] On the Epistemic Uncertainty of Overparametrized Neural Networks](on_the_epistemic_uncertainty_of_overparametrized_neural_networks.md)
-- [\[ICML 2026\] Adaptive Preconditioners Trigger Loss Spikes in Adam](adaptive_preconditioners_trigger_loss_spikes_in_adam.md)
+- [\[NeurIPS 2025\] The Rich and the Simple: On the Implicit Bias of Adam and SGD](../../NeurIPS2025/optimization/the_rich_and_the_simple_on_the_implicit_bias_of_adam_and_sgd.md)
+- [\[ICLR 2026\] Implicit Bias of Per-sample Adam on Separable Data: Departure from the Full-batch Regime](../../ICLR2026/optimization/implicit_bias_of_per-sample_adam_on_separable_data_departure_from_the_full-batch.md)
+- [\[NeurIPS 2025\] Implicit Bias of Spectral Descent and Muon on Multiclass Separable Data](../../NeurIPS2025/optimization/implicit_bias_of_spectral_descent_and_muon_on_multiclass_separable_data.md)
+- [\[ICML 2026\] LiMuon: Light and Fast Muon Optimizer for Large Models](limuon_light_and_fast_muon_optimizer_for_large_models.md)
+- [\[NeurIPS 2025\] Understanding the Generalization of Stochastic Gradient Adam in Learning Neural Networks](../../NeurIPS2025/optimization/understanding_the_generalization_of_stochastic_gradient_adam_in_learning_neural_.md)
 
 </div>
 

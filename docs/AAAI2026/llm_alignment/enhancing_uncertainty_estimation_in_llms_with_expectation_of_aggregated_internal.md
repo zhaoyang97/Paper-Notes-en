@@ -15,7 +15,7 @@ date: 2026-05-08
 content_hash: 1384b0078a8a0844
 ---
 
-# Enhancing Uncertainty Estimation in LLMs with Expectation of Aggregated Internal States
+# Enhancing Uncertainty Estimation in LLMs with Expectation of Aggregated Internal Belief
 
 **Conference**: AAAI 2026
 **arXiv**: [2509.01564](https://arxiv.org/abs/2509.01564)  
@@ -23,7 +23,6 @@ content_hash: 1384b0078a8a0844
 **Area**: LLM Alignment
 **Keywords**: uncertainty estimation, internal state aggregation, confidence calibration, EAGLE, hidden layers
 
-# Enhancing Uncertainty Estimation in LLMs with Expectation of Aggregated Internal Belief
 
 ## TL;DR
 
@@ -135,11 +134,11 @@ The EAGLE (**E**xpectation of **AG**gregated internaL b**E**lief) pipeline proce
 
 ## Related Papers
 
-- [\[ICML 2026\] TUR-DPO: Topology- and Uncertainty-Aware Direct Preference Optimization](../../ICML2026/llm_alignment/tur-dpo_topology-_and_uncertainty-aware_direct_preference_optimization.md)
 - [\[NeurIPS 2025\] LLM Safety Alignment is Divergence Estimation in Disguise](../../NeurIPS2025/llm_alignment/llm_safety_alignment_is_divergence_estimation_in_disguise.md)
 - [\[ACL 2026\] MAESTRO: Meta-learning Adaptive Estimation of Scalarization Trade-offs for Reward Optimization](../../ACL2026/llm_alignment/maestro_meta-learning_adaptive_estimation_of_scalarization_trade-offs_for_reward.md)
 - [\[NeurIPS 2025\] Multi-Environment POMDPs: Discrete Model Uncertainty Under Partial Observability](../../NeurIPS2025/llm_alignment/multi-environment_pomdps_discrete_model_uncertainty_under_partial_observability.md)
 - [\[ACL 2026\] WildFeedback: Aligning LLMs With In-situ User Interactions And Feedback](../../ACL2026/llm_alignment/wildfeedback_aligning_llms_with_in-situ_user_interactions_and_feedback.md)
+- [\[ICML 2026\] The Realignment Problem: When Right becomes Wrong in LLMs](../../ICML2026/llm_alignment/the_realignment_problem_when_right_becomes_wrong_in_llms.md)
 
 </div>
 

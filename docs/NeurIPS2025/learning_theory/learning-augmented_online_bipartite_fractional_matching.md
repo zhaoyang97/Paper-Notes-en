@@ -2,9 +2,10 @@
 title: >-
   [Paper Note] Learning-Augmented Online Bipartite Fractional Matching
 description: >-
-  [NeurIPS 2025][online bipartite matching] This paper proposes two learning-augmented algorithms (LAB and PAW) for online bipartite fractional matching. Given a potentially inaccurate advice matching…
+  [NeurIPS 2025][Other][online bipartite matching] This paper proposes two learning-augmented algorithms (LAB and PAW) for online bipartite fractional matching. Given a potentially inaccurate advice matching…
 tags:
   - "NeurIPS 2025"
+  - "Other"
   - "online bipartite matching"
   - "learning-augmented algorithms"
   - "competitive ratio"
@@ -126,10 +127,10 @@ This paper builds on the learning-augmented algorithms framework (Lykouris & Vas
 
 ## Related Papers
 
-- [\[ICML 2026\] Parsimonious Learning-Augmented Online Metric Matching](../../ICML2026/others/parsimonious_learning-augmented_online_metric_matching.md)
+- [\[ICML 2026\] Parsimonious Learning-Augmented Online Metric Matching](../../ICML2026/learning_theory/parsimonious_learning-augmented_online_metric_matching.md)
 - [\[NeurIPS 2025\] Computable Universal Online Learning](computable_universal_online_learning.md)
-- [\[NeurIPS 2025\] Stable Matching with Ties: Approximation Ratios and Learning](stable_matching_with_ties_approximation_ratios_and_learning.md)
 - [\[NeurIPS 2025\] Learning-Augmented Streaming Algorithms for Correlation Clustering](learning-augmented_streaming_algorithms_for_correlation_clustering.md)
+- [\[NeurIPS 2025\] Prediction-Powered Semi-Supervised Learning with Online Power Tuning](prediction-powered_semi-supervised_learning_with_online_power_tuning.md)
 - [\[NeurIPS 2025\] Non-Clairvoyant Scheduling with Progress Bars](non-clairvoyant_scheduling_with_progress_bars.md)
 
 </div>

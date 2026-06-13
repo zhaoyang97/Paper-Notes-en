@@ -11,14 +11,14 @@ tags:
   - "Time-Series Forecasting"
   - "Alignment/RLHF"
 item_list:
-  - u: "a_frame_is_worth_one_token_efficient_generative_world_modeling_with_delta_tokens/"
-    t: "A Frame is Worth One Token: Efficient Generative World Modeling with Delta Tokens"
   - u: "competition-aware_cpc_forecasting_with_near-market_coverage/"
     t: "Competition-Aware CPC Forecasting with Near-Market Coverage"
   - u: "l2gtx_from_local_to_global_time_series_explanations/"
     t: "L2GTX: From Local to Global Time Series Explanations"
   - u: "pfgnet_a_fully_convolutional_frequency-guided_peripheral_gating_network_for_effi/"
     t: "PFGNet: A Fully Convolutional Frequency-Guided Peripheral Gating Network for Efficient Spatiotemporal Predictive Learning"
+  - u: "sattc_structure-aware_label-free_test-time_calibration_for_cross-subject_eeg-to-/"
+    t: "SATTC: Structure-Aware Label-Free Test-Time Calibration for Cross-Subject EEG-to-Image Retrieval"
   - u: "stable_spike_dual_consistency_optimization_via_bitwise_and_operations_for_spikin/"
     t: "Stable Spike: Dual Consistency Optimization via Bitwise AND Operations for Spiking Neural Networks"
   - u: "stcast_adaptive_boundary_alignment_for_global_and_regional_weather_forecasting/"
@@ -31,13 +31,9 @@ item_total: 6
 
 **📷 CVPR2026** · **6** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (33)](../../ICML2026/time_series/index.md) · [💬 ACL2026 (7)](../../ACL2026/time_series/index.md) · [🔬 ICLR2026 (36)](../../ICLR2026/time_series/index.md) · [🤖 AAAI2026 (36)](../../AAAI2026/time_series/index.md) · [🧠 NeurIPS2025 (56)](../../NeurIPS2025/time_series/index.md) · [📹 ICCV2025 (4)](../../ICCV2025/time_series/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (32)](../../ICML2026/time_series/index.md) · [💬 ACL2026 (7)](../../ACL2026/time_series/index.md) · [🔬 ICLR2026 (37)](../../ICLR2026/time_series/index.md) · [🤖 AAAI2026 (31)](../../AAAI2026/time_series/index.md) · [🧠 NeurIPS2025 (54)](../../NeurIPS2025/time_series/index.md) · [📹 ICCV2025 (4)](../../ICCV2025/time_series/index.md)
 
 🔥 **Top topics:** Time-Series Forecasting ×3
-
-**[A Frame is Worth One Token: Efficient Generative World Modeling with Delta Tokens](a_frame_is_worth_one_token_efficient_generative_world_modeling_with_delta_tokens.md)**
-
-:   This paper proposes DeltaTok, which compresses inter-frame VFM feature differences into a single delta token. Combined with Best-of-Many training, DeltaWorld efficiently generates diverse future predictions in a single forward pass. The model uses only 1/35 the parameters of Cosmos and 1/2000 the FLOPs, yet achieves superior performance on dense prediction tasks.
 
 **[Competition-Aware CPC Forecasting with Near-Market Coverage](competition-aware_cpc_forecasting_with_near-market_coverage.md)**
 
@@ -50,6 +46,10 @@ item_total: 6
 **[PFGNet: A Fully Convolutional Frequency-Guided Peripheral Gating Network for Efficient Spatiotemporal Predictive Learning](pfgnet_a_fully_convolutional_frequency-guided_peripheral_gating_network_for_effi.md)**
 
 :   This paper proposes PFGNet, a fully convolutional spatiotemporal prediction framework that dynamically modulates multi-scale large-kernel peripheral responses via pixel-wise frequency-guided gating (PFG) while applying learnable center inhibition, thereby simulating the biological center-surround bandpass filtering mechanism of the visual system. PFGNet achieves state-of-the-art or near state-of-the-art performance on four benchmarks—Moving MNIST, TaxiBJ, KTH, and Human3.6M—with remarkably few parameters and low computational cost.
+
+**[SATTC: Structure-Aware Label-Free Test-Time Calibration for Cross-Subject EEG-to-Image Retrieval](sattc_structure-aware_label-free_test-time_calibration_for_cross-subject_eeg-to-.md)**
+
+:   This paper proposes SATTC, a label-free test-time calibration head that operates directly on the similarity matrix over frozen EEG and image encoders. It combines a geometric expert (subject-adaptive whitening + adaptive CSLS) and a structural expert (mutual nearest neighbors + bidirectional top-k ranking + category popularity) via a product-of-experts fusion, significantly improving Top-1 accuracy and reducing the hubness effect in cross-subject EEG-to-image retrieval.
 
 **[Stable Spike: Dual Consistency Optimization via Bitwise AND Operations for Spiking Neural Networks](stable_spike_dual_consistency_optimization_via_bitwise_and_operations_for_spikin.md)**
 

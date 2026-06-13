@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Failure Prediction at Runtime for Generative Robot Policies
 description: >-
-  [NeurIPS 2025][Image Generation][Failure Prediction] This paper proposes FIPER, which combines observation-space OOD detection (RND) and action-space uncertainty quantification (ACE) to achieve early failure prediction f…
+  [NeurIPS 2025][Image Generation][Failure Prediction] This paper proposes FIPER, a framework for runtime failure prediction in generative robot policies (diffusion/flow matching). It jointly evaluates an observation-side…
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
   - "Failure Prediction"
-  - "Imitation Learning"
-  - "Diffusion Models"
-  - "Out-of-Distribution Detection"
+  - "Generative Policies"
+  - "RND"
+  - "Action Chunk Entropy"
   - "Conformal Prediction"
 date: 2026-05-08
 content_hash: 5cb97c69a5123d2a
@@ -169,135 +169,6 @@ tags:
   - Conformal Prediction
 ---
 
-# Failure Prediction at Runtime for Generative Robot Policies
-
-**Conference**: NeurIPS 2025
-**arXiv**: [2510.09459](https://arxiv.org/abs/2510.09459)  
-**Code**: [GitHub](https://github.com/utiasDSL/fiper)  
-**Area**: Image Generation / Robot Learning
-**Keywords**: Failure Prediction, Imitation Learning, Diffusion Models, Out-of-Distribution Detection, Conformal Prediction
-
-## TL;DR
-
-This paper proposes FIPER, which combines observation-space OOD detection (RND) and action-space uncertainty quantification (ACE) to achieve early failure prediction for generative robot policies at runtime without requiring any failure data.
-
-## Background & Motivation
-
-Generative imitation learning methods such as diffusion policy and flow matching enable robots to perform complex long-horizon tasks, but pose safety concerns during real-world deployment:
-
-**Distribution shift**: Unseen environments or accumulated action errors can lead to unpredictable behavior.
-
-**Limitations of prior work**:
-   - OOD detection methods based solely on observations produce numerous false positives for benign OOD states.
-   - VLM-based methods can only retrospectively detect failures (too late to intervene).
-   - Many methods rely on failure data collection, which is unsafe and impractical.
-   - The multimodal action distribution characteristic of generative policies is typically ignored.
-
-**Safety-critical need**: Early runtime failure prediction is essential in human–robot coexistence and safety-critical environments.
-
-## Method
-
-### Overall Architecture
-
-FIPER (Failure Prediction at Runtime) combines two complementary failure metrics, motivated by the insight that *failures are typically accompanied by both unfamiliar observations and ambiguous actions*:
-
-1. **Observation-side metric (RND-OE)**: Detects OOD conditions in the policy's observation embedding space.
-2. **Action-side metric (ACE)**: Quantifies the uncertainty of generated actions.
-3. **Joint decision**: A failure alarm is triggered only when both metrics simultaneously exceed their respective thresholds within a temporal window.
-
-### Key Designs
-
-**Random Network Distillation (RND-OE)**:
-- Applies RND within the policy's own observation embedding space rather than the raw observation space.
-- A student network is trained to replicate the output of a randomly initialized teacher network.
-- For in-distribution embeddings, the student closely matches the teacher; for OOD embeddings, large prediction errors emerge.
-- Operating in the embedding space rather than the raw pixel space improves robustness to irrelevant distribution shifts.
-
-**Action Chunk Entropy (ACE)**:
-- A novel uncertainty measure designed for the multimodal action distributions of generative policies.
-- Samples a batch of action chunks from the conditional action distribution.
-- Computes entropy scores in end-effector space.
-- Lightweight and effective at handling multimodal distributions by distinguishing benign multimodality from genuinely high uncertainty.
-
-**Conformal Prediction Calibration**:
-- Thresholds are calibrated using a small number of successful rollouts (50 in simulation, 10 in the real world).
-- Both scores are aggregated over a short temporal window before thresholding, providing statistically guaranteed prediction performance.
-
-### Loss & Training
-
-- The RND student network is trained with MSE loss to replicate teacher outputs.
-- No failure data or policy training data is required.
-- Calibration relies solely on successful rollouts without any labeling.
-
-## Key Experimental Results
-
-### Main Results
-
-FIPER is evaluated across 5 diverse environments (simulation + real world) using both diffusion and flow matching policies:
-
-**Failure prediction performance in simulation**:
-
-| Method | Accuracy | Early Prediction Time | False Positive Rate |
-|---|---|---|---|
-| OOD-only | Lower | — | High |
-| Action-only | Moderate | — | Moderate |
-| FIPER (RND-OE + ACE) | **Highest** | **Earliest** | **Lowest** |
-
-**Key comparison results**:
-- FIPER significantly outperforms observation-only and action-only baselines in distinguishing genuine failures from benign OOD situations the policy can generalize to.
-- Failure predictions are both earlier and more accurate than existing methods.
-
-### Ablation Study
-
-**Contribution of each component**:
-
-| Configuration | Result |
-|---|---|
-| RND-OE only | Detects OOD but produces many false positives (benign OOD also triggers) |
-| ACE only | Captures action uncertainty but misses some failures |
-| RND-OE + ACE | Complementary combination significantly reduces false positives while maintaining high detection rate |
-| Without temporal window aggregation | Unstable detection |
-| With temporal window aggregation | Improved prediction stability and accuracy |
-
-**Different policy types**: FIPER performs well on both diffusion policy and flow matching, validating framework generality.
-
-**Calibration data volume**: A small number of successful rollouts (50 in simulation, 10 in the real world) is sufficient for effective calibration.
-
-### Key Findings
-
-1. **Complementarity of observation and action signals**: Neither metric alone is sufficient for reliable failure prediction; their combination is essential.
-2. **Embedding space vs. raw space**: Applying RND in the policy's embedding space is more effective than in the raw observation space.
-3. **Necessity of multimodal handling**: Conventional entropy measures cannot correctly handle multimodal distributions; ACE specifically addresses this issue.
-4. **Generalization capability**: FIPER correctly identifies benign OOD states that the policy can successfully generalize to, avoiding unnecessary interventions.
-
-## Highlights & Insights
-
-1. **No failure data required**: From a safety perspective, this is a critically important practical advantage.
-2. **Two-stage complementary design**: The observation side checks "whether the input is anomalous" and the action side checks "whether the output is incoherent"—a dual-sided I/O approach.
-3. **Policy-specific design for generative models**: ACE accounts for the multimodal action distribution characteristic of diffusion/flow matching models.
-4. **Conformal prediction**: Provides statistical guarantees on prediction performance, enhancing the method's credibility.
-5. **Interpretability**: The framework can indicate whether a failure stems from an observation anomaly or action confusion, increasing diagnostic value.
-
-## Limitations & Future Work
-
-1. Coverage guarantees from conformal prediction rely on the data exchangeability assumption, which may not hold in non-stationary environments.
-2. The temporal window size must be manually selected and may require task-specific tuning.
-3. The framework currently only passively predicts failures without integrating active recovery strategies (e.g., requesting human intervention or switching policies).
-4. Detection latency may still occur in extreme unseen scenarios.
-
-## Related Work & Insights
-
-- Random Network Distillation (RND) was originally proposed for exploration rewards in reinforcement learning; this paper innovatively repurposes it for OOD detection.
-- Conformal prediction is increasingly popular in uncertainty quantification; this paper demonstrates its application to robot safety monitoring.
-- Compared to ensemble-based uncertainty methods, FIPER does not require training multiple policy copies, resulting in lower computational overhead.
-
-## Rating
-
-- **Novelty**: ⭐⭐⭐⭐ — The combination of observation-side and action-side dual detection is novel.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Five environments spanning simulation and the real world.
-- **Value**: ⭐⭐⭐⭐⭐ — No failure data required, simple calibration, lightweight computation.
-- **Writing Quality**: ⭐⭐⭐⭐ — Clear motivation, intuitive method.
-
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
@@ -307,7 +178,7 @@ FIPER is evaluated across 5 diverse environments (simulation + real world) using
 - [\[NeurIPS 2025\] Gradient Variance Reveals Failure Modes in Flow-Based Generative Models](gradient_variance_reveals_failure_modes_in_flow-based_generative_models.md)
 - [\[ICLR 2026\] Compose Your Policies! Improving Diffusion-based or Flow-based Robot Policies via Test-time Distribution-level Composition](../../ICLR2026/image_generation/compose_your_policies_improving_diffusion-based_or_flow-based_robot_policies_via.md)
 - [\[NeurIPS 2025\] Real-Time Execution of Action Chunking Flow Policies](real-time_execution_of_action_chunking_flow_policies.md)
-- [\[NeurIPS 2025\] Next Semantic Scale Prediction via Hierarchical Diffusion Language Models](next_semantic_scale_prediction_via_hierarchical_diffusion_language_models.md)
+- [\[NeurIPS 2025\] Toward a Unified Geometry Understanding: Riemannian Diffusion Framework for Graph Generation and Prediction](toward_a_unified_geometry_understanding_riemannian_diffusion_framework_for_graph.md)
 - [\[NeurIPS 2025\] Image Super-Resolution with Guarantees via Conformalized Generative Models](image_super-resolution_with_guarantees_via_conformalized_generative_models.md)
 
 </div>

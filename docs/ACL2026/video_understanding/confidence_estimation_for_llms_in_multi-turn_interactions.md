@@ -17,7 +17,7 @@ content_hash: d6329cc7b6dc96f8
 
 # Confidence Estimation for LLMs in Multi-turn Interactions
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2601.02179](https://arxiv.org/abs/2601.02179)  
 **Code**: GitHub mentioned in the paper (Link in original text)  
 **Area**: LLM Calibration / Dialogue / Confidence Estimation  

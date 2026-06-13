@@ -17,7 +17,7 @@ content_hash: 5763dc06bf599ca4
 
 # On the Limits of LLM Adaptability: Impact of Model-Internalized Priors on Annotation
 
-**Conference**: ICML 2026  
+**Conference**: ICML 2026 Oral Spotlight  
 **arXiv**: [2606.00467](https://arxiv.org/abs/2606.00467)  
 **Code**: TBD  
 **Area**: Social Computing / LLM Reliability  

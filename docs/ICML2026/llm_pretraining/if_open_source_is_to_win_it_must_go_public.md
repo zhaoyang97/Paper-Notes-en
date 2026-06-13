@@ -17,7 +17,7 @@ content_hash: 995bfdcee259a1e7
 
 # If open source is to win, it must go public
 
-**Conference**: ICML 2026  
+**Conference**: ICML 2026 Spotlight  
 **arXiv**: [2507.09296](https://arxiv.org/abs/2507.09296)  
 **Code**: None (Position Paper)  
 **Area**: Others / AI Governance & Open Source Ecosystem  

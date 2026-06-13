@@ -17,7 +17,7 @@ content_hash: e48ff87d5194390f
 
 # HiMo-CLIP: Modeling Semantic Hierarchy and Monotonicity in Vision-Language Alignment
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026 Oral  
 **arXiv**: [2511.06653](https://arxiv.org/abs/2511.06653)  
 **Code**: [https://github.com/UnicomAI/HiMo-CLIP](https://github.com/UnicomAI/HiMo-CLIP)  
 **Area**: Information Retrieval

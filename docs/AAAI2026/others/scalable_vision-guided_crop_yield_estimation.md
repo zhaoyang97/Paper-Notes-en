@@ -16,7 +16,7 @@ content_hash: fac4e5aa8b9d2b60
 
 # Scalable Vision-Guided Crop Yield Estimation
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026 Oral  
 **arXiv**: [2511.12999](https://arxiv.org/abs/2511.12999)  
 **Code**: [https://github.com/medhanieirgau/scalable-vision-guided-crop-yield-estimation](https://github.com/medhanieirgau/scalable-vision-guided-crop-yield-estimation)  
 **Area**: Agricultural AI / Computer Vision Applications

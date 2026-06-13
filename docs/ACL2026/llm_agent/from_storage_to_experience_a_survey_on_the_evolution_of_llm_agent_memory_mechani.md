@@ -18,7 +18,7 @@ content_hash: 3ac434f029521540
 
 # From Storage to Experience: A Survey on the Evolution of LLM Agent Memory Mechanisms
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2605.06716](https://arxiv.org/abs/2605.06716)  
 **Code**: https://github.com/FeishuLuo/Evolving-LLM-Agent-Memory-Survey  
 **Area**: LLM Agent / Memory Mechanism / Survey / Continual Learning  

@@ -17,7 +17,7 @@ content_hash: aaad2207cfb15063
 
 # Disambiguation-Centric Finetuning Makes Enterprise Tool-Calling LLMs More Realistic and Less Risky
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2507.03336](https://arxiv.org/abs/2507.03336)  
 **Code**: [HuggingFace](https://huggingface.co/SAP/diaforge-utc-r-0725)  
 **Area**: Dialogue Systems / LLM Agent  

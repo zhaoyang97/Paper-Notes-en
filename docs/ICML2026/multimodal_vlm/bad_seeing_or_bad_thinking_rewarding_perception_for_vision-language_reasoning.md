@@ -17,7 +17,7 @@ content_hash: fc2bb241585c9fec
 
 # Bad Seeing or Bad Thinking? Rewarding Perception for Vision-Language Reasoning
 
-**Conference**: ICML 2026  
+**Conference**: ICML 2026 Oral  
 **arXiv**: [2605.14054](https://arxiv.org/abs/2605.14054)  
 **Code**: To be open-sourced (authors promise release of data/code/models)  
 **Area**: Multimodal VLM / Vision-Language Reasoning / Reinforcement Learning  

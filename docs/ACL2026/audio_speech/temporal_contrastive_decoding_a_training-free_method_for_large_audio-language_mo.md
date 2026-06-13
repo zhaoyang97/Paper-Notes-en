@@ -17,7 +17,7 @@ content_hash: 9704c38abd79ec73
 
 # Temporal Contrastive Decoding: A Training-Free Method for Large Audio-Language Models
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.15383](https://arxiv.org/abs/2604.15383)  
 **Code**: None  
 **Area**: Audio & Speech  

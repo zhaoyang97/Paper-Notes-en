@@ -17,7 +17,7 @@ content_hash: efcbb13303fda52a
 
 # Adapt to Thrive! Adaptive Power-Mean Policy Optimization for Improved LLM Reasoning
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2605.04066](https://arxiv.org/abs/2605.04066)  
 **Code**: None currently public  
 **Area**: LLM Reasoning / Reinforcement Learning  

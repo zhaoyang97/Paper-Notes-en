@@ -17,7 +17,7 @@ content_hash: 69d3e34ae88a22d6
 
 # Efficient Test-Time Scaling via Temporal Reasoning Aggregation
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.17304](https://arxiv.org/abs/2604.17304)  
 **Code**: [https://github.com/qianfantianyuzhouzhou/TRACE](https://github.com/qianfantianyuzhouzhou/TRACE)  
 **Area**: LLM Inference Efficiency  

@@ -17,7 +17,7 @@ content_hash: 6f58a8194ed65b1b
 
 # CarO: Chain-of-Analogy Reasoning Optimization for Robust Content Moderation
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.10504](https://arxiv.org/abs/2604.10504)  
 **Code**: None  
 **Area**: Information Retrieval  

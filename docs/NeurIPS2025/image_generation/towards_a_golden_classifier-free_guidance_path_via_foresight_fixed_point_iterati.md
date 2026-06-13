@@ -17,7 +17,7 @@ content_hash: ce95a6d458bbc973
 
 # Towards a Golden Classifier-Free Guidance Path via Foresight Fixed Point Iterations
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2510.21512](https://arxiv.org/abs/2510.21512)  
 **Code**: [GitHub](https://github.com/Ka1b0/Foresight-Guidance)  
 **Area**: Diffusion Models / Image Generation

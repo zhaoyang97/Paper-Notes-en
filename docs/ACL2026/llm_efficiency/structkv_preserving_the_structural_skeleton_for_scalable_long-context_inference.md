@@ -17,7 +17,7 @@ content_hash: 05812ff89355403e
 
 # StructKV: Preserving the Structural Skeleton for Scalable Long-Context Inference
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.06746](https://arxiv.org/abs/2604.06746)  
 **Code**: None  
 **Area**: Model Efficiency / KV Cache Compression  

@@ -17,7 +17,7 @@ content_hash: 90a65feb129ea914
 
 # Mitigating Object Hallucination in LVLMs via Attention Imbalance Rectification
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026 Findings  
 **arXiv**: [2603.24058](https://arxiv.org/abs/2603.24058)  
 **Code**: None  
 **Area**: Hallucination Detection

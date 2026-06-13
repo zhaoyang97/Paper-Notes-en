@@ -19,7 +19,7 @@ content_hash: 960c4df1efa3c385
 
 # From Signal Degradation to Computation Collapse: Uncovering the Two Failure Modes of LLM Quantization
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.19884](https://arxiv.org/abs/2604.19884)  
 **Code**: None  
 **Area**: Model Quantization / Interpretability  

@@ -17,7 +17,7 @@ content_hash: f8b865d58e6251b3
 
 # Protein Design with Dynamic Protein Vocabulary
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2505.18966](https://arxiv.org/abs/2505.18966)  
 **Code**: [GitHub](https://github.com/sornkL/ProDVa)  
 **Area**: Medical Imaging

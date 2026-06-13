@@ -17,7 +17,7 @@ content_hash: d1a96a7d1f0cde19
 
 # Eliciting Medical Reasoning with Knowledge-enhanced Data Synthesis: A Semi-Supervised RL Approach
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.11547](https://arxiv.org/abs/2604.11547)  
 **Code**: [https://github.com/tdlhl/MedSSR](https://github.com/tdlhl/MedSSR)  
 **Area**: Medical Imaging  

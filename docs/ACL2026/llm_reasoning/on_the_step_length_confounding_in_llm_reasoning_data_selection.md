@@ -17,7 +17,7 @@ content_hash: cf42c53efd589f69
 
 # On the Step Length Confounding in LLM Reasoning Data Selection
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.06834](https://arxiv.org/abs/2604.06834)  
 **Code**: [GitHub](https://github.com/wangbing1416/ASLEC)  
 **Area**: Social Computing  

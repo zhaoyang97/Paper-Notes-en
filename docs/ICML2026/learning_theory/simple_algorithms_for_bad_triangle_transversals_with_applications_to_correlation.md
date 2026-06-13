@@ -17,7 +17,7 @@ content_hash: 6254d74ec97653e3
 
 # Simple Algorithms for Bad Triangle Transversals with Applications to Correlation Clustering
 
-**Conference**: ICML 2026  
+**Conference**: ICML 2026 Spotlight  
 **arXiv**: [2602.04463](https://arxiv.org/abs/2602.04463)  
 **Code**: None  
 **Area**: Algorithmic Theory / Approximation Algorithms / Graph Clustering  

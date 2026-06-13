@@ -17,7 +17,7 @@ content_hash: af9ad1970d296a39
 
 # Depth Adaptive Efficient Visual Autoregressive Modeling
 
-**Conference**: CVPR 2026  
+**Conference**: CVPR 2026 Findings  
 **arXiv**: [2604.17286](https://arxiv.org/abs/2604.17286)  
 **Code**: [https://github.com/STOVAGtz/DepthVAR](https://github.com/STOVAGtz/DepthVAR)  
 **Area**: Image Generation  

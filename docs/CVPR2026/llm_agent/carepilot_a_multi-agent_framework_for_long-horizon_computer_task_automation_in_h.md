@@ -17,7 +17,7 @@ content_hash: 58921e14e5e7ac0f
 
 # CarePilot: A Multi-Agent Framework for Long-Horizon Computer Task Automation in Healthcare
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026 Findings  
 **arXiv**: [2603.24157](https://arxiv.org/abs/2603.24157)  
 **Code**: Available (CarePilot project page)  
 **Area**: LLM Agent / Healthcare Automation

@@ -17,7 +17,7 @@ content_hash: 1921d56e98c94985
 
 # OmniDiagram: Advancing Unified Diagram Code Generation via Visual Interrogation Reward
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.05514](https://arxiv.org/abs/2604.05514)  
 **Code**: [GitHub](https://github.com/Haoyue-Yang/OmniDiagram)  
 **Area**: Code Intelligence / Multimodal Code Generation  

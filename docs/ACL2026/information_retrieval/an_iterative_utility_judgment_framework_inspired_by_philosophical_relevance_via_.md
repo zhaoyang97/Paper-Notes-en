@@ -17,7 +17,7 @@ content_hash: f9a8529e72ca5081
 
 # An Iterative Utility Judgment Framework Inspired by Philosophical Relevance via LLMs
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2406.11290](https://arxiv.org/abs/2406.11290)  
 **Code**: [GitHub](https://github.com/Trustworthy-Information-Access/ITEM)  
 **Area**: Information Retrieval / RAG  

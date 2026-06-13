@@ -17,7 +17,7 @@ content_hash: 95ad89be8ec2f637
 
 # AdaTooler-V: Adaptive Tool-Use for Images and Videos
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2512.16918](https://arxiv.org/abs/2512.16918)  
 **Code**: https://github.com/CYWang735/AdaTooler-V  
 **Area**: Multi-modal VLM / Tool-use / Reinforcement Learning  

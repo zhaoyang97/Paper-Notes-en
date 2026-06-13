@@ -17,7 +17,7 @@ content_hash: 4a00592716abd291
 
 # SegTune: Structured and Fine-Grained Control for Song Generation
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Best Paper Oral  
 **arXiv**: [2606.02638](https://arxiv.org/abs/2606.02638)  
 **Code**: To be confirmed  
 **Area**: audio_speech  

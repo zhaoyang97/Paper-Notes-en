@@ -17,7 +17,7 @@ content_hash: 8aab5c6f426824f0
 
 # BRIEF-Pro: Universal Context Compression with Short-to-Long Synthesis for Fast and Accurate Multi-Hop Reasoning
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2510.13799](https://arxiv.org/abs/2510.13799)  
 **Code**: https://github.com/JasonForJoy/BRIEF (Available)  
 **Area**: Information Retrieval / RAG / Context Compression  

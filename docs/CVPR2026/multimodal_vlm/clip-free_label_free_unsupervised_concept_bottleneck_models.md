@@ -18,7 +18,7 @@ content_hash: c623425ea363985c
 
 # CLIP-Free, Label-Free, Unsupervised Concept Bottleneck Models
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026 Findings  
 **arXiv**: [2503.10981](https://arxiv.org/abs/2503.10981)  
 **Code**: To be confirmed  
 **Area**: Multimodal VLM

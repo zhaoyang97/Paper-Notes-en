@@ -17,7 +17,7 @@ content_hash: 037945c92cf9e158
 
 # Controlling Thinking Speed in Reasoning Models
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2507.03704](https://arxiv.org/abs/2507.03704)  
 **Code**: Implemented based on vLLM  
 **Area**: LLM Reasoning Efficiency / Representation Engineering

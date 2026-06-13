@@ -17,7 +17,7 @@ content_hash: b898b6b3efd68efe
 
 # OMHBench: Benchmarking Balanced and Grounded Omni-Modal Multi-Hop Reasoning
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2508.16198](https://arxiv.org/abs/2508.16198)  
 **Code**: No public code (Dataset: https://huggingface.co/datasets/HYU-NLP/OMHBench)  
 **Area**: Multi-modal VLM  

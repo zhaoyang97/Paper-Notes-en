@@ -17,7 +17,7 @@ content_hash: 0397b4d54a1df4af
 
 # Feedback Adaptation for Retrieval-Augmented Generation
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.06647](https://arxiv.org/abs/2604.06647)  
 **Code**: None  
 **Area**: Information Retrieval / RAG  

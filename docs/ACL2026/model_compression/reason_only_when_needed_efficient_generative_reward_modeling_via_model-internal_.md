@@ -17,7 +17,7 @@ content_hash: 4f4c5ecfd014221c
 
 # Reason Only When Needed: Efficient Generative Reward Modeling via Model-Internal Uncertainty
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.10072](https://arxiv.org/abs/2604.10072)  
 **Code**: None  
 **Area**: Model Compression/LLM Efficiency  

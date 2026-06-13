@@ -16,7 +16,7 @@ content_hash: 8637377a71ac6348
 
 # ViT3: Unlocking Test-Time Training in Vision
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026 Oral  
 **arXiv**: [2512.01643](https://arxiv.org/abs/2512.01643)  
 **Code**: [GitHub](https://github.com/LeapLabTHU/ViTTT)  
 **Area**: Efficient Architecture / Visual Sequence Modeling

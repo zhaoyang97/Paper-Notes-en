@@ -17,7 +17,7 @@ content_hash: 93dd3f6a52420269
 
 # DiScoFormer: Plug-In Density and Score Estimation with Transformers
 
-**Conference**: ICML 2026  
+**Conference**: ICML 2026 Oral  
 **arXiv**: [2511.05924](https://arxiv.org/abs/2511.05924)  
 **Code**: To be confirmed  
 **Area**: Scientific Computing / Non-parametric Statistics / Density and Score Estimation  

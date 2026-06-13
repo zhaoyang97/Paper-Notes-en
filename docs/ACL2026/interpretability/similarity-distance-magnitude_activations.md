@@ -17,7 +17,7 @@ content_hash: 4618d3cb0fd07622
 
 # Similarity-Distance-Magnitude Activations
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2509.12760](https://arxiv.org/abs/2509.12760)  
 **Code**: None  
 **Area**: Interpretability / Uncertainty Estimation  

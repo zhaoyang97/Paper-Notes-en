@@ -17,7 +17,7 @@ content_hash: 942ab4d39fea4705
 
 # FutureSightDrive: Thinking Visually with Spatio-Temporal CoT for Autonomous Driving
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2505.17685](https://arxiv.org/abs/2505.17685)  
 **Code**: [GitHub](https://github.com/MIV-XJTU/FSDrive)  
 **Area**: Autonomous Driving / VLA

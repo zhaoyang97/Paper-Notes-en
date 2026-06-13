@@ -17,7 +17,7 @@ content_hash: 48245dea5f9b4830
 
 # QoQ-Med: Building Multimodal Clinical Foundation Models with Domain-Aware GRPO Training
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Oral  
 **arXiv**: [2506.00711](https://arxiv.org/abs/2506.00711)  
 **Code**: Weights and training pipeline released  
 **Area**: Medical Imaging

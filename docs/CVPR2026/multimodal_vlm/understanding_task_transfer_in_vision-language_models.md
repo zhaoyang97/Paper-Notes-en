@@ -17,7 +17,7 @@ content_hash: eca9ee9a0e4b8850
 
 # Understanding Task Transfer in Vision-Language Models
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026 Oral  
 **arXiv**: [2511.18787](https://arxiv.org/abs/2511.18787)  
 **Code**: [https://aka.ms/task-transfer-vlms](https://aka.ms/task-transfer-vlms) (project page)  
 **Area**: Multimodal VLM

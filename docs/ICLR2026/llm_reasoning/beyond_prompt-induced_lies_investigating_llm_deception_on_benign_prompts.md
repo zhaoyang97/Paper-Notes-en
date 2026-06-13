@@ -17,7 +17,7 @@ content_hash: 1d816be2ad442164
 
 # Beyond Prompt-Induced Lies: Investigating LLM Deception on Benign Prompts
 
-**Conference**: ICLR2026
+**Conference**: ICLR2026 Oral  
 **arXiv**: [2508.06361](https://arxiv.org/abs/2508.06361)  
 **Code**: [Xtra-Computing/LLM-Deception](https://github.com/Xtra-Computing/LLM-Deception)  
 **Area**: LLM Reasoning

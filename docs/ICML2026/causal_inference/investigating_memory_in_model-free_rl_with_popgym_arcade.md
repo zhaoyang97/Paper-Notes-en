@@ -17,7 +17,7 @@ content_hash: 104002f4a59bb54a
 
 # Investigating Memory in Model-Free RL with POPGym Arcade
 
-**Conference**: ICML2026  
+**Conference**: ICML2026 Spotlight  
 **arXiv**: [2503.01450](https://arxiv.org/abs/2503.01450)  
 **Code**: https://github.com/bolt-research/popgym-arcade  
 **Area**: Reinforcement Learning / POMDP / Memory Models  

@@ -17,7 +17,7 @@ content_hash: af8f2388a7441489
 
 # Spatiotemporal-Untrammelled Mixture of Experts for Multi-Person Motion Prediction
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026 Oral  
 **arXiv**: [2512.21707](https://arxiv.org/abs/2512.21707)  
 **Code**: [https://github.com/alanyz106/ST-MoE](https://github.com/alanyz106/ST-MoE)  
 **Area**: Human Understanding

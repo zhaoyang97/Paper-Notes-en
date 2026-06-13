@@ -17,7 +17,7 @@ content_hash: c13228efc3db96b9
 
 # From Static Inference to Dynamic Interaction: A Survey of Streaming Large Language Models
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2603.04592](https://arxiv.org/abs/2603.04592)  
 **Code**: [GitHub](https://github.com/EIT-NLP/Awesome-Streaming-LLMs)  
 **Area**: LLM Systems / Streaming Inference  

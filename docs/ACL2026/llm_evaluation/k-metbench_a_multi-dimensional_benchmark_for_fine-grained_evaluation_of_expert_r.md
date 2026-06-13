@@ -17,7 +17,7 @@ content_hash: b8dea6e949f520a3
 
 # K-MetBench: A Multi-Dimensional Benchmark for Fine-Grained Evaluation of Expert Reasoning, Locality, and Multimodality in Meteorology
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.24645](https://arxiv.org/abs/2604.24645)  
 **Code**: https://github.com/kmetbench/kmetbench-release  
 **Area**: Meteorology LLM Evaluation / Multimodal Benchmark / Cultural Localization  

@@ -17,7 +17,7 @@ content_hash: ad5f1124b9ff9ccb
 
 # BiCA: Effective Biomedical Dense Retrieval with Citation-Aware Hard Negatives
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026 Oral  
 **arXiv**: [2511.08029](https://arxiv.org/abs/2511.08029)  
 **Code**: [bisect-group/BiCA](https://github.com/bisect-group/BiCA)  
 **Area**: Medical Imaging

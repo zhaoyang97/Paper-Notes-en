@@ -17,7 +17,7 @@ content_hash: ed49f8df3e68e195
 
 # CORAL: Adaptive Retrieval Loop for Culturally-Aligned Multilingual RAG
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.25676](https://arxiv.org/abs/2604.25676)  
 **Code**: No link provided (Experimental details in appendix)  
 **Area**: Information Retrieval / Multilingual RAG / Agentic RAG  

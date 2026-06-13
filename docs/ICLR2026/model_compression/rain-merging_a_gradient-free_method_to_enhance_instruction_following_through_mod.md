@@ -17,7 +17,7 @@ content_hash: 27491d1dbd39d651
 
 # RAIN-Merging: A Gradient-Free Method to Enhance Instruction Following Through Model Merging
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026 Oral  
 **arXiv**: [2602.22538](https://arxiv.org/abs/2602.22538)  
 **Code**: [GitHub](https://github.com/K1nght/RAIN-Merging)  
 **Area**: LLM Reasoning

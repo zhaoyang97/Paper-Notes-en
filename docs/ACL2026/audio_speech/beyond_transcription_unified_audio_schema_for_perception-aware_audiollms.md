@@ -17,7 +17,7 @@ content_hash: 956d9aae3e7153df
 
 # Beyond Transcription: Unified Audio Schema for Perception-Aware AudioLLMs
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.12506](https://arxiv.org/abs/2604.12506)  
 **Code**: [GitHub](https://github.com/Tencent/Unified_Audio_Schema)  
 **Area**: Audio Processing  

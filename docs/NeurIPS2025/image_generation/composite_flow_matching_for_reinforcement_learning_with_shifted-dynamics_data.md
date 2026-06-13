@@ -18,7 +18,7 @@ content_hash: 82849957324fe281
 
 # Composite Flow Matching for Reinforcement Learning with Shifted-Dynamics Data
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2505.23062](https://arxiv.org/abs/2505.23062)  
 **Code**: [GitHub](https://github.com/Haichuan23/CompositeFlow)  
 **Area**: Image Generation

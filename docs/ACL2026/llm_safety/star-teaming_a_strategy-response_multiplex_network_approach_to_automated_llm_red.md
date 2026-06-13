@@ -16,7 +16,7 @@ content_hash: 7f859c5e268f12de
 
 # STAR-Teaming: A Strategy-Response Multiplex Network Approach to Automated LLM Red Teaming
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.18976](https://arxiv.org/abs/2604.18976)  
 **Code**: [https://github.com/selectstar-ai/STAR-Teaming-paper](https://github.com/selectstar-ai/STAR-Teaming-paper)  
 **Area**: LLM Alignment  

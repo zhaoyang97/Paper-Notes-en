@@ -17,7 +17,7 @@ content_hash: d20d81ef0ea358ad
 
 # RecycleLoRA: Rank-Revealing QR-Based Dual-LoRA Subspace Adaptation for Domain Generalized Semantic Segmentation
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026 Findings  
 **arXiv**: [2603.28142](https://arxiv.org/abs/2603.28142)  
 **Code**: [https://github.com/chanseul01/RecycleLoRA.git](https://github.com/chanseul01/RecycleLoRA.git)  
 **Area**: Semantic Segmentation / Domain Generalization / Parameter-Efficient Fine-Tuning

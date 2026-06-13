@@ -17,7 +17,7 @@ content_hash: 58ed0081bef68f00
 
 # PatientSim: A Persona-Driven Simulator for Realistic Doctor-Patient Interactions
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2505.17818](https://arxiv.org/abs/2505.17818)  
 **Authors**: Daeun Kyung, Hyunseung Chung, Seongsu Bae, Jiho Kim (KAIST), Jae Ho Sohn (UCSF), Taerim Kim (Samsung Medical Center), Soo Kyung Kim (Ewha Womans University), Edward Choi (KAIST)
 **Code**: [GitHub](https://github.com/dek924/PatientSim)  

@@ -17,7 +17,7 @@ content_hash: 3bf4e9340270bf64
 
 # Causality Meets Locality: Provably Generalizable and Scalable Policy Learning for Networked Systems
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2510.21427](https://arxiv.org/abs/2510.21427)  
 **Code**: To be confirmed  
 **Area**: Autonomous Driving

@@ -17,7 +17,7 @@ content_hash: 3f76353398ea8017
 
 # Evidential Transformation Network: Turning Pretrained Models into Evidential Models for Post-hoc Uncertainty Estimation
 
-**Conference**: CVPR 2026  
+**Conference**: CVPR 2026 Highlight  
 **arXiv**: [2604.08627](https://arxiv.org/abs/2604.08627)  
 **Code**: [GitHub](https://github.com/cyc9805/Evidential-Transformation-Network)  
 **Area**: LLM Pretraining  

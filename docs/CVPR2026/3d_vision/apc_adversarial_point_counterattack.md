@@ -17,7 +17,7 @@ content_hash: b30dd946d593bb93
 
 # APC: Transferable and Efficient Adversarial Point Counterattack for Robust 3D Point Cloud Recognition
 
-**Conference**: CVPR 2026  
+**Conference**: CVPR 2026 Findings  
 **arXiv**: [2604.15708](https://arxiv.org/abs/2604.15708)  
 **Code**: [https://github.com/gyjung975/APC](https://github.com/gyjung975/APC)  
 **Area**: 3D Vision  

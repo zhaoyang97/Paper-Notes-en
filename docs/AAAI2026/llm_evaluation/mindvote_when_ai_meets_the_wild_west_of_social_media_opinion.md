@@ -14,7 +14,7 @@ content_hash: 32323f13cc9dac38
 
 # MindVote: When AI Meets the Wild West of Social Media Opinion
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026 Oral  
 **arXiv**: [2505.14422](https://arxiv.org/abs/2505.14422)  
 **Code**: Available  
 **Area**: LLM Evaluation

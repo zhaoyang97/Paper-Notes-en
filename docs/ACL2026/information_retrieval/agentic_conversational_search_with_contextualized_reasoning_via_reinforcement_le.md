@@ -17,7 +17,7 @@ content_hash: 1bb3b0bfaa796717
 
 # Agentic Conversational Search with Contextualized Reasoning via Reinforcement Learning
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2601.13115](https://arxiv.org/abs/2601.13115)  
 **Code**: None  
 **Area**: Conversational Search / LLM Agent  

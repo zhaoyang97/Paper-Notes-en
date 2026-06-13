@@ -17,7 +17,7 @@ content_hash: a0d29ae98968e2b0
 
 # ExaGPT: Example-Based Machine-Generated Text Detection for Human Interpretability
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2502.11336](https://arxiv.org/abs/2502.11336)  
 **Code**: https://github.com/ryuryukke/ExaGPT  
 **Area**: AIGC Detection / Interpretable Machine Learning / Retrieval-Augmented  

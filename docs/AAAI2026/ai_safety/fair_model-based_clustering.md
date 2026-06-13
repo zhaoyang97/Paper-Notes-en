@@ -17,7 +17,7 @@ content_hash: baee506651529a28
 
 # Fair Model-Based Clustering
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026 Oral  
 **arXiv**: [2602.21509](https://arxiv.org/abs/2602.21509)  
 **Code**: None  
 **Area**: AI Safety / Fairness

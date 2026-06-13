@@ -17,7 +17,7 @@ content_hash: 65352c49b6c8f82f
 
 # NG-GS: NeRF-Guided 3D Gaussian Splatting Segmentation
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026 Highlight  
 **arXiv**: [2604.14706](https://arxiv.org/abs/2604.14706)  
 **Code**: [github.com/BJTU-KD3D/NG-GS](https://github.com/BJTU-KD3D/NG-GS)  
 **Area**: 3D Vision

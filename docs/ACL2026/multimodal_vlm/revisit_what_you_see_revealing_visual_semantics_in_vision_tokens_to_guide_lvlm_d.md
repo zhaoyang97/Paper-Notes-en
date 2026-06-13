@@ -17,7 +17,7 @@ content_hash: f3995a0ee291aa65
 
 # Revisit What You See: Revealing Visual Semantics in Vision Tokens to Guide LVLM Decoding
 
-**Conference**: ACL2026  
+**Conference**: ACL2026 Oral  
 **arXiv**: [2506.09522](https://arxiv.org/abs/2506.09522)  
 **Code**: https://github.com/bscho333/ReVisiT  
 **Area**: Multimodal VLM  

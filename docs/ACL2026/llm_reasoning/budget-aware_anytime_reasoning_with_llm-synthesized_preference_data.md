@@ -17,7 +17,7 @@ content_hash: e770306aa07e19e9
 
 # Budget-Aware Anytime Reasoning with LLM-Synthesized Preference Data
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2601.11038](https://arxiv.org/abs/2601.11038)  
 **Code**: None  
 **Area**: LLM Reasoning  

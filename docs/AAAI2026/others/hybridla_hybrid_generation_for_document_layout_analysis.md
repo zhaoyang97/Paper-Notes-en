@@ -16,7 +16,7 @@ content_hash: 4bafa26a1d7984e9
 
 # HybriDLA: Hybrid Generation for Document Layout Analysis
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026 Oral  
 **arXiv**: [2511.19919](https://arxiv.org/abs/2511.19919)  
 **Code**: [GitHub](https://yufanchen96.github.io/projects/HybriDLA)  
 **Area**: Document Analysis / Object Detection

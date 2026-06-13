@@ -17,7 +17,7 @@ content_hash: 6c5e68db7f738993
 
 # UCS: Estimating Unseen Coverage for Improved In-Context Learning
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.12015](https://arxiv.org/abs/2604.12015)  
 **Code**: [https://github.com/Raina-Xin/UCS](https://github.com/Raina-Xin/UCS)  
 **Area**: In-Context Learning  

@@ -17,7 +17,7 @@ content_hash: e5ef33c95011e492
 
 # SAM-NER: Semantic Archetype Mediation for Zero-Shot Named Entity Recognition
 
-**Conference**: ACL2026  
+**Conference**: ACL2026 Findings  
 **arXiv**: [2605.03706](https://arxiv.org/abs/2605.03706)  
 **Code**: https://github.com/DMIRLAB-Group/SAM-NER  
 **Area**: Named Entity Recognition / Zero-Shot Information Extraction / LLM NLP  

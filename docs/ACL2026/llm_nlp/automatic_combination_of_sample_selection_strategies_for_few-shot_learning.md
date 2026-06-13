@@ -17,7 +17,7 @@ content_hash: 2333a49433903b0b
 
 # Automatic Combination of Sample Selection Strategies for Few-Shot Learning
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2402.03038](https://arxiv.org/abs/2402.03038)  
 **Code**: [https://github.com/kinit-sk/ACSESS](https://github.com/kinit-sk/ACSESS)  
 **Area**: LLM/NLP  

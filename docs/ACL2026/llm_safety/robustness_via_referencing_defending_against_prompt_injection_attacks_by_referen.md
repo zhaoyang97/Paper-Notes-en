@@ -17,7 +17,7 @@ content_hash: 70a92406842b725b
 
 # Robustness via Referencing: Defending against Prompt Injection Attacks by Referencing the Executed Instruction
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2504.20472](https://arxiv.org/abs/2504.20472)  
 **Code**: [https://github.com/LukeChen-go/robust-via-ref](https://github.com/LukeChen-go/robust-via-ref)  
 **Area**: Audio and Speech  

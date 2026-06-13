@@ -17,7 +17,7 @@ content_hash: 3420ab979f4124a9
 
 # STRIDE-QA: Visual Question Answering Dataset for Spatiotemporal Reasoning in Urban Driving Scenes
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026 Oral  
 **arXiv**: [2508.10427](https://arxiv.org/abs/2508.10427)  
 **Code**: [turingmotors/stride-qa](https://turingmotors.github.io/stride-qa/)  
 **Area**: Autonomous Driving / Visual Question Answering / Spatiotemporal Reasoning

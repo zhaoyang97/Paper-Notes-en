@@ -17,7 +17,7 @@ content_hash: 0bb37456bade8b31
 
 # Alignment Tuning for Large Language Models: A Data-Centric Lens on Alignment Data Pipelines
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2605.26442](https://arxiv.org/abs/2605.26442)  
 **Code**: No public code / Not applicable (Review paper)  
 **Area**: LLM Alignment / Alignment Data Pipelines  

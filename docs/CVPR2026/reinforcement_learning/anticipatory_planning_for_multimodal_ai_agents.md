@@ -18,7 +18,7 @@ content_hash: c4e945121ce1a9f2
 
 # Anticipatory Planning for Multimodal AI Agents
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026 Findings  
 **arXiv**: [2603.16777](https://arxiv.org/abs/2603.16777)  
 **Code**: Not released  
 **Area**: Reinforcement Learning

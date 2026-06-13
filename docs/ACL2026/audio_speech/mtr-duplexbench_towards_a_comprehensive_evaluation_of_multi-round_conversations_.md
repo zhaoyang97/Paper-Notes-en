@@ -17,7 +17,7 @@ content_hash: dfc4c15a494a0754
 
 # MTR-DuplexBench: Towards a Comprehensive Evaluation of Multi-Round Conversations for Full-Duplex Speech Language Models
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2511.10262](https://arxiv.org/abs/2511.10262)  
 **Code**: [https://github.com/ZhangHe0918/MTR-DuplexBench](https://github.com/ZhangHe0918/MTR-DuplexBench)  
 **Area**: Speech Language Models / Evaluation Benchmarks  

@@ -17,7 +17,7 @@ content_hash: 61dfc80f6da1cfb0
 
 # Generative Floor Plan Design with LLMs via Reinforcement Learning with Verifiable Rewards
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2605.14117](https://arxiv.org/abs/2605.14117)  
 **Code**: <https://github.com/ludolara/floor-plan-rlvr>  
 **Area**: LLM Generation / RLVR / Architectural Design  

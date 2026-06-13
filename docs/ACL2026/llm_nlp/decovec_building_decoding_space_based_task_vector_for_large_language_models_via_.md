@@ -17,7 +17,7 @@ content_hash: 8479b8d25b66db73
 
 # DeCoVec: Building Decoding Space based Task Vector for Large Language Models via In-Context Learning
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.11129](https://arxiv.org/abs/2604.11129)  
 **Code**: [GitHub](https://github.com/szu-tera/DeCoVec)  
 **Area**: Robotics  

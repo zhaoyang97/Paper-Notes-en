@@ -17,7 +17,7 @@ content_hash: 4c57f5f1d263a279
 
 # HSUGA: LLM-Enhanced Recommendation with Hierarchical Semantic Understanding and Group-Aware Alignment
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2605.11662](https://arxiv.org/abs/2605.11662)  
 **Code**: HSUGA (GitHub, name provided but link not given in the original PDF)  
 **Area**: Recommender Systems / LLM-Enhanced Sequential Recommendation / Long-tail Users  

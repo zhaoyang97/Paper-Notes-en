@@ -17,7 +17,7 @@ content_hash: 5feb4c060126d531
 
 # GeoFusion-CAD: Structure-Aware Diffusion with Geometric State Space for Parametric 3D Design
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026 Findings  
 **arXiv**: [2603.21978](https://arxiv.org/abs/2603.21978)  
 **Code**: [https://github.com/](https://github.com/) (to be released)  
 **Area**: Model Compression

@@ -17,7 +17,7 @@ content_hash: b0bdf8e6de1f5a57
 
 # The World Is Bigger! A Computationally-Embedded Perspective on the Big World Hypothesis
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2512.23419](https://arxiv.org/abs/2512.23419)  
 **Code**: [GitHub](https://github.com/AlexLewandowski/bigger-world-interactivity)  
 **Area**: Reinforcement Learning

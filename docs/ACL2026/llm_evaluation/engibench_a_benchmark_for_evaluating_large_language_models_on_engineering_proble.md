@@ -17,7 +17,7 @@ content_hash: a69d2160ce9dfefc
 
 # EngiBench: A Benchmark for Evaluating Large Language Models on Engineering Problem Solving
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2509.17677](https://arxiv.org/abs/2509.17677)  
 **Code**: https://github.com/AI4Engi/EngiBench  
 **Area**: LLM Evaluation / Engineering Problems / Reasoning Benchmark  

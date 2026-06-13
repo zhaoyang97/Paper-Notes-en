@@ -17,7 +17,7 @@ content_hash: 9fdc5701736d2323
 
 # Privacy-Aware Video Anomaly Detection through Orthogonal Subspace Projection
 
-**Conference**: ICML 2026  
+**Conference**: ICML 2026 Spotlight  
 **arXiv**: [2605.08651](https://arxiv.org/abs/2605.08651)  
 **Code**: Not explicitly disclosed in the paper  
 **Area**: Human Understanding / Video Anomaly Detection / Privacy-Preserving Representation Learning  

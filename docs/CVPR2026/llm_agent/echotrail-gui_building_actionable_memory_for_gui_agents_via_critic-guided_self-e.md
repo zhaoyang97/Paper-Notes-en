@@ -17,7 +17,7 @@ content_hash: 0f5ecb247fb16aac
 
 # EchoTrail-GUI: Building Actionable Memory for GUI Agents via Critic-Guided Self-Exploration
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026 Findings  
 **arXiv**: [2512.19396](https://arxiv.org/abs/2512.19396)  
 **Code**: Available  
 **Area**: LLM Agent / GUI Automation

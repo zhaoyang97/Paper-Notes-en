@@ -17,7 +17,7 @@ content_hash: c137fc7f46197394
 
 # AutoPKG: An Automated Framework for Dynamic E-commerce Product-Attribute Knowledge Graph Construction
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.16950](https://arxiv.org/abs/2604.16950)  
 **Code**: [GitHub](https://github.com/Product-Understanding-Lazada-Alibaba/AutoPKG)  
 **Area**: Knowledge Graph  

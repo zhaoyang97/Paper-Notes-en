@@ -15,7 +15,7 @@ content_hash: 51948b0207319405
 
 # Teaching Language Models to Forecast Research Success Through Comparative Idea Evaluation
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2605.21491](https://arxiv.org/abs/2605.21491)  
 **Code**: To be released  
 **Area**: LLM Evaluation / LLM Reasoning  

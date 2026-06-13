@@ -17,7 +17,7 @@ content_hash: c33432ca47107301
 
 # Beyond Prompt: Fine-grained Simulation of Cognitively Impaired Standardized Patients via Stochastic Steering
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.12210](https://arxiv.org/abs/2604.12210)  
 **Code**: None  
 **Area**: Medical Imaging  

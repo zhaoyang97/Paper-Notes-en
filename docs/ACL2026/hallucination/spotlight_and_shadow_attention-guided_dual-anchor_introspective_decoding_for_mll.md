@@ -17,7 +17,7 @@ content_hash: 1af533be326ea8fe
 
 # Spotlight and Shadow: Attention-Guided Dual-Anchor Introspective Decoding for MLLM Hallucination Mitigation
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.10071](https://arxiv.org/abs/2604.10071)  
 **Code**: None  
 **Area**: Hallucination Detection  

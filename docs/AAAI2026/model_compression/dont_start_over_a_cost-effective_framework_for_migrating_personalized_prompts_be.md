@@ -17,7 +17,7 @@ content_hash: fbd91982f32e6960
 
 # Don't Start Over: A Cost-Effective Framework for Migrating Personalized Prompts Between LLMs
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026 Oral  
 **arXiv**: [2601.12034](https://arxiv.org/abs/2601.12034)  
 **Code**: [github](https://github.com/Kimagure7/Dont-Start-Over)  
 **Area**: Model Compression

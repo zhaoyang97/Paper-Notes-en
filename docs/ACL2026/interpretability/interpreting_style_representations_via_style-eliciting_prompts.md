@@ -17,7 +17,7 @@ content_hash: e06ec1be264b61a3
 
 # Interpreting Style Representations via Style-Eliciting Prompts
 
-**Conference**: ACL2026  
+**Conference**: ACL2026 Findings  
 **arXiv**: [2606.05716](https://arxiv.org/abs/2606.05716)  
 **Code**: https://github.com/junghwanjkim/style-decoding  
 **Area**: Interpretability / Style Control  

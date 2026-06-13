@@ -17,7 +17,7 @@ content_hash: d56bee8766e4ebe3
 
 # Look Twice before You Leap: A Rational Framework for Localized Adversarial Anonymization
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2512.06713](https://arxiv.org/abs/2512.06713)  
 **Code**: [GitHub](https://github.com/SowingG2333/RLAA)  
 **Area**: AI Safety / Privacy Protection  

@@ -16,7 +16,7 @@ content_hash: 8c73b33911cc4ed1
 
 # TabStruct: Measuring Structural Fidelity of Tabular Data
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026 Oral  
 **arXiv**: [2509.11950](https://arxiv.org/abs/2509.11950)  
 **Code**: [https://github.com/SilenceX12138/TabStruct](https://github.com/SilenceX12138/TabStruct)  
 **Area**: Data Generation / Tabular Data / Causal Structure

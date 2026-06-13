@@ -17,7 +17,7 @@ content_hash: aa374f5345239594
 
 # Rethinking LLM Ensembling from the Perspective of Mixture Models
 
-**Conference**: ICML 2026  
+**Conference**: ICML 2026 Spotlight  
 **arXiv**: [2605.00419](https://arxiv.org/abs/2605.00419)  
 **Code**: https://github.com/jialefu/Mixture-model-like-Ensemble (Available)  
 **Area**: LLM Efficiency / Decoding and Ensembling  

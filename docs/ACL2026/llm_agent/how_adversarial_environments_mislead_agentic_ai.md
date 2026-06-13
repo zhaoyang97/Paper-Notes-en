@@ -17,7 +17,7 @@ content_hash: a8e47ff9d276d93f
 
 # How Adversarial Environments Mislead Agentic AI
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.18874](https://arxiv.org/abs/2604.18874)  
 **Code**: [GitHub](https://github.com/zhonghaozhan/Potemkin)  
 **Area**: AI Safety / Agent Robustness  

@@ -18,7 +18,7 @@ content_hash: e020b57ec4e00970
 
 # CoRe: Benchmarking LLMs' Code Reasoning Capabilities through Static Analysis Tasks
 
-**Conference**: NeurIPS 2025  
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2507.05269](https://arxiv.org/abs/2507.05269)  
 **Code**: [corebench.github.io](https://corebench.github.io/) (Apache-2.0)  
 **Area**: Code Intelligence  

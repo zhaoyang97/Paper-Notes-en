@@ -17,7 +17,7 @@ content_hash: 74c347db8ebb2598
 
 # Reasoning-Based Refinement of Unsupervised Text Clusters with LLMs
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.07562](https://arxiv.org/abs/2604.07562)  
 **Code**: [GitHub](https://github.com/tunazislam/reasoning-based-refinement-llms-vegan)  
 **Area**: Text Clustering / Unsupervised Learning  

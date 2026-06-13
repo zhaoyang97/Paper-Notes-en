@@ -17,7 +17,7 @@ content_hash: dce072412f49e6a4
 
 # Interpretable Reward Model via Sparse Autoencoder
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026 Oral  
 **arXiv**: [2508.08746](https://arxiv.org/abs/2508.08746)  
 **Code**: [https://github.com/schrieffer-z/sarm](https://github.com/schrieffer-z/sarm)  
 **Area**: Recommender Systems / LLM Alignment

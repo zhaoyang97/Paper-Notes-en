@@ -17,7 +17,7 @@ content_hash: bbb6e6aa3c07446e
 
 # Semi-Supervised Diseased Detection from Speech Dialogues with Multi-Level Data Modeling
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2601.04744](https://arxiv.org/abs/2601.04744)  
 **Code**: [GitHub](https://github.com/fispresent/semi_pathological)  
 **Area**: Medical Imaging  

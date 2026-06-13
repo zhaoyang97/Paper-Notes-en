@@ -17,7 +17,7 @@ content_hash: 10ccaa8f3829c1fc
 
 # Rethinking Parameter Sharing for LLM Fine-Tuning with Multiple LoRAs
 
-**Conference**: ACL2026  
+**Conference**: ACL2026 Findings  
 **arXiv**: [2509.25414](https://arxiv.org/abs/2509.25414)  
 **Code**: https://github.com/OptMN-Lab/ALoRA  
 **Area**: Model Compression / Parameter-Efficient Fine-Tuning / Federated Fine-Tuning  

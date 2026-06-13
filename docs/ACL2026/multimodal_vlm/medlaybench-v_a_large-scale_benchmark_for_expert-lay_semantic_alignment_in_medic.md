@@ -17,7 +17,7 @@ content_hash: 0b82e6f83eca5a67
 
 # MedLayBench-V: A Large-Scale Benchmark for Expert-Lay Semantic Alignment in Medical Vision Language Models
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Oral Findings  
 **arXiv**: [2604.05738](https://arxiv.org/abs/2604.05738)  
 **Code**: [GitHub](https://github.com/) (Available via Project Page)  
 **Area**: Multimodal VLM / Medical NLP  

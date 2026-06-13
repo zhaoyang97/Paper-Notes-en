@@ -17,7 +17,7 @@ content_hash: d3ca07290c7f0919
 
 # Cross-Modal Unlearning via Influential Neuron Path Editing in Multimodal Large Language Models
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026 Oral  
 **arXiv**: [2511.06793](https://arxiv.org/abs/2511.06793)  
 **Code**: [https://github.com/PreckLi/MIP-Editor](https://github.com/PreckLi/MIP-Editor)  
 **Area**: AI Safety / Multimodal VLM

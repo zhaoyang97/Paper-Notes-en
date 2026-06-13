@@ -17,7 +17,7 @@ content_hash: 2d4a55400623f13d
 
 # Stress-Testing Emotional Support Models: Moving from Homogeneous to Diverse Help Seekers
 
-**Conference**: ACL2026  
+**Conference**: ACL2026 Findings  
 **arXiv**: [2601.07698](https://arxiv.org/abs/2601.07698)  
 **Code**: None  
 **Area**: Emotional Support Conversation / Dialogue Evaluation / User Simulation  

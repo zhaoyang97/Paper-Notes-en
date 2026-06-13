@@ -17,7 +17,7 @@ content_hash: d6f486b60cd6a602
 
 # Polaris: A Gödel Agent Framework for Small Language Models through Experience-Abstracted Policy Repair
 
-**Conference**: ACL2026  
+**Conference**: ACL2026 Findings  
 **arXiv**: [2603.23129](https://arxiv.org/abs/2603.23129)  
 **Code**: No public repository address provided in the paper cache  
 **Area**: llm_agent  

@@ -16,7 +16,7 @@ content_hash: 2cb40df4e4473032
 
 # Learning (Approximately) Equivariant Networks via Constrained Optimization
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Oral  
 **arXiv**: [2505.13631](https://arxiv.org/abs/2505.13631)  
 **Code**: None  
 **Area**: Machine Learning Theory / Equivariant Neural Networks

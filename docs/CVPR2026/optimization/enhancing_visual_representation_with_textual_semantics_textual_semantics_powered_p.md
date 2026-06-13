@@ -17,7 +17,7 @@ content_hash: 67b72c017067c210
 
 # Enhancing Visual Representation with Textual Semantics: Textual Semantics-Powered Prototypes for Heterogeneous Federated Learning
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026 Highlight  
 **arXiv**: [2503.13543](https://arxiv.org/abs/2503.13543)  
 **Code**: [GitHub](https://github.com/XinghaoWu/FedTSP)  
 **Area**: Optimization

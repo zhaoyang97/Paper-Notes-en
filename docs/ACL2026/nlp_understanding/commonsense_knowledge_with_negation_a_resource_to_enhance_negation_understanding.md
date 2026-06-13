@@ -17,7 +17,7 @@ content_hash: 914aa07d01cba140
 
 # Commonsense Knowledge with Negation: A Resource to Enhance Negation Understanding
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.19921](https://arxiv.org/abs/2604.19921)  
 **Code**: [https://github.com/wang-zijie/commonsense_with_negation](https://github.com/wang-zijie/commonsense_with_negation)  
 **Area**: LLM Pretraining  

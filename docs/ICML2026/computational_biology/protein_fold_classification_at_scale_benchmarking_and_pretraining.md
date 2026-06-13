@@ -17,7 +17,7 @@ content_hash: 452f85c605c90bea
 
 # Protein Fold Classification at Scale: Benchmarking and Pretraining
 
-**Conference**: ICML 2026  
+**Conference**: ICML 2026 Spotlight  
 **arXiv**: [2605.18552](https://arxiv.org/abs/2605.18552)  
 **Code**: https://github.com/BorgwardtLab/TEDBench  
 **Area**: Scientific Computing / Protein Structure Representation Learning  

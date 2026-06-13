@@ -17,7 +17,7 @@ content_hash: c411cb1e5f7f7cc8
 
 # From Orbit to Ground: Generative City Photogrammetry from Extreme Off-Nadir Satellite Images
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026 Findings  
 **arXiv**: [2512.07527](https://arxiv.org/abs/2512.07527)  
 **Code**: [Project Page](https://pku-vcl-geometry.github.io/Orbit2Ground/)  
 **Area**: 3D Vision

@@ -17,7 +17,7 @@ content_hash: 60e979d95a151d6a
 
 # RepoShapley: Shapley-Enhanced Context Filtering for Repository-Level Code Completion
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2601.03378](https://arxiv.org/abs/2601.03378)  
 **Code**: [github](https://github.com/yuhuo03/RepoShapley)  
 **Area**: Information Retrieval / Code Completion  

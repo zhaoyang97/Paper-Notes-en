@@ -18,7 +18,7 @@ content_hash: 1d09bd20d9d247ce
 
 # MASPOB: Multi-Agent Prompt Optimization via GNN Surrogate + LinUCB + Coordinate Ascent
 
-**Conference**: ICML 2026  
+**Conference**: ICML 2026 Spotlight  
 **arXiv**: [2603.02630](https://arxiv.org/abs/2603.02630)  
 **Code**: https://github.com/HZ1008/MASPOB  
 **Area**: Multi-Agent / Prompt Optimization / Bayesian Optimization  

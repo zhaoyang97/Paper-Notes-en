@@ -17,7 +17,7 @@ content_hash: 2b91d5d19df4ab4e
 
 # Content Fuzzing for Escaping Information Cocoons on Social Media
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.05461](https://arxiv.org/abs/2604.05461)  
 **Code**: None  
 **Area**: Social Computing / Adversarial Learning  

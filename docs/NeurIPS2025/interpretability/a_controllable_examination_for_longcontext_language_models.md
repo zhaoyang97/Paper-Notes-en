@@ -17,7 +17,7 @@ content_hash: 41eb7335989a3ef3
 
 # A Controllable Examination for Long-Context Language Models
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2506.02921](https://arxiv.org/abs/2506.02921)  
 **Code**: No public code  
 **Area**: Audio & Speech

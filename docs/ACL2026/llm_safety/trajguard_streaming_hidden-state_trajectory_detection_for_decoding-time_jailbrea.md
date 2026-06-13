@@ -17,7 +17,7 @@ content_hash: ac02cf4a8360f229
 
 # TrajGuard: Streaming Hidden-state Trajectory Detection for Decoding-time Jailbreak Defense
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.07727](https://arxiv.org/abs/2604.07727)  
 **Code**: None  
 **Area**: LLM Alignment / AI Safety  

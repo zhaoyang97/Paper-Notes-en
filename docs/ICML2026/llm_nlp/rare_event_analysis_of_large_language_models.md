@@ -17,7 +17,7 @@ content_hash: 94b01fe95015f89d
 
 # Rare Event Analysis of Large Language Models
 
-**Conference**: ICML2026  
+**Conference**: ICML2026 Oral Spotlight  
 **arXiv**: [2602.06791](https://arxiv.org/abs/2602.06791)  
 **Code**: Yes (minimal implementation provided in paper appendix)  
 **Area**: LLM Analysis / Rare Event Sampling / Statistical Physics Methods  

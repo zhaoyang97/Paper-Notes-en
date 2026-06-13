@@ -17,7 +17,7 @@ content_hash: f6f8e5f1283895c1
 
 # Enhancing Factuality through Consensus and Consistency in Summarization Using Minimum Bayes Risk Decoding
 
-**Conference**: ACL2026  
+**Conference**: ACL2026 Findings  
 **arXiv**: [2605.29336](https://arxiv.org/abs/2605.29336)  
 **Code**: https://github.com/naist-nlp/ConSUM  
 **Area**: Abstractive Summarization / Factual Consistency / Reranking  

@@ -17,7 +17,7 @@ content_hash: cb31968a2a87c340
 
 # Extracting Events Like Code: A Multi-Agent Programming Framework for Zero-Shot Event Extraction
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026 Oral  
 **arXiv**: [2511.13118](https://arxiv.org/abs/2511.13118)  
 **Code**: [https://github.com/UESTC-GQJ/Agent-Event-Coder](https://github.com/UESTC-GQJ/Agent-Event-Coder)  
 **Area**: Code Intelligence

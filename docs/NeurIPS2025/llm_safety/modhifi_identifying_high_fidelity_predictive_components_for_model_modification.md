@@ -18,7 +18,7 @@ content_hash: e00b2ea930f6e2c7
 
 # ModHiFi: Identifying High Fidelity Predictive Components for Model Modification
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2511.19566](https://arxiv.org/abs/2511.19566)  
 **Code**: [DhruvaKashyap/modhifi](https://github.com/DhruvaKashyap/modhifi)  
 **Authors**: Dhruva Kashyap, Chaitanya Murti, Pranav Nayak, Tanay Narshana, Chiranjib Bhattacharyya (IISc, HP AI Lab, Google)

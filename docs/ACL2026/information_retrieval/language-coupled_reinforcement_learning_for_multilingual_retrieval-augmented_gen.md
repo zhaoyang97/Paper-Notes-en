@@ -17,7 +17,7 @@ content_hash: cc5c5a364fbbebd3
 
 # Language-Coupled Reinforcement Learning for Multilingual Retrieval-Augmented Generation
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2601.14896](https://arxiv.org/abs/2601.14896)  
 **Code**: [GitHub](https://github.com/Cherry-qwq/LcRL-Open)  
 **Area**: Reinforcement Learning  

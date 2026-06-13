@@ -17,7 +17,7 @@ content_hash: e63eb57186797890
 
 # ChemVLR: Prioritizing Reasoning in Perception for Chemical Vision-Language Understanding
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.06685](https://arxiv.org/abs/2604.06685)  
 **Code**: [https://github.com/xxlllz/ChemVLR](https://github.com/xxlllz/ChemVLR)  
 **Area**: Interpretability  

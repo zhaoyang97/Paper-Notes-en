@@ -17,7 +17,7 @@ content_hash: 969e39976b7f710f
 
 # FACTS: Table Summarization via Offline Template Generation with Agentic Workflows
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2510.13920](https://arxiv.org/abs/2510.13920)  
 **Code**: [GitHub](https://github.com/BorealisAI/FACTS)  
 **Area**: Data Analysis / Table Understanding  

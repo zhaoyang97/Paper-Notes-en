@@ -17,7 +17,7 @@ content_hash: f8784d2da50b69f2
 
 # ReMedi: Reasoner for Medical Clinical Prediction
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2605.01474](https://arxiv.org/abs/2605.01474)  
 **Code**: No public code available  
 **Area**: Medical Clinical Prediction / EHR Modeling / Medical LLMs  

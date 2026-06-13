@@ -17,7 +17,7 @@ content_hash: e2ecc9f5a751fcd5
 
 # FAPEX: Fractional Amplitude-Phase Expressor for Robust Cross-Subject Seizure Prediction
 
-**Conference**: NEURIPS2025  
+**Conference**: NEURIPS2025 Spotlight  
 **arXiv**: [2511.03263](https://arxiv.org/abs/2511.03263)  
 **Code**: To be confirmed  
 **Area**: Medical Imaging  

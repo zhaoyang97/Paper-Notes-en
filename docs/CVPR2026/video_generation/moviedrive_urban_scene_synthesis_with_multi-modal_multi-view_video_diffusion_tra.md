@@ -17,7 +17,7 @@ content_hash: 334ff9e67f397a1f
 
 # MoVieDrive: Urban Scene Synthesis with Multi-Modal Multi-View Video Diffusion Transformer
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026 Findings  
 **arXiv**: [2508.14327](https://arxiv.org/abs/2508.14327)  
 **Code**: Unavailable  
 **Area**: Autonomous Driving / Video Generation

@@ -20,7 +20,7 @@ content_hash: f5bc3048954d0624
 
 # Optimal Sparsity of Mixture-of-Experts Language Models for Reasoning Tasks
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026 Oral  
 **arXiv**: [2508.18672](https://arxiv.org/abs/2508.18672)  
 **Code**: [GitHub](https://github.com/rioyokotalab/optimal-sparsity)  
 **Area**: LLM Alignment

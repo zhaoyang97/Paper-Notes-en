@@ -17,7 +17,7 @@ content_hash: a074a4a235f778dd
 
 # Focus and Dilution: The Multi-stage Learning Process of Attention
 
-**Conference**: ICML 2026  
+**Conference**: ICML 2026 Spotlight  
 **arXiv**: [2605.01199](https://arxiv.org/abs/2605.01199)  
 **Code**: None  
 **Area**: LLM Pre-training / Transformer Training Dynamics  

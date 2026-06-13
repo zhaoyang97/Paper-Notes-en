@@ -17,7 +17,7 @@ content_hash: 14c14a8e0e5dab74
 
 # Clustered Self-Assessment: A Simple yet Effective Method for Uncertainty Quantification in Large Language Models
 
-**Conference**: ACL2026  
+**Conference**: ACL2026 Findings  
 **arXiv**: [2606.03846](https://arxiv.org/abs/2606.03846)  
 **Code**: https://github.com/ccqq77/clustered_self_assessment  
 **Area**: LLM Uncertainty Estimation / NLP Understanding  

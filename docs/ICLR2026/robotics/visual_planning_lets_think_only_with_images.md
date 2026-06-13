@@ -18,7 +18,7 @@ content_hash: 6938594ba3e352ba
 
 # Visual Planning: Let's Think Only with Images
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026 Oral  
 **arXiv**: [2505.11409](https://arxiv.org/abs/2505.11409)  
 **Code**: [GitHub](https://github.com/yix8/VisualPlanning)  
 **Area**: Robotics

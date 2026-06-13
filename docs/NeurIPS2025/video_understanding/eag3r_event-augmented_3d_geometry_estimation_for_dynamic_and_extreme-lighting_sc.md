@@ -17,7 +17,7 @@ content_hash: db7b8ae584675015
 
 # EAG3R: Event-Augmented 3D Geometry Estimation for Dynamic and Extreme-Lighting Scenes
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2512.00771](https://arxiv.org/abs/2512.00771)  
 **Code**: To be confirmed  
 **Area**: 3D Vision

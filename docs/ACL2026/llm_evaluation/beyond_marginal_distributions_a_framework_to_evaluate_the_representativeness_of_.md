@@ -17,7 +17,7 @@ content_hash: 535c0020ffeb8725
 
 # Beyond Marginal Distributions: A Framework to Evaluate the Representativeness of Demographic-Aligned LLMs
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2601.15755](https://arxiv.org/abs/2601.15755)  
 **Code**: [https://github.com/tdw75/beyond-marginal-distributions](https://github.com/tdw75/beyond-marginal-distributions)  
 **Area**: LLM Alignment  

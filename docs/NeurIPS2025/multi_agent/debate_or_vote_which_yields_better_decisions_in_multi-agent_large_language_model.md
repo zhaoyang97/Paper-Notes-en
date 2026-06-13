@@ -17,7 +17,7 @@ content_hash: 6853da273fb80521
 
 # Debate or Vote: Which Yields Better Decisions in Multi-Agent Large Language Models?
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2508.17536](https://arxiv.org/abs/2508.17536)  
 **Code**: [https://github.com/deeplearning-wisc/debate-or-vote](https://github.com/deeplearning-wisc/debate-or-vote)  
 **Area**: LLM Agent

@@ -17,7 +17,7 @@ content_hash: 10ee069695877713
 
 # TiMem: Temporal-Hierarchical Memory Consolidation for Long-Horizon Conversational Agents
 
-**Conference**: ACL2026  
+**Conference**: ACL2026 Findings  
 **arXiv**: [2601.02845](https://arxiv.org/abs/2601.02845)  
 **Code**: https://github.com/TiMEM-AI/timem  
 **Area**: LLM Efficiency / Long-term Memory / Conversational Agents  

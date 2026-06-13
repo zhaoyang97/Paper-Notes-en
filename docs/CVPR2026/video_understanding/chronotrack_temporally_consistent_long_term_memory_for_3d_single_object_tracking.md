@@ -17,7 +17,7 @@ content_hash: 6b5c47c388c62b4f
 
 # Temporally Consistent Long-Term Memory for 3D Single Object Tracking
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026 Findings  
 **arXiv**: [2604.13789](https://arxiv.org/abs/2604.13789)  
 **Code**: [github.com/ujaejoon/ChronoTrack](https://github.com/ujaejoon/ChronoTrack)  
 **Area**: Video Understanding

@@ -67,7 +67,7 @@
 | `llm_alignment/` | ⚖️ Alignment / RLHF | 182 |
 | `llm_efficiency/` | ⚡ LLM Efficiency | 127 |
 | `llm_evaluation/` | 📊 LLM Evaluation | 345 |
-| `llm_nlp/` | 💬 LLM / NLP (other) | 228 |
+| `llm_nlp/` | 💬 LLM (Other) | 228 |
 | `llm_pretraining/` | 📚 Pretraining | 138 |
 | `llm_reasoning/` | 💡 LLM Reasoning | 331 |
 | `llm_safety/` | 🔒 LLM Safety | 406 |

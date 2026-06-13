@@ -17,7 +17,7 @@ content_hash: 9f96f1b0fad5fe7f
 
 # A is for Absorption: Studying Feature Splitting and Absorption in Sparse Autoencoders
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Oral  
 **arXiv**: [2409.14507](https://arxiv.org/abs/2409.14507)  
 **Code**: [https://github.com/lasr-spelling/sae-spelling](https://github.com/lasr-spelling/sae-spelling)  
 **Area**: AI Safety / Interpretability / Mechanistic Interpretability

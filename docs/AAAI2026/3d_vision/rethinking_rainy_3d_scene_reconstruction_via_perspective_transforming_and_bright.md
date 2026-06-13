@@ -17,7 +17,7 @@ content_hash: 0749f57348e799da
 
 # Rethinking Rainy 3D Scene Reconstruction via Perspective Transforming and Brightness Tuning
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026 Oral  
 **arXiv**: [2511.06734](https://arxiv.org/abs/2511.06734)  
 **Code**: [https://github.com/ncfjd/REVR-GSNet](https://github.com/ncfjd/REVR-GSNet)  
 **Area**: 3D Vision

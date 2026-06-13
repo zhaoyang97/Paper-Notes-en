@@ -16,7 +16,7 @@ content_hash: 4fe7acf9a72db3af
 
 # cadrille: Multi-modal CAD Reconstruction with Reinforcement Learning
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026 Oral  
 **arXiv**: [2505.22914](https://arxiv.org/abs/2505.22914)  
 **Code**: [https://github.com/col14m/cadrille](https://github.com/col14m/cadrille)  
 **Area**: Others

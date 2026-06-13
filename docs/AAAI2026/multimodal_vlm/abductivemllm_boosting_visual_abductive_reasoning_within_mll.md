@@ -17,7 +17,7 @@ content_hash: 7dd3d1d39539d51d
 
 # AbductiveMLLM: Boosting Visual Abductive Reasoning Within MLLMs
 
-**Conference**: AAAI 2026  
+**Conference**: AAAI 2026 Oral  
 **arXiv**: [2601.02771](https://arxiv.org/abs/2601.02771)  
 **Code**: [https://github.com/ChangPtR/AbdMLLM](https://github.com/ChangPtR/AbdMLLM)  
 **Area**: Multimodal VLM  

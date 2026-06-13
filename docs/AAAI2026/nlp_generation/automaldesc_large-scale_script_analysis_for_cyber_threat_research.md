@@ -17,7 +17,7 @@ content_hash: 66cd5d4da4440147
 
 # AutoMalDesc: Large-Scale Script Analysis for Cyber Threat Research
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026 Oral  
 **arXiv**: [2511.13333](https://arxiv.org/abs/2511.13333)  
 **Code**: [https://github.com/CrowdStrike/automaldesc](https://github.com/CrowdStrike/automaldesc)  
 **Area**: Text Generation

@@ -17,7 +17,7 @@ content_hash: 2d2e23cb06cd931e
 
 # Difficult Examples Hurt Unsupervised Contrastive Learning: A Theoretical Perspective
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026 Oral  
 **arXiv**: [2501.01317](https://arxiv.org/abs/2501.01317)  
 **Code**: Not released  
 **Area**: Self-Supervised Learning / Contrastive Learning / Theoretical Analysis

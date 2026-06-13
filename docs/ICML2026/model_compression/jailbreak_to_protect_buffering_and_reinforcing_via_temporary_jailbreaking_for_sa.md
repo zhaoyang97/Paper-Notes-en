@@ -17,7 +17,7 @@ content_hash: 8e6b206d50384a2b
 
 # Jailbreak to Protect: Buffering and Reinforcing via Temporary Jailbreaking for Safe Fine-Tuning in Large Language Models
 
-**Conference**: ICML 2026  
+**Conference**: ICML 2026 Spotlight  
 **arXiv**: [2605.24550](https://arxiv.org/abs/2605.24550)  
 **Code**: TBD  
 **Area**: LLM Safety / Fine-tuning-as-a-Service Defense / LoRA  

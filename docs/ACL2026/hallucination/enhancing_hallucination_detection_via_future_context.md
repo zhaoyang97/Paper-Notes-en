@@ -16,7 +16,7 @@ content_hash: 6ad74403d13ca22a
 
 # Enhancing Hallucination Detection via Future Context
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2507.20546](https://arxiv.org/abs/2507.20546)  
 **Code**: None  
 **Area**: Hallucination Detection  

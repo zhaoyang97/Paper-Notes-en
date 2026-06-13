@@ -17,7 +17,7 @@ content_hash: 7f8cc9a1fa398ca4
 
 # SpecMER: Fast Protein Generation with K-mer Guided Speculative Decoding
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2509.21689](https://arxiv.org/abs/2509.21689)  
 **Code**: [https://github.com/amirgroup-codes/SpecMER.git](https://github.com/amirgroup-codes/SpecMER.git)  
 **Area**: Protein Generation / Efficient Inference

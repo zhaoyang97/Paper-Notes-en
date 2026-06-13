@@ -17,7 +17,7 @@ content_hash: 4d51e62f850b6930
 
 # Why Do Multilingual Reasoning Gaps Emerge in Reasoning Language Models?
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2510.27269](https://arxiv.org/abs/2510.27269)  
 **Code**: [GitHub](https://github.com/deokhk/multilingual-reasoning-gap)  
 **Area**: Multilingual / Reasoning  

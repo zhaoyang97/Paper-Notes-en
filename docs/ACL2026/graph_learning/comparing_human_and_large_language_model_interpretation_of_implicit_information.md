@@ -17,7 +17,7 @@ content_hash: 8aef18e66da4374a
 
 # Comparing Human and Large Language Model Interpretation of Implicit Information
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.17085](https://arxiv.org/abs/2604.17085)  
 **Code**: Yes (Link provided in paper)  
 **Area**: Knowledge Graph / Implicit Information Understanding  

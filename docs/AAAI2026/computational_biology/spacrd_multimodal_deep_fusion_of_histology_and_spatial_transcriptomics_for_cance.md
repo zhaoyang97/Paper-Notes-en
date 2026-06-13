@@ -19,7 +19,7 @@ content_hash: 86821a7ef1fa72da
 
 # SpaCRD: Multimodal Deep Fusion of Histology and Spatial Transcriptomics for Cancer Region Detection
 
-**Conference**: AAAI 2026  
+**Conference**: AAAI 2026 Oral  
 **arXiv**: [2603.06186](https://arxiv.org/abs/2603.06186)  
 **Code**: [github.com/wenwenmin/SpaCRD](https://github.com/wenwenmin/SpaCRD)  
 **Area**: Medical Imaging / Computational Pathology  

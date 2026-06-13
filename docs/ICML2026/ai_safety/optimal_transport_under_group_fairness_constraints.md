@@ -17,7 +17,7 @@ content_hash: b26c66215fab499d
 
 # Optimal Transport under Group Fairness Constraints
 
-**Conference**: ICML 2026  
+**Conference**: ICML 2026 Spotlight  
 **arXiv**: [2601.07144](https://arxiv.org/abs/2601.07144)  
 **Code**: https://github.com/LinusBleistein/fair_ot (Available)  
 **Area**: AI Safety / Algorithmic Fairness / Optimal Transport  

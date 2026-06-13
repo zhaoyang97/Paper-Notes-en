@@ -17,7 +17,7 @@ content_hash: 5a436511c9e04ff5
 
 # STELLA: A Multimodal LLM for Protein Functional Annotation via Unified Sequence-Structure Encoding
 
-**Conference**: ACL2026  
+**Conference**: ACL2026 Findings  
 **arXiv**: [2506.03800](https://arxiv.org/abs/2506.03800)  
 **Code**: https://github.com/ocx-lab/STELLA  
 **Area**: Multimodal VLM / Protein Functional Annotation  

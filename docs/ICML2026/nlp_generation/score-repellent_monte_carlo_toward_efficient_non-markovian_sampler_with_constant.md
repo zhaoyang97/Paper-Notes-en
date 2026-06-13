@@ -17,7 +17,7 @@ content_hash: 107c85bbfac1e759
 
 # Score-Repellent Monte Carlo: Toward Efficient Non-Markovian Sampler with Constant Memory in General State Spaces
 
-**Conference**: ICML 2026  
+**Conference**: ICML 2026 Spotlight  
 **arXiv**: [2604.22948](https://arxiv.org/abs/2604.22948)  
 **Code**: TBD  
 **Area**: Scientific Computing / MCMC / Probabilistic Inference  

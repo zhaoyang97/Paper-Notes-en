@@ -17,7 +17,7 @@ content_hash: 003ae0667808eee1
 
 # S2H-DPO: Hardness-Aware Preference Optimization for Vision-Language Models
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.18512](https://arxiv.org/abs/2604.18512)  
 **Code**: None  
 **Area**: Multimodal VLM / Preference Alignment  

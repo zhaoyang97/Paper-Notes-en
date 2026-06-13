@@ -17,7 +17,7 @@ content_hash: 27e0d5fab665d25b
 
 # Style over Story: Measuring LLM Narrative Preferences via Structured Selection
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2510.02025](https://arxiv.org/abs/2510.02025)  
 **Code**: None  
 **Area**: Interpretability / Text Generation  

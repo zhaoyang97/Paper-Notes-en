@@ -17,7 +17,7 @@ content_hash: 138dd89214a220ab
 
 # MASS-RAG: Multi-Agent Synthesis Retrieval-Augmented Generation
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.18509](https://arxiv.org/abs/2604.18509)  
 **Code**: None  
 **Area**: Information Retrieval / RAG  

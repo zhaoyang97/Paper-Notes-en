@@ -17,7 +17,7 @@ content_hash: 47a00c307eb261d2
 
 # SEATrack: Simple, Efficient, and Adaptive Multimodal Tracker
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026 Oral  
 **arXiv**: [2604.12502](https://arxiv.org/abs/2604.12502)  
 **Code**: Available  
 **Area**: Object Tracking / Multimodal

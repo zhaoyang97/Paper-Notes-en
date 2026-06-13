@@ -17,7 +17,7 @@ content_hash: f7f1d0b189c6fb2d
 
 # Almieyar-Oryx-BloomBench: A Bilingual Multimodal Benchmark for Cognitively Informed Evaluation of Vision-Language Models
 
-**Conference**: ACL2026  
+**Conference**: ACL2026 Findings  
 **arXiv**: [2606.05531](https://arxiv.org/abs/2606.05531)  
 **Code**: https://github.com/qcri/Almieyar-Oryx-BloomBench  
 **Area**: Multimodal VLM / Evaluation Benchmark  

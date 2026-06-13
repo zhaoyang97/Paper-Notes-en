@@ -17,7 +17,7 @@ content_hash: 50fb5619a590705a
 
 # Towards Visually Grounded Multimodal Summarization via Cross-Modal Transformer and Gated Attention
 
-**Conference**: ACL2026  
+**Conference**: ACL2026 Findings  
 **arXiv**: [2605.11753](https://arxiv.org/abs/2605.11753)  
 **Code**: https://github.com/abidmeeraj/SPeCTrA-Sum  
 **Area**: Multimodal VLM / Multimodal Summarization  

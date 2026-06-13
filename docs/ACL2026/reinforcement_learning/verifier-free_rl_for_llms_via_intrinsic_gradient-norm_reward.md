@@ -17,7 +17,7 @@ content_hash: 63bdc664a7eb729e
 
 # Verifier-Free RL for LLMs via Intrinsic Gradient-Norm Reward
 
-**Conference**: ACL2026  
+**Conference**: ACL2026 Findings  
 **arXiv**: [2605.09920](https://arxiv.org/abs/2605.09920)  
 **Code**: https://github.com/ZJUSCL/VIGOR  
 **Area**: reinforcement_learning  

@@ -17,7 +17,7 @@ content_hash: 27ef6488b8382d81
 
 # VAUQ: Vision-Aware Uncertainty Quantification for LVLM Self-Evaluation
 
-**Conference**: ACL2026  
+**Conference**: ACL2026 Findings  
 **arXiv**: [2602.21054](https://arxiv.org/abs/2602.21054)  
 **Code**: https://github.com/deeplearning-wisc/vauq  
 **Area**: multimodal_vlm  

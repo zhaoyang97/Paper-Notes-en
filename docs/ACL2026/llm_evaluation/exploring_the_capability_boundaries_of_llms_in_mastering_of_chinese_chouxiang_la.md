@@ -17,7 +17,7 @@ content_hash: 6c25b96aca727428
 
 # Exploring the Capability Boundaries of LLMs in Mastering of Chinese Chouxiang Language
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.15841](https://arxiv.org/abs/2604.15841)  
 **Code**: [GitHub](https://github.com/csdq777/Mouse)  
 **Area**: LLM Evaluation  

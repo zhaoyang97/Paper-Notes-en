@@ -17,7 +17,7 @@ content_hash: 6869e39c2e2e270a
 
 # XLSR-MamBo: Scaling the Hybrid Mamba-Attention Backbone for Audio Deepfake Detection
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2601.02944](https://arxiv.org/abs/2601.02944)  
 **Code**: [GitHub](https://github.com/saki-ciallo/XLSR-MamBo)  
 **Area**: AI Security / Audio Deepfake Detection  

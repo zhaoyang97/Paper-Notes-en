@@ -17,7 +17,7 @@ content_hash: d1b8c2e056403532
 
 # Correcting Split Selection in Online Decision Trees via Anytime-Valid Inference
 
-**Conference**: ICML 2026  
+**Conference**: ICML 2026 Spotlight  
 **arXiv**: [2605.31239](https://arxiv.org/abs/2605.31239)  
 **Code**: None  
 **Area**: Data stream learning / Decision trees / Sequential inference  

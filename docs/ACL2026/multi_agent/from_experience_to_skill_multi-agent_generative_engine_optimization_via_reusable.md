@@ -17,7 +17,7 @@ content_hash: 52c94e7e1beda72e
 
 # MAGEO: From Experience to Skill — Multi-Agent Generative Engine Optimization via Reusable Strategy Learning
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.19516](https://arxiv.org/abs/2604.19516)  
 **Code**: [https://github.com/Wu-beining/MAGEO](https://github.com/Wu-beining/MAGEO)  
 **Area**: Model Compression  

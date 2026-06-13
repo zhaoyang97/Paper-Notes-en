@@ -17,7 +17,7 @@ content_hash: ce8740715d2ebe5a
 
 # GRASS: Gradient-based Adaptive Layer-wise Importance Sampling for Memory-Efficient LLM Fine-tuning
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.07808](https://arxiv.org/abs/2604.07808)  
 **Area**: LLM/NLP  
 **Keywords**: Layer-wise sampling, gradient importance, memory-efficient fine-tuning, optimizer state offloading, adaptive training

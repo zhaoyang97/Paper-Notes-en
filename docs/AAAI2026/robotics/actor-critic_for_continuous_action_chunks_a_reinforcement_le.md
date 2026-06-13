@@ -17,7 +17,7 @@ content_hash: af2b654bd1703a5d
 
 # Actor-Critic for Continuous Action Chunks: A Reinforcement Learning Framework for Long-Horizon Robotic Manipulation with Sparse Reward
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026 Oral  
 **arXiv**: [2508.11143](https://arxiv.org/abs/2508.11143)  
 **Code**: [https://github.com/flyfaerss/ac3](https://github.com/flyfaerss/ac3)  
 **Area**: Robotic Manipulation / Reinforcement Learning

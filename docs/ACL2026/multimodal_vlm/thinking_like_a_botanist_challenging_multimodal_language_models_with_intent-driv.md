@@ -17,7 +17,7 @@ content_hash: 7460c1c291813185
 
 # Thinking Like a Botanist: Challenging Multimodal Language Models with Intent-Driven Chain-of-Inquiry
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.20983](https://arxiv.org/abs/2604.20983)  
 **Code**: [github.com/syed-nazmus-sakib/PlantInquiryVQA](https://github.com/syed-nazmus-sakib/PlantInquiryVQA)  
 **Area**: Medical Imaging / Plant Pathology Diagnosis  

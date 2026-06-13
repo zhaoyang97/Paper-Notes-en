@@ -17,7 +17,7 @@ content_hash: d7388b7f242c65cc
 
 # What You Think is What You See: Driving Exploration in VLM Agents via Visual-Linguistic Curiosity (GLANCE)
 
-**Conference**: ICML 2026  
+**Conference**: ICML 2026 Spotlight  
 **arXiv**: [2605.03782](https://arxiv.org/abs/2605.03782)  
 **Code**: Not yet public (None)  
 **Area**: Multimodal VLM / Reinforcement Learning / Agent Exploration  

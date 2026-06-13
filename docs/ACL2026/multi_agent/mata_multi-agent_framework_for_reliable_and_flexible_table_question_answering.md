@@ -17,7 +17,7 @@ content_hash: a62831981605e89b
 
 # MATA: Multi-Agent Framework for Reliable and Flexible Table Question Answering
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2602.09642](https://arxiv.org/abs/2602.09642)  
 **Code**: [GitHub](https://github.com/AIDASLab/MATA)  
 **Area**: LLM Agent  

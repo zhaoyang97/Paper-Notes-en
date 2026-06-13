@@ -17,7 +17,7 @@ content_hash: a135b0ff551c20fe
 
 # MENTOR: Efficient Autoregressive Image Generation with Balanced Multimodal Control
 
-**Conference**: ACL2026  
+**Conference**: ACL2026 Findings  
 **arXiv**: [2507.09574](https://arxiv.org/abs/2507.09574)  
 **Code**: Project page https://haozhezhao.github.io/MENTOR.page (GitHub link not provided in cache)  
 **Area**: Multimodal Conditional Image Generation / Autoregressive Generation  

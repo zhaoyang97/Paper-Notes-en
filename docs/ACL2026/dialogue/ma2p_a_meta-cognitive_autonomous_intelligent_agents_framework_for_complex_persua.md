@@ -17,7 +17,7 @@ content_hash: a9bc8ab63a101702
 
 # MA$^2$P: A Meta-Cognitive Autonomous Intelligent Agents Framework for Complex Persuasion
 
-**Conference**: ACL2026  
+**Conference**: ACL2026 Findings  
 **arXiv**: [2605.18572](https://arxiv.org/abs/2605.18572)  
 **Code**: The paper states that prompts, code, and knowledge bases will be released, but no public repository link is provided in the cache.  
 **Area**: Dialogue Systems / LLM Agent / Persuasive Dialogue  

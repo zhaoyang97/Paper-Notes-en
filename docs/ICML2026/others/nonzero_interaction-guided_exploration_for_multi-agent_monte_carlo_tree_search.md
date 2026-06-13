@@ -16,7 +16,7 @@ content_hash: 691d2c923f5928f2
 
 # NonZero: Interaction-Guided Exploration for Multi-Agent Monte Carlo Tree Search
 
-**Conference**: ICML 2026  
+**Conference**: ICML 2026 Spotlight  
 **arXiv**: [2605.00751](https://arxiv.org/abs/2605.00751)  
 **Code**: None  
 **Area**: Multi-Agent Reinforcement Learning / Monte Carlo Tree Search / Nonlinear Bandit  

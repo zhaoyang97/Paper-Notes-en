@@ -17,7 +17,7 @@ content_hash: 2f8f37db8be4a060
 
 # LiftQuant: Continuous Bit-Width LLM via Dimensional Lifting and Projection
 
-**Conference**: ICML 2026  
+**Conference**: ICML 2026 Spotlight  
 **arXiv**: [2606.04050](https://arxiv.org/abs/2606.04050)  
 **Code**: https://github.com/Heliulu/LiftQuant  
 **Area**: Model Compression / LLM Quantization / Deployment Optimization  

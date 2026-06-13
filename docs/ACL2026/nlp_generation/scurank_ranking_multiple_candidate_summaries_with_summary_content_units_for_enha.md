@@ -17,7 +17,7 @@ content_hash: 609b3b8e144a8a23
 
 # SCURank: Ranking Multiple Candidate Summaries with Summary Content Units for Enhanced Summarization
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.19185](https://arxiv.org/abs/2604.19185)  
 **Code**: [https://github.com/IKMLab/SCURank](https://github.com/IKMLab/SCURank)  
 **Area**: Text Summarization / Model Distillation  

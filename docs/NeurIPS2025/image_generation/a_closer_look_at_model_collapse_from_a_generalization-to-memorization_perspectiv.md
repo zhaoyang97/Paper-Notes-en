@@ -18,7 +18,7 @@ content_hash: 44c7b8b009360e8d
 
 # A Closer Look at Model Collapse: From a Generalization-to-Memorization Perspective
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2509.16499](https://arxiv.org/abs/2509.16499)  
 **Code**: None  
 **Area**: Diffusion Models / Generative Model Theory

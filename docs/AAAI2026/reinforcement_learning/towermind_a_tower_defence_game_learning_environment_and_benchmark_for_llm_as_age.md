@@ -17,7 +17,7 @@ content_hash: 08e8737fdc0e38a0
 
 # TowerMind: A Tower Defence Game Learning Environment and Benchmark for LLM as Agents
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026 Oral  
 **arXiv**: [2601.05899](https://arxiv.org/abs/2601.05899)  
 **Code**: [https://github.com/tb6147877/TowerMind](https://github.com/tb6147877/TowerMind)  
 **Area**: Reinforcement Learning

@@ -17,7 +17,7 @@ content_hash: 88d6ff0c995b4287
 
 # How Language Models Conflate Logical Validity with Plausibility: A Representational Analysis of Content Effects
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2510.06700](https://arxiv.org/abs/2510.06700)  
 **Code**: [https://github.com/leobertolazzi/content-effect-interpretability](https://github.com/leobertolazzi/content-effect-interpretability)  
 **Area**: Social Computing  

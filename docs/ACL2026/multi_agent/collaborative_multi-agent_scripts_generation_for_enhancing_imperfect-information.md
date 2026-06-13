@@ -17,7 +17,7 @@ content_hash: c736fab097837529
 
 # Collaborative Multi-Agent Scripts Generation for Enhancing Imperfect-Information Reasoning in Murder Mystery Games
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.11741](https://arxiv.org/abs/2604.11741)  
 **Code**: None  
 **Area**: Multimodal VLM  

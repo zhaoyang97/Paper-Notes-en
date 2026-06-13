@@ -17,7 +17,7 @@ content_hash: 8f19ed0fcdea8f7a
 
 # Modeling Hierarchical Thinking in Large Reasoning Models
 
-**Conference**: ICML2026  
+**Conference**: ICML2026 Oral  
 **arXiv**: [2510.22437](https://arxiv.org/abs/2510.22437)  
 **Code**: https://github.com/shahariar-shibli/CoT-FSM (Available)  
 **Area**: LLM Reasoning  

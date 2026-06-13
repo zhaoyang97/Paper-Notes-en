@@ -17,7 +17,7 @@ content_hash: 7770e6bccb8387ae
 
 # Approximate Domain Unlearning for Vision-Language Models
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2510.08132](https://arxiv.org/abs/2510.08132)  
 **Code**: [https://kodaikawamura.github.io/Domain_Unlearning/](https://kodaikawamura.github.io/Domain_Unlearning/)  
 **Area**: Multimodal VLM / Machine Unlearning

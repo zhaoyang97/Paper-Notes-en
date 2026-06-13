@@ -20,7 +20,7 @@ content_hash: 5e9997ec2e090586
 
 # Hard to Be Heard: Phoneme-Level ASR Analysis of Phonologically Complex, Low-Resource Endangered Languages
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.18204](https://arxiv.org/abs/2604.18204)  
 **Code**: [GitHub](https://github.com/mahesh-ak/north_caucasian_asr) | [Data](https://huggingface.co/datasets/mahesh27/archi_rutul_asr)  
 **Area**: Speech Recognition / Low-resource Endangered Languages  

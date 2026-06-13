@@ -17,7 +17,7 @@ content_hash: 77bf51792aa957b5
 
 # Task-Stratified Knowledge Scaling Laws for Post-Training Quantized LLMs
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2508.18609](https://arxiv.org/abs/2508.18609)  
 **Code**: None  
 **Area**: Model Compression / Quantization  

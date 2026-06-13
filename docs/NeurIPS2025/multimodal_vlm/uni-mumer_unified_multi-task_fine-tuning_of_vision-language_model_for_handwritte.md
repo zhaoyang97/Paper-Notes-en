@@ -17,7 +17,7 @@ content_hash: 25abbe7b32ed57a0
 
 # Uni-MuMER: Unified Multi-Task Fine-Tuning of Vision-Language Model for Handwritten Mathematical Expression Recognition
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2505.23566](https://arxiv.org/abs/2505.23566)  
 **Code**: [https://github.com/BFlameSwift/Uni-MuMER](https://github.com/BFlameSwift/Uni-MuMER)  
 **Area**: Multimodal VLM

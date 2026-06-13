@@ -17,7 +17,7 @@ content_hash: 4ffc6ec3529eeb2e
 
 # R$^3$-SQL: Ranking Reward and Resampling for Text-to-SQL
 
-**Conference**: ACL2026  
+**Conference**: ACL2026 Findings  
 **arXiv**: [2604.25325](https://arxiv.org/abs/2604.25325)  
 **Code**: Not open source  
 **Area**: LLM Agent / Text-to-SQL  

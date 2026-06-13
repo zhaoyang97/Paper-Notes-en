@@ -17,7 +17,7 @@ content_hash: b5ac71757d7e6ac9
 
 # Unveiling Temporal Framing in News Text
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Oral  
 **arXiv**: [2606.00294](https://arxiv.org/abs/2606.00294)  
 **Code**: https://mbzuai-nlp.github.io/temporal-framing/  
 **Area**: NLP Understanding / Discourse Analysis  

@@ -17,7 +17,7 @@ content_hash: fd68ffee225fac0b
 
 # PRISM: Gauge-Invariant Tangent-Space Differentially Private LoRA
 
-**Conference**: ICML2026  
+**Conference**: ICML2026 Oral  
 **arXiv**: [2606.00944](https://arxiv.org/abs/2606.00944)  
 **Code**: https://github.com/osu-srml/PRISM-DP-LoRA  
 **Area**: AI Safety / Differential Privacy / LoRA Fine-tuning  

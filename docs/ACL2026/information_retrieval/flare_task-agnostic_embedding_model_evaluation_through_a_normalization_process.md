@@ -17,7 +17,7 @@ content_hash: cf29738cd9ee563d
 
 # FLARE: Task-Agnostic Embedding Model Evaluation via Normalizing Flows
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.17344](https://arxiv.org/abs/2604.17344)  
 **Code**: None  
 **Area**: Information Retrieval  

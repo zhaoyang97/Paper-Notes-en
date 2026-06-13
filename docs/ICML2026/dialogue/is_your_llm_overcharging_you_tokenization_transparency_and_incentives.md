@@ -17,7 +17,7 @@ content_hash: 18aca63112e16e42
 
 # Is Your LLM Overcharging You? Tokenization, Transparency, and Incentives
 
-**Conference**: ICML 2026  
+**Conference**: ICML 2026 Oral  
 **arXiv**: [2505.21627](https://arxiv.org/abs/2505.21627)  
 **Code**: https://github.com/Human-Centric-Machine-Learning/token-pricing (Available)  
 **Area**: AI Safety / Mechanism Design / LLM-as-a-Service Pricing  

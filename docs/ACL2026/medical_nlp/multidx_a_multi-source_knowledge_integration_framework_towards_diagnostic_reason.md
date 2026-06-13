@@ -17,7 +17,7 @@ content_hash: 6140c19318819ce1
 
 # MultiDx: A Multi-Source Knowledge Integration Framework towards Diagnostic Reasoning
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.24186](https://arxiv.org/abs/2604.24186)  
 **Code**: https://github.com/Applied-Machine-Learning-Lab/ACL2026-MultiDx  
 **Area**: Medical Imaging / Medical Diagnostic Reasoning  

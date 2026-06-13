@@ -17,7 +17,7 @@ content_hash: fb0737e1fc7dc557
 
 # IntroLM: Introspective Language Models via Prefilling-Time Self-Evaluation
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2601.03511](https://arxiv.org/abs/2601.03511)  
 **Code**: https://github.com/hhosseini1377/LLM_routing (Available)  
 **Area**: LLM Inference / Model Routing / Introspective Self-Evaluation  

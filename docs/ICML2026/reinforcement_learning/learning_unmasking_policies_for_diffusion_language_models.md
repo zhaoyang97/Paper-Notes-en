@@ -17,7 +17,7 @@ content_hash: 8a7e76d3b4324237
 
 # Learning Unmasking Policies for Diffusion Language Models
 
-**Conference**: ICML 2026  
+**Conference**: ICML 2026 Oral Spotlight  
 **arXiv**: [2512.09106](https://arxiv.org/abs/2512.09106)  
 **Code**: https://github.com/apple/ml-rl-dllm  
 **Area**: Reinforcement Learning / Diffusion Language Models / GRPO  

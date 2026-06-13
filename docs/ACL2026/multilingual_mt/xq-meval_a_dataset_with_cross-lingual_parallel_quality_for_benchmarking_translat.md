@@ -17,7 +17,7 @@ content_hash: fecc8c5497a79923
 
 # XQ-MEval: A Dataset with Cross-lingual Parallel Quality for Benchmarking Translation Metrics
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.14934](https://arxiv.org/abs/2604.14934)  
 **Code**: [GitHub](https://github.com/zhiqu22/XQ-MEval)  
 **Area**: AI Safety  

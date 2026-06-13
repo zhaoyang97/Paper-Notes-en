@@ -17,7 +17,7 @@ content_hash: 4fff3661755e81d6
 
 # COOPERA: Continual Open-Ended Human-Robot Assistance
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2510.23495](https://arxiv.org/abs/2510.23495)  
 **Code**: None  
 **Area**: Robotics

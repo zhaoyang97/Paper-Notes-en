@@ -17,7 +17,7 @@ content_hash: d0481c669cec0c0a
 
 # From Isolated Scoring to Collaborative Ranking: A Comparison-Native Framework for LLM-Based Paper Evaluation
 
-**Conference**: ACL2026  
+**Conference**: ACL2026 Findings  
 **arXiv**: [2603.17588](https://arxiv.org/abs/2603.17588)  
 **Code**: The paper claims to be open-sourced, but the current cache does not provide a specific GitHub URL  
 **Area**: LLM Evaluation / Automated Peer Review / Learning to Rank  

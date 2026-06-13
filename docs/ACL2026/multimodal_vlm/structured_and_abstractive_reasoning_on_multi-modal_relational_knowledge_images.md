@@ -17,7 +17,7 @@ content_hash: c0ed4039b5cbb1ab
 
 # Structured and Abstractive Reasoning on Multi-modal Relational Knowledge Images
 
-**Conference**: ACL2026  
+**Conference**: ACL2026 Findings  
 **arXiv**: [2510.21828](https://arxiv.org/abs/2510.21828)  
 **Code**: https://github.com/zjukg/STAR  
 **Area**: Multi-modal VLM / Knowledge Graphs / Structured Reasoning  

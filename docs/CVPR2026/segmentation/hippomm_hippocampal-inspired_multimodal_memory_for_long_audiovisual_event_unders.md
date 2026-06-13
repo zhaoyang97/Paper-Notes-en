@@ -17,7 +17,7 @@ content_hash: 1723f05a29efd592
 
 # HippoMM: Hippocampal-inspired Multimodal Memory for Long Audiovisual Event Understanding
 
-**Conference**: CVPR 2026  
+**Conference**: CVPR 2026 Findings  
 **arXiv**: [2504.10739](https://arxiv.org/abs/2504.10739)  
 **Code**: [https://github.com/linyueqian/HippoMM](https://github.com/linyueqian/HippoMM)  
 **Area**: Image Segmentation  

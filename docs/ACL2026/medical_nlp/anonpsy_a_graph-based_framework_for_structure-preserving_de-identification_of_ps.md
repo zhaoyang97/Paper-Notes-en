@@ -17,7 +17,7 @@ content_hash: 057fe46baa68e0d3
 
 # Anonpsy: A Graph-Based Framework for Structure-Preserving De-identification of Psychiatric Narratives
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2601.13503](https://arxiv.org/abs/2601.13503)  
 **Code**: None  
 **Area**: Medical Imaging  

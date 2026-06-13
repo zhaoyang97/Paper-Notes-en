@@ -17,7 +17,7 @@ content_hash: 7372bf5d81774349
 
 # End-to-End Compression for Tabular Foundation Models
 
-**Conference**: ICML 2026  
+**Conference**: ICML 2026 Spotlight  
 **arXiv**: [2602.05649](https://arxiv.org/abs/2602.05649)  
 **Code**: https://github.com/machinelearningnuremberg/TACO (Available)  
 **Area**: Model Compression / Tabular Foundation Models / In-context Learning  

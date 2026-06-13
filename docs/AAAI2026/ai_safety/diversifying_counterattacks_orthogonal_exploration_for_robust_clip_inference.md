@@ -17,7 +17,7 @@ content_hash: df3e87d75acfab7e
 
 # Diversifying Counterattacks: Orthogonal Exploration for Robust CLIP Inference
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026 Oral  
 **arXiv**: [2511.09064](https://arxiv.org/abs/2511.09064)  
 **Code**: [Available](https://github.com/bookman233/DOC)  
 **Area**: AI Security

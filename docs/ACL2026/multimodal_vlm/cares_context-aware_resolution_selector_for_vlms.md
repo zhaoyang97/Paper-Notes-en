@@ -17,7 +17,7 @@ content_hash: 63deab99805d93dc
 
 # CARES: Context-Aware Resolution Selector for VLMs
 
-**Conference**: ACL2026  
+**Conference**: ACL2026 Oral  
 **arXiv**: [2510.19496](https://arxiv.org/abs/2510.19496)  
 **Code**: https://mkimhi.github.io/CARES/  
 **Area**: Multimodal VLM / Inference Efficiency / Adaptive Resolution  

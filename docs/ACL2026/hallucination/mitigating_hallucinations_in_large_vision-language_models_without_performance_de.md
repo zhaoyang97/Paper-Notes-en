@@ -17,7 +17,7 @@ content_hash: cb65c9f6129f3c66
 
 # Mitigating Hallucinations in Large Vision-Language Models without Performance Degradation
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Oral  
 **arXiv**: [2604.20366](https://arxiv.org/abs/2604.20366)  
 **Code**: None  
 **Area**: Hallucination Detection  

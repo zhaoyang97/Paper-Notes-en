@@ -17,7 +17,7 @@ content_hash: 50298cae131defac
 
 # Understanding and Mitigating Spurious Signal Amplification in Test-Time Reinforcement Learning for Math Reasoning
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.21327](https://arxiv.org/abs/2604.21327)  
 **Code**: [https://github.com/yuyongcan/DDRL](https://github.com/yuyongcan/DDRL)  
 **Area**: Image Restoration  

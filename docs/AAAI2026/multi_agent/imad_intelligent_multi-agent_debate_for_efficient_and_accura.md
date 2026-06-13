@@ -17,7 +17,7 @@ content_hash: 85bc7f0b28e2ada7
 
 # iMAD: Intelligent Multi-Agent Debate for Efficient and Accurate LLM Inference
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026 Oral  
 **arXiv**: [2511.11306](https://arxiv.org/abs/2511.11306)  
 **Code**: [https://github.com/Fanwei100/iMAD](https://github.com/Fanwei100/iMAD)  
 **Area**: Interpretability

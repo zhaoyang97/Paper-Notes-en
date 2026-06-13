@@ -17,7 +17,7 @@ content_hash: e5e71ac67c075fda
 
 # Fin-Bias: Comprehensive Evaluation for LLM Decision-Making under human bias in Finance Domain
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2605.09106](https://arxiv.org/abs/2605.09106)  
 **Code**: https://github.com/Xiaoyu1216/Fin-Bias.git (Yes)  
 **Area**: LLM Evaluation / Financial Decision-making / Behavioral Bias  

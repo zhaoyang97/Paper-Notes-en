@@ -16,7 +16,7 @@ content_hash: 4c97955633de89db
 
 # MetaphorVU: Towards Metaphorical Video Understanding
 
-**Conference**: ICML 2026  
+**Conference**: ICML 2026 Spotlight  
 **arXiv**: [2605.25461](https://arxiv.org/abs/2605.25461)  
 **Code**: To be confirmed  
 **Area**: Video Understanding / High-level Cognition  

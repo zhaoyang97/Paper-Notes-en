@@ -17,7 +17,7 @@ content_hash: 68a10b8f8c1e4221
 
 # Recovering Policy-Induced Errors: Benchmarking and Trajectory Synthesis for Robust GUI Agents
 
-**Conference**: ICML 2026  
+**Conference**: ICML 2026 Spotlight  
 **arXiv**: [2605.29447](https://arxiv.org/abs/2605.29447)  
 **Code**: https://github.com/AlibabaResearch/RoTS (Available)  
 **Area**: Agent / GUI Agent / Robustness / Data Synthesis  

@@ -17,7 +17,7 @@ content_hash: c6bb36b18393a41e
 
 # MathAgent: Adversarial Evolution of Constraint Graphs for Mathematical Reasoning Data Synthesis
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.11188](https://arxiv.org/abs/2604.11188)  
 **Code**: None  
 **Area**: Data Synthesis / LLM Reasoning  

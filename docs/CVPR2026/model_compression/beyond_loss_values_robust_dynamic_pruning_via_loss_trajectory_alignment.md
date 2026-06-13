@@ -17,7 +17,7 @@ content_hash: dbcc5504ccd37254
 
 # Beyond Loss Values: Robust Dynamic Pruning via Loss Trajectory Alignment
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026 Findings  
 **arXiv**: [2604.07306](https://arxiv.org/abs/2604.07306)  
 **Code**: [GitHub](https://github.com/leonqin430/AlignPrune)  
 **Area**: Model Compression / Data Pruning

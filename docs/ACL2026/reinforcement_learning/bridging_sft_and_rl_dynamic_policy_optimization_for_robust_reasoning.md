@@ -17,7 +17,7 @@ content_hash: a3ada99830c93ba5
 
 # Bridging SFT and RL: Dynamic Policy Optimization for Robust Reasoning
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.08926](https://arxiv.org/abs/2604.08926)  
 **Code**: [GitHub](https://github.com/Tocci-Zhu/DYPO)  
 **Area**: Reinforcement Learning  

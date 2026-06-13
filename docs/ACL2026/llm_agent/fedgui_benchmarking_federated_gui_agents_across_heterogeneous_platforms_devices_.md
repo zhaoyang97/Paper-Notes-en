@@ -17,7 +17,7 @@ content_hash: 850ffe2afb8c1a9e
 
 # FedGUI: Benchmarking Federated GUI Agents across Heterogeneous Platforms, Devices, and Operating Systems
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.14956](https://arxiv.org/abs/2604.14956)  
 **Code**: [GitHub](https://github.com/wwh0411/FedGUI)  
 **Area**: Agent / GUI Interaction  

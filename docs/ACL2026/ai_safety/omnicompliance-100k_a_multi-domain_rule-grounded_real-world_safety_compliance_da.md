@@ -17,7 +17,7 @@ content_hash: dbd679746dbc15f8
 
 # OmniCompliance-100K: A Multi-Domain Rule-Grounded Real-World Safety Compliance Dataset
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2603.13933](https://arxiv.org/abs/2603.13933)  
 **Code**: [GitHub](https://github.com/HKUST-KnowComp/OmniCompliance-100K)  
 **Area**: Medical Imaging  

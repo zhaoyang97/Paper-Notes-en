@@ -17,7 +17,7 @@ content_hash: 3a9bdb3a31010184
 
 # CoVR-R: Reason-Aware Composed Video Retrieval
 
-**Conference**: CVPR 2026  
+**Conference**: CVPR 2026 Findings  
 **arXiv**: [2603.20190](https://arxiv.org/abs/2603.20190)  
 **Code**: [github.com/mbzuai-oryx/CoVR-R](https://github.com/mbzuai-oryx/CoVR-R)  
 **Area**: Multimodal / Video-Language Models  

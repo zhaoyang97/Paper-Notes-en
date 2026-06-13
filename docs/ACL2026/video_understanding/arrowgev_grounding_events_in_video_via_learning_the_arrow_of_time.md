@@ -17,7 +17,7 @@ content_hash: 441d07576b2c4076
 
 # ArrowGEV: Grounding Events in Video via Learning the Arrow of Time
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2601.06559](https://arxiv.org/abs/2601.06559)  
 **Code**: [Available](https://arxiv.org/abs/2601.06559) (Code / Model / Data are all public)  
 **Area**: Video Understanding  

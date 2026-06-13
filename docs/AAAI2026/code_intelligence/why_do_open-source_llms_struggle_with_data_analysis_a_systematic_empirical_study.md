@@ -17,7 +17,7 @@ content_hash: 1be31e17d673a33d
 
 # Why Do Open-Source LLMs Struggle with Data Analysis? A Systematic Empirical Study
 
-**Conference**: AAAI 2026  
+**Conference**: AAAI 2026 Oral  
 **arXiv**: [2506.19794](https://arxiv.org/abs/2506.19794)  
 **Code**: [github.com/zjunlp/DataMind](https://github.com/zjunlp/DataMind)  
 **Area**: Code Intelligence  

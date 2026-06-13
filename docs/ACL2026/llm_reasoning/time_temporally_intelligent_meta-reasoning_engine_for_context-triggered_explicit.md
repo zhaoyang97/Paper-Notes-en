@@ -17,7 +17,7 @@ content_hash: 0e3c8a88df0f67fe
 
 # TIME: Temporally Intelligent Meta-Reasoning Engine for Context-Triggered Explicit Reasoning
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2601.05300](https://arxiv.org/abs/2601.05300)  
 **Code**: https://github.com/The-Coherence-Initiative/TIME / https://github.com/The-Coherence-Initiative/TIMEBench  
 **Area**: LLM Reasoning / Temporal Reasoning / Behavioral Alignment  

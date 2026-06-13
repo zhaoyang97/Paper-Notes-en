@@ -19,7 +19,7 @@ content_hash: 70b92ebc8cd38fbf
 
 ## Basic Information
 
-**Conference**: CVPR2026
+**Conference**: CVPR 2026 Findings  
 **arXiv**: [2511.02580](https://arxiv.org/abs/2511.02580)  
 **Code**: Not released  
 **Area**: Image Generation

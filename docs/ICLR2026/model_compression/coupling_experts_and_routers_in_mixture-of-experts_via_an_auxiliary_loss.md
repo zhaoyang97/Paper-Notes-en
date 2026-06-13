@@ -17,7 +17,7 @@ content_hash: 61d3eef4f4d4d24e
 
 # Coupling Experts and Routers in Mixture-of-Experts via an Auxiliary Loss
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026 Oral  
 **arXiv**: [2512.23447](https://arxiv.org/abs/2512.23447)  
 **Code**: None  
 **Area**: Model Architecture / MoE

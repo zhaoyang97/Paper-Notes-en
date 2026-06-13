@@ -17,7 +17,7 @@ content_hash: babc043798eb3b4f
 
 # On the Expressive Power of Permutation-Equivariant Weight-Space Networks
 
-**Conference**: ICML 2026  
+**Conference**: ICML 2026 Spotlight  
 **arXiv**: [2602.01083](https://arxiv.org/abs/2602.01083)  
 **Code**: https://github.com/dayanadir/capacity_increase_inr_editing_experiment  
 **Area**: Weight-space learning / Expressive power theory / Equivariant neural networks  

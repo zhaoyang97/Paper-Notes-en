@@ -18,7 +18,7 @@ content_hash: 63610dc21072fcce
 
 # Dual Data Alignment Makes AI-Generated Image Detector Easier Generalizable
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2505.14359](https://arxiv.org/abs/2505.14359)  
 **Code**: [roy-ch/Dual-Data-Alignment](https://github.com/roy-ch/Dual-Data-Alignment)  
 **Area**: Image Generation

@@ -17,7 +17,7 @@ content_hash: c40e834c4d754279
 
 # WikiSeeker: Rethinking the Role of Vision-Language Models in Knowledge-Based Visual Question Answering
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.05818](https://arxiv.org/abs/2604.05818)  
 **Code**: [https://github.com/zhuyjan/WikiSeeker](https://github.com/zhuyjan/WikiSeeker)  
 **Area**: Multimodal VLM  

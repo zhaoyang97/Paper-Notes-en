@@ -17,7 +17,7 @@ content_hash: c687b76490b4e1e9
 
 # Retrieve Only Relevant Tables Whether Few or Many: Adaptive Table Retrieval Method
 
-**Conference**: ACL2026  
+**Conference**: ACL2026 Findings  
 **arXiv**: [2605.18766](https://arxiv.org/abs/2605.18766)  
 **Code**: The paper states that code and data are provided (cache does not contain a specific URL)  
 **Area**: Information Retrieval / Table Retrieval / Text-to-SQL  

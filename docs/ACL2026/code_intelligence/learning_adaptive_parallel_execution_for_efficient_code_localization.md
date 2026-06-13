@@ -17,7 +17,7 @@ content_hash: 34c9b72d065ab340
 
 # Learning Adaptive Parallel Execution for Efficient Code Localization
 
-**Conference**: ACL2026  
+**Conference**: ACL2026 Findings  
 **arXiv**: [2601.19568](https://arxiv.org/abs/2601.19568)  
 **Code**: No public code link found in cache  
 **Area**: Code Intelligence / LLM Agent  

@@ -17,7 +17,7 @@ content_hash: eb266743107b20d4
 
 # Idiom Understanding as a Tool to Measure the Dialect Gap
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2510.05026](https://arxiv.org/abs/2510.05026)  
 **Code**: None  
 **Area**: LLM Evaluation  

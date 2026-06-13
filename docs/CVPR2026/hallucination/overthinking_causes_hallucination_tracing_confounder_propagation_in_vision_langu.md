@@ -17,7 +17,7 @@ content_hash: ac7d1794e9a1de07
 
 # Overthinking Causes Hallucination: Tracing Confounder Propagation in Vision Language Models
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026 Findings  
 **arXiv**: [2603.07619](https://arxiv.org/abs/2603.07619)  
 **Code**: None  
 **Area**: Hallucination Detection

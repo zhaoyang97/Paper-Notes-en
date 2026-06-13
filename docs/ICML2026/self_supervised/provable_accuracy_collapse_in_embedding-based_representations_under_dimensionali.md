@@ -17,7 +17,7 @@ content_hash: d9505f96dfc98ae9
 
 # Provable Accuracy Collapse in Embedding-Based Representations under Dimensionality Mismatch
 
-**Conference**: ICML 2026  
+**Conference**: ICML 2026 Spotlight  
 **arXiv**: [2605.03346](https://arxiv.org/abs/2605.03346)  
 **Code**: None  
 **Area**: Representation Learning Theory / Contrastive Learning / Embedding Dimensions  

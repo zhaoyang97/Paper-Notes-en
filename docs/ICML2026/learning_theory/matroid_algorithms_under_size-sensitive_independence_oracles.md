@@ -17,7 +17,7 @@ content_hash: b3ae746e753ae712
 
 # Matroid Algorithms Under Size-Sensitive Independence Oracles
 
-**Conference**: ICML 2026  
+**Conference**: ICML 2026 Spotlight  
 **arXiv**: [2605.00201](https://arxiv.org/abs/2605.00201)  
 **Code**: None (Theoretical paper)  
 **Area**: Algorithm Theory / Combinatorial Optimization  

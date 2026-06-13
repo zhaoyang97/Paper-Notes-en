@@ -17,7 +17,7 @@ content_hash: a7ab91bb9e4d859d
 
 # Specialization after Generalization: Towards Understanding Test-Time Training in Foundation Models
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026 Oral  
 **arXiv**: [2509.24510](https://arxiv.org/abs/2509.24510)  
 **Code**: None  
 **Area**: Model Compression / Test-Time Training

@@ -17,7 +17,7 @@ content_hash: 24255f60a0254080
 
 # TIDMAD: Time Series Dataset for Discovering Dark Matter with AI Denoising
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2406.04378](https://arxiv.org/abs/2406.04378)  
 **Code**: [GitHub](https://github.com/jessicafry/TIDMAD)  
 **Area**: Dataset / Time Series Denoising

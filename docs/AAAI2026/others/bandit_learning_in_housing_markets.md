@@ -16,7 +16,7 @@ content_hash: d77f69d85470faef
 
 # Bandit Learning in Housing Markets
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026 Oral  
 **arXiv**: [2511.12629](https://arxiv.org/abs/2511.12629)  
 **Code**: None  
 **Area**: Other

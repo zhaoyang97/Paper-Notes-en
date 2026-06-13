@@ -16,7 +16,7 @@ content_hash: 963251a3e6bbdbca
 
 # Continuous Thought Machines
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2505.05522](https://arxiv.org/abs/2505.05522)  
 **Code**: [github.com/SakanaAI/ContinuousThoughtMachines](https://github.com/SakanaAI/ContinuousThoughtMachines)  
 **Area**: Other

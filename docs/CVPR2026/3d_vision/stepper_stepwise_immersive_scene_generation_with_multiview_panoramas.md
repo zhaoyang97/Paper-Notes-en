@@ -17,7 +17,7 @@ content_hash: e0a0eebe6180864e
 
 # Stepper: Stepwise Immersive Scene Generation with Multiview Panoramas
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026 Findings  
 **arXiv**: [2603.28980](https://arxiv.org/abs/2603.28980)  
 **Code**: [Project Page](https://fwmb.github.io/stepper)  
 **Area**: 3D Vision / Scene Generation

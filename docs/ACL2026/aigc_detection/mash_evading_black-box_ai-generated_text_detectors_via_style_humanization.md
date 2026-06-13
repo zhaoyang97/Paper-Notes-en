@@ -17,7 +17,7 @@ content_hash: 9de5093fcdb7d39e
 
 # MASH: Evading Black-Box AI-Generated Text Detectors via Style Humanization
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2601.08564](https://arxiv.org/abs/2601.08564)  
 **Code**: [https://github.com/githigher/MASH](https://github.com/githigher/MASH)  
 **Area**: Text Generation / Adversarial Text Detection  

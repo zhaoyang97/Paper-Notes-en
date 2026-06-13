@@ -17,7 +17,7 @@ content_hash: 781efe5e3f732330
 
 # A Picture is Worth a Thousand Words? An Empirical Study of Aggregation Strategies for Visual Financial Document Retrieval
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2605.14581](https://arxiv.org/abs/2605.14581)  
 **Code**: The paper does not provide an open-source link in the abstract.  
 **Area**: Information Retrieval / Visual Document Retrieval / VLM Diagnosis  

@@ -17,7 +17,7 @@ content_hash: 1bcdb619bb55065a
 
 # LASER: Learning Active Sensing for Continuum Field Reconstruction
 
-**Conference**: ICML 2026  
+**Conference**: ICML 2026 Oral  
 **arXiv**: [2604.19355](https://arxiv.org/abs/2604.19355)  
 **Code**: To be confirmed  
 **Area**: Reinforcement Learning / World Models / Active Sensing  

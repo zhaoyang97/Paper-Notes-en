@@ -17,7 +17,7 @@ content_hash: 9216636d46c2a5ca
 
 # Task-Optimized Convolutional Recurrent Networks Align with Tactile Processing in the Rodent Brain
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Oral  
 **arXiv**: [2505.18361](https://arxiv.org/abs/2505.18361)  
 **Code**: [GitHub](https://github.com/neuroagents-lab/2025-tactile-whisking)  
 **Area**: Robotics

@@ -17,7 +17,7 @@ content_hash: 4f5b431a7c7c843f
 
 # Effective Model Pruning: Measure the Redundancy of Model Components
 
-**Conference**: ICML 2026  
+**Conference**: ICML 2026 Spotlight  
 **arXiv**: [2509.25606](https://arxiv.org/abs/2509.25606)  
 **Code**: https://github.com/noMushroomw/Effective-model-pruning  
 **Area**: Model Compression  

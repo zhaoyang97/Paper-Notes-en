@@ -17,7 +17,7 @@ content_hash: daa9d322596f8ccd
 
 # Meta-Tool: Efficient Few-Shot Tool Adaptation for Small Language Models
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.20148](https://arxiv.org/abs/2604.20148)  
 **Code**: [GitHub](https://github.com/techsachinkr/Meta-Tool)  
 **Area**: Model Compression  

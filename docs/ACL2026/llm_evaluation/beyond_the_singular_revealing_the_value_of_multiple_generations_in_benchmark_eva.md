@@ -17,7 +17,7 @@ content_hash: f60060a7416e4731
 
 # Beyond the Singular: Revealing the Value of Multiple Generations in Benchmark Evaluation
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2502.08943](https://arxiv.org/abs/2502.08943)  
 **Code**: To be confirmed  
 **Area**: LLM Evaluation / Statistical Inference / Benchmark Methodology  

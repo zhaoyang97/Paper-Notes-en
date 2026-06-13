@@ -17,7 +17,7 @@ content_hash: 788cee59e0d5157c
 
 # coDrawAgents: A Multi-Agent Dialogue Framework for Compositional Image Generation
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026 Findings  
 **arXiv**: [2603.12829](https://arxiv.org/abs/2603.12829)  
 **Code**: To be released  
 **Area**: Image Generation / Multi-Agent Systems

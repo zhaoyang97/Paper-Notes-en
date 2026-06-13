@@ -17,7 +17,7 @@ content_hash: d755f05dc9a0e3fd
 
 # RacketVision: A Multiple Racket Sports Benchmark for Unified Ball and Racket Analysis
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026 Oral  
 **arXiv**: [2511.17045](https://arxiv.org/abs/2511.17045)  
 **Code**: None  
 **Area**: Sports Analysis / Computer Vision

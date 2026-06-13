@@ -17,7 +17,7 @@ content_hash: d181f84668195da5
 
 # FACT-GS: Frequency-Aligned Complexity-Aware Texture Reparameterization for 2D Gaussian Splatting
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026 Findings  
 **arXiv**: [2511.23292](https://arxiv.org/abs/2511.23292)  
 **Code**: Available (based on gsplat framework)  
 **Area**: 3D Vision / Novel View Synthesis

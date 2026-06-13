@@ -17,7 +17,7 @@ content_hash: 81fc9aa0c1911069
 
 # Towards Self-Improving Error Diagnosis in Multi-Agent Systems
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.17658](https://arxiv.org/abs/2604.17658)  
 **Code**: None  
 **Area**: LLM Evaluation  

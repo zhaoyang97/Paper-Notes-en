@@ -17,7 +17,7 @@ content_hash: 36633ab102d864cb
 
 # Adaptive Layer Selection for Layer-Wise Token Pruning in LLM Inference
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2601.07667](https://arxiv.org/abs/2601.07667)  
 **Code**: [GitHub](https://github.com/TANIGUCHIREI/ASL)  
 **Area**: Model Compression / KV Cache Optimization  

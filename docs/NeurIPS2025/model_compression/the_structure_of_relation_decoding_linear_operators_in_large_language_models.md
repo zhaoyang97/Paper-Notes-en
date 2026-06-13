@@ -17,7 +17,7 @@ content_hash: 8b0ae16b27ed6a03
 
 # The Structure of Relation Decoding Linear Operators in Large Language Models
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2510.26543](https://arxiv.org/abs/2510.26543)  
 **Code**: [GitHub](https://bit.ly/structure-of-relations)  
 **Area**: Model Compression

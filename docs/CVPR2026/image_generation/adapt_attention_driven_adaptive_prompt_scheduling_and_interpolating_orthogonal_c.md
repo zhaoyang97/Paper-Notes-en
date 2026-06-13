@@ -17,7 +17,7 @@ content_hash: cc04f03d979a8023
 
 # ADAPT: Attention Driven Adaptive Prompt Scheduling and InTerpolating Orthogonal Complements for Rare Concepts Generation
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026 Findings  
 **arXiv**: [2603.19157](https://arxiv.org/abs/2603.19157)  
 **Code**: Available (mentioned in the paper)  
 **Area**: Diffusion Models / Image Generation

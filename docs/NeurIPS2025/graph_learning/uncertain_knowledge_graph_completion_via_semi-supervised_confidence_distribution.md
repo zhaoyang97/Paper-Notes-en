@@ -17,7 +17,7 @@ content_hash: 6f7c527da5a0c333
 
 # Uncertain Knowledge Graph Completion via Semi-Supervised Confidence Distribution Learning
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2510.16601](https://arxiv.org/abs/2510.16601)  
 **Code**: [https://github.com/seucoin/unKR/tree/main/unKR_ssCDL](https://github.com/seucoin/unKR/tree/main/unKR_ssCDL)  
 **Area**: Graph Learning / Knowledge Graphs

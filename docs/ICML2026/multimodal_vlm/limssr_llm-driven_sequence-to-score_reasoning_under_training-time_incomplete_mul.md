@@ -17,7 +17,7 @@ content_hash: ef561047e773a0a0
 
 # LIMSSR: LLM-Driven Sequence-to-Score Reasoning under Training-Time Incomplete Multimodal Observations
 
-**Conference**: ICML 2026  
+**Conference**: ICML 2026 Spotlight  
 **arXiv**: [2605.00434](https://arxiv.org/abs/2605.00434)  
 **Code**: https://github.com/XuHuangbiao/LIMSSR  
 **Area**: Multimodal VLM / Incomplete Multimodal Learning / Action Quality Assessment  

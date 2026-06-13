@@ -17,7 +17,7 @@ content_hash: b7ab2a6add640fa6
 
 # EvoLMM: Self-Evolving Large Multimodal Models with Continuous Rewards
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026 Findings  
 **arXiv**: [2511.16672](https://arxiv.org/abs/2511.16672)  
 **Code**: [https://github.com/mbzuai-oryx/EvoLMM](https://github.com/mbzuai-oryx/EvoLMM) (open-source)  
 **Area**: Multimodal VLM / Self-Evolving Learning

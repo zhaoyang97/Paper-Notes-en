@@ -17,7 +17,7 @@ content_hash: 678f95f2e745b541
 
 # Object-Centric Latent Action Learning
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026 Oral  
 **arXiv**: [2502.09680](https://arxiv.org/abs/2502.09680)  
 **Code**: [https://github.com/dunnolab/object-centric-lapo](https://github.com/dunnolab/object-centric-lapo)  
 **Area**: Reinforcement Learning

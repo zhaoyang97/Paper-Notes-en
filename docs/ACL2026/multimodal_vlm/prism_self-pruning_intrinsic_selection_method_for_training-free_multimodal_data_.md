@@ -17,7 +17,7 @@ content_hash: 5e675625850ad683
 
 # PRISM: Self-Pruning Intrinsic Selection Method for Training-Free Multimodal Data Selection
 
-**Conference**: ACL2026  
+**Conference**: ACL2026 Best Paper  
 **arXiv**: [2502.12119](https://arxiv.org/abs/2502.12119)  
 **Code**: Yes, but no clear URL provided for the cache  
 **Area**: Multimodal VLM / Data Selection  

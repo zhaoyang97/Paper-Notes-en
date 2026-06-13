@@ -17,7 +17,7 @@ content_hash: b8af98ab592ee106
 
 # Adaptive Prediction-Powered AutoEval with Reliability and Efficiency Guarantees
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2505.18659](https://arxiv.org/abs/2505.18659)  
 **Code**: [https://github.com/kclip/R_AutoEval_plus](https://github.com/kclip/R_AutoEval_plus)  
 **Area**: Model Compression

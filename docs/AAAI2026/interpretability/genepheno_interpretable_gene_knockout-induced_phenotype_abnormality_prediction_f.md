@@ -17,7 +17,7 @@ content_hash: 3720f014a8c89553
 
 # GenePheno: Interpretable Gene Knockout-Induced Phenotype Abnormality Prediction Framework
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026 Oral  
 **arXiv**: [2511.09512](https://arxiv.org/abs/2511.09512)  
 **Code**: None  
 **Area**: Bioinformatics / Multi-label Classification

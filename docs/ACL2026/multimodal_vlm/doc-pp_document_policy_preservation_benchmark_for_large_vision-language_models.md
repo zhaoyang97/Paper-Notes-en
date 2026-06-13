@@ -17,7 +17,7 @@ content_hash: 7bc639b0da1b101f
 
 # Doc-PP: Document Policy Preservation Benchmark for Large Vision-Language Models
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2601.03926](https://arxiv.org/abs/2601.03926)  
 **Code**: [Project Page](https://hwanchang00.github.io/docpp_project_page)  
 **Area**: Multimodal VLM / Document Security  

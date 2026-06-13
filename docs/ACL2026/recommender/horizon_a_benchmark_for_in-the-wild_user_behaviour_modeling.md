@@ -17,7 +17,7 @@ content_hash: d5ea3ef13081b2da
 
 # HORIZON: A Benchmark for in-the-wild User Behaviour Modeling
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.17259](https://arxiv.org/abs/2604.17259)  
 **Code**: [https://github.com/microsoft/horizon-benchmark](https://github.com/microsoft/horizon-benchmark)  
 **Area**: Recommender Systems / User Behavior Modeling  

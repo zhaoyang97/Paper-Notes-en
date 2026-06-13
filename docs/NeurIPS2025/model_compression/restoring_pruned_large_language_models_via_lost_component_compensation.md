@@ -17,7 +17,7 @@ content_hash: 0ac34bb38577fbe6
 
 # Restoring Pruned Large Language Models via Lost Component Compensation
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2510.21834](https://arxiv.org/abs/2510.21834)  
 **Code**: [GitHub](https://github.com/zijian678/restorelcc/)  
 **Area**: Model Compression / LLM Pruning Recovery

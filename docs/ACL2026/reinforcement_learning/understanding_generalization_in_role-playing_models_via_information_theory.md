@@ -16,7 +16,7 @@ content_hash: 436c3217e7ba2c10
 
 # Understanding Generalization in Role-Playing Models via Information Theory
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2512.17270](https://arxiv.org/abs/2512.17270)  
 **Code**: [GitHub](https://github.com/AlibabaResearch/DAMO-ConvAI/tree/main/RPM-Generalization)  
 **Area**: Reinforcement Learning / Role-Playing Models  

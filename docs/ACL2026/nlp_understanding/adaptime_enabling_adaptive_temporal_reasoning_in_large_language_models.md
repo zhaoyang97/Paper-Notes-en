@@ -17,7 +17,7 @@ content_hash: b0de0e60403a1557
 
 # AdapTime: Enabling Adaptive Temporal Reasoning in Large Language Models
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.24175](https://arxiv.org/abs/2604.24175)  
 **Code**: https://github.com/Applied-Machine-Learning-Lab/ACL2026-AdapTime  
 **Area**: NLP Understanding / LLM Reasoning  

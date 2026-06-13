@@ -17,7 +17,7 @@ content_hash: d294799a43ecd874
 
 # SenseJudge: Human-Centric Preference-Driven Judgment Framework
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2606.03189](https://arxiv.org/abs/2606.03189)  
 **Code**: [GitHub](https://github.com/qiongrenpiqida/SenseJudge)  
 **Area**: recommender  

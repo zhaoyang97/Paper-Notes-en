@@ -17,7 +17,7 @@ content_hash: 443de84fe879bd18
 
 # ZipVoice-Dialog: Non-Autoregressive Spoken Dialogue Generation with Flow Matching
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2507.09318](https://arxiv.org/abs/2507.09318)  
 **Code**: [https://github.com/k2-fsa/ZipVoice](https://github.com/k2-fsa/ZipVoice)  
 **Area**: Speech Generation  

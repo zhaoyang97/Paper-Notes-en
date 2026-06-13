@@ -17,7 +17,7 @@ content_hash: 5d5a86870a6dee15
 
 # SoFar: Language-Grounded Orientation Bridges Spatial Reasoning and Object Manipulation
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2502.13143](https://arxiv.org/abs/2502.13143)  
 **Authors**: Zekun Qi, Wenyao Zhang, Yufei Ding, Runpei Dong et al. (Tsinghua University, SJTU, Galbot, Peking University, UIUC, ShanghaiTech University)
 **Code**: [SoFar](https://github.com/SoFar-LGO/SoFar)  

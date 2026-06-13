@@ -17,7 +17,7 @@ content_hash: fb288ef344b0ba9a
 
 # Exploring Reasoning Reward Model for Agents
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2601.22154](https://arxiv.org/abs/2601.22154)  
 **Code**: https://github.com/kxfan2002/Reagent  
 **Area**: LLM Alignment / Reward Model / Agentic RL  

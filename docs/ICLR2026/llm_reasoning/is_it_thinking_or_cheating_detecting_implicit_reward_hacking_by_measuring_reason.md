@@ -18,7 +18,7 @@ content_hash: c9d771ae26e82d41
 
 # Is It Thinking or Cheating? Detecting Implicit Reward Hacking by Measuring Reasoning Effort
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026 Oral  
 **arXiv**: [2510.01367](https://arxiv.org/abs/2510.01367)  
 **Code**: To be released  
 **Area**: LLM Reasoning

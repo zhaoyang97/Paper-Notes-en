@@ -17,7 +17,7 @@ content_hash: e82f5aeb5e0a4dcc
 
 # LEADER: Learning Reliable Local-to-Global Correspondences for LiDAR Relocalization
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026 Highlight  
 **arXiv**: [2604.11355](https://arxiv.org/abs/2604.11355)  
 **Code**: [https://github.com/JiansW/LEADER](https://github.com/JiansW/LEADER)  
 **Area**: Autonomous Driving

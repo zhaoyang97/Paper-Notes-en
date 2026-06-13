@@ -17,7 +17,7 @@ content_hash: ad83957849669c50
 
 # Optimal and Scalable MAPF via Multi-Marginal Optimal Transport and Schrödinger Bridges
 
-**Conference**: ICML 2026  
+**Conference**: ICML 2026 Spotlight  
 **arXiv**: [2605.10917](https://arxiv.org/abs/2605.10917)  
 **Code**: Not released  
 **Area**: Robotics / Multi-Agent Path Finding / Optimal Transport  

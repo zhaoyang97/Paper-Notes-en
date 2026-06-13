@@ -16,7 +16,7 @@ content_hash: e1854e1307aa4302
 
 # LeMiCa: Lexicographic Minimax Path Caching for Efficient Diffusion-Based Video Generation
 
-**Conference**: NeurIPS 2025  
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2511.00090](https://arxiv.org/abs/2511.00090)  
 **Code**: [GitHub](https://github.com/UnicomAI/LeMiCa)  
 **Area**: Video Generation  

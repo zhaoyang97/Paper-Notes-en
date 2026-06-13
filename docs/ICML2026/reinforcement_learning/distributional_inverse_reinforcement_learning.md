@@ -17,7 +17,7 @@ content_hash: d59bef6e17e62f50
 
 # Distributional Inverse Reinforcement Learning
 
-**Conference**: ICML 2026  
+**Conference**: ICML 2026 Oral  
 **arXiv**: [2510.03013](https://arxiv.org/abs/2510.03013)  
 **Code**: Not disclosed  
 **Area**: Reinforcement Learning / Inverse Reinforcement Learning / Distributional RL / Risk-Sensitive Imitation  

@@ -16,7 +16,7 @@ content_hash: f1d304d4bd2c0aea
 
 # Multigranular Evaluation for Brain Visual Decoding
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026 Oral  
 **arXiv**: [2507.07993](https://arxiv.org/abs/2507.07993)  
 **Code**: [GitHub](https://github.com/weihaox/BASIC)  
 **Area**: Image Segmentation

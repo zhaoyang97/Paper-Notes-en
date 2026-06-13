@@ -16,7 +16,7 @@ content_hash: 247e49a4c16cd5f7
 
 # Adjoint Schrödinger Bridge Sampler
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Oral  
 **arXiv**: [2506.22565](https://arxiv.org/abs/2506.22565)  
 **Code**: [https://github.com/facebookresearch/adjoint_samplers](https://github.com/facebookresearch/adjoint_samplers)  
 **Area**: Diffusion Models / Sampling Methods / Molecular Simulation

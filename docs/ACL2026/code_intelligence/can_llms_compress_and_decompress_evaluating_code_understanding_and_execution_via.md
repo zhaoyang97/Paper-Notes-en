@@ -17,7 +17,7 @@ content_hash: 793afb79fbfc7f63
 
 # Can LLMs Compress (and Decompress)? Evaluating Code Understanding and Execution via Invertibility
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2601.13398](https://arxiv.org/abs/2601.13398)  
 **Code**: https://github.com/Nickil21/round-trip-code-compression  
 **Area**: Code Intelligence  

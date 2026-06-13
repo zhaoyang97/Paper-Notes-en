@@ -17,7 +17,7 @@ content_hash: d935371951785052
 
 # CLEAR: Context-Aware Learning with End-to-End Mask-Free Inference for Adaptive Video Subtitle Removal
 
-**Conference**: ICML 2026  
+**Conference**: ICML 2026 Spotlight  
 **arXiv**: [2603.21901](https://arxiv.org/abs/2603.21901)  
 **Code**: https://github.com/silent-commit/CLEAR (available)  
 **Area**: Video Generation / Video Inpainting / Subtitle Removal  

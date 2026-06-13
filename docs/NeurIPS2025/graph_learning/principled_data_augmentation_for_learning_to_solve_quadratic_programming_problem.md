@@ -18,7 +18,7 @@ content_hash: c43d6c9b509afc39
 
 # Principled Data Augmentation for Learning to Solve Quadratic Programming Problems
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2506.01728](https://arxiv.org/abs/2506.01728)  
 **Authors**: Chendi Qian, Christopher Morris (RWTH Aachen University)
 **Code**: [GitHub](https://github.com/chendiqian/Data-Augmentation-for-Learning-to-Optimize)  

@@ -17,7 +17,7 @@ content_hash: 66e8f2bf0fcf483e
 
 # Establishing a Scale for Kullback–Leibler Divergence in Language Models Across Various Settings
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2505.15353](https://arxiv.org/abs/2505.15353)  
 **Code**: [GitHub](https://github.com/shimo-lab/modelmap)  
 **Area**: Model Analysis / Training Dynamics  

@@ -17,7 +17,7 @@ content_hash: 1e9f9422365d1246
 
 # ODTQA-FoRe: An Open-Domain Tabular Question Answering Dataset for Future Data Forecasting and Reasoning
 
-**Conference**: ACL2026  
+**Conference**: ACL2026 Findings  
 **arXiv**: [2606.02433](https://arxiv.org/abs/2606.02433)  
 **Code**: https://github.com/jensenw1/ODTQA-FoRe  
 **Area**: Time Series / Tabular QA  

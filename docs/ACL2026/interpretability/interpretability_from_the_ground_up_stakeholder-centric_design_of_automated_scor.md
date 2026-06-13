@@ -17,7 +17,7 @@ content_hash: a1f5047e86a89e69
 
 # Interpretability from the Ground Up
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2511.17069](https://arxiv.org/abs/2511.17069)  
 **Code**: [GitHub](https://github.com/yunsungkim0908/analyticscore)  
 **Area**: Interpretability / Educational Assessment  

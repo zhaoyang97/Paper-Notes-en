@@ -17,7 +17,7 @@ content_hash: 4a8acafd7f812f08
 
 # No One Fits All: From Fixed Prompting to Learned Routing in Multilingual LLMs
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.16937](https://arxiv.org/abs/2604.16937)  
 **Code**: None  
 **Area**: Multilingual MT / Prompting Strategies  

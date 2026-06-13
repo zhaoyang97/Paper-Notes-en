@@ -17,7 +17,7 @@ content_hash: e569cfb8026ceae2
 
 # E2E-GMNER: End-to-End Generative Grounded Multimodal Named Entity Recognition
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.17319](https://arxiv.org/abs/2604.17319)  
 **Code**: [https://github.com/Finch-coder/E2E-GMNER](https://github.com/Finch-coder/E2E-GMNER)  
 **Area**: Object Detection  

@@ -17,7 +17,7 @@ content_hash: 12ac629b6f9bc318
 
 # Frame of Reference: Addressing the Challenges of Common Ground Representation in Dialogue
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2601.09365](https://arxiv.org/abs/2601.09365)  
 **Code**: [GitHub](https://github.com/biswesh/IndiRef)  
 **Area**: Reinforcement Learning  

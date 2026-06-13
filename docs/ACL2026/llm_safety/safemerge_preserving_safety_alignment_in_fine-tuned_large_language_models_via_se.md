@@ -17,7 +17,7 @@ content_hash: dd70e883c8de6abe
 
 # SafeMERGE: Preserving Safety Alignment in Fine-Tuned Large Language Models via Selective Layer-Wise Model Merging
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2503.17239](https://arxiv.org/abs/2503.17239)  
 **Code**: [GitHub](https://github.com/aladinD/SafeMERGE)  
 **Area**: LLM Alignment / Safety  

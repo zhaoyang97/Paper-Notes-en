@@ -17,7 +17,7 @@ content_hash: e5e5e61b4e763c4c
 
 # AVA-VLA: Improving Vision-Language-Action models with Active Visual Attention
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026 Highlight  
 **arXiv**: [2511.18960](https://arxiv.org/abs/2511.18960)  
 **Code**: [Project Page](https://liauto-dsr.github.io/AVA-VLA-Page)  
 **Area**: Multimodal VLM

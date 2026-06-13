@@ -17,7 +17,7 @@ content_hash: 48a8d3be7213ba6d
 
 # SwingArena: Adversarial Programming Arena for Long-context GitHub Issue Solving
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026 Oral  
 **arXiv**: [2505.23932](https://arxiv.org/abs/2505.23932)  
 **Code**: [GitHub](https://github.com/) / [HuggingFace Dataset](https://huggingface.co/)  
 **Area**: LLM Efficiency

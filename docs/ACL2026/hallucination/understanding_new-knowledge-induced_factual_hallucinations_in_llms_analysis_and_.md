@@ -17,7 +17,7 @@ content_hash: 622210144bc20b3f
 
 # Understanding New-Knowledge-Induced Factual Hallucinations in LLMs: Analysis and Interpretation
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2511.02626](https://arxiv.org/abs/2511.02626)  
 **Code**: None  
 **Area**: Hallucination Detection  

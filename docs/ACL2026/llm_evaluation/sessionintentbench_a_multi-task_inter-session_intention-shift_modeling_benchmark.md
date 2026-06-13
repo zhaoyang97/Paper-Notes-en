@@ -16,7 +16,7 @@ content_hash: 08d33462dd3028f1
 
 # SessionIntentBench: A Multi-Task Inter-Session Intention-Shift Modeling Benchmark
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2507.20185](https://arxiv.org/abs/2507.20185)  
 **Code**: None  
 **Area**: LLM Evaluation  

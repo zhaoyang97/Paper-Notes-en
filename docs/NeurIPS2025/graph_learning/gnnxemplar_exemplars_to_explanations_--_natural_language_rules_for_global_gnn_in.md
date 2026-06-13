@@ -17,7 +17,7 @@ content_hash: da9e43a5543fb599
 
 # GnnXemplar: Exemplars to Explanations -- Natural Language Rules for Global GNN Interpretability
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Oral  
 **arXiv**: [2509.18376](https://arxiv.org/abs/2509.18376)  
 **Code**: [GitHub](https://github.com/idea-iitd/GnnXemplar.git)  
 **Area**: Graph Learning / GNN Interpretability

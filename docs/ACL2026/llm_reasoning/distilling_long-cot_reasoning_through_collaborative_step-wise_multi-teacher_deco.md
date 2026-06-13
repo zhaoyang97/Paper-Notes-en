@@ -17,7 +17,7 @@ content_hash: 46469cb3fdb937db
 
 # Distilling Long-CoT Reasoning through Collaborative Step-wise Multi-Teacher Decoding (CoRD)
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2605.02290](https://arxiv.org/abs/2605.02290)  
 **Code**: TBD (not directly provided in the paper)  
 **Area**: Model Compression / Distillation / Long-CoT Reasoning  

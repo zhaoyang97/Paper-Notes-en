@@ -17,7 +17,7 @@ content_hash: bc6630de9cc48fb2
 
 # Better and Worse with Scale: How Contextual Entrainment Diverges with Model Size
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.13275](https://arxiv.org/abs/2604.13275)  
 **Code**: None  
 **Area**: Causal Inference  

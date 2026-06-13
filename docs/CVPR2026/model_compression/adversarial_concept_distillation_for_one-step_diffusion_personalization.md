@@ -17,7 +17,7 @@ content_hash: 75663f2c83ee4986
 
 # Adversarial Concept Distillation for One-Step Diffusion Personalization
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026 Findings  
 **arXiv**: [2510.20512](https://arxiv.org/abs/2510.20512)  
 **Code**: [https://liulisixin.github.io/OPAD/](https://liulisixin.github.io/OPAD/)  
 **Area**: Model Compression

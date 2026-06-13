@@ -17,7 +17,7 @@ content_hash: cb29b91a4bc1aa91
 
 # How Retrieved Context Shapes Internal Representations in RAG
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2602.20091](https://arxiv.org/abs/2602.20091)  
 **Code**: None  
 **Area**: Information Retrieval / RAG  

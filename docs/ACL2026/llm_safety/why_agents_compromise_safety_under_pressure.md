@@ -17,7 +17,7 @@ content_hash: 7d61a3c002261bff
 
 # Why Agents Compromise Safety Under Pressure
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2603.14975](https://arxiv.org/abs/2603.14975)  
 **Code**: TBD (None)  
 **Area**: LLM Agent / AI Safety  

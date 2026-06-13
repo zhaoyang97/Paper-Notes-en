@@ -17,7 +17,7 @@ content_hash: fc70b0cd4adb0d30
 
 # Large Language Models Are Overconfident in Their Own Responses
 
-**Conference**: ACL2026  
+**Conference**: ACL2026 Findings  
 **arXiv**: [2606.03437](https://arxiv.org/abs/2606.03437)  
 **Code**: No public code link found in cache  
 **Area**: LLM Alignment / Calibration  

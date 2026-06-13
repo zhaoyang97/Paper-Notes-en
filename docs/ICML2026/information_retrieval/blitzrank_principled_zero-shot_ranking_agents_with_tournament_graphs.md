@@ -17,7 +17,7 @@ content_hash: 6e6f8f143a477c8f
 
 # BlitzRank: Principled Zero-shot Ranking Agents with Tournament Graphs
 
-**Conference**: ICML2026  
+**Conference**: ICML2026 Spotlight  
 **arXiv**: [2602.05448](https://arxiv.org/abs/2602.05448)  
 **Code**: https://github.com/ContextualAI/BlitzRank  
 **Area**: Information Retrieval  

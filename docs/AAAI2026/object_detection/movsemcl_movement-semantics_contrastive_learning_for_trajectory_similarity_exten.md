@@ -17,7 +17,7 @@ content_hash: bfe31c657a60ad18
 
 # MovSemCL: Movement-Semantics Contrastive Learning for Trajectory Similarity (Extension)
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026 Oral  
 **arXiv**: [2511.12061](https://arxiv.org/abs/2511.12061)  
 **Code**: [https://github.com/ryanlaics/MovSemCL](https://github.com/ryanlaics/MovSemCL)  
 **Area**: Self-Supervised Learning / Trajectory Analysis

@@ -18,7 +18,7 @@ content_hash: 9a81216b30639cd9
 
 # Escaping Saddle Points without Lipschitz Smoothness: The Power of Nonlinear Preconditioning
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2509.15817](https://arxiv.org/abs/2509.15817)  
 **Code**: None  
 **Area**: Optimization Theory

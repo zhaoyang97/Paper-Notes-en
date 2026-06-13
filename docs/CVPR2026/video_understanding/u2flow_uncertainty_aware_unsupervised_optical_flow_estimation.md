@@ -17,7 +17,7 @@ content_hash: 115e511d2898825a
 
 # U2Flow: Uncertainty-Aware Unsupervised Optical Flow Estimation
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026 Oral  
 **arXiv**: [2604.10056](https://arxiv.org/abs/2604.10056)  
 **Code**: [https://github.com/sunzunyi/U2FLOW](https://github.com/sunzunyi/U2FLOW)  
 **Area**: Video Understanding / Optical Flow Estimation

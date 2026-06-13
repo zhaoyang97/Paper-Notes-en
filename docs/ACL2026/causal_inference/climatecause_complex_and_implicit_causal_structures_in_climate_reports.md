@@ -17,7 +17,7 @@ content_hash: 72b1e1754ac8a8f2
 
 # ClimateCause: Complex and Implicit Causal Structures in Climate Reports
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.14856](https://arxiv.org/abs/2604.14856)  
 **Code**: [GitHub](https://github.com/laallein/ClimateCause)  
 **Area**: Causal Inference / Datasets  

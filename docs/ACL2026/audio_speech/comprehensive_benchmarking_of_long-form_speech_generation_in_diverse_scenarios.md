@@ -17,7 +17,7 @@ content_hash: 96532b55e8783df6
 
 # Comprehensive Benchmarking of Long-Form Speech Generation in Diverse Scenarios
 
-**Conference**: ACL2026  
+**Conference**: ACL2026 Findings  
 **arXiv**: [2605.28618](https://arxiv.org/abs/2605.28618)  
 **Code**: https://swanaigc.github.io/#bench  
 **Area**: Audio & Speech / Long-form Speech Generation Evaluation  

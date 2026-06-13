@@ -17,7 +17,7 @@ content_hash: 3ad7689696c347e8
 
 # ResearchBench: Benchmarking LLMs in Scientific Discovery via Inspiration-Based Task Decomposition
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2503.21248](https://arxiv.org/abs/2503.21248)  
 **Code**: None  
 **Area**: Scientific Discovery  

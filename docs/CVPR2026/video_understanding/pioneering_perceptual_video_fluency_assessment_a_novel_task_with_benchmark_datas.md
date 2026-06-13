@@ -17,7 +17,7 @@ content_hash: 4d743c130073accb
 
 # Pioneering Perceptual Video Fluency Assessment: A Novel Task with Benchmark Dataset and Baseline
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026 Findings  
 **arXiv**: [2603.26055](https://arxiv.org/abs/2603.26055)  
 **Code**: [https://github.com/KeiChiTse/VFA](https://github.com/KeiChiTse/VFA)  
 **Area**: Video Understanding / Video Quality Assessment

@@ -17,7 +17,7 @@ content_hash: 38828c1fb09b03f6
 
 # HCF: Hierarchical Cascade Framework for Distributed Multi-Stage Image Compression
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026 Oral  
 **arXiv**: [2508.02051](https://arxiv.org/abs/2508.02051)  
 **Code**: N/A  
 **Area**: Model Compression

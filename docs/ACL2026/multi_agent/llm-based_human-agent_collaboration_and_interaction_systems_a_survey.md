@@ -17,7 +17,7 @@ content_hash: 5bdad20e3996b616
 
 # LLM-Based Human-Agent Collaboration and Interaction Systems: A Survey
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2505.00753](https://arxiv.org/abs/2505.00753)  
 **Code**: https://github.com/HenryPengZou/Awesome-Human-Agent-Collaboration-Interaction-Systems  
 **Area**: Human-Agent Collaboration / LLM Agent / Survey  

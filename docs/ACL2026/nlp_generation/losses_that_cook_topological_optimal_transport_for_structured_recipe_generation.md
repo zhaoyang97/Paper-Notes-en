@@ -17,7 +17,7 @@ content_hash: 8174fe92b4c9ef8c
 
 # Losses that Cook: Topological Optimal Transport for Structured Recipe Generation
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2601.02531](https://arxiv.org/abs/2601.02531)  
 **Code**: [GitHub](https://github.com/DarthReca/losses-cook)  
 **Area**: Text Generation  

@@ -17,7 +17,7 @@ content_hash: 192a5763e784f1d6
 
 # Phantasia: Context-Adaptive Backdoors in Vision Language Models
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026 Findings  
 **arXiv**: [2604.08395](https://arxiv.org/abs/2604.08395)  
 **Code**: [https://github.com/nduongw/Phantasia](https://github.com/nduongw/Phantasia)  
 **Area**: Multimodal VLM / AI Security

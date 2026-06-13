@@ -17,7 +17,7 @@ content_hash: ba12dcd513698137
 
 # CaDyT: Causal Structure Learning for Dynamical Systems with Theoretical Score Analysis
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026 Oral  
 **arXiv**: [2512.14361](https://arxiv.org/abs/2512.14361)  
 **Code**: Provided in appendix  
 **Area**: Causal Inference / Dynamical Systems

@@ -17,7 +17,7 @@ content_hash: 41be54f5e36f7fb1
 
 # Learning Randomized Reductions
 
-**Conference**: ICML 2026  
+**Conference**: ICML 2026 Spotlight  
 **arXiv**: [2412.18134](https://arxiv.org/abs/2412.18134)  
 **Code**: https://github.com/ferhaterata/learning-randomized-reductions (Available)  
 **Area**: Optimization / Neuro-symbolic Learning / Symbolic Regression  

@@ -17,7 +17,7 @@ content_hash: 4ca96853c7177c78
 
 # PrinciplismQA: A Philosophy-Grounded Approach to Assessing LLM-Human Clinical Medical Ethics Alignment
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2508.05132](https://arxiv.org/abs/2508.05132)  
 **Code**: None  
 **Area**: Medical Imaging  

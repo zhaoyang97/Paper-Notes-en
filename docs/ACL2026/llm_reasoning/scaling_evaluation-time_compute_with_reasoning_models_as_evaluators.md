@@ -17,7 +17,7 @@ content_hash: 05556d812b8a4c70
 
 # Scaling Evaluation-Time Compute with Reasoning Models as Evaluators
 
-**Conference**: ACL2026  
+**Conference**: ACL2026 Findings  
 **arXiv**: [2503.19877](https://arxiv.org/abs/2503.19877)  
 **Code**: None (Cache not provided)  
 **Area**: LLM Reasoning / LLM Evaluation / Test-time Scaling  

@@ -17,7 +17,7 @@ content_hash: aeebdfda4b432873
 
 # Multi-Drafter Speculative Decoding with Alignment Feedback
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.05417](https://arxiv.org/abs/2604.05417)  
 **Code**: Yes  
 **Area**: LLM Efficiency  

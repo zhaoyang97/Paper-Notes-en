@@ -17,7 +17,7 @@ content_hash: 92a2cde836dcae5f
 
 # EmoVid: A Multimodal Emotion Video Dataset for Emotion-Centric Video Understanding and Generation
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026 Oral  
 **arXiv**: [2511.11002](https://arxiv.org/abs/2511.11002)  
 **Code**: [https://zane-zyqiu.github.io/EmoVid](https://zane-zyqiu.github.io/EmoVid) (Project Page)  
 **Area**: Video Understanding

@@ -17,7 +17,7 @@ content_hash: 7346ae4a855c289b
 
 # ReCast: Reliability-aware Codebook Assisted Lightweight Time Series Forecasting
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026 Oral  
 **arXiv**: [2511.11991](https://arxiv.org/abs/2511.11991)  
 **Code**: N/A  
 **Area**: Time Series

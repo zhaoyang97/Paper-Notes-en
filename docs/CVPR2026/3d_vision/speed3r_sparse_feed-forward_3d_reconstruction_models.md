@@ -17,7 +17,7 @@ content_hash: 54b65a7bb34430d9
 
 # Speed3R: Sparse Feed-forward 3D Reconstruction Models
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026 Findings  
 **arXiv**: [2603.08055](https://arxiv.org/abs/2603.08055)  
 **Code**: [https://visual-ai.github.io/speed3r/](https://visual-ai.github.io/speed3r/)  
 **Area**: 3D Vision

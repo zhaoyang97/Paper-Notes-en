@@ -17,7 +17,7 @@ content_hash: f0d54978a82a0292
 
 # Justice in Judgment: Unveiling (Hidden) Bias in LLM-assisted Peer Reviews
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2509.13400](https://arxiv.org/abs/2509.13400)  
 **Code**: LLMReviewBias (Open-source repository link provided in the paper)  
 **Area**: LLM Evaluation / Fairness / Peer Review  

@@ -16,7 +16,7 @@ content_hash: 0e5c8b42a299e312
 
 # GeoMMBench and GeoMMAgent: Toward Expert-Level Multimodal Intelligence in Geoscience and Remote Sensing
 
-**Conference**: CVPR 2026  
+**Conference**: CVPR 2026 Highlight  
 **arXiv**: [2604.08896](https://arxiv.org/abs/2604.08896)  
 **Code**: [https://geo-mm-agi.github.io](https://geo-mm-agi.github.io)  
 **Area**: Remote Sensing / Multimodal Benchmark  

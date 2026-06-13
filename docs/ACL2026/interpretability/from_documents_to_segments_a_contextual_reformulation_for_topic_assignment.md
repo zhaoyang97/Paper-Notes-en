@@ -17,7 +17,7 @@ content_hash: 52365921cebb758d
 
 # From Documents to Segments: A Contextual Reformulation for Topic Assignment
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2605.17714](https://arxiv.org/abs/2605.17714)  
 **Code**: Dataset https://huggingface.co/datasets/LG-AI-Research/SemEval-STM; GitHub repo not provided yet  
 **Area**: Topic Modeling / Interpretable Text Analysis / NLP Understanding  

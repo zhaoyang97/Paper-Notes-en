@@ -17,7 +17,7 @@ content_hash: 6e64ac3bf7abe1b5
 
 # Anchored Cyclic Generation: A Novel Paradigm for Long-Sequence Symbolic Music Generation
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.05343](https://arxiv.org/abs/2604.05343)  
 **Code**: None  
 **Area**: Audio & Speech / Sequence Generation  

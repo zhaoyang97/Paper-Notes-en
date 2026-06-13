@@ -16,7 +16,7 @@ content_hash: 4a5d56be0b3c47b3
 
 # Probabilistic Kernel Function for Fast Angle Testing
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026 Oral  
 **arXiv**: [2505.20274](https://arxiv.org/abs/2505.20274)  
 **Code**: [GitHub](https://github.com/KejingLu-810/KS)  
 **Area**: Other

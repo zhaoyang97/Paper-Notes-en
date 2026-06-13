@@ -17,7 +17,7 @@ content_hash: c14b9db3239c31a4
 
 # ConSensus: Multi-Agent Collaboration for Multimodal Sensing
 
-**Conference**: ACL2026  
+**Conference**: ACL2026 Findings  
 **arXiv**: [2601.06453](https://arxiv.org/abs/2601.06453)  
 **Code**: https://github.com/nokia/multi-agent-collaboration-for-multimodal-sensing  
 **Area**: Multimodal Sensing / LLM Agent  

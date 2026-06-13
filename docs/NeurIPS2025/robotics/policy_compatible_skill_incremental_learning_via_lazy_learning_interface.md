@@ -18,7 +18,7 @@ content_hash: 57f2014b798a8690
 
 # Policy Compatible Skill Incremental Learning via Lazy Learning Interface
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2509.20612](https://arxiv.org/abs/2509.20612)  
 **Authors**: Daehee Lee (SKKU), Dongsu Lee (UT Austin), TaeYoon Kwack (SKKU), Wonje Choi (SKKU), Honguk Woo (SKKU)
 **Code**: [GitHub](https://github.com/L2dulgi/SIL-C)  

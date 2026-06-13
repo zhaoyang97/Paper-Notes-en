@@ -17,7 +17,7 @@ content_hash: 456c2372604d18cc
 
 # Adaptive Neighborhood-Constrained Q Learning for Offline Reinforcement Learning
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2511.02567](https://arxiv.org/abs/2511.02567)  
 **Code**: [https://github.com/thu-rllab/ANQ](https://github.com/thu-rllab/ANQ)  
 **Area**: Reinforcement Learning / Offline RL

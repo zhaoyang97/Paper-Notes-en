@@ -17,7 +17,7 @@ content_hash: 373aa7b69d1e8560
 
 # OnlineSplatter: Pose-Free Online 3D Reconstruction for Free-Moving Objects
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2510.20605](https://arxiv.org/abs/2510.20605)  
 **Code**: [https://markhh.com/OnlineSplatter](https://markhh.com/OnlineSplatter)  
 **Area**: 3D Vision

@@ -17,7 +17,7 @@ content_hash: 8d53217556ca2fbd
 
 # URaG: Unified Retrieval and Generation in Multimodal LLMs for Efficient Long Document Understanding
 
-**Conference**: AAAI 2026  
+**Conference**: AAAI 2026 Oral  
 **arXiv**: [2511.10552](https://arxiv.org/abs/2511.10552)  
 **Code**: [https://github.com/shi-yx/URaG](https://github.com/shi-yx/URaG)  
 **Area**: Multimodal Large Language Models / Document Understanding  

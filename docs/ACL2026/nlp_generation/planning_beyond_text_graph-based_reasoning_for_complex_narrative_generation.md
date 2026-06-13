@@ -17,7 +17,7 @@ content_hash: 795ff65b95ab6756
 
 # Planning Beyond Text: Graph-based Reasoning for Complex Narrative Generation
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.21253](https://arxiv.org/abs/2604.21253)  
 **Code**: None  
 **Area**: LLM Efficiency  

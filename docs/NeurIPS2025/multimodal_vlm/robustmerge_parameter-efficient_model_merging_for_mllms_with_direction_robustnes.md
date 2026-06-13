@@ -17,7 +17,7 @@ content_hash: 20d95eac343fb251
 
 # RobustMerge: Parameter-Efficient Model Merging for MLLMs with Direction Robustness
 
-**Conference**: NeurIPS 2025  
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2502.17159](https://arxiv.org/abs/2502.17159)  
 **Code**: [GitHub](https://github.com/AuroraZengfh/RobustMerge)  
 **Area**: Multimodal VLM  

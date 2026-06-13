@@ -17,7 +17,7 @@ content_hash: 3ca4f329152f4fb1
 
 # CLAG: Adaptive Memory Organization via Agent-Driven Clustering for Small Language Model Agents
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2603.15421](https://arxiv.org/abs/2603.15421)  
 **Code**: [https://github.com/dmis-lab/CLAG](https://github.com/dmis-lab/CLAG)  
 **Area**: Model Compression  

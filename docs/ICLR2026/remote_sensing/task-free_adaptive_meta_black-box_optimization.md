@@ -17,7 +17,7 @@ content_hash: ef379ae94d5612af
 
 # Task-free Adaptive Meta Black-box Optimization
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026 Oral  
 **arXiv**: [2601.21475](https://arxiv.org/abs/2601.21475)  
 **Code**: None  
 **Area**: Remote Sensing

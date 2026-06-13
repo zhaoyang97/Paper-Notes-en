@@ -17,7 +17,7 @@ content_hash: 8ad381c958e818e2
 
 # UniTok: A Unified Tokenizer for Visual Generation and Understanding
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2502.20321](https://arxiv.org/abs/2502.20321)  
 **Code**: [GitHub](https://github.com/FoundationVision/UniTok)  
 **Area**: Multimodal VLM

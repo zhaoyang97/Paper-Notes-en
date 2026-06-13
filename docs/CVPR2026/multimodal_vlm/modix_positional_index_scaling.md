@@ -17,7 +17,7 @@ content_hash: 2c37adf44d39d009
 
 # MODIX: Training-Free Multimodal Information-Driven Positional Index Scaling for VLMs
 
-**Conference**: CVPR 2026  
+**Conference**: CVPR 2026 Highlight  
 **arXiv**: [2604.12537](https://arxiv.org/abs/2604.12537)  
 **Code**: N/A  
 **Area**: Multimodal VLM  

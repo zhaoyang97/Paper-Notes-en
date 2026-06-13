@@ -17,7 +17,7 @@ content_hash: 3ebfc6956d4391d3
 
 # What's Missing in Screen-to-Action? Towards a UI-in-the-Loop Paradigm for Multimodal GUI Reasoning
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.06995](https://arxiv.org/abs/2604.06995)  
 **Code**: None  
 **Area**: Multimodal VLM / LLM Agent  

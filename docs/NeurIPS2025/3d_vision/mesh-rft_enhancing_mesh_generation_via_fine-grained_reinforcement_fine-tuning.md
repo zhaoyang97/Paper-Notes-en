@@ -17,7 +17,7 @@ content_hash: 2f43aca9e15423a9
 
 # Mesh-RFT: Enhancing Mesh Generation via Fine-Grained Reinforcement Fine-Tuning
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2505.16761](https://arxiv.org/abs/2505.16761)  
 **Code**: [Project Page](https://hitcslj.github.io/mesh-rft/)  
 **Area**: 3D Vision / Mesh Generation

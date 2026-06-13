@@ -17,7 +17,7 @@ content_hash: a94c96a15ed58f7b
 
 # CadLLM: Improving the Throughput of Diffusion-based LLMs via Training-Free Confidence-Aware Calibration
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2512.07173](https://arxiv.org/abs/2512.07173)  
 **Code**: Available  
 **Area**: Model Compression  

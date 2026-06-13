@@ -17,7 +17,7 @@ content_hash: d5e15d25d451cab2
 
 # Mem^p: Exploring Agent Procedural Memory
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2508.06433](https://arxiv.org/abs/2508.06433)  
 **Code**: [GitHub](https://github.com/zjunlp/MemP)  
 **Area**: Model Compression  

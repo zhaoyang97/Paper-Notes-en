@@ -17,7 +17,7 @@ content_hash: b0831fe60dc38a8b
 
 # Circuit Tracing in Vision-Language Models: Understanding the Internal Mechanisms of Multimodal Thinking
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026 Findings  
 **arXiv**: [2602.20330](https://arxiv.org/abs/2602.20330)  
 **Code**: [github.com/UIUC-MONET/vlm-circuit-tracing](https://github.com/UIUC-MONET/vlm-circuit-tracing)  
 **Area**: Multimodal VLM

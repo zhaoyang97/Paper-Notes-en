@@ -17,7 +17,7 @@ content_hash: 6d2326a3291794d6
 
 # PixDLM: A Dual-Path Multimodal Language Model for UAV Reasoning Segmentation
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026 Highlight  
 **arXiv**: [2604.15670](https://arxiv.org/abs/2604.15670)  
 **Code**: [https://github.com/XIEFOX/PixDLM](https://github.com/XIEFOX/PixDLM)  
 **Area**: Semantic Segmentation

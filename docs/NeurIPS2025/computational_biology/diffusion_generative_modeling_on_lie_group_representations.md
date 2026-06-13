@@ -17,7 +17,7 @@ content_hash: a28b1106b9c8dc29
 
 # Diffusion Generative Modeling on Lie Group Representations
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2502.02513](https://arxiv.org/abs/2502.02513)  
 **Code**: None  
 **Area**: Image Generation / Diffusion Models / Lie Groups

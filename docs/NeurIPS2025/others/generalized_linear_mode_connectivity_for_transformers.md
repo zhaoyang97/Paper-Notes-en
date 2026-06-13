@@ -17,7 +17,7 @@ content_hash: 8f4328b5c1d6ee13
 
 # Generalized Linear Mode Connectivity for Transformers
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Oral  
 **arXiv**: [2506.22712](https://arxiv.org/abs/2506.22712)  
 **Code**: Available (link provided in the paper)  
 **Area**: Model Merging / Transformer Theory

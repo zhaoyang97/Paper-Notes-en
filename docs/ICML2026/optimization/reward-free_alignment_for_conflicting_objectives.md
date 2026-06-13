@@ -17,7 +17,7 @@ content_hash: fbe1af518ef5e4c5
 
 # RACO: Reward-free Alignment for Conflicting Objectives
 
-**Conference**: ICML 2026  
+**Conference**: ICML 2026 Oral  
 **arXiv**: [2602.02495](https://arxiv.org/abs/2602.02495)  
 **Code**: TBD  
 **Area**: Optimization / LLM Alignment / Multi-objective Optimization  

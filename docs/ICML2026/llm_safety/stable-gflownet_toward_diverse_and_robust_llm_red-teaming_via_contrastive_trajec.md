@@ -17,7 +17,7 @@ content_hash: 0715778cbb153a7c
 
 # Stable-GFlowNet: Toward Diverse and Robust LLM Red-Teaming via Contrastive Trajectory Balance
 
-**Conference**: ICML 2026  
+**Conference**: ICML 2026 Spotlight  
 **arXiv**: [2605.00553](https://arxiv.org/abs/2605.00553)  
 **Code**: Paper link not public  
 **Area**: LLM Safety / Red-Teaming / GFlowNet  

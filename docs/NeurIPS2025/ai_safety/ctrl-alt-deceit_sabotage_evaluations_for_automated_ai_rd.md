@@ -17,7 +17,7 @@ content_hash: 86b25cb2c8c0611b
 
 # CTRL-ALT-DECEIT: Sabotage Evaluations for Automated AI R&D
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2511.09904](https://arxiv.org/abs/2511.09904)  
 **Code**: [https://github.com/TeunvdWeij/ctrl-alt-deceit](https://github.com/TeunvdWeij/ctrl-alt-deceit)  
 **Area**: AI Safety

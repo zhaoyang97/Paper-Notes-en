@@ -17,7 +17,7 @@ content_hash: 5ccfcfec17965e99
 
 # Gaussian Shannon: High-Precision Diffusion Model Watermarking Based on Communication
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026 Findings  
 **arXiv**: [2603.26167](https://arxiv.org/abs/2603.26167)  
 **Code**: [https://github.com/Rambo-Yi/Gaussian-Shannon](https://github.com/Rambo-Yi/Gaussian-Shannon)  
 **Area**: Image Generation / AI Security

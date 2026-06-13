@@ -17,7 +17,7 @@ content_hash: f7f9998f76c48185
 
 # Stable On-Policy Distillation through Adaptive Target Reformulation
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2601.07155](https://arxiv.org/abs/2601.07155)  
 **Code**: None  
 **Area**: Medical Imaging  

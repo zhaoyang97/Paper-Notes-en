@@ -17,7 +17,7 @@ content_hash: 5da4bf89b98f9edb
 
 # FABLE: Fine-grained Fact Anchoring for Unstructured Model Editing
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.12559](https://arxiv.org/abs/2604.12559)  
 **Code**: [https://github.com/caskcsg/FABLE](https://github.com/caskcsg/FABLE)  
 **Area**: Knowledge Editing / LLM  

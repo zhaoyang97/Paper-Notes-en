@@ -17,7 +17,7 @@ content_hash: a189082e252ac9b2
 
 # Assemble Your Crew: Automatic Multi-agent Communication Topology Design via Autoregressive Graph Generation
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026 Oral  
 **arXiv**: [2507.18224](https://arxiv.org/abs/2507.18224)  
 **Code**: [https://github.com/Shiy-Li/ARG-Designer](https://github.com/Shiy-Li/ARG-Designer)  
 **Area**: Graph Learning

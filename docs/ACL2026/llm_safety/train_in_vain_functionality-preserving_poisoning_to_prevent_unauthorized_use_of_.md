@@ -17,7 +17,7 @@ content_hash: 12a80152d1647ece
 
 # Train in Vain: Functionality-Preserving Poisoning to Prevent Unauthorized Use of Code Datasets
 
-**Conference**: ACL2026  
+**Conference**: ACL2026 Findings  
 **arXiv**: [2604.22291](https://arxiv.org/abs/2604.22291)  
 **Code**: To be confirmed (The paper claims open-source, but the local cache does not provide the repository URL)  
 **Area**: Code Large Language Models / Data Governance  

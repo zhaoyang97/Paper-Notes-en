@@ -17,7 +17,7 @@ content_hash: e1b82fdf627a61d7
 
 # Rethinking Long-tailed Dataset Distillation: A Uni-Level Framework with Unbiased Recovery and Relabeling
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026 Oral  
 **arXiv**: [2511.18858](https://arxiv.org/abs/2511.18858)  
 **Code**: None  
 **Area**: Model Compression

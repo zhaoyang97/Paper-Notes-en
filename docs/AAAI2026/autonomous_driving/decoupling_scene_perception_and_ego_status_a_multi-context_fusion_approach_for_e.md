@@ -17,7 +17,7 @@ content_hash: 2f97ec58f1ddacbc
 
 # AdaptiveAD: Decoupling Scene Perception and Ego Status for End-to-End Autonomous Driving
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026 Oral  
 **arXiv**: [2511.13079](https://arxiv.org/abs/2511.13079)  
 **Code**: N/A  
 **Area**: Autonomous Driving

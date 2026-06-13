@@ -18,7 +18,7 @@ content_hash: 2fd76bb040c4d4ba
 <!-- Generated automatically by src/gen_stubs.py -->
 # SEMA-RAG: A Self-Evolving Multi-Agent Retrieval-Augmented Generation Framework for Medical Reasoning
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2605.17101](https://arxiv.org/abs/2605.17101)  
 **Code**: None  
 **Area**: Medical NLP  

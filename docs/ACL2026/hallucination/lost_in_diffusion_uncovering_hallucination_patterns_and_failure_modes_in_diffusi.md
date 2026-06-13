@@ -17,7 +17,7 @@ content_hash: 313f68bb37bebacc
 
 # Lost in Diffusion: Uncovering Hallucination Patterns and Failure Modes in Diffusion Large Language Models
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.10556](https://arxiv.org/abs/2604.10556)  
 **Code**: [github.com/ZeroLoss-Lab/Lost-in-Diffusion](https://github.com/ZeroLoss-Lab/Lost-in-Diffusion)  
 **Area**: Hallucination Detection  

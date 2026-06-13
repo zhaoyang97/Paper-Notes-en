@@ -17,7 +17,7 @@ content_hash: 8b4b1f7a58a24017
 
 # Towards Scalable Lightweight GUI Agents via Multi-role Orchestration
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.13488](https://arxiv.org/abs/2604.13488)  
 **Code**: [GitHub](https://github.com/BigTaige/LAMO)  
 **Area**: LLM Agent / GUI Automation  

@@ -17,7 +17,7 @@ content_hash: 877dfc5a7096ee8d
 
 # Topic-Based Watermarks for Large Language Models
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2404.02138](https://arxiv.org/abs/2404.02138)  
 **Code**: [GitHub](https://github.com/ANCP2021/Topic-Based-Watermarks)  
 **Area**: AI Security / Text Watermarking  

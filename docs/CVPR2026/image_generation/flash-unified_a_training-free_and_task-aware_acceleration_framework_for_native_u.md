@@ -17,7 +17,7 @@ content_hash: 18f34c385655e618
 
 # Flash-Unified: Training-Free and Task-Aware Acceleration for Native Unified Models
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026 Findings  
 **arXiv**: [2603.15271](https://arxiv.org/abs/2603.15271)  
 **Code**: [Available](https://github.com/Rirayh/FlashU)  
 **Area**: Image Generation

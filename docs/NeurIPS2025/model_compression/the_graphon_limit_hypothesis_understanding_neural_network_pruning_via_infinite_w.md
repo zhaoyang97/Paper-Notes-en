@@ -18,7 +18,7 @@ content_hash: 240e7f8eb4325a26
 
 # The Graphon Limit Hypothesis: Understanding Neural Network Pruning via Infinite Width Analysis
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2510.17515](https://arxiv.org/abs/2510.17515)  
 **Code**: To be confirmed  
 **Area**: Model Compression

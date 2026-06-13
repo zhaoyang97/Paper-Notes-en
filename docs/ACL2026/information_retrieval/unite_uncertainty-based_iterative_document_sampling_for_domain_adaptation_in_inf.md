@@ -17,7 +17,7 @@ content_hash: 06380aa0cd43b52f
 
 # UnIte: Uncertainty-based Iterative Document Sampling for Domain Adaptation in Information Retrieval
 
-**Conference**: ACL2026  
+**Conference**: ACL2026 Findings  
 **arXiv**: [2604.25142](https://arxiv.org/abs/2604.25142)  
 **Code**: https://github.com/ldilab/UnIte  
 **Area**: Information Retrieval  

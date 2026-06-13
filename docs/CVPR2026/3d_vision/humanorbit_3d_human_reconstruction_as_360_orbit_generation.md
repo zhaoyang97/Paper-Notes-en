@@ -17,7 +17,7 @@ content_hash: 494f5e63ff9e3a12
 
 # HumanOrbit: 3D Human Reconstruction as 360° Orbit Generation
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026 Findings  
 **arXiv**: [2602.24148](https://arxiv.org/abs/2602.24148)  
 **Code**: Unavailable  
 **Area**: 3D Vision

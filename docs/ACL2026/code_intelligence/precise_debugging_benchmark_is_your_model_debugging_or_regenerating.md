@@ -17,7 +17,7 @@ content_hash: d2557878f2d32f76
 
 # Precise Debugging Benchmark: Is Your Model Debugging or Regenerating?
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.17338](https://arxiv.org/abs/2604.17338)  
 **Code**: [GitHub](https://github.com)  
 **Area**: Code Intelligence / Debugging Evaluation  

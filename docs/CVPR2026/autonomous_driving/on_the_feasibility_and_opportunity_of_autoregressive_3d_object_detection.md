@@ -18,7 +18,7 @@ content_hash: e471960adaa50bf5
 
 # On the Feasibility and Opportunity of Autoregressive 3D Object Detection
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026 Findings  
 **arXiv**: [2603.07985](https://arxiv.org/abs/2603.07985)  
 **Code**: To be confirmed  
 **Area**: Autonomous Driving / 3D Object Detection

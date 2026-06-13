@@ -17,7 +17,7 @@ content_hash: 611f07a51b4ab5a2
 
 # TagRAG: Tag-guided Hierarchical Knowledge Graph Retrieval-Augmented Generation
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2601.05254](https://arxiv.org/abs/2601.05254)  
 **Code**: None  
 **Area**: Graph Learning / Graph RAG  

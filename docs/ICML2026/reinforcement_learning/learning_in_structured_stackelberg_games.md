@@ -17,7 +17,7 @@ content_hash: b8dc6e2c85283354
 
 # Learning in Structured Stackelberg Games
 
-**Conference**: ICML 2026  
+**Conference**: ICML 2026 Spotlight  
 **arXiv**: [2504.09006](https://arxiv.org/abs/2504.09006)  
 **Code**: Unreleased  
 **Area**: Multi-agent / Game Learning / Learning Theory  

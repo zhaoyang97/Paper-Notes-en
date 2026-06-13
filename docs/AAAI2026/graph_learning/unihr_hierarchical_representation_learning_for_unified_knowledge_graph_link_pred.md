@@ -19,7 +19,7 @@ content_hash: cd86915dad94ce77
 
 # UniHR: Hierarchical Representation Learning for Unified Knowledge Graph Link Prediction
 
-**Conference**: AAAI2026  
+**Conference**: AAAI2026 Oral  
 **arXiv**: [2411.07019](https://arxiv.org/abs/2411.07019)  
 **Authors**: Zhiqiang Liu, Yin Hua, Mingyang Chen, Yichi Zhang, Zhuo Chen, Lei Liang, Wen Zhang (ZJU)  
 **Code**: [zjukg/UniHR](https://github.com/zjukg/UniHR)  

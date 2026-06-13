@@ -17,7 +17,7 @@ content_hash: f8173920cc08f4c5
 
 # Robust Neural Rendering in the Wild with Asymmetric Dual 3D Gaussian Splatting
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2506.03538](https://arxiv.org/abs/2506.03538)  
 **Code**: [GitHub](https://steveli88.github.io/AsymGS)  
 **Area**: 3D Vision / Neural Rendering

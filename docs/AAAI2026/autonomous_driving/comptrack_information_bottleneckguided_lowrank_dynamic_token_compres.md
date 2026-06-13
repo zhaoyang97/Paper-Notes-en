@@ -19,7 +19,7 @@ content_hash: d38c33eb5cb942b3
 
 # CompTrack: Information Bottleneck-Guided Low-Rank Dynamic Token Compression for Point Cloud Tracking
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026 Oral  
 **arXiv**: [2511.15580](https://arxiv.org/abs/2511.15580)  
 **Area**: 3D Single Object Tracking / Autonomous Driving
 **Keywords**: Point cloud tracking, spatial redundancy, information redundancy, information bottleneck, SVD, low-rank approximation, dynamic token compression

@@ -17,7 +17,7 @@ content_hash: 494fe7514285578c
 
 # How Hypocritical Is Your LLM Judge? Listener–Speaker Asymmetries in the Pragmatic Competence of Large Language Models
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.15873](https://arxiv.org/abs/2604.15873)  
 **Code**: None  
 **Area**: Speech Processing / Pragmatic Evaluation  

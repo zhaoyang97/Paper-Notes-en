@@ -17,7 +17,7 @@ content_hash: d5563335ad8ca49d
 
 # DeepPrune: Parallel Scaling without Inter-Trace Redundancy
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2510.08483](https://arxiv.org/abs/2510.08483)  
 **Code**: [https://deepprune.github.io/](https://deepprune.github.io/)  
 **Area**: Model Compression  

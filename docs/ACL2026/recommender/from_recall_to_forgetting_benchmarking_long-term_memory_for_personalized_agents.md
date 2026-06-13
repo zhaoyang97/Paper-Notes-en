@@ -19,7 +19,7 @@ content_hash: b6709d637039ab33
 
 # From Recall to Forgetting: Benchmarking Long-Term Memory for Personalized Agents
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.20006](https://arxiv.org/abs/2604.20006)  
 **Code**: [GitHub](https://github.com/geniesinc/Memora)  
 **Area**: Long-Term Memory / Personalized Agents  

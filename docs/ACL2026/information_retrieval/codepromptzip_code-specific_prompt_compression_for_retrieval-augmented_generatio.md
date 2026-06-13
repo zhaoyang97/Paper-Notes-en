@@ -17,7 +17,7 @@ content_hash: 684b5fff7f702d09
 
 # CodePromptZip: Code-specific Prompt Compression for Retrieval-Augmented Generation in Coding Tasks with LMs
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2502.14925](https://arxiv.org/abs/2502.14925)  
 **Code**: None  
 **Area**: Information Retrieval  

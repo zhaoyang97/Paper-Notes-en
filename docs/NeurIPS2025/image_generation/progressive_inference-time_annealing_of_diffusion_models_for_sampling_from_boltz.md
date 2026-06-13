@@ -17,7 +17,7 @@ content_hash: 3318da774f253a42
 
 # Progressive Inference-Time Annealing of Diffusion Models for Sampling from Boltzmann Densities
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2506.16471](https://arxiv.org/abs/2506.16471)  
 **Code**: [GitHub](https://github.com/taraak/pita)  
 **Area**: Diffusion Models / Sampling / Molecular Simulation

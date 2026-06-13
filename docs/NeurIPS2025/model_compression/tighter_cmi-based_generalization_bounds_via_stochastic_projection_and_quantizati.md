@@ -17,7 +17,7 @@ content_hash: 49b084862dd091be
 
 # Tighter CMI-Based Generalization Bounds via Stochastic Projection and Quantization
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Oral  
 **arXiv**: [2510.23485](https://arxiv.org/abs/2510.23485)  
 **Code**: None  
 **Area**: Model Compression

@@ -17,7 +17,7 @@ content_hash: b295e132c2e822eb
 
 # TabArena: A Living Benchmark for Machine Learning on Tabular Data
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2506.16791](https://arxiv.org/abs/2506.16791)  
 **Code**: [Available (tabarena.ai)](https://tabarena.ai)  
 **Area**: Tabular Data / Benchmarking / AutoML

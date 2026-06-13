@@ -17,7 +17,7 @@ content_hash: b4d56ee132ebf35b
 
 # Beyond Recognition: Evaluating Visual Perspective Taking in Vision Language Models
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026 Findings  
 **arXiv**: [2505.03821](https://arxiv.org/abs/2505.03821)  
 **Code**: None  
 **Area**: Multimodal VLM

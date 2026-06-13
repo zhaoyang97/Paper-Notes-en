@@ -17,7 +17,7 @@ content_hash: 39103d705e80eda3
 
 # Differentially Private Synthetic Text Generation for Retrieval-Augmented Generation (RAG)
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2510.06719](https://arxiv.org/abs/2510.06719)  
 **Code**: Extended based on https://github.com/sarus-tech/dp-rag  
 **Area**: LLM Security / Differential Privacy / RAG  

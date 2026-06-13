@@ -17,7 +17,7 @@ content_hash: 102c04fedf2ab1c3
 
 # PA-FAS: Towards Interpretable and Generalizable Multimodal Face Anti-Spoofing via Path-Augmented Reinforcement Learning
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026 Oral  
 **arXiv**: [2511.17927](https://arxiv.org/abs/2511.17927)  
 **Code**: None  
 **Area**: Reinforcement Learning

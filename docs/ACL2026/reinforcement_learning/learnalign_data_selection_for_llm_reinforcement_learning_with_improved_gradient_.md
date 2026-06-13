@@ -18,7 +18,7 @@ content_hash: 3c6ec9a3940b7d66
 
 # LearnAlign: Data Selection for LLM Reinforcement Learning with Improved Gradient Alignment
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2506.11480](https://arxiv.org/abs/2506.11480)  
 **Code**: TBD  
 **Area**: Reinforcement Learning / Data Selection / LLM Reasoning  

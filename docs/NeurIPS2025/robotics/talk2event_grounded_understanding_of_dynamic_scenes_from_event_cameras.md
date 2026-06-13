@@ -18,7 +18,7 @@ content_hash: 633f715162d1d43b
 
 # Talk2Event: Grounded Understanding of Dynamic Scenes from Event Cameras
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2507.17664](https://arxiv.org/abs/2507.17664)  
 **Code**: None  
 **Area**: Robotics

@@ -17,7 +17,7 @@ content_hash: 4018a1bd2858362c
 
 # FlexRank: Nested Low-Rank Knowledge Decomposition for Adaptive Model Deployment
 
-**Conference**: ICML 2026  
+**Conference**: ICML 2026 Spotlight  
 **arXiv**: [2602.02680](https://arxiv.org/abs/2602.02680)  
 **Code**: https://github.com/RickZack/FlexRank  
 **Area**: Model Compression / Elastic Inference / Low-Rank Decomposition  

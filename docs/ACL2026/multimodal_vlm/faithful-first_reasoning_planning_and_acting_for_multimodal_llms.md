@@ -17,7 +17,7 @@ content_hash: 63e2864cb6501123
 
 # Faithful-First Reasoning, Planning, and Acting for Multimodal LLMs
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2511.08409](https://arxiv.org/abs/2511.08409)  
 **Code**: [GitHub](https://github.com/lijunxian111/Faithful-First-RPA)  
 **Area**: Multimodal VLM / Reasoning Faithfulness  

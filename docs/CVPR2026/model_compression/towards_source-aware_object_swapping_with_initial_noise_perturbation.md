@@ -17,7 +17,7 @@ content_hash: b6730b1fb453f7a7
 
 # Towards Source-Aware Object Swapping with Initial Noise Perturbation
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026 Findings  
 **arXiv**: [2602.23697](https://arxiv.org/abs/2602.23697)  
 **Code**: None  
 **Area**: Model Compression

@@ -17,7 +17,7 @@ content_hash: 9481977d0b7844b7
 
 # Efficient Inference for Large Vision-Language Models: Bottlenecks, Techniques, and Prospects
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.05546](https://arxiv.org/abs/2604.05546)  
 **Code**: [https://github.com/SuDIS-ZJU/Efficient-LVLMs-Inference](https://github.com/SuDIS-ZJU/Efficient-LVLMs-Inference)  
 **Area**: Multimodal VLM / LLM Efficiency  

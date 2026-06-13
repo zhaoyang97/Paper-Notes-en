@@ -17,7 +17,7 @@ content_hash: 483b418ee602ffdd
 
 # Inside-Out: Measuring Generalization in Vision Transformers Through Inner Workings
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026 Highlight  
 **arXiv**: [2604.08192](https://arxiv.org/abs/2604.08192)  
 **Code**: [GitHub](https://github.com/deep-real/GenCircuit)  
 **Area**: Interpretability

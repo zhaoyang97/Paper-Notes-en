@@ -17,7 +17,7 @@ content_hash: 0b90839c17bde4c8
 
 # When Helpers Become Hazards: A Benchmark for Analyzing Multimodal LLM-Powered Safety in Daily Life
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2601.04043](https://arxiv.org/abs/2601.04043)  
 **Code**: [GitHub](https://github.com/xinyuelou/SaLAD)  
 **Area**: Multimodal VLM  

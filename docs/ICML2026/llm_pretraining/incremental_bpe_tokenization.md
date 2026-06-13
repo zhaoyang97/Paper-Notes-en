@@ -17,7 +17,7 @@ content_hash: 3a0a50f3c0838367
 
 # Incremental BPE Tokenization
 
-**Conference**: ICML 2026  
+**Conference**: ICML 2026 Spotlight  
 **arXiv**: [2605.30813](https://arxiv.org/abs/2605.30813)  
 **Code**: https://github.com/ModelTC/mtc-inc-bpe (Available)  
 **Area**: NLP Understanding / LLM Efficiency (Tokenizers, Streaming Inference)  

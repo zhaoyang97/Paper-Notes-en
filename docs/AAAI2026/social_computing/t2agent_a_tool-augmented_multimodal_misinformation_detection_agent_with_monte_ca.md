@@ -17,7 +17,7 @@ content_hash: 979f5c6c3cc232af
 
 # T2Agent: A Tool-augmented Multimodal Misinformation Detection Agent with Monte Carlo Tree Search
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026 Oral  
 **arXiv**: [2505.19768](https://arxiv.org/abs/2505.19768)  
 **Code**: [github.com/cuixing100876/T2Agent](https://github.com/cuixing100876/T2Agent)  
 **Area**: Social Computing

@@ -17,7 +17,7 @@ content_hash: 7b05c8614a858e0e
 
 # Yes FLoReNce, I Will Do Better Next Time! Agentic Feedback Reasoning for Humorous Meme Detection
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026 Oral  
 **arXiv**: [2601.07232](https://arxiv.org/abs/2601.07232)  
 **Code**: None  
 **Area**: Multimodal VLM

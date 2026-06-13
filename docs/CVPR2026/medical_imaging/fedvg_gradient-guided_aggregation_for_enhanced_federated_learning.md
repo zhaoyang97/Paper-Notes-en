@@ -18,7 +18,7 @@ content_hash: 48f893dac89203ed
 
 # FedVG: Gradient-Guided Aggregation for Enhanced Federated Learning
 
-**Conference**: CVPR2026
+**Conference**: CVPR 2026 Findings  
 **arXiv**: [2602.21399](https://arxiv.org/abs/2602.21399)  
 **Code**: [Project Page](https://machine-intelligence-lab-wvu.github.io/fedvg/)  
 **Area**: Medical Imaging / Federated Learning

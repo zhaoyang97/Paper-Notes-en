@@ -17,7 +17,7 @@ content_hash: 6fca22a46bcd0477
 
 # Iterative Formalization and Planning in Partially Observable Environments
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2505.13126](https://arxiv.org/abs/2505.13126)  
 **Code**: [GitHub](https://github.com/zharry29/pddlego-plus)  
 **Area**: LLM NLP / AI Planning  

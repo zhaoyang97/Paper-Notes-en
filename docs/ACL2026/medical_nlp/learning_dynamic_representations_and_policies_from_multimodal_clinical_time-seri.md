@@ -17,7 +17,7 @@ content_hash: f77695f4c079a163
 
 # Learning Dynamic Representations and Policies from Multimodal Clinical Time-Series with Informative Missingness
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.21235](https://arxiv.org/abs/2604.21235)  
 **Code**: [GitHub](https://github.com/CausalMLResearch/OPL-MT-MNAR)  
 **Area**: Medical Imaging  

@@ -17,7 +17,7 @@ content_hash: e851c85cfc8ab150
 
 # Verify Claimed Text-to-Image Models via Boundary-Aware Prompt Optimization
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026 Findings  
 **arXiv**: [2603.26328](https://arxiv.org/abs/2603.26328)  
 **Code**: None  
 **Area**: Image Generation

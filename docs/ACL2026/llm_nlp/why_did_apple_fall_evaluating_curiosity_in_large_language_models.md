@@ -17,7 +17,7 @@ content_hash: a39b38f869eab9ce
 
 # Why Did Apple Fall: Evaluating Curiosity in Large Language Models
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2510.20635](https://arxiv.org/abs/2510.20635)  
 **Code**: [https://github.com/Yukijudaii1352/CuriosityEval](https://github.com/Yukijudaii1352/CuriosityEval)  
 **Area**: LLM Evaluation / Cognitive Science  

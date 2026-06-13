@@ -17,7 +17,7 @@ content_hash: 42e01bc4c6f87c53
 
 # Tensor Product Attention Is All You Need
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2501.06425](https://arxiv.org/abs/2501.06425)  
 **Code**: [GitHub](https://github.com/tensorgi/TPA)  
 **Area**: LLM Efficiency / Attention Mechanism / KV Cache Compression

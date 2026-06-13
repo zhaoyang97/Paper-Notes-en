@@ -17,7 +17,7 @@ content_hash: 51a171bc78aa538a
 
 # Exploring Two-Phase Continual Instruction Fine-tuning for Multilingual Adaptation in Large Language Models
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2410.16006](https://arxiv.org/abs/2410.16006)  
 **Code**: None  
 **Area**: Multilingual / Continual Learning  

@@ -18,7 +18,7 @@ content_hash: 581b090ffea52a32
 
 # GeoRemover: Removing Objects and Their Causal Visual Artifacts
 
-**Conference**: NeurIPS2025
+**Conference**: NeurIPS2025 Spotlight  
 **arXiv**: [2509.18538](https://arxiv.org/abs/2509.18538)  
 **Code**: [Project Page](https://buxiangzhiren.github.io/GeoRemover)  
 **Area**: Image Generation

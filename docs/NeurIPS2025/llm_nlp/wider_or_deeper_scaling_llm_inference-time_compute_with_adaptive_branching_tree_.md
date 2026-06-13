@@ -17,7 +17,7 @@ content_hash: 2ee88ec21481d7e6
 
 # Wider or Deeper: Scaling LLM Inference-Time Compute with Adaptive Branching Tree Search
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2503.04412](https://arxiv.org/abs/2503.04412)  
 **Code**: [GitHub](https://github.com/SakanaAI/treequest)  
 **Area**: LLM/NLP

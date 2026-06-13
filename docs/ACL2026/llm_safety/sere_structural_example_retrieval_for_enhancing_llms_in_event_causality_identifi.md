@@ -17,7 +17,7 @@ content_hash: 2afce486d28c0b58
 
 # SERE: Structural Example Retrieval for Enhancing LLMs in Event Causality Identification
 
-**Conference**: ACL2026  
+**Conference**: ACL2026 Findings  
 **arXiv**: [2605.03701](https://arxiv.org/abs/2605.03701)  
 **Code**: https://github.com/DMIRLAB-Group/SERE  
 **Area**: LLM Safety / Event Causality Identification  

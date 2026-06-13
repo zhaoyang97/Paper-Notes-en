@@ -17,7 +17,7 @@ content_hash: 72ca5fe32ca7efb1
 
 # SCOPE: Scene-Contextualized Incremental Few-Shot 3D Segmentation
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026 Findings  
 **arXiv**: [2603.06572](https://arxiv.org/abs/2603.06572)  
 **Code**: [github.com/Surrey-UP-Lab/SCOPE](https://github.com/Surrey-UP-Lab/SCOPE)  
 **Area**: 3D Point Cloud Segmentation / Incremental Few-Shot Learning

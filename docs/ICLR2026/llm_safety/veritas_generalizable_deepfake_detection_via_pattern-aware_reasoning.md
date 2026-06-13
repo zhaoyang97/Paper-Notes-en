@@ -17,7 +17,7 @@ content_hash: 89e1b1d68b477b84
 
 # Veritas: Generalizable Deepfake Detection via Pattern-Aware Reasoning
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026 Oral  
 **arXiv**: [2508.21048](https://arxiv.org/abs/2508.21048)  
 **Code**: [https://github.com/EricTan7/Veritas](https://github.com/EricTan7/Veritas)  
 **Area**: AI Safety / Multimodal VLM / Deepfake Detection

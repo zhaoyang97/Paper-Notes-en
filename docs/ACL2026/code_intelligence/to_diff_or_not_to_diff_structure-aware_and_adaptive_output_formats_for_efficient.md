@@ -17,7 +17,7 @@ content_hash: 7dec83cf6771a1db
 
 # To Diff or Not to Diff? Structure-Aware and Adaptive Output Formats for Efficient LLM-based Code Editing
 
-**Conference**: ACL2026  
+**Conference**: ACL2026 Findings  
 **arXiv**: [2604.27296](https://arxiv.org/abs/2604.27296)  
 **Code**: https://github.com/nju-websoft/AdaEdit  
 **Area**: Code Intelligence / LLM Code Editing / Editing Format Learning  

@@ -17,7 +17,7 @@ content_hash: a024ea63f93a0eeb
 
 # Rethinking LLM Watermark Detection in Black-Box Settings: A Non-Intrusive Third-Party Framework
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2603.14968](https://arxiv.org/abs/2603.14968)  
 **Code**: None  
 **Area**: AI Safety / Watermark Detection  

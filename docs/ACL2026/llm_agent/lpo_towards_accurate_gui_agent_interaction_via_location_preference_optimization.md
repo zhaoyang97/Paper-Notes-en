@@ -17,7 +17,7 @@ content_hash: 63e6af8c030ff408
 
 # LPO: Towards Accurate GUI Agent Interaction via Location Preference Optimization
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2506.09373](https://arxiv.org/abs/2506.09373)  
 **Code**: [GitHub](https://github.com/jqtangust/LPO)  
 **Area**: GUI Agent  

@@ -17,7 +17,7 @@ content_hash: 4332bc0b12c3dd45
 
 # DocSeeker: Structured Visual Reasoning with Evidence Grounding for Long Document Understanding
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026 Highlight  
 **arXiv**: [2604.12812](https://arxiv.org/abs/2604.12812)  
 **Code**: [https://github.com/yh-hust/DocSeeker](https://github.com/yh-hust/DocSeeker)  
 **Area**: Multimodal VLM / Document Understanding

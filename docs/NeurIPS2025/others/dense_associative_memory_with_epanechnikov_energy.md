@@ -17,7 +17,7 @@ content_hash: 41b3c015f3ab471c
 
 # Dense Associative Memory with Epanechnikov Energy
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2506.10801](https://arxiv.org/abs/2506.10801)  
 **Code**: None  
 **Area**: Other

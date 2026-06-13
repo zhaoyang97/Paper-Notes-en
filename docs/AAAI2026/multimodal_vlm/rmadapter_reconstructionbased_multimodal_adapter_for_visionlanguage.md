@@ -17,7 +17,7 @@ content_hash: e965339817c1f34d
 
 # RMAdapter: Reconstruction-based Multi-Modal Adapter for Vision-Language Models (Oral)
 
-**Conference**: AAAI 2026  
+**Conference**: AAAI 2026 Oral  
 **arXiv**: [2512.06811](https://arxiv.org/abs/2512.06811)  
 **Code**: Not mentioned  
 **Area**: Vision-Language Model / Parameter-Efficient Fine-Tuning  

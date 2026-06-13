@@ -17,7 +17,7 @@ content_hash: dba3915518ad3fbe
 
 # Stop Automating Peer Review Without Rigorous Evaluation
 
-**Conference**: ICML 2026  
+**Conference**: ICML 2026 Spotlight  
 **arXiv**: [2605.03202](https://arxiv.org/abs/2605.03202)  
 **Code**: None  
 **Area**: LLM / NLP / AI Governance / Peer Review  

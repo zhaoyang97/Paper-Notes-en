@@ -17,7 +17,7 @@ content_hash: 24b115c09d2df74c
 
 # GlimpRouter: Efficient Collaborative Inference by Glimpsing One Token of Thoughts
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2601.05110](https://arxiv.org/abs/2601.05110)  
 **Code**: https://github.com/Zengwh02/GlimpRouter  
 **Area**: Model Collaborative Inference / LLM Acceleration / Inference Efficiency  

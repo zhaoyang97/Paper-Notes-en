@@ -17,7 +17,7 @@ content_hash: 7c9ce4e3e127712f
 
 # GeoSVR: Taming Sparse Voxels for Geometrically Accurate Surface Reconstruction
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2509.18090](https://arxiv.org/abs/2509.18090)  
 **Code**: [Fictionarry/GeoSVR](https://github.com/Fictionarry/GeoSVR)  
 **Area**: 3D Vision

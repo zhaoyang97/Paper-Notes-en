@@ -17,7 +17,7 @@ content_hash: 31e4db45f6d109b2
 
 # PL-MTEB: Polish Massive Text Embedding Benchmark
 
-**Conference**: ACL2026  
+**Conference**: ACL2026 Findings  
 **arXiv**: [2405.10138](https://arxiv.org/abs/2405.10138)  
 **Code**: https://github.com/rafalposwiata/pl-mteb  
 **Area**: Information Retrieval/RAG  

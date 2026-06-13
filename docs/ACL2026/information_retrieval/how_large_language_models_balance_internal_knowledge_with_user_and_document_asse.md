@@ -17,7 +17,7 @@ content_hash: c92b6d4abff2f3a1
 
 # How Large Language Models Balance Internal Knowledge with User and Document Assertions
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.22193](https://arxiv.org/abs/2604.22193)  
 **Code**: https://github.com/shuowl/llm-source-balancing (Available)  
 **Area**: RAG / Knowledge Conflict / Sycophancy  

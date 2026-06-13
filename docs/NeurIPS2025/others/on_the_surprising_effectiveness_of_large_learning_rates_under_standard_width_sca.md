@@ -17,7 +17,7 @@ content_hash: 181d34562323e4ed
 
 # On the Surprising Effectiveness of Large Learning Rates under Standard Width Scaling
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2505.22491](https://arxiv.org/abs/2505.22491)  
 **Authors**: Moritz Haas, Sebastian Bordt, Ulrike von Luxburg, Leena Chennuru Vankadara (Tübingen, UCL Gatsby)
 **Area**: Other

@@ -17,7 +17,7 @@ content_hash: e2a862ec063314cc
 
 # Purging the Gray Zone: Latent-Geometric Denoising for Precise Knowledge Boundary Awareness
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.14324](https://arxiv.org/abs/2604.14324)  
 **Code**: [GitHub](https://github.com/Notbesidemoon/GeoDe)  
 **Area**: Image Restoration  

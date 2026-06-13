@@ -17,7 +17,7 @@ content_hash: ca805caf1b358b20
 
 # Just Use XML: Revisiting Joint Translation and Label Projection
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2603.12021](https://arxiv.org/abs/2603.12021)  
 **Code**: [https://github.com/thennal10/LabelPigeon](https://github.com/thennal10/LabelPigeon)  
 **Area**: Multilingual Translation / Cross-lingual Transfer  

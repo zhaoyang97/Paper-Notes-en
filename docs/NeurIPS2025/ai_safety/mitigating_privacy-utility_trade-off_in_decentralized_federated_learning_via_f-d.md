@@ -17,7 +17,7 @@ content_hash: be595c7d748a8102
 
 # Mitigating Privacy-Utility Trade-off in Decentralized Federated Learning via f-Differential Privacy
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2510.19934](https://arxiv.org/abs/2510.19934)  
 **Code**: [https://github.com/lx10077/PN-f-DP](https://github.com/lx10077/PN-f-DP)  
 **Area**: AI Safety / Federated Learning

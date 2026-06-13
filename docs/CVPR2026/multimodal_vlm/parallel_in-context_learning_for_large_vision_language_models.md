@@ -17,7 +17,7 @@ content_hash: d6f26f3c140ff818
 
 # Parallel In-context Learning for Large Vision Language Models
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026 Findings  
 **arXiv**: [2603.16092](https://arxiv.org/abs/2603.16092)  
 **Code**: N/A  
 **Area**: Multimodal VLM

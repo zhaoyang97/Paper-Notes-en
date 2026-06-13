@@ -17,7 +17,7 @@ content_hash: 68d39d16a5a9c11a
 
 # SphereDiff: Tuning-free Omnidirectional Panoramic Image and Video Generation via Spherical Latent Representation
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026 Oral  
 **arXiv**: [2504.14396](https://arxiv.org/abs/2504.14396)  
 **Code**: [https://github.com/pmh9960/SphereDiff](https://github.com/pmh9960/SphereDiff)  
 **Area**: Video Generation

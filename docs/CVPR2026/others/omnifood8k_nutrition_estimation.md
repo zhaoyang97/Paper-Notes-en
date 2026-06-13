@@ -16,7 +16,7 @@ content_hash: b5e34e64f21f2169
 
 # OmniFood8K: Single-Image Nutrition Estimation via Hierarchical Frequency-Aligned Fusion
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026 Highlight  
 **arXiv**: [2604.12356](https://arxiv.org/abs/2604.12356)  
 **Code**: [https://yudongjian.github.io/OmniFood8K-food/](https://yudongjian.github.io/OmniFood8K-food/)  
 **Area**: Food Computing / Multimodal Fusion

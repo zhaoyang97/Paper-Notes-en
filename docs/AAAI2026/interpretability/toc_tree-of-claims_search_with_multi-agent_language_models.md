@@ -17,7 +17,7 @@ content_hash: 89c1845bfd72f52a
 
 # ToC: Tree-of-Claims Search with Multi-Agent Language Models
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026 Oral  
 **arXiv**: [2511.16972](https://arxiv.org/abs/2511.16972)  
 **Code**: [ysy2003/ToC](https://github.com/ysy2003/ToC)  
 **Area**: Interpretability

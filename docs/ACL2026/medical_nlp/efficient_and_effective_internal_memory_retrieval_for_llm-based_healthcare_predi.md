@@ -17,7 +17,7 @@ content_hash: 842c5eb8f265726c
 
 # Efficient and Effective Internal Memory Retrieval for LLM-Based Healthcare Prediction
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.07659](https://arxiv.org/abs/2604.07659)  
 **Code**: [https://anonymous.4open.science/r/K2K-2390/](https://anonymous.4open.science/r/K2K-2390/)  
 **Area**: Medical NLP  

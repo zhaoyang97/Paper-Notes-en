@@ -17,7 +17,7 @@ content_hash: 2e1ae189f4c2f67b
 
 # Mitigating Extrinsic Gender Bias for Bangla Classification Tasks
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2411.10636](https://arxiv.org/abs/2411.10636)  
 **Code**: [GitHub](https://github.com/sajib-kumar/Mitigating-Bangla-Extrinsic-Gender-Bias)  
 **Area**: Multilingual/Fairness  

@@ -17,7 +17,7 @@ content_hash: 7df2e7300cdf4413
 
 # Preconditioned Langevin Dynamics with Score-Based Generative Models for Infinite-Dimensional Linear Bayesian Inverse Problems
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2505.18276](https://arxiv.org/abs/2505.18276)  
 **Code**: Unavailable  
 **Area**: Diffusion Models / Image Generation

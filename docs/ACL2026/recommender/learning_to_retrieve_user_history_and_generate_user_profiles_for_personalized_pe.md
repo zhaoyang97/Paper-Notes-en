@@ -17,7 +17,7 @@ content_hash: 6f7d9951bdaa4f26
 
 # Learning to Retrieve User History and Generate User Profiles for Personalized Persuasiveness Prediction
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2601.05654](https://arxiv.org/abs/2601.05654)  
 **Code**: [GitHub](https://github.com/holi-lab/ReCAP)  
 **Area**: Personalized Recommendation and User Modeling  

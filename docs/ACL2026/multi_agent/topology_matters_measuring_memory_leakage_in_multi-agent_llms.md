@@ -12,7 +12,7 @@ content_hash: eab8386ae6b8105a
 <!-- 由 src/gen_stubs.py 自动生成 -->
 # Topology Matters: Measuring Memory Leakage in Multi-Agent LLMs
 
-**Conference**: ACL2026
+**Conference**: ACL2026 Findings  
 **arXiv**: [2512.04668](https://arxiv.org/abs/2512.04668)
 **Code**: To be confirmed
 **Area**: llm_agent

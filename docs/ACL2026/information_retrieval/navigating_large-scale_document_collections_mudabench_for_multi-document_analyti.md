@@ -17,7 +17,7 @@ content_hash: 957cdcb6d1669a12
 
 # Navigating Large-Scale Document Collections: MuDABench for Multi-Document Analytical QA
 
-**Conference**: ACL2026  
+**Conference**: ACL2026 Findings  
 **arXiv**: [2604.22239](https://arxiv.org/abs/2604.22239)  
 **Code**: https://github.com/Zhanli-Li/MuDABench  
 **Area**: Information Retrieval / Multi-Document QA / Document Intelligence  

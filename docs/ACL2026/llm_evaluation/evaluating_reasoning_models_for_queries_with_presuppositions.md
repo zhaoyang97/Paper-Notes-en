@@ -17,7 +17,7 @@ content_hash: f1a602ac332b8bd1
 
 # Evaluating Reasoning Models for Queries with Presuppositions
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2605.03050](https://arxiv.org/abs/2605.03050)  
 **Code**: https://github.com/weakit/equip  
 **Area**: LLM Reasoning / Evaluation / Factuality  

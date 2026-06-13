@@ -17,7 +17,7 @@ content_hash: 01ff952bdd1807ec
 
 # HiPrune: Hierarchical Attention for Efficient Token Pruning in Vision-Language Models
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2508.00553](https://arxiv.org/abs/2508.00553)  
 **Code**: [GitHub](https://github.com/Danielement321/HiPrune)  
 **Area**: Multimodal Efficiency / Vision Token Compression  

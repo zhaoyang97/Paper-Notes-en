@@ -17,7 +17,7 @@ content_hash: fe6c97b30a676631
 
 # Pseudo2Real: Task Arithmetic for Pseudo-Label Correction in Automatic Speech Recognition
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2510.08047](https://arxiv.org/abs/2510.08047)  
 **Code**: None  
 **Area**: Speech Processing / Domain Adaptation  

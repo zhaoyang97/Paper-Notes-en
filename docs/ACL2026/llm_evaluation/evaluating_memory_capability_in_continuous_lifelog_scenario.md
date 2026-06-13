@@ -17,7 +17,7 @@ content_hash: 594539b66456ec50
 
 # Evaluating Memory Capability in Continuous Lifelog Scenario
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.11182](https://arxiv.org/abs/2604.11182)  
 **Code**: [https://github.com/RayNeo-AI-2025/LifeDialBench](https://github.com/RayNeo-AI-2025/LifeDialBench)  
 **Area**: LLM Evaluation  

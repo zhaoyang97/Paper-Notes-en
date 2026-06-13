@@ -17,7 +17,7 @@ content_hash: 8d56ff4777e209eb
 
 # From Flat Language Labels to Typological Priors: Structured Language Conditioning for Multilingual Speech-to-Speech Translation
 
-**Conference**: ACL2026  
+**Conference**: ACL2026 Findings  
 **arXiv**: [2605.16026](https://arxiv.org/abs/2605.16026)  
 **Code**: No public code (repository not provided in cache)  
 **Area**: Speech Translation / Multilingual S2ST / SpeechLLM  

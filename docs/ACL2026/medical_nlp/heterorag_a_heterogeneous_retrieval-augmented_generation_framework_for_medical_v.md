@@ -17,7 +17,7 @@ content_hash: f3f933e4a1004c70
 
 # HeteroRAG: A Heterogeneous Retrieval-Augmented Generation Framework for Medical Vision Language Tasks
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2508.12778](https://arxiv.org/abs/2508.12778)  
 **Code**: https://github.com/Jack-ZC8/HeteroRAG-Med  
 **Area**: Medical Imaging / RAG / Multimodal  

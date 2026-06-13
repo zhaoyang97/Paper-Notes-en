@@ -17,7 +17,7 @@ content_hash: 4532934816c6dab7
 
 # AStar: Boosting Multimodal Reasoning with Automated Structured Thinking
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026 Oral  
 **arXiv**: [2502.02339](https://arxiv.org/abs/2502.02339)  
 **Code**: Not released  
 **Area**: Multimodal VLM

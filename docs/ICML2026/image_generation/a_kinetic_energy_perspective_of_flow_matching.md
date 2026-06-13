@@ -17,7 +17,7 @@ content_hash: cc815a8f233d3bff
 
 # A Kinetic Energy Perspective of Flow Matching
 
-**Conference**: ICML 2026  
+**Conference**: ICML 2026 Spotlight  
 **arXiv**: [2602.07928](https://arxiv.org/abs/2602.07928)  
 **Code**: No code provided in the paper  
 **Area**: Image Generation / Flow Matching / Generative Model Diagnostics  

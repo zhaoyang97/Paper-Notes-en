@@ -17,7 +17,7 @@ content_hash: 1819b78d0d7c367e
 
 # LLM-Guided Semantic Bootstrapping for Interpretable Text Classification with Tsetlin Machines
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.12223](https://arxiv.org/abs/2604.12223)  
 **Code**: None  
 **Area**: Interpretability / Text Classification  

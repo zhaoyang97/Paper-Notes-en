@@ -17,7 +17,7 @@ content_hash: 6ae1f3e1a2ef8e48
 
 # Orthogonal Concept Erasure for Diffusion Models
 
-**Conference**: ICML 2026  
+**Conference**: ICML 2026 Oral  
 **arXiv**: [2605.28902](https://arxiv.org/abs/2605.28902)  
 **Code**: https://github.com/HansSunY/OCE  
 **Area**: AI Safety / Concept Erasure / Diffusion Models  

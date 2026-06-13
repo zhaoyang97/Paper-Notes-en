@@ -16,7 +16,7 @@ content_hash: f52253490b8d6921
 
 # ReCon: Region-Controllable Data Augmentation with Rectification and Alignment for Object Detection
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2510.15783](https://arxiv.org/abs/2510.15783)  
 **Code**: [https://github.com/haoweiz23/ReCon](https://github.com/haoweiz23/ReCon)  
 **Area**: Object Detection / Data Augmentation

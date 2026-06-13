@@ -16,7 +16,7 @@ content_hash: 6bf9d8efa2aba38a
 
 # SM3Det: A Unified Model for Multi-Modal Remote Sensing Object Detection
 
-**Conference**: AAAI2026  
+**Conference**: AAAI2026 Oral  
 **arXiv**: [2412.20665](https://arxiv.org/abs/2412.20665)  
 **Code**: [github.com/zcablii/SM3Det](https://github.com/zcablii/SM3Det)  
 **Area**: Object Detection  

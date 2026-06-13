@@ -17,7 +17,7 @@ content_hash: 49087174c3d5d17d
 
 # RelaxFlow: Text-Driven Amodal 3D Generation
 
-**Conference**: ICML 2026  
+**Conference**: ICML 2026 Spotlight  
 **arXiv**: [2603.05425](https://arxiv.org/abs/2603.05425)  
 **Code**: https://github.com/viridityzhu/RelaxFlow  
 **Area**: 3D Vision / Diffusion Models / Multimodal VLM  

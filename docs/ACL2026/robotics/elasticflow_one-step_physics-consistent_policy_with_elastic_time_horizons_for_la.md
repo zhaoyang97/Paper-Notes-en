@@ -17,7 +17,7 @@ content_hash: 5ae16e7541c93130
 
 # ElasticFlow: One-Step Physics-Consistent Policy with Elastic Time Horizons for Language-Guided Manipulation
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2605.08799](https://arxiv.org/abs/2605.08799)  
 **Code**: To be confirmed  
 **Area**: Embodied AI / Diffusion Policy / Flow Matching / Robot Manipulation  

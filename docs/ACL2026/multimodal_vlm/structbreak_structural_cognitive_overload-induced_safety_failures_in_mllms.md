@@ -18,7 +18,7 @@ content_hash: f9d82af04f40e10c
 
 # StructBreak: Structural Cognitive Overload-Induced Safety Failures in MLLMs
 
-**Conference**: ACL2026
+**Conference**: ACL2026 Findings  
 **arXiv**: [2605.25534](https://arxiv.org/abs/2605.25534)
 **Code**: To be confirmed
 **Area**: multimodal_vlm

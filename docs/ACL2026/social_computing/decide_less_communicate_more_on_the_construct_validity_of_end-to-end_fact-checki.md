@@ -17,7 +17,7 @@ content_hash: 1d057b37f344f2a8
 
 # Decide less, communicate more: On the construct validity of end-to-end fact-checking in medicine
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2506.20876](https://arxiv.org/abs/2506.20876)  
 **Code**: https://github.com/SebaJoe/decide-less-communicate-more (Available)  
 **Area**: Fact-checking / Medical NLP / Position Paper / HCI  

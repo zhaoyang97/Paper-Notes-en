@@ -17,7 +17,7 @@ content_hash: e9829c3c220302f1
 
 # Beyond Screenshots: Evaluating VLMs' Understanding of UI Animations
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.26148](https://arxiv.org/abs/2604.26148)  
 **Code**: <https://github.com/publicationacc/AniMINT>  
 **Area**: Multimodal VLM / UI Understanding / Evaluation  

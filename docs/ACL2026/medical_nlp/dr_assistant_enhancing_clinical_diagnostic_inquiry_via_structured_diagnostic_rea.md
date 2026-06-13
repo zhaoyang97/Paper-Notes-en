@@ -17,7 +17,7 @@ content_hash: 548062fd757133b1
 
 # Dr. Assistant: Enhancing Clinical Diagnostic Inquiry via Structured Diagnostic Reasoning Data and Reinforcement Learning
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2601.13690](https://arxiv.org/abs/2601.13690)  
 **Code**: [GitHub](https://github.com/YGswu/Dr.-Assistant)  
 **Area**: Medical Imaging  

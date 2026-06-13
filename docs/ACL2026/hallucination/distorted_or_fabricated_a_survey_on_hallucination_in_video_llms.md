@@ -17,7 +17,7 @@ content_hash: a91c97e555e93827
 
 # Distorted or Fabricated? A Survey on Hallucination in Video LLMs
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.12944](https://arxiv.org/abs/2604.12944)  
 **Code**: [GitHub](https://github.com/hukcc/Awesome-Video-Hallucination)  
 **Area**: Hallucination Detection  

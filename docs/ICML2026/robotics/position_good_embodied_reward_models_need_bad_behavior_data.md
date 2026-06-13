@@ -17,7 +17,7 @@ content_hash: c6114ed99e64f067
 
 # Position: Good Embodied Reward Models Need Bad Behavior Data
 
-**Conference**: ICML 2026  
+**Conference**: ICML 2026 Spotlight  
 **arXiv**: [2606.01036](https://arxiv.org/abs/2606.01036)  
 **Code**: None  
 **Area**: Embodied AI / Robotics / Reward Modeling  

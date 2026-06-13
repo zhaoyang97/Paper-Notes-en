@@ -17,7 +17,7 @@ content_hash: 5286e671adbc48d1
 
 # Imperfectly Cooperative Human-AI Interactions: Comparing the Impacts of Human and AI Attributes in Simulated and User Studies
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.15607](https://arxiv.org/abs/2604.15607)  
 **Code**: None  
 **Area**: Human-AI Interaction / AI Safety  

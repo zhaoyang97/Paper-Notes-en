@@ -17,7 +17,7 @@ content_hash: 3271475fbed9c670
 
 # TimeRewarder: Learning Dense Reward from Passive Videos via Frame-wise Temporal Distance
 
-**Conference**: ICML 2026  
+**Conference**: ICML 2026 Spotlight  
 **arXiv**: [2509.26627](https://arxiv.org/abs/2509.26627)  
 **Code**: timerewarder.github.io (Project Page)  
 **Area**: Robotics / Reinforcement Learning / Imitation Learning  

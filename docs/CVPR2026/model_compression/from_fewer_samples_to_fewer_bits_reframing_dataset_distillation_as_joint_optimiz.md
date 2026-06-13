@@ -17,7 +17,7 @@ content_hash: 0310432d489ef697
 
 # From Fewer Samples to Fewer Bits: Reframing Dataset Distillation as Joint Optimization of Precision and Compactness
 
-**Conference**: CVPR2026
+**Conference**: CVPR 2026 Findings  
 **arXiv**: [2603.02411](https://arxiv.org/abs/2603.02411)  
 **Code**: Not released  
 **Area**: Model Compression / Dataset Distillation

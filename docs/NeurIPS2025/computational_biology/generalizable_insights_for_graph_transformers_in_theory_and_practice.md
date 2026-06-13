@@ -17,7 +17,7 @@ content_hash: f68717277a5aff86
 
 # Generalizable Insights for Graph Transformers in Theory and Practice
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2511.08028](https://arxiv.org/abs/2511.08028)  
 **Code**: Available  
 **Area**: Object Detection

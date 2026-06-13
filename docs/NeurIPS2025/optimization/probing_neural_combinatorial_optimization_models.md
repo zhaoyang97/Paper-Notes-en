@@ -17,7 +17,7 @@ content_hash: 09a7b57cb4d60e90
 
 # Probing Neural Combinatorial Optimization Models
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2510.22131](https://arxiv.org/abs/2510.22131)  
 **Code**: [GitHub](https://github.com/123zhangzq/NeurIPS2025_probing/)  
 **Area**: Optimization

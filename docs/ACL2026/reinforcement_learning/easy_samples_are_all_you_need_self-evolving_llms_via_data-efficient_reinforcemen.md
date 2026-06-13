@@ -17,7 +17,7 @@ content_hash: a835ec7da8afc76e
 
 # Easy Samples Are All You Need: Self-Evolving LLMs via Data-Efficient Reinforcement Learning
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.18639](https://arxiv.org/abs/2604.18639)  
 **Code**: [https://github.com/YuZhiyin/EasyRL](https://github.com/YuZhiyin/EasyRL)  
 **Area**: Reinforcement Learning / Data-Efficient Training  

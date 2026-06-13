@@ -17,7 +17,7 @@ content_hash: 88e4a20c21622d73
 
 # FaithLens: Detecting and Explaining Faithfulness Hallucination
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2512.20182](https://arxiv.org/abs/2512.20182)  
 **Code**: [https://github.com/S1s-Z/FaithLens](https://github.com/S1s-Z/FaithLens)  
 **Area**: Hallucination Detection  

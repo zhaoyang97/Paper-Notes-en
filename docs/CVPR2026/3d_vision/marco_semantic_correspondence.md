@@ -17,7 +17,7 @@ content_hash: b09be64aea9493e0
 
 # MARCO: Navigating the Unseen Space of Semantic Correspondence
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026 Oral  
 **arXiv**: [2604.18267](https://arxiv.org/abs/2604.18267)  
 **Code**: [https://visinf.github.io/MARCO](https://visinf.github.io/MARCO)  
 **Area**: 3D Vision

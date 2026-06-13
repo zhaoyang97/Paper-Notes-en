@@ -17,7 +17,7 @@ content_hash: dfaefc1db09de2e8
 
 # EDU-CIRCUIT-HW: Evaluating Multimodal Large Language Models on Real-World University-Level STEM Student Handwritten Solutions
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2602.00095](https://arxiv.org/abs/2602.00095)  
 **Code**: Project Website + GitHub (Links provided in the paper)  
 **Area**: Multimodal VLM / Educational Evaluation  

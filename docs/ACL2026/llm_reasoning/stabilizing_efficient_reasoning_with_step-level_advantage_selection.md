@@ -17,7 +17,7 @@ content_hash: 3a4741ad43bbe617
 
 # Stabilizing Efficient Reasoning with Step-Level Advantage Selection
 
-**Conference**: ACL2026  
+**Conference**: ACL2026 Findings  
 **arXiv**: [2604.24003](https://arxiv.org/abs/2604.24003)  
 **Code**: https://github.com/HanNight/SAS  
 **Area**: Model Compression / Efficient LLM Inference  

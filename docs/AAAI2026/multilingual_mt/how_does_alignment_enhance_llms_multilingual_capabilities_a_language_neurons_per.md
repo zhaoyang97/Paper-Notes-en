@@ -17,7 +17,7 @@ content_hash: 492b9a7bce11a661
 
 # How Does Alignment Enhance LLMs' Multilingual Capabilities? A Language Neurons Perspective
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026 Oral  
 **arXiv**: [2505.21505](https://arxiv.org/abs/2505.21505)  
 **Code**: [https://github.com/NJUNLP/Language-Neurons-Alignment](https://github.com/NJUNLP/Language-Neurons-Alignment)  
 **Area**: Multilingual Translation

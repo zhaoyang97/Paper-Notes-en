@@ -17,7 +17,7 @@ content_hash: a7362e3a4cf59ba4
 
 # MCGA: A Multi-task Classical Chinese Literary Genre Audio Corpus
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2601.09270](https://arxiv.org/abs/2601.09270)  
 **Code**: [https://github.com/yxduir/MCGA](https://github.com/yxduir/MCGA)  
 **Area**: Speech and Natural Language Processing / Classical Chinese Literature  

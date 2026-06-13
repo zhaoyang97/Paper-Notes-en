@@ -17,7 +17,7 @@ content_hash: 0254801ef5f4e408
 
 # DraDDP: A Multimodal Multi-Party Dialogue Discourse Parsing Dataset
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2606.00012](https://arxiv.org/abs/2606.00012)  
 **Code**: https://github.com/DraDDP  
 **Area**: Multimodal Dialogue Understanding / Discourse Parsing  

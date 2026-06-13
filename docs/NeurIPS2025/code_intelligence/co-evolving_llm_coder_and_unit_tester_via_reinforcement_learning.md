@@ -18,7 +18,7 @@ content_hash: f14e9723d90f4cdd
 
 # Co-Evolving LLM Coder and Unit Tester via Reinforcement Learning
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2506.03136](https://arxiv.org/abs/2506.03136)  
 **Code**: [GitHub](https://github.com/Gen-Verse/CURE)  
 **Area**: Code Intelligence / LLM Reasoning

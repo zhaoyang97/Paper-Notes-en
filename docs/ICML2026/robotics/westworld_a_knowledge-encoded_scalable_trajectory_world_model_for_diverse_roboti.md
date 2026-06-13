@@ -17,7 +17,7 @@ content_hash: b564090946ba7d03
 
 # WestWorld: Scalable Trajectory World Models with Knowledge Encoding
 
-**Conference**: ICML 2026  
+**Conference**: ICML 2026 Spotlight  
 **arXiv**: [2603.14392](https://arxiv.org/abs/2603.14392)  
 **Code**: https://github.com/511205787/WestWorld  
 **Area**: Robotics / Embodied AI / World Models  

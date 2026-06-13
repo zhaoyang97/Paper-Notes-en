@@ -16,7 +16,7 @@ content_hash: ea05b1737c72b5e4
 
 # VeCoR — Velocity Contrastive Regularization for Flow Matching
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026 Findings  
 **arXiv**: [2511.18942](https://arxiv.org/abs/2511.18942)  
 **Code**: Available (project page)  
 **Area**: Image Generation

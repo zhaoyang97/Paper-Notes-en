@@ -17,7 +17,7 @@ content_hash: 7337d7b361603267
 
 # Temporal Flattening in LLM-Generated Text: Comparing Human and LLM Writing Trajectories
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.12097](https://arxiv.org/abs/2604.12097)  
 **Code**: [GitHub](https://github.com/yjkim717/Cognitive-Emotional-Trajectories)  
 **Area**: AIGC Detection  

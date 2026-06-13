@@ -17,7 +17,7 @@ content_hash: 2d184d8d21bbde4d
 
 # SPARE: Single-Pass Annotation with Reference-Guided Evaluation for Automatic Process Supervision
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026 Oral  
 **arXiv**: [2506.15498](https://arxiv.org/abs/2506.15498)  
 **Code**: [https://github.com/UKPLab/aaai2026-spare-prm](https://github.com/UKPLab/aaai2026-spare-prm)  
 **Area**: LLM Reasoning

@@ -17,7 +17,7 @@ content_hash: 00c94236fd531aa4
 
 # Revisiting a Pain in the Neck: A Semantic Reasoning Benchmark for Language Models
 
-**Conference**: ACL2026  
+**Conference**: ACL2026 Oral  
 **arXiv**: [2604.16593](https://arxiv.org/abs/2604.16593)  
 **Code**: https://github.com/jacklanda/SemanticQA  
 **Area**: LLM Evaluation / Semantic Reasoning / Phrasal Semantics  

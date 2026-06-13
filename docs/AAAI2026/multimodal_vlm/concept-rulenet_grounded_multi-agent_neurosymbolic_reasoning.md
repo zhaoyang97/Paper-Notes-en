@@ -17,7 +17,7 @@ content_hash: a1aa03e9883d315c
 
 # Concept-RuleNet: Grounded Multi-Agent Neurosymbolic Reasoning in Vision Language Models
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026 Oral  
 **arXiv**: [2511.11751](https://arxiv.org/abs/2511.11751)  
 **Code**: [https://github.com/sanchit97/Concept-RuleNet](https://github.com/sanchit97/Concept-RuleNet)  
 **Area**: Multimodal VLM / Agent / Neurosymbolic Reasoning

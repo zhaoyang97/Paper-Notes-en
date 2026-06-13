@@ -17,7 +17,7 @@ content_hash: c9b8b9d402687d9e
 
 # DiffusionNFT: Online Diffusion Reinforcement with Forward Process
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026 Oral  
 **arXiv**: [2509.16117](https://arxiv.org/abs/2509.16117)  
 **Code**: [https://research.nvidia.com/labs/dir/DiffusionNFT](https://research.nvidia.com/labs/dir/DiffusionNFT)  
 **Area**: Diffusion Models / Reinforcement Learning Alignment

@@ -17,7 +17,7 @@ content_hash: dac4bbb36b4d560e
 
 # Region-R1: Reinforcing Query-Side Region Cropping for Multi-Modal Re-Ranking
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.05268](https://arxiv.org/abs/2604.05268)  
 **Code**: None  
 **Area**: Multi-Modal VLM / Information Retrieval  

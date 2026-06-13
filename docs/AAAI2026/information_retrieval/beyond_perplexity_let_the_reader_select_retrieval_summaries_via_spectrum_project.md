@@ -17,7 +17,7 @@ content_hash: a8d97390d70d0238
 
 # Beyond Perplexity: Let the Reader Select Retrieval Summaries via Spectrum Projection Score
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026 Oral  
 **arXiv**: [2508.05909](https://arxiv.org/abs/2508.05909)  
 **Code**: [https://zhanghao-aaai2026-sps.github.io/AAAI2026-SPS/](https://zhanghao-aaai2026-sps.github.io/AAAI2026-SPS/)  
 **Area**: RAG / Information Retrieval

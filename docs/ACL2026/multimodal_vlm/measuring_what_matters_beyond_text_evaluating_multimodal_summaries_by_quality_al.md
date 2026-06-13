@@ -17,7 +17,7 @@ content_hash: ccfbe15ccedf18ec
 
 # Measuring What Matters Beyond Text: Evaluating Multimodal Summaries by Quality, Alignment, and Diversity (MM-Eval)
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2605.11693](https://arxiv.org/abs/2605.11693)  
 **Code**: https://github.com/abidmeeraj/MM-Eval  
 **Area**: Multimodal Evaluation / Summarization / Explainable Evaluation  

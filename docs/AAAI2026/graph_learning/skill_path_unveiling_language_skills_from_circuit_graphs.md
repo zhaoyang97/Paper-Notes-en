@@ -17,7 +17,7 @@ content_hash: 709a938a8331016c
 
 # Skill Path: Unveiling Language Skills from Circuit Graphs
 
-**Conference**: AAAI2026
+**Conference**: AAAI2026 Oral  
 **arXiv**: [2410.01334](https://arxiv.org/abs/2410.01334)  
 **Code**: [GitHub](https://github.com/Zodiark-ch/Language-Skill-of-LLMs)  
 **Area**: Causal Inference

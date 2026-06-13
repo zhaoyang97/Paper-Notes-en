@@ -17,7 +17,7 @@ content_hash: 5fbf0bbf66c6b5da
 
 # Verifying Chain-of-Thought Reasoning via Its Computational Graph
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026 Oral  
 **arXiv**: [2510.09312](https://arxiv.org/abs/2510.09312)  
 **Code**: [Available](https://github.com/facebookresearch/CRV)  
 **Area**: LLM Reasoning / Mechanistic Interpretability

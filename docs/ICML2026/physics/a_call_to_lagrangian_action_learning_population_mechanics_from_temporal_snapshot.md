@@ -17,7 +17,7 @@ content_hash: b05bb49a5ce27294
 
 # A Call to Lagrangian Action: Learning Population Mechanics from Temporal Snapshots
 
-**Conference**: ICML 2026  
+**Conference**: ICML 2026 Spotlight  
 **arXiv**: [2605.08550](https://arxiv.org/abs/2605.08550)  
 **Code**: https://github.com/guanton/WLM  
 **Area**: Diffusion Models / Dynamics Learning  

@@ -17,7 +17,7 @@ content_hash: c7a3e1e293eda125
 
 # QSVD: Efficient Low-Rank Approximation for Unified Query-Key-Value Weight Compression
 
-**Conference**: NeurIPS 2025  
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2510.16292](https://arxiv.org/abs/2510.16292)  
 **Code**: [https://github.com/SAI-Lab-NYU/QSVD](https://github.com/SAI-Lab-NYU/QSVD)  
 **Area**: Multimodal VLM / Model Compression  

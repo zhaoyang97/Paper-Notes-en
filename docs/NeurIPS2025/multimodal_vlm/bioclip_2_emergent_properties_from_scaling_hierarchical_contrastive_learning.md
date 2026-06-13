@@ -17,7 +17,7 @@ content_hash: d6fb9cf6fc65662d
 
 # BioCLIP 2: Emergent Properties from Scaling Hierarchical Contrastive Learning
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2505.23883](https://arxiv.org/abs/2505.23883)  
 **Code**: To be confirmed  
 **Area**: Biological Vision / Multimodal

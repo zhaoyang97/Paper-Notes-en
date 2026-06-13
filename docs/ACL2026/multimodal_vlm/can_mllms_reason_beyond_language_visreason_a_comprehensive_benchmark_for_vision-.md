@@ -17,7 +17,7 @@ content_hash: 0374ceb5efe2e763
 
 # Can MLLMs Reason Beyond Language? VisReason: A Comprehensive Benchmark for Vision-Centric Reasoning
 
-**Conference**: ACL2026  
+**Conference**: ACL2026 Findings  
 **arXiv**: [2605.25364](https://arxiv.org/abs/2605.25364)  
 **Code**: https://github.com/CASIA-IVA-Lab/VisReason  
 **Area**: Multimodal VLM / Visual Reasoning / Benchmark  

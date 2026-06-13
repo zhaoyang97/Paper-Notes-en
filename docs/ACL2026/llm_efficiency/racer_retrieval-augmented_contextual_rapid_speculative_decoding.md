@@ -17,7 +17,7 @@ content_hash: b6005f31fe575695
 
 # RACER: Retrieval-Augmented Contextual Rapid Speculative Decoding
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.14885](https://arxiv.org/abs/2604.14885)  
 **Code**: [https://github.com/hkr04/RACER](https://github.com/hkr04/RACER)  
 **Area**: Information Retrieval  

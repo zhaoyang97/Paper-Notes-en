@@ -16,7 +16,7 @@ content_hash: 78d9f53f8abe2432
 
 # On Universality Classes of Equivariant Networks
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2506.02293](https://arxiv.org/abs/2506.02293)  
 **Code**: Not available  
 **Area**: Deep Learning Theory / Equivariant Neural Networks

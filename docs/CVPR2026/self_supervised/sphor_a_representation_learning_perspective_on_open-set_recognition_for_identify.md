@@ -17,7 +17,7 @@ content_hash: 1a4e90e8700a0070
 
 # SpHOR: A Representation Learning Perspective on Open-set Recognition for Identifying Unknown Classes in Deep Neural Networks
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026 Findings  
 **arXiv**: [2503.08049](https://arxiv.org/abs/2503.08049)  
 **Code**: None  
 **Area**: Self-supervised Learning

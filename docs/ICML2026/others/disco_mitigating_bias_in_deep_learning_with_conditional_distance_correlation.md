@@ -16,7 +16,7 @@ content_hash: b07c37201439e52c
 
 # DISCO: Mitigating Bias in Deep Learning with Conditional Distance Correlation
 
-**Conference**: ICML2026  
+**Conference**: ICML2026 Oral  
 **arXiv**: [2506.11653](https://arxiv.org/abs/2506.11653)  
 **Code**: https://github.com/yakamoz5/DISCO  
 **Area**: AI Safety / Fairness and Bias Mitigation / Causal Representation Learning  

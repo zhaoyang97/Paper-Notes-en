@@ -16,7 +16,7 @@ content_hash: 31052b89f3fbc23e
 
 # Fixed-Point RNNs: Interpolating from Diagonal to Dense
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2503.10799](https://arxiv.org/abs/2503.10799)  
 **Code**: None (not yet released)  
 **Area**: Sequence Modeling / State Space Models

@@ -17,7 +17,7 @@ content_hash: 1e833936bed2c649
 
 # Reducing Belief Deviation in Reinforcement Learning for Active Reasoning of LLM Agents
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026 Oral  
 **arXiv**: [2510.12264](https://arxiv.org/abs/2510.12264)  
 **Code**: [https://github.com/unimpor/T3](https://github.com/unimpor/T3)  
 **Area**: LLM Agent

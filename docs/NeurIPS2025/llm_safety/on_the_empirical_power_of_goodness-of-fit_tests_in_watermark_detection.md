@@ -17,7 +17,7 @@ content_hash: a508deb5244eff91
 
 # On the Empirical Power of Goodness-of-Fit Tests in Watermark Detection
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2510.03944](https://arxiv.org/abs/2510.03944)  
 **Code**: [GitHub](https://github.com/hwq0726/GoF-for-Watermark-Detection)  
 **Area**: AI Safety / LLM Watermarking

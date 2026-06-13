@@ -17,7 +17,7 @@ content_hash: 3ef76b1e09a7cd01
 
 # The Obfuscation Atlas: Mapping Where Honesty Emerges in RLVR with Deception Probes
 
-**Conference**: ICML 2026  
+**Conference**: ICML 2026 Oral  
 **arXiv**: [2602.15515](https://arxiv.org/abs/2602.15515)  
 **Code**: TBD (Author statement mentions MBPP-Honeypot environment and trained models will be on GitHub / HuggingFace)  
 **Area**: LLM Safety / Alignment / RLHF & RLVR / Interpretability  

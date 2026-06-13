@@ -17,7 +17,7 @@ content_hash: 5a27fc339db63f34
 
 # Cognitive-Uncertainty Guided Knowledge Distillation for Accurate Classification of Student Misconceptions
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2605.14752](https://arxiv.org/abs/2605.14752)  
 **Code**: https://github.com/RoschildRui/acl2026_map (Available)  
 **Area**: Model Compression / Knowledge Distillation / AI in Education  

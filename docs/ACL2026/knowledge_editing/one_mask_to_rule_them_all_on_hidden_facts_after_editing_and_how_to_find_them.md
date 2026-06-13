@@ -16,7 +16,7 @@ content_hash: e683ff49692e7063
 
 # One Mask to Rule Them All: On Hidden Facts after Editing and How to Find Them
 
-**Conference**: ACL2026  
+**Conference**: ACL2026 Findings  
 **arXiv**: [2605.28839](https://arxiv.org/abs/2605.28839)  
 **Code**: https://github.com/holmov1/one-mask-ke  
 **Area**: Knowledge Editing / Mechanistic Interpretability  

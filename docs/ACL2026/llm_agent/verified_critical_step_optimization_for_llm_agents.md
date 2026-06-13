@@ -16,7 +16,7 @@ content_hash: e47ad87ff4d4da87
 
 # Verified Critical Step Optimization for LLM Agents
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2602.03412](https://arxiv.org/abs/2602.03412)  
 **Code**: https://github.com/kiaia/CSO; https://github.com/Tencent/CognitiveKernel-Pro  
 **Area**: llm_agent  

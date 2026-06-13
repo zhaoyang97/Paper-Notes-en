@@ -17,7 +17,7 @@ content_hash: 52f5787b438c3955
 
 # End-to-End Autoregressive Image Generation with 1D Semantic Tokenizer
 
-**Conference**: ICML 2026  
+**Conference**: ICML 2026 Spotlight  
 **arXiv**: [2605.00503](https://arxiv.org/abs/2605.00503)  
 **Code**: None  
 **Area**: Image Generation / Autoregressive Visual Tokenizer / Representation Alignment  

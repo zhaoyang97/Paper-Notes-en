@@ -17,7 +17,7 @@ content_hash: 1f0a8643a15f7469
 
 # Minos: A Multimodal Evaluation Model for Bidirectional Generation Between Image and Text
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2506.02494](https://arxiv.org/abs/2506.02494)  
 **Code**: https://github.com/reroze/MINOS  
 **Area**: Multimodal Evaluation / MLLM-as-a-Judge / Preference Alignment  

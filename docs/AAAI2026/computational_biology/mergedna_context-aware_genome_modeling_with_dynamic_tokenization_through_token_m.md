@@ -17,7 +17,7 @@ content_hash: aabc88f0443b191a
 
 # MergeDNA: Context-aware Genome Modeling with Dynamic Tokenization through Token Merging
 
-**Conference**: AAAI2026
+**Conference**: AAAI2026 Oral  
 **arXiv**: [2511.14806](https://arxiv.org/abs/2511.14806)  
 **Code**: N/A  
 **Area**: Medical Imaging

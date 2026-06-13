@@ -17,7 +17,7 @@ content_hash: 5758e033c89c7bf6
 
 # Toward Stable Value Alignment: Introducing Independent Modules for Consistent Value Guidance
 
-**Conference**: ICML 2026  
+**Conference**: ICML 2026 Spotlight  
 **arXiv**: [2605.11712](https://arxiv.org/abs/2605.11712)  
 **Code**: https://github.com/Clervils/SVGT.git (Available)  
 **Area**: LLM Alignment / RLHF Alternatives / Inference-time Guidance  

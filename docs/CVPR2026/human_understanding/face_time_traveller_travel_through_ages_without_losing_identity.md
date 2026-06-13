@@ -17,7 +17,7 @@ content_hash: 1d1555b4b0b5ab5d
 
 # Face Time Traveller: Travel Through Ages Without Losing Identity
 
-**Conference**: CVPR2026
+**Conference**: CVPR 2026 Findings  
 **arXiv**: [2602.22819](https://arxiv.org/abs/2602.22819)  
 **Code**: To be confirmed  
 **Area**: Human Understanding

@@ -17,7 +17,7 @@ content_hash: 5aff5af099b0654b
 
 # Decomposed On-Policy Distillation for Vision-Language Reasoning: Steering Gradients for Visual Grounding
 
-**Conference**: ICML2026  
+**Conference**: ICML2026 Spotlight  
 **arXiv**: [2606.00564](https://arxiv.org/abs/2606.00564)  
 **Code**: https://github.com/hee-suk-yoon/Decomposed_OPD  
 **Area**: Multimodal VLM / LLM Reasoning  

@@ -17,7 +17,7 @@ content_hash: 9226d6ee631595d5
 
 # Personalized Benchmarking: Evaluating LLMs by Individual Preferences
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.18943](https://arxiv.org/abs/2604.18943)  
 **Code**: None  
 **Area**: LLM Evaluation / Personalized Recommendation  

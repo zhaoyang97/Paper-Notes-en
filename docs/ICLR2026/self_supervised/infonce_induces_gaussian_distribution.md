@@ -17,7 +17,7 @@ content_hash: 4a4cb34d91ab31a2
 
 # InfoNCE Induces Gaussian Distribution
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026 Oral  
 **arXiv**: [2602.24012](https://arxiv.org/abs/2602.24012)  
 **Code**: None  
 **Area**: Self-Supervised Learning / Contrastive Learning / Theoretical Analysis

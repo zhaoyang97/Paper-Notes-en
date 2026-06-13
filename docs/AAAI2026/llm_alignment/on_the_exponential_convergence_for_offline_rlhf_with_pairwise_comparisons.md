@@ -17,7 +17,7 @@ content_hash: d1f487dd9319f88e
 
 # On the Exponential Convergence for Offline RLHF with Pairwise Comparisons
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026 Oral  
 **arXiv**: [2406.12205](https://arxiv.org/abs/2406.12205)  
 **Code**: None  
 **Area**: LLM Alignment / Reinforcement Learning Theory

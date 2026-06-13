@@ -17,7 +17,7 @@ content_hash: 4d34168c1b03309f
 
 # Locality-aware Parallel Decoding for Efficient Autoregressive Image Generation
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026 Oral  
 **arXiv**: [2507.01957](https://arxiv.org/abs/2507.01957)  
 **Code**: [GitHub](https://github.com/mit-han-lab/lpd)  
 **Area**: Autoregressive Image Generation

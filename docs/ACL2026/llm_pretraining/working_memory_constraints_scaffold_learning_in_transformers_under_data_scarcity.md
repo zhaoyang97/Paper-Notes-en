@@ -17,7 +17,7 @@ content_hash: ae6f8c1684d80e84
 
 # Working Memory Constraints Scaffold Learning in Transformers under Data Scarcity
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.20789](https://arxiv.org/abs/2604.20789)  
 **Code**: None  
 **Area**: Cognitive Modeling / LLM Pre-training  

@@ -17,7 +17,7 @@ content_hash: 282119d012671cd8
 
 # What Factors Affect LLMs and RLLMs in Financial Question Answering?
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2507.08339](https://arxiv.org/abs/2507.08339)  
 **Code**: [https://github.com/WPENGxs/LLM_RLLM_financial_analysis](https://github.com/WPENGxs/LLM_RLLM_financial_analysis)  
 **Area**: Multilingual/Financial NLP  

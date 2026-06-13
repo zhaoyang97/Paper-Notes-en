@@ -17,7 +17,7 @@ content_hash: 8aa8815e627c11a5
 
 # Beyond Semantics: Disentangling Information Scope in Sparse Autoencoders for CLIP
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026 Findings  
 **arXiv**: [2604.05724](https://arxiv.org/abs/2604.05724)  
 **Code**: None  
 **Area**: Model Compression / Interpretability

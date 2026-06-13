@@ -17,7 +17,7 @@ content_hash: 46512bd09ac0bb13
 
 # CogGen: A Cognitively Inspired Recursive Framework for Deep Research Report Generation
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.17072](https://arxiv.org/abs/2604.17072)  
 **Code**: [GitHub](https://github.com/NJUNLP/CogGen)  
 **Area**: Multimodal VLM  

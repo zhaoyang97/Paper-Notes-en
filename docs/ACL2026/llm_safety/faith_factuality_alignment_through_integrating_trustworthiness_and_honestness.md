@@ -17,7 +17,7 @@ content_hash: 68425e45756210a7
 
 # FAITH: Factuality Alignment through Integrating Trustworthiness and Honestness
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.10189](https://arxiv.org/abs/2604.10189)  
 **Code**: [https://github.com/xndong/FAITH](https://github.com/xndong/FAITH)  
 **Area**: Information Retrieval  

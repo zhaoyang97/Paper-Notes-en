@@ -17,7 +17,7 @@ content_hash: f6c8e28af529858a
 
 # mCLM: A Modular Chemical Language Model that Generates Functional and Makeable Molecules
 
-**Conference**: ICLR 2026  
+**Conference**: ICLR 2026 Oral  
 **arXiv**: [2505.12565](https://arxiv.org/abs/2505.12565)  
 **Code**: Available (provided in the paper)  
 **Area**: Medicine / Molecular Generation  

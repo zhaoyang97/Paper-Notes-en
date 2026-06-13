@@ -17,7 +17,7 @@ content_hash: 8de22ce92f644e2e
 
 # Prune-then-Merge: Towards Efficient Multi-Vector Visual Document Retrieval
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2602.19549](https://arxiv.org/abs/2602.19549)  
 **Code**: None  
 **Area**: Information Retrieval / Document Retrieval  

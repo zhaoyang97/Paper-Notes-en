@@ -17,7 +17,7 @@ content_hash: 8d05c5022916ffe4
 
 # Automated Knowledge Component Generation and Interpretable Knowledge Tracing in Coding Problems
 
-**Conference**: ACL2026  
+**Conference**: ACL2026 Findings  
 **arXiv**: [2502.18632](https://arxiv.org/abs/2502.18632)  
 **Code**: https://github.com/umass-ml4ed/kcgen-kt  
 **Area**: AI in Education / Knowledge Tracing  

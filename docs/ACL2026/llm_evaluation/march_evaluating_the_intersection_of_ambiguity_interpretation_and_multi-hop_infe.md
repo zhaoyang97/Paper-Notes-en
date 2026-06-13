@@ -17,7 +17,7 @@ content_hash: 4089f8cf294b6b80
 
 # MARCH: Evaluating the Intersection of Ambiguity Interpretation and Multi-hop Inference
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2509.22750](https://arxiv.org/abs/2509.22750)  
 **Code**: [GitHub](https://github.com/jeonghyunpark2002/MARCH)  
 **Area**: LLM Reasoning / Question Answering  

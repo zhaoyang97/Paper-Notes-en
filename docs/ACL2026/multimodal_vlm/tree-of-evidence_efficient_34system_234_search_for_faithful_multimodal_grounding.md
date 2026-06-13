@@ -17,7 +17,7 @@ content_hash: ff475be35c94f393
 
 # Tree-of-Evidence: Efficient "System 2" Search for Faithful Multimodal Grounding
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.07692](https://arxiv.org/abs/2604.07692)  
 **Code**: None  
 **Area**: Multimodal VLM  

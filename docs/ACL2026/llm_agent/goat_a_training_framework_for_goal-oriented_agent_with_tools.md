@@ -17,7 +17,7 @@ content_hash: 5380c15a99157155
 
 # GOAT: A Training Framework for Goal-Oriented Agent with Tools
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2510.12218](https://arxiv.org/abs/2510.12218)  
 **Code**: https://github.com/KU-MIIL/GOAT (Available)  
 **Area**: LLM Agent / Tool Use  

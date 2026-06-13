@@ -17,7 +17,7 @@ content_hash: f5122d1cbb4bbc15
 
 # Position Paper: If Innovation in AI Systematically Violates Fundamental Rights, Is It Innovation at All?
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Oral  
 **arXiv**: [2511.00027](https://arxiv.org/abs/2511.00027)  
 **Code**: None  
 **Area**: AI Ethics / AI Governance

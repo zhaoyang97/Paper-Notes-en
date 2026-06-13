@@ -17,7 +17,7 @@ content_hash: 3db3091d0e854e2d
 
 # MaMe & MaRe: Matrix-Based Token Merging and Restoration for Efficient Visual Perception and Synthesis
 
-**Conference**: CVPR 2026 (Findings)  
+**Conference**: CVPR 2026 Findings  
 **arXiv**: [2604.13432](https://arxiv.org/abs/2604.13432)  
 **Code**: [github.com/cominder/mame](https://github.com/cominder/mame)  
 **Area**: Model Compression / Efficient Inference  

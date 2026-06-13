@@ -17,7 +17,7 @@ content_hash: 8ad3a7cfd71f1303
 
 # SpecDiff: Accelerating Diffusion Model Inference with Self-Speculation
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026 Oral  
 **arXiv**: [2509.13848](https://arxiv.org/abs/2509.13848)  
 **Code**: Unavailable  
 **Area**: Image Generation

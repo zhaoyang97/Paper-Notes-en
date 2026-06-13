@@ -17,7 +17,7 @@ content_hash: 65a64dc4752be33e
 
 # Position: Bridge the Gaps between Machine Unlearning and AI Regulation
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Oral  
 **arXiv**: [2502.12430](https://arxiv.org/abs/2502.12430)  
 **Code**: Unavailable  
 **Area**: AI Safety

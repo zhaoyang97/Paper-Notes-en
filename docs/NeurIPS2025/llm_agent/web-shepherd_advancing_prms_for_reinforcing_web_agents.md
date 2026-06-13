@@ -17,7 +17,7 @@ content_hash: 47d488a39f4fffe1
 
 # Web-Shepherd: Advancing PRMs for Reinforcing Web Agents
 
-**Conference**: NeurIPS 2025  
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2505.15277](https://arxiv.org/abs/2505.15277)  
 **Code**: Available  
 **Area**: Agent  

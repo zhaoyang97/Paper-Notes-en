@@ -17,7 +17,7 @@ content_hash: 1008ea714f39c7ad
 
 # Reverse Constitutional AI: A Framework for Controllable Toxic Data Generation via Probability-Clamped RLAIF
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.17769](https://arxiv.org/abs/2604.17769)  
 **Code**: [https://github.com/ZeroLoss-Lab/R-CAI](https://github.com/ZeroLoss-Lab/R-CAI)  
 **Area**: Reinforcement Learning  

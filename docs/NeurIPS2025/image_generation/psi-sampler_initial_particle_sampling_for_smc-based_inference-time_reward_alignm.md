@@ -17,7 +17,7 @@ content_hash: 6e4b5a19294820ce
 
 # Ψ-Sampler: Initial Particle Sampling for SMC-Based Inference-Time Reward Alignment in Score Models
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2506.01320](https://arxiv.org/abs/2506.01320)  
 **Code**: [Project Page](https://psi-sampler.github.io/)  
 **Area**: Diffusion Models / Image Generation

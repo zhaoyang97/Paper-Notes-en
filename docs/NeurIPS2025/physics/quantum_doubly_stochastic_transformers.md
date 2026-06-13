@@ -17,7 +17,7 @@ content_hash: 9325a668bd5e851a
 
 # Quantum Doubly Stochastic Transformers
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2504.16275](https://arxiv.org/abs/2504.16275)  
 **Code**: None  
 **Area**: Quantum Computing / Transformer

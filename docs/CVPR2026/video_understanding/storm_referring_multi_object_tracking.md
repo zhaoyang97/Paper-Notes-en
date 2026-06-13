@@ -16,7 +16,7 @@ content_hash: 590345234442351c
 
 # STORM: End-to-End Referring Multi-Object Tracking in Videos
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026 Findings  
 **arXiv**: [2604.10527](https://arxiv.org/abs/2604.10527)  
 **Code**: [https://github.com/amazon-science/storm-referring-multi-object-grounding](https://github.com/amazon-science/storm-referring-multi-object-grounding)  
 **Area**: Video Understanding

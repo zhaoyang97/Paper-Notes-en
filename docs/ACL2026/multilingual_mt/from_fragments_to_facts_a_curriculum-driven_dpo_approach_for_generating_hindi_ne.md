@@ -17,7 +17,7 @@ content_hash: 0f1dc1a9326092a4
 
 # From Fragments to Facts: A Curriculum-Driven DPO Approach for Generating Hindi News Veracity Explanations
 
-**Conference**: ACL2026  
+**Conference**: ACL2026 Findings  
 **arXiv**: [2507.05179](https://arxiv.org/abs/2507.05179)  
 **Code**: Project Page: From Fragments to Facts (URL not provided in cache)  
 **Area**: Multilingual NLP / Fact-checking / Explanation Generation  

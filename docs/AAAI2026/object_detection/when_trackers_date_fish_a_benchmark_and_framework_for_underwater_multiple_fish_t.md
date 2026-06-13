@@ -17,7 +17,7 @@ content_hash: dcb72145e0fa2172
 
 # When Trackers Date Fish: A Benchmark and Framework for Underwater Multiple Fish Tracking
 
-**Conference**: AAAI 2026  
+**Conference**: AAAI 2026 Oral  
 **arXiv**: [2507.06400](https://arxiv.org/abs/2507.06400)  
 **Code**: [https://vranlee.github.io/SU-T/](https://vranlee.github.io/SU-T/)  
 **Area**: Object Detection  

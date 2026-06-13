@@ -17,7 +17,7 @@ content_hash: 577274eb84ac3c61
 
 # Revisiting Entropy in Reinforcement Learning for Large Reasoning Models
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2511.05993](https://arxiv.org/abs/2511.05993)  
 **Code**: [GitHub](https://github.com/cordercorder/EntropyRL)  
 **Area**: LLM Reasoning  

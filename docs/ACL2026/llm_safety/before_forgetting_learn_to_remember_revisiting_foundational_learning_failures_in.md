@@ -17,7 +17,7 @@ content_hash: 8d9734520989aa1e
 
 # Before Forgetting, Learn to Remember: Revisiting Foundational Learning Failures in LVLM Unlearning Benchmarks
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2605.03759](https://arxiv.org/abs/2605.03759)  
 **Code**: https://huggingface.co/datasets/herbwood27/Remem  
 **Area**: LLM Safety / Privacy / Multimodal Unlearning  

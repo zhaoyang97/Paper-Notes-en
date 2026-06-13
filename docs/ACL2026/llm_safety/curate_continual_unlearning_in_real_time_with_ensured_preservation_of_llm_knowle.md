@@ -17,7 +17,7 @@ content_hash: 0b51c5303587aa7a
 
 # CURaTE: Continual Unlearning in Real Time with Ensured Preservation of LLM Knowledge
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.14644](https://arxiv.org/abs/2604.14644)  
 **Code**: [GitHub](https://github.com/bsu1313/CURaTE)  
 **Area**: Information Retrieval  

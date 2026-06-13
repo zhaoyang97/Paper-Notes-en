@@ -17,7 +17,7 @@ content_hash: 7aa7a6fb1526e9c8
 
 # Large Reasoning Models Are (Not Yet) Multilingual Latent Reasoners
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2601.02996](https://arxiv.org/abs/2601.02996)  
 **Code**: [https://github.com/cisnlp/multilingual-latent-reasoner](https://github.com/cisnlp/multilingual-latent-reasoner)  
 **Area**: LLM Reasoning  

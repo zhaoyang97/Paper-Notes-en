@@ -17,7 +17,7 @@ content_hash: 912b8efbc10e49db
 
 # RbtAct: Rebuttal as Supervision for Actionable Review Feedback Generation
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2603.09723](https://arxiv.org/abs/2603.09723)  
 **Code**: arXiv page indicates RbtAct; public repository URL not resolved in cache  
 **Area**: LLM Alignment / Academic Peer Review / Feedback Generation  

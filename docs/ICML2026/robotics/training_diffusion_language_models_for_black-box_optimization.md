@@ -17,7 +17,7 @@ content_hash: 69789e3230d76358
 
 # DiBO: Offline Black-box Optimization with Diffusion Language Models (DNA + Robot Morphology)
 
-**Conference**: ICML 2026  
+**Conference**: ICML 2026 Spotlight  
 **arXiv**: [2603.17919](https://arxiv.org/abs/2603.17919)  
 **Code**: Provided on the paper page (here link)  
 **Area**: Black-box Optimization / Diffusion Language Models / Design Generation  

@@ -17,7 +17,7 @@ content_hash: 072c2b1f87d5eda3
 
 # ExpSeek: Self-Triggered Experience Seeking for Web Agents
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2601.08605](https://arxiv.org/abs/2601.08605)  
 **Code**: [https://github.com/WYRipple/ExpSeek](https://github.com/WYRipple/ExpSeek)  
 **Area**: LLM Agent  

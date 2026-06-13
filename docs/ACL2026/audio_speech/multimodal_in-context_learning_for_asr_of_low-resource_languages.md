@@ -17,7 +17,7 @@ content_hash: 1b4d936531bafeb1
 
 # Multimodal In-Context Learning for ASR of Low-Resource Languages
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2601.05707](https://arxiv.org/abs/2601.05707)  
 **Code**: [github](https://github.com/ZL-KA/MICL)  
 **Area**: Audio & Speech / Low-resource ASR  

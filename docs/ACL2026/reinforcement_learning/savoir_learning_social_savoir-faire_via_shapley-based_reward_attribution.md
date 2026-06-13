@@ -17,7 +17,7 @@ content_hash: 6e9ef014fb62d554
 
 # Savoir: Learning Social Savoir-Faire via Shapley-based Reward Attribution
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.18982](https://arxiv.org/abs/2604.18982)  
 **Code**: None  
 **Area**: Social Intelligence / Reinforcement Learning  

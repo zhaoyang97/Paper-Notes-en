@@ -17,7 +17,7 @@ content_hash: 01bcc65a6a8be163
 
 # HazeMatching: Dehazing Light Microscopy Images with Guided Conditional Flow Matching
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026 Findings  
 **arXiv**: [2506.22397](https://arxiv.org/abs/2506.22397)  
 **Code**: [https://github.com/juglab/HazeMatching](https://github.com/juglab/HazeMatching)  
 **Area**: Image Generation / Medical Imaging

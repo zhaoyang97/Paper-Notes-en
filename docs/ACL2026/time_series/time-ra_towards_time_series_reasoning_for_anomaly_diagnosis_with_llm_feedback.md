@@ -17,7 +17,7 @@ content_hash: c3bd96b8683da881
 
 # Time-RA: Towards Time Series Reasoning for Anomaly Diagnosis with LLM Feedback
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2507.15066](https://arxiv.org/abs/2507.15066)  
 **Code**: [yyysjz1997/Time-RA](https://github.com/yyysjz1997/Time-RA)  
 **Area**: Time Series Analysis / LLM Reasoning  

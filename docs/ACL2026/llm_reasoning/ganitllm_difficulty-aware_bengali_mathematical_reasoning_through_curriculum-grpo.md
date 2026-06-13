@@ -17,7 +17,7 @@ content_hash: ee2b6ac9fef0d31c
 
 # GanitLLM: Difficulty-Aware Bengali Mathematical Reasoning through Curriculum-GRPO
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2601.06767](https://arxiv.org/abs/2601.06767)  
 **Code**: [Website](https://dipta007.github.io/GanitLLM/)  
 **Area**: Low-resource language reasoning / Mathematical reasoning  

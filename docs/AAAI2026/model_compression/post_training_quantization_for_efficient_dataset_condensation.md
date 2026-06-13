@@ -17,7 +17,7 @@ content_hash: 993fd633443c404d
 
 # Post Training Quantization for Efficient Dataset Condensation
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026 Oral  
 **arXiv**: [2603.13346](https://arxiv.org/abs/2603.13346)  
 **Code**: None  
 **Area**: Model Compression

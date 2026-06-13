@@ -17,7 +17,7 @@ content_hash: da898a1044d8e1a7
 
 # Preference Estimation via Opponent Modeling in Multi-Agent Negotiation
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.15687](https://arxiv.org/abs/2604.15687)  
 **Code**: None  
 **Area**: Video Understanding  

@@ -17,7 +17,7 @@ content_hash: c12a2ca6e00db614
 
 # Towards Robust Content Watermarking Against Removal and Forgery Attacks
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026 Findings  
 **arXiv**: [2604.06662](https://arxiv.org/abs/2604.06662)  
 **Code**: None  
 **Area**: Image Generation / Digital Watermarking

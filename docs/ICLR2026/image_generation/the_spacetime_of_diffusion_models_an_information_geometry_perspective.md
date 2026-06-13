@@ -17,7 +17,7 @@ content_hash: b850e72cd9eac839
 
 # The Spacetime of Diffusion Models: An Information Geometry Perspective
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026 Oral  
 **arXiv**: [2505.17517](https://arxiv.org/abs/2505.17517)  
 **Code**: [GitHub](https://github.com/rafalkarczewski/spacetime-geometry)  
 **Area**: Diffusion Models / Information Geometry / Theoretical Analysis

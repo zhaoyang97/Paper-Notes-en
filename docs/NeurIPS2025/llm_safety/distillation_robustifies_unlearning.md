@@ -18,7 +18,7 @@ content_hash: 1f49a7d838ce98ce
 
 # Distillation Robustifies Unlearning
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2506.06278](https://arxiv.org/abs/2506.06278)  
 **Code**: Public (GitHub)  
 **Area**: AI Safety / Machine Unlearning / Knowledge Distillation

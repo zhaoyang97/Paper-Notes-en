@@ -17,7 +17,7 @@ content_hash: 013e765a723b4ad3
 
 # Multi-Aspect Cross-modal Quantization for Generative Recommendation
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026 Oral  
 **arXiv**: [2511.15122](https://arxiv.org/abs/2511.15122)  
 **Code**: [github.com/zhangfw123/MACRec](https://github.com/zhangfw123/MACRec)  
 **Area**: Image Generation / Recommender Systems

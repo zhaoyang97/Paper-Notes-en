@@ -17,7 +17,7 @@ content_hash: cf22f9070d6bae13
 
 # Representation-Guided Parameter-Efficient LLM Unlearning
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.17396](https://arxiv.org/abs/2604.17396)  
 **Code**: [https://github.com/sustech-nlp/ReGLU](https://github.com/sustech-nlp/ReGLU)  
 **Area**: Model Compression  

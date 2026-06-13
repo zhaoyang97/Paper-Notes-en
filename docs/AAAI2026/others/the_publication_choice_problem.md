@@ -16,7 +16,7 @@ content_hash: 1d30ece24f8691bb
 
 # The Publication Choice Problem
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026 Oral  
 **arXiv**: [2511.13678](https://arxiv.org/abs/2511.13678)  
 **Code**: None  
 **Area**: Other

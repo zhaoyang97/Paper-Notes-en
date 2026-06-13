@@ -17,7 +17,7 @@ content_hash: 7480f5535d5efa16
 
 # Harnessing Vision-Language Models for Time Series Anomaly Detection
 
-**Conference**: AAAI2026
+**Conference**: AAAI2026 Oral  
 **arXiv**: [2506.06836](https://arxiv.org/abs/2506.06836)  
 **Code**: [ZLHe0/VLM4TS](https://github.com/ZLHe0/VLM4TS)  
 **Area**: Multimodal VLM

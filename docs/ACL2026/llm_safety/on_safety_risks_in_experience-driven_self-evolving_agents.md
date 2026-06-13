@@ -17,7 +17,7 @@ content_hash: be9c50113c4a5fa9
 
 # On Safety Risks in Experience-Driven Self-Evolving Agents
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.16968](https://arxiv.org/abs/2604.16968)  
 **Code**: None  
 **Area**: Robot/Agent Safety  

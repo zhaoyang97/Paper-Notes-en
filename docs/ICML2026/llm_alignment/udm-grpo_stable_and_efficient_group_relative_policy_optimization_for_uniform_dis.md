@@ -16,7 +16,7 @@ content_hash: a053bfdd80c7c3d4
 
 # UDM-GRPO: Stable and Efficient GRPO for Unified Discrete Diffusion Models
 
-**Conference**: ICML 2026  
+**Conference**: ICML 2026 Spotlight  
 **arXiv**: [2604.18518](https://arxiv.org/abs/2604.18518)  
 **Code**: https://github.com/Yovecent/UDM-GRPO  
 **Area**: Diffusion Models / Text-to-Image Generation / RL Alignment  

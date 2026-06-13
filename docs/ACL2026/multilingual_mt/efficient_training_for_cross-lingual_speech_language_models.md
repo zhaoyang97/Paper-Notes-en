@@ -17,7 +17,7 @@ content_hash: 0262c4b3557d9497
 
 # Efficient Training for Cross-lingual Speech Language Models
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.11096](https://arxiv.org/abs/2604.11096)  
 **Code**: [https://github.com/ictnlp/CSLM](https://github.com/ictnlp/CSLM)  
 **Area**: Multilingual/Translation / Audio Speech  

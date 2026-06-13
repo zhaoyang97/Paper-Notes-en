@@ -17,7 +17,7 @@ content_hash: 5eea4a6078b588d7
 
 # T$^2$PO: Uncertainty-Guided Exploration Control for Stable Multi-Turn Agentic Reinforcement Learning
 
-**Conference**: ICML 2026  
+**Conference**: ICML 2026 Spotlight  
 **arXiv**: [2605.02178](https://arxiv.org/abs/2605.02178)  
 **Code**: https://github.com/WillDreamer/T2PO (available)  
 **Area**: LLM Reasoning / Agentic RL / Multi-Turn Reinforcement Learning  

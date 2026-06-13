@@ -17,7 +17,7 @@ content_hash: 0298564e9767a99e
 
 # Scripts Through Time: A Survey of the Evolving Role of Transliteration in NLP
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.18722](https://arxiv.org/abs/2604.18722)  
 **Code**: None  
 **Area**: Recommender Systems  

@@ -17,7 +17,7 @@ content_hash: 7c0096195fe2ae35
 
 # Supplement Generation Training for Enhancing Agentic Task Performance
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.20727](https://arxiv.org/abs/2604.20727)  
 **Code**: None  
 **Area**: Model Compression  

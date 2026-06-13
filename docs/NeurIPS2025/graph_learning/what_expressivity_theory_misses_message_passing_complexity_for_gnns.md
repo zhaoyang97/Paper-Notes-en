@@ -17,7 +17,7 @@ content_hash: 3b3e2294b4e49bff
 
 # What Expressivity Theory Misses: Message Passing Complexity for GNNs
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2509.01254](https://arxiv.org/abs/2509.01254)  
 **Code**: [https://www.cs.cit.tum.de/daml/message-passing-complexity/](https://www.cs.cit.tum.de/daml/message-passing-complexity/)  
 **Area**: GNN Theory / Expressivity

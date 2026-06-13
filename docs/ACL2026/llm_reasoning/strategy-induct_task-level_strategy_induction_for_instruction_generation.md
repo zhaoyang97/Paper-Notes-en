@@ -18,7 +18,7 @@ content_hash: d1ad60432047b1d8
 
 # Strategy-Induct: Task-Level Strategy Induction for Instruction Generation
 
-**Conference**: ACL2026
+**Conference**: ACL2026 Findings  
 **arXiv**: [2605.20924](https://arxiv.org/abs/2605.20924)
 **Code**: To be confirmed
 **Area**: llm_reasoning

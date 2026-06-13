@@ -18,7 +18,7 @@ content_hash: 77c253c160a1a7d0
 <!-- Generated automatically from src/gen_stubs.py -->
 # Rerank Before You Reason: Analyzing Reranking Tradeoffs through Effective Token Cost in Deep Search Agents
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2601.14224](https://arxiv.org/abs/2601.14224)  
 **Code**: [https://github.com/sahel-sh/DeepHone](https://github.com/sahel-sh/DeepHone)  
 **Area**: information_retrieval  

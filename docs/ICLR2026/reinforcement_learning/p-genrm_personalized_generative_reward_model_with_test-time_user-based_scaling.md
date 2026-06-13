@@ -17,7 +17,7 @@ content_hash: ed9394794007af21
 
 # P-GenRM: Personalized Generative Reward Model with Test-time User-based Scaling
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026 Oral  
 **arXiv**: [2602.12116](https://arxiv.org/abs/2602.12116)  
 **Code**: [GitHub](https://github.com/Tongyi-ConvAI/Qwen-Character/tree/main/Character-GenRM)  
 **Area**: Reinforcement Learning

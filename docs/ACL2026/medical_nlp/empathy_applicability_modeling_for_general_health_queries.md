@@ -17,7 +17,7 @@ content_hash: daa1d2f0fb540047
 
 # Empathy Applicability Modeling for General Health Queries
 
-**Conference**: ACL2026  
+**Conference**: ACL2026 Findings  
 **arXiv**: [2601.09696](https://arxiv.org/abs/2601.09696)  
 **Code**: https://github.com/shanmrandhawa/Empathy-Applicability-Framework  
 **Area**: Medical NLP / Clinical Empathy Modeling  

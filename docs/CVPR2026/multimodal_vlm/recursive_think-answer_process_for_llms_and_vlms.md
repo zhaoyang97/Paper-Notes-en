@@ -17,7 +17,7 @@ content_hash: 11943a980d7704ed
 
 # Recursive Think-Answer Process for LLMs and VLMs
 
-**Conference**: CVPR 2026 (Findings)
+**Conference**: CVPR 2026 Findings  
 **arXiv**: [2603.02099](https://arxiv.org/abs/2603.02099)  
 **Code**: To be confirmed (paper mentions a Project page)  
 **Area**: LLM Reasoning / Multimodal VLM

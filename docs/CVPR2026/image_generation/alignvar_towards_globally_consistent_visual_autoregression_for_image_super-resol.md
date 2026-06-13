@@ -17,7 +17,7 @@ content_hash: 4e2eb472793e9200
 
 # AlignVAR: Towards Globally Consistent Visual Autoregression for Image Super-Resolution
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026 Findings  
 **arXiv**: [2603.00589](https://arxiv.org/abs/2603.00589)  
 **Code**: None  
 **Area**: Image Generation

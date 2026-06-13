@@ -17,7 +17,7 @@ content_hash: 7b6a677d7607c755
 
 # From Scoring to Explanations: Evaluating SHAP and LLM Rationales for Rubric-based Teaching Quality Assessment
 
-**Conference**: ACL2026  
+**Conference**: ACL2026 Findings  
 **arXiv**: [2606.05180](https://arxiv.org/abs/2606.05180)  
 **Code**: Not provided in cache  
 **Area**: Educational NLP / Explainability / Automated Rubric Scoring  

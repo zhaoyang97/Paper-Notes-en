@@ -17,7 +17,7 @@ content_hash: 9e7b8aa5cf8aa0aa
 
 # FedGRPO: Privately Optimizing Foundation Models with Group-Relative Rewards from Domain Clients
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026 Oral  
 **arXiv**: [2602.12014](https://arxiv.org/abs/2602.12014)  
 **Code**: [https://github.com/Liar-Mask/FedGRPO](https://github.com/Liar-Mask/FedGRPO)  
 **Area**: Self-Supervised

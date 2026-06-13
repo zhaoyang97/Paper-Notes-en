@@ -17,7 +17,7 @@ content_hash: 6ae967bd2792d759
 
 # Demo: Generative AI helps Radiotherapy Planning with User Preference
 
-**Conference**: NeurIPS 2025 (GenAI for Health Workshop)  
+**Conference**: NeurIPS 2025 (GenAI for Health Workshop) Best Paper  
 **arXiv**: [2512.08996](https://arxiv.org/abs/2512.08996)  
 **Code**: [Demo Video](https://huggingface.co/Jungle15/DoseProposerDemo)  
 **Area**: Medical Imaging  

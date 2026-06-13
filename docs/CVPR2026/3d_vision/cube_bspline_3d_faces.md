@@ -17,7 +17,7 @@ content_hash: feb6c5823e36bd3c
 
 # CUBE: Representing 3D Faces with Learnable B-Spline Volumes
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026 Highlight  
 **arXiv**: [2604.12894](https://arxiv.org/abs/2604.12894)  
 **Code**: None  
 **Area**: 3D Vision / Face Reconstruction

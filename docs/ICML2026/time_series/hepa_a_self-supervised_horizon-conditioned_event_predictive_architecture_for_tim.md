@@ -17,7 +17,7 @@ content_hash: bca5e4cddc155d9e
 
 # HEPA: A Self-Supervised Horizon-Conditioned Event Predictive Architecture for Time Series
 
-**Conference**: ICML 2026  
+**Conference**: ICML 2026 Spotlight  
 **arXiv**: [2605.11130](https://arxiv.org/abs/2605.11130)  
 **Code**: TBD  
 **Area**: Time Series / Self-Supervised Learning / Event Prediction  

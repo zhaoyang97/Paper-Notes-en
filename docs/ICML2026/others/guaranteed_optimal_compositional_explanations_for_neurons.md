@@ -16,7 +16,7 @@ content_hash: 1662a422e2b82220
 
 # Guaranteed Optimal Compositional Explanations for Neurons
 
-**Conference**: ICML 2026  
+**Conference**: ICML 2026 Oral  
 **arXiv**: [2511.20934](https://arxiv.org/abs/2511.20934)  
 **Code**: Provided in the paper ("We release the code at the following repository", see the original text for the specific link)  
 **Area**: Interpretability / Neuron Explanation / Compositional Explanations  

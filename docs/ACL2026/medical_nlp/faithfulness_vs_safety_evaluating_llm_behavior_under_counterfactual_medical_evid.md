@@ -17,7 +17,7 @@ content_hash: 6b2f6071916647f3
 
 # Faithfulness vs. Safety: Evaluating LLM Behavior Under Counterfactual Medical Evidence
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2601.11886](https://arxiv.org/abs/2601.11886)  
 **Code**: [GitHub](https://github.com/KaijieMo-kj/Counterfactual-Medical-Evidence)  
 **Area**: Medical Imaging  

@@ -17,7 +17,7 @@ content_hash: 72cc9482d5b112f0
 
 # Latent Laplace Diffusion for Irregular Multivariate Time Series
 
-**Conference**: ICML 2026  
+**Conference**: ICML 2026 Spotlight  
 **arXiv**: [2605.19805](https://arxiv.org/abs/2605.19805)  
 **Code**: TBD  
 **Area**: Time Series / Generative Models  

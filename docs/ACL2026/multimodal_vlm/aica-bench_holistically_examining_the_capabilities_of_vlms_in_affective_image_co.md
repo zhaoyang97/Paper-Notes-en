@@ -17,7 +17,7 @@ content_hash: b98984f9dd934c5c
 
 # AICA-Bench: Holistically Examining the Capabilities of VLMs in Affective Image Content Analysis
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.05900](https://arxiv.org/abs/2604.05900)  
 **Code**: None  
 **Area**: Multimodal VLM / Affective Computing  

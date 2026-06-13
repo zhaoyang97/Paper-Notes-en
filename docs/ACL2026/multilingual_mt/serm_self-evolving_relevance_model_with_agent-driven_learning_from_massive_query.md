@@ -17,7 +17,7 @@ content_hash: 11360aaa35560781
 
 # SERM: Self-Evolving Relevance Model with Agent-Driven Learning from Massive Query Streams
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2601.09515](https://arxiv.org/abs/2601.09515)  
 **Code**: None  
 **Area**: Multilingual Translation  

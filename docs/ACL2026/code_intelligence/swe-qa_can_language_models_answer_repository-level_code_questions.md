@@ -17,7 +17,7 @@ content_hash: d0087375d82c50c4
 
 # SWE-QA: Can Language Models Answer Repository-level Code Questions?
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2509.14635](https://arxiv.org/abs/2509.14635)  
 **Code**: https://github.com/peng-weihan/SWE-QA-Bench  
 **Area**: Code Intelligence / Repository-level Question Answering  

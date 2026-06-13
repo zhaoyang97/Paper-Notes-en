@@ -16,7 +16,7 @@ content_hash: e2928dbc73d4161b
 
 # Understanding Self-Supervised Learning via Latent Distribution Matching
 
-**Conference**: ICML 2026  
+**Conference**: ICML 2026 Spotlight  
 **arXiv**: [2605.03517](https://arxiv.org/abs/2605.03517)  
 **Code**: None  
 **Area**: Self-Supervised Representation Learning / ICA and Identifiability / Representation Learning Theory  

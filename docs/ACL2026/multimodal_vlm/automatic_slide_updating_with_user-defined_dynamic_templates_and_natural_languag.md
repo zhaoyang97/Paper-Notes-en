@@ -17,7 +17,7 @@ content_hash: a8a58dc764cce8ff
 
 # Automatic Slide Updating with User-Defined Dynamic Templates and Natural Language Instructions
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.17894](https://arxiv.org/abs/2604.17894)  
 **Code**: [github](https://github.com/XiaoZhou2024/SlideAgent)  
 **Area**: Multimodal/VLM  

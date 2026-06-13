@@ -17,7 +17,7 @@ content_hash: a12b0f4bcba9aa4d
 
 # Model Editing as a Double-Edged Sword: Steering Agent Ethical Behavior
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026 Oral  
 **arXiv**: [2506.20606](https://arxiv.org/abs/2506.20606)  
 **Code**: [GitHub](https://github.com/baixianghuang/behavior-edit)  
 **Area**: Knowledge Editing

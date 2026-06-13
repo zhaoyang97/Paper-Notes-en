@@ -17,7 +17,7 @@ content_hash: 09f0ab6f872f63a5
 
 # Aligning What LLMs Do and Say: Towards Self-Consistent Explanations
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2506.07523](https://arxiv.org/abs/2506.07523)  
 **Code**: [GitHub](https://github.com/saharad1/ConstLLM)  
 **Area**: Interpretability  

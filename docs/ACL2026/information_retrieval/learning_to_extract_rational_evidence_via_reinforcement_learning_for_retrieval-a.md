@@ -18,7 +18,7 @@ content_hash: 92ea4e94e89245ad
 <!-- Generated automatically by src/gen_stubs.py -->
 # Learning to Extract Rational Evidence via Reinforcement Learning for Retrieval-Augmented Generation
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2507.15586](https://arxiv.org/abs/2507.15586)  
 **Code**: [GitHub](https://github.com/HITsz-TMG/EviOmni)  
 **Area**: Image Restoration  

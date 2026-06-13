@@ -18,7 +18,7 @@ content_hash: fe411b84068f9660
 
 # Generalizing Fair Clustering to Multiple Groups: Algorithms and Applications
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026 Oral  
 **arXiv**: [2511.11539](https://arxiv.org/abs/2511.11539)  
 **Code**: To be confirmed  
 **Area**: AI Safety / Fairness

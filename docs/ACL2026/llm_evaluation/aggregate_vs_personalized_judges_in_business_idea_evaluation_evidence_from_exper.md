@@ -17,7 +17,7 @@ content_hash: 993da4515bb1df9a
 
 # Aggregate vs. Personalized Judges in Business Idea Evaluation: Evidence from Expert Disagreement
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Oral  
 **arXiv**: [2604.22517](https://arxiv.org/abs/2604.22517)  
 **Code**: None  
 **Area**: LLM Evaluation  

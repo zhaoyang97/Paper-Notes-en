@@ -17,7 +17,7 @@ content_hash: 1fa019fa30ef09ae
 
 # SOLAR-RL: Semi-Online Long-horizon Assignment Reinforcement Learning
 
-**Conference**: ACL2026  
+**Conference**: ACL2026 Findings  
 **arXiv**: [2604.22558](https://arxiv.org/abs/2604.22558)  
 **Code**: No public code (the paper states it is implemented based on verl)  
 **Area**: GUI Agent / Reinforcement Learning / Robotics & Embodied Intelligence  

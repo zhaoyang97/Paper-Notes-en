@@ -17,7 +17,7 @@ content_hash: 17a1698b29478d7b
 
 # Identifying the Achilles' Heel: An Iterative Method for Dynamically Uncovering Factual Errors in Large Language Models
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2401.00761](https://arxiv.org/abs/2401.00761)  
 **Code**: <https://github.com/Mysterchan/HalluHunter>  
 **Area**: LLM Evaluation / Factuality / Automated Testing  

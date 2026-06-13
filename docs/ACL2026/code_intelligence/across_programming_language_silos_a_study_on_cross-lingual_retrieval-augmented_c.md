@@ -17,7 +17,7 @@ content_hash: 07ddb40190b984a5
 
 # Across Programming Language Silos: A Study on Cross-Lingual Retrieval-Augmented Code Generation
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2506.03535](https://arxiv.org/abs/2506.03535)  
 **Code**: [GitHub](https://github.com/icip-cas/Cross-Lingual-RACG)  
 **Area**: Code Intelligence / Cross-Lingual Code Generation  

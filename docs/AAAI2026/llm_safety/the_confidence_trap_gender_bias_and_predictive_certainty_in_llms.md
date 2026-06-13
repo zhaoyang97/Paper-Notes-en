@@ -18,7 +18,7 @@ content_hash: d543ef5f80296992
 
 # The Confidence Trap: Gender Bias and Predictive Certainty in LLMs
 
-**Conference**: AAAI2026
+**Conference**: AAAI2026 Oral  
 **arXiv**: [2601.07806](https://arxiv.org/abs/2601.07806)  
 **Authors**: Ahmed Sabir, Markus Kängsepp, Rajesh Sharma (University of Tartu)
 **Code**: [GitHub](https://github.com/ahmedssabir/GECE)  

@@ -17,7 +17,7 @@ content_hash: 1290478168694857
 
 # Are VLMs Seeing or Just Saying? Uncovering the Illusion of Visual Re-examination
 
-**Conference**: ICML2026  
+**Conference**: ICML2026 Oral  
 **arXiv**: [2605.15864](https://arxiv.org/abs/2605.15864)  
 **Code**: https://visualswap.github.io/  
 **Area**: Multimodal VLM  

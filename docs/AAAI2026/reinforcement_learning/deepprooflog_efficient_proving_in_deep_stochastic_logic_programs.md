@@ -17,7 +17,7 @@ content_hash: 6deaec851b581ec8
 
 # DeepProofLog: Efficient Proving in Deep Stochastic Logic Programs
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026 Oral  
 **arXiv**: [2511.08581](https://arxiv.org/abs/2511.08581)  
 **Code**: [DeepProofLog/DPrL-AAAI](https://github.com/DeepProofLog/DPrL-AAAI)  
 **Area**: Reinforcement Learning

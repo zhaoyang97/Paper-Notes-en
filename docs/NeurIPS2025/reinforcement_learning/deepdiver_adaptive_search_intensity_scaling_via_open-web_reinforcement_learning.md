@@ -16,7 +16,7 @@ content_hash: 0f54d40b17c441ec
 
 # DeepDiver: Adaptive Search Intensity Scaling via Open-Web Reinforcement Learning
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2505.24332](https://arxiv.org/abs/2505.24332)  
 **Code**: None  
 **Area**: Reinforcement Learning

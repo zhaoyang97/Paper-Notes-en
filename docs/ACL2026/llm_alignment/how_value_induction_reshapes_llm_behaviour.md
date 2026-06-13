@@ -17,7 +17,7 @@ content_hash: 9e9eb034b56b5669
 
 # How Value Induction Reshapes LLM Behaviour
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2605.07925](https://arxiv.org/abs/2605.07925)  
 **Code**: To be confirmed  
 **Area**: LLM Alignment / Values / Safety  

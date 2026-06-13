@@ -17,7 +17,7 @@ content_hash: 748272e066ff30d8
 
 # SafetyALFRED: Evaluating Safety-Conscious Planning of Multimodal Large Language Models
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.19638](https://arxiv.org/abs/2604.19638)  
 **Code**: [https://github.com/sled-group/SafetyALFRED](https://github.com/sled-group/SafetyALFRED)  
 **Area**: Multimodal VLM  

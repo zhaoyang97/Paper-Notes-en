@@ -17,7 +17,7 @@ content_hash: 6fcd0916ed23d5da
 
 # A Computational Method for Measuring "Open Codes" in Qualitative Analysis
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2411.12142](https://arxiv.org/abs/2411.12142)  
 **Code**: [GitHub](https://github.com/) (Open-source package)  
 **Area**: Model Compression  

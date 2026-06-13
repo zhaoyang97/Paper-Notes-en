@@ -17,7 +17,7 @@ content_hash: f47bed53ff827d94
 
 # Rethinking Table Pruning in TableQA: From Sequential Revisions to Gold Trajectory-Supervised Parallel Search
 
-**Conference**: ACL2026  
+**Conference**: ACL2026 Oral  
 **arXiv**: [2601.03851](https://arxiv.org/abs/2601.03851)  
 **Code**: None  
 **Area**: TableQA / Table Pruning / LLM Reasoning  

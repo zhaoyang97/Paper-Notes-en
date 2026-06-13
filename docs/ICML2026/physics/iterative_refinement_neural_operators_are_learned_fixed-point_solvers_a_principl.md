@@ -17,7 +17,7 @@ content_hash: b16ded8cefea0425
 
 # Iterative Refinement Neural Operators are Learned Fixed-Point Solvers: A Principled Approach to Spectral Bias Mitigation
 
-**Conference**: ICML 2026  
+**Conference**: ICML 2026 Spotlight  
 **arXiv**: [2605.24041](https://arxiv.org/abs/2605.24041)  
 **Code**: https://github.com/xiaotianliu-dartmouth/Iterative_Refinement_Neural_Operator (Available)  
 **Area**: Scientific Computing / Neural Operators / PDE Surrogate Models  

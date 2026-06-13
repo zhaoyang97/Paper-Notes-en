@@ -17,7 +17,7 @@ content_hash: 7dc4105a36d632d5
 
 # Efficient PRM Training Data Synthesis via Formal Verification
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2505.15960](https://arxiv.org/abs/2505.15960)  
 **Code**: [GitHub](https://github.com/psunlpgroup/FoVer)  
 **Area**: LLM Reasoning  

@@ -17,7 +17,7 @@ content_hash: 0bbdbabd468f0ba7
 
 # Self-Correcting Text-to-Video Generation with Misalignment Detection and Localized Refinement
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2411.15115](https://arxiv.org/abs/2411.15115)  
 **Code**: [video-repair](https://video-repair.github.io/)  
 **Area**: Video Generation  

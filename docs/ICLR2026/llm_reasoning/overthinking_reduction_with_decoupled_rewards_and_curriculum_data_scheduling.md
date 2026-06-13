@@ -17,7 +17,7 @@ content_hash: 898a600fc4fcaa63
 
 # Overthinking Reduction with Decoupled Rewards and Curriculum Data Scheduling
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026 Oral  
 **arXiv**: [2509.25827](https://arxiv.org/abs/2509.25827)  
 **Code**: [github.com/pixas/DECS](https://github.com/pixas/DECS)  
 **Area**: Medical Imaging

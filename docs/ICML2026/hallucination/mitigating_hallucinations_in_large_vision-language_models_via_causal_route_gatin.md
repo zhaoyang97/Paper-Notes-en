@@ -17,7 +17,7 @@ content_hash: 98500aefb89ad360
 
 # Mitigating Hallucinations in Large Vision-Language Models via Causal Route Gating
 
-**Conference**: ICML 2026  
+**Conference**: ICML 2026 Spotlight  
 **arXiv**: [2605.24024](https://arxiv.org/abs/2605.24024)  
 **Code**: None  
 **Area**: Hallucination Detection  

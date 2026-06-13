@@ -17,7 +17,7 @@ content_hash: 45b8ab3435e7b935
 
 # AJ-Bench: Benchmarking Agent-as-a-Judge for Environment-Aware Evaluation
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.18240](https://arxiv.org/abs/2604.18240)  
 **Code**: [https://aj-bench.github.io/](https://aj-bench.github.io/)  
 **Area**: Reinforcement Learning  

@@ -17,7 +17,7 @@ content_hash: 9d855fbefcce237c
 
 # SolidCoder: Bridging the Mental-Reality Gap in LLM Code Generation through Concrete Execution
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.19825](https://arxiv.org/abs/2604.19825)  
 **Code**: [https://github.com/10kH/SolidCoder](https://github.com/10kH/SolidCoder)  
 **Area**: Code Generation / LLM Agent  

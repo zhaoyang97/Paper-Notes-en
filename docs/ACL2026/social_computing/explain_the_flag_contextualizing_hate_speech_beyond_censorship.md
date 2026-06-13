@@ -17,7 +17,7 @@ content_hash: 2c179bb487e1dc15
 
 # Explain the Flag: Contextualizing Hate Speech Beyond Censorship
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.14970](https://arxiv.org/abs/2604.14970)  
 **Code**: [GitHub](https://github.com/ails-lab/detoex)  
 **Area**: Social Computing / Hate Speech  

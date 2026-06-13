@@ -17,7 +17,7 @@ content_hash: 48775b7f54a58e76
 
 # [b] = [d] − [t] + [p]: Self-supervised Speech Models Discover Phonological Vector Arithmetic
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2602.18899](https://arxiv.org/abs/2602.18899)  
 **Area**: Audio & Speech / Speech Representation Learning  
 **Keywords**: Self-supervised speech models, Phonological vector arithmetic, Speech representation structure, Acoustic controllable synthesis, Cross-lingual generalization

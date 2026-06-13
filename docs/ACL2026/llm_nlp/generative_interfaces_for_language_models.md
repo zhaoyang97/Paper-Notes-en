@@ -17,7 +17,7 @@ content_hash: 3cc34ee4b4cf6ea9
 
 # Generative Interfaces for Language Models
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2508.19227](https://arxiv.org/abs/2508.19227)  
 **Code**: https://github.com/SALT-NLP/GenUI  
 **Area**: LLM Interaction / Human-Computer Interaction / UI Generation  

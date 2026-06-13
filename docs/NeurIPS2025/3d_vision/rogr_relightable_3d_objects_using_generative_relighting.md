@@ -17,7 +17,7 @@ content_hash: b2f93f92acf21f9a
 
 # ROGR: Relightable 3D Objects using Generative Relighting
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2510.03163](https://arxiv.org/abs/2510.03163)  
 **Code**: Project Page available  
 **Area**: 3D Vision / Relighting

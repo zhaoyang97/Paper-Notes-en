@@ -17,7 +17,7 @@ content_hash: 5c9562ea17e8dfa3
 
 # A Survey on MLLM-based Visually Rich Document Understanding: Methods, Challenges, and Emerging Trends
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2507.09861](https://arxiv.org/abs/2507.09861)  
 **Code**: None  
 **Area**: Document Understanding / Multimodal LLM  

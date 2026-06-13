@@ -17,7 +17,7 @@ content_hash: f03c82faa305d39f
 
 # Data-Juicer 2.0: Cloud-Scale Adaptive Data Processing for and with Foundation Models
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Spotlight  
 **arXiv**: [2501.14755](https://arxiv.org/abs/2501.14755)  
 **Code**: [GitHub](https://github.com/modelscope/data-juicer)  
 **Area**: Audio & Speech

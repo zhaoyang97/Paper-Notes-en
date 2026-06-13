@@ -17,7 +17,7 @@ content_hash: 4e296c74e11ee1d1
 
 # Revela: Dense Retriever Learning via Language Modeling
 
-**Conference**: ICLR2026  
+**Conference**: ICLR2026 Oral  
 **arXiv**: [2506.16552](https://arxiv.org/abs/2506.16552)  
 **Code**: To be confirmed  
 **Area**: Information Retrieval  

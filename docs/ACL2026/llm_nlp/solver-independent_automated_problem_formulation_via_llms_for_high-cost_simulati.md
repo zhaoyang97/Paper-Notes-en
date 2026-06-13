@@ -17,7 +17,7 @@ content_hash: cb86df5b85827cac
 
 # Solver-Independent Automated Problem Formulation via LLMs for High-Cost Simulation-Driven Design
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2512.18682](https://arxiv.org/abs/2512.18682)  
 **Code**: None  
 **Area**: Signal Communication  

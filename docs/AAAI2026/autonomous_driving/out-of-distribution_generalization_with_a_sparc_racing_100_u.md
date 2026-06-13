@@ -17,7 +17,7 @@ content_hash: 5bcab6f3c0b3c8af
 
 # SPARC: OOD Generalization for Controlling 100 Unseen Vehicles with a Single Policy
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026 Oral  
 **arXiv**: [2511.09737](https://arxiv.org/abs/2511.09737)  
 **Code**: [https://github.com/bramgrooten/sparc](https://github.com/bramgrooten/sparc)  
 **Area**: Reinforcement Learning / Policy Generalization / Autonomous Driving

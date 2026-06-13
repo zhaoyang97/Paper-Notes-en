@@ -17,7 +17,7 @@ content_hash: 978f7851b524b07a
 
 # Learning through Creation: A Hash-Free Framework for On-the-Fly Category Discovery
 
-**Conference**: CVPR2026
+**Conference**: CVPR 2026 Findings  
 **arXiv**: [2603.13858](https://arxiv.org/abs/2603.13858)  
 **Code**: [brandinzhang/LTC](https://github.com/brandinzhang/LTC)  
 **Area**: Model Compression

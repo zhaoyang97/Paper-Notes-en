@@ -17,7 +17,7 @@ content_hash: 61f3dde233543271
 
 # ErrorRadar: Benchmarking Complex Mathematical Reasoning of Multimodal Large Language Models Via Error Detection
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2410.04509](https://arxiv.org/abs/2410.04509)  
 **Code**: None  
 **Area**: Multimodal VLM / Mathematical Reasoning Evaluation  

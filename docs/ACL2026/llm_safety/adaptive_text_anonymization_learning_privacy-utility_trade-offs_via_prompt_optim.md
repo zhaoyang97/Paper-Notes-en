@@ -17,7 +17,7 @@ content_hash: dbb5f536077601e0
 
 # Adaptive Text Anonymization: Learning Privacy-Utility Trade-offs via Prompt Optimization
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2602.20743](https://arxiv.org/abs/2602.20743)  
 **Code**: [https://github.com/gabrielloiseau/adaptive-text-anonymization](https://github.com/gabrielloiseau/adaptive-text-anonymization)  
 **Area**: AI Safety  

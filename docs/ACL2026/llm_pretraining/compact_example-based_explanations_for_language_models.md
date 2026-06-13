@@ -17,7 +17,7 @@ content_hash: dd4c9b33801ef0d8
 
 # Compact Example-Based Explanations for Language Models
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2601.03786](https://arxiv.org/abs/2601.03786)  
 **Code**: None  
 **Area**: LLM Pre-training  

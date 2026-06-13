@@ -17,7 +17,7 @@ content_hash: 7a63b53e1d53ff11
 
 # TELL-TALE: Task Efficient LLMs with Task Aware Layer Elimination
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2510.22767](https://arxiv.org/abs/2510.22767)  
 **Code**: https://github.com/omyokun/tale/  
 **Area**: Model Compression / LLM Efficiency  

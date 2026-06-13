@@ -17,7 +17,7 @@ content_hash: 9968c74b2870f1d1
 
 # Advancing Expert Specialization for Better MoE
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Oral  
 **arXiv**: [2505.22323](https://arxiv.org/abs/2505.22323)  
 **Code**: None  
 **Area**: LLM Efficiency

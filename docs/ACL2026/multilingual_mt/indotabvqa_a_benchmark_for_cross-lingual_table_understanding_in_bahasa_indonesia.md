@@ -17,7 +17,7 @@ content_hash: a4c0ef44be4461e9
 
 # IndoTabVQA: A Benchmark for Cross-Lingual Table Understanding in Bahasa Indonesia Documents
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.11970](https://arxiv.org/abs/2604.11970)  
 **Code**: [https://huggingface.co/datasets/NusaBharat/INDOTABVQA](https://huggingface.co/datasets/NusaBharat/INDOTABVQA)  
 **Area**: Document Understanding / Cross-lingual VQA  

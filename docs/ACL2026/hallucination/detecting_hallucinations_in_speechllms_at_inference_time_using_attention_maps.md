@@ -16,7 +16,7 @@ content_hash: 035f65ee67f090ca
 
 # Detecting Hallucinations in SpeechLLMs at Inference Time Using Attention Maps
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.19565](https://arxiv.org/abs/2604.19565)  
 **Code**: None  
 **Area**: Hallucination Detection  

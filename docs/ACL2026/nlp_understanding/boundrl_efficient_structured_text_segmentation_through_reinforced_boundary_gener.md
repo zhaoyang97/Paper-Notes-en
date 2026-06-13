@@ -17,7 +17,7 @@ content_hash: bc305b92e2472706
 
 # BoundRL: Efficient Structured Text Segmentation through Reinforced Boundary Generation
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2510.20151](https://arxiv.org/abs/2510.20151)  
 **Code**: None  
 **Area**: Text Segmentation/Reinforcement Learning  

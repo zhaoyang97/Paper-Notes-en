@@ -17,7 +17,7 @@ content_hash: ca84044a70affbe2
 
 # Intent-Driven Semantic ID Generation for Grounded Conversational News Recommendation
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Oral  
 **arXiv**: [2605.07613](https://arxiv.org/abs/2605.07613)  
 **Code**: To be confirmed  
 **Area**: Recommendation / Conversation / Generative Recommendation / Semantic ID  

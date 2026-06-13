@@ -17,7 +17,7 @@ content_hash: f99e9053ed9ecdc3
 
 # ClinTutor-R1: Advancing Scalable and Robust One-to-Many Alignment in Clinical Socratic Education
 
-**Conference**: ICML 2026  
+**Conference**: ICML 2026 Spotlight  
 **arXiv**: [2512.05671](https://arxiv.org/abs/2512.05671)  
 **Code**: https://github.com/Zhitao-He/ClinTutor-R1  
 **Area**: Medical NLP  

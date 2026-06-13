@@ -17,7 +17,7 @@ content_hash: 7098dee9cde7414a
 
 # Probing Multimodal Large Language Models on Cognitive Biases in Chinese Short-Video Misinformation
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2601.06600](https://arxiv.org/abs/2601.06600)  
 **Code**: [GitHub](https://github.com/penguinnnnn/Fine-VDK)  
 **Area**: Multimodal VLM / Video Rumor Detection / Model Cognitive Bias Evaluation  

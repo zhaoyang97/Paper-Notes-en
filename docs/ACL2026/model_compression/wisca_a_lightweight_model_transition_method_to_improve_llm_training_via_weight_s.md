@@ -17,7 +17,7 @@ content_hash: e32e2ec723a3cb14
 
 # WISCA: A Lightweight Model Transition Method to Improve LLM Training via Weight Scaling
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2508.16676](https://arxiv.org/abs/2508.16676)  
 **Code**: None  
 **Area**: Model Compression / Training Optimization  

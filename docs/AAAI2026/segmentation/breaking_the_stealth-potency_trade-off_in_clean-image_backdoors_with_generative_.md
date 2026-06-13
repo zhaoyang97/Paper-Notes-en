@@ -17,7 +17,7 @@ content_hash: 4048e2df8d3bd5d6
 
 # Breaking the Stealth-Potency Trade-off in Clean-Image Backdoors with Generative Trigger Optimization
 
-**Conference**: AAAI2026  
+**Conference**: AAAI2026 Oral  
 **arXiv**: [2511.07210](https://arxiv.org/abs/2511.07210)  
 **Code**: [binyxu/GCB](https://github.com/binyxu/GCB)  
 **Area**: Image Segmentation  

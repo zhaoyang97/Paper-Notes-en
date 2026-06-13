@@ -17,7 +17,7 @@ content_hash: d4349597337eed05
 
 # PlanRAG-Audio: Planning and Retrieval Augmented Generation for Long-form Audio Understanding
 
-**Conference**: ACL2026  
+**Conference**: ACL2026 Findings  
 **arXiv**: [2605.20414](https://arxiv.org/abs/2605.20414)  
 **Code**: The paper states that data and code will be made public after acceptance  
 **Area**: Long-form Audio Understanding / Audio RAG  

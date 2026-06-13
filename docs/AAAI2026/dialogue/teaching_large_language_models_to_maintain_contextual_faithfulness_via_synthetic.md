@@ -17,7 +17,7 @@ content_hash: f48c76fe9709f3c6
 
 # Canoe: Teaching LLMs to Maintain Contextual Faithfulness via Synthetic Tasks and RL
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026 Oral  
 **arXiv**: [2505.16483](https://arxiv.org/abs/2505.16483)  
 **Code**: [GitHub](https://github.com/S1s-Z/CANOE)  
 **Area**: Dialogue Systems

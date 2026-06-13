@@ -17,7 +17,7 @@ content_hash: a6e10246f9ab3e10
 
 # USE: A Unified Model for Universal Sound Separation and Extraction
 
-**Conference**: AAAI2026
+**Conference**: AAAI2026 Oral  
 **arXiv**: [2512.21215](https://arxiv.org/abs/2512.21215)  
 **Code**: [https://hongyuwang414.github.io/USE-demo/](https://hongyuwang414.github.io/USE-demo/)  
 **Area**: Speech / Sound Separation

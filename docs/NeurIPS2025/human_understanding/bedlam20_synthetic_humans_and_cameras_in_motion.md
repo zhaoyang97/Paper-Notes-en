@@ -18,7 +18,7 @@ content_hash: fe2c0dc16f324e0c
 
 # BEDLAM2.0: Synthetic Humans and Cameras in Motion
 
-**Conference**: NeurIPS 2025
+**Conference**: NeurIPS 2025 Oral  
 **arXiv**: [2511.14394](https://arxiv.org/abs/2511.14394)  
 **Code/Data**: [bedlam2.is.tuebingen.mpg.de](https://bedlam2.is.tuebingen.mpg.de/)
 **Area**: Human Pose Estimation / Synthetic Data

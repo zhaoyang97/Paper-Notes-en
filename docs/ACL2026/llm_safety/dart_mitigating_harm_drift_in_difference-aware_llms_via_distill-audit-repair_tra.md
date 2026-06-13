@@ -17,7 +17,7 @@ content_hash: 97bd1b6076631797
 
 # DART: Mitigating Harm Drift in Difference-Aware LLMs via Distill-Audit-Repair Training
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.16845](https://arxiv.org/abs/2604.16845)  
 **Code**: [GitHub](https://github.com/dart-framework)  
 **Area**: Medical Imaging  

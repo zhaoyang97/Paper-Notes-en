@@ -17,7 +17,7 @@ content_hash: 5575bb51461fb445
 
 # CAST: Achieving Stable LLM-based Text Analysis for Data Analytics
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2602.15861](https://arxiv.org/abs/2602.15861)  
 **Code**: [https://github.com/jxtse/CAST-text-analysis](https://github.com/jxtse/CAST-text-analysis)  
 **Area**: LLM Evaluation  

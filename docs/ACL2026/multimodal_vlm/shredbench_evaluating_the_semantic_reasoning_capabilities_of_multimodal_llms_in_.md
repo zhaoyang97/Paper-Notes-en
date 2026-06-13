@@ -17,7 +17,7 @@ content_hash: f0c2d9d33a5c6188
 
 # ShredBench: Evaluating the Semantic Reasoning Capabilities of Multimodal LLMs in Document Reconstruction
 
-**Conference**: ACL2026  
+**Conference**: ACL2026 Findings  
 **arXiv**: [2604.23813](https://arxiv.org/abs/2604.23813)  
 **Code**: https://github.com/ythere-y/ShredBench  
 **Area**: Multimodal VLM / Document Understanding / Multimodal Reasoning  

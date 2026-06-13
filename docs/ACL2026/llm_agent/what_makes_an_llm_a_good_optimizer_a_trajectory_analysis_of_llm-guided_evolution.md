@@ -17,7 +17,7 @@ content_hash: 7c8e81eafa2ebdf5
 
 # What Makes an LLM a Good Optimizer? A Trajectory Analysis of LLM-Guided Evolutionary Search
 
-**Conference**: ACL 2026  
+**Conference**: ACL 2026 Findings  
 **arXiv**: [2604.19440](https://arxiv.org/abs/2604.19440)  
 **Code**: [https://github.io/traj_evo_search](https://github.io/traj_evo_search)  
 **Area**: LLM Agent / Optimization  

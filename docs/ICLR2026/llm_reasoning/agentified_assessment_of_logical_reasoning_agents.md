@@ -112,10 +112,10 @@ Agentified Agent Assessment (AAA) = Assessor Agent (evaluation protocol) + Agent
 
 ## Rating
 
-- Novelty: ⭐⭐⭐ (The AAA framework concept is novel, though the auto-formalization technique is relatively straightforward.)
-- Experimental Thoroughness: ⭐⭐ (Single dataset, few comparison methods, extremely small scale.)
-- Writing Quality: ⭐⭐⭐⭐ (Clear and well-structured, with precise problem definitions.)
-- Value: ⭐⭐⭐ (The agentified evaluation paradigm is thought-provoking; the data cleaning pipeline has practical value.)
+- Novelty: ⭐⭐⭐⭐ (The AAA framework concept is novel, though the auto-formalization technique is relatively straightforward.)
+- Experimental Thoroughness: ⭐⭐⭐ (Single dataset, few comparison methods, extremely small scale.)
+- Writing Quality: ⭐⭐⭐⭐⭐ (Clear and well-structured, with precise problem definitions.)
+- Value: ⭐⭐⭐⭐ (The agentified evaluation paradigm is thought-provoking; the data cleaning pipeline has practical value.)
 
 <!-- RELATED:START -->
 

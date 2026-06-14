@@ -18,7 +18,6 @@ content_hash: 1c6a68c989393736
 # Adaptive Hyper-Graph Convolution Network for Skeleton-based Human Action Recognition with Virtual Connections
 
 **Conference**: ICCV 2025
-**arXiv**: N/A (CVF Open Access)  
 **Code**: [https://github.com/6UOOON9/Hyper-GCN](https://github.com/6UOOON9/Hyper-GCN)  
 **Area**: Video Understanding
 **Keywords**: Skeleton-based action recognition, Hypergraph convolution, Virtual connections, Adaptive topology, Graph convolutional network

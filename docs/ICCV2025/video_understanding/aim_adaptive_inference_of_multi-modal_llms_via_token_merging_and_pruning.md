@@ -18,7 +18,6 @@ content_hash: 5f312fc067cf2095
 # AIM: Adaptive Inference of Multi-Modal LLMs via Token Merging and Pruning
 
 **Conference**: ICCV 2025
-**arXiv**: N/A (CVF OpenAccess)  
 **Code**: [https://github.com/LaVi-Lab/AIM](https://github.com/LaVi-Lab/AIM)  
 **Area**: Video Understanding
 **Keywords**: Multimodal Large Language Models, Adaptive Inference, Token Merging, Token Pruning, Visual Token Redundancy

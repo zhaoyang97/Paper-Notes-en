@@ -160,10 +160,10 @@ No formal ablation tables are provided; however, the paper discusses the sources
 
 ## Rating
 
-- Novelty: ⭐⭐⭐ — The methodology is relatively straightforward (standard SFT); the primary contribution lies in the empirical findings.
-- Experimental Thoroughness: ⭐⭐⭐ — Six-category evaluation is provided, but ablations and multi-scale comparisons are lacking.
-- Writing Quality: ⭐⭐⭐ — Conclusions are clear, though portions of the analysis are somewhat subjective.
-- Value: ⭐⭐⭐⭐ — Provides compelling empirical evidence for the potential of SLMs on specialized tasks.
+- Novelty: ⭐⭐⭐⭐ — The methodology is relatively straightforward (standard SFT); the primary contribution lies in the empirical findings.
+- Experimental Thoroughness: ⭐⭐⭐⭐ — Six-category evaluation is provided, but ablations and multi-scale comparisons are lacking.
+- Writing Quality: ⭐⭐⭐⭐ — Conclusions are clear, though portions of the analysis are somewhat subjective.
+- Value: ⭐⭐⭐⭐⭐ — Provides compelling empirical evidence for the potential of SLMs on specialized tasks.
 
 <!-- RELATED:START -->
 

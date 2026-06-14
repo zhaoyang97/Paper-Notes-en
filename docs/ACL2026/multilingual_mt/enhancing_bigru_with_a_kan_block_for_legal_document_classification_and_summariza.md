@@ -130,10 +130,10 @@ The accuracy of the three main classification experiments was 0.6765, 0.6699, an
 - **Insight**: For low-resource specialized NLP, lightweight structural modifications combined with explicit data imbalance handling may be more robust and reproducible than simply applying large-scale models.
 
 ## Rating
-- Novelty: ⭐⭐⭐☆☆ The idea of KAN as a recurrent head has some novelty, but the overall method is an engineering ensemble.
-- Experimental Thoroughness: ⭐⭐⭐☆☆ Includes classification, summarization, ablation, and stability results, but data scale is small and PLM comparisons lack a level playing field/statistical significance.
-- Writing Quality: ⭐⭐⭐☆☆ The main narrative is clear and figures are complete, though some citations and mean calculations are slightly unrefined.
-- Value: ⭐⭐⭐⭐☆ Offers practical reference for low-resource multilingual legal NLP, demonstrating that lightweight models are still worth optimizing under resource constraints.
+- Novelty: ⭐⭐⭐⭐☆☆ The idea of KAN as a recurrent head has some novelty, but the overall method is an engineering ensemble.
+- Experimental Thoroughness: ⭐⭐⭐⭐☆☆ Includes classification, summarization, ablation, and stability results, but data scale is small and PLM comparisons lack a level playing field/statistical significance.
+- Writing Quality: ⭐⭐⭐⭐☆☆ The main narrative is clear and figures are complete, though some citations and mean calculations are slightly unrefined.
+- Value: ⭐⭐⭐⭐⭐☆ Offers practical reference for low-resource multilingual legal NLP, demonstrating that lightweight models are still worth optimizing under resource constraints.
 
 <!-- RELATED:START -->
 

@@ -122,10 +122,10 @@ F1 improves by +34 percentage points; PR-AUC improves by +43 percentage points.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐ Transformer + EWC is not novel, but introducing the operational forecasting paradigm into ecology is a meaningful contribution.
-- Experimental Thoroughness: ⭐⭐ Only 5 bird species, only RF as baseline, continual learning not evaluated.
-- Writing Quality: ⭐⭐⭐ Motivation is clear, but method and experiment descriptions are overly brief.
-- Value: ⭐⭐⭐ The direction is meaningful, but the work resembles a proof-of-concept rather than a mature system.
+- Novelty: ⭐⭐⭐⭐ Transformer + EWC is not novel, but introducing the operational forecasting paradigm into ecology is a meaningful contribution.
+- Experimental Thoroughness: ⭐⭐⭐ Only 5 bird species, only RF as baseline, continual learning not evaluated.
+- Writing Quality: ⭐⭐⭐⭐ Motivation is clear, but method and experiment descriptions are overly brief.
+- Value: ⭐⭐⭐⭐ The direction is meaningful, but the work resembles a proof-of-concept rather than a mature system.
 
 <!-- RELATED:START -->
 

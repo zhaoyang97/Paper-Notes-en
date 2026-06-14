@@ -108,10 +108,10 @@ This is a theoretical paper and does not involve model training. The core mathem
 - **vs. Shapley-value FL**: Shapley value approaches allocate contribution value ex post; this paper studies ex ante participation incentives.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ First systematic analysis of heterogeneous FL incentives under the PAC framework.
-- Experimental Thoroughness: ⭐⭐ Primarily a theoretical contribution with limited empirical evaluation.
-- Writing Quality: ⭐⭐⭐⭐ Theoretically clear with concise proofs.
-- Value: ⭐⭐⭐ Offers theoretical guidance for FL system design.
+- Novelty: ⭐⭐⭐⭐⭐ First systematic analysis of heterogeneous FL incentives under the PAC framework.
+- Experimental Thoroughness: ⭐⭐⭐ Primarily a theoretical contribution with limited empirical evaluation.
+- Writing Quality: ⭐⭐⭐⭐⭐ Theoretically clear with concise proofs.
+- Value: ⭐⭐⭐⭐ Offers theoretical guidance for FL system design.
 
 <!-- RELATED:START -->
 

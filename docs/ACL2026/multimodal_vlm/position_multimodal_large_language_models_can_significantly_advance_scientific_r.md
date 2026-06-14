@@ -131,10 +131,10 @@ As a position paper, it contains no original experiments. Key empirical findings
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐ As a position paper, the four-stage roadmap and the discussion of the dual role of hallucination are novel, though no original methodology is presented.
-- **Experimental Thoroughness**: ⭐⭐ No original experiments; all analyses are based on literature review.
-- **Writing Quality**: ⭐⭐⭐⭐ Clearly structured and comprehensive; the eight future directions provide practical guidance.
-- **Value**: ⭐⭐⭐⭐ Provides a systematic framework and developmental blueprint for MLLM scientific reasoning research.
+- **Novelty**: ⭐⭐⭐⭐ As a position paper, the four-stage roadmap and the discussion of the dual role of hallucination are novel, though no original methodology is presented.
+- **Experimental Thoroughness**: ⭐⭐⭐ No original experiments; all analyses are based on literature review.
+- **Writing Quality**: ⭐⭐⭐⭐⭐ Clearly structured and comprehensive; the eight future directions provide practical guidance.
+- **Value**: ⭐⭐⭐⭐⭐ Provides a systematic framework and developmental blueprint for MLLM scientific reasoning research.
 
 <!-- RELATED:START -->
 

@@ -112,10 +112,10 @@ A latent-space MSE loss is employed: $\mathcal{L}_{\text{lat}} = \|\mathcal{E}(\
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ The idea of repurposing image generators as visual planners is novel and thought-provoking.
-- Experimental Thoroughness: ⭐⭐⭐ Three datasets with complete ablations, but direct comparison with video generation baselines and real-robot validation are lacking.
-- Writing Quality: ⭐⭐⭐ Structure is clear, though mathematical descriptions are slightly redundant with some repetitive content.
-- Value: ⭐⭐⭐ Offers an interesting research direction, but practical value is limited by the absence of closed-loop execution validation.
+- Novelty: ⭐⭐⭐⭐⭐ The idea of repurposing image generators as visual planners is novel and thought-provoking.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Three datasets with complete ablations, but direct comparison with video generation baselines and real-robot validation are lacking.
+- Writing Quality: ⭐⭐⭐⭐ Structure is clear, though mathematical descriptions are slightly redundant with some repetitive content.
+- Value: ⭐⭐⭐⭐ Offers an interesting research direction, but practical value is limited by the absence of closed-loop execution validation.
 
 <!-- RELATED:START -->
 

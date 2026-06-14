@@ -112,10 +112,10 @@ The input consists of a programming problem and (partially) generated code; the 
 - **vs. PRIME**: PRIME uses LLM-as-judge (implicit reward model) to circumvent PRM annotation costs; this work automatically obtains labels via forking tokens and test cases, but is restricted to executable code.
 
 ## Rating
-- Novelty: ⭐⭐⭐ The value head architecture is not novel, but the forking tokens data construction and the unified ORM+PRM framing offer some originality.
-- Experimental Thoroughness: ⭐⭐⭐ Analysis is detailed (balanced/imbalanced, ORM/PRM, per-percentile), but limited to a single dataset and two model scales, with no direct comparison against other reward modeling methods.
-- Writing Quality: ⭐⭐⭐⭐ The paper's reasoning is clear, notation is well-defined, and research questions (RQ1/RQ2) are logically organized.
-- Value: ⭐⭐⭐ As a workshop paper, it validates the feasibility of small-model reward modeling, though the overall contribution is primarily empirical with limited depth and breadth.
+- Novelty: ⭐⭐⭐⭐ The value head architecture is not novel, but the forking tokens data construction and the unified ORM+PRM framing offer some originality.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Analysis is detailed (balanced/imbalanced, ORM/PRM, per-percentile), but limited to a single dataset and two model scales, with no direct comparison against other reward modeling methods.
+- Writing Quality: ⭐⭐⭐⭐⭐ The paper's reasoning is clear, notation is well-defined, and research questions (RQ1/RQ2) are logically organized.
+- Value: ⭐⭐⭐⭐ As a workshop paper, it validates the feasibility of small-model reward modeling, though the overall contribution is primarily empirical with limited depth and breadth.
 
 <!-- RELATED:START -->
 

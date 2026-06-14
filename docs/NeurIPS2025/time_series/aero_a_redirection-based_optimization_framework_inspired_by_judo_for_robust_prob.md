@@ -112,10 +112,10 @@ Paired t-test: T-statistic = 1.70, p-value = 0.0955 (> 0.05), concluding no sign
 - **Insight**: Translating physical metaphors (judo, energy conservation) into algorithms of practical value demands more rigorous methodology—the chain from axioms to algorithm to experimental validation cannot have gaps.
 
 ## Rating
-- Novelty: ⭐⭐⭐ Conceptually interesting, but the 15 axioms are unwieldy and the actual innovation (gradient noise injection + momentum) is not novel.
-- Experimental Thoroughness: ⭐ A single dataset, no baseline comparisons, no ablation experiments—far below the standard expected at top venues.
-- Writing Quality: ⭐⭐⭐ The theoretical exposition is detailed but disproportionately lengthy; the experimental section is too sparse to balance the paper.
-- Value: ⭐⭐ The concept is inspiring but lacks empirical support; in its current form, it is difficult to serve as a reliable reference baseline for future work.
+- Novelty: ⭐⭐⭐⭐ Conceptually interesting, but the 15 axioms are unwieldy and the actual innovation (gradient noise injection + momentum) is not novel.
+- Experimental Thoroughness: ⭐⭐⭐ A single dataset, no baseline comparisons, no ablation experiments—far below the standard expected at top venues.
+- Writing Quality: ⭐⭐⭐⭐ The theoretical exposition is detailed but disproportionately lengthy; the experimental section is too sparse to balance the paper.
+- Value: ⭐⭐⭐ The concept is inspiring but lacks empirical support; in its current form, it is difficult to serve as a reliable reference baseline for future work.
 
 <!-- RELATED:START -->
 

@@ -145,10 +145,10 @@ Mixed-precision quantization comparison (prompt-guided image transformation):
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐ The "LoRA as Input" idea is intuitive but exhibits engineering ingenuity; the QSS sensitivity analysis constitutes a methodological contribution, though the overall emphasis is on systems engineering.
-- **Experimental Thoroughness**: ⭐⭐⭐ Covers multiple chip platforms and use cases with comprehensive KPI analysis spanning accuracy, latency, and memory; however, the number of evaluated use cases is limited (primarily 2–4).
-- **Writing Quality**: ⭐⭐⭐ Framework description is clear, but the paper structure feels somewhat fragmented, with partial redundancy across figures and tables.
-- **Value**: ⭐⭐⭐⭐ Directly addresses a practical industrial pain point—multi-task deployment sharing a single model on mobile devices—with immediate applicability to mobile GenAI deployment.
+- **Novelty**: ⭐⭐⭐⭐ The "LoRA as Input" idea is intuitive but exhibits engineering ingenuity; the QSS sensitivity analysis constitutes a methodological contribution, though the overall emphasis is on systems engineering.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Covers multiple chip platforms and use cases with comprehensive KPI analysis spanning accuracy, latency, and memory; however, the number of evaluated use cases is limited (primarily 2–4).
+- **Writing Quality**: ⭐⭐⭐⭐ Framework description is clear, but the paper structure feels somewhat fragmented, with partial redundancy across figures and tables.
+- **Value**: ⭐⭐⭐⭐⭐ Directly addresses a practical industrial pain point—multi-task deployment sharing a single model on mobile devices—with immediate applicability to mobile GenAI deployment.
 
 <!-- RELATED:START -->
 

@@ -116,10 +116,10 @@ Generation loop: LLM generates candidate riddle → MiniLM encoding → cosine s
 - **vs. Standard Prompting Strategies (CoT/Few-Shot)**: These strategies optimize the reasoning process but do not control output diversity or novelty; AOF is orthogonal to these approaches.
 
 ## Rating
-- Novelty: ⭐⭐⭐ Semantic rejection sampling is conceptually straightforward, and RiddleScore follows the common practice of weighted aggregation.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Covers 3 LLMs, 5 languages, 5 prompting strategies, and human evaluation with good overall breadth.
-- Writing Quality: ⭐⭐⭐ Well-structured but somewhat verbose in places.
-- Value: ⭐⭐⭐ The method is simple and practical, though the application scope is narrow.
+- Novelty: ⭐⭐⭐⭐ Semantic rejection sampling is conceptually straightforward, and RiddleScore follows the common practice of weighted aggregation.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers 3 LLMs, 5 languages, 5 prompting strategies, and human evaluation with good overall breadth.
+- Writing Quality: ⭐⭐⭐⭐ Well-structured but somewhat verbose in places.
+- Value: ⭐⭐⭐⭐ The method is simple and practical, though the application scope is narrow.
 
 <!-- RELATED:START -->
 

@@ -25,7 +25,7 @@ item_total: 3
 
 **🤖 AAAI2026** · **3** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (2)](../../ICML2026/signal_comm/index.md) · [📷 CVPR2026 (5)](../../CVPR2026/signal_comm/index.md) · [🔬 ICLR2026 (2)](../../ICLR2026/signal_comm/index.md) · [🧠 NeurIPS2025 (5)](../../NeurIPS2025/signal_comm/index.md) · [📹 ICCV2025 (3)](../../ICCV2025/signal_comm/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (2)](../../ICML2026/signal_comm/index.md) · [📷 CVPR2026 (4)](../../CVPR2026/signal_comm/index.md) · [🔬 ICLR2026 (2)](../../ICLR2026/signal_comm/index.md) · [🧠 NeurIPS2025 (5)](../../NeurIPS2025/signal_comm/index.md) · [📹 ICCV2025 (3)](../../ICCV2025/signal_comm/index.md)
 
 **[Balancing Multimodal Domain Generalization via Gradient Modulation and Projection](balancing_multimodal_domain_generalization_via_gradient_modulation_and_projectio.md)**
 

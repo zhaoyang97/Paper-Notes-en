@@ -19,7 +19,6 @@ content_hash: 4f07071cf0f64884
 # NAPPure: Adversarial Purification for Robust Image Classification under Non-Additive Perturbations
 
 **Conference**: ICCV 2025  
-**arXiv**: 2510.14025  
 **Code**: None  
 **Area**: Other  
 **Keywords**: adversarial purification, non-additive perturbations, diffusion models, robust classification, blur attacks, occlusion attacks, geometric distortion

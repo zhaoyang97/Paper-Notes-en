@@ -120,10 +120,10 @@ DCR+DFG reaches the target accuracy fastest in both epoch count and wall-clock t
 - **vs. Theseus-Gumbel**: Although soft Gumbel-Softmax gating allows gradient flow, it still retains an additional variance term $\text{Var}(r)\mathbb{E}\|a\|^2$.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ — Eliminating gating variance through deterministic mixing is an intuitively simple yet theoretically rigorous contribution.
-- **Experimental Thoroughness**: ⭐⭐ — Small-scale single-seed experiments; heterogeneous replacement and large models are not addressed.
-- **Writing Quality**: ⭐⭐⭐⭐ — Theoretical derivations are clear; experimental limitations are acknowledged honestly.
-- **Value**: ⭐⭐⭐ — Provides a theoretical foundation for module replacement, but large-scale feasibility requires validation in follow-up work.
+- **Novelty**: ⭐⭐⭐⭐⭐ — Eliminating gating variance through deterministic mixing is an intuitively simple yet theoretically rigorous contribution.
+- **Experimental Thoroughness**: ⭐⭐⭐ — Small-scale single-seed experiments; heterogeneous replacement and large models are not addressed.
+- **Writing Quality**: ⭐⭐⭐⭐⭐ — Theoretical derivations are clear; experimental limitations are acknowledged honestly.
+- **Value**: ⭐⭐⭐⭐ — Provides a theoretical foundation for module replacement, but large-scale feasibility requires validation in follow-up work.
 
 <!-- RELATED:START -->
 

@@ -22,7 +22,7 @@ item_total: 2
 
 **🧪 ICML2026** · **2** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (5)](../../CVPR2026/signal_comm/index.md) · [🔬 ICLR2026 (2)](../../ICLR2026/signal_comm/index.md) · [🤖 AAAI2026 (3)](../../AAAI2026/signal_comm/index.md) · [🧠 NeurIPS2025 (5)](../../NeurIPS2025/signal_comm/index.md) · [📹 ICCV2025 (3)](../../ICCV2025/signal_comm/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (4)](../../CVPR2026/signal_comm/index.md) · [🔬 ICLR2026 (2)](../../ICLR2026/signal_comm/index.md) · [🤖 AAAI2026 (3)](../../AAAI2026/signal_comm/index.md) · [🧠 NeurIPS2025 (5)](../../NeurIPS2025/signal_comm/index.md) · [📹 ICCV2025 (3)](../../ICCV2025/signal_comm/index.md)
 
 **[Joint Model and Data Sparsification via the Marginal Likelihood](joint_model_and_data_sparsification_via_the_marginal_likelihood.md)**
 

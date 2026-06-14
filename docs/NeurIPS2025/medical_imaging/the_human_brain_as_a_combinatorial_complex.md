@@ -124,10 +124,10 @@ Rank-1 edges are constructed based on pairwise mutual information with threshold
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — First direct integration of information theory and combinatorial complexes for brain network analysis; the approach of bypassing topological lifting is conceptually novel.
-- Experimental Thoroughness: ⭐⭐ — Proof-of-concept only; no real data, no downstream tasks, no quantitative comparison against alternative methods.
-- Writing Quality: ⭐⭐⭐⭐ — Mathematical framework is clearly presented, motivation is well-articulated, and the pipeline is described in detail.
-- Value: ⭐⭐⭐ — Promising direction, but considerable follow-up work is required to validate practical feasibility.
+- Novelty: ⭐⭐⭐⭐⭐ — First direct integration of information theory and combinatorial complexes for brain network analysis; the approach of bypassing topological lifting is conceptually novel.
+- Experimental Thoroughness: ⭐⭐⭐ — Proof-of-concept only; no real data, no downstream tasks, no quantitative comparison against alternative methods.
+- Writing Quality: ⭐⭐⭐⭐⭐ — Mathematical framework is clearly presented, motivation is well-articulated, and the pipeline is described in detail.
+- Value: ⭐⭐⭐⭐ — Promising direction, but considerable follow-up work is required to validate practical feasibility.
 
 <!-- RELATED:START -->
 

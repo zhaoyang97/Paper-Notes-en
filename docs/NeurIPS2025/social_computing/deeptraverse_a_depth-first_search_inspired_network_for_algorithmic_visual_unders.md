@@ -126,10 +126,10 @@ The Wide variant surpasses WideResNet by 1.39 points using only 39% of its param
 - **vs. Universal Transformer**: The idea is analogous but applied to CNNs — weight-sharing iterative refinement is a general strategy applicable across modalities.
 
 ## Rating
-- Novelty: ⭐⭐⭐ The DFS analogy is creative, but the core components are combinations of existing techniques.
-- Experimental Thoroughness: ⭐⭐⭐ Multi-dataset validation, but lacking downstream task evaluation and full-scale ImageNet experiments.
-- Writing Quality: ⭐⭐⭐⭐ Narrative structure is clear, and the DFS analogy is presented in an engaging manner.
-- Value: ⭐⭐⭐ Parameter efficiency is genuinely impressive, but validation in real deployment scenarios and comparisons of latency/throughput are absent.
+- Novelty: ⭐⭐⭐⭐ The DFS analogy is creative, but the core components are combinations of existing techniques.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Multi-dataset validation, but lacking downstream task evaluation and full-scale ImageNet experiments.
+- Writing Quality: ⭐⭐⭐⭐⭐ Narrative structure is clear, and the DFS analogy is presented in an engaging manner.
+- Value: ⭐⭐⭐⭐ Parameter efficiency is genuinely impressive, but validation in real deployment scenarios and comparisons of latency/throughput are absent.
 
 <!-- RELATED:START -->
 

@@ -118,10 +118,10 @@ Dataset: LibriBrain, comprising MEG recordings from a single subject listening t
 - The training strategy of prototype averaging combined with mixup is generalizable to other low-SNR biosignal decoding tasks.
 
 ## Rating
-- Novelty: ⭐⭐⭐
-- Experimental Thoroughness: ⭐⭐⭐
-- Writing Quality: ⭐⭐⭐
-- Value: ⭐⭐⭐⭐
+- Novelty: ⭐⭐⭐⭐
+- Experimental Thoroughness: ⭐⭐⭐⭐
+- Writing Quality: ⭐⭐⭐⭐
+- Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
 

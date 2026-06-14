@@ -163,10 +163,10 @@ This paper substitutes comparative analysis for ablation experiments:
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — The perspective of evaluating ToM as a form of XAI is novel.
-- Experimental Thoroughness: ⭐⭐ — Confined to literature analysis; no empirical experiments.
-- Writing Quality: ⭐⭐⭐⭐ — Argumentation is clear with a coherent logical structure.
-- Value: ⭐⭐⭐ — A position paper that identifies an important direction but requires subsequent empirical support.
+- Novelty: ⭐⭐⭐⭐⭐ — The perspective of evaluating ToM as a form of XAI is novel.
+- Experimental Thoroughness: ⭐⭐⭐ — Confined to literature analysis; no empirical experiments.
+- Writing Quality: ⭐⭐⭐⭐⭐ — Argumentation is clear with a coherent logical structure.
+- Value: ⭐⭐⭐⭐ — A position paper that identifies an important direction but requires subsequent empirical support.
 
 <!-- RELATED:START -->
 

@@ -18,7 +18,6 @@ content_hash: 831f9801318a0d4f
 # A0: An Affordance-Aware Hierarchical Model for General Robotic Manipulation
 
 **Conference**: ICCV 2025
-**arXiv**: N/A (CVF OpenAccess)  
 **Code**: [https://a-embodied.github.io/A0/](https://a-embodied.github.io/A0/)  
 **Area**: Image Generation
 **Keywords**: robotic manipulation, spatial affordance, hierarchical model, diffusion model, cross-platform generalization

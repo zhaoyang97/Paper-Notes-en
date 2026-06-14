@@ -176,10 +176,10 @@ As a system paper, no formal user study evaluation has been conducted. The autho
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — The concept of "draw-and-talk" as multimodal AI input is novel
-- Experimental Thoroughness: ⭐⭐ — Only a formative study; system evaluation is absent
-- Writing Quality: ⭐⭐⭐⭐ — Research questions are clearly articulated; design logic chain is complete
-- Value: ⭐⭐⭐ — The concept is valuable but requires formal evaluation for validation
+- Novelty: ⭐⭐⭐⭐⭐ — The concept of "draw-and-talk" as multimodal AI input is novel
+- Experimental Thoroughness: ⭐⭐⭐ — Only a formative study; system evaluation is absent
+- Writing Quality: ⭐⭐⭐⭐⭐ — Research questions are clearly articulated; design logic chain is complete
+- Value: ⭐⭐⭐⭐ — The concept is valuable but requires formal evaluation for validation
 
 <!-- RELATED:START -->
 

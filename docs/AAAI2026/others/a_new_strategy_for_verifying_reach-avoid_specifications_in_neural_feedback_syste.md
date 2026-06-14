@@ -133,10 +133,10 @@ This paper is a methods proposal; the "Ongoing Work" section states that experim
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ Solid theoretical contributions from the joint forward-backward verification strategy and the three under-approximation algorithms.
-- Experimental Thoroughness: ⭐ No experimental data; core claims are yet to be empirically validated.
-- Writing Quality: ⭐⭐⭐ Mathematical definitions are rigorous, but the paper lacks an experimental section as would be expected of a complete manuscript.
-- Value: ⭐⭐⭐ The research direction is important and the theoretical framework is complete, but experimental support is needed to assess actual impact.
+- Novelty: ⭐⭐⭐⭐⭐ Solid theoretical contributions from the joint forward-backward verification strategy and the three under-approximation algorithms.
+- Experimental Thoroughness: ⭐⭐ No experimental data; core claims are yet to be empirically validated.
+- Writing Quality: ⭐⭐⭐⭐ Mathematical definitions are rigorous, but the paper lacks an experimental section as would be expected of a complete manuscript.
+- Value: ⭐⭐⭐⭐ The research direction is important and the theoretical framework is complete, but experimental support is needed to assess actual impact.
 
 <!-- RELATED:START -->
 

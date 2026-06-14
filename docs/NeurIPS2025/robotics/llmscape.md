@@ -122,10 +122,10 @@ This is an interactive art/demo paper with no conventional quantitative experime
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — The perspective of situating LLM agents within a shared physical environment to explore sensemaking is distinctive.
-- Experimental Thoroughness: ⭐⭐ — As an art/demo paper, quantitative experiments are absent.
-- Writing Quality: ⭐⭐⭐⭐ — The narrative is fluent, concepts are clearly articulated, and the three-iteration progression is described in detail.
-- Value: ⭐⭐⭐ — Offers an intriguing perspective on AI–human coexistence, though concrete technical contributions are limited.
+- Novelty: ⭐⭐⭐⭐⭐ — The perspective of situating LLM agents within a shared physical environment to explore sensemaking is distinctive.
+- Experimental Thoroughness: ⭐⭐⭐ — As an art/demo paper, quantitative experiments are absent.
+- Writing Quality: ⭐⭐⭐⭐⭐ — The narrative is fluent, concepts are clearly articulated, and the three-iteration progression is described in detail.
+- Value: ⭐⭐⭐⭐ — Offers an intriguing perspective on AI–human coexistence, though concrete technical contributions are limited.
 
 <!-- RELATED:START -->
 

@@ -124,10 +124,10 @@ This is a position paper with no conventional experiments. The core contribution
 - **vs. Constitutional AI**: Constitutional AI constrains behavior through rules; control theory employs formally constrained optimization to ensure those rules are enforced in a verifiable manner.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Systematically applying control theory to alignment research is a valuable perspective; the ACS framework introduces structured novelty.
-- Experimental Thoroughness: ⭐⭐ No experiments as a position paper; the LQG toy model is overly simplified.
-- Writing Quality: ⭐⭐⭐⭐ Argumentation is clear and well-organized; mathematical derivations are rigorous, though the paper is somewhat lengthy.
-- Value: ⭐⭐⭐ Provides a useful conceptual framework, but substantial work remains before practical application.
+- Novelty: ⭐⭐⭐⭐⭐ Systematically applying control theory to alignment research is a valuable perspective; the ACS framework introduces structured novelty.
+- Experimental Thoroughness: ⭐⭐⭐ No experiments as a position paper; the LQG toy model is overly simplified.
+- Writing Quality: ⭐⭐⭐⭐⭐ Argumentation is clear and well-organized; mathematical derivations are rigorous, though the paper is somewhat lengthy.
+- Value: ⭐⭐⭐⭐ Provides a useful conceptual framework, but substantial work remains before practical application.
 
 <!-- RELATED:START -->
 

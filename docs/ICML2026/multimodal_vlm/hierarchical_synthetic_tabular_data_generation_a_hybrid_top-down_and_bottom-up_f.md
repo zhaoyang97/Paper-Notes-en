@@ -134,10 +134,10 @@ XGBoost ablation (varying training rows and conditioning columns):
 *   **vs. Shumailov et al. 2024 (Nature, model collapse)**: Ours provides a solution to the recursive training collapse by using the top-down path to force rare events into the dataset.
 
 ## Rating
-*   Novelty: ⭐⭐⭐ The decoupling of LLM rule-writing and cheap data generation is insightful, though the individual components are established tools.
-*   Experimental Thoroughness: ⭐⭐ Limited benchmarks and missing comparisons with reasoning-driven baselines. Reliability metrics for the feedback loop and LLM rules are absent.
-*   Writing Quality: ⭐⭐⭐ Clear logic and clean visualizations, though some implementation details are abstract.
-*   Value: ⭐⭐⭐⭐ Provides a pragmatic answer to the role of LLMs in tabular synthesis, offering a cost-control strategy relevant to other LLM-augmented pipelines.
+*   Novelty: ⭐⭐⭐⭐ The decoupling of LLM rule-writing and cheap data generation is insightful, though the individual components are established tools.
+*   Experimental Thoroughness: ⭐⭐⭐ Limited benchmarks and missing comparisons with reasoning-driven baselines. Reliability metrics for the feedback loop and LLM rules are absent.
+*   Writing Quality: ⭐⭐⭐⭐ Clear logic and clean visualizations, though some implementation details are abstract.
+*   Value: ⭐⭐⭐⭐⭐ Provides a pragmatic answer to the role of LLMs in tabular synthesis, offering a cost-control strategy relevant to other LLM-augmented pipelines.
 
 <!-- RELATED:START -->
 

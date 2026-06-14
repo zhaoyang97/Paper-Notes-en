@@ -107,10 +107,10 @@ This paper is theoretical/governance research and does not involve model trainin
 - **vs. Bengio et al. (2024/2025) AI safety governance**: Those works focus on technical safety measures and capability control; this paper addresses the more fundamental institutional dynamics — even with technical safety measures in place, institutional disempowerment can still occur through myopia mechanisms.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ — The causal-chain reconstruction of policy myopia → disempowerment and the three-mechanism coupling framework offer genuinely original insights.
-- Experimental Thoroughness: ⭐⭐ — Only simplified numerical simulations; lacks empirical support and rigorous theoretical proofs.
-- Writing Quality: ⭐⭐⭐ — Argumentation is forceful but some reasoning leaps are large; certain passages are overly assertive.
-- Value: ⭐⭐⭐ — Proposes an important conceptual framework, but practical research operationalizability is limited.
+- Novelty: ⭐⭐⭐⭐⭐ — The causal-chain reconstruction of policy myopia → disempowerment and the three-mechanism coupling framework offer genuinely original insights.
+- Experimental Thoroughness: ⭐⭐⭐ — Only simplified numerical simulations; lacks empirical support and rigorous theoretical proofs.
+- Writing Quality: ⭐⭐⭐⭐ — Argumentation is forceful but some reasoning leaps are large; certain passages are overly assertive.
+- Value: ⭐⭐⭐⭐ — Proposes an important conceptual framework, but practical research operationalizability is limited.
 
 <!-- RELATED:START -->
 

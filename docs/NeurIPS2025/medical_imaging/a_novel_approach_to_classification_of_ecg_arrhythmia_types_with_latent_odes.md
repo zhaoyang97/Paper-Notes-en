@@ -129,10 +129,10 @@ Dataset: MIT-BIH Arrhythmia Database — 48 dual-channel recordings (47 subjects
 
 ## Rating
 
-- Novelty: ⭐⭐⭐ The combination of Latent ODE and ECG classification is creative, but all core components (Latent ODE, GBDT, SMOTE) are existing methods.
-- Experimental Thoroughness: ⭐⭐ Only one small dataset is used; comparisons with mainstream methods and real-device testing are absent.
-- Writing Quality: ⭐⭐⭐⭐ The short-paper format is compact and well-structured, with intuitive algorithmic pseudocode.
-- Value: ⭐⭐⭐ The approach has practical value but requires more thorough validation; the direction is sound as a preliminary exploration.
+- Novelty: ⭐⭐⭐⭐ The combination of Latent ODE and ECG classification is creative, but all core components (Latent ODE, GBDT, SMOTE) are existing methods.
+- Experimental Thoroughness: ⭐⭐⭐ Only one small dataset is used; comparisons with mainstream methods and real-device testing are absent.
+- Writing Quality: ⭐⭐⭐⭐⭐ The short-paper format is compact and well-structured, with intuitive algorithmic pseudocode.
+- Value: ⭐⭐⭐⭐ The approach has practical value but requires more thorough validation; the direction is sound as a preliminary exploration.
 
 <!-- RELATED:START -->
 

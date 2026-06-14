@@ -145,10 +145,10 @@ Experiments use MNIST with noisy checkerboard backgrounds (digit 9 excluded to a
 - **vs. Bouchacourt et al. (2021)**: This work directly inherits the shift operator construction but introduces three key extensions: (1) demonstrating the feasibility of OOD classification; (2) eliminating the need for transformation labels at test time; and (3) replacing the fixed operator with a learned one.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐ The core shift operator and equivariant framework are inherited from prior work; the primary contribution of this paper is validating OOD extrapolation capability and proposing the KNN inference scheme. The ideas are more validatory than fundamentally novel.
-- **Experimental Thoroughness**: ⭐⭐⭐ Experiments on MNIST are well-designed (single transformation / compound transformation / ablation), but the absence of real-dataset validation substantially limits persuasiveness.
-- **Writing Quality**: ⭐⭐⭐⭐ Writing is clear and well-structured, conveying the core story through a minimal setup. The candid discussion of limitations in the Discussion section is also commendable.
-- **Value**: ⭐⭐⭐ Meaningful as a proof of concept—clearly demonstrating the extrapolation capability of latent-space equivariant operators and providing a practical inference scheme. However, the gap to real-world applicability remains large; this work reads more as an inspiring workshop-level contribution.
+- **Novelty**: ⭐⭐⭐⭐ The core shift operator and equivariant framework are inherited from prior work; the primary contribution of this paper is validating OOD extrapolation capability and proposing the KNN inference scheme. The ideas are more validatory than fundamentally novel.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Experiments on MNIST are well-designed (single transformation / compound transformation / ablation), but the absence of real-dataset validation substantially limits persuasiveness.
+- **Writing Quality**: ⭐⭐⭐⭐⭐ Writing is clear and well-structured, conveying the core story through a minimal setup. The candid discussion of limitations in the Discussion section is also commendable.
+- **Value**: ⭐⭐⭐⭐ Meaningful as a proof of concept—clearly demonstrating the extrapolation capability of latent-space equivariant operators and providing a practical inference scheme. However, the gap to real-world applicability remains large; this work reads more as an inspiring workshop-level contribution.
 
 <!-- RELATED:START -->
 

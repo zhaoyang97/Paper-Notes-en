@@ -18,7 +18,6 @@ content_hash: 3af012ddef1e6c72
 # AAA-Gaussians: Anti-Aliased and Artifact-Free 3D Gaussian Rendering
 
 **Conference**: ICCV 2025
-**arXiv**: N/A (CVF Open Access)  
 **Code**: [https://github.com/DerThomy/AAA-Gaussians](https://github.com/DerThomy/AAA-Gaussians)  
 **Area**: 3D Vision
 **Keywords**: 3D Gaussian Splatting, anti-aliasing, artifact elimination, 3D evaluation, real-time rendering

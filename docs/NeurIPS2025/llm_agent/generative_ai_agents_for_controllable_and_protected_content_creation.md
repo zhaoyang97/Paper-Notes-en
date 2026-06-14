@@ -149,10 +149,10 @@ A user study is planned with 30–50 participants from creative domains, compari
 
 ## Rating
 
-- Novelty: ⭐⭐⭐ (Integrating protection mechanisms into the generation pipeline is a valuable direction, though the specific methods are relatively straightforward)
-- Experimental Thoroughness: ⭐⭐ (No actual experimental results; feasibility analysis only)
-- Writing Quality: ⭐⭐⭐ (Clear structure with complete mathematical formalization, though the content skews theoretical as a proposal document)
-- Value: ⭐⭐⭐ (The direction is meaningful, but experimental validation is needed to assess the true contribution)
+- Novelty: ⭐⭐⭐⭐ (Integrating protection mechanisms into the generation pipeline is a valuable direction, though the specific methods are relatively straightforward)
+- Experimental Thoroughness: ⭐⭐⭐ (No actual experimental results; feasibility analysis only)
+- Writing Quality: ⭐⭐⭐⭐ (Clear structure with complete mathematical formalization, though the content skews theoretical as a proposal document)
+- Value: ⭐⭐⭐⭐ (The direction is meaningful, but experimental validation is needed to assess the true contribution)
 
 <!-- RELATED:START -->
 

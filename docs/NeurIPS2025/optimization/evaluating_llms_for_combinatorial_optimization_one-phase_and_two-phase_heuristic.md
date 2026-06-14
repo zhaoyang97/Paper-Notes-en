@@ -119,10 +119,10 @@ The input consists of a structured prompt (containing problem constraints, funct
 - **Relationship to Prompt Engineering**: The success of this approach is highly dependent on prompt design quality; systematic prompt optimization represents an important direction for future work.
 
 ## Rating
-- Novelty: ⭐⭐⭐ The methodological framework is adapted from FunSearch; the primary contribution lies in the evaluation methodology.
-- Experimental Thoroughness: ⭐⭐⭐ Evaluation metrics are comprehensive, but problem scale is limited and broader comparisons are lacking.
-- Writing Quality: ⭐⭐⭐⭐ The framework is described clearly with a complete methodological presentation.
-- Value: ⭐⭐⭐ Provides a preliminary methodological reference for evaluating LLMs in combinatorial optimization.
+- Novelty: ⭐⭐⭐⭐ The methodological framework is adapted from FunSearch; the primary contribution lies in the evaluation methodology.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Evaluation metrics are comprehensive, but problem scale is limited and broader comparisons are lacking.
+- Writing Quality: ⭐⭐⭐⭐⭐ The framework is described clearly with a complete methodological presentation.
+- Value: ⭐⭐⭐⭐ Provides a preliminary methodological reference for evaluating LLMs in combinatorial optimization.
 
 <!-- RELATED:START -->
 

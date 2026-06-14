@@ -1,8 +1,8 @@
 ---
 title: >-
-  CVPR2026 Model Compression Papers · 54 Notes
+  CVPR2026 Model Compression Papers · 40 Notes
 description: >-
-  54 CVPR2026 papers in the Model Compression area, covering Model Compression, Diffusion Models, Compression, Adversarial Robustness, Continual Learning and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  40 CVPR2026 papers in the Model Compression area, covering Diffusion Models, Compression, Model Compression, Adversarial Robustness, Continual Learning and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "CVPR2026"
   - "Model Compression"
@@ -21,16 +21,8 @@ item_list:
     t: "AdaBet: Gradient-free Layer Selection for Efficient Training of Deep Neural Networks"
   - u: "adversarial_concept_distillation_for_one-step_diffusion_personalization/"
     t: "Adversarial Concept Distillation for One-Step Diffusion Personalization"
-  - u: "an_fpga_implementation_of_displacement_vector_search_for_intra_pattern_copy_in_j/"
-    t: "An FPGA Implementation of Displacement Vector Search for Intra Pattern Copy in JPEG XS"
-  - u: "arche_autoregressive_residual_compression_with_hyp/"
-    t: "ARCHE: Autoregressive Residual Compression with Hyperprior and Excitation"
-  - u: "association_and_consolidation_evolutionary_memory-enhanced_incremental_multi-vie/"
-    t: "Association and Consolidation: Evolutionary Memory-Enhanced Incremental Multi-View Clustering"
   - u: "batch_loss_score_for_dynamic_data_pruning/"
     t: "Batch Loss Score for Dynamic Data Pruning"
-  - u: "beyond_loss_values_robust_dynamic_pruning_via_loss_trajectory_alignment/"
-    t: "Beyond Loss Values: Robust Dynamic Pruning via Loss Trajectory Alignment"
   - u: "bilevel_layer-positioning_lora_for_real_image_dehazing/"
     t: "Bilevel Layer-Positioning LoRA for Real Image Dehazing"
   - u: "binaryattention_one-bit_qk-attention_for_vision_and_diffusion_transformers/"
@@ -47,43 +39,51 @@ item_list:
     t: "Elastic Weight Consolidation Done Right for Continual Learning"
   - u: "enhancing_mixture_of_experts_specialization_via_cluster_aware_upcycling/"
     t: "Enhancing Mixture-of-Experts Specialization via Cluster-Aware Upcycling"
-  - u: "fair-pruner_leveraging_tolerance_of_difference_for_flexible_automatic_layer-wise/"
-    t: "FAIR-Pruner: Leveraging Tolerance of Difference for Flexible Automatic Layer-Wise Neural Network Pruning"
   - u: "fixed_anchors_are_not_enough_dynamic_retrieval_and_persistent_homology_for_datas/"
     t: "Fixed Anchors Are Not Enough: Dynamic Retrieval and Persistent Homology for Dataset Distillation"
   - u: "fozo_forward-only_zeroth-order_prompt_optimization_for_test-time_adaptation/"
     t: "FOZO: Forward-Only Zeroth-Order Prompt Optimization for Test-Time Adaptation"
   - u: "frequency_switching_mechanism_for_parameter-ecient_multi-task_learning/"
     t: "Frequency Switching Mechanism for Parameter-Efficient Multi-Task Learning"
-  - u: "from_fewer_samples_to_fewer_bits_reframing_dataset_distillation_as_joint_optimiz/"
-    t: "From Fewer Samples to Fewer Bits: Reframing Dataset Distillation as Joint Optimization of Precision and Compactness"
   - u: "generative_video_compression_with_one-dimensional_latent_representation/"
     t: "Generative Video Compression with One-Dimensional Latent Representation"
-  - u: "geofusion-cad_structure-aware_diffusion_with_geometric_state_space_for_parametri/"
-    t: "GeoFusion-CAD: Structure-Aware Diffusion with Geometric State Space for Parametric 3D Design"
   - u: "hess_head_sensitivity_score_for_sparsity_redistribution_in_vggt/"
     t: "HeSS: Head Sensitivity Score for Sparsity Redistribution in VGGT"
-  - u: "hiap_a_multi-granular_stochastic_auto-pruning_framework_for_vision_transformers/"
-    t: "HiAP: A Multi-Granular Stochastic Auto-Pruning Framework for Vision Transformers"
   - u: "hieramp_coarse-to-fine_autoregressive_amplification_for_generative_dataset_disti/"
     t: "HierAmp: Coarse-to-Fine Autoregressive Amplification for Generative Dataset Distillation"
   - u: "learning_through_creation_a_hash-free_framework_for_on-the-fly_category_discover/"
     t: "Learning through Creation: A Hash-Free Framework for On-the-Fly Category Discovery"
-  - u: "llava-le_large_language-and-vision_assistant_for_lunar_exploration/"
-    t: "LLaVA-LE: Large Language-and-Vision Assistant for Lunar Exploration"
-  - u: "mame_and_mare_matrix_based_token_merging_and_restoration_for_efficient_visual_perception_and_synthesis/"
-    t: "MaMe & MaRe: Matrix-Based Token Merging and Restoration for Efficient Visual Perception and Synthesis"
-item_total: 54
+  - u: "marvo_marine-adaptive_radiance-aware_visual_odometry/"
+    t: "MARVO: Marine-Adaptive Radiance-aware Visual Odometry"
+  - u: "memo_human-like_crisp_edge_detection_using_masked_edge_prediction/"
+    t: "MEMO: Human-like Crisp Edge Detection Using Masked Edge Prediction"
+  - u: "memory_efficient_transfer_learning_with_fading_side_networks/"
+    t: "Memory-Efficient Transfer Learning with Fading Side Networks via Masked Dual Path Distillation"
+  - u: "on_the_robustness_of_diffusion-based_image_compression_to_bit-flip_errors/"
+    t: "On the Robustness of Diffusion-Based Image Compression to Bit-Flip Errors"
+  - u: "parallax_to_align_them_all_an_omniparallax_attention_mechanism_for_distributed_m/"
+    t: "Parallax to Align Them All: An OmniParallax Attention Mechanism for Distributed Multi-View Image Compression"
+  - u: "planareloc_camera_relocalization_in_3d_planar_primitives_via_region-based_struct/"
+    t: "PlanaReLoc: Camera Relocalization in 3D Planar Primitives via Region-Based Structure Matching"
+  - u: "planning_in_8_tokens_a_compact_discrete_tokenizer_for_latent_world_model/"
+    t: "Planning in 8 Tokens: A Compact Discrete Tokenizer for Latent World Model"
+  - u: "ppcl_pluggable_pruning_dit_distillation/"
+    t: "PPCL: Pluggable Pruning with Contiguous Layer Distillation for Diffusion Transformers"
+  - u: "preference-aligned_lora_merging_preserving_subspace_coverage_and_addressing_dire/"
+    t: "Preference-Aligned LoRA Merging: Preserving Subspace Coverage and Addressing Directional Anisotropy"
+  - u: "prism_video_dataset_condensation_with_progressive_refinement_and_insertion_for_s/"
+    t: "PRISM: Video Dataset Condensation with Progressive Refinement and Insertion for Sparse Motion"
+item_total: 40
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->
 # 📦 Model Compression
 
-**📷 CVPR2026** · **54** paper notes
+**📷 CVPR2026** · **40** paper notes
 
 📌 **Same area in other venues:** [🧪 ICML2026 (100)](../../ICML2026/model_compression/index.md) · [💬 ACL2026 (59)](../../ACL2026/model_compression/index.md) · [🔬 ICLR2026 (100)](../../ICLR2026/model_compression/index.md) · [🤖 AAAI2026 (60)](../../AAAI2026/model_compression/index.md) · [🧠 NeurIPS2025 (140)](../../NeurIPS2025/model_compression/index.md) · [📹 ICCV2025 (52)](../../ICCV2025/model_compression/index.md)
 
-🔥 **Top topics:** Model Compression ×7 · Diffusion Models ×6 · Compression ×6 · Adversarial Robustness ×3 · Continual Learning ×2
+🔥 **Top topics:** Diffusion Models ×5 · Compression ×5 · Model Compression ×4 · Adversarial Robustness ×2 · Continual Learning ×2
 
 **[4D-RGPT: Toward Region-level 4D Understanding via Perceptual Distillation](4d_rgpt_toward_region_level_4d_understanding_via_perceptual_distillation.md)**
 
@@ -101,25 +101,9 @@ item_total: 54
 
 :   OPAD is the first work to address personalization for one-step diffusion models (1-SDP). It achieves single-step high-quality concept generation via joint teacher–student training, alignment loss, and adversarial supervision, and further introduces a collaborative learning phase in which samples generated by the student are fed back to benefit both parties.
 
-**[An FPGA Implementation of Displacement Vector Search for Intra Pattern Copy in JPEG XS](an_fpga_implementation_of_displacement_vector_search_for_intra_pattern_copy_in_j.md)**
-
-:   To address the computational bottleneck of Displacement Vector (DV) search in the Intra Pattern Copy (IPC) module for JPEG XS screen content coding, this paper proposes the first four-stage pipeline FPGA architecture and designs an IPC Group-aligned memory organization scheme. Implemented on a Xilinx Artix-7, the design achieves a throughput of 38.3 Mpixels/s at 277 mW power consumption, providing a viable solution for practical hardware deployment of IPC.
-
-**[ARCHE: Autoregressive Residual Compression with Hyperprior and Excitation](arche_autoregressive_residual_compression_with_hyp.md)**
-
-:   A fully convolutional architecture that unifies hierarchical hyperprior, Masked PixelCNN spatial autoregression, channel-conditional modeling, and SE channel excitation — without relying on Transformers or recurrent components. With 95M parameters and a 222ms decoding time, it achieves a 48% BD-Rate reduction over the Ballé baseline and outperforms VVC Intra by 5.6%.
-
-**[Association and Consolidation: Evolutionary Memory-Enhanced Incremental Multi-View Clustering](association_and_consolidation_evolutionary_memory-enhanced_incremental_multi-vie.md)**
-
-:   This paper proposes EMIMC, a framework inspired by the hippocampus–prefrontal cortex collaborative memory mechanism in the brain. Three coordinated modules — a Rapid Associative Module (orthogonal mapping to ensure plasticity), a Cognitive Forgetting Module (power-law decay to simulate the forgetting curve), and a Knowledge Consolidation Module (temporal tensor low-rank decomposition to distill long-term memory) — jointly address the stability-plasticity dilemma in incremental multi-view clustering.
-
 **[Batch Loss Score for Dynamic Data Pruning](batch_loss_score_for_dynamic_data_pruning.md)**
 
 :   This paper proposes Batch Loss Score (BLS), a method that estimates sample importance using only the mean batch loss — which is universally available — rather than per-sample loss, which is difficult to obtain in practice. Grounded in a signal-processing perspective via EMA-based low-pass filtering, BLS offers theoretical guarantees and can be integrated into existing dynamic pruning frameworks with just 3 lines of code.
-
-**[Beyond Loss Values: Robust Dynamic Pruning via Loss Trajectory Alignment](beyond_loss_values_robust_dynamic_pruning_via_loss_trajectory_alignment.md)**
-
-:   This paper proposes AlignPrune—a plug-and-play module based on loss trajectory alignment—that replaces conventional loss-value ranking with a Dynamic Alignment Score (DAS), achieving up to 6.3% accuracy improvement over standard dynamic data pruning methods under noisy label settings.
 
 **[Bilevel Layer-Positioning LoRA for Real Image Dehazing](bilevel_layer-positioning_lora_for_real_image_dehazing.md)**
 
@@ -153,10 +137,6 @@ item_total: 54
 
 :   This paper proposes Cluster-aware Upcycling, which extracts semantic structure from a dense model via spherical k-means clustering to initialize expert and router parameters in MoE, thereby breaking expert symmetry and promoting early specialization. Combined with an Expert Ensemble Self-Distillation (EESD) loss, the method consistently outperforms existing upcycling approaches on CLIP ViT benchmarks.
 
-**[FAIR-Pruner: Leveraging Tolerance of Difference for Flexible Automatic Layer-Wise Neural Network Pruning](fair-pruner_leveraging_tolerance_of_difference_for_flexible_automatic_layer-wise.md)**
-
-:   FAIR-Pruner is a structured pruning framework that introduces the Tolerance of Differences (ToD) metric to reconcile two complementary perspectives: the Wasserstein Utilization Score (U-Score), which identifies redundant units based on class-conditional separability, and the Taylor-based Reconstruction Score (R-Score), which protects critical units. The framework automatically determines non-uniform per-layer pruning ratios and supports search-free flexible compression ratio adjustment, achieving state-of-the-art results on CIFAR-10, SVHN, and ImageNet.
-
 **[Fixed Anchors Are Not Enough: Dynamic Retrieval and Persistent Homology for Dataset Distillation](fixed_anchors_are_not_enough_dynamic_retrieval_and_persistent_homology_for_datas.md)**
 
 :   RETA decouples two failure modes in residual matching for dataset distillation—the fit-complexity gap and the pull-to-anchor effect—by employing Dynamic Retrieval Connection (DRC) to adaptively select real patch anchors and Persistent Topology Alignment (PTA) to preserve intra-class diversity. The method achieves 64.3% (+3.1% vs. FADRM) on ImageNet-1K with ResNet-18 at IPC=50.
@@ -169,25 +149,13 @@ item_total: 54
 
 :   Free Sinewich proposes a parameter-efficient multi-task learning framework based on frequency switching. By applying task-specific sinusoidal transformations $M_t = \sin(\omega_t \cdot M_{AWB})$ to a shared low-rank base matrix, the method achieves genuine parameter reuse and task specialization at near-zero cost, attaining state-of-the-art performance on dense prediction benchmarks with the fewest trainable parameters.
 
-**[From Fewer Samples to Fewer Bits: Reframing Dataset Distillation as Joint Optimization of Precision and Compactness](from_fewer_samples_to_fewer_bits_reframing_dataset_distillation_as_joint_optimiz.md)**
-
-:   This paper proposes QuADD, a framework that embeds a differentiable quantization module into the dataset distillation loop to jointly optimize synthetic data and quantization parameters, achieving Pareto-optimal compression of "fewer samples + lower precision" under a fixed bit budget.
-
 **[Generative Video Compression with One-Dimensional Latent Representation](generative_video_compression_with_one-dimensional_latent_representation.md)**
 
 :   This paper proposes GVC1D, which for the first time replaces the 2D grid latent representation in video compression with a compact 1D token sequence. Combined with a 1D memory module for modeling long-term temporal context, GVC1D achieves over 60% bitrate savings on perceptual quality metrics.
 
-**[GeoFusion-CAD: Structure-Aware Diffusion with Geometric State Space for Parametric 3D Design](geofusion-cad_structure-aware_diffusion_with_geometric_state_space_for_parametri.md)**
-
-:   This paper proposes GeoFusion-CAD, an end-to-end diffusion framework that encodes CAD programs as hierarchical tree structures and introduces a geometry-aware G-Mamba block with linear time complexity to replace quadratic-complexity Transformers, enabling scalable and structure-aware generation of long-sequence parametric CAD programs. The method substantially outperforms Transformer-based approaches on the newly constructed DeepCAD-240 benchmark (up to 240-step commands).
-
 **[HeSS: Head Sensitivity Score for Sparsity Redistribution in VGGT](hess_head_sensitivity_score_for_sparsity_redistribution_in_vggt.md)**
 
 :   HeSS proposes a Head Sensitivity Score to quantify the sensitivity of each attention head in VGGT's global attention layers to sparsification, and redistributes the attention budget from insensitive heads to sensitive ones accordingly. This approach significantly outperforms the uniform sparsification method SparseVGGT at high sparsity ratios with virtually no additional runtime overhead.
-
-**[HiAP: A Multi-Granular Stochastic Auto-Pruning Framework for Vision Transformers](hiap_a_multi-granular_stochastic_auto-pruning_framework_for_vision_transformers.md)**
-
-:   HiAP formulates ViT pruning as an end-to-end budget-aware learning problem, applying stochastic differentiable gating simultaneously at two granularities—entire heads/blocks (macro) and intra-head value dimensions/FFN neurons (micro)—to automatically discover a compact dense subnetwork satisfying a compute budget within a single training run, eliminating the need for importance ranking, threshold search, and separate fine-tuning.
 
 **[HierAmp: Coarse-to-Fine Autoregressive Amplification for Generative Dataset Distillation](hieramp_coarse-to-fine_autoregressive_amplification_for_generative_dataset_disti.md)**
 
@@ -196,14 +164,6 @@ item_total: 54
 **[Learning through Creation: A Hash-Free Framework for On-the-Fly Category Discovery](learning_through_creation_a_hash-free_framework_for_on-the-fly_category_discover.md)**
 
 :   This paper proposes the LTC framework, which leverages MKEE (Minimize Kernel Energy + Maximize Entropy) to online-generate pseudo-unknown class samples during training. Combined with a dual max-margin loss and an adaptive threshold mechanism, LTC achieves 1.5%–13.1% all-class accuracy improvements across 7 datasets, entirely eliminating the semantic degradation caused by hash encoding.
-
-**[LLaVA-LE: Large Language-and-Vision Assistant for Lunar Exploration](llava-le_large_language-and-vision_assistant_for_lunar_exploration.md)**
-
-:   LLaVA-LE is the first vision-language model tailored for lunar exploration. By constructing LUCID, a large-scale real lunar image-text dataset (96K images + 81K QA pairs), and applying two-stage curriculum fine-tuning on LLaVA, the model achieves a 3.3× improvement over the baseline on lunar geological understanding and multimodal reasoning.
-
-**[MaMe & MaRe: Matrix-Based Token Merging and Restoration for Efficient Visual Perception and Synthesis](mame_and_mare_matrix_based_token_merging_and_restoration_for_efficient_visual_perception_and_synthesis.md)**
-
-:   This paper proposes MaMe, a training-free and differentiable token merging method based on fully matrix-based operations, along with its inverse operation MaRe for token restoration, achieving efficient acceleration with minimal performance degradation across image classification, video recognition, and image generation tasks.
 
 **[MARVO: Marine-Adaptive Radiance-aware Visual Odometry](marvo_marine-adaptive_radiance-aware_visual_odometry.md)**
 
@@ -216,10 +176,6 @@ item_total: 54
 **[Memory-Efficient Transfer Learning with Fading Side Networks via Masked Dual Path Distillation](memory_efficient_transfer_learning_with_fading_side_networks.md)**
 
 :   MDPD proposes an efficient fine-tuning framework based on bidirectional knowledge distillation between a frozen backbone and a lightweight side network. Upon training completion, the side network is discarded, achieving both parameter- and memory-efficient training as well as inference-time acceleration.
-
-**[MXNorm: Reusing MXFP Block Scales for Efficient Tensor Normalisation](mxnorm_reusing_mxfp_block_scales_for_efficient_tensor_normalisation.md)**
-
-:   GPU matrix multiplication throughput has improved 80x (V100 to GB200) while reduction/elementwise operations improved only 5-9x, making RMSNorm a new bottleneck in low-precision training. MXNorm directly reuses the block scales already computed during MXFP8 quantization to estimate RMS, achieving a 32x reduction size decrease. Theorem 1 proves that the generalized $p$-mean of block absmax converges to a constant multiple of RMS. Llama 3 pretraining (125M/1B/8B) validates that MXNorm($p=2$) matches RMSNorm with minimal accuracy difference, with torch.compile benchmarks showing up to 2.4x isolated kernel speedup and +1.3%/+2.6% Llama 3 8B layer acceleration for MXFP8/NVFP4. Drop-in replacement with zero additional hyperparameters.
 
 **[On the Robustness of Diffusion-Based Image Compression to Bit-Flip Errors](on_the_robustness_of_diffusion-based_image_compression_to_bit-flip_errors.md)**
 
@@ -273,17 +229,9 @@ item_total: 54
 
 :   This paper proposes TALON, the first test-time adaptive framework for On-the-Fly Category Discovery (OCD). By combining semantics-aware prototype updating, stable encoder adaptation, and margin-aware logit calibration, TALON operates directly in continuous feature space without hash encoding, substantially alleviating category explosion and significantly improving novel category discovery accuracy.
 
-**[F²HDR: Two-Stage HDR Video Reconstruction via Flow Adapter and Physical Motion Modeling](textf2texthdr_two-stage_hdr_video_reconstruction_via_flow_adapter_and_physical_m.md)**
-
-:   This paper proposes F²HDR, a two-stage HDR video reconstruction framework that adapts general-purpose pre-trained optical flow to alternating-exposure scenes via a Flow Adapter for robust alignment, and employs physical motion modeling to extract continuous motion masks from optical flow to guide artifact removal in the second stage, achieving state-of-the-art performance on real-world HDR video benchmarks.
-
 **[Towards Generalizable AI-Generated Image Detection via Image-Adaptive Prompt Learning](towards_generalizable_ai-generated_image_detection_via_image-adaptive_prompt_lea.md)**
 
 :   This paper proposes Image-Adaptive Prompt Learning (IAPL), which dynamically adjusts the prompts of the CLIP encoder for each test image at inference time. Through test-time token tuning and a conditional information learner, IAPL achieves strong generalization to unseen generators, attaining state-of-the-art average accuracies of 95.61% and 96.7% on UniversalFakeDetect and GenImage, respectively.
-
-**[Towards Source-Aware Object Swapping with Initial Noise Perturbation](towards_source-aware_object_swapping_with_initial_noise_perturbation.md)**
-
-:   This paper proposes SourceSwap, which generates high-quality pseudo-paired data from single images via frequency-separated initial noise perturbation, and employs a source-aware dual U-Net architecture to learn cross-object alignment, enabling zero-shot, per-object-fine-tuning-free high-fidelity object swapping.
 
 **[Understanding and Enforcing Weight Disentanglement in Task Arithmetic](understanding_and_enforcing_weight_disentanglement_in_task_arithmetic.md)**
 
@@ -292,10 +240,6 @@ item_total: 54
 **[UniComp: Rethinking Video Compression Through Informational Uniqueness](unicomp_rethinking_video_compression_through_informational_uniqueness.md)**
 
 :   This paper proposes UniComp, a video token compression framework grounded in informational uniqueness rather than attention scores. Through three modules—Frame Group Fusion, Token Allocation, and Spatial Dynamic Compression—UniComp maximally preserves unique information across temporal, spatial, and global dimensions, surpassing the uncompressed baseline even when retaining only 10% of tokens.
-
-**[Unlocking ImageNet's Multi-Object Nature: Automated Large-Scale Multilabel Annotation](unlocking_imagenets_multi-object_nature_automated_large-scale_multilabel_annotat.md)**
-
-:   A fully automated pipeline is proposed that leverages self-supervised ViT features for unsupervised object discovery, generating spatially grounded multi-label annotations for all 1.28 million ImageNet-1K training images without human annotation. Models trained with these labels achieve consistent gains on both in-domain and downstream multi-label tasks (ReaL +2.0 top-1, COCO +4.2 mAP).
 
 **[WPT: World-to-Policy Transfer via Online World Model Distillation](wpt_world-to-policy_transfer_via_online_world_model_distillation.md)**
 

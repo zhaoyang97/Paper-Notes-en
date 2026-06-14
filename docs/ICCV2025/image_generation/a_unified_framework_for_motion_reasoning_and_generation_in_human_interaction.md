@@ -18,7 +18,6 @@ content_hash: ce728437f4f875c4
 # A Unified Framework for Motion Reasoning and Generation in Human Interaction
 
 **Conference**: ICCV 2025  
-**arXiv**: N/A (CVF OpenAccess)  
 **Code**: [https://molam-motion-language.github.io/](https://molam-motion-language.github.io/)  
 **Area**: Image Generation  
 **Keywords**: human interaction motion, motion-language model, multi-turn dialogue, instruction tuning, motion reasoning

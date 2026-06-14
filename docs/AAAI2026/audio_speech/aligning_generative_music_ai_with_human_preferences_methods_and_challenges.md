@@ -128,10 +128,10 @@ How can the fundamental gap between computational optimization objectives (likel
 - **Interdisciplinary collaboration is essential**: Pure ML techniques are insufficient to address the cultural, psychological, and social dimensions of music preferences; deep engagement from musicology, cognitive science, and human-computer interaction is required.
 
 ## Rating
-- Novelty: ⭐⭐⭐ Survey/position paper; well-organized but introduces no new methods.
-- Experimental Thoroughness: ⭐⭐ No new experiments; relies on results from surveyed works.
-- Writing Quality: ⭐⭐⭐⭐ Clear structure, thorough background, and insightful treatment of the complexity of musical preferences.
-- Value: ⭐⭐⭐⭐ Provides a clear panoramic view and roadmap for music AI preference alignment; valuable as a reference for researchers entering the field or planning future work.
+- Novelty: ⭐⭐⭐⭐ Survey/position paper; well-organized but introduces no new methods.
+- Experimental Thoroughness: ⭐⭐⭐ No new experiments; relies on results from surveyed works.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear structure, thorough background, and insightful treatment of the complexity of musical preferences.
+- Value: ⭐⭐⭐⭐⭐ Provides a clear panoramic view and roadmap for music AI preference alignment; valuable as a reference for researchers entering the field or planning future work.
 
 <!-- RELATED:START -->
 

@@ -129,10 +129,10 @@ Baseline comparison: a logistic regression classifier using 13 geometric feature
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐ — First application of SSL to ice crystal habit analysis, though the SSL methodology itself is not novel.
-- **Experimental Thoroughness**: ⭐⭐⭐ — Both classification validation and diversity analysis are conducted, but more quantitative comparisons are lacking.
-- **Writing Quality**: ⭐⭐⭐⭐ — Motivation is clearly articulated; the connection between problem and method is natural.
-- **Value**: ⭐⭐⭐ — Offers practical value to the climate science community, though methodological innovation is limited.
+- **Novelty**: ⭐⭐⭐⭐ — First application of SSL to ice crystal habit analysis, though the SSL methodology itself is not novel.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Both classification validation and diversity analysis are conducted, but more quantitative comparisons are lacking.
+- **Writing Quality**: ⭐⭐⭐⭐⭐ — Motivation is clearly articulated; the connection between problem and method is natural.
+- **Value**: ⭐⭐⭐⭐ — Offers practical value to the climate science community, though methodological innovation is limited.
 
 <!-- RELATED:START -->
 

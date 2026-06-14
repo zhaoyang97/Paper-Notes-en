@@ -18,7 +18,6 @@ content_hash: 691a881493a0d7fe
 # StyleMotif: Multi-Modal Motion Stylization using Style-Content Cross Fusion
 
 **Conference**: ICCV 2025
-**arXiv**: 2503.21775  
 **Code**: [https://stylemotif.github.io](https://stylemotif.github.io)  
 **Area**: Image Generation
 **Keywords**: motion stylization, multi-modal, diffusion model, style-content fusion, motion generation

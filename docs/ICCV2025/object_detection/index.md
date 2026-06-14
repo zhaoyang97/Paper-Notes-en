@@ -77,7 +77,7 @@ item_total: 28
 
 **📹 ICCV2025** · **28** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (6)](../../ICML2026/object_detection/index.md) · [📷 CVPR2026 (55)](../../CVPR2026/object_detection/index.md) · [🔬 ICLR2026 (14)](../../ICLR2026/object_detection/index.md) · [🤖 AAAI2026 (29)](../../AAAI2026/object_detection/index.md) · [🧠 NeurIPS2025 (27)](../../NeurIPS2025/object_detection/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (6)](../../ICML2026/object_detection/index.md) · [📷 CVPR2026 (49)](../../CVPR2026/object_detection/index.md) · [🔬 ICLR2026 (14)](../../ICLR2026/object_detection/index.md) · [🤖 AAAI2026 (29)](../../AAAI2026/object_detection/index.md) · [🧠 NeurIPS2025 (27)](../../NeurIPS2025/object_detection/index.md)
 
 🔥 **Top topics:** Object Detection ×10 · Adversarial Robustness ×2 · Diffusion Models ×2 · Multimodal/VLM ×2 · Remote Sensing ×2
 

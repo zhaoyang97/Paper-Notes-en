@@ -140,10 +140,10 @@ The paper's appendix explicitly lists potentially unsafe responses identified du
 - **vs. Dr.FirstAider**: A rule-driven FAQ chatbot; FirstAidQA supports end-to-end neural model training.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐ First QA dataset dedicated to first aid, though the methodology follows a standard LLM synthesis pipeline.
-- **Experimental Thoroughness**: ⭐⭐ Workshop paper with only dataset description and human evaluation scores; no model training validation.
-- **Writing Quality**: ⭐⭐⭐ Well-structured but limited in technical depth.
-- **Value**: ⭐⭐⭐ Fills a gap in first aid NLP datasets, though safety concerns limit practical deployment.
+- **Novelty**: ⭐⭐⭐⭐ First QA dataset dedicated to first aid, though the methodology follows a standard LLM synthesis pipeline.
+- **Experimental Thoroughness**: ⭐⭐⭐ Workshop paper with only dataset description and human evaluation scores; no model training validation.
+- **Writing Quality**: ⭐⭐⭐⭐ Well-structured but limited in technical depth.
+- **Value**: ⭐⭐⭐⭐ Fills a gap in first aid NLP datasets, though safety concerns limit practical deployment.
 
 <!-- RELATED:START -->
 

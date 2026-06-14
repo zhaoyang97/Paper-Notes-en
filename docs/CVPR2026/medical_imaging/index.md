@@ -1,8 +1,8 @@
 ---
 title: >-
-  CVPR2026 Medical Imaging Papers · 99 Notes
+  CVPR2026 Medical Imaging Papers · 56 Notes
 description: >-
-  99 CVPR2026 papers in the Medical Imaging area, covering Medical Imaging, Segmentation, Multimodal/VLM, Adversarial Robustness, Few-/Zero-Shot Learning, Diffusion Models and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  56 CVPR2026 papers in the Medical Imaging area, covering Medical Imaging, Segmentation, Multimodal/VLM, Few-/Zero-Shot Learning, Reasoning, Federated Learning and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "CVPR2026"
   - "Medical Imaging"
@@ -10,93 +10,85 @@ tags:
   - "paper summaries"
   - "Segmentation"
   - "Multimodal/VLM"
-  - "Adversarial Robustness"
   - "Few-/Zero-Shot Learning"
-  - "Diffusion Models"
+  - "Reasoning"
+  - "Federated Learning"
 item_list:
-  - u: "a_protocol_for_evaluating_robustness_to_he_stainin/"
-    t: "A protocol for evaluating robustness to H&E staining variation in computational pathology models"
   - u: "a_semi-supervised_framework_for_breast_ultrasound_segmentation_with_training-fre/"
     t: "A Semi-Supervised Framework for Breast Ultrasound Segmentation with Training-Free Pseudo-Label Generation and Label Refinement"
-  - u: "accelerating_stroke_mri_with_diffusion_probabilist/"
-    t: "Accelerating Stroke MRI with Diffusion Probabilistic Models through Large-Scale Pre-training and Target-Specific Fine-Tuning"
   - u: "act_like_a_pathologist_tissue-aware_whole_slide_image_reasoning/"
     t: "Act Like a Pathologist: Tissue-Aware Whole Slide Image Reasoning"
   - u: "adaptation_of_weakly_supervised_localization_in_histopathology_by_debiasing_pred/"
     t: "Adaptation of Weakly Supervised Localization in Histopathology by Debiasing Predictions"
   - u: "adaptive_confidence_regularization_for_multimodal_failure_detection/"
     t: "Adaptive Confidence Regularization for Multimodal Failure Detection"
-  - u: "addressing_data_scarcity_in_3d_trauma_detection_through_self-supervised_and_semi/"
-    t: "Addressing Data Scarcity in 3D Trauma Detection through Self-Supervised and Semi-Supervised Learning with Vertex Relative Position Encoding"
-  - u: "apex_adaptive_visual_prompting/"
-    t: "From Adaptation to Generalization: Adaptive Visual Prompting for Medical Image Segmentation"
   - u: "are_general-purpose_vision_models_all_we_need_for_2d_medical_image_segmentation_/"
     t: "Are General-Purpose Vision Models All We Need for 2D Medical Image Segmentation? A Cross-Dataset Empirical Study"
-  - u: "association_of_radiologic_ppfe_change_with_mortali/"
-    t: "Association of Radiologic PPFE Change with Mortality in Lung Cancer Screening Cohorts"
-  - u: "automated_detection_of_malignant_lesions_in_the_ov/"
-    t: "Automated Detection of Malignant Lesions in the Ovary Using Deep Learning Models and XAI"
   - u: "benchmarking_endoscopic_surgical_image_restoration_and_beyond/"
     t: "Benchmarking Endoscopic Surgical Image Restoration and Beyond"
   - u: "better_than_average_spatially-aware_aggregation_of_segmentation_uncertainty_impr/"
     t: "Better than Average: Spatially-Aware Aggregation of Segmentation Uncertainty Improves Downstream Performance"
-  - u: "biclip_bidirectional_and_consistent_language-image_processing_for_robust_medical/"
-    t: "BiCLIP: Bidirectional and Consistent Language-Image Processing for Robust Medical Image Segmentation"
-  - u: "bridging_the_skill_gap_in_clinical_cbct_interpreta/"
-    t: "Bridging the Skill Gap in Clinical CBCT Interpretation with CBCTRepD"
-  - u: "can_natural_image_autoencoders_compactly_tokenize_fmri_volumes_for_long-range_dy/"
-    t: "Can Natural Image Autoencoders Compactly Tokenize fMRI Volumes for Long-Range Dynamics Modeling?"
   - u: "chips_efficient_clip_adaptation_via_curvature-aware_hybrid_influence-based_data_/"
     t: "CHIPS: Efficient CLIP Adaptation via Curvature-aware Hybrid Influence-based Data Selection"
   - u: "cloe_expert_consistency_learning_for_missing_modality_segmentation/"
     t: "CLoE: Expert Consistency Learning for Missing Modality Segmentation"
-  - u: "comparative_evaluation_of_traditional_methods_and_deep_learning_for_brain_glioma/"
-    t: "Comparative Evaluation of Traditional Methods and Deep Learning for Brain Glioma Imaging"
   - u: "crft_consistent-recurrent_feature_flow_transformer_for_cross-modal_image_registr/"
     t: "CRFT: Consistent-Recurrent Feature Flow Transformer for Cross-Modal Image Registration"
   - u: "cure_curriculum-guided_multi-task_training_for_reliable_anatomy_grounded_report_/"
     t: "CURE: Curriculum-guided Multi-task Training for Reliable Anatomy Grounded Report Generation"
-  - u: "decoding_matters_efficient_mamba-based_decoder_with_distribution-aware_deep_supe/"
-    t: "Decoding Matters: Efficient Mamba-Based Decoder with Distribution-Aware Deep Supervision for Medical Image Segmentation"
   - u: "decoupling_vision_and_language_codebook_anchored_visual_adaptation/"
     t: "Decoupling Vision and Language: Codebook Anchored Visual Adaptation"
-  - u: "deep_learning_based_estimation_of_blood_glucose_levels_from_multidirectional_scl/"
-    t: "Deep Learning–Based Estimation of Blood Glucose Levels from Multidirectional Scleral Blood Vessel Imaging"
-  - u: "deep_learningbased_assessment_of_the_relation_betw/"
-    t: "Deep Learning-based Assessment of the Relation Between the Third Molar and Mandibular Canal on Panoramic Radiographs using Local, Centralized, and Federated Learning"
-  - u: "developing_foundation_models_for_universal_segmentation_from_3d_whole-body_posit/"
-    t: "Developing Foundation Models for Universal Segmentation from 3D Whole-Body Positron Emission Tomography"
-  - u: "diffusion-based_feature_denoising_and_using_nnmf_for_robust_brain_tumor_classifi/"
-    t: "Diffusion-Based Feature Denoising and Using NNMF for Robust Brain Tumor Classification"
-  - u: "echoagent_towards_reliable_echocardiography_interpretation_with_eyeshands_and_mi/"
-    t: "EchoAgent: Towards Reliable Echocardiography Interpretation with \"Eyes\", \"Hands\" and \"Minds\""
-  - u: "ei_early_intervention_for_multimodal_imaging_based_disease_recognition/"
-    t: "EI: Early Intervention for Multimodal Imaging based Disease Recognition"
   - u: "emad_evidence-centric_grounded_multimodal_diagnosis_for_alzheimers_disease/"
     t: "EMAD: Evidence-Centric Grounded Multimodal Diagnosis for Alzheimer's Disease"
-item_total: 99
+  - u: "event_level_detection_of_surgical_instrument_handovers_in_videos/"
+    t: "Event-Level Detection of Surgical Instrument Handovers in Videos"
+  - u: "every_error_has_its_magnitude_asymmetric_mistake_severity_training_for_multiclas/"
+    t: "Every Error has Its Magnitude: Asymmetric Mistake Severity Training for Multiclass Multiple Instance Learning"
+  - u: "fedvg_gradient-guided_aggregation_for_enhanced_federated_learning/"
+    t: "FedVG: Gradient-Guided Aggregation for Enhanced Federated Learning"
+  - u: "focus-to-perceive_representation_learning_a_cognition-inspired_hierarchical_fram/"
+    t: "Focus-to-Perceive Representation Learning: A Cognition-Inspired Hierarchical Framework for Endoscopic Video Analysis"
+  - u: "forge_continual_learning_for_fmri_based_brain_disorder_diagnosis/"
+    t: "Continual Learning for fMRI-Based Brain Disorder Diagnosis via Functional Connectivity Matrices Generative Replay"
+  - u: "gaussianpile_a_unified_sparse_gaussian_splatting_framework_for_slice-based_volum/"
+    t: "GaussianPile: A Unified Sparse Gaussian Splatting Framework for Slice-based Volumetric Reconstruction"
+  - u: "giim_graphbased_learning_of_inter_and_intraview_de/"
+    t: "GIIM: Graph-based Learning of Inter- and Intra-view Dependencies for Multi-view Medical Image Diagnosis"
+  - u: "human_knowledge_integrated_multi-modal_learning_for_single_source_domain_general/"
+    t: "Human Knowledge Integrated Multi-modal Learning for Single Source Domain Generalization"
+  - u: "instruction-guided_lesion_segmentation_for_chest_x-rays_with_automatically_gener/"
+    t: "Instruction-Guided Lesion Segmentation for Chest X-rays with Automatically Generated Large-Scale Dataset"
+  - u: "interpretable_cross-domain_few-shot_learning_with_rectified_target-domain_local_/"
+    t: "Interpretable Cross-Domain Few-Shot Learning with Rectified Target-Domain Local Alignment"
+  - u: "learning_generalizable_3d_medical_image_representations_from_mask-guided_self-su/"
+    t: "Learning Generalizable 3D Medical Image Representations from Mask-Guided Self-Supervision"
+  - u: "lemon_a_large_endoscopic_monocular_dataset_and_foundation_model_for_perception_in/"
+    t: "LEMON: A Large Endoscopic MONocular Dataset and Foundation Model for Perception in Surgical Settings"
+  - u: "lumina_a_multi-vendor_mammography_benchmark_with_energy_harmonization_protocol/"
+    t: "LUMINA: A Multi-Vendor Mammography Benchmark with Energy Harmonization Protocol"
+  - u: "medclipseg_probabilistic_vision-language_adaptation_for_data-efficient_and_gener/"
+    t: "MedCLIPSeg: Probabilistic Vision-Language Adaptation for Data-Efficient and Generalizable Medical Image Segmentation"
+  - u: "medgen-bench_contextually_entangled_benchmark_for_open-ended_multimodal_medical_/"
+    t: "MedGEN-Bench: Contextually Entangled Benchmark for Open-Ended Multimodal Medical Generation"
+  - u: "medgrpo_multi-task_reinforcement_learning_for_heterogeneous_medical_video_unders/"
+    t: "MedGRPO: Multi-Task Reinforcement Learning for Heterogeneous Medical Video Understanding"
+  - u: "medkco_medical_vision-language_pretraining_via_knowledge-driven_cognitive_orches/"
+    t: "MedKCO: Medical Vision-Language Pretraining via Knowledge-Driven Cognitive Orchestration"
+item_total: 56
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->
 # 🏥 Medical Imaging
 
-**📷 CVPR2026** · **99** paper notes
+**📷 CVPR2026** · **56** paper notes
 
 📌 **Same area in other venues:** [🧪 ICML2026 (24)](../../ICML2026/medical_imaging/index.md) · [🔬 ICLR2026 (22)](../../ICLR2026/medical_imaging/index.md) · [🤖 AAAI2026 (75)](../../AAAI2026/medical_imaging/index.md) · [🧠 NeurIPS2025 (74)](../../NeurIPS2025/medical_imaging/index.md) · [📹 ICCV2025 (31)](../../ICCV2025/medical_imaging/index.md)
 
-🔥 **Top topics:** Medical Imaging ×35 · Segmentation ×21 · Multimodal/VLM ×12 · Adversarial Robustness ×8 · Few-/Zero-Shot Learning ×6
-
-**[A protocol for evaluating robustness to H&E staining variation in computational pathology models](a_protocol_for_evaluating_robustness_to_he_stainin.md)**
-
-:   A three-step evaluation protocol (select reference staining conditions → characterize test-set staining properties → simulate staining conditions for inference) is proposed to systematically quantify the robustness of 306 MSI classification models to H&E staining variation. The study finds a weak negative correlation between robustness and classification performance ($r = -0.28$), indicating that high performance does not imply high robustness.
+🔥 **Top topics:** Medical Imaging ×20 · Segmentation ×11 · Multimodal/VLM ×6 · Few-/Zero-Shot Learning ×5 · Reasoning ×2
 
 **[A Semi-Supervised Framework for Breast Ultrasound Segmentation with Training-Free Pseudo-Label Generation and Label Refinement](a_semi-supervised_framework_for_breast_ultrasound_segmentation_with_training-fre.md)**
 
 :   This paper proposes a semi-supervised framework for breast ultrasound (BUS) image segmentation. It employs GPT-5-generated appearance descriptions combined with Grounding DINO and SAM for training-free pseudo-label generation (APPG), and refines labels via a dual-teacher framework (static + dynamic) using Uncertainty-Entropy Weighted Fusion (UEWF) and Adaptive Uncertainty-guided Reverse Contrastive Learning (AURCL). The method approaches fully supervised performance using only 2.5% labeled data.
-
-**[Accelerating Stroke MRI with Diffusion Probabilistic Models through Large-Scale Pre-training and Target-Specific Fine-Tuning](accelerating_stroke_mri_with_diffusion_probabilist.md)**
-
-:   Drawing inspiration from the "pre-train then fine-tune" paradigm of foundation models, this work pre-trains a diffusion probabilistic model (DPM) at scale on ~4,000 fastMRI subjects spanning multiple contrasts, then fine-tunes on as few as 20 target-domain subjects using a low learning rate. The resulting model generalizes across contrasts and acquisition protocols for accelerated MRI reconstruction. In a clinical stroke validation, 2× accelerated images are rated non-inferior to fully-sampled images by blinded neuroradiologists.
 
 **[Act Like a Pathologist: Tissue-Aware Whole Slide Image Reasoning](act_like_a_pathologist_tissue-aware_whole_slide_image_reasoning.md)**
 
@@ -110,25 +102,9 @@ item_total: 99
 
 :   This paper proposes the ACR framework, which addresses multimodal misclassification detection for the first time in a systematic manner through two complementary modules: an Adaptive Confidence Loss (ACL) that penalizes "confidence degradation" where multimodal fusion confidence falls below that of individual unimodal branches, and Multimodal Feature Swapping (MFS) that synthesizes failure-aware outlier samples in the feature space. ACR consistently outperforms existing methods across four datasets.
 
-**[Addressing Data Scarcity in 3D Trauma Detection through Self-Supervised and Semi-Supervised Learning with Vertex Relative Position Encoding](addressing_data_scarcity_in_3d_trauma_detection_through_self-supervised_and_semi.md)**
-
-:   This paper proposes a two-stage label-efficient framework: a patch-based MIM self-supervised pretraining of a 3D U-Net encoder on 1,206 unlabeled CT volumes, followed by VDETR with 3D vertex relative position encoding for 3D lesion detection, augmented by Mean Teacher semi-supervised consistency regularization over 2,000 additional unlabeled volumes. Using only 144 annotated samples, the framework achieves 56.57% val mAP@0.50, a 115% improvement over fully supervised training.
-
-**[From Adaptation to Generalization: Adaptive Visual Prompting for Medical Image Segmentation](apex_adaptive_visual_prompting.md)**
-
-:   This paper proposes APEX (Adaptive Prompt EXtraction), which adaptively retrieves input-specific visual prompts from a learnable prompt memory bank—rather than assigning a fixed prompt per domain—and incorporates low-frequency contrastive learning (LFC) to enhance inter-domain discriminability, achieving significant improvements in medical image segmentation on both seen and unseen domains.
-
 **[Are General-Purpose Vision Models All We Need for 2D Medical Image Segmentation? A Cross-Dataset Empirical Study](are_general-purpose_vision_models_all_we_need_for_2d_medical_image_segmentation_.md)**
 
 :   By evaluating 11 models on three heterogeneous medical datasets under a unified training protocol, this study demonstrates that general-purpose vision models (GP-VMs) systematically outperform most specialized medical segmentation architectures (SMAs) under standardized conditions, challenging the prevailing assumption that medical image segmentation inherently requires domain-specific architectures.
-
-**[Association of Radiologic PPFE Change with Mortality in Lung Cancer Screening Cohorts](association_of_radiologic_ppfe_change_with_mortali.md)**
-
-:   Across the NLST (n=7,980) and SUMMIT (n=8,561) large-scale lung cancer screening cohorts, deep learning-based automatic segmentation is used to quantify longitudinal PPFE changes (dPPFE) on low-dose CT, validating their independent association with all-cause mortality (HR=1.25/3.14) and respiratory morbidity.
-
-**[Automated Detection of Malignant Lesions in the Ovary Using Deep Learning Models and XAI](automated_detection_of_malignant_lesions_in_the_ov.md)**
-
-:   This work systematically compares 15 CNN variants (LeNet/ResNet/VGG/Inception) on five-class classification of ovarian cancer histopathology images. InceptionV3-A (ReLU) is selected as the final model, achieving 94% across comprehensive metrics, with comparative explainability analysis conducted using three XAI methods: LIME, SHAP, and Integrated Gradients.
 
 **[Benchmarking Endoscopic Surgical Image Restoration and Beyond](benchmarking_endoscopic_surgical_image_restoration_and_beyond.md)**
 
@@ -138,18 +114,6 @@ item_total: 99
 
 :   This paper presents the first systematic study of aggregation strategies for converting pixel-level uncertainty maps to image-level scores in segmentation tasks. It proposes the Spatial Mass Ratio (SMR)—incorporating spatial structural information via Moran's I, Edge Density, and Shannon Entropy—alongside a GMM meta-aggregator. Experiments across 10 datasets on OoD and failure detection tasks demonstrate that spatially-aware aggregation significantly outperforms global averaging.
 
-**[BiCLIP: Bidirectional and Consistent Language-Image Processing for Robust Medical Image Segmentation](biclip_bidirectional_and_consistent_language-image_processing_for_robust_medical.md)**
-
-:   This paper proposes BiCLIP, a framework that employs Bidirectional Multimodal Fusion (BMF) to refine text representations using visual information, and Image Augmentation Consistency (IAC) to enforce perturbation-invariant intermediate features. BiCLIP surpasses state-of-the-art methods on COVID-19 CT segmentation while remaining robust with as little as 1% labeled data.
-
-**[Bridging the Skill Gap in Clinical CBCT Interpretation with CBCTRepD](bridging_the_skill_gap_in_clinical_cbct_interpreta.md)**
-
-:   This work constructs a large-scale CBCT-report paired dataset of 7,408 cases covering 55 oral diseases, and develops CBCTRepD, a bilingual oral-maxillofacial CBCT report generation system. Through a collaborative paradigm of AI-generated drafts followed by radiologist editing, the system is shown via multi-level clinical evaluation to elevate junior radiologists to an intermediate level, intermediate radiologists to near-senior level, and reduce omissions for senior radiologists.
-
-**[Can Natural Image Autoencoders Compactly Tokenize fMRI Volumes for Long-Range Dynamics Modeling?](can_natural_image_autoencoders_compactly_tokenize_fmri_volumes_for_long-range_dy.md)**
-
-:   This paper proposes TABLeT, which leverages a pretrained 2D natural image autoencoder (DCAE) to compress 3D fMRI volumes into as few as 27 continuous tokens per frame. Paired with a standard Transformer encoder, this enables unprecedented long-range temporal modeling (256 frames), surpassing SOTA voxel-based methods on multiple tasks across UKB, HCP, and ADHD-200, while significantly improving computational efficiency.
-
 **[CHIPS: Efficient CLIP Adaptation via Curvature-aware Hybrid Influence-based Data Selection](chips_efficient_clip_adaptation_via_curvature-aware_hybrid_influence-based_data_.md)**
 
 :   This paper proposes CHIPS, a curvature-aware hybrid influence-based data selection method that computes Newton-style alignment scores in the CLIP endpoint subspace and combines them with learnability and domain-relevance weights. Using only 30% of the data, CHIPS matches full-dataset continual pre-training (CPT) performance and achieves state-of-the-art results across 17 medical benchmarks.
@@ -157,10 +121,6 @@ item_total: 99
 **[CLoE: Expert Consistency Learning for Missing Modality Segmentation](cloe_expert_consistency_learning_for_missing_modality_segmentation.md)**
 
 :   This work reformulates the robustness problem under missing modalities as decision-level expert consistency control. It proposes a dual-branch consistency learning scheme (global MEC + regional REC) coupled with a lightweight gating network that converts consistency scores into modality reliability weights, achieving an average WT Dice of 88.09% across 15 missing-modality combinations on BraTS 2020, surpassing all prior state-of-the-art methods.
-
-**[Comparative Evaluation of Traditional Methods and Deep Learning for Brain Glioma Imaging](comparative_evaluation_of_traditional_methods_and_deep_learning_for_brain_glioma.md)**
-
-:   A systematic review paper that comprehensively compares traditional methods (thresholding, region growing, fuzzy clustering, etc.) and deep learning methods (CNN, U-Net, SegNet, etc.) for brain glioma MRI segmentation and classification, concluding that CNN-based architectures consistently outperform traditional techniques in both accuracy and degree of automation.
 
 **[CRFT: Consistent-Recurrent Feature Flow Transformer for Cross-Modal Image Registration](crft_consistent-recurrent_feature_flow_transformer_for_cross-modal_image_registr.md)**
 
@@ -170,45 +130,13 @@ item_total: 99
 
 :   This paper proposes CURE — an error-aware curriculum learning framework for multi-task training that dynamically adjusts sampling distributions to emphasize hard samples, improving visual grounding accuracy by +0.37 IoU and reducing hallucination rate by 18.6% without introducing additional data.
 
-**[Decoding Matters: Efficient Mamba-Based Decoder with Distribution-Aware Deep Supervision for Medical Image Segmentation](decoding_matters_efficient_mamba-based_decoder_with_distribution-aware_deep_supe.md)**
-
-:   This paper proposes Deco-Mamba, a decoder-centric Transformer-CNN-Mamba hybrid architecture that enhances the decoding process via Co-Attention Gates, Vision State Space Modules (VSSMs), and deformable convolutions, while introducing a distribution-aware deep supervision strategy based on windowed KL divergence. The method achieves state-of-the-art performance across 7 medical image segmentation benchmarks.
-
 **[Decoupling Vision and Language: Codebook Anchored Visual Adaptation](decoupling_vision_and_language_codebook_anchored_visual_adaptation.md)**
 
 :   CRAFT is proposed to decouple the visual encoder from the language model via a discrete codebook, enabling domain adaptation by fine-tuning only the visual encoder. The adapted encoder can be seamlessly reused across different LLM architectures, achieving an average improvement of 13.51% across 10 domain benchmarks.
 
-**[Deep Learning–Based Estimation of Blood Glucose Levels from Multidirectional Scleral Blood Vessel Imaging](deep_learning_based_estimation_of_blood_glucose_levels_from_multidirectional_scl.md)**
-
-:   This paper proposes ScleraGluNet, which captures scleral blood vessel photographs from five gaze directions, extracts direction-specific vascular features via parallel CNNs, refines them through MRFO feature selection, and fuses them across views using a Transformer. The model simultaneously performs three-class metabolic state classification (93.8% accuracy) and continuous fasting plasma glucose (FPG) estimation (MAE = 6.42 mg/dL, r = 0.983).
-
-**[Deep Learning-based Assessment of the Relation Between the Third Molar and Mandibular Canal on Panoramic Radiographs using Local, Centralized, and Federated Learning](deep_learningbased_assessment_of_the_relation_betw.md)**
-
-:   This work systematically compares three training paradigms—local learning (LL), federated learning (FL), and centralized learning (CL)—on cropped panoramic dental radiographs partitioned by 8 independent annotators, targeting a binary classification task of third molar–mandibular canal overlap. The study establishes a consistent performance ranking of CL > FL > LL (AUC: 0.831, 0.757, and 0.672, respectively), demonstrating that FL substantially outperforms site-independent training while preserving data privacy.
-
-**[Developing Foundation Models for Universal Segmentation from 3D Whole-Body Positron Emission Tomography](developing_foundation_models_for_universal_segmentation_from_3d_whole-body_posit.md)**
-
-:   This work constructs PETWB-Seg11K, the largest whole-body PET segmentation dataset to date (11,041 3D PET scans + 59,831 masks), and proposes SegAnyPET — the first 3D promptable segmentation foundation model tailored for functional PET imaging — achieving strong zero-shot generalization across multi-center, multi-tracer, and multi-disease scenarios.
-
-**[Diffusion-Based Feature Denoising and Using NNMF for Robust Brain Tumor Classification](diffusion-based_feature_denoising_and_using_nnmf_for_robust_brain_tumor_classifi.md)**
-
-:   This paper proposes an NNMF+CNN+diffusion defense framework for brain tumor MRI classification. MRI images are first decomposed into compact, interpretable low-rank features via NNMF; the most discriminative components are selected using AUC, Cohen's d, and p-value statistical criteria; a lightweight CNN then performs classification. At inference time, a feature-space purification module combining forward diffusion noise injection and a learned denoiser is introduced. Under AutoAttack ($L_\infty$, $\epsilon=0.10$), robust accuracy improves from 0.47% to 59.53%.
-
-**[EchoAgent: Towards Reliable Echocardiography Interpretation with "Eyes", "Hands" and "Minds"](echoagent_towards_reliable_echocardiography_interpretation_with_eyeshands_and_mi.md)**
-
-:   This paper proposes EchoAgent, an agent system that simulates the "eyes–hands–minds" collaborative workflow of echocardiography clinicians. Through three stages—an Expertise-Driven Cognition engine (mind), a Hierarchical Collaboration Toolkit (eyes + hands), and an Orchestrated Reasoning Hub—the system achieves end-to-end reliable echocardiography interpretation, attaining state-of-the-art performance on multiple benchmarks.
-
-**[EI: Early Intervention for Multimodal Imaging based Disease Recognition](ei_early_intervention_for_multimodal_imaging_based_disease_recognition.md)**
-
-:   EI proposes injecting cross-modal semantic guidance (the [INT] token) **before** unimodal embedding (UIE), emulating the clinical workflow in which a clinician first examines one modality to form a preliminary judgment and then uses that judgment to guide interpretation of another modality. Simultaneously, EI introduces MoR (multi-rank LoRA with a relaxed bypass router) for parameter-efficient VFM adaptation to the medical domain. With fewer than 9M trainable parameters, EI surpasses all full fine-tuning and prompt-learning baselines on three datasets covering retinal, dermatological, and knee-joint imaging.
-
 **[EMAD: Evidence-Centric Grounded Multimodal Diagnosis for Alzheimer's Disease](emad_evidence-centric_grounded_multimodal_diagnosis_for_alzheimers_disease.md)**
 
 :   This paper proposes EMAD, an end-to-end multimodal vision-language framework for AD diagnosis that generates structured reports. Through hierarchical Sentence–Evidence–Anatomy (SEA) Grounding, each diagnostic statement is explicitly linked to clinical evidence and 3D brain anatomy. Executable rule-driven GRPO reinforcement fine-tuning is applied to ensure clinical consistency.
-
-**[EquivAnIA: A Spectral Method for Rotation-Equivariant Anisotropic Image Analysis](equivania_a_spectral_method_for_rotation-equivariant_anisotropic_image_analysis.md)**
-
-:   This paper proposes EquivAnIA, which employs a family of oriented filters (cake wavelets and ridge filters) to estimate the angular distribution of an image via weighted averaging in the frequency domain, replacing conventional angular binning. The method achieves truly numerically rotation-robust anisotropic analysis, with a dominant orientation estimation error of only 0.03° on synthetic images and a CT registration error of only 0.02°.
 
 **[Event-Level Detection of Surgical Instrument Handovers in Videos](event_level_detection_of_surgical_instrument_handovers_in_videos.md)**
 
@@ -218,18 +146,6 @@ item_total: 99
 
 :   This paper proposes PAMS (Priority-Aware Mistake Severity), a framework that significantly reduces the risk of severe misdiagnosis in multiclass MIL-based WSI diagnosis through an asymmetric severity-aware cross-entropy loss (MSCE), semantic feature remix (SFR), and an asymmetric Mikel's Wheel evaluation metric.
 
-**[Extending ZACH-ViT to Robust Medical Imaging: Corruption and Adversarial Stress Testing in Low-Data Regimes](extending_zach-vit_to_robust_medical_imaging_corruption_and_adversarial_stress_t.md)**
-
-:   This work presents the first robustness extension evaluation of ZACH-ViT, a compact permutation-invariant ViT architecture, in low-data medical imaging settings. Across 7 MedMNIST datasets, ZACH-ViT ranks first under both clean and common corruption conditions (Mean Rank 1.57), ranks first under FGSM (2.00), and second under PGD (2.29).
-
-**[Fair Lung Disease Diagnosis from Chest CT via Gender-Adversarial Attention Multiple Instance Learning](fair_lung_disease_diagnosis_from_chest_ct_via_gend.md)**
-
-:   An attention-based MIL model is built upon a ConvNeXt-Base backbone, employing a gradient reversal layer (GRL) to adversarially eliminate gender information from scan representations. Combined with focal loss ($\gamma=2$) + label smoothing ($\varepsilon=0.1$), subgroup oversampling, and 5-fold ensemble, the proposed method achieves a mean competition score of 0.685±0.030 on a four-class lung disease diagnosis task over 889 chest CT scans. The female macro-F1 (0.691) slightly exceeds the male macro-F1 (0.679), validating that GRL effectively closes the fairness gap.
-
-**[Federated Modality-specific Encoders and Partially Personalized Fusion Decoder for Multimodal Brain Tumor Segmentation](federated_modality-specific_encoders_and_partially_personalized_fusion_decoder_f.md)**
-
-:   This paper proposes FedMEPD, a framework that employs modality-specific encoders to address intermodal heterogeneity, a filter-level dynamic partial personalization decoder to balance knowledge sharing and personalization, and a multi-anchor cross-attention calibration module to compensate for missing modality information. FedMEPD comprehensively outperforms existing multimodal federated learning methods on BraTS 2018/2020.
-
 **[FedVG: Gradient-Guided Aggregation for Enhanced Federated Learning](fedvg_gradient-guided_aggregation_for_enhanced_federated_learning.md)**
 
 :   FedVG proposes to score each client using layer-wise gradient norms computed on a global validation set, assigning higher aggregation weights to clients whose gradients are flatter (i.e., smaller in norm), thereby substantially improving generalization performance of federated learning under high data heterogeneity.
@@ -237,10 +153,6 @@ item_total: 99
 **[Focus-to-Perceive Representation Learning: A Cognition-Inspired Hierarchical Framework for Endoscopic Video Analysis](focus-to-perceive_representation_learning_a_cognition-inspired_hierarchical_fram.md)**
 
 :   FPRL is proposed as a clinically-inspired hierarchical self-supervised framework that mitigates motion bias by first "focusing" on intra-frame lesion-centric static semantics and then "perceiving" inter-frame contextual evolution, achieving state-of-the-art performance across 11 endoscopic datasets.
-
-**[Forecasting Epileptic Seizures from Contactless Camera via Cross-Species Transfer Learning](forecasting_epileptic_seizures_from_contactless_ca.md)**
-
-:   This paper is the first to systematically define the task of video-based epileptic seizure forecasting (predicting whether a seizure will occur within the next 5 seconds using 3–10-second pre-ictal clips), and proposes a two-stage cross-species transfer learning framework — self-supervised pre-training of VideoMAE on a mixed dataset of rodent and human videos, followed by few-shot fine-tuning on a very limited set of human epilepsy videos. Under 2/3/4-shot settings, the framework achieves an average balanced accuracy (bacc) of 72.30% and ROC-AUC of 75.58%, outperforming all video understanding baselines.
 
 **[Continual Learning for fMRI-Based Brain Disorder Diagnosis via Functional Connectivity Matrices Generative Replay](forge_continual_learning_for_fmri_based_brain_disorder_diagnosis.md)**
 
@@ -253,10 +165,6 @@ item_total: 99
 **[GIIM: Graph-based Learning of Inter- and Intra-view Dependencies for Multi-view Medical Image Diagnosis](giim_graphbased_learning_of_inter_and_intraview_de.md)**
 
 :   This paper proposes the GIIM framework, which constructs a Multi-Heterogeneous Graph (MHG) with four types of edge relations to simultaneously model the dynamic changes of individual lesions across imaging phases and the spatial associations among different lesions. Four missing-view imputation strategies are designed. GIIM achieves significant improvements over existing methods on three modalities: liver CT, breast mammography, and breast MRI.
-
-**[GLEAM: A Multimodal Imaging Dataset and HAMM for Glaucoma Classification](gleam_a_multimodal_imaging_dataset_and_hamm_for_gl.md)**
-
-:   This paper presents GLEAM, the first publicly available trimodal glaucoma dataset (SLO fundus photography + peripapillary OCT + visual field deviation maps, 1,200 cases, four-stage annotation), along with HAMM, a CNN-based hierarchical attention masked modeling framework. HAMM achieves cross-modal fusion via clinically inspired multi-head modality gating and relational graph attention, attaining a four-class classification accuracy of 81.08%.
 
 **[Human Knowledge Integrated Multi-modal Learning for Single Source Domain Generalization](human_knowledge_integrated_multi-modal_learning_for_single_source_domain_general.md)**
 
@@ -302,14 +210,6 @@ item_total: 99
 
 :   This paper proposes BrainCoDec, a framework that performs fMRI-based visual decoding generalizable to new subjects without any fine-tuning. It employs a two-stage hierarchical in-context learning approach: first estimating encoder parameters for each voxel, then aggregating across voxels via functional inversion. Top-1 retrieval accuracy improves from 3.9% (MindEye2) to 22.7%.
 
-**[MIL-PF: Multiple Instance Learning on Precomputed Features for Mammography Classification](milpf_multiple_instance_learning_on_precomputed_fe.md)**
-
-:   Combining frozen general-purpose foundation encoders (DINOv2 ViT-Giant / MedSigLIP) with a lightweight MIL aggregation head of only ~40k parameters, MIL-PF achieves state-of-the-art performance on large-scale mammography classification benchmarks such as EMBED (AUC 0.916, Spec@Sens=0.9 of 0.762) via a dual-stream aggregation strategy (global mean pooling + local Perceiver cross-attention), training in 5–7 minutes with 35–458× fewer trainable parameters than baselines.
-
-**[Modeling Spatiotemporal Neural Frames for High Resolution Brain Dynamics](modeling_spatiotemporal_neural_frames_for_high_resolution_brain_dynamic.md)**
-
-:   A diffusion Transformer framework conditioned on EEG for fMRI reconstruction is proposed, modeling brain activity as a spatiotemporal sequence of neural frames rather than independent snapshots. The method achieves spatiotemporally consistent fMRI reconstruction at cortical vertex-level resolution, supports intermediate frame interpolation via null-space sampling, and validates the preservation of functional information on downstream visual decoding tasks.
-
 **[Momentum Memory for Knowledge Distillation in Computational Pathology](momentum_memory_for_knowledge_distillation_in_computational_pathology.md)**
 
 :   This paper proposes MoMKD, which replaces conventional batch-local feature alignment with a momentum-updated class-conditional memory bank to enable cross-modal knowledge distillation from genomics to pathology whole-slide images (WSIs), achieving genomics-level predictive capability at inference using only H&E slides.
@@ -318,17 +218,9 @@ item_total: 99
 
 :   This paper presents the first MRI Contrast Enhancement Kinetics World Model (MRI CEKWorld), which leverages spatiotemporal consistency learning (STCL) on sparsely sampled data to generate continuous, high-fidelity contrast-enhanced sequences from non-contrast MRI, addressing the dual challenges of content distortion and temporal discontinuity.
 
-**[Multimodal Classification of Radiation-Induced Contrast Enhancements and Tumor Recurrence Using Deep Learning](multimodal_classification_of_radiation-induced_contrast_enhancements_and_tumor_r.md)**
-
-:   This paper proposes RICE-NET, a multimodal 3D ResNet-18 model that integrates longitudinal MRI data with radiotherapy dose distribution maps to automatically distinguish radiation-induced contrast enhancements (RICE) from tumor recurrence following glioblastoma surgery, achieving F1=0.92 on an independent test set.
-
 **[MultiModalPFN: Extending Prior-Data Fitted Networks for Multimodal Tabular Learning](multimodalpfn_extending_prior-data_fitted_networks_for_multimodal_tabular_learni.md)**
 
 :   This paper proposes MMPFN, the first method to extend the pretrained tabular foundation model TabPFN to multimodal settings (tabular + image/text). By introducing a Multi-head Gated MLP (MGM) and a Cross-Attention Pooler (CAP), MMPFN addresses two failure modes — over-compression of non-tabular embeddings and token-count imbalance — and achieves state-of-the-art performance on both medical and general-purpose datasets.
-
-**[Multiscale Structure-Guided Latent Diffusion for Multimodal MRI Translation](multiscale_structure-guided_latent_diffusion_for_multimodal_mri_translation.md)**
-
-:   This paper proposes MSG-LDM, which introduces a multiscale structure-style disentanglement mechanism into a latent diffusion model. Through high-frequency injection, multimodal structural feature fusion, and structure-aware losses, MSG-LDM achieves multimodal MRI synthesis that preserves anatomical structures and fine-grained details under missing-modality scenarios.
 
 **[MUSE: Harnessing Precise and Diverse Semantics for Few-Shot Whole Slide Image Classification](muse_harnessing_precise_and_diverse_semantics_for_few-shot_whole_slide_image_cla.md)**
 
@@ -346,10 +238,6 @@ item_total: 99
 
 :   NeurINO proposes to initialize a 3D neuron segmentation model by inflating DINOv3 pretrained 2D convolutional kernels into 3D operators, while introducing a Topology-Aware Skeleton Loss (TASL) to explicitly supervise skeleton-level structural fidelity. The method achieves average improvements of 2.9% in ESA, 2.8% in DSA, and 3.8% in PDS across four neuroimaging datasets.
 
-**[Novel Architecture of RPA In Oral Cancer Lesion Detection](novel_architecture_of_rpa_in_oral_cancer_lesion_detection.md)**
-
-:   This work integrates software design patterns (Singleton + Batch Processing) into an EfficientNetV2B1-based oral cancer lesion detection Python pipeline, achieving a 60–100× inference speedup over conventional RPA platforms (UiPath/Automation Anywhere) — 0.06 s per image vs. 2.58 s — while maintaining diagnostic accuracy.
-
 **[OmniFM: Toward Modality-Robust and Task-Agnostic Federated Learning for Heterogeneous Medical Imaging](omnifm_toward_modality-robust_and_task-agnostic_federated_learning_for_heterogen.md)**
 
 :   This paper proposes OmniFM, a modality-robust and task-agnostic federated learning framework that integrates three complementary components—Global Spectral Knowledge Retrieval, Embedding-wise Cross-Attention Fusion, and Prefix–Suffix Spectral Prompting—to support five medical imaging tasks (classification, segmentation, super-resolution, VQA, and multimodal fusion) within a unified FL pipeline, achieving substantial improvements over existing baselines under cross-modal heterogeneous settings.
@@ -358,17 +246,9 @@ item_total: 99
 
 :   OraPO (Oracle-educated GRPO) injects lightweight DPO supervision when GRPO exploration fails, converting zero-reward rollouts into preference pairs. Combined with a FactScore reward, the method achieves SOTA radiology report generation on CheXpert Plus and MIMIC-CXR (F1=0.341/0.357) using only 1K training samples and a 3B model—reducing training data by 2–3 orders of magnitude compared to prior best methods.
 
-**[Parameter-efficient Prompt Tuning and Hierarchical Textual Guidance for Few-shot Whole Slide Image Classification](parameter-efficient_prompt_tuning_and_hierarchical_textual_guidance_for_few-shot.md)**
-
-:   HIPSS introduces two key innovations for few-shot WSI classification: (1) parameter-efficient prompt tuning via Scaling and Shifting Features (SSF) as a replacement for CoOp, substantially reducing the number of trainable parameters; and (2) a soft hierarchical textual guidance strategy that exploits the pretrained knowledge of VLMs and the inherent hierarchical structure of WSIs without hard patch filtering. The method achieves up to 13.8% improvement across three cancer datasets.
-
 **[PGR-Net: Prior-Guided ROI Reasoning Network for Brain Tumor MRI Segmentation](pgr-net_prior-guided_roi_reasoning_network_for_brain_tumor_mri_segmentation.md)**
 
 :   PGR-Net proposes an explicit ROI-aware brain tumor MRI segmentation network that concentrates computational resources on lesion regions via a data-driven spatial prior template set $\{(r_i, c_i)\}$ constructed from the training set, a hierarchical Top-K ROI selection mechanism, and a Window Gaussian-Spatial decay guidance module (WinGS-ROI). With only 8.64M parameters, the method achieves state-of-the-art performance on BraTS-2019/2023 and MSD Task01.
-
-**[Prototype-Based Knowledge Guidance for Fine-Grained Structured Radiology Reporting](prototypebased_knowledge_guidance_for_finegrained.md)**
-
-:   This paper proposes ProtoSR, which employs an LLM-driven pipeline to mine template-aligned visual prototype knowledge bases from 227,000 free-text MIMIC-CXR reports, and introduces a prototype-conditioned late-fusion module that injects retrieved prototype evidence as logit residuals into a hierarchical structured reporting model. ProtoSR achieves state-of-the-art performance on the Rad-ReStruct benchmark, improving L3 fine-grained attribute F1 from 4.3 to 7.4 (+72.1% relative gain).
 
 **[RDFace: A Benchmark Dataset for Rare Disease Facial Image Analysis under Extreme Data Scarcity and Phenotype-Aware Synthetic Generation](rdface_a_benchmark_dataset_for_rare_disease_facial_image_analysis_under_extreme_.md)**
 
@@ -378,26 +258,6 @@ item_total: 99
 
 :   This paper identifies "Lost Layers" in CLIP's text encoder — intermediate layers whose removal paradoxically improves performance under Source-Free Cross-Domain Few-Shot Learning (SF-CDFSL). The authors demonstrate that these layers are not redundant but rather underutilized due to visual domain shift, and propose the VtT model to reclaim this information at both the layer and encoder levels, achieving state-of-the-art performance.
 
-**[Reinforcing the Weakest Links: Modernizing SIENA with Targeted Deep Learning Integration](reinforcing_the_weakest_links_modernizing_siena_wi.md)**
-
-:   This work selectively replaces the classical skull stripping (BET2) and tissue segmentation (FAST) modules in the SIENA longitudinal brain atrophy pipeline with deep learning alternatives (SynthStrip/SynthSeg). Evaluated on two large-scale longitudinal cohorts—ADNI (N=1006) and PPMI (N=310)—the proposed modifications substantially improve the correlation between PBVC and clinical disease progression (correlation coefficients increase by over 100%), while reducing scan-order error by up to 99.1%.
-
-**[RelativeFlow: Taming Medical Image Denoising Learning with Noisy Reference](relativeflow_taming_medical_image_denoising_learning_with_noisy_reference.md)**
-
-:   This paper proposes RelativeFlow, a flow matching-based framework that decomposes the absolute noise-to-clean mapping into relative noisier-to-noisy mappings. By incorporating a consistent transport constraint and a simulation-based velocity field, RelativeFlow learns a unified denoising flow from heterogeneous noisy references, overcoming the reference bias limitation.
-
-**[Residual SODAP: Residual Self-Organizing Domain-Adaptive Prompting with Structural Knowledge Preservation for Continual Learning](residual_sodap_residual_self-organizing_domain-adaptive_prompting_with_structura.md)**
-
-:   This paper proposes the Residual SODAP framework, which jointly addresses prompt-side representation adaptation and classifier-side knowledge preservation through: α-entmax sparse prompt selection with residual aggregation, data-free statistical distillation with pseudo-feature replay, prompt usage pattern drift detection (PUDD), and uncertainty-weighted multi-loss balancing. The framework achieves state-of-the-art performance on medical domain-incremental learning benchmarks.
-
-**[Robust Fair Disease Diagnosis in CT Images](robust_fair_disease_diagnosis_in_ct_images.md)**
-
-:   This paper proposes a dual-objective training framework combining Logit-Adjusted Cross-Entropy (for class imbalance) and CVaR aggregation (for demographic fairness), achieving a gender-averaged macro F1 of 0.8403 with a fairness gap of only 0.0239 on CT disease diagnosis.
-
-**[Robust Multi-Source Covid-19 Detection in CT Images](robust_multi-source_covid-19_detection_in_ct_images.md)**
-
-:   This paper proposes a multi-task learning framework that jointly trains a COVID-19 diagnosis head and a source hospital identification head (supervised by a logit-adjusted loss) on a shared EfficientNet-B7 backbone, encouraging the feature extractor to learn institution-invariant representations. The method achieves an F1 of 0.9098 on a multi-source CT dataset.
-
 **[SD-FSMIS: Adapting Stable Diffusion for Few-Shot Medical Image Segmentation](sd_fsmis_adapting_stable_diffusion_for_few_shot_medical_image_segmentation.md)**
 
 :   This paper proposes SD-FSMIS, a framework that adapts pretrained Stable Diffusion for few-shot medical image segmentation (FSMIS). Through a Support-Query Interaction module and a Visual-to-Text Conditioning Transformer, the framework achieves efficient adaptation, with particularly strong performance in cross-domain scenarios.
@@ -405,10 +265,6 @@ item_total: 99
 **[Semantic Class Distribution Learning for Debiasing Semi-Supervised Medical Image Segmentation](semantic_class_distribution_learning_for_debiasing.md)**
 
 :   This paper proposes SCDL (Semantic Class Distribution Learning), a plug-and-play module that learns structured class-conditional feature distributions and aligns them bidirectionally with learnable class proxies via Class Distribution Bidirectional Alignment (CDBA). Combined with Semantic Anchor Constraints (SAC), which leverage annotated data to guide proxies toward correct semantics, SCDL mitigates both supervision bias and feature representation bias in semi-supervised medical image segmentation (SSMIS), achieving notable improvements on tail-class organs.
-
-**[SemiTooth: a Generalizable Semi-supervised Framework for Multi-Source Tooth Segmentation](semitooth_a_generalizable_semisupervised_framework.md)**
-
-:   This paper proposes SemiTooth, a multi-teacher multi-student semi-supervised framework coupled with a Stricter Weighted-Confidence (SWC) constraint, which effectively leverages multi-source unlabeled data for multi-source CBCT tooth segmentation and achieves cross-source generalization.
 
 **[Solving a Nonlinear Blind Inverse Problem for Tagged MRI with Physics and Deep Generative Priors](solving_a_nonlinear_blind_inverse_problem_for_tagged_mri_with_physics_and_deep_g.md)**
 
@@ -426,10 +282,6 @@ item_total: 99
 
 :   This work introduces SurgBlood, the first laparoscopic surgical video dataset with annotations for both bleeding regions and bleeding points, and proposes BlooDet, a SAM2-based dual-branch bidirectional guidance online detector that achieves joint bleeding region segmentation and bleeding point localization through synergistic optimization of Mask and Point branches.
 
-**[T-Gated Adapter: A Lightweight Temporal Adapter for Vision-Language Medical Segmentation](t-gated_adapter_a_lightweight_temporal_adapter_for_vision-language_medical_segme.md)**
-
-:   This paper proposes a lightweight Temporal Gated Adapter (T-Gated Adapter) that injects adjacent-slice context into the 2D vision-language model CLIPSeg. Trained on only 30 annotated CT volumes, the method achieves an average Dice of 0.704 (+0.206), with consistent improvements on cross-domain zero-shot evaluation and CT-to-MRI cross-modal evaluation.
-
 **[Tell2Adapt: A Unified Framework for Source Free Unsupervised Domain Adaptation via Vision Foundation Model](tell2adapt_a_unified_framework_for_source_free_unsupervised_domain_adaptation_vi.md)**
 
 :   This paper proposes Tell2Adapt, a unified framework that leverages the generalized knowledge of a vision foundation model (BiomedParse) to generate high-quality pseudo labels via Context-Aware Prompt Regularization (CAPR), followed by Visual Plausibility Refinement (VPR) to eliminate anatomically implausible predictions, enabling unified source-free unsupervised domain adaptation for medical image segmentation across 10 domain transfer directions and 22 anatomical targets.
@@ -438,45 +290,21 @@ item_total: 99
 
 :   This paper reveals a previously unreported bias in OOD detection — the "Invisible Gorilla Effect": detection performance is substantially higher when OOD artifacts are visually similar to the model's region of interest (ROI), and degrades significantly when they are dissimilar, with feature-based OOD methods being most severely affected.
 
-**[Transformer-Based Multi-Region Segmentation and Radiomic Analysis of HR-pQCT Imaging for Osteoporosis Classification](transformer-based_multi-region_segmentation_and_radiomic_analysis_of_hr-pqct_ima.md)**
-
-:   This paper proposes a fully automatic multi-region HR-pQCT segmentation framework based on SegFormer, combined with radiomic features and machine learning for binary osteoporosis classification. The key finding is that soft tissue (tendon/fat) features demonstrate greater diagnostic value than traditional bone features.
-
 **[Ultrasound-CLIP: Semantic-Aware Contrastive Pre-training for Ultrasound Image-Text Understanding](ultrasound-clip_semantic-aware_contrastive_pre-training_for_ultrasound_image-tex.md)**
 
 :   The core contribution of this paper is not merely an "ultrasound version of CLIP," but rather a redefinition of the image-text alignment objective around ultrasound-specific anatomical hierarchies and diagnostic attributes. The authors first construct the Ultrasonographic Diagnostic Taxonomy (UDT) and the large-scale US-365K dataset, then explicitly inject clinical relationships from text into contrastive learning via semantic soft labels and an attribute heterogeneous graph, yielding visual-language representations that are more genuinely "ultrasound-aware."
-
-**[Uncertainty-Aware Concept and Motion Segmentation for Semi-Supervised Angiography Videos](uncertainty-aware_concept_and_motion_segmentation_for_semi-supervised_angiograph.md)**
-
-:   This paper proposes SMART, a Teacher-Student semi-supervised framework built upon SAM3's concept-prompt segmentation, integrating progressive confidence regularization and a dual-stream temporal consistency strategy to achieve state-of-the-art vessel segmentation in X-ray coronary angiography videos with minimal annotation.
-
-**[UNIStainNet: Foundation-Model-Guided Virtual Staining of H&E to IHC](unistainnet_foundation-model-guided_virtual_staining_of_he_to_ihc.md)**
-
-:   UNIStainNet is proposed as the first method to inject dense spatial tokens from the frozen pathology foundation model UNI directly into a generator as SPADE modulation signals. Combined with misalignment-aware losses and learnable stain embeddings, a single unified model simultaneously generates four IHC stains (HER2/Ki67/ER/PR), achieving state-of-the-art distributional metrics on the MIST and BCI benchmarks.
 
 **[Unleashing Video Language Models for Fine-grained HRCT Report Generation](unleashing_video_language_models_for_fine-grained_hrct_report_generation.md)**
 
 :   This paper proposes AbSteering, a two-stage framework that adapts general-purpose VideoLMs to HRCT report generation via abnormality-centric Chain-of-Thought reasoning and DPO-based hard-negative contrastive learning, substantially outperforming specialized CT foundation models on clinical efficacy metrics.
 
-**[Unlocking Multi-Site Clinical Data: A Federated Approach to Privacy-First Child Autism Behavior Analysis](unlocking_multi-site_clinical_data_a_federated_approach_to_privacy-first_child_a.md)**
-
-:   This paper proposes the first federated learning framework for children's autism behavior recognition. Through a two-tier privacy strategy—3D skeleton abstraction (identity removal) combined with federated optimization (data never leaves the site)—the proposed approach achieves 87.80% accuracy on the MMASD dataset using the APFL personalized federated method, surpassing local training by 5.2% while satisfying HIPAA/GDPR compliance requirements.
-
 **[Unlocking Positive Transfer in Incrementally Learning Surgical Instruments: A Self-reflection Hierarchical Prompt Framework](unlocking_positive_transfer_in_incrementally_learning_surgical_instruments_a_sel.md)**
 
 :   This paper restructures per-instrument prompt parameters from isolated, independent prompts into a tree-structured hierarchy that progressively decomposes shared knowledge across layers. This design enables new instruments to inherit prior knowledge for rapid learning, while allowing new knowledge to gently revise existing representations, thereby simultaneously improving performance on new, regular, and old classes in surgical instrument class-incremental segmentation.
 
-**[Unsupervised Domain Adaptation with Target-Only Margin Disparity Discrepancy](unsupervised_domain_adaptation_with_target-only_margin_disparity_discrepancy.md)**
-
-:   This paper addresses unsupervised domain adaptation (UDA) for CT→CBCT liver segmentation. It identifies a contradictory term in the classical MDD objective—where the feature extractor is optimized to *maximize* the discrepancy between $f$ and $f'$ on the source domain—and proposes Target-Only MDD, which removes this contradiction and minimizes prediction discrepancy on both domains. The method achieves state-of-the-art UDA performance in both 2D and 3D experiments.
-
 **[Virtual Full-stack Scanning of Brain MRI via Imputing Any Quantised Code](virtual_full-stack_scanning_of_brain_mri_via_imputing_any_quantised_code.md)**
 
 :   This paper proposes CodeBrain, which reformulates the any-to-any brain MRI modality imputation problem as a region-level full-stack quantised code prediction task. Through a two-stage pipeline (scalar quantisation reconstruction + grading-loss code prediction), it achieves unified missing modality synthesis and outperforms five state-of-the-art methods.
-
-**[Weakly Supervised Teacher-Student Framework with Progressive Pseudo-mask Refinement for Gland Segmentation](weakly_supervised_teacher-student_framework_with_progressive_pseudo-mask_refinem.md)**
-
-:   This paper proposes a weakly supervised teacher-student framework that leverages sparse pathological annotations and an EMA-stabilized teacher network to generate progressively refined pseudo-masks. Through confidence filtering, adaptive fusion, and curriculum-guided refinement, the framework achieves efficient segmentation of glandular structures in colorectal cancer pathology images.
 
 **[X-WIN: Building Chest Radiograph World Model via Predictive Sensing](x-win_building_chest_radiograph_world_model_via_predictive_sensing.md)**
 

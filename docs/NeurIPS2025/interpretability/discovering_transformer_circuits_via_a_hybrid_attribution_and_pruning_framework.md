@@ -138,10 +138,10 @@ S-inhibition heads in IOI are responsible for suppressing Name Mover heads from 
 
 ## Rating
 
-- Novelty: ⭐⭐⭐ The combination strategy is straightforward; methodological innovation is limited but effective. The core contribution lies in demonstrating the feasibility of a two-stage approach.
-- Experimental Thoroughness: ⭐⭐ Single model and single task; lack of variance reporting and hyperparameter sensitivity analysis limits persuasiveness.
-- Writing Quality: ⭐⭐⭐⭐ Clear structure, well-motivated presentation, and intuitive IOI case analysis.
-- Overall Recommendation: ⭐⭐⭐ Provides a practical engineering solution for scalability in mechanistic interpretability, but requires broader experimental validation.
+- Novelty: ⭐⭐⭐⭐ The combination strategy is straightforward; methodological innovation is limited but effective. The core contribution lies in demonstrating the feasibility of a two-stage approach.
+- Experimental Thoroughness: ⭐⭐⭐ Single model and single task; lack of variance reporting and hyperparameter sensitivity analysis limits persuasiveness.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear structure, well-motivated presentation, and intuitive IOI case analysis.
+- Overall Recommendation: ⭐⭐⭐⭐ Provides a practical engineering solution for scalability in mechanistic interpretability, but requires broader experimental validation.
 
 <!-- RELATED:START -->
 

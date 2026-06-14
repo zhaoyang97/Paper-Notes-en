@@ -113,10 +113,10 @@ This is a position paper with no quantitative experiments. However, the followin
 - **Insights**: The approach of "redefining the social function of security behaviors" can inspire other domains—for instance, whether adversarial attacks could be viewed as automated security audit tools, or whether red-teaming could be framed as a public safety service.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Exceptionally unique perspective; the inversion of attack–defense concepts for peace-building represents a pioneering interdisciplinary synthesis.
-- Experimental Thoroughness: ⭐ No quantitative experiments whatsoever; only case citations. Understandable for a position paper but remains a weakness.
-- Writing Quality: ⭐⭐⭐ Clear structure and coherent argumentation, but the paper is very short (4 pages of body text) and lacks depth.
-- Value: ⭐⭐⭐ Opens a meaningful new direction for discussion, but substantial follow-up empirical work is needed to validate practical feasibility.
+- Novelty: ⭐⭐⭐⭐⭐ Exceptionally unique perspective; the inversion of attack–defense concepts for peace-building represents a pioneering interdisciplinary synthesis.
+- Experimental Thoroughness: ⭐⭐ No quantitative experiments whatsoever; only case citations. Understandable for a position paper but remains a weakness.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure and coherent argumentation, but the paper is very short (4 pages of body text) and lacks depth.
+- Value: ⭐⭐⭐⭐ Opens a meaningful new direction for discussion, but substantial follow-up empirical work is needed to validate practical feasibility.
 
 ### Overall Assessment
 This is a position paper / short paper (workshop paper in style), whose primary contribution lies not in methodology or experiments but in proposing an entirely new conceptual framework—inverting jailbreaking from a "threat" in the eyes of security researchers to a "tool" in the hands of social activists. This perspectival inversion carries theoretical value in itself, but requires subsequent empirical research to validate feasibility. Within current discussions of LLM safety and platform governance, the decentralized, user-empowerment path merits serious consideration.

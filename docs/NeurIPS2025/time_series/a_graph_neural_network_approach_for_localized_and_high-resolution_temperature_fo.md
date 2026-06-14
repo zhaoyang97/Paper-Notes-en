@@ -113,10 +113,10 @@ Regional meteorological grid points serve as graph nodes (features: temperature,
 - **vs. NWP models**: Traditional NWP is computationally expensive and resolution-limited; the proposed GNN approach is lightweight and achieves higher resolution.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐ — The methodology is relatively basic (GCN+GRU); the embedding scheme is creative but of limited effect.
-- **Experimental Thoroughness**: ⭐⭐⭐ — Three regions are evaluated, but all within the same geographic area; no cross-region transfer experiments.
-- **Writing Quality**: ⭐⭐⭐⭐ — Climate equity motivation is clearly articulated; the paper is concise.
-- **Value**: ⭐⭐⭐ — The research direction is important, but the current work requires further validation and extension.
+- **Novelty**: ⭐⭐⭐⭐ — The methodology is relatively basic (GCN+GRU); the embedding scheme is creative but of limited effect.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Three regions are evaluated, but all within the same geographic area; no cross-region transfer experiments.
+- **Writing Quality**: ⭐⭐⭐⭐⭐ — Climate equity motivation is clearly articulated; the paper is concise.
+- **Value**: ⭐⭐⭐⭐ — The research direction is important, but the current work requires further validation and extension.
 
 <!-- RELATED:START -->
 

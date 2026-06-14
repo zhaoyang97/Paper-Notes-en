@@ -18,7 +18,6 @@ content_hash: 59153d06089d4dd0
 # MonSTeR: a Unified Model for Motion, Scene, Text Retrieval
 
 **Conference**: ICCV 2025
-**arXiv**: 2510.03200  
 **Code**: [GitHub](https://github.com/colloroneluca/MonSTeR)  
 **Area**: Information Retrieval
 **Keywords**: tri-modal retrieval, motion-scene-text, higher-order relationship modeling, contrastive learning, human-scene interaction evaluation

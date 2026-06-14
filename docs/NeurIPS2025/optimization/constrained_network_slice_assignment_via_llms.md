@@ -99,10 +99,10 @@ No training is involved. LLMs operate via zero-shot inference, and the ILP is so
 - The potential of other LLMs (e.g., GPT-4) as semantic engines has not been explored.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐ The LLM+ILP hybrid approach is relatively novel in the networking domain.
-- **Experimental Thoroughness**: ⭐⭐⭐ Synthetic data with limited scale.
-- **Writing Quality**: ⭐⭐⭐ Clear but lacking in depth.
-- **Value**: ⭐⭐⭐ An exploratory work demonstrating the potential of the hybrid approach.
+- **Novelty**: ⭐⭐⭐⭐ The LLM+ILP hybrid approach is relatively novel in the networking domain.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Synthetic data with limited scale.
+- **Writing Quality**: ⭐⭐⭐⭐ Clear but lacking in depth.
+- **Value**: ⭐⭐⭐⭐ An exploratory work demonstrating the potential of the hybrid approach.
 
 <!-- RELATED:START -->
 

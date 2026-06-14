@@ -18,7 +18,6 @@ content_hash: b951da4e92dc1757
 # AIGI-Holmes: Towards Explainable and Generalizable AI-Generated Image Detection via Multimodal Large Language Models
 
 **Conference**: ICCV 2025
-**arXiv**: N/A (CVF OpenAccess)  
 **Code**: [https://github.com/wyczzy/AIGI-Holmes](https://github.com/wyczzy/AIGI-Holmes)  
 **Area**: Multimodal VLM
 **Keywords**: AI-generated image detection, multimodal large language models, explainable detection, direct preference optimization, collaborative decoding

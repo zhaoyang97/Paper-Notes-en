@@ -19,7 +19,6 @@ content_hash: 318ee8370347a687
 # Interpretable Zero-Shot Learning with Locally-Aligned Vision-Language Model
 
 **Conference**: ICCV 2025
-**arXiv**: 2506.23822  
 **Code**: [https://github.com/shiming-chen/LaZSL](https://github.com/shiming-chen/LaZSL)  
 **Area**: Multimodal VLM
 **Keywords**: Zero-shot learning, interpretability, optimal transport, local alignment, CLIP, attributes

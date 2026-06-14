@@ -127,10 +127,10 @@ The methodology of injecting missing capabilities via weak guidance and regulari
 
 ## Rating
 
-- Novelty: ⭐⭐⭐ The fusion idea is intuitive but not groundbreaking; all components are drawn from existing methods.
-- Experimental Thoroughness: ⭐⭐⭐ Evaluation scope is limited; comparisons on standard 3D benchmarks are absent.
-- Writing Quality: ⭐⭐⭐⭐ The analytical sections (CLIP 3D understanding, importance of guidance images) are clearly argued.
-- Value: ⭐⭐⭐ Provides a camera control solution that requires no 3D data, but slow inference limits practical applicability.
+- Novelty: ⭐⭐⭐⭐ The fusion idea is intuitive but not groundbreaking; all components are drawn from existing methods.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Evaluation scope is limited; comparisons on standard 3D benchmarks are absent.
+- Writing Quality: ⭐⭐⭐⭐⭐ The analytical sections (CLIP 3D understanding, importance of guidance images) are clearly argued.
+- Value: ⭐⭐⭐⭐ Provides a camera control solution that requires no 3D data, but slow inference limits practical applicability.
 
 <!-- RELATED:START -->
 

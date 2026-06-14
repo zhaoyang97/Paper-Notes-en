@@ -123,10 +123,10 @@ The KG $\mathcal{G}=(\mathcal{E},\mathcal{R},\mathcal{T})$ is divided into $T$ s
 - **vs. Online EWC / SI**: This paper employs standard EWC without comparing online EWC or Synaptic Intelligence variants, which represent promising directions for extension.
 
 ## Rating
-- Novelty: ⭐⭐⭐ No methodological contribution (direct application of EWC), but the task partitioning effect finding has independent value
-- Experimental Thoroughness: ⭐⭐⭐ Multi-seed experimental design is rigorous, but limited to a single model and dataset
-- Writing Quality: ⭐⭐⭐⭐ Meets empirical paper writing standards with cautious conclusion statements
-- Value: ⭐⭐⭐ Appropriate as a workshop paper; the insight on task partitioning effects has reference value for the field
+- Novelty: ⭐⭐⭐⭐ No methodological contribution (direct application of EWC), but the task partitioning effect finding has independent value
+- Experimental Thoroughness: ⭐⭐⭐⭐ Multi-seed experimental design is rigorous, but limited to a single model and dataset
+- Writing Quality: ⭐⭐⭐⭐⭐ Meets empirical paper writing standards with cautious conclusion statements
+- Value: ⭐⭐⭐⭐ Appropriate as a workshop paper; the insight on task partitioning effects has reference value for the field
 
 <!-- RELATED:START -->
 

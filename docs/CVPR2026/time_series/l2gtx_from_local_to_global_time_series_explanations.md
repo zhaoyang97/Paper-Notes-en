@@ -147,10 +147,10 @@ Evaluated on six UCR time series datasets using two architectures, FCN and LSTM-
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐ Local-to-global aggregation is a novel attempt in time series XAI, though individual components lack methodological breakthroughs.
-- **Experimental Thoroughness**: ⭐⭐⭐ Six datasets, two models, and multiple percentile settings are evaluated, but quantitative comparison with other global methods is absent.
-- **Writing Quality**: ⭐⭐⭐⭐ Structure is clear, formulations are complete, and case studies are convincing.
-- **Value**: ⭐⭐⭐ Addresses a gap in global time series interpretability, though the discussion of application scenarios lacks depth.
+- **Novelty**: ⭐⭐⭐⭐ Local-to-global aggregation is a novel attempt in time series XAI, though individual components lack methodological breakthroughs.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Six datasets, two models, and multiple percentile settings are evaluated, but quantitative comparison with other global methods is absent.
+- **Writing Quality**: ⭐⭐⭐⭐⭐ Structure is clear, formulations are complete, and case studies are convincing.
+- **Value**: ⭐⭐⭐⭐ Addresses a gap in global time series interpretability, though the discussion of application scenarios lacks depth.
 
 <!-- RELATED:START -->
 

@@ -119,10 +119,10 @@ FIFE is an evaluation benchmark rather than a training methodology. All models a
 
 ## Rating
 
-- Novelty: ⭐⭐⭐ The framework extends IFEval; the core innovation lies in the design of financial constraints rather than the methodology itself.
-- Experimental Thoroughness: ⭐⭐⭐ The evaluation scale of 53 models is commendable, but analytical depth is limited.
-- Writing Quality: ⭐⭐⭐ Standard workshop-paper writing—concise but lacking in detail.
-- Value: ⭐⭐⭐⭐ Fills a gap in instruction-following evaluation for the financial domain and holds practical significance for RL in finance.
+- Novelty: ⭐⭐⭐⭐ The framework extends IFEval; the core innovation lies in the design of financial constraints rather than the methodology itself.
+- Experimental Thoroughness: ⭐⭐⭐⭐ The evaluation scale of 53 models is commendable, but analytical depth is limited.
+- Writing Quality: ⭐⭐⭐⭐ Standard workshop-paper writing—concise but lacking in detail.
+- Value: ⭐⭐⭐⭐⭐ Fills a gap in instruction-following evaluation for the financial domain and holds practical significance for RL in finance.
 
 <!-- RELATED:START -->
 

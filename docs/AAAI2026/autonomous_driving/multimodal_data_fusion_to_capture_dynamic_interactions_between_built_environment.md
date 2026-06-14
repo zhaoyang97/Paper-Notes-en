@@ -189,10 +189,10 @@ Although no traditional ablation experiments are conducted, the paper systematic
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — The application of multimodal fusion frameworks to age-friendly urban planning is genuinely novel.
-- Experimental Thoroughness: ⭐⭐ — Only proof-of-concept preliminary results; statistical analysis and large-sample validation are lacking.
-- Writing Quality: ⭐⭐⭐⭐ — Problem motivation and framework description are clear; figures and diagrams are intuitive.
-- Value: ⭐⭐⭐ — The approach is conceptually inspiring but practical utility remains to be validated; leans more toward a position paper.
+- Novelty: ⭐⭐⭐⭐⭐ — The application of multimodal fusion frameworks to age-friendly urban planning is genuinely novel.
+- Experimental Thoroughness: ⭐⭐⭐ — Only proof-of-concept preliminary results; statistical analysis and large-sample validation are lacking.
+- Writing Quality: ⭐⭐⭐⭐⭐ — Problem motivation and framework description are clear; figures and diagrams are intuitive.
+- Value: ⭐⭐⭐⭐ — The approach is conceptually inspiring but practical utility remains to be validated; leans more toward a position paper.
 
 <!-- RELATED:START -->
 

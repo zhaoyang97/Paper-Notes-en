@@ -18,7 +18,6 @@ content_hash: 91eefb23497c4ceb
 # AcZeroTS: Active Learning for Zero-shot Tissue Segmentation in Pathology Images
 
 **Conference**: ICCV 2025 (pp. 23508-23518)  
-**arXiv**: No arXiv version  
 **CVF**: [Link](https://openaccess.thecvf.com/content/ICCV2025/html/Tang_AcZeroTS_Active_Learning_for_Zero-shot_Tissue_Segmentation_in_Pathology_Images_ICCV_2025_paper.html)  
 **Authors**: Jiao Tang, Junjie Zhou, Bo Qian, Peng Wan, Yingli Zuo, Wei Shao, Daoqiang Zhang  
 **Code**: Unavailable  

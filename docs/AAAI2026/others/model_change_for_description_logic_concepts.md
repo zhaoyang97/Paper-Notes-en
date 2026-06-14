@@ -100,10 +100,10 @@ For **EL** (supporting only existential quantification and conjunction): positiv
 - This paper provides a theoretical foundation for knowledge graph evolution and ontology version management.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ First formalization of model change as operations on DL concepts; irreducibility of revision is a novel finding.
-- Experimental Thoroughness: ⭐⭐ Purely theoretical; no empirical validation.
-- Writing Quality: ⭐⭐⭐⭐ Logically rigorous with clear formal definitions.
-- Value: ⭐⭐⭐ Solid theoretical contribution, though with a relatively narrow application scope.
+- Novelty: ⭐⭐⭐⭐⭐ First formalization of model change as operations on DL concepts; irreducibility of revision is a novel finding.
+- Experimental Thoroughness: ⭐⭐⭐ Purely theoretical; no empirical validation.
+- Writing Quality: ⭐⭐⭐⭐⭐ Logically rigorous with clear formal definitions.
+- Value: ⭐⭐⭐⭐ Solid theoretical contribution, though with a relatively narrow application scope.
 
 <!-- RELATED:START -->
 

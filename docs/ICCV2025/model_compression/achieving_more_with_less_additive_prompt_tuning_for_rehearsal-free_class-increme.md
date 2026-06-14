@@ -18,7 +18,6 @@ content_hash: b0522e06cfb60238
 # Achieving More with Less: Additive Prompt Tuning for Rehearsal-Free Class-Incremental Learning
 
 **Conference**: ICCV 2025
-**arXiv**: N/A (CVF OpenAccess)  
 **Code**: Unavailable  
 **Area**: Model Compression
 **Keywords**: Class-Incremental Learning, Prompt Learning, Parameter-Efficient Fine-Tuning, Catastrophic Forgetting, Vision Transformer

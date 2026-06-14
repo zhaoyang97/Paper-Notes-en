@@ -108,10 +108,10 @@ This is a purely theoretical paper with no experimental data. The core conclusio
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ Reducing law design to vertex cover and introducing the gap-free law concept are both original contributions.
-- Experimental Thoroughness: ⭐⭐ A purely theoretical work with no empirical validation, though the proofs are complete.
-- Writing Quality: ⭐⭐⭐⭐ Motivation is clearly introduced (a factory pollution example runs throughout the paper); mathematical presentation is rigorous.
-- Value: ⭐⭐⭐ Theoretically solid but with limited application scope; the one-shot assumption constrains practical utility.
+- Novelty: ⭐⭐⭐⭐⭐ Reducing law design to vertex cover and introducing the gap-free law concept are both original contributions.
+- Experimental Thoroughness: ⭐⭐⭐ A purely theoretical work with no empirical validation, though the proofs are complete.
+- Writing Quality: ⭐⭐⭐⭐⭐ Motivation is clearly introduced (a factory pollution example runs throughout the paper); mathematical presentation is rigorous.
+- Value: ⭐⭐⭐⭐ Theoretically solid but with limited application scope; the one-shot assumption constrains practical utility.
 
 <!-- RELATED:START -->
 

@@ -117,10 +117,10 @@ The proposed system achieves SingMOS (perceptual quality) on par with the best d
 - **vs. ESPNet-SpeechLM**: The proposed method builds on its framework and demonstrates its multi-task extensibility.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐ The idea of adapting SLMs to SVS is interesting, but the technical contribution is incremental.
-- **Experimental Thoroughness**: ⭐⭐⭐ Ablations are thorough, but evaluation is limited to a single dataset.
-- **Writing Quality**: ⭐⭐⭐⭐ Concise and clear (workshop paper).
-- **Value**: ⭐⭐⭐ Validates cross-task generalization of SLMs and offers insights for low-resource speech generation.
+- **Novelty**: ⭐⭐⭐⭐ The idea of adapting SLMs to SVS is interesting, but the technical contribution is incremental.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Ablations are thorough, but evaluation is limited to a single dataset.
+- **Writing Quality**: ⭐⭐⭐⭐⭐ Concise and clear (workshop paper).
+- **Value**: ⭐⭐⭐⭐ Validates cross-task generalization of SLMs and offers insights for low-resource speech generation.
 
 <!-- RELATED:START -->
 

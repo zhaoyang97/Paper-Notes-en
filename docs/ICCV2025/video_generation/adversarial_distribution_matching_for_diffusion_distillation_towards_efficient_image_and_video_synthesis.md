@@ -18,7 +18,6 @@ content_hash: ba00090d3da3df30
 # Adversarial Distribution Matching for Diffusion Distillation Towards Efficient Image and Video Synthesis
 
 **Conference**: ICCV 2025
-**arXiv**: N/A  
 **Code**: N/A  
 **Area**: Image/Video Generation / Diffusion Model Distillation
 **Keywords**: diffusion distillation, adversarial training, distribution matching, one-step generation, score distillation

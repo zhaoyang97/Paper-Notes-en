@@ -121,10 +121,10 @@ Experiments are conducted on a network of 4 quaternionic neurons (16 real-valued
 - **vs. Quaternion Supervised Neural Networks (QSNN)**: Standard QSNNs perform static input-output mappings without continuous-time stability guarantees.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The combination of quaternion algebra, Hopfield networks, supervised learning, and periodic projection is genuinely novel, with rigorous theoretical derivations.
-- Experimental Thoroughness: ⭐⭐ Experiments are conducted at too small a scale (4 neurons), with no quantitative comparison against baselines and only a prototype robotic application.
-- Writing Quality: ⭐⭐⭐⭐ Mathematical derivations are clear, though the prose tends toward verbosity.
-- Value: ⭐⭐⭐ The theoretical foundation is solid, but practical value requires validation at larger scales.
+- Novelty: ⭐⭐⭐⭐⭐ The combination of quaternion algebra, Hopfield networks, supervised learning, and periodic projection is genuinely novel, with rigorous theoretical derivations.
+- Experimental Thoroughness: ⭐⭐⭐ Experiments are conducted at too small a scale (4 neurons), with no quantitative comparison against baselines and only a prototype robotic application.
+- Writing Quality: ⭐⭐⭐⭐⭐ Mathematical derivations are clear, though the prose tends toward verbosity.
+- Value: ⭐⭐⭐⭐ The theoretical foundation is solid, but practical value requires validation at larger scales.
 
 <!-- RELATED:START -->
 

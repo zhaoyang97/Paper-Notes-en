@@ -19,7 +19,6 @@ content_hash: a8147dead295d6db
 # ShortV: Efficient Multimodal Large Language Models by Freezing Visual Tokens in Ineffective Layers
 
 **Conference**: ICCV 2025
-**arXiv**: 2504.00502  
 **Code**: [https://github.com/icip-cas/ShortV](https://github.com/icip-cas/ShortV)  
 **Area**: Multimodal VLM
 **Keywords**: multimodal large language models, inference efficiency, layer redundancy, visual token freezing, training-free, MLLM acceleration

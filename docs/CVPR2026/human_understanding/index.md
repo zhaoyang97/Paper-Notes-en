@@ -1,19 +1,19 @@
 ---
 title: >-
-  CVPR2026 Human Understanding Papers · 63 Notes
+  CVPR2026 Human Understanding Papers · 53 Notes
 description: >-
-  63 CVPR2026 papers in the Human Understanding area, covering Face & Gaze, Human Pose, Multimodal/VLM, Avatars, Agents, Alignment/RLHF and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  53 CVPR2026 papers in the Human Understanding area, covering Face & Gaze, Avatars, Human Pose, Agents, Multimodal/VLM, Adversarial Robustness and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "CVPR2026"
   - "Human Understanding"
   - "AI paper notes"
   - "paper summaries"
   - "Face & Gaze"
-  - "Human Pose"
-  - "Multimodal/VLM"
   - "Avatars"
+  - "Human Pose"
   - "Agents"
-  - "Alignment/RLHF"
+  - "Multimodal/VLM"
+  - "Adversarial Robustness"
 item_list:
   - u: "a_two_stage_dual_modality_model_for_facial_expression_recognition/"
     t: "A Two-Stage Dual-Modality Model for Facial Expression Recognition"
@@ -25,24 +25,14 @@ item_list:
     t: "AssistMimic: Physics-Grounded Humanoid Assistance via Multi-Agent RL"
   - u: "avatar_reinforcement_learning_to_see_hear_and_reason_over_video/"
     t: "AVATAR: Reinforcement Learning to See, Hear, and Reason Over Video"
-  - u: "beyond_the_fold_quantifying_split-level_noise_and_the_case_for_leave-one-dataset/"
-    t: "Beyond the Fold: Quantifying Split-Level Noise and the Case for Leave-One-Dataset-Out AU Evaluation"
-  - u: "brother_behavioral_recognition_optimized_through_heterogeneous_ensemble_regulari/"
-    t: "BROTHER: Behavioral Recognition Optimized Through Heterogeneous Ensemble Regularization for Ambivalence and Hesitancy"
   - u: "cigpose_causal_intervention_graph_neural_network_for_whole-body_pose_estimation/"
     t: "CIGPose: Causal Intervention Graph Neural Network for Whole-Body Pose Estimation"
   - u: "cog_confidence-aware_optimal_geometric_correspondence_for_unsupervised_single-re/"
     t: "COG: Confidence-aware Optimal Geometric Correspondence for Unsupervised Single-reference Novel Object Pose Estimation"
   - u: "e-3dpsm_a_state_machine_for_event-based_egocentric_3d_human_pose_estimation/"
     t: "E-3DPSM: A State Machine for Event-Based Egocentric 3D Human Pose Estimation"
-  - u: "editing_physiological_signals_in_videos_using_latent_representations/"
-    t: "Editing Physiological Signals in Videos Using Latent Representations"
-  - u: "efficient_onboard_spacecraft_pose_estimation_with_event_cameras_and_neuromorphic_hardware/"
-    t: "Efficient Onboard Spacecraft Pose Estimation with Event Cameras and Neuromorphic Hardware"
   - u: "egoposeformer_v2_accurate_egocentric_human_motion_estimation_for_arvr/"
     t: "EgoPoseFormer v2: Accurate Egocentric Human Motion Estimation for AR/VR"
-  - u: "face_time_traveller_travel_through_ages_without_losing_identity/"
-    t: "Face Time Traveller: Travel Through Ages Without Losing Identity"
   - u: "facecot_cot_reasoning_face_anti_spoofing/"
     t: "FaceCoT: Chain-of-Thought Reasoning in MLLMs for Face Anti-Spoofing"
   - u: "flexavatar_learning_complete_3d_head_avatars_with_partial_supervision/"
@@ -51,8 +41,6 @@ item_list:
     t: "A2P: From 2D Alignment to 3D Plausibility for Occlusion-Robust Two-Hand Reconstruction"
   - u: "from_intuition_to_investigation_a_tool-augmented_reasoning_mllm_framework_for_ge/"
     t: "From Intuition to Investigation: A Tool-Augmented Reasoning MLLM Framework for Generalizable Face Anti-Spoofing"
-  - u: "fsmc-pose_frequency_and_spatial_fusion_with_multiscale_selfcalibration_for_cattle/"
-    t: "FSMC-Pose: Frequency and Spatial Fusion with Multiscale Self-calibration for Cattle Mounting Pose Estimation"
   - u: "fusionagent_a_multimodal_agent_with_dynamic_model_selection_for_human_recognitio/"
     t: "FusionAgent: A Multimodal Agent with Dynamic Model Selection for Human Recognition"
   - u: "gazeonce360_fisheye-based_360_multi-person_gaze_estimation_with_global-local_fea/"
@@ -69,23 +57,35 @@ item_list:
     t: "IDperturb: Enhancing Variation in Synthetic Face Generation via Angular Perturbations"
   - u: "lamogen_language_to_motion_generation_through_llm-guided_symbolic_inference/"
     t: "LaMoGen: Language to Motion Generation Through LLM-Guided Symbolic Inference"
-  - u: "lasca_language-conditioned_scalable_modelling_of_affective_dynamics/"
-    t: "LaScA: Language-Conditioned Scalable Modelling of Affective Dynamics"
   - u: "lca_large-scale_codec_avatars_the_unreasonable_effectiveness_of_large-scale_avata/"
     t: "LCA: Large-scale Codec Avatars - The Unreasonable Effectiveness of Large-scale Avatar Pretraining"
   - u: "matched_crisp_edge_detection_using_end-to-end_matching-based_supervision/"
     t: "MatchED: Crisp Edge Detection Using End-to-End, Matching-based Supervision"
-item_total: 63
+  - u: "miburi_towards_expressive_interactive_gesture_synthesis/"
+    t: "Miburi: Towards Expressive Interactive Gesture Synthesis"
+  - u: "mmgait_multi_modal_gait_recognition/"
+    t: "MMGait: Towards Multi-Modal Gait Recognition"
+  - u: "mobile_vton_ondevice_virtual_tryon/"
+    t: "Mobile-VTON: High-Fidelity On-Device Virtual Try-On"
+  - u: "molingo_motion-language_alignment_for_text-to-motion_generation/"
+    t: "MoLingo: Motion-Language Alignment for Text-to-Human Motion Generation"
+  - u: "next-scale_autoregressive_models_for_text-to-motion_generation/"
+    t: "Next-Scale Autoregressive Models for Text-to-Motion Generation"
+  - u: "omg-bench_a_new_challenging_benchmark_for_skeleton-based_online_micro_hand_gestu/"
+    t: "OMG-Bench: A New Challenging Benchmark for Skeleton-based Online Micro Hand Gesture Recognition"
+  - u: "openfs_multi-hand-capable_fingerspelling_recognition_with_implicit_signing-hand_/"
+    t: "OpenFS: Multi-Hand-Capable Fingerspelling Recognition with Implicit Signing-Hand Detection and Frame-Wise Letter-Conditioned Synthesis"
+item_total: 53
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->
 # 🧑 Human Understanding
 
-**📷 CVPR2026** · **63** paper notes
+**📷 CVPR2026** · **53** paper notes
 
 📌 **Same area in other venues:** [🧪 ICML2026 (4)](../../ICML2026/human_understanding/index.md) · [💬 ACL2026 (3)](../../ACL2026/human_understanding/index.md) · [🔬 ICLR2026 (8)](../../ICLR2026/human_understanding/index.md) · [🤖 AAAI2026 (20)](../../AAAI2026/human_understanding/index.md) · [🧠 NeurIPS2025 (21)](../../NeurIPS2025/human_understanding/index.md) · [📹 ICCV2025 (41)](../../ICCV2025/human_understanding/index.md)
 
-🔥 **Top topics:** Face & Gaze ×8 · Human Pose ×6 · Multimodal/VLM ×5 · Avatars ×4 · Agents ×3
+🔥 **Top topics:** Face & Gaze ×7 · Avatars ×4 · Human Pose ×4 · Agents ×3 · Multimodal/VLM ×3
 
 **[A Two-Stage Dual-Modality Model for Facial Expression Recognition](a_two_stage_dual_modality_model_for_facial_expression_recognition.md)**
 
@@ -107,14 +107,6 @@ item_total: 63
 
 :   This paper proposes AVATAR, a framework that improves GRPO through two core components—an off-policy training architecture (hierarchical replay buffer) and Temporal Advantage Shaping (TAS, which applies U-shaped weighting to emphasize the beginning and end of the reasoning chain)—to address data inefficiency, advantage collapse, and uniform credit assignment, achieving significant gains over the GRPO baseline on audio-visual reasoning benchmarks.
 
-**[Beyond the Fold: Quantifying Split-Level Noise and the Case for Leave-One-Dataset-Out AU Evaluation](beyond_the_fold_quantifying_split-level_noise_and_the_case_for_leave-one-dataset.md)**
-
-:   This paper reveals that subject-independent cross-validation in facial AU detection introduces a random noise floor of ±0.065 F1 merely from varying subject-to-fold assignments, rendering many claimed SOTA improvements statistically indistinguishable. The authors propose the Leave-One-Dataset-Out (LODO) protocol as a more stable and reliable alternative evaluation scheme.
-
-**[BROTHER: Behavioral Recognition Optimized Through Heterogeneous Ensemble Regularization for Ambivalence and Hesitancy](brother_behavioral_recognition_optimized_through_heterogeneous_ensemble_regulari.md)**
-
-:   This paper proposes a heavily regularized multimodal fusion pipeline that achieves robust video-level recognition of Ambivalence/Hesitancy (A/H) behaviors in naturalistic settings. The framework employs a heterogeneous classifier committee across four modalities — visual (SigLip2), audio (HuBERT), text (F2LLM), and statistical features — combined with PSO-based hard-voting ensemble regularized by a train-validation gap penalty, achieving Macro F1 = 0.7465 on the ABAW10 test set.
-
 **[CIGPose: Causal Intervention Graph Neural Network for Whole-Body Pose Estimation](cigpose_causal_intervention_graph_neural_network_for_whole-body_pose_estimation.md)**
 
 :   This paper proposes CIGPose, a causal intervention graph-based pose estimation framework that employs a structural causal model (SCM) to identify visual-context confounders, leverages prediction uncertainty to localize confounded keypoints and replaces their embeddings with learned context-free canonical representations, and subsequently models skeletal anatomical constraints via a hierarchical graph neural network. CIGPose achieves a new state of the art of 67.0% AP on COCO-WholeBody.
@@ -127,21 +119,9 @@ item_total: 63
 
 :   This paper proposes E-3DPSM, an event-camera-based egocentric 3D human pose state machine that formulates pose estimation as a continuous-time state evolution process. It integrates bidirectional SSM temporal modeling with a learnable Kalman-style fusion module to combine direct and incremental pose predictions, achieving real-time inference at 80Hz with a 19% reduction in MPJPE and a 2.7× improvement in temporal stability.
 
-**[Editing Physiological Signals in Videos Using Latent Representations](editing_physiological_signals_in_videos_using_latent_representations.md)**
-
-:   This paper proposes PhysioLatent, a framework that encodes input facial videos into the latent space of a 3D VAE, fuses the resulting representation with target heart rate CLIP text embeddings, captures rPPG temporal coherence via AdaLN-enhanced spatiotemporal fusion layers, and employs a FiLM-modulated decoder with a fine-tuned output layer to achieve precise heart rate modification. The method attains a heart rate modulation MAE of 10 bpm while preserving visual quality at PSNR 38.96 dB / SSIM 0.98.
-
-**[Efficient Onboard Spacecraft Pose Estimation with Event Cameras and Neuromorphic Hardware](efficient_onboard_spacecraft_pose_estimation_with_event_cameras_and_neuromorphic_hardware.md)**
-
-:   The first end-to-end 6-DoF spacecraft pose estimation system deployed on BrainChip Akida neuromorphic hardware, exploring accuracy–efficiency trade-offs among event camera representations and quantization-aware training for low-power onboard deployment.
-
 **[EgoPoseFormer v2: Accurate Egocentric Human Motion Estimation for AR/VR](egoposeformer_v2_accurate_egocentric_human_motion_estimation_for_arvr.md)**
 
 :   This paper proposes EgoPoseFormer v2 (EPFv2), which achieves state-of-the-art accuracy in egocentric 3D human motion estimation on the EgoBody3M benchmark (MPJPE 4.02 cm, 15–22% improvement over its predecessor) at 0.8 ms GPU latency. The system combines an end-to-end Transformer architecture (single global query token + causal temporal attention + conditioned multi-view cross-attention) with an uncertainty-distillation-based auto-labeling system.
-
-**[Face Time Traveller: Travel Through Ages Without Losing Identity](face_time_traveller_travel_through_ages_without_losing_identity.md)**
-
-:   This paper proposes FaceTT, a framework that achieves high-fidelity, identity-consistent face age transformation via three core modules—face-attribute-aware prompt refinement, angular inversion, and adaptive attention control (AAC)—surpassing existing methods across multiple benchmarks.
 
 **[FaceCoT: Chain-of-Thought Reasoning in MLLMs for Face Anti-Spoofing](facecot_cot_reasoning_face_anti_spoofing.md)**
 
@@ -158,10 +138,6 @@ item_total: 63
 **[From Intuition to Investigation: A Tool-Augmented Reasoning MLLM Framework for Generalizable Face Anti-Spoofing](from_intuition_to_investigation_a_tool-augmented_reasoning_mllm_framework_for_ge.md)**
 
 :   This paper proposes TAR-FAS, a framework that reformulates Face Anti-Spoofing (FAS) as a Chain-of-Thought with Visual Tools (CoT-VT) paradigm for the first time, enabling MLLMs to adaptively invoke external visual tools (LBP/FFT/HOG, etc.) during inference—upgrading from "intuitive judgment" to "fine-grained investigation"—achieving SOTA on the 1-to-11 cross-domain protocol.
-
-**[FSMC-Pose: Frequency and Spatial Fusion with Multiscale Self-calibration for Cattle Mounting Pose Estimation](fsmc-pose_frequency_and_spatial_fusion_with_multiscale_selfcalibration_for_cattle.md)**
-
-:   FSMC-Pose proposes a lightweight top-down framework for cattle mounting pose estimation, comprising the frequency-spatial fusion backbone CattleMountNet (which employs wavelet transform and Gaussian filtering in the SFEBlock for foreground-background separation, and multi-scale dilated convolutions in the RABlock for context aggregation) and the multiscale self-calibration head SC2Head (spatial-channel co-calibration with a self-calibration branch to correct structural displacement). The paper also introduces MOUNT-Cattle, the first dataset for cattle mounting behavior, achieving 89% AP in complex group-housing environments at extremely low computational cost (4.41 GFLOPs, 2.698M parameters).
 
 **[FusionAgent: A Multimodal Agent with Dynamic Model Selection for Human Recognition](fusionagent_a_multimodal_agent_with_dynamic_model_selection_for_human_recognitio.md)**
 
@@ -194,10 +170,6 @@ item_total: 63
 **[LaMoGen: Language to Motion Generation Through LLM-Guided Symbolic Inference](lamogen_language_to_motion_generation_through_llm-guided_symbolic_inference.md)**
 
 :   This paper proposes LabanLite, a symbolic motion representation, and the LaMoGen framework, which for the first time enables LLMs to autonomously compose motion sequences through interpretable Laban symbol reasoning, surpassing conventional text-motion joint embedding methods in temporal precision and controllability.
-
-**[LaScA: Language-Conditioned Scalable Modelling of Affective Dynamics](lasca_language-conditioned_scalable_modelling_of_affective_dynamics.md)**
-
-:   This paper proposes the LaScA framework, which leverages large language models to generate a deterministic semantic lexicon as affective priors for handcrafted facial and acoustic features. A frozen sentence encoder produces semantic embeddings that are fused with the raw features. LaScA consistently outperforms feature-only baselines in affective dynamics prediction on the Aff-Wild2 and SEWA datasets, and matches or surpasses end-to-end deep models in terms of consistency, efficiency, and interpretability.
 
 **[LCA: Large-scale Codec Avatars - The Unreasonable Effectiveness of Large-scale Avatar Pretraining](lca_large-scale_codec_avatars_the_unreasonable_effectiveness_of_large-scale_avata.md)**
 
@@ -243,10 +215,6 @@ item_total: 63
 
 :   Starting from the Navier-Stokes equations, this work derives through rigorous mathematical analysis that rPPG pulse signals obey a second-order damped harmonic oscillator model whose discrete solution is equivalent to a causal convolution operator, thereby providing a first-principles justification for the TCN architecture. The resulting PHASE-Net, with only 0.29M parameters, achieves state-of-the-art performance across multiple datasets.
 
-**[PhysMoDPO: Physically-Plausible Humanoid Motion with Preference Optimization](physmodpo_physicallyplausible_humanoid_motion_with.md)**
-
-:   PhysMoDPO integrates a pretrained whole-body controller (WBC/DeepMimic) into the post-training pipeline of a diffusion-based motion generator. By automatically constructing preference pairs via physical simulation and fine-tuning with DPO, generated motions—after WBC execution—simultaneously satisfy physical plausibility and text/spatial condition faithfulness, enabling zero-shot transfer to the Unitree G1 real robot.
-
 **[RAM: Recover Any 3D Human Motion in-the-Wild](ram_recover_any_3d_human_motion_in-the-wild.md)**
 
 :   RAM proposes a unified multi-person 3D motion recovery framework integrating a motion-aware semantic tracker SegFollow (built on SAM2 with adaptive Kalman filtering), a memory-augmented temporal human mesh recovery module T-HMR, a lightweight motion predictor, and a gated combiner. It achieves state-of-the-art zero-shot tracking stability and 3D accuracy on benchmarks including PoseTrack and 3DPW, while running 2–3× faster than prior methods.
@@ -291,17 +259,9 @@ item_total: 63
 
 :   This paper proposes Structguard, which leverages semantic anchors to preserve the semantic relational structure among retained instances during the forgetting process, thereby preventing structural collapse. The method achieves average improvements of 32.9% / 19.3% / 22.5% across image classification, face recognition, and retrieval tasks.
 
-**[SVC 2026: The Second Multimodal Deception Detection Challenge and the First Domain Generalized Remote Physiological Measurement Challenge](svc_2026_the_second_multimodal_deception_detection_challenge_and_the_first_domai.md)**
-
-:   This paper organizes the SVC 2026 challenge, comprising two tracks — cross-domain multimodal deception detection and domain-generalized remote physiological measurement — providing a unified evaluation framework and baseline models, with 22 teams submitting final results.
-
 **[Talking Together: Synthesizing Co-Located 3D Conversations from Audio](talking_together_synthesizing_co-located_3d_conversations_from_audio.md)**
 
 :   This work presents the first method for generating complete facial animations of two participants **sharing the same 3D physical space** from a single mixed audio stream. It introduces a dual-stream diffusion architecture (shared U-Net + cross-attention), a two-stage mixed-data training strategy, LLM-driven text-to-spatial-layout control, and an auxiliary eye gaze loss to synthesize natural mutual gaze, head turning, and spatially-aware dyadic 3D conversation animations.
-
-**[Team LEYA in 10th ABAW Competition: Multimodal Ambivalence/Hesitancy Recognition Approach](team_leya_in_10th_abaw_competition_multimodal_ambi.md)**
-
-:   A four-modality fusion pipeline (scene VideoMAE + face EfficientNetB0 + audio Wav2Vec2.0/Mamba + text EmotionDistilRoBERTa) is proposed. Each modality embedding is projected into a shared 128-dimensional space via a prototype-augmented Transformer fusion module and regularized with a prototype classification auxiliary loss. A 5-model ensemble achieves **71.43% Macro F1** on the final test set of the BAH corpus, substantially outperforming all unimodal baselines.
 
 **[TeamHOI: Learning a Unified Policy for Cooperative Human-Object Interactions with Any Team Size](teamhoi_learning_a_unified_policy_for_cooperative_human-object_interactions_with.md)**
 

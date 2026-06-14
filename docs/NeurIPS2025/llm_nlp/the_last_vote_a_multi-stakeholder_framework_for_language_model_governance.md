@@ -144,10 +144,10 @@ Comparison of ISS aggregation methods:
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ The risk taxonomy and ISS design are innovative, though governance framework contributions are inherently difficult to validate.
-- **Experimental Thoroughness**: ⭐⭐ As a policy paper, no experimental validation is provided; only a retrospective analysis plan is proposed.
-- **Writing Quality**: ⭐⭐⭐⭐ The framework is clearly organized with complete mathematical formalization, though certain sections are somewhat verbose.
-- **Value**: ⭐⭐⭐ Provides a systematic governance thinking framework, but practical operationalizability and validation pathways require substantial follow-on work.
+- **Novelty**: ⭐⭐⭐⭐⭐ The risk taxonomy and ISS design are innovative, though governance framework contributions are inherently difficult to validate.
+- **Experimental Thoroughness**: ⭐⭐⭐ As a policy paper, no experimental validation is provided; only a retrospective analysis plan is proposed.
+- **Writing Quality**: ⭐⭐⭐⭐⭐ The framework is clearly organized with complete mathematical formalization, though certain sections are somewhat verbose.
+- **Value**: ⭐⭐⭐⭐ Provides a systematic governance thinking framework, but practical operationalizability and validation pathways require substantial follow-on work.
 
 <!-- RELATED:START -->
 

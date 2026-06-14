@@ -18,7 +18,6 @@ content_hash: 355ca29af725f0d9
 # Adaptive Routing of Text-to-Image Generation Requests Between Large Cloud Models and Small Edge Models
 
 **Conference**: ICCV 2025
-**arXiv**: N/A (CVF OpenAccess)  
 **Code**: None  
 **Area**: Image Generation
 **Keywords**: Text-to-image generation, model routing, edge-cloud collaboration, mixture of experts, multi-metric quality assessment

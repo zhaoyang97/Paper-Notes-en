@@ -179,10 +179,10 @@ This paper does not involve training a new model; it is a post-hoc analysis fram
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐ — The V-Goal radical term design offers some novelty, but the overall framework is largely a combination of existing concepts.
-- **Experimental Thoroughness**: ⭐⭐⭐ — Environments are overly simple; large-scale validation is lacking.
-- **Writing Quality**: ⭐⭐⭐⭐ — Motivation is clearly articulated, and the counterfactual validation visualizations are intuitive.
-- **Value**: ⭐⭐⭐ — Provides a useful tool for the XRL community, though practical deployment remains some distance away.
+- **Novelty**: ⭐⭐⭐⭐ — The V-Goal radical term design offers some novelty, but the overall framework is largely a combination of existing concepts.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Environments are overly simple; large-scale validation is lacking.
+- **Writing Quality**: ⭐⭐⭐⭐⭐ — Motivation is clearly articulated, and the counterfactual validation visualizations are intuitive.
+- **Value**: ⭐⭐⭐⭐ — Provides a useful tool for the XRL community, though practical deployment remains some distance away.
 
 <!-- RELATED:START -->
 

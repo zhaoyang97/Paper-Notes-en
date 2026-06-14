@@ -83,7 +83,7 @@ item_total: 85
 
 **🔬 ICLR2026** · **85** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (99)](../../ICML2026/multimodal_vlm/index.md) · [💬 ACL2026 (94)](../../ACL2026/multimodal_vlm/index.md) · [📷 CVPR2026 (210)](../../CVPR2026/multimodal_vlm/index.md) · [🤖 AAAI2026 (84)](../../AAAI2026/multimodal_vlm/index.md) · [🧠 NeurIPS2025 (137)](../../NeurIPS2025/multimodal_vlm/index.md) · [📹 ICCV2025 (128)](../../ICCV2025/multimodal_vlm/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (99)](../../ICML2026/multimodal_vlm/index.md) · [💬 ACL2026 (94)](../../ACL2026/multimodal_vlm/index.md) · [📷 CVPR2026 (190)](../../CVPR2026/multimodal_vlm/index.md) · [🤖 AAAI2026 (84)](../../AAAI2026/multimodal_vlm/index.md) · [🧠 NeurIPS2025 (137)](../../NeurIPS2025/multimodal_vlm/index.md) · [📹 ICCV2025 (128)](../../ICCV2025/multimodal_vlm/index.md)
 
 🔥 **Top topics:** Multimodal/VLM ×40 · Reasoning ×20 · Robotics ×4 · Agents ×3 · Model Compression ×3
 

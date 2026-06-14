@@ -115,10 +115,10 @@ The core distinction from Fuzzy SD is that FSD applies fuzzy relaxation over a s
 - Integration with quantized inference (e.g., GPTQ/AWQ) is promising: the qualifier could be a quantized version of the target rather than an independent model, relaxing the model-family constraint.
 
 ## Rating
-- Novelty: ⭐⭐⭐ The three-model cascade idea is intuitively natural; the contribution lies in rigorously extending Fuzzy SD to a multi-stage setting and analyzing the conditions for speedup.
-- Experimental Thoroughness: ⭐⭐ Only one dataset (CSQA) and one model family (LLaMA) are evaluated; the hyperparameter ablations are detailed but task diversity is insufficient.
-- Writing Quality: ⭐⭐⭐⭐ The mathematical derivations are clear, the motivation–method–experiment logic chain is coherent, and the entropy gradient analysis enhances persuasiveness.
-- Value: ⭐⭐⭐ The method has practical value as a plug-and-play acceleration scheme, but its impact may be limited by the same-family model requirement and narrow evaluation scope.
+- Novelty: ⭐⭐⭐⭐ The three-model cascade idea is intuitively natural; the contribution lies in rigorously extending Fuzzy SD to a multi-stage setting and analyzing the conditions for speedup.
+- Experimental Thoroughness: ⭐⭐⭐ Only one dataset (CSQA) and one model family (LLaMA) are evaluated; the hyperparameter ablations are detailed but task diversity is insufficient.
+- Writing Quality: ⭐⭐⭐⭐⭐ The mathematical derivations are clear, the motivation–method–experiment logic chain is coherent, and the entropy gradient analysis enhances persuasiveness.
+- Value: ⭐⭐⭐⭐ The method has practical value as a plug-and-play acceleration scheme, but its impact may be limited by the same-family model requirement and narrow evaluation scope.
 
 <!-- RELATED:START -->
 

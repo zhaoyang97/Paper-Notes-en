@@ -138,10 +138,10 @@ DECOR integrates advances from three areas: equivariant networks (e2cnn/$D_4$ gr
 
 ## Rating
 
-- Novelty: ⭐⭐⭐ (Limited innovation in individual components; novelty lies in the combination)
-- Experimental Thoroughness: ⭐⭐⭐ (Single dataset, limited baseline comparisons)
-- Writing Quality: ⭐⭐⭐⭐ (Clear and accessible, with detailed method descriptions)
-- Value: ⭐⭐⭐ (Meaningful for industrial applications, but contributions are limited given the non-archival venue)
+- Novelty: ⭐⭐⭐⭐ (Limited innovation in individual components; novelty lies in the combination)
+- Experimental Thoroughness: ⭐⭐⭐⭐ (Single dataset, limited baseline comparisons)
+- Writing Quality: ⭐⭐⭐⭐⭐ (Clear and accessible, with detailed method descriptions)
+- Value: ⭐⭐⭐⭐ (Meaningful for industrial applications, but contributions are limited given the non-archival venue)
 
 <!-- RELATED:START -->
 

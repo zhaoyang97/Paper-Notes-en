@@ -19,7 +19,6 @@ content_hash: 7ada6e1e32d1c2e1
 # Dual Recursive Feedback on Generation and Appearance Latents for Pose-Robust Text-to-Image Diffusion
 
 **Conference**: ICCV 2025
-**arXiv**: 2508.09575  
 **Code**: [GitHub](https://github.com/jwonkm/DRF)  
 **Area**: Image Generation
 **Keywords**: T2I diffusion model, controllable generation, pose transfer, appearance fidelity, Score Distillation, training-free

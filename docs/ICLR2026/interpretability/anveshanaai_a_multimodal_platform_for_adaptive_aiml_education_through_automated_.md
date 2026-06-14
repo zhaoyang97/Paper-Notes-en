@@ -135,10 +135,10 @@ AnveshanaAI is a full-stack educational platform comprising the following core m
 - **Insight**: For vertical-domain AI education tools, pedagogical theory constraints may matter more than simply scaling up LLM capacity.
 
 ## Rating
-- Novelty: ⭐⭐⭐
-- Experimental Thoroughness: ⭐⭐⭐
-- Writing Quality: ⭐⭐⭐
-- Value: ⭐⭐⭐
+- Novelty: ⭐⭐⭐⭐
+- Experimental Thoroughness: ⭐⭐⭐⭐
+- Writing Quality: ⭐⭐⭐⭐
+- Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
 

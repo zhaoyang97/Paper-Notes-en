@@ -145,10 +145,10 @@ No formal ablation experiments are included; however, the comparison between Set
 
 ## Rating
 
-- Novelty: ⭐⭐⭐ All technical components are established solutions in combination (DPR + Cross-encoder + Mistral-7B); the two-tier database represents a meaningful engineering contribution but offers limited technical novelty.
-- Experimental Thoroughness: ⭐⭐⭐ Retrieval evaluation is complete and comparisons are clear; however, the number of queries is small, and generation quality evaluation and user studies are absent.
-- Writing Quality: ⭐⭐⭐⭐ System description is clear, motivation is well-articulated, and problem framing is precise.
-- Value: ⭐⭐⭐ Offers direct practical value for large scientific collaborations, though the technical contribution and evaluation depth are somewhat insufficient by NeurIPS standards.
+- Novelty: ⭐⭐⭐⭐ All technical components are established solutions in combination (DPR + Cross-encoder + Mistral-7B); the two-tier database represents a meaningful engineering contribution but offers limited technical novelty.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Retrieval evaluation is complete and comparisons are clear; however, the number of queries is small, and generation quality evaluation and user studies are absent.
+- Writing Quality: ⭐⭐⭐⭐⭐ System description is clear, motivation is well-articulated, and problem framing is precise.
+- Value: ⭐⭐⭐⭐ Offers direct practical value for large scientific collaborations, though the technical contribution and evaluation depth are somewhat insufficient by NeurIPS standards.
 
 <!-- RELATED:START -->
 

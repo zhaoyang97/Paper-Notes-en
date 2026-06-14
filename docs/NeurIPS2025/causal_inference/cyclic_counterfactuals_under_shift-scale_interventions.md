@@ -124,10 +124,10 @@ The intervention applies a scale of $\alpha=0.8$ and a shift of $\beta=1.0$ to i
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — First systematic treatment of counterfactual reasoning under soft interventions in cyclic SCMs.
-- Experimental Thoroughness: ⭐⭐ — Only a two-variable toy model; lacks validation on real-world applications.
-- Writing Quality: ⭐⭐⭐⭐ — Theorem proofs are clear and rigorous, though notation is heavy.
-- Value: ⭐⭐⭐ — Fills a theoretical gap in counterfactual reasoning under soft interventions in cyclic causal models.
+- Novelty: ⭐⭐⭐⭐⭐ — First systematic treatment of counterfactual reasoning under soft interventions in cyclic SCMs.
+- Experimental Thoroughness: ⭐⭐⭐ — Only a two-variable toy model; lacks validation on real-world applications.
+- Writing Quality: ⭐⭐⭐⭐⭐ — Theorem proofs are clear and rigorous, though notation is heavy.
+- Value: ⭐⭐⭐⭐ — Fills a theoretical gap in counterfactual reasoning under soft interventions in cyclic causal models.
 
 <!-- RELATED:START -->
 

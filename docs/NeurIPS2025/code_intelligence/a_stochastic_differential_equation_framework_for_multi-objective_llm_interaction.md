@@ -124,10 +124,10 @@ The objective vector $\mathbf{x}(t) \in \mathbb{R}^n$ of iterative LLM interacti
 - **Transferable framework**: The SDE + interference matrix analysis paradigm is applicable to any multi-objective LLM scenario (e.g., helpfulness-safety-honesty trade-offs in dialogue systems, creativity-accuracy-engagement trade-offs in content generation).
 
 ## Rating
-- Novelty: ⭐⭐⭐ The idea of applying an SDE framework to multi-objective LLM interactions is original, though the underlying mathematics relies on standard linear SDE analysis.
-- Experimental Thoroughness: ⭐⭐⭐ Only a single application scenario is evaluated; scoring functions are overly simplified, and the sample of 400 sessions is limited.
-- Writing Quality: ⭐⭐⭐⭐ The framework is described clearly, and the correspondence between theory and experiments is well-articulated.
-- Value: ⭐⭐⭐ The paper offers a theoretical perspective for analyzing multi-objective LLM interactions, but experimental validation and practical applicability require further strengthening.
+- Novelty: ⭐⭐⭐⭐ The idea of applying an SDE framework to multi-objective LLM interactions is original, though the underlying mathematics relies on standard linear SDE analysis.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Only a single application scenario is evaluated; scoring functions are overly simplified, and the sample of 400 sessions is limited.
+- Writing Quality: ⭐⭐⭐⭐⭐ The framework is described clearly, and the correspondence between theory and experiments is well-articulated.
+- Value: ⭐⭐⭐⭐ The paper offers a theoretical perspective for analyzing multi-objective LLM interactions, but experimental validation and practical applicability require further strengthening.
 
 <!-- RELATED:START -->
 

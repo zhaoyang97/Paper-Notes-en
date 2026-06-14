@@ -18,7 +18,6 @@ content_hash: 7d8d3061a19a3546
 # Aligning Effective Tokens with Video Anomaly in Large Language Models
 
 **Conference**: ICCV 2025  
-**arXiv**: N/A (CVF OpenAccess)  
 **Code**: N/A  
 **Area**: Video Understanding  
 **Keywords**: Video anomaly understanding, multimodal large language models, effective token selection, spatiotemporal alignment, anomaly detection

@@ -119,10 +119,10 @@ All proofs are carried out in Coq 8.x, with semi-automated proofs completed via 
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ Establishing a formal equivalence between mereology and topology is an original contribution.
-- **Experimental Thoroughness**: ⭐⭐ Purely theoretical work; no computational experiments or application evaluations.
-- **Writing Quality**: ⭐⭐⭐ Mathematically rigorous but with an extremely high reading threshold; difficult to follow for non-specialists.
-- **Value**: ⭐⭐⭐ Makes an important contribution to the theoretical foundations of qualitative spatial reasoning, though near-term practical applications are limited.
+- **Novelty**: ⭐⭐⭐⭐⭐ Establishing a formal equivalence between mereology and topology is an original contribution.
+- **Experimental Thoroughness**: ⭐⭐⭐ Purely theoretical work; no computational experiments or application evaluations.
+- **Writing Quality**: ⭐⭐⭐⭐ Mathematically rigorous but with an extremely high reading threshold; difficult to follow for non-specialists.
+- **Value**: ⭐⭐⭐⭐ Makes an important contribution to the theoretical foundations of qualitative spatial reasoning, though near-term practical applications are limited.
 
 <!-- RELATED:START -->
 

@@ -18,7 +18,6 @@ content_hash: 4fcec412fa736307
 # ARGMatch: Adaptive Refinement Gathering for Efficient Dense Matching
 
 **Conference**: ICCV 2025
-**arXiv**: N/A (CVF OpenAccess)  
 **Code**: [https://github.com/ACuOoOoO/argmatch](https://github.com/ACuOoOoO/argmatch)  
 **Area**: Model Compression
 **Keywords**: Dense matching, coarse-to-fine, content-aware refinement, local consistency, efficient feature matching

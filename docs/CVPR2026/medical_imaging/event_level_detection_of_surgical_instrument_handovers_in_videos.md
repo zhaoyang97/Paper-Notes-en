@@ -89,10 +89,10 @@ $\mathcal{L} = \lambda_{\text{det}} \cdot \mathcal{L}_{\text{det}} + \lambda_{\t
 
 ## Rating
 
-- Novelty: ⭐⭐⭐ — Methodological design is relatively standard.
-- Technical Depth: ⭐⭐⭐ — The ViT + LSTM + multi-task combination is straightforward.
-- Experimental Thoroughness: ⭐⭐⭐ — Dataset scale is limited to 5 surgeries and 484 handover events.
-- Value: ⭐⭐⭐⭐ — The surgical safety application scenario is well-defined, with strong clinical translation potential.
+- Novelty: ⭐⭐⭐⭐ — Methodological design is relatively standard.
+- Technical Depth: ⭐⭐⭐⭐ — The ViT + LSTM + multi-task combination is straightforward.
+- Experimental Thoroughness: ⭐⭐⭐⭐ — Dataset scale is limited to 5 surgeries and 484 handover events.
+- Value: ⭐⭐⭐⭐⭐ — The surgical safety application scenario is well-defined, with strong clinical translation potential.
 
 <!-- RELATED:START -->
 

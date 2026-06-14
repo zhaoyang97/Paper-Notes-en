@@ -200,10 +200,10 @@ $$F_{i+1} = \text{FeedbackAgent}(J, E_{i+1})$$
 
 ## Rating
 
-- Novelty: ⭐⭐⭐ (The dual-agent iterative framework and reverse engineering dataset construction exhibit moderate novelty, though individual components are relatively standard.)
-- Experimental Thoroughness: ⭐⭐⭐ (Multiple candidate models and feedback configurations are evaluated, but assessment is conducted solely on synthetic data, lacking validation on real judgments.)
-- Writing Quality: ⭐⭐⭐⭐ (Clear structure, rich tables and figures, and thorough introduction of the legal domain context.)
-- Value: ⭐⭐⭐ (Specific value for Indian legal AI, but limited generalizability; the quality ceiling is determined by the synthetic dataset itself.)
+- Novelty: ⭐⭐⭐⭐ (The dual-agent iterative framework and reverse engineering dataset construction exhibit moderate novelty, though individual components are relatively standard.)
+- Experimental Thoroughness: ⭐⭐⭐⭐ (Multiple candidate models and feedback configurations are evaluated, but assessment is conducted solely on synthetic data, lacking validation on real judgments.)
+- Writing Quality: ⭐⭐⭐⭐⭐ (Clear structure, rich tables and figures, and thorough introduction of the legal domain context.)
+- Value: ⭐⭐⭐⭐ (Specific value for Indian legal AI, but limited generalizability; the quality ceiling is determined by the synthetic dataset itself.)
 
 <!-- RELATED:START -->
 

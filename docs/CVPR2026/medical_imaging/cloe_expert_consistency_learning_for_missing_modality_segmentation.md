@@ -121,10 +121,10 @@ The overall objective is $\mathcal{L}_{total} = \mathcal{L}_{seg} + \alpha \math
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐ — Each individual component is not entirely novel, but the problem formulation is clear and well-motivated.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Full coverage of 15 missing-modality combinations, cross-dataset validation, and detailed ablation studies.
-- **Writing Quality**: ⭐⭐⭐ — Methodology is described clearly, though space constraints leave some implementation details to the algorithm box.
-- **Value**: ⭐⭐⭐ — Missing modality segmentation is an important clinical problem; performance gains are solid if not dramatic.
+- **Novelty**: ⭐⭐⭐⭐ — Each individual component is not entirely novel, but the problem formulation is clear and well-motivated.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Full coverage of 15 missing-modality combinations, cross-dataset validation, and detailed ablation studies.
+- **Writing Quality**: ⭐⭐⭐⭐ — Methodology is described clearly, though space constraints leave some implementation details to the algorithm box.
+- **Value**: ⭐⭐⭐⭐ — Missing modality segmentation is an important clinical problem; performance gains are solid if not dramatic.
 
 <!-- RELATED:START -->
 

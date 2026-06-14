@@ -147,10 +147,10 @@ CMMCoT is built upon Qwen2-VL / Qwen2.5-VL and consists of two phases: training 
 - The idea of injecting entity images as reasoning context without computing loss over them can be generalized to key-frame reasoning in video understanding.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐ Extending CoT to multi-image settings is a natural direction; the RIFREM memory retrieval design is noteworthy but not a breakthrough contribution.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Both multi-image and single-image benchmarks are evaluated, with comprehensive ablations (module combinations, RIFREM layer count, different base models); however, direct comparisons with concurrent methods are missing.
-- **Writing Quality**: ⭐⭐⭐ Generally clear but somewhat disorganized in structure (tables are interspersed throughout Method and Experiments); the motivation for some design choices could be articulated more intuitively.
-- **Value**: ⭐⭐⭐ The research direction is meaningful and the CMMCoT-260K dataset has reuse value, but the limited performance gains and strong dependency on base model grounding capability may restrict practical impact.
+- **Novelty**: ⭐⭐⭐⭐ Extending CoT to multi-image settings is a natural direction; the RIFREM memory retrieval design is noteworthy but not a breakthrough contribution.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Both multi-image and single-image benchmarks are evaluated, with comprehensive ablations (module combinations, RIFREM layer count, different base models); however, direct comparisons with concurrent methods are missing.
+- **Writing Quality**: ⭐⭐⭐⭐ Generally clear but somewhat disorganized in structure (tables are interspersed throughout Method and Experiments); the motivation for some design choices could be articulated more intuitively.
+- **Value**: ⭐⭐⭐⭐ The research direction is meaningful and the CMMCoT-260K dataset has reuse value, but the limited performance gains and strong dependency on base model grounding capability may restrict practical impact.
 
 <!-- RELATED:START -->
 

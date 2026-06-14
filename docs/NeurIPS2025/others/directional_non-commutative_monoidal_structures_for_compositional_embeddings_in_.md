@@ -109,9 +109,9 @@ The framework provides theoretical guidance for designing new architectures: one
 
 ## Rating
 - Novelty: ⭐⭐⭐⭐⭐ (first proposal of a multi-dimensional non-commutative compositional algebra framework of this kind)
-- Experimental Thoroughness: ⭐ (no experiments whatsoever)
-- Writing Quality: ⭐⭐⭐⭐ (theoretical derivations are clear, though some notation is heavy)
-- Value: ⭐⭐⭐ (meaningful theoretical contribution, but the absence of experiments substantially limits practical impact)
+- Experimental Thoroughness: ⭐⭐ (no experiments whatsoever)
+- Writing Quality: ⭐⭐⭐⭐⭐ (theoretical derivations are clear, though some notation is heavy)
+- Value: ⭐⭐⭐⭐ (meaningful theoretical contribution, but the absence of experiments substantially limits practical impact)
 
 <!-- RELATED:START -->
 

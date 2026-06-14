@@ -108,10 +108,10 @@ Domain AUC ≈ 0.5 indicates that source and target features are indistinguishab
 - **vs. DANN**: The classical adversarial domain adaptation method serves as a baseline; the proposed distance-based approach achieves comparable performance with greater stability.
 
 ## Rating
-- Novelty: ⭐⭐⭐ The domain adaptation methodology itself is not novel, but the top-$k$ OT matching and the systematic comparison of 46 metrics are valuable contributions.
-- Experimental Thoroughness: ⭐⭐⭐ A preliminary pipeline with sufficient comparison across three backbones and multiple alignment strategies, though limited to three-class classification.
-- Writing Quality: ⭐⭐⭐ Method descriptions are clear, but the paper is relatively short for a NeurIPS submission.
-- Value: ⭐⭐⭐⭐ Directly addresses practical needs of the astronomical AI community and is well-positioned for next-generation surveys.
+- Novelty: ⭐⭐⭐⭐ The domain adaptation methodology itself is not novel, but the top-$k$ OT matching and the systematic comparison of 46 metrics are valuable contributions.
+- Experimental Thoroughness: ⭐⭐⭐⭐ A preliminary pipeline with sufficient comparison across three backbones and multiple alignment strategies, though limited to three-class classification.
+- Writing Quality: ⭐⭐⭐⭐ Method descriptions are clear, but the paper is relatively short for a NeurIPS submission.
+- Value: ⭐⭐⭐⭐⭐ Directly addresses practical needs of the astronomical AI community and is well-positioned for next-generation surveys.
 
 <!-- RELATED:START -->
 

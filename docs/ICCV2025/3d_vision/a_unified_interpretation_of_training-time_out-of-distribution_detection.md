@@ -18,7 +18,6 @@ content_hash: de3b6d414526b6cc
 # A Unified Interpretation of Training-Time Out-of-Distribution Detection
 
 **Conference**: ICCV 2025
-**arXiv**: N/A (CVF OpenAccess)  
 **Code**: None  
 **Area**: 3D Vision
 **Keywords**: OOD detection, interaction complexity, training-time methods, high-order interactions, interpretability

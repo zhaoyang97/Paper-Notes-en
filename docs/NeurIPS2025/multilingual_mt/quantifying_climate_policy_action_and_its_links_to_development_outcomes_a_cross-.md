@@ -118,10 +118,10 @@ The method proceeds in two steps. Step 1 is NLP classification: a fine-tuned Dis
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐ The combination of NLP classification and panel regression is methodologically straightforward, though its application to cross-national climate policy analysis is novel.
-- **Experimental Thoroughness**: ⭐⭐⭐ Classification experiments are thorough, but regression analysis is constrained by data scarcity and causal inference is insufficiently developed.
-- **Writing Quality**: ⭐⭐⭐⭐ The framework is clear and the two-step logic flows smoothly, though interpretations of some findings are overly cautious and lack deeper analysis.
-- **Value**: ⭐⭐⭐ The interdisciplinary framework has practical application value, but methodological innovation is limited; the contribution is primarily at the level of engineering application.
+- **Novelty**: ⭐⭐⭐⭐ The combination of NLP classification and panel regression is methodologically straightforward, though its application to cross-national climate policy analysis is novel.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Classification experiments are thorough, but regression analysis is constrained by data scarcity and causal inference is insufficiently developed.
+- **Writing Quality**: ⭐⭐⭐⭐⭐ The framework is clear and the two-step logic flows smoothly, though interpretations of some findings are overly cautious and lack deeper analysis.
+- **Value**: ⭐⭐⭐⭐ The interdisciplinary framework has practical application value, but methodological innovation is limited; the contribution is primarily at the level of engineering application.
 
 <!-- RELATED:START -->
 

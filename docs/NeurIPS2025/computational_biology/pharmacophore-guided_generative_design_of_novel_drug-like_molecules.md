@@ -127,10 +127,10 @@ Case study: targeting the alpha estrogen receptor (PDB ID: 8AWG) for breast canc
 
 ## Rating
 
-- Novelty: ⭐⭐⭐ The dual-objective optimization rationale is sound but not a breakthrough contribution.
-- Experimental Thoroughness: ⭐⭐⭐ Single target, no comparison with similar methods, no experimental validation.
-- Writing Quality: ⭐⭐⭐ Structure is clear, though certain details lack sufficient depth.
-- Value: ⭐⭐⭐ Provides a practical framework for pharmacophore-guided molecular generation, but validation remains limited.
+- Novelty: ⭐⭐⭐⭐ The dual-objective optimization rationale is sound but not a breakthrough contribution.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Single target, no comparison with similar methods, no experimental validation.
+- Writing Quality: ⭐⭐⭐⭐ Structure is clear, though certain details lack sufficient depth.
+- Value: ⭐⭐⭐⭐ Provides a practical framework for pharmacophore-guided molecular generation, but validation remains limited.
 
 <!-- RELATED:START -->
 

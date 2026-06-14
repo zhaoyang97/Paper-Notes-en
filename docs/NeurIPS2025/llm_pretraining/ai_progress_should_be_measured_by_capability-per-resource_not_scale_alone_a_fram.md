@@ -138,10 +138,10 @@ As a position paper, this work introduces no new loss function. The core optimiz
 - **Evaluation frameworks**: HELM (Liang et al., 2023) — holistic evaluation including efficiency metrics
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ — The CPR perspective and gradient blueprint concept are original contributions that unify scattered efficiency methods into a coherent theoretical framework.
-- **Experimental Thoroughness**: ⭐⭐ — No experiments are presented; theoretical analyses rest on strong assumptions, limiting persuasiveness.
-- **Writing Quality**: ⭐⭐⭐⭐ — Argumentation is logically coherent, with a complete arc from motivation through theory to practical pathways and consistent notation.
-- **Value**: ⭐⭐⭐ — The ideas are intellectually stimulating but lack empirical grounding; the gradient blueprint requires broad community adoption to have practical impact.
+- **Novelty**: ⭐⭐⭐⭐⭐ — The CPR perspective and gradient blueprint concept are original contributions that unify scattered efficiency methods into a coherent theoretical framework.
+- **Experimental Thoroughness**: ⭐⭐⭐ — No experiments are presented; theoretical analyses rest on strong assumptions, limiting persuasiveness.
+- **Writing Quality**: ⭐⭐⭐⭐⭐ — Argumentation is logically coherent, with a complete arc from motivation through theory to practical pathways and consistent notation.
+- **Value**: ⭐⭐⭐⭐ — The ideas are intellectually stimulating but lack empirical grounding; the gradient blueprint requires broad community adoption to have practical impact.
 
 <!-- RELATED:START -->
 

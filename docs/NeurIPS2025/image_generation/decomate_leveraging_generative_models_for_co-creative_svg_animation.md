@@ -128,10 +128,10 @@ This paper proposes Decomate, an interactive system that leverages multimodal la
 - **vs. Traditional tools (Figma + Lottie + After Effects)**: Traditional tools demand manual operation and technical expertise; Decomate lowers the barrier but sacrifices fine-grained control.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐ — The combination of semantic decomposition and prompt-driven animation constitutes incremental innovation, with core capabilities relying on LLM capacity.
-- **Experimental Thoroughness**: ⭐⭐⭐ — Includes needs assessment and user study, but evaluation is qualitative only, with a small sample (n=6) and no quantitative comparisons.
-- **Writing Quality**: ⭐⭐⭐⭐ — Problem motivation is clearly articulated; pipeline diagrams and interface screenshots are detailed; user feedback is presented verbatim.
-- **Value**: ⭐⭐⭐ — Meaningful as a workshop demonstration, but considerable distance remains from a reliable production design tool.
+- **Novelty**: ⭐⭐⭐⭐ — The combination of semantic decomposition and prompt-driven animation constitutes incremental innovation, with core capabilities relying on LLM capacity.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Includes needs assessment and user study, but evaluation is qualitative only, with a small sample (n=6) and no quantitative comparisons.
+- **Writing Quality**: ⭐⭐⭐⭐⭐ — Problem motivation is clearly articulated; pipeline diagrams and interface screenshots are detailed; user feedback is presented verbatim.
+- **Value**: ⭐⭐⭐⭐ — Meaningful as a workshop demonstration, but considerable distance remains from a reliable production design tool.
 
 <!-- RELATED:START -->
 

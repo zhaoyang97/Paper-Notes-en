@@ -18,7 +18,6 @@ content_hash: ea42210c475b3082
 # Acknowledging Focus Ambiguity in Visual Questions
 
 **Conference**: ICCV 2025
-**arXiv**: N/A (CVF OpenAccess)  
 **Code**: None (dataset available at [https://vizwiz.org/](https://vizwiz.org/))  
 **Area**: Multimodal VLM
 **Keywords**: Visual Question Answering, Focus Ambiguity, Dataset, Visual Grounding, Multimodal Benchmark

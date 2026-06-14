@@ -136,10 +136,10 @@ Three professional audio engineers (4–6 years of experience) each composed a m
 - **vs. Be the Beat**: Both are embodied devices embedding generative AI, but Be the Beat responds to a dancer's movements while Lumia responds to visual scenes, differing in modality.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The concept of "composing by photographing" is novel and compelling, though the underlying technology is primarily API composition.
-- Experimental Thoroughness: ⭐⭐ Only a 3-participant user study; lacks quantitative comparative baselines; system evaluation is weak.
-- Writing Quality: ⭐⭐⭐⭐ System description is clear and complete; the iterative interaction design process is transparent; in-depth technical analysis is limited.
-- Value: ⭐⭐⭐ Informative as an HCI/creative AI system, but leans toward proof-of-concept; practical deployment remains some distance away.
+- Novelty: ⭐⭐⭐⭐⭐ The concept of "composing by photographing" is novel and compelling, though the underlying technology is primarily API composition.
+- Experimental Thoroughness: ⭐⭐⭐ Only a 3-participant user study; lacks quantitative comparative baselines; system evaluation is weak.
+- Writing Quality: ⭐⭐⭐⭐⭐ System description is clear and complete; the iterative interaction design process is transparent; in-depth technical analysis is limited.
+- Value: ⭐⭐⭐⭐ Informative as an HCI/creative AI system, but leans toward proof-of-concept; practical deployment remains some distance away.
 
 ## Related Work & Insights
 

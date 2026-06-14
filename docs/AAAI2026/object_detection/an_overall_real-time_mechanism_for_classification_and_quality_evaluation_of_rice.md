@@ -154,10 +154,10 @@ Compared to single-task methods, the proposed system's strength lies in its syst
 
 ## Rating
 
-- Novelty: ⭐⭐ (Methodological contributions are incremental; SimAM and ECA are existing modules directly embedded into standard architectures.)
-- Experimental Thoroughness: ⭐⭐⭐ (Detection and classification experiments are reasonably comprehensive, but the chalkiness experiment is limited in scale.)
-- Writing Quality: ⭐⭐⭐ (Structure is clear and national standard citations are properly used, though some experimental analyses lack depth.)
-- Value: ⭐⭐⭐ (High engineering application value; academic contribution is limited.)
+- Novelty: ⭐⭐⭐ (Methodological contributions are incremental; SimAM and ECA are existing modules directly embedded into standard architectures.)
+- Experimental Thoroughness: ⭐⭐⭐⭐ (Detection and classification experiments are reasonably comprehensive, but the chalkiness experiment is limited in scale.)
+- Writing Quality: ⭐⭐⭐⭐ (Structure is clear and national standard citations are properly used, though some experimental analyses lack depth.)
+- Value: ⭐⭐⭐⭐ (High engineering application value; academic contribution is limited.)
 
 <!-- RELATED:START -->
 

@@ -18,7 +18,6 @@ content_hash: c734809a64b6a645
 # 3DGS-LM: Faster Gaussian-Splatting Optimization with Levenberg-Marquardt
 
 **Conference**: ICCV 2025
-**arXiv**: N/A (CVF Open Access)  
 **Code**: [https://lukashoel.github.io/3DGS-LM/](https://lukashoel.github.io/3DGS-LM/)  
 **Area**: 3D Vision
 **Keywords**: 3D Gaussian Splatting, Levenberg-Marquardt, Optimization Acceleration, Novel View Synthesis, CUDA Parallelism

@@ -125,10 +125,10 @@ The **iVON (Improved Variational Online Newton)** algorithm replaces SGD for opt
 
 ## Rating
 
-- Novelty: ⭐⭐⭐ — Applies an existing optimizer to a new domain; theoretical contribution is limited, but the observations are valuable
-- Experimental Thoroughness: ⭐⭐⭐ — Small-scale but carefully analyzed, with faithful reproduction of prior benchmark results
-- Writing Quality: ⭐⭐⭐⭐ — Background is clearly explained and mathematical derivations are complete
-- Value: ⭐⭐⭐ — Directly useful to the radio astronomy BNN community; insights are broadly inspiring for the wider BNN community
+- Novelty: ⭐⭐⭐⭐ — Applies an existing optimizer to a new domain; theoretical contribution is limited, but the observations are valuable
+- Experimental Thoroughness: ⭐⭐⭐⭐ — Small-scale but carefully analyzed, with faithful reproduction of prior benchmark results
+- Writing Quality: ⭐⭐⭐⭐⭐ — Background is clearly explained and mathematical derivations are complete
+- Value: ⭐⭐⭐⭐ — Directly useful to the radio astronomy BNN community; insights are broadly inspiring for the wider BNN community
 
 <!-- RELATED:START -->
 

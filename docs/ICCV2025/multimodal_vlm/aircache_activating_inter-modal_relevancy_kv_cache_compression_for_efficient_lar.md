@@ -18,7 +18,6 @@ content_hash: 800ad5fe2b6995c8
 # AirCache: Activating Inter-Modal Relevancy KV Cache Compression for Efficient Large Vision-Language Model Inference
 
 **Conference**: ICCV 2025
-**arXiv**: N/A (CVF OpenAccess)  
 **Code**: Unavailable  
 **Area**: Multimodal VLM
 **Keywords**: KV Cache compression, large vision-language models, cross-modal attention, layer-wise budget allocation, inference acceleration

@@ -142,10 +142,10 @@ The paper currently provides only preliminary observations:
 
 ## Rating
 
-- Novelty: ⭐⭐⭐ — The idea is intuitive yet effective; the dual-signal fusion design is well-motivated
-- Technical Depth: ⭐⭐ — A workshop paper with detailed method description but insufficient experimental depth
-- Experimental Thoroughness: ⭐⭐ — Only preliminary testing; lacks systematic evaluation and comparison
-- Practical Value: ⭐⭐⭐ — The plug-and-play design is highly attractive from an engineering perspective, but scaled validation is needed
+- Novelty: ⭐⭐⭐⭐ — The idea is intuitive yet effective; the dual-signal fusion design is well-motivated
+- Technical Depth: ⭐⭐⭐ — A workshop paper with detailed method description but insufficient experimental depth
+- Experimental Thoroughness: ⭐⭐⭐ — Only preliminary testing; lacks systematic evaluation and comparison
+- Practical Value: ⭐⭐⭐⭐ — The plug-and-play design is highly attractive from an engineering perspective, but scaled validation is needed
 
 <!-- RELATED:START -->
 

@@ -117,10 +117,10 @@ Overall, performance in subtasks 1 and 2 exceeded the baseline by 3–4% on aver
 - **vs. Data Augmentation**: Compared to EDA or back-translation, dual-style augmentation (original + augmented + global deduplication) is more lightweight, and using homoglyph attacks on the training side is a rare but effective technique in the text robustness community.
 
 ## Rating
-- Novelty: ⭐⭐☆☆☆ The main contribution is transferring the existing mdok pipeline to a new task; technical innovation is limited, but homoglyph training augmentation and 22-language merging are practical tricks.
-- Experimental Thoroughness: ⭐⭐⭐☆☆ Full runs across 22 languages and 3 subtasks were completed with fine-grained per-label analysis, though ablation studies for individual contributions (homoglyphs vs. anonymization) are missing.
-- Writing Quality: ⭐⭐⭐☆☆ Standard system paper style; the method is clear, but some key details are missing (e.g., LoRA rank, target modules).
-- Value: ⭐⭐⭐☆☆ Directly reusable for engineering teams in SemEval or those performing multilingual text classification; academic contribution is moderate.
+- Novelty: ⭐⭐⭐☆☆☆ The main contribution is transferring the existing mdok pipeline to a new task; technical innovation is limited, but homoglyph training augmentation and 22-language merging are practical tricks.
+- Experimental Thoroughness: ⭐⭐⭐⭐☆☆ Full runs across 22 languages and 3 subtasks were completed with fine-grained per-label analysis, though ablation studies for individual contributions (homoglyphs vs. anonymization) are missing.
+- Writing Quality: ⭐⭐⭐⭐☆☆ Standard system paper style; the method is clear, but some key details are missing (e.g., LoRA rank, target modules).
+- Value: ⭐⭐⭐⭐☆☆ Directly reusable for engineering teams in SemEval or those performing multilingual text classification; academic contribution is moderate.
 
 <!-- RELATED:START -->
 

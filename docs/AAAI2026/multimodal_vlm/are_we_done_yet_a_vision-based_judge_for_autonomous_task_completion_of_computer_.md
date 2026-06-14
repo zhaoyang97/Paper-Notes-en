@@ -128,10 +128,10 @@ The following broader implications are noted:
 
 ## Rating
 
-- Novelty: ⭐⭐⭐ — The approach is straightforward yet effective; applying VLM-as-judge to CUA evaluation is a natural extension.
-- Experimental Thoroughness: ⭐⭐⭐ — Three CUAs and five evaluators provide reasonable coverage, but ablation studies and in-depth analysis are lacking.
-- Writing Quality: ⭐⭐⭐⭐ — The structure is clear, the problem is well-defined, and technical details are sufficient.
-- Value: ⭐⭐⭐ — Identifies an important problem and provides a concise solution, though accuracy and scale warrant further improvement.
+- Novelty: ⭐⭐⭐⭐ — The approach is straightforward yet effective; applying VLM-as-judge to CUA evaluation is a natural extension.
+- Experimental Thoroughness: ⭐⭐⭐⭐ — Three CUAs and five evaluators provide reasonable coverage, but ablation studies and in-depth analysis are lacking.
+- Writing Quality: ⭐⭐⭐⭐⭐ — The structure is clear, the problem is well-defined, and technical details are sufficient.
+- Value: ⭐⭐⭐⭐ — Identifies an important problem and provides a concise solution, though accuracy and scale warrant further improvement.
 
 <!-- RELATED:START -->
 

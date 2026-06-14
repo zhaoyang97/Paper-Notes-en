@@ -113,10 +113,10 @@ Standard sequential recommendation training objective (e.g., cross-entropy or BP
 
 ## Rating
 
-- Novelty: ⭐⭐⭐ Hybrid MoE for recommendation is relatively novel, though the technical components are established
-- Experimental Thoroughness: ⭐⭐⭐ Limited by Student Abstract format
-- Writing Quality: ⭐⭐⭐⭐ Problem motivation is clearly articulated
-- Value: ⭐⭐⭐ Meaningful improvement for sequential recommendation
+- Novelty: ⭐⭐⭐⭐ Hybrid MoE for recommendation is relatively novel, though the technical components are established
+- Experimental Thoroughness: ⭐⭐⭐⭐ Limited by Student Abstract format
+- Writing Quality: ⭐⭐⭐⭐⭐ Problem motivation is clearly articulated
+- Value: ⭐⭐⭐⭐ Meaningful improvement for sequential recommendation
 
 <!-- RELATED:START -->
 

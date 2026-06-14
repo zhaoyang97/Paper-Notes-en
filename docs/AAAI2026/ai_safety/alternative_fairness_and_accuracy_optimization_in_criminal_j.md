@@ -138,10 +138,10 @@ The paper provides a theoretical analysis of the tolerance parameter $\tau$:
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐ The tolerance constraint formulation is a simple yet effective improvement over existing frameworks; the Three Pillars framework integrates multidisciplinary perspectives, though individual components are not entirely novel
-- **Experimental Thoroughness**: ⭐⭐ As a theoretical/framework paper, it contains no original experiments, relying solely on cited empirical results, which limits persuasiveness
-- **Writing Quality**: ⭐⭐⭐⭐ The survey portion is systematic and comprehensive, mathematical notation is rigorous, the argumentation is logically clear, and interdisciplinary references are rich
-- **Value**: ⭐⭐⭐ The Three Pillars framework provides practical deployment guidance for public sector algorithmic systems, and the tolerance constraint idea is concise and useful, though the absence of empirical validation weakens the overall contribution
+- **Novelty**: ⭐⭐⭐⭐ The tolerance constraint formulation is a simple yet effective improvement over existing frameworks; the Three Pillars framework integrates multidisciplinary perspectives, though individual components are not entirely novel
+- **Experimental Thoroughness**: ⭐⭐⭐ As a theoretical/framework paper, it contains no original experiments, relying solely on cited empirical results, which limits persuasiveness
+- **Writing Quality**: ⭐⭐⭐⭐⭐ The survey portion is systematic and comprehensive, mathematical notation is rigorous, the argumentation is logically clear, and interdisciplinary references are rich
+- **Value**: ⭐⭐⭐⭐ The Three Pillars framework provides practical deployment guidance for public sector algorithmic systems, and the tolerance constraint idea is concise and useful, though the absence of empirical validation weakens the overall contribution
 
 <!-- RELATED:START -->
 

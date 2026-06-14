@@ -150,10 +150,10 @@ These ablation directions are not pursued in the current paper and constitute im
 
 ## Rating
 
-- Novelty: ⭐⭐⭐ The idea of combining Agentic AI with regionalization is reasonably novel, though the individual components (SOM, LLM dialogue) are not new in isolation.
-- Experimental Thoroughness: ⭐⭐ Only a single demonstration case is provided, with no quantitative comparative experiments or user studies; understandable for a workshop paper but insufficient.
-- Writing Quality: ⭐⭐⭐ The structure is clear and the system architecture is well described, though technical details (e.g., autoencoder configuration, SOM parameters) are insufficiently elaborated.
-- Value: ⭐⭐⭐ Offers a valuable exploratory direction at the intersection of AI and urban planning, but requires more empirical evidence to substantiate practical utility.
+- Novelty: ⭐⭐⭐⭐ The idea of combining Agentic AI with regionalization is reasonably novel, though the individual components (SOM, LLM dialogue) are not new in isolation.
+- Experimental Thoroughness: ⭐⭐⭐ Only a single demonstration case is provided, with no quantitative comparative experiments or user studies; understandable for a workshop paper but insufficient.
+- Writing Quality: ⭐⭐⭐⭐ The structure is clear and the system architecture is well described, though technical details (e.g., autoencoder configuration, SOM parameters) are insufficiently elaborated.
+- Value: ⭐⭐⭐⭐ Offers a valuable exploratory direction at the intersection of AI and urban planning, but requires more empirical evidence to substantiate practical utility.
 
 <!-- RELATED:START -->
 

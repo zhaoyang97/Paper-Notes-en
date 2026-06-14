@@ -140,10 +140,10 @@ Self-training on Qwen3-4B led to a performance drop (0.75→0.72), suggesting th
 - **vs SemEval-2024 Task 8 (spiegel-macko-2024-kinit)**: They previously showed 7B LLMs outperfored BERT-like models; this work validates that larger scales (32B) still provide gains, though at a decreasing rate.
 
 ## Rating
-- Novelty: ⭐⭐ (Mainly cross-task reuse of the mdok recipe)
-- Experimental Thoroughness: ⭐⭐⭐ (11 system comparisons + ablation, but lacks multi-round ST and deep error analysis)
-- Writing Quality: ⭐⭐⭐⭐ (Clear motivation and complete reproduction details in standard system paper style)
-- Value: ⭐⭐⭐ (Solid report for SemEval; engineering experience with augmentation and strict self-training is practical for competition participants)
+- Novelty: ⭐⭐⭐ (Mainly cross-task reuse of the mdok recipe)
+- Experimental Thoroughness: ⭐⭐⭐⭐ (11 system comparisons + ablation, but lacks multi-round ST and deep error analysis)
+- Writing Quality: ⭐⭐⭐⭐⭐ (Clear motivation and complete reproduction details in standard system paper style)
+- Value: ⭐⭐⭐⭐ (Solid report for SemEval; engineering experience with augmentation and strict self-training is practical for competition participants)
 
 <!-- RELATED:START -->
 

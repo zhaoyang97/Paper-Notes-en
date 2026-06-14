@@ -117,10 +117,10 @@ F1 scores of BLISS vs. PLADIES across 6 datasets (GAT / GraphSAGE):
 - **vs. GraphSAINT**: Subgraph-based sampling operates under a different paradigm and cannot be directly compared.
 
 ## Rating
-- Novelty: ⭐⭐⭐ Layer-wise bandits represent a natural extension of BS-GNN; conceptual innovation is moderate.
-- Experimental Thoroughness: ⭐⭐⭐ Covers 6 datasets and 2 architectures, but comparison is limited to a single baseline.
-- Writing Quality: ⭐⭐⭐⭐ Method description is clear and notation is rigorous.
-- Value: ⭐⭐⭐ Offers meaningful reference for large-scale GNN training.
+- Novelty: ⭐⭐⭐⭐ Layer-wise bandits represent a natural extension of BS-GNN; conceptual innovation is moderate.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covers 6 datasets and 2 architectures, but comparison is limited to a single baseline.
+- Writing Quality: ⭐⭐⭐⭐⭐ Method description is clear and notation is rigorous.
+- Value: ⭐⭐⭐⭐ Offers meaningful reference for large-scale GNN training.
 
 <!-- RELATED:START -->
 

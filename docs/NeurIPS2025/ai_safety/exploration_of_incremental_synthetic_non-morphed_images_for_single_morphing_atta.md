@@ -130,10 +130,10 @@ Three experimental configurations:
 - **Impact of weak morphing tools**: FaceMorpher produces visually apparent artifacts that may reduce overall detection difficulty.
 
 ## Rating
-- Novelty: ⭐⭐⭐ The incremental synthetic data study is systematic, but the methodological contribution is limited.
-- Experimental Thoroughness: ⭐⭐⭐ The proportion sweep is comprehensive, but deeper analysis and ablation studies are lacking.
-- Writing Quality: ⭐⭐⭐ Structure is clear, though workshop length constraints limit depth.
-- Value: ⭐⭐⭐ Provides practical guidance on synthetic data usage for security applications.
+- Novelty: ⭐⭐⭐⭐ The incremental synthetic data study is systematic, but the methodological contribution is limited.
+- Experimental Thoroughness: ⭐⭐⭐⭐ The proportion sweep is comprehensive, but deeper analysis and ablation studies are lacking.
+- Writing Quality: ⭐⭐⭐⭐ Structure is clear, though workshop length constraints limit depth.
+- Value: ⭐⭐⭐⭐ Provides practical guidance on synthetic data usage for security applications.
 
 ## Related Work & Insights
 

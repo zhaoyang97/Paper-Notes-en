@@ -125,10 +125,10 @@ When the relay is positioned along a path of total length $d_1 + d_2 = 1000$ m, 
 
 ## Rating
 
-- Novelty: ⭐⭐⭐ Applying DRL to communication parameter optimization is precedented; the DOR reward design is a notable contribution.
-- Experimental Thoroughness: ⭐⭐⭐ Comparisons with one-shot baselines and alternative RL algorithms are adequate, though comparisons with other MARL approaches are absent.
-- Writing Quality: ⭐⭐⭐⭐ Problem formulation is clear and mathematical derivations are complete.
-- Value: ⭐⭐⭐ Offers practical value for 5G URLLC relay systems; academic novelty is moderate.
+- Novelty: ⭐⭐⭐⭐ Applying DRL to communication parameter optimization is precedented; the DOR reward design is a notable contribution.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Comparisons with one-shot baselines and alternative RL algorithms are adequate, though comparisons with other MARL approaches are absent.
+- Writing Quality: ⭐⭐⭐⭐⭐ Problem formulation is clear and mathematical derivations are complete.
+- Value: ⭐⭐⭐⭐ Offers practical value for 5G URLLC relay systems; academic novelty is moderate.
 
 <!-- RELATED:START -->
 

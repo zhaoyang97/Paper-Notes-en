@@ -118,10 +118,10 @@ The standard VGAE variational objective is employed: a reconstruction loss (cros
 
 ## Rating
 
-- Novelty: ⭐⭐⭐ The method itself (VGAE + standard decoders) is not novel, but the systematic evaluation and failure mode analysis are valuable.
-- Experimental Thoroughness: ⭐⭐⭐ The four-decoder × two-dataset comparison is reasonable, though comparisons against non-VGAE baselines are absent.
-- Writing Quality: ⭐⭐⭐⭐ Well-structured with honest reporting of negative results.
-- Value: ⭐⭐⭐ Establishes an important baseline for synthetic distribution grid generation and identifies the performance ceiling of VGAE.
+- Novelty: ⭐⭐⭐⭐ The method itself (VGAE + standard decoders) is not novel, but the systematic evaluation and failure mode analysis are valuable.
+- Experimental Thoroughness: ⭐⭐⭐⭐ The four-decoder × two-dataset comparison is reasonable, though comparisons against non-VGAE baselines are absent.
+- Writing Quality: ⭐⭐⭐⭐⭐ Well-structured with honest reporting of negative results.
+- Value: ⭐⭐⭐⭐ Establishes an important baseline for synthetic distribution grid generation and identifies the performance ceiling of VGAE.
 
 <!-- RELATED:START -->
 

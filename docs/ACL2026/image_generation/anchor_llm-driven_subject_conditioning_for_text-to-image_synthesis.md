@@ -110,10 +110,10 @@ The cache does not include the full text; thus, no verifiable ablation tables ar
 - **Insight**: When performing text-to-image/video generation, one should not only ask "if the prompt is detailed" but also "if the key subjects are represented with high fidelity in the conditional space."
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Mapping abstract news captions and LLM-driven subject extraction to T2I conditioning is a clear and well-defined problem setting.
-- Experimental Thoroughness: ⭐⭐ Abstract only; experimental details and ablations cannot be verified.
-- Writing Quality: ⭐⭐⭐ The abstract is clear, but the lack of full text prevents an evaluation of the complete narrative.
-- Value: ⭐⭐⭐⭐ If the experiments are robust, this provides a useful resource and method for complex caption-driven T2I alignment.
+- Novelty: ⭐⭐⭐⭐⭐ Mapping abstract news captions and LLM-driven subject extraction to T2I conditioning is a clear and well-defined problem setting.
+- Experimental Thoroughness: ⭐⭐⭐ Abstract only; experimental details and ablations cannot be verified.
+- Writing Quality: ⭐⭐⭐⭐ The abstract is clear, but the lack of full text prevents an evaluation of the complete narrative.
+- Value: ⭐⭐⭐⭐⭐ If the experiments are robust, this provides a useful resource and method for complex caption-driven T2I alignment.
 
 <!-- RELATED:START -->
 

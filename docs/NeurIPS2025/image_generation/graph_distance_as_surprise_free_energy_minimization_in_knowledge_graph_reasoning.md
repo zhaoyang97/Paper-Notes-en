@@ -116,10 +116,10 @@ This paper presents a theoretical framework with a worked example; no standard b
 
 ## Rating
 
-- Novelty: ⭐⭐⭐ The interdisciplinary connection is interesting, but the FEP→graph distance mapping is fairly intuitive and lacks theoretical depth.
-- Experimental Thoroughness: ⭐⭐ Workshop paper with only a toy example; no benchmark experiments.
-- Writing Quality: ⭐⭐⭐ Logically clear but substantively thin; formalization is rigorous.
-- Value: ⭐⭐⭐ Offers an interesting theoretical perspective but remains far from practical applicability.
+- Novelty: ⭐⭐⭐⭐ The interdisciplinary connection is interesting, but the FEP→graph distance mapping is fairly intuitive and lacks theoretical depth.
+- Experimental Thoroughness: ⭐⭐⭐ Workshop paper with only a toy example; no benchmark experiments.
+- Writing Quality: ⭐⭐⭐⭐ Logically clear but substantively thin; formalization is rigorous.
+- Value: ⭐⭐⭐⭐ Offers an interesting theoretical perspective but remains far from practical applicability.
 
 <!-- RELATED:START -->
 

@@ -119,10 +119,10 @@ The paper uses simulations of small-world networks (Watts-Strogatz model) to ill
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ Introducing discrete curvature into hyperscanning analysis represents a novel cross-disciplinary synthesis.
-- Experimental Thoroughness: ⭐⭐ Limited to simulations without real-data validation; acceptable for a workshop paper.
-- Writing Quality: ⭐⭐⭐⭐ Concepts are clearly articulated and the argument is coherent, making the paper an effective directional position piece.
-- Value: ⭐⭐⭐ A promising research direction is proposed, though real-data validation is needed to assess its practical utility.
+- Novelty: ⭐⭐⭐⭐⭐ Introducing discrete curvature into hyperscanning analysis represents a novel cross-disciplinary synthesis.
+- Experimental Thoroughness: ⭐⭐⭐ Limited to simulations without real-data validation; acceptable for a workshop paper.
+- Writing Quality: ⭐⭐⭐⭐⭐ Concepts are clearly articulated and the argument is coherent, making the paper an effective directional position piece.
+- Value: ⭐⭐⭐⭐ A promising research direction is proposed, though real-data validation is needed to assess its practical utility.
 
 <!-- RELATED:START -->
 

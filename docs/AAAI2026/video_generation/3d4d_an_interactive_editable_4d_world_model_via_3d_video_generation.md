@@ -128,10 +128,10 @@ Evaluation metrics: CLIP Consistency (CC, cross-view consistency) and CLIP Score
 - **vs. WonderWorld**: WonderWorld achieves a near-identical CS (0.9948 vs. 0.9951) but trails noticeably on CC (29.47 vs. 30.40) and does not support the temporal dimension.
 
 ## Rating
-- Novelty: ⭐⭐⭐ — Primarily a system integration contribution; no novel algorithms in individual modules; VLM-guided foveated rendering is the main highlight.
-- Experimental Thoroughness: ⭐⭐ — Only two tables; ablation studies and user evaluations are absent; evaluation dimensions are narrow.
-- Writing Quality: ⭐⭐⭐ — System architecture is described clearly, but the paper is relatively short and lacks technical depth.
-- Value: ⭐⭐⭐ — As the first interactive 4D editing system, it has practical application value; academic contribution is limited.
+- Novelty: ⭐⭐⭐⭐ — Primarily a system integration contribution; no novel algorithms in individual modules; VLM-guided foveated rendering is the main highlight.
+- Experimental Thoroughness: ⭐⭐⭐ — Only two tables; ablation studies and user evaluations are absent; evaluation dimensions are narrow.
+- Writing Quality: ⭐⭐⭐⭐ — System architecture is described clearly, but the paper is relatively short and lacks technical depth.
+- Value: ⭐⭐⭐⭐ — As the first interactive 4D editing system, it has practical application value; academic contribution is limited.
 
 ---
 

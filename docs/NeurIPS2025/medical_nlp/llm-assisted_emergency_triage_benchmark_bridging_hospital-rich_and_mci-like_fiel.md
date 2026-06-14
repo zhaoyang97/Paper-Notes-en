@@ -120,10 +120,10 @@ Random Forest achieves the best performance under the MCI scenario (AUROC $= 0.7
 - **Insight**: The paradigm of LLM-assisted data curation is generalizable to other EHR benchmark construction efforts.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐☆☆ — A dataset construction contribution; methodological innovation is limited, though the scenario design is distinctive.
-- **Experimental Thoroughness**: ⭐⭐☆☆☆ — The demo subset is too small; generalizability of conclusions is uncertain.
-- **Writing Quality**: ⭐⭐⭐⭐☆ — The pipeline is clearly described with well-motivated objectives.
-- **Value**: ⭐⭐⭐⭐☆ — Advances reproducible triage AI research; value increases substantially upon extension to the full dataset.
+- **Novelty**: ⭐⭐⭐⭐☆☆ — A dataset construction contribution; methodological innovation is limited, though the scenario design is distinctive.
+- **Experimental Thoroughness**: ⭐⭐⭐☆☆☆ — The demo subset is too small; generalizability of conclusions is uncertain.
+- **Writing Quality**: ⭐⭐⭐⭐⭐☆ — The pipeline is clearly described with well-motivated objectives.
+- **Value**: ⭐⭐⭐⭐⭐☆ — Advances reproducible triage AI research; value increases substantially upon extension to the full dataset.
 
 <!-- RELATED:START -->
 

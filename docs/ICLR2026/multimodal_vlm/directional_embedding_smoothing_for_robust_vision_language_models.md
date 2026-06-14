@@ -110,10 +110,10 @@ RESTA's advantage lies in its implementation simplicity and independence from au
 The finding that directional noise is effective while isotropic noise is not reinforces the hypothesis that embedding vector directions encode semantics, offering guidance for understanding and leveraging embedding spaces. The paper's conjecture that jailbreak attacks may exploit fragile "narrow pathways" in activations—thus susceptible to noise perturbation—if formalized theoretically, would carry significant implications for understanding VLM safety. The authors' pragmatic framing of RESTA as one layer within a broader security framework is a commendable stance, and the growing integration of VLMs into autonomous agentic systems will only increase the importance of inference-time defenses.
 
 ## Rating
-- Novelty: ⭐⭐⭐ (The extension of RESTA to VLMs is relatively straightforward, though the directional noise finding is valuable)
-- Experimental Thoroughness: ⭐⭐⭐ (Large-scale benchmarks, but lacks adaptive attack evaluation and broader model coverage)
-- Writing Quality: ⭐⭐⭐⭐ (Clear exposition with candid and thorough discussion of limitations)
-- Value: ⭐⭐⭐ (Practical inference-time defense paradigm; the directional noise insight contributes to the field)
+- Novelty: ⭐⭐⭐⭐ (The extension of RESTA to VLMs is relatively straightforward, though the directional noise finding is valuable)
+- Experimental Thoroughness: ⭐⭐⭐⭐ (Large-scale benchmarks, but lacks adaptive attack evaluation and broader model coverage)
+- Writing Quality: ⭐⭐⭐⭐⭐ (Clear exposition with candid and thorough discussion of limitations)
+- Value: ⭐⭐⭐⭐ (Practical inference-time defense paradigm; the directional noise insight contributes to the field)
 
 <!-- RELATED:START -->
 

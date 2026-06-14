@@ -79,10 +79,10 @@ Compared to multi-agent frameworks such as ChatDev/MetaGPT, Agint draws on compi
 - The effect-aware execution and rollback mechanism offers a valuable reference for agent safety.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The intersection of compiler theory and AI code generation is novel; the six-level type system design demonstrates depth.
-- Experimental Thoroughness: ⭐⭐ A system paper with no quantitative experiments — only usage examples.
-- Writing Quality: ⭐⭐⭐ Numerous system components but lacking a clear end-to-end architecture diagram; reads as somewhat fragmented.
-- Value: ⭐⭐⭐ The ideas are valuable but require quantitative validation before their actual impact can be assessed.
+- Novelty: ⭐⭐⭐⭐⭐ The intersection of compiler theory and AI code generation is novel; the six-level type system design demonstrates depth.
+- Experimental Thoroughness: ⭐⭐⭐ A system paper with no quantitative experiments — only usage examples.
+- Writing Quality: ⭐⭐⭐⭐ Numerous system components but lacking a clear end-to-end architecture diagram; reads as somewhat fragmented.
+- Value: ⭐⭐⭐⭐ The ideas are valuable but require quantitative validation before their actual impact can be assessed.
 
 <!-- RELATED:START -->
 

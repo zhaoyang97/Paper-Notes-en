@@ -115,10 +115,10 @@ PoC experiment: sparse autoencoders (SAE) are trained on layer-15 activations (4
 - **vs. JEPA**: LeCun's predictive architecture emphasizes learning abstract world models through prediction, resonating with the predictive feedback principle proposed here, yet JEPA remains a monolithic structure.
 
 ## Rating
-- Novelty: ⭐⭐⭐ Neuroscience-inspired AI architectures are not a new concept, but systematically integrating three cortical principles into an actionable blueprint represents a moderate contribution.
-- Experimental Thoroughness: ⭐⭐ Only a minimal-scale PoC experiment is presented; the complete architecture is not implemented.
-- Writing Quality: ⭐⭐⭐⭐ The survey sections bridging neuroscience and AI are clearly written, with effective interdisciplinary exposition.
-- Value: ⭐⭐⭐ Provides meaningful design insights, though the absence of comprehensive validation limits direct impact.
+- Novelty: ⭐⭐⭐⭐ Neuroscience-inspired AI architectures are not a new concept, but systematically integrating three cortical principles into an actionable blueprint represents a moderate contribution.
+- Experimental Thoroughness: ⭐⭐⭐ Only a minimal-scale PoC experiment is presented; the complete architecture is not implemented.
+- Writing Quality: ⭐⭐⭐⭐⭐ The survey sections bridging neuroscience and AI are clearly written, with effective interdisciplinary exposition.
+- Value: ⭐⭐⭐⭐ Provides meaningful design insights, though the absence of comprehensive validation limits direct impact.
 
 <!-- RELATED:START -->
 

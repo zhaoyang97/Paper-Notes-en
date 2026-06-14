@@ -158,10 +158,10 @@ Experiments use 2020 Jena weather station temperature data (10-minute resolution
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ First theoretical framework establishing optimal horizon selection in federated TSF
-- Experimental Thoroughness: ⭐⭐ Limited to SDG validation; no comparative experiments on real federated datasets
-- Writing Quality: ⭐⭐⭐⭐ Rigorous theoretical derivations with consistent notation
-- Value: ⭐⭐⭐ Meaningful theoretical contribution, though practical utility awaits empirical verification
+- Novelty: ⭐⭐⭐⭐⭐ First theoretical framework establishing optimal horizon selection in federated TSF
+- Experimental Thoroughness: ⭐⭐⭐ Limited to SDG validation; no comparative experiments on real federated datasets
+- Writing Quality: ⭐⭐⭐⭐⭐ Rigorous theoretical derivations with consistent notation
+- Value: ⭐⭐⭐⭐ Meaningful theoretical contribution, though practical utility awaits empirical verification
 
 <!-- RELATED:START -->
 

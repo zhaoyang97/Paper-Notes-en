@@ -137,10 +137,10 @@ No ablation table is provided; key conclusions are drawn by comparing classifica
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ Applying GFlowNet to DDI data augmentation is a novel combination; the reward function design is elegant.
-- Experimental Thoroughness: ⭐⭐ Single dataset, lacking comparative baselines and ablation studies.
-- Writing Quality: ⭐⭐⭐ Method description is clear, but the experimental section is overly brief.
-- Value: ⭐⭐⭐ The approach is conceptually valuable, but insufficient experimental validation limits its persuasiveness.
+- Novelty: ⭐⭐⭐⭐⭐ Applying GFlowNet to DDI data augmentation is a novel combination; the reward function design is elegant.
+- Experimental Thoroughness: ⭐⭐⭐ Single dataset, lacking comparative baselines and ablation studies.
+- Writing Quality: ⭐⭐⭐⭐ Method description is clear, but the experimental section is overly brief.
+- Value: ⭐⭐⭐⭐ The approach is conceptually valuable, but insufficient experimental validation limits its persuasiveness.
 
 <!-- RELATED:START -->
 

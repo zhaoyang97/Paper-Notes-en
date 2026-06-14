@@ -125,10 +125,10 @@ Experiments are conducted in the PettingZoo simple_tag_v3 environment, where mul
 - The findings suggest that in MARL, **experience sharing is more important than signal sharing**, offering a core insight for the design of new distributed exploration methods.
 
 ## Rating
-- Novelty: ⭐⭐⭐ The method is a direct extension rather than a fundamentally new design, though the systematic ablation has research value.
-- Experimental Thoroughness: ⭐⭐⭐ The ablation is comprehensive (15 seeds × 8 configurations), but only one environment is used and comparisons with MARL SOTA are absent.
-- Writing Quality: ⭐⭐⭐⭐ The paper is clearly structured with rigorous experimental setup and well-defined conclusions; its self-characterization as a preliminary study is appropriately honest.
-- Value: ⭐⭐⭐ The work establishes an empirical foundation for the NGU→MARL direction, and the shared replay buffer finding has practical guidance value.
+- Novelty: ⭐⭐⭐⭐ The method is a direct extension rather than a fundamentally new design, though the systematic ablation has research value.
+- Experimental Thoroughness: ⭐⭐⭐⭐ The ablation is comprehensive (15 seeds × 8 configurations), but only one environment is used and comparisons with MARL SOTA are absent.
+- Writing Quality: ⭐⭐⭐⭐⭐ The paper is clearly structured with rigorous experimental setup and well-defined conclusions; its self-characterization as a preliminary study is appropriately honest.
+- Value: ⭐⭐⭐⭐ The work establishes an empirical foundation for the NGU→MARL direction, and the shared replay buffer finding has practical guidance value.
 
 <!-- RELATED:START -->
 

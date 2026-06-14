@@ -83,7 +83,7 @@ item_total: 47
 
 **🔬 ICLR2026** · **47** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (64)](../../ICML2026/optimization/index.md) · [📷 CVPR2026 (17)](../../CVPR2026/optimization/index.md) · [🤖 AAAI2026 (21)](../../AAAI2026/optimization/index.md) · [🧠 NeurIPS2025 (121)](../../NeurIPS2025/optimization/index.md) · [📹 ICCV2025 (7)](../../ICCV2025/optimization/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (64)](../../ICML2026/optimization/index.md) · [📷 CVPR2026 (14)](../../CVPR2026/optimization/index.md) · [🤖 AAAI2026 (21)](../../AAAI2026/optimization/index.md) · [🧠 NeurIPS2025 (121)](../../NeurIPS2025/optimization/index.md) · [📹 ICCV2025 (7)](../../ICCV2025/optimization/index.md)
 
 🔥 **Top topics:** Federated Learning ×3
 

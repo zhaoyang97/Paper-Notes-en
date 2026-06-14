@@ -155,10 +155,10 @@ All models achieve NRMSE below 0.05 and $R^2$ scores close to 1.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐ The systematic comparison of multiple GNN architectures is valuable, though the core idea of using GNNs for power flow prediction has precedent in prior work.
-- Experimental Thoroughness: ⭐⭐⭐ Comprehensive evaluation across four architectures and four grids, but lacking runtime comparisons and tests on larger systems.
-- Writing Quality: ⭐⭐⭐ Well-structured with thorough related work coverage, though some experimental results are not reported with sufficient numerical precision.
-- Value: ⭐⭐⭐ Provides a practical reference for GNN applications in power systems; open-sourced code enhances reproducibility.
+- Novelty: ⭐⭐⭐⭐ The systematic comparison of multiple GNN architectures is valuable, though the core idea of using GNNs for power flow prediction has precedent in prior work.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive evaluation across four architectures and four grids, but lacking runtime comparisons and tests on larger systems.
+- Writing Quality: ⭐⭐⭐⭐ Well-structured with thorough related work coverage, though some experimental results are not reported with sufficient numerical precision.
+- Value: ⭐⭐⭐⭐ Provides a practical reference for GNN applications in power systems; open-sourced code enhances reproducibility.
 
 <!-- RELATED:START -->
 

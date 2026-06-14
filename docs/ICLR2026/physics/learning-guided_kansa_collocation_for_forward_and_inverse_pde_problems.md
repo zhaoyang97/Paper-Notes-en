@@ -154,10 +154,10 @@ Comparison on Burgers' equation (nonlinear):
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐ — The extension directions are natural but largely incremental; the core ideas (differentiation matrices, temporal discretization) are combinations of classical numerical techniques.
-- **Experimental Thoroughness**: ⭐⭐⭐ — Forward and inverse problems are covered across multiple PDE types, but experiments are small-scale (primarily 1D) and lack large-scale validation.
-- **Writing Quality**: ⭐⭐⭐⭐ — The methodology is developed in a clear, layered manner with detailed matrix derivations, though the notation is dense.
-- **Value**: ⭐⭐⭐ — Offers practical contributions to the Kansa methods community; the systematic comparison has reference value, but the overall scope of impact is relatively limited.
+- **Novelty**: ⭐⭐⭐⭐ — The extension directions are natural but largely incremental; the core ideas (differentiation matrices, temporal discretization) are combinations of classical numerical techniques.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Forward and inverse problems are covered across multiple PDE types, but experiments are small-scale (primarily 1D) and lack large-scale validation.
+- **Writing Quality**: ⭐⭐⭐⭐⭐ — The methodology is developed in a clear, layered manner with detailed matrix derivations, though the notation is dense.
+- **Value**: ⭐⭐⭐⭐ — Offers practical contributions to the Kansa methods community; the systematic comparison has reference value, but the overall scope of impact is relatively limited.
 
 <!-- RELATED:START -->
 

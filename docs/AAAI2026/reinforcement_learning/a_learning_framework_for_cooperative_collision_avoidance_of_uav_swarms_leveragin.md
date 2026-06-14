@@ -107,10 +107,10 @@ Learning curves indicate that for swarm sizes ≤ 3, UAVs can fly safely without
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ Unique interdisciplinary reward design approach
-- Experimental Thoroughness: ⭐⭐⭐ Multi-scenario comparisons are comprehensive but limited to simulation
-- Writing Quality: ⭐⭐⭐ Structure is clear but some equations are poorly typeset
-- Value: ⭐⭐⭐ Useful reference for UAV swarm collision avoidance, but real-world deployment validation is absent
+- Novelty: ⭐⭐⭐⭐⭐ Unique interdisciplinary reward design approach
+- Experimental Thoroughness: ⭐⭐⭐⭐ Multi-scenario comparisons are comprehensive but limited to simulation
+- Writing Quality: ⭐⭐⭐⭐ Structure is clear but some equations are poorly typeset
+- Value: ⭐⭐⭐⭐ Useful reference for UAV swarm collision avoidance, but real-world deployment validation is absent
 
 <!-- RELATED:START -->
 

@@ -152,10 +152,10 @@ Parameter count comparison: Pformer 453,561 → S-Pformer 369,039 (**18.6% reduc
 
 ## Rating
 
-- Novelty: ⭐⭐⭐ — The core idea combines encoder removal with Fourier features; individual components have precedents, but the combination is meaningful
-- Experimental Thoroughness: ⭐⭐⭐ — Covers 4 benchmarks, spectral analysis, ablation, and hyperparameter optimization; reasonably thorough but limited in scale
-- Writing Quality: ⭐⭐⭐⭐ — Clear structure, complete derivations, and well-designed ablation studies
-- Value: ⭐⭐⭐ — Offers practical reference value to the PINN community, though application scope and broader impact are limited
+- Novelty: ⭐⭐⭐⭐ — The core idea combines encoder removal with Fourier features; individual components have precedents, but the combination is meaningful
+- Experimental Thoroughness: ⭐⭐⭐⭐ — Covers 4 benchmarks, spectral analysis, ablation, and hyperparameter optimization; reasonably thorough but limited in scale
+- Writing Quality: ⭐⭐⭐⭐⭐ — Clear structure, complete derivations, and well-designed ablation studies
+- Value: ⭐⭐⭐⭐ — Offers practical reference value to the PINN community, though application scope and broader impact are limited
 
 <!-- RELATED:START -->
 

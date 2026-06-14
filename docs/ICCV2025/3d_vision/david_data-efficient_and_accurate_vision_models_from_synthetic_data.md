@@ -19,7 +19,6 @@ content_hash: 871217221c03d575
 # DAViD: Data-efficient and Accurate Vision Models from Synthetic Data
 
 **Conference**: ICCV 2025
-**arXiv**: 2507.15365  
 **Code**: [Project Page](https://aka.ms/DAViD)  
 **Area**: 3D Vision
 **Keywords**: synthetic data, depth estimation, surface normal estimation, foreground segmentation, DPT, high-fidelity annotation

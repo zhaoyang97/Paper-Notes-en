@@ -110,10 +110,10 @@ Standard cross-entropy loss is aggregated within each cluster. Weight optimizati
 - **vs. FedSoft/FedRC**: These methods employ soft clustering to allow clients to mix multiple cluster models, potentially introducing noise. FedDAG's dual-encoder structurally separates the two signal sources, avoiding this issue.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐ Class-wise fusion and the dual-encoder design represent reasonable but incremental contributions.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Evaluation across four heterogeneity types is comprehensive.
-- **Writing Quality**: ⭐⭐⭐ Content is thorough but the structure is somewhat complex.
-- **Value**: ⭐⭐⭐ Offers practical improvements for clustered FL, though the scope is relatively specific.
+- **Novelty**: ⭐⭐⭐⭐ Class-wise fusion and the dual-encoder design represent reasonable but incremental contributions.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Evaluation across four heterogeneity types is comprehensive.
+- **Writing Quality**: ⭐⭐⭐⭐ Content is thorough but the structure is somewhat complex.
+- **Value**: ⭐⭐⭐⭐ Offers practical improvements for clustered FL, though the scope is relatively specific.
 
 <!-- RELATED:START -->
 

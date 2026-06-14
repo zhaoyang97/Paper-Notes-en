@@ -136,10 +136,10 @@ The paper provides no systematic ablation experiments to quantify the independen
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ The architectural design perspective that systematically reinterprets visual cortex principles through geometric language is highly novel.
-- Experimental Thoroughness: ⭐⭐ Lacking ablation studies, with insufficient baseline fairness and limited dataset scale.
-- Writing Quality: ⭐⭐⭐⭐ The theoretical framework is articulated clearly and elegantly; the geometric interpretation is compelling.
-- Value: ⭐⭐⭐ The theoretical perspective is insightful, but the experimental evidence is insufficient to establish the effectiveness of the proposed designs.
+- Novelty: ⭐⭐⭐⭐⭐ The architectural design perspective that systematically reinterprets visual cortex principles through geometric language is highly novel.
+- Experimental Thoroughness: ⭐⭐⭐ Lacking ablation studies, with insufficient baseline fairness and limited dataset scale.
+- Writing Quality: ⭐⭐⭐⭐⭐ The theoretical framework is articulated clearly and elegantly; the geometric interpretation is compelling.
+- Value: ⭐⭐⭐⭐ The theoretical perspective is insightful, but the experimental evidence is insufficient to establish the effectiveness of the proposed designs.
 
 <!-- RELATED:START -->
 

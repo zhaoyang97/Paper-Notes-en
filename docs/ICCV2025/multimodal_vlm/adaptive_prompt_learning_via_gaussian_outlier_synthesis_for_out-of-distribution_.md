@@ -18,7 +18,6 @@ content_hash: 6415daaf9a0feae5
 # Adaptive Prompt Learning via Gaussian Outlier Synthesis for Out-of-Distribution Detection
 
 **Conference**: ICCV 2025
-**arXiv**: N/A (CVF OpenAccess)  
 **Code**: Unavailable  
 **Area**: Multimodal VLM
 **Keywords**: OOD detection, prompt learning, Gaussian outlier synthesis, vision-language model, contrastive learning

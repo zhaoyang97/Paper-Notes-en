@@ -109,10 +109,10 @@ Evaluated on 300 ProofWriter samples across three models:
 - **vs. atomic reasoning (zhang2025)**: Inspired by atomic claim decomposition, but augmented with closure-based verification.
 
 ## Rating
-- Novelty: ⭐⭐⭐ The combination of symbolic closure and sketch generation is an interesting idea, though technical contributions are limited.
-- Experimental Thoroughness: ⭐⭐ The experimental scale is too small (300 samples, single dataset), undermining the reliability of conclusions.
-- Writing Quality: ⭐⭐⭐ Structure is clear but lacks depth; the work is at workshop level.
-- Value: ⭐⭐⭐ The direction is interesting but insufficiently validated; larger-scale experiments are needed.
+- Novelty: ⭐⭐⭐⭐ The combination of symbolic closure and sketch generation is an interesting idea, though technical contributions are limited.
+- Experimental Thoroughness: ⭐⭐⭐ The experimental scale is too small (300 samples, single dataset), undermining the reliability of conclusions.
+- Writing Quality: ⭐⭐⭐⭐ Structure is clear but lacks depth; the work is at workshop level.
+- Value: ⭐⭐⭐⭐ The direction is interesting but insufficiently validated; larger-scale experiments are needed.
 
 <!-- RELATED:START -->
 

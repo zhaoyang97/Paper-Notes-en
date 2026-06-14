@@ -130,10 +130,10 @@ The paper presents three major open research challenges as qualitative analysis:
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — Systematically applying the NeSy paradigm to wireless foundation models is a first; the identification of the three challenges is insightful.
-- Experimental Thoroughness: ⭐⭐ — Purely a vision paper with no experiments or prototype validation.
-- Writing Quality: ⭐⭐⭐⭐ — The argumentation is logically clear, the comparison in Table 1 is effective, and the research challenges are described precisely.
-- Value: ⭐⭐⭐ — High directional value but distant from practical deployment; inspiring for both the wireless AI and NeSy communities, yet lacking actionable guidance.
+- Novelty: ⭐⭐⭐⭐⭐ — Systematically applying the NeSy paradigm to wireless foundation models is a first; the identification of the three challenges is insightful.
+- Experimental Thoroughness: ⭐⭐⭐ — Purely a vision paper with no experiments or prototype validation.
+- Writing Quality: ⭐⭐⭐⭐⭐ — The argumentation is logically clear, the comparison in Table 1 is effective, and the research challenges are described precisely.
+- Value: ⭐⭐⭐⭐ — High directional value but distant from practical deployment; inspiring for both the wireless AI and NeSy communities, yet lacking actionable guidance.
 
 <!-- RELATED:START -->
 

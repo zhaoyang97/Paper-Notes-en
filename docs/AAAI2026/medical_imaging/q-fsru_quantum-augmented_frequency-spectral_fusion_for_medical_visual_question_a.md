@@ -184,10 +184,10 @@ Detailed 5-fold cross-validation results:
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐ — The combination of frequency-domain fusion and quantum-inspired retrieval is a novel attempt, though the depth of innovation in individual components is limited.
-- **Technical Depth**: ⭐⭐ — The method design is relatively straightforward; the "quantum" component is novel primarily in name, with the underlying computation being entirely classical.
-- **Practicality**: ⭐⭐ — Binary classification on a small-scale dataset, without direct comparison to SOTA methods, limits practical clinical value.
-- **Clarity**: ⭐⭐⭐ — Mathematical formulations are clear, but the experimental section lacks comparison baselines.
+- **Novelty**: ⭐⭐⭐⭐ — The combination of frequency-domain fusion and quantum-inspired retrieval is a novel attempt, though the depth of innovation in individual components is limited.
+- **Technical Depth**: ⭐⭐⭐ — The method design is relatively straightforward; the "quantum" component is novel primarily in name, with the underlying computation being entirely classical.
+- **Practicality**: ⭐⭐⭐ — Binary classification on a small-scale dataset, without direct comparison to SOTA methods, limits practical clinical value.
+- **Clarity**: ⭐⭐⭐⭐ — Mathematical formulations are clear, but the experimental section lacks comparison baselines.
 
 <!-- RELATED:START -->
 

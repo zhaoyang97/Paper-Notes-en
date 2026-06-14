@@ -19,7 +19,6 @@ content_hash: 20fc0509a840ac18
 # ViT-Linearizer: Distilling Quadratic Knowledge into Linear-Time Vision Models
 
 **Conference**: ICCV 2025
-**arXiv**: 2504.00037  
 **Code**: Not released  
 **Area**: Model Compression
 **Keywords**: Cross-architecture distillation, ViT, Mamba, linear complexity, activation matching, masked prediction

@@ -126,10 +126,10 @@ Both metrics achieve a **6× or greater improvement**.
 - The methodological contributions are transferable to related problems.
 
 ## Rating
-- Novelty: ⭐⭐⭐ Novel perspective on code–audio alignment
-- Experimental Thoroughness: ⭐⭐⭐
-- Writing Quality: ⭐⭐⭐
-- Value: ⭐⭐⭐ Specific value for the audio generation domain
+- Novelty: ⭐⭐⭐⭐ Novel perspective on code–audio alignment
+- Experimental Thoroughness: ⭐⭐⭐⭐
+- Writing Quality: ⭐⭐⭐⭐
+- Value: ⭐⭐⭐⭐ Specific value for the audio generation domain
 
 <!-- RELATED:START -->
 

@@ -178,10 +178,10 @@ Stricter thresholds restrict reflection-correction to the lowest-quality transla
 
 ## Rating
 
-- Novelty: ⭐⭐⭐ The core idea (self-reflection to improve generation quality) builds on prior work; the contributions lie in systematically applying it to low-resource translation and introducing the RAKE masking mechanism. Incremental innovation.
-- Experimental Thoroughness: ⭐⭐⭐ Statistical analysis is rigorous (non-parametric testing + effect sizes), but language coverage is limited (only 2 languages), model selection is conservative (only 2 models), and human evaluation is absent.
-- Writing Quality: ⭐⭐⭐⭐ Structure is clear and argumentation is logically rigorous; mathematical notation is used appropriately; full prompt templates are provided in the appendix, enhancing reproducibility.
-- Value: ⭐⭐⭐ The method is lightweight, plug-and-play, and model-agnostic, with practical applicability to low-resource translation; the reflection-augmented dataset is a valuable by-product; however, the limited experimental scale constrains the generalizability of the conclusions.
+- Novelty: ⭐⭐⭐⭐ The core idea (self-reflection to improve generation quality) builds on prior work; the contributions lie in systematically applying it to low-resource translation and introducing the RAKE masking mechanism. Incremental innovation.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Statistical analysis is rigorous (non-parametric testing + effect sizes), but language coverage is limited (only 2 languages), model selection is conservative (only 2 models), and human evaluation is absent.
+- Writing Quality: ⭐⭐⭐⭐⭐ Structure is clear and argumentation is logically rigorous; mathematical notation is used appropriately; full prompt templates are provided in the appendix, enhancing reproducibility.
+- Value: ⭐⭐⭐⭐ The method is lightweight, plug-and-play, and model-agnostic, with practical applicability to low-resource translation; the reflection-augmented dataset is a valuable by-product; however, the limited experimental scale constrains the generalizability of the conclusions.
 
 <!-- RELATED:START -->
 

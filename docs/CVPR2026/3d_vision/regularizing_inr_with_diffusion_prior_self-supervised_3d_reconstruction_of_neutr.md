@@ -142,10 +142,10 @@ The paper employs ROI-scale analysis in place of conventional ablation experimen
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐ Primarily an incremental improvement to the DD3IP framework, replacing the CG solver with INR and a proximal regularizer—a natural but non-breakthrough contribution.
-- **Experimental Thoroughness**: ⭐⭐ Limited to 2-slice volumes; no systematic ablation, no runtime analysis, and no downstream task evaluation.
-- **Writing Quality**: ⭐⭐⭐ Method derivation is clear and complete; the paper is concise overall, with ROI analysis being a notable highlight.
-- **Value**: ⭐⭐⭐ Directly applicable to sparse-view neutron CT reconstruction, but generalizability and scalability remain insufficiently validated.
+- **Novelty**: ⭐⭐⭐⭐ Primarily an incremental improvement to the DD3IP framework, replacing the CG solver with INR and a proximal regularizer—a natural but non-breakthrough contribution.
+- **Experimental Thoroughness**: ⭐⭐⭐ Limited to 2-slice volumes; no systematic ablation, no runtime analysis, and no downstream task evaluation.
+- **Writing Quality**: ⭐⭐⭐⭐ Method derivation is clear and complete; the paper is concise overall, with ROI analysis being a notable highlight.
+- **Value**: ⭐⭐⭐⭐ Directly applicable to sparse-view neutron CT reconstruction, but generalizability and scalability remain insufficiently validated.
 
 <!-- RELATED:START -->
 

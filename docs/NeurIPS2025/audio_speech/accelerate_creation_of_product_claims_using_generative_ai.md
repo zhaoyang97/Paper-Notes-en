@@ -120,10 +120,10 @@ The fine-tuned Phi-3 14B surpasses GPT-4o with only 1 in-context example, compar
 - **Transferable insight**: Any domain with an established human preference comparison methodology (A/B testing, Elo ranking, etc.) can adopt a similar approach to embed that methodology into LLM workflows.
 
 ## Rating
-- Novelty: ⭐⭐⭐ Incorporating the MaxDiff paradigm into LLM design is creative, but technically the approach is a standard combination of prompt engineering and LoRA.
-- Experimental Thoroughness: ⭐⭐⭐ Real consumer MaxDiff validation is a strength, but data unavailability and unsystematic model comparisons are weaknesses.
-- Writing Quality: ⭐⭐⭐⭐ Practical problem descriptions are clear and methods are explained intuitively, though the paper reads more as an industrial report than an academic contribution.
-- Value: ⭐⭐⭐ Valuable reference for industrial LLM applications, but academic contribution is limited.
+- Novelty: ⭐⭐⭐⭐ Incorporating the MaxDiff paradigm into LLM design is creative, but technically the approach is a standard combination of prompt engineering and LoRA.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Real consumer MaxDiff validation is a strength, but data unavailability and unsystematic model comparisons are weaknesses.
+- Writing Quality: ⭐⭐⭐⭐⭐ Practical problem descriptions are clear and methods are explained intuitively, though the paper reads more as an industrial report than an academic contribution.
+- Value: ⭐⭐⭐⭐ Valuable reference for industrial LLM applications, but academic contribution is limited.
 
 <!-- RELATED:START -->
 

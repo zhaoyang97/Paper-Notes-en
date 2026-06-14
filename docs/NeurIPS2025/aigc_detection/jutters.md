@@ -116,10 +116,10 @@ This project involves no model training; it relies entirely on inference from pr
 - The jutter metaphor surfaces a deeper question: if the stance toward AI-generated content shifts from "detect and remove" to "curate and assign meaning," the entire framework of the AIGC detection field may need to be reconsidered.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ — Uniquely combines traditional cultural metaphor with critical reflection on AI-generated content.
-- Experimental Thoroughness: ⭐⭐ — Lacks user studies and quantitative evaluation; amounts to an installation description.
-- Writing Quality: ⭐⭐⭐⭐ — Fluent narrative and precise metaphors, balancing academic rigor with poetic sensibility.
-- Value: ⭐⭐⭐ — Thought-provoking as a creative AI work, though of limited direct reference value to the technical community.
+- Novelty: ⭐⭐⭐⭐⭐ — Uniquely combines traditional cultural metaphor with critical reflection on AI-generated content.
+- Experimental Thoroughness: ⭐⭐⭐ — Lacks user studies and quantitative evaluation; amounts to an installation description.
+- Writing Quality: ⭐⭐⭐⭐⭐ — Fluent narrative and precise metaphors, balancing academic rigor with poetic sensibility.
+- Value: ⭐⭐⭐⭐ — Thought-provoking as a creative AI work, though of limited direct reference value to the technical community.
 
 <!-- RELATED:START -->
 
